@@ -145,7 +145,7 @@ List at most eight account-permitted actions. If there is no clear account-permi
 
 ## 8. Turn Points to Watch
 
-List at most ten.
+List at most ten. Treat the list below as a starting checklist, not a permanent requirement. Replace obsolete indicators with better source-backed proxies when the active opportunity set changes.
 
 - Hyperscaler capex changes.
 - NVIDIA gross margin, inventory, and accounts receivable.
@@ -158,7 +158,17 @@ List at most ten.
 - Nasdaq, SOX, and semiconductor leader trend breaks.
 - Export controls, antitrust, energy permitting, launch, spectrum, or data-regulation changes.
 
-## 9. Fact, Inference, Scenario, and Action Separation
+## 9. Checklist Evolution Review
+
+Use this section when an indicator has become stale or a new bottleneck has become important.
+
+| Indicator or proxy | Keep, retire, or add | Reason | Replacement source family |
+| --- | --- | --- | --- |
+|  |  |  |  |
+
+Do not remove an indicator merely because current data is inconvenient to collect. Retire it only when it no longer maps to the opportunity set, the source quality has degraded, or a better source-backed proxy exists.
+
+## 10. Fact, Inference, Scenario, and Action Separation
 
 Facts:
 

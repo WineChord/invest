@@ -524,6 +524,16 @@ Required coverage:
 - Regulation and geopolitics: chip export controls, antitrust, data regulation, energy permitting, power-grid constraints, defense budgets, launch regulation, spectrum regulation, and major geopolitical shocks.
 - Market calendar: U.S. market holidays and shortened sessions must be stated explicitly when they affect weekly data.
 
+The required coverage list is a 2026 starting checklist, not a permanent list of sacred indicators. The durable questions are broader: where is capital being over-allocated, where are bottlenecks real, where are unit economics improving or deteriorating, where is financing becoming fragile, and where is market structure hiding risk. Future reviews should replace obsolete tickers, data series, cycle analogies, and source families when technology, market plumbing, or the account policy changes. Keep the economic question; update the proxy.
+
+Indicator evolution rules:
+
+- If an indicator stops mapping to the active opportunity set, mark it stale and replace it rather than collecting it by habit.
+- If a new bottleneck becomes central to the portfolio, add source-backed indicators for that bottleneck before it affects allocation.
+- If a historical analogy stops clarifying the current cycle, demote it to context and use a better source-backed framework.
+- When changing the checklist, preserve auditability by noting what changed, why the old proxy became weak, and what source family will replace it.
+- Do not weaken freshness, source, policy, or no-auto-trading requirements while updating indicators.
+
 Output requirements:
 
 - Separate `facts`, `inferences`, `probability scenarios`, and `account actions`.
@@ -867,6 +877,7 @@ Annually:
 - Review whether the process still serves the satellite mission.
 - Review whether the data model remains clone-portable.
 - Review whether old decisions were recorded clearly enough for a new agent to understand.
+- Review whether market-regime and AI-cycle monitor indicators still map to the active opportunity set. Retire stale proxies and add new source-backed proxies when technology, market structure, or policy changes.
 
 ## Failure Modes and Controls
 
