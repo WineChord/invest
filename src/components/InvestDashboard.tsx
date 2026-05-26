@@ -93,7 +93,7 @@ interface LogoTrendPalette {
   glow: string;
 }
 
-type ChartRange = "1M" | "3M" | "6M" | "YTD" | "ALL";
+type ChartRange = "1M" | "3M" | "6M" | "YTD" | "1Y" | "3Y" | "5Y" | "ALL";
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
@@ -115,7 +115,18 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
 
 const marketColorStorageKey = "winechord-invest-market-colors";
 const defaultMarketColorScheme: MarketColorScheme = "mainland";
-const chartRangeOptions: ChartRange[] = ["1M", "3M", "6M", "YTD", "ALL"];
+const chartRangeOptions: ChartRange[] = [
+  "1M",
+  "3M",
+  "6M",
+  "YTD",
+  "1Y",
+  "3Y",
+  "5Y",
+  "ALL",
+];
+const chartVisibleLeftPadding = 1.05;
+const chartVisibleRightPadding = 0.25;
 const chartAttributionUrl =
   "https://www.tradingview.com/?utm_source=winechord-invest";
 const watchStatusLabels: Record<string, string> = {
@@ -1396,12 +1407,15 @@ function EquityChart({
           </div>
         )}
         <div className="chart-summary" aria-label="Equity curve summary">
-          <span>
-            Latest <strong>{formatCurrency(lastPoint.totalEquity)}</strong>
+          <span className="chart-summary-title">Portfolio equity</span>
+          <span className="chart-summary-value">
+            <span>Latest</span>
+            <strong>{formatCurrency(lastPoint.totalEquity)}</strong>
           </span>
           <span className={`signed-value signed-value-${chartTone}`}>
             {formatSignedPercent(chartReturnPct)}
           </span>
+          <span className="chart-summary-range">{activeRange}</span>
         </div>
         <div className="chart-range-toolbar" aria-label="Chart time range">
           {chartRangeOptions.map((range) => (
@@ -1532,8 +1546,8 @@ function applyChartRange(
 ): void {
   if (range === "ALL" || points.length <= 2) {
     chart.timeScale().setVisibleLogicalRange({
-      from: -0.5,
-      to: points.length - 0.5,
+      from: -chartVisibleLeftPadding,
+      to: points.length - chartVisibleRightPadding,
     });
     return;
   }
@@ -1545,8 +1559,8 @@ function applyChartRange(
   );
   const from = firstVisibleIndex === -1 ? 0 : firstVisibleIndex;
   chart.timeScale().setVisibleLogicalRange({
-    from: Math.max(0, from - 0.5),
-    to: points.length - 0.5,
+    from: Math.max(-chartVisibleLeftPadding, from - chartVisibleLeftPadding),
+    to: points.length - chartVisibleRightPadding,
   });
 }
 
@@ -1564,6 +1578,9 @@ function chartRangeCutoff(
     "1M": 31,
     "3M": 92,
     "6M": 183,
+    "1Y": 366,
+    "3Y": 1096,
+    "5Y": 1827,
   };
   return lastTime - dayCounts[range] * 24 * 60 * 60 * 1000;
 }
