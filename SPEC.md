@@ -131,6 +131,17 @@ date,total_market_value,cash,total_equity,cumulative_deposits,
 total_return_pct,period_return_pct,notes
 ```
 
+The equity curve is a valuation snapshot series, not a trade ledger and not a broker statement. It can be updated from confirmed positions, confirmed cash, and timestamped market prices without changing broker-confirmed account records.
+
+Snapshot cadence policy:
+
+- Minimum cadence: add or refresh a portfolio-level valuation snapshot during each monthly decision cycle when confirmed cash or positions exist.
+- Event cadence: add a snapshot for each confirmed deposit or execution date after the user confirms the broker-side event and positions are recalculated.
+- Month-end cadence: when reliable historical close data is available, backfill month-end snapshots since the previous snapshot. This keeps the long-term chart smooth enough without pretending to have intraday precision.
+- Optional higher cadence: weekly or daily snapshots may be added after the account has meaningful positions or an automation is introduced, but these remain market-derived valuation points and must cite the price dates used.
+- Historical backfill must use historical prices for the exact valuation date. Never fill an old date with today's price.
+- If price history for a required date is unavailable, leave the gap or mark the snapshot as estimated in `notes`; do not invent precision.
+
 Market snapshots used for display and decision support are stored in `data/market/`. They do not mutate confirmed account records.
 
 The public research drilldown index is stored in [research/company-analysis.yml](research/company-analysis.yml). It is the structured bridge between dated research notes and the dashboard. Each entry represents one historical analysis event for one company, not a fresh market fact.
@@ -192,6 +203,7 @@ If a critical freshness check fails, the decision must default to no trade or ho
 13. Save the proposed decision in `decisions/` if the user asks to persist it.
 14. Do not update `data/account/ledger.csv` until execution is confirmed.
 15. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
+16. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
 
 ## Position Sizing Policy
 

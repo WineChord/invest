@@ -65,6 +65,7 @@ When the user asks what to buy or sell today:
 7. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
 8. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
 9. Mark the output as a proposed decision only. Do not mutate the ledger.
+10. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
 
 ## Execution Update Workflow
 
@@ -74,7 +75,8 @@ When the user says trades or deposits were actually completed:
 2. If fields are missing, ask for the missing fields. Do not use current market prices as substitutes.
 3. Append a new event to [data/account/ledger.csv](data/account/ledger.csv).
 4. Recalculate [data/account/positions.csv](data/account/positions.csv) and [data/account/state.yml](data/account/state.yml) from confirmed events.
-5. Never silently edit old ledger rows. Use a `correction` event if a past record was wrong.
+5. Add or refresh the equity-curve valuation snapshot for the confirmed event date when prices for that date are available. If price data is unavailable, leave the valuation gap rather than inventing a price.
+6. Never silently edit old ledger rows. Use a `correction` event if a past record was wrong.
 
 ## Public Dashboard Workflow
 
