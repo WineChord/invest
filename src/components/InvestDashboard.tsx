@@ -86,6 +86,13 @@ interface AccountStatusDisplay {
   tone: "safe" | "warning" | "neutral";
 }
 
+interface LogoTrendPalette {
+  start: string;
+  mid: string;
+  end: string;
+  glow: string;
+}
+
 type ChartRange = "1M" | "3M" | "6M" | "YTD" | "ALL";
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
@@ -657,6 +664,10 @@ export default function InvestDashboard({ data }: Props) {
     persistMarketColorScheme(marketColorScheme);
   }, [marketColorPreferenceLoaded, marketColorScheme]);
 
+  useEffect(() => {
+    updateFaviconForMarketColorScheme(marketColorScheme);
+  }, [marketColorScheme]);
+
   return (
     <div className="invest-shell" data-market-colors={marketColorScheme}>
       <header className="invest-topbar">
@@ -665,7 +676,7 @@ export default function InvestDashboard({ data }: Props) {
           href={activeData.publicUrl}
           aria-label="WineChord Invest home"
         >
-          <BrandLogo />
+          <BrandLogo marketColorScheme={marketColorScheme} />
           <span>
             <strong>WineChord Invest</strong>
             <small>Satellite Portfolio</small>
@@ -837,7 +848,46 @@ export default function InvestDashboard({ data }: Props) {
   );
 }
 
-function BrandLogo() {
+function updateFaviconForMarketColorScheme(scheme: MarketColorScheme): void {
+  if (typeof document === "undefined") {
+    return;
+  }
+
+  const icon = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+  if (icon === null) {
+    return;
+  }
+
+  const fileName =
+    scheme === "mainland" ? "favicon-cn.svg" : "favicon-western.svg";
+  icon.href = new URL(fileName, icon.href).toString();
+}
+
+function logoTrendPalette(scheme: MarketColorScheme): LogoTrendPalette {
+  if (scheme === "western") {
+    return {
+      end: "#f7fff3",
+      glow: "#5ee4cb",
+      mid: "#b9ffe4",
+      start: "#25c49b",
+    };
+  }
+
+  return {
+    end: "#fff5ee",
+    glow: "#ff6b5b",
+    mid: "#ffb09b",
+    start: "#d83a2e",
+  };
+}
+
+function BrandLogo({
+  marketColorScheme,
+}: {
+  marketColorScheme: MarketColorScheme;
+}) {
+  const trend = logoTrendPalette(marketColorScheme);
+
   return (
     <svg
       aria-hidden="true"
@@ -852,9 +902,9 @@ function BrandLogo() {
           <stop offset="1" stopColor="#030706" />
         </linearGradient>
         <linearGradient id="brand-w" x1="11" x2="37" y1="16" y2="34">
-          <stop offset="0" stopColor="#5ee4cb" />
-          <stop offset="0.55" stopColor="#c7ffe7" />
-          <stop offset="1" stopColor="#f7fff3" />
+          <stop offset="0" stopColor={trend.start} />
+          <stop offset="0.55" stopColor={trend.mid} />
+          <stop offset="1" stopColor={trend.end} />
         </linearGradient>
         <linearGradient id="brand-orbit" x1="7" x2="42" y1="35" y2="16">
           <stop offset="0" stopColor="#8c7a5f" stopOpacity="0.35" />
@@ -879,6 +929,15 @@ function BrandLogo() {
         strokeLinejoin="round"
         strokeWidth="5.2"
       />
+      <path
+        d="M33.3 14.2 37 12.6l-.6 4"
+        fill="none"
+        stroke={trend.end}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.2"
+      />
+      <circle cx="36.4" cy="13.5" fill={trend.glow} opacity="0.95" r="1.35" />
       <path
         d="M7.2 34.1c7.1 5.8 25.7 1.4 34.2-13.7"
         fill="none"
