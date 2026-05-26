@@ -7,6 +7,7 @@ Use it to avoid repeating low-value searches, but never treat it as fresh market
 Files:
 
 - `watchlist.csv`: current candidate universe and monitoring status.
+- `company-analysis.yml`: structured company analysis index used by the public dashboard for quick briefs and historical drilldowns.
 - `sources.yml`: durable source register.
 - `2026-05-26-initial-baseline.md`: first baseline research snapshot.
 

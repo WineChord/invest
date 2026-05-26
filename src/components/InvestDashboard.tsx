@@ -1,8 +1,11 @@
 import {
   Activity,
   BarChart3,
+  BookOpen,
   Database,
+  ExternalLink,
   Github,
+  History,
   LineChart,
   ListChecks,
   Palette,
@@ -18,13 +21,14 @@ import type {
   SeriesMarker,
   Time,
 } from "lightweight-charts";
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, ReactNode, RefObject } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   EquityPoint,
   LedgerEvent,
   PortfolioData,
   PositionRecord,
+  ResearchAnalysisEntry,
   WatchlistItem,
 } from "../lib/portfolioData";
 
@@ -107,6 +111,20 @@ const defaultMarketColorScheme: MarketColorScheme = "mainland";
 const chartRangeOptions: ChartRange[] = ["1M", "3M", "6M", "YTD", "ALL"];
 const chartAttributionUrl =
   "https://www.tradingview.com/?utm_source=winechord-invest";
+const watchStatusLabels: Record<string, string> = {
+  active_candidate: "Active candidate",
+  active_core_candidate: "Core candidate",
+  frozen: "Frozen",
+  not_tradable: "Not tradable",
+  probation: "Probation",
+  removed: "Removed",
+  research_only: "Research only",
+  watch: "Watch",
+  watch_future: "Future watch",
+};
+const watchPriorityLabels: Record<string, string> = {
+  watch_future: "Future",
+};
 
 function readInitialMarketColorScheme(): MarketColorScheme {
   if (typeof window === "undefined") {
@@ -809,7 +827,10 @@ export default function InvestDashboard({ data }: Props) {
         </section>
 
         <Panel title="Research universe" eyebrow="active universe">
-          <WatchlistTable items={activeData.watchlist} />
+          <WatchlistTable
+            items={activeData.watchlist}
+            repositoryUrl={activeData.repositoryUrl}
+          />
         </Panel>
       </main>
     </div>
@@ -1970,27 +1991,294 @@ function operationDetail(event: LedgerEvent): string {
   return `${quantity} shares @ ${formatCurrency(event.averagePrice)} - ${event.notes}`;
 }
 
-function WatchlistTable({ items }: { items: WatchlistItem[] }) {
+function WatchlistTable({
+  items,
+  repositoryUrl,
+}: {
+  items: WatchlistItem[];
+  repositoryUrl: string;
+}) {
+  const [selectedSymbol, setSelectedSymbol] = useState(items[0]?.symbol ?? "");
+  const detailPanelRef = useRef<HTMLElement | null>(null);
+  const selectedItem =
+    items.find((item) => item.symbol === selectedSymbol) ?? items[0] ?? null;
+
+  useEffect(() => {
+    if (items.length === 0) {
+      setSelectedSymbol("");
+      return;
+    }
+
+    if (!items.some((item) => item.symbol === selectedSymbol)) {
+      setSelectedSymbol(items[0].symbol);
+    }
+  }, [items, selectedSymbol]);
+
+  const selectItem = (symbol: string) => {
+    setSelectedSymbol(symbol);
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 760px)").matches
+    ) {
+      window.requestAnimationFrame(() => {
+        detailPanelRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    }
+  };
+
+  if (items.length === 0) {
+    return (
+      <div className="empty-state">
+        <strong>No research candidates yet</strong>
+        <span>
+          The research universe will appear after watchlist records are added.
+        </span>
+      </div>
+    );
+  }
+
   return (
-    <div className="watchlist-grid">
-      {items.map((item) => (
-        <article className="watch-card" key={item.symbol}>
-          <div>
-            <strong>{item.symbol}</strong>
-            <span>{item.name}</span>
-          </div>
-          <p>{item.theme}</p>
-          <footer>
-            <span className="rank">{item.priority}</span>
-            <span>{item.status.replaceAll("_", " ")}</span>
-            <span>
-              {item.price === null
-                ? "No price"
-                : `${formatCurrency(item.price)} - ${item.priceAsOf}`}
-            </span>
-          </footer>
-        </article>
-      ))}
+    <div className="research-workspace">
+      <div className="watchlist-grid" aria-label="Research candidates">
+        {items.map((item) => {
+          const latest = latestAnalysisFor(item);
+          const selected = item.symbol === selectedItem?.symbol;
+          const previewId = `watch-preview-${item.symbol.toLowerCase()}`;
+
+          return (
+            <button
+              aria-describedby={latest === null ? undefined : previewId}
+              aria-pressed={selected}
+              className={
+                selected
+                  ? "watch-card watch-card-selected"
+                  : "watch-card"
+              }
+              key={item.symbol}
+              onClick={() => selectItem(item.symbol)}
+              title={latest?.summary ?? item.notes}
+              type="button"
+            >
+              <span className="watch-card-topline">
+                <span className="watch-card-symbol-row">
+                  <strong>{item.symbol}</strong>
+                  <span className="rank">
+                    {watchPriorityLabel(item.priority)}
+                  </span>
+                </span>
+                <span className="watch-card-name">{item.name}</span>
+              </span>
+              <span className="watch-card-theme">{item.theme}</span>
+              <span className="watch-card-meta">
+                <span>{watchStatusLabel(item.status)}</span>
+                <span>{formatWatchPrice(item)}</span>
+                <span>{analysisCountLabel(item.analysisHistory.length)}</span>
+              </span>
+              {latest === null ? null : (
+                <WatchAnalysisPreview
+                  entry={latest}
+                  id={previewId}
+                  item={item}
+                />
+              )}
+            </button>
+          );
+        })}
+      </div>
+      <ResearchDetailPanel
+        item={selectedItem}
+        panelRef={detailPanelRef}
+        repositoryUrl={repositoryUrl}
+      />
     </div>
   );
+}
+
+function WatchAnalysisPreview({
+  entry,
+  id,
+  item,
+}: {
+  entry: ResearchAnalysisEntry;
+  id: string;
+  item: WatchlistItem;
+}) {
+  return (
+    <span className="watch-preview" id={id} role="tooltip">
+      <span className="watch-preview-kicker">Latest analysis</span>
+      <strong>
+        {item.symbol} {analysisStanceLabel(entry.stance)} · {entry.analyzedAt}
+      </strong>
+      <span>{entry.summary}</span>
+      <span>
+        <b>Risk watch</b> {entry.riskWatch}
+      </span>
+    </span>
+  );
+}
+
+function ResearchDetailPanel({
+  item,
+  panelRef,
+  repositoryUrl,
+}: {
+  item: WatchlistItem | null;
+  panelRef: RefObject<HTMLElement | null>;
+  repositoryUrl: string;
+}) {
+  if (item === null) {
+    return null;
+  }
+
+  const latest = latestAnalysisFor(item);
+  const history = item.analysisHistory;
+
+  return (
+    <aside
+      aria-label={`${item.symbol} research detail`}
+      className="research-detail-panel"
+      ref={panelRef}
+    >
+      <div className="research-detail-kicker">
+        <BookOpen size={16} />
+        <span>Research brief</span>
+      </div>
+      <div className="research-detail-title">
+        <div>
+          <span className="research-symbol">{item.symbol}</span>
+          <h3>{item.name}</h3>
+        </div>
+        <span className="rank">{watchPriorityLabel(item.priority)}</span>
+      </div>
+      <p className="research-theme">{item.theme}</p>
+      <dl className="research-meta-grid">
+        <div>
+          <dt>Status</dt>
+          <dd>{watchStatusLabel(item.status)}</dd>
+        </div>
+        <div>
+          <dt>Price</dt>
+          <dd>{formatWatchPrice(item)}</dd>
+        </div>
+        <div>
+          <dt>Baseline</dt>
+          <dd>{item.latestBaselineDate || "Pending"}</dd>
+        </div>
+        <div>
+          <dt>Latest stance</dt>
+          <dd>{analysisStanceLabel(latest?.stance ?? item.priority)}</dd>
+        </div>
+      </dl>
+
+      <div className="research-brief-stack">
+        <ResearchBriefSection
+          label="Thesis"
+          value={latest?.summary ?? item.notes}
+        />
+        <ResearchBriefSection
+          label="Upside path"
+          value={latest?.upsidePath ?? item.initialRole}
+        />
+        <ResearchBriefSection
+          label="Risk watch"
+          value={latest?.riskWatch ?? "No structured risk note yet."}
+        />
+        <ResearchBriefSection
+          label="Next check"
+          value={latest?.nextCheck ?? item.nextReviewTrigger}
+        />
+      </div>
+
+      <div className="analysis-history-block">
+        <div className="analysis-history-heading">
+          <History size={16} />
+          <span>Analysis history</span>
+        </div>
+        {history.length === 0 ? (
+          <p>No structured analysis entries yet.</p>
+        ) : (
+          <ol className="analysis-timeline">
+            {history.map((entry) => (
+              <li key={entry.id}>
+                <span className="analysis-date">{entry.analyzedAt}</span>
+                <strong>{entry.title}</strong>
+                <span className="analysis-meta">
+                  {analysisStanceLabel(entry.stance)} ·{" "}
+                  {readableStatusLabel(entry.analysisType)} ·{" "}
+                  {entry.policyVersion}
+                </span>
+                <p>{entry.summary}</p>
+                {entry.sourcePath === "" ? null : (
+                  <a
+                    className="research-source-link"
+                    href={repositoryFileUrl(repositoryUrl, entry.sourcePath)}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <ExternalLink size={14} />
+                    <span>{sourceLinkLabel(entry.sourcePath)}</span>
+                  </a>
+                )}
+              </li>
+            ))}
+          </ol>
+        )}
+      </div>
+    </aside>
+  );
+}
+
+function ResearchBriefSection({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <section className="research-brief-section">
+      <h4>{label}</h4>
+      <p>{value}</p>
+    </section>
+  );
+}
+
+function latestAnalysisFor(item: WatchlistItem): ResearchAnalysisEntry | null {
+  return item.analysisHistory[0] ?? null;
+}
+
+function watchStatusLabel(status: string): string {
+  return watchStatusLabels[status] ?? readableStatusLabel(status);
+}
+
+function watchPriorityLabel(priority: string): string {
+  return watchPriorityLabels[priority] ?? priority;
+}
+
+function analysisStanceLabel(stance: string): string {
+  return watchPriorityLabels[stance] ?? watchStatusLabels[stance] ?? stance;
+}
+
+function formatWatchPrice(item: WatchlistItem): string {
+  if (item.price === null) {
+    return item.status === "watch_future" ? "Not tradable" : "No price";
+  }
+
+  return `${formatCurrency(item.price)} · ${item.priceAsOf ?? "undated"}`;
+}
+
+function analysisCountLabel(count: number): string {
+  return count === 1 ? "1 analysis" : `${count} analyses`;
+}
+
+function repositoryFileUrl(repositoryUrl: string, sourcePath: string): string {
+  const encodedPath = sourcePath.split("/").map(encodeURIComponent).join("/");
+  return `${repositoryUrl.replace(/\/$/, "")}/blob/main/${encodedPath}`;
+}
+
+function sourceLinkLabel(sourcePath: string): string {
+  return sourcePath.split("/").at(-1) ?? sourcePath;
 }

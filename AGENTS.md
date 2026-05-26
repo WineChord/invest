@@ -94,6 +94,8 @@ Dashboard rules:
 10. Market movement colors must use a browser-remembered convention toggle. The default convention is Mainland China style: gains are red and losses are green. The alternative convention is Western style: gains are green and losses are red. UI copy remains English-only, and browser-only display preferences must never mutate committed account records, research files, or market snapshots.
 11. Keep market movement colors separate from operation colors. Buy and sell markers may use their own semantic colors so they are not confused with gain and loss.
 12. Treat the equity chart as a broker-grade analytical surface, with TradingView as the quality benchmark. Chart work should prioritize accurate axes, crosshair detail, range controls, touch and mouse interaction, confirmed-operation markers, and low-noise layout before decorative styling. The chart is display-only and must never imply broker connection, order entry, or automatic execution.
+13. Treat the research universe as an interactive research workspace, not a static table. Company cards should support compact scanning, hover and keyboard-focus latest-analysis previews, click or tap detail drilldowns, and historical analysis timelines sourced from committed research records.
+14. Research drilldowns must preserve provenance. Show analysis dates, stances, policy versions, analysis types, and source links when available, and make clear through dated labels that historical analysis is memory rather than fresh market truth.
 
 ## Continuous Improvement and Noise Hygiene
 
@@ -121,6 +123,8 @@ Each active company thesis must include:
 - customer concentration and dependency risk;
 - regulatory, technical, execution, and valuation risk;
 - next review date.
+
+When adding a durable company analysis that should appear on the public dashboard, add or append a structured entry in [research/company-analysis.yml](research/company-analysis.yml) and link it to the dated source note. Do not parse long-form Markdown as the dashboard database when a structured index can carry the needed summary and provenance.
 
 Do not blindly follow the user's initial candidate list. Treat it as a starting watchlist and independently challenge every company.
 

@@ -83,6 +83,22 @@ export interface WatchlistItem {
   notes: string;
   price: number | null;
   priceAsOf: string | null;
+  analysisHistory: ResearchAnalysisEntry[];
+}
+
+export interface ResearchAnalysisEntry {
+  id: string;
+  symbol: string;
+  analyzedAt: string;
+  analysisType: string;
+  policyVersion: string;
+  title: string;
+  stance: string;
+  summary: string;
+  upsidePath: string;
+  riskWatch: string;
+  nextCheck: string;
+  sourcePath: string;
 }
 
 export interface PortfolioData {
@@ -96,6 +112,7 @@ export interface PortfolioData {
   equityCurve: EquityPoint[];
   watchlist: WatchlistItem[];
   prices: PriceSnapshot[];
+  researchAnalysis: ResearchAnalysisEntry[];
 }
 
 const repositoryRoot = process.cwd();
@@ -278,8 +295,46 @@ function readPrices(): PriceSnapshot[] {
   }));
 }
 
-function readWatchlist(prices: PriceSnapshot[]): WatchlistItem[] {
+function readResearchAnalysis(): ResearchAnalysisEntry[] {
+  const parsed = parseYaml(readRequiredFile("research/company-analysis.yml")) as Record<string, unknown>;
+  const entries = Array.isArray(parsed.entries) ? parsed.entries : [];
+  return entries
+    .map((entry) => {
+      const row = entry as Record<string, unknown>;
+      return {
+        id: String(row.id ?? ""),
+        symbol: String(row.symbol ?? ""),
+        analyzedAt: String(row.analyzed_at ?? ""),
+        analysisType: String(row.analysis_type ?? ""),
+        policyVersion: String(row.policy_version ?? ""),
+        title: String(row.title ?? ""),
+        stance: String(row.stance ?? ""),
+        summary: String(row.summary ?? ""),
+        upsidePath: String(row.upside_path ?? ""),
+        riskWatch: String(row.risk_watch ?? ""),
+        nextCheck: String(row.next_check ?? ""),
+        sourcePath: String(row.source_path ?? ""),
+      };
+    })
+    .filter((entry) => entry.id !== "" && entry.symbol !== "");
+}
+
+function readWatchlist(
+  prices: PriceSnapshot[],
+  researchAnalysis: ResearchAnalysisEntry[],
+): WatchlistItem[] {
   const priceBySymbol = new Map(prices.map((price) => [price.symbol, price]));
+  const analysisBySymbol = new Map<string, ResearchAnalysisEntry[]>();
+  researchAnalysis.forEach((entry) => {
+    const history = analysisBySymbol.get(entry.symbol) ?? [];
+    history.push(entry);
+    analysisBySymbol.set(entry.symbol, history);
+  });
+
+  analysisBySymbol.forEach((history) => {
+    history.sort((left, right) => right.analyzedAt.localeCompare(left.analyzedAt));
+  });
+
   return readCsv("research/watchlist.csv").map((row) => {
     const price = priceBySymbol.get(row.symbol);
     return {
@@ -294,12 +349,14 @@ function readWatchlist(prices: PriceSnapshot[]): WatchlistItem[] {
       notes: row.notes,
       price: price?.price ?? null,
       priceAsOf: price?.priceAsOf ?? null,
+      analysisHistory: analysisBySymbol.get(row.symbol) ?? [],
     };
   });
 }
 
 export function loadPortfolioData(): PortfolioData {
   const prices = readPrices();
+  const researchAnalysis = readResearchAnalysis();
   return {
     generatedAt: new Date().toISOString(),
     policyVersion,
@@ -309,7 +366,8 @@ export function loadPortfolioData(): PortfolioData {
     ledger: readLedger(),
     positions: readPositions(),
     equityCurve: readEquityCurve(),
-    watchlist: readWatchlist(prices),
+    watchlist: readWatchlist(prices, researchAnalysis),
     prices,
+    researchAnalysis,
   };
 }

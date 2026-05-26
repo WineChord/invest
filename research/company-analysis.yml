@@ -1,0 +1,181 @@
+entries:
+  - id: 2026-05-26-rklb-initial-baseline
+    symbol: RKLB
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: A
+    summary: Rocket Lab is the strongest execution-led public space platform in the initial universe, with revenue growth, margin expansion, and backlog evidence supporting a core-candidate role.
+    upside_path: Compound from Electron and space systems into a broader launch and space infrastructure platform, with Neutron as the major upside variable.
+    risk_watch: Neutron slippage, backlog conversion, space systems margin quality, launch reliability, and dilution discipline.
+    next_check: Next earnings or Neutron update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-asts-initial-baseline
+    symbol: ASTS
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: A
+    summary: AST SpaceMobile carries one of the highest-upside theses because direct-to-device satellite broadband could become a new global connectivity layer.
+    upside_path: Build a scaled satellite-to-phone network with mobile operator distribution and regulated commercial service.
+    risk_watch: Launch cadence, satellite production, regulatory approvals, mobile network operator monetization, burn rate, and dilution.
+    next_check: Next launch, regulatory, or commercial update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-crdo-initial-baseline
+    symbol: CRDO
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: A-
+    summary: Credo is a strong AI infrastructure bottleneck candidate through high-speed, energy-efficient connectivity, but concentration and valuation risk require close tracking.
+    upside_path: Capture durable AI data-center interconnect demand as scale-up and scale-out network complexity rises.
+    risk_watch: Hyperscaler concentration, AI capex cyclicality, margin compression, product diversification, and competing interconnect routes.
+    next_check: Next quarterly result or customer concentration disclosure.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-alab-initial-baseline
+    symbol: ALAB
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: A-
+    summary: Astera Labs has high-quality exposure to AI rack-scale connectivity, with strong growth and margins but little room for execution mistakes.
+    upside_path: Become a key connectivity platform across PCIe, CXL, Ethernet, NVLink Fusion, UALink, and AI fabric transitions.
+    risk_watch: AI order slowdown, inventory correction, customer concentration, design-win losses, and gross margin compression.
+    next_check: Next quarterly result or design-win update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-vrt-initial-baseline
+    symbol: VRT
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: A-
+    summary: Vertiv is a more mature AI infrastructure candidate that sits on the power, cooling, thermal, and service bottlenecks of data-center buildouts.
+    upside_path: Compound through sustained AI data-center power and cooling demand, especially liquid cooling and infrastructure services.
+    risk_watch: Data-center order cancellations, margin pressure, liquid-cooling execution, supply constraints, and backlog quality.
+    next_check: Next order, backlog, or liquid-cooling update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-nbis-initial-baseline
+    symbol: NBIS
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: B+
+    summary: Nebius can benefit from scarce GPU capacity, power access, and AI factory execution, but financing and utilization quality are central.
+    upside_path: Build differentiated AI cloud capacity if GPU supply, power, and customer demand remain constrained.
+    risk_watch: Capex intensity, financing dilution, receivables quality, customer concentration, utilization economics, and delivery delays.
+    next_check: Next 6-K, customer update, or financing update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-crcl-initial-baseline
+    symbol: CRCL
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: B+
+    summary: Circle is a programmable-money infrastructure candidate whose upside depends on becoming a durable regulated internet-dollar toll point.
+    upside_path: Expand USDC circulation, payments utility, and developer ecosystem beyond rate-sensitive reserve income.
+    risk_watch: USDC share loss, distribution cost pressure, falling rates, adverse regulation, and banks or exchanges capturing economics.
+    next_check: Next reserve, USDC circulation, or earnings update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-cbrs-initial-baseline
+    symbol: CBRS
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: B
+    summary: Cerebras has meaningful AI infrastructure ambition, but its public track record is too short for core status.
+    upside_path: Convert wafer-scale AI systems and inference demand into durable revenue after becoming a public company.
+    risk_watch: Customer concentration, backlog conversion, gross margin quality, supply chain constraints, and valuation expectations.
+    next_check: After at least two public quarterly reports.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-be-initial-baseline
+    symbol: BE
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: B
+    summary: Bloom Energy may benefit from AI data-center power shortages, but unit economics, service obligations, and cash conversion need skeptical tracking.
+    upside_path: Become a credible onsite power provider for constrained AI data-center and industrial power demand.
+    risk_watch: Service costs, customer economics, subsidy dependence, cash flow conversion, warranty issues, and order quality.
+    next_check: Next customer, order, or cash-flow update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-ionq-initial-baseline
+    symbol: IONQ
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: B-
+    summary: IonQ is an option-like quantum candidate with enormous theoretical upside but early commercial evidence.
+    upside_path: Benefit if quantum computing, networking, sensing, or security becomes commercially essential.
+    risk_watch: One-time system sales, commercial demand breadth, burn rate, technical milestones, and competing quantum architectures.
+    next_check: Next commercial revenue or system delivery update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-lunr-initial-baseline
+    symbol: LUNR
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: B-
+    summary: Intuitive Machines has improved evidence in lunar, civil, commercial, and national-security space infrastructure, but mission and integration risk remain high.
+    upside_path: Convert lunar and space infrastructure contracts into a broader government and commercial platform.
+    risk_watch: Mission execution, acquisition integration, backlog margin, government budget timing, and cash burn.
+    next_check: Next mission, contract, or acquisition integration update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-rdw-initial-baseline
+    symbol: RDW
+    analyzed_at: "2026-05-26"
+    analysis_type: initial_baseline
+    policy_version: v1.0
+    title: Initial baseline
+    stance: C+
+    summary: Redwire fits the space infrastructure and defense theme, but company complexity keeps it research-only for now.
+    upside_path: Become a scaled space infrastructure and defense systems supplier if integration and cash generation improve.
+    risk_watch: Integration failures, internal-control issues, weak cash generation, customer concentration, and financing pressure.
+    next_check: Next integration, cash-flow, or internal-control update.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-spacex-initial-baseline
+    symbol: SPACEX
+    analyzed_at: "2026-05-26"
+    analysis_type: future_watch
+    policy_version: v1.0
+    title: Future public watch
+    stance: watch_future
+    summary: SpaceX remains research-only until it becomes directly tradable under the allowed asset rules.
+    upside_path: Potential public exposure to launch, Starlink, and space infrastructure if listed in the future.
+    risk_watch: Not directly tradable, private-company access risk, valuation, and policy eligibility.
+    next_check: When directly US-listed.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-openai-initial-baseline
+    symbol: OPENAI
+    analyzed_at: "2026-05-26"
+    analysis_type: future_watch
+    policy_version: v1.0
+    title: Future public watch
+    stance: watch_future
+    summary: OpenAI remains research-only until it becomes directly tradable under the allowed asset rules.
+    upside_path: Potential public exposure to frontier AI platforms and infrastructure demand if listed in the future.
+    risk_watch: Not directly tradable, governance, valuation, capex intensity, and policy eligibility.
+    next_check: When directly US-listed.
+    source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-26-anthropic-initial-baseline
+    symbol: ANTHROPIC
+    analyzed_at: "2026-05-26"
+    analysis_type: future_watch
+    policy_version: v1.0
+    title: Future public watch
+    stance: watch_future
+    summary: Anthropic remains research-only until it becomes directly tradable under the allowed asset rules.
+    upside_path: Potential public exposure to frontier AI platforms, enterprise AI adoption, and AI safety-focused model development if listed in the future.
+    risk_watch: Not directly tradable, governance, valuation, capex intensity, and policy eligibility.
+    next_check: When directly US-listed.
+    source_path: research/2026-05-26-initial-baseline.md

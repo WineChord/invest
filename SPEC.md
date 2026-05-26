@@ -133,6 +133,27 @@ total_return_pct,period_return_pct,notes
 
 Market snapshots used for display and decision support are stored in `data/market/`. They do not mutate confirmed account records.
 
+The public research drilldown index is stored in [research/company-analysis.yml](research/company-analysis.yml). It is the structured bridge between dated research notes and the dashboard. Each entry represents one historical analysis event for one company, not a fresh market fact.
+
+Each analysis entry records:
+
+```yaml
+id:
+symbol:
+analyzed_at:
+analysis_type:
+policy_version:
+title:
+stance:
+summary:
+upside_path:
+risk_watch:
+next_check:
+source_path:
+```
+
+Entries are append-only by default and shown newest-first on the dashboard. If an analysis becomes stale or superseded, add a later entry that says so instead of rewriting the historical record.
+
 ## Freshness Rules
 
 Every monthly decision must include a freshness report covering:
@@ -365,6 +386,7 @@ The dashboard's real-data view is built from committed repository files:
 - `data/account/equity_curve.csv` for performance history;
 - `data/market/watchlist_prices.csv` for dated market snapshots;
 - `research/watchlist.csv` for the research pool.
+- `research/company-analysis.yml` for structured company briefs and historical analysis drilldowns.
 
 The dashboard may include browser-only demo data for testing visual logic while the real account has no records. Demo data must be clearly labeled and must not write files, update the ledger, or appear in committed account records.
 
@@ -380,7 +402,7 @@ Required dashboard surfaces:
 - append-only operation history;
 - equity curve;
 - buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
-- active research/watchlist table;
+- active research/watchlist workspace with company cards, hover or focus quick briefs, click or tap detail drilldown, and historical analysis timeline;
 - open-source repository link.
 
 The equity curve uses TradingView Lightweight Charts as a client-side chart engine. The engine supplies chart interaction only: time and price axes, crosshair behavior, viewport range controls, touch gestures, and ledger event markers. It must not be treated as a data provider. Real points still come from committed account files, and demo points still come only from browser-only fixtures. Keep TradingView attribution visible through either the built-in mark or a restrained public attribution link near the chart.
@@ -403,6 +425,9 @@ Dashboard evolution rules:
 - Every dashboard surface must have a clear committed data source or an explicitly labeled browser-only demo source.
 - Every major surface should explain its state through the data itself, a compact label, or an empty state. Avoid decorative complexity that does not help the user understand capital, risk, operations, performance, or research freshness.
 - Public-facing status fields should use human-readable labels and short explanations. Do not expose raw machine status strings such as internal enum names unless the surface is explicitly a debug or audit view.
+- Company research cards should remain compact scanning controls. They should expose a short latest-analysis preview on hover and keyboard focus when a pointer/focus environment supports it, while click or tap opens a durable detail panel that works on mobile.
+- Company research detail must show the current watchlist metadata, latest structured thesis, upside path, risk watch, next check, and every historical analysis entry with date, stance, analysis type, policy version, and source link.
+- Historical research UI must not imply freshness. Dated baseline entries are memory and provenance; monthly trade decisions still require fresh price, SEC, IR, regulatory, and news checks.
 - Interactive chart features should support both pointer and keyboard focus when practical, avoid mobile overflow, and expose the underlying operation or metric detail rather than only adding visual decoration.
 - Chart operation tooltips should be compact, light, and non-dominating. They must keep side badges horizontal, avoid large dark blocks over the chart, and preserve readable layout for one or many same-day trades.
 - Market movement colors must be tokenized and user-switchable. The default browser convention is Mainland China style, where gains are red and losses are green. The alternate convention is Western style, where gains are green and losses are red. The selected convention should be remembered in browser storage and applied consistently to return metrics, chart direction, and profit/loss fields without changing the underlying data.
