@@ -144,3 +144,66 @@ sources:
     first_seen_at: 2026-05-26
     related_symbols: [ASTS, CRDO, RKLB, VRT, CRCL, CBRS, NBIS, BE, ALAB, IONQ, LUNR, RDW]
     summary: Latest available close snapshot used for initial simulation; not a live quote.
+  - id: rklb_10q_q1_2026
+    title: Rocket Lab Form 10-Q for the quarter ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [RKLB]
+    summary: Q1 2026 quarterly filing covering revenue growth, gross margin, segment performance, debt, share count, litigation, and risk-factor status.
+  - id: rklb_atm_8k_2026_05_20
+    title: Rocket Lab Form 8-K for equity distribution agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000181999426000045/rklb-20260520.htm
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [RKLB]
+    summary: Filing describing up to USD 3.0 billion of common stock sale capacity through sales agents and forward-sale structures.
+  - id: rklb_space_force_geo_2026_05_21
+    title: Rocket Lab Awarded $90M Contract to Build GEO Satellites Hosting Space Domain Awareness Payload for U.S. Space Force
+    source_type: company_ir
+    url: https://rocketlabcorp.com/updates/rocket-lab-awarded-90m-contract-to-build-geo-satellites-hosting-space-domain-awareness-payload-for-u-s-space-force/
+    source_published_at: 2026-05-21
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [RKLB]
+    summary: Rocket Lab received a USD 90 million Space Force contract for two GEO satellites and mission operations.
+  - id: asts_10q_q1_2026
+    title: AST SpaceMobile Form 10-Q for the quarter ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1780312/000119312526216950/asts-20260331.htm
+    source_published_at: 2026-05-11
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [ASTS]
+    summary: Q1 2026 quarterly filing covering revenue, expenses, liquidity, debt, share count, cash flows, and regulatory/commercial milestones.
+  - id: asts_us_mno_jv_2026_05_14
+    title: AST SpaceMobile Commends Proposed Direct-to-Device Joint Venture by U.S. Mobile Network Operators
+    source_type: company_ir
+    url: https://www.businesswire.com/news/home/20260513491108/en/AST-SpaceMobile-Commends-Proposed-Direct-to-Device-Joint-Venture-by-U.S.-Mobile-Network-Operators
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [ASTS]
+    summary: AST SpaceMobile described the AT&T, T-Mobile, and Verizon proposed direct-to-device joint venture as a positive ecosystem signal.
+  - id: stockanalysis_rklb_quote_2026_05_26
+    title: Rocket Lab Stock Price & Overview
+    source_type: market_data
+    url: https://stockanalysis.com/stocks/rklb/
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [RKLB]
+    summary: Quote page showed RKLB May 22, 2026 close at USD 135.76 and May 26, 2026 pre-market indication around USD 143.00.
+  - id: stockanalysis_asts_quote_2026_05_26
+    title: AST SpaceMobile Stock Price & Overview
+    source_type: market_data
+    url: https://stockanalysis.com/stocks/asts/
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [ASTS]
+    summary: Quote page showed ASTS May 22, 2026 close at USD 105.86 and May 26, 2026 pre-market indication around USD 113.07.
