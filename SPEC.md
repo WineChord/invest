@@ -494,6 +494,61 @@ Freshness defaults:
 
 If a critical freshness check fails, the decision must default to no trade or hold cash.
 
+## AI Cycle and Market Regime Monitor
+
+The AI cycle monitor is a risk overlay for monthly allocation and major-event reviews. It is not a standalone trading system, and it does not override the allowed-asset policy. Under policy `v1.0`, the monitor may recommend buying eligible common stocks, holding cash, reducing or exiting confirmed positions, or waiting. It must not recommend options, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments as account actions unless a later approved policy allows them. If a market-regime review discusses puts, hedges, or shorts as general market context, the output must label them as outside the account policy rather than converting them into proposed orders.
+
+Purpose:
+
+- identify whether the broad AI infrastructure cycle is strengthening, topping, deteriorating, or entering credit stress;
+- separate company-specific thesis changes from market-wide multiple compression, capex risk, financing risk, and liquidity risk;
+- keep the satellite portfolio from adding capital into a broad bubble unwind merely because an individual company thesis still sounds strong;
+- avoid forcing defensive sales during ordinary volatility when credit, earnings quality, and primary evidence remain healthy.
+
+Cadence:
+
+- Run before any monthly allocation decision when the active universe has material AI infrastructure, space infrastructure, power, cooling, or financing-cycle exposure.
+- Run after major market events such as a sharp Nasdaq or SOX drawdown, a major AI financing failure, a hyperscaler capex shock, a credit spread break, a semiconductor supply-chain warning, or a material regulatory/geopolitical event.
+- A weekly Saturday review can be automated later, but automation may only collect and structure evidence. Allocation judgment still requires agent or human review.
+
+Required coverage:
+
+- Index and factor tape: SPX, NDX, Nasdaq Composite, QQQ, SOX, SMH, IWM, and relevant equal-weight or breadth measures when available.
+- Volatility and options context: VIX, VVIX when available, put/call measures when available, and unusual option activity in AI leaders only when sourced from a reputable data provider.
+- Rates, dollar, and credit: 2-year Treasury yield, 10-year Treasury yield, real yields when available, U.S. dollar index, high-yield OAS, investment-grade OAS, and CDX HY or equivalent credit stress measures when available.
+- Market breadth: advancing and declining issues, 52-week highs and lows, concentration in mega-cap leaders, and whether AI leaders are masking broad weakness.
+- AI capex: Microsoft, Alphabet, Amazon, Meta, Oracle, Tesla, CoreWeave, Nebius, xAI, OpenAI, Anthropic, and other relevant infrastructure buyers when source-backed data exists.
+- AI supply chain: NVIDIA, AMD, Broadcom, TSMC, ASML, SK Hynix, Micron, Arista, Dell, Super Micro, power, cooling, and data-center infrastructure suppliers.
+- AI demand and unit economics: cloud AI revenue, enterprise AI paid adoption, AI software ARR, model API revenue, inference cost, GPU rental pricing, gross margin, depreciation, cloud margin, and AI service margin when source-backed data exists.
+- Financing and IPO pressure: public offerings, convertible debt, private funding rounds, secondary-market valuation changes, IPO filings, lockups, and data-center financing terms for relevant AI and space infrastructure companies.
+- Regulation and geopolitics: chip export controls, antitrust, data regulation, energy permitting, power-grid constraints, defense budgets, launch regulation, spectrum regulation, and major geopolitical shocks.
+- Market calendar: U.S. market holidays and shortened sessions must be stated explicitly when they affect weekly data.
+
+Output requirements:
+
+- Separate `facts`, `inferences`, `probability scenarios`, and `account actions`.
+- State what could not be verified instead of filling gaps with memory or estimates.
+- Provide source publication dates, data timestamps, retrieval dates, and data scope for every important market, company, and credit claim.
+- Use probability-weighted regime labels rather than a single false certainty. Allowed regime labels are `strong_trend`, `top_formation`, `early_downtrend`, `bubble_break_initial`, `credit_stress`, and `survivor_reset`.
+- Internet-bubble analogies may be used only as a rough cycle map, not as proof. Allowed analogy labels are `1996-1998_early_diffusion`, `1999_narrative_and_valuation_acceleration`, `2000Q1_near_top`, `2000H2_orders_and_capex_deterioration`, `2001-2002_credit_risk_exposure`, and `2003_survivor_stage`.
+- Score bubble risk dimensions from 0 to 5 and explain the change from the prior monitor if a prior monitor exists.
+- Convert the regime view into account-permitted actions with trigger conditions, invalidation conditions, and a time horizon.
+- If there is no clear account-permitted trade, say `no clear account-permitted trade`.
+
+Bubble risk dimensions:
+
+- valuation excess;
+- capex overheating;
+- financing fragility;
+- real demand conversion;
+- supply glut risk;
+- leader earnings quality;
+- second-tier company fragility;
+- credit market stress;
+- breadth deterioration;
+- regulatory and geopolitical risk;
+- mega-IPO and private-market capital drain risk.
+
 ## Monthly Decision Algorithm
 
 1. Identify the policy version.
@@ -502,17 +557,18 @@ If a critical freshness check fails, the decision must default to no trade or ho
 4. Compute investable cash from confirmed cash and confirmed deposits only.
 5. Retrieve fresh prices for current holdings and active candidates.
 6. Retrieve fresh primary evidence for each active candidate.
-7. Check `research/quality-metrics.yml` and resolve or explicitly disclose open critical events, missing filing reviews, stale valuation states, and stale theses.
-8. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
-9. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
-10. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, and funding runway.
-11. Decide one of: buy new position, add to existing position, hold cash, do nothing, trim, or exit.
-12. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
-13. State the validity window. If price moves materially, market closes, or new company-specific information appears, recompute.
-14. Save the proposed decision in `decisions/` if the user asks to persist it.
-15. Do not update `data/account/ledger.csv` until execution is confirmed.
-16. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
-17. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
+7. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
+8. Check `research/quality-metrics.yml` and resolve or explicitly disclose open critical events, missing filing reviews, stale valuation states, and stale theses.
+9. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
+10. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
+11. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
+12. Decide one of: buy new position, add to existing position, hold cash, do nothing, trim, or exit.
+13. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
+14. State the validity window. If price moves materially, market closes, or new company-specific information appears, recompute.
+15. Save the proposed decision in `decisions/` if the user asks to persist it.
+16. Do not update `data/account/ledger.csv` until execution is confirmed.
+17. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
+18. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
 
 ## Position Sizing Policy
 
