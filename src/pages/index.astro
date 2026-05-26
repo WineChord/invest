@@ -1,0 +1,22 @@
+---
+import InvestDashboard from "../components/InvestDashboard";
+import { loadPortfolioData } from "../lib/portfolioData";
+import "../styles/global.css";
+
+const portfolioData = loadPortfolioData();
+const canonicalUrl = "https://www.wineandchord.com/invest/";
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="WineChord long-term satellite investment dashboard." />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>WineChord Invest</title>
+  </head>
+  <body>
+    <InvestDashboard client:load data={portfolioData} />
+  </body>
+</html>

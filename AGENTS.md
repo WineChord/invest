@@ -41,6 +41,10 @@ until the user confirms that money is available in the brokerage account.
 10. Do not add leverage, margin, options, short selling, crypto tokens, private
     shares, or non-US-listed instruments unless a later explicit policy version
     approved by the user allows them.
+11. When adding or changing product behavior, data records, dashboard behavior,
+    research workflow, or automation, evaluate whether `SPEC.md` and templates
+    need to be updated in the same change. Update them when the behavior becomes
+    part of the durable process.
 
 ## Source Hierarchy
 
@@ -110,6 +114,29 @@ When the user says trades or deposits were actually completed:
    from confirmed events.
 5. Never silently edit old ledger rows. Use a `correction` event if a past record
    was wrong.
+
+## Public Dashboard Workflow
+
+The public dashboard lives at `https://www.wineandchord.com/invest/` and is
+served from this open-source repository as a static GitHub Pages project site.
+
+Dashboard rules:
+
+1. The real-data view must be built from committed repository files.
+2. Demo or fake data may exist only as browser-only testing state or clearly
+   labeled fixture data. It must never mutate `data/account/ledger.csv`,
+   `data/account/positions.csv`, or `data/account/state.yml`.
+3. The dashboard must clearly distinguish confirmed broker records from market
+   snapshots, research records, and simulated data.
+4. It should display holdings, cash, ledger operations, performance curve, total
+   return, Sharpe ratio, drawdown, research pool, and source freshness whenever
+   enough data exists.
+5. When confirmed account data is missing, show a useful empty state rather than
+   inventing real balances.
+6. After frontend changes, run the local build and inspect the page locally
+   across desktop and mobile widths before committing when practical.
+7. Keep the page usable under `/invest/`; do not hard-code local filesystem
+   paths or root-relative assumptions that break GitHub Pages project hosting.
 
 ## Research Discipline
 

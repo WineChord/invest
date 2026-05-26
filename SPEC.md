@@ -61,6 +61,15 @@ broker records.
 Prompt and record templates for monthly decisions, execution confirmations,
 company research cards, and policy changes.
 
+`.github/workflows/pages.yml`
+
+GitHub Pages workflow that publishes the static dashboard to
+`https://www.wineandchord.com/invest/`.
+
+`src/`
+
+Astro and React source for the public dashboard.
+
 ## Truth Model
 
 There are four levels of truth:
@@ -139,6 +148,19 @@ related_symbols:
 summary:
 ```
 
+Portfolio performance snapshots are stored in
+[data/account/equity_curve.csv](data/account/equity_curve.csv).
+
+Required columns:
+
+```text
+date,total_market_value,cash,total_equity,cumulative_deposits,
+total_return_pct,period_return_pct,notes
+```
+
+Market snapshots used for display and decision support are stored in
+`data/market/`. They do not mutate confirmed account records.
+
 ## Freshness Rules
 
 Every monthly decision must include a freshness report covering:
@@ -188,6 +210,9 @@ hold cash.
     company-specific information appears, recompute.
 13. Save the proposed decision in `decisions/` if the user asks to persist it.
 14. Do not update `data/account/ledger.csv` until execution is confirmed.
+15. If the recommendation produces new durable market snapshots, source records,
+    or performance observations, update the relevant research or market-data
+    files without changing confirmed account records.
 
 ## Position Sizing Policy
 
@@ -369,6 +394,74 @@ Policy changes use
 Approved changes create a new file in `data/policy/` and decisions after that
 point cite the new version.
 
+Durable behavior changes also require documentation review. When adding a new
+data file, dashboard feature, decision step, automation, or public reporting
+surface, update `SPEC.md`, `AGENTS.md`, or templates in the same change when the
+behavior should persist for future agents.
+
+## Public Dashboard
+
+The public dashboard is deployed at `https://www.wineandchord.com/invest/`.
+It is a static Astro site using `base: "/invest"` so it works as a GitHub Pages
+project site under the shared `www.wineandchord.com` domain.
+
+The dashboard's real-data view is built from committed repository files:
+
+- `data/account/state.yml` for confirmed account status;
+- `data/account/ledger.csv` for confirmed operations;
+- `data/account/positions.csv` for derived confirmed holdings;
+- `data/account/equity_curve.csv` for performance history;
+- `data/market/watchlist_prices.csv` for dated market snapshots;
+- `research/watchlist.csv` for the research pool.
+
+The dashboard may include browser-only demo data for testing visual logic while
+the real account has no records. Demo data must be clearly labeled and must not
+write files, update the ledger, or appear in committed account records.
+
+Required dashboard surfaces:
+
+- total equity;
+- confirmed cash;
+- cumulative deposits;
+- total return;
+- Sharpe ratio when enough return observations exist;
+- maximum drawdown when enough equity observations exist;
+- holdings table;
+- append-only operation history;
+- equity curve;
+- active research/watchlist table;
+- open-source repository link.
+
+Metric definitions:
+
+- Total equity is confirmed cash plus current market value when both are
+  available, or the latest committed equity snapshot.
+- Total return uses latest total equity compared with cumulative confirmed
+  deposits when those values exist.
+- Sharpe ratio is annualized from committed period return observations; display
+  an empty state until enough observations exist.
+- Maximum drawdown should be calculated from period return observations when
+  available, because recurring deposits can hide drawdowns in raw account
+  equity. Fall back to raw equity only when return observations are unavailable.
+
+Fallback behavior:
+
+- If there are no confirmed positions, show an empty holdings state.
+- If there are fewer than two equity points, show an empty performance state.
+- If cash is unknown, display it as unknown or pending confirmation.
+- If a price is stale, show its `price_as_of` date and require refresh before
+  real trading decisions.
+
+Local verification:
+
+```bash
+npm run verify
+```
+
+For visual changes, run the dev server and inspect the dashboard in desktop and
+mobile widths. Verify that the browser-only demo toggle and restore-real toggle
+work before committing.
+
 ## Audit Requirements
 
 Monthly:
@@ -376,6 +469,7 @@ Monthly:
 - Confirm no ledger mutation occurred from recommendations alone.
 - Confirm freshness checks were completed.
 - Confirm each proposed order had a validity window.
+- Confirm the public dashboard still builds from committed data.
 
 Quarterly:
 

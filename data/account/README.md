@@ -8,6 +8,7 @@ Rules:
 - `positions.csv` is derived from confirmed ledger events.
 - `state.yml` summarizes the latest confirmed account state.
 - `plan.yml` stores planned contributions and preferences, not actual cash.
+- `equity_curve.csv` stores derived performance snapshots for reporting.
 - Recommendations in `decisions/` never mutate this directory.
 
 Initial state on 2026-05-26:
