@@ -806,6 +806,68 @@ h1 {
   text-align: right;
 }
 
+.account-status-card {
+  align-items: start;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 0.78rem;
+}
+
+.account-status-card div {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.account-status-card span:first-child,
+.account-status-card small {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.account-status-card span:first-child {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.account-status-card strong {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.account-status-card small {
+  line-height: 1.35;
+}
+
+.account-status-badge {
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 0.34rem 0.52rem;
+  white-space: nowrap;
+}
+
+.account-status-badge-neutral {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.account-status-badge-safe {
+  background: rgba(45, 125, 70, 0.1);
+  color: var(--green);
+}
+
+.account-status-badge-warning {
+  background: rgba(185, 133, 33, 0.14);
+  color: var(--amber);
+}
+
 .table-wrap {
   overflow-x: auto;
 }

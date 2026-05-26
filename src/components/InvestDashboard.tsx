@@ -75,6 +75,13 @@ interface CrosshairDetail {
   marker: TradeMarker | null;
 }
 
+interface AccountStatusDisplay {
+  badge: string;
+  description: string;
+  label: string;
+  tone: "safe" | "warning" | "neutral";
+}
+
 type ChartRange = "1M" | "3M" | "6M" | "YTD" | "ALL";
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
@@ -617,6 +624,7 @@ export default function InvestDashboard({ data }: Props) {
   );
   const metrics = useMemo(() => calculateMetrics(activeData), [activeData]);
   const isDemo = mode === "demo";
+  const accountStatus = accountStatusDisplayFor(activeData, isDemo);
   const nextMarketColorScheme = oppositeMarketColorScheme(marketColorScheme);
 
   useEffect(() => {
@@ -782,10 +790,7 @@ export default function InvestDashboard({ data }: Props) {
                 label="Total equity"
                 value={formatCurrency(metrics.totalEquity)}
               />
-              <BalanceRow
-                label="Status"
-                value={activeData.accountState.status}
-              />
+              <AccountStatusCard status={accountStatus} />
             </div>
           </Panel>
         </section>
@@ -877,6 +882,64 @@ function BalanceRow({ label, value }: { label: string; value: string }) {
       <strong>{value}</strong>
     </div>
   );
+}
+
+function AccountStatusCard({ status }: { status: AccountStatusDisplay }) {
+  return (
+    <div className="account-status-card">
+      <div>
+        <span>Data state</span>
+        <strong>{status.label}</strong>
+        <small>{status.description}</small>
+      </div>
+      <span
+        className={`account-status-badge account-status-badge-${status.tone}`}
+      >
+        {status.badge}
+      </span>
+    </div>
+  );
+}
+
+function accountStatusDisplayFor(
+  data: PortfolioData,
+  isDemo: boolean,
+): AccountStatusDisplay {
+  if (isDemo) {
+    return {
+      badge: "Demo",
+      description:
+        "Browser-only fixture data. Confirmed account files are unchanged.",
+      label: "Demo mode",
+      tone: "warning",
+    };
+  }
+
+  if (data.accountState.status === "initialized_empty_unconfirmed") {
+    return {
+      badge: "Pending",
+      description:
+        "No broker-confirmed cash or holdings have been recorded yet.",
+      label: "Awaiting first confirmation",
+      tone: "neutral",
+    };
+  }
+
+  return {
+    badge: "Confirmed",
+    description:
+      "Displayed balances come from committed account records and derived files.",
+    label: readableStatusLabel(data.accountState.status),
+    tone: "safe",
+  };
+}
+
+function readableStatusLabel(status: string): string {
+  return status
+    .split("_")
+    .filter(Boolean)
+    .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
+    .join(" ");
 }
 
 function EquityChart({
