@@ -33,11 +33,16 @@ unavailable_sources:
 Summarize new public candidates, rejected candidates, and candidates that need incubation.
 
 ```yaml
+themes_scanned:
+universe_sources_checked:
 new_candidates_added:
 promoted_to_watchlist:
 rejected_or_archived:
 open_candidate_count:
+deep_dive_queue:
 ```
+
+Do not deep-research every symbol found in the scan. Explain which theme filters and quick rejection criteria were used before any company entered the deep-dive queue.
 
 ## Freshness Monitor
 

@@ -206,6 +206,8 @@ Completed filing reviews are stored in `research/filings/` using the naming conv
 
 When `source_ids` stores multiple source references, use semicolon-separated IDs from `research/sources.yml`.
 
+Raw source files and downloaded documents are not part of durable repository state by default. Use `research/cache/` or `research/downloads/` only as local ignored scratch space for temporary SEC, IR, transcript, or market-data downloads. Commit durable source metadata, extracted metrics, filing reviews, scenario notes, and links instead of large raw documents unless a file is legally redistributable, uniquely important, small, and unlikely to remain accessible from the original source.
+
 The public research drilldown index is stored in [research/company-analysis.yml](research/company-analysis.yml). It is the structured bridge between dated research notes and the dashboard. Each entry represents one historical analysis event for one company, not a fresh market fact.
 
 Each analysis entry records:
@@ -253,6 +255,14 @@ Readiness semantics:
 - Header-only discovery, freshness, and valuation files are acceptable as an initial scaffold only when `decision_readiness.status` is explicitly `not_ready`.
 - Validation must reject `ready` status when active symbols lack current valuation state, latest material filing review coverage, or unresolved critical events.
 
+Research funnel ruling:
+
+- Do not attempt full deep research on every listed company. That is not feasible and would make the system noisy, slow, and shallow.
+- Do maintain broad but cheap awareness of the public universe through symbol directories, SEC issuer coverage, new listings, filings, price dislocations, and theme-specific news.
+- Spend deep research only after a company passes a mission-shaped funnel: eligible instrument, relevant bottleneck theme, plausible multi-decade upside, sufficient public evidence, survivable balance sheet, and an entry setup that is not already fully priced for perfection.
+- The correct posture is a funnel, not a map of the whole market: scan thousands cheaply, triage hundreds quickly, track dozens lightly, deeply understand a small active set, and allocate only to the few that pass mission, evidence, and entry gates.
+- The system should prefer missing a marginal idea over filling the repository with low-conviction notes. Extreme compounding requires a small number of exceptional decisions, not superficial coverage of everything.
+
 ### Universe Discovery Loop
 
 Purpose: find public companies that are not already in the watchlist but may fit the satellite mission.
@@ -277,6 +287,23 @@ Default filters:
 - Minimum practical liquidity for retail execution.
 - Fits at least one asymmetric satellite theme, or introduces a new theme with a plausible multi-decade bottleneck.
 - Avoids pure index duplication of the user's large Nasdaq technology core.
+
+Theme-scoped discovery:
+
+- Start from themes where the satellite objective is structurally plausible, such as space infrastructure, direct-to-device connectivity, AI compute and connectivity bottlenecks, power and cooling, advanced manufacturing, defense autonomy, quantum, programmable money, and future categories created by new regulation or technical breakthroughs.
+- For each theme, maintain a finite investable map: public pure plays, public picks-and-shovels suppliers, newly public companies, spinoffs, critical infrastructure vendors, and companies whose market capitalization is still small enough for extreme upside.
+- Use screens only as triage, not as proof. Useful first-pass signals include market capitalization range, revenue growth, gross margin, free cash flow trajectory, cash runway, dilution rate, backlog/RPO growth, customer concentration, insider ownership or selling, recent IPO/spinoff status, and sharp price dislocation after non-thesis-breaking events.
+- Penalize companies that are merely adjacent to the theme but whose economics are too commodity-like, too levered, too dilutive, too promotional, or too dependent on one binary event.
+- Promote only a few names per theme into active monitoring. When a new candidate enters, remove, archive, or demote weaker candidates so the active research set stays small enough to understand.
+
+Discovery funnel stages:
+
+1. Universe scan: identify eligible US-listed instruments and newly public names from durable symbol and filing sources.
+2. Theme filter: keep only names connected to mission-relevant bottlenecks or emerging categories.
+3. Cheap triage: use quick structured metrics and source checks to reject obvious weak fits.
+4. Primary-source skim: read enough filings, IR material, and operating evidence to decide whether a full research card is justified.
+5. Deep-dive queue: write or refresh full thesis, filing review, valuation state, and kill criteria only for the small set that could plausibly affect allocation.
+6. Active set discipline: keep the buy-eligible universe narrow and demote stale, low-quality, or fully priced names.
 
 Discovery output:
 

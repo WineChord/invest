@@ -44,6 +44,12 @@ Every important claim must record:
 
 A fact is new only when `source_published_at` is later than the prior decision. A source that is newly retrieved but old must not be described as new market information.
 
+## Source Retention
+
+Do not commit large raw SEC filings, PDFs, transcripts, presentations, market-data dumps, or scraped pages by default. Store source metadata, durable URLs, accession numbers, retrieved dates, structured metric extracts, analysis notes, and completed filing reviews instead.
+
+Use ignored local scratch directories such as `research/cache/` or `research/downloads/` for temporary downloads during analysis. Commit a raw source file only when it is small, legally redistributable, uniquely important, and unlikely to remain available from the original source.
+
 ## Writing Format
 
 Use natural wrapping for Markdown prose and documentation. Do not hard-wrap ordinary paragraphs at a fixed character count. Keep each paragraph, list item, or sentence group on the line that best matches the content and surrounding style. Preserve semantic line breaks for code blocks, tables, CSV headers and rows, YAML structures, command examples, and source code.
@@ -140,6 +146,8 @@ Research is organized as a pipeline:
 7. `research/company-analysis.yml` for dashboard-visible historical analysis.
 
 The active decision universe is limited to watchlist rows whose status is `active_core_candidate`, `active_candidate`, or `watch`. Rows marked `research_only`, `not_tradable`, `probation`, `frozen`, or `removed` cannot receive new buy recommendations unless the decision first promotes them with fresh evidence and updates the durable records.
+
+Do not deep-research every listed company. Use a research funnel: broad cheap universe awareness, theme-scoped filtering, quick rejection of weak fits, primary-source skims for plausible candidates, and deep research only for the small set that could realistically affect allocation. Keep the active set small enough to understand deeply.
 
 Before recommending a buy, confirm the target passes three gates:
 
