@@ -7,8 +7,14 @@
   --muted: #63716b;
   --border: #d8e3df;
   --teal: #18a999;
-  --green: #2d7d46;
-  --coral: #e46f52;
+  --market-red: #c94431;
+  --market-green: #237a48;
+  --green: var(--market-green);
+  --coral: var(--market-red);
+  --gain: var(--market-red);
+  --loss: var(--market-green);
+  --buy: #2563eb;
+  --sell: #b45309;
   --amber: #b98521;
   --indigo: #4f57c8;
   --shadow: 0 18px 55px rgba(18, 42, 35, 0.12);
@@ -20,6 +26,11 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+
+.invest-shell[data-market-colors="western"] {
+  --gain: var(--market-green);
+  --loss: var(--market-red);
 }
 
 * {
@@ -139,10 +150,21 @@ button {
   color: white;
 }
 
+.preference-button {
+  min-width: 7.2rem;
+}
+
 .icon-link:hover,
 .mode-button:hover {
   border-color: var(--teal);
   transform: translateY(-1px);
+}
+
+.icon-link:focus-visible,
+.mode-button:focus-visible {
+  border-color: var(--teal);
+  outline: 3px solid rgba(24, 169, 153, 0.28);
+  outline-offset: 2px;
 }
 
 .dashboard {
@@ -272,6 +294,33 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.metric-card-gain .metric-icon,
+.metric-card-gain strong {
+  color: var(--gain);
+}
+
+.metric-card-loss .metric-icon,
+.metric-card-loss strong {
+  color: var(--loss);
+}
+
+.signed-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+
+.signed-value-gain {
+  color: var(--gain);
+}
+
+.signed-value-loss {
+  color: var(--loss);
+}
+
+.signed-value-neutral {
+  color: var(--muted);
+}
+
 .dashboard-grid {
   display: grid;
   gap: 1rem;
@@ -301,9 +350,18 @@ h1 {
 }
 
 .chart-wrap {
+  --chart-tone: var(--muted);
   min-height: 18rem;
   overflow: visible;
   position: relative;
+}
+
+.chart-wrap-gain {
+  --chart-tone: var(--gain);
+}
+
+.chart-wrap-loss {
+  --chart-tone: var(--loss);
 }
 
 .chart-wrap svg {
@@ -329,7 +387,7 @@ h1 {
 
 .chart-line {
   fill: none;
-  stroke: var(--teal);
+  stroke: var(--chart-tone);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 4;
@@ -337,8 +395,31 @@ h1 {
 
 .chart-dot {
   fill: white;
-  stroke: var(--teal);
+  stroke: var(--chart-tone);
   stroke-width: 3;
+}
+
+.chart-summary {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(18, 42, 35, 0.1);
+  display: inline-flex;
+  gap: 0.65rem;
+  left: 0.35rem;
+  padding: 0.45rem 0.6rem;
+  position: absolute;
+  top: 0.35rem;
+}
+
+.chart-summary span {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.chart-summary strong {
+  color: var(--ink);
 }
 
 .trade-marker {
@@ -378,11 +459,11 @@ h1 {
 }
 
 .trade-marker-buy {
-  background: var(--green);
+  background: var(--buy);
 }
 
 .trade-marker-sell {
-  background: var(--coral);
+  background: var(--sell);
 }
 
 .trade-marker-mixed {
@@ -561,11 +642,11 @@ h1 {
 }
 
 .trade-side-buy {
-  background: var(--green);
+  background: var(--buy);
 }
 
 .trade-side-sell {
-  background: var(--coral);
+  background: var(--sell);
 }
 
 .empty-chart,
@@ -630,9 +711,13 @@ h1 {
   overflow-x: auto;
 }
 
+.holding-card-list {
+  display: none;
+}
+
 table {
   border-collapse: collapse;
-  min-width: 42rem;
+  min-width: 48rem;
   width: 100%;
 }
 
@@ -640,14 +725,14 @@ th {
   color: var(--muted);
   font-size: 0.76rem;
   font-weight: 800;
-  padding: 0.7rem 0.65rem;
+  padding: 0.7rem 0.55rem;
   text-align: left;
   text-transform: uppercase;
 }
 
 td {
   border-top: 1px solid var(--border);
-  padding: 0.82rem 0.65rem;
+  padding: 0.82rem 0.55rem;
   vertical-align: middle;
 }
 
@@ -680,10 +765,39 @@ td span {
   padding: 0.75rem;
 }
 
+.operation-row {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
 .operation-date {
   color: var(--coral);
   font-size: 0.76rem;
   font-weight: 800;
+}
+
+.operation-badge {
+  border-radius: 999px;
+  color: white;
+  font-size: 0.66rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 0.24rem 0.42rem;
+  text-transform: uppercase;
+}
+
+.operation-badge-buy {
+  background: var(--buy);
+}
+
+.operation-badge-sell {
+  background: var(--sell);
+}
+
+.operation-badge-deposit {
+  background: var(--teal);
 }
 
 .operation-list strong {
@@ -813,6 +927,67 @@ td span {
 
   .metric-card {
     min-height: 5rem;
+  }
+
+  .holdings-table-wrap {
+    display: none;
+  }
+
+  .holding-card-list {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .holding-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: grid;
+    gap: 0.7rem;
+    padding: 0.78rem;
+  }
+
+  .holding-card header {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: space-between;
+  }
+
+  .holding-card header span:first-child {
+    display: grid;
+    gap: 0.12rem;
+  }
+
+  .holding-card strong {
+    font-size: 1rem;
+  }
+
+  .holding-card small,
+  .holding-card dt {
+    color: var(--muted);
+    font-size: 0.72rem;
+  }
+
+  .holding-card dl {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+  }
+
+  .holding-card div {
+    min-width: 0;
+  }
+
+  .holding-card dt,
+  .holding-card dd {
+    margin: 0;
+  }
+
+  .holding-card dd {
+    font-size: 0.86rem;
+    font-weight: 800;
+    overflow-wrap: anywhere;
   }
 
   .trade-tooltip {

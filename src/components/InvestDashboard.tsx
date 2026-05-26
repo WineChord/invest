@@ -5,6 +5,7 @@ import {
   Github,
   LineChart,
   ListChecks,
+  Palette,
   RefreshCcw,
   ShieldCheck,
   Sparkles,
@@ -12,7 +13,7 @@ import {
   Wallet,
 } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type {
   EquityPoint,
   LedgerEvent,
@@ -37,6 +38,8 @@ interface Metrics {
 }
 
 type DashboardMode = "real" | "demo";
+type MarketColorScheme = "mainland" | "western";
+type ValueTone = "gain" | "loss" | "neutral";
 
 interface TradeMarker {
   id: string;
@@ -66,6 +69,32 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
   style: "percent",
 });
 
+const marketColorStorageKey = "winechord-invest-market-colors";
+const defaultMarketColorScheme: MarketColorScheme = "mainland";
+
+function readInitialMarketColorScheme(): MarketColorScheme {
+  if (typeof window === "undefined") {
+    return defaultMarketColorScheme;
+  }
+
+  try {
+    const stored = window.localStorage.getItem(marketColorStorageKey);
+    return stored === "western" || stored === "mainland"
+      ? stored
+      : defaultMarketColorScheme;
+  } catch {
+    return defaultMarketColorScheme;
+  }
+}
+
+function persistMarketColorScheme(scheme: MarketColorScheme): void {
+  try {
+    window.localStorage.setItem(marketColorStorageKey, scheme);
+  } catch {
+    // The preference is cosmetic, so blocked browser storage should not break the dashboard.
+  }
+}
+
 function formatCurrency(value: number | null): string {
   return value === null
     ? "Pending confirmation"
@@ -82,11 +111,52 @@ function formatPercent(value: number | null): string {
     : percentFormatter.format(value / 100);
 }
 
+function formatSignedPercent(value: number | null): string {
+  if (value === null) {
+    return "Not enough data";
+  }
+
+  const formatted = percentFormatter.format(Math.abs(value) / 100);
+  return value > 0 ? `+${formatted}` : value < 0 ? `-${formatted}` : formatted;
+}
+
+function formatSignedCurrency(value: number | null): string {
+  if (value === null) {
+    return "Pending";
+  }
+
+  const formatted = currencyFormatter.format(Math.abs(value));
+  return value > 0 ? `+${formatted}` : value < 0 ? `-${formatted}` : formatted;
+}
+
 function formatNumber(value: number | null, digits = 2): string {
   if (value === null) {
     return "Not enough data";
   }
   return value.toFixed(digits);
+}
+
+function toneForSignedValue(value: number | null): ValueTone {
+  if (value === null || value === 0) {
+    return "neutral";
+  }
+  return value > 0 ? "gain" : "loss";
+}
+
+function oppositeMarketColorScheme(
+  scheme: MarketColorScheme,
+): MarketColorScheme {
+  return scheme === "mainland" ? "western" : "mainland";
+}
+
+function marketColorButtonLabel(scheme: MarketColorScheme): string {
+  return scheme === "mainland" ? "CN colors" : "US colors";
+}
+
+function marketColorDescription(scheme: MarketColorScheme): string {
+  return scheme === "mainland"
+    ? "Gains red, losses green"
+    : "Gains green, losses red";
 }
 
 function buildDemoData(realData: PortfolioData): PortfolioData {
@@ -132,8 +202,8 @@ function buildDemoData(realData: PortfolioData): PortfolioData {
       assetType: "common_stock",
       exchange: "NASDAQ",
       quantity: 20,
-      averageCost: 24,
-      costBasis: 480,
+      averageCost: 45,
+      costBasis: 900,
       currency: "USD",
       firstTradeDate: "2026-03-07",
       lastTradeDate: "2026-03-07",
@@ -237,8 +307,8 @@ function buildDemoData(realData: PortfolioData): PortfolioData {
       "LUNR",
       "buy",
       20,
-      24,
-      -480,
+      45,
+      -900,
       "2026-03-07",
       "Buy Intuitive Machines",
     ),
@@ -406,6 +476,16 @@ function marketValueForPosition(
   return price === null ? position.costBasis : position.quantity * price;
 }
 
+function costBasisForPosition(position: PositionRecord): number | null {
+  if (position.costBasis !== null) {
+    return position.costBasis;
+  }
+  if (position.averageCost !== null) {
+    return position.averageCost * position.quantity;
+  }
+  return null;
+}
+
 function calculateMetrics(data: PortfolioData): Metrics {
   const cash = data.accountState.confirmedCash;
   const marketValue = data.positions.reduce((sum, position) => {
@@ -497,15 +577,33 @@ function maxDrawdown(points: EquityPoint[]): number | null {
 
 export default function InvestDashboard({ data }: Props) {
   const [mode, setMode] = useState<DashboardMode>("real");
+  const [marketColorScheme, setMarketColorScheme] = useState<MarketColorScheme>(
+    defaultMarketColorScheme,
+  );
+  const [marketColorPreferenceLoaded, setMarketColorPreferenceLoaded] =
+    useState(false);
   const activeData = useMemo(
     () => (mode === "demo" ? buildDemoData(data) : data),
     [data, mode],
   );
   const metrics = useMemo(() => calculateMetrics(activeData), [activeData]);
   const isDemo = mode === "demo";
+  const nextMarketColorScheme = oppositeMarketColorScheme(marketColorScheme);
+
+  useEffect(() => {
+    setMarketColorScheme(readInitialMarketColorScheme());
+    setMarketColorPreferenceLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (!marketColorPreferenceLoaded) {
+      return;
+    }
+    persistMarketColorScheme(marketColorScheme);
+  }, [marketColorPreferenceLoaded, marketColorScheme]);
 
   return (
-    <div className="invest-shell">
+    <div className="invest-shell" data-market-colors={marketColorScheme}>
       <header className="invest-topbar">
         <a
           className="brand"
@@ -529,6 +627,16 @@ export default function InvestDashboard({ data }: Props) {
             <Github size={18} />
             <span>Open source</span>
           </a>
+          <button
+            className="mode-button preference-button"
+            type="button"
+            onClick={() => setMarketColorScheme(nextMarketColorScheme)}
+            title={`Switch to ${marketColorDescription(nextMarketColorScheme)}`}
+            aria-label={`Market color convention: ${marketColorDescription(marketColorScheme)}. Switch to ${marketColorDescription(nextMarketColorScheme)}.`}
+          >
+            <Palette size={17} />
+            <span>{marketColorButtonLabel(marketColorScheme)}</span>
+          </button>
           <button
             className={
               isDemo ? "mode-button" : "mode-button mode-button-active"
@@ -567,6 +675,11 @@ export default function InvestDashboard({ data }: Props) {
           </div>
           <div className="status-stack">
             <StatusPill
+              icon={<Palette size={16} />}
+              label={marketColorDescription(marketColorScheme)}
+              tone="neutral"
+            />
+            <StatusPill
               icon={<ShieldCheck size={16} />}
               label={isDemo ? "Demo only" : "Confirmed ledger"}
               tone={isDemo ? "warning" : "safe"}
@@ -588,7 +701,8 @@ export default function InvestDashboard({ data }: Props) {
           <MetricCard
             icon={<TrendingUp size={20} />}
             label="Total return"
-            value={formatPercent(metrics.totalReturnPct)}
+            tone={toneForSignedValue(metrics.totalReturnPct)}
+            value={formatSignedPercent(metrics.totalReturnPct)}
           />
           <MetricCard
             icon={<Activity size={20} />}
@@ -598,6 +712,7 @@ export default function InvestDashboard({ data }: Props) {
           <MetricCard
             icon={<BarChart3 size={20} />}
             label="Max drawdown"
+            tone={metrics.maxDrawdownPct === null ? "neutral" : "loss"}
             value={formatPercent(metrics.maxDrawdownPct)}
           />
           <MetricCard
@@ -686,14 +801,16 @@ function StatusPill({
 function MetricCard({
   icon,
   label,
+  tone = "neutral",
   value,
 }: {
   icon: ReactNode;
   label: string;
+  tone?: ValueTone;
   value: string;
 }) {
   return (
-    <article className="metric-card">
+    <article className={`metric-card metric-card-${tone}`}>
       <div className="metric-icon">{icon}</div>
       <div>
         <p>{label}</p>
@@ -759,6 +876,19 @@ function EquityChart({
   const min = Math.min(...values) * 0.96;
   const max = Math.max(...values) * 1.04;
   const range = Math.max(max - min, 1);
+  const firstPoint = points[0];
+  const lastPoint = points[points.length - 1];
+  const chartReturnPct =
+    lastPoint.cumulativeDeposits !== null && lastPoint.cumulativeDeposits > 0
+      ? ((lastPoint.totalEquity - lastPoint.cumulativeDeposits) /
+          lastPoint.cumulativeDeposits) *
+        100
+      : lastPoint.totalEquity === firstPoint.totalEquity
+        ? 0
+        : ((lastPoint.totalEquity - firstPoint.totalEquity) /
+            firstPoint.totalEquity) *
+          100;
+  const chartTone = toneForSignedValue(chartReturnPct);
   const tradeEvents = events.filter(isTradeEvent);
   const pointTimes = points.map((point) => Date.parse(point.date));
   const tradeTimes = tradeEvents
@@ -778,7 +908,7 @@ function EquityChart({
         `${index === 0 ? "M" : "L"} ${toX(point.date)} ${toY(point.totalEquity)}`,
     )
     .join(" ");
-  const areaPath = `${path} L ${toX(points[points.length - 1].date)} ${height - padding} L ${toX(points[0].date)} ${height - padding} Z`;
+  const areaPath = `${path} L ${toX(lastPoint.date)} ${height - padding} L ${toX(firstPoint.date)} ${height - padding} Z`;
   const gridValues = [0.25, 0.5, 0.75].map((ratio) => min + range * ratio);
   const dateLabelIndexes = buildDateLabelIndexes(points, toX);
   const markers = buildTradeMarkers({
@@ -791,7 +921,7 @@ function EquityChart({
   });
 
   return (
-    <div className="chart-wrap">
+    <div className={`chart-wrap chart-wrap-${chartTone}`}>
       <svg
         viewBox={`0 0 ${width} ${height}`}
         role="img"
@@ -799,8 +929,12 @@ function EquityChart({
       >
         <defs>
           <linearGradient id="equity-fill" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="#18a999" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#18a999" stopOpacity="0" />
+            <stop
+              offset="0%"
+              stopColor="var(--chart-tone)"
+              stopOpacity="0.24"
+            />
+            <stop offset="100%" stopColor="var(--chart-tone)" stopOpacity="0" />
           </linearGradient>
         </defs>
         {gridValues.map((value) => (
@@ -840,6 +974,14 @@ function EquityChart({
           </g>
         ))}
       </svg>
+      <div className="chart-summary" aria-label="Equity curve summary">
+        <span>
+          Latest <strong>{formatCurrency(lastPoint.totalEquity)}</strong>
+        </span>
+        <span className={`signed-value signed-value-${chartTone}`}>
+          {formatSignedPercent(chartReturnPct)}
+        </span>
+      </div>
       {markers.map((marker) => {
         const markerStyle = {
           "--marker-left": `${marker.left}%`,
@@ -1081,42 +1223,127 @@ function HoldingsTable({ data }: { data: PortfolioData }) {
     );
   }
 
+  const holdings = data.positions.map((position) => {
+    const price = priceForSymbol(data, position.symbol);
+    const value = marketValueForPosition(data, position);
+    const costBasis = costBasisForPosition(position);
+    const profitLoss =
+      value !== null && costBasis !== null ? value - costBasis : null;
+    const returnPct =
+      profitLoss !== null && costBasis !== null && costBasis > 0
+        ? (profitLoss / costBasis) * 100
+        : null;
+    const returnTone = toneForSignedValue(returnPct);
+    return {
+      position,
+      price,
+      profitLoss,
+      returnPct,
+      returnTone,
+      value,
+    };
+  });
+
   return (
-    <div className="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Symbol</th>
-            <th>Shares</th>
-            <th>Avg Cost</th>
-            <th>Last Price</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.positions.map((position) => {
-            const price = priceForSymbol(data, position.symbol);
-            const value = marketValueForPosition(data, position);
-            return (
-              <tr key={position.symbol}>
-                <td>
+    <>
+      <div className="table-wrap holdings-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Shares</th>
+              <th>Avg Cost</th>
+              <th>Last Price</th>
+              <th>Value</th>
+              <th>P/L</th>
+              <th>Return</th>
+            </tr>
+          </thead>
+          <tbody>
+            {holdings.map(
+              ({
+                position,
+                price,
+                profitLoss,
+                returnPct,
+                returnTone,
+                value,
+              }) => (
+                <tr key={position.symbol}>
+                  <td>
+                    <strong>{position.symbol}</strong>
+                    <span>{position.exchange}</span>
+                  </td>
+                  <td>
+                    {position.quantity.toLocaleString("en-US", {
+                      maximumFractionDigits: 4,
+                    })}
+                  </td>
+                  <td>{formatCurrency(position.averageCost)}</td>
+                  <td>{formatCurrency(price)}</td>
+                  <td>{formatCurrency(value)}</td>
+                  <td>
+                    <span className={`signed-value signed-value-${returnTone}`}>
+                      {formatSignedCurrency(profitLoss)}
+                    </span>
+                  </td>
+                  <td>
+                    <span className={`signed-value signed-value-${returnTone}`}>
+                      {formatSignedPercent(returnPct)}
+                    </span>
+                  </td>
+                </tr>
+              ),
+            )}
+          </tbody>
+        </table>
+      </div>
+      <div className="holding-card-list">
+        {holdings.map(
+          ({ position, price, profitLoss, returnPct, returnTone, value }) => (
+            <article className="holding-card" key={position.symbol}>
+              <header>
+                <span>
                   <strong>{position.symbol}</strong>
-                  <span>{position.exchange}</span>
-                </td>
-                <td>
-                  {position.quantity.toLocaleString("en-US", {
-                    maximumFractionDigits: 4,
-                  })}
-                </td>
-                <td>{formatCurrency(position.averageCost)}</td>
-                <td>{formatCurrency(price)}</td>
-                <td>{formatCurrency(value)}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+                  <small>{position.exchange}</small>
+                </span>
+                <span className={`signed-value signed-value-${returnTone}`}>
+                  {formatSignedPercent(returnPct)}
+                </span>
+              </header>
+              <dl>
+                <div>
+                  <dt>Shares</dt>
+                  <dd>
+                    {position.quantity.toLocaleString("en-US", {
+                      maximumFractionDigits: 4,
+                    })}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Value</dt>
+                  <dd>{formatCurrency(value)}</dd>
+                </div>
+                <div>
+                  <dt>Avg cost</dt>
+                  <dd>{formatCurrency(position.averageCost)}</dd>
+                </div>
+                <div>
+                  <dt>Last price</dt>
+                  <dd>{formatCurrency(price)}</dd>
+                </div>
+                <div>
+                  <dt>P/L</dt>
+                  <dd className={`signed-value signed-value-${returnTone}`}>
+                    {formatSignedCurrency(profitLoss)}
+                  </dd>
+                </div>
+              </dl>
+            </article>
+          ),
+        )}
+      </div>
+    </>
   );
 }
 
@@ -1140,15 +1367,36 @@ function OperationsList({ events }: { events: LedgerEvent[] }) {
         .reverse()
         .map((event) => (
           <li key={event.eventId}>
-            <span className="operation-date">
-              {event.tradeDate || event.createdAt}
-            </span>
+            <div className="operation-row">
+              <span className="operation-date">
+                {event.tradeDate || event.createdAt}
+              </span>
+              <span
+                className={`operation-badge operation-badge-${operationTone(event)}`}
+              >
+                {operationBadgeLabel(event)}
+              </span>
+            </div>
             <strong>{operationTitle(event)}</strong>
             <span>{operationDetail(event)}</span>
           </li>
         ))}
     </ol>
   );
+}
+
+function operationTone(event: LedgerEvent): string {
+  if (event.eventType === "deposit") {
+    return "deposit";
+  }
+  return event.side === "sell" ? "sell" : "buy";
+}
+
+function operationBadgeLabel(event: LedgerEvent): string {
+  if (event.eventType === "deposit") {
+    return "cash";
+  }
+  return event.side;
 }
 
 function operationTitle(event: LedgerEvent): string {

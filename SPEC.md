@@ -388,6 +388,8 @@ Dashboard evolution rules:
 - Every dashboard surface must have a clear committed data source or an explicitly labeled browser-only demo source.
 - Every major surface should explain its state through the data itself, a compact label, or an empty state. Avoid decorative complexity that does not help the user understand capital, risk, operations, performance, or research freshness.
 - Interactive chart features should support both pointer and keyboard focus when practical, avoid mobile overflow, and expose the underlying operation or metric detail rather than only adding visual decoration.
+- Market movement colors must be tokenized and user-switchable. The default browser convention is Mainland China style, where gains are red and losses are green. The alternate convention is Western style, where gains are green and losses are red. The selected convention should be remembered in browser storage and applied consistently to return metrics, chart direction, and profit/loss fields without changing the underlying data.
+- Buy and sell operation colors are separate from market movement colors. A buy marker, sell marker, deposit badge, or operation type badge should not silently inherit gain/loss colors unless that UI element is explicitly communicating price movement or investment return.
 - Demo fixtures should exercise real visual edge cases such as missing data, dense operations, buy and sell markers, stale prices, and empty account records. They must remain easy to remove or reset and must not leak into confirmed account files.
 - When frontend work reveals a better reusable display pattern, fold it back into the spec or code structure so the dashboard keeps improving instead of accumulating one-off components.
 - When a display surface becomes stale, redundant, too noisy, or disconnected from the investment mission, remove it or demote it before adding more surface area.
@@ -399,6 +401,7 @@ Metric definitions:
 - Sharpe ratio is annualized from committed period return observations; display an empty state until enough observations exist.
 - Maximum drawdown should be calculated from period return observations when available, because recurring deposits can hide drawdowns in raw account equity. Fall back to raw equity only when return observations are unavailable.
 - Equity curve trade markers should group same-day buy and sell executions, distinguish buy and sell visually, and expose a hover, focus, or click tooltip with date, side, symbol, share quantity, average execution price, and cash impact. The tooltip must use confirmed ledger events in real-data mode and browser-only fixtures in demo mode.
+- Position profit/loss and return fields use the selected market color convention. Positive values are gains, negative values are losses, and drawdown values are treated as losses even though they are displayed as positive magnitudes.
 
 Fallback behavior:
 

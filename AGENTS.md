@@ -91,6 +91,8 @@ Dashboard rules:
 7. Keep the page usable under `/invest/`; do not hard-code local filesystem paths or root-relative assumptions that break GitHub Pages project hosting.
 8. Treat the dashboard as a living product surface. When a visualization, metric, table, interaction, empty state, demo fixture, or public copy becomes confusing, stale, visually noisy, or no longer aligned with the process, simplify or replace it and update `SPEC.md` when the behavior should persist.
 9. Every public display surface should have a clear data source, provenance boundary, freshness cue when relevant, empty/demo fallback, desktop and mobile behavior, and no hidden dependency on local state.
+10. Market movement colors must use a browser-remembered convention toggle. The default convention is Mainland China style: gains are red and losses are green. The alternative convention is Western style: gains are green and losses are red. UI copy remains English-only, and browser-only display preferences must never mutate committed account records, research files, or market snapshots.
+11. Keep market movement colors separate from operation colors. Buy and sell markers may use their own semantic colors so they are not confused with gain and loss.
 
 ## Continuous Improvement and Noise Hygiene
 
