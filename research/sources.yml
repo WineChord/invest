@@ -1,0 +1,146 @@
+schema_version: 1
+sources:
+  - id: finra_trade_confirmations_2024
+    title: Are You Checking Your Trade Confirmations?
+    source_type: investor_education
+    url: https://www.finra.org/investors/insights/checking-trade-confirmations
+    source_published_at: 2024
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: []
+    summary: Trade confirmations should be checked against brokerage account statements.
+  - id: sec_edgar_research
+    title: Using EDGAR to Research Investments
+    source_type: regulator
+    url: https://www.sec.gov/search-filings/edgar-search-assistance/using-edgar-research-investments
+    source_published_at: 2018
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: []
+    summary: SEC EDGAR provides free access to company filings for investment research.
+  - id: sec_asset_allocation
+    title: Beginners' Guide to Asset Allocation, Diversification, and Rebalancing
+    source_type: regulator
+    url: https://www.sec.gov/investor/pubs/assetallocation.htm
+    source_published_at: 2009
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: []
+    summary: SEC overview of diversification and rebalancing concepts.
+  - id: finra_dollar_cost_averaging
+    title: The Pros and Cons of Dollar-Cost Averaging
+    source_type: investor_education
+    url: https://www.finra.org/investors/insights/dollar-cost-averaging
+    source_published_at: 2022
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: []
+    summary: Dollar-cost averaging can reduce timing stress but does not eliminate investment risk.
+  - id: asts_q1_2026
+    title: AST SpaceMobile Provides Business Update and First Quarter 2026 Results
+    source_type: company_ir
+    url: https://www.businesswire.com/news/home/20260511685431/en/AST-SpaceMobile-Provides-Business-Update-and-First-Quarter-2026-Results
+    source_published_at: 2026-05-11
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [ASTS]
+    summary: Q1 2026 update included satellite deployment targets, FCC authorization, revenue guidance, and liquidity.
+  - id: rklb_q1_2026
+    title: Rocket Lab Announces First Quarter 2026 Financial Results
+    source_type: company_ir
+    url: https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-first-quarter-2026-financial-results
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [RKLB]
+    summary: Q1 2026 revenue, backlog, gross margin, liquidity, and guidance update.
+  - id: vrt_q1_2026
+    title: Vertiv Reports Strong First Quarter 2026 Results
+    source_type: company_ir
+    url: https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-First-Quarter-with-Diluted-EPS-Growth-of-136-Adjusted-Diluted-EPS-Growth-of-83-Raises-Full-Year-Guidance/default.aspx
+    source_published_at: 2026-04-22
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [VRT]
+    summary: Q1 2026 sales, margin, cash flow, and raised full-year guidance.
+  - id: crdo_q3_fy2026
+    title: Credo Technology Group Reports Third Quarter Fiscal Year 2026 Results
+    source_type: company_ir
+    url: https://www.nasdaq.com/press-release/credo-technology-group-holding-ltd-reports-third-quarter-fiscal-year-2026-financial
+    source_published_at: 2026-03-02
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [CRDO]
+    summary: Fiscal Q3 2026 revenue, profitability, balance sheet, and Q4 outlook.
+  - id: alab_q1_2026
+    title: Astera Labs Reports First Quarter 2026 Financial Results
+    source_type: company_ir
+    url: https://ir.asteralabs.com/news-releases/news-release-details/astera-labs-reports-first-quarter-2026-financial-results
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [ALAB]
+    summary: Q1 2026 revenue, gross margin, AI fabric products, and Q2 outlook.
+  - id: crcl_q1_2026
+    title: Circle Reports First Quarter 2026 Results
+    source_type: company_ir
+    url: https://www.circle.com/pressroom/circle-reports-first-quarter-2026-results
+    source_published_at: 2026-05-11
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [CRCL]
+    summary: Q1 2026 USDC circulation, transaction volume, revenue, reserve income, and business update.
+  - id: cbrs_ipo_2026
+    title: Cerebras Systems Announces Closing of Initial Public Offering
+    source_type: company_ir
+    url: https://www.cerebras.ai/press-release/cerebras-systems-announces-closing-of-initial-public-offering
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [CBRS]
+    summary: IPO closed, Nasdaq ticker CBRS, offering size, and company description.
+  - id: ionq_q1_2026
+    title: IonQ Announces First Quarter 2026 Financial Results
+    source_type: company_ir
+    url: https://investors.ionq.com/news/news-details/2026/IonQ-Announces-First-Quarter-2026-Financial-Results/default.aspx
+    source_published_at: 2026-05-06
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [IONQ]
+    summary: Q1 2026 results, raised revenue expectations, and adjusted EBITDA loss outlook.
+  - id: be_q1_2026
+    title: Bloom Energy Reports Record First Quarter 2026 Results
+    source_type: company_ir
+    url: https://investor.bloomenergy.com/press-releases/press-release-details/2026/Bloom-Energy-Reports-Record-First-Quarter-2026-Results-and-Raises-Full-Year-2026-Guidance/default.aspx
+    source_published_at: 2026-04-28
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [BE]
+    summary: Q1 2026 revenue growth, product revenue growth, margin, and raised full-year guidance.
+  - id: lunr_q1_2026
+    title: Intuitive Machines Reports First Quarter 2026 Financial Results
+    source_type: company_ir
+    url: https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-reports-first-quarter-2026-financial-results
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [LUNR]
+    summary: Q1 2026 revenue, backlog, acquisition updates, awards, and full-year outlook.
+  - id: rdw_ir_q1_2026
+    title: Redwire Investor Relations Q1 2026
+    source_type: company_ir
+    url: https://ir.redwirespace.com/
+    source_published_at: 2026-05
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [RDW]
+    summary: Investor relations page links to Q1 2026 earnings release, presentation, transcript, and 10-Q.
+  - id: stooq_prices_2026_05_22
+    title: Stooq latest available OHLCV snapshot
+    source_type: market_data
+    url: https://stooq.com/q/l/
+    source_published_at: 2026-05-22
+    retrieved_at: 2026-05-26
+    first_seen_at: 2026-05-26
+    related_symbols: [ASTS, CRDO, RKLB, VRT, CRCL, CBRS, NBIS, BE, ALAB, IONQ, LUNR, RDW]
+    summary: Latest available close snapshot used for initial simulation; not a live quote.

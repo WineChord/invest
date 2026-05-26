@@ -1,0 +1,18 @@
+schema_version: 1
+base_currency: USD
+default_monthly_contribution:
+  amount: 888
+  currency: USD
+  status: planned_not_confirmed_cash
+investment_horizon: multi_decade
+portfolio_type: satellite_only
+primary_goal: asymmetric_multi_decade_compounding
+execution_preferences:
+  trade_execution: user_executes_manually
+  fractional_shares_allowed: unknown_until_user_confirms_broker_capability
+  default_order_type: unknown_until_monthly_decision
+  cash_buffer_policy: keep_small_buffer_for_slippage_and_fees
+recordkeeping:
+  ledger_is_append_only: true
+  update_only_after_broker_confirmation: true
+  corrections_are_new_events: true

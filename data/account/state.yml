@@ -1,0 +1,15 @@
+schema_version: 1
+as_of: 2026-05-26
+status: initialized_empty_unconfirmed
+base_currency: USD
+confirmed_cash: null
+settled_cash: null
+buying_power: null
+positions_count: 0
+last_confirmed_ledger_event_id: null
+last_reconciled_with_broker_at: null
+notes:
+  - Initial repository state.
+  - The user stated initial holdings are empty.
+  - The user stated initial account balance is empty or unconfirmed.
+  - Planned monthly contribution defaults to USD 888 but is not cash until confirmed.

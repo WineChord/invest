@@ -1,0 +1,1 @@
+event_id,event_type,status,broker,account_alias,confirmation_id,trade_date,settlement_date,symbol,side,quantity,average_price,fees,gross_amount,net_cash_effect,currency,source,created_at,notes
