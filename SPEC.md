@@ -302,6 +302,11 @@ Corrections are append-only. Never silently rewrite history.
 
 The repository should improve over time, but improvement must not drift away from the mission.
 
+Self-evolution has two equal duties:
+
+- improve the system's ability to make fresh, critical, long-horizon allocation decisions;
+- reduce accumulated noise so future agents can find the signal faster.
+
 Allowed self-improvements:
 
 - better research templates;
@@ -310,7 +315,9 @@ Allowed self-improvements:
 - clearer scoring definitions;
 - better candidate universe filters;
 - better decision and audit formatting;
-- new tools that make the process more reliable.
+- new tools that make the process more reliable;
+- clearer dashboard interactions and visualizations;
+- cleanup of stale, duplicated, misleading, or low-signal repository content.
 
 Forbidden self-improvements:
 
@@ -325,6 +332,24 @@ Forbidden self-improvements:
 Policy changes use [templates/policy-change-proposal.md](templates/policy-change-proposal.md). Approved changes create a new file in `data/policy/` and decisions after that point cite the new version.
 
 Durable behavior changes also require documentation review. When adding a new data file, dashboard feature, decision step, automation, or public reporting surface, update `SPEC.md`, `AGENTS.md`, or templates in the same change when the behavior should persist for future agents.
+
+Operational loop:
+
+1. Observe what became slow, confusing, stale, duplicated, visually noisy, or error-prone during the current interaction.
+2. Decide whether the lesson is durable. If it is one-off scratch work, do not encode it as process.
+3. Encode durable lessons into the narrowest durable artifact: `AGENTS.md` for agent rules, `SPEC.md` for system design, templates for repeated workflows, data files for source-of-truth records, and source code for product behavior.
+4. Clean the repository after the improvement. Remove obsolete scratch files, unused demo assumptions, dead UI states, stale generated artifacts, duplicate notes, and sources that no longer support active research.
+5. Preserve audit history. Confirmed ledger events, policy versions, dated decisions, and past research baselines must remain reconstructable. If they are no longer current, mark them as historical, archived, superseded, or stale rather than presenting them as active evidence.
+6. Verify that the public dashboard, decision workflow, and data model still use clear provenance boundaries between confirmed facts, current market facts, historical evidence, demo fixtures, and analysis.
+
+Noise control rules:
+
+- Prefer one canonical record for each durable concept. Link to that record instead of repeating similar instructions across many files.
+- Keep temporary screenshots, local logs, generated caches, browser test artifacts, exploratory scratch notes, and one-off fake data out of committed state unless they are intentional fixtures.
+- Move candidates out of the active research universe when the thesis is stale, broken, no longer directly tradable, no longer aligned with the satellite mission, or not worth fresh research time. Keep a short reason and date for the downgrade.
+- Mark old sources as historical evidence when their publication date is no longer current. A newly retrieved old source is not fresh market information.
+- Keep dashboard surfaces sparse and decision-useful. Remove metrics, cards, labels, or interactions that look impressive but do not improve understanding of confirmed state, current performance, account activity, source freshness, or the research universe.
+- Whenever a cleanup removes or demotes material that future decisions might otherwise expect, note the reason in the commit or a dated decision/research note.
 
 ## Public Dashboard
 
@@ -357,6 +382,15 @@ Required dashboard surfaces:
 - buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
 - active research/watchlist table;
 - open-source repository link.
+
+Dashboard evolution rules:
+
+- Every dashboard surface must have a clear committed data source or an explicitly labeled browser-only demo source.
+- Every major surface should explain its state through the data itself, a compact label, or an empty state. Avoid decorative complexity that does not help the user understand capital, risk, operations, performance, or research freshness.
+- Interactive chart features should support both pointer and keyboard focus when practical, avoid mobile overflow, and expose the underlying operation or metric detail rather than only adding visual decoration.
+- Demo fixtures should exercise real visual edge cases such as missing data, dense operations, buy and sell markers, stale prices, and empty account records. They must remain easy to remove or reset and must not leak into confirmed account files.
+- When frontend work reveals a better reusable display pattern, fold it back into the spec or code structure so the dashboard keeps improving instead of accumulating one-off components.
+- When a display surface becomes stale, redundant, too noisy, or disconnected from the investment mission, remove it or demote it before adding more surface area.
 
 Metric definitions:
 

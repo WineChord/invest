@@ -23,6 +23,7 @@ Default planned monthly contribution: USD 888. Treat this as planned cash only u
 9. Self-improvement may change templates, scoring, source lists, data providers, and research process, but must not weaken the mission, freshness rules, confirmation rules, audit trail, or no-auto-trading rule.
 10. Do not add leverage, margin, options, short selling, crypto tokens, private shares, or non-US-listed instruments unless a later explicit policy version approved by the user allows them.
 11. When adding or changing product behavior, data records, dashboard behavior, research workflow, or automation, evaluate whether `SPEC.md` and templates need to be updated in the same change. Update them when the behavior becomes part of the durable process.
+12. Treat repository hygiene as part of the product. After meaningful decisions, research updates, dashboard work, or tooling changes, check whether the repository accumulated stale, duplicated, misleading, or low-signal material. Clean it up without weakening auditability.
 
 ## Source Hierarchy
 
@@ -88,6 +89,22 @@ Dashboard rules:
 5. When confirmed account data is missing, show a useful empty state rather than inventing real balances.
 6. After frontend changes, run the local build and inspect the page locally across desktop and mobile widths before committing when practical.
 7. Keep the page usable under `/invest/`; do not hard-code local filesystem paths or root-relative assumptions that break GitHub Pages project hosting.
+8. Treat the dashboard as a living product surface. When a visualization, metric, table, interaction, empty state, demo fixture, or public copy becomes confusing, stale, visually noisy, or no longer aligned with the process, simplify or replace it and update `SPEC.md` when the behavior should persist.
+9. Every public display surface should have a clear data source, provenance boundary, freshness cue when relevant, empty/demo fallback, desktop and mobile behavior, and no hidden dependency on local state.
+
+## Continuous Improvement and Noise Hygiene
+
+This repository should become more useful, more reliable, and easier to operate after each serious interaction. Improvement is not only adding features. It also means deleting clutter, reducing ambiguity, tightening stale rules, and making the next decision cycle cheaper without lowering decision quality.
+
+Use this loop when a change reveals a durable lesson:
+
+1. Capture the lesson in the smallest durable place: `AGENTS.md` for agent behavior, `SPEC.md` for system behavior, templates for repeated workflows, data files for durable records, and source files for product behavior.
+2. Remove or demote noise created by the work: obsolete demo assumptions, duplicate research notes, unused UI states, dead scripts, stale screenshots, outdated candidate labels, irrelevant sources, and misleading comments.
+3. Preserve audit history. Do not delete confirmed ledger events, policy versions, or dated decisions just because they are old. If historical material remains useful only as history, mark it as historical, archived, superseded, or stale instead of presenting it as current evidence.
+4. Prefer concise canonical records over sprawling parallel notes. If two files describe the same durable rule, keep one authoritative version and link to it from the other.
+5. Keep demo data, generated artifacts, cache files, temporary screenshots, local logs, and exploratory scratch work out of committed durable state unless the file is intentionally part of the product or test fixture.
+6. During every monthly decision, explicitly separate current evidence, historical evidence, stale evidence, and analysis. Do not let old narratives keep influencing allocation after their evidence window expires.
+7. When cleaning up, keep changes reviewable: explain the cleanup in the commit message or decision note when it affects future interpretation.
 
 ## Research Discipline
 
