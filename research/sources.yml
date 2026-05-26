@@ -180,11 +180,11 @@ sources:
     first_seen_at: 2026-05-26
     related_symbols: [ASTS]
     summary: Q1 2026 quarterly filing covering revenue, expenses, liquidity, debt, share count, cash flows, and regulatory/commercial milestones.
-  - id: asts_us_mno_jv_2026_05_14
+  - id: asts_us_mno_jv_2026_05_13
     title: AST SpaceMobile Commends Proposed Direct-to-Device Joint Venture by U.S. Mobile Network Operators
     source_type: company_ir
     url: https://www.businesswire.com/news/home/20260513491108/en/AST-SpaceMobile-Commends-Proposed-Direct-to-Device-Joint-Venture-by-U.S.-Mobile-Network-Operators
-    source_published_at: 2026-05-14
+    source_published_at: 2026-05-13
     retrieved_at: 2026-05-26
     first_seen_at: 2026-05-26
     related_symbols: [ASTS]
