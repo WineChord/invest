@@ -1169,10 +1169,14 @@ function tradeMarkerPlacementClasses(marker: TradeMarker): string {
 
 function TradeTooltip({ marker }: { marker: TradeMarker }) {
   return (
-    <span className="trade-tooltip">
-      <span className="trade-tooltip-heading">
-        <span>{marker.date}</span>
-        <strong>{tradeGroupLabel(marker)}</strong>
+    <span className="trade-tooltip" role="tooltip">
+      <span className="trade-tooltip-topline">
+        <span className="trade-tooltip-date">{marker.date}</span>
+        <span
+          className={`trade-tooltip-action trade-tooltip-action-${marker.tone}`}
+        >
+          {tradeGroupLabel(marker)}
+        </span>
       </span>
       <span className="trade-tooltip-list">
         {marker.trades.map((trade) => (
@@ -1180,10 +1184,16 @@ function TradeTooltip({ marker }: { marker: TradeMarker }) {
             <span className={`trade-side trade-side-${trade.side}`}>
               {trade.side.toUpperCase()}
             </span>
-            <strong>{trade.symbol}</strong>
-            <span>{formatTradeQuantity(trade.quantity)} shares</span>
-            <span>@ {formatCurrency(trade.averagePrice)}</span>
-            <span>{formatCurrency(Math.abs(trade.netCashEffect ?? 0))}</span>
+            <span className="trade-tooltip-main">
+              <strong>{trade.symbol}</strong>
+              <span>
+                {formatTradeQuantity(trade.quantity)} shares @{" "}
+                {formatCurrency(trade.averagePrice)}
+              </span>
+            </span>
+            <span className="trade-tooltip-cash">
+              {formatCurrency(Math.abs(trade.netCashEffect ?? 0))}
+            </span>
           </span>
         ))}
       </span>
