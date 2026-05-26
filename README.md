@@ -36,3 +36,11 @@ npm run verify
 ```
 
 The dashboard defaults to committed real data. Because the account currently has no confirmed transactions, the real view intentionally shows empty holdings and empty performance. The "Demo data" control switches to browser-only demo data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "Real data" switches back to committed repository data without changing files.
+
+Daily market data refresh:
+
+```bash
+npm run refresh:market -- --dry-run
+```
+
+GitHub Actions runs the same close-price refresh on a weekday schedule. It updates `data/market/watchlist_prices.csv` from daily close data and updates `data/account/equity_curve.csv` only after confirmed positions and confirmed cash exist.

@@ -142,6 +142,17 @@ Snapshot cadence policy:
 - Historical backfill must use historical prices for the exact valuation date. Never fill an old date with today's price.
 - If price history for a required date is unavailable, leave the gap or mark the snapshot as estimated in `notes`; do not invent precision.
 
+Daily close automation:
+
+- `.github/workflows/daily-market-data.yml` runs on a weekday schedule after the regular US market close should normally be available from end-of-day data providers. It can also be run manually with an optional `as_of` date.
+- The automation is deterministic code only. It must not call an LLM, agent, broker, or order-execution service.
+- `scripts/refresh-market-data.mjs` fetches the latest available daily close up to the New York `as_of` date from Stooq for symbols already present in `data/market/watchlist_prices.csv` plus all confirmed position symbols.
+- The script refreshes `data/market/watchlist_prices.csv` only when the provider supplies a newer close date or a corrected close for the same date. Weekends, holidays, and repeated provider data should produce no commit.
+- The script adds or replaces one `data/account/equity_curve.csv` row for the valuation close date only when confirmed positions exist and `data/account/state.yml` has `confirmed_cash`. It must not fabricate equity when cash is unknown.
+- Daily equity snapshots use confirmed position quantities, confirmed cash, and the latest available close for each held symbol. If any held-symbol price is missing, the automation fails instead of committing a partial valuation.
+- Daily automation must not mutate `ledger.csv`, `positions.csv`, `state.yml`, research files, or decision files. Those remain user-confirmed or agent-researched records.
+- Because commits made by `GITHUB_TOKEN` may not reliably trigger a second Pages workflow, the daily market data workflow builds and deploys the dashboard itself after committing a data change.
+
 Market snapshots used for display and decision support are stored in `data/market/`. They do not mutate confirmed account records.
 
 The public research drilldown index is stored in [research/company-analysis.yml](research/company-analysis.yml). It is the structured bridge between dated research notes and the dashboard. Each entry represents one historical analysis event for one company, not a fresh market fact.

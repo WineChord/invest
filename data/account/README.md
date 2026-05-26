@@ -16,7 +16,9 @@ Equity curve cadence:
 - Add a valuation snapshot during each monthly decision cycle once confirmed cash or positions exist.
 - Add a valuation snapshot after each confirmed deposit or execution date when the required prices are available.
 - Backfill month-end valuation snapshots from historical close data when possible.
+- Daily close automation may add or refresh one valuation snapshot per available market close after confirmed positions and confirmed cash exist.
 - Do not use today's price to fill an older valuation date.
+- Automated valuation snapshots are market-derived reporting rows only. They do not change `ledger.csv`, `positions.csv`, or `state.yml`.
 
 Initial state on 2026-05-26:
 
