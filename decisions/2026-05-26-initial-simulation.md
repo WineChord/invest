@@ -4,8 +4,7 @@ Date: 2026-05-26
 
 Policy version: `v1.0`
 
-Status: simulation only. No trade is recommended from this document. No account
-record was updated.
+Status: simulation only. No trade is recommended from this document. No account record was updated.
 
 ## Account State Used
 
@@ -15,13 +14,11 @@ record was updated.
 - Confirmed monthly deposit: none.
 - Planned default monthly contribution: USD 888, not confirmed cash.
 
-Because no broker-confirmed cash exists yet, the only valid real-money action
-under `v1.0` is no trade.
+Because no broker-confirmed cash exists yet, the only valid real-money action under `v1.0` is no trade.
 
 ## Simulated Question
 
-If the user later confirms a fresh USD 888 deposit and asks for a monthly
-decision, how should the first decision be approached?
+If the user later confirms a fresh USD 888 deposit and asks for a monthly decision, how should the first decision be approached?
 
 ## Simulated Freshness Report
 
@@ -49,8 +46,7 @@ Policy:
 
 ## Simulated Allocation Logic
 
-If USD 888 were confirmed as settled cash and fractional shares were available,
-the first real decision would probably compare three paths:
+If USD 888 were confirmed as settled cash and fractional shares were available, the first real decision would probably compare three paths:
 
 1. Concentrated first purchase in one strongest candidate.
 2. Two-name staged entry between space infrastructure and AI infrastructure.
@@ -63,15 +59,13 @@ Given the initial baseline, the most likely first-decision shortlist would be:
 - CRDO or ALAB for AI interconnect bottleneck exposure;
 - VRT if the decision needs a more mature AI infrastructure compounder.
 
-This is not a final ranking for a real trade. It must be recomputed with live
-prices and fresh facts.
+This is not a final ranking for a real trade. It must be recomputed with live prices and fresh facts.
 
 ## Simulated Decision
 
 Real action today: no trade.
 
-Reason: the repository has no confirmed cash and no broker-confirmed account
-snapshot.
+Reason: the repository has no confirmed cash and no broker-confirmed account snapshot.
 
 Proposed next user input for the first real decision:
 
@@ -90,5 +84,4 @@ current_positions: []
 constraints_or_preferences:
 ```
 
-After the user provides this, the agent should refresh market data and company
-evidence, then produce exact proposed share counts.
+After the user provides this, the agent should refresh market data and company evidence, then produce exact proposed share counts.

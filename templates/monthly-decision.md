@@ -30,5 +30,4 @@ Minimum needed for exact share counts:
 - current holdings if they differ from repository records;
 - any fees or commissions.
 
-The agent must refresh current market and company data before recommending any
-orders.
+The agent must refresh current market and company data before recommending any orders.

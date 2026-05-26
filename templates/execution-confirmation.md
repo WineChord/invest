@@ -1,7 +1,6 @@
 # Execution Confirmation Template
 
-Use this only after the broker actually confirms a deposit, buy, sell, dividend,
-fee, split, or correction.
+Use this only after the broker actually confirms a deposit, buy, sell, dividend, fee, split, or correction.
 
 ## Deposit
 
@@ -68,5 +67,4 @@ reason:
 notes:
 ```
 
-If any required field is missing, the agent must ask for it before updating the
-ledger.
+If any required field is missing, the agent must ask for it before updating the ledger.

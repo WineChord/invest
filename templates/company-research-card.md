@@ -14,8 +14,7 @@ Policy version:
 
 ## Current Evidence
 
-Record only source-backed facts. Include source publication date and retrieval
-date.
+Record only source-backed facts. Include source publication date and retrieval date.
 
 ## Key Metrics to Track
 
