@@ -12,7 +12,9 @@ Start here:
 2. Read [SPEC.md](SPEC.md) for the full portfolio system design.
 3. Use [templates/monthly-decision.md](templates/monthly-decision.md) when asking for a monthly buy or sell plan.
 4. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
-5. Run `npm run dev` to preview the public dashboard locally.
+5. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
+6. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
+7. Run `npm run dev` to preview the public dashboard locally.
 
 Repository state:
 
@@ -21,6 +23,14 @@ Repository state:
 - Confirmed ledger events: none.
 - Initial research baseline: [research/2026-05-26-initial-baseline.md](research/2026-05-26-initial-baseline.md).
 - Initial simulated decision: [decisions/2026-05-26-initial-simulation.md](decisions/2026-05-26-initial-simulation.md).
+
+Research engine state:
+
+- Potential new public candidates: [research/discovery/candidates.csv](research/discovery/candidates.csv).
+- Material freshness events: [research/freshness/events.csv](research/freshness/events.csv).
+- Valuation and entry states: [research/valuation-states.csv](research/valuation-states.csv).
+- Research health metrics: [research/quality-metrics.yml](research/quality-metrics.yml).
+- Completed filing reviews: [research/filings](research/filings).
 
 ## Dashboard
 

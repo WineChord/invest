@@ -59,13 +59,16 @@ When the user asks what to buy or sell today:
 1. Start from the confirmed ledger and confirmed positions only.
 2. Check whether the user confirmed a new deposit. If not confirmed, planned contribution cash is not investable cash.
 3. Reconstruct available cash from confirmed records, then reconcile with any broker account snapshot the user provides.
-4. Retrieve fresh prices and current market data for all current holdings and active candidates.
-5. Retrieve fresh company data: SEC filings, IR releases, earnings transcripts, regulatory updates, contract news, dilution, debt, liquidity, and management changes.
-6. Compare new evidence against the stored thesis, kill criteria, and prior decision notes.
-7. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
-8. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
-9. Mark the output as a proposed decision only. Do not mutate the ledger.
-10. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
+4. Run the research engine loop from `SPEC.md`: check discovery candidates, freshness events, valuation states, and active watchlist names before deciding allocation.
+5. Retrieve fresh prices and current market data for all current holdings, active candidates, and newly promoted candidates.
+6. Retrieve fresh company data: SEC filings, IR releases, earnings transcripts, regulatory updates, contract news, dilution, debt, liquidity, and management changes.
+7. When a new material filing exists, read the primary filing or official report before buying. Use [templates/filing-review.md](templates/filing-review.md) for 10-K, 10-Q, S-1, F-1, 424B, earnings 8-K, financing 8-K, and equivalent reports.
+8. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, or missing filing reviews make the research engine not decision-ready, either refresh the evidence or recommend holding cash.
+9. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
+10. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
+11. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
+12. Mark the output as a proposed decision only. Do not mutate the ledger.
+13. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
 
 ## Execution Update Workflow
 
@@ -126,7 +129,29 @@ Each active company thesis must include:
 - regulatory, technical, execution, and valuation risk;
 - next review date.
 
+Research is organized as a pipeline:
+
+1. `research/discovery/candidates.csv` for raw potential public candidates found by universe scans.
+2. `research/freshness/events.csv` for material filings, IR releases, contracts, financing, dilution, regulatory events, price dislocations, and thesis triggers.
+3. `research/valuation-states.csv` for current valuation and entry-attractiveness state.
+4. `research/quality-metrics.yml` for coverage, freshness, stale analysis, and open-event health checks.
+5. `research/filings/` for completed material filing reviews linked from freshness events.
+6. `research/watchlist.csv` for candidates that deserve ongoing active monitoring.
+7. `research/company-analysis.yml` for dashboard-visible historical analysis.
+
+The active decision universe is limited to watchlist rows whose status is `active_core_candidate`, `active_candidate`, or `watch`. Rows marked `research_only`, `not_tradable`, `probation`, `frozen`, or `removed` cannot receive new buy recommendations unless the decision first promotes them with fresh evidence and updates the durable records.
+
+Before recommending a buy, confirm the target passes three gates:
+
+- Mission gate: the company still has a plausible multi-decade asymmetric upside path and does not merely duplicate the user's large Nasdaq technology core.
+- Evidence gate: current primary evidence supports the thesis, material filings are reviewed, and no critical freshness event is unresolved.
+- Entry gate: current price, valuation, dilution, balance sheet survival, and opportunity cost still leave enough expected upside for the satellite objective.
+
 When adding a durable company analysis that should appear on the public dashboard, add or append a structured entry in [research/company-analysis.yml](research/company-analysis.yml) and link it to the dated source note. Do not parse long-form Markdown as the dashboard database when a structured index can carry the needed summary and provenance.
+
+When a candidate or holding publishes a material filing, do not make a buy recommendation until the filing has been reviewed or the decision explicitly says why the filing is immaterial. Financial statement review must consider revenue growth, gross margin, operating margin, cash flow, cash, debt, dilution, share count, stock-based compensation, backlog or RPO when relevant, customer concentration, guidance, risk-factor changes, and liquidity.
+
+Completed material filing reviews must be saved under `research/filings/` and linked from `research/freshness/events.csv` through `review_path`. If a material event is ignored as immaterial, `immaterial_reason` must explain why.
 
 Do not blindly follow the user's initial candidate list. Treat it as a starting watchlist and independently challenge every company.
 

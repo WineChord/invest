@@ -155,6 +155,57 @@ Daily close automation:
 
 Market snapshots used for display and decision support are stored in `data/market/`. They do not mutate confirmed account records.
 
+Research engine state is stored under `research/`.
+
+`research/quality-metrics.yml` records whether the research engine itself is healthy enough to support a monthly allocation decision. It is a compact operational dashboard for coverage, staleness, open event risk, and unresolved research debt.
+
+Required sections:
+
+```yaml
+schema_version:
+as_of:
+last_research_engine_run:
+decision_readiness:
+coverage:
+freshness:
+quality_gates:
+notes:
+```
+
+`research/discovery/candidates.csv` records potential new public candidates before they are promoted into the active watchlist.
+
+Required columns:
+
+```text
+symbol,name,exchange,asset_type,discovered_at,discovery_source,source_url,
+source_published_at,retrieved_at,first_seen_at,theme,why_it_might_matter,
+status,next_action,notes
+```
+
+`research/freshness/events.csv` records dated events that require review, including filings, earnings releases, guidance, contracts, financing, dilution, regulatory decisions, price dislocations, leadership changes, and thesis-breaking evidence.
+
+Required columns:
+
+```text
+event_id,symbol,event_date,event_type,source_type,source_url,
+source_published_at,retrieved_at,first_seen_at,severity,status,
+required_action,reviewed_at,review_path,immaterial_reason,notes
+```
+
+`research/valuation-states.csv` records the latest valuation and entry-attractiveness state for researched symbols. It is an analytical state file, not a price history and not an order instruction.
+
+Required columns:
+
+```text
+symbol,as_of,price,market_cap,enterprise_value,currency,valuation_state,
+price_attractiveness,thesis_state,risk_state,expected_return_setup,
+scenario_path,next_review_trigger,source_ids,notes
+```
+
+Completed filing reviews are stored in `research/filings/` using the naming convention `YYYY-MM-DD-SYMBOL-FILINGTYPE-ACCESSION.md`. A reviewed freshness event must either link `review_path` to a completed review file or explain the immateriality decision in `immaterial_reason`.
+
+When `source_ids` stores multiple source references, use semicolon-separated IDs from `research/sources.yml`.
+
 The public research drilldown index is stored in [research/company-analysis.yml](research/company-analysis.yml). It is the structured bridge between dated research notes and the dashboard. Each entry represents one historical analysis event for one company, not a fresh market fact.
 
 Each analysis entry records:
@@ -175,6 +226,225 @@ source_path:
 ```
 
 Entries are append-only by default and shown newest-first on the dashboard. If an analysis becomes stale or superseded, add a later entry that says so instead of rewriting the historical record.
+
+## Research Engine
+
+The repository must evolve from a static watchlist into a research engine. The engine has five loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, and monthly allocation.
+
+Feasibility boundary:
+
+- Deterministic automation can refresh prices, equity snapshots, source indexes, and simple staleness counters.
+- Deterministic automation can identify that a filing, symbol, price move, or issuer event exists.
+- Deterministic automation must not decide that a company is good, cheap, or buyable by itself.
+- Agent or human research must interpret filings, management discussion, financial quality, competitive position, dilution, valuation, and thesis changes.
+- A monthly allocation decision is allowed only when the relevant deterministic data has been refreshed and the material qualitative evidence has been reviewed or explicitly marked immaterial.
+
+Implementation target:
+
+- Use code for repeatable collection, validation, and stale-state detection.
+- Use research templates for judgment-heavy work.
+- Use committed files as the durable interface between automation, agent analysis, dashboard display, and future decisions.
+- Track the health of the research process itself in `research/quality-metrics.yml`, so the system can say when it is not ready to make a buy recommendation.
+
+Readiness semantics:
+
+- `decision_readiness.status: ready` means the repository can support a live monthly allocation recommendation after fresh prices and broker cash are checked in the current decision cycle.
+- `decision_readiness.status: not_ready` means the system must refresh missing research evidence or recommend holding cash.
+- Header-only discovery, freshness, and valuation files are acceptable as an initial scaffold only when `decision_readiness.status` is explicitly `not_ready`.
+- Validation must reject `ready` status when active symbols lack current valuation state, latest material filing review coverage, or unresolved critical events.
+
+### Universe Discovery Loop
+
+Purpose: find public companies that are not already in the watchlist but may fit the satellite mission.
+
+Cadence:
+
+- Run at least monthly before the allocation decision.
+- Run ad hoc after major IPOs, spinoffs, direct listings, index additions, sector shocks, or policy changes.
+
+Recommended source stack:
+
+- SEC company ticker and exchange reference files for listed issuer coverage.
+- Nasdaq Trader symbol directories for US-listed common stocks and ADRs.
+- Exchange, issuer IR, and SEC sources for newly public companies.
+- Reputable market data only for market cap, liquidity, and price metadata after the symbol is identified from durable public sources.
+
+Default filters:
+
+- US-listed common stock or ADR under the current policy.
+- Directly tradable for a normal retail brokerage account.
+- Public filings or equivalent official reporting are available.
+- Minimum practical liquidity for retail execution.
+- Fits at least one asymmetric satellite theme, or introduces a new theme with a plausible multi-decade bottleneck.
+- Avoids pure index duplication of the user's large Nasdaq technology core.
+
+Discovery output:
+
+- Add raw candidates to `research/discovery/candidates.csv`, not directly to `research/watchlist.csv`.
+- Promote a candidate to `research/watchlist.csv` only after a human or agent writes a concise thesis, identifies the evidence needed next, and records at least one primary source.
+- Reject or archive candidates quickly when the theme is weak, the instrument is not eligible, the public evidence is too thin, the company is a low-quality proxy, or the upside path is already fully dependent on heroic assumptions.
+- Summarize each discovery run with [templates/research-engine-run.md](templates/research-engine-run.md) when the run changes durable candidates, valuation states, freshness events, or cleanup state.
+
+Discovery status values are `new`, `incubating`, `promoted`, `rejected`, and `archived`.
+
+Watchlist status taxonomy:
+
+- `active_core_candidate`: highest-priority tradable candidate for regular allocation comparison.
+- `active_candidate`: tradable candidate that can receive capital if evidence and valuation are favorable.
+- `watch`: tradable or near-tradable candidate requiring active monitoring but more evidence or a better entry.
+- `research_only`: not allocation-ready; preserve research memory but do not buy without promotion.
+- `not_tradable`: future watch item that is not directly tradable under current policy.
+- `probation`: thesis or risk has deteriorated; do not add until the probation trigger is resolved.
+- `frozen`: no new buying due to unresolved evidence, policy, liquidity, or operational issue.
+- `removed`: no longer part of the active research universe, retained only for audit history.
+
+The active decision universe is `active_core_candidate`, `active_candidate`, and `watch`. `research_only`, `not_tradable`, `probation`, `frozen`, and `removed` are excluded from buy recommendations unless a decision explicitly promotes them with fresh evidence.
+
+### Freshness Monitor Loop
+
+Purpose: detect evidence changes between monthly decisions, so the system does not wait for the user to ask before realizing that the facts changed.
+
+Monitor at minimum:
+
+- SEC filings: 10-K, 10-Q, 20-F, 6-K, 8-K, S-1, F-1, 424B, DEF 14A, 13D, 13G, Form 4 when relevant, and material amendments.
+- Company IR: earnings releases, shareholder letters, presentations, transcripts when available, guidance, product launches, investor days, and press releases.
+- Capital structure: share issuance, warrants, convertibles, debt, covenants, shelf registrations, ATM programs, insider selling, and stock-based compensation.
+- Operating evidence: revenue growth, gross margin, operating margin, free cash flow, backlog, RPO, bookings, customer concentration, retention, capacity, launch cadence, production milestones, regulatory approvals, and contract awards.
+- Risk events: auditor change, internal controls, restatements, litigation, regulatory blocks, customer loss, technical failure, leadership departure, financing stress, or thesis-critical delays.
+- Market events: major price drawdown, valuation compression, unusual gap up, liquidity deterioration, or market cap crossing a threshold that changes expected return.
+
+Freshness output:
+
+- Add every material event to `research/freshness/events.csv`.
+- Set `severity` as `low`, `medium`, `high`, or `critical`.
+- Set `status` as `new`, `reviewed`, `stale`, `superseded`, or `ignored_with_reason`.
+- Critical events must be reviewed before buying. If a critical event cannot be understood, default to no trade or hold cash.
+- Update `research/quality-metrics.yml` with open critical/high events and stale valuation or thesis counts after each material research run.
+
+### Filing Review Protocol
+
+When a material filing appears, use [templates/filing-review.md](templates/filing-review.md). This applies especially to 10-K, 10-Q, S-1, F-1, 424B, earnings 8-K, financing 8-K, and any filing that changes dilution, debt, liquidity, guidance, customer concentration, or risk factors.
+
+Scientific filing review rules:
+
+- Read the primary filing or official shareholder letter. Do not rely only on news summaries, social media, quote APIs, or extracted metric tables.
+- Use XBRL/company-facts data as a structured index, but the filing text, footnotes, MD&A, liquidity section, risk factors, and subsequent events control the interpretation.
+- Compare against the latest stored thesis and the previous comparable period. A filing is useful only if it changes evidence, risk, valuation, or timing.
+- Separate accounting facts from analytical conclusions. The filing can say revenue grew; the analysis must decide whether quality, durability, margins, cash conversion, and dilution support the thesis.
+- Record source publication date, retrieval date, accession number or filing URL, and the exact filing period.
+- Update `research/freshness/events.csv` and `research/valuation-states.csv` when applicable. Add a new `research/company-analysis.yml` entry only when the conclusion should be shown as historical analysis on the dashboard.
+- Save completed material filing reviews under `research/filings/` and link the freshness event through `review_path`. If the filing is deliberately treated as immaterial, leave an auditable reason in `immaterial_reason`.
+
+### Valuation and Entry Loop
+
+Purpose: decide whether a good company is also buyable at a price that can plausibly serve the multi-decade asymmetric objective.
+
+The system must not reduce valuation to one ratio. Use a multi-lens state:
+
+- `broken_thesis`: price is irrelevant because evidence no longer supports the thesis.
+- `too_expensive`: strong company, but expected future return no longer fits the mission.
+- `fair`: reasonable but not unusually attractive versus current holdings and cash.
+- `attractive`: thesis intact and price offers a favorable long-term entry.
+- `dislocated`: thesis intact while market price appears unusually depressed by temporary or misunderstood factors.
+- `too_uncertain`: evidence is insufficient to distinguish cheap from broken.
+
+Required valuation considerations:
+
+- Market capitalization and enterprise value versus the plausible future profit pool.
+- Revenue growth, gross margin, operating leverage, and cash conversion quality.
+- Dilution-adjusted upside, including stock-based compensation, warrants, convertibles, ATM programs, and likely future financing.
+- Balance sheet survival: cash, debt, burn, runway, covenant risk, and financing access.
+- Unit economics and backlog/RPO quality when the business reports them.
+- Customer concentration and dependency on one budget cycle, launch provider, hyperscaler, regulator, or government program.
+- Historical drawdown and valuation compression, but only as context. A large drop is not enough; the thesis must remain intact.
+- Opportunity cost versus existing holdings and other active candidates.
+- What evidence would make the position a buy, add, hold, probation, trim, or sell.
+
+Valuation output:
+
+- Maintain `research/valuation-states.csv` for active and near-active candidates.
+- `price_attractiveness` should be a concise label such as `too_expensive`, `fair`, `attractive`, `dislocated`, `too_uncertain`, or `broken_thesis`.
+- Monthly decisions must cite the current valuation state or explain why it is stale and recomputed in the decision.
+- Use `scenario_path` when the valuation state depends on a detailed downside/base/upside scenario, dilution bridge, or other longer calculation that should remain auditable outside the CSV row.
+
+### Research Quality Gates and Metrics
+
+The system should measure whether it is ready to make a decision, not only whether it has many notes. A research process that cannot quantify freshness, coverage, and unresolved evidence should default to caution.
+
+Hard gates before a buy recommendation:
+
+- No open `critical` freshness event for the target symbol.
+- No open unreviewed material filing for the target symbol unless the decision explicitly explains why it is immaterial.
+- A current valuation state exists for the target symbol or is recomputed in the decision.
+- The latest thesis has not expired under the quality gates in `research/quality-metrics.yml`, or the decision refreshes it.
+- The recommendation can state why the company is both thesis-worthy and entry-worthy at the price basis used.
+- Cash, position sizing, and execution assumptions are derived from confirmed account files or explicitly provided broker information.
+
+Research engine health metrics:
+
+- `universe_scan_as_of`: latest date the public issuer universe was checked.
+- `active_symbols_with_current_valuation_state`: active watchlist or holding symbols with a non-stale valuation state.
+- `active_symbols_with_latest_filing_review`: active symbols whose latest material filing has been reviewed or marked immaterial.
+- `raw_discovery_candidates_open`: candidates still waiting for promote/reject/incubate action.
+- `open_critical_events` and `open_high_events`: unresolved material event risk.
+- `oldest_open_event_date`: oldest unresolved freshness event.
+- `stale_valuation_states_over_45_days`: valuation states older than the default review window.
+- `stale_theses_over_90_days`: company theses older than the default review window.
+
+Company quality indicators:
+
+- addressable profit pool and why the company can capture it;
+- bottleneck ownership, scarcity, network effects, technical edge, licenses, manufacturing capacity, or distribution leverage;
+- revenue growth, growth durability, gross margin, operating margin, and operating leverage;
+- cash conversion, free cash flow trajectory, burn, cash runway, debt, covenants, and financing access;
+- dilution, share count growth, stock-based compensation, warrants, convertibles, ATM programs, and shelf capacity;
+- backlog, RPO, bookings, orders, launch cadence, capacity, utilization, or equivalent operating indicators when relevant;
+- customer concentration, partner dependency, regulatory dependency, government budget dependency, and supplier dependency;
+- management execution quality, guidance credibility, governance, internal controls, auditor risk, and capital allocation behavior;
+- competitive intensity, substitute risk, technology roadmap risk, product-market fit, retention, and pricing power;
+- kill criteria that would prove the thesis is wrong.
+
+Entry quality indicators:
+
+- current market capitalization and enterprise value versus plausible long-term revenue, gross profit, operating profit, and free cash flow outcomes;
+- dilution-adjusted upside rather than headline market-cap upside;
+- price versus the latest evidence, not price versus an old narrative;
+- drawdown, volatility, 52-week range, all-time high, and valuation compression as context only;
+- scenario analysis with downside, base, and upside paths when enough evidence exists;
+- explicit distinction between `good company but too expensive`, `cheap because misunderstood`, and `cheap because broken`.
+
+Process quality indicators:
+
+- material-event detection latency;
+- time from material filing to completed filing review;
+- percentage of active symbols with current valuation state;
+- percentage of active symbols with current filing review;
+- candidate funnel quality: discovered, rejected, incubated, promoted, and later removed;
+- reasons for missed opportunities or false positives after postmortem;
+- amount of stale or duplicate research removed or archived during cleanup.
+
+### Monthly Allocation Loop
+
+The monthly decision compares all active candidates and holdings together. It must not simply buy the top-ranked name from a static watchlist.
+
+Allocation inputs:
+
+- confirmed cash and positions;
+- fresh prices and daily close snapshots;
+- open freshness events;
+- latest filing reviews;
+- latest valuation states;
+- current portfolio concentration by ticker and theme;
+- thesis strength, thesis delta, valuation state, risk state, and available cash;
+- whether new candidates deserve promotion, incubation, or rejection.
+
+Allocation outputs:
+
+- proposed exact share counts and estimated cash use;
+- a validity window tied to price and evidence freshness;
+- rationale for why new cash goes to the selected name or stays in cash;
+- explicit statement when a name is good but not buyable at the current price;
+- explicit statement when a name is cheap but evidence is too weak or the thesis may be broken.
 
 ## Freshness Rules
 
@@ -205,16 +475,17 @@ If a critical freshness check fails, the decision must default to no trade or ho
 4. Compute investable cash from confirmed cash and confirmed deposits only.
 5. Retrieve fresh prices for current holdings and active candidates.
 6. Retrieve fresh primary evidence for each active candidate.
-7. Update the watchlist status mentally for the current decision: `core_candidate`, `watch`, `probation`, `frozen`, or `removed`.
-8. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
-9. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, and funding runway.
-10. Decide one of: buy new position, add to existing position, hold cash, do nothing, trim, or exit.
-11. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
-12. State the validity window. If price moves materially, market closes, or new company-specific information appears, recompute.
-13. Save the proposed decision in `decisions/` if the user asks to persist it.
-14. Do not update `data/account/ledger.csv` until execution is confirmed.
-15. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
-16. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
+7. Check `research/quality-metrics.yml` and resolve or explicitly disclose open critical events, missing filing reviews, stale valuation states, and stale theses.
+8. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
+9. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
+10. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, and funding runway.
+11. Decide one of: buy new position, add to existing position, hold cash, do nothing, trim, or exit.
+12. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
+13. State the validity window. If price moves materially, market closes, or new company-specific information appears, recompute.
+14. Save the proposed decision in `decisions/` if the user asks to persist it.
+15. Do not update `data/account/ledger.csv` until execution is confirmed.
+16. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
+17. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
 
 ## Position Sizing Policy
 

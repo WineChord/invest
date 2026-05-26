@@ -1,0 +1,28 @@
+schema_version: 1
+as_of: 2026-05-26
+last_research_engine_run:
+decision_readiness:
+  status: not_ready
+  can_recommend_buys: false
+  reason: Initial scaffold only; no completed research-engine run has refreshed filings, valuation states, and quality metrics for a live allocation decision.
+coverage:
+  universe_scan_as_of: 2026-05-26
+  active_watchlist_symbols: 11
+  active_symbols_with_current_valuation_state: 0
+  active_symbols_missing_valuation_state: 11
+  active_symbols_with_latest_filing_review: 0
+  active_symbols_missing_latest_filing_review: 11
+  raw_discovery_candidates_open: 0
+freshness:
+  open_critical_events: 0
+  open_high_events: 0
+  oldest_open_event_date:
+  stale_valuation_states_over_45_days: 0
+  stale_theses_over_90_days: 0
+quality_gates:
+  critical_event_review_target_hours: 72
+  high_event_review_target_days: 7
+  valuation_state_max_age_days: 45
+  thesis_review_max_age_days: 90
+  discovery_scan_max_age_days: 31
+notes: Initial baseline files exist, but the research engine is intentionally marked not ready until a full discovery, filing, valuation, and quality-metrics run is completed for the next live allocation request.
