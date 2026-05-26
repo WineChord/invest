@@ -9,8 +9,9 @@
   --teal: #18a999;
   --market-red: #c94431;
   --market-green: #237a48;
+  --accent: #ba4937;
   --green: var(--market-green);
-  --coral: var(--market-red);
+  --coral: var(--accent);
   --gain: var(--market-red);
   --loss: var(--market-green);
   --buy: #2563eb;
@@ -330,6 +331,7 @@ h1 {
 }
 
 .dashboard-grid {
+  align-items: start;
   display: grid;
   gap: 1rem;
   grid-template-columns: minmax(0, 1fr) minmax(18rem, 23rem);
@@ -376,9 +378,9 @@ h1 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  min-height: 23.8rem;
+  display: grid;
+  min-height: 24.25rem;
   overflow: hidden;
-  padding-top: 3rem;
   position: relative;
 }
 
@@ -393,23 +395,41 @@ h1 {
   color: var(--muted);
   display: flex;
   font-size: 0.84rem;
-  inset: 0;
+  inset: 3.45rem 0 0;
   justify-content: center;
   position: absolute;
 }
 
-.chart-summary {
+.chart-control-layer {
   align-items: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.88)),
+    var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 0.85rem;
+  justify-content: space-between;
+  min-height: 3.45rem;
+  padding: 0.48rem 0.65rem;
+  z-index: 3;
+}
+
+.chart-summary {
+  align-items: start;
   background: transparent;
   border: 0;
-  display: inline-flex;
-  gap: 0.55rem;
-  left: 0.75rem;
+  display: grid;
+  gap: 0.22rem;
   min-width: 0;
   padding: 0;
-  position: absolute;
-  top: 0.7rem;
-  z-index: 3;
+}
+
+.chart-summary-main {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  min-width: 0;
 }
 
 .chart-summary span {
@@ -419,6 +439,26 @@ h1 {
 
 .chart-summary strong {
   color: var(--ink);
+}
+
+.chart-view-context {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+  min-width: 0;
+}
+
+.chart-view-context span {
+  background: rgba(238, 247, 244, 0.78);
+  border: 1px solid rgba(216, 227, 223, 0.78);
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.18rem 0.38rem;
+  white-space: nowrap;
 }
 
 .chart-summary-title {
@@ -435,14 +475,10 @@ h1 {
   white-space: nowrap;
 }
 
-.chart-summary-range {
-  background: var(--surface-strong);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--ink) !important;
-  font-weight: 900;
-  line-height: 1;
-  padding: 0.22rem 0.42rem;
+.chart-summary-total {
+  color: var(--muted);
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .chart-range-toolbar {
@@ -452,18 +488,19 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(18, 42, 35, 0.08);
   display: inline-flex;
+  flex: 0 0 auto;
   gap: 0.18rem;
-  max-width: calc(100% - 16rem);
+  max-width: min(100%, 19rem);
   overflow-x: auto;
   padding: 0.22rem;
-  position: absolute;
-  right: 0.65rem;
   scrollbar-width: none;
-  top: 0.52rem;
-  z-index: 3;
 }
 
 .chart-range-toolbar::-webkit-scrollbar {
+  display: none;
+}
+
+.chart-view-context::-webkit-scrollbar {
   display: none;
 }
 
@@ -662,6 +699,11 @@ h1 {
   box-shadow: 0 8px 22px rgba(18, 42, 35, 0.12);
   outline: none;
   transform: translateY(-1px);
+}
+
+.trade-event-button-unplotted {
+  border-style: dashed;
+  color: var(--muted);
 }
 
 .trade-event-button:focus-visible {
@@ -1479,31 +1521,43 @@ td span {
   }
 
   .chart-canvas-shell {
-    min-height: 23.6rem;
-    padding-top: 5.15rem;
+    min-height: 24.35rem;
   }
 
   .chart-canvas {
     height: 20rem;
   }
 
-  .chart-summary {
-    flex-wrap: wrap;
-    left: 0.65rem;
-    right: 0.65rem;
-    top: 0.55rem;
+  .chart-control-layer {
+    align-items: stretch;
+    display: grid;
+    gap: 0.45rem;
+    min-height: 5.75rem;
+    padding: 0.55rem 0.65rem;
   }
 
-  .chart-summary-range {
+  .chart-loading {
+    inset: 5.75rem 0 0;
+  }
+
+  .chart-summary-main {
+    gap: 0.5rem;
+  }
+
+  .chart-view-context {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .chart-deposit-context {
     display: none;
   }
 
   .chart-range-toolbar {
     justify-content: flex-start;
-    left: 0.65rem;
     max-width: none;
-    right: 0.65rem;
-    top: 2.8rem;
+    width: 100%;
   }
 
   .chart-hover-card,

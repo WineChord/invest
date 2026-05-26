@@ -107,6 +107,12 @@ const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
 });
 
+const shortDateFormatter = new Intl.DateTimeFormat("en-US", {
+  day: "numeric",
+  month: "short",
+  timeZone: "UTC",
+});
+
 const percentFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 1,
   minimumFractionDigits: 1,
@@ -1132,7 +1138,33 @@ function EquityChart({
     firstPoint === null || lastPoint === null
       ? null
       : chartReturnForPoints(firstPoint, lastPoint);
-  const chartTone = toneForSignedValue(chartReturnPct);
+  const visibleChartPoints = useMemo(
+    () => chartPoints.slice(firstVisibleIndexForRange(chartPoints, activeRange)),
+    [activeRange, chartPoints],
+  );
+  const visibleFirstPoint = visibleChartPoints[0] ?? firstPoint;
+  const visibleLastPoint = visibleChartPoints.at(-1) ?? lastPoint;
+  const rangeReturnPct =
+    visibleChartPoints.length < 2 ||
+    visibleFirstPoint === null ||
+    visibleLastPoint === null
+      ? chartReturnPct
+      : rangeReturnForPoints(visibleChartPoints);
+  const chartTone = toneForSignedValue(rangeReturnPct);
+  const depositReferencePoints = useMemo(
+    () =>
+      chartPoints
+        .filter(
+          (point): point is ChartPoint & { cumulativeDeposits: number } =>
+            point.cumulativeDeposits !== null,
+        )
+        .map((point) => ({
+          time: point.date as Time,
+          value: point.cumulativeDeposits,
+        })),
+    [chartPoints],
+  );
+  const hasDepositReference = depositReferencePoints.length >= 2;
   const pointByDate = useMemo(
     () => new Map(chartPoints.map((point) => [point.date, point])),
     [chartPoints],
@@ -1140,6 +1172,10 @@ function EquityChart({
   const markers = useMemo(
     () => buildTradeMarkers(events.filter(isTradeEvent)),
     [events],
+  );
+  const plottedMarkers = useMemo(
+    () => markers.filter((marker) => pointByDate.has(marker.date)),
+    [markers, pointByDate],
   );
   const markerById = useMemo(
     () => new Map(markers.map((marker) => [marker.id, marker])),
@@ -1153,6 +1189,14 @@ function EquityChart({
     selectedTradeMarkerId === null
       ? null
       : (markerById.get(selectedTradeMarkerId) ?? null);
+  const plottedVisibleTradeDayCount =
+    visibleFirstPoint === null || visibleLastPoint === null
+      ? 0
+      : plottedMarkers.filter(
+          (marker) =>
+            marker.date >= visibleFirstPoint.date &&
+            marker.date <= visibleLastPoint.date,
+        ).length;
 
   useEffect(() => {
     activeRangeRef.current = activeRange;
@@ -1193,6 +1237,7 @@ function EquityChart({
         AreaSeries,
         ColorType,
         CrosshairMode,
+        LineSeries,
         LineStyle,
         createChart,
         createSeriesMarkers,
@@ -1265,6 +1310,7 @@ function EquityChart({
             pinch: true,
           },
           localization: {
+            locale: "en-US",
             priceFormatter: (value: number) =>
               compactCurrencyFormatter.format(value),
           },
@@ -1298,9 +1344,21 @@ function EquityChart({
           })),
         );
 
+        if (hasDepositReference) {
+          const depositSeries = chart.addSeries(LineSeries, {
+            color: chartColors.deposit,
+            crosshairMarkerVisible: false,
+            lastValueVisible: false,
+            lineStyle: LineStyle.Dashed,
+            lineWidth: 1,
+            priceLineVisible: false,
+          });
+          depositSeries.setData(depositReferencePoints);
+        }
+
         createSeriesMarkers(
           areaSeries,
-          buildSeriesMarkers(markers, chartColors),
+          buildSeriesMarkers(plottedMarkers, chartColors),
           {
             autoScale: false,
           },
@@ -1355,7 +1413,11 @@ function EquityChart({
           chart.remove();
         };
       },
-    );
+    ).catch((error: unknown) => {
+      if (!disposed) {
+        console.error("Failed to render equity chart", error);
+      }
+    });
 
     return () => {
       disposed = true;
@@ -1365,11 +1427,14 @@ function EquityChart({
   }, [
     chartPoints,
     chartTone,
+    depositReferencePoints,
+    hasDepositReference,
     hasEquityCurve,
     markerByDate,
     markerById,
     markers,
     marketColorScheme,
+    plottedMarkers,
     pointByDate,
   ]);
 
@@ -1394,6 +1459,52 @@ function EquityChart({
           Latest equity is {formatCurrency(lastPoint.totalEquity)} and total
           return is {formatSignedPercent(chartReturnPct)}.
         </p>
+        <div className="chart-control-layer">
+          <div className="chart-summary" aria-label="Equity curve summary">
+            <div className="chart-summary-main">
+              <span className="chart-summary-title">Portfolio equity</span>
+              <span className="chart-summary-value">
+                <span>Latest</span>
+                <strong>{formatCurrency(lastPoint.totalEquity)}</strong>
+              </span>
+              <span className={`signed-value signed-value-${chartTone}`}>
+                Range {formatSignedPercent(rangeReturnPct)}
+              </span>
+              {activeRange === "ALL" ? null : (
+                <span className="chart-summary-total">
+                  Total {formatSignedPercent(chartReturnPct)}
+                </span>
+              )}
+            </div>
+            <div className="chart-view-context" aria-label="Visible chart view">
+              <span>
+                View {formatShortDate((visibleFirstPoint ?? firstPoint).date)} -{" "}
+                {formatShortDate((visibleLastPoint ?? lastPoint).date)}
+              </span>
+              <span>{visibleChartPoints.length} points</span>
+              <span>{plottedVisibleTradeDayCount} plotted event days</span>
+              {hasDepositReference ? (
+                <span className="chart-deposit-context">Dashed deposits</span>
+              ) : null}
+            </div>
+          </div>
+          <div className="chart-range-toolbar" aria-label="Chart time range">
+            {chartRangeOptions.map((range) => (
+              <button
+                className={
+                  activeRange === range
+                    ? "chart-range-button chart-range-button-active"
+                    : "chart-range-button"
+                }
+                key={range}
+                onClick={() => setActiveRange(range)}
+                type="button"
+              >
+                {range}
+              </button>
+            ))}
+          </div>
+        </div>
         <div
           ref={chartContainerRef}
           className="chart-canvas"
@@ -1406,33 +1517,6 @@ function EquityChart({
             Loading chart
           </div>
         )}
-        <div className="chart-summary" aria-label="Equity curve summary">
-          <span className="chart-summary-title">Portfolio equity</span>
-          <span className="chart-summary-value">
-            <span>Latest</span>
-            <strong>{formatCurrency(lastPoint.totalEquity)}</strong>
-          </span>
-          <span className={`signed-value signed-value-${chartTone}`}>
-            {formatSignedPercent(chartReturnPct)}
-          </span>
-          <span className="chart-summary-range">{activeRange}</span>
-        </div>
-        <div className="chart-range-toolbar" aria-label="Chart time range">
-          {chartRangeOptions.map((range) => (
-            <button
-              className={
-                activeRange === range
-                  ? "chart-range-button chart-range-button-active"
-                  : "chart-range-button"
-              }
-              key={range}
-              onClick={() => setActiveRange(range)}
-              type="button"
-            >
-              {range}
-            </button>
-          ))}
-        </div>
         {crosshairDetail === null ? null : (
           <CrosshairTooltip detail={crosshairDetail} />
         )}
@@ -1447,11 +1531,23 @@ function EquityChart({
             <span>Events</span>
             {markers.map((marker) => (
               <button
-                aria-label={tradeMarkerAriaLabel(marker)}
+                title={
+                  pointByDate.has(marker.date)
+                    ? undefined
+                    : "Not plotted: no equity snapshot exists for this date."
+                }
+                aria-label={tradeMarkerAriaLabel(
+                  marker,
+                  pointByDate.has(marker.date),
+                )}
                 className={`trade-event-button trade-event-button-${marker.tone} ${
                   selectedTradeMarkerId === marker.id
                     ? "trade-event-button-active"
                     : ""
+                } ${
+                  pointByDate.has(marker.date)
+                    ? ""
+                    : "trade-event-button-unplotted"
                 }`}
                 key={marker.id}
                 onClick={() =>
@@ -1539,6 +1635,36 @@ function chartReturnForPoints(
   );
 }
 
+function rangeReturnForPoints(points: ChartPoint[]): number | null {
+  const periodReturns = points
+    .slice(1)
+    .map((point) => point.periodReturnPct)
+    .filter((value): value is number => value !== null);
+
+  if (periodReturns.length > 0) {
+    const compounded = periodReturns.reduce(
+      (nav, periodReturnPct) => nav * (1 + periodReturnPct / 100),
+      1,
+    );
+    return (compounded - 1) * 100;
+  }
+
+  const firstPoint = points[0];
+  const lastPoint = points.at(-1);
+  if (firstPoint === undefined || lastPoint === undefined) {
+    return null;
+  }
+  if (firstPoint.totalEquity === 0) {
+    return null;
+  }
+
+  return (
+    ((lastPoint.totalEquity - firstPoint.totalEquity) /
+      firstPoint.totalEquity) *
+    100
+  );
+}
+
 function applyChartRange(
   chart: IChartApi,
   points: ChartPoint[],
@@ -1552,16 +1678,27 @@ function applyChartRange(
     return;
   }
 
+  const from = firstVisibleIndexForRange(points, range);
+  chart.timeScale().setVisibleLogicalRange({
+    from: Math.max(-chartVisibleLeftPadding, from - chartVisibleLeftPadding),
+    to: points.length - chartVisibleRightPadding,
+  });
+}
+
+function firstVisibleIndexForRange(
+  points: ChartPoint[],
+  range: ChartRange,
+): number {
+  if (range === "ALL" || points.length <= 2) {
+    return 0;
+  }
+
   const lastPoint = points[points.length - 1];
   const cutoff = chartRangeCutoff(lastPoint.date, range);
   const firstVisibleIndex = points.findIndex(
     (point) => Date.parse(point.date) >= cutoff,
   );
-  const from = firstVisibleIndex === -1 ? 0 : firstVisibleIndex;
-  chart.timeScale().setVisibleLogicalRange({
-    from: Math.max(-chartVisibleLeftPadding, from - chartVisibleLeftPadding),
-    to: points.length - chartVisibleRightPadding,
-  });
+  return firstVisibleIndex === -1 ? 0 : firstVisibleIndex;
 }
 
 function chartRangeCutoff(
@@ -1583,6 +1720,11 @@ function chartRangeCutoff(
     "5Y": 1827,
   };
   return lastTime - dayCounts[range] * 24 * 60 * 60 * 1000;
+}
+
+function formatShortDate(date: string): string {
+  const timestamp = Date.parse(`${date}T00:00:00Z`);
+  return Number.isNaN(timestamp) ? date : shortDateFormatter.format(timestamp);
 }
 
 function buildTradeMarkers(events: LedgerEvent[]): TradeMarker[] {
@@ -1620,6 +1762,7 @@ interface ChartColors {
   border: string;
   buy: string;
   crosshair: string;
+  deposit: string;
   grid: string;
   ink: string;
   mixed: string;
@@ -1642,6 +1785,7 @@ function readChartColors(
     border: readCssVariable(element, "--border", "#d8e3df"),
     buy: readCssVariable(element, "--buy", "#2563eb"),
     crosshair: "rgba(23, 32, 29, 0.42)",
+    deposit: "rgba(99, 113, 107, 0.62)",
     grid: "rgba(99, 113, 107, 0.16)",
     ink: readCssVariable(element, "--ink", "#17201d"),
     mixed: readCssVariable(element, "--indigo", "#4f57c8"),
@@ -1706,7 +1850,7 @@ function buildSeriesMarkers(
         : marker.tone === "sell"
           ? "arrowDown"
           : "circle",
-    size: 1.35,
+    size: 1,
     text: marker.label,
     time: marker.date as Time,
   }));
@@ -1808,14 +1952,17 @@ function chartTimeToDateString(time: Time | undefined): string | null {
   ).padStart(2, "0")}`;
 }
 
-function tradeMarkerAriaLabel(marker: TradeMarker): string {
+function tradeMarkerAriaLabel(marker: TradeMarker, isPlotted: boolean): string {
   const summary = marker.trades
     .map(
       (trade) =>
         `${trade.side.toUpperCase()} ${trade.quantity} ${trade.symbol} at ${formatCurrency(trade.averagePrice)}`,
     )
     .join(", ");
-  return `${marker.date}: ${summary}`;
+  const plotStatus = isPlotted
+    ? ""
+    : " Not plotted because no equity snapshot exists for this date.";
+  return `${marker.date}: ${summary}.${plotStatus}`;
 }
 
 function CrosshairTooltip({ detail }: { detail: CrosshairDetail }) {
