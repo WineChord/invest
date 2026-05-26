@@ -62,6 +62,18 @@ button {
   cursor: pointer;
 }
 
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .invest-shell {
   min-height: 100vh;
   background:
@@ -364,39 +376,29 @@ h1 {
   --chart-tone: var(--loss);
 }
 
-.chart-wrap svg {
-  display: block;
-  height: auto;
+.chart-canvas-shell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-height: 22.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-canvas {
+  height: 22.5rem;
+  position: relative;
   width: 100%;
 }
 
-.chart-grid {
-  stroke: #dae5e1;
-  stroke-width: 1;
-}
-
-.chart-label,
-.chart-date {
-  fill: var(--muted);
-  font-size: 0.78rem;
-}
-
-.chart-area {
-  fill: url(#equity-fill);
-}
-
-.chart-line {
-  fill: none;
-  stroke: var(--chart-tone);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 4;
-}
-
-.chart-dot {
-  fill: white;
-  stroke: var(--chart-tone);
-  stroke-width: 3;
+.chart-loading {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.84rem;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
 }
 
 .chart-summary {
@@ -422,176 +424,229 @@ h1 {
   color: var(--ink);
 }
 
-.trade-marker {
+.chart-range-toolbar {
   align-items: center;
-  border: 2px solid white;
-  border-radius: 999px;
-  box-shadow:
-    0 10px 22px rgba(18, 42, 35, 0.18),
-    0 0 0 1px rgba(23, 32, 29, 0.1);
-  color: white;
-  display: flex;
-  font-size: 0.72rem;
-  font-weight: 900;
-  height: 1.65rem;
-  justify-content: center;
-  left: var(--marker-left);
-  line-height: 1;
-  padding: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(18, 42, 35, 0.1);
+  display: inline-flex;
+  gap: 0.18rem;
+  padding: 0.22rem;
   position: absolute;
-  top: var(--marker-top);
-  transform: translate(-50%, -50%);
-  transition:
-    filter 160ms ease,
-    transform 160ms ease;
-  width: 1.65rem;
+  right: 0.35rem;
+  top: 0.35rem;
   z-index: 3;
 }
 
-.trade-marker::before {
-  background: currentColor;
-  bottom: -1.05rem;
-  content: "";
-  height: 1rem;
-  opacity: 0.36;
-  position: absolute;
-  width: 2px;
+.chart-range-button {
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1;
+  min-height: 1.65rem;
+  min-width: 2.1rem;
+  padding: 0.35rem 0.45rem;
 }
 
-.trade-marker-buy {
-  background: var(--buy);
-}
-
-.trade-marker-sell {
-  background: var(--sell);
-}
-
-.trade-marker-mixed {
-  background: var(--indigo);
-}
-
-.trade-marker:hover,
-.trade-marker:focus-visible,
-.trade-marker:focus {
-  filter: saturate(1.12);
+.chart-range-button:hover,
+.chart-range-button:focus-visible,
+.chart-range-button-active {
+  background: var(--ink);
+  color: white;
   outline: none;
-  transform: translate(-50%, -50%) scale(1.12);
 }
 
-.trade-tooltip {
+.chart-range-button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(24, 169, 153, 0.28);
+}
+
+.chart-hover-card {
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 18px 38px rgba(18, 42, 35, 0.16);
   color: var(--ink);
-  cursor: default;
-  display: none;
-  left: 50%;
+  display: grid;
+  gap: 0.48rem;
+  left: var(--tooltip-left);
   max-width: min(22rem, calc(100vw - 2rem));
   min-width: min(17rem, calc(100vw - 2rem));
-  opacity: 0;
-  padding: 0.55rem;
+  padding: 0.65rem;
   pointer-events: none;
   position: absolute;
-  text-align: left;
-  top: -0.75rem;
-  transform: translate(-50%, -100%) translateY(0.35rem);
+  top: var(--tooltip-top);
+  z-index: 4;
+}
+
+.chart-hover-card-left {
+  transform: translate(0.75rem, -50%);
+}
+
+.chart-hover-card-right {
+  transform: translate(calc(-100% - 0.75rem), -50%);
+}
+
+.chart-hover-topline {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.chart-hover-topline span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.chart-hover-topline strong {
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.chart-hover-metrics {
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+.chart-hover-metrics div {
+  min-width: 0;
+}
+
+.chart-hover-metrics dt,
+.chart-hover-metrics dd {
+  margin: 0;
+}
+
+.chart-hover-metrics dt {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.chart-hover-metrics dd {
+  font-size: 0.8rem;
+  font-weight: 850;
+  margin-top: 0.12rem;
+  overflow-wrap: anywhere;
+}
+
+.chart-hover-trades,
+.trade-detail-card {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.chart-footer-row {
+  align-items: center;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: space-between;
+  margin-top: 0.65rem;
+  min-width: 0;
+}
+
+.trade-event-rail {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 0.46rem;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 0.1rem;
+}
+
+.chart-attribution {
+  color: var(--muted);
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.chart-attribution:hover,
+.chart-attribution:focus-visible {
+  color: var(--ink);
+  outline: none;
+}
+
+.trade-event-rail > span {
+  color: var(--muted);
+  flex: 0 0 auto;
+  font-size: 0.76rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.trade-event-button {
+  align-items: center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--ink);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 0.76rem;
+  font-weight: 800;
+  gap: 0.32rem;
+  min-height: 2rem;
+  padding: 0.28rem 0.56rem 0.28rem 0.34rem;
   transition:
-    opacity 150ms ease,
-    transform 150ms ease;
-  z-index: 5;
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
-.trade-tooltip::after {
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  bottom: -0.32rem;
-  content: "";
-  height: 0.62rem;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%) rotate(45deg);
-  width: 0.62rem;
+.trade-marker-label {
+  align-items: center;
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  font-size: 0.7rem;
+  font-weight: 900;
+  height: 1.28rem;
+  justify-content: center;
+  width: 1.28rem;
 }
 
-.trade-marker:hover .trade-tooltip,
-.trade-marker:focus .trade-tooltip,
-.trade-marker:focus-visible .trade-tooltip {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(-50%, -100%) translateY(0);
+.trade-event-button-buy .trade-marker-label {
+  background: var(--buy);
 }
 
-.trade-marker-edge-left .trade-tooltip {
-  left: -0.5rem;
-  transform: translate(0, -100%) translateY(0.35rem);
+.trade-event-button-sell .trade-marker-label {
+  background: var(--sell);
 }
 
-.trade-marker-edge-left:hover .trade-tooltip,
-.trade-marker-edge-left:focus .trade-tooltip,
-.trade-marker-edge-left:focus-visible .trade-tooltip {
-  transform: translate(0, -100%) translateY(0);
+.trade-event-button-mixed .trade-marker-label {
+  background: var(--indigo);
 }
 
-.trade-marker-edge-left .trade-tooltip::after {
-  left: 1.35rem;
+.trade-event-button:hover,
+.trade-event-button:focus-visible,
+.trade-event-button-active {
+  border-color: var(--chart-tone);
+  box-shadow: 0 8px 22px rgba(18, 42, 35, 0.12);
+  outline: none;
+  transform: translateY(-1px);
 }
 
-.trade-marker-edge-right .trade-tooltip {
-  left: auto;
-  right: -0.5rem;
-  transform: translate(0, -100%) translateY(0.35rem);
+.trade-event-button:focus-visible {
+  outline: 3px solid rgba(24, 169, 153, 0.25);
+  outline-offset: 2px;
 }
 
-.trade-marker-edge-right:hover .trade-tooltip,
-.trade-marker-edge-right:focus .trade-tooltip,
-.trade-marker-edge-right:focus-visible .trade-tooltip {
-  transform: translate(0, -100%) translateY(0);
-}
-
-.trade-marker-edge-right .trade-tooltip::after {
-  left: auto;
-  right: 1rem;
-}
-
-.trade-marker-tooltip-below .trade-tooltip {
-  top: calc(100% + 0.85rem);
-  transform: translate(-50%, 0.35rem);
-}
-
-.trade-marker-tooltip-below:hover .trade-tooltip,
-.trade-marker-tooltip-below:focus .trade-tooltip,
-.trade-marker-tooltip-below:focus-visible .trade-tooltip {
-  transform: translate(-50%, 0);
-}
-
-.trade-marker-tooltip-below .trade-tooltip::after {
-  bottom: auto;
-  top: -0.35rem;
-}
-
-.trade-marker-edge-left.trade-marker-tooltip-below .trade-tooltip {
-  transform: translate(0, 0.35rem);
-}
-
-.trade-marker-edge-left.trade-marker-tooltip-below:hover .trade-tooltip,
-.trade-marker-edge-left.trade-marker-tooltip-below:focus .trade-tooltip,
-.trade-marker-edge-left.trade-marker-tooltip-below:focus-visible
-  .trade-tooltip {
-  transform: translate(0, 0);
-}
-
-.trade-marker-edge-right.trade-marker-tooltip-below .trade-tooltip {
-  transform: translate(0, 0.35rem);
-}
-
-.trade-marker-edge-right.trade-marker-tooltip-below:hover .trade-tooltip,
-.trade-marker-edge-right.trade-marker-tooltip-below:focus .trade-tooltip,
-.trade-marker-edge-right.trade-marker-tooltip-below:focus-visible
-  .trade-tooltip {
-  transform: translate(0, 0);
+.trade-detail-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 0.65rem;
+  padding: 0.65rem;
 }
 
 .trade-tooltip-topline {
@@ -1034,10 +1089,50 @@ td span {
     overflow-wrap: anywhere;
   }
 
-  .trade-tooltip {
-    max-width: calc(100vw - 3rem);
-    min-width: min(18rem, calc(100vw - 3rem));
+  .chart-canvas-shell {
+    min-height: 20rem;
+  }
+
+  .chart-canvas {
+    height: 20rem;
+  }
+
+  .chart-summary {
+    left: 0.45rem;
+    top: 0.45rem;
+  }
+
+  .chart-range-toolbar {
+    left: 0.45rem;
+    right: auto;
+    top: 3.05rem;
+  }
+
+  .chart-hover-card,
+  .chart-hover-card-left,
+  .chart-hover-card-right {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    max-width: none;
+    min-width: 0;
     padding: 0.68rem;
+    right: 0.75rem;
+    top: auto;
+    transform: none;
+  }
+
+  .chart-hover-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chart-footer-row {
+    align-items: stretch;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .chart-attribution {
+    justify-self: end;
   }
 
   .trade-tooltip-row {

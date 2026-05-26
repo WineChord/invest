@@ -383,6 +383,21 @@ Required dashboard surfaces:
 - active research/watchlist table;
 - open-source repository link.
 
+The equity curve uses TradingView Lightweight Charts as a client-side chart engine. The engine supplies chart interaction only: time and price axes, crosshair behavior, viewport range controls, touch gestures, and ledger event markers. It must not be treated as a data provider. Real points still come from committed account files, and demo points still come only from browser-only fixtures. Keep TradingView attribution visible through either the built-in mark or a restrained public attribution link near the chart.
+
+TradingView-grade chart benchmark, captured on 2026-05-26 from official TradingView and Lightweight Charts documentation:
+
+- Reference sources: TradingView Lightweight Charts customization guide (`https://tradingview.github.io/lightweight-charts/tutorials/customization/intro`), crosshair guide (`https://tradingview.github.io/lightweight-charts/tutorials/customization/crosshair`), series markers guide (`https://tradingview.github.io/lightweight-charts/tutorials/how_to/series-markers`), SeriesMarkersOptions API (`https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkersOptions`), and TradingView product comparison explaining that Lightweight Charts contains no market data (`https://www.tradingview.com/charting-library-docs/latest/getting_started/product-comparison/`).
+- Use a real financial chart engine for the plot area rather than hand-drawn SVG paths once the chart needs professional interaction.
+- Preserve the canonical financial chart structure: bottom time scale, right price scale, visible latest value line when useful, subtle grid, readable axis labels, and a crosshair that exposes exact values.
+- Use crosshair behavior for exploration, not giant hover blocks. The crosshair detail card should stay compact, follow the pointer or tap target, and show date, equity, total return, period return, deposits, and same-day operation detail when available.
+- Use series markers for dated ledger events. Markers attach to the time series by date and should auto-scale with the chart so they are not clipped at the plot edge.
+- Event markers must not distort the portfolio value axis. If marker auto-scaling creates misleading price ranges, keep the price scale fit to equity values and expose operation detail through compact markers, event chips, and drill-down cards.
+- Provide fast viewport controls for common horizons: `1M`, `3M`, `6M`, `YTD`, and `ALL`. Range changes should update the existing chart viewport instead of recreating the whole surface when practical.
+- Support mouse, trackpad, and touch exploration through pan, zoom, crosshair, and tap/click event selection. Mobile must not require horizontal page scrolling to inspect the chart.
+- Keep operation drill-down separate from market movement color semantics. Buy, sell, and mixed-operation markers use operation colors; returns and profit/loss use the selected market color convention.
+- Keep chart capability honest. This dashboard can show historical operations, performance, and research context, but it must not provide order tickets, broker login, broker credential storage, or execution controls.
+
 Dashboard evolution rules:
 
 - Every dashboard surface must have a clear committed data source or an explicitly labeled browser-only demo source.

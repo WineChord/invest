@@ -12,8 +12,14 @@ import {
   TrendingUp,
   Wallet,
 } from "lucide-react";
+import type {
+  IChartApi,
+  MouseEventParams,
+  SeriesMarker,
+  Time,
+} from "lightweight-charts";
 import type { CSSProperties, ReactNode } from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   EquityPoint,
   LedgerEvent,
@@ -44,12 +50,32 @@ type ValueTone = "gain" | "loss" | "neutral";
 interface TradeMarker {
   id: string;
   date: string;
-  left: number;
-  top: number;
   tone: "buy" | "sell" | "mixed";
   label: string;
   trades: LedgerEvent[];
 }
+
+interface ChartPoint {
+  date: string;
+  totalEquity: number;
+  cumulativeDeposits: number | null;
+  totalReturnPct: number | null;
+  periodReturnPct: number | null;
+}
+
+interface CrosshairDetail {
+  date: string;
+  left: number;
+  top: number;
+  placement: "left" | "right";
+  totalEquity: number;
+  cumulativeDeposits: number | null;
+  totalReturnPct: number | null;
+  periodReturnPct: number | null;
+  marker: TradeMarker | null;
+}
+
+type ChartRange = "1M" | "3M" | "6M" | "YTD" | "ALL";
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
@@ -71,6 +97,9 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
 
 const marketColorStorageKey = "winechord-invest-market-colors";
 const defaultMarketColorScheme: MarketColorScheme = "mainland";
+const chartRangeOptions: ChartRange[] = ["1M", "3M", "6M", "YTD", "ALL"];
+const chartAttributionUrl =
+  "https://www.tradingview.com/?utm_source=winechord-invest";
 
 function readInitialMarketColorScheme(): MarketColorScheme {
   if (typeof window === "undefined") {
@@ -735,6 +764,7 @@ export default function InvestDashboard({ data }: Props) {
             <EquityChart
               points={activeData.equityCurve}
               events={activeData.ledger}
+              marketColorScheme={marketColorScheme}
             />
           </Panel>
 
@@ -852,11 +882,272 @@ function BalanceRow({ label, value }: { label: string; value: string }) {
 function EquityChart({
   points,
   events,
+  marketColorScheme,
 }: {
   points: EquityPoint[];
   events: LedgerEvent[];
+  marketColorScheme: MarketColorScheme;
 }) {
-  if (points.length < 2) {
+  const chartContainerRef = useRef<HTMLDivElement | null>(null);
+  const chartApiRef = useRef<IChartApi | null>(null);
+  const activeRangeRef = useRef<ChartRange>("ALL");
+  const [chartReady, setChartReady] = useState(false);
+  const [crosshairDetail, setCrosshairDetail] =
+    useState<CrosshairDetail | null>(null);
+  const [selectedTradeMarkerId, setSelectedTradeMarkerId] = useState<
+    string | null
+  >(null);
+  const [activeRange, setActiveRange] = useState<ChartRange>("ALL");
+  const hasEquityCurve = points.length >= 2;
+  const chartPoints = useMemo(() => buildChartPoints(points), [points]);
+  const firstPoint = chartPoints[0] ?? null;
+  const lastPoint = chartPoints.at(-1) ?? null;
+  const chartReturnPct =
+    firstPoint === null || lastPoint === null
+      ? null
+      : chartReturnForPoints(firstPoint, lastPoint);
+  const chartTone = toneForSignedValue(chartReturnPct);
+  const pointByDate = useMemo(
+    () => new Map(chartPoints.map((point) => [point.date, point])),
+    [chartPoints],
+  );
+  const markers = useMemo(
+    () => buildTradeMarkers(events.filter(isTradeEvent)),
+    [events],
+  );
+  const markerById = useMemo(
+    () => new Map(markers.map((marker) => [marker.id, marker])),
+    [markers],
+  );
+  const markerByDate = useMemo(
+    () => new Map(markers.map((marker) => [marker.date, marker])),
+    [markers],
+  );
+  const selectedTradeMarker =
+    selectedTradeMarkerId === null
+      ? null
+      : (markerById.get(selectedTradeMarkerId) ?? null);
+
+  useEffect(() => {
+    activeRangeRef.current = activeRange;
+    if (chartApiRef.current !== null) {
+      applyChartRange(chartApiRef.current, chartPoints, activeRange);
+    }
+  }, [activeRange, chartPoints]);
+
+  useEffect(() => {
+    setSelectedTradeMarkerId((currentMarkerId) =>
+      currentMarkerId !== null && markerById.has(currentMarkerId)
+        ? currentMarkerId
+        : null,
+    );
+  }, [markerById]);
+
+  useEffect(() => {
+    if (!hasEquityCurve) {
+      chartApiRef.current = null;
+      setChartReady(false);
+      setCrosshairDetail(null);
+      return;
+    }
+
+    const container = chartContainerRef.current;
+    if (container === null) {
+      return;
+    }
+
+    let disposed = false;
+    let cleanupChart: (() => void) | null = null;
+    setChartReady(false);
+    setCrosshairDetail(null);
+    container.replaceChildren();
+
+    void import("lightweight-charts").then(
+      ({
+        AreaSeries,
+        ColorType,
+        CrosshairMode,
+        LineStyle,
+        createChart,
+        createSeriesMarkers,
+      }) => {
+        if (disposed) {
+          return;
+        }
+
+        const chartColors = readChartColors(container, chartTone);
+        const chart = createChart(container, {
+          autoSize: true,
+          height: 360,
+          layout: {
+            attributionLogo: false,
+            background: {
+              color: chartColors.background,
+              type: ColorType.Solid,
+            },
+            fontFamily:
+              "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+            textColor: chartColors.muted,
+          },
+          grid: {
+            horzLines: { color: chartColors.grid },
+            vertLines: { color: chartColors.grid },
+          },
+          rightPriceScale: {
+            autoScale: true,
+            borderColor: chartColors.border,
+            scaleMargins: {
+              bottom: 0.14,
+              top: 0.16,
+            },
+            visible: true,
+          },
+          timeScale: {
+            borderColor: chartColors.border,
+            fixLeftEdge: true,
+            fixRightEdge: false,
+            lockVisibleTimeRangeOnResize: true,
+            rightOffset: 2,
+            secondsVisible: false,
+            timeVisible: false,
+          },
+          crosshair: {
+            mode: CrosshairMode.Magnet,
+            horzLine: {
+              color: chartColors.crosshair,
+              labelBackgroundColor: chartColors.ink,
+              style: LineStyle.Dashed,
+              width: 1,
+            },
+            vertLine: {
+              color: chartColors.crosshair,
+              labelBackgroundColor: chartColors.ink,
+              style: LineStyle.Dashed,
+              width: 1,
+            },
+          },
+          handleScroll: {
+            horzTouchDrag: true,
+            mouseWheel: true,
+            pressedMouseMove: true,
+            vertTouchDrag: false,
+          },
+          handleScale: {
+            axisDoubleClickReset: true,
+            axisPressedMouseMove: true,
+            mouseWheel: true,
+            pinch: true,
+          },
+          localization: {
+            priceFormatter: (value: number) =>
+              compactCurrencyFormatter.format(value),
+          },
+        });
+
+        const areaSeries = chart.addSeries(AreaSeries, {
+          bottomColor: transparentize(chartColors.tone, 0),
+          crosshairMarkerBorderColor: chartColors.surface,
+          crosshairMarkerBorderWidth: 2,
+          crosshairMarkerRadius: 5,
+          crosshairMarkerVisible: true,
+          crosshairMarkerBackgroundColor: chartColors.tone,
+          lastValueVisible: true,
+          lineColor: chartColors.tone,
+          lineWidth: 3,
+          priceFormat: {
+            minMove: 0.01,
+            precision: 2,
+            type: "price",
+          },
+          priceLineColor: chartColors.tone,
+          priceLineStyle: LineStyle.Dotted,
+          priceLineVisible: true,
+          topColor: transparentize(chartColors.tone, 0.22),
+        });
+
+        areaSeries.setData(
+          chartPoints.map((point) => ({
+            time: point.date as Time,
+            value: point.totalEquity,
+          })),
+        );
+
+        createSeriesMarkers(
+          areaSeries,
+          buildSeriesMarkers(markers, chartColors),
+          {
+            autoScale: false,
+          },
+        );
+
+        const detailFromParams = (params: MouseEventParams<Time>) =>
+          buildCrosshairDetail({
+            markerByDate,
+            markerById,
+            params,
+            pointByDate,
+            seriesData: params.seriesData.get(areaSeries),
+            viewportHeight: container.clientHeight,
+            viewportWidth: container.clientWidth,
+          });
+
+        const handleCrosshairMove = (params: MouseEventParams<Time>) => {
+          setCrosshairDetail(detailFromParams(params));
+        };
+
+        const handleClick = (params: MouseEventParams<Time>) => {
+          const detail = detailFromParams(params);
+          if (detail !== null) {
+            setCrosshairDetail(detail);
+          }
+
+          const marker = markerFromParams(params, markerByDate, markerById);
+          if (marker !== null) {
+            setSelectedTradeMarkerId(marker.id);
+          }
+        };
+
+        chartApiRef.current = chart;
+        const applyCurrentRange = () =>
+          applyChartRange(chart, chartPoints, activeRangeRef.current);
+        applyCurrentRange();
+        const rangeFrame = window.requestAnimationFrame(applyCurrentRange);
+        const rangeTimer = window.setTimeout(applyCurrentRange, 160);
+
+        chart.subscribeCrosshairMove(handleCrosshairMove);
+        chart.subscribeClick(handleClick);
+        setChartReady(true);
+
+        cleanupChart = () => {
+          window.cancelAnimationFrame(rangeFrame);
+          window.clearTimeout(rangeTimer);
+          chart.unsubscribeCrosshairMove(handleCrosshairMove);
+          chart.unsubscribeClick(handleClick);
+          if (chartApiRef.current === chart) {
+            chartApiRef.current = null;
+          }
+          chart.remove();
+        };
+      },
+    );
+
+    return () => {
+      disposed = true;
+      cleanupChart?.();
+      container.replaceChildren();
+    };
+  }, [
+    chartPoints,
+    chartTone,
+    hasEquityCurve,
+    markerByDate,
+    markerById,
+    markers,
+    marketColorScheme,
+    pointByDate,
+  ]);
+
+  if (!hasEquityCurve || firstPoint === null || lastPoint === null) {
     return (
       <div className="empty-chart">
         <LineChart size={40} />
@@ -869,138 +1160,99 @@ function EquityChart({
     );
   }
 
-  const width = 760;
-  const height = 280;
-  const padding = 32;
-  const values = points.map((point) => point.totalEquity);
-  const min = Math.min(...values) * 0.96;
-  const max = Math.max(...values) * 1.04;
-  const range = Math.max(max - min, 1);
-  const firstPoint = points[0];
-  const lastPoint = points[points.length - 1];
-  const chartReturnPct =
-    lastPoint.cumulativeDeposits !== null && lastPoint.cumulativeDeposits > 0
-      ? ((lastPoint.totalEquity - lastPoint.cumulativeDeposits) /
-          lastPoint.cumulativeDeposits) *
-        100
-      : lastPoint.totalEquity === firstPoint.totalEquity
-        ? 0
-        : ((lastPoint.totalEquity - firstPoint.totalEquity) /
-            firstPoint.totalEquity) *
-          100;
-  const chartTone = toneForSignedValue(chartReturnPct);
-  const tradeEvents = events.filter(isTradeEvent);
-  const pointTimes = points.map((point) => Date.parse(point.date));
-  const tradeTimes = tradeEvents
-    .map((event) => Date.parse(event.tradeDate || event.createdAt))
-    .filter(Number.isFinite);
-  const minTime = Math.min(...pointTimes, ...tradeTimes);
-  const maxTime = Math.max(...pointTimes, ...tradeTimes);
-  const timeRange = Math.max(maxTime - minTime, 1);
-  const toX = (date: string) =>
-    padding +
-    ((Date.parse(date) - minTime) / timeRange) * (width - padding * 2);
-  const toY = (value: number) =>
-    height - padding - ((value - min) / range) * (height - padding * 2);
-  const path = points
-    .map(
-      (point, index) =>
-        `${index === 0 ? "M" : "L"} ${toX(point.date)} ${toY(point.totalEquity)}`,
-    )
-    .join(" ");
-  const areaPath = `${path} L ${toX(lastPoint.date)} ${height - padding} L ${toX(firstPoint.date)} ${height - padding} Z`;
-  const gridValues = [0.25, 0.5, 0.75].map((ratio) => min + range * ratio);
-  const dateLabelIndexes = buildDateLabelIndexes(points, toX);
-  const markers = buildTradeMarkers({
-    events: tradeEvents,
-    height,
-    points,
-    toX,
-    toY,
-    width,
-  });
-
   return (
     <div className={`chart-wrap chart-wrap-${chartTone}`}>
-      <svg
-        viewBox={`0 0 ${width} ${height}`}
-        role="img"
-        aria-label="Portfolio equity curve"
-      >
-        <defs>
-          <linearGradient id="equity-fill" x1="0" x2="0" y1="0" y2="1">
-            <stop
-              offset="0%"
-              stopColor="var(--chart-tone)"
-              stopOpacity="0.24"
-            />
-            <stop offset="100%" stopColor="var(--chart-tone)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        {gridValues.map((value) => (
-          <g key={value}>
-            <line
-              className="chart-grid"
-              x1={padding}
-              x2={width - padding}
-              y1={toY(value)}
-              y2={toY(value)}
-            />
-            <text className="chart-label" x={padding} y={toY(value) - 6}>
-              {compactCurrencyFormatter.format(value)}
-            </text>
-          </g>
-        ))}
-        <path className="chart-area" d={areaPath} />
-        <path className="chart-line" d={path} />
-        {points.map((point, index) => (
-          <g key={point.date}>
-            <circle
-              className="chart-dot"
-              cx={toX(point.date)}
-              cy={toY(point.totalEquity)}
-              r="5"
-            />
-            {dateLabelIndexes.has(index) ? (
-              <text
-                className="chart-date"
-                x={toX(point.date)}
-                y={height - 8}
-                textAnchor="middle"
-              >
-                {point.date.slice(5)}
-              </text>
-            ) : null}
-          </g>
-        ))}
-      </svg>
-      <div className="chart-summary" aria-label="Equity curve summary">
-        <span>
-          Latest <strong>{formatCurrency(lastPoint.totalEquity)}</strong>
-        </span>
-        <span className={`signed-value signed-value-${chartTone}`}>
-          {formatSignedPercent(chartReturnPct)}
-        </span>
+      <div className="chart-canvas-shell">
+        <p className="sr-only" id="equity-chart-description">
+          Portfolio equity curve from {firstPoint.date} to {lastPoint.date}.
+          Latest equity is {formatCurrency(lastPoint.totalEquity)} and total
+          return is {formatSignedPercent(chartReturnPct)}.
+        </p>
+        <div
+          ref={chartContainerRef}
+          className="chart-canvas"
+          role="img"
+          aria-describedby="equity-chart-description"
+          aria-label="Interactive portfolio equity curve"
+        />
+        {chartReady ? null : (
+          <div className="chart-loading" aria-hidden="true">
+            Loading chart
+          </div>
+        )}
+        <div className="chart-summary" aria-label="Equity curve summary">
+          <span>
+            Latest <strong>{formatCurrency(lastPoint.totalEquity)}</strong>
+          </span>
+          <span className={`signed-value signed-value-${chartTone}`}>
+            {formatSignedPercent(chartReturnPct)}
+          </span>
+        </div>
+        <div className="chart-range-toolbar" aria-label="Chart time range">
+          {chartRangeOptions.map((range) => (
+            <button
+              className={
+                activeRange === range
+                  ? "chart-range-button chart-range-button-active"
+                  : "chart-range-button"
+              }
+              key={range}
+              onClick={() => setActiveRange(range)}
+              type="button"
+            >
+              {range}
+            </button>
+          ))}
+        </div>
+        {crosshairDetail === null ? null : (
+          <CrosshairTooltip detail={crosshairDetail} />
+        )}
       </div>
-      {markers.map((marker) => {
-        const markerStyle = {
-          "--marker-left": `${marker.left}%`,
-          "--marker-top": `${marker.top}%`,
-        } as CSSProperties;
 
-        return (
-          <button
-            aria-label={tradeMarkerAriaLabel(marker)}
-            className={`trade-marker trade-marker-${marker.tone} ${tradeMarkerPlacementClasses(marker)}`}
-            key={marker.id}
-            style={markerStyle}
-            type="button"
+      <div className="chart-footer-row">
+        {markers.length > 0 ? (
+          <div
+            className="trade-event-rail"
+            aria-label="Equity chart trade events"
           >
-            <span className="trade-marker-label">{marker.label}</span>
-            <TradeTooltip marker={marker} />
-          </button>
-        );
-      })}
+            <span>Events</span>
+            {markers.map((marker) => (
+              <button
+                aria-label={tradeMarkerAriaLabel(marker)}
+                className={`trade-event-button trade-event-button-${marker.tone} ${
+                  selectedTradeMarkerId === marker.id
+                    ? "trade-event-button-active"
+                    : ""
+                }`}
+                key={marker.id}
+                onClick={() =>
+                  setSelectedTradeMarkerId((currentMarkerId) =>
+                    currentMarkerId === marker.id ? null : marker.id,
+                  )
+                }
+                type="button"
+              >
+                <span className="trade-marker-label">{marker.label}</span>
+                <span>{marker.date.slice(5)}</span>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <span />
+        )}
+        <a
+          className="chart-attribution"
+          href={chartAttributionUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Charting by TradingView
+        </a>
+      </div>
+
+      {selectedTradeMarker === null ? null : (
+        <TradeDetailCard marker={selectedTradeMarker} />
+      )}
     </div>
   );
 }
@@ -1015,24 +1267,100 @@ function isTradeEvent(event: LedgerEvent): boolean {
   );
 }
 
-function buildTradeMarkers({
-  events,
-  height,
-  points,
-  toX,
-  toY,
-  width,
-}: {
-  events: LedgerEvent[];
-  height: number;
-  points: EquityPoint[];
-  toX: (date: string) => number;
-  toY: (value: number) => number;
-  width: number;
-}): TradeMarker[] {
+function buildChartPoints(points: EquityPoint[]): ChartPoint[] {
+  return points
+    .slice()
+    .sort((left, right) => left.date.localeCompare(right.date))
+    .map((point) => ({
+      cumulativeDeposits: point.cumulativeDeposits,
+      date: point.date,
+      periodReturnPct: point.periodReturnPct,
+      totalEquity: point.totalEquity,
+      totalReturnPct: point.totalReturnPct,
+    }));
+}
+
+function chartReturnForPoints(
+  firstPoint: ChartPoint,
+  lastPoint: ChartPoint,
+): number | null {
+  if (
+    lastPoint.cumulativeDeposits !== null &&
+    lastPoint.cumulativeDeposits > 0
+  ) {
+    return (
+      ((lastPoint.totalEquity - lastPoint.cumulativeDeposits) /
+        lastPoint.cumulativeDeposits) *
+      100
+    );
+  }
+
+  if (firstPoint.totalEquity === 0) {
+    return null;
+  }
+
+  if (lastPoint.totalEquity === firstPoint.totalEquity) {
+    return 0;
+  }
+
+  return (
+    ((lastPoint.totalEquity - firstPoint.totalEquity) /
+      firstPoint.totalEquity) *
+    100
+  );
+}
+
+function applyChartRange(
+  chart: IChartApi,
+  points: ChartPoint[],
+  range: ChartRange,
+): void {
+  if (range === "ALL" || points.length <= 2) {
+    chart.timeScale().setVisibleLogicalRange({
+      from: -0.5,
+      to: points.length - 0.5,
+    });
+    return;
+  }
+
+  const lastPoint = points[points.length - 1];
+  const cutoff = chartRangeCutoff(lastPoint.date, range);
+  const firstVisibleIndex = points.findIndex(
+    (point) => Date.parse(point.date) >= cutoff,
+  );
+  const from = firstVisibleIndex === -1 ? 0 : firstVisibleIndex;
+  chart.timeScale().setVisibleLogicalRange({
+    from: Math.max(0, from - 0.5),
+    to: points.length - 0.5,
+  });
+}
+
+function chartRangeCutoff(
+  lastDate: string,
+  range: Exclude<ChartRange, "ALL">,
+): number {
+  const lastTime = Date.parse(lastDate);
+  if (range === "YTD") {
+    const year = new Date(lastTime).getUTCFullYear();
+    return Date.UTC(year, 0, 1);
+  }
+
+  const dayCounts: Record<Exclude<ChartRange, "YTD" | "ALL">, number> = {
+    "1M": 31,
+    "3M": 92,
+    "6M": 183,
+  };
+  return lastTime - dayCounts[range] * 24 * 60 * 60 * 1000;
+}
+
+function buildTradeMarkers(events: LedgerEvent[]): TradeMarker[] {
   const tradesByDate = new Map<string, LedgerEvent[]>();
   events.forEach((event) => {
     const date = event.tradeDate || event.createdAt;
+    if (date === "") {
+      return;
+    }
+
     const trades = tradesByDate.get(date) ?? [];
     trades.push(event);
     tradesByDate.set(date, trades);
@@ -1045,54 +1373,207 @@ function buildTradeMarkers({
       const tone =
         sides.size > 1 ? "mixed" : sides.has("sell") ? "sell" : "buy";
       const label = tone === "mixed" ? "T" : tone === "sell" ? "S" : "B";
-      const x = toX(date);
-      const y = toY(interpolateEquity(points, date));
       return {
         date,
         id: `trade-${date}`,
         label,
-        left: clamp((x / width) * 100, 5, 95),
         tone,
-        top: clamp((y / height) * 100 - 8, 8, 82),
         trades,
       };
     });
 }
 
-function interpolateEquity(points: EquityPoint[], date: string): number {
-  const targetTime = Date.parse(date);
-  const sortedPoints = points
-    .slice()
-    .sort((left, right) => left.date.localeCompare(right.date));
+interface ChartColors {
+  background: string;
+  border: string;
+  buy: string;
+  crosshair: string;
+  grid: string;
+  ink: string;
+  mixed: string;
+  muted: string;
+  sell: string;
+  surface: string;
+  tone: string;
+}
 
-  if (targetTime <= Date.parse(sortedPoints[0].date)) {
-    return sortedPoints[0].totalEquity;
+function readChartColors(
+  element: HTMLElement,
+  chartTone: ValueTone,
+): ChartColors {
+  const gain = readCssVariable(element, "--gain", "#c94431");
+  const loss = readCssVariable(element, "--loss", "#237a48");
+  const neutralTone = readCssVariable(element, "--muted", "#63716b");
+
+  return {
+    background: readCssVariable(element, "--surface", "#ffffff"),
+    border: readCssVariable(element, "--border", "#d8e3df"),
+    buy: readCssVariable(element, "--buy", "#2563eb"),
+    crosshair: "rgba(23, 32, 29, 0.42)",
+    grid: "rgba(99, 113, 107, 0.16)",
+    ink: readCssVariable(element, "--ink", "#17201d"),
+    mixed: readCssVariable(element, "--indigo", "#4f57c8"),
+    muted: readCssVariable(element, "--muted", "#63716b"),
+    sell: readCssVariable(element, "--sell", "#b45309"),
+    surface: readCssVariable(element, "--surface", "#ffffff"),
+    tone:
+      chartTone === "gain" ? gain : chartTone === "loss" ? loss : neutralTone,
+  };
+}
+
+function readCssVariable(
+  element: HTMLElement,
+  name: string,
+  fallback: string,
+): string {
+  return getComputedStyle(element).getPropertyValue(name).trim() || fallback;
+}
+
+function transparentize(color: string, alpha: number): string {
+  const trimmed = color.trim();
+  const hexMatch = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(trimmed);
+  if (hexMatch !== null) {
+    const hex = hexMatch[1];
+    const normalized =
+      hex.length === 3
+        ? hex
+            .split("")
+            .map((character) => `${character}${character}`)
+            .join("")
+        : hex;
+    const red = Number.parseInt(normalized.slice(0, 2), 16);
+    const green = Number.parseInt(normalized.slice(2, 4), 16);
+    const blue = Number.parseInt(normalized.slice(4, 6), 16);
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
   }
 
-  const lastPoint = sortedPoints[sortedPoints.length - 1];
-  if (targetTime >= Date.parse(lastPoint.date)) {
-    return lastPoint.totalEquity;
+  const rgbMatch = /^rgb\((.+)\)$/i.exec(trimmed);
+  if (rgbMatch !== null) {
+    return `rgba(${rgbMatch[1]}, ${alpha})`;
   }
 
-  for (let index = 1; index < sortedPoints.length; index += 1) {
-    const previous = sortedPoints[index - 1];
-    const next = sortedPoints[index];
-    const previousTime = Date.parse(previous.date);
-    const nextTime = Date.parse(next.date);
-    if (targetTime <= nextTime) {
-      const progress = (targetTime - previousTime) / (nextTime - previousTime);
-      return (
-        previous.totalEquity +
-        (next.totalEquity - previous.totalEquity) * progress
-      );
+  return trimmed;
+}
+
+function buildSeriesMarkers(
+  markers: TradeMarker[],
+  colors: ChartColors,
+): SeriesMarker<Time>[] {
+  return markers.map((marker) => ({
+    color:
+      marker.tone === "buy"
+        ? colors.buy
+        : marker.tone === "sell"
+          ? colors.sell
+          : colors.mixed,
+    id: marker.id,
+    position: marker.tone === "sell" ? "aboveBar" : "belowBar",
+    shape:
+      marker.tone === "buy"
+        ? "arrowUp"
+        : marker.tone === "sell"
+          ? "arrowDown"
+          : "circle",
+    size: 1.35,
+    text: marker.label,
+    time: marker.date as Time,
+  }));
+}
+
+function buildCrosshairDetail({
+  markerByDate,
+  markerById,
+  params,
+  pointByDate,
+  seriesData,
+  viewportHeight,
+  viewportWidth,
+}: {
+  markerByDate: Map<string, TradeMarker>;
+  markerById: Map<string, TradeMarker>;
+  params: MouseEventParams<Time>;
+  pointByDate: Map<string, ChartPoint>;
+  seriesData: unknown;
+  viewportHeight: number;
+  viewportWidth: number;
+}): CrosshairDetail | null {
+  if (params.point === undefined) {
+    return null;
+  }
+
+  const date = chartTimeToDateString(params.time);
+  if (date === null) {
+    return null;
+  }
+
+  const point = pointByDate.get(date) ?? null;
+  const totalEquity = valueFromSeriesData(seriesData) ?? point?.totalEquity;
+  if (totalEquity === undefined) {
+    return null;
+  }
+
+  return {
+    cumulativeDeposits: point?.cumulativeDeposits ?? null,
+    date,
+    left: params.point.x,
+    marker: markerFromParams(params, markerByDate, markerById),
+    periodReturnPct: point?.periodReturnPct ?? null,
+    placement: params.point.x > viewportWidth - 320 ? "right" : "left",
+    top: Math.min(
+      Math.max(params.point.y, 82),
+      Math.max(82, viewportHeight - 76),
+    ),
+    totalEquity,
+    totalReturnPct: point?.totalReturnPct ?? null,
+  };
+}
+
+function valueFromSeriesData(seriesData: unknown): number | null {
+  if (
+    typeof seriesData === "object" &&
+    seriesData !== null &&
+    "value" in seriesData
+  ) {
+    const value = (seriesData as { value: unknown }).value;
+    return typeof value === "number" ? value : null;
+  }
+
+  return null;
+}
+
+function markerFromParams(
+  params: MouseEventParams<Time>,
+  markerByDate: Map<string, TradeMarker>,
+  markerById: Map<string, TradeMarker>,
+): TradeMarker | null {
+  const objectId = params.hoveredInfo?.objectId ?? params.hoveredObjectId;
+  if (typeof objectId === "string") {
+    const marker = markerById.get(objectId);
+    if (marker !== undefined) {
+      return marker;
     }
   }
 
-  return lastPoint.totalEquity;
+  const date = chartTimeToDateString(params.time);
+  return date === null ? null : (markerByDate.get(date) ?? null);
 }
 
-function clamp(value: number, min: number, max: number): number {
-  return Math.min(Math.max(value, min), max);
+function chartTimeToDateString(time: Time | undefined): string | null {
+  if (time === undefined) {
+    return null;
+  }
+
+  if (typeof time === "string") {
+    return time;
+  }
+
+  if (typeof time === "number") {
+    return new Date(time * 1000).toISOString().slice(0, 10);
+  }
+
+  return `${time.year}-${String(time.month).padStart(2, "0")}-${String(
+    time.day,
+  ).padStart(2, "0")}`;
 }
 
 function tradeMarkerAriaLabel(marker: TradeMarker): string {
@@ -1105,98 +1586,98 @@ function tradeMarkerAriaLabel(marker: TradeMarker): string {
   return `${marker.date}: ${summary}`;
 }
 
-function buildDateLabelIndexes(
-  points: EquityPoint[],
-  toX: (date: string) => number,
-): Set<number> {
-  const minimumGap = 78;
-  const indexes: number[] = [0];
+function CrosshairTooltip({ detail }: { detail: CrosshairDetail }) {
+  const tooltipStyle = {
+    "--tooltip-left": `${detail.left}px`,
+    "--tooltip-top": `${detail.top}px`,
+  } as CSSProperties;
 
-  if (points.length <= 6) {
-    for (let index = 1; index < points.length; index += 1) {
-      const previousIndex = indexes[indexes.length - 1];
-      if (
-        toX(points[index].date) - toX(points[previousIndex].date) >=
-        minimumGap
-      ) {
-        indexes.push(index);
-      }
-    }
-    return new Set(indexes);
-  }
-
-  const interiorCount = points.length - 2;
-  const interval = Math.max(1, Math.ceil(interiorCount / 4));
-  for (let index = interval; index < points.length - 1; index += interval) {
-    const previousIndex = indexes[indexes.length - 1];
-    if (
-      toX(points[index].date) - toX(points[previousIndex].date) >=
-      minimumGap
-    ) {
-      indexes.push(index);
-    }
-  }
-
-  const lastIndex = points.length - 1;
-  while (
-    indexes.length > 1 &&
-    toX(points[lastIndex].date) -
-      toX(points[indexes[indexes.length - 1]].date) <
-      minimumGap
-  ) {
-    indexes.pop();
-  }
-  indexes.push(lastIndex);
-
-  return new Set(indexes);
-}
-
-function tradeMarkerPlacementClasses(marker: TradeMarker): string {
-  const classes: string[] = [];
-
-  if (marker.left < 30) {
-    classes.push("trade-marker-edge-left");
-  } else if (marker.left > 70) {
-    classes.push("trade-marker-edge-right");
-  }
-
-  if (marker.top < 26) {
-    classes.push("trade-marker-tooltip-below");
-  }
-
-  return classes.join(" ");
-}
-
-function TradeTooltip({ marker }: { marker: TradeMarker }) {
   return (
-    <span className="trade-tooltip" role="tooltip">
-      <span className="trade-tooltip-topline">
+    <div
+      className={`chart-hover-card chart-hover-card-${detail.placement}`}
+      role="tooltip"
+      style={tooltipStyle}
+    >
+      <div className="chart-hover-topline">
+        <span>{detail.date}</span>
+        <strong>{formatCurrency(detail.totalEquity)}</strong>
+      </div>
+      <dl className="chart-hover-metrics">
+        <div>
+          <dt>Total return</dt>
+          <dd
+            className={`signed-value signed-value-${toneForSignedValue(
+              detail.totalReturnPct,
+            )}`}
+          >
+            {formatSignedPercent(detail.totalReturnPct)}
+          </dd>
+        </div>
+        <div>
+          <dt>Period</dt>
+          <dd
+            className={`signed-value signed-value-${toneForSignedValue(
+              detail.periodReturnPct,
+            )}`}
+          >
+            {formatSignedPercent(detail.periodReturnPct)}
+          </dd>
+        </div>
+        <div>
+          <dt>Deposits</dt>
+          <dd>{formatCurrency(detail.cumulativeDeposits)}</dd>
+        </div>
+      </dl>
+      {detail.marker === null ? null : (
+        <div className="chart-hover-trades">
+          <span
+            className={`trade-tooltip-action trade-tooltip-action-${detail.marker.tone}`}
+          >
+            {tradeGroupLabel(detail.marker)}
+          </span>
+          <TradeRows marker={detail.marker} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TradeDetailCard({ marker }: { marker: TradeMarker }) {
+  return (
+    <div className="trade-detail-card">
+      <div className="trade-tooltip-topline">
         <span className="trade-tooltip-date">{marker.date}</span>
         <span
           className={`trade-tooltip-action trade-tooltip-action-${marker.tone}`}
         >
           {tradeGroupLabel(marker)}
         </span>
-      </span>
-      <span className="trade-tooltip-list">
-        {marker.trades.map((trade) => (
-          <span className="trade-tooltip-row" key={trade.eventId}>
-            <span className={`trade-side trade-side-${trade.side}`}>
-              {trade.side.toUpperCase()}
-            </span>
-            <span className="trade-tooltip-main">
-              <strong>{trade.symbol}</strong>
-              <span>
-                {formatTradeQuantity(trade.quantity)} shares @{" "}
-                {formatCurrency(trade.averagePrice)}
-              </span>
-            </span>
-            <span className="trade-tooltip-cash">
-              {formatCurrency(Math.abs(trade.netCashEffect ?? 0))}
+      </div>
+      <TradeRows marker={marker} />
+    </div>
+  );
+}
+
+function TradeRows({ marker }: { marker: TradeMarker }) {
+  return (
+    <span className="trade-tooltip-list">
+      {marker.trades.map((trade) => (
+        <span className="trade-tooltip-row" key={trade.eventId}>
+          <span className={`trade-side trade-side-${trade.side}`}>
+            {trade.side.toUpperCase()}
+          </span>
+          <span className="trade-tooltip-main">
+            <strong>{trade.symbol}</strong>
+            <span>
+              {formatTradeQuantity(trade.quantity)} shares @{" "}
+              {formatCurrency(trade.averagePrice)}
             </span>
           </span>
-        ))}
-      </span>
+          <span className="trade-tooltip-cash">
+            {formatCurrency(Math.abs(trade.netCashEffect ?? 0))}
+          </span>
+        </span>
+      ))}
     </span>
   );
 }
