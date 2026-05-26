@@ -35,4 +35,4 @@ Build and verify:
 npm run verify
 ```
 
-The dashboard defaults to committed real data. Because the account currently has no confirmed transactions, the real view intentionally shows empty holdings and empty performance. The "注入模拟数据" control switches to browser-only demo data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "恢复真实数据" switches back to committed repository data without changing files.
+The dashboard defaults to committed real data. Because the account currently has no confirmed transactions, the real view intentionally shows empty holdings and empty performance. The "Demo data" control switches to browser-only demo data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "Real data" switches back to committed repository data without changing files.

@@ -57,20 +57,24 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
 });
 
 function formatCurrency(value: number | null): string {
-  return value === null ? "等待确认" : currencyFormatter.format(value);
+  return value === null
+    ? "Pending confirmation"
+    : currencyFormatter.format(value);
 }
 
 function formatCompactCurrency(value: number | null): string {
-  return value === null ? "等待确认" : compactCurrencyFormatter.format(value);
+  return value === null ? "Pending" : compactCurrencyFormatter.format(value);
 }
 
 function formatPercent(value: number | null): string {
-  return value === null ? "等待数据" : percentFormatter.format(value / 100);
+  return value === null
+    ? "Not enough data"
+    : percentFormatter.format(value / 100);
 }
 
 function formatNumber(value: number | null, digits = 2): string {
   if (value === null) {
-    return "等待数据";
+    return "Not enough data";
   }
   return value.toFixed(digits);
 }
@@ -140,19 +144,149 @@ function buildDemoData(realData: PortfolioData): PortfolioData {
   ];
 
   const demoLedger: LedgerEvent[] = [
-    demoLedgerEvent("demo-001", "deposit", "", "", null, null, 888, "2026-01-05", "Initial demo contribution"),
-    demoLedgerEvent("demo-002", "trade", "RKLB", "buy", 4, 72, -288, "2026-01-08", "Buy Rocket Lab"),
-    demoLedgerEvent("demo-003", "trade", "ASTS", "buy", 5, 58, -290, "2026-01-08", "Buy AST SpaceMobile"),
-    demoLedgerEvent("demo-004", "deposit", "", "", null, null, 888, "2026-02-05", "Second demo contribution"),
-    demoLedgerEvent("demo-005", "trade", "CRDO", "buy", 3, 132, -396, "2026-02-06", "Buy Credo"),
-    demoLedgerEvent("demo-006", "deposit", "", "", null, null, 888, "2026-03-05", "Third demo contribution"),
-    demoLedgerEvent("demo-007", "trade", "RKLB", "buy", 4, 108, -432, "2026-03-07", "Add Rocket Lab"),
-    demoLedgerEvent("demo-008", "trade", "LUNR", "buy", 20, 24, -480, "2026-03-07", "Buy Intuitive Machines"),
-    demoLedgerEvent("demo-009", "deposit", "", "", null, null, 888, "2026-04-05", "Fourth demo contribution"),
-    demoLedgerEvent("demo-010", "trade", "ASTS", "buy", 5, 90, -450, "2026-04-09", "Add AST SpaceMobile"),
-    demoLedgerEvent("demo-011", "trade", "RDW", "buy", 30, 12, -360, "2026-04-09", "Buy Redwire"),
-    demoLedgerEvent("demo-012", "deposit", "", "", null, null, 888, "2026-05-05", "Fifth demo contribution"),
-    demoLedgerEvent("demo-013", "trade", "CRDO", "buy", 2, 177, -354, "2026-05-08", "Add Credo"),
+    demoLedgerEvent(
+      "demo-001",
+      "deposit",
+      "",
+      "",
+      null,
+      null,
+      888,
+      "2026-01-05",
+      "Initial demo contribution",
+    ),
+    demoLedgerEvent(
+      "demo-002",
+      "trade",
+      "RKLB",
+      "buy",
+      4,
+      72,
+      -288,
+      "2026-01-08",
+      "Buy Rocket Lab",
+    ),
+    demoLedgerEvent(
+      "demo-003",
+      "trade",
+      "ASTS",
+      "buy",
+      5,
+      58,
+      -290,
+      "2026-01-08",
+      "Buy AST SpaceMobile",
+    ),
+    demoLedgerEvent(
+      "demo-004",
+      "deposit",
+      "",
+      "",
+      null,
+      null,
+      888,
+      "2026-02-05",
+      "Second demo contribution",
+    ),
+    demoLedgerEvent(
+      "demo-005",
+      "trade",
+      "CRDO",
+      "buy",
+      3,
+      132,
+      -396,
+      "2026-02-06",
+      "Buy Credo",
+    ),
+    demoLedgerEvent(
+      "demo-006",
+      "deposit",
+      "",
+      "",
+      null,
+      null,
+      888,
+      "2026-03-05",
+      "Third demo contribution",
+    ),
+    demoLedgerEvent(
+      "demo-007",
+      "trade",
+      "RKLB",
+      "buy",
+      4,
+      108,
+      -432,
+      "2026-03-07",
+      "Add Rocket Lab",
+    ),
+    demoLedgerEvent(
+      "demo-008",
+      "trade",
+      "LUNR",
+      "buy",
+      20,
+      24,
+      -480,
+      "2026-03-07",
+      "Buy Intuitive Machines",
+    ),
+    demoLedgerEvent(
+      "demo-009",
+      "deposit",
+      "",
+      "",
+      null,
+      null,
+      888,
+      "2026-04-05",
+      "Fourth demo contribution",
+    ),
+    demoLedgerEvent(
+      "demo-010",
+      "trade",
+      "ASTS",
+      "buy",
+      5,
+      90,
+      -450,
+      "2026-04-09",
+      "Add AST SpaceMobile",
+    ),
+    demoLedgerEvent(
+      "demo-011",
+      "trade",
+      "RDW",
+      "buy",
+      30,
+      12,
+      -360,
+      "2026-04-09",
+      "Buy Redwire",
+    ),
+    demoLedgerEvent(
+      "demo-012",
+      "deposit",
+      "",
+      "",
+      null,
+      null,
+      888,
+      "2026-05-05",
+      "Fifth demo contribution",
+    ),
+    demoLedgerEvent(
+      "demo-013",
+      "trade",
+      "CRDO",
+      "buy",
+      2,
+      177,
+      -354,
+      "2026-05-08",
+      "Add Credo",
+    ),
   ];
 
   return {
@@ -237,7 +371,10 @@ function priceForSymbol(data: PortfolioData, symbol: string): number | null {
   return data.prices.find((price) => price.symbol === symbol)?.price ?? null;
 }
 
-function marketValueForPosition(data: PortfolioData, position: PositionRecord): number | null {
+function marketValueForPosition(
+  data: PortfolioData,
+  position: PositionRecord,
+): number | null {
   const price = priceForSymbol(data, position.symbol);
   return price === null ? position.costBasis : position.quantity * price;
 }
@@ -248,12 +385,17 @@ function calculateMetrics(data: PortfolioData): Metrics {
     const value = marketValueForPosition(data, position);
     return sum + (value ?? 0);
   }, 0);
-  const totalEquity = data.equityCurve.at(-1)?.totalEquity
-    ?? (cash === null && data.positions.length === 0 ? null : (cash ?? 0) + marketValue);
-  const investedCapital = data.equityCurve.at(-1)?.cumulativeDeposits
-    ?? depositsFromLedger(data.ledger);
-  const totalReturnPct = data.equityCurve.at(-1)?.totalReturnPct
-    ?? (totalEquity !== null && investedCapital !== null && investedCapital > 0
+  const totalEquity =
+    data.equityCurve.at(-1)?.totalEquity ??
+    (cash === null && data.positions.length === 0
+      ? null
+      : (cash ?? 0) + marketValue);
+  const investedCapital =
+    data.equityCurve.at(-1)?.cumulativeDeposits ??
+    depositsFromLedger(data.ledger);
+  const totalReturnPct =
+    data.equityCurve.at(-1)?.totalReturnPct ??
+    (totalEquity !== null && investedCapital !== null && investedCapital > 0
       ? ((totalEquity - investedCapital) / investedCapital) * 100
       : null);
 
@@ -285,9 +427,13 @@ function annualizedSharpe(points: EquityPoint[]): number | null {
   }
 
   const mean = returns.reduce((sum, value) => sum + value, 0) / returns.length;
-  const variance = returns.reduce((sum, value) => sum + (value - mean) ** 2, 0) / (returns.length - 1);
+  const variance =
+    returns.reduce((sum, value) => sum + (value - mean) ** 2, 0) /
+    (returns.length - 1);
   const standardDeviation = Math.sqrt(variance);
-  return standardDeviation === 0 ? null : (mean / standardDeviation) * Math.sqrt(12);
+  return standardDeviation === 0
+    ? null
+    : (mean / standardDeviation) * Math.sqrt(12);
 }
 
 function maxDrawdown(points: EquityPoint[]): number | null {
@@ -324,14 +470,21 @@ function maxDrawdown(points: EquityPoint[]): number | null {
 
 export default function InvestDashboard({ data }: Props) {
   const [mode, setMode] = useState<DashboardMode>("real");
-  const activeData = useMemo(() => (mode === "demo" ? buildDemoData(data) : data), [data, mode]);
+  const activeData = useMemo(
+    () => (mode === "demo" ? buildDemoData(data) : data),
+    [data, mode],
+  );
   const metrics = useMemo(() => calculateMetrics(activeData), [activeData]);
   const isDemo = mode === "demo";
 
   return (
     <div className="invest-shell">
       <header className="invest-topbar">
-        <a className="brand" href={activeData.publicUrl} aria-label="WineChord Invest home">
+        <a
+          className="brand"
+          href={activeData.publicUrl}
+          aria-label="WineChord Invest home"
+        >
           <span className="brand-mark">W</span>
           <span>
             <strong>WineChord Invest</strong>
@@ -339,27 +492,37 @@ export default function InvestDashboard({ data }: Props) {
           </span>
         </a>
         <nav className="topbar-actions" aria-label="Dashboard actions">
-          <a className="icon-link" href={activeData.repositoryUrl} target="_blank" rel="noreferrer" title="GitHub repository">
+          <a
+            className="icon-link"
+            href={activeData.repositoryUrl}
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub repository"
+          >
             <Github size={18} />
             <span>Open source</span>
           </a>
           <button
-            className={isDemo ? "mode-button" : "mode-button mode-button-active"}
+            className={
+              isDemo ? "mode-button" : "mode-button mode-button-active"
+            }
             type="button"
             onClick={() => setMode("real")}
             title="Restore committed repository data"
           >
             <RefreshCcw size={17} />
-            <span>恢复真实数据</span>
+            <span>Real data</span>
           </button>
           <button
-            className={isDemo ? "mode-button mode-button-active" : "mode-button"}
+            className={
+              isDemo ? "mode-button mode-button-active" : "mode-button"
+            }
             type="button"
             onClick={() => setMode("demo")}
             title="Inject browser-only demo data"
           >
             <Sparkles size={17} />
-            <span>注入模拟数据</span>
+            <span>Demo data</span>
           </button>
         </nav>
       </header>
@@ -368,9 +531,11 @@ export default function InvestDashboard({ data }: Props) {
         <section className="hero-band">
           <div>
             <p className="eyebrow">Policy {activeData.policyVersion}</p>
-            <h1>长期卫星仓控制台</h1>
+            <h1>Long-Term Satellite Portfolio Dashboard</h1>
             <p className="hero-copy">
-              只展示仓库内已确认账本与研究状态；模拟数据仅用于检查收益曲线、操作流和指标计算。
+              Confirmed account records and research state come from the
+              repository. Demo data exists only in the browser to test charts,
+              operation flow, and metrics.
             </p>
           </div>
           <div className="status-stack">
@@ -388,40 +553,82 @@ export default function InvestDashboard({ data }: Props) {
         </section>
 
         <section className="metric-grid" aria-label="Portfolio summary">
-          <MetricCard icon={<Wallet size={20} />} label="账户总权益" value={formatCompactCurrency(metrics.totalEquity)} />
-          <MetricCard icon={<TrendingUp size={20} />} label="累计收益率" value={formatPercent(metrics.totalReturnPct)} />
-          <MetricCard icon={<Activity size={20} />} label="Sharpe" value={formatNumber(metrics.sharpe)} />
-          <MetricCard icon={<BarChart3 size={20} />} label="最大回撤" value={formatPercent(metrics.maxDrawdownPct)} />
-          <MetricCard icon={<ListChecks size={20} />} label="已确认操作" value={`${metrics.operationsCount}`} />
-          <MetricCard icon={<LineChart size={20} />} label="持仓数量" value={`${metrics.positionsCount}`} />
+          <MetricCard
+            icon={<Wallet size={20} />}
+            label="Total equity"
+            value={formatCompactCurrency(metrics.totalEquity)}
+          />
+          <MetricCard
+            icon={<TrendingUp size={20} />}
+            label="Total return"
+            value={formatPercent(metrics.totalReturnPct)}
+          />
+          <MetricCard
+            icon={<Activity size={20} />}
+            label="Sharpe"
+            value={formatNumber(metrics.sharpe)}
+          />
+          <MetricCard
+            icon={<BarChart3 size={20} />}
+            label="Max drawdown"
+            value={formatPercent(metrics.maxDrawdownPct)}
+          />
+          <MetricCard
+            icon={<ListChecks size={20} />}
+            label="Confirmed operations"
+            value={`${metrics.operationsCount}`}
+          />
+          <MetricCard
+            icon={<LineChart size={20} />}
+            label="Positions"
+            value={`${metrics.positionsCount}`}
+          />
         </section>
 
         <section className="dashboard-grid">
-          <Panel title="收益曲线" eyebrow={isDemo ? "browser demo" : "confirmed data"}>
+          <Panel
+            title="Equity curve"
+            eyebrow={isDemo ? "browser demo" : "confirmed data"}
+          >
             <EquityChart points={activeData.equityCurve} />
           </Panel>
 
-          <Panel title="账户余额" eyebrow="cash and capital">
+          <Panel title="Account balance" eyebrow="cash and capital">
             <div className="balance-list">
-              <BalanceRow label="确认现金" value={formatCurrency(metrics.cash)} />
-              <BalanceRow label="累计入金" value={formatCurrency(metrics.investedCapital)} />
-              <BalanceRow label="总权益" value={formatCurrency(metrics.totalEquity)} />
-              <BalanceRow label="状态" value={activeData.accountState.status} />
+              <BalanceRow
+                label="Confirmed cash"
+                value={formatCurrency(metrics.cash)}
+              />
+              <BalanceRow
+                label="Cumulative deposits"
+                value={formatCurrency(metrics.investedCapital)}
+              />
+              <BalanceRow
+                label="Total equity"
+                value={formatCurrency(metrics.totalEquity)}
+              />
+              <BalanceRow
+                label="Status"
+                value={activeData.accountState.status}
+              />
             </div>
           </Panel>
         </section>
 
         <section className="dashboard-grid dashboard-grid-wide-left">
-          <Panel title="当前持仓" eyebrow={isDemo ? "simulated positions" : "confirmed positions"}>
+          <Panel
+            title="Holdings"
+            eyebrow={isDemo ? "simulated positions" : "confirmed positions"}
+          >
             <HoldingsTable data={activeData} />
           </Panel>
 
-          <Panel title="操作记录" eyebrow="append-only ledger">
+          <Panel title="Operation history" eyebrow="append-only ledger">
             <OperationsList events={activeData.ledger} />
           </Panel>
         </section>
 
-        <Panel title="研究池" eyebrow="active universe">
+        <Panel title="Research universe" eyebrow="active universe">
           <WatchlistTable items={activeData.watchlist} />
         </Panel>
       </main>
@@ -429,7 +636,15 @@ export default function InvestDashboard({ data }: Props) {
   );
 }
 
-function StatusPill({ icon, label, tone }: { icon: ReactNode; label: string; tone: "safe" | "warning" | "neutral" }) {
+function StatusPill({
+  icon,
+  label,
+  tone,
+}: {
+  icon: ReactNode;
+  label: string;
+  tone: "safe" | "warning" | "neutral";
+}) {
   return (
     <span className={`status-pill status-pill-${tone}`}>
       {icon}
@@ -438,7 +653,15 @@ function StatusPill({ icon, label, tone }: { icon: ReactNode; label: string; ton
   );
 }
 
-function MetricCard({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
+function MetricCard({
+  icon,
+  label,
+  value,
+}: {
+  icon: ReactNode;
+  label: string;
+  value: string;
+}) {
   return (
     <article className="metric-card">
       <div className="metric-icon">{icon}</div>
@@ -450,7 +673,15 @@ function MetricCard({ icon, label, value }: { icon: ReactNode; label: string; va
   );
 }
 
-function Panel({ title, eyebrow, children }: { title: string; eyebrow: string; children: ReactNode }) {
+function Panel({
+  title,
+  eyebrow,
+  children,
+}: {
+  title: string;
+  eyebrow: string;
+  children: ReactNode;
+}) {
   return (
     <section className="panel">
       <div className="panel-heading">
@@ -476,8 +707,11 @@ function EquityChart({ points }: { points: EquityPoint[] }) {
     return (
       <div className="empty-chart">
         <LineChart size={40} />
-        <strong>等待首次权益曲线</strong>
-        <span>确认入金和成交后，这里会显示真实曲线。</span>
+        <strong>Waiting for the first equity curve</strong>
+        <span>
+          After confirmed deposits and executions, the real curve will appear
+          here.
+        </span>
       </div>
     );
   }
@@ -491,14 +725,24 @@ function EquityChart({ points }: { points: EquityPoint[] }) {
   const range = Math.max(max - min, 1);
   const xStep = (width - padding * 2) / (points.length - 1);
   const toX = (index: number) => padding + index * xStep;
-  const toY = (value: number) => height - padding - ((value - min) / range) * (height - padding * 2);
-  const path = points.map((point, index) => `${index === 0 ? "M" : "L"} ${toX(index)} ${toY(point.totalEquity)}`).join(" ");
+  const toY = (value: number) =>
+    height - padding - ((value - min) / range) * (height - padding * 2);
+  const path = points
+    .map(
+      (point, index) =>
+        `${index === 0 ? "M" : "L"} ${toX(index)} ${toY(point.totalEquity)}`,
+    )
+    .join(" ");
   const areaPath = `${path} L ${toX(points.length - 1)} ${height - padding} L ${padding} ${height - padding} Z`;
   const gridValues = [0.25, 0.5, 0.75].map((ratio) => min + range * ratio);
 
   return (
     <div className="chart-wrap">
-      <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Portfolio equity curve">
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-label="Portfolio equity curve"
+      >
         <defs>
           <linearGradient id="equity-fill" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%" stopColor="#18a999" stopOpacity="0.28" />
@@ -507,7 +751,13 @@ function EquityChart({ points }: { points: EquityPoint[] }) {
         </defs>
         {gridValues.map((value) => (
           <g key={value}>
-            <line className="chart-grid" x1={padding} x2={width - padding} y1={toY(value)} y2={toY(value)} />
+            <line
+              className="chart-grid"
+              x1={padding}
+              x2={width - padding}
+              y1={toY(value)}
+              y2={toY(value)}
+            />
             <text className="chart-label" x={padding} y={toY(value) - 6}>
               {compactCurrencyFormatter.format(value)}
             </text>
@@ -517,8 +767,18 @@ function EquityChart({ points }: { points: EquityPoint[] }) {
         <path className="chart-line" d={path} />
         {points.map((point, index) => (
           <g key={point.date}>
-            <circle className="chart-dot" cx={toX(index)} cy={toY(point.totalEquity)} r="5" />
-            <text className="chart-date" x={toX(index)} y={height - 8} textAnchor="middle">
+            <circle
+              className="chart-dot"
+              cx={toX(index)}
+              cy={toY(point.totalEquity)}
+              r="5"
+            />
+            <text
+              className="chart-date"
+              x={toX(index)}
+              y={height - 8}
+              textAnchor="middle"
+            >
               {point.date.slice(5)}
             </text>
           </g>
@@ -532,8 +792,11 @@ function HoldingsTable({ data }: { data: PortfolioData }) {
   if (data.positions.length === 0) {
     return (
       <div className="empty-state">
-        <strong>暂无确认持仓</strong>
-        <span>首次成交确认后会从账本派生持仓。</span>
+        <strong>No confirmed holdings yet</strong>
+        <span>
+          Holdings will be derived from the ledger after the first confirmed
+          execution.
+        </span>
       </div>
     );
   }
@@ -560,7 +823,11 @@ function HoldingsTable({ data }: { data: PortfolioData }) {
                   <strong>{position.symbol}</strong>
                   <span>{position.exchange}</span>
                 </td>
-                <td>{position.quantity.toLocaleString("en-US", { maximumFractionDigits: 4 })}</td>
+                <td>
+                  {position.quantity.toLocaleString("en-US", {
+                    maximumFractionDigits: 4,
+                  })}
+                </td>
                 <td>{formatCurrency(position.averageCost)}</td>
                 <td>{formatCurrency(price)}</td>
                 <td>{formatCurrency(value)}</td>
@@ -577,21 +844,29 @@ function OperationsList({ events }: { events: LedgerEvent[] }) {
   if (events.length === 0) {
     return (
       <div className="empty-state">
-        <strong>暂无确认操作</strong>
-        <span>入金、买入、卖出、分红和修正都会按追加账本展示。</span>
+        <strong>No confirmed operations yet</strong>
+        <span>
+          Deposits, buys, sells, dividends, and corrections will appear as
+          append-only ledger events.
+        </span>
       </div>
     );
   }
 
   return (
     <ol className="operation-list">
-      {events.slice().reverse().map((event) => (
-        <li key={event.eventId}>
-          <span className="operation-date">{event.tradeDate || event.createdAt}</span>
-          <strong>{operationTitle(event)}</strong>
-          <span>{operationDetail(event)}</span>
-        </li>
-      ))}
+      {events
+        .slice()
+        .reverse()
+        .map((event) => (
+          <li key={event.eventId}>
+            <span className="operation-date">
+              {event.tradeDate || event.createdAt}
+            </span>
+            <strong>{operationTitle(event)}</strong>
+            <span>{operationDetail(event)}</span>
+          </li>
+        ))}
     </ol>
   );
 }
@@ -607,8 +882,10 @@ function operationDetail(event: LedgerEvent): string {
   if (event.eventType === "deposit") {
     return `${formatCurrency(Math.abs(event.netCashEffect ?? 0))} ${event.notes}`;
   }
-  const quantity = event.quantity?.toLocaleString("en-US", { maximumFractionDigits: 4 }) ?? "-";
-  return `${quantity} shares @ ${formatCurrency(event.averagePrice)} · ${event.notes}`;
+  const quantity =
+    event.quantity?.toLocaleString("en-US", { maximumFractionDigits: 4 }) ??
+    "-";
+  return `${quantity} shares @ ${formatCurrency(event.averagePrice)} - ${event.notes}`;
 }
 
 function WatchlistTable({ items }: { items: WatchlistItem[] }) {
@@ -624,7 +901,11 @@ function WatchlistTable({ items }: { items: WatchlistItem[] }) {
           <footer>
             <span className="rank">{item.priority}</span>
             <span>{item.status.replaceAll("_", " ")}</span>
-            <span>{item.price === null ? "No price" : `${formatCurrency(item.price)} · ${item.priceAsOf}`}</span>
+            <span>
+              {item.price === null
+                ? "No price"
+                : `${formatCurrency(item.price)} - ${item.priceAsOf}`}
+            </span>
           </footer>
         </article>
       ))}

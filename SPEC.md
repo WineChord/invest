@@ -330,6 +330,8 @@ Durable behavior changes also require documentation review. When adding a new da
 
 The public dashboard is deployed at `https://www.wineandchord.com/invest/`. It is a static Astro site using `base: "/invest"` so it works as a GitHub Pages project site under the shared `www.wineandchord.com` domain.
 
+The dashboard is English-only by default. It should not provide a Chinese page, locale switcher, or Chinese UI copy unless a future explicit requirement adds multilingual support.
+
 The dashboard's real-data view is built from committed repository files:
 
 - `data/account/state.yml` for confirmed account status;
