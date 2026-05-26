@@ -665,7 +665,7 @@ export default function InvestDashboard({ data }: Props) {
           href={activeData.publicUrl}
           aria-label="WineChord Invest home"
         >
-          <span className="brand-mark">W</span>
+          <BrandLogo />
           <span>
             <strong>WineChord Invest</strong>
             <small>Satellite Portfolio</small>
@@ -834,6 +834,78 @@ export default function InvestDashboard({ data }: Props) {
         </Panel>
       </main>
     </div>
+  );
+}
+
+function BrandLogo() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="brand-mark"
+      focusable="false"
+      viewBox="0 0 48 48"
+    >
+      <defs>
+        <linearGradient id="brand-bg" x1="6" x2="43" y1="4" y2="44">
+          <stop offset="0" stopColor="#17201d" />
+          <stop offset="0.62" stopColor="#09110f" />
+          <stop offset="1" stopColor="#030706" />
+        </linearGradient>
+        <linearGradient id="brand-w" x1="11" x2="37" y1="16" y2="34">
+          <stop offset="0" stopColor="#5ee4cb" />
+          <stop offset="0.55" stopColor="#c7ffe7" />
+          <stop offset="1" stopColor="#f7fff3" />
+        </linearGradient>
+        <linearGradient id="brand-orbit" x1="7" x2="42" y1="35" y2="16">
+          <stop offset="0" stopColor="#8c7a5f" stopOpacity="0.35" />
+          <stop offset="0.5" stopColor="#f8e6ae" />
+          <stop offset="1" stopColor="#c5a46f" />
+        </linearGradient>
+      </defs>
+      <rect
+        fill="url(#brand-bg)"
+        height="44"
+        rx="12"
+        stroke="rgba(255,255,255,0.14)"
+        width="44"
+        x="2"
+        y="2"
+      />
+      <path
+        d="M11.5 16.5 18.7 35 24 22.2 29.5 35 36.5 13.5"
+        fill="none"
+        stroke="url(#brand-w)"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="5.2"
+      />
+      <path
+        d="M7.2 34.1c7.1 5.8 25.7 1.4 34.2-13.7"
+        fill="none"
+        stroke="url(#brand-orbit)"
+        strokeLinecap="round"
+        strokeWidth="1.75"
+      />
+      <path
+        d="M35.4 13.6 41.1 8.8l-1.6 7.3"
+        fill="none"
+        stroke="#f8e6ae"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.55"
+      />
+      <g fill="#f8e6ae" transform="rotate(37 38.1 12.1)">
+        <rect height="3.4" rx="0.7" width="5.2" x="35.5" y="10.4" />
+        <rect height="1.3" rx="0.45" width="4.2" x="31.4" y="11.45" />
+        <rect height="1.3" rx="0.45" width="4.2" x="40.6" y="11.45" />
+      </g>
+      <path
+        d="M13.4 10.2 14.7 13l2.9 1.2-2.9 1.3-1.3 2.8-1.2-2.8-2.9-1.3 2.9-1.2Z"
+        fill="#fff0bf"
+      />
+      <circle cx="24.8" cy="11.2" fill="#9dd6cd" opacity="0.9" r="1.25" />
+      <circle cx="38.4" cy="31.8" fill="#9dd6cd" opacity="0.78" r="1.1" />
+    </svg>
   );
 }
 

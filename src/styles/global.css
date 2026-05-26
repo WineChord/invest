@@ -105,15 +105,11 @@ button {
 }
 
 .brand-mark {
-  align-items: center;
-  background: var(--ink);
-  border-radius: 8px;
-  color: white;
-  display: inline-flex;
-  font-weight: 800;
-  height: 2.25rem;
-  justify-content: center;
-  width: 2.25rem;
+  display: block;
+  flex: 0 0 auto;
+  height: 2.75rem;
+  width: 2.75rem;
+  filter: drop-shadow(0 10px 22px rgba(18, 42, 35, 0.18));
 }
 
 .brand strong,
