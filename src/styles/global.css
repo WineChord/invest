@@ -173,6 +173,7 @@ h1 {
   font-size: clamp(2rem, 3vw, 3.7rem);
   line-height: 1.02;
   margin-bottom: 0.7rem;
+  white-space: nowrap;
 }
 
 .hero-copy {
@@ -525,6 +526,10 @@ td span {
 }
 
 @media (max-width: 1120px) {
+  h1 {
+    white-space: normal;
+  }
+
   .metric-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

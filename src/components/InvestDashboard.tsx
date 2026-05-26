@@ -531,7 +531,7 @@ export default function InvestDashboard({ data }: Props) {
         <section className="hero-band">
           <div>
             <p className="eyebrow">Policy {activeData.policyVersion}</p>
-            <h1>Long-Term Satellite Portfolio Dashboard</h1>
+            <h1>Satellite Portfolio Dashboard</h1>
             <p className="hero-copy">
               Confirmed account records and research state come from the
               repository. Demo data exists only in the browser to test charts,
