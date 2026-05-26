@@ -11,7 +11,7 @@ import {
   TrendingUp,
   Wallet,
 } from "lucide-react";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useMemo, useState } from "react";
 import type {
   EquityPoint,
@@ -37,6 +37,16 @@ interface Metrics {
 }
 
 type DashboardMode = "real" | "demo";
+
+interface TradeMarker {
+  id: string;
+  date: string;
+  left: number;
+  top: number;
+  tone: "buy" | "sell" | "mixed";
+  label: string;
+  trades: LedgerEvent[];
+}
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
@@ -133,12 +143,12 @@ function buildDemoData(realData: PortfolioData): PortfolioData {
       symbol: "RDW",
       assetType: "common_stock",
       exchange: "NYSE",
-      quantity: 30,
+      quantity: 25,
       averageCost: 12,
-      costBasis: 360,
+      costBasis: 300,
       currency: "USD",
       firstTradeDate: "2026-04-09",
-      lastTradeDate: "2026-04-09",
+      lastTradeDate: "2026-05-20",
       notes: "demo space defense position",
     },
   ];
@@ -287,6 +297,17 @@ function buildDemoData(realData: PortfolioData): PortfolioData {
       "2026-05-08",
       "Add Credo",
     ),
+    demoLedgerEvent(
+      "demo-014",
+      "trade",
+      "RDW",
+      "sell",
+      5,
+      17,
+      85,
+      "2026-05-20",
+      "Trim Redwire after a fast move",
+    ),
   ];
 
   return {
@@ -295,20 +316,26 @@ function buildDemoData(realData: PortfolioData): PortfolioData {
       ...realData.accountState,
       asOf: "2026-05-22",
       status: "demo_mode_not_accounting_truth",
-      confirmedCash: 283.37,
-      settledCash: 283.37,
-      buyingPower: 283.37,
+      confirmedCash: 368.37,
+      settledCash: 368.37,
+      buyingPower: 368.37,
       positionsCount: demoPositions.length,
-      lastConfirmedLedgerEventId: "demo-013",
+      lastConfirmedLedgerEventId: "demo-014",
       lastReconciledWithBrokerAt: "2026-05-22",
     },
     ledger: demoLedger,
     positions: demoPositions,
     equityCurve: [
+      demoPoint("2026-01-08", 888, 888, 0, 0),
       demoPoint("2026-01-31", 902, 888, 1.58, 1.58),
+      demoPoint("2026-02-06", 1768, 1776, -0.45, -0.62),
       demoPoint("2026-02-28", 1798, 1776, 1.24, 0.92),
+      demoPoint("2026-03-07", 2650, 2664, -0.53, -1.4),
       demoPoint("2026-03-31", 2740, 2664, 2.85, -2.6),
+      demoPoint("2026-04-09", 3515, 3552, -1.04, -0.85),
       demoPoint("2026-04-30", 3725, 3552, 4.87, 1.94),
+      demoPoint("2026-05-08", 4490, 4440, 1.13, 2.18),
+      demoPoint("2026-05-20", 4625, 4440, 4.17, 1.05),
       demoPoint("2026-05-22", 4810, 4440, 8.33, 5.29),
     ],
   };
@@ -590,7 +617,10 @@ export default function InvestDashboard({ data }: Props) {
             title="Equity curve"
             eyebrow={isDemo ? "browser demo" : "confirmed data"}
           >
-            <EquityChart points={activeData.equityCurve} />
+            <EquityChart
+              points={activeData.equityCurve}
+              events={activeData.ledger}
+            />
           </Panel>
 
           <Panel title="Account balance" eyebrow="cash and capital">
@@ -702,7 +732,13 @@ function BalanceRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-function EquityChart({ points }: { points: EquityPoint[] }) {
+function EquityChart({
+  points,
+  events,
+}: {
+  points: EquityPoint[];
+  events: LedgerEvent[];
+}) {
   if (points.length < 2) {
     return (
       <div className="empty-chart">
@@ -723,18 +759,36 @@ function EquityChart({ points }: { points: EquityPoint[] }) {
   const min = Math.min(...values) * 0.96;
   const max = Math.max(...values) * 1.04;
   const range = Math.max(max - min, 1);
-  const xStep = (width - padding * 2) / (points.length - 1);
-  const toX = (index: number) => padding + index * xStep;
+  const tradeEvents = events.filter(isTradeEvent);
+  const pointTimes = points.map((point) => Date.parse(point.date));
+  const tradeTimes = tradeEvents
+    .map((event) => Date.parse(event.tradeDate || event.createdAt))
+    .filter(Number.isFinite);
+  const minTime = Math.min(...pointTimes, ...tradeTimes);
+  const maxTime = Math.max(...pointTimes, ...tradeTimes);
+  const timeRange = Math.max(maxTime - minTime, 1);
+  const toX = (date: string) =>
+    padding +
+    ((Date.parse(date) - minTime) / timeRange) * (width - padding * 2);
   const toY = (value: number) =>
     height - padding - ((value - min) / range) * (height - padding * 2);
   const path = points
     .map(
       (point, index) =>
-        `${index === 0 ? "M" : "L"} ${toX(index)} ${toY(point.totalEquity)}`,
+        `${index === 0 ? "M" : "L"} ${toX(point.date)} ${toY(point.totalEquity)}`,
     )
     .join(" ");
-  const areaPath = `${path} L ${toX(points.length - 1)} ${height - padding} L ${padding} ${height - padding} Z`;
+  const areaPath = `${path} L ${toX(points[points.length - 1].date)} ${height - padding} L ${toX(points[0].date)} ${height - padding} Z`;
   const gridValues = [0.25, 0.5, 0.75].map((ratio) => min + range * ratio);
+  const dateLabelIndexes = buildDateLabelIndexes(points, toX);
+  const markers = buildTradeMarkers({
+    events: tradeEvents,
+    height,
+    points,
+    toX,
+    toY,
+    width,
+  });
 
   return (
     <div className="chart-wrap">
@@ -769,23 +823,249 @@ function EquityChart({ points }: { points: EquityPoint[] }) {
           <g key={point.date}>
             <circle
               className="chart-dot"
-              cx={toX(index)}
+              cx={toX(point.date)}
               cy={toY(point.totalEquity)}
               r="5"
             />
-            <text
-              className="chart-date"
-              x={toX(index)}
-              y={height - 8}
-              textAnchor="middle"
-            >
-              {point.date.slice(5)}
-            </text>
+            {dateLabelIndexes.has(index) ? (
+              <text
+                className="chart-date"
+                x={toX(point.date)}
+                y={height - 8}
+                textAnchor="middle"
+              >
+                {point.date.slice(5)}
+              </text>
+            ) : null}
           </g>
         ))}
       </svg>
+      {markers.map((marker) => {
+        const markerStyle = {
+          "--marker-left": `${marker.left}%`,
+          "--marker-top": `${marker.top}%`,
+        } as CSSProperties;
+
+        return (
+          <button
+            aria-label={tradeMarkerAriaLabel(marker)}
+            className={`trade-marker trade-marker-${marker.tone} ${tradeMarkerPlacementClasses(marker)}`}
+            key={marker.id}
+            style={markerStyle}
+            type="button"
+          >
+            <span className="trade-marker-label">{marker.label}</span>
+            <TradeTooltip marker={marker} />
+          </button>
+        );
+      })}
     </div>
   );
+}
+
+function isTradeEvent(event: LedgerEvent): boolean {
+  return (
+    event.eventType === "trade" &&
+    (event.side === "buy" || event.side === "sell") &&
+    event.symbol !== "" &&
+    event.quantity !== null &&
+    event.averagePrice !== null
+  );
+}
+
+function buildTradeMarkers({
+  events,
+  height,
+  points,
+  toX,
+  toY,
+  width,
+}: {
+  events: LedgerEvent[];
+  height: number;
+  points: EquityPoint[];
+  toX: (date: string) => number;
+  toY: (value: number) => number;
+  width: number;
+}): TradeMarker[] {
+  const tradesByDate = new Map<string, LedgerEvent[]>();
+  events.forEach((event) => {
+    const date = event.tradeDate || event.createdAt;
+    const trades = tradesByDate.get(date) ?? [];
+    trades.push(event);
+    tradesByDate.set(date, trades);
+  });
+
+  return [...tradesByDate.entries()]
+    .sort(([leftDate], [rightDate]) => leftDate.localeCompare(rightDate))
+    .map(([date, trades]) => {
+      const sides = new Set(trades.map((trade) => trade.side));
+      const tone =
+        sides.size > 1 ? "mixed" : sides.has("sell") ? "sell" : "buy";
+      const label = tone === "mixed" ? "T" : tone === "sell" ? "S" : "B";
+      const x = toX(date);
+      const y = toY(interpolateEquity(points, date));
+      return {
+        date,
+        id: `trade-${date}`,
+        label,
+        left: clamp((x / width) * 100, 5, 95),
+        tone,
+        top: clamp((y / height) * 100 - 8, 8, 82),
+        trades,
+      };
+    });
+}
+
+function interpolateEquity(points: EquityPoint[], date: string): number {
+  const targetTime = Date.parse(date);
+  const sortedPoints = points
+    .slice()
+    .sort((left, right) => left.date.localeCompare(right.date));
+
+  if (targetTime <= Date.parse(sortedPoints[0].date)) {
+    return sortedPoints[0].totalEquity;
+  }
+
+  const lastPoint = sortedPoints[sortedPoints.length - 1];
+  if (targetTime >= Date.parse(lastPoint.date)) {
+    return lastPoint.totalEquity;
+  }
+
+  for (let index = 1; index < sortedPoints.length; index += 1) {
+    const previous = sortedPoints[index - 1];
+    const next = sortedPoints[index];
+    const previousTime = Date.parse(previous.date);
+    const nextTime = Date.parse(next.date);
+    if (targetTime <= nextTime) {
+      const progress = (targetTime - previousTime) / (nextTime - previousTime);
+      return (
+        previous.totalEquity +
+        (next.totalEquity - previous.totalEquity) * progress
+      );
+    }
+  }
+
+  return lastPoint.totalEquity;
+}
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max);
+}
+
+function tradeMarkerAriaLabel(marker: TradeMarker): string {
+  const summary = marker.trades
+    .map(
+      (trade) =>
+        `${trade.side.toUpperCase()} ${trade.quantity} ${trade.symbol} at ${formatCurrency(trade.averagePrice)}`,
+    )
+    .join(", ");
+  return `${marker.date}: ${summary}`;
+}
+
+function buildDateLabelIndexes(
+  points: EquityPoint[],
+  toX: (date: string) => number,
+): Set<number> {
+  const minimumGap = 78;
+  const indexes: number[] = [0];
+
+  if (points.length <= 6) {
+    for (let index = 1; index < points.length; index += 1) {
+      const previousIndex = indexes[indexes.length - 1];
+      if (
+        toX(points[index].date) - toX(points[previousIndex].date) >=
+        minimumGap
+      ) {
+        indexes.push(index);
+      }
+    }
+    return new Set(indexes);
+  }
+
+  const interiorCount = points.length - 2;
+  const interval = Math.max(1, Math.ceil(interiorCount / 4));
+  for (let index = interval; index < points.length - 1; index += interval) {
+    const previousIndex = indexes[indexes.length - 1];
+    if (
+      toX(points[index].date) - toX(points[previousIndex].date) >=
+      minimumGap
+    ) {
+      indexes.push(index);
+    }
+  }
+
+  const lastIndex = points.length - 1;
+  while (
+    indexes.length > 1 &&
+    toX(points[lastIndex].date) -
+      toX(points[indexes[indexes.length - 1]].date) <
+      minimumGap
+  ) {
+    indexes.pop();
+  }
+  indexes.push(lastIndex);
+
+  return new Set(indexes);
+}
+
+function tradeMarkerPlacementClasses(marker: TradeMarker): string {
+  const classes: string[] = [];
+
+  if (marker.left < 30) {
+    classes.push("trade-marker-edge-left");
+  } else if (marker.left > 70) {
+    classes.push("trade-marker-edge-right");
+  }
+
+  if (marker.top < 26) {
+    classes.push("trade-marker-tooltip-below");
+  }
+
+  return classes.join(" ");
+}
+
+function TradeTooltip({ marker }: { marker: TradeMarker }) {
+  return (
+    <span className="trade-tooltip">
+      <span className="trade-tooltip-heading">
+        <span>{marker.date}</span>
+        <strong>{tradeGroupLabel(marker)}</strong>
+      </span>
+      <span className="trade-tooltip-list">
+        {marker.trades.map((trade) => (
+          <span className="trade-tooltip-row" key={trade.eventId}>
+            <span className={`trade-side trade-side-${trade.side}`}>
+              {trade.side.toUpperCase()}
+            </span>
+            <strong>{trade.symbol}</strong>
+            <span>{formatTradeQuantity(trade.quantity)} shares</span>
+            <span>@ {formatCurrency(trade.averagePrice)}</span>
+            <span>{formatCurrency(Math.abs(trade.netCashEffect ?? 0))}</span>
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+}
+
+function tradeGroupLabel(marker: TradeMarker): string {
+  if (marker.trades.length === 1) {
+    return marker.trades[0].side === "sell" ? "Sell" : "Buy";
+  }
+
+  const sides = new Set(marker.trades.map((trade) => trade.side));
+  if (sides.size > 1) {
+    return `${marker.trades.length} trades`;
+  }
+
+  return marker.trades[0].side === "sell"
+    ? `${marker.trades.length} sells`
+    : `${marker.trades.length} buys`;
+}
+
+function formatTradeQuantity(value: number | null): string {
+  return value?.toLocaleString("en-US", { maximumFractionDigits: 4 }) ?? "-";
 }
 
 function HoldingsTable({ data }: { data: PortfolioData }) {

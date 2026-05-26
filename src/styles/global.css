@@ -13,8 +13,13 @@
   --indigo: #4f57c8;
   --shadow: 0 18px 55px rgba(18, 42, 35, 0.12);
   font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 
 * {
@@ -297,7 +302,8 @@ h1 {
 
 .chart-wrap {
   min-height: 18rem;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
 }
 
 .chart-wrap svg {
@@ -333,6 +339,233 @@ h1 {
   fill: white;
   stroke: var(--teal);
   stroke-width: 3;
+}
+
+.trade-marker {
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 999px;
+  box-shadow:
+    0 10px 22px rgba(18, 42, 35, 0.18),
+    0 0 0 1px rgba(23, 32, 29, 0.1);
+  color: white;
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 900;
+  height: 1.65rem;
+  justify-content: center;
+  left: var(--marker-left);
+  line-height: 1;
+  padding: 0;
+  position: absolute;
+  top: var(--marker-top);
+  transform: translate(-50%, -50%);
+  transition:
+    filter 160ms ease,
+    transform 160ms ease;
+  width: 1.65rem;
+  z-index: 3;
+}
+
+.trade-marker::before {
+  background: currentColor;
+  bottom: -1.05rem;
+  content: "";
+  height: 1rem;
+  opacity: 0.36;
+  position: absolute;
+  width: 2px;
+}
+
+.trade-marker-buy {
+  background: var(--green);
+}
+
+.trade-marker-sell {
+  background: var(--coral);
+}
+
+.trade-marker-mixed {
+  background: var(--indigo);
+}
+
+.trade-marker:hover,
+.trade-marker:focus-visible,
+.trade-marker:focus {
+  filter: saturate(1.12);
+  outline: none;
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+.trade-tooltip {
+  background: rgba(23, 32, 29, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 22px 55px rgba(18, 42, 35, 0.24);
+  color: white;
+  cursor: default;
+  display: none;
+  left: 50%;
+  max-width: min(26rem, calc(100vw - 2rem));
+  min-width: min(22rem, calc(100vw - 2rem));
+  opacity: 0;
+  padding: 0.75rem;
+  pointer-events: none;
+  position: absolute;
+  top: -0.85rem;
+  transform: translate(-50%, -100%) translateY(0.35rem);
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+  z-index: 5;
+}
+
+.trade-tooltip::after {
+  background: rgba(23, 32, 29, 0.96);
+  bottom: -0.35rem;
+  content: "";
+  height: 0.7rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) rotate(45deg);
+  width: 0.7rem;
+}
+
+.trade-marker:hover .trade-tooltip,
+.trade-marker:focus .trade-tooltip,
+.trade-marker:focus-visible .trade-tooltip {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -100%) translateY(0);
+}
+
+.trade-marker-edge-left .trade-tooltip {
+  left: -0.5rem;
+  transform: translate(0, -100%) translateY(0.35rem);
+}
+
+.trade-marker-edge-left:hover .trade-tooltip,
+.trade-marker-edge-left:focus .trade-tooltip,
+.trade-marker-edge-left:focus-visible .trade-tooltip {
+  transform: translate(0, -100%) translateY(0);
+}
+
+.trade-marker-edge-left .trade-tooltip::after {
+  left: 1.35rem;
+}
+
+.trade-marker-edge-right .trade-tooltip {
+  left: auto;
+  right: -0.5rem;
+  transform: translate(0, -100%) translateY(0.35rem);
+}
+
+.trade-marker-edge-right:hover .trade-tooltip,
+.trade-marker-edge-right:focus .trade-tooltip,
+.trade-marker-edge-right:focus-visible .trade-tooltip {
+  transform: translate(0, -100%) translateY(0);
+}
+
+.trade-marker-edge-right .trade-tooltip::after {
+  left: auto;
+  right: 1rem;
+}
+
+.trade-marker-tooltip-below .trade-tooltip {
+  top: calc(100% + 0.85rem);
+  transform: translate(-50%, 0.35rem);
+}
+
+.trade-marker-tooltip-below:hover .trade-tooltip,
+.trade-marker-tooltip-below:focus .trade-tooltip,
+.trade-marker-tooltip-below:focus-visible .trade-tooltip {
+  transform: translate(-50%, 0);
+}
+
+.trade-marker-tooltip-below .trade-tooltip::after {
+  bottom: auto;
+  top: -0.35rem;
+}
+
+.trade-marker-edge-left.trade-marker-tooltip-below .trade-tooltip {
+  transform: translate(0, 0.35rem);
+}
+
+.trade-marker-edge-left.trade-marker-tooltip-below:hover .trade-tooltip,
+.trade-marker-edge-left.trade-marker-tooltip-below:focus .trade-tooltip,
+.trade-marker-edge-left.trade-marker-tooltip-below:focus-visible
+  .trade-tooltip {
+  transform: translate(0, 0);
+}
+
+.trade-marker-edge-right.trade-marker-tooltip-below .trade-tooltip {
+  transform: translate(0, 0.35rem);
+}
+
+.trade-marker-edge-right.trade-marker-tooltip-below:hover .trade-tooltip,
+.trade-marker-edge-right.trade-marker-tooltip-below:focus .trade-tooltip,
+.trade-marker-edge-right.trade-marker-tooltip-below:focus-visible
+  .trade-tooltip {
+  transform: translate(0, 0);
+}
+
+.trade-tooltip-heading {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.trade-tooltip-heading span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.trade-tooltip-heading strong {
+  font-size: 0.84rem;
+}
+
+.trade-tooltip-list {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.trade-tooltip-row {
+  align-items: center;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns:
+    auto minmax(2.8rem, 0.6fr) minmax(5rem, 1fr) minmax(5.2rem, 1fr)
+    minmax(5rem, 1fr);
+}
+
+.trade-tooltip-row span,
+.trade-tooltip-row strong {
+  font-size: 0.78rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trade-side {
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  font-size: 0.68rem;
+  font-weight: 900;
+  justify-content: center;
+  min-width: 2.35rem;
+  padding: 0.2rem 0.34rem;
+}
+
+.trade-side-buy {
+  background: var(--green);
+}
+
+.trade-side-sell {
+  background: var(--coral);
 }
 
 .empty-chart,
@@ -580,5 +813,25 @@ td span {
 
   .metric-card {
     min-height: 5rem;
+  }
+
+  .trade-tooltip {
+    max-width: calc(100vw - 3rem);
+    min-width: min(18rem, calc(100vw - 3rem));
+    padding: 0.68rem;
+  }
+
+  .trade-tooltip-row {
+    align-items: start;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .trade-tooltip-row .trade-side {
+    grid-row: span 4;
+  }
+
+  .trade-tooltip-row strong,
+  .trade-tooltip-row span:nth-child(n + 3) {
+    grid-column: 2;
   }
 }

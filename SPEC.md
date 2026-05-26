@@ -354,6 +354,7 @@ Required dashboard surfaces:
 - holdings table;
 - append-only operation history;
 - equity curve;
+- buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
 - active research/watchlist table;
 - open-source repository link.
 
@@ -363,6 +364,7 @@ Metric definitions:
 - Total return uses latest total equity compared with cumulative confirmed deposits when those values exist.
 - Sharpe ratio is annualized from committed period return observations; display an empty state until enough observations exist.
 - Maximum drawdown should be calculated from period return observations when available, because recurring deposits can hide drawdowns in raw account equity. Fall back to raw equity only when return observations are unavailable.
+- Equity curve trade markers should group same-day buy and sell executions, distinguish buy and sell visually, and expose a hover, focus, or click tooltip with date, side, symbol, share quantity, average execution price, and cash impact. The tooltip must use confirmed ledger events in real-data mode and browser-only fixtures in demo mode.
 
 Fallback behavior:
 
