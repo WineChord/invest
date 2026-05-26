@@ -21,7 +21,14 @@ import type {
   SeriesMarker,
   Time,
 } from "lightweight-charts";
-import type { CSSProperties, ReactNode, RefObject } from "react";
+import type {
+  CSSProperties,
+  FocusEvent,
+  MouseEvent as ReactMouseEvent,
+  PointerEvent as ReactPointerEvent,
+  ReactNode,
+  RefObject,
+} from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   EquityPoint,
@@ -93,7 +100,20 @@ interface LogoTrendPalette {
   glow: string;
 }
 
+interface WatchPreviewState {
+  left: number;
+  symbol: string;
+  top: number;
+}
+
 type ChartRange = "1M" | "3M" | "6M" | "YTD" | "1Y" | "3Y" | "5Y" | "ALL";
+
+const WATCH_PREVIEW_MEDIA_QUERY =
+  "(hover: hover) and (pointer: fine) and (min-width: 761px)";
+const WATCH_PREVIEW_WIDTH = 380;
+const WATCH_PREVIEW_HEIGHT = 220;
+const WATCH_PREVIEW_GAP = 12;
+const WATCH_PREVIEW_MARGIN = 12;
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
@@ -705,7 +725,6 @@ export default function InvestDashboard({ data }: Props) {
             href={activeData.repositoryUrl}
             target="_blank"
             rel="noreferrer"
-            title="GitHub repository"
           >
             <Github size={18} />
             <span>Open source</span>
@@ -714,7 +733,6 @@ export default function InvestDashboard({ data }: Props) {
             className="mode-button preference-button"
             type="button"
             onClick={() => setMarketColorScheme(nextMarketColorScheme)}
-            title={`Switch to ${marketColorDescription(nextMarketColorScheme)}`}
             aria-label={`Market color convention: ${marketColorDescription(marketColorScheme)}. Switch to ${marketColorDescription(nextMarketColorScheme)}.`}
           >
             <Palette size={17} />
@@ -726,7 +744,6 @@ export default function InvestDashboard({ data }: Props) {
             }
             type="button"
             onClick={() => setMode("real")}
-            title="Restore committed repository data"
           >
             <RefreshCcw size={17} />
             <span>Real data</span>
@@ -737,7 +754,6 @@ export default function InvestDashboard({ data }: Props) {
             }
             type="button"
             onClick={() => setMode("demo")}
-            title="Inject browser-only demo data"
           >
             <Sparkles size={17} />
             <span>Demo data</span>
@@ -1531,11 +1547,6 @@ function EquityChart({
             <span>Events</span>
             {markers.map((marker) => (
               <button
-                title={
-                  pointByDate.has(marker.date)
-                    ? undefined
-                    : "Not plotted: no equity snapshot exists for this date."
-                }
                 aria-label={tradeMarkerAriaLabel(
                   marker,
                   pointByDate.has(marker.date),
@@ -2294,20 +2305,37 @@ function WatchlistTable({
   repositoryUrl: string;
 }) {
   const [selectedSymbol, setSelectedSymbol] = useState(items[0]?.symbol ?? "");
+  const [previewState, setPreviewState] = useState<WatchPreviewState | null>(
+    null,
+  );
   const detailPanelRef = useRef<HTMLElement | null>(null);
   const selectedItem =
     items.find((item) => item.symbol === selectedSymbol) ?? items[0] ?? null;
+  const previewItem =
+    previewState === null
+      ? null
+      : (items.find((item) => item.symbol === previewState.symbol) ?? null);
+  const previewEntry =
+    previewItem === null ? null : latestAnalysisFor(previewItem);
 
   useEffect(() => {
     if (items.length === 0) {
       setSelectedSymbol("");
+      setPreviewState(null);
       return;
     }
 
     if (!items.some((item) => item.symbol === selectedSymbol)) {
       setSelectedSymbol(items[0].symbol);
     }
-  }, [items, selectedSymbol]);
+
+    if (
+      previewState !== null &&
+      !items.some((item) => item.symbol === previewState.symbol)
+    ) {
+      setPreviewState(null);
+    }
+  }, [items, previewState?.symbol, selectedSymbol]);
 
   const selectItem = (symbol: string) => {
     setSelectedSymbol(symbol);
@@ -2323,6 +2351,109 @@ function WatchlistTable({
       });
     }
   };
+
+  const showPreviewForElement = (
+    symbol: string,
+    element: HTMLButtonElement,
+  ) => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    if (!window.matchMedia(WATCH_PREVIEW_MEDIA_QUERY).matches) {
+      return;
+    }
+
+    const rect = element.getBoundingClientRect();
+    const detailPanel = element
+      .closest(".research-workspace")
+      ?.querySelector<HTMLElement>(".research-detail-panel");
+    const detailPanelRect = detailPanel?.getBoundingClientRect() ?? null;
+    const maxLeft = Math.max(
+      WATCH_PREVIEW_MARGIN,
+      window.innerWidth - WATCH_PREVIEW_WIDTH - WATCH_PREVIEW_MARGIN,
+    );
+    const maxTop = Math.max(
+      WATCH_PREVIEW_MARGIN,
+      window.innerHeight - WATCH_PREVIEW_HEIGHT - WATCH_PREVIEW_MARGIN,
+    );
+    const clamp = (value: number, minimum: number, maximum: number) =>
+      Math.min(Math.max(value, minimum), maximum);
+    const alignedLeft = clamp(rect.left, WATCH_PREVIEW_MARGIN, maxLeft);
+    const alignedTop = clamp(rect.top, WATCH_PREVIEW_MARGIN, maxTop);
+    const candidates = [
+      { left: rect.right + WATCH_PREVIEW_GAP, top: alignedTop },
+      {
+        left: rect.left - WATCH_PREVIEW_WIDTH - WATCH_PREVIEW_GAP,
+        top: alignedTop,
+      },
+      { left: alignedLeft, top: rect.bottom + WATCH_PREVIEW_GAP },
+      {
+        left: alignedLeft,
+        top: rect.top - WATCH_PREVIEW_HEIGHT - WATCH_PREVIEW_GAP,
+      },
+    ];
+    const candidateFits = ({ left, top }: { left: number; top: number }) =>
+      left >= WATCH_PREVIEW_MARGIN &&
+      top >= WATCH_PREVIEW_MARGIN &&
+      left + WATCH_PREVIEW_WIDTH <= window.innerWidth - WATCH_PREVIEW_MARGIN &&
+      top + WATCH_PREVIEW_HEIGHT <= window.innerHeight - WATCH_PREVIEW_MARGIN;
+    const candidateOverlaps = (
+      { left, top }: { left: number; top: number },
+      target: DOMRect | null,
+    ) =>
+      target !== null &&
+      left + WATCH_PREVIEW_WIDTH > target.left &&
+      left < target.right &&
+      top + WATCH_PREVIEW_HEIGHT > target.top &&
+      top < target.bottom;
+    const next =
+      candidates.find(
+        (candidate) =>
+          candidateFits(candidate) &&
+          !candidateOverlaps(candidate, rect) &&
+          !candidateOverlaps(candidate, detailPanelRect),
+      ) ??
+      candidates.find(
+        (candidate) =>
+          candidateFits(candidate) && !candidateOverlaps(candidate, rect),
+      ) ??
+      {
+        left: alignedLeft,
+        top: alignedTop,
+      };
+
+    setPreviewState({
+      left: clamp(next.left, WATCH_PREVIEW_MARGIN, maxLeft),
+      symbol,
+      top: clamp(next.top, WATCH_PREVIEW_MARGIN, maxTop),
+    });
+  };
+
+  const showPreviewFromPointer = (
+    event: ReactPointerEvent<HTMLButtonElement>,
+    symbol: string,
+  ) => {
+    if (event.pointerType === "touch") {
+      return;
+    }
+    showPreviewForElement(symbol, event.currentTarget);
+  };
+
+  const showPreviewFromMouse = (
+    event: ReactMouseEvent<HTMLButtonElement>,
+    symbol: string,
+  ) => {
+    showPreviewForElement(symbol, event.currentTarget);
+  };
+
+  const showPreviewFromFocus = (
+    event: FocusEvent<HTMLButtonElement>,
+    symbol: string,
+  ) => {
+    showPreviewForElement(symbol, event.currentTarget);
+  };
+
+  const hidePreview = () => setPreviewState(null);
 
   if (items.length === 0) {
     return (
@@ -2345,7 +2476,11 @@ function WatchlistTable({
 
           return (
             <button
-              aria-describedby={latest === null ? undefined : previewId}
+              aria-describedby={
+                latest !== null && previewState?.symbol === item.symbol
+                  ? previewId
+                  : undefined
+              }
               aria-pressed={selected}
               className={
                 selected
@@ -2353,8 +2488,35 @@ function WatchlistTable({
                   : "watch-card"
               }
               key={item.symbol}
+              onBlur={hidePreview}
               onClick={() => selectItem(item.symbol)}
-              title={latest?.summary ?? item.notes}
+              onFocus={(event) => {
+                if (latest !== null) {
+                  showPreviewFromFocus(event, item.symbol);
+                }
+              }}
+              onMouseEnter={(event) => {
+                if (latest !== null) {
+                  showPreviewFromMouse(event, item.symbol);
+                }
+              }}
+              onMouseLeave={hidePreview}
+              onMouseMove={(event) => {
+                if (latest !== null) {
+                  showPreviewFromMouse(event, item.symbol);
+                }
+              }}
+              onPointerEnter={(event) => {
+                if (latest !== null) {
+                  showPreviewFromPointer(event, item.symbol);
+                }
+              }}
+              onPointerLeave={hidePreview}
+              onPointerMove={(event) => {
+                if (latest !== null) {
+                  showPreviewFromPointer(event, item.symbol);
+                }
+              }}
               type="button"
             >
               <span className="watch-card-topline">
@@ -2372,17 +2534,21 @@ function WatchlistTable({
                 <span>{formatWatchPrice(item)}</span>
                 <span>{analysisCountLabel(item.analysisHistory.length)}</span>
               </span>
-              {latest === null ? null : (
-                <WatchAnalysisPreview
-                  entry={latest}
-                  id={previewId}
-                  item={item}
-                />
-              )}
             </button>
           );
         })}
       </div>
+      {previewItem === null || previewEntry === null || previewState === null ? null : (
+        <WatchAnalysisPreview
+          entry={previewEntry}
+          id={`watch-preview-${previewItem.symbol.toLowerCase()}`}
+          item={previewItem}
+          style={{
+            left: `${previewState.left}px`,
+            top: `${previewState.top}px`,
+          }}
+        />
+      )}
       <ResearchDetailPanel
         item={selectedItem}
         panelRef={detailPanelRef}
@@ -2396,13 +2562,15 @@ function WatchAnalysisPreview({
   entry,
   id,
   item,
+  style,
 }: {
   entry: ResearchAnalysisEntry;
   id: string;
   item: WatchlistItem;
+  style: CSSProperties;
 }) {
   return (
-    <span className="watch-preview" id={id} role="tooltip">
+    <span className="watch-preview" id={id} role="tooltip" style={style}>
       <span className="watch-preview-kicker">Latest analysis</span>
       <strong>
         {item.symbol} {analysisStanceLabel(entry.stance)} · {entry.analyzedAt}

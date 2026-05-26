@@ -1154,31 +1154,21 @@ td span {
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 18px 40px rgba(18, 42, 35, 0.16);
+  box-shadow: 0 18px 42px rgba(18, 42, 35, 0.18);
   color: var(--ink);
   display: grid;
   gap: 0.42rem;
-  left: 0.65rem;
-  max-width: min(23rem, calc(100vw - 2rem));
-  opacity: 0;
+  max-width: min(23.5rem, calc(100vw - 1.5rem));
+  min-width: min(19rem, calc(100vw - 1.5rem));
+  opacity: 1;
   padding: 0.68rem;
   pointer-events: none;
-  position: absolute;
-  right: 0.65rem;
-  top: calc(100% - 0.45rem);
-  transform: translateY(-0.3rem);
-  transition:
-    opacity 140ms ease,
-    transform 140ms ease;
-  visibility: hidden;
-  z-index: 5;
-}
-
-.watch-card:hover .watch-preview,
-.watch-card:focus-visible .watch-preview {
-  opacity: 1;
+  position: fixed;
   transform: translateY(0);
-  visibility: visible;
+  transition:
+    opacity 70ms ease,
+    transform 70ms ease;
+  z-index: 40;
 }
 
 .watch-preview span {
@@ -1438,8 +1428,7 @@ td span {
     min-height: 9rem;
   }
 
-  .watch-card:hover .watch-preview,
-  .watch-card:focus-visible .watch-preview {
+  .watch-preview {
     display: none;
   }
 
