@@ -2248,18 +2248,18 @@ function OperationsList({ events }: { events: LedgerEvent[] }) {
         .reverse()
         .map((event) => (
           <li key={event.eventId}>
-            <div className="operation-row">
-              <span className="operation-date">
-                {event.tradeDate || event.createdAt}
-              </span>
-              <span
-                className={`operation-badge operation-badge-${operationTone(event)}`}
-              >
-                {operationBadgeLabel(event)}
-              </span>
-            </div>
-            <strong>{operationTitle(event)}</strong>
-            <span>{operationDetail(event)}</span>
+            <span className="operation-date">
+              {event.tradeDate || event.createdAt}
+            </span>
+            <span className="operation-main">
+              <strong>{operationTitle(event)}</strong>
+              <span>{operationDetail(event)}</span>
+            </span>
+            <span
+              className={`operation-badge operation-badge-${operationTone(event)}`}
+            >
+              {operationBadgeLabel(event)}
+            </span>
           </li>
         ))}
     </ol>
