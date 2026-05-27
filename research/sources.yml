@@ -207,3 +207,39 @@ sources:
     first_seen_at: 2026-05-26
     related_symbols: [ASTS]
     summary: Quote page showed ASTS May 22, 2026 close at USD 105.86 and May 26, 2026 pre-market indication around USD 113.07.
+  - id: ishares_sgov_2026_05_27
+    title: iShares 0-3 Month Treasury Bond ETF
+    source_type: fund_provider
+    url: https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf-fund
+    source_published_at: 2026-05-27
+    retrieved_at: 2026-05-27
+    first_seen_at: 2026-05-27
+    related_symbols: [SGOV]
+    summary: iShares describes SGOV as seeking to track an index composed of 0-3 month U.S. Treasury securities and as a capital-preservation and liquidity-management tool.
+  - id: schwab_international_account_2026_05_27
+    title: Invest in the U.S. market with a Schwab International Brokerage Account
+    source_type: broker_documentation
+    url: https://international.schwab.com/us-investing-brokerage-account
+    source_published_at: undated
+    retrieved_at: 2026-05-27
+    first_seen_at: 2026-05-27
+    related_symbols: []
+    summary: Schwab states that Schwab One International accounts allow many international investors to trade U.S. stocks, ETFs, options, and bonds in U.S. markets, subject to eligibility and restrictions.
+  - id: schwab_cash_trading_violations_2025_08_29
+    title: Avoiding Trading Violations in Cash Accounts
+    source_type: broker_documentation
+    url: https://international.schwab.com/story/understanding-stock-settlement-dates-violations
+    source_published_at: 2025-08-29
+    retrieved_at: 2026-05-27
+    first_seen_at: 2026-05-27
+    related_symbols: []
+    summary: Schwab explains T+1 settlement, settled and unsettled cash, and good faith violations when a security bought with unsettled proceeds is sold before the original sale settles.
+  - id: investorgov_t1_settlement
+    title: New T+1 Settlement Cycle - What Investors Need To Know
+    source_type: regulator
+    url: https://www.investor.gov/newT1settlement-cycle
+    source_published_at: 2024
+    retrieved_at: 2026-05-27
+    first_seen_at: 2026-05-27
+    related_symbols: []
+    summary: Investor.gov explains that the T+1 settlement cycle applies to stocks, bonds, municipal securities, exchange-traded funds, certain mutual funds, and limited partnerships that trade on an exchange.

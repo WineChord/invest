@@ -10,17 +10,19 @@ Start here:
 
 1. Read [AGENTS.md](AGENTS.md) for the rules every future agent must follow.
 2. Read [SPEC.md](SPEC.md) for the full portfolio system design.
-3. Use [templates/monthly-decision.md](templates/monthly-decision.md) when asking for a monthly buy or sell plan.
-4. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
-5. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
-6. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
-7. Run `npm run dev` to preview the public dashboard locally.
+3. Read [policy-v1.1.md](data/policy/policy-v1.1.md) for the current investment policy.
+4. Use [templates/monthly-decision.md](templates/monthly-decision.md) when asking for a monthly buy, sell, hold-cash, or SGOV liquidity-reserve plan.
+5. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
+6. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
+7. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
+8. Run `npm run dev` to preview the public dashboard locally.
 
 Repository state:
 
 - Confirmed positions: empty.
 - Confirmed cash balance: unknown until the first broker-confirmed deposit or account snapshot is provided.
 - Confirmed ledger events: none.
+- Current policy: [policy-v1.1.md](data/policy/policy-v1.1.md), which allows SGOV or a materially equivalent short-duration U.S. Treasury reserve for cash management only.
 - Initial research baseline: [research/2026-05-26-initial-baseline.md](research/2026-05-26-initial-baseline.md).
 - Initial simulated decision: [decisions/2026-05-26-initial-simulation.md](decisions/2026-05-26-initial-simulation.md).
 

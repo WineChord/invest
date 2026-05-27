@@ -10,6 +10,7 @@ Rules:
 - `plan.yml` stores planned contributions and preferences, not actual cash.
 - `equity_curve.csv` stores derived performance snapshots for reporting.
 - Recommendations in `decisions/` never mutate this directory.
+- SGOV and equivalent liquidity-reserve instruments are securities, not cash. Record confirmed reserve buys and sells in `ledger.csv`; do not silently merge them into `confirmed_cash`.
 
 Equity curve cadence:
 
@@ -26,3 +27,4 @@ Initial state on 2026-05-26:
 - no confirmed positions;
 - confirmed cash balance unknown;
 - default planned monthly contribution USD 888.
+- policy `v1.1` allows SGOV or a materially equivalent short-duration U.S. Treasury reserve for cash management only after broker-confirmed execution.

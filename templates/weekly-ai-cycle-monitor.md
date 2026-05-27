@@ -107,7 +107,7 @@ Use this only for confirmed holdings and active watchlist names relevant to the 
 | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |  |
 
-Account-permitted actions under policy `v1.0` are buy eligible common stock, add, hold, trim, exit, wait, or hold cash. Puts, shorts, leverage, margin, crypto tokens, private shares, and non-US-listed instruments are outside policy unless a later approved policy changes this.
+Account-permitted actions under policy `v1.1` are buy eligible common stock, add, hold, trim, exit, wait, hold cash, or park idle liquidity in an approved short-duration U.S. Treasury reserve such as SGOV. Puts, shorts, leverage, margin, crypto tokens, private shares, and non-US-listed instruments are outside policy unless a later approved policy changes this.
 
 ## 6. Next-Week Scenarios
 

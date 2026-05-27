@@ -10,6 +10,8 @@ This account is not the user's main Nasdaq technology allocation. Do not dilute 
 
 Default planned monthly contribution: USD 888. Treat this as planned cash only until the user confirms that money is available in the brokerage account.
 
+Under policy `v1.1`, monthly contributions do not need to be fully deployed. A monthly decision may recommend no trade, holding cash, or parking idle cash in SGOV or a materially equivalent approved short-duration U.S. Treasury liquidity reserve when that best supports the long-term objective.
+
 ## Immutable Rules
 
 1. Never execute trades.
@@ -24,6 +26,7 @@ Default planned monthly contribution: USD 888. Treat this as planned cash only u
 10. Do not add leverage, margin, options, short selling, crypto tokens, private shares, or non-US-listed instruments unless a later explicit policy version approved by the user allows them.
 11. When adding or changing product behavior, data records, dashboard behavior, research workflow, or automation, evaluate whether `SPEC.md` and templates need to be updated in the same change. Update them when the behavior becomes part of the durable process.
 12. Treat repository hygiene as part of the product. After meaningful decisions, research updates, dashboard work, or tooling changes, check whether the repository accumulated stale, duplicated, misleading, or low-signal material. Clean it up without weakening auditability.
+13. Treat SGOV or an equivalent short-duration U.S. Treasury reserve as cash management only, never as a return-seeking satellite allocation. SGOV is an ETF, not cash; record confirmed SGOV buys and sells like any other broker-confirmed trade.
 
 ## Source Hierarchy
 
@@ -72,9 +75,10 @@ When the user asks what to buy or sell today:
 8. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, or missing filing reviews make the research engine not decision-ready, either refresh the evidence or recommend holding cash.
 9. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
 10. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
-11. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
-12. Mark the output as a proposed decision only. Do not mutate the ledger.
-13. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
+11. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, or do nothing. Never force a trade just because a monthly contribution arrived.
+12. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
+13. Mark the output as a proposed decision only. Do not mutate the ledger.
+14. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
 
 ## Execution Update Workflow
 
@@ -164,6 +168,8 @@ Completed material filing reviews must be saved under `research/filings/` and li
 Do not blindly follow the user's initial candidate list. Treat it as a starting watchlist and independently challenge every company.
 
 Sells should be rare. Prefer directing new contributions away from downgraded companies before selling existing long-term positions. Sell or trim only when fresh evidence shows thesis breakage, unacceptable permanent impairment risk, portfolio risk that conflicts with the mission, or a clearly superior opportunity after tax and execution costs.
+
+Liquidity reserve sales are different from return-seeking position sales. Selling SGOV or an equivalent approved reserve to fund a researched common-stock buy is a cash-management step, not a thesis-driven exit.
 
 ## Git Rules
 

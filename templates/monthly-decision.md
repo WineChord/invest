@@ -14,6 +14,9 @@ cash_available_for_trading:
 settled_cash:
 fractional_shares_allowed:
 fees_or_commissions:
+liquidity_reserve_enabled:
+liquidity_reserve_symbol: SGOV
+broker_settlement_constraints:
 current_positions:
   - symbol:
     quantity:
@@ -30,6 +33,7 @@ Minimum needed for exact share counts:
 - whether fractional shares are allowed;
 - current holdings if they differ from repository records;
 - any fees or commissions.
+- whether the approved liquidity reserve is available and eligible in the user's broker account.
 
 The agent must refresh current market and company data before recommending any orders.
 
@@ -44,11 +48,13 @@ Research engine checklist before proposing orders:
 - If a material filing exists, complete or cite a filing review using [filing-review.md](filing-review.md) before buying that symbol.
 - If `research/quality-metrics.yml` says `decision_readiness.status: not_ready`, refresh the missing evidence or recommend holding cash.
 - State when a company is good but not attractively priced, or when a price looks cheap but the thesis may be broken.
+- State when no stock passes the gates and the best action is no trade, hold cash, or park idle cash in the approved liquidity reserve.
 - Confirm the target passes the mission gate, evidence gate, and entry gate from `AGENTS.md`.
 
 Output discipline:
 
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.
-- Keep proposed account actions inside the current policy. Under policy `v1.0`, do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.
+- Keep proposed account actions inside the current policy. Under policy `v1.1`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.
 - Every action needs a trigger condition, invalidation condition, and time horizon.
+- SGOV and equivalent reserve buys and sells still require broker execution confirmation before ledger updates.

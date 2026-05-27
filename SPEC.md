@@ -8,6 +8,8 @@ The account starts with no confirmed holdings and no confirmed cash balance. The
 
 The portfolio's ultimate objective is not to look stable or diversified in a conventional sense. The objective is to find and hold a small number of public companies that can plausibly become much larger over decades because they sit on structural bottlenecks: space infrastructure, direct-to-device connectivity, AI infrastructure, power, cooling, semiconductor interconnect, quantum technology, programmable money, and future categories that do not yet exist.
 
+The account is not required to stay fully invested. Monthly contributions can remain unspent when no candidate passes the mission, evidence, and entry gates. Under policy `v1.1`, idle liquidity may be parked in SGOV or a materially equivalent short-duration U.S. Treasury reserve instrument for cash management only.
+
 ## Non-Goals
 
 - Do not manage the user's large Nasdaq technology core allocation.
@@ -15,6 +17,7 @@ The portfolio's ultimate objective is not to look stable or diversified in a con
 - Do not create automatic trades.
 - Do not treat monthly contribution planning as confirmed cash.
 - Do not use options, margin, leverage, shorts, crypto tokens, OTC shares, or private-company proxies without a later user-approved policy.
+- Do not treat SGOV or an equivalent Treasury reserve instrument as a return-seeking allocation. It is an ETF or money-market vehicle used for liquidity management, not cash itself and not a satellite thesis.
 
 ## Repository Layout
 
@@ -105,6 +108,8 @@ first_trade_date,last_trade_date,notes
 ```
 
 The default contribution plan is stored in [data/account/plan.yml](data/account/plan.yml). It is a plan, not confirmed cash.
+
+SGOV and equivalent reserve instruments, if used, are recorded as confirmed positions and ledger events. They may be shown separately as liquidity reserve exposure in reporting, but they are still securities and must not be silently merged into confirmed cash.
 
 Research sources are stored in [research/sources.yml](research/sources.yml).
 
@@ -470,6 +475,7 @@ Allocation outputs:
 - proposed exact share counts and estimated cash use;
 - a validity window tied to price and evidence freshness;
 - rationale for why new cash goes to the selected name or stays in cash;
+- rationale for why idle cash should or should not be parked in the approved liquidity reserve;
 - explicit statement when a name is good but not buyable at the current price;
 - explicit statement when a name is cheap but evidence is too weak or the thesis may be broken.
 
@@ -496,7 +502,7 @@ If a critical freshness check fails, the decision must default to no trade or ho
 
 ## AI Cycle and Market Regime Monitor
 
-The AI cycle monitor is a risk overlay for monthly allocation and major-event reviews. It is not a standalone trading system, and it does not override the allowed-asset policy. Under policy `v1.0`, the monitor may recommend buying eligible common stocks, holding cash, reducing or exiting confirmed positions, or waiting. It must not recommend options, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments as account actions unless a later approved policy allows them. If a market-regime review discusses puts, hedges, or shorts as general market context, the output must label them as outside the account policy rather than converting them into proposed orders.
+The AI cycle monitor is a risk overlay for monthly allocation and major-event reviews. It is not a standalone trading system, and it does not override the allowed-asset policy. Under policy `v1.1`, the monitor may recommend buying eligible common stocks, holding cash, parking idle liquidity in an approved short-duration U.S. Treasury reserve, reducing or exiting confirmed return-seeking positions, or waiting. It must not recommend options, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments as account actions unless a later approved policy allows them. If a market-regime review discusses puts, hedges, or shorts as general market context, the output must label them as outside the account policy rather than converting them into proposed orders.
 
 Purpose:
 
@@ -572,7 +578,7 @@ Bubble risk dimensions:
 9. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
 10. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
 11. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
-12. Decide one of: buy new position, add to existing position, hold cash, do nothing, trim, or exit.
+12. Decide one of: buy new position, add to existing position, park idle cash in the approved liquidity reserve, hold cash, do nothing, trim, or exit.
 13. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
 14. State the validity window. If price moves materially, market closes, or new company-specific information appears, recompute.
 15. Save the proposed decision in `decisions/` if the user asks to persist it.
@@ -588,6 +594,7 @@ Default sizing principles:
 
 - Start new names in stages unless a fresh, unusually strong evidence update justifies a larger first allocation.
 - Prefer adding to existing high-conviction names when fresh evidence confirms the thesis and valuation remains tolerable.
+- Prefer holding cash or liquidity reserve over forcing deployment when evidence or valuation is not strong enough.
 - Prefer withholding new cash from downgraded names before selling existing positions.
 - Do not make forced rebalancing trades just because a position outperformed.
 - Do not sell winners solely because they became large; sell only if the thesis breaks, risk becomes unacceptable, or opportunity cost becomes overwhelming.
@@ -597,6 +604,7 @@ Suggested guardrails for normal decisions:
 
 - Keep a small cash buffer for price slippage and fees.
 - Avoid deploying the full monthly contribution into a single unprofitable, pre-commercial company unless fresh evidence materially reduces execution risk.
+- Do not deploy the full monthly contribution merely to avoid idle cash. Cash and the liquidity reserve preserve option value.
 - Track theme concentration, especially AI infrastructure and space infrastructure, because multiple tickers can depend on the same capital spending cycle.
 
 The guardrails are not mechanical rules. The final recommendation must explain why the chosen sizing best serves the long-term asymmetric objective.
@@ -608,16 +616,19 @@ Default allowed assets:
 - common stocks or ADRs listed on major US exchanges;
 - companies with sufficient liquidity for normal retail execution;
 - companies whose thesis can be researched from public sources.
+- SGOV or a materially equivalent short-duration U.S. Treasury ETF or Treasury money-market vehicle, for liquidity reserve use only under policy `v1.1`.
 
 Default excluded assets:
 
 - options;
 - margin or leveraged ETFs;
+- inverse ETFs;
 - short positions;
 - crypto tokens;
 - private shares and secondary private markets;
 - OTC securities;
 - funds that simply duplicate the user's existing Nasdaq technology core.
+- bond funds used as yield-seeking or duration-seeking allocations rather than liquidity reserves.
 
 Future IPO watch items such as SpaceX, OpenAI, and Anthropic are research-only until they become directly tradable under the allowed asset rules.
 
@@ -701,6 +712,7 @@ Ledger math:
 - Deposit increases cash by confirmed amount.
 - Buy decreases cash by `quantity * average_price + fees`.
 - Sell increases cash by `quantity * average_price - fees`.
+- SGOV or equivalent reserve buys and sells use normal buy and sell ledger events. They are securities transactions, not cash ledger shortcuts.
 - Fees are recorded explicitly.
 - Splits, dividends, and corrections use separate event rows.
 
