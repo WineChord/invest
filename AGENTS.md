@@ -12,6 +12,8 @@ Default planned monthly contribution: USD 888. Treat this as planned cash only u
 
 Under policy `v1.1`, monthly contributions do not need to be fully deployed. A monthly decision may recommend no trade, holding cash, or parking idle cash in SGOV or a materially equivalent approved short-duration U.S. Treasury liquidity reserve when that best supports the long-term objective.
 
+The reverse is also true: the latest USD 888 contribution is not a sizing cap. If a rare opportunity passes the mission, evidence, and entry gates strongly enough, evaluate total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale.
+
 ## Immutable Rules
 
 1. Never execute trades.
@@ -67,7 +69,7 @@ When the user asks what to buy or sell today:
 
 1. Start from the confirmed ledger and confirmed positions only.
 2. Check whether the user confirmed a new deposit. If not confirmed, planned contribution cash is not investable cash.
-3. Reconstruct available cash from confirmed records, then reconcile with any broker account snapshot the user provides.
+3. Reconstruct total deployable liquidity from confirmed records, including cash, settled or tradeable proceeds, and any confirmed SGOV or equivalent reserve value available for sale, then reconcile with any broker account snapshot the user provides.
 4. Run the research engine loop from `SPEC.md`: check discovery candidates, freshness events, valuation states, and active watchlist names before deciding allocation.
 5. Retrieve fresh prices and current market data for all current holdings, active candidates, and newly promoted candidates.
 6. Retrieve fresh company data: SEC filings, IR releases, earnings transcripts, regulatory updates, contract news, dilution, debt, liquidity, and management changes.
@@ -75,7 +77,7 @@ When the user asks what to buy or sell today:
 8. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, or missing filing reviews make the research engine not decision-ready, either refresh the evidence or recommend holding cash.
 9. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
 10. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
-11. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, or do nothing. Never force a trade just because a monthly contribution arrived.
+11. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, sell reserve to fund a buy, or do nothing. Never force a trade just because a monthly contribution arrived, and never cap a strong opportunity at the latest contribution merely because older cash is parked in reserve.
 12. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
 13. Mark the output as a proposed decision only. Do not mutate the ledger.
 14. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.

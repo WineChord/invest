@@ -20,6 +20,8 @@ The planned contribution is not confirmed cash. It becomes investable only when 
 
 Monthly contributions do not need to be fully deployed. A monthly decision may recommend no trade, holding cash, parking idle cash in an approved liquidity reserve, or buying fewer shares than the available cash could afford.
 
+Monthly contributions are not position-sizing buckets. When a rare high-conviction opportunity passes the mission, evidence, and entry gates, the decision should evaluate total confirmed deployable liquidity, not only the latest USD 888 contribution. Total deployable liquidity can include confirmed cash and confirmed SGOV or equivalent reserve value available for sale, after preserving any needed buffer for fees, settlement, taxes, account restrictions, and avoidable-ruin risk.
+
 ## Allowed Return-Seeking Assets
 
 Default return-seeking assets are U.S.-listed common stocks and ADRs with public disclosures and normal retail liquidity.
@@ -45,6 +47,8 @@ SGOV and equivalent reserve instruments are not cash. They may have market price
 
 When a target common stock becomes attractive, the account may sell reserve instruments first and then buy the target stock after the broker shows sufficient funds available to trade. If unsettled sale proceeds are used in a cash account, do not sell the newly purchased stock before the reserve sale settles unless the broker confirms that doing so will not create a settlement violation.
 
+The reserve is available capital, not a permanent separate sleeve. A strong enough return-seeking opportunity may justify selling some or all of the reserve and deploying more than the current month's contribution, as long as the recommendation explains the evidence strength, opportunity cost, liquidity effect, settlement constraints, and remaining risk buffer.
+
 ## Excluded Assets
 
 Excluded unless a future approved policy says otherwise:
@@ -66,7 +70,7 @@ A return-seeking buy recommendation needs all of the following:
 
 - fresh price data;
 - fresh primary-source company check;
-- confirmed investable cash or confirmed liquidity reserve available for sale;
+- total confirmed deployable liquidity, including confirmed cash and any confirmed liquidity reserve available for sale;
 - clear thesis;
 - clear risk and kill criteria;
 - exact proposed share count;

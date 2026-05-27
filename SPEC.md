@@ -10,6 +10,8 @@ The portfolio's ultimate objective is not to look stable or diversified in a con
 
 The account is not required to stay fully invested. Monthly contributions can remain unspent when no candidate passes the mission, evidence, and entry gates. Under policy `v1.1`, idle liquidity may be parked in SGOV or a materially equivalent short-duration U.S. Treasury reserve instrument for cash management only.
 
+Monthly contributions are cash-flow inputs, not sizing limits. When a rare high-conviction opportunity appears, the allocation decision should consider total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale, subject to broker settlement rules and avoidable-ruin controls.
+
 ## Non-Goals
 
 - Do not manage the user's large Nasdaq technology core allocation.
@@ -462,6 +464,7 @@ The monthly decision compares all active candidates and holdings together. It mu
 Allocation inputs:
 
 - confirmed cash and positions;
+- confirmed liquidity reserve value available for sale;
 - fresh prices and daily close snapshots;
 - open freshness events;
 - latest filing reviews;
@@ -473,6 +476,7 @@ Allocation inputs:
 Allocation outputs:
 
 - proposed exact share counts and estimated cash use;
+- total deployable-liquidity basis used for sizing, including cash, reserve-sale proceeds, and retained buffer;
 - a validity window tied to price and evidence freshness;
 - rationale for why new cash goes to the selected name or stays in cash;
 - rationale for why idle cash should or should not be parked in the approved liquidity reserve;
@@ -570,7 +574,7 @@ Bubble risk dimensions:
 1. Identify the policy version.
 2. Load confirmed ledger, positions, contribution plan, and prior decisions.
 3. Ask whether the user has confirmed a new deposit if the prompt is ambiguous.
-4. Compute investable cash from confirmed cash and confirmed deposits only.
+4. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest monthly contribution when a stronger opportunity justifies broader deployment.
 5. Retrieve fresh prices for current holdings and active candidates.
 6. Retrieve fresh primary evidence for each active candidate.
 7. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
@@ -595,6 +599,7 @@ Default sizing principles:
 - Start new names in stages unless a fresh, unusually strong evidence update justifies a larger first allocation.
 - Prefer adding to existing high-conviction names when fresh evidence confirms the thesis and valuation remains tolerable.
 - Prefer holding cash or liquidity reserve over forcing deployment when evidence or valuation is not strong enough.
+- When evidence and entry quality are unusually strong, consider using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, rather than only the latest monthly contribution.
 - Prefer withholding new cash from downgraded names before selling existing positions.
 - Do not make forced rebalancing trades just because a position outperformed.
 - Do not sell winners solely because they became large; sell only if the thesis breaks, risk becomes unacceptable, or opportunity cost becomes overwhelming.
@@ -605,6 +610,7 @@ Suggested guardrails for normal decisions:
 - Keep a small cash buffer for price slippage and fees.
 - Avoid deploying the full monthly contribution into a single unprofitable, pre-commercial company unless fresh evidence materially reduces execution risk.
 - Do not deploy the full monthly contribution merely to avoid idle cash. Cash and the liquidity reserve preserve option value.
+- Do not preserve the liquidity reserve mechanically when a rare opportunity passes all gates strongly enough to justify deployment. Explain why the opportunity deserves reserve capital and what buffer remains.
 - Track theme concentration, especially AI infrastructure and space infrastructure, because multiple tickers can depend on the same capital spending cycle.
 
 The guardrails are not mechanical rules. The final recommendation must explain why the chosen sizing best serves the long-term asymmetric objective.

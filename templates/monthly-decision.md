@@ -12,6 +12,8 @@ broker:
 account_alias:
 cash_available_for_trading:
 settled_cash:
+confirmed_liquidity_reserve_value:
+liquidity_reserve_available_for_sale:
 fractional_shares_allowed:
 fees_or_commissions:
 liquidity_reserve_enabled:
@@ -30,6 +32,7 @@ latest_ai_cycle_monitor:
 Minimum needed for exact share counts:
 
 - confirmed available cash;
+- confirmed liquidity reserve value and whether it is available for sale;
 - whether fractional shares are allowed;
 - current holdings if they differ from repository records;
 - any fees or commissions.
@@ -49,6 +52,7 @@ Research engine checklist before proposing orders:
 - If `research/quality-metrics.yml` says `decision_readiness.status: not_ready`, refresh the missing evidence or recommend holding cash.
 - State when a company is good but not attractively priced, or when a price looks cheap but the thesis may be broken.
 - State when no stock passes the gates and the best action is no trade, hold cash, or park idle cash in the approved liquidity reserve.
+- State when a stock passes the gates strongly enough to justify using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, instead of limiting the order to the latest monthly contribution.
 - Confirm the target passes the mission gate, evidence gate, and entry gate from `AGENTS.md`.
 
 Output discipline:
@@ -58,3 +62,4 @@ Output discipline:
 - Keep proposed account actions inside the current policy. Under policy `v1.1`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.
 - Every action needs a trigger condition, invalidation condition, and time horizon.
 - SGOV and equivalent reserve buys and sells still require broker execution confirmation before ledger updates.
+- Sizing must disclose the total deployable-liquidity basis: confirmed cash, reserve value planned for sale, expected retained buffer, and any settlement constraint.
