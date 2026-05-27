@@ -1,13 +1,13 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
-ASTS,105.86,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-CRDO,218.41,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-RKLB,135.76,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-VRT,327.46,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-CRCL,113.12,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-CBRS,256.78,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-NBIS,214.77,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-BE,302.49,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-ALAB,306.88,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-IONQ,63.64,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-LUNR,38.26,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
-RDW,17.49,USD,2026-05-22,Stooq,2026-05-26,Initial baseline close snapshot; refresh before real trading.
+ASTS,119.7,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+CRDO,221.64,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+RKLB,143.2,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+VRT,323.91,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+CRCL,104.17,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+CBRS,241.71,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+NBIS,208.06,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+BE,302.4,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+ALAB,318.72,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+IONQ,63.62,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+LUNR,34.86,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
+RDW,22.04,USD,2026-05-26,Stooq,2026-05-27T07:46:33.259Z,Automated daily close refresh.
