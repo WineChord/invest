@@ -1,0 +1,16 @@
+symbol,name,exchange,asset_type,tradability,market_data_symbol,sec_cik,tradingview_symbol,tradingview_url,stockanalysis_url,notes
+RKLB,Rocket Lab,NASDAQ,common_stock,tradable,RKLB,0001819994,NASDAQ:RKLB,https://www.tradingview.com/symbols/NASDAQ-RKLB/,https://stockanalysis.com/stocks/rklb/,Public watchlist security with SEC reporting history.
+ASTS,AST SpaceMobile,NASDAQ,common_stock,tradable,ASTS,0001780312,NASDAQ:ASTS,https://www.tradingview.com/symbols/NASDAQ-ASTS/,https://stockanalysis.com/stocks/asts/,Public watchlist security with SEC reporting history.
+CRDO,Credo Technology,NASDAQ,common_stock,tradable,CRDO,0001807794,NASDAQ:CRDO,https://www.tradingview.com/symbols/NASDAQ-CRDO/,https://stockanalysis.com/stocks/crdo/,Public watchlist security with SEC reporting history.
+ALAB,Astera Labs,NASDAQ,common_stock,tradable,ALAB,0001736297,NASDAQ:ALAB,https://www.tradingview.com/symbols/NASDAQ-ALAB/,https://stockanalysis.com/stocks/alab/,Public watchlist security with SEC reporting history.
+VRT,Vertiv,NYSE,common_stock,tradable,VRT,0001674101,NYSE:VRT,https://www.tradingview.com/symbols/NYSE-VRT/,https://stockanalysis.com/stocks/vrt/,Public watchlist security with SEC reporting history.
+NBIS,Nebius,NASDAQ,common_stock,tradable,NBIS,0001513845,NASDAQ:NBIS,https://www.tradingview.com/symbols/NASDAQ-NBIS/,https://stockanalysis.com/stocks/nbis/,Public watchlist security with SEC reporting history.
+CRCL,Circle Internet Group,NYSE,common_stock,tradable,CRCL,0001876042,NYSE:CRCL,https://www.tradingview.com/symbols/NYSE-CRCL/,https://stockanalysis.com/stocks/crcl/,Public watchlist security with SEC reporting history.
+CBRS,Cerebras Systems,NASDAQ,common_stock,tradable,CBRS,0002021728,NASDAQ:CBRS,https://www.tradingview.com/symbols/NASDAQ-CBRS/,https://stockanalysis.com/stocks/cbrs/,Recent public watchlist security; expect sparse history and metrics.
+BE,Bloom Energy,NYSE,common_stock,tradable,BE,0001664703,NYSE:BE,https://www.tradingview.com/symbols/NYSE-BE/,https://stockanalysis.com/stocks/be/,Public watchlist security with SEC reporting history.
+IONQ,IonQ,NYSE,common_stock,tradable,IONQ,0001824920,NYSE:IONQ,https://www.tradingview.com/symbols/NYSE-IONQ/,https://stockanalysis.com/stocks/ionq/,Public watchlist security with SEC reporting history.
+LUNR,Intuitive Machines,NASDAQ,common_stock,tradable,LUNR,0001844452,NASDAQ:LUNR,https://www.tradingview.com/symbols/NASDAQ-LUNR/,https://stockanalysis.com/stocks/lunr/,Public watchlist security with SEC reporting history.
+RDW,Redwire,NYSE,common_stock,tradable,RDW,0001819810,NYSE:RDW,https://www.tradingview.com/symbols/NYSE-RDW/,https://stockanalysis.com/stocks/rdw/,Public watchlist security with SEC reporting history.
+SPACEX,SpaceX,private,private_company,not_tradable,,,,,,Future public watch only; no public security chart.
+OPENAI,OpenAI,private,private_company,not_tradable,,,,,,Future public watch only; no public security chart.
+ANTHROPIC,Anthropic,private,private_company,not_tradable,,,,,,Future public watch only; no public security chart.

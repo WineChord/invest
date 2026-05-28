@@ -55,4 +55,4 @@ Daily market data refresh:
 npm run refresh:market -- --dry-run
 ```
 
-GitHub Actions runs the same close-price refresh on a weekday schedule. It updates `data/market/watchlist_prices.csv` from daily close data and updates `data/account/equity_curve.csv` only after confirmed positions and confirmed cash exist.
+GitHub Actions runs the same market-data refresh on a weekday schedule. It updates committed daily price history, technical snapshots, SEC-derived company metrics, and latest close snapshots, then updates `data/account/equity_curve.csv` only after confirmed positions and confirmed cash exist. The research cards, right-side research detail, and per-symbol pages under `/research/<symbol>/` read those committed files, so the public display becomes richer as the refresh history grows.

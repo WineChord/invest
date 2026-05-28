@@ -790,6 +790,10 @@ The dashboard's real-data view is built from committed repository files:
 - `data/account/positions.csv` for derived confirmed holdings;
 - `data/account/equity_curve.csv` for performance history;
 - `data/market/watchlist_prices.csv` for dated market snapshots;
+- `data/market/price_history.csv` for committed daily OHLCV history used by company price charts and sparklines;
+- `data/market/technical_snapshots.csv` for derived return, 52-week range, moving-average, RSI, and volume display metrics;
+- `data/market/company_metrics.csv` for SEC-derived fundamentals and valuation ratios combined with the latest committed close;
+- `data/market/security_master.csv` for tradability, exchange, SEC CIK, and external research/chart links;
 - `research/watchlist.csv` for the research pool.
 - `research/company-analysis.yml` for structured company briefs and historical analysis drilldowns.
 
@@ -807,10 +811,13 @@ Required dashboard surfaces:
 - append-only operation history;
 - equity curve;
 - buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
-- active research/watchlist workspace with company cards, hover or focus quick briefs, click or tap detail drilldown, and historical analysis timeline;
+- active research/watchlist workspace with company cards, committed price sparklines, key technical and valuation metrics, hover or focus quick briefs, click or tap detail drilldown, and historical analysis timeline;
+- per-symbol research pages under `/research/<symbol>/` with committed price charts, market/technical/fundamental metrics, analysis provenance, external links, and an optional live TradingView preview;
 - open-source repository link.
 
 The equity curve uses TradingView Lightweight Charts as a client-side chart engine. The engine supplies chart interaction only: time and price axes, crosshair behavior, viewport range controls, touch gestures, and ledger event markers. It must not be treated as a data provider. Real points still come from committed account files, and demo points still come only from browser-only fixtures. Keep TradingView attribution visible through either the built-in mark or a restrained public attribution link near the chart.
+
+Company price charts use the same Lightweight Charts engine, but their data comes from committed `data/market/price_history.csv`. The optional TradingView widget is an external live preview only: it may help visual inspection, but it is not a repository source of truth and must not replace the committed price, technical, SEC, IR, filing, or news evidence required for decisions.
 
 TradingView-grade chart benchmark, captured on 2026-05-26 from official TradingView and Lightweight Charts documentation:
 
@@ -838,8 +845,10 @@ Dashboard evolution rules:
 - Summary metric cards should stay compact. Use enough padding for legibility, but avoid oversized vertical whitespace that makes the top dashboard row feel heavier than the chart and account sections.
 - Public-facing status fields should use human-readable labels and short explanations. Do not expose raw machine status strings such as internal enum names unless the surface is explicitly a debug or audit view.
 - Company research cards should remain compact scanning controls. They should expose a short latest-analysis preview on hover and keyboard focus when a pointer/focus environment supports it, while click or tap opens a durable detail panel that works on mobile.
+- Research cards may show compact sparklines and a few high-signal metrics, but they must remain scanning controls rather than miniature full dashboards. Dense charting, market facts, technical indicators, and external live previews belong in the detail panel or per-symbol page.
 - Research-card hover previews must be app-rendered tooltips, not native browser `title` tooltips. They should appear quickly, avoid covering the trigger when possible, clamp inside the viewport, and stay disabled on touch-only mobile interaction where the detail panel is the primary path.
 - Company research detail must show the current watchlist metadata, latest structured thesis, upside path, risk watch, next check, and every historical analysis entry with date, stance, analysis type, policy version, and source link.
+- Company research detail and per-symbol pages should preserve provenance by separating committed market history, SEC-derived metrics, historical research analysis, and external live preview links. If a metric is unavailable or not meaningful, show `N/A` or `N/M` instead of manufacturing a value.
 - Historical research UI must not imply freshness. Dated baseline entries are memory and provenance; monthly trade decisions still require fresh price, SEC, IR, regulatory, and news checks.
 - Interactive chart features should support both pointer and keyboard focus when practical, avoid mobile overflow, and expose the underlying operation or metric detail rather than only adding visual decoration.
 - Chart operation tooltips should be compact, light, and non-dominating. They must keep side badges horizontal, avoid large dark blocks over the chart, and preserve readable layout for one or many same-day trades.

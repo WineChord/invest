@@ -12,6 +12,7 @@ import {
   RefreshCcw,
   ShieldCheck,
   Sparkles,
+  SquareArrowOutUpRight,
   TrendingUp,
   Wallet,
 } from "lucide-react";
@@ -35,6 +36,7 @@ import type {
   LedgerEvent,
   PortfolioData,
   PositionRecord,
+  PriceHistoryPoint,
   ResearchAnalysisEntry,
   WatchlistItem,
 } from "../lib/portfolioData";
@@ -72,6 +74,11 @@ interface ChartPoint {
   cumulativeDeposits: number | null;
   totalReturnPct: number | null;
   periodReturnPct: number | null;
+}
+
+interface StockChartPoint {
+  date: string;
+  close: number;
 }
 
 interface CrosshairDetail {
@@ -124,6 +131,13 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
   maximumFractionDigits: 0,
+  style: "currency",
+});
+
+const largeCurrencyFormatter = new Intl.NumberFormat("en-US", {
+  currency: "USD",
+  maximumFractionDigits: 1,
+  notation: "compact",
   style: "currency",
 });
 
@@ -203,6 +217,10 @@ function formatCompactCurrency(value: number | null): string {
   return value === null ? "Pending" : compactCurrencyFormatter.format(value);
 }
 
+function formatLargeCurrency(value: number | null): string {
+  return value === null ? "N/A" : largeCurrencyFormatter.format(value);
+}
+
 function formatPercent(value: number | null): string {
   return value === null
     ? "Not enough data"
@@ -232,6 +250,18 @@ function formatNumber(value: number | null, digits = 2): string {
     return "Not enough data";
   }
   return value.toFixed(digits);
+}
+
+function formatRatio(value: number | null): string {
+  return value === null ? "N/M" : `${value.toFixed(value >= 100 ? 0 : 1)}x`;
+}
+
+function formatMetricPercent(value: number | null): string {
+  return value === null ? "N/A" : formatSignedPercent(value);
+}
+
+function formatPlainPercent(value: number | null): string {
+  return value === null ? "N/A" : percentFormatter.format(value / 100);
 }
 
 function toneForSignedValue(value: number | null): ValueTone {
@@ -873,6 +903,7 @@ export default function InvestDashboard({ data }: Props) {
         <Panel title="Research universe" eyebrow="active universe">
           <WatchlistTable
             items={activeData.watchlist}
+            marketColorScheme={marketColorScheme}
             repositoryUrl={activeData.repositoryUrl}
           />
         </Panel>
@@ -1646,6 +1677,24 @@ function chartReturnForPoints(
   );
 }
 
+function returnForPricePoints(
+  firstPoint: PriceHistoryPoint,
+  lastPoint: PriceHistoryPoint,
+): number | null {
+  return firstPoint.close > 0
+    ? ((lastPoint.close - firstPoint.close) / firstPoint.close) * 100
+    : null;
+}
+
+function returnForStockChartPoints(
+  firstPoint: StockChartPoint,
+  lastPoint: StockChartPoint,
+): number | null {
+  return firstPoint.close > 0
+    ? ((lastPoint.close - firstPoint.close) / firstPoint.close) * 100
+    : null;
+}
+
 function rangeReturnForPoints(points: ChartPoint[]): number | null {
   const periodReturns = points
     .slice(1)
@@ -1678,7 +1727,7 @@ function rangeReturnForPoints(points: ChartPoint[]): number | null {
 
 function applyChartRange(
   chart: IChartApi,
-  points: ChartPoint[],
+  points: { date: string }[],
   range: ChartRange,
 ): void {
   if (range === "ALL" || points.length <= 2) {
@@ -1697,7 +1746,7 @@ function applyChartRange(
 }
 
 function firstVisibleIndexForRange(
-  points: ChartPoint[],
+  points: { date: string }[],
   range: ChartRange,
 ): number {
   if (range === "ALL" || points.length <= 2) {
@@ -1865,6 +1914,44 @@ function buildSeriesMarkers(
     text: marker.label,
     time: marker.date as Time,
   }));
+}
+
+function buildAnalysisMarkers(
+  entries: ResearchAnalysisEntry[],
+  points: StockChartPoint[],
+  colors: ChartColors,
+): SeriesMarker<Time>[] {
+  const usedDates = new Set<string>();
+  return entries
+    .map((entry) => nearestStockPointOnOrBefore(points, entry.analyzedAt))
+    .filter((point): point is StockChartPoint => point !== null)
+    .filter((point) => {
+      if (usedDates.has(point.date)) {
+        return false;
+      }
+      usedDates.add(point.date);
+      return true;
+    })
+    .map((point) => ({
+      color: colors.mixed,
+      position: "aboveBar",
+      shape: "circle",
+      size: 1,
+      text: "A",
+      time: point.date as Time,
+    }));
+}
+
+function nearestStockPointOnOrBefore(
+  points: StockChartPoint[],
+  date: string,
+): StockChartPoint | null {
+  for (let index = points.length - 1; index >= 0; index -= 1) {
+    if (points[index].date <= date) {
+      return points[index];
+    }
+  }
+  return null;
 }
 
 function buildCrosshairDetail({
@@ -2299,9 +2386,11 @@ function operationDetail(event: LedgerEvent): string {
 
 function WatchlistTable({
   items,
+  marketColorScheme,
   repositoryUrl,
 }: {
   items: WatchlistItem[];
+  marketColorScheme: MarketColorScheme;
   repositoryUrl: string;
 }) {
   const [selectedSymbol, setSelectedSymbol] = useState(items[0]?.symbol ?? "");
@@ -2529,6 +2618,21 @@ function WatchlistTable({
                 <span className="watch-card-name">{item.name}</span>
               </span>
               <span className="watch-card-theme">{item.theme}</span>
+              <MiniSparkline item={item} />
+              <span className="watch-card-metric-row">
+                <span>
+                  <b>{formatMetricPercent(item.technical?.oneMonthReturnPct ?? null)}</b>
+                  <small>1M</small>
+                </span>
+                <span>
+                  <b>{formatMetricPercent(item.technical?.ytdReturnPct ?? null)}</b>
+                  <small>YTD</small>
+                </span>
+                <span>
+                  <b>{formatRatio(item.metrics?.priceToSales ?? null)}</b>
+                  <small>P/S</small>
+                </span>
+              </span>
               <span className="watch-card-meta">
                 <span>{watchStatusLabel(item.status)}</span>
                 <span>{formatWatchPrice(item)}</span>
@@ -2551,10 +2655,48 @@ function WatchlistTable({
       )}
       <ResearchDetailPanel
         item={selectedItem}
+        marketColorScheme={marketColorScheme}
         panelRef={detailPanelRef}
         repositoryUrl={repositoryUrl}
       />
     </div>
+  );
+}
+
+function MiniSparkline({ item }: { item: WatchlistItem }) {
+  const history = item.priceHistory.slice(-80);
+  if (history.length < 2) {
+    return (
+      <span className="mini-sparkline mini-sparkline-empty">
+        Price history pending
+      </span>
+    );
+  }
+
+  const first = history[0];
+  const last = history.at(-1) ?? first;
+  const tone = toneForSignedValue(returnForPricePoints(first, last));
+  const highs = history.map((point) => point.close);
+  const high = Math.max(...highs);
+  const low = Math.min(...highs);
+  const width = 180;
+  const height = 42;
+  const range = high - low || 1;
+  const xStep = width / (history.length - 1);
+  const points = history
+    .map((point, index) => {
+      const x = index * xStep;
+      const y = height - ((point.close - low) / range) * (height - 4) - 2;
+      return `${x.toFixed(2)},${y.toFixed(2)}`;
+    })
+    .join(" ");
+
+  return (
+    <span className={`mini-sparkline mini-sparkline-${tone}`} aria-hidden="true">
+      <svg focusable="false" viewBox={`0 0 ${width} ${height}`}>
+        <polyline points={points} />
+      </svg>
+    </span>
   );
 }
 
@@ -2585,10 +2727,12 @@ function WatchAnalysisPreview({
 
 function ResearchDetailPanel({
   item,
+  marketColorScheme,
   panelRef,
   repositoryUrl,
 }: {
   item: WatchlistItem | null;
+  marketColorScheme: MarketColorScheme;
   panelRef: RefObject<HTMLElement | null>;
   repositoryUrl: string;
 }) {
@@ -2635,6 +2779,44 @@ function ResearchDetailPanel({
           <dd>{analysisStanceLabel(latest?.stance ?? item.priority)}</dd>
         </div>
       </dl>
+
+      <div className="research-action-row">
+        <a className="research-action-link" href={researchPagePath(item.symbol)}>
+          <BookOpen size={14} />
+          <span>Full brief</span>
+        </a>
+        {item.security?.tradingViewUrl ? (
+          <a
+            className="research-action-link"
+            href={item.security.tradingViewUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <SquareArrowOutUpRight size={14} />
+            <span>TradingView</span>
+          </a>
+        ) : null}
+        {item.security?.stockAnalysisUrl ? (
+          <a
+            className="research-action-link"
+            href={item.security.stockAnalysisUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <ExternalLink size={14} />
+            <span>StockAnalysis</span>
+          </a>
+        ) : null}
+      </div>
+
+      <MarketMetricStrip item={item} />
+
+      <StockPriceChart
+        item={item}
+        marketColorScheme={marketColorScheme}
+      />
+
+      <TradingViewPreview item={item} />
 
       <div className="research-brief-stack">
         <ResearchBriefSection
@@ -2694,6 +2876,372 @@ function ResearchDetailPanel({
   );
 }
 
+function MarketMetricStrip({ item }: { item: WatchlistItem }) {
+  const technical = item.technical;
+  const metrics = item.metrics;
+
+  return (
+    <div className="market-metric-strip" aria-label={`${item.symbol} market metrics`}>
+      <MarketMetric label="Market cap" value={formatLargeCurrency(metrics?.marketCap ?? null)} />
+      <MarketMetric label="EV/S" value={formatRatio(metrics?.enterpriseValueToSales ?? null)} />
+      <MarketMetric label="P/E" value={formatRatio(metrics?.peRatio ?? null)} />
+      <MarketMetric label="Revenue" value={formatLargeCurrency(metrics?.ttmRevenue ?? null)} />
+      <MarketMetric label="Rev growth" value={formatMetricPercent(metrics?.revenueGrowthYoy ?? null)} />
+      <MarketMetric label="Gross margin" value={formatPlainPercent(metrics?.grossMarginTtm ?? null)} />
+      <MarketMetric label="RSI 14" value={formatNumber(technical?.rsi14 ?? null, 1)} />
+      <MarketMetric label="52w pos" value={formatPlainPercent(technical?.positionIn52WeekRangePct ?? null)} />
+    </div>
+  );
+}
+
+function MarketMetric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="market-metric">
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function StockPriceChart({
+  item,
+  marketColorScheme,
+}: {
+  item: WatchlistItem;
+  marketColorScheme: MarketColorScheme;
+}) {
+  const chartContainerRef = useRef<HTMLDivElement | null>(null);
+  const chartApiRef = useRef<IChartApi | null>(null);
+  const activeRangeRef = useRef<ChartRange>("1Y");
+  const [chartReady, setChartReady] = useState(false);
+  const [activeRange, setActiveRange] = useState<ChartRange>("1Y");
+  const chartPoints = useMemo(
+    () =>
+      item.priceHistory
+        .map((point) => ({
+          close: point.close,
+          date: point.date,
+        }))
+        .sort((left, right) => left.date.localeCompare(right.date)),
+    [item.priceHistory],
+  );
+  const hasPriceHistory = chartPoints.length >= 2;
+  const firstPoint = chartPoints[0] ?? null;
+  const lastPoint = chartPoints.at(-1) ?? null;
+  const visibleChartPoints = useMemo(
+    () => chartPoints.slice(firstVisibleIndexForRange(chartPoints, activeRange)),
+    [activeRange, chartPoints],
+  );
+  const visibleFirstPoint = visibleChartPoints[0] ?? firstPoint;
+  const visibleLastPoint = visibleChartPoints.at(-1) ?? lastPoint;
+  const rangeReturnPct =
+    visibleChartPoints.length < 2 ||
+    visibleFirstPoint === null ||
+    visibleLastPoint === null
+      ? null
+      : returnForStockChartPoints(visibleFirstPoint, visibleLastPoint);
+  const chartTone = toneForSignedValue(rangeReturnPct);
+
+  useEffect(() => {
+    activeRangeRef.current = activeRange;
+    if (chartApiRef.current !== null) {
+      applyChartRange(chartApiRef.current, chartPoints, activeRange);
+    }
+  }, [activeRange, chartPoints]);
+
+  useEffect(() => {
+    if (!hasPriceHistory) {
+      chartApiRef.current = null;
+      setChartReady(false);
+      return;
+    }
+
+    const container = chartContainerRef.current;
+    if (container === null) {
+      return;
+    }
+
+    let disposed = false;
+    let cleanupChart: (() => void) | null = null;
+    setChartReady(false);
+    container.replaceChildren();
+
+    void import("lightweight-charts").then(
+      ({
+        AreaSeries,
+        ColorType,
+        CrosshairMode,
+        LineStyle,
+        createChart,
+        createSeriesMarkers,
+      }) => {
+        if (disposed) {
+          return;
+        }
+
+        const chartColors = readChartColors(container, chartTone);
+        const chart = createChart(container, {
+          autoSize: true,
+          height: 250,
+          layout: {
+            attributionLogo: false,
+            background: {
+              color: chartColors.background,
+              type: ColorType.Solid,
+            },
+            fontFamily:
+              "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+            textColor: chartColors.muted,
+          },
+          grid: {
+            horzLines: { color: chartColors.grid },
+            vertLines: { color: chartColors.grid },
+          },
+          rightPriceScale: {
+            borderColor: chartColors.border,
+            scaleMargins: {
+              bottom: 0.16,
+              top: 0.14,
+            },
+            visible: true,
+          },
+          timeScale: {
+            borderColor: chartColors.border,
+            fixLeftEdge: true,
+            rightOffset: 2,
+            secondsVisible: false,
+            timeVisible: false,
+          },
+          crosshair: {
+            mode: CrosshairMode.Magnet,
+            horzLine: {
+              color: chartColors.crosshair,
+              labelBackgroundColor: chartColors.ink,
+              style: LineStyle.Dashed,
+              width: 1,
+            },
+            vertLine: {
+              color: chartColors.crosshair,
+              labelBackgroundColor: chartColors.ink,
+              style: LineStyle.Dashed,
+              width: 1,
+            },
+          },
+          handleScroll: {
+            horzTouchDrag: true,
+            mouseWheel: true,
+            pressedMouseMove: true,
+            vertTouchDrag: false,
+          },
+          handleScale: {
+            axisDoubleClickReset: true,
+            axisPressedMouseMove: true,
+            mouseWheel: true,
+            pinch: true,
+          },
+          localization: {
+            locale: "en-US",
+            priceFormatter: (value: number) => currencyFormatter.format(value),
+          },
+        });
+
+        const areaSeries = chart.addSeries(AreaSeries, {
+          bottomColor: transparentize(chartColors.tone, 0),
+          crosshairMarkerBorderColor: chartColors.surface,
+          crosshairMarkerBorderWidth: 2,
+          crosshairMarkerRadius: 4,
+          crosshairMarkerVisible: true,
+          crosshairMarkerBackgroundColor: chartColors.tone,
+          lastValueVisible: true,
+          lineColor: chartColors.tone,
+          lineWidth: 2,
+          priceFormat: {
+            minMove: 0.01,
+            precision: 2,
+            type: "price",
+          },
+          priceLineColor: chartColors.tone,
+          priceLineStyle: LineStyle.Dotted,
+          priceLineVisible: true,
+          topColor: transparentize(chartColors.tone, 0.18),
+        });
+
+        areaSeries.setData(
+          chartPoints.map((point) => ({
+            time: point.date as Time,
+            value: point.close,
+          })),
+        );
+
+        createSeriesMarkers(
+          areaSeries,
+          buildAnalysisMarkers(item.analysisHistory, chartPoints, chartColors),
+          {
+            autoScale: false,
+          },
+        );
+
+        chartApiRef.current = chart;
+        const applyCurrentRange = () =>
+          applyChartRange(chart, chartPoints, activeRangeRef.current);
+        applyCurrentRange();
+        const rangeFrame = window.requestAnimationFrame(applyCurrentRange);
+        const rangeTimer = window.setTimeout(applyCurrentRange, 160);
+        setChartReady(true);
+
+        cleanupChart = () => {
+          window.cancelAnimationFrame(rangeFrame);
+          window.clearTimeout(rangeTimer);
+          if (chartApiRef.current === chart) {
+            chartApiRef.current = null;
+          }
+          chart.remove();
+        };
+      },
+    ).catch((error: unknown) => {
+      if (!disposed) {
+        console.error(`Failed to render ${item.symbol} price chart`, error);
+      }
+    });
+
+    return () => {
+      disposed = true;
+      cleanupChart?.();
+      container.replaceChildren();
+    };
+  }, [
+    chartPoints,
+    chartTone,
+    hasPriceHistory,
+    item.analysisHistory,
+    item.symbol,
+    marketColorScheme,
+  ]);
+
+  if (!hasPriceHistory || firstPoint === null || lastPoint === null) {
+    return (
+      <div className="stock-chart-empty">
+        <LineChart size={24} />
+        <span>Price history pending</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`stock-chart-wrap chart-wrap-${chartTone}`}>
+      <div className="stock-chart-heading">
+        <div>
+          <span>Price chart</span>
+          <strong>
+            {formatCurrency(lastPoint.close)} · {lastPoint.date}
+          </strong>
+        </div>
+        <span className={`signed-value signed-value-${chartTone}`}>
+          {formatSignedPercent(rangeReturnPct)}
+        </span>
+      </div>
+      <div className="stock-chart-range-toolbar" aria-label={`${item.symbol} price chart range`}>
+        {chartRangeOptions.map((range) => (
+          <button
+            className={
+              activeRange === range
+                ? "chart-range-button chart-range-button-active"
+                : "chart-range-button"
+            }
+            key={range}
+            onClick={() => setActiveRange(range)}
+            type="button"
+          >
+            {range}
+          </button>
+        ))}
+      </div>
+      <div className="stock-chart-canvas-shell">
+        <div
+          ref={chartContainerRef}
+          className="stock-chart-canvas"
+          role="img"
+          aria-label={`${item.symbol} committed daily close price chart`}
+        />
+        {chartReady ? null : (
+          <div className="stock-chart-loading" aria-hidden="true">
+            Loading chart
+          </div>
+        )}
+      </div>
+      <div className="stock-chart-footer">
+        <span>
+          {formatShortDate(firstPoint.date)} - {formatShortDate(lastPoint.date)}
+        </span>
+        <span>{item.technical?.source ?? "Committed price history"}</span>
+      </div>
+    </div>
+  );
+}
+
+function TradingViewPreview({ item }: { item: WatchlistItem }) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [expanded, setExpanded] = useState(false);
+  const tradingViewSymbol = item.security?.tradingViewSymbol ?? "";
+
+  useEffect(() => {
+    if (!expanded || tradingViewSymbol === "") {
+      return;
+    }
+    const container = containerRef.current;
+    if (container === null) {
+      return;
+    }
+
+    container.replaceChildren();
+    const widget = document.createElement("div");
+    widget.className = "tradingview-widget-container__widget";
+    const script = document.createElement("script");
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.type = "text/javascript";
+    script.async = true;
+    script.text = JSON.stringify({
+      allow_symbol_change: false,
+      autosize: true,
+      calendar: false,
+      details: true,
+      hide_side_toolbar: true,
+      hide_top_toolbar: false,
+      interval: "D",
+      locale: "en",
+      save_image: false,
+      style: "1",
+      symbol: tradingViewSymbol,
+      theme: "light",
+      timezone: "Etc/UTC",
+      withdateranges: true,
+    });
+    container.append(widget, script);
+
+    return () => {
+      container.replaceChildren();
+    };
+  }, [expanded, tradingViewSymbol]);
+
+  if (tradingViewSymbol === "") {
+    return null;
+  }
+
+  return (
+    <details
+      className="tradingview-preview"
+      onToggle={(event) => setExpanded(event.currentTarget.open)}
+    >
+      <summary>
+        <SquareArrowOutUpRight size={14} />
+        <span>Live TradingView preview</span>
+      </summary>
+      <div ref={containerRef} className="tradingview-widget-container" />
+    </details>
+  );
+}
+
 function ResearchBriefSection({
   label,
   value,
@@ -2711,6 +3259,10 @@ function ResearchBriefSection({
 
 function latestAnalysisFor(item: WatchlistItem): ResearchAnalysisEntry | null {
   return item.analysisHistory[0] ?? null;
+}
+
+function researchPagePath(symbol: string): string {
+  return `research/${symbol.toLowerCase()}/`;
 }
 
 function watchStatusLabel(status: string): string {

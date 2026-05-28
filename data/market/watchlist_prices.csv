@@ -1,13 +1,13 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
-ASTS,129.6,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-CRDO,221.23,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-RKLB,150.23,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-VRT,319.78,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-CRCL,102.64,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-CBRS,266.9,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-NBIS,208.37,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-BE,293.8,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-ALAB,325.33,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-IONQ,65.4,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-LUNR,40.34,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
-RDW,24,USD,2026-05-27,Stooq,2026-05-28T07:06:16.785Z,Automated daily close refresh.
+ALAB,325.3300,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+ASTS,129.6000,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+BE,293.8000,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+CBRS,266.9000,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+CRCL,102.6400,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+CRDO,221.2300,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+IONQ,65.4000,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+LUNR,40.3400,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+NBIS,208.3700,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+RDW,24.0000,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+RKLB,150.2300,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.
+VRT,319.7800,USD,2026-05-27,Yahoo Finance chart,2026-05-28T12:36:41.646Z,Automated daily close refresh from committed price history.

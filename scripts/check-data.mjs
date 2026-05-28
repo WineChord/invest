@@ -5,6 +5,10 @@ const csvFiles = [
   "data/account/ledger.csv",
   "data/account/positions.csv",
   "data/account/equity_curve.csv",
+  "data/market/company_metrics.csv",
+  "data/market/price_history.csv",
+  "data/market/security_master.csv",
+  "data/market/technical_snapshots.csv",
   "data/market/watchlist_prices.csv",
   "research/discovery/candidates.csv",
   "research/freshness/events.csv",
@@ -21,14 +25,43 @@ const yamlFiles = [
 ];
 
 const companyAnalysisFile = "research/company-analysis.yml";
+const companyMetricsFile = "data/market/company_metrics.csv";
 const discoveryFile = "research/discovery/candidates.csv";
 const freshnessFile = "research/freshness/events.csv";
+const priceHistoryFile = "data/market/price_history.csv";
 const qualityMetricsFile = "research/quality-metrics.yml";
+const securityMasterFile = "data/market/security_master.csv";
 const sourcesFile = "research/sources.yml";
+const technicalSnapshotsFile = "data/market/technical_snapshots.csv";
 const valuationStatesFile = "research/valuation-states.csv";
 const watchlistFile = "research/watchlist.csv";
 
 const requiredCsvHeaders = new Map([
+  [
+    companyMetricsFile,
+    [
+      "symbol",
+      "as_of",
+      "source_published_at",
+      "retrieved_at",
+      "currency",
+      "market_cap",
+      "enterprise_value",
+      "ttm_revenue",
+      "revenue_growth_yoy",
+      "gross_margin_ttm",
+      "operating_margin_ttm",
+      "net_income_ttm",
+      "cash_and_equivalents",
+      "total_debt",
+      "shares_outstanding",
+      "price_to_sales",
+      "enterprise_value_to_sales",
+      "pe_ratio",
+      "source",
+      "notes",
+    ],
+  ],
   [
     discoveryFile,
     [
@@ -67,6 +100,62 @@ const requiredCsvHeaders = new Map([
       "reviewed_at",
       "review_path",
       "immaterial_reason",
+      "notes",
+    ],
+  ],
+  [
+    priceHistoryFile,
+    [
+      "symbol",
+      "date",
+      "open",
+      "high",
+      "low",
+      "close",
+      "adj_close",
+      "volume",
+      "currency",
+      "source",
+      "retrieved_at",
+    ],
+  ],
+  [
+    securityMasterFile,
+    [
+      "symbol",
+      "name",
+      "exchange",
+      "asset_type",
+      "tradability",
+      "market_data_symbol",
+      "sec_cik",
+      "tradingview_symbol",
+      "tradingview_url",
+      "stockanalysis_url",
+      "notes",
+    ],
+  ],
+  [
+    technicalSnapshotsFile,
+    [
+      "symbol",
+      "as_of",
+      "close",
+      "one_day_return_pct",
+      "one_month_return_pct",
+      "three_month_return_pct",
+      "ytd_return_pct",
+      "one_year_return_pct",
+      "fifty_two_week_high",
+      "fifty_two_week_low",
+      "position_in_52w_range_pct",
+      "sma_50",
+      "sma_200",
+      "rsi_14",
+      "volume",
+      "average_volume_30d",
+      "source",
+      "retrieved_at",
       "notes",
     ],
   ],
@@ -215,6 +304,7 @@ for (const file of yamlFiles) {
 
 validateSources();
 validateWatchlist();
+validateMarketDataFiles();
 validateDiscoveryCandidates();
 validateFreshnessEvents();
 validateValuationStates();
@@ -267,6 +357,14 @@ function requireAllowed(value, allowed, context) {
 function requireNumber(value, context) {
   if (typeof value !== "number" || !Number.isFinite(value)) {
     throw new Error(`${context} must be a finite number`);
+  }
+}
+
+function requirePositiveNumberString(value, context) {
+  requireString(value, context);
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    throw new Error(`${context} must be a positive number`);
   }
 }
 
@@ -332,6 +430,88 @@ function validateWatchlist() {
     requireString(row.latest_baseline_date, `${context} latest_baseline_date`);
   });
   console.log(`ok ${watchlistFile} semantic checks`);
+}
+
+function validateMarketDataFiles() {
+  const watchlistSymbols = new Set(csvRecords(watchlistFile).map((row) => row.symbol));
+  const tradableSymbols = new Set(
+    csvRecords(securityMasterFile)
+      .filter((row) => row.tradability === "tradable")
+      .map((row) => row.symbol),
+  );
+  const priceHistorySymbols = new Set(csvRecords(priceHistoryFile).map((row) => row.symbol));
+  const technicalSymbols = new Set(csvRecords(technicalSnapshotsFile).map((row) => row.symbol));
+  const metricSymbols = new Set(csvRecords(companyMetricsFile).map((row) => row.symbol));
+
+  csvRecords(securityMasterFile).forEach((row, index) => {
+    const context = `${securityMasterFile} row ${index + 2}`;
+    requireString(row.symbol, `${context} symbol`);
+    requireString(row.name, `${context} name`);
+    requireString(row.tradability, `${context} tradability`);
+    if (!watchlistSymbols.has(row.symbol)) {
+      throw new Error(`${context} references unknown watchlist symbol ${row.symbol}`);
+    }
+    if (row.tradability === "tradable") {
+      ["market_data_symbol", "sec_cik", "tradingview_symbol", "tradingview_url", "stockanalysis_url"].forEach(
+        (field) => requireString(row[field], `${context} ${field}`),
+      );
+      if (!/^\d{10}$/.test(row.sec_cik)) {
+        throw new Error(`${context} sec_cik must be a 10 digit CIK`);
+      }
+    }
+  });
+
+  csvRecords(priceHistoryFile).forEach((row, index) => {
+    const context = `${priceHistoryFile} row ${index + 2}`;
+    ["symbol", "date", "currency", "source", "retrieved_at"].forEach((field) =>
+      requireString(row[field], `${context} ${field}`),
+    );
+    if (!tradableSymbols.has(row.symbol)) {
+      throw new Error(`${context} references non-tradable or unknown symbol ${row.symbol}`);
+    }
+    parseDate(row.date, `${context} date`);
+    ["open", "high", "low", "close"].forEach((field) =>
+      requirePositiveNumberString(row[field], `${context} ${field}`),
+    );
+  });
+
+  csvRecords(technicalSnapshotsFile).forEach((row, index) => {
+    const context = `${technicalSnapshotsFile} row ${index + 2}`;
+    ["symbol", "as_of", "close", "source", "retrieved_at"].forEach((field) =>
+      requireString(row[field], `${context} ${field}`),
+    );
+    if (!priceHistorySymbols.has(row.symbol)) {
+      throw new Error(`${context} lacks supporting price history for ${row.symbol}`);
+    }
+    parseDate(row.as_of, `${context} as_of`);
+    requirePositiveNumberString(row.close, `${context} close`);
+  });
+
+  csvRecords(companyMetricsFile).forEach((row, index) => {
+    const context = `${companyMetricsFile} row ${index + 2}`;
+    ["symbol", "as_of", "source_published_at", "retrieved_at", "currency", "source", "notes"].forEach(
+      (field) => requireString(row[field], `${context} ${field}`),
+    );
+    if (!tradableSymbols.has(row.symbol)) {
+      throw new Error(`${context} references non-tradable or unknown symbol ${row.symbol}`);
+    }
+    parseDate(row.as_of, `${context} as_of`);
+    parseDate(row.source_published_at, `${context} source_published_at`);
+  });
+
+  for (const symbol of tradableSymbols) {
+    if (!priceHistorySymbols.has(symbol)) {
+      throw new Error(`${priceHistoryFile} is missing tradable symbol ${symbol}`);
+    }
+    if (!technicalSymbols.has(symbol)) {
+      throw new Error(`${technicalSnapshotsFile} is missing tradable symbol ${symbol}`);
+    }
+    if (!metricSymbols.has(symbol)) {
+      throw new Error(`${companyMetricsFile} is missing tradable symbol ${symbol}`);
+    }
+  }
+
+  console.log("ok market data semantic checks");
 }
 
 function validateDiscoveryCandidates() {

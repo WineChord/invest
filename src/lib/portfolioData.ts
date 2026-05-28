@@ -71,6 +71,79 @@ export interface PriceSnapshot {
   notes: string;
 }
 
+export interface PriceHistoryPoint {
+  symbol: string;
+  date: string;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  adjClose: number | null;
+  volume: number | null;
+  currency: string;
+  source: string;
+  retrievedAt: string;
+}
+
+export interface SecurityRecord {
+  symbol: string;
+  name: string;
+  exchange: string;
+  assetType: string;
+  tradability: string;
+  marketDataSymbol: string;
+  secCik: string;
+  tradingViewSymbol: string;
+  tradingViewUrl: string;
+  stockAnalysisUrl: string;
+  notes: string;
+}
+
+export interface TechnicalSnapshot {
+  symbol: string;
+  asOf: string;
+  close: number | null;
+  oneDayReturnPct: number | null;
+  oneMonthReturnPct: number | null;
+  threeMonthReturnPct: number | null;
+  ytdReturnPct: number | null;
+  oneYearReturnPct: number | null;
+  fiftyTwoWeekHigh: number | null;
+  fiftyTwoWeekLow: number | null;
+  positionIn52WeekRangePct: number | null;
+  sma50: number | null;
+  sma200: number | null;
+  rsi14: number | null;
+  volume: number | null;
+  averageVolume30d: number | null;
+  source: string;
+  retrievedAt: string;
+  notes: string;
+}
+
+export interface CompanyMetrics {
+  symbol: string;
+  asOf: string;
+  sourcePublishedAt: string;
+  retrievedAt: string;
+  currency: string;
+  marketCap: number | null;
+  enterpriseValue: number | null;
+  ttmRevenue: number | null;
+  revenueGrowthYoy: number | null;
+  grossMarginTtm: number | null;
+  operatingMarginTtm: number | null;
+  netIncomeTtm: number | null;
+  cashAndEquivalents: number | null;
+  totalDebt: number | null;
+  sharesOutstanding: number | null;
+  priceToSales: number | null;
+  enterpriseValueToSales: number | null;
+  peRatio: number | null;
+  source: string;
+  notes: string;
+}
+
 export interface WatchlistItem {
   symbol: string;
   name: string;
@@ -83,6 +156,10 @@ export interface WatchlistItem {
   notes: string;
   price: number | null;
   priceAsOf: string | null;
+  security: SecurityRecord | null;
+  priceHistory: PriceHistoryPoint[];
+  technical: TechnicalSnapshot | null;
+  metrics: CompanyMetrics | null;
   analysisHistory: ResearchAnalysisEntry[];
 }
 
@@ -112,11 +189,15 @@ export interface PortfolioData {
   equityCurve: EquityPoint[];
   watchlist: WatchlistItem[];
   prices: PriceSnapshot[];
+  priceHistory: PriceHistoryPoint[];
+  securityMaster: SecurityRecord[];
+  technicalSnapshots: TechnicalSnapshot[];
+  companyMetrics: CompanyMetrics[];
   researchAnalysis: ResearchAnalysisEntry[];
 }
 
 const repositoryRoot = process.cwd();
-const policyVersion = "v1.0";
+const policyVersion = "v1.1";
 const repositoryUrl = "https://github.com/WineChord/invest";
 const publicUrl = "https://www.wineandchord.com/invest/";
 
@@ -295,6 +376,93 @@ function readPrices(): PriceSnapshot[] {
   }));
 }
 
+function readPriceHistory(): PriceHistoryPoint[] {
+  return readCsv("data/market/price_history.csv")
+    .map((row) => ({
+      symbol: row.symbol,
+      date: row.date,
+      open: toNumber(row.open) ?? 0,
+      high: toNumber(row.high) ?? 0,
+      low: toNumber(row.low) ?? 0,
+      close: toNumber(row.close) ?? 0,
+      adjClose: toNumber(row.adj_close),
+      volume: toNumber(row.volume),
+      currency: row.currency,
+      source: row.source,
+      retrievedAt: row.retrieved_at,
+    }))
+    .sort((left, right) =>
+      left.symbol === right.symbol
+        ? left.date.localeCompare(right.date)
+        : left.symbol.localeCompare(right.symbol),
+    );
+}
+
+function readSecurityMaster(): SecurityRecord[] {
+  return readCsv("data/market/security_master.csv").map((row) => ({
+    symbol: row.symbol,
+    name: row.name,
+    exchange: row.exchange,
+    assetType: row.asset_type,
+    tradability: row.tradability,
+    marketDataSymbol: row.market_data_symbol,
+    secCik: row.sec_cik,
+    tradingViewSymbol: row.tradingview_symbol,
+    tradingViewUrl: row.tradingview_url,
+    stockAnalysisUrl: row.stockanalysis_url,
+    notes: row.notes,
+  }));
+}
+
+function readTechnicalSnapshots(): TechnicalSnapshot[] {
+  return readCsv("data/market/technical_snapshots.csv").map((row) => ({
+    symbol: row.symbol,
+    asOf: row.as_of,
+    close: toNumber(row.close),
+    oneDayReturnPct: toNumber(row.one_day_return_pct),
+    oneMonthReturnPct: toNumber(row.one_month_return_pct),
+    threeMonthReturnPct: toNumber(row.three_month_return_pct),
+    ytdReturnPct: toNumber(row.ytd_return_pct),
+    oneYearReturnPct: toNumber(row.one_year_return_pct),
+    fiftyTwoWeekHigh: toNumber(row.fifty_two_week_high),
+    fiftyTwoWeekLow: toNumber(row.fifty_two_week_low),
+    positionIn52WeekRangePct: toNumber(row.position_in_52w_range_pct),
+    sma50: toNumber(row.sma_50),
+    sma200: toNumber(row.sma_200),
+    rsi14: toNumber(row.rsi_14),
+    volume: toNumber(row.volume),
+    averageVolume30d: toNumber(row.average_volume_30d),
+    source: row.source,
+    retrievedAt: row.retrieved_at,
+    notes: row.notes,
+  }));
+}
+
+function readCompanyMetrics(): CompanyMetrics[] {
+  return readCsv("data/market/company_metrics.csv").map((row) => ({
+    symbol: row.symbol,
+    asOf: row.as_of,
+    sourcePublishedAt: row.source_published_at,
+    retrievedAt: row.retrieved_at,
+    currency: row.currency,
+    marketCap: toNumber(row.market_cap),
+    enterpriseValue: toNumber(row.enterprise_value),
+    ttmRevenue: toNumber(row.ttm_revenue),
+    revenueGrowthYoy: toNumber(row.revenue_growth_yoy),
+    grossMarginTtm: toNumber(row.gross_margin_ttm),
+    operatingMarginTtm: toNumber(row.operating_margin_ttm),
+    netIncomeTtm: toNumber(row.net_income_ttm),
+    cashAndEquivalents: toNumber(row.cash_and_equivalents),
+    totalDebt: toNumber(row.total_debt),
+    sharesOutstanding: toNumber(row.shares_outstanding),
+    priceToSales: toNumber(row.price_to_sales),
+    enterpriseValueToSales: toNumber(row.enterprise_value_to_sales),
+    peRatio: toNumber(row.pe_ratio),
+    source: row.source,
+    notes: row.notes,
+  }));
+}
+
 function readResearchAnalysis(): ResearchAnalysisEntry[] {
   const parsed = parseYaml(readRequiredFile("research/company-analysis.yml")) as Record<string, unknown>;
   const entries = Array.isArray(parsed.entries) ? parsed.entries : [];
@@ -322,8 +490,23 @@ function readResearchAnalysis(): ResearchAnalysisEntry[] {
 function readWatchlist(
   prices: PriceSnapshot[],
   researchAnalysis: ResearchAnalysisEntry[],
+  securityMaster: SecurityRecord[],
+  priceHistory: PriceHistoryPoint[],
+  technicalSnapshots: TechnicalSnapshot[],
+  companyMetrics: CompanyMetrics[],
 ): WatchlistItem[] {
   const priceBySymbol = new Map(prices.map((price) => [price.symbol, price]));
+  const securityBySymbol = new Map(securityMaster.map((row) => [row.symbol, row]));
+  const technicalBySymbol = new Map(
+    technicalSnapshots.map((row) => [row.symbol, row]),
+  );
+  const metricsBySymbol = new Map(companyMetrics.map((row) => [row.symbol, row]));
+  const historyBySymbol = new Map<string, PriceHistoryPoint[]>();
+  priceHistory.forEach((point) => {
+    const history = historyBySymbol.get(point.symbol) ?? [];
+    history.push(point);
+    historyBySymbol.set(point.symbol, history);
+  });
   const analysisBySymbol = new Map<string, ResearchAnalysisEntry[]>();
   researchAnalysis.forEach((entry) => {
     const history = analysisBySymbol.get(entry.symbol) ?? [];
@@ -349,6 +532,10 @@ function readWatchlist(
       notes: row.notes,
       price: price?.price ?? null,
       priceAsOf: price?.priceAsOf ?? null,
+      security: securityBySymbol.get(row.symbol) ?? null,
+      priceHistory: historyBySymbol.get(row.symbol) ?? [],
+      technical: technicalBySymbol.get(row.symbol) ?? null,
+      metrics: metricsBySymbol.get(row.symbol) ?? null,
       analysisHistory: analysisBySymbol.get(row.symbol) ?? [],
     };
   });
@@ -356,6 +543,10 @@ function readWatchlist(
 
 export function loadPortfolioData(): PortfolioData {
   const prices = readPrices();
+  const priceHistory = readPriceHistory();
+  const securityMaster = readSecurityMaster();
+  const technicalSnapshots = readTechnicalSnapshots();
+  const companyMetrics = readCompanyMetrics();
   const researchAnalysis = readResearchAnalysis();
   return {
     generatedAt: new Date().toISOString(),
@@ -366,8 +557,19 @@ export function loadPortfolioData(): PortfolioData {
     ledger: readLedger(),
     positions: readPositions(),
     equityCurve: readEquityCurve(),
-    watchlist: readWatchlist(prices, researchAnalysis),
+    watchlist: readWatchlist(
+      prices,
+      researchAnalysis,
+      securityMaster,
+      priceHistory,
+      technicalSnapshots,
+      companyMetrics,
+    ),
     prices,
+    priceHistory,
+    securityMaster,
+    technicalSnapshots,
+    companyMetrics,
     researchAnalysis,
   };
 }
