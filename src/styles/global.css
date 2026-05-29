@@ -1068,6 +1068,28 @@ td span {
   grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.46fr);
 }
 
+.research-display-toolbar {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  font-weight: 850;
+  gap: 0.45rem;
+  justify-content: flex-end;
+  margin-bottom: 0.72rem;
+}
+
+.research-display-toggle {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: inline-flex;
+  gap: 0.18rem;
+  padding: 0.18rem;
+}
+
 .watchlist-grid {
   display: grid;
   gap: 0.75rem;
@@ -1212,6 +1234,14 @@ td span {
   font-size: 0.62rem;
   font-weight: 850;
   text-transform: uppercase;
+}
+
+.watch-card-metric-gain b {
+  color: var(--gain);
+}
+
+.watch-card-metric-loss b {
+  color: var(--loss);
 }
 
 .watch-card-meta {
@@ -1476,12 +1506,55 @@ td span {
   white-space: nowrap;
 }
 
+.stock-chart-move-row {
+  display: grid;
+  gap: 0.35rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stock-chart-move-pill {
+  background: rgba(238, 247, 244, 0.68);
+  border: 1px solid rgba(216, 227, 223, 0.74);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.12rem;
+  min-width: 0;
+  padding: 0.45rem 0.55rem;
+}
+
+.stock-chart-move-pill small {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 850;
+}
+
+.stock-chart-move-pill strong {
+  font-size: 0.9rem;
+  line-height: 1.15;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stock-chart-move-pill-gain strong {
+  color: var(--gain);
+}
+
+.stock-chart-move-pill-loss strong {
+  color: var(--loss);
+}
+
 .stock-chart-range-toolbar {
   display: flex;
   gap: 0.28rem;
   overflow-x: auto;
   padding-bottom: 0.08rem;
   scrollbar-width: none;
+}
+
+.stock-chart-range-toolbar::-webkit-scrollbar {
+  display: none;
 }
 
 .stock-chart-canvas-shell {
@@ -1958,6 +2031,10 @@ td span {
   .metric-grid,
   .watchlist-grid {
     grid-template-columns: 1fr;
+  }
+
+  .research-display-toolbar {
+    justify-content: flex-start;
   }
 
   .watch-card {

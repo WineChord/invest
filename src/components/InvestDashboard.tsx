@@ -58,6 +58,7 @@ interface Metrics {
 
 type DashboardMode = "real" | "demo";
 type MarketColorScheme = "mainland" | "western";
+type MovementDisplayMode = "percent" | "dollar";
 type ValueTone = "gain" | "loss" | "neutral";
 
 interface TradeMarker {
@@ -113,7 +114,22 @@ interface WatchPreviewState {
   top: number;
 }
 
-type ChartRange = "1M" | "3M" | "6M" | "YTD" | "1Y" | "3Y" | "5Y" | "ALL";
+type ChartRange =
+  | "1D"
+  | "5D"
+  | "1M"
+  | "3M"
+  | "6M"
+  | "YTD"
+  | "1Y"
+  | "3Y"
+  | "5Y"
+  | "ALL";
+
+interface PriceMovement {
+  amount: number;
+  percent: number;
+}
 
 const WATCH_PREVIEW_MEDIA_QUERY =
   "(hover: hover) and (pointer: fine) and (min-width: 761px)";
@@ -164,6 +180,11 @@ const chartRangeOptions: ChartRange[] = [
   "3Y",
   "5Y",
   "ALL",
+];
+const stockChartRangeOptions: ChartRange[] = [
+  "1D",
+  "5D",
+  ...chartRangeOptions,
 ];
 const chartVisibleLeftPadding = 1.05;
 const chartVisibleRightPadding = 0.25;
@@ -258,6 +279,18 @@ function formatRatio(value: number | null): string {
 
 function formatMetricPercent(value: number | null): string {
   return value === null ? "N/A" : formatSignedPercent(value);
+}
+
+function formatMovement(
+  movement: PriceMovement | null,
+  mode: MovementDisplayMode,
+): string {
+  if (movement === null) {
+    return "N/A";
+  }
+  return mode === "percent"
+    ? formatSignedPercent(movement.percent)
+    : formatSignedCurrency(movement.amount);
 }
 
 function formatPlainPercent(value: number | null): string {
@@ -1695,6 +1728,37 @@ function returnForStockChartPoints(
     : null;
 }
 
+function priceMovementForItem(
+  item: WatchlistItem,
+  sessionsBack: number,
+): PriceMovement | null {
+  return priceMovementForHistory(item.priceHistory, sessionsBack);
+}
+
+function priceMovementForHistory(
+  history: PriceHistoryPoint[],
+  sessionsBack: number,
+): PriceMovement | null {
+  if (history.length <= sessionsBack) {
+    return null;
+  }
+
+  const sortedHistory = history
+    .slice()
+    .sort((left, right) => left.date.localeCompare(right.date));
+  const latest = sortedHistory.at(-1);
+  const base = sortedHistory[sortedHistory.length - 1 - sessionsBack];
+  if (latest === undefined || base === undefined || base.close <= 0) {
+    return null;
+  }
+
+  const amount = latest.close - base.close;
+  return {
+    amount,
+    percent: (amount / base.close) * 100,
+  };
+}
+
 function rangeReturnForPoints(points: ChartPoint[]): number | null {
   const periodReturns = points
     .slice(1)
@@ -1753,6 +1817,14 @@ function firstVisibleIndexForRange(
     return 0;
   }
 
+  if (range === "1D") {
+    return Math.max(0, points.length - 2);
+  }
+
+  if (range === "5D") {
+    return Math.max(0, points.length - 6);
+  }
+
   const lastPoint = points[points.length - 1];
   const cutoff = chartRangeCutoff(lastPoint.date, range);
   const firstVisibleIndex = points.findIndex(
@@ -1763,7 +1835,7 @@ function firstVisibleIndexForRange(
 
 function chartRangeCutoff(
   lastDate: string,
-  range: Exclude<ChartRange, "ALL">,
+  range: Exclude<ChartRange, "1D" | "5D" | "ALL">,
 ): number {
   const lastTime = Date.parse(lastDate);
   if (range === "YTD") {
@@ -2394,6 +2466,8 @@ function WatchlistTable({
   repositoryUrl: string;
 }) {
   const [selectedSymbol, setSelectedSymbol] = useState(items[0]?.symbol ?? "");
+  const [movementDisplayMode, setMovementDisplayMode] =
+    useState<MovementDisplayMode>("percent");
   const [previewState, setPreviewState] = useState<WatchPreviewState | null>(
     null,
   );
@@ -2556,7 +2630,35 @@ function WatchlistTable({
   }
 
   return (
-    <div className="research-workspace">
+    <>
+      <div className="research-display-toolbar" aria-label="Research display controls">
+        <span>Recent move</span>
+        <div className="research-display-toggle" role="group" aria-label="Recent move display mode">
+          <button
+            className={
+              movementDisplayMode === "percent"
+                ? "chart-range-button chart-range-button-active"
+                : "chart-range-button"
+            }
+            onClick={() => setMovementDisplayMode("percent")}
+            type="button"
+          >
+            %
+          </button>
+          <button
+            className={
+              movementDisplayMode === "dollar"
+                ? "chart-range-button chart-range-button-active"
+                : "chart-range-button"
+            }
+            onClick={() => setMovementDisplayMode("dollar")}
+            type="button"
+          >
+            $
+          </button>
+        </div>
+      </div>
+      <div className="research-workspace">
       <div className="watchlist-grid" aria-label="Research candidates">
         {items.map((item) => {
           const latest = latestAnalysisFor(item);
@@ -2620,18 +2722,22 @@ function WatchlistTable({
               <span className="watch-card-theme">{item.theme}</span>
               <MiniSparkline item={item} />
               <span className="watch-card-metric-row">
-                <span>
-                  <b>{formatMetricPercent(item.technical?.oneMonthReturnPct ?? null)}</b>
-                  <small>1M</small>
-                </span>
-                <span>
-                  <b>{formatMetricPercent(item.technical?.ytdReturnPct ?? null)}</b>
-                  <small>YTD</small>
-                </span>
-                <span>
-                  <b>{formatRatio(item.metrics?.priceToSales ?? null)}</b>
-                  <small>P/S</small>
-                </span>
+                <WatchCardMovementMetric
+                  item={item}
+                  label="1D"
+                  mode={movementDisplayMode}
+                  sessionsBack={1}
+                />
+                <WatchCardMovementMetric
+                  item={item}
+                  label="5D"
+                  mode={movementDisplayMode}
+                  sessionsBack={5}
+                />
+                <WatchCardPlainMetric
+                  label="P/S"
+                  value={formatRatio(item.metrics?.priceToSales ?? null)}
+                />
               </span>
               <span className="watch-card-meta">
                 <span>{watchStatusLabel(item.status)}</span>
@@ -2656,10 +2762,49 @@ function WatchlistTable({
       <ResearchDetailPanel
         item={selectedItem}
         marketColorScheme={marketColorScheme}
+        movementDisplayMode={movementDisplayMode}
         panelRef={detailPanelRef}
         repositoryUrl={repositoryUrl}
       />
     </div>
+    </>
+  );
+}
+
+function WatchCardMovementMetric({
+  item,
+  label,
+  mode,
+  sessionsBack,
+}: {
+  item: WatchlistItem;
+  label: string;
+  mode: MovementDisplayMode;
+  sessionsBack: number;
+}) {
+  const movement = priceMovementForItem(item, sessionsBack);
+  const tone = toneForSignedValue(movement?.amount ?? null);
+
+  return (
+    <span className={`watch-card-metric watch-card-metric-${tone}`}>
+      <b>{formatMovement(movement, mode)}</b>
+      <small>{label}</small>
+    </span>
+  );
+}
+
+function WatchCardPlainMetric({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <span className="watch-card-metric">
+      <b>{value}</b>
+      <small>{label}</small>
+    </span>
   );
 }
 
@@ -2728,11 +2873,13 @@ function WatchAnalysisPreview({
 function ResearchDetailPanel({
   item,
   marketColorScheme,
+  movementDisplayMode,
   panelRef,
   repositoryUrl,
 }: {
   item: WatchlistItem | null;
   marketColorScheme: MarketColorScheme;
+  movementDisplayMode: MovementDisplayMode;
   panelRef: RefObject<HTMLElement | null>;
   repositoryUrl: string;
 }) {
@@ -2814,6 +2961,7 @@ function ResearchDetailPanel({
       <StockPriceChart
         item={item}
         marketColorScheme={marketColorScheme}
+        movementDisplayMode={movementDisplayMode}
       />
 
       <TradingViewPreview item={item} />
@@ -2906,15 +3054,17 @@ function MarketMetric({ label, value }: { label: string; value: string }) {
 function StockPriceChart({
   item,
   marketColorScheme,
+  movementDisplayMode,
 }: {
   item: WatchlistItem;
   marketColorScheme: MarketColorScheme;
+  movementDisplayMode: MovementDisplayMode;
 }) {
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
   const chartApiRef = useRef<IChartApi | null>(null);
-  const activeRangeRef = useRef<ChartRange>("1Y");
+  const activeRangeRef = useRef<ChartRange>("1M");
   const [chartReady, setChartReady] = useState(false);
-  const [activeRange, setActiveRange] = useState<ChartRange>("1Y");
+  const [activeRange, setActiveRange] = useState<ChartRange>("1M");
   const chartPoints = useMemo(
     () =>
       item.priceHistory
@@ -3140,8 +3290,22 @@ function StockPriceChart({
           {formatSignedPercent(rangeReturnPct)}
         </span>
       </div>
+      <div className="stock-chart-move-row" aria-label={`${item.symbol} recent price moves`}>
+        <StockChartMovementPill
+          item={item}
+          label="1D"
+          mode={movementDisplayMode}
+          sessionsBack={1}
+        />
+        <StockChartMovementPill
+          item={item}
+          label="5D"
+          mode={movementDisplayMode}
+          sessionsBack={5}
+        />
+      </div>
       <div className="stock-chart-range-toolbar" aria-label={`${item.symbol} price chart range`}>
-        {chartRangeOptions.map((range) => (
+        {stockChartRangeOptions.map((range) => (
           <button
             className={
               activeRange === range
@@ -3176,6 +3340,28 @@ function StockPriceChart({
         <span>{item.technical?.source ?? "Committed price history"}</span>
       </div>
     </div>
+  );
+}
+
+function StockChartMovementPill({
+  item,
+  label,
+  mode,
+  sessionsBack,
+}: {
+  item: WatchlistItem;
+  label: string;
+  mode: MovementDisplayMode;
+  sessionsBack: number;
+}) {
+  const movement = priceMovementForItem(item, sessionsBack);
+  const tone = toneForSignedValue(movement?.amount ?? null);
+
+  return (
+    <span className={`stock-chart-move-pill stock-chart-move-pill-${tone}`}>
+      <small>{label}</small>
+      <strong>{formatMovement(movement, mode)}</strong>
+    </span>
   );
 }
 

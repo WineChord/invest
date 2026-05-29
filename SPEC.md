@@ -153,7 +153,7 @@ Daily close automation:
 
 - `.github/workflows/daily-market-data.yml` runs on a weekday schedule after the regular US market close should normally be available from end-of-day data providers. It can also be run manually with an optional `as_of` date.
 - The automation is deterministic code only. It must not call an LLM, agent, broker, or order-execution service.
-- `scripts/refresh-market-data.mjs` fetches the latest available daily close up to the New York `as_of` date from Stooq for symbols already present in `data/market/watchlist_prices.csv` plus all confirmed position symbols.
+- `scripts/refresh-market-data.mjs` fetches the latest available daily close up to the New York `as_of` date from Yahoo Finance chart data for symbols in `data/market/security_master.csv`, symbols already present in `data/market/watchlist_prices.csv`, and all confirmed position symbols.
 - The script refreshes `data/market/watchlist_prices.csv` only when the provider supplies a newer close date or a corrected close for the same date. Weekends, holidays, and repeated provider data should produce no commit.
 - The script adds or replaces one `data/account/equity_curve.csv` row for the valuation close date only when confirmed positions exist and `data/account/state.yml` has `confirmed_cash`. It must not fabricate equity when cash is unknown.
 - Daily equity snapshots use confirmed position quantities, confirmed cash, and the latest available close for each held symbol. If any held-symbol price is missing, the automation fails instead of committing a partial valuation.
@@ -811,13 +811,13 @@ Required dashboard surfaces:
 - append-only operation history;
 - equity curve;
 - buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
-- active research/watchlist workspace with company cards, committed price sparklines, key technical and valuation metrics, hover or focus quick briefs, click or tap detail drilldown, and historical analysis timeline;
+- active research/watchlist workspace with company cards, committed price sparklines, recent 1D and 5D price moves with percent or dollar display, key technical and valuation metrics, hover or focus quick briefs, click or tap detail drilldown, and historical analysis timeline;
 - per-symbol research pages under `/research/<symbol>/` with committed price charts, market/technical/fundamental metrics, analysis provenance, external links, and an optional live TradingView preview;
 - open-source repository link.
 
 The equity curve uses TradingView Lightweight Charts as a client-side chart engine. The engine supplies chart interaction only: time and price axes, crosshair behavior, viewport range controls, touch gestures, and ledger event markers. It must not be treated as a data provider. Real points still come from committed account files, and demo points still come only from browser-only fixtures. Keep TradingView attribution visible through either the built-in mark or a restrained public attribution link near the chart.
 
-Company price charts use the same Lightweight Charts engine, but their data comes from committed `data/market/price_history.csv`. The optional TradingView widget is an external live preview only: it may help visual inspection, but it is not a repository source of truth and must not replace the committed price, technical, SEC, IR, filing, or news evidence required for decisions.
+Company price charts use the same Lightweight Charts engine, but their data comes from committed `data/market/price_history.csv`. Research drilldowns and per-symbol pages include 1D and 5D chart ranges and recent-move chips derived from committed daily sessions. The optional TradingView widget is an external live preview only: it may help visual inspection, but it is not a repository source of truth and must not replace the committed price, technical, SEC, IR, filing, or news evidence required for decisions.
 
 TradingView-grade chart benchmark, captured on 2026-05-26 from official TradingView and Lightweight Charts documentation:
 

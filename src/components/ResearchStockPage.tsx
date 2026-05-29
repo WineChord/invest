@@ -1,7 +1,11 @@
 import { BookOpen, ExternalLink, Home, LineChart, SquareArrowOutUpRight } from "lucide-react";
 import type { IChartApi, Time } from "lightweight-charts";
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { ResearchAnalysisEntry, WatchlistItem } from "../lib/portfolioData";
+import type {
+  PriceHistoryPoint,
+  ResearchAnalysisEntry,
+  WatchlistItem,
+} from "../lib/portfolioData";
 
 interface Props {
   item: WatchlistItem;
@@ -9,12 +13,27 @@ interface Props {
   repositoryUrl: string;
 }
 
-type ChartRange = "1M" | "3M" | "6M" | "YTD" | "1Y" | "3Y" | "5Y" | "ALL";
+type ChartRange =
+  | "1D"
+  | "5D"
+  | "1M"
+  | "3M"
+  | "6M"
+  | "YTD"
+  | "1Y"
+  | "3Y"
+  | "5Y"
+  | "ALL";
 type ValueTone = "gain" | "loss" | "neutral";
 
 interface StockChartPoint {
   date: string;
   close: number;
+}
+
+interface PriceMovement {
+  amount: number;
+  percent: number;
 }
 
 const chartRangeOptions: ChartRange[] = [
@@ -26,6 +45,11 @@ const chartRangeOptions: ChartRange[] = [
   "3Y",
   "5Y",
   "ALL",
+];
+const stockChartRangeOptions: ChartRange[] = [
+  "1D",
+  "5D",
+  ...chartRangeOptions,
 ];
 const chartVisibleLeftPadding = 1.05;
 const chartVisibleRightPadding = 0.25;
@@ -164,9 +188,9 @@ export default function ResearchStockPage({ item, publicUrl, repositoryUrl }: Pr
 function StockPageChart({ item }: { item: WatchlistItem }) {
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
   const chartApiRef = useRef<IChartApi | null>(null);
-  const activeRangeRef = useRef<ChartRange>("1Y");
+  const activeRangeRef = useRef<ChartRange>("1M");
   const [chartReady, setChartReady] = useState(false);
-  const [activeRange, setActiveRange] = useState<ChartRange>("1Y");
+  const [activeRange, setActiveRange] = useState<ChartRange>("1M");
   const chartPoints = useMemo(
     () =>
       item.priceHistory
@@ -390,8 +414,12 @@ function StockPageChart({ item }: { item: WatchlistItem }) {
           </small>
         </div>
       </div>
+      <div className="stock-chart-move-row" aria-label={`${item.symbol} recent price moves`}>
+        <StockPageMovementPill item={item} label="1D" sessionsBack={1} />
+        <StockPageMovementPill item={item} label="5D" sessionsBack={5} />
+      </div>
       <div className="chart-range-toolbar" aria-label={`${item.symbol} chart range`}>
-        {chartRangeOptions.map((range) => (
+        {stockChartRangeOptions.map((range) => (
           <button
             className={
               activeRange === range
@@ -420,6 +448,26 @@ function StockPageChart({ item }: { item: WatchlistItem }) {
         )}
       </div>
     </section>
+  );
+}
+
+function StockPageMovementPill({
+  item,
+  label,
+  sessionsBack,
+}: {
+  item: WatchlistItem;
+  label: string;
+  sessionsBack: number;
+}) {
+  const movement = priceMovementForHistory(item.priceHistory, sessionsBack);
+  const tone = toneForSignedValue(movement?.amount ?? null);
+
+  return (
+    <span className={`stock-chart-move-pill stock-chart-move-pill-${tone}`}>
+      <small>{label}</small>
+      <strong>{formatMovement(movement)}</strong>
+    </span>
   );
 }
 
@@ -687,6 +735,14 @@ function firstVisibleIndexForRange(
     return 0;
   }
 
+  if (range === "1D") {
+    return Math.max(0, points.length - 2);
+  }
+
+  if (range === "5D") {
+    return Math.max(0, points.length - 6);
+  }
+
   const lastPoint = points[points.length - 1];
   const cutoff = chartRangeCutoff(lastPoint.date, range);
   const firstVisibleIndex = points.findIndex(
@@ -697,7 +753,7 @@ function firstVisibleIndexForRange(
 
 function chartRangeCutoff(
   lastDate: string,
-  range: Exclude<ChartRange, "ALL">,
+  range: Exclude<ChartRange, "1D" | "5D" | "ALL">,
 ): number {
   const lastTime = Date.parse(lastDate);
   if (range === "YTD") {
@@ -705,7 +761,7 @@ function chartRangeCutoff(
     return Date.UTC(year, 0, 1);
   }
 
-  const dayCounts: Record<Exclude<ChartRange, "YTD" | "ALL">, number> = {
+  const dayCounts: Record<Exclude<ChartRange, "1D" | "5D" | "YTD" | "ALL">, number> = {
     "1M": 31,
     "3M": 92,
     "6M": 183,
@@ -723,6 +779,30 @@ function returnForStockChartPoints(
   return firstPoint.close > 0
     ? ((lastPoint.close - firstPoint.close) / firstPoint.close) * 100
     : null;
+}
+
+function priceMovementForHistory(
+  history: PriceHistoryPoint[],
+  sessionsBack: number,
+): PriceMovement | null {
+  if (history.length <= sessionsBack) {
+    return null;
+  }
+
+  const sortedHistory = history
+    .slice()
+    .sort((left, right) => left.date.localeCompare(right.date));
+  const latest = sortedHistory.at(-1);
+  const base = sortedHistory[sortedHistory.length - 1 - sessionsBack];
+  if (latest === undefined || base === undefined || base.close <= 0) {
+    return null;
+  }
+
+  const amount = latest.close - base.close;
+  return {
+    amount,
+    percent: (amount / base.close) * 100,
+  };
 }
 
 function toneForSignedValue(value: number | null): ValueTone {
@@ -767,6 +847,23 @@ function formatSignedPercent(value: number | null): string {
 
   const formatted = percentFormatter.format(Math.abs(value) / 100);
   return value > 0 ? `+${formatted}` : value < 0 ? `-${formatted}` : formatted;
+}
+
+function formatSignedCurrency(value: number | null): string {
+  if (value === null) {
+    return "N/A";
+  }
+
+  const formatted = currencyFormatter.format(Math.abs(value));
+  return value > 0 ? `+${formatted}` : value < 0 ? `-${formatted}` : formatted;
+}
+
+function formatMovement(movement: PriceMovement | null): string {
+  if (movement === null) {
+    return "N/A";
+  }
+
+  return `${formatSignedPercent(movement.percent)} · ${formatSignedCurrency(movement.amount)}`;
 }
 
 function formatShortDate(date: string): string {
