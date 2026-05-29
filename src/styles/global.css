@@ -1627,7 +1627,13 @@ td span {
 }
 
 .tradingview-widget-container-compact {
-  height: 18rem;
+  height: 20rem;
+  min-height: 20rem;
+}
+
+.tradingview-widget-container-compact iframe {
+  height: 20rem !important;
+  width: 100% !important;
 }
 
 .research-brief-stack {

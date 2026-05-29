@@ -3391,9 +3391,10 @@ function TradingViewPreview({ item }: { item: WatchlistItem }) {
       allow_symbol_change: false,
       autosize: true,
       calendar: false,
-      details: true,
+      details: false,
+      hide_legend: true,
       hide_side_toolbar: true,
-      hide_top_toolbar: false,
+      hide_top_toolbar: true,
       interval: "5",
       locale: "en",
       range: "1D",
@@ -3402,7 +3403,7 @@ function TradingViewPreview({ item }: { item: WatchlistItem }) {
       symbol: tradingViewSymbol,
       theme: "light",
       timezone: "exchange",
-      withdateranges: true,
+      withdateranges: false,
     });
     container.append(widget, script);
 
