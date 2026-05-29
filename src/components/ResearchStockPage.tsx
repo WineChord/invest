@@ -6,6 +6,10 @@ import type {
   ResearchAnalysisEntry,
   WatchlistItem,
 } from "../lib/portfolioData";
+import {
+  liveIntradayTradingViewCaption,
+  liveIntradayTradingViewConfig,
+} from "../lib/tradingView";
 
 interface Props {
   item: WatchlistItem;
@@ -493,23 +497,12 @@ function TradingViewPreview({ item }: { item: WatchlistItem }) {
       "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
     script.type = "text/javascript";
     script.async = true;
-    script.text = JSON.stringify({
-      allow_symbol_change: false,
-      autosize: true,
-      calendar: false,
-      details: true,
-      hide_side_toolbar: false,
-      hide_top_toolbar: false,
-      interval: "5",
-      locale: "en",
-      range: "1D",
-      save_image: false,
-      style: "1",
-      symbol: tradingViewSymbol,
-      theme: "light",
-      timezone: "exchange",
-      withdateranges: true,
-    });
+    script.text = JSON.stringify(
+      liveIntradayTradingViewConfig({
+        compact: false,
+        symbol: tradingViewSymbol,
+      }),
+    );
     container.append(widget, script);
 
     return () => {
@@ -528,8 +521,13 @@ function TradingViewPreview({ item }: { item: WatchlistItem }) {
       onToggle={(event) => setExpanded(event.currentTarget.open)}
     >
       <summary>
-        <SquareArrowOutUpRight size={16} />
-        <span>Live 1D TradingView</span>
+        <span className="tradingview-preview-title">
+          <SquareArrowOutUpRight size={16} />
+          <span>Live 1D TradingView</span>
+        </span>
+        <span className="tradingview-preview-caption">
+          {liveIntradayTradingViewCaption}
+        </span>
       </summary>
       <div ref={containerRef} className="tradingview-widget-container" />
     </details>
