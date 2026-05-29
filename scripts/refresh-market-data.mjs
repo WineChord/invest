@@ -10,6 +10,7 @@ const priceHistoryFile = "data/market/price_history.csv";
 const securityMasterFile = "data/market/security_master.csv";
 const technicalSnapshotsFile = "data/market/technical_snapshots.csv";
 const watchlistPricesFile = "data/market/watchlist_prices.csv";
+const watchlistFile = "research/watchlist.csv";
 
 const defaultHistoryDays = 5 * 366;
 const minHistoryDays = 30;
@@ -76,6 +77,19 @@ const csvHeaders = {
     "price_as_of",
     "source",
     "retrieved_at",
+    "notes",
+  ],
+  securityMaster: [
+    "symbol",
+    "name",
+    "exchange",
+    "asset_type",
+    "tradability",
+    "market_data_symbol",
+    "sec_cik",
+    "tradingview_symbol",
+    "tradingview_url",
+    "stockanalysis_url",
     "notes",
   ],
   technicalSnapshots: [
@@ -173,7 +187,12 @@ if (
   );
 }
 
-const securityMaster = readCsvFile(securityMasterFile);
+const watchlistRows = readCsvFile(watchlistFile);
+const securityMaster = await syncSecurityMaster(
+  readCsvFile(securityMasterFile),
+  watchlistRows,
+  options.dryRun,
+);
 const existingCompanyMetrics = readCsvFile(companyMetricsFile);
 const existingPriceHistory = readCsvFile(priceHistoryFile);
 const existingTechnicalSnapshots = readCsvFile(technicalSnapshotsFile);
@@ -184,6 +203,9 @@ const positions = readCsvFile(positionsFile).filter(
 const symbols = uniqueSymbols([
   ...securityMaster
     .filter((row) => row.tradability === "tradable")
+    .map((row) => row.symbol),
+  ...watchlistRows
+    .filter((row) => row.status !== "not_tradable")
     .map((row) => row.symbol),
   ...existingPrices.map((row) => row.symbol),
   ...positions.map((row) => row.symbol),
@@ -353,6 +375,152 @@ Options:
 `);
 }
 
+async function syncSecurityMaster(existingRows, watchlistRows, dryRun) {
+  const existingBySymbol = new Map(
+    existingRows.map((row) => [row.symbol.toUpperCase(), row]),
+  );
+  const missingRows = watchlistRows.filter(
+    (row) => !existingBySymbol.has(row.symbol.toUpperCase()),
+  );
+
+  if (missingRows.length === 0) {
+    return existingRows;
+  }
+
+  const nextRows = existingRows.slice();
+  let secTickerMap = null;
+
+  for (const row of missingRows) {
+    const symbol = row.symbol.toUpperCase();
+    if (row.status === "not_tradable") {
+      nextRows.push(nonTradableSecurityRow(row));
+      console.log(`ok security ${symbol} not_tradable`);
+      continue;
+    }
+
+    secTickerMap ??= await fetchSecTickerMap();
+    const metadata = await fetchPublicSecurityMetadata(symbol, secTickerMap);
+    nextRows.push(publicSecurityRow(row, metadata));
+    console.log(`ok security ${symbol} ${metadata.exchange} ${metadata.secCik}`);
+  }
+
+  const sortedRows = nextRows.sort((left, right) =>
+    left.symbol.localeCompare(right.symbol),
+  );
+  writeCsvFile(
+    securityMasterFile,
+    csvHeaders.securityMaster,
+    sortedRows,
+    dryRun,
+  );
+  return sortedRows;
+}
+
+function nonTradableSecurityRow(row) {
+  return {
+    symbol: row.symbol.toUpperCase(),
+    name: row.name,
+    exchange: "private",
+    asset_type: "private_company",
+    tradability: "not_tradable",
+    market_data_symbol: "",
+    sec_cik: "",
+    tradingview_symbol: "",
+    tradingview_url: "",
+    stockanalysis_url: "",
+    notes: "Auto-created from watchlist non-tradable status; market refresh skips this symbol.",
+  };
+}
+
+function publicSecurityRow(watchlistRow, metadata) {
+  const symbol = watchlistRow.symbol.toUpperCase();
+  const tradingViewSymbol = `${metadata.exchange}:${metadata.marketDataSymbol}`;
+  return {
+    symbol,
+    name: watchlistRow.name || metadata.name,
+    exchange: metadata.exchange,
+    asset_type: "common_stock",
+    tradability: "tradable",
+    market_data_symbol: metadata.marketDataSymbol,
+    sec_cik: metadata.secCik,
+    tradingview_symbol: tradingViewSymbol,
+    tradingview_url: `https://www.tradingview.com/symbols/${metadata.exchange}-${metadata.marketDataSymbol}/`,
+    stockanalysis_url: `https://stockanalysis.com/stocks/${symbol.toLowerCase()}/`,
+    notes: "Auto-created from watchlist using SEC ticker metadata and Yahoo chart availability.",
+  };
+}
+
+async function fetchPublicSecurityMetadata(symbol, secTickerMap) {
+  const secRow = secTickerMap.get(symbol);
+  if (secRow === undefined) {
+    throw new Error(`Missing SEC ticker metadata for watchlist symbol ${symbol}`);
+  }
+
+  const history = await fetchPriceHistory(symbol, asOfDate, minHistoryDays);
+  if (history.length === 0) {
+    throw new Error(`Missing Yahoo chart data for watchlist symbol ${symbol}`);
+  }
+
+  return {
+    exchange: normalizeExchange(secRow.exchange),
+    marketDataSymbol: symbol,
+    name: titleCaseCompanyName(secRow.name),
+    secCik: String(secRow.cik).padStart(10, "0"),
+  };
+}
+
+async function fetchSecTickerMap() {
+  const response = await fetch(
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    {
+      headers: {
+        "User-Agent": userAgent,
+      },
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status} from SEC ticker metadata`);
+  }
+
+  const payload = await response.json();
+  const fields = Array.isArray(payload.fields) ? payload.fields : [];
+  const data = Array.isArray(payload.data) ? payload.data : [];
+  return new Map(
+    data
+      .map((row) =>
+        Object.fromEntries(fields.map((field, index) => [field, row[index]])),
+      )
+      .map((row) => [String(row.ticker ?? "").toUpperCase(), row]),
+  );
+}
+
+function normalizeExchange(exchange) {
+  const text = String(exchange ?? "").toLowerCase();
+  if (text.includes("nasdaq")) {
+    return "NASDAQ";
+  }
+  if (text.includes("nyse american")) {
+    return "AMEX";
+  }
+  if (text.includes("nyse")) {
+    return "NYSE";
+  }
+  return String(exchange ?? "").toUpperCase().replaceAll(" ", "");
+}
+
+function titleCaseCompanyName(name) {
+  return String(name ?? "")
+    .toLowerCase()
+    .replace(/\b([a-z])/g, (match) => match.toUpperCase())
+    .replace(/\bInc\b/g, "Inc.")
+    .replace(/\bCorp\b/g, "Corp.")
+    .replace(/\bLtd\b/g, "Ltd.")
+    .replace(/\bLlc\b/g, "LLC")
+    .replace(/\bLp\b/g, "LP")
+    .replaceAll("..", ".");
+}
+
 async function fetchPriceHistory(symbol, upperDate, days) {
   const startDate = addDays(upperDate, -days);
   const period1 = unixSeconds(startDate);
@@ -450,7 +618,7 @@ function refreshPriceRows(existingRows, historyBySymbol, heldSymbols) {
     };
   });
 
-  for (const symbol of heldSymbols) {
+  for (const symbol of historyBySymbol.keys()) {
     if (existingSymbols.has(symbol)) {
       continue;
     }
@@ -467,7 +635,9 @@ function refreshPriceRows(existingRows, historyBySymbol, heldSymbols) {
       price_as_of: latest.date,
       source: priceHistorySource,
       retrieved_at: retrievedAt,
-      notes: "Automated daily close refresh for confirmed holding.",
+      notes: heldSymbols.has(symbol)
+        ? "Automated daily close refresh for confirmed holding."
+        : "Automated daily close refresh from committed price history.",
     });
   }
 

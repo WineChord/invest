@@ -1,20 +1,20 @@
 schema_version: 1
-as_of: 2026-05-26
+as_of: 2026-05-29
 last_research_engine_run:
-  as_of: 2026-05-26
-  scope: monthly_decision_target_refresh
-  notes: Refreshed target filing reviews, price basis, and valuation states for RKLB and ASTS only. The full active universe still needs broader filing-review and valuation coverage before the repository can be marked generally decision-ready.
+  as_of: 2026-05-29
+  scope: watchlist_expansion_scan
+  notes: Promoted a small set of distinct satellite candidates from the user-supplied universe and kept the repository not ready for buy recommendations until filing reviews and valuation states are refreshed.
 decision_readiness:
   status: not_ready
   can_recommend_buys: false
-  reason: Partial target refresh completed for the 2026-05-26 first-deposit decision, but the full active watchlist still lacks current valuation states and latest filing reviews.
+  reason: Watchlist expansion added new active research names, but the full active watchlist still lacks current valuation states and latest filing reviews.
 coverage:
-  universe_scan_as_of: 2026-05-26
-  active_watchlist_symbols: 11
+  universe_scan_as_of: 2026-05-29
+  active_watchlist_symbols: 18
   active_symbols_with_current_valuation_state: 2
-  active_symbols_missing_valuation_state: 9
+  active_symbols_missing_valuation_state: 16
   active_symbols_with_latest_filing_review: 2
-  active_symbols_missing_latest_filing_review: 9
+  active_symbols_missing_latest_filing_review: 16
   raw_discovery_candidates_open: 0
 freshness:
   open_critical_events: 0

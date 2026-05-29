@@ -434,8 +434,11 @@ function validateWatchlist() {
 
 function validateMarketDataFiles() {
   const watchlistSymbols = new Set(csvRecords(watchlistFile).map((row) => row.symbol));
+  const securityBySymbol = new Map(
+    csvRecords(securityMasterFile).map((row) => [row.symbol, row]),
+  );
   const tradableSymbols = new Set(
-    csvRecords(securityMasterFile)
+    [...securityBySymbol.values()]
       .filter((row) => row.tradability === "tradable")
       .map((row) => row.symbol),
   );
@@ -443,7 +446,21 @@ function validateMarketDataFiles() {
   const technicalSymbols = new Set(csvRecords(technicalSnapshotsFile).map((row) => row.symbol));
   const metricSymbols = new Set(csvRecords(companyMetricsFile).map((row) => row.symbol));
 
-  csvRecords(securityMasterFile).forEach((row, index) => {
+  csvRecords(watchlistFile).forEach((row, index) => {
+    const context = `${watchlistFile} row ${index + 2}`;
+    const security = securityBySymbol.get(row.symbol);
+    if (security === undefined) {
+      throw new Error(`${context} is missing ${securityMasterFile} metadata for ${row.symbol}`);
+    }
+    if (row.status === "not_tradable" && security.tradability !== "not_tradable") {
+      throw new Error(`${context} is not_tradable but ${securityMasterFile} marks ${row.symbol} as ${security.tradability}`);
+    }
+    if (row.status !== "not_tradable" && security.tradability !== "tradable") {
+      throw new Error(`${context} needs tradable ${securityMasterFile} metadata for ${row.symbol}`);
+    }
+  });
+
+  [...securityBySymbol.values()].forEach((row, index) => {
     const context = `${securityMasterFile} row ${index + 2}`;
     requireString(row.symbol, `${context} symbol`);
     requireString(row.name, `${context} name`);

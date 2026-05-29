@@ -56,3 +56,5 @@ npm run refresh:market -- --dry-run
 ```
 
 GitHub Actions runs the same market-data refresh on a weekday schedule. It updates committed daily price history, technical snapshots, SEC-derived company metrics, and latest close snapshots, then updates `data/account/equity_curve.csv` only after confirmed positions and confirmed cash exist. The research cards, right-side research detail, and per-symbol pages under `/research/<symbol>/` read those committed files, so the public display becomes richer as the refresh history grows.
+
+Watchlist expansion should start with `research/watchlist.csv`. For a new public ticker, the market-data refresh hydrates missing security metadata, fetches committed price history, updates the latest close and derived metrics, and lets the dashboard generate the card and `/research/<symbol>/` page without changing the workflow. `npm run check:data` enforces that every watchlist row has matching security metadata and that every tradable watchlist symbol has market-data coverage after refresh.

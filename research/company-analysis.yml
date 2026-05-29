@@ -71,6 +71,30 @@ entries:
     risk_watch: Capex intensity, financing dilution, receivables quality, customer concentration, utilization economics, and delivery delays.
     next_check: Next 6-K, customer update, or financing update.
     source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-29-mu-watchlist-expansion
+    symbol: MU
+    analyzed_at: "2026-05-29"
+    analysis_type: watchlist_expansion_scan
+    policy_version: v1.1
+    title: Watchlist expansion scan
+    stance: B+
+    summary: Micron adds direct AI memory and HBM bottleneck exposure, but memory cyclicality keeps it watch-only until evidence and entry work are refreshed.
+    upside_path: Benefit if HBM and advanced DRAM become durable constraints in AI accelerator systems rather than a short commodity cycle.
+    risk_watch: Memory pricing cycles, capex intensity, HBM share losses, China exposure, inventory corrections, and margin volatility.
+    next_check: Next earnings or HBM supply and margin update.
+    source_path: research/2026-05-29-watchlist-expansion-scan.md
+  - id: 2026-05-29-crwv-watchlist-expansion
+    symbol: CRWV
+    analyzed_at: "2026-05-29"
+    analysis_type: watchlist_expansion_scan
+    policy_version: v1.1
+    title: Watchlist expansion scan
+    stance: B+
+    summary: CoreWeave adds pure-play AI cloud capacity exposure, with clearer neocloud focus than most infrastructure names but high balance-sheet and customer concentration risk.
+    upside_path: Compound if scarce GPU capacity, data-center power, and AI workload demand support durable utilization and pricing.
+    risk_watch: Debt load, customer concentration, GPU depreciation, hyperscaler competition, supply commitments, and financing dilution.
+    next_check: Next earnings, customer concentration disclosure, or debt update.
+    source_path: research/2026-05-29-watchlist-expansion-scan.md
   - id: 2026-05-26-crcl-initial-baseline
     symbol: CRCL
     analyzed_at: "2026-05-26"
@@ -95,6 +119,30 @@ entries:
     risk_watch: Customer concentration, backlog conversion, gross margin quality, supply chain constraints, and valuation expectations.
     next_check: After at least two public quarterly reports.
     source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-29-iren-watchlist-expansion
+    symbol: IREN
+    analyzed_at: "2026-05-29"
+    analysis_type: watchlist_expansion_scan
+    policy_version: v1.1
+    title: Watchlist expansion scan
+    stance: B
+    summary: IREN is the only miner and power-site conversion name promoted because it may turn power access into AI cloud optionality without adding the whole crypto-miner basket.
+    upside_path: Convert low-cost power and data-center sites into contracted AI compute capacity while retaining optionality from bitcoin mining economics.
+    risk_watch: Bitcoin exposure, AI customer quality, financing needs, construction execution, GPU procurement, and dilution.
+    next_check: Next AI cloud capacity, customer, or financing update.
+    source_path: research/2026-05-29-watchlist-expansion-scan.md
+  - id: 2026-05-29-oklo-watchlist-expansion
+    symbol: OKLO
+    analyzed_at: "2026-05-29"
+    analysis_type: watchlist_expansion_scan
+    policy_version: v1.1
+    title: Watchlist expansion scan
+    stance: B
+    summary: Oklo adds advanced nuclear optionality for power-constrained AI and industrial demand, but it remains pre-commercial and highly dependent on licensing execution.
+    upside_path: Become a deployable advanced-fission power supplier if regulatory approvals, fuel access, and customer commitments converge.
+    risk_watch: NRC licensing, project timing, fuel availability, pre-revenue dilution, customer contract quality, and technology execution.
+    next_check: Next NRC, licensing, customer, or deployment update.
+    source_path: research/2026-05-29-watchlist-expansion-scan.md
   - id: 2026-05-26-be-initial-baseline
     symbol: BE
     analyzed_at: "2026-05-26"
@@ -107,6 +155,42 @@ entries:
     risk_watch: Service costs, customer economics, subsidy dependence, cash flow conversion, warranty issues, and order quality.
     next_check: Next customer, order, or cash-flow update.
     source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-29-leu-watchlist-expansion
+    symbol: LEU
+    analyzed_at: "2026-05-29"
+    analysis_type: watchlist_expansion_scan
+    policy_version: v1.1
+    title: Watchlist expansion scan
+    stance: B-
+    summary: Centrus adds upstream nuclear fuel and HALEU bottleneck exposure, which is more distinct than broad uranium commodity exposure.
+    upside_path: Benefit if advanced nuclear demand and U.S. fuel-security policy make HALEU enrichment capacity strategically scarce.
+    risk_watch: Government contract dependence, enrichment scale-up, uranium feedstock, policy timing, customer concentration, and execution risk.
+    next_check: Next DOE, HALEU, or capacity update.
+    source_path: research/2026-05-29-watchlist-expansion-scan.md
+  - id: 2026-05-29-gsat-watchlist-expansion
+    symbol: GSAT
+    analyzed_at: "2026-05-29"
+    analysis_type: watchlist_expansion_scan
+    policy_version: v1.1
+    title: Watchlist expansion scan
+    stance: B-
+    summary: Globalstar adds a spectrum-backed direct-to-device and satellite-connectivity peer to ASTS without assuming only one architecture wins.
+    upside_path: Turn satellite spectrum and device partnerships into durable connectivity economics if direct-to-device demand broadens.
+    risk_watch: Apple and partner concentration, capex needs, spectrum monetization, network capacity, competitive positioning, and dilution.
+    next_check: Next Apple, direct-to-device, spectrum, or capex update.
+    source_path: research/2026-05-29-watchlist-expansion-scan.md
+  - id: 2026-05-29-ktos-watchlist-expansion
+    symbol: KTOS
+    analyzed_at: "2026-05-29"
+    analysis_type: watchlist_expansion_scan
+    policy_version: v1.1
+    title: Watchlist expansion scan
+    stance: B-
+    summary: Kratos adds defense autonomy and space communications exposure while avoiding weaker drone microcaps.
+    upside_path: Compound if unmanned systems, hypersonic targets, tactical drones, and satellite communications become higher-priority defense infrastructure.
+    risk_watch: Contractor margin limits, program timing, defense budget cycles, working capital, and backlog conversion.
+    next_check: Next unmanned systems, space communications, or backlog update.
+    source_path: research/2026-05-29-watchlist-expansion-scan.md
   - id: 2026-05-26-ionq-initial-baseline
     symbol: IONQ
     analyzed_at: "2026-05-26"
