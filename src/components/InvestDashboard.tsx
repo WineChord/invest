@@ -2471,6 +2471,8 @@ function WatchlistTable({
   const [previewState, setPreviewState] = useState<WatchPreviewState | null>(
     null,
   );
+  const workspaceRef = useRef<HTMLDivElement | null>(null);
+  const watchlistGridRef = useRef<HTMLDivElement | null>(null);
   const detailPanelRef = useRef<HTMLElement | null>(null);
   const selectedItem =
     items.find((item) => item.symbol === selectedSymbol) ?? items[0] ?? null;
@@ -2499,6 +2501,41 @@ function WatchlistTable({
       setPreviewState(null);
     }
   }, [items, previewState?.symbol, selectedSymbol]);
+
+  useEffect(() => {
+    const workspace = workspaceRef.current;
+    const watchlistGrid = watchlistGridRef.current;
+    if (workspace === null || watchlistGrid === null) {
+      return;
+    }
+
+    let animationFrame = 0;
+    const updateLeftColumnHeight = () => {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = window.requestAnimationFrame(() => {
+        const height = Math.ceil(watchlistGrid.getBoundingClientRect().height);
+        workspace.style.setProperty(
+          "--research-left-column-height",
+          `${height}px`,
+        );
+      });
+    };
+
+    updateLeftColumnHeight();
+
+    const resizeObserver =
+      typeof ResizeObserver === "undefined"
+        ? null
+        : new ResizeObserver(updateLeftColumnHeight);
+    resizeObserver?.observe(watchlistGrid);
+    window.addEventListener("resize", updateLeftColumnHeight);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", updateLeftColumnHeight);
+    };
+  }, [items.length, movementDisplayMode]);
 
   const selectItem = (symbol: string) => {
     setSelectedSymbol(symbol);
@@ -2658,115 +2695,119 @@ function WatchlistTable({
           </button>
         </div>
       </div>
-      <div className="research-workspace">
-      <div className="watchlist-grid" aria-label="Research candidates">
-        {items.map((item) => {
-          const latest = latestAnalysisFor(item);
-          const selected = item.symbol === selectedItem?.symbol;
-          const previewId = `watch-preview-${item.symbol.toLowerCase()}`;
+      <div className="research-workspace" ref={workspaceRef}>
+        <div
+          aria-label="Research candidates"
+          className="watchlist-grid"
+          ref={watchlistGridRef}
+        >
+          {items.map((item) => {
+            const latest = latestAnalysisFor(item);
+            const selected = item.symbol === selectedItem?.symbol;
+            const previewId = `watch-preview-${item.symbol.toLowerCase()}`;
 
-          return (
-            <button
-              aria-describedby={
-                latest !== null && previewState?.symbol === item.symbol
-                  ? previewId
-                  : undefined
-              }
-              aria-pressed={selected}
-              className={
-                selected
-                  ? "watch-card watch-card-selected"
-                  : "watch-card"
-              }
-              key={item.symbol}
-              onBlur={hidePreview}
-              onClick={() => selectItem(item.symbol)}
-              onFocus={(event) => {
-                if (latest !== null) {
-                  showPreviewFromFocus(event, item.symbol);
+            return (
+              <button
+                aria-describedby={
+                  latest !== null && previewState?.symbol === item.symbol
+                    ? previewId
+                    : undefined
                 }
-              }}
-              onMouseEnter={(event) => {
-                if (latest !== null) {
-                  showPreviewFromMouse(event, item.symbol);
+                aria-pressed={selected}
+                className={
+                  selected ? "watch-card watch-card-selected" : "watch-card"
                 }
-              }}
-              onMouseLeave={hidePreview}
-              onMouseMove={(event) => {
-                if (latest !== null) {
-                  showPreviewFromMouse(event, item.symbol);
-                }
-              }}
-              onPointerEnter={(event) => {
-                if (latest !== null) {
-                  showPreviewFromPointer(event, item.symbol);
-                }
-              }}
-              onPointerLeave={hidePreview}
-              onPointerMove={(event) => {
-                if (latest !== null) {
-                  showPreviewFromPointer(event, item.symbol);
-                }
-              }}
-              type="button"
-            >
-              <span className="watch-card-topline">
-                <span className="watch-card-symbol-row">
-                  <strong>{item.symbol}</strong>
-                  <span className="rank">
-                    {watchPriorityLabel(item.priority)}
+                key={item.symbol}
+                onBlur={hidePreview}
+                onClick={() => selectItem(item.symbol)}
+                onFocus={(event) => {
+                  if (latest !== null) {
+                    showPreviewFromFocus(event, item.symbol);
+                  }
+                }}
+                onMouseEnter={(event) => {
+                  if (latest !== null) {
+                    showPreviewFromMouse(event, item.symbol);
+                  }
+                }}
+                onMouseLeave={hidePreview}
+                onMouseMove={(event) => {
+                  if (latest !== null) {
+                    showPreviewFromMouse(event, item.symbol);
+                  }
+                }}
+                onPointerEnter={(event) => {
+                  if (latest !== null) {
+                    showPreviewFromPointer(event, item.symbol);
+                  }
+                }}
+                onPointerLeave={hidePreview}
+                onPointerMove={(event) => {
+                  if (latest !== null) {
+                    showPreviewFromPointer(event, item.symbol);
+                  }
+                }}
+                type="button"
+              >
+                <span className="watch-card-topline">
+                  <span className="watch-card-symbol-row">
+                    <strong>{item.symbol}</strong>
+                    <span className="rank">
+                      {watchPriorityLabel(item.priority)}
+                    </span>
                   </span>
+                  <span className="watch-card-name">{item.name}</span>
                 </span>
-                <span className="watch-card-name">{item.name}</span>
-              </span>
-              <span className="watch-card-theme">{item.theme}</span>
-              <MiniSparkline item={item} />
-              <span className="watch-card-metric-row">
-                <WatchCardMovementMetric
-                  item={item}
-                  label="1D"
-                  mode={movementDisplayMode}
-                  sessionsBack={1}
-                />
-                <WatchCardMovementMetric
-                  item={item}
-                  label="5D"
-                  mode={movementDisplayMode}
-                  sessionsBack={5}
-                />
-                <WatchCardPlainMetric
-                  label="P/S"
-                  value={formatRatio(item.metrics?.priceToSales ?? null)}
-                />
-              </span>
-              <span className="watch-card-meta">
-                <span>{watchStatusLabel(item.status)}</span>
-                <span>{formatWatchPrice(item)}</span>
-                <span>{analysisCountLabel(item.analysisHistory.length)}</span>
-              </span>
-            </button>
-          );
-        })}
-      </div>
-      {previewItem === null || previewEntry === null || previewState === null ? null : (
-        <WatchAnalysisPreview
-          entry={previewEntry}
-          id={`watch-preview-${previewItem.symbol.toLowerCase()}`}
-          item={previewItem}
-          style={{
-            left: `${previewState.left}px`,
-            top: `${previewState.top}px`,
-          }}
+                <span className="watch-card-theme">{item.theme}</span>
+                <MiniSparkline item={item} />
+                <span className="watch-card-metric-row">
+                  <WatchCardMovementMetric
+                    item={item}
+                    label="1D"
+                    mode={movementDisplayMode}
+                    sessionsBack={1}
+                  />
+                  <WatchCardMovementMetric
+                    item={item}
+                    label="5D"
+                    mode={movementDisplayMode}
+                    sessionsBack={5}
+                  />
+                  <WatchCardPlainMetric
+                    label="P/S"
+                    value={formatRatio(item.metrics?.priceToSales ?? null)}
+                  />
+                </span>
+                <span className="watch-card-meta">
+                  <span>{watchStatusLabel(item.status)}</span>
+                  <span>{formatWatchPrice(item)}</span>
+                  <span>{analysisCountLabel(item.analysisHistory.length)}</span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        {previewItem === null ||
+        previewEntry === null ||
+        previewState === null ? null : (
+          <WatchAnalysisPreview
+            entry={previewEntry}
+            id={`watch-preview-${previewItem.symbol.toLowerCase()}`}
+            item={previewItem}
+            style={{
+              left: `${previewState.left}px`,
+              top: `${previewState.top}px`,
+            }}
+          />
+        )}
+        <ResearchDetailPanel
+          item={selectedItem}
+          marketColorScheme={marketColorScheme}
+          movementDisplayMode={movementDisplayMode}
+          panelRef={detailPanelRef}
+          repositoryUrl={repositoryUrl}
         />
-      )}
-      <ResearchDetailPanel
-        item={selectedItem}
-        marketColorScheme={marketColorScheme}
-        movementDisplayMode={movementDisplayMode}
-        panelRef={detailPanelRef}
-        repositoryUrl={repositoryUrl}
-      />
-    </div>
+      </div>
     </>
   );
 }

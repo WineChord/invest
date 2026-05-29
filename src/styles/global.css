@@ -1062,7 +1062,9 @@ td span {
 }
 
 .research-workspace {
-  align-items: stretch;
+  --research-detail-sticky-top: 5.3rem;
+  --research-left-column-height: 100vh;
+  align-items: start;
   display: grid;
   gap: 1rem;
   grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.46fr);
@@ -1315,15 +1317,22 @@ td span {
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 14px 34px rgba(18, 42, 35, 0.1);
-  align-self: stretch;
+  align-self: start;
   display: grid;
   grid-auto-rows: max-content;
   gap: 0.9rem;
+  max-height: min(
+    var(--research-left-column-height),
+    calc(100vh - var(--research-detail-sticky-top) - 1rem)
+  );
   min-width: 0;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 0.95rem;
   position: sticky;
-  top: 5.3rem;
+  scrollbar-gutter: stable;
+  top: var(--research-detail-sticky-top);
 }
 
 .research-detail-kicker,
