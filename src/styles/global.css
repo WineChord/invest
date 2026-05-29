@@ -1255,21 +1255,6 @@ td span {
   font-size: 0.76rem;
 }
 
-.mini-sparkline-label {
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(216, 227, 223, 0.72);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 0.58rem;
-  font-weight: 850;
-  line-height: 1;
-  padding: 0.16rem 0.28rem;
-  position: absolute;
-  right: 0.16rem;
-  text-transform: uppercase;
-  top: 0.18rem;
-}
-
 .watch-card-metric-row {
   display: grid;
   gap: 0.38rem;

@@ -271,19 +271,6 @@ function sessionsForSparklineWindow(
   );
 }
 
-function sparklineWindowLabel(
-  windowKey: SparklineWindowKey,
-  sessions: number | null,
-): string {
-  if (windowKey === "ALL") {
-    return "ALL close";
-  }
-  if (windowKey === "CUSTOM") {
-    return `${sessions ?? defaultCustomSparklineSessions}D close`;
-  }
-  return `${windowKey} close`;
-}
-
 function formatCurrency(value: number | null): string {
   return value === null
     ? "Pending confirmation"
@@ -2553,10 +2540,6 @@ function WatchlistTable({
     sparklineWindow,
     activeCustomSparklineSessions,
   );
-  const activeSparklineLabel = sparklineWindowLabel(
-    sparklineWindow,
-    sparklineSessions,
-  );
 
   useEffect(() => {
     if (items.length === 0) {
@@ -2909,7 +2892,6 @@ function WatchlistTable({
                 <span className="watch-card-theme">{item.theme}</span>
                 <MiniSparkline
                   item={item}
-                  windowLabel={activeSparklineLabel}
                   windowSessions={sparklineSessions}
                 />
                 <span className="watch-card-metric-row">
@@ -3003,11 +2985,9 @@ function WatchCardPlainMetric({
 
 function MiniSparkline({
   item,
-  windowLabel,
   windowSessions,
 }: {
   item: WatchlistItem;
-  windowLabel: string;
   windowSessions: number | null;
 }) {
   const history =
@@ -3043,12 +3023,11 @@ function MiniSparkline({
   return (
     <span
       className={`mini-sparkline mini-sparkline-${tone}`}
-      aria-label={`${item.symbol} ${windowLabel} daily close sparkline`}
+      aria-label={`${item.symbol} daily close sparkline`}
     >
       <svg focusable="false" viewBox={`0 0 ${width} ${height}`}>
         <polyline points={points} />
       </svg>
-      <span className="mini-sparkline-label">{windowLabel}</span>
     </span>
   );
 }
