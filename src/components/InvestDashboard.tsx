@@ -63,6 +63,7 @@ interface Metrics {
 type DashboardMode = "real" | "demo";
 type MarketColorScheme = "mainland" | "western";
 type MovementDisplayMode = "percent" | "dollar";
+type SparklineWindowKey = "1M" | "3M" | "6M" | "1Y" | "ALL" | "CUSTOM";
 type ValueTone = "gain" | "loss" | "neutral";
 
 interface TradeMarker {
@@ -135,12 +136,29 @@ interface PriceMovement {
   percent: number;
 }
 
+interface SparklineWindowOption {
+  key: Exclude<SparklineWindowKey, "CUSTOM">;
+  label: string;
+  sessions: number | null;
+}
+
 const WATCH_PREVIEW_MEDIA_QUERY =
   "(hover: hover) and (pointer: fine) and (min-width: 761px)";
 const WATCH_PREVIEW_WIDTH = 380;
 const WATCH_PREVIEW_HEIGHT = 220;
 const WATCH_PREVIEW_GAP = 12;
 const WATCH_PREVIEW_MARGIN = 12;
+const sparklineSessionMin = 5;
+const sparklineSessionMax = 756;
+const defaultSparklineWindow: SparklineWindowKey = "3M";
+const defaultCustomSparklineSessions = 80;
+const sparklineWindowOptions: SparklineWindowOption[] = [
+  { key: "1M", label: "1M", sessions: 21 },
+  { key: "3M", label: "3M", sessions: 63 },
+  { key: "6M", label: "6M", sessions: 126 },
+  { key: "1Y", label: "1Y", sessions: 252 },
+  { key: "ALL", label: "ALL", sessions: null },
+];
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
@@ -230,6 +248,40 @@ function persistMarketColorScheme(scheme: MarketColorScheme): void {
   } catch {
     // The preference is cosmetic, so blocked browser storage should not break the dashboard.
   }
+}
+
+function clampSparklineSessions(value: number): number {
+  return Math.min(
+    Math.max(Math.round(value), sparklineSessionMin),
+    sparklineSessionMax,
+  );
+}
+
+function sessionsForSparklineWindow(
+  windowKey: SparklineWindowKey,
+  customSessions: number,
+): number | null {
+  if (windowKey === "CUSTOM") {
+    return clampSparklineSessions(customSessions);
+  }
+
+  return (
+    sparklineWindowOptions.find((option) => option.key === windowKey)
+      ?.sessions ?? null
+  );
+}
+
+function sparklineWindowLabel(
+  windowKey: SparklineWindowKey,
+  sessions: number | null,
+): string {
+  if (windowKey === "ALL") {
+    return "ALL close";
+  }
+  if (windowKey === "CUSTOM") {
+    return `${sessions ?? defaultCustomSparklineSessions}D close`;
+  }
+  return `${windowKey} close`;
 }
 
 function formatCurrency(value: number | null): string {
@@ -2472,6 +2524,10 @@ function WatchlistTable({
   const [selectedSymbol, setSelectedSymbol] = useState(items[0]?.symbol ?? "");
   const [movementDisplayMode, setMovementDisplayMode] =
     useState<MovementDisplayMode>("percent");
+  const [sparklineWindow, setSparklineWindow] =
+    useState<SparklineWindowKey>(defaultSparklineWindow);
+  const [customSparklineSessionsInput, setCustomSparklineSessionsInput] =
+    useState(String(defaultCustomSparklineSessions));
   const [previewState, setPreviewState] = useState<WatchPreviewState | null>(
     null,
   );
@@ -2486,6 +2542,21 @@ function WatchlistTable({
       : (items.find((item) => item.symbol === previewState.symbol) ?? null);
   const previewEntry =
     previewItem === null ? null : latestAnalysisFor(previewItem);
+  const customSparklineSessions = Number.parseInt(
+    customSparklineSessionsInput,
+    10,
+  );
+  const activeCustomSparklineSessions = Number.isFinite(customSparklineSessions)
+    ? clampSparklineSessions(customSparklineSessions)
+    : defaultCustomSparklineSessions;
+  const sparklineSessions = sessionsForSparklineWindow(
+    sparklineWindow,
+    activeCustomSparklineSessions,
+  );
+  const activeSparklineLabel = sparklineWindowLabel(
+    sparklineWindow,
+    sparklineSessions,
+  );
 
   useEffect(() => {
     if (items.length === 0) {
@@ -2505,6 +2576,22 @@ function WatchlistTable({
       setPreviewState(null);
     }
   }, [items, previewState?.symbol, selectedSymbol]);
+
+  const setCustomSparklineSessions = (value: string) => {
+    if (/^\d{0,4}$/.test(value)) {
+      setCustomSparklineSessionsInput(value);
+      setSparklineWindow("CUSTOM");
+    }
+  };
+
+  const commitCustomSparklineSessions = (value: string) => {
+    const parsed = Number.parseInt(value, 10);
+    const nextSessions = Number.isFinite(parsed)
+      ? clampSparklineSessions(parsed)
+      : defaultCustomSparklineSessions;
+    setCustomSparklineSessionsInput(String(nextSessions));
+    setSparklineWindow("CUSTOM");
+  };
 
   useEffect(() => {
     const workspace = workspaceRef.current;
@@ -2672,31 +2759,88 @@ function WatchlistTable({
 
   return (
     <>
-      <div className="research-display-toolbar" aria-label="Research display controls">
-        <span>Recent move</span>
-        <div className="research-display-toggle" role="group" aria-label="Recent move display mode">
-          <button
-            className={
-              movementDisplayMode === "percent"
-                ? "chart-range-button chart-range-button-active"
-                : "chart-range-button"
-            }
-            onClick={() => setMovementDisplayMode("percent")}
-            type="button"
+      <div
+        className="research-display-toolbar"
+        aria-label="Research display controls"
+      >
+        <div className="research-display-control-group">
+          <span>Sparkline window</span>
+          <div
+            className="research-display-toggle sparkline-window-toggle"
+            role="group"
+            aria-label="Sparkline window preset"
           >
-            %
-          </button>
-          <button
+            {sparklineWindowOptions.map((option) => (
+              <button
+                className={
+                  sparklineWindow === option.key
+                    ? "chart-range-button chart-range-button-active"
+                    : "chart-range-button"
+                }
+                key={option.key}
+                onClick={() => setSparklineWindow(option.key)}
+                type="button"
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+          <label
             className={
-              movementDisplayMode === "dollar"
-                ? "chart-range-button chart-range-button-active"
-                : "chart-range-button"
+              sparklineWindow === "CUSTOM"
+                ? "sparkline-window-custom sparkline-window-custom-active"
+                : "sparkline-window-custom"
             }
-            onClick={() => setMovementDisplayMode("dollar")}
-            type="button"
           >
-            $
-          </button>
+            <input
+              aria-label={`Custom sparkline window, ${sparklineSessionMin} to ${sparklineSessionMax} trading sessions`}
+              inputMode="numeric"
+              max={sparklineSessionMax}
+              min={sparklineSessionMin}
+              onBlur={(event) =>
+                commitCustomSparklineSessions(event.currentTarget.value)
+              }
+              onChange={(event) =>
+                setCustomSparklineSessions(event.currentTarget.value)
+              }
+              onFocus={() => setSparklineWindow("CUSTOM")}
+              step={1}
+              type="number"
+              value={customSparklineSessionsInput}
+            />
+            <span>sessions</span>
+          </label>
+        </div>
+        <div className="research-display-control-group">
+          <span>Recent move</span>
+          <div
+            className="research-display-toggle"
+            role="group"
+            aria-label="Recent move display mode"
+          >
+            <button
+              className={
+                movementDisplayMode === "percent"
+                  ? "chart-range-button chart-range-button-active"
+                  : "chart-range-button"
+              }
+              onClick={() => setMovementDisplayMode("percent")}
+              type="button"
+            >
+              %
+            </button>
+            <button
+              className={
+                movementDisplayMode === "dollar"
+                  ? "chart-range-button chart-range-button-active"
+                  : "chart-range-button"
+              }
+              onClick={() => setMovementDisplayMode("dollar")}
+              type="button"
+            >
+              $
+            </button>
+          </div>
         </div>
       </div>
       <div className="research-workspace" ref={workspaceRef}>
@@ -2763,7 +2907,11 @@ function WatchlistTable({
                   <span className="watch-card-name">{item.name}</span>
                 </span>
                 <span className="watch-card-theme">{item.theme}</span>
-                <MiniSparkline item={item} />
+                <MiniSparkline
+                  item={item}
+                  windowLabel={activeSparklineLabel}
+                  windowSessions={sparklineSessions}
+                />
                 <span className="watch-card-metric-row">
                   <WatchCardMovementMetric
                     item={item}
@@ -2853,8 +3001,19 @@ function WatchCardPlainMetric({
   );
 }
 
-function MiniSparkline({ item }: { item: WatchlistItem }) {
-  const history = item.priceHistory.slice(-80);
+function MiniSparkline({
+  item,
+  windowLabel,
+  windowSessions,
+}: {
+  item: WatchlistItem;
+  windowLabel: string;
+  windowSessions: number | null;
+}) {
+  const history =
+    windowSessions === null
+      ? item.priceHistory
+      : item.priceHistory.slice(-windowSessions);
   if (history.length < 2) {
     return (
       <span className="mini-sparkline mini-sparkline-empty">
@@ -2882,10 +3041,14 @@ function MiniSparkline({ item }: { item: WatchlistItem }) {
     .join(" ");
 
   return (
-    <span className={`mini-sparkline mini-sparkline-${tone}`} aria-hidden="true">
+    <span
+      className={`mini-sparkline mini-sparkline-${tone}`}
+      aria-label={`${item.symbol} ${windowLabel} daily close sparkline`}
+    >
       <svg focusable="false" viewBox={`0 0 ${width} ${height}`}>
         <polyline points={points} />
       </svg>
+      <span className="mini-sparkline-label">{windowLabel}</span>
     </span>
   );
 }

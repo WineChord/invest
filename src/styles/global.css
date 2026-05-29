@@ -1077,9 +1077,16 @@ td span {
   flex-wrap: wrap;
   font-size: 0.78rem;
   font-weight: 850;
-  gap: 0.45rem;
-  justify-content: flex-end;
+  gap: 0.7rem;
+  justify-content: space-between;
   margin-bottom: 0.72rem;
+}
+
+.research-display-control-group {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
 .research-display-toggle {
@@ -1090,6 +1097,46 @@ td span {
   display: inline-flex;
   gap: 0.18rem;
   padding: 0.18rem;
+}
+
+.sparkline-window-toggle .chart-range-button {
+  min-width: 2.15rem;
+}
+
+.sparkline-window-custom {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: inline-flex;
+  gap: 0.28rem;
+  min-height: 2rem;
+  padding: 0.18rem 0.48rem 0.18rem 0.24rem;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.sparkline-window-custom-active,
+.sparkline-window-custom:focus-within {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(24, 169, 153, 0.16);
+}
+
+.sparkline-window-custom input {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  font-weight: 850;
+  outline: none;
+  width: 3.1rem;
+}
+
+.sparkline-window-custom span {
+  color: var(--muted);
+  font-size: 0.66rem;
 }
 
 .watchlist-grid {
@@ -1177,6 +1224,7 @@ td span {
   height: 2.95rem;
   min-width: 0;
   padding: 0.18rem 0;
+  position: relative;
 }
 
 .mini-sparkline svg {
@@ -1205,6 +1253,21 @@ td span {
 .mini-sparkline-empty {
   color: var(--muted);
   font-size: 0.76rem;
+}
+
+.mini-sparkline-label {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(216, 227, 223, 0.72);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 850;
+  line-height: 1;
+  padding: 0.16rem 0.28rem;
+  position: absolute;
+  right: 0.16rem;
+  text-transform: uppercase;
+  top: 0.18rem;
 }
 
 .watch-card-metric-row {

@@ -814,7 +814,7 @@ Required dashboard surfaces:
 - append-only operation history;
 - equity curve;
 - buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
-- active research/watchlist workspace with company cards, committed price sparklines, recent 1D and 5D price moves with percent or dollar display, key technical and valuation metrics, hover or focus quick briefs, click or tap detail drilldown, and historical analysis timeline;
+- active research/watchlist workspace with company cards, committed price sparklines with a global window control, recent 1D and 5D price moves with percent or dollar display, key technical and valuation metrics, hover or focus quick briefs, click or tap detail drilldown, and historical analysis timeline;
 - per-symbol research pages under `/research/<symbol>/` with committed price charts, market/technical/fundamental metrics, analysis provenance, external links, and an optional live TradingView preview;
 - open-source repository link.
 
@@ -848,7 +848,7 @@ Dashboard evolution rules:
 - Summary metric cards should stay compact. Use enough padding for legibility, but avoid oversized vertical whitespace that makes the top dashboard row feel heavier than the chart and account sections.
 - Public-facing status fields should use human-readable labels and short explanations. Do not expose raw machine status strings such as internal enum names unless the surface is explicitly a debug or audit view.
 - Company research cards should remain compact scanning controls. They should expose a short latest-analysis preview on hover and keyboard focus when a pointer/focus environment supports it, while click or tap opens a durable detail panel that works on mobile.
-- Research cards may show compact sparklines and a few high-signal metrics, but they must remain scanning controls rather than miniature full dashboards. Dense charting, market facts, technical indicators, and external live previews belong in the detail panel or per-symbol page.
+- Research cards may show compact sparklines and a few high-signal metrics, but they must remain scanning controls rather than miniature full dashboards. The sparkline window should be globally switchable with common presets and a bounded custom trading-session input. Dense charting, market facts, technical indicators, and external live previews belong in the detail panel or per-symbol page.
 - Research-card hover previews must be app-rendered tooltips, not native browser `title` tooltips. They should appear quickly, avoid covering the trigger when possible, clamp inside the viewport, and stay disabled on touch-only mobile interaction where the detail panel is the primary path.
 - Company research detail must show the current watchlist metadata, latest structured thesis, upside path, risk watch, next check, and every historical analysis entry with date, stance, analysis type, policy version, and source link.
 - On desktop, the company research detail should behave like a sticky inspector while the research card grid scrolls. Its visible height should be bounded by the viewport and by the left card grid's bottom edge; when the detail content is longer, the panel scrolls internally instead of stretching the whole research workspace. On mobile, it remains in normal document flow.
