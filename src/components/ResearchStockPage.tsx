@@ -93,6 +93,13 @@ const shortDateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   timeZone: "UTC",
 });
+const fullDateFormatter = new Intl.DateTimeFormat("en-US", {
+  day: "numeric",
+  month: "short",
+  timeZone: "UTC",
+  year: "numeric",
+});
+const researchPriceChartMinBarSpacing = 0.05;
 
 export default function ResearchStockPage({ item, publicUrl, repositoryUrl }: Props) {
   const latest = item.analysisHistory[0] ?? null;
@@ -288,6 +295,7 @@ function StockPageChart({ item }: { item: WatchlistItem }) {
           timeScale: {
             borderColor: chartColors.border,
             fixLeftEdge: true,
+            minBarSpacing: researchPriceChartMinBarSpacing,
             rightOffset: 2,
             secondsVisible: false,
             timeVisible: false,
@@ -407,7 +415,10 @@ function StockPageChart({ item }: { item: WatchlistItem }) {
           <p className="eyebrow">Committed price history</p>
           <h2>{item.symbol} daily close</h2>
           <span>
-            {formatShortDate(firstPoint.date)} - {formatShortDate(lastPoint.date)}
+            {formatDateRange(
+              (visibleFirstPoint ?? firstPoint).date,
+              (visibleLastPoint ?? lastPoint).date,
+            )}
           </span>
         </div>
         <div className="research-page-chart-latest">
@@ -869,6 +880,20 @@ function formatMovement(movement: PriceMovement | null): string {
 function formatShortDate(date: string): string {
   const timestamp = Date.parse(`${date}T00:00:00Z`);
   return Number.isNaN(timestamp) ? date : shortDateFormatter.format(timestamp);
+}
+
+function formatFullDate(date: string): string {
+  const timestamp = Date.parse(`${date}T00:00:00Z`);
+  return Number.isNaN(timestamp) ? date : fullDateFormatter.format(timestamp);
+}
+
+function formatDateRange(firstDate: string, lastDate: string): string {
+  const firstYear = firstDate.slice(0, 4);
+  const lastYear = lastDate.slice(0, 4);
+  if (firstYear !== "" && firstYear === lastYear) {
+    return `${formatShortDate(firstDate)} - ${formatShortDate(lastDate)}`;
+  }
+  return `${formatFullDate(firstDate)} - ${formatFullDate(lastDate)}`;
 }
 
 function readableStatusLabel(status: string): string {

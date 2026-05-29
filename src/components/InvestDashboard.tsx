@@ -184,6 +184,12 @@ const shortDateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   timeZone: "UTC",
 });
+const fullDateFormatter = new Intl.DateTimeFormat("en-US", {
+  day: "numeric",
+  month: "short",
+  timeZone: "UTC",
+  year: "numeric",
+});
 
 const percentFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 1,
@@ -208,6 +214,7 @@ const stockChartRangeOptions: ChartRange[] = [
   "5D",
   ...chartRangeOptions,
 ];
+const compactPriceChartMinBarSpacing = 0.05;
 const chartVisibleLeftPadding = 1.05;
 const chartVisibleRightPadding = 0.25;
 const chartAttributionUrl =
@@ -1902,6 +1909,20 @@ function formatShortDate(date: string): string {
   return Number.isNaN(timestamp) ? date : shortDateFormatter.format(timestamp);
 }
 
+function formatFullDate(date: string): string {
+  const timestamp = Date.parse(`${date}T00:00:00Z`);
+  return Number.isNaN(timestamp) ? date : fullDateFormatter.format(timestamp);
+}
+
+function formatDateRange(firstDate: string, lastDate: string): string {
+  const firstYear = firstDate.slice(0, 4);
+  const lastYear = lastDate.slice(0, 4);
+  if (firstYear !== "" && firstYear === lastYear) {
+    return `${formatShortDate(firstDate)} - ${formatShortDate(lastDate)}`;
+  }
+  return `${formatFullDate(firstDate)} - ${formatFullDate(lastDate)}`;
+}
+
 function buildTradeMarkers(events: LedgerEvent[]): TradeMarker[] {
   const tradesByDate = new Map<string, LedgerEvent[]>();
   events.forEach((event) => {
@@ -3345,6 +3366,7 @@ function StockPriceChart({
           timeScale: {
             borderColor: chartColors.border,
             fixLeftEdge: true,
+            minBarSpacing: compactPriceChartMinBarSpacing,
             rightOffset: 2,
             secondsVisible: false,
             timeVisible: false,
@@ -3522,7 +3544,10 @@ function StockPriceChart({
       </div>
       <div className="stock-chart-footer">
         <span>
-          {formatShortDate(firstPoint.date)} - {formatShortDate(lastPoint.date)}
+          {formatDateRange(
+            (visibleFirstPoint ?? firstPoint).date,
+            (visibleLastPoint ?? lastPoint).date,
+          )}
         </span>
         <span>{item.technical?.source ?? "Committed price history"}</span>
       </div>
