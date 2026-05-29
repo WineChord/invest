@@ -473,7 +473,7 @@ function StockPageMovementPill({
 
 function TradingViewPreview({ item }: { item: WatchlistItem }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const tradingViewSymbol = item.security?.tradingViewSymbol ?? "";
 
   useEffect(() => {
@@ -500,13 +500,14 @@ function TradingViewPreview({ item }: { item: WatchlistItem }) {
       details: true,
       hide_side_toolbar: false,
       hide_top_toolbar: false,
-      interval: "D",
+      interval: "5",
       locale: "en",
+      range: "1D",
       save_image: false,
       style: "1",
       symbol: tradingViewSymbol,
       theme: "light",
-      timezone: "Etc/UTC",
+      timezone: "exchange",
       withdateranges: true,
     });
     container.append(widget, script);
@@ -523,11 +524,12 @@ function TradingViewPreview({ item }: { item: WatchlistItem }) {
   return (
     <details
       className="research-page-tradingview"
+      open={expanded}
       onToggle={(event) => setExpanded(event.currentTarget.open)}
     >
       <summary>
         <SquareArrowOutUpRight size={16} />
-        <span>Live TradingView preview</span>
+        <span>Live 1D TradingView</span>
       </summary>
       <div ref={containerRef} className="tradingview-widget-container" />
     </details>

@@ -1062,7 +1062,7 @@ td span {
 }
 
 .research-workspace {
-  align-items: start;
+  align-items: stretch;
   display: grid;
   gap: 1rem;
   grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.46fr);
@@ -1315,11 +1315,12 @@ td span {
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 14px 34px rgba(18, 42, 35, 0.1);
+  align-self: stretch;
   display: grid;
+  grid-auto-rows: max-content;
   gap: 0.9rem;
-  max-height: min(58rem, calc(100vh - 6rem));
   min-width: 0;
-  overflow: auto;
+  overflow: visible;
   padding: 0.95rem;
   position: sticky;
   top: 5.3rem;
@@ -1623,6 +1624,10 @@ td span {
 
 .tradingview-widget-container {
   height: 24rem;
+}
+
+.tradingview-widget-container-compact {
+  height: 18rem;
 }
 
 .research-brief-stack {
@@ -1971,6 +1976,8 @@ td span {
   }
 
   .research-detail-panel {
+    align-self: start;
+    overflow: visible;
     max-height: none;
     position: static;
   }
