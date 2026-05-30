@@ -62,10 +62,13 @@ Full decision operating cycle before proposing orders:
 - Review `research/valuation-states.csv` for stale or changed entry states.
 - Review `research/quality-metrics.yml` for stale research coverage, open critical events, stale valuation states, stale theses, and filing-review gaps.
 - Check for new SEC filings, IR releases, earnings materials, financing updates, dilution, debt, contract wins or losses, regulatory changes, and management changes since the last decision.
+- Build a dated evidence packet for advisory reviewers: policy version, confirmed account facts, freshness window, candidate set, source publication dates, retrieval dates, deterministic outputs, open freshness events, valuation states, quality metrics, allowed assets, and specific questions.
+- Run xhigh advisory subagents when available. For any decision that may buy, add, trim, exit, sell a reserve, deploy cash, or deliberately hold cash while cash is available, use at least evidence/freshness, bull-case, bear-case, and allocation/risk reviewers. For major discovery changes, also use a discovery-lane/candidate triage reviewer.
 - Run the self-evolution check: identify which watchlist theses strengthened or weakened, which entries became more or less attractive, which names deserve priority/status changes, and whether a new theme, industry, bottleneck, or market-structure change deserves a discovery lane.
 - Run or cite [weekly-ai-cycle-monitor.md](weekly-ai-cycle-monitor.md) when the decision depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
 - If a material filing exists, complete or cite a filing review using [filing-review.md](filing-review.md) before buying that symbol.
 - If `research/quality-metrics.yml` says `decision_readiness.status: not_ready`, refresh the missing evidence or recommend holding cash.
+- Reconcile subagent findings explicitly. Do not vote or average. Treat unresolved material disagreement, unresolved critical evidence, stale source coverage, unreviewed material filings, or broker-fact uncertainty as a blocker to buy/add recommendations unless resolved from primary evidence or marked immaterial.
 - State when a company is good but not attractively priced, or when a price looks cheap but the thesis may be broken.
 - State when no stock passes the gates and the best action is no trade, hold cash, or park idle cash in the approved liquidity reserve.
 - State when a stock passes the gates strongly enough to justify using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, instead of limiting the order to the latest monthly contribution.
@@ -78,6 +81,7 @@ Full decision operating cycle before proposing orders:
 Output discipline:
 
 - Include a `Decision operating cycle` section with constitutional alignment, sources checked, discovery lane changes, discovery candidate changes, watchlist priority changes, thesis/entry deltas, freshness events, filing-review status, valuation-state status, meta-self-improvement findings, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
+- Include a `Subagent reviews` section when subagents ran or should have run. State which reviewers ran, which were skipped and why, the major disagreements, how the main agent resolved them, and whether any unresolved conflict forced no trade, hold cash, or the approved liquidity reserve.
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.
 - Keep proposed account actions inside the current policy. Under policy `v1.1`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.

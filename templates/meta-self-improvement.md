@@ -61,6 +61,7 @@ Before changing the process, state how this improvement could fail.
 - How could it create false confidence?
 - How could it overfit the last mistake?
 - How could it weaken freshness, auditability, source quality, or mission fit?
+- If subagents are involved, how could they duplicate work, hide stale inputs behind apparent consensus, create unresolved conflicts, or add repository noise?
 
 ## Change Made
 
@@ -77,6 +78,7 @@ dashboard:
 validation:
 cleanup:
 mission_or_lane_map_effect:
+subagent_protocol_effect:
 ```
 
 ## Study Plan
@@ -88,7 +90,10 @@ next_cycle_to_review:
 metric_or_signal:
 decision_quality_question:
 maintenance_cost_question:
+subagent_quality_question:
 ```
+
+After any cycle using subagents, record whether they improved decision quality enough to justify cost and latency. Narrow or roll back the trigger if they mostly duplicate work, add noise, create false confidence, or fail to catch material evidence gaps.
 
 ## Outcome Review
 

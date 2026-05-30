@@ -34,6 +34,8 @@ Before making recommendations or changing state, read the relevant canonical fil
 - During serious research or decision work, run self-evolution and meta-self-improvement checks before finishing.
 - During every full-cycle or monthly decision, explicitly ask whether a new discovery lane appeared and whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged.
 - Never start serious discovery from a stock list. Start from structural bottlenecks, then derive direct public beneficiaries and only then compare companies.
+- Use advisory xhigh subagents when available for material monthly decisions, full-cycle runs, discovery lane changes, freshness or filing gaps, watchlist reprioritization, valuation changes, allocation decisions, and substantial process changes. Default roles are discovery-lane/candidate triage, freshness/filing review, bull case, bear case, and allocation/risk.
+- Keep deterministic commands, durable file edits, account-state reconstruction, validation, commits, pushes, and final synthesis in the main agent. Treat unresolved material subagent disagreement as a reason to gather more evidence or default to no trade, hold cash, or the approved liquidity reserve.
 - During meta-self-improvement, check whether this repo-scoped skill should be updated because workflow triggers, canonical files, safety boundaries, or validation commands changed.
 - Never answer from the old watchlist alone. Re-check discovery lanes, discovery candidates, freshness, thesis delta, entry delta, priority delta, opportunity cost, and lane delta.
 
@@ -65,6 +67,7 @@ Final responses for serious runs should state:
 - whether watchlist priority or thesis/entry deltas changed;
 - whether discovery lanes or raw discovery candidates changed;
 - whether meta-self-improvement found a durable lesson;
+- which xhigh subagents ran or were skipped and how material disagreements were resolved;
 - files changed;
 - validations run;
 - whether changes were committed and pushed;

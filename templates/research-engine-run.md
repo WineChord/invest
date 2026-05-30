@@ -87,6 +87,31 @@ price_dislocations:
 regulatory_or_contract_events:
 ```
 
+## Advisory Subagent Reviews
+
+Use this section when the run is material enough to affect research readiness, discovery lanes, raw candidates, watchlist priority, valuation states, or allocation.
+
+```yaml
+evidence_packet_built:
+subagents_run:
+  - role:
+    reasoning_level:
+    scope:
+    key_findings:
+    missing_or_stale_evidence:
+    durable_updates_recommended:
+subagents_skipped:
+  - role:
+    reason:
+conflicts:
+  - issue:
+    resolution: accepted | rejected | unresolved
+    reason:
+unresolved_conflict_effect:
+```
+
+Do not save raw subagent transcripts by default. Persist only the reconciled conclusions and durable updates that improve future decisions.
+
 ## Filing Reviews
 
 For each material filing, either link to a completed filing review or explain why the filing is immaterial to the current allocation decision.
@@ -135,6 +160,7 @@ automation_opportunities:
 validation_gaps:
 dashboard_or_data_confusion:
 repo_scoped_skill_changes:
+subagent_protocol_result:
 meta_improvement_record:
 next_process_review:
 ```

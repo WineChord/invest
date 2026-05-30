@@ -318,10 +318,23 @@ Implementation target:
 - Use code for repeatable collection, validation, and stale-state detection.
 - Use `npm run discover:universe -- --dry-run` as a deterministic first-pass lane keyword scan. It can suggest raw candidates from public issuer data, but it is not research judgment and it does not create buy eligibility.
 - Use research templates for judgment-heavy work.
+- Use advisory xhigh subagents for independent judgment-heavy review during material decisions, full-cycle runs, major discovery changes, material filing events, watchlist reprioritization, and substantial process changes when the tools are available.
 - Use committed files as the durable interface between automation, agent analysis, dashboard display, and future decisions.
 - Track the health of the research process itself in `research/quality-metrics.yml`, so the system can say when it is not ready to make a buy recommendation.
 - Track discovery-lane health in `research/discovery/lanes.yml` and `research/quality-metrics.yml`, so the system does not confuse the current watchlist with the full opportunity set.
 - Track thesis, entry, priority, opportunity-cost, and theme deltas so the repository can notice when a former secondary idea becomes a better candidate, or when a new industry makes the current opportunity set stale.
+
+Advisory subagent model:
+
+- Subagents reduce bias and improve coverage. They do not replace primary evidence, deterministic validation, policy gates, or the main agent's responsibility for final synthesis.
+- The main agent owns account-state reconstruction, source retrieval, deterministic commands, durable file edits, validation, commits, pushes, and the final proposed decision.
+- For monthly decisions with any buy, add, sell, trim, SGOV sale, or cash-deployment possibility, use xhigh bull-case, bear-case, allocation/risk, and freshness/evidence review when available.
+- For full operating cycles that change research readiness, discovery lanes, raw candidates, watchlist priority, valuation state, or filing-readiness conclusions, use xhigh discovery/freshness/research-quality review when available.
+- For material filings, financing, dilution, liquidity, customer-loss, auditor, governance, or thesis-breaking events, use an xhigh filing or evidence reviewer and an xhigh bear-case reviewer when available.
+- Subagents should receive the same dated evidence packet, including source publication dates, retrieval dates, validity windows, confirmed broker facts, policy constraints, open freshness events, valuation states, deterministic outputs, and the specific question they are answering.
+- Subagent outputs must separate facts, inferences, missing evidence, disconfirming evidence, policy blockers, and recommendation impact.
+- Subagent agreement is not proof. If material reviews conflict, the main agent must resolve the conflict from primary evidence. If it cannot, the decision defaults to no trade, hold cash, or the approved liquidity reserve.
+- Raw subagent transcripts are not durable research records by default. Commit only the final synthesis or concise process notes when the reviews create durable conclusions or workflow changes.
 
 Readiness semantics:
 
@@ -338,6 +351,7 @@ Operating-cycle trigger model:
 - The operating cycle must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
 - At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, review the discovery lane map, explicitly ask whether a new lane appeared, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing. The cycle must never skip bottleneck-map review merely because the current watchlist already has plausible candidates.
 - Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, meta-self-improvement, and commit/push when changes are coherent.
+- Material full-cycle and decision runs should use the advisory subagent model after deterministic refresh has produced an auditable evidence packet. Do not use subagents to compensate for missing primary evidence.
 - The cycle may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
 - If any applicable workflow cannot be completed, the decision must say exactly which discovery, filing, market-data, validation, dashboard, cleanup, or quality-gate checks are missing and default to no trade, hold cash, or the approved liquidity reserve unless the missing item is explicitly reviewed or marked immaterial.
 - Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery lane changes, discovery candidate changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, unavailable evidence, and validity window.
@@ -733,16 +747,18 @@ Bubble risk dimensions:
 7. Retrieve fresh primary evidence for each active candidate and any newly decision-relevant candidate.
 8. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
 9. Check `research/quality-metrics.yml` and resolve or explicitly disclose open critical events, missing filing reviews, stale valuation states, stale theses, and any incomplete operating-cycle item.
-10. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
-11. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
-12. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
-13. Decide one of: buy new position, add to existing position, park idle cash in the approved liquidity reserve, hold cash, do nothing, trim, or exit.
-14. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
-15. State the operating-cycle result and validity window. If price moves materially, market closes, new company-specific information appears, or the operating-cycle evidence becomes stale, recompute.
-16. Save the proposed decision in `decisions/` if the user asks to persist it.
-17. Do not update `data/account/ledger.csv` until execution is confirmed.
-18. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
-19. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
+10. Run xhigh advisory subagents when available. For any decision that could deploy cash, sell a reserve, add, trim, exit, or hold despite available deployable liquidity, use at least freshness/evidence, bull-case, bear-case, and allocation/risk reviewers.
+11. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
+12. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
+13. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
+14. Reconcile subagent findings explicitly. Bear-case blockers and critical missing evidence must be answered before buy/add recommendations. Unresolved material conflicts default to no trade, hold cash, or the approved liquidity reserve.
+15. Decide one of: buy new position, add to existing position, park idle cash in the approved liquidity reserve, hold cash, do nothing, trim, or exit.
+16. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
+17. State the operating-cycle result and validity window. If price moves materially, market closes, new company-specific information appears, or the operating-cycle evidence becomes stale, recompute.
+18. Save the proposed decision in `decisions/` if the user asks to persist it.
+19. Do not update `data/account/ledger.csv` until execution is confirmed.
+20. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
+21. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
 
 ## Position Sizing Policy
 

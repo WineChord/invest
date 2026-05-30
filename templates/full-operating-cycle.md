@@ -40,16 +40,17 @@ Run every applicable item in this order. If an item is not applicable, say why.
 4. Run bottleneck-lane review: read `research/discovery/lanes.yml`, use [bottleneck-lane-review.md](bottleneck-lane-review.md) when the review is material, ask which future bottlenecks can become unavoidable, valuable, and publicly investable, ask whether a new lane appeared, decide whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged, and record the lane delta.
 5. Run universe discovery: use `npm run discover:universe -- --dry-run` when network access is available, scan existing raw candidates, mission-relevant themes, newly public names, spinoffs, direct listings, IPOs, and new public proxies. Add, reject, archive, or incubate raw candidates when evidence supports doing so.
 6. Run freshness monitoring: check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and price dislocations for holdings, active watchlist symbols, and decision-relevant candidates.
-7. Run self-evolution and reprioritization: identify thesis delta, entry delta, priority delta, opportunity-cost delta, theme delta, and lane delta. Promote, demote, freeze, remove, or incubate names when fresh evidence supports the change.
-8. Complete filing reviews: read primary filings or official reports for material events before any buy recommendation. Link reviews from freshness events or record immaterial reasons.
-9. Refresh valuation and entry states: update or recompute stale states for active and decision-relevant symbols.
-10. Run market-regime review when relevant: use the AI-cycle and macro/credit checklist when the active universe depends on AI infrastructure, power, space infrastructure, financing, or broad bubble risk.
-11. Run allocation analysis when the user asks for a decision: compare all active candidates and holdings, test mission/evidence/entry gates, size proposed actions from confirmed deployable liquidity, and state trigger and invalidation conditions.
-12. Run meta-self-improvement: identify process defects, missed-lane risk, source gaps, weak templates, scoring ambiguity, automation opportunities, validation gaps, dashboard confusion, repo-scoped skill updates, or cleanup rules exposed by the run. Use [meta-self-improvement.md](meta-self-improvement.md) for substantial changes.
-13. Update durable records: research notes, source register, discovery lanes, discovery candidates, freshness events, valuation states, watchlist priority/status, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, templates, and process reviews when the run creates durable facts or behavior.
-14. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
-15. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
-16. Commit and push coherent durable changes when the repository's Git Rules call for it.
+7. Build a dated evidence packet for advisory subagents after deterministic refresh and freshness checks. Use xhigh subagents when available for material discovery, freshness, research-readiness, priority, valuation, allocation, or process conclusions. Do not use subagents to compensate for missing primary evidence.
+8. Run self-evolution and reprioritization: identify thesis delta, entry delta, priority delta, opportunity-cost delta, theme delta, and lane delta. Promote, demote, freeze, remove, or incubate names when fresh evidence supports the change.
+9. Complete filing reviews: read primary filings or official reports for material events before any buy recommendation. Link reviews from freshness events or record immaterial reasons.
+10. Refresh valuation and entry states: update or recompute stale states for active and decision-relevant symbols.
+11. Run market-regime review when relevant: use the AI-cycle and macro/credit checklist when the active universe depends on AI infrastructure, power, space infrastructure, financing, or broad bubble risk.
+12. Run allocation analysis when the user asks for a decision: compare all active candidates and holdings, test mission/evidence/entry gates, reconcile xhigh evidence/freshness, bull-case, bear-case, and allocation/risk reviews, size proposed actions from confirmed deployable liquidity, and state trigger and invalidation conditions.
+13. Run meta-self-improvement: identify process defects, missed-lane risk, source gaps, weak templates, scoring ambiguity, automation opportunities, validation gaps, dashboard confusion, repo-scoped skill updates, or cleanup rules exposed by the run. Use [meta-self-improvement.md](meta-self-improvement.md) for substantial changes.
+14. Update durable records: research notes, source register, discovery lanes, discovery candidates, freshness events, valuation states, watchlist priority/status, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, templates, and process reviews when the run creates durable facts or behavior.
+15. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
+16. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
+17. Commit and push coherent durable changes when the repository's Git Rules call for it.
 
 ## Completion Report
 
@@ -66,6 +67,9 @@ committed:
 pushed:
 decision_readiness:
 constitutional_alignment:
+subagents_run:
+subagents_skipped_with_reasons:
+subagent_conflicts_and_resolution:
 watchlist_priority_changes:
 discovery_lane_changes:
 new_or_emerging_themes:

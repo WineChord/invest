@@ -112,19 +112,92 @@ Full decision operating cycle:
 2. Reconstruct confirmed deployable liquidity from durable broker-confirmed records and any user-provided broker snapshot. Ask only for missing broker facts that cannot be inferred safely.
 3. Run deterministic repository tooling that is applicable and safe, including market-data refresh, dry-run universe discovery, data checks, build checks, or dashboard checks when the request touches those surfaces.
 4. Run bottleneck-map review before allocation judgment: review `research/discovery/lanes.yml` and [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md), explicitly ask whether a new lane appeared, and only then scan existing discovery candidates, mission-relevant themes, newly public companies, spinoffs, IPOs, direct listings, and new public proxies. Add raw candidates to `research/discovery/candidates.csv` when they plausibly matter, and quickly reject or archive weak fits when the evidence supports doing so.
-5. Run freshness monitoring for current holdings, active watchlist names, raw candidates that could affect allocation, and newly promoted candidates. Check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and material price dislocations.
-6. Run the self-evolution check: identify which existing watchlist theses strengthened, weakened, became stale, became newly buyable because price improved, or became less attractive because price outran evidence. Promote, demote, freeze, or reprioritize watchlist rows only when fresh evidence supports the change, and record the reason.
-7. Complete or cite filing reviews for material filings before a buy recommendation. If a filing or event is immaterial, record the reason rather than leaving it ambiguous.
-8. Refresh or recompute valuation and entry states for decision-relevant symbols. Separate strong companies from buyable entries and cheap-looking names from broken theses.
-9. Run or cite the AI cycle and market-regime monitor whenever the decision depends on AI capex, financing, semiconductor supply chains, data-center power, credit conditions, space infrastructure, or broad bubble risk.
-10. Compare all active candidates and holdings together. Do not anchor on the previous favorite if a new candidate, new industry, new filing, valuation change, thesis delta, or cleanup finding changes the opportunity set.
-11. Use bull-case, bear-case, and allocation/risk review when the decision is material and the tools are available.
+5. Use the subagent protocol below for material decisions and full-cycle runs when the tooling is available. At minimum, delegate xhigh discovery-lane/candidate triage and xhigh freshness/filing review before allocation, then delegate xhigh bull-case, bear-case, and allocation/risk review before proposing orders.
+6. Run freshness monitoring for current holdings, active watchlist names, raw candidates that could affect allocation, and newly promoted candidates. Check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and material price dislocations.
+7. Run the self-evolution check: identify which existing watchlist theses strengthened, weakened, became stale, became newly buyable because price improved, or became less attractive because price outran evidence. Promote, demote, freeze, or reprioritize watchlist rows only when fresh evidence supports the change, and record the reason.
+8. Complete or cite filing reviews for material filings before a buy recommendation. If a filing or event is immaterial, record the reason rather than leaving it ambiguous.
+9. Refresh or recompute valuation and entry states for decision-relevant symbols. Separate strong companies from buyable entries and cheap-looking names from broken theses.
+10. Run or cite the AI cycle and market-regime monitor whenever the decision depends on AI capex, financing, semiconductor supply chains, data-center power, credit conditions, space infrastructure, or broad bubble risk.
+11. Compare all active candidates and holdings together. Do not anchor on the previous favorite if a new candidate, new industry, new filing, valuation change, thesis delta, or cleanup finding changes the opportunity set.
 12. Produce a proposed decision only after the preceding steps are complete or explicitly marked unavailable. The output must include proposed orders, exact sizing, cash impact, source dates, retrieval dates, validity window, trigger conditions, invalidation conditions, and unavailable evidence.
 13. Update durable research, market, source, decision, and dashboard-facing records when the run creates durable facts or conclusions. Never mutate broker-confirmed ledger, positions, cost basis, or cash without execution confirmation.
 14. Run the meta-self-improvement check: identify whether the process, templates, source lists, scoring model, automation, dashboard, validation, or repository structure should be improved because this run exposed friction, stale assumptions, missing coverage, weak feedback loops, or avoidable noise.
 15. Run repository hygiene cleanup before finishing: remove or demote stale/noisy material, update canonical docs or templates when behavior changes, keep demo/cache/generated artifacts out of durable state, and preserve auditability.
 16. Validate the changed surfaces. For data/research changes, run `npm run check:data`; for dashboard or broad repository changes, run `npm run verify` when practical.
 17. Commit and push coherent durable changes to the default remote when the repository's Git Rules call for it.
+
+## Subagent Protocol
+
+The user authorizes using subagents whenever doing so is scientifically reasonable and improves the odds of serving the constitution. For critical investment decisions, full-cycle runs, major discovery updates, material filing reviews, material watchlist reprioritization, and substantial process changes, use the strongest available model and reasoning effort for judgment-heavy subagents, normally `xhigh`.
+
+Default mandatory subagents for a monthly decision or full-cycle run with an allocation question:
+
+- Discovery-lane and candidate triage reviewer: reviews `research/discovery/lanes.yml`, the `npm run discover:universe -- --dry-run` output, existing candidates, new listings, spinoffs, IPOs, and mission-relevant themes. It should identify true direct public beneficiaries, false positives, lane additions or changes, raw candidates worth writing, and candidates to reject or incubate.
+- Freshness and filing reviewer: checks SEC submissions, IR releases, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and price dislocations for holdings, active watchlist names, and decision-relevant candidates. It should classify material events, identify required filing reviews, and mark immaterial filings with reasons.
+- Bull-case reviewer: argues for the strongest mission-aligned upside case and identifies which candidate could most improve long-term asymmetric compounding if current evidence is interpreted favorably.
+- Bear-case reviewer: argues against the leading candidates, focusing on thesis breakage, valuation, dilution, balance-sheet survival, customer concentration, execution, regulation, and opportunity-cost risk.
+- Allocation/risk reviewer: sizes proposed actions from confirmed deployable liquidity only, compares buy candidates against cash and the approved liquidity reserve, checks settlement and fee assumptions, and recommends exact sizing or no trade.
+
+Optional subagents are encouraged when useful: source-quality reviewer, market-regime or AI-cycle reviewer, valuation specialist, dashboard/data reviewer, repo-hygiene reviewer, or process-red-team reviewer. Use them when the run exposes a specific uncertainty or when parallel review can catch a failure mode without creating noise.
+
+Subagent boundaries:
+
+- Deterministic commands remain the main agent's responsibility: market refresh, dry-run universe discovery, data checks, builds, git status, commits, pushes, and any command that mutates durable files.
+- Subagents should normally be read-only reviewers for investment decisions. They may edit files only when the main agent assigns a narrow, disjoint write scope and the task is not a broker-record or account-state mutation.
+- Subagents must not update `data/account/ledger.csv`, `data/account/positions.csv`, `data/account/state.yml`, cost basis, cash, or broker facts. Only broker-confirmed execution updates can change those records.
+- Subagents must cite source dates, retrieval dates, file paths, and uncertainty. They should separate facts, inferences, and recommendations.
+- Subagent disagreement is a signal, not a voting problem. The main agent must reconcile conflicts explicitly. If a disagreement affects buy eligibility, sizing, or a critical freshness event and cannot be resolved from primary evidence, default to no trade, hold cash, or the approved liquidity reserve.
+- Do not run non-dry-run candidate writes merely because a discovery subagent found keyword matches. First require primary-source skim evidence that the company plausibly owns, controls, or directly monetizes a structural bottleneck.
+- Do not save raw subagent transcripts by default. Persist the final synthesis, durable research changes, or a concise process review only when the reviews change the decision, evidence state, workflow behavior, or future interpretation.
+
+Every subagent should receive the same bounded evidence packet when practical:
+
+```yaml
+mission:
+policy_version:
+request_type:
+current_date:
+freshness_window:
+confirmed_account_facts:
+planned_but_unconfirmed_cash:
+current_positions:
+liquidity_reserve_status:
+allowed_assets_and_exclusions:
+candidate_set:
+relevant_files:
+fresh_sources:
+deterministic_outputs:
+open_freshness_events:
+valuation_states:
+quality_metrics:
+specific_question:
+safety_boundaries:
+```
+
+Minimum subagent output schema:
+
+```yaml
+role:
+scope:
+reasoning_level:
+inputs_used:
+sources_checked:
+facts_verified:
+stale_or_missing_evidence:
+primary_source_conflicts:
+key_findings:
+thesis_delta:
+entry_delta:
+priority_or_lane_delta:
+ruin_or_permanent_impairment_risks:
+policy_or_safety_blockers:
+recommended_durable_updates:
+buy_or_no_buy_implication:
+confidence:
+conditions_to_change_view:
+unresolved_questions:
+conflicts_with_other_reviews:
+```
 
 ## Self-Evolution Mandate
 
@@ -220,7 +293,7 @@ Decision operating-cycle execution:
 10. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, missing filing reviews, or an incomplete operating-cycle step make the research engine not decision-ready, either refresh the evidence or recommend holding cash or the approved liquidity reserve.
 11. In the final decision, include a concise operating-cycle summary covering sources checked, discovery changes, freshness events, filing reviews, valuation-state changes, cleanup performed, validation run, readiness status, unavailable data, and the exact validity window.
 12. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
-13. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
+13. Use the subagent protocol when available for critical capital allocation decisions: evidence/freshness, bull-case, bear-case, and allocation/risk reviewers at the highest useful reasoning level, normally `xhigh`; add discovery-lane/candidate triage when discovery output could affect the decision.
 14. Run the meta-self-improvement check from this file and `SPEC.md`; record durable process lessons when the cycle exposes one.
 15. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, sell reserve to fund a buy, or do nothing. Never force a trade just because a monthly contribution arrived, and never cap a strong opportunity at the latest contribution merely because older cash is parked in reserve.
 16. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
