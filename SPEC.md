@@ -265,6 +265,16 @@ Readiness semantics:
 - Header-only discovery, freshness, and valuation files are acceptable as an initial scaffold only when `decision_readiness.status` is explicitly `not_ready`.
 - Validation must reject `ready` status when active symbols lack current valuation state, latest material filing review coverage, or unresolved critical events.
 
+Decision research preflight:
+
+- A user request about a new deposit, monthly contribution, what to buy, what to sell, whether to deploy cash, whether to use SGOV, or how to allocate the account is a decision trigger. It must start the research-engine preflight before any proposed order is produced.
+- The preflight is the operational bridge between this specification and agent behavior. It prevents the system from answering from stale watchlist memory when the real objective is to keep finding the best current public opportunities for the mission.
+- The preflight must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
+- At minimum, the preflight must refresh deterministic market data when tooling is available, determine the freshness window, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, and update or cite research quality metrics.
+- The preflight may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
+- If the preflight cannot be completed, the allocation decision must say exactly which discovery, filing, market-data, or quality-gate checks are missing and default to no trade, hold cash, or the approved liquidity reserve unless the missing item is explicitly reviewed or marked immaterial.
+- Every allocation recommendation must include a concise preflight summary: retrieval dates, sources checked, discovery changes, freshness events, filing-review status, valuation-state status, readiness result, unavailable evidence, and validity window.
+
 Research funnel ruling:
 
 - Do not attempt full deep research on every listed company. That is not feasible and would make the system noisy, slow, and shallow.
@@ -577,21 +587,22 @@ Bubble risk dimensions:
 1. Identify the policy version.
 2. Load confirmed ledger, positions, contribution plan, and prior decisions.
 3. Ask whether the user has confirmed a new deposit if the prompt is ambiguous.
-4. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest monthly contribution when a stronger opportunity justifies broader deployment.
-5. Retrieve fresh prices for current holdings and active candidates.
-6. Retrieve fresh primary evidence for each active candidate.
-7. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
-8. Check `research/quality-metrics.yml` and resolve or explicitly disclose open critical events, missing filing reviews, stale valuation states, and stale theses.
-9. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
-10. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
-11. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
-12. Decide one of: buy new position, add to existing position, park idle cash in the approved liquidity reserve, hold cash, do nothing, trim, or exit.
-13. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
-14. State the validity window. If price moves materially, market closes, or new company-specific information appears, recompute.
-15. Save the proposed decision in `decisions/` if the user asks to persist it.
-16. Do not update `data/account/ledger.csv` until execution is confirmed.
-17. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
-18. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
+4. Run the decision research preflight. This is mandatory and must not be skipped because the user phrased the request casually.
+5. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest monthly contribution when a stronger opportunity justifies broader deployment.
+6. Retrieve fresh prices for current holdings, active candidates, and any newly promoted or decision-relevant discovery candidate.
+7. Retrieve fresh primary evidence for each active candidate and any newly decision-relevant candidate.
+8. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
+9. Check `research/quality-metrics.yml` and resolve or explicitly disclose open critical events, missing filing reviews, stale valuation states, stale theses, and any incomplete preflight item.
+10. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
+11. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
+12. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
+13. Decide one of: buy new position, add to existing position, park idle cash in the approved liquidity reserve, hold cash, do nothing, trim, or exit.
+14. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
+15. State the preflight result and validity window. If price moves materially, market closes, new company-specific information appears, or the preflight becomes stale, recompute.
+16. Save the proposed decision in `decisions/` if the user asks to persist it.
+17. Do not update `data/account/ledger.csv` until execution is confirmed.
+18. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
+19. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
 
 ## Position Sizing Policy
 

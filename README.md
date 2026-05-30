@@ -35,6 +35,8 @@ Research engine state:
 - Research health metrics: [research/quality-metrics.yml](research/quality-metrics.yml).
 - Completed filing reviews: [research/filings](research/filings).
 
+Decision requests are research-engine triggers. When the user reports new cash or asks what to buy, sell, hold, or allocate, future agents must run the decision research preflight from [AGENTS.md](AGENTS.md) and [SPEC.md](SPEC.md) before proposing orders. The preflight refreshes market data, scans discovery candidates and mission-relevant new public names, checks SEC/IR freshness, reviews filing and valuation coverage, and reports decision readiness.
+
 ## Dashboard
 
 ```bash

@@ -65,22 +65,29 @@ Use idiomatic English as the repository-wide default language. Documentation, te
 
 ## Monthly Decision Workflow
 
-When the user asks what to buy or sell today:
+This workflow is a hard trigger, not optional background reading. Treat any user request about a new deposit, monthly contribution, what to buy, what to sell, whether to deploy cash, whether to use SGOV, or how to allocate the account as a `monthly_decision` request even if the user does not name the template.
+
+Before giving any proposed order, run a decision research preflight. Do not answer from the existing watchlist alone. The preflight is mandatory because the account's edge depends on continuously discovering and re-evaluating the best public companies for the mission, not repeatedly choosing from a stale static list.
+
+Decision research preflight:
 
 1. Start from the confirmed ledger and confirmed positions only.
 2. Check whether the user confirmed a new deposit. If not confirmed, planned contribution cash is not investable cash.
 3. Reconstruct total deployable liquidity from confirmed records, including cash, settled or tradeable proceeds, and any confirmed SGOV or equivalent reserve value available for sale, then reconcile with any broker account snapshot the user provides.
-4. Run the research engine loop from `SPEC.md`: check discovery candidates, freshness events, valuation states, and active watchlist names before deciding allocation.
-5. Retrieve fresh prices and current market data for all current holdings, active candidates, and newly promoted candidates.
-6. Retrieve fresh company data: SEC filings, IR releases, earnings transcripts, regulatory updates, contract news, dilution, debt, liquidity, and management changes.
-7. When a new material filing exists, read the primary filing or official report before buying. Use [templates/filing-review.md](templates/filing-review.md) for 10-K, 10-Q, S-1, F-1, 424B, earnings 8-K, financing 8-K, and equivalent reports.
-8. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, or missing filing reviews make the research engine not decision-ready, either refresh the evidence or recommend holding cash.
-9. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
-10. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
-11. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, sell reserve to fund a buy, or do nothing. Never force a trade just because a monthly contribution arrived, and never cap a strong opportunity at the latest contribution merely because older cash is parked in reserve.
-12. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
-13. Mark the output as a proposed decision only. Do not mutate the ledger.
-14. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
+4. Determine the freshness window from the latest decision, latest research-engine run, latest market-data refresh, and current decision date.
+5. Refresh deterministic market data with the repository tooling when available, then retrieve fresh prices and current market data for current holdings, active candidates, watchlist names, newly promoted candidates, and any raw discovery candidate that could plausibly affect the decision.
+6. Run the research engine loop from `SPEC.md` before allocation judgment: review `research/discovery/candidates.csv`, scan for new public candidates in mission-relevant themes, check freshness events, detect new material filings or issuer events, review valuation states, and compare active watchlist names.
+7. Retrieve fresh company data: SEC filings, IR releases, earnings transcripts, regulatory updates, contract news, dilution, debt, liquidity, and management changes.
+8. When a new material filing exists, read the primary filing or official report before buying. Use [templates/filing-review.md](templates/filing-review.md) for 10-K, 10-Q, S-1, F-1, 424B, earnings 8-K, financing 8-K, and equivalent reports.
+9. Update or cite the durable research state changed by the preflight: `research/discovery/candidates.csv`, `research/freshness/events.csv`, `research/valuation-states.csv`, `research/quality-metrics.yml`, filing reviews, and a dated research-engine run note when the run changes durable research state.
+10. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, missing filing reviews, or an incomplete preflight make the research engine not decision-ready, either refresh the evidence or recommend holding cash or the approved liquidity reserve.
+11. In the final decision, include a concise preflight summary covering sources checked, discovery changes, freshness events, filing reviews, valuation-state changes, readiness status, unavailable data, and the exact validity window.
+12. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
+13. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
+14. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, sell reserve to fund a buy, or do nothing. Never force a trade just because a monthly contribution arrived, and never cap a strong opportunity at the latest contribution merely because older cash is parked in reserve.
+15. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
+16. Mark the output as a proposed decision only. Do not mutate the ledger.
+17. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
 
 ## Execution Update Workflow
 
