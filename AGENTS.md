@@ -63,6 +63,18 @@ Use natural wrapping for Markdown prose and documentation. Do not hard-wrap ordi
 
 Use idiomatic English as the repository-wide default language. Documentation, templates, source comments, UI text, accessibility labels, data notes, commit messages, and public dashboard copy should be written in clear native-quality English. Do not add Chinese documentation, Chinese UI strings, Chinese routes, or language-switching pages unless the user explicitly asks for a multilingual feature.
 
+## Repo-Scoped Skills
+
+This repository may include Codex repo-scoped skills under `.agents/skills/`. Use them as lightweight trigger and navigation layers for this repository's repeated workflows. They do not replace `AGENTS.md`, `SPEC.md`, policy files, templates, or committed data.
+
+Repo-scoped skill rules:
+
+- Keep `SKILL.md` concise. It should point to canonical repository files rather than copying the full process.
+- Do not include secrets, local-only paths, broker credentials, raw market-data dumps, or large source downloads.
+- Update the relevant repo-scoped skill when a durable workflow trigger or execution order changes.
+- Do not install repo-specific skills globally unless the user explicitly asks for cross-repository reuse.
+- If a repo-scoped skill and `AGENTS.md` conflict, follow `AGENTS.md` and fix the skill.
+
 ## Operating Trigger Model
 
 Treat this repository as an operating system for the satellite account, not as a pile of passive notes. When a user request touches the account, research process, dashboard, data records, or decision workflow, run every applicable repository capability in a reasonable order. Do not choose the smallest convenient subset when the request naturally calls for the broader system.

@@ -38,6 +38,10 @@ Research engine state:
 - Completed filing reviews: [research/filings](research/filings).
 - Process reviews: [research/process](research/process).
 
+Repo-scoped skill:
+
+- [invest-operating-cycle](.agents/skills/invest-operating-cycle/SKILL.md) is a lightweight Codex skill for this repository's repeated workflows. It is stored under `.agents/skills` so Codex can discover it as repository context without installing it globally. It points agents back to `AGENTS.md`, `SPEC.md`, policy files, templates, and validation commands.
+
 Decision requests are full operating-cycle triggers. When the user reports new cash or asks what to buy, sell, hold, use as SGOV reserve, or allocate, future agents must run the full decision operating cycle from [AGENTS.md](AGENTS.md), [SPEC.md](SPEC.md), and [templates/monthly-decision.md](templates/monthly-decision.md) before proposing orders. The cycle refreshes market data, scans discovery candidates and mission-relevant new public names, checks SEC/IR freshness, reviews filing and valuation coverage, reprioritizes the watchlist when thesis or entry quality changes, runs applicable risk and regime checks, performs repository cleanup, validates changed surfaces, and reports decision readiness.
 
 The research engine is self-evolving. Current favorite stocks are not permanent favorites. Each serious decision or full-cycle run must ask whether watchlist theses improved or deteriorated, whether price made a candidate newly attractive or unattractive, whether another candidate now has better opportunity cost, and whether a new industry or bottleneck deserves a discovery lane.
