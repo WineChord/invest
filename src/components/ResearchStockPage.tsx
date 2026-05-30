@@ -2,6 +2,7 @@ import { BookOpen, ExternalLink, Home, LineChart, SquareArrowOutUpRight } from "
 import type { IChartApi, Time } from "lightweight-charts";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type {
+  LedgerEvent,
   PriceHistoryPoint,
   ResearchAnalysisEntry,
   WatchlistItem,
@@ -10,9 +11,14 @@ import {
   liveIntradayTradingViewCaption,
   liveIntradayTradingViewConfig,
 } from "../lib/tradingView";
+import {
+  buildSymbolTradeMarkers,
+  buildTradeSeriesMarkers,
+} from "../lib/tradeMarkers";
 
 interface Props {
   item: WatchlistItem;
+  ledger: LedgerEvent[];
   publicUrl: string;
   repositoryUrl: string;
 }
@@ -101,7 +107,12 @@ const fullDateFormatter = new Intl.DateTimeFormat("en-US", {
 });
 const researchPriceChartMinBarSpacing = 0.05;
 
-export default function ResearchStockPage({ item, publicUrl, repositoryUrl }: Props) {
+export default function ResearchStockPage({
+  item,
+  ledger,
+  publicUrl,
+  repositoryUrl,
+}: Props) {
   const latest = item.analysisHistory[0] ?? null;
   const tradingViewUrl = item.security?.tradingViewUrl ?? "";
   const stockAnalysisUrl = item.security?.stockAnalysisUrl ?? "";
@@ -147,7 +158,7 @@ export default function ResearchStockPage({ item, publicUrl, repositoryUrl }: Pr
 
         <section className="research-page-grid">
           <article className="research-page-main">
-            <StockPageChart item={item} />
+            <StockPageChart item={item} ledger={ledger} />
             <TradingViewPreview item={item} />
           </article>
 
@@ -196,7 +207,13 @@ export default function ResearchStockPage({ item, publicUrl, repositoryUrl }: Pr
   );
 }
 
-function StockPageChart({ item }: { item: WatchlistItem }) {
+function StockPageChart({
+  item,
+  ledger,
+}: {
+  item: WatchlistItem;
+  ledger: LedgerEvent[];
+}) {
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
   const chartApiRef = useRef<IChartApi | null>(null);
   const activeRangeRef = useRef<ChartRange>("1M");
@@ -228,6 +245,22 @@ function StockPageChart({ item }: { item: WatchlistItem }) {
       ? null
       : returnForStockChartPoints(visibleFirstPoint, visibleLastPoint);
   const chartTone = toneForSignedValue(rangeReturnPct);
+  const chartDates = useMemo(
+    () => new Set(chartPoints.map((point) => point.date)),
+    [chartPoints],
+  );
+  const tradeMarkers = useMemo(
+    () => buildSymbolTradeMarkers(ledger, item.symbol),
+    [item.symbol, ledger],
+  );
+  const plottedTradeMarkers = useMemo(
+    () => tradeMarkers.filter((marker) => chartDates.has(marker.date)),
+    [chartDates, tradeMarkers],
+  );
+  const plottedTradeMarkerDates = useMemo(
+    () => new Set(plottedTradeMarkers.map((marker) => marker.date)),
+    [plottedTradeMarkers],
+  );
 
   useEffect(() => {
     activeRangeRef.current = activeRange;
@@ -363,7 +396,15 @@ function StockPageChart({ item }: { item: WatchlistItem }) {
 
         createSeriesMarkers(
           areaSeries,
-          buildAnalysisMarkers(item.analysisHistory, chartPoints, chartColors),
+          [
+            ...buildAnalysisMarkers(
+              item.analysisHistory,
+              chartPoints,
+              chartColors,
+              plottedTradeMarkerDates,
+            ),
+            ...buildTradeSeriesMarkers(plottedTradeMarkers, chartColors),
+          ],
           {
             autoScale: false,
           },
@@ -397,7 +438,15 @@ function StockPageChart({ item }: { item: WatchlistItem }) {
       cleanupChart?.();
       container.replaceChildren();
     };
-  }, [chartPoints, chartTone, hasPriceHistory, item.analysisHistory, item.symbol]);
+  }, [
+    chartPoints,
+    chartTone,
+    hasPriceHistory,
+    item.analysisHistory,
+    item.symbol,
+    plottedTradeMarkerDates,
+    plottedTradeMarkers,
+  ]);
 
   if (!hasPriceHistory || firstPoint === null || lastPoint === null) {
     return (
@@ -623,6 +672,7 @@ function buildAnalysisMarkers(
   entries: ResearchAnalysisEntry[],
   points: StockChartPoint[],
   colors: ChartColors,
+  excludedDates: ReadonlySet<string> = new Set<string>(),
 ) {
   const usedDates = new Set<string>();
   return entries
@@ -630,6 +680,9 @@ function buildAnalysisMarkers(
     .filter((point): point is StockChartPoint => point !== null)
     .filter((point) => {
       if (usedDates.has(point.date)) {
+        return false;
+      }
+      if (excludedDates.has(point.date)) {
         return false;
       }
       usedDates.add(point.date);
@@ -659,11 +712,13 @@ function nearestStockPointOnOrBefore(
 interface ChartColors {
   background: string;
   border: string;
+  buy: string;
   crosshair: string;
   grid: string;
   ink: string;
   mixed: string;
   muted: string;
+  sell: string;
   surface: string;
   tone: string;
 }
@@ -676,11 +731,13 @@ function readChartColors(element: HTMLElement, chartTone: ValueTone): ChartColor
   return {
     background: readCssVariable(element, "--surface", "#ffffff"),
     border: readCssVariable(element, "--border", "#d8e3df"),
+    buy: readCssVariable(element, "--buy", "#2563eb"),
     crosshair: "rgba(23, 32, 29, 0.42)",
     grid: "rgba(99, 113, 107, 0.16)",
     ink: readCssVariable(element, "--ink", "#17201d"),
     mixed: readCssVariable(element, "--indigo", "#4f57c8"),
     muted: readCssVariable(element, "--muted", "#63716b"),
+    sell: readCssVariable(element, "--sell", "#b45309"),
     surface: readCssVariable(element, "--surface", "#ffffff"),
     tone:
       chartTone === "gain" ? gain : chartTone === "loss" ? loss : neutralTone,

@@ -44,6 +44,12 @@ import {
   liveIntradayTradingViewCaption,
   liveIntradayTradingViewConfig,
 } from "../lib/tradingView";
+import {
+  buildSymbolTradeMarkers,
+  buildTradeMarkers,
+  buildTradeSeriesMarkers,
+  type TradeMarker,
+} from "../lib/tradeMarkers";
 
 interface Props {
   data: PortfolioData;
@@ -65,14 +71,6 @@ type MarketColorScheme = "mainland" | "western";
 type MovementDisplayMode = "percent" | "dollar";
 type SparklineWindowKey = "1M" | "3M" | "6M" | "1Y" | "ALL" | "CUSTOM";
 type ValueTone = "gain" | "loss" | "neutral";
-
-interface TradeMarker {
-  id: string;
-  date: string;
-  tone: "buy" | "sell" | "mixed";
-  label: string;
-  trades: LedgerEvent[];
-}
 
 interface ChartPoint {
   date: string;
@@ -985,6 +983,7 @@ export default function InvestDashboard({ data }: Props) {
 
         <Panel title="Research universe" eyebrow="active universe">
           <WatchlistTable
+            events={activeData.ledger}
             items={activeData.watchlist}
             marketColorScheme={marketColorScheme}
             repositoryUrl={activeData.repositoryUrl}
@@ -1301,7 +1300,7 @@ function EquityChart({
     [chartPoints],
   );
   const markers = useMemo(
-    () => buildTradeMarkers(events.filter(isTradeEvent)),
+    () => buildTradeMarkers(events),
     [events],
   );
   const plottedMarkers = useMemo(
@@ -1489,7 +1488,7 @@ function EquityChart({
 
         createSeriesMarkers(
           areaSeries,
-          buildSeriesMarkers(plottedMarkers, chartColors),
+          buildTradeSeriesMarkers(plottedMarkers, chartColors),
           {
             autoScale: false,
           },
@@ -1713,16 +1712,6 @@ function EquityChart({
   );
 }
 
-function isTradeEvent(event: LedgerEvent): boolean {
-  return (
-    event.eventType === "trade" &&
-    (event.side === "buy" || event.side === "sell") &&
-    event.symbol !== "" &&
-    event.quantity !== null &&
-    event.averagePrice !== null
-  );
-}
-
 function buildChartPoints(points: EquityPoint[]): ChartPoint[] {
   return points
     .slice()
@@ -1929,36 +1918,6 @@ function formatDateRange(firstDate: string, lastDate: string): string {
   return `${formatFullDate(firstDate)} - ${formatFullDate(lastDate)}`;
 }
 
-function buildTradeMarkers(events: LedgerEvent[]): TradeMarker[] {
-  const tradesByDate = new Map<string, LedgerEvent[]>();
-  events.filter(isTradeEvent).forEach((event) => {
-    const date = event.tradeDate;
-    if (date === "") {
-      return;
-    }
-
-    const trades = tradesByDate.get(date) ?? [];
-    trades.push(event);
-    tradesByDate.set(date, trades);
-  });
-
-  return [...tradesByDate.entries()]
-    .sort(([leftDate], [rightDate]) => leftDate.localeCompare(rightDate))
-    .map(([date, trades]) => {
-      const sides = new Set(trades.map((trade) => trade.side));
-      const tone =
-        sides.size > 1 ? "mixed" : sides.has("sell") ? "sell" : "buy";
-      const label = tone === "mixed" ? "T" : tone === "sell" ? "S" : "B";
-      return {
-        date,
-        id: `trade-${date}`,
-        label,
-        tone,
-        trades,
-      };
-    });
-}
-
 interface ChartColors {
   background: string;
   border: string;
@@ -2033,35 +1992,11 @@ function transparentize(color: string, alpha: number): string {
   return trimmed;
 }
 
-function buildSeriesMarkers(
-  markers: TradeMarker[],
-  colors: ChartColors,
-): SeriesMarker<Time>[] {
-  return markers.map((marker) => ({
-    color:
-      marker.tone === "buy"
-        ? colors.buy
-        : marker.tone === "sell"
-          ? colors.sell
-          : colors.mixed,
-    id: marker.id,
-    position: marker.tone === "sell" ? "aboveBar" : "belowBar",
-    shape:
-      marker.tone === "buy"
-        ? "arrowUp"
-        : marker.tone === "sell"
-          ? "arrowDown"
-          : "circle",
-    size: 1,
-    text: marker.label,
-    time: marker.date as Time,
-  }));
-}
-
 function buildAnalysisMarkers(
   entries: ResearchAnalysisEntry[],
   points: StockChartPoint[],
   colors: ChartColors,
+  excludedDates: ReadonlySet<string> = new Set<string>(),
 ): SeriesMarker<Time>[] {
   const usedDates = new Set<string>();
   return entries
@@ -2069,6 +2004,9 @@ function buildAnalysisMarkers(
     .filter((point): point is StockChartPoint => point !== null)
     .filter((point) => {
       if (usedDates.has(point.date)) {
+        return false;
+      }
+      if (excludedDates.has(point.date)) {
         return false;
       }
       usedDates.add(point.date);
@@ -2526,10 +2464,12 @@ function operationDetail(event: LedgerEvent): string {
 }
 
 function WatchlistTable({
+  events,
   items,
   marketColorScheme,
   repositoryUrl,
 }: {
+  events: LedgerEvent[];
   items: WatchlistItem[];
   marketColorScheme: MarketColorScheme;
   repositoryUrl: string;
@@ -2961,6 +2901,7 @@ function WatchlistTable({
           />
         )}
         <ResearchDetailPanel
+          events={events}
           item={selectedItem}
           marketColorScheme={marketColorScheme}
           movementDisplayMode={movementDisplayMode}
@@ -3084,12 +3025,14 @@ function WatchAnalysisPreview({
 }
 
 function ResearchDetailPanel({
+  events,
   item,
   marketColorScheme,
   movementDisplayMode,
   panelRef,
   repositoryUrl,
 }: {
+  events: LedgerEvent[];
   item: WatchlistItem | null;
   marketColorScheme: MarketColorScheme;
   movementDisplayMode: MovementDisplayMode;
@@ -3172,6 +3115,7 @@ function ResearchDetailPanel({
       <MarketMetricStrip item={item} />
 
       <StockPriceChart
+        events={events}
         item={item}
         marketColorScheme={marketColorScheme}
         movementDisplayMode={movementDisplayMode}
@@ -3265,10 +3209,12 @@ function MarketMetric({ label, value }: { label: string; value: string }) {
 }
 
 function StockPriceChart({
+  events,
   item,
   marketColorScheme,
   movementDisplayMode,
 }: {
+  events: LedgerEvent[];
   item: WatchlistItem;
   marketColorScheme: MarketColorScheme;
   movementDisplayMode: MovementDisplayMode;
@@ -3304,6 +3250,22 @@ function StockPriceChart({
       ? null
       : returnForStockChartPoints(visibleFirstPoint, visibleLastPoint);
   const chartTone = toneForSignedValue(rangeReturnPct);
+  const chartDates = useMemo(
+    () => new Set(chartPoints.map((point) => point.date)),
+    [chartPoints],
+  );
+  const tradeMarkers = useMemo(
+    () => buildSymbolTradeMarkers(events, item.symbol),
+    [events, item.symbol],
+  );
+  const plottedTradeMarkers = useMemo(
+    () => tradeMarkers.filter((marker) => chartDates.has(marker.date)),
+    [chartDates, tradeMarkers],
+  );
+  const plottedTradeMarkerDates = useMemo(
+    () => new Set(plottedTradeMarkers.map((marker) => marker.date)),
+    [plottedTradeMarkers],
+  );
 
   useEffect(() => {
     activeRangeRef.current = activeRange;
@@ -3439,7 +3401,15 @@ function StockPriceChart({
 
         createSeriesMarkers(
           areaSeries,
-          buildAnalysisMarkers(item.analysisHistory, chartPoints, chartColors),
+          [
+            ...buildAnalysisMarkers(
+              item.analysisHistory,
+              chartPoints,
+              chartColors,
+              plottedTradeMarkerDates,
+            ),
+            ...buildTradeSeriesMarkers(plottedTradeMarkers, chartColors),
+          ],
           {
             autoScale: false,
           },
@@ -3480,6 +3450,8 @@ function StockPriceChart({
     item.analysisHistory,
     item.symbol,
     marketColorScheme,
+    plottedTradeMarkerDates,
+    plottedTradeMarkers,
   ]);
 
   if (!hasPriceHistory || firstPoint === null || lastPoint === null) {

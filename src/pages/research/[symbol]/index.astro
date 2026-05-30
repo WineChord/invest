@@ -11,13 +11,14 @@ export function getStaticPaths() {
     },
     props: {
       item,
+      ledger: data.ledger,
       publicUrl: data.publicUrl,
       repositoryUrl: data.repositoryUrl,
     },
   }));
 }
 
-const { item, publicUrl, repositoryUrl } = Astro.props;
+const { item, ledger, publicUrl, repositoryUrl } = Astro.props;
 const canonicalUrl = `${publicUrl}research/${item.symbol.toLowerCase()}/`;
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -42,6 +43,7 @@ const faviconUrl = `${baseUrl}favicon-cn.svg`;
     <ResearchStockPage
       client:load
       item={item}
+      ledger={ledger}
       publicUrl={publicUrl}
       repositoryUrl={repositoryUrl}
     />
