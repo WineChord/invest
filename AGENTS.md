@@ -63,13 +63,47 @@ Use natural wrapping for Markdown prose and documentation. Do not hard-wrap ordi
 
 Use idiomatic English as the repository-wide default language. Documentation, templates, source comments, UI text, accessibility labels, data notes, commit messages, and public dashboard copy should be written in clear native-quality English. Do not add Chinese documentation, Chinese UI strings, Chinese routes, or language-switching pages unless the user explicitly asks for a multilingual feature.
 
+## Operating Trigger Model
+
+Treat this repository as an operating system for the satellite account, not as a pile of passive notes. When a user request touches the account, research process, dashboard, data records, or decision workflow, run every applicable repository capability in a reasonable order. Do not choose the smallest convenient subset when the request naturally calls for the broader system.
+
+Trigger tiers:
+
+1. Every repository interaction: read the relevant repository rules, inspect current state before changing files, preserve user changes, and decide whether the request reveals stale, duplicated, misleading, or low-signal material that should be cleaned up. After any meaningful change, run the relevant validation command and report what was checked.
+2. Investment decision request: any request about new cash, monthly contribution, buying, selling, holding cash, using SGOV, allocation, portfolio action, or "what should I do" triggers the full decision operating cycle. The cycle includes discovery, freshness, research, valuation, allocation, cleanup, and validation.
+3. Full-cycle request: phrases such as "run the whole repo flow", "execute everything", "full refresh", "full monthly cycle", "全量执行", or similar language trigger every applicable workflow in this repository: account-state review, market-data refresh, universe discovery, freshness monitoring, filing review, valuation review, AI-cycle or market-regime review when relevant, allocation analysis, dashboard/data validation, cleanup, and durable commits when repository state changes.
+
+Full decision operating cycle:
+
+1. Load `AGENTS.md`, `SPEC.md`, current policy, templates, confirmed account files, prior decisions, research state, market snapshots, and package scripts.
+2. Reconstruct confirmed deployable liquidity from durable broker-confirmed records and any user-provided broker snapshot. Ask only for missing broker facts that cannot be inferred safely.
+3. Run deterministic repository tooling that is applicable and safe, including market-data refresh, data checks, build checks, or dashboard checks when the request touches those surfaces.
+4. Run universe discovery before allocation judgment: scan existing discovery candidates, mission-relevant themes, newly public companies, spinoffs, IPOs, direct listings, and new public proxies. Add raw candidates to `research/discovery/candidates.csv` when they plausibly matter, and quickly reject or archive weak fits when the evidence supports doing so.
+5. Run freshness monitoring for current holdings, active watchlist names, raw candidates that could affect allocation, and newly promoted candidates. Check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and material price dislocations.
+6. Complete or cite filing reviews for material filings before a buy recommendation. If a filing or event is immaterial, record the reason rather than leaving it ambiguous.
+7. Refresh or recompute valuation and entry states for decision-relevant symbols. Separate strong companies from buyable entries and cheap-looking names from broken theses.
+8. Run or cite the AI cycle and market-regime monitor whenever the decision depends on AI capex, financing, semiconductor supply chains, data-center power, credit conditions, space infrastructure, or broad bubble risk.
+9. Compare all active candidates and holdings together. Do not anchor on the previous favorite if a new candidate, new filing, valuation change, or cleanup finding changes the opportunity set.
+10. Use bull-case, bear-case, and allocation/risk review when the decision is material and the tools are available.
+11. Produce a proposed decision only after the preceding steps are complete or explicitly marked unavailable. The output must include proposed orders, exact sizing, cash impact, source dates, retrieval dates, validity window, trigger conditions, invalidation conditions, and unavailable evidence.
+12. Update durable research, market, source, decision, and dashboard-facing records when the run creates durable facts or conclusions. Never mutate broker-confirmed ledger, positions, cost basis, or cash without execution confirmation.
+13. Run repository hygiene cleanup before finishing: remove or demote stale/noisy material, update canonical docs or templates when behavior changes, keep demo/cache/generated artifacts out of durable state, and preserve auditability.
+14. Validate the changed surfaces. For data/research changes, run `npm run check:data`; for dashboard or broad repository changes, run `npm run verify` when practical.
+15. Commit and push coherent durable changes to the default remote when the repository's Git Rules call for it.
+
+Completion standard:
+
+- The final response must say which operating-cycle steps ran, which were skipped, why they were skipped, which files changed, which validations passed or failed, and whether any follow-up evidence is still required.
+- Do not claim the full cycle is complete if any applicable workflow was skipped for time, missing data, unavailable tooling, or user ambiguity. State the gap and default to caution for account actions.
+- The workflow remains bounded by the immutable rules: no automatic trades, no invented broker facts, no policy-violating instruments, no hidden local state, and no weakening of freshness or auditability.
+
 ## Monthly Decision Workflow
 
 This workflow is a hard trigger, not optional background reading. Treat any user request about a new deposit, monthly contribution, what to buy, what to sell, whether to deploy cash, whether to use SGOV, or how to allocate the account as a `monthly_decision` request even if the user does not name the template.
 
-Before giving any proposed order, run a decision research preflight. Do not answer from the existing watchlist alone. The preflight is mandatory because the account's edge depends on continuously discovering and re-evaluating the best public companies for the mission, not repeatedly choosing from a stale static list.
+Before giving any proposed order, run the full decision operating cycle. Do not answer from the existing watchlist alone. The cycle is mandatory because the account's edge depends on continuously discovering and re-evaluating the best public companies for the mission, not repeatedly choosing from a stale static list.
 
-Decision research preflight:
+Decision operating-cycle execution:
 
 1. Start from the confirmed ledger and confirmed positions only.
 2. Check whether the user confirmed a new deposit. If not confirmed, planned contribution cash is not investable cash.
@@ -79,9 +113,9 @@ Decision research preflight:
 6. Run the research engine loop from `SPEC.md` before allocation judgment: review `research/discovery/candidates.csv`, scan for new public candidates in mission-relevant themes, check freshness events, detect new material filings or issuer events, review valuation states, and compare active watchlist names.
 7. Retrieve fresh company data: SEC filings, IR releases, earnings transcripts, regulatory updates, contract news, dilution, debt, liquidity, and management changes.
 8. When a new material filing exists, read the primary filing or official report before buying. Use [templates/filing-review.md](templates/filing-review.md) for 10-K, 10-Q, S-1, F-1, 424B, earnings 8-K, financing 8-K, and equivalent reports.
-9. Update or cite the durable research state changed by the preflight: `research/discovery/candidates.csv`, `research/freshness/events.csv`, `research/valuation-states.csv`, `research/quality-metrics.yml`, filing reviews, and a dated research-engine run note when the run changes durable research state.
-10. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, missing filing reviews, or an incomplete preflight make the research engine not decision-ready, either refresh the evidence or recommend holding cash or the approved liquidity reserve.
-11. In the final decision, include a concise preflight summary covering sources checked, discovery changes, freshness events, filing reviews, valuation-state changes, readiness status, unavailable data, and the exact validity window.
+9. Update or cite the durable research state changed by the operating cycle: `research/discovery/candidates.csv`, `research/freshness/events.csv`, `research/valuation-states.csv`, `research/quality-metrics.yml`, filing reviews, and a dated research-engine run note when the run changes durable research state.
+10. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, missing filing reviews, or an incomplete operating-cycle step make the research engine not decision-ready, either refresh the evidence or recommend holding cash or the approved liquidity reserve.
+11. In the final decision, include a concise operating-cycle summary covering sources checked, discovery changes, freshness events, filing reviews, valuation-state changes, cleanup performed, validation run, readiness status, unavailable data, and the exact validity window.
 12. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
 13. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
 14. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, sell reserve to fund a buy, or do nothing. Never force a trade just because a monthly contribution arrived, and never cap a strong opportunity at the latest contribution merely because older cash is parked in reserve.
