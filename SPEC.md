@@ -241,7 +241,9 @@ Entries are append-only by default and shown newest-first on the dashboard. If a
 
 ## Research Engine
 
-The repository must evolve from a static watchlist into a research engine. The engine has five loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, and monthly allocation.
+The repository must evolve from a static watchlist into a self-evolving research engine. The engine has six loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, and monthly allocation.
+
+The watchlist is not the goal. It is a temporary working set for the mission. The system must be willing to promote, demote, freeze, remove, or incubate names as evidence, prices, technologies, industries, and opportunity costs change over months and years.
 
 Feasibility boundary:
 
@@ -257,6 +259,7 @@ Implementation target:
 - Use research templates for judgment-heavy work.
 - Use committed files as the durable interface between automation, agent analysis, dashboard display, and future decisions.
 - Track the health of the research process itself in `research/quality-metrics.yml`, so the system can say when it is not ready to make a buy recommendation.
+- Track thesis, entry, priority, opportunity-cost, and theme deltas so the repository can notice when a former secondary idea becomes a better candidate, or when a new industry makes the current opportunity set stale.
 
 Readiness semantics:
 
@@ -271,8 +274,8 @@ Operating-cycle trigger model:
 - A user request to "run everything", "execute the full workflow", "refresh the whole repo", "full monthly cycle", "全量执行", or equivalent language is a full-cycle trigger. It must execute every applicable repository workflow in the safest useful order, including research, data refresh, validation, dashboard checks when relevant, cleanup, and durable commits when state changes.
 - The operating cycle is the bridge between this specification and agent behavior. It prevents the system from answering from stale watchlist memory when the real objective is to keep finding the best current public opportunities for the mission.
 - The operating cycle must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
-- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, and run repository hygiene cleanup before finishing.
-- Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, and commit/push when changes are coherent.
+- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing.
+- Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, and commit/push when changes are coherent.
 - The cycle may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
 - If any applicable workflow cannot be completed, the decision must say exactly which discovery, filing, market-data, validation, dashboard, cleanup, or quality-gate checks are missing and default to no trade, hold cash, or the approved liquidity reserve unless the missing item is explicitly reviewed or marked immaterial.
 - Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, unavailable evidence, and validity window.
@@ -284,6 +287,48 @@ Research funnel ruling:
 - Spend deep research only after a company passes a mission-shaped funnel: eligible instrument, relevant bottleneck theme, plausible multi-decade upside, sufficient public evidence, survivable balance sheet, and an entry setup that is not already fully priced for perfection.
 - The correct posture is a funnel, not a map of the whole market: scan thousands cheaply, triage hundreds quickly, track dozens lightly, deeply understand a small active set, and allocate only to the few that pass mission, evidence, and entry gates.
 - The system should prefer missing a marginal idea over filling the repository with low-conviction notes. Extreme compounding requires a small number of exceptional decisions, not superficial coverage of everything.
+
+### Self-Evolution Loop
+
+Purpose: keep the repository aligned with the mission when old theses improve or deteriorate, prices change, new evidence arrives, or new industries appear.
+
+Cadence:
+
+- Run during every monthly allocation decision.
+- Run during every full-cycle repository request.
+- Run ad hoc after a major filing, major price dislocation, major industry event, new listing wave, policy change, or market-regime shift.
+- Run at least quarterly even when no cash is being deployed, because priority drift and new opportunity discovery matter over multi-year horizons.
+
+Required checks:
+
+- Thesis delta: mark decision-relevant names as `strengthened`, `unchanged`, `weakened`, `broken`, or `stale` based on fresh evidence.
+- Entry delta: mark whether the current price and valuation state became `more_attractive`, `unchanged`, `less_attractive`, `dislocated`, or `too_uncertain`.
+- Priority delta: decide whether a symbol should be promoted, demoted, frozen, removed, incubated, or left unchanged.
+- Opportunity-cost delta: compare the improved or deteriorated name against current holdings, active candidates, cash, and the approved liquidity reserve.
+- Theme delta: decide whether a new technology platform, industry bottleneck, regulation, supply-chain constraint, or market structure change deserves a new discovery lane.
+
+Priority-change triggers:
+
+- Promote when fresh evidence strengthens the thesis, removes a key risk, confirms operating leverage, extends runway, improves customer or regulatory proof, or when price dislocates without thesis damage.
+- Demote when evidence weakens the thesis, valuation outruns plausible upside, dilution or debt risk increases, customer concentration worsens, execution slips, or a better candidate now dominates the risk/reward.
+- Freeze when evidence is unresolved enough that new buying would be premature.
+- Remove only when the company no longer fits the mission, becomes ineligible under policy, or the thesis is broken enough that keeping it active creates noise.
+- Incubate when a candidate is promising but needs more public evidence, more trading history, more filings, or a clearer entry setup.
+
+Durable outputs:
+
+- Update `research/watchlist.csv` priority, status, next review trigger, and notes when priority changes.
+- Update `research/valuation-states.csv` when entry attractiveness changes materially.
+- Update `research/freshness/events.csv` when a priority change depends on a material event.
+- Add raw names to `research/discovery/candidates.csv` before promotion.
+- Add a dated research-engine run note when the run changes discovery, priority, valuation, freshness, or cleanup state.
+
+Guardrails:
+
+- Do not promote a name merely because its price rose or because market sentiment improved.
+- Do not call a drawdown attractive unless the thesis is still intact and the balance sheet can survive.
+- Do not keep the active set large just to feel comprehensive. A self-evolving engine should also delete, demote, and archive.
+- Do not let the initial watchlist, prior favorite names, or old thesis language override fresh evidence and current opportunity cost.
 
 ### Universe Discovery Loop
 

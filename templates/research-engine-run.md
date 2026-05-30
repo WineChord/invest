@@ -44,6 +44,25 @@ deep_dive_queue:
 
 Do not deep-research every symbol found in the scan. Explain which theme filters and quick rejection criteria were used before any company entered the deep-dive queue.
 
+## Self-Evolution And Priority
+
+Record how the opportunity set changed. This section is required when the run changes or should have considered changing watchlist priority, watchlist status, valuation state, or active research focus.
+
+```yaml
+thesis_delta:
+entry_delta:
+priority_delta:
+opportunity_cost_delta:
+theme_delta:
+promoted_symbols:
+demoted_symbols:
+frozen_or_removed_symbols:
+new_discovery_lanes:
+no_change_reason:
+```
+
+Explain why the current priority order still serves the mission, or why it changed. Do not preserve a prior favorite without fresh evidence.
+
 ## Freshness Monitor
 
 List material events found since the previous run and whether each event is reviewed.

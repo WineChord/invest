@@ -58,6 +58,7 @@ Full decision operating cycle before proposing orders:
 - Review `research/valuation-states.csv` for stale or changed entry states.
 - Review `research/quality-metrics.yml` for stale research coverage, open critical events, stale valuation states, stale theses, and filing-review gaps.
 - Check for new SEC filings, IR releases, earnings materials, financing updates, dilution, debt, contract wins or losses, regulatory changes, and management changes since the last decision.
+- Run the self-evolution check: identify which watchlist theses strengthened or weakened, which entries became more or less attractive, which names deserve priority/status changes, and whether a new theme or industry deserves a discovery lane.
 - Run or cite [weekly-ai-cycle-monitor.md](weekly-ai-cycle-monitor.md) when the decision depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
 - If a material filing exists, complete or cite a filing review using [filing-review.md](filing-review.md) before buying that symbol.
 - If `research/quality-metrics.yml` says `decision_readiness.status: not_ready`, refresh the missing evidence or recommend holding cash.
@@ -71,7 +72,7 @@ Full decision operating cycle before proposing orders:
 
 Output discipline:
 
-- Include a `Decision operating cycle` section with sources checked, discovery changes, freshness events, filing-review status, valuation-state status, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
+- Include a `Decision operating cycle` section with sources checked, discovery changes, watchlist priority changes, thesis/entry deltas, freshness events, filing-review status, valuation-state status, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.
 - Keep proposed account actions inside the current policy. Under policy `v1.1`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.

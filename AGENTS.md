@@ -80,16 +80,44 @@ Full decision operating cycle:
 3. Run deterministic repository tooling that is applicable and safe, including market-data refresh, data checks, build checks, or dashboard checks when the request touches those surfaces.
 4. Run universe discovery before allocation judgment: scan existing discovery candidates, mission-relevant themes, newly public companies, spinoffs, IPOs, direct listings, and new public proxies. Add raw candidates to `research/discovery/candidates.csv` when they plausibly matter, and quickly reject or archive weak fits when the evidence supports doing so.
 5. Run freshness monitoring for current holdings, active watchlist names, raw candidates that could affect allocation, and newly promoted candidates. Check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and material price dislocations.
-6. Complete or cite filing reviews for material filings before a buy recommendation. If a filing or event is immaterial, record the reason rather than leaving it ambiguous.
-7. Refresh or recompute valuation and entry states for decision-relevant symbols. Separate strong companies from buyable entries and cheap-looking names from broken theses.
-8. Run or cite the AI cycle and market-regime monitor whenever the decision depends on AI capex, financing, semiconductor supply chains, data-center power, credit conditions, space infrastructure, or broad bubble risk.
-9. Compare all active candidates and holdings together. Do not anchor on the previous favorite if a new candidate, new filing, valuation change, or cleanup finding changes the opportunity set.
-10. Use bull-case, bear-case, and allocation/risk review when the decision is material and the tools are available.
-11. Produce a proposed decision only after the preceding steps are complete or explicitly marked unavailable. The output must include proposed orders, exact sizing, cash impact, source dates, retrieval dates, validity window, trigger conditions, invalidation conditions, and unavailable evidence.
-12. Update durable research, market, source, decision, and dashboard-facing records when the run creates durable facts or conclusions. Never mutate broker-confirmed ledger, positions, cost basis, or cash without execution confirmation.
-13. Run repository hygiene cleanup before finishing: remove or demote stale/noisy material, update canonical docs or templates when behavior changes, keep demo/cache/generated artifacts out of durable state, and preserve auditability.
-14. Validate the changed surfaces. For data/research changes, run `npm run check:data`; for dashboard or broad repository changes, run `npm run verify` when practical.
-15. Commit and push coherent durable changes to the default remote when the repository's Git Rules call for it.
+6. Run the self-evolution check: identify which existing watchlist theses strengthened, weakened, became stale, became newly buyable because price improved, or became less attractive because price outran evidence. Promote, demote, freeze, or reprioritize watchlist rows only when fresh evidence supports the change, and record the reason.
+7. Complete or cite filing reviews for material filings before a buy recommendation. If a filing or event is immaterial, record the reason rather than leaving it ambiguous.
+8. Refresh or recompute valuation and entry states for decision-relevant symbols. Separate strong companies from buyable entries and cheap-looking names from broken theses.
+9. Run or cite the AI cycle and market-regime monitor whenever the decision depends on AI capex, financing, semiconductor supply chains, data-center power, credit conditions, space infrastructure, or broad bubble risk.
+10. Compare all active candidates and holdings together. Do not anchor on the previous favorite if a new candidate, new industry, new filing, valuation change, thesis delta, or cleanup finding changes the opportunity set.
+11. Use bull-case, bear-case, and allocation/risk review when the decision is material and the tools are available.
+12. Produce a proposed decision only after the preceding steps are complete or explicitly marked unavailable. The output must include proposed orders, exact sizing, cash impact, source dates, retrieval dates, validity window, trigger conditions, invalidation conditions, and unavailable evidence.
+13. Update durable research, market, source, decision, and dashboard-facing records when the run creates durable facts or conclusions. Never mutate broker-confirmed ledger, positions, cost basis, or cash without execution confirmation.
+14. Run repository hygiene cleanup before finishing: remove or demote stale/noisy material, update canonical docs or templates when behavior changes, keep demo/cache/generated artifacts out of durable state, and preserve auditability.
+15. Validate the changed surfaces. For data/research changes, run `npm run check:data`; for dashboard or broad repository changes, run `npm run verify` when practical.
+16. Commit and push coherent durable changes to the default remote when the repository's Git Rules call for it.
+
+## Self-Evolution Mandate
+
+The repository must keep serving the mission as markets, technologies, industries, and valuations change. The current best ideas are not sacred. Every serious research or decision cycle must ask whether the opportunity set changed.
+
+Self-evolution has two sides:
+
+1. Internal reprioritization: existing watchlist names must move up or down when fresh evidence changes thesis strength, execution probability, balance-sheet survival, dilution risk, market structure, valuation, or entry attractiveness. A watchlist company can become more important because its thesis improved, because price dislocated while the thesis stayed intact, or because competing opportunities weakened. It can also be demoted, frozen, or removed when evidence deteriorates or valuation outruns realistic upside.
+2. External discovery: the system must keep looking for new public companies, newly public pure plays, spinoffs, new industry bottlenecks, new regulatory regimes, and new technology platforms that could better satisfy the asymmetric multi-decade mission than the current watchlist.
+
+During each decision cycle, explicitly review:
+
+- thesis delta: strengthened, unchanged, weakened, broken, or stale;
+- entry delta: more attractive, unchanged, less attractive, dislocated, or too uncertain;
+- priority delta: promote, demote, freeze, remove, incubate, or no change;
+- opportunity-cost delta: whether another current or new candidate now better serves the mission;
+- theme delta: whether a new industry, supply bottleneck, regulatory shift, or technology platform deserves a new discovery lane.
+
+Durable outputs:
+
+- Update `research/watchlist.csv` priority, status, next review trigger, or notes when the active priority order changes.
+- Update `research/valuation-states.csv` when entry attractiveness changes materially.
+- Add or update `research/freshness/events.csv` when new evidence requires review.
+- Add raw names to `research/discovery/candidates.csv` before watchlist promotion.
+- Add a dated research-engine run note when the cycle changes discovery, priority, valuation, freshness, or cleanup state.
+
+Do not preserve a stale priority order just because prior work favored a name. The long-term goal controls the watchlist, not the watchlist controlling the long-term goal.
 
 Completion standard:
 
