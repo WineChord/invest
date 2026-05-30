@@ -243,3 +243,21 @@ sources:
     first_seen_at: 2026-05-27
     related_symbols: []
     summary: Investor.gov explains that the T+1 settlement cycle applies to stocks, bonds, municipal securities, exchange-traded funds, certain mutual funds, and limited partnerships that trade on an exchange.
+  - id: yahoo_chart_close_2026_05_29
+    title: Yahoo Finance Chart Daily Close Snapshot
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-30
+    first_seen_at: 2026-05-30
+    related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, GSAT, IONQ, IREN, KTOS, LEU, LUNR, MU, NBIS, OKLO, RDW, RKLB, VRT]
+    summary: Daily OHLCV chart data refreshed through the 2026-05-29 U.S. market close for tradable watchlist names.
+  - id: sec_active_universe_filings_2026_05_30
+    title: SEC Submissions and Companyfacts Active Universe Refresh
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-05
+    retrieved_at: 2026-05-30
+    first_seen_at: 2026-05-30
+    related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, GSAT, IONQ, IREN, KTOS, LEU, LUNR, MU, NBIS, OKLO, RKLB, VRT]
+    summary: SEC submissions and companyfacts were used to identify the latest material filings and refresh company metrics for the active watchlist.

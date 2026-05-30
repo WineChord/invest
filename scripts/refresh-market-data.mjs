@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { parse as parseYaml } from "yaml";
 
@@ -19,9 +20,13 @@ const marketTimeZone = "America/New_York";
 const defaultCurrency = "USD";
 const priceHistorySource = "Yahoo Finance chart";
 const companyFactsSource = "SEC EDGAR companyfacts";
-const userAgent =
+const secUserAgent =
   process.env.SEC_USER_AGENT ||
   "WineChordInvest/1.0 (public dashboard market data refresh)";
+const marketDataUserAgent =
+  process.env.MARKET_DATA_USER_AGENT ||
+  "Mozilla/5.0 (compatible; WineChordInvest/1.0; market data refresh)";
+const yahooForbiddenStatus = 403;
 const retrievedAt = new Date().toISOString();
 
 const csvHeaders = {
@@ -474,7 +479,7 @@ async function fetchSecTickerMap() {
     "https://www.sec.gov/files/company_tickers_exchange.json",
     {
       headers: {
-        "User-Agent": userAgent,
+        "User-Agent": secUserAgent,
       },
     },
   );
@@ -535,17 +540,7 @@ async function fetchPriceHistory(symbol, upperDate, days) {
   url.searchParams.set("events", "history");
   url.searchParams.set("includeAdjustedClose", "true");
 
-  const response = await fetch(url, {
-    headers: {
-      "User-Agent": userAgent,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} from Yahoo chart`);
-  }
-
-  const payload = await response.json();
+  const payload = await fetchYahooJson(url);
   const error = payload?.chart?.error;
   if (error !== null && error !== undefined) {
     throw new Error(error.description ?? "Yahoo chart error");
@@ -586,6 +581,35 @@ async function fetchPriceHistory(symbol, upperDate, days) {
   }
 
   return rows;
+}
+
+async function fetchYahooJson(url) {
+  const response = await fetch(url, {
+    headers: {
+      "User-Agent": marketDataUserAgent,
+    },
+  });
+
+  if (response.ok) {
+    return response.json();
+  }
+
+  if (response.status !== yahooForbiddenStatus) {
+    throw new Error(`HTTP ${response.status} from Yahoo chart`);
+  }
+
+  try {
+    const payload = execFileSync(
+      "curl",
+      ["-fsSL", "-A", marketDataUserAgent, url.toString()],
+      { encoding: "utf8", maxBuffer: 10 * 1024 * 1024 },
+    );
+    return JSON.parse(payload);
+  } catch (error) {
+    throw new Error(
+      `HTTP ${response.status} from Yahoo chart; curl fallback failed: ${error.message}`,
+    );
+  }
 }
 
 function yahooSymbolFor(symbol) {
@@ -738,7 +762,7 @@ async function fetchCompanyFacts(cik) {
   const url = `https://data.sec.gov/api/xbrl/companyfacts/CIK${normalized}.json`;
   const response = await fetch(url, {
     headers: {
-      "User-Agent": userAgent,
+      "User-Agent": secUserAgent,
     },
   });
 

@@ -1261,6 +1261,7 @@ function EquityChart({
   >(null);
   const [activeRange, setActiveRange] = useState<ChartRange>("ALL");
   const hasEquityCurve = points.length >= 2;
+  const hasSingleSnapshot = points.length === 1;
   const chartPoints = useMemo(() => buildChartPoints(points), [points]);
   const firstPoint = chartPoints[0] ?? null;
   const lastPoint = chartPoints.at(-1) ?? null;
@@ -1572,10 +1573,15 @@ function EquityChart({
     return (
       <div className="empty-chart">
         <LineChart size={40} />
-        <strong>Waiting for the first equity curve</strong>
+        <strong>
+          {hasSingleSnapshot
+            ? "First valuation snapshot recorded"
+            : "Waiting for the first equity curve"}
+        </strong>
         <span>
-          After confirmed deposits and executions, the real curve will appear
-          here.
+          {hasSingleSnapshot
+            ? "A full curve needs at least two dated valuation snapshots."
+            : "After confirmed deposits and executions, the real curve will appear here."}
         </span>
       </div>
     );
@@ -1925,8 +1931,8 @@ function formatDateRange(firstDate: string, lastDate: string): string {
 
 function buildTradeMarkers(events: LedgerEvent[]): TradeMarker[] {
   const tradesByDate = new Map<string, LedgerEvent[]>();
-  events.forEach((event) => {
-    const date = event.tradeDate || event.createdAt;
+  events.filter(isTradeEvent).forEach((event) => {
+    const date = event.tradeDate;
     if (date === "") {
       return;
     }

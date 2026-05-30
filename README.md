@@ -20,11 +20,12 @@ Start here:
 Repository state:
 
 - Confirmed positions: empty.
-- Confirmed cash balance: unknown until the first broker-confirmed deposit or account snapshot is provided.
-- Confirmed ledger events: none.
+- Confirmed cash balance: USD 888.
+- Confirmed ledger events: one deposit event on 2026-05-30.
 - Current policy: [policy-v1.1.md](data/policy/policy-v1.1.md), which allows SGOV or a materially equivalent short-duration U.S. Treasury reserve for cash management only.
 - Initial research baseline: [research/2026-05-26-initial-baseline.md](research/2026-05-26-initial-baseline.md).
 - Initial simulated decision: [decisions/2026-05-26-initial-simulation.md](decisions/2026-05-26-initial-simulation.md).
+- Latest ready-state refresh: [research/2026-05-30-ready-state-refresh.md](research/2026-05-30-ready-state-refresh.md).
 
 Research engine state:
 
@@ -47,7 +48,7 @@ Build and verify:
 npm run verify
 ```
 
-The dashboard defaults to committed real data. Because the account currently has no confirmed transactions, the real view intentionally shows empty holdings and empty performance. The "Demo data" control switches to browser-only demo data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "Real data" switches back to committed repository data without changing files.
+The dashboard defaults to committed real data. Because the account currently has confirmed cash but no confirmed security positions, the real view shows funded cash, empty holdings, and a deposit-only equity curve. The "Demo data" control switches to browser-only demo data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "Real data" switches back to committed repository data without changing files.
 
 Daily market data refresh:
 

@@ -21,10 +21,10 @@ Equity curve cadence:
 - Do not use today's price to fill an older valuation date.
 - Automated valuation snapshots are market-derived reporting rows only. They do not change `ledger.csv`, `positions.csv`, or `state.yml`.
 
-Initial state on 2026-05-26:
+Current state after the 2026-05-30 confirmed deposit:
 
-- no confirmed ledger events;
+- one confirmed deposit ledger event;
 - no confirmed positions;
-- confirmed cash balance unknown;
-- default planned monthly contribution USD 888.
+- confirmed cash balance USD 888;
+- default planned monthly contribution remains USD 888 for future months.
 - policy `v1.1` allows SGOV or a materially equivalent short-duration U.S. Treasury reserve for cash management only after broker-confirmed execution.

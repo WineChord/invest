@@ -1,1 +1,2 @@
 event_id,event_type,status,broker,account_alias,confirmation_id,trade_date,settlement_date,symbol,side,quantity,average_price,fees,gross_amount,net_cash_effect,currency,source,created_at,notes
+2026-05-30-deposit-001,deposit,confirmed,Charles Schwab International,satellite,user-confirmed-2026-05-30-888-deposit,2026-05-30,2026-05-30,,,,,0.00,888.00,888.00,USD,user_confirmed_goal,2026-05-30T10:29:51+08:00,User confirmed USD 888 deposit available in the brokerage account.

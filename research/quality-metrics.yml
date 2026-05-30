@@ -1,20 +1,20 @@
 schema_version: 1
-as_of: 2026-05-29
+as_of: 2026-05-30
 last_research_engine_run:
-  as_of: 2026-05-29
-  scope: watchlist_expansion_scan
-  notes: Promoted a small set of distinct satellite candidates from the user-supplied universe and kept the repository not ready for buy recommendations until filing reviews and valuation states are refreshed.
+  as_of: 2026-05-30
+  scope: ready_state_refresh
+  notes: Refreshed market data, latest filing-review coverage, valuation states, and account cash records for the active decision universe.
 decision_readiness:
-  status: not_ready
-  can_recommend_buys: false
-  reason: Watchlist expansion added new active research names, but the full active watchlist still lacks current valuation states and latest filing reviews.
+  status: ready
+  can_recommend_buys: true
+  reason: Active watchlist has current valuation states, latest filing-review coverage, fresh market snapshots through 2026-05-29, and no unresolved critical or high-severity freshness events.
 coverage:
-  universe_scan_as_of: 2026-05-29
+  universe_scan_as_of: 2026-05-30
   active_watchlist_symbols: 18
-  active_symbols_with_current_valuation_state: 2
-  active_symbols_missing_valuation_state: 16
-  active_symbols_with_latest_filing_review: 2
-  active_symbols_missing_latest_filing_review: 16
+  active_symbols_with_current_valuation_state: 18
+  active_symbols_missing_valuation_state: 0
+  active_symbols_with_latest_filing_review: 18
+  active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 0
 freshness:
   open_critical_events: 0
@@ -28,4 +28,4 @@ quality_gates:
   valuation_state_max_age_days: 45
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
-notes: Initial baseline files exist, but the research engine is intentionally marked not ready until a full discovery, filing, valuation, and quality-metrics run is completed for the next live allocation request.
+notes: Ready means the repository can support a live monthly allocation decision after checking broker cash and current prices. It does not force a buy recommendation.

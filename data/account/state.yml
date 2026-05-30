@@ -1,15 +1,14 @@
 schema_version: 1
-as_of: 2026-05-26
-status: initialized_empty_unconfirmed
+as_of: 2026-05-30
+status: funded_no_positions
 base_currency: USD
-confirmed_cash: null
-settled_cash: null
-buying_power: null
+confirmed_cash: 888.00
+settled_cash: 888.00
+buying_power: 888.00
 positions_count: 0
-last_confirmed_ledger_event_id: null
-last_reconciled_with_broker_at: null
+last_confirmed_ledger_event_id: 2026-05-30-deposit-001
+last_reconciled_with_broker_at: 2026-05-30
 notes:
-  - Initial repository state.
-  - The user stated initial holdings are empty.
-  - The user stated initial account balance is empty or unconfirmed.
-  - Planned monthly contribution defaults to USD 888 but is not cash until confirmed.
+  - User confirmed a USD 888 deposit is available in the brokerage account.
+  - No broker-confirmed security trades have been recorded.
+  - Confirmed cash is deployable only through user-executed broker orders.

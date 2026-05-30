@@ -263,3 +263,219 @@ entries:
     risk_watch: Not directly tradable, governance, valuation, capex intensity, and policy eligibility.
     next_check: When directly US-listed.
     source_path: research/2026-05-26-initial-baseline.md
+  - id: 2026-05-30-rklb-ready-state-refresh
+    symbol: RKLB
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: A
+    summary: Rocket Lab remains the strongest execution-led space platform candidate, but the current price already discounts substantial success.
+    upside_path: Compound through launch, space systems, defense programs, and Neutron if execution continues.
+    risk_watch: Neutron slippage, ATM dilution, valuation compression, backlog conversion, and space-systems margin quality.
+    next_check: Next earnings or Neutron update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-asts-ready-state-refresh
+    symbol: ASTS
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: A
+    summary: ASTS still offers extreme direct-to-device optionality, but revenue remains pre-scale and execution risk is high.
+    upside_path: Build a satellite-to-phone connectivity layer through MNO and government channels.
+    risk_watch: Launch cadence, satellite production, regulatory approvals, MNO economics, burn, and dilution.
+    next_check: Next launch, regulatory, or commercial update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-crdo-ready-state-refresh
+    symbol: CRDO
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: A-
+    summary: Credo has strong AI interconnect growth and margin quality, but valuation and customer concentration limit entry quality.
+    upside_path: Capture durable AI data-center connectivity demand as network complexity rises.
+    risk_watch: Customer concentration, hyperscaler capex cyclicality, competition, and valuation.
+    next_check: Next quarterly result or customer concentration disclosure.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-alab-ready-state-refresh
+    symbol: ALAB
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: A-
+    summary: Astera Labs remains a high-quality AI connectivity platform, but price-to-sales near 66 leaves little margin for mistakes.
+    upside_path: Become a core rack-scale AI connectivity vendor across PCIe, CXL, Ethernet, and related fabrics.
+    risk_watch: Hyperscaler concentration, AI order digestion, design-win losses, and gross margin pressure.
+    next_check: Next quarterly result or design-win update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-vrt-ready-state-refresh
+    symbol: VRT
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: A-
+    summary: Vertiv has real AI power and cooling evidence, but its large size makes extreme satellite-account upside harder.
+    upside_path: Compound through AI data-center power, cooling, liquid-cooling, and service demand.
+    risk_watch: Order cyclicality, liquid-cooling execution, margin pressure, supply constraints, and backlog quality.
+    next_check: Next order, backlog, or liquid-cooling update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-nbis-ready-state-refresh
+    symbol: NBIS
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B+
+    summary: Nebius has AI cloud capacity upside, but leverage, utilization economics, customer quality, and valuation make it watch-only.
+    upside_path: Build scarce GPU and power-backed AI cloud capacity if demand remains durable.
+    risk_watch: Debt, utilization, customer concentration, financing, receivables quality, and delivery delays.
+    next_check: Next 6-K or customer and financing update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-mu-ready-state-refresh
+    symbol: MU
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B+
+    summary: Micron has powerful HBM and AI memory exposure, but trillion-dollar scale and memory cyclicality reduce satellite-account asymmetry.
+    upside_path: Benefit if HBM and advanced DRAM remain durable AI system bottlenecks.
+    risk_watch: Memory cycles, capex, HBM share, China exposure, inventory correction, and margin volatility.
+    next_check: Next earnings or HBM supply and margin update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-crwv-ready-state-refresh
+    symbol: CRWV
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B+
+    summary: CoreWeave is direct AI cloud capacity exposure, but heavy debt and customer concentration keep entry too uncertain.
+    upside_path: Compound if scarce GPU capacity and power access support durable utilization and pricing.
+    risk_watch: Debt load, customer concentration, GPU depreciation, supply commitments, and hyperscaler competition.
+    next_check: Next earnings, customer concentration disclosure, or debt update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-crcl-ready-state-refresh
+    symbol: CRCL
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B+
+    summary: Circle remains a programmable-money infrastructure candidate, but reserve economics and valuation remain unresolved.
+    upside_path: Turn USDC circulation, payments utility, and developer adoption into durable regulated network economics.
+    risk_watch: USDC share, falling rates, distribution costs, regulation, competition, and reserve economics.
+    next_check: Next reserve, USDC, or earnings update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-cbrs-ready-state-refresh
+    symbol: CBRS
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B
+    summary: Cerebras is an AI systems option, but recent IPO status and sparse public metrics make underwriting premature.
+    upside_path: Convert wafer-scale systems and inference demand into durable public-company revenue.
+    risk_watch: Customer concentration, backlog conversion, margin quality, supply chain constraints, and valuation.
+    next_check: After at least two public quarterly reports.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-iren-ready-state-refresh
+    symbol: IREN
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B
+    summary: IREN may turn power sites into AI compute value, but bitcoin exposure, financing, and customer economics remain unresolved.
+    upside_path: Convert low-cost power and data-center sites into contracted AI compute capacity.
+    risk_watch: Bitcoin exposure, AI customer quality, financing, construction, GPU procurement, and dilution.
+    next_check: Next AI cloud capacity, customer, or financing update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-oklo-ready-state-refresh
+    symbol: OKLO
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B
+    summary: Oklo keeps advanced nuclear optionality, but commercial proof, licensing, liquidity, and deployment timing remain unresolved.
+    upside_path: Become a deployable advanced-fission power supplier for constrained AI and industrial demand.
+    risk_watch: NRC licensing, fuel access, deployment timing, customer contract quality, liquidity, and dilution.
+    next_check: Next NRC, licensing, customer, or deployment update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-be-ready-state-refresh
+    symbol: BE
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B
+    summary: Bloom has AI power-scarcity relevance, but valuation, service economics, and debt keep it from buy readiness.
+    upside_path: Become a credible onsite power provider for constrained AI data-center and industrial demand.
+    risk_watch: Service costs, warranty issues, debt, subsidy dependence, cash conversion, and order quality.
+    next_check: Next customer, order, or cash-flow update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-leu-ready-state-refresh
+    symbol: LEU
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B-
+    summary: Centrus has distinct HALEU scarcity exposure at a less extreme valuation, but policy and scale-up risk control the thesis.
+    upside_path: Benefit if U.S. fuel-security policy and advanced nuclear demand make HALEU capacity strategically scarce.
+    risk_watch: DOE dependence, enrichment scale-up, uranium feedstock, policy timing, and contract concentration.
+    next_check: Next DOE, HALEU, or capacity update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-gsat-ready-state-refresh
+    symbol: GSAT
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B-
+    summary: Globalstar adds spectrum-backed direct-to-device optionality, but partner concentration and network economics remain unresolved.
+    upside_path: Turn spectrum and device partnerships into durable connectivity economics if direct-to-device demand broadens.
+    risk_watch: Apple and partner concentration, capex, spectrum monetization, network capacity, and dilution.
+    next_check: Next Apple, direct-to-device, spectrum, or capex update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-ktos-ready-state-refresh
+    symbol: KTOS
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B-
+    summary: Kratos has useful defense and space exposure, but contractor economics and program timing cap asymmetry.
+    upside_path: Compound if unmanned systems, hypersonic targets, tactical drones, and satellite communications become higher-priority defense infrastructure.
+    risk_watch: Contractor margin limits, program timing, defense budget cycles, working capital, and backlog conversion.
+    next_check: Next unmanned systems, space communications, or backlog update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-ionq-ready-state-refresh
+    symbol: IONQ
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B-
+    summary: IonQ keeps quantum option value, but commercial proof is early and valuation is very high.
+    upside_path: Benefit if quantum computing, networking, sensing, or security becomes commercially essential.
+    risk_watch: One-time system sales, commercial demand breadth, burn rate, technical milestones, and competing architectures.
+    next_check: Next commercial revenue or system delivery update.
+    source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-lunr-ready-state-refresh
+    symbol: LUNR
+    analyzed_at: "2026-05-30"
+    analysis_type: ready_state_refresh
+    policy_version: v1.1
+    title: Ready-state refresh
+    stance: B-
+    summary: Intuitive Machines has lunar and space infrastructure upside, but mission execution, integration, and financing risk remain high.
+    upside_path: Convert lunar and space infrastructure contracts into a broader government and commercial platform.
+    risk_watch: Mission execution, acquisition integration, backlog margin, government budget timing, debt, and cash burn.
+    next_check: Next mission, contract, or acquisition integration update.
+    source_path: research/2026-05-30-ready-state-refresh.md
