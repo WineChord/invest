@@ -2,12 +2,12 @@ schema_version: 1
 as_of: 2026-05-30
 last_research_engine_run:
   as_of: 2026-05-30
-  scope: ready_state_refresh
-  notes: Refreshed market data, latest filing-review coverage, valuation states, and account cash records for the active decision universe.
+  scope: full_operating_cycle
+  notes: Refreshed market data, checked SEC filings and future-watch listings, recorded the SpaceX S-1 event, and preserved account records unchanged.
 decision_readiness:
   status: ready
   can_recommend_buys: true
-  reason: Active watchlist has current valuation states, latest filing-review coverage, fresh market snapshots through 2026-05-29, and no unresolved critical or high-severity freshness events.
+  reason: Active watchlist has current valuation states, latest filing-review coverage, fresh market snapshots through 2026-05-29, and no unresolved critical or high-severity freshness events. SpaceX remains a not-tradable future-watch item, so its reviewed S-1 event does not create buy readiness.
 coverage:
   universe_scan_as_of: 2026-05-30
   active_watchlist_symbols: 18

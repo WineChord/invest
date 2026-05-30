@@ -479,3 +479,15 @@ entries:
     risk_watch: Mission execution, acquisition integration, backlog margin, government budget timing, debt, and cash burn.
     next_check: Next mission, contract, or acquisition integration update.
     source_path: research/2026-05-30-ready-state-refresh.md
+  - id: 2026-05-30-spacex-s1-future-watch
+    symbol: SPACEX
+    analyzed_at: "2026-05-30"
+    analysis_type: future_watch
+    policy_version: v1.1
+    title: S-1 future-watch update
+    stance: watch_future
+    summary: SpaceX filed a preliminary S-1 and applied to list Class A common stock under proposed symbol SPCX, making it a higher-priority future-watch item but not yet tradable.
+    upside_path: Potential public exposure to integrated launch, Starlink connectivity, and AI infrastructure if the registration becomes effective and the valuation leaves room for asymmetric compounding.
+    risk_watch: IPO valuation, dual-class control, capital intensity, xAI integration, debt, Starlink ARPU, launch reliability, regulatory approvals, and whether public shares are actually available through the user's broker.
+    next_check: Registration effectiveness, amended price range, final prospectus, or first public trading under SPCX.
+    source_path: research/2026-05-30-full-operating-cycle.md

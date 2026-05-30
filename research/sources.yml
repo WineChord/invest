@@ -261,3 +261,12 @@ sources:
     first_seen_at: 2026-05-30
     related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, GSAT, IONQ, IREN, KTOS, LEU, LUNR, MU, NBIS, OKLO, RKLB, VRT]
     summary: SEC submissions and companyfacts were used to identify the latest material filings and refresh company metrics for the active watchlist.
+  - id: spacex_s1_2026_05_20
+    title: Space Exploration Technologies Corp. Form S-1 Registration Statement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-05-30
+    first_seen_at: 2026-05-30
+    related_symbols: [SPACEX]
+    summary: SpaceX filed a preliminary IPO registration statement for Class A common stock, applied to list on Nasdaq and Nasdaq Texas under proposed symbol SPCX, and disclosed recast SpaceX, xAI, and X financials.
