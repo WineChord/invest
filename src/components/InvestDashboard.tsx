@@ -2079,7 +2079,6 @@ function buildAnalysisMarkers(
       position: "aboveBar",
       shape: "circle",
       size: 1,
-      text: "A",
       time: point.date as Time,
     }));
 }

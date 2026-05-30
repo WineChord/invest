@@ -640,7 +640,6 @@ function buildAnalysisMarkers(
       position: "aboveBar" as const,
       shape: "circle" as const,
       size: 1,
-      text: "A",
       time: point.date as Time,
     }));
 }
