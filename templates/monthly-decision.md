@@ -53,7 +53,7 @@ Full decision operating cycle before proposing orders:
 - Load `AGENTS.md`, `SPEC.md`, current policy, account files, prior decisions, package scripts, research state, and dashboard/data surfaces relevant to the request.
 - Determine the freshness window from the latest decision, latest research-engine run, latest market-data refresh, and the decision date.
 - Refresh deterministic market data with repository tooling when available.
-- Review `research/discovery/lanes.yml`, explicitly ask whether a new lane appeared, and record whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged.
+- Review `research/discovery/lanes.yml` and use [bottleneck-lane-review.md](bottleneck-lane-review.md) when material. Start from the bottleneck map, explicitly ask whether a new lane appeared, and record whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged.
 - Run `npm run discover:universe -- --dry-run` when network access is available, and treat results as raw leads that require primary-source skims before promotion.
 - Review `research/discovery/candidates.csv` for any candidate that should be promoted, rejected, or kept incubating.
 - Scan mission-relevant themes for newly public companies, major spinoffs, IPOs, direct listings, and new public proxies that might deserve raw discovery status.

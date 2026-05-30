@@ -561,6 +561,11 @@ function validateDiscoveryLanes() {
   parseDate(parsed.as_of, `${discoveryLanesFile} as_of`);
   requireString(parsed.mission_anchor, `${discoveryLanesFile} mission_anchor`);
   requireString(parsed.review_cadence, `${discoveryLanesFile} review_cadence`);
+  requireString(parsed.framework_name, `${discoveryLanesFile} framework_name`);
+  requireStringArray(parsed.framework_questions, `${discoveryLanesFile} framework_questions`);
+  if (parsed.framework_questions.length < 4) {
+    throw new Error(`${discoveryLanesFile} framework_questions must contain at least four questions`);
+  }
   requireStringArray(parsed.notes, `${discoveryLanesFile} notes`);
   if (!Array.isArray(parsed.lanes) || parsed.lanes.length === 0) {
     throw new Error(`${discoveryLanesFile} must contain at least one lane`);

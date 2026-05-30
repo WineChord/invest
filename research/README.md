@@ -4,7 +4,7 @@ This directory stores durable research memory.
 
 Use it to avoid repeating low-value searches, but never treat it as fresh market truth. Every monthly decision must refresh current prices, company disclosures, regulatory updates, and material news.
 
-The research process is a funnel serving the root mission: multi-decade asymmetric compounding with outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin. It should scan broadly and cheaply, filter by mission-relevant discovery lanes, reject weak fits quickly, and reserve deep filing work for a small active set that could affect allocation.
+The research process is a funnel serving the root mission: multi-decade asymmetric compounding with outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin. It starts from the bottleneck map, scans broadly and cheaply, filters by mission-relevant discovery lanes, rejects weak fits quickly, and reserves deep filing work for a small active set that could affect allocation.
 
 Files:
 

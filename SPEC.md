@@ -12,6 +12,8 @@ That objective is the system's root constraint. The repository should evolve its
 
 The practical search starts with public companies that can plausibly become much larger over decades because they sit on structural bottlenecks: space infrastructure, direct-to-device connectivity, AI infrastructure, power, cooling, semiconductor interconnect, quantum technology, programmable money, and future categories that do not yet exist.
 
+The core research frame is bottleneck-map-first. The system should not start with a stock list and ask what looks attractive. It should start with a map of future bottlenecks, ask which bottlenecks can create durable pricing power and extreme upside, identify direct public beneficiaries, reject weak proxies, and only then decide which companies deserve primary-source research.
+
 The account is not required to stay fully invested. Monthly contributions can remain unspent when no candidate passes the mission, evidence, and entry gates. Under policy `v1.1`, idle liquidity may be parked in SGOV or a materially equivalent short-duration U.S. Treasury reserve instrument for cash management only.
 
 Monthly contributions are cash-flow inputs, not sizing limits. When a rare high-conviction opportunity appears, the allocation decision should consider total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale, subject to broker settlement rules and avoidable-ruin controls.
@@ -201,7 +203,7 @@ quality_gates:
 notes:
 ```
 
-`research/discovery/lanes.yml` records the structural bottleneck lanes that guide universe discovery beyond the current watchlist. A lane is a search hypothesis, not a sector allocation target or proof that any company is buyable.
+`research/discovery/lanes.yml` records the structural bottleneck lanes that guide universe discovery beyond the current watchlist. A lane is a search hypothesis, not a sector allocation target or proof that any company is buyable. The lane map is the first-class discovery interface.
 
 Required top-level fields:
 
@@ -210,6 +212,8 @@ schema_version:
 as_of:
 mission_anchor:
 review_cadence:
+framework_name:
+framework_questions:
 notes:
 lanes:
 ```
@@ -230,7 +234,7 @@ next_review_trigger:
 invalidation_or_demote_signal:
 ```
 
-Lane status values are `active`, `emerging`, `incubating`, `dormant`, and `retired`. Every full operating cycle and monthly decision must review the lane map and explicitly ask whether a new lane appeared.
+Lane status values are `active`, `emerging`, `incubating`, `dormant`, and `retired`. Every full operating cycle and monthly decision must review the lane map and explicitly ask whether a new lane appeared. Use [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md) when the lane review creates, retires, splits, merges, or materially changes a lane.
 
 `research/discovery/candidates.csv` records potential new public candidates before they are promoted into the active watchlist.
 
@@ -293,7 +297,7 @@ Entries are append-only by default and shown newest-first on the dashboard. If a
 
 The repository must evolve from a static watchlist into a self-evolving research engine. The engine has seven loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, monthly allocation, and meta-self-improvement. Each loop is subordinate to the same root objective: multi-decade asymmetric compounding with avoidable-ruin controls.
 
-The watchlist is not the goal. It is a temporary working set for the mission. The system must be willing to promote, demote, freeze, remove, or incubate names as evidence, prices, technologies, industries, and opportunity costs change over months and years.
+The watchlist is not the goal. It is a temporary working set for the mission. The bottleneck map comes first, the watchlist comes second, and individual stock research comes third. The system must be willing to promote, demote, freeze, remove, or incubate names as evidence, prices, technologies, industries, and opportunity costs change over months and years.
 
 Feasibility boundary:
 
@@ -326,7 +330,7 @@ Operating-cycle trigger model:
 - A user request to "run everything", "execute the full workflow", "refresh the whole repo", "full monthly cycle", "全量执行", or equivalent language is a full-cycle trigger. It must execute every applicable repository workflow in the safest useful order, including research, data refresh, validation, dashboard checks when relevant, cleanup, and durable commits when state changes.
 - The operating cycle is the bridge between this specification and agent behavior. It prevents the system from answering from stale watchlist memory when the real objective is to keep finding the best current public opportunities for the mission.
 - The operating cycle must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
-- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, review the discovery lane map, explicitly ask whether a new lane appeared, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing.
+- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, review the discovery lane map, explicitly ask whether a new lane appeared, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing. The cycle must never skip bottleneck-map review merely because the current watchlist already has plausible candidates.
 - Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, meta-self-improvement, and commit/push when changes are coherent.
 - The cycle may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
 - If any applicable workflow cannot be completed, the decision must say exactly which discovery, filing, market-data, validation, dashboard, cleanup, or quality-gate checks are missing and default to no trade, hold cash, or the approved liquidity reserve unless the missing item is explicitly reviewed or marked immaterial.
@@ -336,7 +340,7 @@ Research funnel ruling:
 
 - Do not attempt full deep research on every listed company. That is not feasible and would make the system noisy, slow, and shallow.
 - Do maintain broad but cheap awareness of the public universe through symbol directories, SEC issuer coverage, new listings, filings, price dislocations, and theme-specific news.
-- Spend deep research only after a company passes a mission-shaped funnel: eligible instrument, relevant bottleneck theme, plausible multi-decade upside, sufficient public evidence, survivable balance sheet, and an entry setup that is not already fully priced for perfection.
+- Spend deep research only after a company passes a mission-shaped funnel: eligible instrument, relevant bottleneck theme, direct or high-quality exposure to the bottleneck, plausible multi-decade upside, sufficient public evidence, survivable balance sheet, and an entry setup that is not already fully priced for perfection.
 - The correct posture is a funnel, not a map of the whole market: scan thousands cheaply, triage hundreds quickly, track dozens lightly, deeply understand a small active set, and allocate only to the few that pass mission, evidence, and entry gates.
 - The system should prefer missing a marginal idea over filling the repository with low-conviction notes. Extreme compounding requires a small number of exceptional decisions, not superficial coverage of everything.
 
@@ -404,10 +408,20 @@ Recommended source stack:
 Discovery lane map:
 
 - `research/discovery/lanes.yml` is the first stop for universe discovery. It stores the current structural bottleneck hypotheses, source families, screen keywords, public proxies, and review triggers.
+- The framework question is not "which stocks are worth watching?" The framework question is "which future bottlenecks can become unavoidable, valuable, and publicly investable?"
 - Every full operating cycle must ask: did a new lane appear, did an existing lane become too broad, did a lane stop serving the mission, or did an old rejected lane become investable because public evidence changed?
 - A new lane should begin as `emerging` or `incubating` unless there is enough source-backed evidence to make it `active` immediately.
 - Keep `unknown_future_bottlenecks` as an explicit open lane. Its job is to force the system to search outside existing categories instead of treating today's watchlist and themes as permanent.
 - Lane changes must improve the search for multi-decade asymmetric compounding with avoidable-ruin controls. Do not add a lane merely because a sector is fashionable.
+
+Bottleneck-map-first review questions:
+
+- Which scarce resources, technical capabilities, distribution points, regulatory permissions, infrastructure constraints, or capital-formation changes could become system bottlenecks over the next decade or longer?
+- Which bottlenecks can create exceptional pricing power, survival advantage, or compounding reinvestment paths?
+- Which public companies directly own, control, or monetize the bottleneck rather than merely referencing the theme?
+- Which companies are too small, too early, too recently listed, too awkward, or too difficult for traditional screens to notice?
+- What primary evidence would distinguish a real bottleneck owner from a promotional proxy?
+- What would make the lane dangerous enough to avoid despite its upside narrative?
 
 Default filters:
 

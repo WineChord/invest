@@ -2,8 +2,17 @@ schema_version: 1
 as_of: 2026-05-30
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
+framework_name: bottleneck_map_first
+framework_questions:
+  - Which scarce resources, technical capabilities, distribution points, regulatory permissions, infrastructure constraints, or capital-formation changes could become system bottlenecks over the next decade or longer?
+  - Which bottlenecks can create exceptional pricing power, survival advantage, or compounding reinvestment paths?
+  - Which public companies directly own, control, or monetize the bottleneck rather than merely referencing the theme?
+  - Which candidates are too small, too early, too recently listed, too awkward, or too difficult for traditional screens to notice?
+  - What primary evidence would distinguish a real bottleneck owner from a promotional proxy?
+  - What would make the lane dangerous enough to avoid despite its upside narrative?
 notes:
   - Discovery lanes are not sectors or benchmarks. They are hypotheses about structural bottlenecks that could produce outcomes tens, hundreds, or thousands of times larger over a very long horizon.
+  - Start from the bottleneck map, not from a stock list. Stocks are outputs of the lane review, not inputs that should anchor the search.
   - A lane exists only to improve the search for rare public opportunities. If it stops helping that mission, revise, merge, demote, or retire it.
   - New lanes should start as emerging or incubating before they affect allocation. Promotion requires source-backed evidence that the bottleneck is durable and publicly investable.
 lanes:

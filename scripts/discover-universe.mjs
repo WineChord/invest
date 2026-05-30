@@ -40,6 +40,8 @@ const companies = await fetchSecCompanyList();
 const candidates = findCandidates(companies, discoveryLanes, knownSymbols)
   .slice(0, options.limit);
 
+console.log("Bottleneck-map-first dry run. Results are raw leads, not buy recommendations.");
+
 if (candidates.length === 0) {
   console.log("No new keyword-matched discovery candidates found.");
 } else {

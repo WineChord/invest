@@ -1,6 +1,6 @@
 # Meta-Self-Improvement Template
 
-Use this when improving the repository's process, not a single company thesis. Examples include methodology upgrades, recurring research defects, missed-candidate postmortems, source-list changes, scoring changes, dashboard workflow changes, automation opportunities, validation gaps, and cleanup rules.
+Use this when improving the repository's process, not a single company thesis. Examples include methodology upgrades, recurring research defects, missed-candidate or missed-bottleneck postmortems, source-list changes, scoring changes, dashboard workflow changes, automation opportunities, validation gaps, and cleanup rules.
 
 ```yaml
 review_date:
@@ -23,6 +23,7 @@ affected_workflow:
 evidence:
 impact_on_mission:
 impact_on_discovery_lanes:
+impact_on_bottleneck_map_first_process:
 frequency:
 severity:
 ```

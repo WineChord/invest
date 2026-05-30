@@ -8,6 +8,10 @@ Last updated:
 
 Policy version:
 
+Discovery lane:
+
+Direct bottleneck exposure:
+
 ## One-Sentence Thesis
 
 ## Why It Could Be a Multi-Decade Outlier

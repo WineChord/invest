@@ -32,9 +32,10 @@ unavailable_sources:
 
 ## Universe Discovery
 
-Summarize new public candidates, rejected candidates, and candidates that need incubation.
+Summarize new public candidates, rejected candidates, and candidates that need incubation. Start from the bottleneck map, not from stock names.
 
 ```yaml
+bottleneck_map_first_review:
 themes_scanned:
 lane_map_as_of:
 new_lanes_considered:

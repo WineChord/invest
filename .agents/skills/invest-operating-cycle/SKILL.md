@@ -17,9 +17,11 @@ Before making recommendations or changing state, read the relevant canonical fil
 - `SPEC.md` for system design, data models, research engine, dashboard behavior, and audit requirements.
 - `data/policy/policy-v1.1.md` for the current investment policy.
 - `research/discovery/lanes.yml` for the current structural bottleneck lane map before judging whether the watchlist is complete.
+- `templates/bottleneck-lane-review.md` when a full cycle, monthly decision, or discovery run needs to review lanes before naming stocks.
 - The relevant template under `templates/`:
   - `monthly-decision.md` for buy, sell, hold-cash, SGOV, or allocation requests.
   - `full-operating-cycle.md` for full-cycle repository requests.
+  - `bottleneck-lane-review.md` for bottleneck-map-first discovery review.
   - `execution-confirmation.md` for broker-confirmed trades or deposits.
   - `research-engine-run.md` for discovery, freshness, valuation, priority, and cleanup runs.
   - `meta-self-improvement.md` for process upgrades and methodology reviews.
@@ -30,6 +32,7 @@ Before making recommendations or changing state, read the relevant canonical fil
 - Treat "run everything", "full refresh", "full monthly cycle", "全量执行", or equivalent language as full-cycle repository requests.
 - During serious research or decision work, run self-evolution and meta-self-improvement checks before finishing.
 - During every full-cycle or monthly decision, explicitly ask whether a new discovery lane appeared and whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged.
+- Never start serious discovery from a stock list. Start from structural bottlenecks, then derive direct public beneficiaries and only then compare companies.
 - During meta-self-improvement, check whether this repo-scoped skill should be updated because workflow triggers, canonical files, safety boundaries, or validation commands changed.
 - Never answer from the old watchlist alone. Re-check discovery lanes, discovery candidates, freshness, thesis delta, entry delta, priority delta, opportunity cost, and lane delta.
 
