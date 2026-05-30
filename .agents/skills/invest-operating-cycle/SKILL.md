@@ -26,6 +26,7 @@ Before making recommendations or changing state, read the relevant canonical fil
 - Treat questions about deposits, cash deployment, buying, selling, SGOV, allocation, or "what should I do" as full decision operating-cycle requests.
 - Treat "run everything", "full refresh", "full monthly cycle", "全量执行", or equivalent language as full-cycle repository requests.
 - During serious research or decision work, run self-evolution and meta-self-improvement checks before finishing.
+- During meta-self-improvement, check whether this repo-scoped skill should be updated because workflow triggers, canonical files, safety boundaries, or validation commands changed.
 - Never answer from the old watchlist alone. Re-check discovery, freshness, thesis delta, entry delta, priority delta, and opportunity cost.
 
 ## Safety Boundaries

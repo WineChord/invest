@@ -55,9 +55,24 @@ Prompt and record templates for monthly decisions, execution confirmations, comp
 
 GitHub Pages workflow that publishes the static dashboard to `https://www.wineandchord.com/invest/`.
 
+`.agents/skills/`
+
+Repo-scoped Codex skills that act as compact trigger and navigation layers for this repository. They do not replace `AGENTS.md`, `SPEC.md`, policy files, templates, scripts, or committed data.
+
 `src/`
 
 Astro and React source for the public dashboard.
+
+## Operating System Model
+
+This repository is the durable operating system for the satellite account. The files store policy, account state, research memory, workflow definitions, scripts, dashboard behavior, and audit history.
+
+An agent conversation supplies active compute. When the user opens Codex in this repository and asks for work, the system is powered on and should execute every applicable workflow in a reasonable order. When no agent is active, the repository is mostly idle. Scheduled deterministic automation may refresh allowed market-data surfaces, validate, build, or deploy, but it must not perform qualitative research judgment, recommend orders, mutate broker-confirmed records, or trade.
+
+The operating system model has two boundaries:
+
+- Durable state belongs in the repository. Avoid hidden local state, private cache dependencies, uncommitted source-of-truth files, and undocumented manual steps.
+- Active judgment belongs to user-triggered agent work or explicitly approved automation boundaries. Do not imply that the repository autonomously thinks, researches, or trades while unpowered.
 
 ## Truth Model
 
@@ -811,6 +826,7 @@ Method:
 Allowed self-improvements:
 
 - better research templates;
+- better repo-scoped skills for repeated workflow triggering and navigation;
 - better source lists;
 - stricter freshness checks;
 - clearer scoring definitions;
@@ -853,7 +869,15 @@ Meta-learning controls:
 - Do not let one recent miss overfit the whole process.
 - Do not add ceremony unless it improves freshness, signal quality, auditability, speed, or error prevention.
 - Treat source lists, templates, quality metrics, dashboards, and scripts as improvable tools, not as sacred artifacts.
+- Treat repo-scoped skills as improvable trigger layers, not canonical source-of-truth documents.
 - Periodically ask whether a better public source, data provider, validation check, discovery lane, or visualization would make the next decision materially better.
+
+Repo-scoped skill evolution:
+
+- Create a repo-scoped skill when a repeated repository workflow needs stronger automatic trigger metadata or navigation than the normal docs provide.
+- Update a repo-scoped skill when canonical workflow triggers, execution order, safety boundaries, validation commands, or template names change.
+- Remove or simplify a repo-scoped skill when it duplicates canonical docs, drifts from `AGENTS.md`, triggers too broadly, or adds context cost without improving execution.
+- Do not put raw research, individual stock theses, broker/account facts, secrets, or large source material in skills.
 
 Noise control rules:
 

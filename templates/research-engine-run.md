@@ -121,6 +121,7 @@ template_gaps:
 automation_opportunities:
 validation_gaps:
 dashboard_or_data_confusion:
+repo_scoped_skill_changes:
 meta_improvement_record:
 next_process_review:
 ```

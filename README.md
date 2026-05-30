@@ -6,6 +6,8 @@ The account objective is multi-decade asymmetric compounding: pursue outcomes th
 
 Public dashboard: [www.wineandchord.com/invest](https://www.wineandchord.com/invest/). It is built from this open-source repository and deployed as a static GitHub Pages project site.
 
+Operating model: the repository stores the durable operating system. Codex or a future agent supplies active compute when the user starts a conversation in this workspace. When no agent is active, only deterministic automation such as GitHub Actions may run; qualitative research judgment, allocation recommendations, broker-record changes, and trades require user-triggered agent work and the repository's confirmation rules.
+
 Start here:
 
 1. Read [AGENTS.md](AGENTS.md) for the rules every future agent must follow.
@@ -41,6 +43,7 @@ Research engine state:
 Repo-scoped skill:
 
 - [invest-operating-cycle](.agents/skills/invest-operating-cycle/SKILL.md) is a lightweight Codex skill for this repository's repeated workflows. It is stored under `.agents/skills` so Codex can discover it as repository context without installing it globally. It points agents back to `AGENTS.md`, `SPEC.md`, policy files, templates, and validation commands.
+- Repo-scoped skills are part of meta-self-improvement. Add or update them when repeated workflows need better automatic triggering or navigation, but keep canonical rules in `AGENTS.md`, `SPEC.md`, templates, scripts, and committed data.
 
 Decision requests are full operating-cycle triggers. When the user reports new cash or asks what to buy, sell, hold, use as SGOV reserve, or allocate, future agents must run the full decision operating cycle from [AGENTS.md](AGENTS.md), [SPEC.md](SPEC.md), and [templates/monthly-decision.md](templates/monthly-decision.md) before proposing orders. The cycle refreshes market data, scans discovery candidates and mission-relevant new public names, checks SEC/IR freshness, reviews filing and valuation coverage, reprioritizes the watchlist when thesis or entry quality changes, runs applicable risk and regime checks, performs repository cleanup, validates changed surfaces, and reports decision readiness.
 

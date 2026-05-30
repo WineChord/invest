@@ -75,9 +75,24 @@ Repo-scoped skill rules:
 - Do not install repo-specific skills globally unless the user explicitly asks for cross-repository reuse.
 - If a repo-scoped skill and `AGENTS.md` conflict, follow `AGENTS.md` and fix the skill.
 
+Repo-scoped skill self-evolution:
+
+- Create a new repo-scoped skill only when a repeated workflow needs stronger automatic triggering or navigation than `AGENTS.md`, `SPEC.md`, and templates provide.
+- Update an existing repo-scoped skill when the trigger phrases, execution order, canonical files, safety boundaries, or validation commands change.
+- Do not create skills for one-off research notes, individual stock theses, temporary experiments, raw source material, or broad process prose better kept in `SPEC.md`.
+- During meta-self-improvement, explicitly check whether a durable process lesson should update `.agents/skills/`, and whether an existing skill has drifted from the canonical rules.
+- Keep skills as entry points, not duplicate operating manuals. If a skill grows large, move details back into templates, `SPEC.md`, scripts, or references and keep the skill as a compact router.
+
 ## Operating Trigger Model
 
 Treat this repository as an operating system for the satellite account, not as a pile of passive notes. When a user request touches the account, research process, dashboard, data records, or decision workflow, run every applicable repository capability in a reasonable order. Do not choose the smallest convenient subset when the request naturally calls for the broader system.
+
+Operating-system model:
+
+- The repository stores the durable operating system: state, policy, rules, templates, scripts, dashboard, research memory, and audit trail.
+- Codex or a future agent supplies active compute. When the user starts a Codex conversation in this repository, the system is powered on and should run the applicable workflows.
+- When no agent is active, the repository is mostly idle. Only deterministic automations such as GitHub Actions may run, and they must not make qualitative investment judgments or broker-side changes.
+- This model does not permit automatic trading, invented account facts, unreviewed buy recommendations, or hidden local state. Agent judgment begins only when powered by an explicit user interaction or an approved automation boundary.
 
 Trigger tiers:
 

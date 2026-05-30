@@ -67,6 +67,7 @@ spec_sections:
 templates:
 data_files:
 source_code:
+repo_scoped_skills:
 dashboard:
 validation:
 cleanup:
@@ -109,3 +110,21 @@ Confirm the change did not weaken:
 - allowed-asset policy;
 - long-term asymmetric mission;
 - repository noise hygiene.
+
+## Repo-Scoped Skill Check
+
+Answer this whenever a process change affects repeated agent behavior.
+
+```yaml
+new_skill_needed:
+existing_skill_to_update:
+skill_path:
+trigger_change:
+canonical_files_changed:
+validation_or_command_change:
+why_not_just_agents_or_spec:
+drift_risk:
+review_date:
+```
+
+Create or update a repo-scoped skill only when it improves automatic triggering or workflow navigation. Keep canonical rules in `AGENTS.md`, `SPEC.md`, templates, scripts, and committed data.
