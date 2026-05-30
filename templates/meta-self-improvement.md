@@ -1,0 +1,111 @@
+# Meta-Self-Improvement Template
+
+Use this when improving the repository's process, not a single company thesis. Examples include methodology upgrades, recurring research defects, missed-candidate postmortems, source-list changes, scoring changes, dashboard workflow changes, automation opportunities, validation gaps, and cleanup rules.
+
+```yaml
+review_date:
+operator:
+policy_version:
+trigger:
+related_cycle:
+related_files:
+next_review_date:
+```
+
+## Problem Observed
+
+State what became slow, ambiguous, stale, noisy, fragile, biased, or error-prone. Separate symptoms from root-cause hypotheses.
+
+```yaml
+problem_type:
+affected_workflow:
+evidence:
+impact_on_mission:
+frequency:
+severity:
+```
+
+## Learning Sources Checked
+
+List external or internal sources used to improve the process. Include publication dates and retrieval dates when the source is important to the change.
+
+```yaml
+external_sources:
+internal_sources:
+unavailable_sources:
+```
+
+## Process Hypothesis
+
+State the smallest process change expected to improve future decisions.
+
+```yaml
+hypothesis:
+expected_benefit:
+possible_harm:
+success_signal:
+rollback_condition:
+review_date:
+```
+
+## Premortem
+
+Before changing the process, state how this improvement could fail.
+
+- How could it make decisions slower without improving quality?
+- How could it create false confidence?
+- How could it overfit the last mistake?
+- How could it weaken freshness, auditability, source quality, or mission fit?
+
+## Change Made
+
+List the durable artifacts changed.
+
+```yaml
+agents_rules:
+spec_sections:
+templates:
+data_files:
+source_code:
+dashboard:
+validation:
+cleanup:
+```
+
+## Study Plan
+
+Define how the change will be reviewed after future use.
+
+```yaml
+next_cycle_to_review:
+metric_or_signal:
+decision_quality_question:
+maintenance_cost_question:
+```
+
+## Outcome Review
+
+Fill this after the next relevant cycle.
+
+```yaml
+reviewed_at:
+kept:
+revised:
+reverted:
+evidence:
+lesson:
+follow_up:
+```
+
+## Guardrails
+
+Confirm the change did not weaken:
+
+- no automatic trading;
+- broker-confirmation-only account records;
+- source freshness and hierarchy;
+- auditability;
+- clone portability;
+- allowed-asset policy;
+- long-term asymmetric mission;
+- repository noise hygiene.

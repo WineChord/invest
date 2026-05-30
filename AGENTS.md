@@ -70,8 +70,8 @@ Treat this repository as an operating system for the satellite account, not as a
 Trigger tiers:
 
 1. Every repository interaction: read the relevant repository rules, inspect current state before changing files, preserve user changes, and decide whether the request reveals stale, duplicated, misleading, or low-signal material that should be cleaned up. After any meaningful change, run the relevant validation command and report what was checked.
-2. Investment decision request: any request about new cash, monthly contribution, buying, selling, holding cash, using SGOV, allocation, portfolio action, or "what should I do" triggers the full decision operating cycle. The cycle includes discovery, freshness, research, valuation, allocation, cleanup, and validation.
-3. Full-cycle request: phrases such as "run the whole repo flow", "execute everything", "full refresh", "full monthly cycle", "全量执行", or similar language trigger every applicable workflow in this repository: account-state review, market-data refresh, universe discovery, freshness monitoring, filing review, valuation review, AI-cycle or market-regime review when relevant, allocation analysis, dashboard/data validation, cleanup, and durable commits when repository state changes.
+2. Investment decision request: any request about new cash, monthly contribution, buying, selling, holding cash, using SGOV, allocation, portfolio action, or "what should I do" triggers the full decision operating cycle. The cycle includes discovery, freshness, research, valuation, allocation, meta-self-improvement, cleanup, and validation.
+3. Full-cycle request: phrases such as "run the whole repo flow", "execute everything", "full refresh", "full monthly cycle", "全量执行", or similar language trigger every applicable workflow in this repository: account-state review, market-data refresh, universe discovery, freshness monitoring, filing review, valuation review, AI-cycle or market-regime review when relevant, allocation analysis, dashboard/data validation, meta-self-improvement, cleanup, and durable commits when repository state changes.
 
 Full decision operating cycle:
 
@@ -88,9 +88,10 @@ Full decision operating cycle:
 11. Use bull-case, bear-case, and allocation/risk review when the decision is material and the tools are available.
 12. Produce a proposed decision only after the preceding steps are complete or explicitly marked unavailable. The output must include proposed orders, exact sizing, cash impact, source dates, retrieval dates, validity window, trigger conditions, invalidation conditions, and unavailable evidence.
 13. Update durable research, market, source, decision, and dashboard-facing records when the run creates durable facts or conclusions. Never mutate broker-confirmed ledger, positions, cost basis, or cash without execution confirmation.
-14. Run repository hygiene cleanup before finishing: remove or demote stale/noisy material, update canonical docs or templates when behavior changes, keep demo/cache/generated artifacts out of durable state, and preserve auditability.
-15. Validate the changed surfaces. For data/research changes, run `npm run check:data`; for dashboard or broad repository changes, run `npm run verify` when practical.
-16. Commit and push coherent durable changes to the default remote when the repository's Git Rules call for it.
+14. Run the meta-self-improvement check: identify whether the process, templates, source lists, scoring model, automation, dashboard, validation, or repository structure should be improved because this run exposed friction, stale assumptions, missing coverage, weak feedback loops, or avoidable noise.
+15. Run repository hygiene cleanup before finishing: remove or demote stale/noisy material, update canonical docs or templates when behavior changes, keep demo/cache/generated artifacts out of durable state, and preserve auditability.
+16. Validate the changed surfaces. For data/research changes, run `npm run check:data`; for dashboard or broad repository changes, run `npm run verify` when practical.
+17. Commit and push coherent durable changes to the default remote when the repository's Git Rules call for it.
 
 ## Self-Evolution Mandate
 
@@ -119,9 +120,45 @@ Durable outputs:
 
 Do not preserve a stale priority order just because prior work favored a name. The long-term goal controls the watchlist, not the watchlist controlling the long-term goal.
 
+## Meta-Self-Improvement Mandate
+
+The process itself must evolve. The repository should not only discover better stocks; it should discover better ways to discover, evaluate, monitor, decide, record, validate, and clean up.
+
+Use a learning loop for process changes:
+
+1. Observe: identify friction, missed candidates, false positives, stale sources, weak templates, manual repetition, dashboard confusion, validation gaps, bad defaults, or decision-quality problems.
+2. Orient: decide whether the problem is one-off noise or a durable process defect. Check whether the issue weakens the mission, freshness, auditability, clone portability, or decision quality.
+3. Plan: write the smallest process-improvement hypothesis that could fix the defect. Include expected benefit, possible harm, success signal, rollback condition, and next review date.
+4. Do: change the narrowest durable artifact: rules in `AGENTS.md`, system behavior in `SPEC.md`, repeated workflow in `templates/`, source-of-truth data in committed data files, product behavior in source code, or process notes in `research/process/`.
+5. Study: after the next relevant cycle, compare the result against the stated success signal. Look for Goodharting, process bloat, false confidence, overfitting to the last mistake, and hidden maintenance cost.
+6. Act: keep, revise, broaden, or revert the process change. Capture the lesson and remove any obsolete scaffolding.
+
+Meta-improvement triggers:
+
+- A decision was blocked by missing data, unclear templates, stale valuation states, weak source coverage, or ambiguous priority rules.
+- A candidate was missed, promoted too late, researched too shallowly, or kept active too long.
+- A thesis review relied on old narratives, weak source hierarchy, or uncalibrated probabilities.
+- A repeated manual step could become deterministic tooling or validation.
+- Dashboard or data presentation made the account state, research freshness, or opportunity set harder to understand.
+- Cleanup found duplicated rules, outdated notes, misleading labels, dead scripts, unused fixtures, or hidden local assumptions.
+
+Process-quality outputs:
+
+- Use [templates/meta-self-improvement.md](templates/meta-self-improvement.md) for substantial process changes, recurring problems, postmortems, premortems, or methodology upgrades.
+- Store durable process reviews under `research/process/` when they are more than a tiny inline doc change.
+- Record forecasts, assumptions, and review dates when a process change depends on a prediction about improved decision quality.
+- Prefer small reversible experiments over large framework changes unless the current process clearly fails the mission.
+
+Guardrails:
+
+- Do not improve the process by weakening the no-trading rule, confirmation rule, source freshness, source hierarchy, audit trail, or allowed-asset policy.
+- Do not add process ceremony that makes the next decision slower without improving signal, safety, or auditability.
+- Do not optimize for looking systematic at the expense of finding rare asymmetric opportunities.
+- Do not let a benchmark, metric, template, or dashboard surface become the objective. The objective remains long-term asymmetric compounding with avoidable-ruin controls.
+
 Completion standard:
 
-- The final response must say which operating-cycle steps ran, which were skipped, why they were skipped, which files changed, which validations passed or failed, and whether any follow-up evidence is still required.
+- The final response must say which operating-cycle steps ran, which were skipped, why they were skipped, which files changed, which validations passed or failed, whether any meta-self-improvement was captured, and whether any follow-up evidence is still required.
 - Do not claim the full cycle is complete if any applicable workflow was skipped for time, missing data, unavailable tooling, or user ambiguity. State the gap and default to caution for account actions.
 - The workflow remains bounded by the immutable rules: no automatic trades, no invented broker facts, no policy-violating instruments, no hidden local state, and no weakening of freshness or auditability.
 
@@ -146,10 +183,11 @@ Decision operating-cycle execution:
 11. In the final decision, include a concise operating-cycle summary covering sources checked, discovery changes, freshness events, filing reviews, valuation-state changes, cleanup performed, validation run, readiness status, unavailable data, and the exact validity window.
 12. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
 13. Use subagents when available for critical capital allocation decisions: one bull-case reviewer, one bear-case reviewer, and one allocation/risk reviewer. Use the highest reasoning level available, such as `xhigh`, for these reviews.
-14. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, sell reserve to fund a buy, or do nothing. Never force a trade just because a monthly contribution arrived, and never cap a strong opportunity at the latest contribution merely because older cash is parked in reserve.
-15. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
-16. Mark the output as a proposed decision only. Do not mutate the ledger.
-17. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
+14. Run the meta-self-improvement check from this file and `SPEC.md`; record durable process lessons when the cycle exposes one.
+15. Decide whether the best account action is buy, add, trim, exit, hold cash, park idle cash in the approved liquidity reserve, sell reserve to fund a buy, or do nothing. Never force a trade just because a monthly contribution arrived, and never cap a strong opportunity at the latest contribution merely because older cash is parked in reserve.
+16. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
+17. Mark the output as a proposed decision only. Do not mutate the ledger.
+18. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
 
 ## Execution Update Workflow
 

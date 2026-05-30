@@ -66,13 +66,14 @@ Full decision operating cycle before proposing orders:
 - State when no stock passes the gates and the best action is no trade, hold cash, or park idle cash in the approved liquidity reserve.
 - State when a stock passes the gates strongly enough to justify using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, instead of limiting the order to the latest monthly contribution.
 - Confirm the target passes the mission gate, evidence gate, and entry gate from `AGENTS.md`.
+- Run the meta-self-improvement check: note whether the cycle exposed a durable process defect, source gap, weak template, automation opportunity, validation gap, scoring ambiguity, or dashboard/data problem.
 - Run repository cleanup before finishing: demote stale research, remove or ignore scratch/generated noise, update canonical docs or templates when behavior changes, and preserve auditability.
 - Run applicable validation. Use `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
 - If any applicable operating-cycle step cannot be completed, do not give a buy recommendation unless the missing item is explicitly reviewed or marked immaterial.
 
 Output discipline:
 
-- Include a `Decision operating cycle` section with sources checked, discovery changes, watchlist priority changes, thesis/entry deltas, freshness events, filing-review status, valuation-state status, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
+- Include a `Decision operating cycle` section with sources checked, discovery changes, watchlist priority changes, thesis/entry deltas, freshness events, filing-review status, valuation-state status, meta-self-improvement findings, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.
 - Keep proposed account actions inside the current policy. Under policy `v1.1`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.

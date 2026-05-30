@@ -15,8 +15,9 @@ Start here:
 5. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
 6. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
 7. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
-8. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md) when asking the agent to run the whole repository flow or execute every applicable workflow.
-9. Run `npm run dev` to preview the public dashboard locally.
+8. Use [templates/meta-self-improvement.md](templates/meta-self-improvement.md) when improving the repository's own process.
+9. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md) when asking the agent to run the whole repository flow or execute every applicable workflow.
+10. Run `npm run dev` to preview the public dashboard locally.
 
 Repository state:
 
@@ -35,10 +36,13 @@ Research engine state:
 - Valuation and entry states: [research/valuation-states.csv](research/valuation-states.csv).
 - Research health metrics: [research/quality-metrics.yml](research/quality-metrics.yml).
 - Completed filing reviews: [research/filings](research/filings).
+- Process reviews: [research/process](research/process).
 
 Decision requests are full operating-cycle triggers. When the user reports new cash or asks what to buy, sell, hold, use as SGOV reserve, or allocate, future agents must run the full decision operating cycle from [AGENTS.md](AGENTS.md), [SPEC.md](SPEC.md), and [templates/monthly-decision.md](templates/monthly-decision.md) before proposing orders. The cycle refreshes market data, scans discovery candidates and mission-relevant new public names, checks SEC/IR freshness, reviews filing and valuation coverage, reprioritizes the watchlist when thesis or entry quality changes, runs applicable risk and regime checks, performs repository cleanup, validates changed surfaces, and reports decision readiness.
 
 The research engine is self-evolving. Current favorite stocks are not permanent favorites. Each serious decision or full-cycle run must ask whether watchlist theses improved or deteriorated, whether price made a candidate newly attractive or unattractive, whether another candidate now has better opportunity cost, and whether a new industry or bottleneck deserves a discovery lane.
+
+The process is also self-improving. Each serious run must ask whether the repository's methods, templates, sources, scoring labels, automation, validation, dashboard, or cleanup rules should be improved. Substantial process reviews live under [research/process](research/process) and use [templates/meta-self-improvement.md](templates/meta-self-improvement.md).
 
 Full-cycle requests go further. When the user asks to run the whole repository flow, execute everything, do a full refresh, or uses equivalent language such as "全量执行", future agents must use [templates/full-operating-cycle.md](templates/full-operating-cycle.md) and run every applicable repository capability in a safe order. If something cannot be executed, the agent must say why and must not claim full-cycle completion.
 

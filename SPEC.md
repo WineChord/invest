@@ -241,7 +241,7 @@ Entries are append-only by default and shown newest-first on the dashboard. If a
 
 ## Research Engine
 
-The repository must evolve from a static watchlist into a self-evolving research engine. The engine has six loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, and monthly allocation.
+The repository must evolve from a static watchlist into a self-evolving research engine. The engine has seven loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, monthly allocation, and meta-self-improvement.
 
 The watchlist is not the goal. It is a temporary working set for the mission. The system must be willing to promote, demote, freeze, remove, or incubate names as evidence, prices, technologies, industries, and opportunity costs change over months and years.
 
@@ -275,7 +275,7 @@ Operating-cycle trigger model:
 - The operating cycle is the bridge between this specification and agent behavior. It prevents the system from answering from stale watchlist memory when the real objective is to keep finding the best current public opportunities for the mission.
 - The operating cycle must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
 - At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing.
-- Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, and commit/push when changes are coherent.
+- Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, meta-self-improvement, and commit/push when changes are coherent.
 - The cycle may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
 - If any applicable workflow cannot be completed, the decision must say exactly which discovery, filing, market-data, validation, dashboard, cleanup, or quality-gate checks are missing and default to no trade, hold cash, or the approved liquidity reserve unless the missing item is explicitly reviewed or marked immaterial.
 - Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, unavailable evidence, and validity window.
@@ -787,12 +787,26 @@ Corrections are append-only. Never silently rewrite history.
 
 ## Self-Evolution Mechanism
 
-The repository should improve over time, but improvement must not drift away from the mission.
+The repository should improve over time, but improvement must not drift away from the mission. Self-evolution applies at two levels:
+
+- research self-evolution: better candidates, better watchlist priorities, better thesis and valuation updates;
+- meta-self-improvement: better ways to discover, research, score, decide, validate, visualize, document, and clean up.
 
 Self-evolution has two equal duties:
 
 - improve the system's ability to make fresh, critical, long-horizon allocation decisions;
 - reduce accumulated noise so future agents can find the signal faster.
+
+Meta-self-improvement is a disciplined learning loop, not open-ended refactoring. Use it when the work exposes a durable process defect, such as a missed candidate class, stale source family, weak filing workflow, noisy dashboard surface, ambiguous scoring label, repeated manual step, validation gap, or decision-quality failure.
+
+Method:
+
+1. Observe: record what failed, slowed the run, created ambiguity, or reduced decision quality.
+2. Orient: decide whether the issue is a one-off artifact or a durable process defect. Check whether it affects mission fit, freshness, auditability, clone portability, user trust, or avoidable-ruin controls.
+3. Plan: state a process-improvement hypothesis with expected benefit, possible harm, success signal, rollback condition, and review date.
+4. Do: change the smallest durable artifact that solves the problem.
+5. Study: revisit the change after the next relevant research or decision cycle and compare against the success signal.
+6. Act: keep, revise, broaden, or revert the change and remove obsolete scaffolding.
 
 Allowed self-improvements:
 
@@ -805,6 +819,7 @@ Allowed self-improvements:
 - new tools that make the process more reliable;
 - clearer dashboard interactions and visualizations;
 - cleanup of stale, duplicated, misleading, or low-signal repository content.
+- process-quality scorekeeping, decision journals, premortems, postmortems, calibration reviews, and process experiments that improve future allocation decisions.
 
 Forbidden self-improvements:
 
@@ -820,6 +835,8 @@ Policy changes use [templates/policy-change-proposal.md](templates/policy-change
 
 Durable behavior changes also require documentation review. When adding a new data file, dashboard feature, decision step, automation, or public reporting surface, update `SPEC.md`, `AGENTS.md`, or templates in the same change when the behavior should persist for future agents.
 
+Use [templates/meta-self-improvement.md](templates/meta-self-improvement.md) for substantial methodology upgrades, repeated process defects, major postmortems, premortems before large workflow changes, or changes that introduce new scoring, source, automation, or dashboard behavior. Store durable process reviews under `research/process/` when they are more than a tiny inline cleanup note.
+
 Operational loop:
 
 1. Observe what became slow, confusing, stale, duplicated, visually noisy, or error-prone during the current interaction.
@@ -828,6 +845,15 @@ Operational loop:
 4. Clean the repository after the improvement. Remove obsolete scratch files, unused demo assumptions, dead UI states, stale generated artifacts, duplicate notes, and sources that no longer support active research.
 5. Preserve audit history. Confirmed ledger events, policy versions, dated decisions, and past research baselines must remain reconstructable. If they are no longer current, mark them as historical, archived, superseded, or stale rather than presenting them as active evidence.
 6. Verify that the public dashboard, decision workflow, and data model still use clear provenance boundaries between confirmed facts, current market facts, historical evidence, demo fixtures, and analysis.
+
+Meta-learning controls:
+
+- Prefer small reversible process experiments over broad rewrites.
+- Attach review dates to process changes that make predictions about better decision quality.
+- Do not let one recent miss overfit the whole process.
+- Do not add ceremony unless it improves freshness, signal quality, auditability, speed, or error prevention.
+- Treat source lists, templates, quality metrics, dashboards, and scripts as improvable tools, not as sacred artifacts.
+- Periodically ask whether a better public source, data provider, validation check, discovery lane, or visualization would make the next decision materially better.
 
 Noise control rules:
 

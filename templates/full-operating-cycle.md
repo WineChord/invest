@@ -42,10 +42,11 @@ Run every applicable item in this order. If an item is not applicable, say why.
 8. Refresh valuation and entry states: update or recompute stale states for active and decision-relevant symbols.
 9. Run market-regime review when relevant: use the AI-cycle and macro/credit checklist when the active universe depends on AI infrastructure, power, space infrastructure, financing, or broad bubble risk.
 10. Run allocation analysis when the user asks for a decision: compare all active candidates and holdings, test mission/evidence/entry gates, size proposed actions from confirmed deployable liquidity, and state trigger and invalidation conditions.
-11. Update durable records: research notes, source register, freshness events, valuation states, watchlist priority/status, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, and templates when the run creates durable facts or behavior.
-12. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
-13. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
-14. Commit and push coherent durable changes when the repository's Git Rules call for it.
+11. Run meta-self-improvement: identify process defects, source gaps, weak templates, scoring ambiguity, automation opportunities, validation gaps, dashboard confusion, or cleanup rules exposed by the run. Use [meta-self-improvement.md](meta-self-improvement.md) for substantial changes.
+12. Update durable records: research notes, source register, freshness events, valuation states, watchlist priority/status, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, templates, and process reviews when the run creates durable facts or behavior.
+13. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
+14. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
+15. Commit and push coherent durable changes when the repository's Git Rules call for it.
 
 ## Completion Report
 
@@ -63,6 +64,7 @@ pushed:
 decision_readiness:
 watchlist_priority_changes:
 new_or_emerging_themes:
+meta_self_improvement:
 unavailable_evidence:
 next_required_user_input:
 ```

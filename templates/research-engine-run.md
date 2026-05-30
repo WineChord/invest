@@ -110,6 +110,23 @@ stale_valuation_states_over_45_days:
 stale_theses_over_90_days:
 ```
 
+## Meta-Self-Improvement
+
+Record whether this research run exposed a durable process lesson.
+
+```yaml
+process_defects_found:
+source_gaps:
+template_gaps:
+automation_opportunities:
+validation_gaps:
+dashboard_or_data_confusion:
+meta_improvement_record:
+next_process_review:
+```
+
+Use [meta-self-improvement.md](meta-self-improvement.md) for substantial methodology changes or recurring defects.
+
 ## Allocation Readiness
 
 State whether the next monthly decision can proceed. If not, list the missing evidence that must be gathered before recommending buys.
