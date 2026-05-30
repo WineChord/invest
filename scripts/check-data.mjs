@@ -25,8 +25,13 @@ const yamlFiles = [
   "research/sources.yml",
 ];
 
+const markdownFiles = [
+  "CONSTITUTION.md",
+];
+
 const companyAnalysisFile = "research/company-analysis.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
+const constitutionFile = "CONSTITUTION.md";
 const discoveryFile = "research/discovery/candidates.csv";
 const discoveryLanesFile = "research/discovery/lanes.yml";
 const freshnessFile = "research/freshness/events.csv";
@@ -290,6 +295,13 @@ function parseCsv(content) {
 const parsedCsvFiles = new Map();
 const parsedYamlFiles = new Map();
 
+for (const file of markdownFiles) {
+  if (!existsSync(file)) {
+    throw new Error(`${file} is missing`);
+  }
+  console.log(`ok ${file}`);
+}
+
 for (const file of csvFiles) {
   const rows = parseCsv(readFileSync(file, "utf8"));
   parsedCsvFiles.set(file, rows);
@@ -312,6 +324,7 @@ for (const file of yamlFiles) {
 }
 
 validateSources();
+validateConstitution();
 validateWatchlist();
 validateMarketDataFiles();
 validateDiscoveryLanes();
@@ -441,6 +454,24 @@ function validateSources() {
     }
   });
   console.log(`ok ${sourcesFile} semantic checks`);
+}
+
+function validateConstitution() {
+  const content = readFileSync(constitutionFile, "utf8");
+  [
+    "multi-decade asymmetric compounding",
+    "tens, hundreds, or thousands",
+    "avoidable ruin",
+    "Bottleneck-Map-First",
+    "Self-Evolution",
+    "Meta-Self-Evolution",
+    "The repository may recommend. It must never execute trades.",
+  ].forEach((phrase) => {
+    if (!content.includes(phrase)) {
+      throw new Error(`${constitutionFile} is missing required phrase: ${phrase}`);
+    }
+  });
+  console.log(`ok ${constitutionFile} semantic checks`);
 }
 
 function validateWatchlist() {

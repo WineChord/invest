@@ -7,6 +7,7 @@ review_date:
 operator:
 policy_version:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+constitutional_alignment:
 trigger:
 related_cycle:
 related_files:

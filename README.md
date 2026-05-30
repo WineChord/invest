@@ -10,17 +10,18 @@ Operating model: the repository stores the durable operating system. Codex or a 
 
 Start here:
 
-1. Read [AGENTS.md](AGENTS.md) for the rules every future agent must follow.
-2. Read [SPEC.md](SPEC.md) for the full portfolio system design.
-3. Read [policy-v1.1.md](data/policy/policy-v1.1.md) for the current investment policy.
-4. Use [templates/monthly-decision.md](templates/monthly-decision.md) when asking for a monthly buy, sell, hold-cash, or SGOV liquidity-reserve plan.
-5. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
-6. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
-7. Use [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md) when reviewing the bottleneck map before naming stocks.
-8. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
-9. Use [templates/meta-self-improvement.md](templates/meta-self-improvement.md) when improving the repository's own process.
-10. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md) when asking the agent to run the whole repository flow or execute every applicable workflow.
-11. Run `npm run dev` to preview the public dashboard locally.
+1. Read [CONSTITUTION.md](CONSTITUTION.md) for the highest-order mission and operating principles.
+2. Read [AGENTS.md](AGENTS.md) for the rules every future agent must follow.
+3. Read [SPEC.md](SPEC.md) for the full portfolio system design.
+4. Read [policy-v1.1.md](data/policy/policy-v1.1.md) for the current investment policy.
+5. Use [templates/monthly-decision.md](templates/monthly-decision.md) when asking for a monthly buy, sell, hold-cash, or SGOV liquidity-reserve plan.
+6. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
+7. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
+8. Use [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md) when reviewing the bottleneck map before naming stocks.
+9. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
+10. Use [templates/meta-self-improvement.md](templates/meta-self-improvement.md) when improving the repository's own process.
+11. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md) when asking the agent to run the whole repository flow or execute every applicable workflow.
+12. Run `npm run dev` to preview the public dashboard locally.
 
 Repository state:
 

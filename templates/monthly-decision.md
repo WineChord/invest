@@ -7,6 +7,7 @@ request_type: monthly_decision
 full_decision_operating_cycle_required: true
 date:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+constitutional_alignment:
 deposit_confirmed:
 deposit_amount:
 currency: USD
@@ -50,7 +51,7 @@ The agent must run the full decision operating cycle before recommending any ord
 
 Full decision operating cycle before proposing orders:
 
-- Load `AGENTS.md`, `SPEC.md`, current policy, account files, prior decisions, package scripts, research state, and dashboard/data surfaces relevant to the request.
+- Load `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, current policy, account files, prior decisions, package scripts, research state, and dashboard/data surfaces relevant to the request.
 - Determine the freshness window from the latest decision, latest research-engine run, latest market-data refresh, and the decision date.
 - Refresh deterministic market data with repository tooling when available.
 - Review `research/discovery/lanes.yml` and use [bottleneck-lane-review.md](bottleneck-lane-review.md) when material. Start from the bottleneck map, explicitly ask whether a new lane appeared, and record whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged.
@@ -76,7 +77,7 @@ Full decision operating cycle before proposing orders:
 
 Output discipline:
 
-- Include a `Decision operating cycle` section with sources checked, discovery lane changes, discovery candidate changes, watchlist priority changes, thesis/entry deltas, freshness events, filing-review status, valuation-state status, meta-self-improvement findings, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
+- Include a `Decision operating cycle` section with constitutional alignment, sources checked, discovery lane changes, discovery candidate changes, watchlist priority changes, thesis/entry deltas, freshness events, filing-review status, valuation-state status, meta-self-improvement findings, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.
 - Keep proposed account actions inside the current policy. Under policy `v1.1`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.

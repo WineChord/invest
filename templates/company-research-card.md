@@ -8,6 +8,8 @@ Last updated:
 
 Policy version:
 
+Constitutional alignment:
+
 Discovery lane:
 
 Direct bottleneck exposure:

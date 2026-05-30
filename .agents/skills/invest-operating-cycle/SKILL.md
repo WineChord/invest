@@ -13,6 +13,7 @@ The root objective is multi-decade asymmetric compounding: pursue outcomes that 
 
 Before making recommendations or changing state, read the relevant canonical files:
 
+- `CONSTITUTION.md` for the highest-order mission and operating principles.
 - `AGENTS.md` for mandatory agent behavior, immutable rules, operating triggers, self-evolution, and Git rules.
 - `SPEC.md` for system design, data models, research engine, dashboard behavior, and audit requirements.
 - `data/policy/policy-v1.1.md` for the current investment policy.

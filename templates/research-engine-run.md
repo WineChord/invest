@@ -7,6 +7,7 @@ run_date:
 operator:
 policy_version:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+constitutional_alignment:
 run_type: monthly
 previous_run:
 market_data_as_of:

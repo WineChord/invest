@@ -7,6 +7,7 @@ request_type: full_operating_cycle
 date:
 policy_version:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+constitutional_alignment:
 cycle_scope:
 user_goal:
 decision_requested:
@@ -33,7 +34,7 @@ If the user asked for a decision, this template must be used together with [mont
 
 Run every applicable item in this order. If an item is not applicable, say why.
 
-1. Load rules and state: `AGENTS.md`, `SPEC.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state.
+1. Load rules and state: `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state.
 2. Protect confirmed broker truth: separate confirmed account facts from market data, research, analysis, user estimates, screenshots, and proposed orders.
 3. Refresh deterministic data: run market-data refresh, data checks, and build/dashboard checks when the request touches those surfaces and tooling is available.
 4. Run bottleneck-lane review: read `research/discovery/lanes.yml`, use [bottleneck-lane-review.md](bottleneck-lane-review.md) when the review is material, ask which future bottlenecks can become unavoidable, valuable, and publicly investable, ask whether a new lane appeared, decide whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged, and record the lane delta.
@@ -64,6 +65,7 @@ validation_result:
 committed:
 pushed:
 decision_readiness:
+constitutional_alignment:
 watchlist_priority_changes:
 discovery_lane_changes:
 new_or_emerging_themes:

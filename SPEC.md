@@ -4,6 +4,8 @@
 
 This repository is the durable memory and operating manual for a long-term satellite investment account. A new computer should be able to clone the repository and continue the process without hidden local state.
 
+The highest-order principles are stated in [CONSTITUTION.md](CONSTITUTION.md). This specification implements those principles as system design; it should evolve when doing so improves the constitutional mission without weakening truth, freshness, auditability, clone portability, or avoidable-ruin controls.
+
 The account starts with no confirmed holdings and no confirmed cash balance. The default planned contribution is USD 888 per month, but future contributions may be higher. Actual account state changes only after the user confirms broker-side activity.
 
 The portfolio's ultimate objective is not to look stable or diversified in a conventional sense. The objective is multi-decade asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin.
@@ -28,6 +30,10 @@ Monthly contributions are cash-flow inputs, not sizing limits. When a rare high-
 - Do not treat SGOV or an equivalent Treasury reserve instrument as a return-seeking allocation. It is an ETF or money-market vehicle used for liquidity management, not cash itself and not a satellite thesis.
 
 ## Repository Layout
+
+`CONSTITUTION.md`
+
+Highest-order mission and operating principles.
 
 `AGENTS.md`
 

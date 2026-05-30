@@ -6,6 +6,8 @@ This repository supports one long-term satellite investment account. Follow thes
 
 The mission is to support a multi-decade satellite portfolio whose goal is asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin.
 
+[CONSTITUTION.md](CONSTITUTION.md) is the compact constitutional anchor for this repository. It states the highest-order mission and operating principles in plain language. If `CONSTITUTION.md`, this file, `SPEC.md`, templates, or scripts appear to conflict, preserve the constitution's mission, truth, freshness, auditability, and avoidable-ruin controls, then fix the lower-level artifact.
+
 This mission is the repository's highest objective. Every policy, template, source list, research lane, dashboard surface, self-evolution rule, meta-self-improvement change, cleanup decision, and validation check exists to improve the odds of that outcome without weakening broker-confirmation truth, source freshness, auditability, clone portability, or avoidable-ruin controls.
 
 The primary discovery frame is bottleneck-map-first, not stock-list-first. Do not begin serious research by asking "which stocks look interesting?" Begin by asking which scarce resources, technical capabilities, distribution points, regulatory permissions, infrastructure constraints, or capital-formation changes could become system bottlenecks over the next decade or longer; which bottlenecks could create exceptional pricing power; which public companies are direct beneficiaries rather than weak proxies; and which candidates are small, early, awkward, or newly public enough that conventional screens may miss them.

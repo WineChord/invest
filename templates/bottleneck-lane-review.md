@@ -7,6 +7,7 @@ review_date:
 operator:
 policy_version:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+constitutional_alignment:
 framework_name: bottleneck_map_first
 related_cycle:
 lane_map_as_of:
