@@ -261,6 +261,15 @@ sources:
     first_seen_at: 2026-05-30
     related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, GSAT, IONQ, IREN, KTOS, LEU, LUNR, MU, NBIS, OKLO, RKLB, VRT]
     summary: SEC submissions and companyfacts were used to identify the latest material filings and refresh company metrics for the active watchlist.
+  - id: iren_dell_gpu_purchase_2026_05_26
+    title: IREN Form 8-K Dell Purchase Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000187884826000030/iren-20260519.htm
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-05-30
+    first_seen_at: 2026-05-30
+    related_symbols: [IREN]
+    summary: IREN disclosed an approximately USD 1.6 billion Dell GPU purchase agreement to support a previously announced USD 3.4 billion managed services AI cloud contract, with parent-level guarantee risk.
   - id: spacex_s1_2026_05_20
     title: Space Exploration Technologies Corp. Form S-1 Registration Statement
     source_type: sec_filing
