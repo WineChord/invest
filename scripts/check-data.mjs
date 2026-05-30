@@ -20,6 +20,7 @@ const yamlFiles = [
   "data/account/plan.yml",
   "data/account/state.yml",
   "research/company-analysis.yml",
+  "research/discovery/lanes.yml",
   "research/quality-metrics.yml",
   "research/sources.yml",
 ];
@@ -27,6 +28,7 @@ const yamlFiles = [
 const companyAnalysisFile = "research/company-analysis.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
 const discoveryFile = "research/discovery/candidates.csv";
+const discoveryLanesFile = "research/discovery/lanes.yml";
 const freshnessFile = "research/freshness/events.csv";
 const priceHistoryFile = "data/market/price_history.csv";
 const qualityMetricsFile = "research/quality-metrics.yml";
@@ -201,6 +203,13 @@ const allowedDiscoveryStatuses = new Set([
   "rejected",
   "archived",
 ]);
+const allowedDiscoveryLaneStatuses = new Set([
+  "active",
+  "emerging",
+  "incubating",
+  "dormant",
+  "retired",
+]);
 const openEventStatuses = new Set(["new", "stale"]);
 const allowedEventSeverities = new Set(["low", "medium", "high", "critical"]);
 const allowedEventStatuses = new Set([
@@ -305,6 +314,7 @@ for (const file of yamlFiles) {
 validateSources();
 validateWatchlist();
 validateMarketDataFiles();
+validateDiscoveryLanes();
 validateDiscoveryCandidates();
 validateFreshnessEvents();
 validateValuationStates();
@@ -358,6 +368,17 @@ function requireNumber(value, context) {
   if (typeof value !== "number" || !Number.isFinite(value)) {
     throw new Error(`${context} must be a finite number`);
   }
+}
+
+function requireStringArray(value, context) {
+  if (!Array.isArray(value)) {
+    throw new Error(`${context} must be an array`);
+  }
+  value.forEach((item, index) => {
+    if (typeof item !== "string" || item.trim() === "") {
+      throw new Error(`${context}[${index}] must be a non-empty string`);
+    }
+  });
 }
 
 function requirePositiveNumberString(value, context) {
@@ -531,6 +552,52 @@ function validateMarketDataFiles() {
   console.log("ok market data semantic checks");
 }
 
+function validateDiscoveryLanes() {
+  const parsed = parsedYamlFiles.get(discoveryLanesFile);
+  if (parsed?.schema_version !== 1) {
+    throw new Error(`${discoveryLanesFile} schema_version must be 1`);
+  }
+  requireString(parsed.as_of, `${discoveryLanesFile} as_of`);
+  parseDate(parsed.as_of, `${discoveryLanesFile} as_of`);
+  requireString(parsed.mission_anchor, `${discoveryLanesFile} mission_anchor`);
+  requireString(parsed.review_cadence, `${discoveryLanesFile} review_cadence`);
+  requireStringArray(parsed.notes, `${discoveryLanesFile} notes`);
+  if (!Array.isArray(parsed.lanes) || parsed.lanes.length === 0) {
+    throw new Error(`${discoveryLanesFile} must contain at least one lane`);
+  }
+
+  const laneIds = new Set();
+  const watchlistSymbols = new Set(csvRecords(watchlistFile).map((row) => row.symbol));
+  parsed.lanes.forEach((lane, index) => {
+    const context = `${discoveryLanesFile} lane ${index + 1}`;
+    [
+      "id",
+      "name",
+      "bottleneck_thesis",
+      "why_asymmetric",
+      "next_review_trigger",
+      "invalidation_or_demote_signal",
+    ].forEach((field) => requireString(lane?.[field], `${context} ${field}`));
+    if (laneIds.has(lane.id)) {
+      throw new Error(`${discoveryLanesFile} has duplicate lane id ${lane.id}`);
+    }
+    laneIds.add(lane.id);
+    requireAllowed(lane.status, allowedDiscoveryLaneStatuses, `${context} status`);
+    [
+      "source_families",
+      "screen_keywords",
+      "current_public_proxies",
+      "candidate_entry_points",
+    ].forEach((field) => requireStringArray(lane?.[field], `${context} ${field}`));
+    lane.current_public_proxies.forEach((symbol) => {
+      if (!watchlistSymbols.has(symbol)) {
+        throw new Error(`${context} current_public_proxies references unknown watchlist symbol ${symbol}`);
+      }
+    });
+  });
+  console.log(`ok ${discoveryLanesFile} semantic checks`);
+}
+
 function validateDiscoveryCandidates() {
   csvRecords(discoveryFile).forEach((row, index) => {
     const context = `${discoveryFile} row ${index + 2}`;
@@ -667,6 +734,8 @@ function validateQualityMetrics() {
     "active_symbols_with_latest_filing_review",
     "active_symbols_missing_latest_filing_review",
     "raw_discovery_candidates_open",
+    "active_discovery_lanes",
+    "emerging_discovery_lanes",
   ].forEach((field) => requireNumber(coverage[field], `${qualityMetricsFile} coverage.${field}`));
   [
     "open_critical_events",
@@ -691,6 +760,18 @@ function validateQualityMetrics() {
 
   const asOfTimestamp = parseDate(parsed.as_of, `${qualityMetricsFile} as_of`);
   parseDate(coverage.universe_scan_as_of, `${qualityMetricsFile} coverage.universe_scan_as_of`);
+  parseDate(coverage.discovery_lane_map_as_of, `${qualityMetricsFile} coverage.discovery_lane_map_as_of`);
+
+  const discoveryLanes = parsedYamlFiles.get(discoveryLanesFile)?.lanes ?? [];
+  const activeDiscoveryLaneCount = discoveryLanes.filter((lane) => lane.status === "active").length;
+  const emergingDiscoveryLaneCount = discoveryLanes.filter((lane) => lane.status === "emerging").length;
+  if (coverage.active_discovery_lanes !== activeDiscoveryLaneCount) {
+    throw new Error(`${qualityMetricsFile} active_discovery_lanes is ${coverage.active_discovery_lanes}, expected ${activeDiscoveryLaneCount}`);
+  }
+  if (coverage.emerging_discovery_lanes !== emergingDiscoveryLaneCount) {
+    throw new Error(`${qualityMetricsFile} emerging_discovery_lanes is ${coverage.emerging_discovery_lanes}, expected ${emergingDiscoveryLaneCount}`);
+  }
+
   const currentValuationSymbols = currentValuationSymbolSet(activeSymbols, asOfTimestamp, gates.valuation_state_max_age_days);
   if (coverage.active_symbols_with_current_valuation_state !== currentValuationSymbols.size) {
     throw new Error(

@@ -10,6 +10,9 @@ decision_readiness:
   reason: Active watchlist has current valuation states, latest filing-review coverage, fresh market snapshots through 2026-05-29, and no unresolved critical or high-severity freshness events. SpaceX remains a not-tradable future-watch item, so its reviewed S-1 event does not create buy readiness.
 coverage:
   universe_scan_as_of: 2026-05-30
+  discovery_lane_map_as_of: 2026-05-30
+  active_discovery_lanes: 9
+  emerging_discovery_lanes: 1
   active_watchlist_symbols: 18
   active_symbols_with_current_valuation_state: 18
   active_symbols_missing_valuation_state: 0
@@ -28,4 +31,4 @@ quality_gates:
   valuation_state_max_age_days: 45
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
-notes: Ready means the repository can support a live monthly allocation decision after checking broker cash and current prices. It does not force a buy recommendation.
+notes: Ready means the repository can support a live monthly allocation decision after checking broker cash and current prices. It does not force a buy recommendation. Discovery lane readiness means the current lane map has been reviewed, not that the watchlist is complete.

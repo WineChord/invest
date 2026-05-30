@@ -6,6 +6,7 @@ Use this template when running the discovery, freshness, valuation, and cleanup 
 run_date:
 operator:
 policy_version:
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 run_type: monthly
 previous_run:
 market_data_as_of:
@@ -21,6 +22,7 @@ Record the source families checked and the exact retrieval window.
 
 ```yaml
 listed_universe_sources:
+discovery_lanes_reviewed:
 sec_filings_window:
 company_ir_window:
 market_data_window:
@@ -34,6 +36,11 @@ Summarize new public candidates, rejected candidates, and candidates that need i
 
 ```yaml
 themes_scanned:
+lane_map_as_of:
+new_lanes_considered:
+lanes_added_or_revised:
+unknown_future_bottlenecks_review:
+dry_run_candidate_scan:
 universe_sources_checked:
 new_candidates_added:
 promoted_to_watchlist:
@@ -54,14 +61,16 @@ entry_delta:
 priority_delta:
 opportunity_cost_delta:
 theme_delta:
+lane_delta:
 promoted_symbols:
 demoted_symbols:
 frozen_or_removed_symbols:
 new_discovery_lanes:
+retired_or_demoted_lanes:
 no_change_reason:
 ```
 
-Explain why the current priority order still serves the mission, or why it changed. Do not preserve a prior favorite without fresh evidence.
+Explain why the current priority order and discovery lane map still serve the mission, or why they changed. Do not preserve a prior favorite or prior lane map without fresh evidence.
 
 ## Freshness Monitor
 
@@ -104,6 +113,8 @@ active_symbols_with_current_valuation_state:
 active_symbols_missing_valuation_state:
 active_symbols_with_latest_filing_review:
 active_symbols_missing_latest_filing_review:
+active_discovery_lanes:
+emerging_discovery_lanes:
 open_critical_events:
 open_high_events:
 stale_valuation_states_over_45_days:

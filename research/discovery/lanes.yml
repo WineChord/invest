@@ -1,0 +1,275 @@
+schema_version: 1
+as_of: 2026-05-30
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
+notes:
+  - Discovery lanes are not sectors or benchmarks. They are hypotheses about structural bottlenecks that could produce outcomes tens, hundreds, or thousands of times larger over a very long horizon.
+  - A lane exists only to improve the search for rare public opportunities. If it stops helping that mission, revise, merge, demote, or retire it.
+  - New lanes should start as emerging or incubating before they affect allocation. Promotion requires source-backed evidence that the bottleneck is durable and publicly investable.
+lanes:
+  - id: space_infrastructure
+    name: Space Infrastructure
+    status: active
+    bottleneck_thesis: Launch cadence, orbital logistics, spacecraft manufacturing, space systems, and government or commercial demand can become durable infrastructure bottlenecks.
+    why_asymmetric: A small public company that compounds into a space infrastructure platform could become far larger than its early public market footprint.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - NASA procurement and awards
+      - U.S. Space Force and defense contract data
+      - launch manifests and mission updates
+    screen_keywords:
+      - launch
+      - satellite
+      - spacecraft
+      - orbital
+      - space
+    current_public_proxies:
+      - RKLB
+      - LUNR
+      - RDW
+      - KTOS
+    candidate_entry_points:
+      - newly public launch or space-systems companies
+      - spinoffs with defense or civil-space infrastructure exposure
+      - public suppliers with mission-critical subsystems and growing backlog
+    next_review_trigger: New listing, major launch or mission failure, material contract award, Neutron milestone, or government budget shift.
+    invalidation_or_demote_signal: Public proxies become mostly promotional, chronically dilutive, or unable to convert backlog into durable gross profit.
+  - id: direct_to_device_connectivity
+    name: Direct-To-Device Connectivity
+    status: active
+    bottleneck_thesis: Satellite-to-phone service could create a new global connectivity layer if spectrum, constellation capacity, mobile-network distribution, and regulation align.
+    why_asymmetric: A successful network can monetize global dead-zone coverage and emergency connectivity with scarce spectrum and carrier distribution.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - FCC and spectrum filings
+      - mobile network operator announcements
+      - satellite deployment updates
+    screen_keywords:
+      - satellite-to-phone
+      - direct-to-device
+      - spectrum
+      - mobile satellite
+      - connectivity
+    current_public_proxies:
+      - ASTS
+      - GSAT
+      - SPACEX
+    candidate_entry_points:
+      - newly listed satellite connectivity companies
+      - public spectrum holders with credible satellite-to-phone economics
+      - carrier-backed infrastructure vehicles or spinoffs
+    next_review_trigger: Launch, FCC, MNO commercial economics, Starlink mobile update, or spectrum partnership change.
+    invalidation_or_demote_signal: Capacity economics, regulation, carrier incentives, or handset compatibility prove too weak for durable returns.
+  - id: ai_compute_infrastructure
+    name: AI Compute Infrastructure
+    status: active
+    bottleneck_thesis: Training and inference demand can make compute capacity, deployment speed, power access, utilization, and financing discipline decisive constraints.
+    why_asymmetric: A focused public provider with scarce capacity and durable customers could compound if AI workloads keep scaling and unit economics survive depreciation.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - hyperscaler capex reports
+      - data-center financing data
+      - AI infrastructure customer disclosures
+    screen_keywords:
+      - AI cloud
+      - GPU
+      - inference
+      - training cluster
+      - compute
+    current_public_proxies:
+      - CRWV
+      - NBIS
+      - IREN
+      - SPACEX
+    candidate_entry_points:
+      - newly public neoclouds
+      - power-backed compute conversions
+      - public AI infrastructure spinoffs
+    next_review_trigger: Customer concentration change, financing terms, utilization disclosure, GPU depreciation update, or hyperscaler capex shift.
+    invalidation_or_demote_signal: Unit economics depend on circular financing, fragile counterparties, or debt that can wipe out equity in a utilization downturn.
+  - id: ai_power_and_cooling
+    name: AI Data-Center Power And Cooling
+    status: active
+    bottleneck_thesis: AI data centers may be constrained by grid interconnection, onsite generation, thermal management, power electronics, and service capacity.
+    why_asymmetric: A supplier that owns a hard physical bottleneck can compound even when model-level AI economics are uncertain.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - utility and grid interconnection sources
+      - data-center buildout announcements
+      - power equipment order and backlog disclosures
+    screen_keywords:
+      - data center power
+      - liquid cooling
+      - grid
+      - onsite power
+      - thermal
+    current_public_proxies:
+      - VRT
+      - BE
+      - OKLO
+      - LEU
+    candidate_entry_points:
+      - public power-equipment suppliers with AI-specific order growth
+      - onsite power companies with proven data-center economics
+      - grid or thermal spinoffs with scarce capacity
+    next_review_trigger: Backlog quality update, liquid-cooling evidence, major data-center power deal, NRC or DOE milestone, or grid constraint change.
+    invalidation_or_demote_signal: Revenue growth proves subsidy-driven, service economics deteriorate, or valuation outruns realistic bottleneck profits.
+  - id: semiconductor_interconnect_and_memory
+    name: Semiconductor Interconnect And Memory
+    status: active
+    bottleneck_thesis: AI system scaling can be limited by memory bandwidth, interconnect, retimers, optical or copper links, and rack-scale connectivity.
+    why_asymmetric: A public company that controls a critical connectivity or memory constraint can grow with AI cluster complexity without owning the full accelerator stack.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - customer concentration disclosures
+      - semiconductor supply-chain updates
+      - standards and ecosystem announcements
+    screen_keywords:
+      - interconnect
+      - HBM
+      - CXL
+      - retimer
+      - optical
+    current_public_proxies:
+      - CRDO
+      - ALAB
+      - MU
+    candidate_entry_points:
+      - newly public connectivity suppliers
+      - smaller public optical or advanced packaging bottleneck companies
+      - memory or interconnect names after thesis-preserving valuation resets
+    next_review_trigger: Customer concentration disclosure, HBM margin update, design-win change, standard transition, or AI capex slowdown.
+    invalidation_or_demote_signal: Product differentiation collapses into commodity pricing or customer concentration creates non-survivable revenue risk.
+  - id: advanced_nuclear_and_grid_constraints
+    name: Advanced Nuclear And Grid Constraints
+    status: active
+    bottleneck_thesis: AI, industrial electrification, and energy security can make dispatchable power, nuclear fuel, licensing, and grid access strategic constraints.
+    why_asymmetric: A public company tied to scarce fuel, licensing, or deployable clean firm power can become much larger if power scarcity persists.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - DOE sources
+      - NRC licensing records
+      - utility and customer agreements
+    screen_keywords:
+      - nuclear
+      - HALEU
+      - uranium
+      - reactor
+      - grid
+    current_public_proxies:
+      - OKLO
+      - LEU
+      - BE
+    candidate_entry_points:
+      - advanced nuclear developers with public reporting
+      - strategic fuel-cycle companies
+      - public grid bottleneck suppliers with non-commodity economics
+    next_review_trigger: DOE award, NRC milestone, fuel supply development, customer contract, or financing update.
+    invalidation_or_demote_signal: Timeline, licensing, or fuel access makes equity dilution more likely than durable compounding.
+  - id: quantum_computing_and_networking
+    name: Quantum Computing And Networking
+    status: active
+    bottleneck_thesis: Quantum computing, networking, sensing, or security may become a new infrastructure layer if commercial usefulness emerges.
+    why_asymmetric: Early public leaders could be option-like if technical progress becomes commercially relevant before dilution overwhelms equity.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - customer and government contract releases
+      - technical roadmap disclosures
+      - standards and security policy updates
+    screen_keywords:
+      - quantum
+      - qubit
+      - ion trap
+      - quantum networking
+      - post-quantum
+    current_public_proxies:
+      - IONQ
+    candidate_entry_points:
+      - newly public quantum hardware or networking companies
+      - public suppliers with real quantum revenue and government validation
+      - security infrastructure companies tied to post-quantum migration
+    next_review_trigger: Commercial revenue quality, system delivery, government contract, technical milestone, or cash runway update.
+    invalidation_or_demote_signal: Revenue remains mostly one-time or promotional while burn and dilution compound faster than technical proof.
+  - id: programmable_money_infrastructure
+    name: Programmable Money Infrastructure
+    status: active
+    bottleneck_thesis: Regulated stablecoin and programmable-money networks could become internet-scale financial infrastructure if distribution, reserves, compliance, and developer utility compound.
+    why_asymmetric: A durable public toll point on digital dollars could scale far beyond a conventional financial intermediary if network effects persist.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - reserve attestations
+      - regulator and legislative sources
+      - payment network and developer ecosystem data
+    screen_keywords:
+      - stablecoin
+      - USDC
+      - digital dollar
+      - programmable money
+      - payments infrastructure
+    current_public_proxies:
+      - CRCL
+    candidate_entry_points:
+      - newly public stablecoin or payments infrastructure companies
+      - regulated digital-dollar network suppliers
+      - public platforms with source-backed reserve and transaction economics
+    next_review_trigger: Reserve economics, rate sensitivity, regulation, distribution cost, USDC circulation, or transaction volume update.
+    invalidation_or_demote_signal: Economics are captured by banks, exchanges, or distributors, or regulation weakens network monetization.
+  - id: frontier_ai_public_platforms
+    name: Future Public Frontier AI Platforms
+    status: active
+    bottleneck_thesis: Frontier AI platforms may become application, infrastructure, and distribution layers if compute, data, product adoption, and capital access reinforce each other.
+    why_asymmetric: Direct public exposure to a true frontier platform could matter more than many second-order suppliers, but only if valuation and governance leave room for public shareholders.
+    source_families:
+      - SEC filings
+      - direct listing or IPO filings
+      - company announcements
+      - cloud and compute partner disclosures
+      - regulator and governance sources
+    screen_keywords:
+      - artificial intelligence
+      - frontier AI
+      - foundation model
+      - AI platform
+      - agentic
+    current_public_proxies:
+      - OPENAI
+      - ANTHROPIC
+      - SPACEX
+    candidate_entry_points:
+      - future public listings of frontier AI labs
+      - public subsidiaries or spinoffs with direct model economics
+      - public platforms with credible AI distribution and unit economics
+    next_review_trigger: S-1, direct listing, merger, spinoff, governance change, or durable public reporting.
+    invalidation_or_demote_signal: Public exposure is unavailable, indirect, overvalued, governance-impaired, or mostly duplicates the user's main Nasdaq technology core.
+  - id: unknown_future_bottlenecks
+    name: Unknown Future Bottlenecks
+    status: emerging
+    bottleneck_thesis: The next multi-decade asymmetric opportunity may come from a category not yet represented in the watchlist or current lane map.
+    why_asymmetric: Rare compounding often starts where existing screens and categories are not looking, especially when a new technical, regulatory, or capital-formation bottleneck appears.
+    source_families:
+      - SEC new listings and registration statements
+      - regulator rulemaking and spectrum or energy policy
+      - government procurement changes
+      - scientific and technical commercialization signals
+      - market dislocations with intact primary evidence
+    screen_keywords:
+      - platform
+      - infrastructure
+      - bottleneck
+      - network
+      - mission critical
+    current_public_proxies: []
+    candidate_entry_points:
+      - new public categories with no current lane
+      - spinoffs that create pure-play exposure to a newly scarce capability
+      - companies rejected before a new source-backed bottleneck emerged
+    next_review_trigger: Every full operating cycle must explicitly ask whether this lane should create a new named lane.
+    invalidation_or_demote_signal: This lane should never be retired; if it becomes too broad to be useful, split out the concrete new lane and keep this as the open-ended reminder.

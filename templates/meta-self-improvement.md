@@ -6,6 +6,7 @@ Use this when improving the repository's process, not a single company thesis. E
 review_date:
 operator:
 policy_version:
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 trigger:
 related_cycle:
 related_files:
@@ -21,6 +22,7 @@ problem_type:
 affected_workflow:
 evidence:
 impact_on_mission:
+impact_on_discovery_lanes:
 frequency:
 severity:
 ```
@@ -45,6 +47,7 @@ expected_benefit:
 possible_harm:
 success_signal:
 rollback_condition:
+mission_alignment_check:
 review_date:
 ```
 
@@ -71,6 +74,7 @@ repo_scoped_skills:
 dashboard:
 validation:
 cleanup:
+mission_or_lane_map_effect:
 ```
 
 ## Study Plan
@@ -108,7 +112,7 @@ Confirm the change did not weaken:
 - auditability;
 - clone portability;
 - allowed-asset policy;
-- long-term asymmetric mission;
+- multi-decade asymmetric compounding with avoidable-ruin controls;
 - repository noise hygiene.
 
 ## Repo-Scoped Skill Check

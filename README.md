@@ -33,6 +33,7 @@ Repository state:
 
 Research engine state:
 
+- Discovery lane map: [research/discovery/lanes.yml](research/discovery/lanes.yml).
 - Potential new public candidates: [research/discovery/candidates.csv](research/discovery/candidates.csv).
 - Material freshness events: [research/freshness/events.csv](research/freshness/events.csv).
 - Valuation and entry states: [research/valuation-states.csv](research/valuation-states.csv).
@@ -45,9 +46,9 @@ Repo-scoped skill:
 - [invest-operating-cycle](.agents/skills/invest-operating-cycle/SKILL.md) is a lightweight Codex skill for this repository's repeated workflows. It is stored under `.agents/skills` so Codex can discover it as repository context without installing it globally. It points agents back to `AGENTS.md`, `SPEC.md`, policy files, templates, and validation commands.
 - Repo-scoped skills are part of meta-self-improvement. Add or update them when repeated workflows need better automatic triggering or navigation, but keep canonical rules in `AGENTS.md`, `SPEC.md`, templates, scripts, and committed data.
 
-Decision requests are full operating-cycle triggers. When the user reports new cash or asks what to buy, sell, hold, use as SGOV reserve, or allocate, future agents must run the full decision operating cycle from [AGENTS.md](AGENTS.md), [SPEC.md](SPEC.md), and [templates/monthly-decision.md](templates/monthly-decision.md) before proposing orders. The cycle refreshes market data, scans discovery candidates and mission-relevant new public names, checks SEC/IR freshness, reviews filing and valuation coverage, reprioritizes the watchlist when thesis or entry quality changes, runs applicable risk and regime checks, performs repository cleanup, validates changed surfaces, and reports decision readiness.
+Decision requests are full operating-cycle triggers. When the user reports new cash or asks what to buy, sell, hold, use as SGOV reserve, or allocate, future agents must run the full decision operating cycle from [AGENTS.md](AGENTS.md), [SPEC.md](SPEC.md), and [templates/monthly-decision.md](templates/monthly-decision.md) before proposing orders. The cycle refreshes market data, reviews the discovery lane map, asks whether a new lane appeared, scans discovery candidates and mission-relevant new public names, checks SEC/IR freshness, reviews filing and valuation coverage, reprioritizes the watchlist when thesis or entry quality changes, runs applicable risk and regime checks, performs repository cleanup, validates changed surfaces, and reports decision readiness.
 
-The research engine is self-evolving. Current favorite stocks are not permanent favorites. Each serious decision or full-cycle run must ask whether watchlist theses improved or deteriorated, whether price made a candidate newly attractive or unattractive, whether another candidate now has better opportunity cost, and whether a new industry or bottleneck deserves a discovery lane.
+The research engine is self-evolving. Current favorite stocks are not permanent favorites, and current discovery lanes are not permanent boundaries. Each serious decision or full-cycle run must ask whether watchlist theses improved or deteriorated, whether price made a candidate newly attractive or unattractive, whether another candidate now has better opportunity cost, and whether a new industry or bottleneck deserves a discovery lane.
 
 The process is also self-improving. Each serious run must ask whether the repository's methods, templates, sources, scoring labels, automation, validation, dashboard, or cleanup rules should be improved. Substantial process reviews live under [research/process](research/process) and use [templates/meta-self-improvement.md](templates/meta-self-improvement.md).
 
@@ -73,6 +74,14 @@ Daily market data refresh:
 ```bash
 npm run refresh:market -- --dry-run
 ```
+
+Dry-run discovery scan:
+
+```bash
+npm run discover:universe -- --dry-run
+```
+
+The discovery scan is only a first-pass lead generator from the lane map and public issuer reference data. It does not replace primary-source research, create buy eligibility, or mutate account records.
 
 GitHub Actions runs the same market-data refresh on a weekday schedule. It updates committed daily price history, technical snapshots, SEC-derived company metrics, and latest close snapshots, then updates `data/account/equity_curve.csv` only after confirmed positions and confirmed cash exist. The research cards, right-side research detail, and per-symbol pages under `/research/<symbol>/` read those committed files, so the public display becomes richer as the refresh history grows.
 

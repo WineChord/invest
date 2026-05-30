@@ -6,6 +6,7 @@ Use this when the user asks to run the whole repository flow, execute everything
 request_type: full_operating_cycle
 date:
 policy_version:
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 cycle_scope:
 user_goal:
 decision_requested:
@@ -35,18 +36,19 @@ Run every applicable item in this order. If an item is not applicable, say why.
 1. Load rules and state: `AGENTS.md`, `SPEC.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state.
 2. Protect confirmed broker truth: separate confirmed account facts from market data, research, analysis, user estimates, screenshots, and proposed orders.
 3. Refresh deterministic data: run market-data refresh, data checks, and build/dashboard checks when the request touches those surfaces and tooling is available.
-4. Run universe discovery: scan existing raw candidates, mission-relevant themes, newly public names, spinoffs, direct listings, IPOs, and new public proxies. Add, reject, archive, or incubate raw candidates when evidence supports doing so.
-5. Run freshness monitoring: check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and price dislocations for holdings, active watchlist symbols, and decision-relevant candidates.
-6. Run self-evolution and reprioritization: identify thesis delta, entry delta, priority delta, opportunity-cost delta, and theme delta. Promote, demote, freeze, remove, or incubate names when fresh evidence supports the change.
-7. Complete filing reviews: read primary filings or official reports for material events before any buy recommendation. Link reviews from freshness events or record immaterial reasons.
-8. Refresh valuation and entry states: update or recompute stale states for active and decision-relevant symbols.
-9. Run market-regime review when relevant: use the AI-cycle and macro/credit checklist when the active universe depends on AI infrastructure, power, space infrastructure, financing, or broad bubble risk.
-10. Run allocation analysis when the user asks for a decision: compare all active candidates and holdings, test mission/evidence/entry gates, size proposed actions from confirmed deployable liquidity, and state trigger and invalidation conditions.
-11. Run meta-self-improvement: identify process defects, source gaps, weak templates, scoring ambiguity, automation opportunities, validation gaps, dashboard confusion, repo-scoped skill updates, or cleanup rules exposed by the run. Use [meta-self-improvement.md](meta-self-improvement.md) for substantial changes.
-12. Update durable records: research notes, source register, freshness events, valuation states, watchlist priority/status, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, templates, and process reviews when the run creates durable facts or behavior.
-13. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
-14. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
-15. Commit and push coherent durable changes when the repository's Git Rules call for it.
+4. Run discovery-lane review: read `research/discovery/lanes.yml`, ask whether a new lane appeared, decide whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged, and record the lane delta.
+5. Run universe discovery: use `npm run discover:universe -- --dry-run` when network access is available, scan existing raw candidates, mission-relevant themes, newly public names, spinoffs, direct listings, IPOs, and new public proxies. Add, reject, archive, or incubate raw candidates when evidence supports doing so.
+6. Run freshness monitoring: check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and price dislocations for holdings, active watchlist symbols, and decision-relevant candidates.
+7. Run self-evolution and reprioritization: identify thesis delta, entry delta, priority delta, opportunity-cost delta, theme delta, and lane delta. Promote, demote, freeze, remove, or incubate names when fresh evidence supports the change.
+8. Complete filing reviews: read primary filings or official reports for material events before any buy recommendation. Link reviews from freshness events or record immaterial reasons.
+9. Refresh valuation and entry states: update or recompute stale states for active and decision-relevant symbols.
+10. Run market-regime review when relevant: use the AI-cycle and macro/credit checklist when the active universe depends on AI infrastructure, power, space infrastructure, financing, or broad bubble risk.
+11. Run allocation analysis when the user asks for a decision: compare all active candidates and holdings, test mission/evidence/entry gates, size proposed actions from confirmed deployable liquidity, and state trigger and invalidation conditions.
+12. Run meta-self-improvement: identify process defects, missed-lane risk, source gaps, weak templates, scoring ambiguity, automation opportunities, validation gaps, dashboard confusion, repo-scoped skill updates, or cleanup rules exposed by the run. Use [meta-self-improvement.md](meta-self-improvement.md) for substantial changes.
+13. Update durable records: research notes, source register, discovery lanes, discovery candidates, freshness events, valuation states, watchlist priority/status, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, templates, and process reviews when the run creates durable facts or behavior.
+14. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
+15. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
+16. Commit and push coherent durable changes when the repository's Git Rules call for it.
 
 ## Completion Report
 
@@ -63,6 +65,7 @@ committed:
 pushed:
 decision_readiness:
 watchlist_priority_changes:
+discovery_lane_changes:
 new_or_emerging_themes:
 meta_self_improvement:
 unavailable_evidence:

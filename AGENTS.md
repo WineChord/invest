@@ -4,7 +4,9 @@ This repository supports one long-term satellite investment account. Follow thes
 
 ## Mission
 
-The mission is to support a multi-decade satellite portfolio whose goal is asymmetric compounding: pursue investments that can plausibly return tens, hundreds, or thousands of times capital over decades.
+The mission is to support a multi-decade satellite portfolio whose goal is asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin.
+
+This mission is the repository's highest objective. Every policy, template, source list, research lane, dashboard surface, self-evolution rule, meta-self-improvement change, cleanup decision, and validation check exists to improve the odds of that outcome without weakening broker-confirmation truth, source freshness, auditability, clone portability, or avoidable-ruin controls.
 
 This account is not the user's main Nasdaq technology allocation. Do not dilute the satellite objective by optimizing for broad-market benchmarking, low volatility, short-term comfort, or index-like diversification.
 
@@ -104,8 +106,8 @@ Full decision operating cycle:
 
 1. Load `AGENTS.md`, `SPEC.md`, current policy, templates, confirmed account files, prior decisions, research state, market snapshots, and package scripts.
 2. Reconstruct confirmed deployable liquidity from durable broker-confirmed records and any user-provided broker snapshot. Ask only for missing broker facts that cannot be inferred safely.
-3. Run deterministic repository tooling that is applicable and safe, including market-data refresh, data checks, build checks, or dashboard checks when the request touches those surfaces.
-4. Run universe discovery before allocation judgment: scan existing discovery candidates, mission-relevant themes, newly public companies, spinoffs, IPOs, direct listings, and new public proxies. Add raw candidates to `research/discovery/candidates.csv` when they plausibly matter, and quickly reject or archive weak fits when the evidence supports doing so.
+3. Run deterministic repository tooling that is applicable and safe, including market-data refresh, dry-run universe discovery, data checks, build checks, or dashboard checks when the request touches those surfaces.
+4. Run universe discovery before allocation judgment: review `research/discovery/lanes.yml`, explicitly ask whether a new lane appeared, scan existing discovery candidates, mission-relevant themes, newly public companies, spinoffs, IPOs, direct listings, and new public proxies. Add raw candidates to `research/discovery/candidates.csv` when they plausibly matter, and quickly reject or archive weak fits when the evidence supports doing so.
 5. Run freshness monitoring for current holdings, active watchlist names, raw candidates that could affect allocation, and newly promoted candidates. Check SEC filings, company IR, earnings material, financing, dilution, debt, contracts, regulatory changes, management changes, and material price dislocations.
 6. Run the self-evolution check: identify which existing watchlist theses strengthened, weakened, became stale, became newly buyable because price improved, or became less attractive because price outran evidence. Promote, demote, freeze, or reprioritize watchlist rows only when fresh evidence supports the change, and record the reason.
 7. Complete or cite filing reviews for material filings before a buy recommendation. If a filing or event is immaterial, record the reason rather than leaving it ambiguous.
@@ -128,6 +130,7 @@ Self-evolution has two sides:
 
 1. Internal reprioritization: existing watchlist names must move up or down when fresh evidence changes thesis strength, execution probability, balance-sheet survival, dilution risk, market structure, valuation, or entry attractiveness. A watchlist company can become more important because its thesis improved, because price dislocated while the thesis stayed intact, or because competing opportunities weakened. It can also be demoted, frozen, or removed when evidence deteriorates or valuation outruns realistic upside.
 2. External discovery: the system must keep looking for new public companies, newly public pure plays, spinoffs, new industry bottlenecks, new regulatory regimes, and new technology platforms that could better satisfy the asymmetric multi-decade mission than the current watchlist.
+3. Discovery-lane evolution: `research/discovery/lanes.yml` is a living map of structural bottleneck hypotheses. Every full operating cycle and monthly decision must review whether a lane should be added, split, promoted, demoted, merged, or retired. The open-ended `unknown_future_bottlenecks` lane must remain active as a reminder that the next true outlier may begin outside all current categories.
 
 During each decision cycle, explicitly review:
 
@@ -136,12 +139,14 @@ During each decision cycle, explicitly review:
 - priority delta: promote, demote, freeze, remove, incubate, or no change;
 - opportunity-cost delta: whether another current or new candidate now better serves the mission;
 - theme delta: whether a new industry, supply bottleneck, regulatory shift, or technology platform deserves a new discovery lane.
+- lane delta: whether any discovery lane strengthened, weakened, became too broad, became irrelevant, or failed to search where the mission now demands searching.
 
 Durable outputs:
 
 - Update `research/watchlist.csv` priority, status, next review trigger, or notes when the active priority order changes.
 - Update `research/valuation-states.csv` when entry attractiveness changes materially.
 - Add or update `research/freshness/events.csv` when new evidence requires review.
+- Update `research/discovery/lanes.yml` when the lane map changes or when the full-cycle review exposes a missing lane.
 - Add raw names to `research/discovery/candidates.csv` before watchlist promotion.
 - Add a dated research-engine run note when the cycle changes discovery, priority, valuation, freshness, or cleanup state.
 
@@ -180,7 +185,7 @@ Guardrails:
 
 - Do not improve the process by weakening the no-trading rule, confirmation rule, source freshness, source hierarchy, audit trail, or allowed-asset policy.
 - Do not add process ceremony that makes the next decision slower without improving signal, safety, or auditability.
-- Do not optimize for looking systematic at the expense of finding rare asymmetric opportunities.
+- Do not optimize for looking systematic at the expense of finding rare asymmetric opportunities, and do not let meta-process become a substitute for searching outside the current watchlist.
 - Do not let a benchmark, metric, template, or dashboard surface become the objective. The objective remains long-term asymmetric compounding with avoidable-ruin controls.
 
 Completion standard:
@@ -202,7 +207,7 @@ Decision operating-cycle execution:
 3. Reconstruct total deployable liquidity from confirmed records, including cash, settled or tradeable proceeds, and any confirmed SGOV or equivalent reserve value available for sale, then reconcile with any broker account snapshot the user provides.
 4. Determine the freshness window from the latest decision, latest research-engine run, latest market-data refresh, and current decision date.
 5. Refresh deterministic market data with the repository tooling when available, then retrieve fresh prices and current market data for current holdings, active candidates, watchlist names, newly promoted candidates, and any raw discovery candidate that could plausibly affect the decision.
-6. Run the research engine loop from `SPEC.md` before allocation judgment: review `research/discovery/candidates.csv`, scan for new public candidates in mission-relevant themes, check freshness events, detect new material filings or issuer events, review valuation states, and compare active watchlist names.
+6. Run the research engine loop from `SPEC.md` before allocation judgment: review `research/discovery/lanes.yml`, explicitly ask whether a new lane appeared, review `research/discovery/candidates.csv`, scan for new public candidates in mission-relevant themes, check freshness events, detect new material filings or issuer events, review valuation states, and compare active watchlist names.
 7. Retrieve fresh company data: SEC filings, IR releases, earnings transcripts, regulatory updates, contract news, dilution, debt, liquidity, and management changes.
 8. When a new material filing exists, read the primary filing or official report before buying. Use [templates/filing-review.md](templates/filing-review.md) for 10-K, 10-Q, S-1, F-1, 424B, earnings 8-K, financing 8-K, and equivalent reports.
 9. Update or cite the durable research state changed by the operating cycle: `research/discovery/candidates.csv`, `research/freshness/events.csv`, `research/valuation-states.csv`, `research/quality-metrics.yml`, filing reviews, and a dated research-engine run note when the run changes durable research state.
@@ -277,13 +282,14 @@ Each active company thesis must include:
 
 Research is organized as a pipeline:
 
-1. `research/discovery/candidates.csv` for raw potential public candidates found by universe scans.
-2. `research/freshness/events.csv` for material filings, IR releases, contracts, financing, dilution, regulatory events, price dislocations, and thesis triggers.
-3. `research/valuation-states.csv` for current valuation and entry-attractiveness state.
-4. `research/quality-metrics.yml` for coverage, freshness, stale analysis, and open-event health checks.
-5. `research/filings/` for completed material filing reviews linked from freshness events.
-6. `research/watchlist.csv` for candidates that deserve ongoing active monitoring.
-7. `research/company-analysis.yml` for dashboard-visible historical analysis.
+1. `research/discovery/lanes.yml` for structural bottleneck lanes that guide search beyond the current watchlist.
+2. `research/discovery/candidates.csv` for raw potential public candidates found by universe scans.
+3. `research/freshness/events.csv` for material filings, IR releases, contracts, financing, dilution, regulatory events, price dislocations, and thesis triggers.
+4. `research/valuation-states.csv` for current valuation and entry-attractiveness state.
+5. `research/quality-metrics.yml` for coverage, freshness, lane-map health, stale analysis, and open-event health checks.
+6. `research/filings/` for completed material filing reviews linked from freshness events.
+7. `research/watchlist.csv` for candidates that deserve ongoing active monitoring.
+8. `research/company-analysis.yml` for dashboard-visible historical analysis.
 
 The active decision universe is limited to watchlist rows whose status is `active_core_candidate`, `active_candidate`, or `watch`. Rows marked `research_only`, `not_tradable`, `probation`, `frozen`, or `removed` cannot receive new buy recommendations unless the decision first promotes them with fresh evidence and updates the durable records.
 

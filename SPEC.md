@@ -6,7 +6,11 @@ This repository is the durable memory and operating manual for a long-term satel
 
 The account starts with no confirmed holdings and no confirmed cash balance. The default planned contribution is USD 888 per month, but future contributions may be higher. Actual account state changes only after the user confirms broker-side activity.
 
-The portfolio's ultimate objective is not to look stable or diversified in a conventional sense. The objective is to find and hold a small number of public companies that can plausibly become much larger over decades because they sit on structural bottlenecks: space infrastructure, direct-to-device connectivity, AI infrastructure, power, cooling, semiconductor interconnect, quantum technology, programmable money, and future categories that do not yet exist.
+The portfolio's ultimate objective is not to look stable or diversified in a conventional sense. The objective is multi-decade asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin.
+
+That objective is the system's root constraint. The repository should evolve its watchlist, discovery lanes, templates, validation, dashboard, source lists, and process rules only when the change improves the odds of finding and holding those rare outcomes without weakening broker-confirmation truth, freshness, auditability, clone portability, or survival controls.
+
+The practical search starts with public companies that can plausibly become much larger over decades because they sit on structural bottlenecks: space infrastructure, direct-to-device connectivity, AI infrastructure, power, cooling, semiconductor interconnect, quantum technology, programmable money, and future categories that do not yet exist.
 
 The account is not required to stay fully invested. Monthly contributions can remain unspent when no candidate passes the mission, evidence, and entry gates. Under policy `v1.1`, idle liquidity may be parked in SGOV or a materially equivalent short-duration U.S. Treasury reserve instrument for cash management only.
 
@@ -197,6 +201,37 @@ quality_gates:
 notes:
 ```
 
+`research/discovery/lanes.yml` records the structural bottleneck lanes that guide universe discovery beyond the current watchlist. A lane is a search hypothesis, not a sector allocation target or proof that any company is buyable.
+
+Required top-level fields:
+
+```yaml
+schema_version:
+as_of:
+mission_anchor:
+review_cadence:
+notes:
+lanes:
+```
+
+Each lane records:
+
+```yaml
+id:
+name:
+status:
+bottleneck_thesis:
+why_asymmetric:
+source_families:
+screen_keywords:
+current_public_proxies:
+candidate_entry_points:
+next_review_trigger:
+invalidation_or_demote_signal:
+```
+
+Lane status values are `active`, `emerging`, `incubating`, `dormant`, and `retired`. Every full operating cycle and monthly decision must review the lane map and explicitly ask whether a new lane appeared.
+
 `research/discovery/candidates.csv` records potential new public candidates before they are promoted into the active watchlist.
 
 Required columns:
@@ -256,7 +291,7 @@ Entries are append-only by default and shown newest-first on the dashboard. If a
 
 ## Research Engine
 
-The repository must evolve from a static watchlist into a self-evolving research engine. The engine has seven loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, monthly allocation, and meta-self-improvement.
+The repository must evolve from a static watchlist into a self-evolving research engine. The engine has seven loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, monthly allocation, and meta-self-improvement. Each loop is subordinate to the same root objective: multi-decade asymmetric compounding with avoidable-ruin controls.
 
 The watchlist is not the goal. It is a temporary working set for the mission. The system must be willing to promote, demote, freeze, remove, or incubate names as evidence, prices, technologies, industries, and opportunity costs change over months and years.
 
@@ -271,9 +306,11 @@ Feasibility boundary:
 Implementation target:
 
 - Use code for repeatable collection, validation, and stale-state detection.
+- Use `npm run discover:universe -- --dry-run` as a deterministic first-pass lane keyword scan. It can suggest raw candidates from public issuer data, but it is not research judgment and it does not create buy eligibility.
 - Use research templates for judgment-heavy work.
 - Use committed files as the durable interface between automation, agent analysis, dashboard display, and future decisions.
 - Track the health of the research process itself in `research/quality-metrics.yml`, so the system can say when it is not ready to make a buy recommendation.
+- Track discovery-lane health in `research/discovery/lanes.yml` and `research/quality-metrics.yml`, so the system does not confuse the current watchlist with the full opportunity set.
 - Track thesis, entry, priority, opportunity-cost, and theme deltas so the repository can notice when a former secondary idea becomes a better candidate, or when a new industry makes the current opportunity set stale.
 
 Readiness semantics:
@@ -289,11 +326,11 @@ Operating-cycle trigger model:
 - A user request to "run everything", "execute the full workflow", "refresh the whole repo", "full monthly cycle", "全量执行", or equivalent language is a full-cycle trigger. It must execute every applicable repository workflow in the safest useful order, including research, data refresh, validation, dashboard checks when relevant, cleanup, and durable commits when state changes.
 - The operating cycle is the bridge between this specification and agent behavior. It prevents the system from answering from stale watchlist memory when the real objective is to keep finding the best current public opportunities for the mission.
 - The operating cycle must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
-- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing.
+- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, review the discovery lane map, explicitly ask whether a new lane appeared, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing.
 - Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, meta-self-improvement, and commit/push when changes are coherent.
 - The cycle may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
 - If any applicable workflow cannot be completed, the decision must say exactly which discovery, filing, market-data, validation, dashboard, cleanup, or quality-gate checks are missing and default to no trade, hold cash, or the approved liquidity reserve unless the missing item is explicitly reviewed or marked immaterial.
-- Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, unavailable evidence, and validity window.
+- Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery lane changes, discovery candidate changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, unavailable evidence, and validity window.
 
 Research funnel ruling:
 
@@ -321,6 +358,7 @@ Required checks:
 - Priority delta: decide whether a symbol should be promoted, demoted, frozen, removed, incubated, or left unchanged.
 - Opportunity-cost delta: compare the improved or deteriorated name against current holdings, active candidates, cash, and the approved liquidity reserve.
 - Theme delta: decide whether a new technology platform, industry bottleneck, regulation, supply-chain constraint, or market structure change deserves a new discovery lane.
+- Lane delta: decide whether each active or emerging lane still helps the mission, should be promoted, split, merged, demoted, retired, or expanded because a new bottleneck appeared.
 
 Priority-change triggers:
 
@@ -333,6 +371,7 @@ Priority-change triggers:
 Durable outputs:
 
 - Update `research/watchlist.csv` priority, status, next review trigger, and notes when priority changes.
+- Update `research/discovery/lanes.yml` when the lane map changes or when the `unknown_future_bottlenecks` review identifies a concrete new lane.
 - Update `research/valuation-states.csv` when entry attractiveness changes materially.
 - Update `research/freshness/events.csv` when a priority change depends on a material event.
 - Add raw names to `research/discovery/candidates.csv` before promotion.
@@ -357,9 +396,18 @@ Cadence:
 Recommended source stack:
 
 - SEC company ticker and exchange reference files for listed issuer coverage.
+- `scripts/discover-universe.mjs` for a dry-run-first keyword scan across the lane map and SEC listed issuer reference data.
 - Nasdaq Trader symbol directories for US-listed common stocks and ADRs.
 - Exchange, issuer IR, and SEC sources for newly public companies.
 - Reputable market data only for market cap, liquidity, and price metadata after the symbol is identified from durable public sources.
+
+Discovery lane map:
+
+- `research/discovery/lanes.yml` is the first stop for universe discovery. It stores the current structural bottleneck hypotheses, source families, screen keywords, public proxies, and review triggers.
+- Every full operating cycle must ask: did a new lane appear, did an existing lane become too broad, did a lane stop serving the mission, or did an old rejected lane become investable because public evidence changed?
+- A new lane should begin as `emerging` or `incubating` unless there is enough source-backed evidence to make it `active` immediately.
+- Keep `unknown_future_bottlenecks` as an explicit open lane. Its job is to force the system to search outside existing categories instead of treating today's watchlist and themes as permanent.
+- Lane changes must improve the search for multi-decade asymmetric compounding with avoidable-ruin controls. Do not add a lane merely because a sector is fashionable.
 
 Default filters:
 
@@ -377,6 +425,14 @@ Theme-scoped discovery:
 - Use screens only as triage, not as proof. Useful first-pass signals include market capitalization range, revenue growth, gross margin, free cash flow trajectory, cash runway, dilution rate, backlog/RPO growth, customer concentration, insider ownership or selling, recent IPO/spinoff status, and sharp price dislocation after non-thesis-breaking events.
 - Penalize companies that are merely adjacent to the theme but whose economics are too commodity-like, too levered, too dilutive, too promotional, or too dependent on one binary event.
 - Promote only a few names per theme into active monitoring. When a new candidate enters, remove, archive, or demote weaker candidates so the active research set stays small enough to understand.
+
+New-lane test:
+
+- Is there a structural bottleneck, network, regulatory shift, supply constraint, technical platform, or capital-formation change that could create unusually large long-horizon outcomes?
+- Is there or will there plausibly be public-market exposure under the current allowed-asset policy?
+- Would the lane find candidates not already found by the current lanes and watchlist?
+- Can the lane be monitored with durable source families rather than hype?
+- What would prove the lane too broad, too promotional, too uninvestable, or too ruin-prone?
 
 Discovery funnel stages:
 
@@ -492,6 +548,8 @@ Hard gates before a buy recommendation:
 Research engine health metrics:
 
 - `universe_scan_as_of`: latest date the public issuer universe was checked.
+- `discovery_lane_map_as_of`: latest date the discovery lane map was reviewed.
+- `active_discovery_lanes` and `emerging_discovery_lanes`: current lane-map breadth, used to catch accidental lane-map drift.
 - `active_symbols_with_current_valuation_state`: active watchlist or holding symbols with a non-stale valuation state.
 - `active_symbols_with_latest_filing_review`: active symbols whose latest material filing has been reviewed or marked immaterial.
 - `raw_discovery_candidates_open`: candidates still waiting for promote/reject/incubate action.
@@ -649,7 +707,7 @@ Bubble risk dimensions:
 1. Identify the policy version.
 2. Load confirmed ledger, positions, contribution plan, and prior decisions.
 3. Ask whether the user has confirmed a new deposit if the prompt is ambiguous.
-4. Run the full decision operating cycle through discovery, freshness, filing, valuation, risk, allocation, cleanup, and validation stages. This is mandatory and must not be skipped because the user phrased the request casually.
+4. Run the full decision operating cycle through discovery-lane review, universe discovery, freshness, filing, valuation, risk, allocation, cleanup, and validation stages. This is mandatory and must not be skipped because the user phrased the request casually.
 5. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest monthly contribution when a stronger opportunity justifies broader deployment.
 6. Retrieve fresh prices for current holdings, active candidates, and any newly promoted or decision-relevant discovery candidate.
 7. Retrieve fresh primary evidence for each active candidate and any newly decision-relevant candidate.
@@ -802,7 +860,7 @@ Corrections are append-only. Never silently rewrite history.
 
 ## Self-Evolution Mechanism
 
-The repository should improve over time, but improvement must not drift away from the mission. Self-evolution applies at two levels:
+The repository should improve over time, but improvement must not drift away from the mission: multi-decade asymmetric compounding with outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin. Self-evolution applies at two levels:
 
 - research self-evolution: better candidates, better watchlist priorities, better thesis and valuation updates;
 - meta-self-improvement: better ways to discover, research, score, decide, validate, visualize, document, and clean up.
@@ -810,6 +868,7 @@ The repository should improve over time, but improvement must not drift away fro
 Self-evolution has two equal duties:
 
 - improve the system's ability to make fresh, critical, long-horizon allocation decisions;
+- improve the system's ability to notice new discovery lanes before the current watchlist becomes stale;
 - reduce accumulated noise so future agents can find the signal faster.
 
 Meta-self-improvement is a disciplined learning loop, not open-ended refactoring. Use it when the work exposes a durable process defect, such as a missed candidate class, stale source family, weak filing workflow, noisy dashboard surface, ambiguous scoring label, repeated manual step, validation gap, or decision-quality failure.
@@ -831,6 +890,7 @@ Allowed self-improvements:
 - stricter freshness checks;
 - clearer scoring definitions;
 - better candidate universe filters;
+- better discovery-lane maps and lane-review triggers;
 - better decision and audit formatting;
 - new tools that make the process more reliable;
 - clearer dashboard interactions and visualizations;
@@ -845,6 +905,7 @@ Forbidden self-improvements:
 - deleting or rewriting audit history;
 - hidden local state;
 - weakening the long-term asymmetric objective;
+- making the process look systematic while narrowing search away from future asymmetric lanes;
 - adding leverage, options, margin, shorts, crypto tokens, private shares, or OTC securities without explicit user approval.
 
 Policy changes use [templates/policy-change-proposal.md](templates/policy-change-proposal.md). Approved changes create a new file in `data/policy/` and decisions after that point cite the new version.
@@ -857,7 +918,7 @@ Operational loop:
 
 1. Observe what became slow, confusing, stale, duplicated, visually noisy, or error-prone during the current interaction.
 2. Decide whether the lesson is durable. If it is one-off scratch work, do not encode it as process.
-3. Encode durable lessons into the narrowest durable artifact: `AGENTS.md` for agent rules, `SPEC.md` for system design, templates for repeated workflows, data files for source-of-truth records, and source code for product behavior.
+3. Encode durable lessons into the narrowest durable artifact: `AGENTS.md` for agent rules, `SPEC.md` for system design, templates for repeated workflows, `research/discovery/lanes.yml` for lane-map changes, data files for source-of-truth records, and source code for product behavior.
 4. Clean the repository after the improvement. Remove obsolete scratch files, unused demo assumptions, dead UI states, stale generated artifacts, duplicate notes, and sources that no longer support active research.
 5. Preserve audit history. Confirmed ledger events, policy versions, dated decisions, and past research baselines must remain reconstructable. If they are no longer current, mark them as historical, archived, superseded, or stale rather than presenting them as active evidence.
 6. Verify that the public dashboard, decision workflow, and data model still use clear provenance boundaries between confirmed facts, current market facts, historical evidence, demo fixtures, and analysis.

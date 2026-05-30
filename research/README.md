@@ -4,11 +4,12 @@ This directory stores durable research memory.
 
 Use it to avoid repeating low-value searches, but never treat it as fresh market truth. Every monthly decision must refresh current prices, company disclosures, regulatory updates, and material news.
 
-The research process is a funnel. It should scan broadly and cheaply, filter by mission-relevant themes, reject weak fits quickly, and reserve deep filing work for a small active set that could affect allocation.
+The research process is a funnel serving the root mission: multi-decade asymmetric compounding with outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin. It should scan broadly and cheaply, filter by mission-relevant discovery lanes, reject weak fits quickly, and reserve deep filing work for a small active set that could affect allocation.
 
 Files:
 
 - `watchlist.csv`: current candidate universe and monitoring status.
+- `discovery/lanes.yml`: structural bottleneck lane map used to search beyond the current watchlist.
 - `discovery/candidates.csv`: potential new public candidates found by universe scans before they deserve watchlist promotion.
 - `freshness/events.csv`: dated filing, IR, regulatory, contract, financing, dilution, price, and thesis-trigger events that require review.
 - `valuation-states.csv`: latest valuation and entry-attractiveness state for researched symbols.
