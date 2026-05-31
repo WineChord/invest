@@ -6,10 +6,14 @@
     "dev": "astro dev --host 127.0.0.1",
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1",
+    "build:evidence-packet": "node scripts/build-subagent-evidence-packet.mjs",
     "check:data": "node scripts/check-data.mjs",
+    "test:discovery-gates": "node scripts/test-discovery-readiness-gates.mjs",
+    "test:promotion-gates": "node scripts/test-promotion-gates.mjs",
+    "test:watchlist-cycle-gates": "node scripts/test-watchlist-cycle-gates.mjs",
     "discover:universe": "node scripts/discover-universe.mjs",
     "refresh:market": "node scripts/refresh-market-data.mjs",
-    "verify": "npm run check:data && npm run build"
+    "verify": "npm run check:data && npm run test:discovery-gates && npm run test:promotion-gates && npm run test:watchlist-cycle-gates && npm run build"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.5",

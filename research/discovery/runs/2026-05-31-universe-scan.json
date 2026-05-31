@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T02:38:38.225Z",
+  "as_of": "2026-05-31",
+  "discovery_scope": "active_emerging_incubating",
+  "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+  "deterministic_limit": 20,
+  "known_symbol_count": 23,
+  "lanes_scanned": [
+    {
+      "id": "space_infrastructure",
+      "name": "Space Infrastructure",
+      "status": "active"
+    },
+    {
+      "id": "direct_to_device_connectivity",
+      "name": "Direct-To-Device Connectivity",
+      "status": "active"
+    },
+    {
+      "id": "ai_compute_infrastructure",
+      "name": "AI Compute Infrastructure",
+      "status": "active"
+    },
+    {
+      "id": "ai_power_and_cooling",
+      "name": "AI Data-Center Power And Cooling",
+      "status": "active"
+    },
+    {
+      "id": "semiconductor_interconnect_and_memory",
+      "name": "Semiconductor Interconnect And Memory",
+      "status": "active"
+    },
+    {
+      "id": "advanced_nuclear_and_grid_constraints",
+      "name": "Advanced Nuclear And Grid Constraints",
+      "status": "active"
+    },
+    {
+      "id": "quantum_computing_and_networking",
+      "name": "Quantum Computing And Networking",
+      "status": "active"
+    },
+    {
+      "id": "programmable_money_infrastructure",
+      "name": "Programmable Money Infrastructure",
+      "status": "active"
+    },
+    {
+      "id": "frontier_ai_public_platforms",
+      "name": "Future Public Frontier AI Platforms",
+      "status": "active"
+    },
+    {
+      "id": "unknown_future_bottlenecks",
+      "name": "Unknown Future Bottlenecks",
+      "status": "emerging"
+    }
+  ],
+  "candidate_count": 20,
+  "candidates": [
+    {
+      "symbol": "FNUC",
+      "name": "Frontier Nuclear & Minerals Inc.",
+      "exchange": "Nasdaq",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "matched_keywords": [
+        "nuclear"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "JAGU",
+      "name": "Jaguar Uranium Corp.",
+      "exchange": "NYSE",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "matched_keywords": [
+        "uranium"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "NNE",
+      "name": "Nano Nuclear Energy Inc.",
+      "exchange": "Nasdaq",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "matched_keywords": [
+        "nuclear"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "NUCL",
+      "name": "Eagle Nuclear Energy Corp.",
+      "exchange": "Nasdaq",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "matched_keywords": [
+        "nuclear"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "UEC",
+      "name": "URANIUM ENERGY CORP",
+      "exchange": "NYSE",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "matched_keywords": [
+        "uranium"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "UROY",
+      "name": "Uranium Royalty Corp.",
+      "exchange": "Nasdaq",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "matched_keywords": [
+        "uranium"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "AGPU",
+      "name": "Axe Compute Inc.",
+      "exchange": "Nasdaq",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "matched_keywords": [
+        "GPU",
+        "compute"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "ALP",
+      "name": "Alpha Compute Corp",
+      "exchange": "Nasdaq",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "matched_keywords": [
+        "compute"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "GPUS",
+      "name": "Hyperscale Data, Inc.",
+      "exchange": "NYSE",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "matched_keywords": [
+        "GPU"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "SMCI",
+      "name": "Super Micro Computer, Inc.",
+      "exchange": "Nasdaq",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "matched_keywords": [
+        "compute"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "GDYN",
+      "name": "GRID DYNAMICS HOLDINGS, INC.",
+      "exchange": "Nasdaq",
+      "lane_id": "ai_power_and_cooling",
+      "lane_name": "AI Data-Center Power And Cooling",
+      "matched_keywords": [
+        "grid"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "GRDX",
+      "name": "GridAI Technologies Corp.",
+      "exchange": "Nasdaq",
+      "lane_id": "ai_power_and_cooling",
+      "lane_name": "AI Data-Center Power And Cooling",
+      "matched_keywords": [
+        "grid"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "NGG",
+      "name": "NATIONAL GRID PLC",
+      "exchange": "NYSE",
+      "lane_id": "ai_power_and_cooling",
+      "lane_name": "AI Data-Center Power And Cooling",
+      "matched_keywords": [
+        "grid"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "NBXG",
+      "name": "Neuberger Next Generation Connectivity Fund Inc.",
+      "exchange": "NYSE",
+      "lane_id": "direct_to_device_connectivity",
+      "lane_name": "Direct-To-Device Connectivity",
+      "matched_keywords": [
+        "connectivity"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "SPB",
+      "name": "Spectrum Brands Holdings, Inc.",
+      "exchange": "NYSE",
+      "lane_id": "direct_to_device_connectivity",
+      "lane_name": "Direct-To-Device Connectivity",
+      "matched_keywords": [
+        "spectrum"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "TEL",
+      "name": "TE Connectivity plc",
+      "exchange": "NYSE",
+      "lane_id": "direct_to_device_connectivity",
+      "lane_name": "Direct-To-Device Connectivity",
+      "matched_keywords": [
+        "connectivity"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "AIO",
+      "name": "Virtus Artificial Intelligence & Technology Opportunities Fund",
+      "exchange": "NYSE",
+      "lane_id": "frontier_ai_public_platforms",
+      "lane_name": "Future Public Frontier AI Platforms",
+      "matched_keywords": [
+        "artificial intelligence"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "SDEV",
+      "name": "Stablecoin Development Corp",
+      "exchange": "NYSE",
+      "lane_id": "programmable_money_infrastructure",
+      "lane_name": "Programmable Money Infrastructure",
+      "matched_keywords": [
+        "stablecoin"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "ARQQ",
+      "name": "Arqit Quantum Inc.",
+      "exchange": "Nasdaq",
+      "lane_id": "quantum_computing_and_networking",
+      "lane_name": "Quantum Computing And Networking",
+      "matched_keywords": [
+        "quantum"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "HQ",
+      "name": "Horizon Quantum Holdings Ltd.",
+      "exchange": "Nasdaq",
+      "lane_id": "quantum_computing_and_networking",
+      "lane_name": "Quantum Computing And Networking",
+      "matched_keywords": [
+        "quantum"
+      ],
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    }
+  ],
+  "caveats": [
+    "Deterministic keyword matches are raw leads, not recommendations.",
+    "This scan checks SEC listed issuer reference names and symbols only.",
+    "Serious discovery still requires independent agentic bottleneck research and source-backed readiness work."
+  ]
+}

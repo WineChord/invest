@@ -204,6 +204,7 @@ as_of:
 last_research_engine_run:
 decision_readiness:
 coverage:
+discovery_process:
 freshness:
 quality_gates:
 notes:
@@ -252,6 +253,37 @@ source_published_at,retrieved_at,first_seen_at,theme,why_it_might_matter,
 status,next_action,notes
 ```
 
+`research/discovery/candidate-readiness.yml` records machine-checkable readiness state for raw discovery candidates that remain open. It separates unfinished repository work from genuine external blockers and makes candidate readiness visible to `research/quality-metrics.yml`.
+
+Each record includes:
+
+```yaml
+symbol:
+material_to_current_allocation:
+affected_lanes:
+materiality_reason:
+blocking_scope:
+readiness_status:
+dashboard_surface_status:
+readiness_path:
+blocker_type:
+blocker_reason:
+reachable_evidence_remaining:
+last_readiness_reviewed_at:
+next_action:
+conclusion:
+```
+
+`readiness_status` values are `completed`, `incubated_after_review`, `rejected_after_review`, `archived_after_review`, `not_material_current_allocation`, `external_blocked`, and `not_tradable` in a committed ready state. `not_started` and `in_progress` are scratch-only and must not pass validation. `dashboard_surface_status` values are `complete`, `not_required_rejected`, `not_required_archived`, `not_required_not_material`, `not_required_external`, and `not_required_not_tradable`.
+
+Completed readiness sprint notes are stored under `research/discovery/readiness/` using [templates/discovery-readiness-sprint.md](templates/discovery-readiness-sprint.md). Material agentic discovery runs are stored under `research/discovery/runs/` using [templates/agentic-discovery-run.md](templates/agentic-discovery-run.md). These artifacts are not raw subagent transcripts; they are concise audit records that prove the discovery process answered the first-layer bottleneck questions, searched broad current sources, reconciled subagent conflicts, and classified candidate readiness.
+
+For material candidates, `affected_lanes`, `materiality_reason`, and `blocking_scope` are required so the repository cannot hide a same-lane opportunity-cost issue by merely setting `material_to_current_allocation` incorrectly. The field name is intentionally conservative and should be read as material to the current powered-on research or decision cycle: allocation, opportunity cost, lane completeness, and watchlist priority all count. For complete agentic discovery runs, source coverage must be structured by source family, including primary filings or regulatory sources, issuer material, market data, and current-world context.
+
+`research/quality-metrics.yml` records `discovery_process.allocation_relevant_lanes` for a live or historical decision cycle. The validation layer treats open raw candidates in those lanes as material by default unless their readiness record explicitly classifies them as `not_material_current_allocation` with evidence.
+
+When a material candidate is completed or incubated rather than rejected, it must receive a dashboard-facing research surface before the repository can be considered ready. At minimum that means a `research/watchlist.csv` row, security metadata, price history, latest price snapshot, technical snapshot, company metrics when available, valuation state, reviewed freshness or filing records, a `research/company-analysis.yml` entry, and the generated per-symbol research page. The status can be `research_only`; this is not a buy promotion, it is the minimum surface needed to compare a new candidate fairly with existing research names. The readiness record must set `dashboard_surface_status: complete`; rejected, not-material, external-blocked, and not-tradable records use the matching `not_required_*` status.
+
 `research/freshness/events.csv` records dated events that require review, including filings, earnings releases, guidance, contracts, financing, dilution, regulatory decisions, price dislocations, leadership changes, and thesis-breaking evidence.
 
 Required columns:
@@ -297,11 +329,21 @@ next_check:
 source_path:
 ```
 
+`research/promotion/` stores promotion reviews created from [templates/promotion-review.md](templates/promotion-review.md). A promotion review is required when a symbol moves into `active_candidate`, `active_core_candidate`, or current buy-zone consideration from a lower status, or when a candidate is demoted from those states because fresh evidence changed the ranking.
+
+Promotion reviews are the bridge between discovery readiness and allocation. They must record the trigger, source IDs, retrieval window, mission/evidence/entry/survival/opportunity-cost gates, required xhigh reviewer conclusions, conflicts, final status, buy-zone status, kill criteria, and durable updates. They are not order tickets and must not update broker-confirmed account records.
+
+`research/watchlist-cycle-reviews.csv` records the lightweight per-cycle stale-prevention review for every non-removed `research/watchlist.csv` row. Every full operating cycle and monthly decision must add or refresh a current row for each non-removed symbol, even when the result is `no_change`. The row records status and priority before and after, thesis delta, entry delta, priority delta, status delta, buy-zone delta, action required, next review trigger, source IDs, and reviewer roles. This file proves that the whole watchlist was re-evaluated; promotion reviews remain selective and run only when the cycle review or a fast-path event could change active/core status, allocation ranking, or buy-zone eligibility.
+
+`research/watchlist-transitions.csv` is the machine-checkable index for status and priority changes. Every current `active_candidate` and `active_core_candidate` must have a latest transition record whose `to_status` and `to_priority` match `research/watchlist.csv`, whose source paths exist, whose required xhigh roles are recorded, and whose unresolved conflicts are zero.
+
+`research/buy-zones.csv` records symbol-level current buy-zone state. Active and core candidates must have a current-cycle row, but only `buy_zone_status: in_buy_zone` can support a current proposed buy. `active_core_candidate` is a research ranking, not an automatic order instruction.
+
 Entries are append-only by default and shown newest-first on the dashboard. If an analysis becomes stale or superseded, add a later entry that says so instead of rewriting the historical record.
 
 ## Research Engine
 
-The repository must evolve from a static watchlist into a self-evolving research engine. The engine has seven loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, monthly allocation, and meta-self-improvement. Each loop is subordinate to the same root objective: multi-decade asymmetric compounding with avoidable-ruin controls.
+The repository must evolve from a static watchlist into a self-evolving research engine. The engine has eight loops: universe discovery, freshness monitoring, filing review, valuation and entry scoring, full watchlist-cycle review, selective promotion/reprioritization, monthly allocation, and meta-self-improvement. Each loop is subordinate to the same root objective: multi-decade asymmetric compounding with avoidable-ruin controls.
 
 The watchlist is not the goal. It is a temporary working set for the mission. The bottleneck map comes first, the watchlist comes second, and individual stock research comes third. The system must be willing to promote, demote, freeze, remove, or incubate names as evidence, prices, technologies, industries, and opportunity costs change over months and years.
 
@@ -317,10 +359,11 @@ Implementation target:
 
 - Use code for repeatable collection, validation, and stale-state detection.
 - Use `npm run discover:universe -- --dry-run` as a deterministic first-pass lane keyword scan. It can suggest raw candidates from public issuer data, but it is not research judgment and it does not create buy eligibility.
+- Treat deterministic discovery as scaffolding, not the whole search. Serious discovery must also use independent fresh-context xhigh subagents for broad current-world source search, first-principles bottleneck reasoning, mandatory first-layer bottleneck-question review, newly public issuer discovery, and challenge review of stale lanes or missed candidates.
 - Use research templates for judgment-heavy work.
 - Use advisory xhigh subagents for independent judgment-heavy review during material decisions, full-cycle runs, major discovery changes, material filing events, watchlist reprioritization, and substantial process changes when the tools are available.
 - Use committed files as the durable interface between automation, agent analysis, dashboard display, and future decisions.
-- Track the health of the research process itself in `research/quality-metrics.yml`, so the system can say when it is not ready to make a buy recommendation.
+- Track the health of the research process itself in `research/quality-metrics.yml`, so the system can prove when repository and public-observable evidence is ready to support a decision.
 - Track discovery-lane health in `research/discovery/lanes.yml` and `research/quality-metrics.yml`, so the system does not confuse the current watchlist with the full opportunity set.
 - Track thesis, entry, priority, opportunity-cost, and theme deltas so the repository can notice when a former secondary idea becomes a better candidate, or when a new industry makes the current opportunity set stale.
 
@@ -330,18 +373,22 @@ Advisory subagent model:
 - The main agent owns account-state reconstruction, source retrieval, deterministic commands, durable file edits, validation, commits, pushes, and the final proposed decision.
 - For monthly decisions with any buy, add, sell, trim, SGOV sale, or cash-deployment possibility, use xhigh bull-case, bear-case, allocation/risk, and freshness/evidence review when available.
 - For full operating cycles that change research readiness, discovery lanes, raw candidates, watchlist priority, valuation state, or filing-readiness conclusions, use xhigh discovery/freshness/research-quality review when available.
+- Discovery subagents should usually run from independent fresh context with a bounded evidence packet. They should search current public sources, answer the first-layer bottleneck questions before naming stocks, and identify candidates, bottlenecks, and disconfirming evidence that deterministic scripts or the current watchlist may miss.
 - For material filings, financing, dilution, liquidity, customer-loss, auditor, governance, or thesis-breaking events, use an xhigh filing or evidence reviewer and an xhigh bear-case reviewer when available.
 - Subagents should receive the same dated evidence packet, including source publication dates, retrieval dates, validity windows, confirmed broker facts, policy constraints, open freshness events, valuation states, deterministic outputs, and the specific question they are answering.
+- Use `npm run build:evidence-packet -- --as-of YYYY-MM-DD --output research/discovery/runs/YYYY-MM-DD-subagent-evidence-packet.yml` to generate the bounded packet when practical, then reference it from `research/quality-metrics.yml`.
 - Subagent outputs must separate facts, inferences, missing evidence, disconfirming evidence, policy blockers, and recommendation impact.
 - Subagent agreement is not proof. If material reviews conflict, the main agent must resolve the conflict from primary evidence. If it cannot, the decision defaults to no trade, hold cash, or the approved liquidity reserve.
 - Raw subagent transcripts are not durable research records by default. Commit only the final synthesis or concise process notes when the reviews create durable conclusions or workflow changes.
+- Material discovery runs must leave a structured run artifact in `research/discovery/runs/`; otherwise a future agent cannot prove that broad source search, first-layer reasoning, independent xhigh coverage, conflict resolution, and candidate readiness work happened.
 
 Readiness semantics:
 
-- `decision_readiness.status: ready` means the repository can support a live monthly allocation recommendation after fresh prices and broker cash are checked in the current decision cycle.
-- `decision_readiness.status: not_ready` means the system must refresh missing research evidence or recommend holding cash.
-- Header-only discovery, freshness, and valuation files are acceptable as an initial scaffold only when `decision_readiness.status` is explicitly `not_ready`.
-- Validation must reject `ready` status when active symbols lack current valuation state, latest material filing review coverage, or unresolved critical events.
+- `decision_readiness.status: ready` means the repository-public research state can support the triggered allocation or research decision from repository records and public-observable evidence.
+- `decision_readiness.scope` must be `repository_and_public_observable_information`. User-only broker cash, buying power, order-preview details, fractional-share support, and final execution instructions are execution prerequisites, not reasons to mark the repository not ready.
+- The durable current state must not remain `not_ready`. If a run reveals missing research evidence, stale coverage, unresolved candidate readiness, unresolved subagent conflict, or other repository-reachable work, the agent must keep iterating until the evidence is gathered, the issue is marked immaterial from evidence, the candidate is rejected or incubated from evidence, or the blocker is genuinely external.
+- Header-only discovery, freshness, and valuation files are acceptable only as early scaffolding before the repository is operational. They are not acceptable for a passing current `research/quality-metrics.yml`.
+- Validation must reject the current state when active symbols lack current valuation state, latest material filing review coverage, unresolved critical events, unresolved subagent conflicts, a material open raw candidate without a readiness sprint, a material incubating candidate without dashboard-facing research coverage, a material open raw candidate whose blocker is unfinished repository work rather than analyzed evidence, or a `decision_readiness.status` other than `ready`.
 
 Operating-cycle trigger model:
 
@@ -349,11 +396,11 @@ Operating-cycle trigger model:
 - A user request to "run everything", "execute the full workflow", "refresh the whole repo", "full monthly cycle", "全量执行", or equivalent language is a full-cycle trigger. It must execute every applicable repository workflow in the safest useful order, including research, data refresh, validation, dashboard checks when relevant, cleanup, and durable commits when state changes.
 - The operating cycle is the bridge between this specification and agent behavior. It prevents the system from answering from stale watchlist memory when the real objective is to keep finding the best current public opportunities for the mission.
 - The operating cycle must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
-- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, review the discovery lane map, explicitly ask whether a new lane appeared, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run watchlist reprioritization, and run repository hygiene cleanup before finishing. The cycle must never skip bottleneck-map review merely because the current watchlist already has plausible candidates.
-- Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, meta-self-improvement, and commit/push when changes are coherent.
-- Material full-cycle and decision runs should use the advisory subagent model after deterministic refresh has produced an auditable evidence packet. Do not use subagents to compensate for missing primary evidence.
+- At minimum, a decision cycle must refresh deterministic market data when tooling is available, determine the freshness window, review the discovery lane map, explicitly ask whether a new lane appeared, scan discovery candidates and mission-relevant new public names, check new SEC and IR evidence, review open freshness events, identify stale valuation states and theses, update or cite research quality metrics, run a current watchlist-cycle review for every non-removed watchlist symbol, selectively run promotion/reprioritization where evidence warrants it, and run repository hygiene cleanup before finishing. The cycle must never skip bottleneck-map review merely because the current watchlist already has plausible candidates.
+- Full-cycle execution should cover all applicable repository capabilities: account-state reconstruction, market-data refresh, universe discovery, freshness monitoring, filing review, valuation and entry scoring, full watchlist-cycle review, selective watchlist reprioritization, AI-cycle or market-regime review when relevant, monthly allocation, equity-curve refresh when confirmed state exists, dashboard/data verification, source/register updates, research cleanup, meta-self-improvement, and commit/push when changes are coherent.
+- Material full-cycle and decision runs should use the advisory subagent model after deterministic refresh has produced an auditable evidence packet. Subagents may help find, retrieve, and interpret missing primary evidence, but their reasoning is not a substitute for actually recording source-backed evidence, source dates, retrieval dates, and uncertainty.
 - The cycle may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
-- If any applicable workflow cannot be completed, the decision must say exactly which discovery, filing, market-data, validation, dashboard, cleanup, or quality-gate checks are missing and default to no trade, hold cash, or the approved liquidity reserve unless the missing item is explicitly reviewed or marked immaterial.
+- If any applicable workflow cannot be completed, the agent must first make a reasonable best effort to complete it when the missing evidence is publicly reachable or available through repository tooling. The agent should not return to the user with the repository in a not-ready research state; it must either resolve the gap into ready evidence, an evidence-based reject/incubate/no-buy conclusion, an immaterial classification, or a genuine external blocker. User-only broker facts remain execution prerequisites and do not make the repository-public research state not ready.
 - Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery lane changes, discovery candidate changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, unavailable evidence, and validity window.
 
 Research funnel ruling:
@@ -363,6 +410,27 @@ Research funnel ruling:
 - Spend deep research only after a company passes a mission-shaped funnel: eligible instrument, relevant bottleneck theme, direct or high-quality exposure to the bottleneck, plausible multi-decade upside, sufficient public evidence, survivable balance sheet, and an entry setup that is not already fully priced for perfection.
 - The correct posture is a funnel, not a map of the whole market: scan thousands cheaply, triage hundreds quickly, track dozens lightly, deeply understand a small active set, and allocate only to the few that pass mission, evidence, and entry gates.
 - The system should prefer missing a marginal idea over filling the repository with low-conviction notes. Extreme compounding requires a small number of exceptional decisions, not superficial coverage of everything.
+
+First-layer bottleneck-question review:
+
+- Before producing ticker lists, serious discovery must answer the following questions using fresh source-backed research and independent high-reasoning review:
+  - What could become scarce or strategically constrained over the next decade?
+  - Who controls, owns, enables, or can remove that scarcity?
+  - Who can convert the scarcity into pricing power, reinvestment paths, and shareholder value?
+  - Is there a public security that directly expresses that exposure under the current policy?
+  - Is the public company early, small, misunderstood, newly listed, awkward, or underfollowed enough to support extreme asymmetric upside?
+- Each answer should separate facts, inference, uncertainty, disconfirming evidence, and investment implication.
+- If the answers identify a new or changed bottleneck, update or propose an update to `research/discovery/lanes.yml`.
+- If the answers identify public securities, route them through raw-candidate triage and the discovery readiness sprint before they influence allocation.
+
+Discovery readiness sprint:
+
+- Naming a plausible candidate is not enough. When a new candidate could affect allocation, opportunity cost, lane completeness, or watchlist priority, the system must try to make it research-ready during the powered-on cycle.
+- Research-ready means the repository has, when available, security metadata, market data, SEC CIK, current price history, primary filings or issuer reports, source-backed industry context, filing review for material reports, valuation and entry state, same-lane peer comparison, risk and dilution analysis, dashboard-facing research coverage for material completed or incubated public stocks, and a durable classify/promote/incubate/reject decision.
+- The sprint must update `research/discovery/candidate-readiness.yml`; material candidates should link a sprint note under `research/discovery/readiness/`.
+- Materiality must be explicit: the readiness record should name affected lanes, explain why the candidate could affect allocation or opportunity cost, and state the blocking scope. If the candidate is same-lane with a proposed allocation, the default is material until evidence supports incubating, rejecting, archiving, not-tradable status, or non-material classification.
+- An incubated material candidate must be visible, not buried. If it remains relevant enough to current allocation or lane completeness to keep incubating, route it into the research-only dashboard universe and hydrate the same supporting data files used by other public stocks. If it does not deserve that treatment, reject it, archive it, or mark it not material with evidence.
+- Do not leave a candidate unbuyable merely because the repository has not yet gathered evidence it can reasonably gather. "Not buy-ready" is acceptable only after the reachable evidence has been exhausted or the remaining blocker is a user-only broker fact, unavailable source, legal access limit, market closure, missing quote, not-tradable status, or an evidence-based failure of the mission, evidence, entry, risk, or policy gates.
 
 ### Self-Evolution Loop
 
@@ -384,6 +452,14 @@ Required checks:
 - Theme delta: decide whether a new technology platform, industry bottleneck, regulation, supply-chain constraint, or market structure change deserves a new discovery lane.
 - Lane delta: decide whether each active or emerging lane still helps the mission, should be promoted, split, merged, demoted, retired, or expanded because a new bottleneck appeared.
 
+Full watchlist-cycle review:
+
+- Cover every non-removed row in `research/watchlist.csv` during each full operating cycle and monthly decision, including `research_only`, `watch`, `active_candidate`, `active_core_candidate`, `probation`, `frozen`, and `not_tradable`.
+- Save one current row per symbol in `research/watchlist-cycle-reviews.csv` with `reviewed_at` equal to the current cycle date.
+- Treat `no_change` as an active conclusion, not as skipped work. It must cite current sources and restate the next review trigger.
+- Escalate to a promotion review only when the cycle review or a fast-path event could change status, priority, active/core ranking, allocation ranking, or buy-zone eligibility.
+- The repository is not ready for a monthly decision or full-cycle completion if any non-removed symbol lacks a current cycle review, if an active/core buy-zone row is stale, or if `research/quality-metrics.yml` reports stale active theses, stale valuation states, open high/critical events, or unresolved watchlist-review conflicts.
+
 Priority-change triggers:
 
 - Promote when fresh evidence strengthens the thesis, removes a key risk, confirms operating leverage, extends runway, improves customer or regulatory proof, or when price dislocates without thesis damage.
@@ -394,7 +470,9 @@ Priority-change triggers:
 
 Durable outputs:
 
+- Update `research/watchlist-cycle-reviews.csv` for every non-removed watchlist symbol during every monthly decision and full operating cycle.
 - Update `research/watchlist.csv` priority, status, next review trigger, and notes when priority changes.
+- Update `research/watchlist-transitions.csv` and `research/buy-zones.csv` when active/core status or current buy-zone eligibility changes.
 - Update `research/discovery/lanes.yml` when the lane map changes or when the `unknown_future_bottlenecks` review identifies a concrete new lane.
 - Update `research/valuation-states.csv` when entry attractiveness changes materially.
 - Update `research/freshness/events.csv` when a priority change depends on a material event.
@@ -497,7 +575,7 @@ Watchlist status taxonomy:
 - `frozen`: no new buying due to unresolved evidence, policy, liquidity, or operational issue.
 - `removed`: no longer part of the active research universe, retained only for audit history.
 
-The active decision universe is `active_core_candidate`, `active_candidate`, and `watch`. `research_only`, `not_tradable`, `probation`, `frozen`, and `removed` are excluded from buy recommendations unless a decision explicitly promotes them with fresh evidence.
+The comparison universe is `active_core_candidate`, `active_candidate`, and `watch`. The buy-eligible universe is narrower: only `active_core_candidate` and `active_candidate` rows with a current `research/buy-zones.csv` row may receive proposed orders, and only `in_buy_zone` symbols may receive current buy recommendations. `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, and `removed` are excluded from buy recommendations unless a decision explicitly promotes them with fresh evidence, records the transition, and updates buy-zone status.
 
 ### Freshness Monitor Loop
 
@@ -583,6 +661,8 @@ Research engine health metrics:
 
 - `universe_scan_as_of`: latest date the public issuer universe was checked.
 - `discovery_lane_map_as_of`: latest date the discovery lane map was reviewed.
+- `watchlist_symbols`: non-removed watchlist rows that require a current cycle review.
+- `watchlist_symbols_with_current_cycle_review` and `watchlist_symbols_missing_current_cycle_review`: proof that each non-removed watchlist symbol was reviewed during the current quality-metrics date.
 - `active_discovery_lanes` and `emerging_discovery_lanes`: current lane-map breadth, used to catch accidental lane-map drift.
 - `active_symbols_with_current_valuation_state`: active watchlist or holding symbols with a non-stale valuation state.
 - `active_symbols_with_latest_filing_review`: active symbols whose latest material filing has been reviewed or marked immaterial.
@@ -745,20 +825,21 @@ Bubble risk dimensions:
 5. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest monthly contribution when a stronger opportunity justifies broader deployment.
 6. Retrieve fresh prices for current holdings, active candidates, and any newly promoted or decision-relevant discovery candidate.
 7. Retrieve fresh primary evidence for each active candidate and any newly decision-relevant candidate.
-8. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
-9. Check `research/quality-metrics.yml` and resolve or explicitly disclose open critical events, missing filing reviews, stale valuation states, stale theses, and any incomplete operating-cycle item.
-10. Run xhigh advisory subagents when available. For any decision that could deploy cash, sell a reserve, add, trim, exit, or hold despite available deployable liquidity, use at least freshness/evidence, bull-case, bear-case, and allocation/risk reviewers.
-11. Update the watchlist status mentally for the current decision using the watchlist status taxonomy: `active_core_candidate`, `active_candidate`, `watch`, `research_only`, `not_tradable`, `probation`, `frozen`, or `removed`.
-12. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
-13. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
-14. Reconcile subagent findings explicitly. Bear-case blockers and critical missing evidence must be answered before buy/add recommendations. Unresolved material conflicts default to no trade, hold cash, or the approved liquidity reserve.
-15. Decide one of: buy new position, add to existing position, park idle cash in the approved liquidity reserve, hold cash, do nothing, trim, or exit.
-16. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
-17. State the operating-cycle result and validity window. If price moves materially, market closes, new company-specific information appears, or the operating-cycle evidence becomes stale, recompute.
-18. Save the proposed decision in `decisions/` if the user asks to persist it.
-19. Do not update `data/account/ledger.csv` until execution is confirmed.
-20. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
-21. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
+8. Run discovery readiness sprints for plausible new candidates that could affect allocation, opportunity cost, lane completeness, or watchlist priority. Do the reachable public research before declaring the candidate not buy-ready because of missing repository data.
+9. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
+10. Check `research/quality-metrics.yml` and resolve open critical events, missing filing reviews, stale valuation states, stale theses, and any incomplete operating-cycle item. Explicit disclosure is not enough when the missing evidence can be gathered during the cycle.
+11. Run xhigh advisory subagents when available. For any decision that could deploy cash, sell a reserve, add, trim, exit, or hold despite available deployable liquidity, use at least freshness/evidence, bull-case, bear-case, and allocation/risk reviewers.
+12. Update watchlist status durably when the evidence supports a change. Do not merely update status mentally when the change affects active/core standing, buy-zone eligibility, or allocation ranking; record the transition and buy-zone state.
+13. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
+14. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.
+15. Reconcile subagent findings explicitly. Bear-case blockers and critical missing evidence must be answered before buy/add recommendations. Unresolved material conflicts default to no trade, hold cash, or the approved liquidity reserve.
+16. Decide one of: buy new position, add to existing position, park idle cash in the approved liquidity reserve, hold cash, do nothing, trim, or exit.
+17. Convert allocation into exact proposed share counts using the latest price basis, estimated fees, and whole-share or fractional-share assumptions.
+18. State the operating-cycle result and validity window. If price moves materially, market closes, new company-specific information appears, or the operating-cycle evidence becomes stale, recompute.
+19. Save the proposed decision in `decisions/` if the user asks to persist it.
+20. Do not update `data/account/ledger.csv` until execution is confirmed.
+21. If the recommendation produces new durable market snapshots, source records, or performance observations, update the relevant research or market-data files without changing confirmed account records.
+22. If confirmed cash or positions exist, refresh the portfolio-level valuation snapshot using fresh prices and append or update `data/account/equity_curve.csv` for the decision date. Backfill missing month-end snapshots only from historical close data.
 
 ## Position Sizing Policy
 
@@ -829,6 +910,28 @@ Use letter tiers for readability:
 - `B`: watch candidate needing more evidence or a better entry setup.
 - `B-`: highly speculative option-like candidate.
 - `C+` or below: research-only unless evidence changes materially.
+
+Status ladder:
+
+- `research_only`: dashboard-visible but not buyable without a fresh promotion review.
+- `watch`: monitored and eligible to affect opportunity-cost comparison, but not automatically buyable.
+- `active_candidate`: a live allocation contender that has current evidence, current valuation state, reviewed material filings, and a plausible entry setup.
+- `active_core_candidate`: a top-tier candidate whose mission fit, direct bottleneck control, evidence quality, long-term upside, survival profile, and opportunity-cost ranking are strong enough to be compared with RKLB and ASTS.
+- `buy_zone`: not a watchlist status; it is the current decision-cycle conclusion that a symbol passes mission, evidence, entry, survival, opportunity-cost, and allocation/risk gates strongly enough to support a proposed order.
+
+Promotion triggers include thesis strengthening, material filing or event updates, price dislocations, valuation compression, balance-sheet improvement, customer or contract evidence, regulatory progress, lane reprioritization, core-candidate weakening, or a superior same-lane opportunity. The system should be agile: material events and severe price dislocations should trigger a fast-path promotion review during the current powered-on session or the next approved monitoring wakeup, not wait passively for a monthly cadence.
+
+Required promotion evidence:
+
+- primary-source freshness and material filing review;
+- source-backed bottleneck ownership and public-security expression;
+- valuation and entry state;
+- dilution, debt, runway, customer concentration, execution, regulatory, and governance risk review;
+- same-lane peer comparison and opportunity-cost ranking versus current core candidates, cash, and the approved liquidity reserve;
+- independent fresh-context xhigh evidence/freshness, valuation/entry, bull-case, bear-case, and opportunity-cost/allocation reviews when tooling is available;
+- explicit kill criteria, next review trigger, conditions to promote further, and conditions to demote.
+
+Do not promote merely because a symbol has been watched for a long time, and do not block promotion merely because a symbol is newly discovered. Fresh evidence controls status.
 
 ## Sell and Downgrade Policy
 
@@ -1091,6 +1194,8 @@ Local verification:
 ```bash
 npm run verify
 ```
+
+`npm run verify` includes data validation, discovery-readiness negative gate tests, and the static dashboard build.
 
 For visual changes, run the dev server and inspect the dashboard in desktop and mobile widths. Verify that the browser-only demo toggle and restore-real toggle work before committing.
 

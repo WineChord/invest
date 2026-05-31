@@ -32,11 +32,17 @@ Start with structural bottlenecks, not interesting stocks. Ask which scarce reso
 
 Stocks are outputs of the bottleneck review. A company deserves deeper research only when it may directly own, control, or monetize a bottleneck, and when primary evidence can separate a real beneficiary from a weak proxy.
 
+Deterministic screens and fixed keyword searches are only scaffolding. Serious discovery must also use fresh agentic research, broad current-world source gathering, and independent high-reasoning review to look for candidates and bottlenecks that fixed code, stale categories, or obvious keywords would miss.
+
+Discovery obligations are satisfied by source-backed, auditable evidence, not by a prose claim that a step ran. When discovery can affect allocation, the repository should preserve enough structured evidence to prove what was searched, what was found or rejected, what remains unresolved, and why.
+
 ## Article 5 — Watchlists Are Temporary
 
 The watchlist serves the mission. The mission does not serve the watchlist.
 
 A prior favorite can be demoted, frozen, removed, or ignored when evidence weakens, valuation outruns plausible upside, opportunity cost changes, or a better lane appears. A new company can enter only through evidence, not excitement.
+
+Every full operating cycle and monthly decision must actively re-review the current watchlist instead of inheriting stale priority or status. No change is allowed, but it must be a current, source-backed conclusion.
 
 ## Article 6 — Entry Matters
 
@@ -55,6 +61,12 @@ The latest monthly contribution is not a sizing cap. If a rare opportunity passe
 The opportunity set must evolve. Every serious research or decision cycle should ask whether theses strengthened, weakened, broke, became stale, became newly buyable, became less attractive, or were displaced by better opportunities.
 
 Discovery lanes are living hypotheses. Every full cycle must ask whether a new lane appeared, an existing lane became too broad, a lane should be split or merged, or a lane should be retired.
+
+When a plausible new public candidate appears, the system must make every reasonable effort to make it research-ready before treating missing evidence as a blocker. If filings, market data, source-backed industry context, valuation work, peer comparison, or risk analysis can be obtained through public sources and agent work, gather and analyze them. A candidate should be rejected or left unbuyable because the evidence, valuation, risk, or policy gate fails, not merely because the repository has not yet done work it is capable of doing.
+
+If a material candidate remains incubating rather than rejected, it must become visible as a research-only public stock with comparable source-backed evidence and dashboard-facing coverage. A hidden discovery-only candidate is not ready merely because it has been named.
+
+The repository should not be left in a not-ready research state when an agent is powered on. Readiness means repository and public-observable evidence readiness: all reachable repository work, current public sources, market data, filing review, discovery readiness, and validation needed for the triggered decision have been completed or converted into an evidence-based conclusion. Missing user-only broker facts, broker order-preview details, or final user execution instructions are execution prerequisites, not repository-readiness failures.
 
 ## Article 9 — Meta-Self-Evolution
 

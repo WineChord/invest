@@ -279,3 +279,75 @@ sources:
     first_seen_at: 2026-05-30
     related_symbols: [SPACEX]
     summary: SpaceX filed a preliminary IPO registration statement for Class A common stock, applied to list on Nasdaq and Nasdaq Texas under proposed symbol SPCX, and disclosed recast SpaceX, xAI, and X financials.
+  - id: fly_q1_2026_results
+    title: Firefly Aerospace First Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/0001860160/000186016026000008/fly-ex99_1.htm
+    source_published_at: 2026-05-04
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: Firefly Aerospace Q1 2026 results used as primary-source skim evidence for a raw space infrastructure candidate.
+  - id: fly_10q_q1_2026
+    title: Firefly Aerospace Form 10-Q for the quarter ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1860160/000186016026000009/fly-20260331.htm
+    source_published_at: 2026-05-04
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: Firefly Aerospace Q1 2026 quarterly filing used for revenue, loss, cash, debt, share count, customer, and risk review.
+  - id: fly_s1_offering_2026_05_26
+    title: Firefly Aerospace Form S-1 Offering Registration Statement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1860160/000119312526239249/d104612ds1.htm
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: Firefly Aerospace S-1 offering filing used to identify dilution and public-float review work before any watchlist promotion.
+  - id: fly_424b3_offering_2026_05_26
+    title: Firefly Aerospace Form 424B3 Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1860160/000119312526239406/d145409d424b3.htm
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: Firefly Aerospace prospectus supplement used with the S-1 to assess offering, float, and selling-holder risk before any future promotion.
+  - id: sec_fly_submissions_2026_05_31
+    title: Firefly Aerospace SEC Submissions Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/CIK0001860160.json
+    source_published_at: 2026-05-28
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: SEC submissions confirmed Firefly Aerospace Inc. as Nasdaq ticker FLY, CIK 0001860160, SIC 3760, with recent EFFECT, 424B3, S-1, Form 144, 10-Q, and 8-K filings relevant to tradability and dilution review.
+  - id: yahoo_chart_fly_2026_05_29
+    title: Yahoo Finance Chart FLY Daily Close Snapshot
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/FLY?range=5d&interval=1d
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: Daily chart data showed FLY on NasdaqGM, equity instrument type, 2026-05-29 close near USD 46.49, daily volume around 22.3 million shares, and a 52-week range of USD 16.00 to USD 73.80.
+  - id: sec_companyfacts_fly_2026_05_31
+    title: Firefly Aerospace SEC Companyfacts Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001860160.json
+    source_published_at: 2026-05-04
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: SEC companyfacts showed Q1 2026 revenue of USD 80.879 million, Q1 2026 net loss of USD 96.676 million, March 31 2026 cash and equivalents of USD 326.179 million, and 160.067 million common shares outstanding.
+  - id: defensescoop_golden_dome_sbi_2026_04_24
+    title: Space Force Names 12 Companies to Develop Golden Dome Space-Based Interceptors
+    source_type: industry_journalism
+    url: https://defensescoop.com/2026/04/24/golden-dome-space-based-interceptor-missile-defense-contractors/
+    source_published_at: 2026-04-24
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FLY]
+    summary: DefenseScoop reported that Space Force's acquisition arm named 12 companies for Golden Dome space-based interceptor prototypes, providing current-world context for Firefly's SciTec-related issuer material.

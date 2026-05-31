@@ -1,0 +1,18 @@
+schema_version: 1
+as_of: 2026-05-31
+records:
+  - symbol: FLY
+    material_to_current_allocation: true
+    affected_lanes:
+      - space_infrastructure
+    materiality_reason: FLY sits in the same space_infrastructure lane as the current RKLB and ASTS allocation comparison, so a live space-heavy buy recommendation needs at least first-pass readiness classification rather than ignoring the candidate.
+    blocking_scope: current_space_allocation
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-05-31-FLY-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Publicly reachable SEC, market data, filing-package, valuation, company-analysis, and dashboard-facing records were gathered. FLY is a direct same-lane space infrastructure candidate, but the evidence shows high implied valuation, material losses, cash-burn risk, dilution and selling-holder risk, recent offering filings, and a shorter public record than established lane candidates. It is therefore an incubating research-only candidate, not a current buy or promoted watchlist candidate.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-05-31
+    next_action: Monitor the next quarterly report, amended offering or selling-holder filing, major launch or contract update, or price dislocation before reconsidering promotion.
+    conclusion: Incubated after full dashboard-facing review; no longer a repository-work blocker for current allocation readiness, but not buy-ready or promoted.

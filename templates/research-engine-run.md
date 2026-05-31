@@ -37,21 +37,34 @@ Summarize new public candidates, rejected candidates, and candidates that need i
 
 ```yaml
 bottleneck_map_first_review:
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+  who_controls_or_removes_scarcity:
+  who_can_monetize_into_shareholder_value:
+  public_security_expression:
+  early_small_misunderstood_or_newly_public:
 themes_scanned:
 lane_map_as_of:
 new_lanes_considered:
 lanes_added_or_revised:
 unknown_future_bottlenecks_review:
 dry_run_candidate_scan:
+agentic_discovery_subagents:
+agentic_discovery_run_path:
+subagent_evidence_packet_path:
 universe_sources_checked:
 new_candidates_added:
 promoted_to_watchlist:
 rejected_or_archived:
 open_candidate_count:
 deep_dive_queue:
+readiness_sprints:
+candidate_readiness_index:
 ```
 
-Do not deep-research every symbol found in the scan. Explain which theme filters and quick rejection criteria were used before any company entered the deep-dive queue.
+Do not deep-research every symbol found in the scan. Explain which theme filters and quick rejection criteria were used before any company entered the deep-dive queue. Serious discovery must answer the first-layer bottleneck questions before ticker lists become important. For candidates that could affect allocation, opportunity cost, lane completeness, or watchlist priority, do not stop at a shallow raw-candidate label. Run a readiness sprint and gather public market data, security metadata, primary filings, issuer reports, industry context, material filing review, valuation state, same-lane peer comparison, and dashboard-facing research coverage when available before concluding that the candidate is not buy-ready.
+
+For material discovery, save a structured run artifact using [agentic-discovery-run.md](agentic-discovery-run.md). For material raw candidates, save or update [discovery-readiness-sprint.md](discovery-readiness-sprint.md) and `research/discovery/candidate-readiness.yml`.
 
 ## Self-Evolution And Priority
 
@@ -64,15 +77,24 @@ priority_delta:
 opportunity_cost_delta:
 theme_delta:
 lane_delta:
+watchlist_cycle_review_path:
+watchlist_symbols_reviewed:
+watchlist_symbols_missing_current_cycle_review:
 promoted_symbols:
 demoted_symbols:
 frozen_or_removed_symbols:
+promotion_reviews:
+fast_path_promotion_triggers:
+buy_zone_candidates:
+symbols_requiring_promotion_review_before_buy:
 new_discovery_lanes:
 retired_or_demoted_lanes:
 no_change_reason:
 ```
 
-Explain why the current priority order and discovery lane map still serve the mission, or why they changed. Do not preserve a prior favorite or prior lane map without fresh evidence.
+Explain why the current priority order and discovery lane map still serve the mission, or why they changed. Do not preserve a prior favorite or prior lane map without fresh evidence. During a full-cycle or monthly decision run, every non-removed `research/watchlist.csv` symbol must receive a current row in `research/watchlist-cycle-reviews.csv`, including symbols that remain unchanged.
+
+Use [promotion-review.md](promotion-review.md) before moving a symbol into `active_candidate`, `active_core_candidate`, or buy-zone consideration from a lower status. A promotion review should be full agentic when the change can affect allocation: build a bounded evidence packet, use independent fresh-context xhigh evidence/freshness, valuation/entry, bull-case, bear-case, and opportunity-cost/allocation reviewers, then reconcile conflicts in the main synthesis. Promotion is allowed to be fast when fresh evidence or price action is material; speed means running the review immediately, not skipping gates.
 
 ## Freshness Monitor
 
@@ -116,6 +138,8 @@ Do not save raw subagent transcripts by default. Persist only the reconciled con
 
 For each material filing, either link to a completed filing review or explain why the filing is immaterial to the current allocation decision.
 
+If a material filing is missing and can be retrieved from public sources, retrieve and review it during the run rather than leaving the candidate blocked by missing repository work.
+
 ## Valuation and Entry States
 
 For every active candidate and current holding, record whether the valuation state is current, stale, or updated in this run.
@@ -134,18 +158,29 @@ Update or cite `research/quality-metrics.yml`.
 
 ```yaml
 decision_readiness_status:
+decision_readiness_scope: repository_and_public_observable_information
 can_recommend_buys:
 decision_readiness_reason:
+user_only_execution_prerequisites:
 active_symbols_with_current_valuation_state:
 active_symbols_missing_valuation_state:
 active_symbols_with_latest_filing_review:
 active_symbols_missing_latest_filing_review:
+watchlist_symbols:
+watchlist_symbols_with_current_cycle_review:
+watchlist_symbols_missing_current_cycle_review:
 active_discovery_lanes:
 emerging_discovery_lanes:
 open_critical_events:
 open_high_events:
 stale_valuation_states_over_45_days:
 stale_theses_over_90_days:
+latest_discovery_run_path:
+latest_watchlist_cycle_review_path:
+open_candidates_without_readiness_sprint:
+material_open_candidates_blocking_allocation:
+unresolved_subagent_conflicts:
+unresolved_watchlist_review_conflicts:
 ```
 
 ## Meta-Self-Improvement
@@ -169,7 +204,11 @@ Use [meta-self-improvement.md](meta-self-improvement.md) for substantial methodo
 
 ## Allocation Readiness
 
-State whether the next monthly decision can proceed. If not, list the missing evidence that must be gathered before recommending buys.
+State whether the next monthly decision can proceed from repository and public-observable evidence. The current durable state should be `ready`; if it is not, continue the research run rather than ending with a missing-evidence list.
+
+Do not call a candidate or decision not ready merely because the repository has not yet gathered data that is publicly reachable during the run. Either gather it, mark it genuinely unavailable or user-only, or reject/incubate the candidate based on analyzed evidence.
+
+Do not leave the decision not ready when a material open candidate still has reachable repository work outstanding. That state should fail validation until `research/discovery/candidate-readiness.yml` and `research/quality-metrics.yml` are updated to a ready, evidence-based conclusion. If the conclusion is incubate rather than reject or not-material, the candidate also needs research-only dashboard visibility and the same supporting market, filing, valuation, and company-analysis surfaces as other public stocks.
 
 ## Repository Updates
 

@@ -491,3 +491,15 @@ entries:
     risk_watch: IPO valuation, dual-class control, capital intensity, xAI integration, debt, Starlink ARPU, launch reliability, regulatory approvals, and whether public shares are actually available through the user's broker.
     next_check: Registration effectiveness, amended price range, final prospectus, or first public trading under SPCX.
     source_path: research/2026-05-30-full-operating-cycle.md
+  - id: 2026-05-31-fly-discovery-readiness
+    symbol: FLY
+    analyzed_at: "2026-05-31"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: Firefly Aerospace is direct enough for the space infrastructure research universe, but current evidence keeps it research-only because valuation, losses, runway, dilution, selling-holder risk, and short public history are unresolved.
+    upside_path: Compound if launch cadence, spacecraft manufacturing, mission operations, and defense-space demand become durable bottlenecks that Firefly can convert into backlog, margin, and disciplined reinvestment.
+    risk_watch: Launch reliability, spacecraft execution, backlog quality, gross margin, cash runway, S-1 and 424B3 dilution, Form 144 selling pressure, lockup dynamics, and valuation.
+    next_check: Next quarterly report, amended offering or selling-holder filing, major launch or contract update, or price dislocation.
+    source_path: research/filings/2026-05-31-FLY-10Q-S1-000186016026000009.md

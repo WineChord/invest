@@ -1,16 +1,24 @@
 schema_version: 1
-as_of: 2026-05-30
+as_of: 2026-05-31
 last_research_engine_run:
-  as_of: 2026-05-30
+  as_of: 2026-05-31
   scope: monthly_decision_full_cycle
-  notes: Refreshed market data, checked SEC filings and future-watch listings, recorded the reviewed IREN Dell GPU purchase event and SpaceX S-1 event, and preserved account records unchanged.
+  notes: Re-ran market refresh and universe discovery in dry-run mode, checked current SEC submissions for active watchlist symbols, added FLY as an incubating research-only space infrastructure candidate with dashboard-facing coverage, and preserved account records unchanged.
 decision_readiness:
   status: ready
+  scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Active watchlist has current valuation states, latest filing-review coverage, fresh market snapshots through 2026-05-29, and no unresolved critical or high-severity freshness events. SpaceX remains a not-tradable future-watch item, so its reviewed S-1 event does not create buy readiness.
+  reason: Active watchlist coverage remains current, and FLY's publicly reachable readiness sprint was completed to an evidence-based incubate classification with dashboard-facing research-only coverage. Repository-public readiness excludes user-only broker facts and execution instructions; those are execution prerequisites, not research-readiness blockers.
+  user_only_execution_prerequisites:
+    - broker cash and buying-power confirmation before order entry
+    - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction
+    - current live quote or accepted limit price at the time the user chooses to act
 coverage:
-  universe_scan_as_of: 2026-05-30
+  universe_scan_as_of: 2026-05-31
   discovery_lane_map_as_of: 2026-05-30
+  watchlist_symbols: 23
+  watchlist_symbols_with_current_cycle_review: 23
+  watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
   active_watchlist_symbols: 18
@@ -18,7 +26,53 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 18
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 0
+  raw_discovery_candidates_open: 1
+discovery_process:
+  latest_discovery_run_path: research/discovery/runs/2026-05-31-agentic-discovery.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-05-31-agentic-discovery.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-05-31-agentic-discovery.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-05-31-subagent-evidence-packet.yml
+  first_layer_questions_status: complete
+  broad_source_search_status: complete
+  independent_xhigh_subagents_status: complete
+  required_xhigh_roles:
+    - discovery_lane_candidate_triage
+    - freshness_filing_review
+    - bull_case
+    - bear_case
+    - allocation_risk
+  completed_xhigh_roles:
+    - discovery_lane_candidate_triage
+    - freshness_filing_review
+    - bull_case
+    - bear_case
+    - allocation_risk
+  skipped_xhigh_roles: []
+  allocation_relevant_lanes:
+    - space_infrastructure
+  unresolved_subagent_conflicts: 0
+  open_candidates_without_readiness_sprint: 0
+  material_open_candidates: 1
+  material_open_candidates_blocking_allocation: 0
+  open_candidate_readiness_completed: 1
+watchlist_process:
+  latest_cycle_review_path: research/watchlist-cycle-reviews.csv
+  full_watchlist_review_status: complete
+  priority_status_refresh_status: complete
+  buy_zone_refresh_status: complete
+  independent_xhigh_reprioritization_status: complete
+  required_xhigh_roles:
+    - discovery_lane_candidate_triage
+    - freshness_filing_review
+    - valuation_entry
+    - allocation_risk
+  completed_xhigh_roles:
+    - discovery_lane_candidate_triage
+    - freshness_filing_review
+    - valuation_entry
+    - allocation_risk
+  skipped_xhigh_roles: []
+  unresolved_watchlist_review_conflicts: 0
 freshness:
   open_critical_events: 0
   open_high_events: 0
@@ -31,4 +85,5 @@ quality_gates:
   valuation_state_max_age_days: 45
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
-notes: Ready means the repository can support a live monthly allocation decision after checking broker cash and current prices. It does not force a buy recommendation. Discovery lane readiness means the current lane map has been reviewed, not that the watchlist is complete.
+  watchlist_cycle_review_max_age_days: 31
+notes: Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory.

@@ -1,0 +1,262 @@
+schema_version: 1
+run_id: 2026-05-31-agentic-discovery
+run_date: 2026-05-31
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: 2026-05-31
+linked_decision_or_research_note:
+  - decisions/2026-05-31-monthly-decision.md
+  - research/2026-05-31-full-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-05-31-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run
+      dry_run: true
+      output_path: research/discovery/runs/2026-05-31-universe-scan.json
+      retrieved_at: 2026-05-31
+      result_summary: SEC company ticker lane keyword scan surfaced FLY as the material raw lead after primary-source triage.
+    - command: npm run discover:universe -- --dry-run --limit 20 --json --output research/discovery/runs/2026-05-31-universe-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-05-31-universe-scan.json
+      retrieved_at: 2026-05-31
+      result_summary: Strengthened scanner emitted auditable JSON across active, emerging, and incubating lanes; output shows deterministic false-positive patterns and proves unknown_future_bottlenecks was included in scope.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings and listed issuer references
+      sources_or_queries:
+        - SEC company_tickers_exchange reference
+        - SEC FLY 2026-05-26 S-1 offering filing
+        - SEC FLY submissions snapshot
+        - SEC FLY companyfacts snapshot
+      source_ids:
+        - fly_s1_offering_2026_05_26
+        - sec_fly_submissions_2026_05_31
+        - sec_companyfacts_fly_2026_05_31
+      retrieved_at: 2026-05-31
+      material_findings: SEC sources confirm FLY as a Nasdaq-listed public equity and show recent S-1, 424B3, EFFECT, Form 144, 10-Q, companyfacts, and Q1 financial data that make dilution and runway review material.
+      unavailable_or_skipped_reason:
+    - family_id: issuer_material
+      family: Issuer results and business update material
+      sources_or_queries:
+        - SEC FLY Q1 2026 results exhibit
+      source_ids:
+        - fly_q1_2026_results
+      retrieved_at: 2026-05-31
+      material_findings: Q1 results show record revenue, 2026 revenue guidance, Golden Dome and FORGE-related claims, and direct space and defense infrastructure exposure.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Market data and tradability
+      sources_or_queries:
+        - Yahoo Finance FLY daily chart snapshot
+      source_ids:
+        - yahoo_chart_fly_2026_05_29
+      retrieved_at: 2026-05-31
+      material_findings: FLY had a 2026-05-29 close near USD 46.49 and sufficient quoted liquidity for a raw-candidate readiness classification, but the rough valuation is demanding.
+      unavailable_or_skipped_reason:
+    - family_id: current_world_context
+      family: Current defense-space and program context
+      sources_or_queries:
+        - DefenseScoop Golden Dome space-based interceptor contractor coverage
+      source_ids:
+        - defensescoop_golden_dome_sbi_2026_04_24
+      retrieved_at: 2026-05-31
+      material_findings: Current defense-space context supports the lane relevance of Golden Dome and space-based interceptors, but it does not by itself prove FLY pricing power, margins, backlog conversion, or shareholder returns.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-05-31
+    notes: The 2026-05-31 run used xhigh discovery, freshness, bull-case, bear-case, and allocation/risk reviewers plus deterministic market and universe refresh. The durable lesson is that future runs need this structured artifact and candidate readiness gates.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Space launch cadence, responsive defense space access, spacecraft manufacturing, AI data-center power, AI interconnect capacity, advanced nuclear fuel/licensing, and direct-to-device spectrum/capacity remain active scarcity hypotheses.
+    inferences: The space infrastructure lane remains decision-relevant because new public companies can appear and affect opportunity cost versus RKLB, ASTS, LUNR, RDW, and KTOS.
+    disconfirming_evidence: Many deterministic keyword hits were funds, broad suppliers, or weak proxies rather than direct bottleneck owners.
+    source_ids:
+      - fly_q1_2026_results
+      - fly_s1_offering_2026_05_26
+      - sec_fly_submissions_2026_05_31
+      - defensescoop_golden_dome_sbi_2026_04_24
+    investment_implication: Do not treat the existing watchlist as complete when a same-lane public candidate appears.
+  who_controls_or_removes_scarcity:
+    facts: Public candidates can control or remove scarcity only through owned assets, technical capability, regulatory permission, manufacturing capacity, customer access, or contract execution.
+    inferences: FLY may control part of the launch and spacecraft bottleneck, but this must be verified through filings, backlog, customer, margin, cash runway, and dilution review.
+    disconfirming_evidence: A company can reference space infrastructure without owning durable pricing power.
+    source_ids:
+      - fly_q1_2026_results
+      - fly_s1_offering_2026_05_26
+      - sec_fly_submissions_2026_05_31
+      - defensescoop_golden_dome_sbi_2026_04_24
+    investment_implication: Candidate triage must distinguish direct bottleneck owners from promotional proxies.
+  who_can_monetize_into_shareholder_value:
+    facts: Monetization requires pricing power, backlog conversion, cash runway, reinvestment paths, and dilution discipline. FLY's Q1 2026 revenue was USD 80.879 million, Q1 2026 net loss was USD 96.676 million, and March 31 2026 cash and equivalents were USD 326.179 million.
+    inferences: FLY can be incubated after first-pass review, but it cannot be promoted until offering-adjusted valuation, runway, backlog quality, and filing quality are reviewed more deeply.
+    disconfirming_evidence: Launch and spacecraft demand can still destroy shareholder value if execution failures or dilution dominate.
+    source_ids:
+      - fly_s1_offering_2026_05_26
+      - sec_companyfacts_fly_2026_05_31
+    investment_implication: FLY remains raw and incubating; it does not currently displace RKLB or ASTS.
+  public_security_expression:
+    facts: SEC submissions identify Firefly Aerospace Inc. as Nasdaq ticker FLY, and Yahoo chart data identifies FLY as a NasdaqGM equity with a 2026-05-29 close near USD 46.49 and roughly 22.3 million shares of daily volume.
+    inferences: FLY is policy-eligible as a public U.S.-listed common stock, but eligibility is not buy readiness.
+    disconfirming_evidence: Recent S-1, 424B3, EFFECT, and Form 144 filings mean offering and selling-holder effects remain material.
+    source_ids:
+      - fly_s1_offering_2026_05_26
+      - sec_fly_submissions_2026_05_31
+      - yahoo_chart_fly_2026_05_29
+    investment_implication: Keep FLY in incubating research-only visibility until new quarterly, offering, selling-holder, contract, launch, or price evidence supports promotion.
+  early_small_misunderstood_or_newly_public:
+    facts: FLY appears newly public and less embedded in the existing watchlist than RKLB or ASTS.
+    inferences: It may be more underfollowed, but the offering filing can also create dilution or selling pressure that weakens the setup.
+    disconfirming_evidence: Early public status alone is not enough; the candidate must clear evidence and entry gates.
+    source_ids:
+      - fly_s1_offering_2026_05_26
+      - sec_fly_submissions_2026_05_31
+    investment_implication: Incubate after first-pass readiness review rather than buying or ignoring the name.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - CONSTITUTION.md
+        - AGENTS.md
+        - research/discovery/lanes.yml
+        - research/discovery/candidates.csv
+        - deterministic universe dry-run output
+      sources_checked:
+        - fly_q1_2026_results
+        - fly_s1_offering_2026_05_26
+      facts_verified:
+        - FLY is the strongest same-lane raw space lead from the discovery review.
+      stale_or_missing_evidence:
+        - Original missing FLY market data, first-pass valuation evidence, filing-package review, and dashboard-facing records were resolved by the readiness sprint; future promotion requires new evidence rather than unfinished repository work.
+      confidence: medium_high_for_raw_candidate_incubation
+      key_findings: FLY was the strongest dry-run lead and required incubation plus research-only dashboard visibility after filing, valuation, and peer review.
+      conflicts: []
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - research/watchlist.csv
+        - research/freshness/events.csv
+        - SEC submissions checks
+        - company IR checks
+      sources_checked:
+        - sec_active_universe_filings_2026_05_30
+        - fly_q1_2026_results
+        - fly_s1_offering_2026_05_26
+      facts_verified:
+        - No post-2026-05-30 active-watchlist filing blocked the original RKLB or ASTS staged order.
+      stale_or_missing_evidence:
+        - FLY no longer has repository-work readiness outstanding after dashboard-facing sprint completion; future promotion requires new quarterly, offering, selling-holder, contract, launch, or price evidence.
+      confidence: high_for_active_watchlist_filing_freshness
+      key_findings: No post-run blocker for RKLB or ASTS; FLY was incubated after follow-up readiness work.
+      conflicts: []
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - research/watchlist.csv
+        - research/valuation-states.csv
+        - research/filings
+        - confirmed account cash state
+      sources_checked:
+        - yahoo_chart_close_2026_05_29
+        - sec_active_universe_filings_2026_05_30
+      facts_verified:
+        - RKLB and ASTS remained the original strongest mission-fit staged candidates from the active watchlist.
+      stale_or_missing_evidence:
+        - FLY dashboard-facing readiness is now resolved, but new evidence is required before it can compete for allocation promotion.
+      confidence: medium
+      key_findings: Strongest bull case remained staged RKLB plus ASTS, subject to risk review.
+      conflicts:
+        - Bear case preferred no buy or only one RKLB share due entry risk.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - research/valuation-states.csv
+        - company metrics
+        - technical snapshots
+        - filing reviews
+      sources_checked:
+        - yahoo_chart_close_2026_05_29
+        - sec_active_universe_filings_2026_05_30
+      facts_verified:
+        - RKLB and ASTS had strong mission fit but demanding valuation and execution risk.
+      stale_or_missing_evidence:
+        - Broker fees and fractional share capability were unknown.
+      confidence: medium_high
+      key_findings: Entry quality and valuation risk argued for holding cash or a much smaller starter.
+      conflicts:
+        - Bull case preferred more convex ASTS exposure.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - data/account/state.yml
+        - data/account/positions.csv
+        - price snapshots
+        - proposed order sizing
+      sources_checked:
+        - yahoo_chart_close_2026_05_29
+        - investorgov_t1_settlement
+      facts_verified:
+        - Confirmed deployable cash was USD 888 and no broker-confirmed positions existed.
+      stale_or_missing_evidence:
+        - Broker fee schedule and fractional-share capability were unknown.
+      confidence: medium_high
+      key_findings: Proposed whole-share GFD limits retained a cash buffer and did not use SGOV.
+      conflicts: []
+  unresolved_conflicts: 0
+  conflict_resolution: Main synthesis staged sizing and added FLY as a raw candidate. The later process review made FLY readiness machine-checkable, and the completed first-pass sprint incubated FLY rather than letting missing reachable evidence remain a blocker.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: No new lane was added; the open-ended lane remains required.
+  no_change_reason: FLY maps to the existing space_infrastructure lane.
+
+candidate_delta:
+  candidates_added:
+    - FLY
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated:
+    - FLY
+  false_positive_patterns:
+    - broad funds and thematic vehicles
+    - generic keyword matches without direct bottleneck ownership
+    - mature suppliers with limited satellite-account asymmetry
+
+readiness_sprints:
+  - symbol: FLY
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-05-31-FLY-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#FLY
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Under the strengthened discovery design, FLY's publicly reachable readiness work was completed through dashboard-facing market data, filing-package review, valuation state, company analysis, and peer comparison. A future FLY promotion requires new evidence, but it is no longer a repository-work blocker for current allocation readiness.

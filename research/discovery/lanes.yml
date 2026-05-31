@@ -5,8 +5,11 @@ review_cadence: Review every full operating cycle and every monthly decision; re
 framework_name: bottleneck_map_first
 framework_questions:
   - Which scarce resources, technical capabilities, distribution points, regulatory permissions, infrastructure constraints, or capital-formation changes could become system bottlenecks over the next decade or longer?
+  - Who controls, owns, enables, or can remove that scarcity?
   - Which bottlenecks can create exceptional pricing power, survival advantage, or compounding reinvestment paths?
+  - Who can convert that scarcity into pricing power, reinvestment paths, and shareholder value?
   - Which public companies directly own, control, or monetize the bottleneck rather than merely referencing the theme?
+  - Is there a public security that directly expresses that exposure under the current policy?
   - Which candidates are too small, too early, too recently listed, too awkward, or too difficult for traditional screens to notice?
   - What primary evidence would distinguish a real bottleneck owner from a promotional proxy?
   - What would make the lane dangerous enough to avoid despite its upside narrative?
@@ -35,6 +38,7 @@ lanes:
       - space
     current_public_proxies:
       - RKLB
+      - FLY
       - LUNR
       - RDW
       - KTOS

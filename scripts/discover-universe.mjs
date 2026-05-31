@@ -9,6 +9,7 @@ const watchlistFile = "research/watchlist.csv";
 const defaultLimit = 50;
 const secUserAgent = "winechord-invest discovery research";
 const allowedDiscoveryExchanges = new Set(["Nasdaq", "NYSE", "NYSE American"]);
+const defaultDiscoveryScope = "active_emerging_incubating";
 
 const candidateColumns = [
   "symbol",
@@ -39,25 +40,53 @@ const knownSymbols = new Set([
 const companies = await fetchSecCompanyList();
 const candidates = findCandidates(companies, discoveryLanes, knownSymbols)
   .slice(0, options.limit);
+const result = buildResult({
+  candidates,
+  discoveryDate,
+  discoveryLanes,
+  knownSymbols,
+  options,
+});
 
-console.log("Bottleneck-map-first dry run. Results are raw leads, not buy recommendations.");
-
-if (candidates.length === 0) {
-  console.log("No new keyword-matched discovery candidates found.");
+if (options.json) {
+  const output = `${JSON.stringify(result, null, 2)}\n`;
+  if (options.output === undefined) {
+    process.stdout.write(output);
+  } else {
+    writeFileSync(options.output, output);
+    console.log(`Wrote discovery audit output to ${options.output}.`);
+  }
 } else {
-  console.log(formatCandidates(candidates));
+  console.log("Bottleneck-map-first dry run. Results are raw leads, not buy recommendations.");
+
+  if (candidates.length === 0) {
+    console.log("No new keyword-matched discovery candidates found.");
+  } else {
+    console.log(formatCandidates(candidates));
+  }
+
+  console.log(`Discovery scope: ${result.discovery_scope}.`);
 }
 
 if (options.write && candidates.length > 0) {
   appendCandidates(candidates, discoveryDate);
-  console.log(`Appended ${candidates.length} candidates to ${candidatesFile}.`);
+  logStatus(`Appended ${candidates.length} candidates to ${candidatesFile}.`);
 } else {
-  console.log("Dry run only. Pass --write to append candidates after reviewing the output.");
+  logStatus("Dry run only. Pass --write to append candidates after reviewing the output.");
+}
+
+function logStatus(message) {
+  if (options.json && options.output === undefined) {
+    console.error(message);
+    return;
+  }
+  console.log(message);
 }
 
 function parseArgs(args) {
   const parsed = {
-    includeEmerging: false,
+    includeEmerging: true,
+    json: false,
     limit: defaultLimit,
     write: false,
   };
@@ -70,6 +99,13 @@ function parseArgs(args) {
       parsed.write = false;
     } else if (arg === "--include-emerging") {
       parsed.includeEmerging = true;
+    } else if (arg === "--active-only") {
+      parsed.includeEmerging = false;
+    } else if (arg === "--json") {
+      parsed.json = true;
+    } else if (arg === "--output") {
+      parsed.output = requireNextArg(args, index, arg);
+      index += 1;
     } else if (arg === "--as-of") {
       parsed.asOf = requireNextArg(args, index, arg);
       index += 1;
@@ -108,6 +144,47 @@ function loadDiscoveryLanes({ includeEmerging }) {
     }
     return includeEmerging && ["emerging", "incubating"].includes(lane.status);
   });
+}
+
+function buildResult({
+  candidates,
+  discoveryDate,
+  discoveryLanes,
+  knownSymbols,
+  options,
+}) {
+  return {
+    schema_version: 1,
+    generated_at: new Date().toISOString(),
+    as_of: discoveryDate,
+    discovery_scope: options.includeEmerging
+      ? defaultDiscoveryScope
+      : "active_only",
+    source_url: secCompanyTickersExchangeUrl,
+    deterministic_limit: options.limit,
+    known_symbol_count: knownSymbols.size,
+    lanes_scanned: discoveryLanes.map((lane) => ({
+      id: lane.id,
+      name: lane.name,
+      status: lane.status,
+    })),
+    candidate_count: candidates.length,
+    candidates: candidates.map((candidate) => ({
+      symbol: candidate.symbol,
+      name: candidate.name,
+      exchange: candidate.exchange,
+      lane_id: candidate.laneId,
+      lane_name: candidate.laneName,
+      matched_keywords: candidate.keywords,
+      deterministic_only: true,
+      required_next_step: "primary_source_skim_and_readiness_triage",
+    })),
+    caveats: [
+      "Deterministic keyword matches are raw leads, not recommendations.",
+      "This scan checks SEC listed issuer reference names and symbols only.",
+      "Serious discovery still requires independent agentic bottleneck research and source-backed readiness work.",
+    ],
+  };
 }
 
 async function fetchSecCompanyList() {
