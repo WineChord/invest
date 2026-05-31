@@ -140,6 +140,11 @@ interface SparklineWindowOption {
   sessions: number | null;
 }
 
+interface WatchReturnWindow {
+  label: string;
+  sessionsBack: number | null;
+}
+
 const WATCH_PREVIEW_MEDIA_QUERY =
   "(hover: hover) and (pointer: fine) and (min-width: 761px)";
 const WATCH_PREVIEW_WIDTH = 380;
@@ -156,6 +161,15 @@ const sparklineWindowOptions: SparklineWindowOption[] = [
   { key: "6M", label: "6M", sessions: 126 },
   { key: "1Y", label: "1Y", sessions: 252 },
   { key: "ALL", label: "ALL", sessions: null },
+];
+const watchReturnWindows: WatchReturnWindow[] = [
+  { label: "1D", sessionsBack: 1 },
+  { label: "5D", sessionsBack: 5 },
+  { label: "1M", sessionsBack: 21 },
+  { label: "3M", sessionsBack: 63 },
+  { label: "6M", sessionsBack: 126 },
+  { label: "1Y", sessionsBack: 252 },
+  { label: "ALL", sessionsBack: null },
 ];
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
@@ -343,6 +357,16 @@ function formatMovement(
 
 function formatPlainPercent(value: number | null): string {
   return value === null ? "N/A" : percentFormatter.format(value / 100);
+}
+
+function formatCompactSignedPercent(value: number | null): string {
+  if (value === null) {
+    return "N/A";
+  }
+
+  const digits = Math.abs(value) >= 100 ? 0 : 1;
+  const prefix = value > 0 ? "+" : "";
+  return `${prefix}${value.toFixed(digits)}%`;
 }
 
 function toneForSignedValue(value: number | null): ValueTone {
@@ -1799,6 +1823,32 @@ function priceMovementForItem(
   return priceMovementForHistory(item.priceHistory, sessionsBack);
 }
 
+function priceMovementForReturnWindow(
+  history: PriceHistoryPoint[],
+  sessionsBack: number | null,
+): PriceMovement | null {
+  if (sessionsBack !== null) {
+    return priceMovementForHistory(history, sessionsBack);
+  }
+
+  if (history.length < 2) {
+    return null;
+  }
+
+  const first = history[0];
+  const latest = history.at(-1);
+  const firstClose = pricePointClose(first);
+  if (latest === undefined || firstClose <= 0) {
+    return null;
+  }
+
+  const amount = pricePointClose(latest) - firstClose;
+  return {
+    amount,
+    percent: (amount / firstClose) * 100,
+  };
+}
+
 function priceMovementForHistory(
   history: PriceHistoryPoint[],
   sessionsBack: number,
@@ -2877,26 +2927,12 @@ function WatchlistTable({
                   item={item}
                   windowSessions={sparklineSessions}
                 />
-                <span className="watch-card-metric-row">
-                  <WatchCardMovementMetric
-                    item={item}
-                    label="1D"
-                    mode={movementDisplayMode}
-                    sessionsBack={1}
-                  />
-                  <WatchCardMovementMetric
-                    item={item}
-                    label="5D"
-                    mode={movementDisplayMode}
-                    sessionsBack={5}
-                  />
-                  <WatchCardPlainMetric
-                    label="P/S"
-                    value={formatRatio(item.metrics?.priceToSales ?? null)}
-                  />
-                </span>
+                <WatchCardReturnGrid item={item} />
                 <span className="watch-card-meta">
                   <span>{watchStatusLabel(item.status)}</span>
+                  <span>
+                    P/S {formatRatio(item.metrics?.priceToSales ?? null)}
+                  </span>
                   <span>{formatWatchPrice(item)}</span>
                   <span>{analysisCountLabel(item.analysisHistory.length)}</span>
                 </span>
@@ -2930,39 +2966,29 @@ function WatchlistTable({
   );
 }
 
-function WatchCardMovementMetric({
-  item,
-  label,
-  mode,
-  sessionsBack,
-}: {
-  item: WatchlistItem;
-  label: string;
-  mode: MovementDisplayMode;
-  sessionsBack: number;
-}) {
-  const movement = priceMovementForItem(item, sessionsBack);
-  const tone = toneForSignedValue(movement?.amount ?? null);
-
+function WatchCardReturnGrid({ item }: { item: WatchlistItem }) {
   return (
-    <span className={`watch-card-metric watch-card-metric-${tone}`}>
-      <b>{formatMovement(movement, mode)}</b>
-      <small>{label}</small>
-    </span>
-  );
-}
+    <span
+      aria-label={`${item.symbol} close-to-close returns by period`}
+      className="watch-card-return-grid"
+    >
+      {watchReturnWindows.map((window) => {
+        const movement = priceMovementForReturnWindow(
+          item.priceHistory,
+          window.sessionsBack,
+        );
+        const tone = toneForSignedValue(movement?.amount ?? null);
 
-function WatchCardPlainMetric({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
-  return (
-    <span className="watch-card-metric">
-      <b>{value}</b>
-      <small>{label}</small>
+        return (
+          <span
+            className={`watch-card-return watch-card-return-${tone}`}
+            key={window.label}
+          >
+            <small>{window.label}</small>
+            <b>{formatCompactSignedPercent(movement?.percent ?? null)}</b>
+          </span>
+        );
+      })}
     </span>
   );
 }
