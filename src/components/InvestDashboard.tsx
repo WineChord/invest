@@ -1759,9 +1759,28 @@ function returnForPricePoints(
   firstPoint: PriceHistoryPoint,
   lastPoint: PriceHistoryPoint,
 ): number | null {
-  return firstPoint.close > 0
-    ? ((lastPoint.close - firstPoint.close) / firstPoint.close) * 100
+  const firstClose = pricePointClose(firstPoint);
+  const lastClose = pricePointClose(lastPoint);
+  return firstClose > 0
+    ? ((lastClose - firstClose) / firstClose) * 100
     : null;
+}
+
+function pricePointDate(point: PriceHistoryPoint): string {
+  return point[0];
+}
+
+function pricePointClose(point: PriceHistoryPoint): number {
+  return point[1];
+}
+
+function stockChartPointFromPriceHistory(
+  point: PriceHistoryPoint,
+): StockChartPoint {
+  return {
+    close: pricePointClose(point),
+    date: pricePointDate(point),
+  };
 }
 
 function returnForStockChartPoints(
@@ -1788,19 +1807,17 @@ function priceMovementForHistory(
     return null;
   }
 
-  const sortedHistory = history
-    .slice()
-    .sort((left, right) => left.date.localeCompare(right.date));
-  const latest = sortedHistory.at(-1);
-  const base = sortedHistory[sortedHistory.length - 1 - sessionsBack];
-  if (latest === undefined || base === undefined || base.close <= 0) {
+  const latest = history.at(-1);
+  const base = history[history.length - 1 - sessionsBack];
+  const baseClose = base === undefined ? 0 : pricePointClose(base);
+  if (latest === undefined || base === undefined || baseClose <= 0) {
     return null;
   }
 
-  const amount = latest.close - base.close;
+  const amount = pricePointClose(latest) - baseClose;
   return {
     amount,
-    percent: (amount / base.close) * 100,
+    percent: (amount / baseClose) * 100,
   };
 }
 
@@ -2972,7 +2989,7 @@ function MiniSparkline({
   const first = history[0];
   const last = history.at(-1) ?? first;
   const tone = toneForSignedValue(returnForPricePoints(first, last));
-  const highs = history.map((point) => point.close);
+  const highs = history.map(pricePointClose);
   const high = Math.max(...highs);
   const low = Math.min(...highs);
   const width = 180;
@@ -2982,7 +2999,8 @@ function MiniSparkline({
   const points = history
     .map((point, index) => {
       const x = index * xStep;
-      const y = height - ((point.close - low) / range) * (height - 4) - 2;
+      const y =
+        height - ((pricePointClose(point) - low) / range) * (height - 4) - 2;
       return `${x.toFixed(2)},${y.toFixed(2)}`;
     })
     .join(" ");
@@ -3227,10 +3245,7 @@ function StockPriceChart({
   const chartPoints = useMemo(
     () =>
       item.priceHistory
-        .map((point) => ({
-          close: point.close,
-          date: point.date,
-        }))
+        .map(stockChartPointFromPriceHistory)
         .sort((left, right) => left.date.localeCompare(right.date)),
     [item.priceHistory],
   );
@@ -3556,7 +3571,7 @@ function StockChartMovementPill({
 
 function TradingViewPreview({ item }: { item: WatchlistItem }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const tradingViewSymbol = item.security?.tradingViewSymbol ?? "";
 
   useEffect(() => {

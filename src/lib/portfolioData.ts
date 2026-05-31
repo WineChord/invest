@@ -71,18 +71,12 @@ export interface PriceSnapshot {
   notes: string;
 }
 
-export interface PriceHistoryPoint {
+export type PriceHistoryPoint = [date: string, close: number];
+
+interface RawPriceHistoryPoint {
   symbol: string;
   date: string;
-  open: number;
-  high: number;
-  low: number;
   close: number;
-  adjClose: number | null;
-  volume: number | null;
-  currency: string;
-  source: string;
-  retrievedAt: string;
 }
 
 export interface SecurityRecord {
@@ -189,11 +183,6 @@ export interface PortfolioData {
   equityCurve: EquityPoint[];
   watchlist: WatchlistItem[];
   prices: PriceSnapshot[];
-  priceHistory: PriceHistoryPoint[];
-  securityMaster: SecurityRecord[];
-  technicalSnapshots: TechnicalSnapshot[];
-  companyMetrics: CompanyMetrics[];
-  researchAnalysis: ResearchAnalysisEntry[];
 }
 
 const repositoryRoot = process.cwd();
@@ -376,20 +365,12 @@ function readPrices(): PriceSnapshot[] {
   }));
 }
 
-function readPriceHistory(): PriceHistoryPoint[] {
+function readPriceHistory(): RawPriceHistoryPoint[] {
   return readCsv("data/market/price_history.csv")
     .map((row) => ({
       symbol: row.symbol,
       date: row.date,
-      open: toNumber(row.open) ?? 0,
-      high: toNumber(row.high) ?? 0,
-      low: toNumber(row.low) ?? 0,
       close: toNumber(row.close) ?? 0,
-      adjClose: toNumber(row.adj_close),
-      volume: toNumber(row.volume),
-      currency: row.currency,
-      source: row.source,
-      retrievedAt: row.retrieved_at,
     }))
     .sort((left, right) =>
       left.symbol === right.symbol
@@ -491,7 +472,7 @@ function readWatchlist(
   prices: PriceSnapshot[],
   researchAnalysis: ResearchAnalysisEntry[],
   securityMaster: SecurityRecord[],
-  priceHistory: PriceHistoryPoint[],
+  priceHistory: RawPriceHistoryPoint[],
   technicalSnapshots: TechnicalSnapshot[],
   companyMetrics: CompanyMetrics[],
 ): WatchlistItem[] {
@@ -501,7 +482,7 @@ function readWatchlist(
     technicalSnapshots.map((row) => [row.symbol, row]),
   );
   const metricsBySymbol = new Map(companyMetrics.map((row) => [row.symbol, row]));
-  const historyBySymbol = new Map<string, PriceHistoryPoint[]>();
+  const historyBySymbol = new Map<string, RawPriceHistoryPoint[]>();
   priceHistory.forEach((point) => {
     const history = historyBySymbol.get(point.symbol) ?? [];
     history.push(point);
@@ -520,6 +501,9 @@ function readWatchlist(
 
   return readCsv("research/watchlist.csv").map((row) => {
     const price = priceBySymbol.get(row.symbol);
+    const priceHistoryPoints = (historyBySymbol.get(row.symbol) ?? []).map(
+      (point): PriceHistoryPoint => [point.date, point.close],
+    );
     return {
       symbol: row.symbol,
       name: row.name,
@@ -533,7 +517,7 @@ function readWatchlist(
       price: price?.price ?? null,
       priceAsOf: price?.priceAsOf ?? null,
       security: securityBySymbol.get(row.symbol) ?? null,
-      priceHistory: historyBySymbol.get(row.symbol) ?? [],
+      priceHistory: priceHistoryPoints,
       technical: technicalBySymbol.get(row.symbol) ?? null,
       metrics: metricsBySymbol.get(row.symbol) ?? null,
       analysisHistory: analysisBySymbol.get(row.symbol) ?? [],
@@ -566,10 +550,5 @@ export function loadPortfolioData(): PortfolioData {
       companyMetrics,
     ),
     prices,
-    priceHistory,
-    securityMaster,
-    technicalSnapshots,
-    companyMetrics,
-    researchAnalysis,
   };
 }

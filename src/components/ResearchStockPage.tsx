@@ -222,10 +222,7 @@ function StockPageChart({
   const chartPoints = useMemo(
     () =>
       item.priceHistory
-        .map((point) => ({
-          close: point.close,
-          date: point.date,
-        }))
+        .map(stockChartPointFromPriceHistory)
         .sort((left, right) => left.date.localeCompare(right.date)),
     [item.priceHistory],
   );
@@ -537,7 +534,7 @@ function StockPageMovementPill({
 
 function TradingViewPreview({ item }: { item: WatchlistItem }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const tradingViewSymbol = item.security?.tradingViewSymbol ?? "";
 
   useEffect(() => {
@@ -848,6 +845,23 @@ function returnForStockChartPoints(
     : null;
 }
 
+function pricePointDate(point: PriceHistoryPoint): string {
+  return point[0];
+}
+
+function pricePointClose(point: PriceHistoryPoint): number {
+  return point[1];
+}
+
+function stockChartPointFromPriceHistory(
+  point: PriceHistoryPoint,
+): StockChartPoint {
+  return {
+    close: pricePointClose(point),
+    date: pricePointDate(point),
+  };
+}
+
 function priceMovementForHistory(
   history: PriceHistoryPoint[],
   sessionsBack: number,
@@ -856,19 +870,16 @@ function priceMovementForHistory(
     return null;
   }
 
-  const sortedHistory = history
-    .slice()
-    .sort((left, right) => left.date.localeCompare(right.date));
-  const latest = sortedHistory.at(-1);
-  const base = sortedHistory[sortedHistory.length - 1 - sessionsBack];
-  if (latest === undefined || base === undefined || base.close <= 0) {
+  const latest = history.at(-1);
+  const base = history[history.length - 1 - sessionsBack];
+  if (latest === undefined || base === undefined || pricePointClose(base) <= 0) {
     return null;
   }
 
-  const amount = latest.close - base.close;
+  const amount = pricePointClose(latest) - pricePointClose(base);
   return {
     amount,
-    percent: (amount / base.close) * 100,
+    percent: (amount / pricePointClose(base)) * 100,
   };
 }
 
