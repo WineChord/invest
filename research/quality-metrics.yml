@@ -2,8 +2,8 @@ schema_version: 1
 as_of: 2026-05-31
 last_research_engine_run:
   as_of: 2026-05-31
-  scope: monthly_decision_full_cycle
-  notes: Re-ran market refresh, universe discovery, SEC freshness, AI-cycle, and allocation review. Completed missing watch/research-only financing and transaction reviews for IREN, OKLO, CRCL, RDW, IONQ, and NBIS; kept RKLB and ASTS in staged buy-zone with a smaller proposed order; preserved account records unchanged.
+  scope: monthly_decision_full_cycle_plus_fn_targeted_triage
+  notes: Re-ran market refresh, universe discovery, SEC freshness, AI-cycle, and allocation review. Completed missing watch/research-only financing and transaction reviews for IREN, OKLO, CRCL, RDW, IONQ, and NBIS; kept RKLB and ASTS in staged buy-zone with a smaller proposed order; then added FN as research-only optical/datacom manufacturing coverage after targeted user-request triage. Account records remain unchanged.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
@@ -16,8 +16,8 @@ decision_readiness:
 coverage:
   universe_scan_as_of: 2026-05-31
   discovery_lane_map_as_of: 2026-05-30
-  watchlist_symbols: 23
-  watchlist_symbols_with_current_cycle_review: 23
+  watchlist_symbols: 24
+  watchlist_symbols_with_current_cycle_review: 24
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1

@@ -137,8 +137,8 @@ const testCases = [
         doc.entries = doc.entries.filter((entry) => entry.symbol !== "FLY");
       });
       updateYaml(cwd, "research/quality-metrics.yml", (doc) => {
-        doc.coverage.watchlist_symbols = 22;
-        doc.coverage.watchlist_symbols_with_current_cycle_review = 22;
+        doc.coverage.watchlist_symbols -= 1;
+        doc.coverage.watchlist_symbols_with_current_cycle_review -= 1;
       });
       updateYaml(cwd, "research/discovery/lanes.yml", (doc) => {
         doc.lanes.forEach((lane) => {

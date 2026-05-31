@@ -575,3 +575,15 @@ entries:
     risk_watch: Integration, up to USD 98 million cash consideration, 3.8 million share consideration, utilization, financing, receivables, and customer concentration.
     next_check: Next 6-K, customer update, financing update, or acquisition closing/integration update.
     source_path: research/filings/2026-05-31-NBIS-6K-MAGICBYTE-000110465926053464.md
+  - id: 2026-05-31-fn-watchlist-triage
+    symbol: FN
+    analyzed_at: "2026-05-31"
+    analysis_type: watchlist_triage
+    policy_version: v1.1
+    title: Watchlist triage
+    stance: C+
+    summary: Fabrinet has real AI datacom and advanced optical manufacturing exposure, but the evidence supports research-only coverage rather than a buy or active watch promotion because economics remain contract-manufacturing-like and customer concentration is material.
+    upside_path: Benefit if AI data-center optical modules, datacenter interconnect, and high-performance computing assemblies become durable manufacturing bottlenecks that Fabrinet can scale without margin compression.
+    risk_watch: Customer concentration, short-cycle customer orders, limited pricing power, low gross margin, capacity expansion risk, optical demand cyclicality, and valuation after a strong share-price move.
+    next_check: Next quarterly report or customer/datacom/HPC concentration update.
+    source_path: research/2026-05-31-fn-watchlist-triage.md

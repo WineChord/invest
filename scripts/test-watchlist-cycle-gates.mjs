@@ -24,7 +24,7 @@ const testCases = [
         reviewed_at: "2026-05-30",
       }));
     },
-    expected: "research/quality-metrics.yml watchlist_symbols_with_current_cycle_review is 23, expected 22",
+    expected: "research/quality-metrics.yml watchlist_symbols_with_current_cycle_review is",
   },
   {
     name: "rejects watchlist trigger mismatch",

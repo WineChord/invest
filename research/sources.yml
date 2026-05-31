@@ -477,6 +477,42 @@ sources:
     first_seen_at: 2026-05-31
     related_symbols: [CRDO, ALAB, MU]
     summary: Broadcom reported strong AI revenue from custom accelerators and AI networking, reinforcing the semiconductor interconnect lane.
+  - id: fn_q3_fy2026_results
+    title: Fabrinet Third Quarter Fiscal Year 2026 Financial Results
+    source_type: company_ir
+    url: https://investor.fabrinet.com/news-releases/news-release-details/fabrinet-announces-third-quarter-fiscal-year-2026-financial
+    source_published_at: 2026-05-04
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FN]
+    summary: Fabrinet reported record fiscal Q3 2026 revenue of USD 1.214 billion, GAAP net income of USD 125.2 million, and Q4 revenue guidance of USD 1.25 billion to USD 1.29 billion.
+  - id: fn_10q_q3_fy2026
+    title: Fabrinet Form 10-Q for the quarter ended March 27, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1408710/000140871026000016/fn-20260327.htm
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FN]
+    summary: Fabrinet's Q3 filing shows strong optical communications revenue, datacom and datacenter interconnect exposure, new high-performance computing disclosure, and major-customer concentration that limits promotion.
+  - id: sec_companyfacts_fn_2026_05_31
+    title: Fabrinet SEC Companyfacts Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001408710.json
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FN]
+    summary: SEC companyfacts confirmed fiscal Q3 2026 revenue, profitability, cash, share count, and segment facts used for the FN research-only valuation and risk triage.
+  - id: yahoo_chart_fn_2026_05_29
+    title: Yahoo Finance Chart FN Daily Close Snapshot
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/FN?range=5d&interval=1d
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [FN]
+    summary: Daily chart data showed FN's 2026-05-29 close near USD 654.16, which anchors the research-only valuation check.
   - id: ferc_large_load_docket_2026_04_16
     title: FERC Large Load Interconnection Docket
     source_type: regulator
