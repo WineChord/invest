@@ -13,9 +13,9 @@ const technicalSnapshotsFile = "data/market/technical_snapshots.csv";
 const watchlistPricesFile = "data/market/watchlist_prices.csv";
 const watchlistFile = "research/watchlist.csv";
 
-const defaultHistoryDays = 5 * 366;
+const defaultHistoryDays = 60 * 366;
 const minHistoryDays = 30;
-const maxHistoryDays = 5 * 366;
+const maxHistoryDays = 60 * 366;
 const marketTimeZone = "America/New_York";
 const defaultCurrency = "USD";
 const priceHistorySource = "Yahoo Finance chart";
