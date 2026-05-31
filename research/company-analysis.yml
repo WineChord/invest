@@ -65,7 +65,7 @@ entries:
     analysis_type: initial_baseline
     policy_version: v1.0
     title: Initial baseline
-    stance: B+
+    stance: B
     summary: Nebius can benefit from scarce GPU capacity, power access, and AI factory execution, but financing and utilization quality are central.
     upside_path: Build differentiated AI cloud capacity if GPU supply, power, and customer demand remain constrained.
     risk_watch: Capex intensity, financing dilution, receivables quality, customer concentration, utilization economics, and delivery delays.
@@ -587,3 +587,15 @@ entries:
     risk_watch: Customer concentration, short-cycle customer orders, limited pricing power, low gross margin, capacity expansion risk, optical demand cyclicality, and valuation after a strong share-price move.
     next_check: Next quarterly report or customer/datacom/HPC concentration update.
     source_path: research/2026-05-31-fn-watchlist-triage.md
+  - id: 2026-05-31-lite-watchlist-triage
+    symbol: LITE
+    analyzed_at: "2026-05-31"
+    analysis_type: watchlist_triage
+    policy_version: v1.1
+    title: Watchlist triage
+    stance: B
+    summary: Lumentum has direct AI optical and photonic interconnect exposure, strengthened by Q3 FY2026 growth, margin expansion, and NVIDIA's USD 2.0 billion preferred-stock investment, but valuation and capital-structure complexity block buy readiness.
+    upside_path: Benefit if laser chips, optical subsystems, CPO, and optical circuit switching become durable AI data-center bottlenecks that Lumentum can convert into pricing power and disciplined reinvestment.
+    risk_watch: Customer concentration, optical commoditization, hyperscaler bargaining power, debt, convertible notes, preferred-stock dilution, NVIDIA relationship execution, trade controls, rare earth supply, and valuation after a strong share-price move.
+    next_check: Next quarterly report, NVIDIA partnership update, CPO or optical circuit switching design-win update, customer concentration disclosure, debt exchange update, Greensboro capacity update, or price dislocation.
+    source_path: research/2026-05-31-lite-watchlist-triage.md

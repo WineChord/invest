@@ -2,13 +2,13 @@ schema_version: 1
 as_of: 2026-05-31
 last_research_engine_run:
   as_of: 2026-05-31
-  scope: monthly_decision_full_cycle_plus_fn_targeted_triage
-  notes: Re-ran market refresh, universe discovery, SEC freshness, AI-cycle, and allocation review. Completed missing watch/research-only financing and transaction reviews for IREN, OKLO, CRCL, RDW, IONQ, and NBIS; kept RKLB and ASTS in staged buy-zone with a smaller proposed order; then added FN as research-only optical/datacom manufacturing coverage after targeted user-request triage. Account records remain unchanged.
+  scope: monthly_decision_full_cycle_plus_targeted_optical_triage
+  notes: Re-ran market refresh, universe discovery, SEC freshness, AI-cycle, and allocation review. Completed missing watch/research-only financing and transaction reviews for IREN, OKLO, CRCL, RDW, IONQ, and NBIS; kept RKLB and ASTS in staged buy-zone with a smaller proposed order; added FN as research-only optical/datacom manufacturing coverage and LITE as watchlist optical/photonics coverage after targeted user-request triage. Account records remain unchanged.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Active watchlist coverage remains current, and FLY's publicly reachable readiness sprint was completed to an evidence-based incubate classification with dashboard-facing research-only coverage. Repository-public readiness excludes user-only broker facts and execution instructions; those are execution prerequisites, not research-readiness blockers.
+  reason: Active watchlist coverage remains current after targeted FN and LITE optical-infrastructure triage, and FLY's publicly reachable readiness sprint was completed to an evidence-based incubate classification with dashboard-facing research-only coverage. Repository-public readiness excludes user-only broker facts and execution instructions; those are execution prerequisites, not research-readiness blockers.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation before order entry
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction
@@ -16,15 +16,15 @@ decision_readiness:
 coverage:
   universe_scan_as_of: 2026-05-31
   discovery_lane_map_as_of: 2026-05-30
-  watchlist_symbols: 24
-  watchlist_symbols_with_current_cycle_review: 24
+  watchlist_symbols: 25
+  watchlist_symbols_with_current_cycle_review: 25
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
-  active_watchlist_symbols: 18
-  active_symbols_with_current_valuation_state: 18
+  active_watchlist_symbols: 19
+  active_symbols_with_current_valuation_state: 19
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 18
+  active_symbols_with_latest_filing_review: 19
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 1
 discovery_process:
