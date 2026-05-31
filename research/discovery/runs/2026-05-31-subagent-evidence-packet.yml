@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: 2026-05-31T04:14:06.989Z
+generated_at: 2026-05-31T05:52:41.863Z
 current_date: 2026-05-31
 request_type: monthly_decision_full_cycle
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
@@ -573,6 +573,25 @@ fresh_sources:
     summary: DefenseScoop reported that Space Force's acquisition arm named 12
       companies for Golden Dome space-based interceptor prototypes, providing
       current-world context for Firefly's SciTec-related issuer material.
+  - id: rklb_form144_director_sale_2026_05_29
+    source_type: sec_filing
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - RKLB
+    summary: Form 144 notice by director Alexander R. Slusky for a proposed sale of
+      100,000 Rocket Lab common shares, with 100,000 shares sold during the
+      prior three months; reviewed as a non-blocking insider-sale freshness item
+      relative to Rocket Lab's large public float.
+  - id: rklb_form_sd_2026_05_29
+    source_type: sec_filing
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - RKLB
+    summary: Rocket Lab Form SD for the 2025 conflict-minerals reporting period;
+      reviewed as a supply-chain disclosure that does not change the current
+      staged buy-zone view.
 deterministic_outputs:
   - command: npm run discover:universe -- --dry-run --limit 20 --json --output
       research/discovery/runs/2026-05-31-universe-scan.json
@@ -763,6 +782,9 @@ quality_metrics:
   coverage:
     universe_scan_as_of: 2026-05-31
     discovery_lane_map_as_of: 2026-05-30
+    watchlist_symbols: 23
+    watchlist_symbols_with_current_cycle_review: 23
+    watchlist_symbols_missing_current_cycle_review: 0
     active_discovery_lanes: 9
     emerging_discovery_lanes: 1
     active_watchlist_symbols: 18

@@ -351,3 +351,147 @@ sources:
     first_seen_at: 2026-05-31
     related_symbols: [FLY]
     summary: DefenseScoop reported that Space Force's acquisition arm named 12 companies for Golden Dome space-based interceptor prototypes, providing current-world context for Firefly's SciTec-related issuer material.
+  - id: rklb_form144_director_sale_2026_05_29
+    title: Rocket Lab Form 144 Director Proposed Sale Notice
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000200101126000078/xsl144X01/primary_doc.xml
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [RKLB]
+    summary: Form 144 notice by director Alexander R. Slusky for a proposed sale of 100,000 Rocket Lab common shares, with 100,000 shares sold during the prior three months; reviewed as a non-blocking insider-sale freshness item relative to Rocket Lab's large public float.
+  - id: rklb_form_sd_2026_05_29
+    title: Rocket Lab Form SD Conflict Minerals Specialized Disclosure Report
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000181999426000053/rklb-2025sd.htm
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [RKLB]
+    summary: Rocket Lab Form SD for the 2025 conflict-minerals reporting period; reviewed as a supply-chain disclosure that does not change the current staged buy-zone view.
+  - id: asts_form144_officer_sale_2026_05_27
+    title: AST SpaceMobile Form 144 Officer Proposed Sale Notice
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1780312/000195917326004041/xsl144X01/primary_doc.xml
+    source_published_at: 2026-05-27
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [ASTS]
+    summary: Form 144 notice by officer Scott Wisniewski for a proposed sale of 25,904 Class A shares, with 47,000 shares sold during the prior three months; reviewed as a non-blocking insider-sale freshness item.
+  - id: iren_convertible_notes_2026_05_14
+    title: IREN Form 8-K 1.00% Convertible Senior Notes Due 2033
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000114036126021285/ef20073507_8k.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [IREN]
+    summary: IREN issued USD 3.0 billion principal amount of 1.00% convertible senior notes due 2033, with approximately USD 2.96 billion net proceeds and a USD 201.3 million capped-call cost.
+  - id: oklo_atm_2026_05_13
+    title: Oklo Form 8-K and 424B5 At-The-Market Equity Program
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1849056/000110465926060387/tm2614458-1_424b5.htm
+    source_published_at: 2026-05-13
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [OKLO]
+    summary: Oklo registered an at-the-market program for up to USD 1.0 billion of Class A common stock after substantially using the prior USD 1.5 billion program.
+  - id: crcl_form_d_token_purchase_2026_05_22
+    title: Circle Form D Token Purchase Agreements
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1876042/000123191926000528/xslFormDX01/primary_doc.xml
+    source_published_at: 2026-05-22
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [CRCL]
+    summary: Circle filed a Form D for USD 221,999,998 of token purchase agreements sold to 14 investors; reviewed as an unresolved economics and governance risk before any promotion.
+  - id: rdw_atm_2026_05_06
+    title: Redwire Form 424B5 At-The-Market Equity Program
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819810/000162828026031235/redwire-atmprosuppmay2026.htm
+    source_published_at: 2026-05-06
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [RDW]
+    summary: Redwire entered a new at-the-market program for up to USD 350 million of common stock after selling about USD 249.7 million under its prior program.
+  - id: rdw_preferred_conversion_2026_05_20
+    title: Redwire Form 8-K Series A Convertible Preferred Stock Conversion
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819810/000181981026000065/rdw-20260520.htm
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [RDW]
+    summary: Redwire disclosed AE Industrial Partners' voluntary conversion of all remaining Series A convertible preferred stock into 15,247,586 common shares.
+  - id: ionq_skywater_425_2026_05_07
+    title: IonQ Form 425 SkyWater Transaction Material
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1824920/000095014226001324/eh260776838_425.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [IONQ]
+    summary: IonQ filed Form 425 transaction material tied to the SkyWater Technology transaction and Q1 2026 call; reviewed as transaction and integration risk before any promotion.
+  - id: nbis_magicbyte_eigen_2026_05_01
+    title: Nebius Form 6-K MagicByte Eigen AI Labs Merger Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926053464/tm2613296d1_6k.htm
+    source_published_at: 2026-05-01
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [NBIS]
+    summary: Nebius disclosed an agreement to acquire MagicByte Inc., doing business as Eigen AI Labs, for up to about USD 98 million in cash and about 3.8 million Class A shares.
+  - id: microsoft_fy26_q3_ai_capex_2026_04_29
+    title: Microsoft Fiscal 2026 Third Quarter Earnings Event
+    source_type: company_ir
+    url: https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3
+    source_published_at: 2026-04-29
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [CRDO, ALAB, VRT, NBIS, CRWV, IREN, MU]
+    summary: Microsoft earnings material and call commentary supported continued AI infrastructure capacity constraints and elevated capex.
+  - id: meta_q1_2026_ai_capex_2026_04_29
+    title: Meta Reports First Quarter 2026 Results
+    source_type: company_ir
+    url: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/
+    source_published_at: 2026-04-29
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [CRDO, ALAB, VRT, NBIS, CRWV, IREN, MU]
+    summary: Meta raised its 2026 capital-expenditure guide, reinforcing current AI data-center demand while increasing capex-cycle risk.
+  - id: nvidia_q1_fy2027_ai_networking_2026_05_20
+    title: NVIDIA Announces Financial Results for First Quarter Fiscal 2027
+    source_type: company_ir
+    url: https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [CRDO, ALAB, VRT, NBIS, CRWV, IREN, MU]
+    summary: NVIDIA reported strong data-center and networking growth, supporting AI interconnect and compute-infrastructure demand while leaving valuation risk active.
+  - id: broadcom_q1_fy2026_ai_revenue_2026_03_04
+    title: Broadcom First Quarter Fiscal Year 2026 Results
+    source_type: company_ir
+    url: https://investors.broadcom.com/node/63976/pdf
+    source_published_at: 2026-03-04
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [CRDO, ALAB, MU]
+    summary: Broadcom reported strong AI revenue from custom accelerators and AI networking, reinforcing the semiconductor interconnect lane.
+  - id: ferc_large_load_docket_2026_04_16
+    title: FERC Large Load Interconnection Docket
+    source_type: regulator
+    url: https://www.ferc.gov/news-events/news/ferc-act-large-load-interconnection-docket-june-2026
+    source_published_at: 2026-04-16
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [VRT, BE, OKLO, LEU, IREN]
+    summary: FERC large-load interconnection docket context supports data-center power as a real structural bottleneck.
+  - id: federal_reserve_financial_stability_2026_05_08
+    title: Federal Reserve Financial Stability Report May 2026
+    source_type: regulator
+    url: https://www.federalreserve.gov/publications/files/financial-stability-report-20260508.pdf
+    source_published_at: 2026-05-08
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, CRWV, IREN, OKLO, FLY]
+    summary: Federal Reserve stability report noted high equity valuations and tight credit spreads, supporting staged sizing and strict price discipline for high-multiple candidates.

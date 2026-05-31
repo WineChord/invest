@@ -3,7 +3,7 @@ as_of: 2026-05-31
 last_research_engine_run:
   as_of: 2026-05-31
   scope: monthly_decision_full_cycle
-  notes: Re-ran market refresh and universe discovery in dry-run mode, checked current SEC submissions for active watchlist symbols, added FLY as an incubating research-only space infrastructure candidate with dashboard-facing coverage, and preserved account records unchanged.
+  notes: Re-ran market refresh, universe discovery, SEC freshness, AI-cycle, and allocation review. Completed missing watch/research-only financing and transaction reviews for IREN, OKLO, CRCL, RDW, IONQ, and NBIS; kept RKLB and ASTS in staged buy-zone with a smaller proposed order; preserved account records unchanged.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information

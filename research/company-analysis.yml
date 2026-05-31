@@ -503,3 +503,75 @@ entries:
     risk_watch: Launch reliability, spacecraft execution, backlog quality, gross margin, cash runway, S-1 and 424B3 dilution, Form 144 selling pressure, lockup dynamics, and valuation.
     next_check: Next quarterly report, amended offering or selling-holder filing, major launch or contract update, or price dislocation.
     source_path: research/filings/2026-05-31-FLY-10Q-S1-000186016026000009.md
+  - id: 2026-05-31-iren-convertible-notes
+    symbol: IREN
+    analyzed_at: "2026-05-31"
+    analysis_type: filing_review
+    policy_version: v1.1
+    title: Convertible notes financing review
+    stance: B
+    summary: IREN's USD 3.0 billion convertible notes improve AI cloud buildout liquidity but add leverage, conversion, and capital-deployment risk.
+    upside_path: Convert power sites and GPU procurement into durable AI cloud revenue if customer economics and utilization prove strong.
+    risk_watch: Bitcoin exposure, USD 3.0 billion convertible debt, capped-call limits, Dell GPU payments, parent guarantees, customer concentration, and utilization.
+    next_check: Next AI cloud deployment, customer revenue, financing, or convertible-note update.
+    source_path: research/filings/2026-05-31-IREN-8K-CONVERTIBLE-NOTES-000114036126021285.md
+  - id: 2026-05-31-oklo-atm-review
+    symbol: OKLO
+    analyzed_at: "2026-05-31"
+    analysis_type: filing_review
+    policy_version: v1.1
+    title: ATM equity program review
+    stance: B
+    summary: Oklo remains an advanced nuclear option, but a new USD 1.0 billion ATM reinforces dilution risk before commercial deployment evidence exists.
+    upside_path: Become a deployable advanced-fission power supplier if licensing, fuel, customer contracts, and project execution converge.
+    risk_watch: NRC licensing, fuel access, customer contract quality, pre-commercial burn, ATM issuance, and shareholder dilution.
+    next_check: NRC, licensing, customer deployment, financing, or ATM usage update.
+    source_path: research/filings/2026-05-31-OKLO-8K-424B5-ATM-000110465926060385.md
+  - id: 2026-05-31-crcl-token-purchase-review
+    symbol: CRCL
+    analyzed_at: "2026-05-31"
+    analysis_type: filing_review
+    policy_version: v1.1
+    title: Token purchase agreement review
+    stance: B+
+    summary: Circle's Form D for USD 222 million of token purchase agreements adds an unresolved token-economics question before any common-stock promotion.
+    upside_path: Become regulated programmable-money infrastructure if USDC utility, distribution, reserves, and developer adoption produce durable common-stock economics.
+    risk_watch: Token economics, reserve income sensitivity, regulation, distribution costs, USDC share, and policy boundary risk around crypto-token exposure.
+    next_check: Reserve, USDC circulation, token economics, or earnings update.
+    source_path: research/filings/2026-05-31-CRCL-FORMD-TOKEN-PURCHASE-000123191926000528.md
+  - id: 2026-05-31-rdw-atm-conversion-review
+    symbol: RDW
+    analyzed_at: "2026-05-31"
+    analysis_type: filing_review
+    policy_version: v1.1
+    title: ATM and preferred conversion review
+    stance: C+
+    summary: Redwire's USD 350 million ATM and preferred conversion keep it research-only because capitalization, dilution, control, and integration risk remain high.
+    upside_path: Become a scaled space infrastructure and defense systems supplier if Edge Autonomy integration and cash generation improve.
+    risk_watch: ATM issuance, preferred conversion dilution, integration, internal controls, weak cash generation, and customer concentration.
+    next_check: Integration, cash-flow, internal-control, or ATM usage update.
+    source_path: research/filings/2026-05-31-RDW-424B5-8K-ATM-CONVERSION.md
+  - id: 2026-05-31-ionq-skywater-review
+    symbol: IONQ
+    analyzed_at: "2026-05-31"
+    analysis_type: filing_review
+    policy_version: v1.1
+    title: SkyWater transaction material review
+    stance: B-
+    summary: IonQ's SkyWater transaction material may broaden capability, but commercial proof and transaction integration remain too uncertain for promotion.
+    upside_path: Benefit if quantum computing, networking, sensing, or security becomes commercially essential and IonQ can scale useful systems.
+    risk_watch: Transaction approvals, integration, dilution or consideration terms, one-time system sales, burn rate, and practical quantum utility.
+    next_check: Commercial revenue, system delivery, or SkyWater transaction update.
+    source_path: research/filings/2026-05-31-IONQ-425-SKYWATER-000095014226001324.md
+  - id: 2026-05-31-nbis-magicbyte-review
+    symbol: NBIS
+    analyzed_at: "2026-05-31"
+    analysis_type: filing_review
+    policy_version: v1.1
+    title: MagicByte/Eigen AI Labs acquisition review
+    stance: B+
+    summary: Nebius' MagicByte/Eigen AI Labs acquisition is strategically relevant, but it does not solve financing, utilization, or customer economics.
+    upside_path: Build differentiated AI cloud capacity and software capability if GPU supply, power access, and customer demand stay constrained.
+    risk_watch: Integration, up to USD 98 million cash consideration, 3.8 million share consideration, utilization, financing, receivables, and customer concentration.
+    next_check: Next 6-K, customer update, financing update, or acquisition closing/integration update.
+    source_path: research/filings/2026-05-31-NBIS-6K-MAGICBYTE-000110465926053464.md
