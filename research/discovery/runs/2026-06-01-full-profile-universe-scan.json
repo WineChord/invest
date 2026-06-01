@@ -1,19 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-01T03:50:59.189Z",
+  "generated_at": "2026-06-01T08:42:28.424Z",
   "as_of": "2026-06-01",
   "discovery_scope": "active_emerging_incubating",
   "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
-  "sec_input_source": "research/cache/company_tickers_exchange-2026-06-01.json",
-  "sec_input_fetched_at": "2026-06-01T03:05:12.676Z",
+  "sec_input_source": "https://www.sec.gov/files/company_tickers_exchange.json",
+  "sec_input_fetched_at": "2026-06-01T08:42:17.474Z",
   "sec_input_row_count": 10365,
   "sec_input_eligible_universe_count": 7575,
   "sec_input_sha256": "27a0d81776e908cfdc6cc71064bf7692c8aea14f01ff074e46c2b7015ffbf5ee",
-  "input_path": "research/cache/company_tickers_exchange-2026-06-01.json",
+  "input_path": "",
   "lane_map_path": "research/discovery/lanes.yml",
   "lane_map_as_of": "2026-06-01",
-  "lane_map_sha256": "6c288d7da254cf6c16705e0b42c11f477717c926bc45b383b8f6107d929d488d",
+  "lane_map_sha256": "ce54732acffd5ff86b46425ef68c2177f6861c4bc4ed0af99466b2c3078ffa67",
   "profile_input_path": "research/cache/discovery/2026-06-01/2026-06-01-full-sec-issuer-profiles.json",
+  "profile_input_sha256": "e1a55371be049ba068760de120abf68b92370355e1f7bedcfa866ad1b5e64046",
   "profile_purpose": "issuer_universe_discovery",
   "profile_source": "sec_submissions_metadata",
   "profile_generated_at": "2026-06-01T03:33:23.864Z",
@@ -46,7 +47,7 @@
   "profile_declared_count": 6004,
   "profile_symbol_count": 6004,
   "deterministic_limit": 60,
-  "known_symbol_count": 25,
+  "known_symbol_count": 29,
   "lanes_scanned": [
     {
       "id": "space_infrastructure",
@@ -105,29 +106,29 @@
     "sort by deterministic priority before applying the limit"
   ],
   "candidate_counts_by_priority": {
-    "high": 17,
-    "medium": 43
+    "high": 16,
+    "medium": 44
   },
   "candidate_counts_by_lane": {
     "advanced_nuclear_and_grid_constraints": 3,
     "programmable_money_infrastructure": 1,
-    "quantum_computing_and_networking": 11,
+    "quantum_computing_and_networking": 10,
     "semiconductor_interconnect_and_memory": 8,
     "space_infrastructure": 1,
-    "ai_compute_infrastructure": 36
+    "ai_compute_infrastructure": 37
   },
   "false_positive_flag_counts": {},
   "all_candidate_counts_by_priority": {
-    "high": 17,
-    "medium": 211,
+    "high": 16,
+    "medium": 208,
     "low": 10
   },
   "all_candidate_counts_by_lane": {
     "advanced_nuclear_and_grid_constraints": 8,
     "programmable_money_infrastructure": 1,
-    "quantum_computing_and_networking": 11,
+    "quantum_computing_and_networking": 10,
     "semiconductor_interconnect_and_memory": 105,
-    "space_infrastructure": 18,
+    "space_infrastructure": 15,
     "ai_compute_infrastructure": 91,
     "direct_to_device_connectivity": 3,
     "frontier_ai_public_platforms": 1
@@ -146,30 +147,30 @@
     "blank_check_or_spac": 4,
     "fund_or_etf": 9
   },
-  "profile_enriched_candidate_count": 195,
-  "profile_enriched_returned_candidate_count": 43,
-  "profile_enriched_suppressed_match_count": 8,
+  "profile_enriched_candidate_count": 192,
+  "profile_enriched_returned_candidate_count": 44,
+  "profile_enriched_suppressed_match_count": 11,
   "profile_enriched_exploratory_match_count": 0,
-  "profile_known_symbol_count": 22,
-  "profile_unknown_symbol_count": 5982,
+  "profile_known_symbol_count": 26,
+  "profile_unknown_symbol_count": 5978,
   "total_match_count": 316,
-  "all_candidate_count": 238,
+  "all_candidate_count": 234,
   "returned_candidate_count": 60,
-  "omitted_candidate_count": 178,
+  "omitted_candidate_count": 174,
   "exploratory_match_count": 59,
   "truncated": true,
-  "recall_expected_lane_count": 22,
+  "recall_expected_lane_count": 25,
   "recall_expected_lane_miss_count": 0,
   "recall_counts_by_status": {
-    "matched_expected_lane": 22,
+    "matched_expected_lane": 25,
     "out_of_scope_private_or_future_proxy": 5
   },
   "recall_out_of_scope_proxy_count": 5,
-  "recall_unique_expected_proxy_count": 19,
+  "recall_unique_expected_proxy_count": 22,
   "recall_unique_expected_proxy_miss_count": 0,
-  "recall_expected_proxy_count": 22,
+  "recall_expected_proxy_count": 25,
   "recall_expected_proxy_miss_count": 0,
-  "recall_organic_expected_proxy_count": 7,
+  "recall_organic_expected_proxy_count": 10,
   "recall_organic_expected_proxy_miss_count": 15,
   "recall_organic_expected_proxy_status": "partial_organic_recall_gap",
   "recall_ticker_only_expected_proxy_count": 15,
@@ -1420,144 +1421,6 @@
         }
       ],
       "secondary_lane_ids": [],
-      "matched_keywords": [
-        "quantum"
-      ],
-      "matched_keyword_scopes": {
-        "quantum": "screen_keywords"
-      },
-      "matched_keyword_variants": {
-        "quantum": [
-          "quantum"
-        ]
-      },
-      "matched_fields": [
-        "issuer_name"
-      ],
-      "matched_keyword_fields": {
-        "quantum": [
-          "issuer_name"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "high_signal",
-      "triage_score": 85,
-      "deterministic_priority": "high",
-      "recommended_review_depth": "readiness_triage_priority",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
-      "symbol": "XNDU",
-      "name": "Xanadu Quantum Technologies Ltd",
-      "cik": "2097163",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "quantum_computing_and_networking",
-      "lane_id": "quantum_computing_and_networking",
-      "lane_name": "Quantum Computing And Networking",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "quantum_computing_and_networking",
-          "lane_name": "Quantum Computing And Networking",
-          "lane_status": "active",
-          "matched_keywords": [
-            "quantum"
-          ],
-          "matched_keyword_scopes": {
-            "quantum": "screen_keywords"
-          },
-          "matched_keyword_variants": {
-            "quantum": [
-              "quantum"
-            ]
-          },
-          "matched_fields": [
-            "issuer_name"
-          ],
-          "matched_keyword_fields": {
-            "quantum": [
-              "issuer_name"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 85,
-          "priority": "high",
-          "review_depth": "readiness_triage_priority",
-          "keyword_signal": "high_signal",
-          "false_positive_flags": []
-        },
-        {
-          "lane_id": "ai_compute_infrastructure",
-          "lane_name": "AI Compute Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "electronic computers"
-          ],
-          "matched_keyword_scopes": {
-            "electronic computers": "profile_keywords"
-          },
-          "matched_keyword_variants": {
-            "electronic computers": [
-              "electronic computers"
-            ]
-          },
-          "matched_fields": [
-            "profile_text"
-          ],
-          "matched_keyword_fields": {
-            "electronic computers": [
-              "profile_text"
-            ]
-          },
-          "matched_profile_snippets": [
-            {
-              "keyword": "electronic computers",
-              "keyword_scope": "profile_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Electronic Computers <br>Emerging growth company other"
-            },
-            {
-              "keyword": "electronic computers",
-              "keyword_scope": "profile_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Electronic Computers"
-            }
-          ],
-          "match_sources": [
-            "profile_input"
-          ],
-          "profile_enriched": true,
-          "score": 60,
-          "priority": "medium",
-          "review_depth": "primary_source_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
       "matched_keywords": [
         "quantum"
       ],
@@ -9162,9 +9025,7 @@
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage"
-    }
-  ],
-  "omitted_candidates": [
+    },
     {
       "symbol": "JOYY",
       "name": "JOYY Inc.",
@@ -9343,7 +9204,9 @@
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
+    }
+  ],
+  "omitted_candidates": [
     {
       "symbol": "LIF",
       "name": "Life360, Inc.",
@@ -31026,137 +30889,6 @@
       "required_next_step": "primary_source_skim_and_readiness_triage"
     },
     {
-      "symbol": "MNTS",
-      "name": "Momentus Inc.",
-      "cik": "1781162",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "space_infrastructure",
-      "lane_id": "space_infrastructure",
-      "lane_name": "Space Infrastructure",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "space_infrastructure",
-          "lane_name": "Space Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "space"
-          ],
-          "matched_keyword_scopes": {
-            "space": "screen_keywords"
-          },
-          "matched_keyword_variants": {
-            "space": [
-              "space"
-            ]
-          },
-          "matched_fields": [
-            "profile_text"
-          ],
-          "matched_keyword_fields": {
-            "space": [
-              "profile_text"
-            ]
-          },
-          "matched_profile_snippets": [
-            {
-              "keyword": "space",
-              "keyword_scope": "screen_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Smaller reporting company o"
-            },
-            {
-              "keyword": "space",
-              "keyword_scope": "screen_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Guided Missiles & Space Vehicles & Parts"
-            }
-          ],
-          "match_sources": [
-            "profile_input"
-          ],
-          "profile_enriched": true,
-          "score": 60,
-          "priority": "medium",
-          "review_depth": "primary_source_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "space"
-      ],
-      "matched_keyword_scopes": {
-        "space": "screen_keywords"
-      },
-      "matched_keyword_variants": {
-        "space": [
-          "space"
-        ]
-      },
-      "matched_fields": [
-        "profile_text"
-      ],
-      "matched_keyword_fields": {
-        "space": [
-          "profile_text"
-        ]
-      },
-      "matched_profile_snippets": [
-        {
-          "keyword": "space",
-          "keyword_scope": "screen_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Smaller reporting company o"
-        },
-        {
-          "keyword": "space",
-          "keyword_scope": "screen_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Guided Missiles & Space Vehicles & Parts"
-        }
-      ],
-      "match_sources": [
-        "profile_input"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 60,
-      "deterministic_priority": "medium",
-      "recommended_review_depth": "primary_source_skim",
-      "false_positive_flags": [],
-      "profile_enriched": true,
-      "profile_metadata": {},
-      "profile_sources": [
-        {
-          "source_url": "https://data.sec.gov/submissions/CIK0001781162.json",
-          "source_name": "SEC submissions metadata",
-          "source_published_at": "not listed on SEC submissions metadata",
-          "retrieved_at": "2026-06-01",
-          "profile_metadata": {}
-        }
-      ],
-      "profile_text_fields": [
-        "sicDescription",
-        "category",
-        "entityType"
-      ],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
       "symbol": "SIDU",
       "name": "Sidus Space Inc.",
       "cik": "1879726",
@@ -31237,274 +30969,6 @@
       "profile_metadata": {},
       "profile_sources": [],
       "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
-      "symbol": "VOYG",
-      "name": "Voyager Technologies, Inc./DE",
-      "cik": "1788060",
-      "exchange": "NYSE",
-      "primary_lane_id": "space_infrastructure",
-      "lane_id": "space_infrastructure",
-      "lane_name": "Space Infrastructure",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "space_infrastructure",
-          "lane_name": "Space Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "space"
-          ],
-          "matched_keyword_scopes": {
-            "space": "screen_keywords"
-          },
-          "matched_keyword_variants": {
-            "space": [
-              "space"
-            ]
-          },
-          "matched_fields": [
-            "profile_text"
-          ],
-          "matched_keyword_fields": {
-            "space": [
-              "profile_text"
-            ]
-          },
-          "matched_profile_snippets": [
-            {
-              "keyword": "space",
-              "keyword_scope": "screen_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Emerging growth company ope"
-            },
-            {
-              "keyword": "space",
-              "keyword_scope": "screen_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Guided Missiles & Space Vehicles & Parts"
-            }
-          ],
-          "match_sources": [
-            "profile_input"
-          ],
-          "profile_enriched": true,
-          "score": 60,
-          "priority": "medium",
-          "review_depth": "primary_source_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "space"
-      ],
-      "matched_keyword_scopes": {
-        "space": "screen_keywords"
-      },
-      "matched_keyword_variants": {
-        "space": [
-          "space"
-        ]
-      },
-      "matched_fields": [
-        "profile_text"
-      ],
-      "matched_keyword_fields": {
-        "space": [
-          "profile_text"
-        ]
-      },
-      "matched_profile_snippets": [
-        {
-          "keyword": "space",
-          "keyword_scope": "screen_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Emerging growth company ope"
-        },
-        {
-          "keyword": "space",
-          "keyword_scope": "screen_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Guided Missiles & Space Vehicles & Parts"
-        }
-      ],
-      "match_sources": [
-        "profile_input"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 60,
-      "deterministic_priority": "medium",
-      "recommended_review_depth": "primary_source_skim",
-      "false_positive_flags": [],
-      "profile_enriched": true,
-      "profile_metadata": {},
-      "profile_sources": [
-        {
-          "source_url": "https://data.sec.gov/submissions/CIK0001788060.json",
-          "source_name": "SEC submissions metadata",
-          "source_published_at": "not listed on SEC submissions metadata",
-          "retrieved_at": "2026-06-01",
-          "profile_metadata": {}
-        }
-      ],
-      "profile_text_fields": [
-        "sicDescription",
-        "category",
-        "entityType"
-      ],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
-      "symbol": "YSS",
-      "name": "York Space Systems Inc.",
-      "cik": "2086587",
-      "exchange": "NYSE",
-      "primary_lane_id": "space_infrastructure",
-      "lane_id": "space_infrastructure",
-      "lane_name": "Space Infrastructure",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "space_infrastructure",
-          "lane_name": "Space Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "space"
-          ],
-          "matched_keyword_scopes": {
-            "space": "screen_keywords"
-          },
-          "matched_keyword_variants": {
-            "space": [
-              "space"
-            ]
-          },
-          "matched_fields": [
-            "issuer_name",
-            "profile_text"
-          ],
-          "matched_keyword_fields": {
-            "space": [
-              "issuer_name",
-              "profile_text"
-            ]
-          },
-          "matched_profile_snippets": [
-            {
-              "keyword": "space",
-              "keyword_scope": "screen_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Guided Missiles & Space Vehicles & Parts <br>Emerging growth company operating"
-            },
-            {
-              "keyword": "space",
-              "keyword_scope": "screen_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Guided Missiles & Space Vehicles & Parts"
-            }
-          ],
-          "match_sources": [
-            "profile_input",
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": true,
-          "score": 60,
-          "priority": "medium",
-          "review_depth": "primary_source_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "space"
-      ],
-      "matched_keyword_scopes": {
-        "space": "screen_keywords"
-      },
-      "matched_keyword_variants": {
-        "space": [
-          "space"
-        ]
-      },
-      "matched_fields": [
-        "issuer_name",
-        "profile_text"
-      ],
-      "matched_keyword_fields": {
-        "space": [
-          "issuer_name",
-          "profile_text"
-        ]
-      },
-      "matched_profile_snippets": [
-        {
-          "keyword": "space",
-          "keyword_scope": "screen_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Guided Missiles & Space Vehicles & Parts <br>Emerging growth company operating"
-        },
-        {
-          "keyword": "space",
-          "keyword_scope": "screen_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Guided Missiles & Space Vehicles & Parts"
-        }
-      ],
-      "match_sources": [
-        "profile_input",
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 60,
-      "deterministic_priority": "medium",
-      "recommended_review_depth": "primary_source_skim",
-      "false_positive_flags": [],
-      "profile_enriched": true,
-      "profile_metadata": {},
-      "profile_sources": [
-        {
-          "source_url": "https://data.sec.gov/submissions/CIK0002086587.json",
-          "source_name": "SEC submissions metadata",
-          "source_published_at": "not listed on SEC submissions metadata",
-          "retrieved_at": "2026-06-01",
-          "profile_metadata": {}
-        }
-      ],
-      "profile_text_fields": [
-        "sicDescription",
-        "category",
-        "entityType"
-      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage"
@@ -33349,185 +32813,6 @@
   ],
   "top_omitted_candidates": [
     {
-      "symbol": "JOYY",
-      "name": "JOYY Inc.",
-      "cik": "1530238",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "ai_compute_infrastructure",
-      "lane_id": "ai_compute_infrastructure",
-      "lane_name": "AI Compute Infrastructure",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "ai_compute_infrastructure",
-          "lane_name": "AI Compute Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "computer processing",
-            "data preparation"
-          ],
-          "matched_keyword_scopes": {
-            "computer processing": "profile_keywords",
-            "data preparation": "profile_keywords"
-          },
-          "matched_keyword_variants": {
-            "computer processing": [
-              "computer processing"
-            ],
-            "data preparation": [
-              "data preparation"
-            ]
-          },
-          "matched_fields": [
-            "profile_text"
-          ],
-          "matched_keyword_fields": {
-            "computer processing": [
-              "profile_text"
-            ],
-            "data preparation": [
-              "profile_text"
-            ]
-          },
-          "matched_profile_snippets": [
-            {
-              "keyword": "computer processing",
-              "keyword_scope": "profile_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer other"
-            },
-            {
-              "keyword": "computer processing",
-              "keyword_scope": "profile_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Services-Computer Processing & Data Preparation"
-            },
-            {
-              "keyword": "data preparation",
-              "keyword_scope": "profile_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer other"
-            },
-            {
-              "keyword": "data preparation",
-              "keyword_scope": "profile_keywords",
-              "profile_text_field_ids": [
-                "sicDescription"
-              ],
-              "snippet": "Services-Computer Processing & Data Preparation"
-            }
-          ],
-          "match_sources": [
-            "profile_input"
-          ],
-          "profile_enriched": true,
-          "score": 70,
-          "priority": "medium",
-          "review_depth": "primary_source_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "computer processing",
-        "data preparation"
-      ],
-      "matched_keyword_scopes": {
-        "computer processing": "profile_keywords",
-        "data preparation": "profile_keywords"
-      },
-      "matched_keyword_variants": {
-        "computer processing": [
-          "computer processing"
-        ],
-        "data preparation": [
-          "data preparation"
-        ]
-      },
-      "matched_fields": [
-        "profile_text"
-      ],
-      "matched_keyword_fields": {
-        "computer processing": [
-          "profile_text"
-        ],
-        "data preparation": [
-          "profile_text"
-        ]
-      },
-      "matched_profile_snippets": [
-        {
-          "keyword": "computer processing",
-          "keyword_scope": "profile_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer other"
-        },
-        {
-          "keyword": "computer processing",
-          "keyword_scope": "profile_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Services-Computer Processing & Data Preparation"
-        },
-        {
-          "keyword": "data preparation",
-          "keyword_scope": "profile_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer other"
-        },
-        {
-          "keyword": "data preparation",
-          "keyword_scope": "profile_keywords",
-          "profile_text_field_ids": [
-            "sicDescription"
-          ],
-          "snippet": "Services-Computer Processing & Data Preparation"
-        }
-      ],
-      "match_sources": [
-        "profile_input"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 70,
-      "deterministic_priority": "medium",
-      "recommended_review_depth": "primary_source_skim",
-      "false_positive_flags": [],
-      "profile_enriched": true,
-      "profile_metadata": {},
-      "profile_sources": [
-        {
-          "source_url": "https://data.sec.gov/submissions/CIK0001530238.json",
-          "source_name": "SEC submissions metadata",
-          "source_published_at": "not listed on SEC submissions metadata",
-          "retrieved_at": "2026-06-01",
-          "profile_metadata": {}
-        }
-      ],
-      "profile_text_fields": [
-        "sicDescription",
-        "category",
-        "entityType"
-      ],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
       "symbol": "LIF",
       "name": "Life360, Inc.",
       "cik": "1581760",
@@ -35123,6 +34408,185 @@
       "profile_sources": [
         {
           "source_url": "https://data.sec.gov/submissions/CIK0001751876.json",
+          "source_name": "SEC submissions metadata",
+          "source_published_at": "not listed on SEC submissions metadata",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "PEGA",
+      "name": "PEGASYSTEMS INC",
+      "cik": "1013857",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "computer processing",
+            "data preparation"
+          ],
+          "matched_keyword_scopes": {
+            "computer processing": "profile_keywords",
+            "data preparation": "profile_keywords"
+          },
+          "matched_keyword_variants": {
+            "computer processing": [
+              "computer processing"
+            ],
+            "data preparation": [
+              "data preparation"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "computer processing": [
+              "profile_text"
+            ],
+            "data preparation": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "computer processing",
+              "keyword_scope": "profile_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer operating"
+            },
+            {
+              "keyword": "computer processing",
+              "keyword_scope": "profile_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Services-Computer Processing & Data Preparation"
+            },
+            {
+              "keyword": "data preparation",
+              "keyword_scope": "profile_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer operating"
+            },
+            {
+              "keyword": "data preparation",
+              "keyword_scope": "profile_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Services-Computer Processing & Data Preparation"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 70,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "computer processing",
+        "data preparation"
+      ],
+      "matched_keyword_scopes": {
+        "computer processing": "profile_keywords",
+        "data preparation": "profile_keywords"
+      },
+      "matched_keyword_variants": {
+        "computer processing": [
+          "computer processing"
+        ],
+        "data preparation": [
+          "data preparation"
+        ]
+      },
+      "matched_fields": [
+        "profile_text"
+      ],
+      "matched_keyword_fields": {
+        "computer processing": [
+          "profile_text"
+        ],
+        "data preparation": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "computer processing",
+          "keyword_scope": "profile_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer operating"
+        },
+        {
+          "keyword": "computer processing",
+          "keyword_scope": "profile_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Services-Computer Processing & Data Preparation"
+        },
+        {
+          "keyword": "data preparation",
+          "keyword_scope": "profile_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Services-Computer Processing & Data Preparation Large accelerated filer operating"
+        },
+        {
+          "keyword": "data preparation",
+          "keyword_scope": "profile_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Services-Computer Processing & Data Preparation"
+        }
+      ],
+      "match_sources": [
+        "profile_input"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 70,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "https://data.sec.gov/submissions/CIK0001013857.json",
           "source_name": "SEC submissions metadata",
           "source_published_at": "not listed on SEC submissions metadata",
           "retrieved_at": "2026-06-01",
@@ -40269,6 +39733,168 @@
   ],
   "suppressed_known_matches": [
     {
+      "symbol": "XNDU",
+      "name": "Xanadu Quantum Technologies Ltd",
+      "cik": "2097163",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "quantum_computing_and_networking",
+      "lane_id": "quantum_computing_and_networking",
+      "lane_name": "Quantum Computing And Networking",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "quantum_computing_and_networking",
+          "lane_name": "Quantum Computing And Networking",
+          "lane_status": "active",
+          "matched_keywords": [
+            "XNDU",
+            "quantum"
+          ],
+          "matched_keyword_scopes": {
+            "XNDU": "current_public_proxy_symbols",
+            "quantum": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "XNDU": [
+              "xndu"
+            ],
+            "quantum": [
+              "quantum"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "XNDU": [
+              "ticker"
+            ],
+            "quantum": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 100,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "electronic computers"
+          ],
+          "matched_keyword_scopes": {
+            "electronic computers": "profile_keywords"
+          },
+          "matched_keyword_variants": {
+            "electronic computers": [
+              "electronic computers"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "electronic computers": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "electronic computers",
+              "keyword_scope": "profile_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Electronic Computers <br>Emerging growth company other"
+            },
+            {
+              "keyword": "electronic computers",
+              "keyword_scope": "profile_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Electronic Computers"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 60,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "matched_keywords": [
+        "XNDU",
+        "quantum"
+      ],
+      "matched_keyword_scopes": {
+        "XNDU": "current_public_proxy_symbols",
+        "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "XNDU": [
+          "xndu"
+        ],
+        "quantum": [
+          "quantum"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "XNDU": [
+          "ticker"
+        ],
+        "quantum": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 100,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:research_only",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
       "symbol": "ALAB",
       "name": "Astera Labs, Inc.",
       "cik": "1736297",
@@ -41206,6 +40832,324 @@
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     },
     {
+      "symbol": "VOYG",
+      "name": "Voyager Technologies, Inc./DE",
+      "cik": "1788060",
+      "exchange": "NYSE",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "VOYG",
+            "space"
+          ],
+          "matched_keyword_scopes": {
+            "VOYG": "current_public_proxy_symbols",
+            "space": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "VOYG": [
+              "voyg"
+            ],
+            "space": [
+              "space"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "VOYG": [
+              "ticker"
+            ],
+            "space": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Emerging growth company ope"
+            },
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Guided Missiles & Space Vehicles & Parts"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 75,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "VOYG",
+        "space"
+      ],
+      "matched_keyword_scopes": {
+        "VOYG": "current_public_proxy_symbols",
+        "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "VOYG": [
+          "voyg"
+        ],
+        "space": [
+          "space"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "VOYG": [
+          "ticker"
+        ],
+        "space": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Emerging growth company ope"
+        },
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Guided Missiles & Space Vehicles & Parts"
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 75,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "https://data.sec.gov/submissions/CIK0001788060.json",
+          "source_name": "SEC submissions metadata",
+          "source_published_at": "not listed on SEC submissions metadata",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:research_only",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "YSS",
+      "name": "York Space Systems Inc.",
+      "cik": "2086587",
+      "exchange": "NYSE",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "YSS",
+            "space"
+          ],
+          "matched_keyword_scopes": {
+            "YSS": "current_public_proxy_symbols",
+            "space": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "YSS": [
+              "yss"
+            ],
+            "space": [
+              "space"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name",
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "YSS": [
+              "ticker"
+            ],
+            "space": [
+              "issuer_name",
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Guided Missiles & Space Vehicles & Parts <br>Emerging growth company operating"
+            },
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Guided Missiles & Space Vehicles & Parts"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 75,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "YSS",
+        "space"
+      ],
+      "matched_keyword_scopes": {
+        "YSS": "current_public_proxy_symbols",
+        "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "YSS": [
+          "yss"
+        ],
+        "space": [
+          "space"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name",
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "YSS": [
+          "ticker"
+        ],
+        "space": [
+          "issuer_name",
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Guided Missiles & Space Vehicles & Parts <br>Emerging growth company operating"
+        },
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Guided Missiles & Space Vehicles & Parts"
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 75,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "https://data.sec.gov/submissions/CIK0002086587.json",
+          "source_name": "SEC submissions metadata",
+          "source_published_at": "not listed on SEC submissions metadata",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
       "symbol": "MU",
       "name": "MICRON TECHNOLOGY INC",
       "cik": "723125",
@@ -41493,6 +41437,141 @@
       "known_sources": [
         "watchlist:watch",
         "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "MNTS",
+      "name": "Momentus Inc.",
+      "cik": "1781162",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "space"
+          ],
+          "matched_keyword_scopes": {
+            "space": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "space": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Smaller reporting company o"
+            },
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "sicDescription"
+              ],
+              "snippet": "Guided Missiles & Space Vehicles & Parts"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 60,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "space"
+      ],
+      "matched_keyword_scopes": {
+        "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
+      },
+      "matched_fields": [
+        "profile_text"
+      ],
+      "matched_keyword_fields": {
+        "space": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Guided Missiles & Space Vehicles & Parts Non-accelerated filer<br>Smaller reporting company o"
+        },
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "sicDescription"
+          ],
+          "snippet": "Guided Missiles & Space Vehicles & Parts"
+        }
+      ],
+      "match_sources": [
+        "profile_input"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 60,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "https://data.sec.gov/submissions/CIK0001781162.json",
+          "source_name": "SEC submissions metadata",
+          "source_published_at": "not listed on SEC submissions metadata",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "discovery_candidates:rejected"
       ],
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     },
@@ -42595,7 +42674,7 @@
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     }
   ],
-  "suppressed_known_match_count": 19,
+  "suppressed_known_match_count": 23,
   "recall_diagnostics": [
     {
       "symbol": "RKLB",
@@ -42672,6 +42751,91 @@
       "profile_sources": [
         {
           "source_url": "https://data.sec.gov/submissions/CIK0001860160.json",
+          "source_name": "SEC submissions metadata",
+          "source_published_at": "not listed on SEC submissions metadata",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
+      "symbol": "YSS",
+      "sec_name": "York Space Systems Inc.",
+      "expected_lane_id": "space_infrastructure",
+      "expected_lane_ids_for_symbol": [
+        "space_infrastructure"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "matched_fields": [
+        "issuer_name",
+        "profile_text",
+        "ticker"
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [
+        {
+          "source_url": "https://data.sec.gov/submissions/CIK0002086587.json",
+          "source_name": "SEC submissions metadata",
+          "source_published_at": "not listed on SEC submissions metadata",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
+      "symbol": "VOYG",
+      "sec_name": "Voyager Technologies, Inc./DE",
+      "expected_lane_id": "space_infrastructure",
+      "expected_lane_ids_for_symbol": [
+        "space_infrastructure"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [
+        {
+          "source_url": "https://data.sec.gov/submissions/CIK0001788060.json",
           "source_name": "SEC submissions metadata",
           "source_published_at": "not listed on SEC submissions metadata",
           "retrieved_at": "2026-06-01",
@@ -43480,6 +43644,50 @@
       "suggested_review": "No recall action from deterministic scanner."
     },
     {
+      "symbol": "XNDU",
+      "sec_name": "Xanadu Quantum Technologies Ltd",
+      "expected_lane_id": "quantum_computing_and_networking",
+      "expected_lane_ids_for_symbol": [
+        "quantum_computing_and_networking"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "quantum_computing_and_networking",
+        "ai_compute_infrastructure"
+      ],
+      "matched_fields": [
+        "issuer_name",
+        "profile_text",
+        "ticker"
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [
+        {
+          "source_url": "https://data.sec.gov/submissions/CIK0002097163.json",
+          "source_name": "SEC submissions metadata",
+          "source_published_at": "not listed on SEC submissions metadata",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
       "symbol": "CRCL",
       "sec_name": "Circle Internet Group, Inc.",
       "expected_lane_id": "programmable_money_infrastructure",
@@ -43579,6 +43787,5 @@
     "Deterministic keyword matches are raw leads, not recommendations.",
     "This scan checks SEC listed issuer reference names and symbols plus optional caller-supplied profile text.",
     "Serious discovery still requires independent agentic bottleneck research and source-backed readiness work."
-  ],
-  "profile_input_sha256": "e1a55371be049ba068760de120abf68b92370355e1f7bedcfa866ad1b5e64046"
+  ]
 }

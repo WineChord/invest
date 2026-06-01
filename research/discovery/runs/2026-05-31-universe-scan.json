@@ -1,19 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-31T22:46:58.017Z",
+  "generated_at": "2026-06-01T08:40:23.452Z",
   "as_of": "2026-05-31",
   "discovery_scope": "active_emerging_incubating",
   "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
   "sec_input_source": "https://www.sec.gov/files/company_tickers_exchange.json",
-  "sec_input_fetched_at": "2026-05-31T22:46:55.609Z",
+  "sec_input_fetched_at": "2026-06-01T08:40:21.949Z",
   "sec_input_row_count": 10365,
   "sec_input_eligible_universe_count": 7575,
   "sec_input_sha256": "27a0d81776e908cfdc6cc71064bf7692c8aea14f01ff074e46c2b7015ffbf5ee",
   "input_path": "",
   "lane_map_path": "research/discovery/lanes.yml",
   "lane_map_as_of": "2026-06-01",
-  "lane_map_sha256": "6c288d7da254cf6c16705e0b42c11f477717c926bc45b383b8f6107d929d488d",
+  "lane_map_sha256": "ce54732acffd5ff86b46425ef68c2177f6861c4bc4ed0af99466b2c3078ffa67",
   "profile_input_path": "",
+  "profile_input_sha256": "",
   "profile_purpose": "",
   "profile_source": "",
   "profile_generated_at": "",
@@ -26,14 +27,19 @@
   "profile_selected_symbol_count": 0,
   "profile_eligible_universe_count": 0,
   "profile_coverage_limit": 0,
+  "profile_audited_symbol_count": 0,
+  "profile_skipped_symbol_count": 0,
   "profile_coverage_gap_count": 0,
   "profile_coverage_ratio": 0,
   "profile_coverage_status": "not_applicable_no_profile_input",
+  "issuer_profile_coverage_status": "absent_name_ticker_only",
+  "issuer_profile_semantic_gap_count": 7575,
+  "issuer_profile_semantic_coverage_ratio": 0,
   "profile_sampling_note": "",
   "profile_declared_count": 0,
   "profile_symbol_count": 0,
   "deterministic_limit": 1000,
-  "known_symbol_count": 25,
+  "known_symbol_count": 29,
   "lanes_scanned": [
     {
       "id": "space_infrastructure",
@@ -92,53 +98,51 @@
     "sort by deterministic priority before applying the limit"
   ],
   "candidate_counts_by_priority": {
-    "high": 17,
-    "medium": 19,
-    "low": 10
+    "high": 16,
+    "medium": 18,
+    "low": 9
   },
   "candidate_counts_by_lane": {
     "advanced_nuclear_and_grid_constraints": 8,
     "programmable_money_infrastructure": 1,
-    "quantum_computing_and_networking": 12,
+    "quantum_computing_and_networking": 10,
     "semiconductor_interconnect_and_memory": 2,
-    "space_infrastructure": 15,
-    "ai_compute_infrastructure": 3,
+    "space_infrastructure": 14,
+    "ai_compute_infrastructure": 4,
     "direct_to_device_connectivity": 3,
-    "ai_power_and_cooling": 1,
     "frontier_ai_public_platforms": 1
   },
   "false_positive_flag_counts": {
     "blank_check_or_spac": 6,
-    "ticker_keyword_collision": 2,
+    "ticker_keyword_collision": 3,
     "royalty_or_commodity_proxy": 1,
     "brand_keyword_collision": 1,
     "fund_or_etf": 2
   },
   "all_candidate_counts_by_priority": {
-    "high": 17,
-    "medium": 19,
-    "low": 10
+    "high": 16,
+    "medium": 18,
+    "low": 9
   },
   "all_candidate_counts_by_lane": {
     "advanced_nuclear_and_grid_constraints": 8,
     "programmable_money_infrastructure": 1,
-    "quantum_computing_and_networking": 12,
+    "quantum_computing_and_networking": 10,
     "semiconductor_interconnect_and_memory": 2,
-    "space_infrastructure": 15,
-    "ai_compute_infrastructure": 3,
+    "space_infrastructure": 14,
+    "ai_compute_infrastructure": 4,
     "direct_to_device_connectivity": 3,
-    "ai_power_and_cooling": 1,
     "frontier_ai_public_platforms": 1
   },
   "all_false_positive_flag_counts": {
     "blank_check_or_spac": 6,
-    "ticker_keyword_collision": 2,
+    "ticker_keyword_collision": 3,
     "royalty_or_commodity_proxy": 1,
     "brand_keyword_collision": 1,
     "fund_or_etf": 2
   },
   "exploratory_match_counts_by_lane": {
-    "unknown_future_bottlenecks": 57
+    "unknown_future_bottlenecks": 59
   },
   "exploratory_false_positive_flag_counts": {
     "blank_check_or_spac": 4,
@@ -150,25 +154,53 @@
   "profile_enriched_exploratory_match_count": 0,
   "profile_known_symbol_count": 0,
   "profile_unknown_symbol_count": 0,
-  "total_match_count": 121,
-  "all_candidate_count": 46,
-  "returned_candidate_count": 46,
+  "total_match_count": 123,
+  "all_candidate_count": 43,
+  "returned_candidate_count": 43,
   "omitted_candidate_count": 0,
-  "exploratory_match_count": 57,
+  "exploratory_match_count": 59,
   "truncated": false,
-  "recall_expected_lane_count": 22,
+  "recall_expected_lane_count": 25,
   "recall_expected_lane_miss_count": 0,
   "recall_counts_by_status": {
-    "matched_expected_lane": 22,
+    "matched_expected_lane": 25,
     "out_of_scope_private_or_future_proxy": 5
   },
   "recall_out_of_scope_proxy_count": 5,
-  "recall_unique_expected_proxy_count": 19,
+  "recall_unique_expected_proxy_count": 22,
   "recall_unique_expected_proxy_miss_count": 0,
-  "recall_expected_proxy_count": 22,
+  "recall_expected_proxy_count": 25,
   "recall_expected_proxy_miss_count": 0,
-  "recall_ticker_only_expected_proxy_count": 22,
-  "candidate_count": 46,
+  "recall_organic_expected_proxy_count": 2,
+  "recall_organic_expected_proxy_miss_count": 23,
+  "recall_organic_expected_proxy_status": "partial_organic_recall_gap",
+  "recall_ticker_only_expected_proxy_count": 23,
+  "recall_ticker_only_expected_proxy_symbols": [
+    "ALAB",
+    "ASTS",
+    "BE",
+    "BE",
+    "CRCL",
+    "CRDO",
+    "CRWV",
+    "FLY",
+    "GSAT",
+    "IONQ",
+    "IREN",
+    "KTOS",
+    "LEU",
+    "LEU",
+    "LUNR",
+    "MU",
+    "NBIS",
+    "OKLO",
+    "OKLO",
+    "RDW",
+    "RKLB",
+    "VOYG",
+    "VRT"
+  ],
+  "candidate_count": 43,
   "candidates": [
     {
       "symbol": "FNUC",
@@ -1361,91 +1393,6 @@
       "required_next_step": "primary_source_skim_and_readiness_triage"
     },
     {
-      "symbol": "XNDU",
-      "name": "Xanadu Quantum Technologies Ltd",
-      "cik": "2097163",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "quantum_computing_and_networking",
-      "lane_id": "quantum_computing_and_networking",
-      "lane_name": "Quantum Computing And Networking",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "quantum_computing_and_networking",
-          "lane_name": "Quantum Computing And Networking",
-          "lane_status": "active",
-          "matched_keywords": [
-            "quantum"
-          ],
-          "matched_keyword_scopes": {
-            "quantum": "screen_keywords"
-          },
-          "matched_keyword_variants": {
-            "quantum": [
-              "quantum"
-            ]
-          },
-          "matched_fields": [
-            "issuer_name"
-          ],
-          "matched_keyword_fields": {
-            "quantum": [
-              "issuer_name"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 85,
-          "priority": "high",
-          "review_depth": "readiness_triage_priority",
-          "keyword_signal": "high_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "quantum"
-      ],
-      "matched_keyword_scopes": {
-        "quantum": "screen_keywords"
-      },
-      "matched_keyword_variants": {
-        "quantum": [
-          "quantum"
-        ]
-      },
-      "matched_fields": [
-        "issuer_name"
-      ],
-      "matched_keyword_fields": {
-        "quantum": [
-          "issuer_name"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "high_signal",
-      "triage_score": 85,
-      "deterministic_priority": "high",
-      "recommended_review_depth": "readiness_triage_priority",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
       "symbol": "OCC",
       "name": "OPTICAL CABLE CORP",
       "cik": "1000230",
@@ -2336,91 +2283,6 @@
       "name": "Sidus Space Inc.",
       "cik": "1879726",
       "exchange": "Nasdaq",
-      "primary_lane_id": "space_infrastructure",
-      "lane_id": "space_infrastructure",
-      "lane_name": "Space Infrastructure",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "space_infrastructure",
-          "lane_name": "Space Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "space"
-          ],
-          "matched_keyword_scopes": {
-            "space": "screen_keywords"
-          },
-          "matched_keyword_variants": {
-            "space": [
-              "space"
-            ]
-          },
-          "matched_fields": [
-            "issuer_name"
-          ],
-          "matched_keyword_fields": {
-            "space": [
-              "issuer_name"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 60,
-          "priority": "medium",
-          "review_depth": "primary_source_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "space"
-      ],
-      "matched_keyword_scopes": {
-        "space": "screen_keywords"
-      },
-      "matched_keyword_variants": {
-        "space": [
-          "space"
-        ]
-      },
-      "matched_fields": [
-        "issuer_name"
-      ],
-      "matched_keyword_fields": {
-        "space": [
-          "issuer_name"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 60,
-      "deterministic_priority": "medium",
-      "recommended_review_depth": "primary_source_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
-      "symbol": "YSS",
-      "name": "York Space Systems Inc.",
-      "cik": "2086587",
-      "exchange": "NYSE",
       "primary_lane_id": "space_infrastructure",
       "lane_id": "space_infrastructure",
       "lane_name": "Space Infrastructure",
@@ -3444,35 +3306,35 @@
       "required_next_step": "primary_source_skim_and_readiness_triage"
     },
     {
-      "symbol": "VRTS",
-      "name": "VIRTUS INVESTMENT PARTNERS, INC.",
-      "cik": "883237",
+      "symbol": "GPUS-PD",
+      "name": "Hyperscale Data, Inc.",
+      "cik": "896493",
       "exchange": "NYSE",
-      "primary_lane_id": "ai_power_and_cooling",
-      "lane_id": "ai_power_and_cooling",
-      "lane_name": "AI Data-Center Power And Cooling",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
       "lane_status": "active",
       "lane_matches": [
         {
-          "lane_id": "ai_power_and_cooling",
-          "lane_name": "AI Data-Center Power And Cooling",
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "VRT"
+            "GPU"
           ],
           "matched_keyword_scopes": {
-            "VRT": "current_public_proxy_symbols"
+            "GPU": "screen_keywords"
           },
           "matched_keyword_variants": {
-            "VRT": [
-              "vrts"
+            "GPU": [
+              "gpus"
             ]
           },
           "matched_fields": [
             "ticker"
           ],
           "matched_keyword_fields": {
-            "VRT": [
+            "GPU": [
               "ticker"
             ]
           },
@@ -3484,27 +3346,29 @@
           "score": 44,
           "priority": "low",
           "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
+          "keyword_signal": "ticker_only_signal",
+          "false_positive_flags": [
+            "ticker_keyword_collision"
+          ]
         }
       ],
       "secondary_lane_ids": [],
       "matched_keywords": [
-        "VRT"
+        "GPU"
       ],
       "matched_keyword_scopes": {
-        "VRT": "current_public_proxy_symbols"
+        "GPU": "screen_keywords"
       },
       "matched_keyword_variants": {
-        "VRT": [
-          "vrts"
+        "GPU": [
+          "gpus"
         ]
       },
       "matched_fields": [
         "ticker"
       ],
       "matched_keyword_fields": {
-        "VRT": [
+        "GPU": [
           "ticker"
         ]
       },
@@ -3515,96 +3379,13 @@
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
+      "keyword_signal": "ticker_only_signal",
       "triage_score": 44,
       "deterministic_priority": "low",
       "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
-      "symbol": "IONQ-WT",
-      "name": "IonQ, Inc.",
-      "cik": "1824920",
-      "exchange": "NYSE",
-      "primary_lane_id": "quantum_computing_and_networking",
-      "lane_id": "quantum_computing_and_networking",
-      "lane_name": "Quantum Computing And Networking",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "quantum_computing_and_networking",
-          "lane_name": "Quantum Computing And Networking",
-          "lane_status": "active",
-          "matched_keywords": [
-            "IONQ"
-          ],
-          "matched_keyword_scopes": {
-            "IONQ": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "IONQ": [
-              "ionq"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "IONQ": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
+      "false_positive_flags": [
+        "ticker_keyword_collision"
       ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "IONQ"
-      ],
-      "matched_keyword_scopes": {
-        "IONQ": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "IONQ": [
-          "ionq"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "IONQ": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
       "profile_enriched": false,
       "profile_metadata": {},
       "profile_sources": [],
@@ -4930,6 +4711,178 @@
     },
     {
       "symbol": "BIP",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "cik": "1406234",
+      "exchange": "NYSE",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "infrastructure"
+      ],
+      "matched_keyword_scopes": {
+        "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "BIP-PA",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "cik": "1406234",
+      "exchange": "NYSE",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "infrastructure"
+      ],
+      "matched_keyword_scopes": {
+        "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "BIP-PB",
       "name": "Brookfield Infrastructure Partners L.P.",
       "cik": "1406234",
       "exchange": "NYSE",
@@ -9197,6 +9150,224 @@
   ],
   "suppressed_known_matches": [
     {
+      "symbol": "XNDU",
+      "name": "Xanadu Quantum Technologies Ltd",
+      "cik": "2097163",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "quantum_computing_and_networking",
+      "lane_id": "quantum_computing_and_networking",
+      "lane_name": "Quantum Computing And Networking",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "quantum_computing_and_networking",
+          "lane_name": "Quantum Computing And Networking",
+          "lane_status": "active",
+          "matched_keywords": [
+            "XNDU",
+            "quantum"
+          ],
+          "matched_keyword_scopes": {
+            "XNDU": "current_public_proxy_symbols",
+            "quantum": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "XNDU": [
+              "xndu"
+            ],
+            "quantum": [
+              "quantum"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "XNDU": [
+              "ticker"
+            ],
+            "quantum": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 100,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "XNDU",
+        "quantum"
+      ],
+      "matched_keyword_scopes": {
+        "XNDU": "current_public_proxy_symbols",
+        "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "XNDU": [
+          "xndu"
+        ],
+        "quantum": [
+          "quantum"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "XNDU": [
+          "ticker"
+        ],
+        "quantum": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 100,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:research_only",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "YSS",
+      "name": "York Space Systems Inc.",
+      "cik": "2086587",
+      "exchange": "NYSE",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "YSS",
+            "space"
+          ],
+          "matched_keyword_scopes": {
+            "YSS": "current_public_proxy_symbols",
+            "space": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "YSS": [
+              "yss"
+            ],
+            "space": [
+              "space"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "YSS": [
+              "ticker"
+            ],
+            "space": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 75,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "YSS",
+        "space"
+      ],
+      "matched_keyword_scopes": {
+        "YSS": "current_public_proxy_symbols",
+        "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "YSS": [
+          "yss"
+        ],
+        "space": [
+          "space"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "YSS": [
+          "ticker"
+        ],
+        "space": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 75,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
       "symbol": "BE",
       "name": "Bloom Energy Corp",
       "cik": "1664703",
@@ -10924,9 +11095,100 @@
         "security_master:tradable"
       ],
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "VOYG",
+      "name": "Voyager Technologies, Inc./DE",
+      "cik": "1788060",
+      "exchange": "NYSE",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "VOYG"
+          ],
+          "matched_keyword_scopes": {
+            "VOYG": "current_public_proxy_symbols"
+          },
+          "matched_keyword_variants": {
+            "VOYG": [
+              "voyg"
+            ]
+          },
+          "matched_fields": [
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "VOYG": [
+              "ticker"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 44,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "VOYG"
+      ],
+      "matched_keyword_scopes": {
+        "VOYG": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "VOYG": [
+          "voyg"
+        ]
+      },
+      "matched_fields": [
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "VOYG": [
+          "ticker"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 44,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:research_only",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     }
   ],
-  "suppressed_known_match_count": 18,
+  "suppressed_known_match_count": 21,
   "recall_diagnostics": [
     {
       "symbol": "RKLB",
@@ -10961,6 +11223,69 @@
     {
       "symbol": "FLY",
       "sec_name": "Firefly Aerospace Inc.",
+      "expected_lane_id": "space_infrastructure",
+      "expected_lane_ids_for_symbol": [
+        "space_infrastructure"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "matched_fields": [
+        "ticker"
+      ],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
+      "symbol": "YSS",
+      "sec_name": "York Space Systems Inc.",
+      "expected_lane_id": "space_infrastructure",
+      "expected_lane_ids_for_symbol": [
+        "space_infrastructure"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
+      "symbol": "VOYG",
+      "sec_name": "Voyager Technologies, Inc./DE",
       "expected_lane_id": "space_infrastructure",
       "expected_lane_ids_for_symbol": [
         "space_infrastructure"
@@ -11615,6 +11940,39 @@
       "suggested_review": "No recall action from deterministic scanner."
     },
     {
+      "symbol": "XNDU",
+      "sec_name": "Xanadu Quantum Technologies Ltd",
+      "expected_lane_id": "quantum_computing_and_networking",
+      "expected_lane_ids_for_symbol": [
+        "quantum_computing_and_networking"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
       "symbol": "CRCL",
       "sec_name": "Circle Internet Group, Inc.",
       "expected_lane_id": "programmable_money_infrastructure",
@@ -11706,35 +12064,5 @@
     "Deterministic keyword matches are raw leads, not recommendations.",
     "This scan checks SEC listed issuer reference names and symbols plus optional caller-supplied profile text.",
     "Serious discovery still requires independent agentic bottleneck research and source-backed readiness work."
-  ],
-  "recall_organic_expected_proxy_count": 0,
-  "recall_organic_expected_proxy_miss_count": 22,
-  "recall_organic_expected_proxy_status": "insufficient_all_expected_proxies_ticker_only",
-  "recall_ticker_only_expected_proxy_symbols": [
-    "ALAB",
-    "ASTS",
-    "BE",
-    "BE",
-    "CRCL",
-    "CRDO",
-    "CRWV",
-    "FLY",
-    "GSAT",
-    "IONQ",
-    "IREN",
-    "KTOS",
-    "LEU",
-    "LEU",
-    "LUNR",
-    "MU",
-    "NBIS",
-    "OKLO",
-    "OKLO",
-    "RDW",
-    "RKLB",
-    "VRT"
-  ],
-  "issuer_profile_coverage_status": "absent_name_ticker_only",
-  "issuer_profile_semantic_gap_count": 7575,
-  "issuer_profile_semantic_coverage_ratio": 0
+  ]
 }

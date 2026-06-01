@@ -1,37 +1,37 @@
 schema_version: 1
-as_of: 2026-05-31
+as_of: 2026-06-01
 last_research_engine_run:
-  as_of: 2026-05-31
-  scope: monthly_decision_full_cycle_plus_targeted_optical_triage
-  notes: Re-ran market refresh, universe discovery, SEC freshness, AI-cycle, and allocation review. Completed missing watch/research-only financing and transaction reviews for IREN, OKLO, CRCL, RDW, IONQ, and NBIS; kept RKLB and ASTS in staged buy-zone with a smaller proposed order; added FN as research-only optical/datacom manufacturing coverage and LITE as watchlist optical/photonics coverage after targeted user-request triage. Account records remain unchanged.
+  as_of: 2026-06-01
+  scope: post_discovery_readiness_for_semantic_xhigh_misses
+  notes: Completed post-discovery readiness for MNTS, VOYG, XNDU, and YSS after the semantic discovery run found them as xhigh names missing from the watchlist. MNTS was rejected after evidence review; VOYG and XNDU were added as research-only coverage; YSS was added as watchlist coverage. Corrected XNDU valuation to use F-1 Class A/Class B shares outstanding rather than weighted-average companyfacts shares. Account records remain unchanged.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Active watchlist coverage remains current after targeted FN and LITE optical-infrastructure triage, and FLY's publicly reachable readiness sprint was completed to an evidence-based incubate classification with dashboard-facing research-only coverage. Repository-public readiness excludes user-only broker facts and execution instructions; those are execution prerequisites, not research-readiness blockers.
+  reason: Active watchlist coverage remains current after post-discovery readiness. FLY, VOYG, XNDU, and YSS all have terminal readiness records and dashboard-facing coverage where required, while MNTS was rejected after review. Repository-public readiness excludes user-only broker facts and execution instructions; those are execution prerequisites, not research-readiness blockers.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation before order entry
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction
     - current live quote or accepted limit price at the time the user chooses to act
 coverage:
-  universe_scan_as_of: 2026-05-31
-  discovery_lane_map_as_of: 2026-05-30
-  watchlist_symbols: 25
-  watchlist_symbols_with_current_cycle_review: 25
+  universe_scan_as_of: 2026-06-01
+  discovery_lane_map_as_of: 2026-06-01
+  watchlist_symbols: 28
+  watchlist_symbols_with_current_cycle_review: 28
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
-  active_watchlist_symbols: 19
-  active_symbols_with_current_valuation_state: 19
+  active_watchlist_symbols: 20
+  active_symbols_with_current_valuation_state: 20
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 19
+  active_symbols_with_latest_filing_review: 20
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 1
+  raw_discovery_candidates_open: 4
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-05-31-agentic-discovery.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-05-31-agentic-discovery.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-05-31-agentic-discovery.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-05-31-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-06-01-post-discovery-readiness.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-06-01-post-discovery-readiness.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-06-01-post-discovery-readiness.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-06-01-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -51,11 +51,12 @@ discovery_process:
   allocation_relevant_lanes:
     - space_infrastructure
     - direct_to_device_connectivity
+    - quantum_computing_and_networking
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 1
+  material_open_candidates: 4
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 1
+  open_candidate_readiness_completed: 4
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -87,4 +88,5 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory.
+notes: >-
+  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-01 post-discovery pass also records a data-quality lesson: newly public dual-class or transaction issuers may need manual share-count and debt overrides when generic companyfacts fields understate current economic capitalization.

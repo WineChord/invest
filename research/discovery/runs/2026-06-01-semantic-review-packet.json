@@ -1,38 +1,38 @@
 {
   "schema_version": 1,
   "source": "semantic_review_packet",
-  "generated_at": "2026-06-01T06:11:55.329Z",
+  "generated_at": "2026-06-01T07:34:02.031Z",
   "as_of": "2026-06-01",
   "semantic_run_path": "research/discovery/runs/2026-06-01-semantic-discovery-run.json",
-  "semantic_run_sha256": "e6d6fb7ee440b16cd697a09814a4de5104da1dbf26edec7d37f71e9fbf0c099a",
+  "semantic_run_sha256": "59bafc5dca8096fd738b1c2e67f5bee9d6aa826115dce7044ec74aeaa2fb0219",
   "semantic_cache_path": "research/discovery/semantic-cache.jsonl",
-  "semantic_cache_sha256": "d5d7c69a0c4ced8878eedf436756555e3ef5dc8ba6d49c68601075169ff77fc1",
+  "semantic_cache_sha256": "0834e7804bc74612a99585dcbd369e55da38fb3337378bf5fe352face7a2b661",
   "packet_artifact_path": "research/cache/discovery/2026-06-01/2026-06-01-semantic-packets.json",
   "packet_artifact_sha256": "b6a948d72d96dc128fb8f26d3bc0d92b0e59f1f03f1af7b4dcaa2da256b3c746",
   "summary": {
-    "classifier_version": "semantic_triage_v2",
+    "classifier_version": "semantic_triage_v5",
     "packet_count": 7575,
     "classified_current_count": 7575,
     "unclassified_count": 0,
     "stale_cache_count": 0,
     "classification_coverage_ratio": 1,
     "escalation_counts": {
-      "medium_lane_compare": 227,
-      "none": 7262,
-      "reject_or_archive": 36,
-      "xhigh_readiness_candidate": 50
+      "medium_lane_compare": 49,
+      "none": 7440,
+      "reject_or_archive": 62,
+      "xhigh_readiness_candidate": 24
     },
     "bottleneck_exposure_counts": {
-      "none": 7255,
-      "possible": 43,
+      "none": 7439,
+      "possible": 21,
       "strong": 19,
-      "weak": 258
+      "weak": 96
     },
     "directness_counts": {
-      "direct": 19,
-      "indirect": 43,
-      "none": 7291,
-      "weak_proxy": 222
+      "direct": 27,
+      "indirect": 13,
+      "none": 7501,
+      "weak_proxy": 34
     },
     "lane_counts": {
       "advanced_nuclear_and_grid_constraints": 12,
@@ -61,34 +61,6 @@
       "extreme_upside_fit": "strong",
       "confidence": "high",
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "ARQQ",
-      "name": "Arqit Quantum Inc.",
-      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "ARQQW",
-      "name": "Arqit Quantum Inc.",
-      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
     },
     {
       "symbol": "ASTS",
@@ -127,9 +99,9 @@
       "matched_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
-      "directness": "indirect",
+      "directness": "direct",
       "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
+      "extreme_upside_fit": "strong",
       "confidence": "low",
       "notes": "Low-cost screen matched lane keywords: semiconductors & related devices."
     },
@@ -176,20 +148,6 @@
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
     },
     {
-      "symbol": "FJET",
-      "name": "Starfighters Space, Inc.",
-      "business_plain_english": "Starfighters Space, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
       "symbol": "FLY",
       "name": "Firefly Aerospace Inc.",
       "business_plain_english": "Firefly Aerospace Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
@@ -204,48 +162,6 @@
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
     },
     {
-      "symbol": "FNUC",
-      "name": "Frontier Nuclear & Minerals Inc.",
-      "business_plain_english": "Frontier Nuclear & Minerals Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "GEMI",
-      "name": "Gemini Space Station, Inc.",
-      "business_plain_english": "Gemini Space Station, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "GILT",
-      "name": "GILAT SATELLITE NETWORKS LTD",
-      "business_plain_english": "GILAT SATELLITE NETWORKS LTD is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: satellite."
-    },
-    {
       "symbol": "GSAT",
       "name": "Globalstar, Inc.",
       "business_plain_english": "Globalstar, Inc. is a SEC-listed issuer described by the packet as: Communications Services, NEC Large accelerated filer operating.",
@@ -258,34 +174,6 @@
       "extreme_upside_fit": "strong",
       "confidence": "high",
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "HQ",
-      "name": "Horizon Quantum Holdings Ltd.",
-      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "HQWWW",
-      "name": "Horizon Quantum Holdings Ltd.",
-      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
     },
     {
       "symbol": "IONQ",
@@ -314,20 +202,6 @@
       "extreme_upside_fit": "strong",
       "confidence": "high",
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "JAGU",
-      "name": "Jaguar Uranium Corp.",
-      "business_plain_english": "Jaguar Uranium Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: uranium."
     },
     {
       "symbol": "KTOS",
@@ -373,20 +247,6 @@
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
     },
     {
-      "symbol": "MDA",
-      "name": "MDA Space Ltd.",
-      "business_plain_english": "MDA Space Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
       "symbol": "MNTS",
       "name": "Momentus Inc.",
       "business_plain_english": "Momentus Inc. is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Non-accelerated filer Smaller reporting company operating.",
@@ -394,25 +254,11 @@
       "matched_lane_ids": [
         "space_infrastructure"
       ],
-      "directness": "indirect",
+      "directness": "direct",
       "company_stage": "growth",
-      "extreme_upside_fit": "possible",
+      "extreme_upside_fit": "strong",
       "confidence": "low",
       "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "MSAI",
-      "name": "MultiSensor AI Holdings, Inc.",
-      "business_plain_english": "MultiSensor AI Holdings, Inc. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company Emerging growth company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
     },
     {
       "symbol": "MU",
@@ -443,62 +289,6 @@
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
     },
     {
-      "symbol": "NNE",
-      "name": "Nano Nuclear Energy Inc.",
-      "business_plain_english": "Nano Nuclear Energy Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "NUCL",
-      "name": "Eagle Nuclear Energy Corp.",
-      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "NUCLW",
-      "name": "Eagle Nuclear Energy Corp.",
-      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "OCC",
-      "name": "OPTICAL CABLE CORP",
-      "business_plain_english": "OPTICAL CABLE CORP is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
       "symbol": "OKLO",
       "name": "Oklo Inc.",
       "business_plain_english": "Oklo Inc. is a SEC-listed issuer described by the packet as: Electric Services Emerging growth company operating.",
@@ -512,131 +302,6 @@
       "extreme_upside_fit": "strong",
       "confidence": "high",
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "OPTX",
-      "name": "SYNTEC OPTICS HOLDINGS, INC.",
-      "business_plain_english": "SYNTEC OPTICS HOLDINGS, INC. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company Emerging growth company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "OPXS",
-      "name": "Optex Systems Holdings Inc",
-      "business_plain_english": "Optex Systems Holdings Inc is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "QBTS",
-      "name": "D-Wave Quantum Inc.",
-      "business_plain_english": "D-Wave Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure",
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen matched lane keywords: computer processing; data preparation; quantum."
-    },
-    {
-      "symbol": "QMCO",
-      "name": "QUANTUM CORP /DE/",
-      "business_plain_english": "QUANTUM CORP /DE/ is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QNC",
-      "name": "Quantum eMotion Corp",
-      "business_plain_english": "Quantum eMotion Corp is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QSI",
-      "name": "Quantum-Si Inc",
-      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QSIAW",
-      "name": "Quantum-Si Inc",
-      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QXL",
-      "name": "QUANTUM X LABS INC.",
-      "business_plain_english": "QUANTUM X LABS INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "RCKTW",
-      "name": "ROCKET PHARMACEUTICALS, INC.",
-      "business_plain_english": "ROCKET PHARMACEUTICALS, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: ."
     },
     {
       "symbol": "RDW",
@@ -667,34 +332,6 @@
       "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
     },
     {
-      "symbol": "SIDU",
-      "name": "Sidus Space Inc.",
-      "business_plain_english": "Sidus Space Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "UROY",
-      "name": "Uranium Royalty Corp.",
-      "business_plain_english": "Uranium Royalty Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: uranium."
-    },
-    {
       "symbol": "VOYG",
       "name": "Voyager Technologies, Inc./DE",
       "business_plain_english": "Voyager Technologies, Inc./DE is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Non-accelerated filer Emerging growth company operating.",
@@ -702,9 +339,9 @@
       "matched_lane_ids": [
         "space_infrastructure"
       ],
-      "directness": "indirect",
+      "directness": "direct",
       "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
+      "extreme_upside_fit": "strong",
       "confidence": "low",
       "notes": "Low-cost screen matched lane keywords: space."
     },
@@ -731,9 +368,9 @@
         "ai_compute_infrastructure",
         "quantum_computing_and_networking"
       ],
-      "directness": "indirect",
+      "directness": "direct",
       "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
+      "extreme_upside_fit": "strong",
       "confidence": "low",
       "notes": "Low-cost screen matched lane keywords: electronic computers; quantum."
     },
@@ -745,112 +382,14 @@
       "matched_lane_ids": [
         "space_infrastructure"
       ],
-      "directness": "indirect",
+      "directness": "direct",
       "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
+      "extreme_upside_fit": "strong",
       "confidence": "low",
       "notes": "Low-cost screen matched lane keywords: space."
     }
   ],
   "medium_lane_compare": [
-    {
-      "symbol": "AAOI",
-      "name": "APPLIED OPTOELECTRONICS, INC.",
-      "business_plain_english": "APPLIED OPTOELECTRONICS, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "AD",
-      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
-      "business_plain_english": "ARRAY DIGITAL INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ADI",
-      "name": "ANALOG DEVICES INC",
-      "business_plain_english": "ANALOG DEVICES INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ADP",
-      "name": "AUTOMATIC DATA PROCESSING INC",
-      "business_plain_english": "AUTOMATIC DATA PROCESSING INC is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "AGPU",
-      "name": "Axe Compute Inc.",
-      "business_plain_english": "Axe Compute Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "AIAI",
-      "name": "AIAI Holdings Corp",
-      "business_plain_english": "AIAI Holdings Corp is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "AIB",
-      "name": "BlockchAIn Digital Infrastructure, Inc.",
-      "business_plain_english": "BlockchAIn Digital Infrastructure, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
     {
       "symbol": "AIP",
       "name": "Arteris, Inc.",
@@ -862,20 +401,6 @@
       "directness": "weak_proxy",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ALGM",
-      "name": "ALLEGRO MICROSYSTEMS, INC.",
-      "business_plain_english": "ALLEGRO MICROSYSTEMS, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
@@ -894,34 +419,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "ALP",
-      "name": "Alpha Compute Corp",
-      "business_plain_english": "Alpha Compute Corp is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "AMBA",
-      "name": "AMBARELLA INC",
-      "business_plain_english": "AMBARELLA INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "AMBQ",
       "name": "Ambiq Micro, Inc.",
       "business_plain_english": "Ambiq Micro, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company Emerging growth company operating.",
@@ -936,130 +433,18 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "AMKR",
-      "name": "AMKOR TECHNOLOGY, INC.",
-      "business_plain_english": "AMKOR TECHNOLOGY, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
+      "symbol": "ARQQ",
+      "name": "Arqit Quantum Inc.",
+      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
+        "quantum_computing_and_networking"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ANTA",
-      "name": "Antalpha Platform Holding Co",
-      "business_plain_english": "Antalpha Platform Holding Co is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
+      "directness": "indirect",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "AOSL",
-      "name": "ALPHA & OMEGA SEMICONDUCTOR Ltd",
-      "business_plain_english": "ALPHA & OMEGA SEMICONDUCTOR Ltd is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "APLD",
-      "name": "Applied Digital Corp.",
-      "business_plain_english": "Applied Digital Corp. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen matched lane keywords: computer processing; data preparation."
-    },
-    {
-      "symbol": "ARM",
-      "name": "ARM HOLDINGS PLC /UK",
-      "business_plain_english": "ARM HOLDINGS PLC /UK is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ARRY",
-      "name": "Array Technologies, Inc.",
-      "business_plain_english": "Array Technologies, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ASTI",
-      "name": "Ascent Solar Technologies, Inc.",
-      "business_plain_english": "Ascent Solar Technologies, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ASX",
-      "name": "ASE Technology Holding Co., Ltd.",
-      "business_plain_english": "ASE Technology Holding Co., Ltd. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ATHM",
-      "name": "Autohome Inc.",
-      "business_plain_english": "Autohome Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: quantum."
     },
     {
       "symbol": "ATOM",
@@ -1076,20 +461,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "AUUD",
-      "name": "AUDDIA INC.",
-      "business_plain_english": "AUDDIA INC. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "AXTI",
       "name": "AXT INC",
       "business_plain_english": "AXT INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company operating.",
@@ -1099,202 +470,6 @@
       ],
       "directness": "weak_proxy",
       "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BEEP",
-      "name": "Mobile Infrastructure Corp",
-      "business_plain_english": "Mobile Infrastructure Corp is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BFLY",
-      "name": "Butterfly Network, Inc.",
-      "business_plain_english": "Butterfly Network, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BILI",
-      "name": "Bilibili Inc.",
-      "business_plain_english": "Bilibili Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BIP",
-      "name": "Brookfield Infrastructure Partners L.P.",
-      "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BIPC",
-      "name": "Brookfield Infrastructure Corp",
-      "business_plain_english": "Brookfield Infrastructure Corp is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BIPH",
-      "name": "Brookfield Infrastructure Partners L.P.",
-      "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BIPI",
-      "name": "Brookfield Infrastructure Partners L.P.",
-      "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BIPJ",
-      "name": "Brookfield Infrastructure Partners L.P.",
-      "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BNAI",
-      "name": "Brand Engagement Network Inc.",
-      "business_plain_english": "Brand Engagement Network Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BNAIW",
-      "name": "Brand Engagement Network Inc.",
-      "business_plain_english": "Brand Engagement Network Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BRAI",
-      "name": "Braiin Ltd",
-      "business_plain_english": "Braiin Ltd is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BRUN",
-      "name": "Boost Run Inc.",
-      "business_plain_english": "Boost Run Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BUI",
-      "name": "BlackRock Utilities, Infrastructure & Power Opportunities Trust",
-      "business_plain_english": "BlackRock Utilities, Infrastructure & Power Opportunities Trust is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "BXDC",
-      "name": "Blackstone Digital Infrastructure Trust Inc.",
-      "business_plain_english": "Blackstone Digital Infrastructure Trust Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
@@ -1314,104 +489,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "CAMT",
-      "name": "CAMTEK LTD",
-      "business_plain_english": "CAMTEK LTD is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Large accelerated filer other.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "CARG",
-      "name": "CarGurus, Inc.",
-      "business_plain_english": "CarGurus, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "CARS",
-      "name": "Cars.com Inc.",
-      "business_plain_english": "Cars.com Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "CAST",
-      "name": "FreeCast, Inc.",
-      "business_plain_english": "FreeCast, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "CDNL",
-      "name": "Cardinal Infrastructure Group Inc.",
-      "business_plain_english": "Cardinal Infrastructure Group Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "CHR",
-      "name": "Cheer Holding, Inc.",
-      "business_plain_english": "Cheer Holding, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "CLVT",
-      "name": "CLARIVATE PLC",
-      "business_plain_english": "CLARIVATE PLC is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "COHR",
       "name": "COHERENT CORP.",
       "business_plain_english": "COHERENT CORP. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Large accelerated filer operating.",
@@ -1426,340 +503,18 @@
       "notes": "Low-cost screen matched lane keywords: optical."
     },
     {
-      "symbol": "CRUS",
-      "name": "CIRRUS LOGIC, INC.",
-      "business_plain_english": "CIRRUS LOGIC, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "CSIQ",
-      "name": "Canadian Solar Inc.",
-      "business_plain_english": "Canadian Solar Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "CTW",
-      "name": "CTW Cayman",
-      "business_plain_english": "CTW Cayman is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DBD",
-      "name": "DIEBOLD NIXDORF, Inc",
-      "business_plain_english": "DIEBOLD NIXDORF, Inc is a SEC-listed issuer described by the packet as: Calculating & Accounting Machines (No Electronic Computers) Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DDI",
-      "name": "DoubleDown Interactive Co., Ltd.",
-      "business_plain_english": "DoubleDown Interactive Co., Ltd. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DELL",
-      "name": "Dell Technologies Inc.",
-      "business_plain_english": "Dell Technologies Inc. is a SEC-listed issuer described by the packet as: Electronic Computers Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DGNX",
-      "name": "Diginex Ltd",
-      "business_plain_english": "Diginex Ltd is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DIOD",
-      "name": "DIODES INC /DEL/",
-      "business_plain_english": "DIODES INC /DEL/ is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DQ",
-      "name": "DAQO NEW ENERGY CORP.",
-      "business_plain_english": "DAQO NEW ENERGY CORP. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DTCX",
-      "name": "Datacentrex, Inc.",
-      "business_plain_english": "Datacentrex, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DTST",
-      "name": "Data Storage Corp",
-      "business_plain_english": "Data Storage Corp is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DUO",
-      "name": "Fangdd Network Group Ltd.",
-      "business_plain_english": "Fangdd Network Group Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "DXC",
-      "name": "DXC Technology Co",
-      "business_plain_english": "DXC Technology Co is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "EGHT",
-      "name": "8X8 INC /DE/",
-      "business_plain_english": "8X8 INC /DE/ is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ENPH",
-      "name": "Enphase Energy, Inc.",
-      "business_plain_english": "Enphase Energy, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "EVTC",
-      "name": "EVERTEC, Inc.",
-      "business_plain_english": "EVERTEC, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "EXR",
-      "name": "Extra Space Storage Inc.",
-      "business_plain_english": "Extra Space Storage Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "symbol": "FNUC",
+      "name": "Frontier Nuclear & Minerals Inc.",
+      "business_plain_english": "Frontier Nuclear & Minerals Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
       "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "space_infrastructure"
+        "advanced_nuclear_and_grid_constraints"
       ],
       "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "FA",
-      "name": "FIRST ADVANTAGE CORP",
-      "business_plain_english": "FIRST ADVANTAGE CORP is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "FIP",
-      "name": "FTAI Infrastructure Inc.",
-      "business_plain_english": "FTAI Infrastructure Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "FIVN",
-      "name": "Five9, Inc.",
-      "business_plain_english": "Five9, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "FORA",
-      "name": "Forian Inc.",
-      "business_plain_english": "Forian Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "FORM",
-      "name": "FORMFACTOR INC",
-      "business_plain_english": "FORMFACTOR INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "FSLR",
-      "name": "FIRST SOLAR, INC.",
-      "business_plain_english": "FIRST SOLAR, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "FTCI",
-      "name": "FTC Solar, Inc.",
-      "business_plain_english": "FTC Solar, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: nuclear."
     },
     {
       "symbol": "GCTS",
@@ -1776,117 +531,18 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "GDRX",
-      "name": "GoodRx Holdings, Inc.",
-      "business_plain_english": "GoodRx Holdings, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer operating.",
-      "bottleneck_exposure": "weak",
+      "symbol": "GILT",
+      "name": "GILAT SATELLITE NETWORKS LTD",
+      "business_plain_english": "GILAT SATELLITE NETWORKS LTD is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "ai_compute_infrastructure"
+        "space_infrastructure"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "GDYN",
-      "name": "GRID DYNAMICS HOLDINGS, INC.",
-      "business_plain_english": "GRID DYNAMICS HOLDINGS, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
-        "ai_power_and_cooling"
-      ],
-      "directness": "weak_proxy",
+      "directness": "indirect",
       "company_stage": "growth",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "GFS",
-      "name": "GLOBALFOUNDRIES Inc.",
-      "business_plain_english": "GLOBALFOUNDRIES Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "GLE",
-      "name": "Global Engine Group Holding Ltd",
-      "business_plain_english": "Global Engine Group Holding Ltd is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "GLOB",
-      "name": "Globant S.A.",
-      "business_plain_english": "Globant S.A. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "GLOO",
-      "name": "Gloo Holdings, Inc.",
-      "business_plain_english": "Gloo Holdings, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "GMHS",
-      "name": "Gamehaus Holdings Inc.",
-      "business_plain_english": "Gamehaus Holdings Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "GRVY",
-      "name": "GRAVITY Co., Ltd.",
-      "business_plain_english": "GRAVITY Co., Ltd. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: satellite."
     },
     {
       "symbol": "GSIT",
@@ -1903,102 +559,18 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "HASI",
-      "name": "HA Sustainable Infrastructure Capital, Inc.",
-      "business_plain_english": "HA Sustainable Infrastructure Capital, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "HAWK",
-      "name": "HawkEye 360, Inc.",
-      "business_plain_english": "HawkEye 360, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "HBM",
-      "name": "Hudbay Minerals Inc.",
-      "business_plain_english": "Hudbay Minerals Inc. is a SEC-listed issuer described by the packet as: Metal Mining Large accelerated filer other.",
+      "symbol": "HQ",
+      "name": "Horizon Quantum Holdings Ltd.",
+      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
       "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
+        "quantum_computing_and_networking"
       ],
       "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: hbm."
-    },
-    {
-      "symbol": "HIMX",
-      "name": "Himax Technologies, Inc.",
-      "business_plain_english": "Himax Technologies, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "HNGE",
-      "name": "Hinge Health, Inc.",
-      "business_plain_english": "Hinge Health, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "HTCR",
-      "name": "HeartCore Enterprises, Inc.",
-      "business_plain_english": "HeartCore Enterprises, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Smaller reporting company Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "IBEX",
-      "name": "IBEX Ltd",
-      "business_plain_english": "IBEX Ltd is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: quantum."
     },
     {
       "symbol": "ICG",
@@ -2011,104 +583,6 @@
       "directness": "weak_proxy",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ICHR",
-      "name": "ICHOR HOLDINGS, LTD.",
-      "business_plain_english": "ICHOR HOLDINGS, LTD. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "IMOS",
-      "name": "CHIPMOS TECHNOLOGIES INC",
-      "business_plain_english": "CHIPMOS TECHNOLOGIES INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "INDI",
-      "name": "indie Semiconductor, Inc.",
-      "business_plain_english": "indie Semiconductor, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "INFQ",
-      "name": "Infleqtion, Inc.",
-      "business_plain_english": "Infleqtion, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "INOD",
-      "name": "INNODATA INC",
-      "business_plain_english": "INNODATA INC is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "IPDN",
-      "name": "Professional Diversity Network, Inc.",
-      "business_plain_english": "Professional Diversity Network, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "IPGP",
-      "name": "IPG PHOTONICS CORP",
-      "business_plain_english": "IPG PHOTONICS CORP is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
@@ -2127,74 +601,18 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "JKS",
-      "name": "JinkoSolar Holding Co., Ltd.",
-      "business_plain_english": "JinkoSolar Holding Co., Ltd. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "JOYY",
-      "name": "JOYY Inc.",
-      "business_plain_english": "JOYY Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "KEEL",
-      "name": "Keel Infrastructure Corp.",
-      "business_plain_english": "Keel Infrastructure Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "KLAC",
-      "name": "KLA CORP",
-      "business_plain_english": "KLA CORP is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Large accelerated filer operating.",
+      "symbol": "JAGU",
+      "name": "Jaguar Uranium Corp.",
+      "business_plain_english": "Jaguar Uranium Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
       "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
+        "advanced_nuclear_and_grid_constraints"
       ],
       "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "KLIC",
-      "name": "KULICKE & SOFFA INDUSTRIES INC",
-      "business_plain_english": "KULICKE & SOFFA INDUSTRIES INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: uranium."
     },
     {
       "symbol": "KOPN",
@@ -2225,20 +643,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "LASR",
-      "name": "NLIGHT, INC.",
-      "business_plain_english": "NLIGHT, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "LEDS",
       "name": "SemiLEDs Corp",
       "business_plain_english": "SemiLEDs Corp is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company operating.",
@@ -2251,34 +655,6 @@
       "extreme_upside_fit": "possible",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "LIF",
-      "name": "Life360, Inc.",
-      "business_plain_english": "Life360, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "LMT",
-      "name": "LOCKHEED MARTIN CORP",
-      "business_plain_english": "LOCKHEED MARTIN CORP is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Large accelerated filer operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
     },
     {
       "symbol": "LPTH",
@@ -2295,74 +671,18 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "LSCC",
-      "name": "LATTICE SEMICONDUCTOR CORP",
-      "business_plain_english": "LATTICE SEMICONDUCTOR CORP is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
+      "symbol": "MDA",
+      "name": "MDA Space Ltd.",
+      "business_plain_english": "MDA Space Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
+        "space_infrastructure"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "LZ",
-      "name": "LEGALZOOM.COM, INC.",
-      "business_plain_english": "LEGALZOOM.COM, INC. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "MASK",
-      "name": "3 E Network Technology Group Ltd",
-      "business_plain_english": "3 E Network Technology Group Ltd is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
+      "directness": "direct",
+      "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "MCHP",
-      "name": "MICROCHIP TECHNOLOGY INC",
-      "business_plain_english": "MICROCHIP TECHNOLOGY INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "MNDR",
-      "name": "Mobile-health Network Solutions",
-      "business_plain_english": "Mobile-health Network Solutions is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: space."
     },
     {
       "symbol": "MOBX",
@@ -2375,34 +695,6 @@
       "directness": "weak_proxy",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "MOVE",
-      "name": "Corvex, Inc.",
-      "business_plain_english": "Corvex, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "MPWR",
-      "name": "MONOLITHIC POWER SYSTEMS INC",
-      "business_plain_english": "MONOLITHIC POWER SYSTEMS INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
@@ -2421,34 +713,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "MRVL",
-      "name": "Marvell Technology, Inc.",
-      "business_plain_english": "Marvell Technology, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "MTSI",
-      "name": "MACOM Technology Solutions Holdings, Inc.",
-      "business_plain_english": "MACOM Technology Solutions Holdings, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "MX",
       "name": "MAGNACHIP SEMICONDUCTOR Corp",
       "business_plain_english": "MAGNACHIP SEMICONDUCTOR Corp is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Accelerated filer Smaller reporting company operating.",
@@ -2459,20 +723,6 @@
       "directness": "weak_proxy",
       "company_stage": "growth",
       "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "MXL",
-      "name": "MAXLINEAR, INC",
-      "business_plain_english": "MAXLINEAR, INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
@@ -2491,61 +741,32 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "NATL",
-      "name": "NCR Atleos Corp",
-      "business_plain_english": "NCR Atleos Corp is a SEC-listed issuer described by the packet as: Calculating & Accounting Machines (No Electronic Computers) Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
+      "symbol": "NNE",
+      "name": "Nano Nuclear Energy Inc.",
+      "business_plain_english": "Nano Nuclear Energy Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "ai_compute_infrastructure"
+        "advanced_nuclear_and_grid_constraints"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "NGG",
-      "name": "NATIONAL GRID PLC",
-      "business_plain_english": "NATIONAL GRID PLC is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
-        "ai_power_and_cooling"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "NRDS",
-      "name": "NERDWALLET, INC.",
-      "business_plain_english": "NERDWALLET, INC. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
+      "directness": "indirect",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: nuclear."
     },
     {
-      "symbol": "NTIP",
-      "name": "NETWORK-1 TECHNOLOGIES, INC.",
-      "business_plain_english": "NETWORK-1 TECHNOLOGIES, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
+      "symbol": "NUCL",
+      "name": "Eagle Nuclear Energy Corp.",
+      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "unknown_future_bottlenecks"
+        "advanced_nuclear_and_grid_constraints"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
+      "directness": "indirect",
+      "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: nuclear."
     },
     {
       "symbol": "NVEC",
@@ -2562,20 +783,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "NVMI",
-      "name": "NOVA LTD.",
-      "business_plain_english": "NOVA LTD. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Large accelerated filer other.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
       "symbol": "NVTS",
       "name": "Navitas Semiconductor Corp",
       "business_plain_english": "Navitas Semiconductor Corp is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer operating.",
@@ -2590,272 +797,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "NWPX",
-      "name": "NWPX Infrastructure, Inc.",
-      "business_plain_english": "NWPX Infrastructure, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "NXPI",
-      "name": "NXP Semiconductors N.V.",
-      "business_plain_english": "NXP Semiconductors N.V. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "NXT",
-      "name": "Nextpower Inc.",
-      "business_plain_english": "Nextpower Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "NXTT",
-      "name": "Next Technology Holding Inc.",
-      "business_plain_english": "Next Technology Holding Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "OMCL",
-      "name": "OMNICELL, INC.",
-      "business_plain_english": "OMNICELL, INC. is a SEC-listed issuer described by the packet as: Electronic Computers Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ON",
-      "name": "ON SEMICONDUCTOR CORP",
-      "business_plain_english": "ON SEMICONDUCTOR CORP is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ONFO",
-      "name": "Onfolio Holdings, Inc",
-      "business_plain_english": "Onfolio Holdings, Inc is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "OOMA",
-      "name": "OOMA INC",
-      "business_plain_english": "OOMA INC is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "OSIS",
-      "name": "OSI SYSTEMS INC",
-      "business_plain_english": "OSI SYSTEMS INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "OSS",
-      "name": "ONE STOP SYSTEMS, INC.",
-      "business_plain_english": "ONE STOP SYSTEMS, INC. is a SEC-listed issuer described by the packet as: Electronic Computers Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PAGS",
-      "name": "PagSeguro Digital Ltd.",
-      "business_plain_english": "PagSeguro Digital Ltd. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PAR",
-      "name": "PAR TECHNOLOGY CORP",
-      "business_plain_english": "PAR TECHNOLOGY CORP is a SEC-listed issuer described by the packet as: Calculating & Accounting Machines (No Electronic Computers) Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PAVS",
-      "name": "Paranovus Entertainment Technology Ltd.",
-      "business_plain_english": "Paranovus Entertainment Technology Ltd. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PEGA",
-      "name": "PEGASYSTEMS INC",
-      "business_plain_english": "PEGASYSTEMS INC is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PENG",
-      "name": "Penguin Solutions, Inc.",
-      "business_plain_english": "Penguin Solutions, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PERI",
-      "name": "Perion Network Ltd.",
-      "business_plain_english": "Perion Network Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PHUN",
-      "name": "Phunware, Inc.",
-      "business_plain_english": "Phunware, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PLAB",
-      "name": "PHOTRONICS INC",
-      "business_plain_english": "PHOTRONICS INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "PLTK",
-      "name": "Playtika Holding Corp.",
-      "business_plain_english": "Playtika Holding Corp. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "POET",
       "name": "POET TECHNOLOGIES INC.",
       "business_plain_english": "POET TECHNOLOGIES INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Accelerated filer other.",
@@ -2866,20 +807,6 @@
       "directness": "weak_proxy",
       "company_stage": "growth",
       "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "POWI",
-      "name": "POWER INTEGRATIONS INC",
-      "business_plain_english": "POWER INTEGRATIONS INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
@@ -2912,18 +839,33 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "QRVO",
-      "name": "Qorvo, Inc.",
-      "business_plain_english": "Qorvo, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
+      "symbol": "QBTS",
+      "name": "D-Wave Quantum Inc.",
+      "business_plain_english": "D-Wave Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
+        "ai_compute_infrastructure",
+        "quantum_computing_and_networking"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Low-cost screen matched lane keywords: computer processing; data preparation; quantum."
+    },
+    {
+      "symbol": "QNC",
+      "name": "Quantum eMotion Corp",
+      "business_plain_english": "Quantum eMotion Corp is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: quantum."
     },
     {
       "symbol": "QUBT",
@@ -2933,7 +875,7 @@
       "matched_lane_ids": [
         "quantum_computing_and_networking"
       ],
-      "directness": "indirect",
+      "directness": "direct",
       "company_stage": "mature",
       "extreme_upside_fit": "unknown",
       "confidence": "low",
@@ -2954,102 +896,18 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "RAMP",
-      "name": "LiveRamp Holdings, Inc.",
-      "business_plain_english": "LiveRamp Holdings, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
+      "symbol": "QXL",
+      "name": "QUANTUM X LABS INC.",
+      "business_plain_english": "QUANTUM X LABS INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "ai_compute_infrastructure"
+        "quantum_computing_and_networking"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "RDDT",
-      "name": "Reddit, Inc.",
-      "business_plain_english": "Reddit, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "RMBS",
-      "name": "RAMBUS INC",
-      "business_plain_english": "RAMBUS INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "RNG",
-      "name": "RingCentral, Inc.",
-      "business_plain_english": "RingCentral, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SCKT",
-      "name": "SOCKET MOBILE, INC.",
-      "business_plain_english": "SOCKET MOBILE, INC. is a SEC-listed issuer described by the packet as: Electronic Computers Non-accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
+      "directness": "indirect",
       "company_stage": "growth",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SEDG",
-      "name": "SOLAREDGE TECHNOLOGIES, INC.",
-      "business_plain_english": "SOLAREDGE TECHNOLOGIES, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SEI",
-      "name": "Solaris Energy Infrastructure, Inc.",
-      "business_plain_english": "Solaris Energy Infrastructure, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: quantum."
     },
     {
       "symbol": "SELX",
@@ -3063,20 +921,6 @@
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SHAZ",
-      "name": "SharonAI Holdings Inc.",
-      "business_plain_english": "SharonAI Holdings Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
@@ -3094,62 +938,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "SIMO",
-      "name": "Silicon Motion Technology CORP",
-      "business_plain_english": "Silicon Motion Technology CORP is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SITM",
-      "name": "SITIME Corp",
-      "business_plain_english": "SITIME Corp is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SJ",
-      "name": "Scienjoy Holding Corp",
-      "business_plain_english": "Scienjoy Holding Corp is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SKLZ",
-      "name": "Skillz Inc.",
-      "business_plain_english": "Skillz Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "SKYT",
       "name": "SkyWater Technology, Inc",
       "business_plain_english": "SkyWater Technology, Inc is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Accelerated filer Emerging growth company operating.",
@@ -3160,48 +948,6 @@
       "directness": "weak_proxy",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SLAB",
-      "name": "SILICON LABORATORIES INC.",
-      "business_plain_english": "SILICON LABORATORIES INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SMCI",
-      "name": "Super Micro Computer, Inc.",
-      "business_plain_english": "Super Micro Computer, Inc. is a SEC-listed issuer described by the packet as: Electronic Computers Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SMTC",
-      "name": "SEMTECH CORP",
-      "business_plain_english": "SEMTECH CORP is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
@@ -3218,48 +964,6 @@
       "extreme_upside_fit": "possible",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SOHU",
-      "name": "Sohu.com Ltd",
-      "business_plain_english": "Sohu.com Ltd is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SOPH",
-      "name": "SOPHiA GENETICS SA",
-      "business_plain_english": "SOPHiA GENETICS SA is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SPB",
-      "name": "Spectrum Brands Holdings, Inc.",
-      "business_plain_english": "Spectrum Brands Holdings, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "direct_to_device_connectivity"
-      ],
-      "directness": "indirect",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: spectrum."
     },
     {
       "symbol": "SPCB",
@@ -3304,146 +1008,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "SSTK",
-      "name": "Shutterstock, Inc.",
-      "business_plain_english": "Shutterstock, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "STM",
-      "name": "STMicroelectronics N.V.",
-      "business_plain_english": "STMicroelectronics N.V. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "STNE",
-      "name": "StoneCo Ltd.",
-      "business_plain_english": "StoneCo Ltd. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "STRL",
-      "name": "STERLING INFRASTRUCTURE, INC.",
-      "business_plain_english": "STERLING INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SWKS",
-      "name": "SKYWORKS SOLUTIONS, INC.",
-      "business_plain_english": "SKYWORKS SOLUTIONS, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SY",
-      "name": "So-Young International Inc.",
-      "business_plain_english": "So-Young International Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "SYNA",
-      "name": "SYNAPTICS Inc",
-      "business_plain_english": "SYNAPTICS Inc is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TASK",
-      "name": "TaskUs, Inc.",
-      "business_plain_english": "TaskUs, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TCGL",
-      "name": "TechCreate Group Ltd.",
-      "business_plain_english": "TechCreate Group Ltd. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TCX",
-      "name": "TUCOWS INC /PA/",
-      "business_plain_english": "TUCOWS INC /PA/ is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "TE",
       "name": "T1 Energy Inc.",
       "business_plain_english": "T1 Energy Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company operating.",
@@ -3458,48 +1022,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
     {
-      "symbol": "TEL",
-      "name": "TE Connectivity plc",
-      "business_plain_english": "TE Connectivity plc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "direct_to_device_connectivity"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TGHL",
-      "name": "GrowHub Ltd",
-      "business_plain_english": "GrowHub Ltd is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TOST",
-      "name": "Toast, Inc.",
-      "business_plain_english": "Toast, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
       "symbol": "TOYO",
       "name": "TOYO Co., Ltd",
       "business_plain_english": "TOYO Co., Ltd is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Emerging growth company other.",
@@ -3510,132 +1032,6 @@
       "directness": "weak_proxy",
       "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TRAK",
-      "name": "ReposiTrak, Inc.",
-      "business_plain_english": "ReposiTrak, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TRVG",
-      "name": "trivago N.V.",
-      "business_plain_english": "trivago N.V. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TSEM",
-      "name": "TOWER SEMICONDUCTOR LTD",
-      "business_plain_english": "TOWER SEMICONDUCTOR LTD is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TSM",
-      "name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
-      "business_plain_english": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TXN",
-      "name": "TEXAS INSTRUMENTS INC",
-      "business_plain_english": "TEXAS INSTRUMENTS INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TYG",
-      "name": "TORTOISE ENERGY INFRASTRUCTURE CORP",
-      "business_plain_english": "TORTOISE ENERGY INFRASTRUCTURE CORP is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TYG-RI",
-      "name": "TORTOISE ENERGY INFRASTRUCTURE CORP",
-      "business_plain_english": "TORTOISE ENERGY INFRASTRUCTURE CORP is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "TYGO",
-      "name": "TIGO ENERGY, INC.",
-      "business_plain_english": "TIGO ENERGY, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "UCTT",
-      "name": "Ultra Clean Holdings, Inc.",
-      "business_plain_english": "Ultra Clean Holdings, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     },
@@ -3654,102 +1050,18 @@
       "notes": "Low-cost screen matched lane keywords: uranium."
     },
     {
-      "symbol": "UMC",
-      "name": "UNITED MICROELECTRONICS CORP",
-      "business_plain_english": "UNITED MICROELECTRONICS CORP is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
-      "bottleneck_exposure": "weak",
+      "symbol": "UROY",
+      "name": "Uranium Royalty Corp.",
+      "business_plain_english": "Uranium Royalty Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
       "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
+        "advanced_nuclear_and_grid_constraints"
       ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "UPWK",
-      "name": "UPWORK, INC",
-      "business_plain_english": "UPWORK, INC is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "UZD",
-      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
-      "business_plain_english": "ARRAY DIGITAL INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
+      "directness": "indirect",
+      "company_stage": "newly_public",
       "extreme_upside_fit": "possible",
       "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "UZE",
-      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
-      "business_plain_english": "ARRAY DIGITAL INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "UZF",
-      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
-      "business_plain_english": "ARRAY DIGITAL INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "VERI",
-      "name": "Veritone, Inc.",
-      "business_plain_english": "Veritone, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "VIAV",
-      "name": "VIAVI SOLUTIONS INC.",
-      "business_plain_english": "VIAVI SOLUTIONS INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
+      "notes": "Low-cost screen matched lane keywords: uranium."
     },
     {
       "symbol": "VLN",
@@ -3761,174 +1073,6 @@
       ],
       "directness": "weak_proxy",
       "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "VRSK",
-      "name": "Verisk Analytics, Inc.",
-      "business_plain_english": "Verisk Analytics, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "VS",
-      "name": "Versus Systems Inc.",
-      "business_plain_english": "Versus Systems Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Smaller reporting company Emerging growth company operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "VYX",
-      "name": "NCR Voyix Corp",
-      "business_plain_english": "NCR Voyix Corp is a SEC-listed issuer described by the packet as: Calculating & Accounting Machines (No Electronic Computers) Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "WBI",
-      "name": "WaterBridge Infrastructure LLC",
-      "business_plain_english": "WaterBridge Infrastructure LLC is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "WDAY",
-      "name": "Workday, Inc.",
-      "business_plain_english": "Workday, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "WKEY",
-      "name": "Wisekey International Holding S.A.",
-      "business_plain_english": "Wisekey International Holding S.A. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "WOLF",
-      "name": "WOLFSPEED, INC.",
-      "business_plain_english": "WOLFSPEED, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "XIFR",
-      "name": "XPLR Infrastructure, LP",
-      "business_plain_english": "XPLR Infrastructure, LP is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "YEXT",
-      "name": "Yext, Inc.",
-      "business_plain_english": "Yext, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "mature",
-      "extreme_upside_fit": "unknown",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "YMT",
-      "name": "Yimutian Inc.",
-      "business_plain_english": "Yimutian Inc. is a SEC-listed issuer described by the packet as: Services-Computer Processing & Data Preparation Non-accelerated filer Emerging growth company other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ZEPP",
-      "name": "Zepp Health Corp",
-      "business_plain_english": "Zepp Health Corp is a SEC-listed issuer described by the packet as: Electronic Computers Non-accelerated filer other.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
-    },
-    {
-      "symbol": "ZNB",
-      "name": "Zeta Network Group",
-      "business_plain_english": "Zeta Network Group is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "weak",
-      "matched_lane_ids": [
-        "unknown_future_bottlenecks"
-      ],
-      "directness": "weak_proxy",
-      "company_stage": "growth",
       "extreme_upside_fit": "possible",
       "confidence": "low",
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
@@ -3961,7 +1105,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "AIIA-UN",
@@ -3975,7 +1119,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "AIO",
@@ -4006,6 +1150,20 @@
       "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
     },
     {
+      "symbol": "ARQQW",
+      "name": "Arqit Quantum Inc.",
+      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
+    },
+    {
       "symbol": "ASGI",
       "name": "abrdn Global Infrastructure Income Fund",
       "business_plain_english": "abrdn Global Infrastructure Income Fund is a SEC-listed issuer; the current packet contains only name-level business evidence.",
@@ -4020,6 +1178,20 @@
       "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
     },
     {
+      "symbol": "ASTI",
+      "name": "Ascent Solar Technologies, Inc.",
+      "business_plain_english": "Ascent Solar Technologies, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company operating.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
+    },
+    {
       "symbol": "BIP-PA",
       "name": "Brookfield Infrastructure Partners L.P.",
       "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
@@ -4031,7 +1203,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: ticker_suffix_preferred_share."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_preferred_share."
     },
     {
       "symbol": "BIP-PB",
@@ -4045,7 +1217,49 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: ticker_suffix_preferred_share."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_preferred_share."
+    },
+    {
+      "symbol": "BIPH",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
+    },
+    {
+      "symbol": "BIPI",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
+    },
+    {
+      "symbol": "BIPJ",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "business_plain_english": "Brookfield Infrastructure Partners L.P. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
     },
     {
       "symbol": "BIXI",
@@ -4073,7 +1287,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "BIXIW",
@@ -4087,7 +1301,49 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
+    },
+    {
+      "symbol": "BNAIW",
+      "name": "Brand Engagement Network Inc.",
+      "business_plain_english": "Brand Engagement Network Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
+    },
+    {
+      "symbol": "BUI",
+      "name": "BlackRock Utilities, Infrastructure & Power Opportunities Trust",
+      "business_plain_english": "BlackRock Utilities, Infrastructure & Power Opportunities Trust is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
+    },
+    {
+      "symbol": "CSIQ",
+      "name": "Canadian Solar Inc.",
+      "business_plain_english": "Canadian Solar Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
     },
     {
       "symbol": "DMB",
@@ -4118,6 +1374,104 @@
       "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
     },
     {
+      "symbol": "DQ",
+      "name": "DAQO NEW ENERGY CORP.",
+      "business_plain_english": "DAQO NEW ENERGY CORP. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer other.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
+    },
+    {
+      "symbol": "ENPH",
+      "name": "Enphase Energy, Inc.",
+      "business_plain_english": "Enphase Energy, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
+    },
+    {
+      "symbol": "EXR",
+      "name": "Extra Space Storage Inc.",
+      "business_plain_english": "Extra Space Storage Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf; space_name_collision."
+    },
+    {
+      "symbol": "FSLR",
+      "name": "FIRST SOLAR, INC.",
+      "business_plain_english": "FIRST SOLAR, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
+    },
+    {
+      "symbol": "FTCI",
+      "name": "FTC Solar, Inc.",
+      "business_plain_english": "FTC Solar, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Non-accelerated filer Smaller reporting company Emerging growth company operating.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
+    },
+    {
+      "symbol": "HBM",
+      "name": "Hudbay Minerals Inc.",
+      "business_plain_english": "Hudbay Minerals Inc. is a SEC-listed issuer described by the packet as: Metal Mining Large accelerated filer other.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: hbm_name_collision."
+    },
+    {
+      "symbol": "HQWWW",
+      "name": "Horizon Quantum Holdings Ltd.",
+      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
+    },
+    {
       "symbol": "HSPT",
       "name": "Horizon Space Acquisition II Corp.",
       "business_plain_english": "Horizon Space Acquisition II Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
@@ -4143,7 +1497,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "HSPTU",
@@ -4157,7 +1511,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "IDE",
@@ -4213,7 +1567,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "LPAAW",
@@ -4227,7 +1581,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "LPBB",
@@ -4255,7 +1609,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "LPBBW",
@@ -4269,7 +1623,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "MEGI",
@@ -4314,6 +1668,20 @@
       "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
     },
     {
+      "symbol": "NUCLW",
+      "name": "Eagle Nuclear Energy Corp.",
+      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
+    },
+    {
       "symbol": "NXG",
       "name": "NXG NextGen Infrastructure Income Fund",
       "business_plain_english": "NXG NextGen Infrastructure Income Fund is a SEC-listed issuer; the current packet contains only name-level business evidence.",
@@ -4342,6 +1710,20 @@
       "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
     },
     {
+      "symbol": "QMCO",
+      "name": "QUANTUM CORP /DE/",
+      "business_plain_english": "QUANTUM CORP /DE/ is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "none",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: quantum_name_collision."
+    },
+    {
       "symbol": "QNTM",
       "name": "Quantum Biopharma Ltd.",
       "business_plain_english": "Quantum Biopharma Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
@@ -4354,6 +1736,34 @@
       "extreme_upside_fit": "possible",
       "confidence": "high",
       "notes": "Low-cost screen flagged security or issuer form risk: biotech_or_healthcare_name_collision."
+    },
+    {
+      "symbol": "QSI",
+      "name": "Quantum-Si Inc",
+      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "none",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: quantum_name_collision."
+    },
+    {
+      "symbol": "QSIAW",
+      "name": "Quantum-Si Inc",
+      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "QUCY",
@@ -4395,7 +1805,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "SAAQW",
@@ -4409,7 +1819,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "possible",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "SDEV",
@@ -4426,6 +1836,62 @@
       "notes": "Low-cost screen flagged security or issuer form risk: biotech_or_healthcare_name_collision."
     },
     {
+      "symbol": "SEDG",
+      "name": "SOLAREDGE TECHNOLOGIES, INC.",
+      "business_plain_english": "SOLAREDGE TECHNOLOGIES, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
+    },
+    {
+      "symbol": "SPB",
+      "name": "Spectrum Brands Holdings, Inc.",
+      "business_plain_english": "Spectrum Brands Holdings, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "direct_to_device_connectivity"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unknown",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: spectrum_name_collision."
+    },
+    {
+      "symbol": "TYG-RI",
+      "name": "TORTOISE ENERGY INFRASTRUCTURE CORP",
+      "business_plain_english": "TORTOISE ENERGY INFRASTRUCTURE CORP is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
+    },
+    {
+      "symbol": "TYGO",
+      "name": "TIGO ENERGY, INC.",
+      "business_plain_english": "TIGO ENERGY, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Emerging growth company operating.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: solar_energy_semiconductor_name_collision."
+    },
+    {
       "symbol": "UTF",
       "name": "COHEN & STEERS INFRASTRUCTURE FUND INC",
       "business_plain_english": "COHEN & STEERS INFRASTRUCTURE FUND INC is a SEC-listed issuer; the current packet contains only name-level business evidence.",
@@ -4438,6 +1904,48 @@
       "extreme_upside_fit": "possible",
       "confidence": "high",
       "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
+    },
+    {
+      "symbol": "UZD",
+      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
+      "business_plain_english": "ARRAY DIGITAL INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
+    },
+    {
+      "symbol": "UZE",
+      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
+      "business_plain_english": "ARRAY DIGITAL INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
+    },
+    {
+      "symbol": "UZF",
+      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
+      "business_plain_english": "ARRAY DIGITAL INFRASTRUCTURE, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "weak",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "none",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
     }
   ],
   "none_sample": [
@@ -4487,7 +1995,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
     },
     {
       "symbol": "AACBU",
@@ -4499,7 +2007,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument."
     },
     {
       "symbol": "AACG",
@@ -4535,7 +2043,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "AACIW",
@@ -4547,7 +2055,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "AACO",
@@ -4571,7 +2079,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument."
     },
     {
       "symbol": "AACOW",
@@ -4583,7 +2091,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac."
+      "notes": "Low-cost screen flagged security or issuer form risk: blank_check_or_spac; duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "AACPU",
@@ -4634,6 +2142,20 @@
       "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
     },
     {
+      "symbol": "AAOI",
+      "name": "APPLIED OPTOELECTRONICS, INC.",
+      "business_plain_english": "APPLIED OPTOELECTRONICS, INC. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
+      "bottleneck_exposure": "none",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "none",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "high",
+      "notes": "Low-cost screen found only generic industry wording; it was not escalated without direct bottleneck evidence."
+    },
+    {
       "symbol": "AAON",
       "name": "AAON, INC.",
       "business_plain_english": "AAON, INC. is a SEC-listed issuer described by the packet as: Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip Large accelerated filer operating.",
@@ -4673,14 +2195,14 @@
       "symbol": "AAPL",
       "name": "Apple Inc.",
       "business_plain_english": "Apple Inc. is a SEC-listed issuer described by the packet as: Electronic Computers Large accelerated filer operating.",
-      "bottleneck_exposure": "weak",
+      "bottleneck_exposure": "none",
       "matched_lane_ids": [
         "ai_compute_infrastructure"
       ],
-      "directness": "weak_proxy",
+      "directness": "none",
       "company_stage": "too_large_mature",
       "extreme_upside_fit": "unlikely",
-      "confidence": "low",
+      "confidence": "high",
       "notes": "Low-cost screen found at most a large mature issuer; this is unlikely to serve the satellite account's extreme asymmetry lane without a separate thesis."
     },
     {
@@ -4705,7 +2227,7 @@
       "company_stage": "mature",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
+      "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
     },
     {
       "symbol": "AAUC",
@@ -4837,7 +2359,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "ABM",
@@ -4873,7 +2395,7 @@
       "company_stage": "newly_public",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
+      "notes": "Low-cost screen flagged security or issuer form risk: biotech_or_healthcare_name_collision."
     },
     {
       "symbol": "ABR",
@@ -4885,7 +2407,7 @@
       "company_stage": "mature",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
+      "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
     },
     {
       "symbol": "ABR-PD",
@@ -4897,7 +2419,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: ticker_suffix_preferred_share."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_preferred_share."
     },
     {
       "symbol": "ABR-PE",
@@ -4909,7 +2431,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: ticker_suffix_preferred_share."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_preferred_share."
     },
     {
       "symbol": "ABR-PF",
@@ -4921,7 +2443,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen flagged security or issuer form risk: ticker_suffix_preferred_share."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_preferred_share."
     },
     {
       "symbol": "ABSI",
@@ -5017,7 +2539,7 @@
       "company_stage": "unknown",
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
+      "notes": "Low-cost screen flagged security or issuer form risk: duplicate_or_non_common_instrument; ticker_suffix_unit_warrant_or_right."
     },
     {
       "symbol": "ABVX",
@@ -5030,18 +2552,6 @@
       "extreme_upside_fit": "unlikely",
       "confidence": "high",
       "notes": "Low-cost screen flagged security or issuer form risk: biotech_or_healthcare_name_collision."
-    },
-    {
-      "symbol": "ABX",
-      "name": "Abacus Global Management, Inc.",
-      "business_plain_english": "Abacus Global Management, Inc. is a SEC-listed issuer described by the packet as: Investment Advice Accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "none",
-      "matched_lane_ids": [],
-      "directness": "none",
-      "company_stage": "growth",
-      "extreme_upside_fit": "unlikely",
-      "confidence": "high",
-      "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
     }
   ],
   "review_questions": [

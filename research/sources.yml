@@ -612,3 +612,165 @@ sources:
     first_seen_at: 2026-05-31
     related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, CRWV, IREN, OKLO, FLY]
     summary: Federal Reserve stability report noted high equity valuations and tight credit spreads, supporting staged sizing and strict price discipline for high-multiple candidates.
+  - id: mnts_q1_2026_10q
+    title: Momentus Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1781162/000162828026034490/mnts-20260331.htm
+    source_published_at: 2026-05-13
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [MNTS]
+    summary: Momentus Q1 filing confirmed USD 3.2 million of quarterly revenue, USD 23.5 million cash, continued net losses, recent financing dependence, and management's statement that prior going-concern doubt no longer existed after financings.
+  - id: mnts_private_placement_8k_2026_05_29
+    title: Momentus May 2026 Private Placement 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1781162/000114036126023337/ef20075150_8k.htm
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [MNTS]
+    summary: Momentus disclosed a May 2026 private placement that reinforced dilution and survival-financing risk after the Q1 filing.
+  - id: yahoo_chart_mnts_2026_05_29
+    title: Yahoo Finance Chart MNTS Daily Close Snapshot
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/MNTS?range=5d&interval=1d
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [MNTS]
+    summary: Daily chart data showed MNTS's 2026-05-29 close near USD 16.85.
+  - id: voyg_q1_2026_results
+    title: Voyager Reports First Quarter 2026 Financial Results
+    source_type: company_ir
+    url: https://investors.voyagertechnologies.com/news/news-details/2026/Voyager-Reports-First-Quarter-2026-Financial-Results-Reports-1Q-Record-Backlog-Increases-2026-Revenue-Guidance/default.aspx
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [VOYG]
+    summary: Voyager reported Q1 2026 revenue, record backlog, liquidity, and raised 2026 revenue guidance while Starlab remained a future option rather than current revenue.
+  - id: voyg_q1_2026_10q
+    title: Voyager Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1788060/000162828026030331/voyg-20260331.htm
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [VOYG]
+    summary: Voyager Q1 filing confirmed USD 35.2 million quarterly revenue, negative gross profit, USD 429.4 million cash, USD 153.2 million remaining performance obligations, and USD 435.0 million of 2030 convertible senior secured notes.
+  - id: voyg_ipo_prospectus_2025_06_10
+    title: Voyager IPO Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1788060/000162828025030832/voyager-424b4finalprospect.htm
+    source_published_at: 2025-06-10
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [VOYG]
+    summary: Voyager IPO prospectus described the public listing structure, Starlab option, defense and space technology business mix, and controlled-company governance.
+  - id: yahoo_chart_voyg_2026_05_29
+    title: Yahoo Finance Chart VOYG Daily Close Snapshot
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/VOYG?range=5d&interval=1d
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [VOYG]
+    summary: Daily chart data showed VOYG's 2026-05-29 close near USD 49.53.
+  - id: sec_companyfacts_voyg_2026_06_01
+    title: Voyager SEC Companyfacts Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001788060.json
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [VOYG]
+    summary: SEC companyfacts snapshot supplied Voyager's current XBRL fundamentals used in market-data refresh, supplemented by a 10-Q debt override for valuation.
+  - id: xndu_q1_2026_6k
+    title: Xanadu Q1 2026 6-K Financial Report
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2097163/000209716326000012/xndu-20260331.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [XNDU]
+    summary: Xanadu Q1 report confirmed small professional-services revenue, cash balance, debt, losses, and customer concentration before commercial utility-scale quantum revenue.
+  - id: xndu_f1_yorkville_2026_05_22
+    title: Xanadu F-1 Resale and Yorkville Standby Equity Facility
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2097163/000121390026060259/ea0290512-f1_xanadu.htm
+    source_published_at: 2026-05-22
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [XNDU]
+    summary: Xanadu F-1 disclosed 298.5 million shares outstanding as of 2026-05-14, 346.0 million fully diluted shares, and the USD 300 million Yorkville standby equity purchase agreement.
+  - id: xndu_s8_2026_05_26
+    title: Xanadu 2026 Form S-8 Equity Registration
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2097163/000121390026061015/ea0291748-s8_xanadu.htm
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [XNDU]
+    summary: Xanadu S-8 registered equity-plan shares, adding dilution context for a newly public pre-commercial quantum company.
+  - id: yahoo_chart_xndu_2026_05_29
+    title: Yahoo Finance Chart XNDU Daily Close Snapshot
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/XNDU?range=5d&interval=1d
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [XNDU]
+    summary: Daily chart data showed XNDU's 2026-05-29 close near USD 16.17.
+  - id: sec_companyfacts_xndu_2026_06_01
+    title: Xanadu SEC Companyfacts Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/api/xbrl/companyfacts/CIK0002097163.json
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [XNDU]
+    summary: SEC companyfacts snapshot supplied Xanadu's current XBRL fundamentals; share-count and valuation metrics needed a manual F-1 override because companyfacts exposed weighted-average Q1 shares rather than current Class A and Class B shares outstanding.
+  - id: yss_q1_2026_results
+    title: York Space Systems Reports First Quarter 2026 Results
+    source_type: company_ir
+    url: https://ir.yorkspacesystems.com/news/news-details/2026/York-Space-Systems-Reports-First-Quarter-2026-Results/default.aspx
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [YSS]
+    summary: York reported Q1 2026 revenue, backlog, cash, reaffirmed 2026 revenue guidance, and operating updates for defense spacecraft production and operations.
+  - id: yss_q1_2026_10q
+    title: York Space Systems Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086587/000162828026035244/yss-20260331.htm
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [YSS]
+    summary: York Q1 filing confirmed USD 116.3 million quarterly revenue, USD 642.3 million remaining performance obligations, USD 655.7 million cash, debt, losses, and a material weakness in internal control over financial reporting.
+  - id: yss_ipo_prospectus_2026_01_28
+    title: York Space Systems IPO Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086587/000119312526030469/d941199d424b4.htm
+    source_published_at: 2026-01-28
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [YSS]
+    summary: York IPO prospectus described the newly public common-stock security, defense-space business, governance controls, and IPO proceeds context.
+  - id: yahoo_chart_yss_2026_05_29
+    title: Yahoo Finance Chart YSS Daily Close Snapshot
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/YSS?range=5d&interval=1d
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [YSS]
+    summary: Daily chart data showed YSS's 2026-05-29 close near USD 32.64.
+  - id: sec_companyfacts_yss_2026_06_01
+    title: York Space Systems SEC Companyfacts Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/api/xbrl/companyfacts/CIK0002086587.json
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-06-01
+    first_seen_at: 2026-06-01
+    related_symbols: [YSS]
+    summary: SEC companyfacts snapshot supplied York's current XBRL fundamentals used in the market-data and valuation refresh.

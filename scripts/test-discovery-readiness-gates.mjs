@@ -16,14 +16,18 @@ const positiveTestCases = [
     mutate: (cwd) => {
       const outputSha256 = writePartialProfileScan(cwd);
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        Object.assign(doc.source_coverage.deterministic_commands[0], {
+        doc.source_coverage.deterministic_commands.push({
+          command: "npm run discover:universe -- --dry-run --profile-input partial-profile-scan.json",
+          dry_run: true,
           output_path: "research/discovery/runs/partial-profile-scan.json",
           output_sha256: outputSha256,
+          retrieved_at: "2026-05-31",
           profile_coverage_scope: "partial_requested_symbols",
           profile_coverage_status: "targeted_partial",
           profile_requested_symbols: ["ARCD"],
           targeted_scope_acknowledged: true,
           targeted_scope_reason: "fixture intentionally exercises an explicit requested-symbol profile scan",
+          result_summary: "Targeted profile scan is allowed as scoped supplementary evidence, not as the broad universe freshness command.",
         });
       });
     },
@@ -296,7 +300,7 @@ const testCases = [
     name: "rejects stale discovery source retrieval",
     mutate: (cwd) => {
       updateYaml(cwd, "research/sources.yml", (doc) => {
-        const source = doc.sources.find((entry) => entry.id === "fly_s1_offering_2026_05_26");
+        const source = doc.sources.find((entry) => entry.id === "yss_q1_2026_10q");
         source.retrieved_at = "1900-01-01";
       });
     },
@@ -306,7 +310,7 @@ const testCases = [
     name: "rejects evidence packet stale source metadata",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
-        const source = doc.fresh_sources.find((entry) => entry.id === "fly_s1_offering_2026_05_26");
+        const source = doc.fresh_sources.find((entry) => entry.id === "yss_q1_2026_10q");
         source.retrieved_at = "1900-01-01";
       });
     },
@@ -343,10 +347,10 @@ const testCases = [
     name: "rejects missing material readiness sprint",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        doc.readiness_sprints = doc.readiness_sprints.filter((sprint) => sprint.symbol !== "FLY");
+        doc.readiness_sprints = doc.readiness_sprints.slice(1);
       });
     },
-    expected: "readiness_sprints is missing material scoped readiness symbol FLY",
+    expected: "readiness_sprints is missing material scoped readiness symbol",
   },
   {
     name: "rejects hollow readiness sprint note",
@@ -384,7 +388,7 @@ const testCases = [
     name: "rejects invalid alternate latest agentic discovery path",
     mutate: (cwd) => {
       cpSync(
-        path.join(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml"),
+        path.join(cwd, latestAgenticDiscoveryPath(cwd)),
         path.join(cwd, "research/discovery/runs/bad-agentic-discovery.yml"),
       );
       updateYaml(cwd, "research/discovery/runs/bad-agentic-discovery.yml", (doc) => {
@@ -709,12 +713,16 @@ const testCases = [
         profile_symbol_count: 1,
       });
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        Object.assign(doc.source_coverage.deterministic_commands[0], {
+        doc.source_coverage.deterministic_commands.push({
+          command: "npm run discover:universe -- --dry-run --profile-input complete-profile-scan.json",
+          dry_run: true,
           output_path: "research/discovery/runs/complete-profile-scan.json",
           output_sha256: outputSha256,
+          retrieved_at: doc.run_date,
           profile_coverage_scope: "complete_sec_universe",
           profile_coverage_status: "complete",
           profile_requested_symbols: [],
+          result_summary: "Fixture complete issuer profile scan with forged counts.",
         });
       });
     },
@@ -727,12 +735,16 @@ const testCases = [
         sec_input_sha256: "0".repeat(64),
       });
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        Object.assign(doc.source_coverage.deterministic_commands[0], {
+        doc.source_coverage.deterministic_commands.push({
+          command: "npm run discover:universe -- --dry-run --profile-input complete-profile-scan.json",
+          dry_run: true,
           output_path: "research/discovery/runs/complete-profile-scan.json",
           output_sha256: outputSha256,
+          retrieved_at: doc.run_date,
           profile_coverage_scope: "complete_sec_universe",
           profile_coverage_status: "complete",
           profile_requested_symbols: [],
+          result_summary: "Fixture complete issuer profile scan with forged SEC input binding.",
         });
       });
     },
@@ -743,14 +755,18 @@ const testCases = [
     mutate: (cwd) => {
       writePartialProfileScan(cwd);
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        Object.assign(doc.source_coverage.deterministic_commands[0], {
+        doc.source_coverage.deterministic_commands.push({
+          command: "npm run discover:universe -- --dry-run --profile-input partial-profile-scan.json",
+          dry_run: true,
           output_path: "research/discovery/runs/partial-profile-scan.json",
           output_sha256: "0".repeat(64),
+          retrieved_at: doc.run_date,
           profile_coverage_scope: "partial_requested_symbols",
           profile_coverage_status: "targeted_partial",
           profile_requested_symbols: ["ARCD"],
           targeted_scope_acknowledged: true,
           targeted_scope_reason: "fixture intentionally tests output hash mismatch",
+          result_summary: "Fixture targeted profile scan with forged output hash.",
         });
       });
     },
@@ -853,7 +869,7 @@ const testCases = [
     name: "rejects evidence packet missing scan payload summary",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
-        const output = doc.deterministic_outputs.find((entry) => entry.output_path === "research/discovery/runs/2026-05-31-universe-scan.json");
+        const output = firstDeterministicOutput(doc);
         output.scan_payload_summary = null;
       });
     },
@@ -863,7 +879,7 @@ const testCases = [
     name: "rejects evidence packet mutated scan candidate summary",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
-        const output = doc.deterministic_outputs.find((entry) => entry.output_path === "research/discovery/runs/2026-05-31-universe-scan.json");
+        const output = firstDeterministicOutput(doc);
         output.scan_payload_summary.returned_candidates[0].deterministic_priority = "low";
       });
     },
@@ -873,7 +889,7 @@ const testCases = [
     name: "rejects evidence packet mutated recall diagnostic",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
-        const output = doc.deterministic_outputs.find((entry) => entry.output_path === "research/discovery/runs/2026-05-31-universe-scan.json");
+        const output = firstDeterministicOutput(doc);
         output.scan_payload_summary.recall_diagnostics[0].status = "missed_expected_lane";
       });
     },
@@ -995,7 +1011,7 @@ const testCases = [
     name: "rejects evidence packet mutated candidate security form",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
-        const output = doc.deterministic_outputs.find((entry) => entry.output_path === "research/discovery/runs/2026-05-31-universe-scan.json");
+        const output = firstDeterministicOutput(doc);
         output.scan_payload_summary.returned_candidates[0].security_form = "common_stock";
       });
     },
@@ -1005,7 +1021,7 @@ const testCases = [
     name: "rejects evidence packet mutated candidate matched fields",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
-        const output = doc.deterministic_outputs.find((entry) => entry.output_path === "research/discovery/runs/2026-05-31-universe-scan.json");
+        const output = firstDeterministicOutput(doc);
         output.scan_payload_summary.returned_candidates[0].matched_fields = [];
       });
     },
@@ -1085,10 +1101,49 @@ function updateCandidateReadiness(cwd, mutate) {
 }
 
 function updateYaml(cwd, relativePath, mutate) {
-  const filePath = path.join(cwd, relativePath);
+  const filePath = path.join(cwd, resolveFixtureYamlPath(cwd, relativePath));
   const doc = parseYaml(readFileSync(filePath, "utf8"));
   mutate(doc);
   writeFileSync(filePath, stringifyYaml(doc));
+}
+
+function resolveFixtureYamlPath(cwd, relativePath) {
+  if (relativePath === "research/discovery/runs/2026-05-31-agentic-discovery.yml") {
+    return latestAgenticDiscoveryPath(cwd);
+  }
+  if (relativePath === "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml") {
+    return latestEvidencePacketPath(cwd);
+  }
+  return relativePath;
+}
+
+function latestAgenticDiscoveryPath(cwd) {
+  return latestDiscoveryProcessPath(cwd, "latest_agentic_discovery_path");
+}
+
+function latestEvidencePacketPath(cwd) {
+  return latestDiscoveryProcessPath(cwd, "latest_evidence_packet_path");
+}
+
+function latestDiscoveryProcessPath(cwd, field) {
+  const qualityMetrics = parseYaml(readFileSync(path.join(cwd, "research/quality-metrics.yml"), "utf8"));
+  const value = qualityMetrics.discovery_process?.[field];
+  if (typeof value !== "string" || value === "") {
+    throw new Error(`Missing quality metrics discovery_process.${field}`);
+  }
+  return value;
+}
+
+function firstDeterministicOutput(doc) {
+  const output = doc.deterministic_outputs?.find((entry) =>
+    typeof entry?.output_path === "string"
+      && entry.output_path.endsWith("universe-scan.json")
+      && entry.scan_payload_summary !== undefined,
+  );
+  if (output === undefined) {
+    throw new Error("Missing deterministic universe scan output in evidence packet fixture");
+  }
+  return output;
 }
 
 function updateJson(cwd, relativePath, mutate) {
@@ -1229,14 +1284,16 @@ function syncFlyReadinessArtifacts(cwd) {
   }
   updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
     const sprint = doc.readiness_sprints.find((entry) => entry.symbol === "FLY");
-    Object.assign(sprint, {
-      material_to_current_allocation: record.material_to_current_allocation,
-      readiness_status: record.readiness_status,
-      dashboard_surface_status: record.dashboard_surface_status,
-      readiness_path: record.readiness_path,
-      blocker_type: record.blocker_type,
-      reachable_evidence_remaining: record.reachable_evidence_remaining,
-    });
+    if (sprint !== undefined) {
+      Object.assign(sprint, {
+        material_to_current_allocation: record.material_to_current_allocation,
+        readiness_status: record.readiness_status,
+        dashboard_surface_status: record.dashboard_surface_status,
+        readiness_path: record.readiness_path,
+        blocker_type: record.blocker_type,
+        reachable_evidence_remaining: record.reachable_evidence_remaining,
+      });
+    }
   });
   updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
     const packetRecord = doc.candidate_readiness.find((entry) => entry.symbol === "FLY");
@@ -1284,7 +1341,7 @@ function writeCompleteProfileScan(cwd, overrides) {
 }
 
 function writeProfileScan(cwd, fileName, payload) {
-  const baseline = JSON.parse(readFileSync(path.join(cwd, "research/discovery/runs/2026-05-31-universe-scan.json"), "utf8"));
+  const baseline = JSON.parse(readFileSync(path.join(cwd, baselineUniverseScanPath(cwd)), "utf8"));
   const completeCount = baseline.sec_input_eligible_universe_count;
   const content = `${JSON.stringify({
     ...broadScanPayload(cwd),
@@ -1313,11 +1370,11 @@ function writeBroadScan(cwd, fileName, overrides) {
 }
 
 function broadScanPayload(cwd) {
-  const baseline = JSON.parse(readFileSync(path.join(cwd, "research/discovery/runs/2026-05-31-universe-scan.json"), "utf8"));
+  const baseline = JSON.parse(readFileSync(path.join(cwd, baselineUniverseScanPath(cwd)), "utf8"));
   return {
     schema_version: 1,
-    generated_at: "2026-05-31T12:00:00.000Z",
-    as_of: "2026-05-31",
+    generated_at: `${baseline.as_of}T12:00:00.000Z`,
+    as_of: baseline.as_of,
     discovery_scope: "active_emerging_incubating",
     source_url: baseline.source_url,
     sec_input_source: baseline.sec_input_source,
@@ -1360,6 +1417,19 @@ function broadScanPayload(cwd) {
     recall_ticker_only_expected_proxy_symbols: [],
     truncated: false,
   };
+}
+
+function baselineUniverseScanPath(cwd) {
+  const qualityMetrics = parseYaml(readFileSync(path.join(cwd, "research/quality-metrics.yml"), "utf8"));
+  const asOf = qualityMetrics.coverage?.universe_scan_as_of;
+  if (typeof asOf !== "string" || asOf === "") {
+    throw new Error("Missing quality metrics coverage.universe_scan_as_of");
+  }
+  const scanPath = `research/discovery/runs/${asOf}-universe-scan.json`;
+  if (!readFileSync(path.join(cwd, scanPath), "utf8")) {
+    throw new Error(`Missing baseline universe scan fixture ${scanPath}`);
+  }
+  return scanPath;
 }
 
 function slug(value) {

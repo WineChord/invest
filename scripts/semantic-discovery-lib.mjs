@@ -6,7 +6,7 @@ import { fetchSecTextWithRetry } from "./sec-fetch-lib.mjs";
 
 export const semanticPacketSchemaVersion = 1;
 export const semanticClassificationSchemaVersion = 1;
-export const semanticClassifierVersion = "semantic_triage_v2";
+export const semanticClassifierVersion = "semantic_triage_v5";
 export const semanticBatchSchemaVersion = 1;
 export const semanticDiscoveryRunSchemaVersion = 1;
 export const secCompanyTickersExchangeUrl = "https://www.sec.gov/files/company_tickers_exchange.json";

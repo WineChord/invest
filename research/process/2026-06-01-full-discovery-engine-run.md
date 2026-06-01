@@ -14,9 +14,9 @@ buy_recommendation_scope: none
 
 ## Executive Summary
 
-The run completed a full semantic discovery pass across the SEC-listed NYSE, Nasdaq, and NYSE American universe, using cached complete-universe issuer packets and a low-cost classifier before advisory subagent review. It did not create buy eligibility, order sizing, or account-state changes. It improved the engine where the run exposed real process defects: GitHub Actions market-data cache reuse, durable security metadata commits, semantic cache invalidation, ticker-suffix false positives, review-packet validation, and cache-only artifact guards.
+The run completed a full semantic discovery pass across the SEC-listed NYSE, Nasdaq, and NYSE American universe, using cached complete-universe issuer packets, a low-cost classifier, a fixed worker-pool audit plan, and advisory subagent review. It did not create buy eligibility, order sizing, or account-state changes. It improved the engine where the run exposed real process defects: GitHub Actions market-data cache reuse, durable security metadata commits, semantic cache invalidation, ticker-suffix false positives, review-packet validation, cache-only artifact guards, fixed-pool subagent orchestration, and generic-keyword noise control.
 
-The durable semantic run now records full current coverage for 7,575 issuer packets. Final triage counts are 50 `xhigh_readiness_candidate`, 227 `medium_lane_compare`, 36 `reject_or_archive`, and 7,262 `none`. The committed run artifact keeps summary and review queues; complete issuer packets, full SEC issuer profiles, classifier JSONL results, and batch work orders remain under ignored cache.
+The durable semantic run now records full current coverage for 7,575 issuer packets under `semantic_triage_v5`. Final triage counts are 24 `xhigh_readiness_candidate`, 49 `medium_lane_compare`, 62 `reject_or_archive`, and 7,440 `none`. The committed run artifact keeps summary and review queues; complete issuer packets, full SEC issuer profiles, classifier JSONL results, and batch work orders remain under ignored cache.
 
 ## Source Coverage
 
@@ -29,7 +29,7 @@ semantic_profile_coverage:
   eligible_issuer_packets: 7575
   current_classifications: 7575
   stale_cache_count: 0
-  classifier_version: semantic_triage_v2
+  classifier_version: semantic_triage_v5
 optional_market_data_providers:
   fmp_api_key_available: true
   fmp_mode: missing
@@ -56,8 +56,17 @@ semantic_packet_artifact: research/cache/discovery/2026-06-01/2026-06-01-semanti
 semantic_classification_import: research/discovery/runs/2026-06-01-semantic-import.json
 semantic_discovery_run: research/discovery/runs/2026-06-01-semantic-discovery-run.json
 semantic_review_packet: research/discovery/runs/2026-06-01-semantic-review-packet.json
-semantic_classifier_version: semantic_triage_v2
+semantic_classifier_version: semantic_triage_v5
 semantic_batch_cache_status: no_uncached_packets_remaining_for_current_packet_and_lane_hash
+semantic_worker_pool_status:
+  cache_first_full_universe:
+    eligible_issuer_packets: 7575
+    skipped_current_cache_count: 7575
+    pending_low_reasoning_worker_assignments: 0
+  forced_quality_audit:
+    first_escalated_audit_pool: 277 symbols reviewed across 4 low-reasoning worker slots
+    post_rule_update_audit_pool: 78 symbols reviewed or sampled across 4 low-reasoning worker slots
+    final_escalated_review_pool: 73 symbols after v5 triage
 cache_only_intermediates:
   - research/cache/discovery/2026-06-01/2026-06-01-full-sec-issuer-profiles.json
   - research/cache/discovery/2026-06-01/2026-06-01-semantic-packets.json
@@ -66,10 +75,10 @@ durable_semantic_summary:
   packet_count: 7575
   classified_current_count: 7575
   classification_coverage_ratio: 1
-  xhigh_readiness_candidate: 50
-  medium_lane_compare: 227
-  reject_or_archive: 36
-  no_escalation: 7262
+  xhigh_readiness_candidate: 24
+  medium_lane_compare: 49
+  reject_or_archive: 62
+  no_escalation: 7440
 agentic_discovery_subagents:
   - xhigh candidate triage reviewer
   - medium lane and false-negative reviewer
@@ -82,22 +91,28 @@ deep_dive_queue:
   direct_readiness_attention:
     - VOYG
     - MNTS
+    - YSS
   source_backed_medium_review_before_readiness:
-    - APLD
-    - SMCI
-    - AAOI
-    - MRVL
-    - MTSI
-    - RMBS
     - AIP
+    - ARQQ
+    - FNUC
+    - GILT
+    - HQ
+    - JAGU
+    - MDA
+    - NNE
+    - NUCL
     - POET
     - BZAI
     - SKYT
     - UEC
+    - UROY
     - QUBT
 ```
 
 The main run accepted the subagent finding that `VOYG` and `MNTS` are the most plausible newly surfaced direct readiness candidates from the high-priority space bucket. It also accepted that many medium hits are useful as a recall layer but too noisy for direct promotion, especially generic AI compute, broad semiconductor, and unknown-future-bottleneck matches. No watchlist promotion was made because this run was process and discovery execution, not a source-backed readiness sprint or allocation decision.
+
+The later fixed-pool review also kept `YSS` in the direct readiness queue because both its name and SEC metadata point to space systems, while downgrading name-only or thin-evidence quantum, nuclear, uranium, satellite, and space hits to medium lane comparison instead of xhigh readiness.
 
 ## Durable Fixes
 
@@ -112,6 +127,15 @@ semantic_cache_fixes:
 classifier_precision_fixes:
   - common-stock tickers ending in R, U, or W are no longer rejected as rights, units, or warrants without a delimiter or explicit security-form evidence
   - profile keywords are matched against source-attributed profile blocks instead of the combined symbol/name/status text
+  - paired no-delimiter warrant symbols such as ARQQW, BNAIW, NUCLW, QSIAW, RCKTW, and HQWWW are filtered by same-CIK common-equity linkage or missing market-data evidence
+  - fund, trust, REIT, preferred, right, unit, duplicate-security, and obvious non-common-instrument noise is rejected before semantic escalation
+  - generic SEC categories such as Services-Computer Processing & Data Preparation, Electronic Computers, and Semiconductors & Related Devices no longer create medium or xhigh escalation without stronger lane-specific evidence
+  - solar, generic optical, spectrum-brand, HBM-symbol, quantum-name, and space-name collisions are guarded against
+  - name-only quantum, nuclear, uranium, satellite, and space matches default to medium lane comparison unless a current proxy, watchlist state, discovery state, or stronger direct-readiness evidence supports xhigh
+semantic_worker_pool_fixes:
+  - scripts/build-semantic-worker-pool.mjs now turns batch manifests into fixed-size worker-pool work orders with deterministic result paths and cache-first no-work accounting
+  - package.json exposes npm run build:semantic-worker-pool
+  - semantic discovery tests cover worker-pool assignment, current-cache skipping, paired warrant filtering, and common-stock trailing-letter safety
 durable_artifact_fixes:
   - semantic run keeps only a no-escalation sample rather than all 7,262 no-escalation rows
   - semantic review packet is generated by script and validated against the semantic run hash and summary counts
@@ -124,9 +148,11 @@ durable_artifact_fixes:
 ```yaml
 accepted_findings:
   - VOYG and MNTS deserve the next source-backed readiness attention from the high-priority space group
-  - GEMI, MSAI, OPTX, OPXS, QMCO, QSI, and UROY were high-priority false positives or weak proxies under the first heuristic pass
+  - YSS deserves direct readiness attention after v5 because both name and SEC metadata point to space systems
+  - GEMI, MSAI, OPTX, OPXS, QMCO, QSI, and many no-delimiter warrant symbols were high-priority false positives or weak proxies under earlier heuristic passes
+  - UROY is better treated as medium uranium lane comparison rather than xhigh readiness because the packet indicates royalty or commodity exposure, not direct fuel-cycle control
   - LUNR, RDW, and LEU were wrongly demoted by the trailing-letter security-form heuristic and must remain high-priority current public proxies
-  - the medium queue is useful for recall but too noisy for promotion without source-backed lane comparison
+  - the medium queue is useful for recall but should stay small enough for source-backed lane comparison; v5 reduced it to 49 symbols
   - FMP cache reuse and security_master commits needed workflow fixes
   - semantic cache needed classifier-version invalidation
 unresolved_conflicts: []
@@ -147,4 +173,4 @@ result: passed
 
 ## Next Research Work
 
-This run makes the discovery engine more complete and less wasteful, but it does not finish readiness research for any new ticker. The next high-value research step is a source-backed readiness sprint for `VOYG` and `MNTS`, followed by medium-lane comparisons for the under-escalated optical interconnect, AI infrastructure, advanced packaging, power semiconductor, nuclear fuel, and quantum names listed above.
+This run makes the discovery engine more complete and less wasteful, but it does not finish readiness research for any new ticker. The next high-value research step is a source-backed readiness sprint for `VOYG`, `MNTS`, and `YSS`, followed by medium-lane comparisons for the remaining 49 medium symbols. The medium queue should be enriched with business-description evidence before promotion decisions, not promoted from SIC or name tokens alone.

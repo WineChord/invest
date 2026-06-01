@@ -39,6 +39,8 @@ lanes:
     current_public_proxies:
       - RKLB
       - FLY
+      - YSS
+      - VOYG
       - LUNR
       - RDW
       - KTOS
@@ -212,6 +214,7 @@ lanes:
       - post-quantum
     current_public_proxies:
       - IONQ
+      - XNDU
     candidate_entry_points:
       - newly public quantum hardware or networking companies
       - public suppliers with real quantum revenue and government validation

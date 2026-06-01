@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-31T20:25:22.747Z",
+  "generated_at": "2026-06-01T08:43:25.766Z",
   "source": "sec_submissions_recent_filings",
   "source_files": [
     "https://www.sec.gov/files/company_tickers_exchange.json",
@@ -23,7 +23,7 @@
       "cik": "0001819994",
       "source_url": "https://data.sec.gov/submissions/CIK0001819994.json",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:22.747Z",
+      "cache_observed_at": "2026-06-01T08:43:25.766Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
       "payload_sha256": "3bfdff335628e8f665bf26e46123d76d77461e8c816256408a3eda21832db270",
@@ -33,14 +33,14 @@
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:22.747Z"
+      "fetched_at": "2026-06-01T08:43:25.766Z"
     },
     {
       "symbol": "ASTS",
       "cik": "0001780312",
       "source_url": "https://data.sec.gov/submissions/CIK0001780312.json",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:22.747Z",
+      "cache_observed_at": "2026-06-01T08:43:25.766Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
       "payload_sha256": "4415474bdeb490bce1343549c4efc538ea737e2897083ccd8c4eb4a962336440",
@@ -50,14 +50,14 @@
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:22.747Z"
+      "fetched_at": "2026-06-01T08:43:25.766Z"
     },
     {
       "symbol": "CRDO",
       "cik": "0001807794",
       "source_url": "https://data.sec.gov/submissions/CIK0001807794.json",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:22.747Z",
+      "cache_observed_at": "2026-06-01T08:43:25.766Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
       "payload_sha256": "13e122c0845c5d47648e536f19a1534baa0f4f4e12aee9c8c3d2a3f66cbbbab3",
@@ -67,14 +67,14 @@
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:22.747Z"
+      "fetched_at": "2026-06-01T08:43:25.766Z"
     },
     {
       "symbol": "VRT",
       "cik": "0001674101",
       "source_url": "https://data.sec.gov/submissions/CIK0001674101.json",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:22.747Z",
+      "cache_observed_at": "2026-06-01T08:43:25.766Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
       "payload_sha256": "66e4c4fc87e4d1049214abb90c1d945333117e579f35a8d1eceff9a00ffd6ec9",
@@ -84,13 +84,13 @@
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:22.747Z"
+      "fetched_at": "2026-06-01T08:43:25.766Z"
     }
   ],
   "max_submissions_cache_age_days": 1,
   "sec_fetch_retries": 2,
   "sec_retry_delay_ms": 1000,
-  "sec_user_agent": "winechord-invest discovery research",
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
   "sec_min_complete_universe_request_delay_ms": 100,
   "sec_request_delay_ms": 0,
   "selection_strategy": "requested_symbols",

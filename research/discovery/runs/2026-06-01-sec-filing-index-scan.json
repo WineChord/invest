@@ -1,22 +1,23 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-31T22:07:52.226Z",
+  "generated_at": "2026-06-01T08:43:37.883Z",
   "as_of": "2026-06-01",
   "discovery_scope": "active_emerging_incubating",
   "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
   "sec_input_source": "https://www.sec.gov/files/company_tickers_exchange.json",
-  "sec_input_fetched_at": "2026-05-31T22:07:50.689Z",
+  "sec_input_fetched_at": "2026-06-01T08:43:36.064Z",
   "sec_input_row_count": 10365,
   "sec_input_eligible_universe_count": 7575,
   "sec_input_sha256": "27a0d81776e908cfdc6cc71064bf7692c8aea14f01ff074e46c2b7015ffbf5ee",
   "input_path": "",
   "lane_map_path": "research/discovery/lanes.yml",
   "lane_map_as_of": "2026-06-01",
-  "lane_map_sha256": "6c288d7da254cf6c16705e0b42c11f477717c926bc45b383b8f6107d929d488d",
+  "lane_map_sha256": "ce54732acffd5ff86b46425ef68c2177f6861c4bc4ed0af99466b2c3078ffa67",
   "profile_input_path": "research/discovery/runs/2026-06-01-sec-filing-index-profiles.json",
+  "profile_input_sha256": "cd470985a30d09b7793beeb1679c8903912c391d727d05ac5dc16d99142ff0ab",
   "profile_purpose": "issuer_universe_discovery",
   "profile_source": "sec_filing_business_sections",
-  "profile_generated_at": "2026-05-31T20:25:29.674Z",
+  "profile_generated_at": "2026-06-01T08:43:31.091Z",
   "profile_source_files": [
     "research/discovery/runs/2026-06-01-sec-filing-index-manifest.csv",
     "https://www.sec.gov/files/company_tickers_exchange.json",
@@ -37,14 +38,19 @@
   "profile_selected_symbol_count": 4,
   "profile_eligible_universe_count": 7575,
   "profile_coverage_limit": 4,
+  "profile_audited_symbol_count": 4,
+  "profile_skipped_symbol_count": 0,
   "profile_coverage_gap_count": 7571,
   "profile_coverage_ratio": 0.000528,
   "profile_coverage_status": "targeted_partial",
+  "issuer_profile_coverage_status": "targeted_partial",
+  "issuer_profile_semantic_gap_count": 7571,
+  "issuer_profile_semantic_coverage_ratio": 0.000528,
   "profile_sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
   "profile_declared_count": 4,
   "profile_symbol_count": 4,
-  "deterministic_limit": 1000,
-  "known_symbol_count": 25,
+  "deterministic_limit": 25,
+  "known_symbol_count": 29,
   "lanes_scanned": [
     {
       "id": "space_infrastructure",
@@ -103,51 +109,41 @@
     "sort by deterministic priority before applying the limit"
   ],
   "candidate_counts_by_priority": {
-    "high": 17,
-    "medium": 19,
-    "low": 8
+    "high": 16,
+    "medium": 9
   },
   "candidate_counts_by_lane": {
-    "advanced_nuclear_and_grid_constraints": 8,
+    "advanced_nuclear_and_grid_constraints": 5,
     "programmable_money_infrastructure": 1,
-    "quantum_computing_and_networking": 12,
-    "semiconductor_interconnect_and_memory": 2,
-    "space_infrastructure": 15,
-    "ai_compute_infrastructure": 2,
-    "direct_to_device_connectivity": 3,
-    "frontier_ai_public_platforms": 1
+    "quantum_computing_and_networking": 10,
+    "semiconductor_interconnect_and_memory": 1,
+    "space_infrastructure": 8
   },
-  "false_positive_flag_counts": {
-    "blank_check_or_spac": 6,
-    "ticker_keyword_collision": 1,
-    "royalty_or_commodity_proxy": 1,
-    "brand_keyword_collision": 1,
-    "fund_or_etf": 2
-  },
+  "false_positive_flag_counts": {},
   "all_candidate_counts_by_priority": {
-    "high": 17,
-    "medium": 19,
-    "low": 8
+    "high": 16,
+    "medium": 18,
+    "low": 9
   },
   "all_candidate_counts_by_lane": {
     "advanced_nuclear_and_grid_constraints": 8,
     "programmable_money_infrastructure": 1,
-    "quantum_computing_and_networking": 12,
+    "quantum_computing_and_networking": 10,
     "semiconductor_interconnect_and_memory": 2,
-    "space_infrastructure": 15,
-    "ai_compute_infrastructure": 2,
+    "space_infrastructure": 14,
+    "ai_compute_infrastructure": 4,
     "direct_to_device_connectivity": 3,
     "frontier_ai_public_platforms": 1
   },
   "all_false_positive_flag_counts": {
     "blank_check_or_spac": 6,
-    "ticker_keyword_collision": 1,
+    "ticker_keyword_collision": 3,
     "royalty_or_commodity_proxy": 1,
     "brand_keyword_collision": 1,
     "fund_or_etf": 2
   },
   "exploratory_match_counts_by_lane": {
-    "unknown_future_bottlenecks": 47
+    "unknown_future_bottlenecks": 59
   },
   "exploratory_false_positive_flag_counts": {
     "blank_check_or_spac": 4,
@@ -159,24 +155,49 @@
   "profile_enriched_exploratory_match_count": 0,
   "profile_known_symbol_count": 4,
   "profile_unknown_symbol_count": 0,
-  "total_match_count": 109,
-  "all_candidate_count": 44,
-  "returned_candidate_count": 44,
-  "omitted_candidate_count": 0,
-  "exploratory_match_count": 47,
-  "truncated": false,
-  "recall_expected_lane_count": 22,
+  "total_match_count": 123,
+  "all_candidate_count": 43,
+  "returned_candidate_count": 25,
+  "omitted_candidate_count": 18,
+  "exploratory_match_count": 59,
+  "truncated": true,
+  "recall_expected_lane_count": 25,
   "recall_expected_lane_miss_count": 0,
   "recall_counts_by_status": {
-    "matched_expected_lane": 22,
+    "matched_expected_lane": 25,
     "out_of_scope_private_or_future_proxy": 5
   },
   "recall_out_of_scope_proxy_count": 5,
-  "recall_unique_expected_proxy_count": 19,
+  "recall_unique_expected_proxy_count": 22,
   "recall_unique_expected_proxy_miss_count": 0,
-  "recall_expected_proxy_count": 22,
+  "recall_expected_proxy_count": 25,
   "recall_expected_proxy_miss_count": 0,
-  "candidate_count": 44,
+  "recall_organic_expected_proxy_count": 6,
+  "recall_organic_expected_proxy_miss_count": 19,
+  "recall_organic_expected_proxy_status": "partial_organic_recall_gap",
+  "recall_ticker_only_expected_proxy_count": 19,
+  "recall_ticker_only_expected_proxy_symbols": [
+    "ALAB",
+    "BE",
+    "BE",
+    "CRCL",
+    "CRWV",
+    "FLY",
+    "GSAT",
+    "IONQ",
+    "IREN",
+    "KTOS",
+    "LEU",
+    "LEU",
+    "LUNR",
+    "MU",
+    "NBIS",
+    "OKLO",
+    "OKLO",
+    "RDW",
+    "VOYG"
+  ],
+  "candidate_count": 25,
   "candidates": [
     {
       "symbol": "FNUC",
@@ -197,6 +218,11 @@
           ],
           "matched_keyword_scopes": {
             "nuclear": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "nuclear": [
+              "nuclear"
+            ]
           },
           "matched_fields": [
             "issuer_name"
@@ -224,6 +250,11 @@
       ],
       "matched_keyword_scopes": {
         "nuclear": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "nuclear": [
+          "nuclear"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -273,6 +304,11 @@
           "matched_keyword_scopes": {
             "nuclear": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "nuclear": [
+              "nuclear"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -299,6 +335,11 @@
       ],
       "matched_keyword_scopes": {
         "nuclear": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "nuclear": [
+          "nuclear"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -348,6 +389,11 @@
           "matched_keyword_scopes": {
             "nuclear": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "nuclear": [
+              "nuclear"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -374,6 +420,11 @@
       ],
       "matched_keyword_scopes": {
         "nuclear": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "nuclear": [
+          "nuclear"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -423,6 +474,11 @@
           "matched_keyword_scopes": {
             "stablecoin": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "stablecoin": [
+              "stablecoin"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -449,6 +505,11 @@
       ],
       "matched_keyword_scopes": {
         "stablecoin": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "stablecoin": [
+          "stablecoin"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -498,6 +559,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -524,6 +590,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -573,6 +644,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -599,6 +675,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -648,6 +729,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -674,6 +760,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -723,6 +814,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -749,6 +845,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -798,6 +899,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -824,6 +930,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -873,6 +984,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -899,6 +1015,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -948,6 +1069,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -974,6 +1100,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1023,6 +1154,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1049,6 +1185,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1098,6 +1239,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1124,6 +1270,11 @@
       ],
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "quantum": [
+          "quantum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1173,6 +1324,11 @@
           "matched_keyword_scopes": {
             "quantum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "quantum": [
+              "quantum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1200,80 +1356,10 @@
       "matched_keyword_scopes": {
         "quantum": "screen_keywords"
       },
-      "matched_fields": [
-        "issuer_name"
-      ],
-      "matched_keyword_fields": {
+      "matched_keyword_variants": {
         "quantum": [
-          "issuer_name"
+          "quantum"
         ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "high_signal",
-      "triage_score": 85,
-      "deterministic_priority": "high",
-      "recommended_review_depth": "readiness_triage_priority",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
-      "symbol": "XNDU",
-      "name": "Xanadu Quantum Technologies Ltd",
-      "cik": "2097163",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "quantum_computing_and_networking",
-      "lane_id": "quantum_computing_and_networking",
-      "lane_name": "Quantum Computing And Networking",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "quantum_computing_and_networking",
-          "lane_name": "Quantum Computing And Networking",
-          "lane_status": "active",
-          "matched_keywords": [
-            "quantum"
-          ],
-          "matched_keyword_scopes": {
-            "quantum": "screen_keywords"
-          },
-          "matched_fields": [
-            "issuer_name"
-          ],
-          "matched_keyword_fields": {
-            "quantum": [
-              "issuer_name"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 85,
-          "priority": "high",
-          "review_depth": "readiness_triage_priority",
-          "keyword_signal": "high_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "quantum"
-      ],
-      "matched_keyword_scopes": {
-        "quantum": "screen_keywords"
       },
       "matched_fields": [
         "issuer_name"
@@ -1323,6 +1409,11 @@
           "matched_keyword_scopes": {
             "optical": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "optical": [
+              "optical"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1349,6 +1440,11 @@
       ],
       "matched_keyword_scopes": {
         "optical": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "optical": [
+          "optical"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1398,6 +1494,11 @@
           "matched_keyword_scopes": {
             "satellite": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "satellite": [
+              "satellite"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1416,14 +1517,55 @@
           "review_depth": "readiness_triage_priority",
           "keyword_signal": "high_signal",
           "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
         }
       ],
-      "secondary_lane_ids": [],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
       "matched_keywords": [
         "satellite"
       ],
       "matched_keyword_scopes": {
         "satellite": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "satellite": [
+          "satellite"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1473,6 +1615,11 @@
           "matched_keyword_scopes": {
             "uranium": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "uranium": [
+              "uranium"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1499,6 +1646,11 @@
       ],
       "matched_keyword_scopes": {
         "uranium": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "uranium": [
+          "uranium"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1548,6 +1700,11 @@
           "matched_keyword_scopes": {
             "uranium": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "uranium": [
+              "uranium"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1574,6 +1731,11 @@
       ],
       "matched_keyword_scopes": {
         "uranium": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "uranium": [
+          "uranium"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1623,6 +1785,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1649,6 +1816,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1698,6 +1870,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1724,6 +1901,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1773,6 +1955,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1799,6 +1986,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1848,6 +2040,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1874,6 +2071,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1923,6 +2125,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -1949,6 +2156,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -1998,6 +2210,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2024,6 +2241,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2073,80 +2295,10 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
-          "matched_fields": [
-            "issuer_name"
-          ],
-          "matched_keyword_fields": {
+          "matched_keyword_variants": {
             "space": [
-              "issuer_name"
+              "space"
             ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 60,
-          "priority": "medium",
-          "review_depth": "primary_source_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "space"
-      ],
-      "matched_keyword_scopes": {
-        "space": "screen_keywords"
-      },
-      "matched_fields": [
-        "issuer_name"
-      ],
-      "matched_keyword_fields": {
-        "space": [
-          "issuer_name"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 60,
-      "deterministic_priority": "medium",
-      "recommended_review_depth": "primary_source_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
-    {
-      "symbol": "YSS",
-      "name": "York Space Systems Inc.",
-      "cik": "2086587",
-      "exchange": "NYSE",
-      "primary_lane_id": "space_infrastructure",
-      "lane_id": "space_infrastructure",
-      "lane_name": "Space Infrastructure",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "space_infrastructure",
-          "lane_name": "Space Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "space"
-          ],
-          "matched_keyword_scopes": {
-            "space": "screen_keywords"
           },
           "matched_fields": [
             "issuer_name"
@@ -2175,6 +2327,11 @@
       "matched_keyword_scopes": {
         "space": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
@@ -2202,7 +2359,9 @@
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage"
-    },
+    }
+  ],
+  "omitted_candidates": [
     {
       "symbol": "GDYN",
       "name": "GRID DYNAMICS HOLDINGS, INC.",
@@ -2222,6 +2381,11 @@
           ],
           "matched_keyword_scopes": {
             "grid": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
           },
           "matched_fields": [
             "issuer_name"
@@ -2252,6 +2416,11 @@
           "matched_keyword_scopes": {
             "grid": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2280,6 +2449,11 @@
       ],
       "matched_keyword_scopes": {
         "grid": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "grid": [
+          "grid"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2329,6 +2503,11 @@
           "matched_keyword_scopes": {
             "grid": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2358,6 +2537,11 @@
           "matched_keyword_scopes": {
             "grid": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2386,6 +2570,11 @@
       ],
       "matched_keyword_scopes": {
         "grid": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "grid": [
+          "grid"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2435,6 +2624,11 @@
           "matched_keyword_scopes": {
             "compute": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "compute": [
+              "compute"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2461,6 +2655,11 @@
       ],
       "matched_keyword_scopes": {
         "compute": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "compute": [
+          "compute"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2510,6 +2709,11 @@
           "matched_keyword_scopes": {
             "compute": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "compute": [
+              "compute"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2536,6 +2740,11 @@
       ],
       "matched_keyword_scopes": {
         "compute": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "compute": [
+          "compute"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2585,6 +2794,11 @@
           "matched_keyword_scopes": {
             "connectivity": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "connectivity": [
+              "connectivity"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2611,6 +2825,11 @@
       ],
       "matched_keyword_scopes": {
         "connectivity": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "connectivity": [
+          "connectivity"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2660,6 +2879,11 @@
           "matched_keyword_scopes": {
             "launch": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2688,6 +2912,11 @@
       ],
       "matched_keyword_scopes": {
         "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2739,6 +2968,11 @@
           "matched_keyword_scopes": {
             "launch": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2767,6 +3001,11 @@
       ],
       "matched_keyword_scopes": {
         "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2818,6 +3057,11 @@
           "matched_keyword_scopes": {
             "launch": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2846,6 +3090,11 @@
       ],
       "matched_keyword_scopes": {
         "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2897,6 +3146,11 @@
           "matched_keyword_scopes": {
             "launch": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -2925,6 +3179,11 @@
       ],
       "matched_keyword_scopes": {
         "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -2957,30 +3216,35 @@
       "required_next_step": "primary_source_skim_and_readiness_triage"
     },
     {
-      "symbol": "IONQ-WT",
-      "name": "IonQ, Inc.",
-      "cik": "1824920",
+      "symbol": "GPUS",
+      "name": "Hyperscale Data, Inc.",
+      "cik": "896493",
       "exchange": "NYSE",
-      "primary_lane_id": "quantum_computing_and_networking",
-      "lane_id": "quantum_computing_and_networking",
-      "lane_name": "Quantum Computing And Networking",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
       "lane_status": "active",
       "lane_matches": [
         {
-          "lane_id": "quantum_computing_and_networking",
-          "lane_name": "Quantum Computing And Networking",
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "IONQ"
+            "GPU"
           ],
           "matched_keyword_scopes": {
-            "IONQ": "current_public_proxy_symbols"
+            "GPU": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "GPU": [
+              "gpus"
+            ]
           },
           "matched_fields": [
             "ticker"
           ],
           "matched_keyword_fields": {
-            "IONQ": [
+            "GPU": [
               "ticker"
             ]
           },
@@ -2992,22 +3256,29 @@
           "score": 44,
           "priority": "low",
           "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
+          "keyword_signal": "ticker_only_signal",
+          "false_positive_flags": [
+            "ticker_keyword_collision"
+          ]
         }
       ],
       "secondary_lane_ids": [],
       "matched_keywords": [
-        "IONQ"
+        "GPU"
       ],
       "matched_keyword_scopes": {
-        "IONQ": "current_public_proxy_symbols"
+        "GPU": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "GPU": [
+          "gpus"
+        ]
       },
       "matched_fields": [
         "ticker"
       ],
       "matched_keyword_fields": {
-        "IONQ": [
+        "GPU": [
           "ticker"
         ]
       },
@@ -3018,11 +3289,102 @@
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
+      "keyword_signal": "ticker_only_signal",
       "triage_score": 44,
       "deterministic_priority": "low",
       "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
+      "false_positive_flags": [
+        "ticker_keyword_collision"
+      ],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "GPUS-PD",
+      "name": "Hyperscale Data, Inc.",
+      "cik": "896493",
+      "exchange": "NYSE",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "GPU"
+          ],
+          "matched_keyword_scopes": {
+            "GPU": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "GPU": [
+              "gpus"
+            ]
+          },
+          "matched_fields": [
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "GPU": [
+              "ticker"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 44,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "ticker_only_signal",
+          "false_positive_flags": [
+            "ticker_keyword_collision"
+          ]
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "GPU"
+      ],
+      "matched_keyword_scopes": {
+        "GPU": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "GPU": [
+          "gpus"
+        ]
+      },
+      "matched_fields": [
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "GPU": [
+          "ticker"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "ticker_only_signal",
+      "triage_score": 44,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [
+        "ticker_keyword_collision"
+      ],
       "profile_enriched": false,
       "profile_metadata": {},
       "profile_sources": [],
@@ -3050,6 +3412,11 @@
           ],
           "matched_keyword_scopes": {
             "HBM": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "HBM": [
+              "hbm"
+            ]
           },
           "matched_fields": [
             "ticker"
@@ -3079,6 +3446,11 @@
       ],
       "matched_keyword_scopes": {
         "HBM": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "HBM": [
+          "hbm"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -3130,6 +3502,11 @@
           "matched_keyword_scopes": {
             "uranium": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "uranium": [
+              "uranium"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3158,6 +3535,11 @@
       ],
       "matched_keyword_scopes": {
         "uranium": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "uranium": [
+          "uranium"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3209,6 +3591,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3237,6 +3624,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3288,6 +3680,11 @@
           "matched_keyword_scopes": {
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3316,6 +3713,11 @@
       ],
       "matched_keyword_scopes": {
         "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "space": [
+          "space"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3367,6 +3769,11 @@
           "matched_keyword_scopes": {
             "spectrum": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "spectrum": [
+              "spectrum"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3395,6 +3802,11 @@
       ],
       "matched_keyword_scopes": {
         "spectrum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "spectrum": [
+          "spectrum"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3446,6 +3858,11 @@
           "matched_keyword_scopes": {
             "connectivity": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "connectivity": [
+              "connectivity"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3474,6 +3891,11 @@
       ],
       "matched_keyword_scopes": {
         "connectivity": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "connectivity": [
+          "connectivity"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3525,6 +3947,11 @@
           "matched_keyword_scopes": {
             "artificial intelligence": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "artificial intelligence": [
+              "artificial intelligence"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3553,6 +3980,11 @@
       ],
       "matched_keyword_scopes": {
         "artificial intelligence": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "artificial intelligence": [
+          "artificial intelligence"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3585,8 +4017,950 @@
       "required_next_step": "primary_source_skim_and_readiness_triage"
     }
   ],
-  "omitted_candidates": [],
-  "top_omitted_candidates": [],
+  "top_omitted_candidates": [
+    {
+      "symbol": "GDYN",
+      "name": "GRID DYNAMICS HOLDINGS, INC.",
+      "cik": "1743725",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "advanced_nuclear_and_grid_constraints",
+          "lane_name": "Advanced Nuclear And Grid Constraints",
+          "lane_status": "active",
+          "matched_keywords": [
+            "grid"
+          ],
+          "matched_keyword_scopes": {
+            "grid": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "grid": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "ai_power_and_cooling",
+          "lane_name": "AI Data-Center Power And Cooling",
+          "lane_status": "active",
+          "matched_keywords": [
+            "grid"
+          ],
+          "matched_keyword_scopes": {
+            "grid": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "grid": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "ai_power_and_cooling"
+      ],
+      "matched_keywords": [
+        "grid"
+      ],
+      "matched_keyword_scopes": {
+        "grid": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "grid": [
+          "grid"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "grid": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 52,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "NGG",
+      "name": "NATIONAL GRID PLC",
+      "cik": "1004315",
+      "exchange": "NYSE",
+      "primary_lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "advanced_nuclear_and_grid_constraints",
+          "lane_name": "Advanced Nuclear And Grid Constraints",
+          "lane_status": "active",
+          "matched_keywords": [
+            "grid"
+          ],
+          "matched_keyword_scopes": {
+            "grid": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "grid": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "ai_power_and_cooling",
+          "lane_name": "AI Data-Center Power And Cooling",
+          "lane_status": "active",
+          "matched_keywords": [
+            "grid"
+          ],
+          "matched_keyword_scopes": {
+            "grid": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "grid": [
+              "grid"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "grid": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "ai_power_and_cooling"
+      ],
+      "matched_keywords": [
+        "grid"
+      ],
+      "matched_keyword_scopes": {
+        "grid": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "grid": [
+          "grid"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "grid": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 52,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "AGPU",
+      "name": "Axe Compute Inc.",
+      "cik": "1446159",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "compute"
+          ],
+          "matched_keyword_scopes": {
+            "compute": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "compute": [
+              "compute"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "compute": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "compute"
+      ],
+      "matched_keyword_scopes": {
+        "compute": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "compute": [
+          "compute"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "compute": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 52,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "ALP",
+      "name": "Alpha Compute Corp",
+      "cik": "1095435",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "compute"
+          ],
+          "matched_keyword_scopes": {
+            "compute": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "compute": [
+              "compute"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "compute": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "compute"
+      ],
+      "matched_keyword_scopes": {
+        "compute": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "compute": [
+          "compute"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "compute": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 52,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "TEL",
+      "name": "TE Connectivity plc",
+      "cik": "1385157",
+      "exchange": "NYSE",
+      "primary_lane_id": "direct_to_device_connectivity",
+      "lane_id": "direct_to_device_connectivity",
+      "lane_name": "Direct-To-Device Connectivity",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "direct_to_device_connectivity",
+          "lane_name": "Direct-To-Device Connectivity",
+          "lane_status": "active",
+          "matched_keywords": [
+            "connectivity"
+          ],
+          "matched_keyword_scopes": {
+            "connectivity": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "connectivity": [
+              "connectivity"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "connectivity": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "connectivity"
+      ],
+      "matched_keyword_scopes": {
+        "connectivity": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "connectivity": [
+          "connectivity"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "connectivity": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 52,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "LPAA",
+      "name": "Launch One Acquisition Corp.",
+      "cik": "2015502",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "launch"
+          ],
+          "matched_keyword_scopes": {
+            "launch": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "launch": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 50,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": [
+            "blank_check_or_spac"
+          ]
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "launch"
+      ],
+      "matched_keyword_scopes": {
+        "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "launch": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 50,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [
+        "blank_check_or_spac"
+      ],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "LPAAU",
+      "name": "Launch One Acquisition Corp.",
+      "cik": "2015502",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "launch"
+          ],
+          "matched_keyword_scopes": {
+            "launch": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "launch": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 50,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": [
+            "blank_check_or_spac"
+          ]
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "launch"
+      ],
+      "matched_keyword_scopes": {
+        "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "launch": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 50,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [
+        "blank_check_or_spac"
+      ],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "LPBB",
+      "name": "Launch Two Acquisition Corp.",
+      "cik": "2023676",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "launch"
+          ],
+          "matched_keyword_scopes": {
+            "launch": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "launch": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 50,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": [
+            "blank_check_or_spac"
+          ]
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "launch"
+      ],
+      "matched_keyword_scopes": {
+        "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "launch": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 50,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [
+        "blank_check_or_spac"
+      ],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "LPBBU",
+      "name": "Launch Two Acquisition Corp.",
+      "cik": "2023676",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "launch"
+          ],
+          "matched_keyword_scopes": {
+            "launch": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "launch": [
+              "launch"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "launch": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 50,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": [
+            "blank_check_or_spac"
+          ]
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "launch"
+      ],
+      "matched_keyword_scopes": {
+        "launch": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "launch": [
+          "launch"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "launch": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 50,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [
+        "blank_check_or_spac"
+      ],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    },
+    {
+      "symbol": "GPUS",
+      "name": "Hyperscale Data, Inc.",
+      "cik": "896493",
+      "exchange": "NYSE",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "GPU"
+          ],
+          "matched_keyword_scopes": {
+            "GPU": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "GPU": [
+              "gpus"
+            ]
+          },
+          "matched_fields": [
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "GPU": [
+              "ticker"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 44,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "ticker_only_signal",
+          "false_positive_flags": [
+            "ticker_keyword_collision"
+          ]
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "GPU"
+      ],
+      "matched_keyword_scopes": {
+        "GPU": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "GPU": [
+          "gpus"
+        ]
+      },
+      "matched_fields": [
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "GPU": [
+          "ticker"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "ticker_only_signal",
+      "triage_score": 44,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [
+        "ticker_keyword_collision"
+      ],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage"
+    }
+  ],
   "exploratory_matches": [
     {
       "symbol": "AD",
@@ -3607,6 +4981,11 @@
           ],
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
           },
           "matched_fields": [
             "issuer_name"
@@ -3634,6 +5013,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3684,6 +5068,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3711,11 +5100,102 @@
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "ANET",
+      "name": "Arista Networks, Inc.",
+      "cik": "1596532",
+      "exchange": "NYSE",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "network"
+      ],
+      "matched_keyword_scopes": {
+        "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "networks"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "network": [
           "issuer_name"
         ]
       },
@@ -3760,6 +5240,11 @@
           "matched_keyword_scopes": {
             "platform": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "platform": [
+              "platform"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3787,11 +5272,188 @@
       "matched_keyword_scopes": {
         "platform": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "platform": [
+          "platform"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "platform": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "ATEN",
+      "name": "A10 Networks, Inc.",
+      "cik": "1580808",
+      "exchange": "NYSE",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "network"
+      ],
+      "matched_keyword_scopes": {
+        "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "networks"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "network": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "AVNW",
+      "name": "AVIAT NETWORKS, INC.",
+      "cik": "1377789",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "network"
+      ],
+      "matched_keyword_scopes": {
+        "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "networks"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "network": [
           "issuer_name"
         ]
       },
@@ -3836,6 +5498,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3862,6 +5529,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3912,6 +5584,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -3938,6 +5615,11 @@
       ],
       "matched_keyword_scopes": {
         "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -3988,6 +5670,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4014,6 +5701,183 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "BIP-PA",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "cik": "1406234",
+      "exchange": "NYSE",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "infrastructure"
+      ],
+      "matched_keyword_scopes": {
+        "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "BIP-PB",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "cik": "1406234",
+      "exchange": "NYSE",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "infrastructure"
+      ],
+      "matched_keyword_scopes": {
+        "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4064,6 +5928,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4090,6 +5959,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4140,6 +6014,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4166,6 +6045,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4216,6 +6100,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4242,6 +6131,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4292,6 +6186,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4318,6 +6217,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4368,6 +6272,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4394,6 +6303,11 @@
       ],
       "matched_keyword_scopes": {
         "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4444,6 +6358,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4470,6 +6389,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4520,6 +6444,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4546,6 +6475,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4596,6 +6530,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4623,11 +6562,102 @@
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "CRNT",
+      "name": "CERAGON NETWORKS LTD",
+      "cik": "1119769",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "network"
+      ],
+      "matched_keyword_scopes": {
+        "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "networks"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "network": [
           "issuer_name"
         ]
       },
@@ -4672,6 +6702,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4698,6 +6733,97 @@
       ],
       "matched_keyword_scopes": {
         "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "network": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "EXTR",
+      "name": "EXTREME NETWORKS INC",
+      "cik": "1078271",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "network"
+      ],
+      "matched_keyword_scopes": {
+        "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "networks"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4748,6 +6874,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4774,6 +6905,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4824,6 +6960,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4850,6 +6991,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4900,6 +7046,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -4926,6 +7077,11 @@
       ],
       "matched_keyword_scopes": {
         "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -4976,6 +7132,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5002,6 +7163,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5052,6 +7218,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5079,11 +7250,102 @@
       "matched_keyword_scopes": {
         "network": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "network": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "cik": "1326801",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "platform"
+          ],
+          "matched_keyword_scopes": {
+            "platform": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "platform": [
+              "platforms"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "platform": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "platform"
+      ],
+      "matched_keyword_scopes": {
+        "platform": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "platform": [
+          "platforms"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "platform": [
           "issuer_name"
         ]
       },
@@ -5128,6 +7390,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5154,6 +7421,11 @@
       ],
       "matched_keyword_scopes": {
         "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5204,6 +7476,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5230,6 +7507,11 @@
       ],
       "matched_keyword_scopes": {
         "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5280,6 +7562,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5307,11 +7594,102 @@
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks Inc",
+      "cik": "1327567",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "network"
+      ],
+      "matched_keyword_scopes": {
+        "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "networks"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "network": [
           "issuer_name"
         ]
       },
@@ -5356,6 +7734,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5383,11 +7766,102 @@
       "matched_keyword_scopes": {
         "network": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "network": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "RIOT",
+      "name": "Riot Platforms, Inc.",
+      "cik": "1167419",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "platform"
+          ],
+          "matched_keyword_scopes": {
+            "platform": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "platform": [
+              "platforms"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "platform": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "platform"
+      ],
+      "matched_keyword_scopes": {
+        "platform": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "platform": [
+          "platforms"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "platform": [
           "issuer_name"
         ]
       },
@@ -5432,6 +7906,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5459,11 +7938,102 @@
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "SKYX",
+      "name": "SKYX Platforms Corp.",
+      "cik": "1598981",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "platform"
+          ],
+          "matched_keyword_scopes": {
+            "platform": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "platform": [
+              "platforms"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "platform": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "platform"
+      ],
+      "matched_keyword_scopes": {
+        "platform": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "platform": [
+          "platforms"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "platform": [
           "issuer_name"
         ]
       },
@@ -5508,6 +8078,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5534,6 +8109,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5584,6 +8164,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5610,6 +8195,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5660,6 +8250,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5686,6 +8281,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5736,6 +8336,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5762,6 +8367,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5812,6 +8422,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5838,6 +8453,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -5888,6 +8508,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5915,11 +8540,102 @@
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
+      },
       "matched_fields": [
         "issuer_name"
       ],
       "matched_keyword_fields": {
         "infrastructure": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 42,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "bottleneck_lane_review_before_candidate_append",
+      "exploratory_reason": "The open-ended unknown-future lane creates lane-review signals, not ordinary raw candidates, until evidence supports a concrete named lane."
+    },
+    {
+      "symbol": "VISN",
+      "name": "Vistance Networks, Inc.",
+      "cik": "1517228",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "unknown_future_bottlenecks",
+      "lane_id": "unknown_future_bottlenecks",
+      "lane_name": "Unknown Future Bottlenecks",
+      "lane_status": "emerging",
+      "lane_matches": [
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "networks"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "network"
+      ],
+      "matched_keyword_scopes": {
+        "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "networks"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name"
+      ],
+      "matched_keyword_fields": {
+        "network": [
           "issuer_name"
         ]
       },
@@ -5964,6 +8680,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -5990,6 +8711,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6040,6 +8766,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6066,6 +8797,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6116,6 +8852,11 @@
           "matched_keyword_scopes": {
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6142,6 +8883,11 @@
       ],
       "matched_keyword_scopes": {
         "network": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "network": [
+          "network"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6192,6 +8938,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6220,6 +8971,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6272,6 +9028,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6300,6 +9061,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6352,6 +9118,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6380,6 +9151,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6432,6 +9208,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6460,6 +9241,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6512,6 +9298,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6540,6 +9331,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6592,6 +9388,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6620,6 +9421,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6672,6 +9478,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6700,6 +9511,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6752,6 +9568,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6780,6 +9601,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6832,6 +9658,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6860,6 +9691,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6912,6 +9748,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -6940,6 +9781,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -6992,6 +9838,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -7020,6 +9871,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -7072,6 +9928,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -7100,6 +9961,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -7152,6 +10018,11 @@
           "matched_keyword_scopes": {
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "issuer_name"
           ],
@@ -7180,6 +10051,11 @@
       ],
       "matched_keyword_scopes": {
         "infrastructure": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "infrastructure": [
+          "infrastructure"
+        ]
       },
       "matched_fields": [
         "issuer_name"
@@ -7242,6 +10118,23 @@
             "orbital": "screen_keywords",
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "RKLB": [
+              "rklb"
+            ],
+            "launch": [
+              "launch"
+            ],
+            "spacecraft": [
+              "spacecraft"
+            ],
+            "orbital": [
+              "orbital"
+            ],
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "profile_text",
             "ticker"
@@ -7273,6 +10166,22 @@
               "snippet": "h an established track record of mission success. We deliver reliable launch services, spacecraft design services, spacecraft components, spacecra"
             },
             {
+              "keyword": "launch",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "h an established track record of mission success. We deliver reliable launch services, spacecraft design services, spacecraft components, spacecra"
+            },
+            {
+              "keyword": "spacecraft",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "track record of mission success. We deliver reliable launch services, spacecraft design services, spacecraft components, spacecraft manufacturing, opt"
+            },
+            {
               "keyword": "spacecraft",
               "keyword_scope": "screen_keywords",
               "profile_text_field_ids": [
@@ -7287,14 +10196,6 @@
                 "business_description"
               ],
               "snippet": "ynspective. In 2025, Electron was the second most frequently launched orbital rocket. Rocket Lab’s frequent launch cadence has been enabled through"
-            },
-            {
-              "keyword": "space",
-              "keyword_scope": "screen_keywords",
-              "profile_text_field_ids": [
-                "business_description"
-              ],
-              "snippet": "Item 1. Business Who We Are Our Mission: We Open Access to Space to Improve Life on Earth. Rocket Lab is an end-to-end space company w"
             }
           ],
           "match_sources": [
@@ -7318,6 +10219,11 @@
           "matched_keyword_scopes": {
             "optical": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "optical": [
+              "optical"
+            ]
+          },
           "matched_fields": [
             "profile_text"
           ],
@@ -7327,6 +10233,14 @@
             ]
           },
           "matched_profile_snippets": [
+            {
+              "keyword": "optical",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "aft design services, spacecraft components, spacecraft manufacturing, optical systems and other spacecraft and on-orbit management solutions that m"
+            },
             {
               "keyword": "optical",
               "keyword_scope": "screen_keywords",
@@ -7358,6 +10272,14 @@
             "platform": "screen_keywords",
             "infrastructure": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "platform": [
+              "platform"
+            ],
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
           "matched_fields": [
             "profile_text"
           ],
@@ -7377,6 +10299,22 @@
                 "business_description"
               ],
               "snippet": "n have on Earth by making it easier to get to space and using it as a platform for innovation, exploration and infrastructure. As one of select few"
+            },
+            {
+              "keyword": "platform",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "n have on Earth by making it easier to get to space and using it as a platform for innovation, exploration and infrastructure. As one of select few"
+            },
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "t to space and using it as a platform for innovation, exploration and infrastructure. As one of select few commercial companies delivering regular access"
             },
             {
               "keyword": "infrastructure",
@@ -7416,6 +10354,23 @@
         "orbital": "screen_keywords",
         "space": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "RKLB": [
+          "rklb"
+        ],
+        "launch": [
+          "launch"
+        ],
+        "spacecraft": [
+          "spacecraft"
+        ],
+        "orbital": [
+          "orbital"
+        ],
+        "space": [
+          "space"
+        ]
+      },
       "matched_fields": [
         "profile_text",
         "ticker"
@@ -7447,6 +10402,22 @@
           "snippet": "h an established track record of mission success. We deliver reliable launch services, spacecraft design services, spacecraft components, spacecra"
         },
         {
+          "keyword": "launch",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "business_description"
+          ],
+          "snippet": "h an established track record of mission success. We deliver reliable launch services, spacecraft design services, spacecraft components, spacecra"
+        },
+        {
+          "keyword": "spacecraft",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "business_description"
+          ],
+          "snippet": "track record of mission success. We deliver reliable launch services, spacecraft design services, spacecraft components, spacecraft manufacturing, opt"
+        },
+        {
           "keyword": "spacecraft",
           "keyword_scope": "screen_keywords",
           "profile_text_field_ids": [
@@ -7461,14 +10432,6 @@
             "business_description"
           ],
           "snippet": "ynspective. In 2025, Electron was the second most frequently launched orbital rocket. Rocket Lab’s frequent launch cadence has been enabled through"
-        },
-        {
-          "keyword": "space",
-          "keyword_scope": "screen_keywords",
-          "profile_text_field_ids": [
-            "business_description"
-          ],
-          "snippet": "Item 1. Business Who We Are Our Mission: We Open Access to Space to Improve Life on Earth. Rocket Lab is an end-to-end space company w"
         }
       ],
       "match_sources": [
@@ -7488,7 +10451,7 @@
         "filing_accession_or_document_id": "0001819994-26-000013/rklb-20251231.htm",
         "filing_accession_number": "0001819994-26-000013",
         "filing_acceptance_datetime": "2026-02-26T21:31:49.000Z",
-        "filing_content_sha256": "da570cf0c2d63113af108b14a309981967a7a7d4e66ea6aeb538a81da53f3180",
+        "filing_content_sha256": "e0f6bd6b33952b8ca4494ad49b50815ac3f56cc7a374575b190ba23d3baa5032",
         "filing_content_cache_status": "network_fetch",
         "filing_content_request_attempt_count": 1,
         "filing_content_request_statuses": [
@@ -7532,7 +10495,7 @@
             "filing_accession_or_document_id": "0001819994-26-000013/rklb-20251231.htm",
             "filing_accession_number": "0001819994-26-000013",
             "filing_acceptance_datetime": "2026-02-26T21:31:49.000Z",
-            "filing_content_sha256": "da570cf0c2d63113af108b14a309981967a7a7d4e66ea6aeb538a81da53f3180",
+            "filing_content_sha256": "e0f6bd6b33952b8ca4494ad49b50815ac3f56cc7a374575b190ba23d3baa5032",
             "filing_content_cache_status": "network_fetch",
             "filing_content_request_attempt_count": 1,
             "filing_content_request_statuses": [
@@ -7604,6 +10567,17 @@
             "spectrum": "screen_keywords",
             "mobile satellite": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "ASTS": [
+              "asts"
+            ],
+            "spectrum": [
+              "spectrum"
+            ],
+            "mobile satellite": [
+              "mobile satellite"
+            ]
+          },
           "matched_fields": [
             "profile_text",
             "ticker"
@@ -7627,6 +10601,22 @@
                 "business_description"
               ],
               "snippet": "red, large phased-array satellites in LEO using low-band and mid-band spectrum controlled by MNOs. On March 22, 2025, we and certain of our subsidia"
+            },
+            {
+              "keyword": "spectrum",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "red, large phased-array satellites in LEO using low-band and mid-band spectrum controlled by MNOs. On March 22, 2025, we and certain of our subsidia"
+            },
+            {
+              "keyword": "mobile satellite",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "Band International Telecommunication Union (“ITU”) priority rights to Mobile Satellite Services frequencies in the range of 1980-2010 MHz and 2170-2200 MHz,"
             },
             {
               "keyword": "mobile satellite",
@@ -7660,6 +10650,14 @@
             "satellite": "screen_keywords",
             "space": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "satellite": [
+              "satellite"
+            ],
+            "space": [
+              "space"
+            ]
+          },
           "matched_fields": [
             "profile_text"
           ],
@@ -7679,6 +10677,22 @@
                 "business_description"
               ],
               "snippet": "to be provided by a constellation of high-powered, large phased-array satellites in LEO using low-band and mid-band spectrum controlled by MNOs. On M"
+            },
+            {
+              "keyword": "satellite",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "to be provided by a constellation of high-powered, large phased-array satellites in LEO using low-band and mid-band spectrum controlled by MNOs. On M"
+            },
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "are building the first and only global Cellular Broadband network in space to be accessible directly by everyday smartphones (2G/4G-LTE/5G devic"
             },
             {
               "keyword": "space",
@@ -7711,6 +10725,14 @@
             "infrastructure": "screen_keywords",
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ],
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "profile_text"
           ],
@@ -7730,6 +10752,22 @@
                 "business_description"
               ],
               "snippet": "and extend their coverage without building towers or other land-based infrastructure, including where it is not cost-justified or is difficult due to geog"
+            },
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "and extend their coverage without building towers or other land-based infrastructure, including where it is not cost-justified or is difficult due to geog"
+            },
+            {
+              "keyword": "network",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "Company We are building the first and only global Cellular Broadband network in space to be accessible directly by everyday smartphones (2G/4G-LTE"
             },
             {
               "keyword": "network",
@@ -7765,6 +10803,17 @@
         "spectrum": "screen_keywords",
         "mobile satellite": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "ASTS": [
+          "asts"
+        ],
+        "spectrum": [
+          "spectrum"
+        ],
+        "mobile satellite": [
+          "mobile satellite"
+        ]
+      },
       "matched_fields": [
         "profile_text",
         "ticker"
@@ -7788,6 +10837,22 @@
             "business_description"
           ],
           "snippet": "red, large phased-array satellites in LEO using low-band and mid-band spectrum controlled by MNOs. On March 22, 2025, we and certain of our subsidia"
+        },
+        {
+          "keyword": "spectrum",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "business_description"
+          ],
+          "snippet": "red, large phased-array satellites in LEO using low-band and mid-band spectrum controlled by MNOs. On March 22, 2025, we and certain of our subsidia"
+        },
+        {
+          "keyword": "mobile satellite",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "business_description"
+          ],
+          "snippet": "Band International Telecommunication Union (“ITU”) priority rights to Mobile Satellite Services frequencies in the range of 1980-2010 MHz and 2170-2200 MHz,"
         },
         {
           "keyword": "mobile satellite",
@@ -7815,7 +10880,7 @@
         "filing_accession_or_document_id": "0001780312-26-000006/asts-20251231.htm",
         "filing_accession_number": "0001780312-26-000006",
         "filing_acceptance_datetime": "2026-03-02T21:39:58.000Z",
-        "filing_content_sha256": "950f384b14380452e2b770ba2874b271947b0e306cdad461f6d867271a78573d",
+        "filing_content_sha256": "706348de1ed7dbd411be2a3fb6c7c74b988aa34c7fb56b2fd2a52669dacdf856",
         "filing_content_cache_status": "network_fetch",
         "filing_content_request_attempt_count": 1,
         "filing_content_request_statuses": [
@@ -7859,7 +10924,7 @@
             "filing_accession_or_document_id": "0001780312-26-000006/asts-20251231.htm",
             "filing_accession_number": "0001780312-26-000006",
             "filing_acceptance_datetime": "2026-03-02T21:39:58.000Z",
-            "filing_content_sha256": "950f384b14380452e2b770ba2874b271947b0e306cdad461f6d867271a78573d",
+            "filing_content_sha256": "706348de1ed7dbd411be2a3fb6c7c74b988aa34c7fb56b2fd2a52669dacdf856",
             "filing_content_cache_status": "network_fetch",
             "filing_content_request_attempt_count": 1,
             "filing_content_request_statuses": [
@@ -7908,6 +10973,115 @@
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     },
     {
+      "symbol": "XNDU",
+      "name": "Xanadu Quantum Technologies Ltd",
+      "cik": "2097163",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "quantum_computing_and_networking",
+      "lane_id": "quantum_computing_and_networking",
+      "lane_name": "Quantum Computing And Networking",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "quantum_computing_and_networking",
+          "lane_name": "Quantum Computing And Networking",
+          "lane_status": "active",
+          "matched_keywords": [
+            "XNDU",
+            "quantum"
+          ],
+          "matched_keyword_scopes": {
+            "XNDU": "current_public_proxy_symbols",
+            "quantum": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "XNDU": [
+              "xndu"
+            ],
+            "quantum": [
+              "quantum"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "XNDU": [
+              "ticker"
+            ],
+            "quantum": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 100,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "XNDU",
+        "quantum"
+      ],
+      "matched_keyword_scopes": {
+        "XNDU": "current_public_proxy_symbols",
+        "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "XNDU": [
+          "xndu"
+        ],
+        "quantum": [
+          "quantum"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "XNDU": [
+          "ticker"
+        ],
+        "quantum": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 100,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:research_only",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
       "symbol": "CRDO",
       "name": "Credo Technology Group Holding Ltd",
       "cik": "1807794",
@@ -7929,6 +11103,14 @@
             "CRDO": "current_public_proxy_symbols",
             "optical": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "CRDO": [
+              "crdo"
+            ],
+            "optical": [
+              "optical"
+            ]
+          },
           "matched_fields": [
             "profile_text",
             "ticker"
@@ -7942,6 +11124,14 @@
             ]
           },
           "matched_profile_snippets": [
+            {
+              "keyword": "optical",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "and hyperscale networks. Our connectivity solutions are optimized for optical and electrical Ethernet and PCIe applications, including the 100G (or"
+            },
             {
               "keyword": "optical",
               "keyword_scope": "screen_keywords",
@@ -7974,6 +11164,14 @@
             "AI cloud": "screen_keywords",
             "compute": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "AI cloud": [
+              "ai cloud"
+            ],
+            "compute": [
+              "compute"
+            ]
+          },
           "matched_fields": [
             "profile_text"
           ],
@@ -7993,6 +11191,22 @@
                 "business_description"
               ],
               "snippet": "and scalable solutions that support the ever-expanding demands of AI, cloud computing and hyperscale networks. Our connectivity solutions are opt"
+            },
+            {
+              "keyword": "AI cloud",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "and scalable solutions that support the ever-expanding demands of AI, cloud computing and hyperscale networks. Our connectivity solutions are opt"
+            },
+            {
+              "keyword": "compute",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "largely by hyperscale data centers (hyperscalers), as well as general compute, AI/ML infrastructure, multi-service operators (MSOs) and mobile netw"
             },
             {
               "keyword": "compute",
@@ -8023,6 +11237,11 @@
           "matched_keyword_scopes": {
             "connectivity": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "connectivity": [
+              "connectivity"
+            ]
+          },
           "matched_fields": [
             "profile_text"
           ],
@@ -8032,6 +11251,14 @@
             ]
           },
           "matched_profile_snippets": [
+            {
+              "keyword": "connectivity",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "ness Company Overview At Credo, our mission is to redefine high-speed connectivity by delivering breakthrough solutions that enable the next generation"
+            },
             {
               "keyword": "connectivity",
               "keyword_scope": "screen_keywords",
@@ -8063,6 +11290,14 @@
             "infrastructure": "screen_keywords",
             "network": "screen_keywords"
           },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ],
+            "network": [
+              "network"
+            ]
+          },
           "matched_fields": [
             "profile_text"
           ],
@@ -8082,6 +11317,22 @@
                 "business_description"
               ],
               "snippet": "nnection reliability in the data center. The multibillion-dollar data infrastructure market that we serve is driven largely by hyperscale data centers (hy"
+            },
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "nnection reliability in the data center. The multibillion-dollar data infrastructure market that we serve is driven largely by hyperscale data centers (hy"
+            },
+            {
+              "keyword": "network",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "business_description"
+              ],
+              "snippet": "port the ever-expanding demands of AI, cloud computing and hyperscale networks. Our connectivity solutions are optimized for optical and electrical"
             },
             {
               "keyword": "network",
@@ -8116,6 +11367,14 @@
         "CRDO": "current_public_proxy_symbols",
         "optical": "screen_keywords"
       },
+      "matched_keyword_variants": {
+        "CRDO": [
+          "crdo"
+        ],
+        "optical": [
+          "optical"
+        ]
+      },
       "matched_fields": [
         "profile_text",
         "ticker"
@@ -8129,6 +11388,14 @@
         ]
       },
       "matched_profile_snippets": [
+        {
+          "keyword": "optical",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "business_description"
+          ],
+          "snippet": "and hyperscale networks. Our connectivity solutions are optimized for optical and electrical Ethernet and PCIe applications, including the 100G (or"
+        },
         {
           "keyword": "optical",
           "keyword_scope": "screen_keywords",
@@ -8155,7 +11422,7 @@
         "filing_accession_or_document_id": "0001628280-25-033813/crdo-20250503.htm",
         "filing_accession_number": "0001628280-25-033813",
         "filing_acceptance_datetime": "2025-07-01T21:52:06.000Z",
-        "filing_content_sha256": "0f687a00e51861473d548cf1e2542f6167667a838e81252d17ff07c030682976",
+        "filing_content_sha256": "c93c55a54173026a0ea19ef1f9235eabf7a37ce02460dd88a0fbc8d8a9045a9f",
         "filing_content_cache_status": "network_fetch",
         "filing_content_request_attempt_count": 1,
         "filing_content_request_statuses": [
@@ -8199,7 +11466,7 @@
             "filing_accession_or_document_id": "0001628280-25-033813/crdo-20250503.htm",
             "filing_accession_number": "0001628280-25-033813",
             "filing_acceptance_datetime": "2025-07-01T21:52:06.000Z",
-            "filing_content_sha256": "0f687a00e51861473d548cf1e2542f6167667a838e81252d17ff07c030682976",
+            "filing_content_sha256": "c93c55a54173026a0ea19ef1f9235eabf7a37ce02460dd88a0fbc8d8a9045a9f",
             "filing_content_cache_status": "network_fetch",
             "filing_content_request_attempt_count": 1,
             "filing_content_request_statuses": [
@@ -8248,6 +11515,115 @@
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     },
     {
+      "symbol": "YSS",
+      "name": "York Space Systems Inc.",
+      "cik": "2086587",
+      "exchange": "NYSE",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "YSS",
+            "space"
+          ],
+          "matched_keyword_scopes": {
+            "YSS": "current_public_proxy_symbols",
+            "space": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "YSS": [
+              "yss"
+            ],
+            "space": [
+              "space"
+            ]
+          },
+          "matched_fields": [
+            "issuer_name",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "YSS": [
+              "ticker"
+            ],
+            "space": [
+              "issuer_name"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 75,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "YSS",
+        "space"
+      ],
+      "matched_keyword_scopes": {
+        "YSS": "current_public_proxy_symbols",
+        "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "YSS": [
+          "yss"
+        ],
+        "space": [
+          "space"
+        ]
+      },
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "YSS": [
+          "ticker"
+        ],
+        "space": [
+          "issuer_name"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 75,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
       "symbol": "BE",
       "name": "Bloom Energy Corp",
       "cik": "1664703",
@@ -8266,6 +11642,11 @@
           ],
           "matched_keyword_scopes": {
             "BE": "current_public_proxy_symbols"
+          },
+          "matched_keyword_variants": {
+            "BE": [
+              "be"
+            ]
           },
           "matched_fields": [
             "ticker"
@@ -8296,6 +11677,11 @@
           "matched_keyword_scopes": {
             "BE": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "BE": [
+              "be"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8324,6 +11710,11 @@
       ],
       "matched_keyword_scopes": {
         "BE": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "BE": [
+          "be"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -8378,6 +11769,11 @@
           "matched_keyword_scopes": {
             "LEU": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "LEU": [
+              "leu"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8407,6 +11803,11 @@
           "matched_keyword_scopes": {
             "LEU": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "LEU": [
+              "leu"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8435,6 +11836,11 @@
       ],
       "matched_keyword_scopes": {
         "LEU": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "LEU": [
+          "leu"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -8489,6 +11895,11 @@
           "matched_keyword_scopes": {
             "OKLO": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "OKLO": [
+              "oklo"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8518,6 +11929,11 @@
           "matched_keyword_scopes": {
             "OKLO": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "OKLO": [
+              "oklo"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8546,6 +11962,11 @@
       ],
       "matched_keyword_scopes": {
         "OKLO": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "OKLO": [
+          "oklo"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -8600,6 +12021,11 @@
           "matched_keyword_scopes": {
             "CRWV": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "CRWV": [
+              "crwv"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8626,6 +12052,11 @@
       ],
       "matched_keyword_scopes": {
         "CRWV": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "CRWV": [
+          "crwv"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -8680,6 +12111,11 @@
           "matched_keyword_scopes": {
             "IREN": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "IREN": [
+              "iren"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8706,6 +12142,11 @@
       ],
       "matched_keyword_scopes": {
         "IREN": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "IREN": [
+          "iren"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -8760,6 +12201,11 @@
           "matched_keyword_scopes": {
             "NBIS": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "NBIS": [
+              "nbis"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8786,6 +12232,11 @@
       ],
       "matched_keyword_scopes": {
         "NBIS": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "NBIS": [
+          "nbis"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -8840,6 +12291,11 @@
           "matched_keyword_scopes": {
             "GSAT": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "GSAT": [
+              "gsat"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8866,6 +12322,11 @@
       ],
       "matched_keyword_scopes": {
         "GSAT": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "GSAT": [
+          "gsat"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -8920,6 +12381,11 @@
           "matched_keyword_scopes": {
             "CRCL": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "CRCL": [
+              "crcl"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -8946,6 +12412,11 @@
       ],
       "matched_keyword_scopes": {
         "CRCL": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "CRCL": [
+          "crcl"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9000,6 +12471,11 @@
           "matched_keyword_scopes": {
             "IONQ": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "IONQ": [
+              "ionq"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -9026,6 +12502,11 @@
       ],
       "matched_keyword_scopes": {
         "IONQ": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "IONQ": [
+          "ionq"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9080,6 +12561,11 @@
           "matched_keyword_scopes": {
             "ALAB": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "ALAB": [
+              "alab"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -9106,6 +12592,11 @@
       ],
       "matched_keyword_scopes": {
         "ALAB": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "ALAB": [
+          "alab"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9160,6 +12651,11 @@
           "matched_keyword_scopes": {
             "MU": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "MU": [
+              "mu"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -9186,6 +12682,11 @@
       ],
       "matched_keyword_scopes": {
         "MU": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "MU": [
+          "mu"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9240,6 +12741,11 @@
           "matched_keyword_scopes": {
             "FLY": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "FLY": [
+              "fly"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -9266,6 +12772,11 @@
       ],
       "matched_keyword_scopes": {
         "FLY": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "FLY": [
+          "fly"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9321,6 +12832,11 @@
           "matched_keyword_scopes": {
             "KTOS": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "KTOS": [
+              "ktos"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -9347,6 +12863,11 @@
       ],
       "matched_keyword_scopes": {
         "KTOS": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "KTOS": [
+          "ktos"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9401,6 +12922,11 @@
           "matched_keyword_scopes": {
             "LUNR": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "LUNR": [
+              "lunr"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -9427,6 +12953,11 @@
       ],
       "matched_keyword_scopes": {
         "LUNR": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "LUNR": [
+          "lunr"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9481,6 +13012,11 @@
           "matched_keyword_scopes": {
             "RDW": "current_public_proxy_symbols"
           },
+          "matched_keyword_variants": {
+            "RDW": [
+              "rdw"
+            ]
+          },
           "matched_fields": [
             "ticker"
           ],
@@ -9507,6 +13043,11 @@
       ],
       "matched_keyword_scopes": {
         "RDW": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "RDW": [
+          "rdw"
+        ]
       },
       "matched_fields": [
         "ticker"
@@ -9540,9 +13081,100 @@
         "security_master:tradable"
       ],
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "VOYG",
+      "name": "Voyager Technologies, Inc./DE",
+      "cik": "1788060",
+      "exchange": "NYSE",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "VOYG"
+          ],
+          "matched_keyword_scopes": {
+            "VOYG": "current_public_proxy_symbols"
+          },
+          "matched_keyword_variants": {
+            "VOYG": [
+              "voyg"
+            ]
+          },
+          "matched_fields": [
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "VOYG": [
+              "ticker"
+            ]
+          },
+          "matched_profile_snippets": [],
+          "match_sources": [
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": false,
+          "score": 44,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "VOYG"
+      ],
+      "matched_keyword_scopes": {
+        "VOYG": "current_public_proxy_symbols"
+      },
+      "matched_keyword_variants": {
+        "VOYG": [
+          "voyg"
+        ]
+      },
+      "matched_fields": [
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "VOYG": [
+          "ticker"
+        ]
+      },
+      "matched_profile_snippets": [],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "generic_signal",
+      "triage_score": 44,
+      "deterministic_priority": "low",
+      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "false_positive_flags": [],
+      "profile_enriched": false,
+      "profile_metadata": {},
+      "profile_sources": [],
+      "profile_text_fields": [],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:research_only",
+        "security_master:tradable",
+        "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     }
   ],
-  "suppressed_known_match_count": 18,
+  "suppressed_known_match_count": 21,
   "recall_diagnostics": [
     {
       "symbol": "RKLB",
@@ -9558,6 +13190,11 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "space_infrastructure",
         "semiconductor_interconnect_and_memory",
@@ -9581,7 +13218,7 @@
             "filing_accession_or_document_id": "0001819994-26-000013/rklb-20251231.htm",
             "filing_accession_number": "0001819994-26-000013",
             "filing_acceptance_datetime": "2026-02-26T21:31:49.000Z",
-            "filing_content_sha256": "da570cf0c2d63113af108b14a309981967a7a7d4e66ea6aeb538a81da53f3180",
+            "filing_content_sha256": "e0f6bd6b33952b8ca4494ad49b50815ac3f56cc7a374575b190ba23d3baa5032",
             "filing_content_cache_status": "network_fetch",
             "filing_content_request_attempt_count": 1,
             "filing_content_request_statuses": [
@@ -9634,6 +13271,72 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "matched_fields": [
+        "ticker"
+      ],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
+      "symbol": "YSS",
+      "sec_name": "York Space Systems Inc.",
+      "expected_lane_id": "space_infrastructure",
+      "expected_lane_ids_for_symbol": [
+        "space_infrastructure"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "matched_fields": [
+        "issuer_name",
+        "ticker"
+      ],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
+      "symbol": "VOYG",
+      "sec_name": "Voyager Technologies, Inc./DE",
+      "expected_lane_id": "space_infrastructure",
+      "expected_lane_ids_for_symbol": [
+        "space_infrastructure"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "space_infrastructure"
+      ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "space_infrastructure"
       ],
@@ -9661,6 +13364,9 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "space_infrastructure"
       ],
@@ -9688,6 +13394,9 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "space_infrastructure"
       ],
@@ -9715,6 +13424,9 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "space_infrastructure"
       ],
@@ -9742,6 +13454,11 @@
       "matched_expected_lane_ids": [
         "direct_to_device_connectivity"
       ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "direct_to_device_connectivity"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "direct_to_device_connectivity",
         "space_infrastructure",
@@ -9765,7 +13482,7 @@
             "filing_accession_or_document_id": "0001780312-26-000006/asts-20251231.htm",
             "filing_accession_number": "0001780312-26-000006",
             "filing_acceptance_datetime": "2026-03-02T21:39:58.000Z",
-            "filing_content_sha256": "950f384b14380452e2b770ba2874b271947b0e306cdad461f6d867271a78573d",
+            "filing_content_sha256": "706348de1ed7dbd411be2a3fb6c7c74b988aa34c7fb56b2fd2a52669dacdf856",
             "filing_content_cache_status": "network_fetch",
             "filing_content_request_attempt_count": 1,
             "filing_content_request_statuses": [
@@ -9818,6 +13535,9 @@
       "matched_expected_lane_ids": [
         "direct_to_device_connectivity"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "direct_to_device_connectivity"
       ],
@@ -9864,6 +13584,9 @@
       "matched_expected_lane_ids": [
         "ai_compute_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "ai_compute_infrastructure"
       ],
@@ -9891,6 +13614,9 @@
       "matched_expected_lane_ids": [
         "ai_compute_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "ai_compute_infrastructure"
       ],
@@ -9918,6 +13644,9 @@
       "matched_expected_lane_ids": [
         "ai_compute_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "ai_compute_infrastructure"
       ],
@@ -9964,6 +13693,11 @@
       "matched_expected_lane_ids": [
         "ai_power_and_cooling"
       ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "ai_power_and_cooling"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "ai_power_and_cooling",
         "ai_compute_infrastructure",
@@ -9988,7 +13722,7 @@
             "filing_accession_or_document_id": "0001674101-26-000008/vrt-20251231.htm",
             "filing_accession_number": "0001674101-26-000008",
             "filing_acceptance_datetime": "2026-02-13T21:10:21.000Z",
-            "filing_content_sha256": "078f8f0bc3c378d7e88c878cee160a176f9f3e987aa1a8a85d480843ee702b54",
+            "filing_content_sha256": "139b8bb89bb4996295cd39df800483e8b7883ce6cdd3023fa29c4b3b093b1a39",
             "filing_content_cache_status": "network_fetch",
             "filing_content_request_attempt_count": 1,
             "filing_content_request_statuses": [
@@ -10043,6 +13777,9 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
@@ -10073,6 +13810,9 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
@@ -10103,6 +13843,9 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
@@ -10131,6 +13874,11 @@
       "matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "semiconductor_interconnect_and_memory",
         "ai_compute_infrastructure",
@@ -10155,7 +13903,7 @@
             "filing_accession_or_document_id": "0001628280-25-033813/crdo-20250503.htm",
             "filing_accession_number": "0001628280-25-033813",
             "filing_acceptance_datetime": "2025-07-01T21:52:06.000Z",
-            "filing_content_sha256": "0f687a00e51861473d548cf1e2542f6167667a838e81252d17ff07c030682976",
+            "filing_content_sha256": "c93c55a54173026a0ea19ef1f9235eabf7a37ce02460dd88a0fbc8d8a9045a9f",
             "filing_content_cache_status": "network_fetch",
             "filing_content_request_attempt_count": 1,
             "filing_content_request_statuses": [
@@ -10208,6 +13956,9 @@
       "matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
@@ -10235,6 +13986,9 @@
       "matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
@@ -10264,6 +14018,9 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
@@ -10294,6 +14051,9 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
@@ -10324,6 +14084,9 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
@@ -10352,10 +14115,46 @@
       "matched_expected_lane_ids": [
         "quantum_computing_and_networking"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "quantum_computing_and_networking"
       ],
       "matched_fields": [
+        "ticker"
+      ],
+      "match_sources": [
+        "sec_issuer_reference"
+      ],
+      "profile_sources": [],
+      "missed_reason": "",
+      "suggested_review": "No recall action from deterministic scanner."
+    },
+    {
+      "symbol": "XNDU",
+      "sec_name": "Xanadu Quantum Technologies Ltd",
+      "expected_lane_id": "quantum_computing_and_networking",
+      "expected_lane_ids_for_symbol": [
+        "quantum_computing_and_networking"
+      ],
+      "status": "matched_expected_lane",
+      "recall_scope": "sec_listed_public_proxy",
+      "would_match_expected_lane": true,
+      "matched_any_expected_lane": true,
+      "matched_expected_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "matched_fields": [
+        "issuer_name",
         "ticker"
       ],
       "match_sources": [
@@ -10379,6 +14178,9 @@
       "matched_expected_lane_ids": [
         "programmable_money_infrastructure"
       ],
+      "organic_matched_any_expected_lane": false,
+      "organic_matched_expected_lane_ids": [],
+      "ticker_only_expected_lane_recall": true,
       "matched_lane_ids": [
         "programmable_money_infrastructure"
       ],
@@ -10454,37 +14256,5 @@
     "Deterministic keyword matches are raw leads, not recommendations.",
     "This scan checks SEC listed issuer reference names and symbols plus optional caller-supplied profile text.",
     "Serious discovery still requires independent agentic bottleneck research and source-backed readiness work."
-  ],
-  "recall_organic_expected_proxy_count": 0,
-  "recall_organic_expected_proxy_miss_count": 22,
-  "recall_organic_expected_proxy_status": "insufficient_all_expected_proxies_ticker_only",
-  "recall_ticker_only_expected_proxy_symbols": [
-    "ALAB",
-    "ASTS",
-    "BE",
-    "BE",
-    "CRCL",
-    "CRDO",
-    "CRWV",
-    "FLY",
-    "GSAT",
-    "IONQ",
-    "IREN",
-    "KTOS",
-    "LEU",
-    "LEU",
-    "LUNR",
-    "MU",
-    "NBIS",
-    "OKLO",
-    "OKLO",
-    "RDW",
-    "RKLB",
-    "VRT"
-  ],
-  "issuer_profile_coverage_status": "targeted_partial",
-  "issuer_profile_semantic_gap_count": 7571,
-  "issuer_profile_semantic_coverage_ratio": 0.000528,
-  "recall_ticker_only_expected_proxy_count": 22,
-  "profile_input_sha256": "6ed273012382fff7023f02a1fec30017eb33d3e516e5b706558129c82ff679bc"
+  ]
 }

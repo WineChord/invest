@@ -16,6 +16,7 @@
     "build:sec-issuer-profiles": "node scripts/build-sec-issuer-profiles.mjs",
     "build:semantic-issuer-packets": "node scripts/build-semantic-issuer-packets.mjs",
     "build:semantic-batches": "node scripts/build-semantic-batches.mjs",
+    "build:semantic-worker-pool": "node scripts/build-semantic-worker-pool.mjs",
     "classify:semantic-heuristic": "node scripts/classify-semantic-heuristic.mjs",
     "import:semantic-classifications": "node scripts/import-semantic-classifications.mjs",
     "build:semantic-discovery-run": "node scripts/build-semantic-discovery-run.mjs",

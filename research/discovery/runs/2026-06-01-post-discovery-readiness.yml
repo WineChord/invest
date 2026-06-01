@@ -1,0 +1,353 @@
+schema_version: 1
+run_id: 2026-06-01-post-discovery-readiness
+run_date: 2026-06-01
+request_type: post_discovery_readiness
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: 2026-06-01
+linked_decision_or_research_note:
+  - research/process/2026-06-01-full-discovery-engine-run.md
+subagent_evidence_packet_path: research/discovery/runs/2026-06-01-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --as-of 2026-06-01 --limit 1000 --json --output research/discovery/runs/2026-06-01-universe-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-06-01-universe-scan.json
+      output_sha256: 97fe8fe51dd1163629d0efa112ddd2ced1bc2b0cb2359321bfbe1503634ee3a2
+      retrieved_at: 2026-06-01
+      result_summary: Deterministic lane scan refreshed after post-discovery lane updates; it produced 43 candidates and 59 exploratory unknown-future matches under the current 2026-06-01 lane map.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings and listed issuer references
+      sources_or_queries:
+        - SEC MNTS Q1 2026 Form 10-Q
+        - SEC VOYG Q1 2026 Form 10-Q
+        - SEC XNDU Q1 2026 6-K and F-1
+        - SEC YSS Q1 2026 Form 10-Q
+      source_ids:
+        - mnts_q1_2026_10q
+        - voyg_q1_2026_10q
+        - xndu_q1_2026_6k
+        - xndu_f1_yorkville_2026_05_22
+        - yss_q1_2026_10q
+      retrieved_at: 2026-06-01
+      material_findings: SEC filings confirmed all four symbols were tradable public issuers and separated MNTS rejection risk from VOYG, XNDU, and YSS dashboard coverage.
+      unavailable_or_skipped_reason:
+    - family_id: issuer_material
+      family: Issuer results and business update material
+      sources_or_queries:
+        - Voyager Q1 2026 results
+        - York Q1 2026 results
+        - Xanadu Q1 2026 release filed on 6-K
+      source_ids:
+        - voyg_q1_2026_results
+        - yss_q1_2026_results
+        - xndu_q1_2026_6k
+      retrieved_at: 2026-06-01
+      material_findings: Issuer material supported VOYG and XNDU research-only coverage and YSS watch coverage, while MNTS lacked enough operating proof for dashboard coverage.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Market data and tradability
+      sources_or_queries:
+        - Yahoo daily chart MNTS
+        - Yahoo daily chart VOYG
+        - Yahoo daily chart XNDU
+        - Yahoo daily chart YSS
+      source_ids:
+        - yahoo_chart_mnts_2026_05_29
+        - yahoo_chart_voyg_2026_05_29
+        - yahoo_chart_xndu_2026_05_29
+        - yahoo_chart_yss_2026_05_29
+      retrieved_at: 2026-06-01
+      material_findings: Market data confirmed public tradability and provided 2026-05-29 close prices for valuation and technical snapshots.
+      unavailable_or_skipped_reason:
+    - family_id: current_world_context
+      family: Current space and quantum public-company context
+      sources_or_queries:
+        - York Q1 backlog and defense-space operating evidence
+        - Voyager Q1 backlog and Starlab context
+        - Xanadu F-1 and Q1 commercial proof context
+      source_ids:
+        - yss_q1_2026_results
+        - voyg_q1_2026_results
+        - xndu_f1_yorkville_2026_05_22
+      retrieved_at: 2026-06-01
+      material_findings: Current public-company context showed YSS as the strongest post-discovery space addition, VOYG as research-only, and XNDU as a pre-commercial quantum monitor.
+      unavailable_or_skipped_reason:
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, IPO, spinoff, and transaction discovery
+      sources_or_queries:
+        - VOYG IPO prospectus
+        - YSS IPO prospectus
+        - XNDU F-1 and recent public-company filings
+      source_ids:
+        - voyg_ipo_prospectus_2025_06_10
+        - yss_ipo_prospectus_2026_01_28
+        - xndu_f1_yorkville_2026_05_22
+      retrieved_at: 2026-06-01
+      material_findings: Newly public or recently listed issuers were central to the post-discovery additions, reinforcing why the engine cannot rely only on stale watchlist memory.
+      unavailable_or_skipped_reason:
+    - family_id: lane_evolution_current_world_search
+      family: Lane evolution and new public proxy search
+      sources_or_queries:
+        - Space infrastructure peer completeness review
+        - Quantum lane peer completeness review
+        - Semantic xhigh review packet for missing watchlist names
+      source_ids:
+        - voyg_q1_2026_10q
+        - yss_q1_2026_10q
+        - xndu_q1_2026_6k
+        - xndu_f1_yorkville_2026_05_22
+      retrieved_at: 2026-06-01
+      material_findings: Space infrastructure proxies were expanded to include YSS and VOYG; quantum proxies were expanded to include XNDU. MNTS was rejected as a cautionary microcap financing false-positive pattern.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-06-01
+    notes: The post-discovery pass combined the full semantic discovery output, deterministic lane scan, primary SEC filings, market data, and independent xhigh reviews for space, quantum, and valuation risk.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Proliferated defense spacecraft production, post-ISS LEO infrastructure, and fault-tolerant quantum architectures all surfaced from the xhigh semantic set.
+    inferences: The post-discovery run needed to improve peer-map completeness without confusing thematic exposure with buy readiness.
+    disconfirming_evidence: MNTS shows that direct thematic exposure can still fail when financing and dilution overwhelm bottleneck control.
+    source_ids:
+      - yss_q1_2026_10q
+      - voyg_q1_2026_10q
+      - xndu_q1_2026_6k
+      - mnts_q1_2026_10q
+    investment_implication: Add durable coverage only when primary evidence supports comparable research value; reject direct but low-quality false positives.
+  who_controls_or_removes_scarcity:
+    facts: YSS has direct spacecraft production and operations evidence, VOYG has defense-space and Starlab exposure, XNDU controls a photonic quantum architecture, and MNTS has smaller space-services exposure.
+    inferences: Control quality differs sharply; YSS has the strongest current operating evidence while MNTS lacks enough proof of durable control.
+    disconfirming_evidence: Small market cap, keywords, or public tradability alone do not prove control over scarcity.
+    source_ids:
+      - yss_q1_2026_results
+      - voyg_q1_2026_results
+      - xndu_f1_yorkville_2026_05_22
+      - mnts_private_placement_8k_2026_05_29
+    investment_implication: Treat YSS, VOYG, and XNDU as comparable research surfaces; keep MNTS out of dashboard coverage.
+  who_can_monetize_into_shareholder_value:
+    facts: YSS has Q1 revenue above USD 100 million and backlog above USD 600 million; VOYG has smaller current revenue and convertible debt; XNDU has tiny professional-services revenue; MNTS has tiny revenue and financing dependence.
+    inferences: Shareholder-value conversion is plausible for YSS and uncertain for VOYG and XNDU, but currently weakest for MNTS.
+    disconfirming_evidence: Losses, customer concentration, material weaknesses, convertible debt, standby equity facilities, and private placements can prevent bottleneck exposure from compounding into common-stock value.
+    source_ids:
+      - yss_q1_2026_10q
+      - voyg_q1_2026_10q
+      - xndu_f1_yorkville_2026_05_22
+      - mnts_private_placement_8k_2026_05_29
+    investment_implication: No post-discovery name becomes buy-ready; the value is coverage quality and opportunity-cost awareness.
+  public_security_expression:
+    facts: SEC and Yahoo evidence confirmed MNTS and XNDU as Nasdaq common-stock tickers and VOYG and YSS as NYSE common-stock tickers.
+    inferences: Policy tradability is satisfied for all four, but policy eligibility is only the first gate.
+    disconfirming_evidence: XNDU's public Class B shares have weaker voting control, and VOYG/YSS governance also requires monitoring.
+    source_ids:
+      - yahoo_chart_mnts_2026_05_29
+      - yahoo_chart_voyg_2026_05_29
+      - yahoo_chart_xndu_2026_05_29
+      - yahoo_chart_yss_2026_05_29
+    investment_implication: Public tradability supports readiness classification but not automatic watchlist promotion.
+  early_small_misunderstood_or_newly_public:
+    facts: VOYG, XNDU, and YSS are recently public enough to plausibly be under-modeled; MNTS is small but has severe financing and dilution risk.
+    inferences: Newly public status improves discovery importance, while corrected share count and capital structure prevent naive valuation conclusions.
+    disconfirming_evidence: XNDU looked cheaper under weighted-average shares until F-1 share count corrected the market-cap denominator.
+    source_ids:
+      - voyg_ipo_prospectus_2025_06_10
+      - yss_ipo_prospectus_2026_01_28
+      - xndu_f1_yorkville_2026_05_22
+      - sec_companyfacts_xndu_2026_06_01
+    investment_implication: Keep the newly public discovery lane active and require share-count/debt sanity checks before valuation conclusions.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - research/discovery/semantic-cache.jsonl
+        - research/discovery/runs/2026-06-01-semantic-discovery-run.json
+        - SEC filings for MNTS, VOYG, XNDU, and YSS
+      sources_checked:
+        - mnts_q1_2026_10q
+        - voyg_q1_2026_10q
+        - xndu_q1_2026_6k
+        - yss_q1_2026_10q
+      facts_verified:
+        - All four xhigh names were real tradable public issuers.
+        - YSS had the strongest operating evidence among the space-lane additions.
+      stale_or_missing_evidence:
+        - none after readiness sprint
+      confidence: medium_high
+      key_findings: VOYG, XNDU, and YSS deserved durable coverage, while MNTS should be rejected despite direct thematic exposure.
+      conflicts: []
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - research/freshness/events.csv
+        - current SEC filings for MNTS, VOYG, XNDU, and YSS
+      sources_checked:
+        - mnts_private_placement_8k_2026_05_29
+        - voyg_q1_2026_10q
+        - xndu_f1_yorkville_2026_05_22
+        - yss_q1_2026_10q
+      facts_verified:
+        - XNDU F-1 share count corrected the automated valuation denominator.
+        - VOYG Q1 filing disclosed convertible debt that generic companyfacts did not capture.
+        - YSS Q1 filing disclosed a material weakness.
+      stale_or_missing_evidence:
+        - none after readiness sprint
+      confidence: high
+      key_findings: The filing review created durable freshness rows and corrected valuation inputs for VOYG and XNDU.
+      conflicts: []
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - first-layer bottleneck questions
+        - readiness sprint evidence
+      sources_checked:
+        - yss_q1_2026_results
+        - voyg_q1_2026_results
+        - xndu_f1_yorkville_2026_05_22
+      facts_verified:
+        - YSS, VOYG, and XNDU each represent a direct public expression of a plausible bottleneck lane.
+      stale_or_missing_evidence:
+        - none after readiness sprint
+      confidence: medium
+      key_findings: The strongest positive case was YSS for defense spacecraft production and operations; XNDU and VOYG are option-like research peers.
+      conflicts: []
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - risk and valuation review for MNTS, VOYG, XNDU, and YSS
+      sources_checked:
+        - mnts_private_placement_8k_2026_05_29
+        - voyg_q1_2026_10q
+        - xndu_f1_yorkville_2026_05_22
+        - yss_q1_2026_10q
+      facts_verified:
+        - MNTS had severe dilution and financing risk.
+        - XNDU corrected market cap was far above the generic weighted-average share output.
+      stale_or_missing_evidence:
+        - none after readiness sprint
+      confidence: high
+      key_findings: MNTS should not receive dashboard coverage; VOYG, XNDU, and YSS are not buy-ready.
+      conflicts:
+        - MNTS incubate versus reject disagreement was resolved to reject because dilution and financing risk dominated bottleneck control.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used:
+        - valuation states
+        - market data
+        - readiness sprint notes
+      sources_checked:
+        - yahoo_chart_voyg_2026_05_29
+        - yahoo_chart_xndu_2026_05_29
+        - yahoo_chart_yss_2026_05_29
+      facts_verified:
+        - No post-discovery candidate displaced current buy-zone names.
+        - YSS improved watchlist completeness without becoming buy-ready.
+      stale_or_missing_evidence:
+        - none after readiness sprint
+      confidence: medium_high
+      key_findings: The post-discovery pass improves opportunity-cost tracking but does not create a new allocation recommendation.
+      conflicts: []
+  unresolved_conflicts: 0
+
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - digital infrastructure and platform language
+    - broad network hardware names
+    - quantum-themed names needing false-positive review
+  sampled_symbols:
+    - AD
+    - AIB
+    - ANET
+    - ARQQ
+    - HQ
+  disposition: No new lane was created from the 2026-06-01 exploratory bucket; quantum and space lane coverage was improved through concrete xhigh readiness candidates instead.
+  false_positive_patterns:
+    - generic infrastructure wording without source-backed scarcity control
+    - quantum name collisions or legacy hardware companies without clear quantum bottleneck control
+    - small space names where financing survival dominates bottleneck exposure
+  lane_decisions:
+    - keep unknown_future_bottlenecks active
+    - add XNDU to quantum lane coverage but require corrected share-count valuation
+    - add YSS and VOYG to space infrastructure peer coverage
+    - reject MNTS as a space microcap financing false-positive pattern
+
+candidate_delta:
+  candidates_added:
+    - MNTS
+    - VOYG
+    - XNDU
+    - YSS
+  candidates_rejected_or_archived:
+    - MNTS
+  candidates_promoted: []
+  candidates_incubated:
+    - VOYG
+    - XNDU
+    - YSS
+  false_positive_patterns:
+    - direct thematic exposure without durable scarcity control
+    - weighted-average share count understating current economic capitalization
+    - custom debt tags omitted by generic companyfacts refresh
+  lane_delta:
+    - space_infrastructure proxies now include YSS and VOYG
+    - quantum_computing_and_networking proxies now include XNDU
+  unresolved_conflicts: 0
+
+readiness_sprints:
+  - symbol: MNTS
+    material_to_current_allocation: true
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-06-01-MNTS-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#MNTS
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+  - symbol: VOYG
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-06-01-VOYG-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#VOYG
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+  - symbol: XNDU
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-06-01-XNDU-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#XNDU
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+  - symbol: YSS
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-06-01-YSS-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#YSS
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate

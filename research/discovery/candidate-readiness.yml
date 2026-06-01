@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-05-31
+as_of: 2026-06-01
 records:
   - symbol: FLY
     material_to_current_allocation: true
@@ -16,3 +16,63 @@ records:
     last_readiness_reviewed_at: 2026-05-31
     next_action: Monitor the next quarterly report, amended offering or selling-holder filing, major launch or contract update, or price dislocation before reconsidering promotion.
     conclusion: Incubated after full dashboard-facing review; no longer a repository-work blocker for current allocation readiness, but not buy-ready or promoted.
+  - symbol: MNTS
+    material_to_current_allocation: true
+    affected_lanes:
+      - space_infrastructure
+    materiality_reason: MNTS surfaced in the same space_infrastructure lane as RKLB, FLY, LUNR, RDW, VOYG, and YSS, so the discovery engine needed evidence-backed triage rather than silently ignoring it.
+    blocking_scope: current_space_allocation
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-06-01-MNTS-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: MNTS is tradable and thematically direct, but fresh SEC evidence shows a tiny revenue base, continued losses, recent ATM and private-placement financing dependence, and heavy dilution risk. The evidence supports rejecting dashboard coverage today rather than treating it as an allocation-relevant research-only peer.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-06-01
+    next_action: Reopen only if multiple quarters show real revenue/backlog conversion, reduced dilution cadence, successful mission execution, and stronger evidence of bottleneck control.
+    conclusion: Rejected after review; no dashboard surface required and no allocation implication today.
+  - symbol: VOYG
+    material_to_current_allocation: true
+    affected_lanes:
+      - space_infrastructure
+    materiality_reason: VOYG is a newly public direct space and defense-space issuer with Starlab optionality, so same-lane opportunity-cost completeness requires research-only coverage.
+    blocking_scope: current_space_allocation
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-06-01-VOYG-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: VOYG has direct exposure and meaningful backlog, but Q1 losses, negative gross margin, Starlab funding and timing risk, USD 435.0 million convertible notes, controlled-company governance, and valuation keep it below current buy or active-candidate promotion.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-06-01
+    next_action: Monitor the next quarterly report, backlog conversion, Starlab funding and milestone disclosures, customer concentration, debt terms, and price dislocation.
+    conclusion: Incubated into research-only dashboard coverage; material to space-lane completeness but not buy-ready.
+  - symbol: XNDU
+    material_to_current_allocation: true
+    affected_lanes:
+      - quantum_computing_and_networking
+    materiality_reason: XNDU is a newly public pure-play photonic quantum computing issuer, so the quantum lane needs a comparable research-only surface rather than relying only on IONQ.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-06-01-XNDU-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: XNDU directly expresses photonic quantum optionality, but the company remains pre-commercial, Q1 revenue is tiny and customer-concentrated, corrected Class A/Class B share count implies a much higher valuation than weighted-average companyfacts shares, and Yorkville/S-8 dilution risk is material.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-06-01
+    next_action: Monitor customer revenue quality, system milestones, government funding, Yorkville draws, equity issuance, and valuation dislocation.
+    conclusion: Incubated into research-only dashboard coverage; material to quantum-lane completeness but not buy-ready or promoted.
+  - symbol: YSS
+    material_to_current_allocation: true
+    affected_lanes:
+      - space_infrastructure
+    materiality_reason: YSS is a newly public direct defense-space spacecraft manufacturer and operations provider with material revenue and backlog, making it a same-lane opportunity-cost peer for RKLB, FLY, LUNR, RDW, KTOS, and VOYG.
+    blocking_scope: current_space_allocation
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-06-01-YSS-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: YSS is the strongest of the four new xhigh names because revenue, backlog, cash, and direct defense-space fit are real, but valuation, customer concentration, contract accounting, material weakness, acquisition integration, and short public history keep it watch-only rather than buy-ready.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-06-01
+    next_action: Monitor backlog conversion, major defense constellation awards, customer diversification, material weakness remediation, margins, and price dislocation.
+    conclusion: Incubated into watchlist coverage; space-lane peer map improved but no current buy or allocation implication.

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-06-01T08:42:38.375Z",
+  "as_of": "2026-05-31",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-05-31.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-05-31-universe-scan.json",
+      "sha256": "3f1a867ca90a23149c5737b403b78c2ef8320a86949ad016ce610d286d0f1dc2",
+      "role": "deterministic_scan_artifact"
+    }
+  ]
+}

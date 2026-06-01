@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-31T20:25:22.653Z",
+  "generated_at": "2026-06-01T08:43:25.573Z",
   "as_of": "2026-06-01",
   "source": "sec_filing_discovery_index",
   "index_scope": "targeted_symbols",
@@ -16,9 +16,9 @@
   "profile_path": "research/discovery/runs/2026-06-01-sec-filing-index-profiles.json",
   "scan_path": "research/discovery/runs/2026-06-01-sec-filing-index-scan.json",
   "manifest_sha256": "beaded2df762af188da80038784dba78f85e7871b41625c991def2a51c6a2254",
-  "manifest_metadata_sha256": "38d9495099c921a93c58841d851e257740c77edc908f6e63176bf0e69eda95a6",
-  "profile_sha256": "6ed273012382fff7023f02a1fec30017eb33d3e516e5b706558129c82ff679bc",
-  "scan_sha256": "c90c68f1de72e611ce67f222620b78c0ec9565b73725f704a13b933de7bc9576",
+  "manifest_metadata_sha256": "3dcd6f29f5a8a212daa60403df0dda536cf457ec6ee31094db43a95052d870e5",
+  "profile_sha256": "cd470985a30d09b7793beeb1679c8903912c391d727d05ac5dc16d99142ff0ab",
+  "scan_sha256": "8b9a34e20f250985668d2d163054de6cafda167fce13a6c08702d4d87aef9e8b",
   "commands": [
     {
       "command": "node scripts/build-sec-filing-manifest.mjs --as-of 2026-06-01 --output research/discovery/runs/2026-06-01-sec-filing-index-manifest.csv --metadata-output research/discovery/runs/2026-06-01-sec-filing-index-manifest.metadata.json --symbols RKLB,ASTS,CRDO,VRT",
@@ -43,8 +43,8 @@
     "profile_coverage_status": "targeted_partial",
     "profile_coverage_gap_count": 7571,
     "profile_coverage_ratio": 0.000528,
-    "candidate_count": 44,
-    "total_match_count": 109
+    "candidate_count": 25,
+    "total_match_count": 123
   },
   "caveats": [
     "This index is deterministic discovery scaffolding, not buy eligibility.",

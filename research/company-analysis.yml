@@ -599,3 +599,39 @@ entries:
     risk_watch: Customer concentration, optical commoditization, hyperscaler bargaining power, debt, convertible notes, preferred-stock dilution, NVIDIA relationship execution, trade controls, rare earth supply, and valuation after a strong share-price move.
     next_check: Next quarterly report, NVIDIA partnership update, CPO or optical circuit switching design-win update, customer concentration disclosure, debt exchange update, Greensboro capacity update, or price dislocation.
     source_path: research/2026-05-31-lite-watchlist-triage.md
+  - id: 2026-06-01-voyg-readiness
+    symbol: VOYG
+    analyzed_at: "2026-06-01"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: Voyager Technologies is direct enough for space-infrastructure research coverage through defense-space revenue and Starlab optionality, but current evidence keeps it research-only.
+    upside_path: Compound if defense-space systems scale and Starlab becomes funded commercial LEO infrastructure without excessive dilution.
+    risk_watch: Q1 negative gross profit, losses, Starlab capital intensity, backlog conversion, customer concentration, USD 435.0 million convertible notes, controlled-company governance, and valuation.
+    next_check: Next quarterly report, backlog conversion, Starlab funding or milestone disclosure, customer concentration, debt update, or price dislocation.
+    source_path: research/discovery/readiness/2026-06-01-VOYG-readiness.md
+  - id: 2026-06-01-xndu-readiness
+    symbol: XNDU
+    analyzed_at: "2026-06-01"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: Xanadu gives the quantum lane a clean public photonic quantum computing peer, but it remains research-only because commercial proof is early and corrected valuation is high.
+    upside_path: Benefit if fault-tolerant photonic quantum computing and PennyLane developer adoption become commercially useful infrastructure.
+    risk_watch: Pre-commercial quantum roadmap, tiny and customer-concentrated Q1 revenue, dual-class voting control, Yorkville standby equity issuance, S-8 dilution, and valuation on corrected share count.
+    next_check: Next quarterly report, customer revenue quality, quantum system milestone, government funding, Yorkville draw, equity issuance, or price dislocation.
+    source_path: research/discovery/readiness/2026-06-01-XNDU-readiness.md
+  - id: 2026-06-01-yss-readiness
+    symbol: YSS
+    analyzed_at: "2026-06-01"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: B-
+    summary: York Space Systems is the strongest post-discovery addition because it directly targets defense spacecraft production and operations with real revenue, backlog, and cash, but it is not buy-ready.
+    upside_path: Benefit if proliferated defense satellite architectures and missile-defense space layers create durable demand for rapid spacecraft production and operations.
+    risk_watch: Contract-accounting estimates, customer concentration, material weakness, acquisition integration, government funding shifts, controlled-company governance, short public history, and valuation.
+    next_check: Next quarterly report, backlog conversion, major award, customer diversification, material weakness remediation, margin update, or price dislocation.
+    source_path: research/discovery/readiness/2026-06-01-YSS-readiness.md

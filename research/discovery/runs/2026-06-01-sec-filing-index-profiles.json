@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-31T20:25:29.674Z",
+  "generated_at": "2026-06-01T08:43:31.091Z",
   "source": "sec_filing_business_sections",
   "profile_purpose": "issuer_universe_discovery",
   "profile_text_fields": [
@@ -24,74 +24,74 @@
       "cik": "0001780312",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000178031226000006/asts-20251231.htm",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:29.674Z",
+      "cache_observed_at": "2026-06-01T08:43:31.091Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
-      "payload_sha256": "950f384b14380452e2b770ba2874b271947b0e306cdad461f6d867271a78573d",
+      "payload_sha256": "706348de1ed7dbd411be2a3fb6c7c74b988aa34c7fb56b2fd2a52669dacdf856",
       "validation_status": "validated",
       "request_attempt_count": 1,
       "request_statuses": [
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:29.674Z"
+      "fetched_at": "2026-06-01T08:43:31.091Z"
     },
     {
       "symbol": "CRDO",
       "cik": "0001807794",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828025033813/crdo-20250503.htm",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:29.674Z",
+      "cache_observed_at": "2026-06-01T08:43:31.091Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
-      "payload_sha256": "0f687a00e51861473d548cf1e2542f6167667a838e81252d17ff07c030682976",
+      "payload_sha256": "c93c55a54173026a0ea19ef1f9235eabf7a37ce02460dd88a0fbc8d8a9045a9f",
       "validation_status": "validated",
       "request_attempt_count": 1,
       "request_statuses": [
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:29.674Z"
+      "fetched_at": "2026-06-01T08:43:31.091Z"
     },
     {
       "symbol": "RKLB",
       "cik": "0001819994",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000013/rklb-20251231.htm",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:29.674Z",
+      "cache_observed_at": "2026-06-01T08:43:31.091Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
-      "payload_sha256": "da570cf0c2d63113af108b14a309981967a7a7d4e66ea6aeb538a81da53f3180",
+      "payload_sha256": "e0f6bd6b33952b8ca4494ad49b50815ac3f56cc7a374575b190ba23d3baa5032",
       "validation_status": "validated",
       "request_attempt_count": 1,
       "request_statuses": [
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:29.674Z"
+      "fetched_at": "2026-06-01T08:43:31.091Z"
     },
     {
       "symbol": "VRT",
       "cik": "0001674101",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm",
       "cache_status": "network_fetch",
-      "cache_observed_at": "2026-05-31T20:25:29.674Z",
+      "cache_observed_at": "2026-06-01T08:43:31.091Z",
       "cache_age_days": 0,
       "max_cache_age_days": 1,
-      "payload_sha256": "078f8f0bc3c378d7e88c878cee160a176f9f3e987aa1a8a85d480843ee702b54",
+      "payload_sha256": "139b8bb89bb4996295cd39df800483e8b7883ce6cdd3023fa29c4b3b093b1a39",
       "validation_status": "validated",
       "request_attempt_count": 1,
       "request_statuses": [
         "200"
       ],
       "retrieved_at": "2026-06-01",
-      "fetched_at": "2026-05-31T20:25:29.674Z"
+      "fetched_at": "2026-06-01T08:43:31.091Z"
     }
   ],
   "max_filing_cache_age_days": 1,
   "sec_fetch_retries": 2,
   "sec_retry_delay_ms": 1000,
-  "sec_user_agent": "winechord-invest discovery research",
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
   "sec_request_delay_ms": 0,
   "selection_strategy": "manifest_filing_sections",
   "manifest_selection_strategy": "requested_symbols",
@@ -131,7 +131,7 @@
       "filing_accession_or_document_id": "0001780312-26-000006/asts-20251231.htm",
       "filing_accession_number": "0001780312-26-000006",
       "filing_acceptance_datetime": "2026-03-02T21:39:58.000Z",
-      "filing_content_sha256": "950f384b14380452e2b770ba2874b271947b0e306cdad461f6d867271a78573d",
+      "filing_content_sha256": "706348de1ed7dbd411be2a3fb6c7c74b988aa34c7fb56b2fd2a52669dacdf856",
       "filing_content_cache_status": "network_fetch",
       "filing_content_request_attempt_count": 1,
       "filing_content_request_statuses": [
@@ -183,7 +183,7 @@
       "filing_accession_or_document_id": "0001628280-25-033813/crdo-20250503.htm",
       "filing_accession_number": "0001628280-25-033813",
       "filing_acceptance_datetime": "2025-07-01T21:52:06.000Z",
-      "filing_content_sha256": "0f687a00e51861473d548cf1e2542f6167667a838e81252d17ff07c030682976",
+      "filing_content_sha256": "c93c55a54173026a0ea19ef1f9235eabf7a37ce02460dd88a0fbc8d8a9045a9f",
       "filing_content_cache_status": "network_fetch",
       "filing_content_request_attempt_count": 1,
       "filing_content_request_statuses": [
@@ -235,7 +235,7 @@
       "filing_accession_or_document_id": "0001819994-26-000013/rklb-20251231.htm",
       "filing_accession_number": "0001819994-26-000013",
       "filing_acceptance_datetime": "2026-02-26T21:31:49.000Z",
-      "filing_content_sha256": "da570cf0c2d63113af108b14a309981967a7a7d4e66ea6aeb538a81da53f3180",
+      "filing_content_sha256": "e0f6bd6b33952b8ca4494ad49b50815ac3f56cc7a374575b190ba23d3baa5032",
       "filing_content_cache_status": "network_fetch",
       "filing_content_request_attempt_count": 1,
       "filing_content_request_statuses": [
@@ -287,7 +287,7 @@
       "filing_accession_or_document_id": "0001674101-26-000008/vrt-20251231.htm",
       "filing_accession_number": "0001674101-26-000008",
       "filing_acceptance_datetime": "2026-02-13T21:10:21.000Z",
-      "filing_content_sha256": "078f8f0bc3c378d7e88c878cee160a176f9f3e987aa1a8a85d480843ee702b54",
+      "filing_content_sha256": "139b8bb89bb4996295cd39df800483e8b7883ce6cdd3023fa29c4b3b093b1a39",
       "filing_content_cache_status": "network_fetch",
       "filing_content_request_attempt_count": 1,
       "filing_content_request_statuses": [
@@ -320,6 +320,5 @@
       "extraction_start_pattern_label": "Item 1 Business",
       "extraction_warnings": []
     }
-  ],
-  "manifest_metadata_sha256": "38d9495099c921a93c58841d851e257740c77edc908f6e63176bf0e69eda95a6"
+  ]
 }
