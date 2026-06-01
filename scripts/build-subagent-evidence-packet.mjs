@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { parse as parseYaml, stringify as stringifyYaml } from "yaml";
@@ -54,6 +55,7 @@ if (options.output === undefined) {
 function parseArgs(args) {
   const parsed = {
     asOf: currentDate(),
+    deterministicOutputPaths: [],
     requestType: "monthly_decision_full_cycle",
     roles: defaultRoles,
     specificQuestion: defaultQuestion,
@@ -75,6 +77,9 @@ function parseArgs(args) {
       index += 1;
     } else if (arg === "--output") {
       parsed.output = requireNextArg(args, index, arg);
+      index += 1;
+    } else if (arg === "--deterministic-output") {
+      parsed.deterministicOutputPaths.push(requireNextArg(args, index, arg));
       index += 1;
     } else {
       throw new Error(`Unsupported argument: ${arg}`);
@@ -99,14 +104,23 @@ function currentDate() {
   return new Date().toISOString().slice(0, 10);
 }
 
-function buildPacket({ asOf, requestType, roles, specificQuestion }) {
+function buildPacket({
+  asOf,
+  deterministicOutputPaths,
+  requestType,
+  roles,
+  specificQuestion,
+}) {
   const accountPlan = readYaml(accountPlanFile);
   const accountState = readYaml(accountStateFile);
   const qualityMetrics = readYaml(qualityMetricsFile);
   const sources = readYaml(sourcesFile);
   const readiness = readYaml(candidateReadinessFile);
   const discoveryLanes = readYaml(discoveryLanesFile);
-  const universeScan = readJsonIfExists(universeScanFile);
+  const effectiveDeterministicOutputPaths = deterministicOutputPaths.length === 0
+    ? deterministicOutputPathsFromQualityMetrics(qualityMetrics)
+    : deterministicOutputPaths;
+  const deterministicOutputs = effectiveDeterministicOutputPaths.map(deterministicOutputRecord);
   const watchlistRows = csvRecords(watchlistFile);
   const valuationRows = csvRecords(valuationStatesFile);
   const candidateRows = csvRecords(candidatesFile);
@@ -115,7 +129,7 @@ function buildPacket({ asOf, requestType, roles, specificQuestion }) {
   const policyVersion = readPolicyVersion(policyFile);
 
   const activeWatchlist = watchlistRows
-    .filter((row) => ["active_core_candidate", "active_candidate", "watch"].includes(row.status))
+    .filter((row) => row.status !== "removed")
     .map((row) => ({
       symbol: row.symbol,
       name: row.name,
@@ -131,7 +145,16 @@ function buildPacket({ asOf, requestType, roles, specificQuestion }) {
     .map((row) => ({
       symbol: row.symbol,
       name: row.name,
+      exchange: row.exchange,
+      asset_type: row.asset_type,
+      discovered_at: row.discovered_at,
+      discovery_source: row.discovery_source,
+      source_url: row.source_url,
+      source_published_at: row.source_published_at,
+      retrieved_at: row.retrieved_at,
+      first_seen_at: row.first_seen_at,
       theme: row.theme,
+      why_it_might_matter: row.why_it_might_matter,
       status: row.status,
       next_action: row.next_action,
       notes: row.notes,
@@ -187,6 +210,7 @@ function buildPacket({ asOf, requestType, roles, specificQuestion }) {
     },
     candidate_set: candidateSet,
     candidate_readiness: readinessRecords,
+    active_watchlist_scope: "all non-removed research/watchlist.csv rows, including active, watch, research_only, and not_tradable rows",
     active_watchlist: activeWatchlist,
     relevant_files: [
       "CONSTITUTION.md",
@@ -201,19 +225,11 @@ function buildPacket({ asOf, requestType, roles, specificQuestion }) {
       valuationStatesFile,
       watchlistFile,
       sourcesFile,
-      universeScanFile,
+      ...effectiveDeterministicOutputPaths,
     ],
     fresh_sources: freshSources,
     deterministic_outputs: [
-      {
-        command: "npm run discover:universe -- --dry-run --limit 20 --json --output research/discovery/runs/2026-05-31-universe-scan.json",
-        output_path: universeScanFile,
-        schema_version: universeScan?.schema_version,
-        as_of: universeScan?.as_of,
-        discovery_scope: universeScan?.discovery_scope,
-        candidate_count: universeScan?.candidate_count,
-        caveats: universeScan?.caveats ?? [],
-      },
+      ...deterministicOutputs,
       {
         command: "npm run check:data",
         result: "must pass before final synthesis",
@@ -283,6 +299,131 @@ function readJsonIfExists(file) {
     return null;
   }
   return JSON.parse(readFileSync(file, "utf8"));
+}
+
+function deterministicOutputRecord(file) {
+  const output = readJsonIfExists(file);
+  if (output === null) {
+    throw new Error(`Deterministic output does not exist: ${file}`);
+  }
+  return {
+    command: "caller-supplied deterministic discovery output",
+    output_path: file,
+    output_sha256: sha256(readFileSync(file, "utf8")),
+    schema_version: output.schema_version,
+    as_of: output.as_of,
+    discovery_scope: output.discovery_scope,
+    candidate_count: output.candidate_count,
+    total_match_count: output.total_match_count,
+    profile_purpose: output.profile_purpose,
+    profile_coverage_scope: output.profile_coverage_scope,
+    profile_coverage_status: output.profile_coverage_status,
+    profile_requested_symbols: output.profile_requested_symbols ?? [],
+    profile_coverage_gap_count: output.profile_coverage_gap_count,
+    profile_coverage_ratio: output.profile_coverage_ratio,
+    scan_payload_summary: scanPayloadSummary(output),
+    caveats: output.caveats ?? [],
+  };
+}
+
+function scanPayloadSummary(output) {
+  if (!("candidate_count" in output)) {
+    return null;
+  }
+  return {
+    truncated: output.truncated,
+    returned_candidate_count: output.returned_candidate_count,
+    omitted_candidate_count: output.omitted_candidate_count,
+    total_match_count: output.total_match_count,
+    exploratory_match_count: output.exploratory_match_count,
+    suppressed_known_match_count: output.suppressed_known_match_count,
+    recall_expected_lane_miss_count: output.recall_expected_lane_miss_count,
+    recall_expected_proxy_miss_count: output.recall_expected_proxy_miss_count,
+    recall_organic_expected_proxy_count: output.recall_organic_expected_proxy_count,
+    recall_organic_expected_proxy_miss_count: output.recall_organic_expected_proxy_miss_count,
+    recall_organic_expected_proxy_status: output.recall_organic_expected_proxy_status,
+    recall_ticker_only_expected_proxy_count: output.recall_ticker_only_expected_proxy_count,
+    recall_ticker_only_expected_proxy_symbols: output.recall_ticker_only_expected_proxy_symbols ?? [],
+    candidate_counts_by_priority: output.candidate_counts_by_priority ?? {},
+    candidate_counts_by_lane: output.candidate_counts_by_lane ?? {},
+    false_positive_flag_counts: output.false_positive_flag_counts ?? {},
+    exploratory_match_counts_by_lane: output.exploratory_match_counts_by_lane ?? {},
+    returned_candidates: scanCandidateSummaries(output.candidates ?? []),
+    omitted_candidates: scanCandidateSummaries(output.omitted_candidates ?? []),
+    exploratory_unknown_lane_matches: scanCandidateSummaries(output.exploratory_matches ?? []),
+    suppressed_known_matches: scanCandidateSummaries(output.suppressed_known_matches ?? []),
+    recall_diagnostics: recallDiagnosticSummaries(output.recall_diagnostics ?? []),
+  };
+}
+
+function scanCandidateSummaries(candidates) {
+  if (!Array.isArray(candidates)) {
+    return [];
+  }
+  return candidates.map((candidate) => ({
+    symbol: candidate.symbol,
+    name: candidate.name,
+    exchange: candidate.exchange,
+    primary_lane_id: candidate.primary_lane_id ?? candidate.lane_id,
+    secondary_lane_ids: candidate.secondary_lane_ids ?? [],
+    deterministic_priority: candidate.deterministic_priority,
+    triage_score: candidate.triage_score,
+    recommended_review_depth: candidate.recommended_review_depth,
+    keyword_signal: candidate.keyword_signal,
+    matched_fields: candidate.matched_fields ?? [],
+    matched_keyword_fields: candidate.matched_keyword_fields ?? {},
+    matched_keyword_variants: candidate.matched_keyword_variants ?? {},
+    matched_profile_snippets: candidate.matched_profile_snippets ?? [],
+    matched_keywords: candidate.matched_keywords ?? [],
+    match_sources: candidate.match_sources ?? [],
+    false_positive_flags: candidate.false_positive_flags ?? [],
+    profile_enriched: candidate.profile_enriched,
+    security_form: candidate.security_form,
+    security_form_confidence: candidate.security_form_confidence,
+    requires_security_type_confirmation: candidate.requires_security_type_confirmation,
+    known_sources: candidate.known_sources ?? [],
+    required_next_step: candidate.required_next_step,
+    exploratory_reason: candidate.exploratory_reason ?? "",
+    recheck_reason: candidate.recheck_reason ?? "",
+  }));
+}
+
+function recallDiagnosticSummaries(diagnostics) {
+  if (!Array.isArray(diagnostics)) {
+    return [];
+  }
+  return diagnostics.map((diagnostic) => ({
+    symbol: diagnostic.symbol,
+    expected_lane_id: diagnostic.expected_lane_id,
+    status: diagnostic.status,
+    recall_scope: diagnostic.recall_scope,
+    missed_reason: diagnostic.missed_reason,
+    suggested_review: diagnostic.suggested_review,
+    matched_expected_lane_ids: diagnostic.matched_expected_lane_ids ?? [],
+    organic_matched_any_expected_lane: diagnostic.organic_matched_any_expected_lane,
+    organic_matched_expected_lane_ids: diagnostic.organic_matched_expected_lane_ids ?? [],
+    ticker_only_expected_lane_recall: diagnostic.ticker_only_expected_lane_recall,
+    matched_lane_ids: diagnostic.matched_lane_ids ?? [],
+    match_sources: diagnostic.match_sources ?? [],
+  }));
+}
+
+function deterministicOutputPathsFromQualityMetrics(qualityMetrics) {
+  const latestAgenticDiscoveryPath = qualityMetrics.discovery_process?.latest_agentic_discovery_path;
+  if (typeof latestAgenticDiscoveryPath === "string" && latestAgenticDiscoveryPath !== "" && existsSync(latestAgenticDiscoveryPath)) {
+    const agenticRun = readYaml(latestAgenticDiscoveryPath);
+    const paths = (agenticRun.source_coverage?.deterministic_commands ?? [])
+      .map((command) => typeof command?.output_path === "string" ? command.output_path : "")
+      .filter((file) => file.endsWith(".json"));
+    if (paths.length > 0) {
+      return [...new Set(paths)];
+    }
+  }
+  return [universeScanFile];
+}
+
+function sha256(content) {
+  return createHash("sha256").update(content).digest("hex");
 }
 
 function readPolicyVersion(file) {

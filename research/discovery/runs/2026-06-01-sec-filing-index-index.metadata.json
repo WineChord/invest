@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T20:25:22.653Z",
+  "as_of": "2026-06-01",
+  "source": "sec_filing_discovery_index",
+  "index_scope": "targeted_symbols",
+  "requested_symbols": [
+    "RKLB",
+    "ASTS",
+    "CRDO",
+    "VRT"
+  ],
+  "output_prefix": "research/discovery/runs/2026-06-01-sec-filing-index",
+  "manifest_path": "research/discovery/runs/2026-06-01-sec-filing-index-manifest.csv",
+  "manifest_metadata_path": "research/discovery/runs/2026-06-01-sec-filing-index-manifest.metadata.json",
+  "profile_path": "research/discovery/runs/2026-06-01-sec-filing-index-profiles.json",
+  "scan_path": "research/discovery/runs/2026-06-01-sec-filing-index-scan.json",
+  "manifest_sha256": "beaded2df762af188da80038784dba78f85e7871b41625c991def2a51c6a2254",
+  "manifest_metadata_sha256": "38d9495099c921a93c58841d851e257740c77edc908f6e63176bf0e69eda95a6",
+  "profile_sha256": "6ed273012382fff7023f02a1fec30017eb33d3e516e5b706558129c82ff679bc",
+  "scan_sha256": "c90c68f1de72e611ce67f222620b78c0ec9565b73725f704a13b933de7bc9576",
+  "commands": [
+    {
+      "command": "node scripts/build-sec-filing-manifest.mjs --as-of 2026-06-01 --output research/discovery/runs/2026-06-01-sec-filing-index-manifest.csv --metadata-output research/discovery/runs/2026-06-01-sec-filing-index-manifest.metadata.json --symbols RKLB,ASTS,CRDO,VRT",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/build-sec-filing-profiles.mjs --as-of 2026-06-01 --manifest research/discovery/runs/2026-06-01-sec-filing-index-manifest.csv --manifest-metadata research/discovery/runs/2026-06-01-sec-filing-index-manifest.metadata.json --output research/discovery/runs/2026-06-01-sec-filing-index-profiles.json",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/discover-universe.mjs --dry-run --json --as-of 2026-06-01 --profile-input research/discovery/runs/2026-06-01-sec-filing-index-profiles.json --output research/discovery/runs/2026-06-01-sec-filing-index-scan.json --limit 25",
+      "output_checked": true
+    }
+  ],
+  "coverage": {
+    "selection_strategy": "requested_symbols",
+    "coverage_scope": "partial_requested_symbols",
+    "selected_symbol_count": 4,
+    "eligible_universe_count": 7575,
+    "manifest_row_count": 4,
+    "profile_count": 4,
+    "profile_coverage_status": "targeted_partial",
+    "profile_coverage_gap_count": 7571,
+    "profile_coverage_ratio": 0.000528,
+    "candidate_count": 44,
+    "total_match_count": 109
+  },
+  "caveats": [
+    "This index is deterministic discovery scaffolding, not buy eligibility.",
+    "Targeted-symbol indexes answer only the requested scope and must not be cited as complete SEC universe coverage.",
+    "Complete SEC universe indexes require --all and the upstream SEC submissions guardrails."
+  ]
+}

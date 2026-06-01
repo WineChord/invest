@@ -50,6 +50,7 @@ discovery_process:
   skipped_xhigh_roles: []
   allocation_relevant_lanes:
     - space_infrastructure
+    - direct_to_device_connectivity
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
   material_open_candidates: 1

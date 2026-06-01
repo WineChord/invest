@@ -39,8 +39,8 @@ external_sources:
     retrieved_at: 2026-05-30
     lesson: Skills should be concise and use metadata plus progressive disclosure instead of copying large bodies of instructions.
 internal_sources:
-  - /Users/guoqizhou/.codex/skills/.system/skill-creator/SKILL.md
-  - /Users/guoqizhou/.codex/skills/.system/skill-installer/SKILL.md
+  - $CODEX_HOME/skills/.system/skill-creator/SKILL.md
+  - $CODEX_HOME/skills/.system/skill-installer/SKILL.md
 unavailable_sources: []
 ```
 

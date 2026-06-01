@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: 2026-05-31T05:52:41.863Z
+generated_at: 2026-06-01T01:28:22.749Z
 current_date: 2026-05-31
 request_type: monthly_decision_full_cycle
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
@@ -29,7 +29,18 @@ allowed_assets_and_exclusions:
 candidate_set:
   - symbol: FLY
     name: Firefly Aerospace Inc.
+    exchange: Nasdaq
+    asset_type: common_stock
+    discovered_at: 2026-05-31
+    discovery_source: SEC company_tickers_exchange lane keyword scan plus primary-source skim
+    source_url: https://www.sec.gov/Archives/edgar/data/1860160/000119312526239249/d104612ds1.htm
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-05-31
+    first_seen_at: 2026-05-31
     theme: space_infrastructure
+    why_it_might_matter: Direct public space and defense infrastructure lead with
+      fresh Q1 2026 results and a May 2026 S-1 offering; incubated after full
+      dashboard-facing readiness review.
     status: incubating
     next_action: monitor_next_quarterly_offering_selling_holder_or_price_dislocation
     notes: "Research-only dashboard candidate after SEC, market-data,
@@ -48,6 +59,8 @@ candidate_readiness:
     conclusion: Incubated after full dashboard-facing review; no longer a
       repository-work blocker for current allocation readiness, but not
       buy-ready or promoted.
+active_watchlist_scope: all non-removed research/watchlist.csv rows, including
+  active, watch, research_only, and not_tradable rows
 active_watchlist:
   - symbol: RKLB
     name: Rocket Lab
@@ -97,9 +110,9 @@ active_watchlist:
     status: watch
     priority: B+
     initial_role: AI neocloud capacity
-    next_review_trigger: next 6-K or customer/financing update
-    notes: Large opportunity; financing, receivables, and customer concentration are
-      key risks.
+    next_review_trigger: next 6-K or customer/financing/integration update
+    notes: Large opportunity; financing, receivables, customer concentration, and
+      MagicByte/Eigen AI Labs integration are key risks.
   - symbol: MU
     name: Micron Technology
     theme: AI memory and HBM
@@ -124,9 +137,24 @@ active_watchlist:
     status: watch
     priority: B+
     initial_role: USDC and programmable money network
-    next_review_trigger: next reserve/USDC/earnings update
-    notes: Infrastructure-like potential; rate sensitivity and distribution costs
-      are central.
+    next_review_trigger: next reserve/USDC/token-economics/earnings update
+    notes: Infrastructure-like potential; rate sensitivity, distribution costs, and
+      token purchase economics are central.
+  - symbol: LITE
+    name: Lumentum
+    theme: AI optical and photonic interconnect
+    status: watch
+    priority: B
+    initial_role: AI cloud photonics and optical systems
+    next_review_trigger: next quarterly report, NVIDIA partnership update, CPO or
+      optical circuit switching design-win update, customer concentration
+      disclosure, debt exchange update, Greensboro capacity update, or price
+      dislocation
+    notes: Targeted review added LITE to the watchlist because Q3 FY2026 growth,
+      margin expansion, CPO and optical circuit switching exposure, NVIDIA's USD
+      2.0 billion preferred-stock investment, and planned Greensboro laser
+      capacity create direct AI photonics bottleneck evidence; valuation,
+      customer concentration, debt, and dilution complexity block buy readiness.
   - symbol: CBRS
     name: Cerebras Systems
     theme: AI inference chips and systems
@@ -143,16 +171,17 @@ active_watchlist:
     initial_role: compute power optionality
     next_review_trigger: next AI cloud capacity/customer/financing update
     notes: Promoted from candidate scan; power footprint may matter but bitcoin
-      exposure and buildout financing are major risks.
+      exposure, Dell commitments, guarantees, and USD 3.0 billion convertible
+      notes are major risks.
   - symbol: OKLO
     name: Oklo
     theme: advanced nuclear power
     status: watch
     priority: B
     initial_role: nuclear power option for constrained grids
-    next_review_trigger: next NRC/licensing/customer deployment update
-    notes: Promoted from candidate scan; extreme optionality but pre-commercial and
-      regulatory risk remain high.
+    next_review_trigger: next NRC/licensing/customer deployment or ATM usage update
+    notes: Promoted from candidate scan; extreme optionality but pre-commercial,
+      regulatory, and USD 1.0 billion ATM dilution risk remain high.
   - symbol: BE
     name: Bloom Energy
     theme: onsite power for AI data centers
@@ -195,8 +224,9 @@ active_watchlist:
     status: watch
     priority: B-
     initial_role: quantum option value
-    next_review_trigger: next commercial revenue/system delivery update
-    notes: Very high optionality; commercial usefulness and burn remain unresolved.
+    next_review_trigger: next commercial revenue/system delivery or SkyWater transaction update
+    notes: Very high optionality; commercial usefulness, burn, and SkyWater
+      transaction integration remain unresolved.
   - symbol: LUNR
     name: Intuitive Machines
     theme: lunar and space infrastructure
@@ -205,6 +235,64 @@ active_watchlist:
     initial_role: space infrastructure and government contracts
     next_review_trigger: next mission/contract/acquisition integration update
     notes: Contract momentum improved; mission and integration risk high.
+  - symbol: RDW
+    name: Redwire
+    theme: space infrastructure and defense systems
+    status: research_only
+    priority: C+
+    initial_role: complex space and defense roll-up
+    next_review_trigger: next integration/cash-flow/internal-control or ATM usage update
+    notes: Theme fits but company complexity, ATM dilution, preferred conversion,
+      and control risks require caution.
+  - symbol: FLY
+    name: Firefly Aerospace
+    theme: space infrastructure and defense systems
+    status: research_only
+    priority: C+
+    initial_role: launch and spacecraft infrastructure candidate
+    next_review_trigger: next quarterly report, offering update, selling-holder
+      update, major launch or contract update, or price dislocation
+    notes: Discovered on 2026-05-31; direct exposure is real, but completed
+      dashboard-facing readiness keeps it research-only because valuation,
+      losses, runway, dilution, selling-holder risk, and short public record do
+      not justify a buy or allocation promotion today.
+  - symbol: FN
+    name: Fabrinet
+    theme: AI optical manufacturing and advanced optical packaging
+    status: research_only
+    priority: C+
+    initial_role: AI optical manufacturing capacity monitor
+    next_review_trigger: next quarterly report or customer/datacom/HPC concentration update
+    notes: Targeted review upgraded FN from the prior broad-scan rejection to
+      research-only coverage; direct optical/datacom manufacturing evidence is
+      real, but contract-manufacturing economics, customer concentration, and
+      limited pricing power cap satellite-account asymmetry.
+  - symbol: SPACEX
+    name: SpaceX
+    theme: future public space infrastructure
+    status: not_tradable
+    priority: watch_future
+    initial_role: IPO watch
+    next_review_trigger: when registration statement becomes effective or shares
+      begin trading under SPCX
+    notes: S-1 filed on 2026-05-20 with proposed Nasdaq and Nasdaq Texas symbol
+      SPCX; still not tradable under policy until public listing is effective.
+  - symbol: OPENAI
+    name: OpenAI
+    theme: future public AI platform
+    status: not_tradable
+    priority: watch_future
+    initial_role: IPO watch
+    next_review_trigger: when directly US-listed
+    notes: Research only until tradable under policy.
+  - symbol: ANTHROPIC
+    name: Anthropic
+    theme: future public AI platform
+    status: not_tradable
+    priority: watch_future
+    initial_role: IPO watch
+    next_review_trigger: when directly US-listed
+    notes: Research only until tradable under policy.
 relevant_files:
   - CONSTITUTION.md
   - AGENTS.md
@@ -592,17 +680,4716 @@ fresh_sources:
     summary: Rocket Lab Form SD for the 2025 conflict-minerals reporting period;
       reviewed as a supply-chain disclosure that does not change the current
       staged buy-zone view.
+  - id: asts_form144_officer_sale_2026_05_27
+    source_type: sec_filing
+    source_published_at: 2026-05-27
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - ASTS
+    summary: Form 144 notice by officer Scott Wisniewski for a proposed sale of
+      25,904 Class A shares, with 47,000 shares sold during the prior three
+      months; reviewed as a non-blocking insider-sale freshness item.
+  - id: iren_convertible_notes_2026_05_14
+    source_type: sec_filing
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - IREN
+    summary: IREN issued USD 3.0 billion principal amount of 1.00% convertible
+      senior notes due 2033, with approximately USD 2.96 billion net proceeds
+      and a USD 201.3 million capped-call cost.
+  - id: oklo_atm_2026_05_13
+    source_type: sec_filing
+    source_published_at: 2026-05-13
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - OKLO
+    summary: Oklo registered an at-the-market program for up to USD 1.0 billion of
+      Class A common stock after substantially using the prior USD 1.5 billion
+      program.
+  - id: crcl_form_d_token_purchase_2026_05_22
+    source_type: sec_filing
+    source_published_at: 2026-05-22
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - CRCL
+    summary: Circle filed a Form D for USD 221,999,998 of token purchase agreements
+      sold to 14 investors; reviewed as an unresolved economics and governance
+      risk before any promotion.
+  - id: rdw_atm_2026_05_06
+    source_type: sec_filing
+    source_published_at: 2026-05-06
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - RDW
+    summary: Redwire entered a new at-the-market program for up to USD 350 million
+      of common stock after selling about USD 249.7 million under its prior
+      program.
+  - id: rdw_preferred_conversion_2026_05_20
+    source_type: sec_filing
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - RDW
+    summary: Redwire disclosed AE Industrial Partners' voluntary conversion of all
+      remaining Series A convertible preferred stock into 15,247,586 common
+      shares.
+  - id: ionq_skywater_425_2026_05_07
+    source_type: sec_filing
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - IONQ
+    summary: IonQ filed Form 425 transaction material tied to the SkyWater
+      Technology transaction and Q1 2026 call; reviewed as transaction and
+      integration risk before any promotion.
+  - id: nbis_magicbyte_eigen_2026_05_01
+    source_type: sec_filing
+    source_published_at: 2026-05-01
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - NBIS
+    summary: Nebius disclosed an agreement to acquire MagicByte Inc., doing business
+      as Eigen AI Labs, for up to about USD 98 million in cash and about 3.8
+      million Class A shares.
+  - id: microsoft_fy26_q3_ai_capex_2026_04_29
+    source_type: company_ir
+    source_published_at: 2026-04-29
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - CRDO
+      - ALAB
+      - VRT
+      - NBIS
+      - CRWV
+      - IREN
+      - MU
+    summary: Microsoft earnings material and call commentary supported continued AI
+      infrastructure capacity constraints and elevated capex.
+  - id: meta_q1_2026_ai_capex_2026_04_29
+    source_type: company_ir
+    source_published_at: 2026-04-29
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - CRDO
+      - ALAB
+      - VRT
+      - NBIS
+      - CRWV
+      - IREN
+      - MU
+    summary: Meta raised its 2026 capital-expenditure guide, reinforcing current AI
+      data-center demand while increasing capex-cycle risk.
+  - id: nvidia_q1_fy2027_ai_networking_2026_05_20
+    source_type: company_ir
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - CRDO
+      - ALAB
+      - VRT
+      - NBIS
+      - CRWV
+      - IREN
+      - MU
+    summary: NVIDIA reported strong data-center and networking growth, supporting AI
+      interconnect and compute-infrastructure demand while leaving valuation
+      risk active.
+  - id: broadcom_q1_fy2026_ai_revenue_2026_03_04
+    source_type: company_ir
+    source_published_at: 2026-03-04
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - CRDO
+      - ALAB
+      - MU
+    summary: Broadcom reported strong AI revenue from custom accelerators and AI
+      networking, reinforcing the semiconductor interconnect lane.
+  - id: fn_q3_fy2026_results
+    source_type: company_ir
+    source_published_at: 2026-05-04
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - FN
+    summary: Fabrinet reported record fiscal Q3 2026 revenue of USD 1.214 billion,
+      GAAP net income of USD 125.2 million, and Q4 revenue guidance of USD 1.25
+      billion to USD 1.29 billion.
+  - id: fn_10q_q3_fy2026
+    source_type: sec_filing
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - FN
+    summary: Fabrinet's Q3 filing shows strong optical communications revenue,
+      datacom and datacenter interconnect exposure, new high-performance
+      computing disclosure, and major-customer concentration that limits
+      promotion.
+  - id: sec_companyfacts_fn_2026_05_31
+    source_type: sec_filing
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - FN
+    summary: SEC companyfacts confirmed fiscal Q3 2026 revenue, profitability, cash,
+      share count, and segment facts used for the FN research-only valuation and
+      risk triage.
+  - id: yahoo_chart_fn_2026_05_29
+    source_type: market_data
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - FN
+    summary: Daily chart data showed FN's 2026-05-29 close near USD 654.16, which
+      anchors the research-only valuation check.
+  - id: lite_q3_fy2026_results
+    source_type: company_ir
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: Lumentum reported Q3 FY2026 revenue of USD 808.4 million, strong margin
+      expansion, Q4 revenue guidance of USD 960 million to USD 1.01 billion, and
+      CPO/optical circuit switching growth commentary.
+  - id: lite_10q_q3_fy2026
+    source_type: sec_filing
+    source_published_at: 2026-05-06
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: Lumentum's Q3 filing confirmed revenue growth, profitability, cash,
+      debt, share count, NVIDIA preferred-stock terms, customer concentration,
+      and supply-chain risks.
+  - id: lite_nvidia_preferred_2026_03_02
+    source_type: sec_filing
+    source_published_at: 2026-03-02
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: Lumentum disclosed NVIDIA's USD 2.0 billion Series A Convertible
+      Preferred Stock purchase and strategic optics partnership, validating AI
+      photonics relevance while adding dilution complexity.
+  - id: lite_nvidia_partnership_ir_2026_03_02
+    source_type: company_ir
+    source_published_at: 2026-03-02
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: NVIDIA and Lumentum announced a strategic optics partnership tied to
+      next-generation AI data-center infrastructure, supporting LITE's direct
+      photonics bottleneck relevance.
+  - id: lite_debt_exchange_2026_04_08
+    source_type: sec_filing
+    source_published_at: 2026-04-08
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: Lumentum disclosed exchange transactions involving portions of the 2026
+      and 2029 convertible notes, making capital-structure complexity a
+      watchlist risk.
+  - id: lite_greensboro_facility_2026_03_26
+    source_type: company_ir
+    source_published_at: 2026-03-26
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: Lumentum announced a 240000 square foot Greensboro advanced-laser
+      manufacturing facility expected to ramp in mid-2028, strengthening the
+      long-term InP laser capacity thesis.
+  - id: lite_nasdaq100_inclusion_2026_05_11
+    source_type: company_ir
+    source_published_at: 2026-05-11
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: Lumentum announced Nasdaq-100 inclusion, which improves visibility and
+      liquidity but does not by itself change the core business thesis.
+  - id: sec_companyfacts_lite_2026_05_31
+    source_type: sec_filing
+    source_published_at: 2026-05-06
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: SEC companyfacts confirmed Lumentum's fiscal Q3 2026 revenue,
+      profitability, cash, debt, and share-count facts used in the watchlist
+      valuation triage.
+  - id: yahoo_chart_lite_2026_05_29
+    source_type: market_data
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - LITE
+    summary: Daily chart data showed LITE's 2026-05-29 close near USD 854.96, which
+      anchors the watchlist valuation check.
+  - id: ferc_large_load_docket_2026_04_16
+    source_type: regulator
+    source_published_at: 2026-04-16
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - VRT
+      - BE
+      - OKLO
+      - LEU
+      - IREN
+    summary: FERC large-load interconnection docket context supports data-center
+      power as a real structural bottleneck.
+  - id: federal_reserve_financial_stability_2026_05_08
+    source_type: regulator
+    source_published_at: 2026-05-08
+    retrieved_at: 2026-05-31
+    related_symbols:
+      - RKLB
+      - ASTS
+      - CRDO
+      - ALAB
+      - VRT
+      - NBIS
+      - CRWV
+      - IREN
+      - OKLO
+      - FLY
+    summary: Federal Reserve stability report noted high equity valuations and tight
+      credit spreads, supporting staged sizing and strict price discipline for
+      high-multiple candidates.
 deterministic_outputs:
-  - command: npm run discover:universe -- --dry-run --limit 20 --json --output
-      research/discovery/runs/2026-05-31-universe-scan.json
+  - command: caller-supplied deterministic discovery output
     output_path: research/discovery/runs/2026-05-31-universe-scan.json
+    output_sha256: 5899b37e11a9ef0fde9104225b1aefd54500a7d0b2f8ea0e86f1985e153aff4e
     schema_version: 1
     as_of: 2026-05-31
     discovery_scope: active_emerging_incubating
-    candidate_count: 20
+    candidate_count: 46
+    total_match_count: 121
+    profile_purpose: ""
+    profile_coverage_scope: ""
+    profile_coverage_status: not_applicable_no_profile_input
+    profile_requested_symbols: []
+    profile_coverage_gap_count: 0
+    profile_coverage_ratio: 0
+    scan_payload_summary:
+      truncated: false
+      returned_candidate_count: 46
+      omitted_candidate_count: 0
+      total_match_count: 121
+      exploratory_match_count: 57
+      suppressed_known_match_count: 18
+      recall_expected_lane_miss_count: 0
+      recall_expected_proxy_miss_count: 0
+      recall_organic_expected_proxy_count: 0
+      recall_organic_expected_proxy_miss_count: 22
+      recall_organic_expected_proxy_status: insufficient_all_expected_proxies_ticker_only
+      recall_ticker_only_expected_proxy_count: 22
+      recall_ticker_only_expected_proxy_symbols:
+        - ALAB
+        - ASTS
+        - BE
+        - BE
+        - CRCL
+        - CRDO
+        - CRWV
+        - FLY
+        - GSAT
+        - IONQ
+        - IREN
+        - KTOS
+        - LEU
+        - LEU
+        - LUNR
+        - MU
+        - NBIS
+        - OKLO
+        - OKLO
+        - RDW
+        - RKLB
+        - VRT
+      candidate_counts_by_priority:
+        high: 17
+        medium: 19
+        low: 10
+      candidate_counts_by_lane:
+        advanced_nuclear_and_grid_constraints: 8
+        programmable_money_infrastructure: 1
+        quantum_computing_and_networking: 12
+        semiconductor_interconnect_and_memory: 2
+        space_infrastructure: 15
+        ai_compute_infrastructure: 3
+        direct_to_device_connectivity: 3
+        ai_power_and_cooling: 1
+        frontier_ai_public_platforms: 1
+      false_positive_flag_counts:
+        blank_check_or_spac: 6
+        ticker_keyword_collision: 2
+        royalty_or_commodity_proxy: 1
+        brand_keyword_collision: 1
+        fund_or_etf: 2
+      exploratory_match_counts_by_lane:
+        unknown_future_bottlenecks: 57
+      returned_candidates:
+        - symbol: FNUC
+          name: Frontier Nuclear & Minerals Inc.
+          exchange: Nasdaq
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            nuclear:
+              - issuer_name
+          matched_keyword_variants:
+            nuclear:
+              - nuclear
+          matched_profile_snippets: []
+          matched_keywords:
+            - nuclear
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: NNE
+          name: Nano Nuclear Energy Inc.
+          exchange: Nasdaq
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            nuclear:
+              - issuer_name
+          matched_keyword_variants:
+            nuclear:
+              - nuclear
+          matched_profile_snippets: []
+          matched_keywords:
+            - nuclear
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: NUCL
+          name: Eagle Nuclear Energy Corp.
+          exchange: Nasdaq
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            nuclear:
+              - issuer_name
+          matched_keyword_variants:
+            nuclear:
+              - nuclear
+          matched_profile_snippets: []
+          matched_keywords:
+            - nuclear
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: SDEV
+          name: Stablecoin Development Corp
+          exchange: NYSE
+          primary_lane_id: programmable_money_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            stablecoin:
+              - issuer_name
+          matched_keyword_variants:
+            stablecoin:
+              - stablecoin
+          matched_profile_snippets: []
+          matched_keywords:
+            - stablecoin
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: ARQQ
+          name: Arqit Quantum Inc.
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: HQ
+          name: Horizon Quantum Holdings Ltd.
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QBTS
+          name: D-Wave Quantum Inc.
+          exchange: NYSE
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QMCO
+          name: QUANTUM CORP /DE/
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QNC
+          name: Quantum eMotion Corp
+          exchange: NYSE
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QNTM
+          name: Quantum Biopharma Ltd.
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QSI
+          name: Quantum-Si Inc
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QUBT
+          name: Quantum Computing Inc.
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QUCY
+          name: Quantum Cyber N.V.
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: QXL
+          name: QUANTUM X LABS INC.
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: XNDU
+          name: Xanadu Quantum Technologies Ltd
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: OCC
+          name: OPTICAL CABLE CORP
+          exchange: Nasdaq
+          primary_lane_id: semiconductor_interconnect_and_memory
+          secondary_lane_ids: []
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            optical:
+              - issuer_name
+          matched_keyword_variants:
+            optical:
+              - optical
+          matched_profile_snippets: []
+          matched_keywords:
+            - optical
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: GILT
+          name: GILAT SATELLITE NETWORKS LTD
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids:
+            - unknown_future_bottlenecks
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            satellite:
+              - issuer_name
+          matched_keyword_variants:
+            satellite:
+              - satellite
+          matched_profile_snippets: []
+          matched_keywords:
+            - satellite
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: JAGU
+          name: Jaguar Uranium Corp.
+          exchange: NYSE
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            uranium:
+              - issuer_name
+          matched_keyword_variants:
+            uranium:
+              - uranium
+          matched_profile_snippets: []
+          matched_keywords:
+            - uranium
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: UEC
+          name: URANIUM ENERGY CORP
+          exchange: NYSE
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            uranium:
+              - issuer_name
+          matched_keyword_variants:
+            uranium:
+              - uranium
+          matched_profile_snippets: []
+          matched_keywords:
+            - uranium
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: EXR
+          name: Extra Space Storage Inc.
+          exchange: NYSE
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: FJET
+          name: Starfighters Space, Inc.
+          exchange: NYSE
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: GEMI
+          name: Gemini Space Station, Inc.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: HSPT
+          name: Horizon Space Acquisition II Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: HSPTU
+          name: Horizon Space Acquisition II Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: MDA
+          name: MDA Space Ltd.
+          exchange: NYSE
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: SIDU
+          name: Sidus Space Inc.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: YSS
+          name: York Space Systems Inc.
+          exchange: NYSE
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: GDYN
+          name: GRID DYNAMICS HOLDINGS, INC.
+          exchange: Nasdaq
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids:
+            - ai_power_and_cooling
+          deterministic_priority: medium
+          triage_score: 52
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            grid:
+              - issuer_name
+          matched_keyword_variants:
+            grid:
+              - grid
+          matched_profile_snippets: []
+          matched_keywords:
+            - grid
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: NGG
+          name: NATIONAL GRID PLC
+          exchange: NYSE
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids:
+            - ai_power_and_cooling
+          deterministic_priority: medium
+          triage_score: 52
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            grid:
+              - issuer_name
+          matched_keyword_variants:
+            grid:
+              - grid
+          matched_profile_snippets: []
+          matched_keywords:
+            - grid
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: AGPU
+          name: Axe Compute Inc.
+          exchange: Nasdaq
+          primary_lane_id: ai_compute_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 52
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            compute:
+              - issuer_name
+          matched_keyword_variants:
+            compute:
+              - compute
+          matched_profile_snippets: []
+          matched_keywords:
+            - compute
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: ALP
+          name: Alpha Compute Corp
+          exchange: Nasdaq
+          primary_lane_id: ai_compute_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 52
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            compute:
+              - issuer_name
+          matched_keyword_variants:
+            compute:
+              - compute
+          matched_profile_snippets: []
+          matched_keywords:
+            - compute
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: TEL
+          name: TE Connectivity plc
+          exchange: NYSE
+          primary_lane_id: direct_to_device_connectivity
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 52
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            connectivity:
+              - issuer_name
+          matched_keyword_variants:
+            connectivity:
+              - connectivity
+          matched_profile_snippets: []
+          matched_keywords:
+            - connectivity
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: LPAA
+          name: Launch One Acquisition Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 50
+          recommended_review_depth: primary_source_skim
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            launch:
+              - issuer_name
+          matched_keyword_variants:
+            launch:
+              - launch
+          matched_profile_snippets: []
+          matched_keywords:
+            - launch
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: LPAAU
+          name: Launch One Acquisition Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 50
+          recommended_review_depth: primary_source_skim
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            launch:
+              - issuer_name
+          matched_keyword_variants:
+            launch:
+              - launch
+          matched_profile_snippets: []
+          matched_keywords:
+            - launch
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: LPBB
+          name: Launch Two Acquisition Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 50
+          recommended_review_depth: primary_source_skim
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            launch:
+              - issuer_name
+          matched_keyword_variants:
+            launch:
+              - launch
+          matched_profile_snippets: []
+          matched_keywords:
+            - launch
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: LPBBU
+          name: Launch Two Acquisition Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 50
+          recommended_review_depth: primary_source_skim
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            launch:
+              - issuer_name
+          matched_keyword_variants:
+            launch:
+              - launch
+          matched_profile_snippets: []
+          matched_keywords:
+            - launch
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: GPUS
+          name: Hyperscale Data, Inc.
+          exchange: NYSE
+          primary_lane_id: ai_compute_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: ticker_only_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            GPU:
+              - ticker
+          matched_keyword_variants:
+            GPU:
+              - gpus
+          matched_profile_snippets: []
+          matched_keywords:
+            - GPU
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - ticker_keyword_collision
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: VRTS
+          name: VIRTUS INVESTMENT PARTNERS, INC.
+          exchange: NYSE
+          primary_lane_id: ai_power_and_cooling
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            VRT:
+              - ticker
+          matched_keyword_variants:
+            VRT:
+              - vrts
+          matched_profile_snippets: []
+          matched_keywords:
+            - VRT
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: IONQ-WT
+          name: IonQ, Inc.
+          exchange: NYSE
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            IONQ:
+              - ticker
+          matched_keyword_variants:
+            IONQ:
+              - ionq
+          matched_profile_snippets: []
+          matched_keywords:
+            - IONQ
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: HBM
+          name: Hudbay Minerals Inc.
+          exchange: NYSE
+          primary_lane_id: semiconductor_interconnect_and_memory
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: ticker_only_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            HBM:
+              - ticker
+          matched_keyword_variants:
+            HBM:
+              - hbm
+          matched_profile_snippets: []
+          matched_keywords:
+            - HBM
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - ticker_keyword_collision
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: UROY
+          name: Uranium Royalty Corp.
+          exchange: Nasdaq
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 40
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            uranium:
+              - issuer_name
+          matched_keyword_variants:
+            uranium:
+              - uranium
+          matched_profile_snippets: []
+          matched_keywords:
+            - uranium
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - royalty_or_commodity_proxy
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: SAAQ
+          name: Space Asset Acquisition Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 25
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: SAAQU
+          name: Space Asset Acquisition Corp.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 25
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: SPB
+          name: Spectrum Brands Holdings, Inc.
+          exchange: NYSE
+          primary_lane_id: direct_to_device_connectivity
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 22
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            spectrum:
+              - issuer_name
+          matched_keyword_variants:
+            spectrum:
+              - spectrum
+          matched_profile_snippets: []
+          matched_keywords:
+            - spectrum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - brand_keyword_collision
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: NBXG
+          name: Neuberger Next Generation Connectivity Fund Inc.
+          exchange: NYSE
+          primary_lane_id: direct_to_device_connectivity
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            connectivity:
+              - issuer_name
+          matched_keyword_variants:
+            connectivity:
+              - connectivity
+          matched_profile_snippets: []
+          matched_keywords:
+            - connectivity
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+        - symbol: AIO
+          name: Virtus Artificial Intelligence & Technology Opportunities Fund
+          exchange: NYSE
+          primary_lane_id: frontier_ai_public_platforms
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            artificial intelligence:
+              - issuer_name
+          matched_keyword_variants:
+            artificial intelligence:
+              - artificial intelligence
+          matched_profile_snippets: []
+          matched_keywords:
+            - artificial intelligence
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: ""
+      omitted_candidates: []
+      exploratory_unknown_lane_matches:
+        - symbol: AD
+          name: ARRAY DIGITAL INFRASTRUCTURE, INC.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: AIB
+          name: BlockchAIn Digital Infrastructure, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: ANET
+          name: Arista Networks, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - networks
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: ANTA
+          name: Antalpha Platform Holding Co
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            platform:
+              - issuer_name
+          matched_keyword_variants:
+            platform:
+              - platform
+          matched_profile_snippets: []
+          matched_keywords:
+            - platform
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: ATEN
+          name: A10 Networks, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - networks
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: AVNW
+          name: AVIAT NETWORKS, INC.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - networks
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BEEP
+          name: Mobile Infrastructure Corp
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BFLY
+          name: Butterfly Network, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BIP
+          name: Brookfield Infrastructure Partners L.P.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BIPC
+          name: Brookfield Infrastructure Corp
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BIPH
+          name: Brookfield Infrastructure Partners L.P.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BIPI
+          name: Brookfield Infrastructure Partners L.P.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BIPJ
+          name: Brookfield Infrastructure Partners L.P.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BNAI
+          name: Brand Engagement Network Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BUI
+          name: BlackRock Utilities, Infrastructure & Power Opportunities Trust
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BXDC
+          name: Blackstone Digital Infrastructure Trust Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: CDNL
+          name: Cardinal Infrastructure Group Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: CRNT
+          name: CERAGON NETWORKS LTD
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - networks
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: DUO
+          name: Fangdd Network Group Ltd.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: EXTR
+          name: EXTREME NETWORKS INC
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - networks
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: FIP
+          name: FTAI Infrastructure Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: HASI
+          name: HA Sustainable Infrastructure Capital, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: IPDN
+          name: Professional Diversity Network, Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: KEEL
+          name: Keel Infrastructure Corp.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: MASK
+          name: 3 E Network Technology Group Ltd
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: META
+          name: Meta Platforms, Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            platform:
+              - issuer_name
+          matched_keyword_variants:
+            platform:
+              - platforms
+          matched_profile_snippets: []
+          matched_keywords:
+            - platform
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: MNDR
+          name: Mobile-health Network Solutions
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: NTIP
+          name: NETWORK-1 TECHNOLOGIES, INC.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: NWPX
+          name: NWPX Infrastructure, Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: PANW
+          name: Palo Alto Networks Inc
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - networks
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: PERI
+          name: Perion Network Ltd.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: RIOT
+          name: Riot Platforms, Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            platform:
+              - issuer_name
+          matched_keyword_variants:
+            platform:
+              - platforms
+          matched_profile_snippets: []
+          matched_keywords:
+            - platform
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: SEI
+          name: Solaris Energy Infrastructure, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: SKYX
+          name: SKYX Platforms Corp.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            platform:
+              - issuer_name
+          matched_keyword_variants:
+            platform:
+              - platforms
+          matched_profile_snippets: []
+          matched_keywords:
+            - platform
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: STRL
+          name: STERLING INFRASTRUCTURE, INC.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: TYG
+          name: TORTOISE ENERGY INFRASTRUCTURE CORP
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: TYG-RI
+          name: TORTOISE ENERGY INFRASTRUCTURE CORP
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: UZD
+          name: ARRAY DIGITAL INFRASTRUCTURE, INC.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: UZE
+          name: ARRAY DIGITAL INFRASTRUCTURE, INC.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: UZF
+          name: ARRAY DIGITAL INFRASTRUCTURE, INC.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: VISN
+          name: Vistance Networks, Inc.
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - networks
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: WBI
+          name: WaterBridge Infrastructure LLC
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: XIFR
+          name: XPLR Infrastructure, LP
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: ZNB
+          name: Zeta Network Group
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 42
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            network:
+              - issuer_name
+          matched_keyword_variants:
+            network:
+              - network
+          matched_profile_snippets: []
+          matched_keywords:
+            - network
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: AIIA
+          name: AI Infrastructure Acquisition Corp.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 7
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: AIIA-RI
+          name: AI Infrastructure Acquisition Corp.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 7
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BIXI
+          name: Bitcoin Infrastructure Acquisition Corp Ltd
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 7
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: BIXIU
+          name: Bitcoin Infrastructure Acquisition Corp Ltd
+          exchange: Nasdaq
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 7
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - blank_check_or_spac
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: ASGI
+          name: abrdn Global Infrastructure Income Fund
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: DMB
+          name: BNY Mellon Municipal Bond Infrastructure Fund, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: DPG
+          name: Duff & Phelps Utility & Infrastructure Fund Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: IDE
+          name: Voya Infrastructure, Industrials & Materials Fund
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: KYN
+          name: Kayne Anderson Energy Infrastructure Fund, Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: MEGI
+          name: NYLI CBRE Global Infrastructure Megatrends Term Fund
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: NML
+          name: Neuberger Energy Infrastructure & Income Fund Inc.
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: NXG
+          name: NXG NextGen Infrastructure Income Fund
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+        - symbol: UTF
+          name: COHEN & STEERS INFRASTRUCTURE FUND INC
+          exchange: NYSE
+          primary_lane_id: unknown_future_bottlenecks
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 0
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            infrastructure:
+              - issuer_name
+          matched_keyword_variants:
+            infrastructure:
+              - infrastructure
+          matched_profile_snippets: []
+          matched_keywords:
+            - infrastructure
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags:
+            - fund_or_etf
+          profile_enriched: false
+          security_form: fund_or_trust_like_security
+          security_form_confidence: medium
+          requires_security_type_confirmation: true
+          known_sources: []
+          required_next_step: bottleneck_lane_review_before_candidate_append
+          exploratory_reason: The open-ended unknown-future lane creates lane-review
+            signals, not ordinary raw candidates, until evidence supports a
+            concrete named lane.
+          recheck_reason: ""
+      suppressed_known_matches:
+        - symbol: BE
+          name: Bloom Energy Corp
+          exchange: NYSE
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids:
+            - ai_power_and_cooling
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            BE:
+              - ticker
+          matched_keyword_variants:
+            BE:
+              - be
+          matched_profile_snippets: []
+          matched_keywords:
+            - BE
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: LEU
+          name: CENTRUS ENERGY CORP
+          exchange: NYSE
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids:
+            - ai_power_and_cooling
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            LEU:
+              - ticker
+          matched_keyword_variants:
+            LEU:
+              - leu
+          matched_profile_snippets: []
+          matched_keywords:
+            - LEU
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: OKLO
+          name: Oklo Inc.
+          exchange: NYSE
+          primary_lane_id: advanced_nuclear_and_grid_constraints
+          secondary_lane_ids:
+            - ai_power_and_cooling
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            OKLO:
+              - ticker
+          matched_keyword_variants:
+            OKLO:
+              - oklo
+          matched_profile_snippets: []
+          matched_keywords:
+            - OKLO
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: CRWV
+          name: CoreWeave, Inc.
+          exchange: Nasdaq
+          primary_lane_id: ai_compute_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            CRWV:
+              - ticker
+          matched_keyword_variants:
+            CRWV:
+              - crwv
+          matched_profile_snippets: []
+          matched_keywords:
+            - CRWV
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: IREN
+          name: IREN Ltd
+          exchange: Nasdaq
+          primary_lane_id: ai_compute_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            IREN:
+              - ticker
+          matched_keyword_variants:
+            IREN:
+              - iren
+          matched_profile_snippets: []
+          matched_keywords:
+            - IREN
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: NBIS
+          name: Nebius Group N.V.
+          exchange: Nasdaq
+          primary_lane_id: ai_compute_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            NBIS:
+              - ticker
+          matched_keyword_variants:
+            NBIS:
+              - nbis
+          matched_profile_snippets: []
+          matched_keywords:
+            - NBIS
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: ASTS
+          name: AST SpaceMobile, Inc.
+          exchange: Nasdaq
+          primary_lane_id: direct_to_device_connectivity
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            ASTS:
+              - ticker
+          matched_keyword_variants:
+            ASTS:
+              - asts
+          matched_profile_snippets: []
+          matched_keywords:
+            - ASTS
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:active_core_candidate
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: GSAT
+          name: Globalstar, Inc.
+          exchange: Nasdaq
+          primary_lane_id: direct_to_device_connectivity
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            GSAT:
+              - ticker
+          matched_keyword_variants:
+            GSAT:
+              - gsat
+          matched_profile_snippets: []
+          matched_keywords:
+            - GSAT
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: CRCL
+          name: Circle Internet Group, Inc.
+          exchange: NYSE
+          primary_lane_id: programmable_money_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            CRCL:
+              - ticker
+          matched_keyword_variants:
+            CRCL:
+              - crcl
+          matched_profile_snippets: []
+          matched_keywords:
+            - CRCL
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: IONQ
+          name: IonQ, Inc.
+          exchange: NYSE
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            IONQ:
+              - ticker
+          matched_keyword_variants:
+            IONQ:
+              - ionq
+          matched_profile_snippets: []
+          matched_keywords:
+            - IONQ
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: ALAB
+          name: Astera Labs, Inc.
+          exchange: Nasdaq
+          primary_lane_id: semiconductor_interconnect_and_memory
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            ALAB:
+              - ticker
+          matched_keyword_variants:
+            ALAB:
+              - alab
+          matched_profile_snippets: []
+          matched_keywords:
+            - ALAB
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:active_candidate
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: CRDO
+          name: Credo Technology Group Holding Ltd
+          exchange: Nasdaq
+          primary_lane_id: semiconductor_interconnect_and_memory
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            CRDO:
+              - ticker
+          matched_keyword_variants:
+            CRDO:
+              - crdo
+          matched_profile_snippets: []
+          matched_keywords:
+            - CRDO
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:active_core_candidate
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: MU
+          name: MICRON TECHNOLOGY INC
+          exchange: Nasdaq
+          primary_lane_id: semiconductor_interconnect_and_memory
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            MU:
+              - ticker
+          matched_keyword_variants:
+            MU:
+              - mu
+          matched_profile_snippets: []
+          matched_keywords:
+            - MU
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: FLY
+          name: Firefly Aerospace Inc.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            FLY:
+              - ticker
+          matched_keyword_variants:
+            FLY:
+              - fly
+          matched_profile_snippets: []
+          matched_keywords:
+            - FLY
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:research_only
+            - security_master:tradable
+            - discovery_candidates:incubating
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: KTOS
+          name: KRATOS DEFENSE & SECURITY SOLUTIONS, INC.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            KTOS:
+              - ticker
+          matched_keyword_variants:
+            KTOS:
+              - ktos
+          matched_profile_snippets: []
+          matched_keywords:
+            - KTOS
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: LUNR
+          name: Intuitive Machines, Inc.
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            LUNR:
+              - ticker
+          matched_keyword_variants:
+            LUNR:
+              - lunr
+          matched_profile_snippets: []
+          matched_keywords:
+            - LUNR
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:watch
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: RDW
+          name: Redwire Corp
+          exchange: NYSE
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            RDW:
+              - ticker
+          matched_keyword_variants:
+            RDW:
+              - rdw
+          matched_profile_snippets: []
+          matched_keywords:
+            - RDW
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:research_only
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: RKLB
+          name: Rocket Lab Corp
+          exchange: Nasdaq
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: low
+          triage_score: 44
+          recommended_review_depth: false_positive_filter_before_primary_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - ticker
+          matched_keyword_fields:
+            RKLB:
+              - ticker
+          matched_keyword_variants:
+            RKLB:
+              - rklb
+          matched_profile_snippets: []
+          matched_keywords:
+            - RKLB
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:active_core_candidate
+            - security_master:tradable
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+      recall_diagnostics:
+        - symbol: RKLB
+          expected_lane_id: space_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - space_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - space_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: FLY
+          expected_lane_id: space_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - space_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - space_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: LUNR
+          expected_lane_id: space_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - space_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - space_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: RDW
+          expected_lane_id: space_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - space_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - space_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: KTOS
+          expected_lane_id: space_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - space_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - space_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: ASTS
+          expected_lane_id: direct_to_device_connectivity
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - direct_to_device_connectivity
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - direct_to_device_connectivity
+          match_sources:
+            - sec_issuer_reference
+        - symbol: GSAT
+          expected_lane_id: direct_to_device_connectivity
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - direct_to_device_connectivity
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - direct_to_device_connectivity
+          match_sources:
+            - sec_issuer_reference
+        - symbol: SPACEX
+          expected_lane_id: direct_to_device_connectivity
+          status: out_of_scope_private_or_future_proxy
+          recall_scope: out_of_scope_private_or_future_proxy
+          missed_reason: Proxy is intentionally outside the current SEC-listed public
+            recall denominator.
+          suggested_review: Move this symbol into current_public_proxies only after it
+            becomes an eligible SEC-listed public security for deterministic
+            recall.
+          matched_expected_lane_ids: []
+          organic_matched_expected_lane_ids: []
+          matched_lane_ids: []
+          match_sources: []
+        - symbol: CRWV
+          expected_lane_id: ai_compute_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - ai_compute_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - ai_compute_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: NBIS
+          expected_lane_id: ai_compute_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - ai_compute_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - ai_compute_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: IREN
+          expected_lane_id: ai_compute_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - ai_compute_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - ai_compute_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: SPACEX
+          expected_lane_id: ai_compute_infrastructure
+          status: out_of_scope_private_or_future_proxy
+          recall_scope: out_of_scope_private_or_future_proxy
+          missed_reason: Proxy is intentionally outside the current SEC-listed public
+            recall denominator.
+          suggested_review: Move this symbol into current_public_proxies only after it
+            becomes an eligible SEC-listed public security for deterministic
+            recall.
+          matched_expected_lane_ids: []
+          organic_matched_expected_lane_ids: []
+          matched_lane_ids: []
+          match_sources: []
+        - symbol: VRT
+          expected_lane_id: ai_power_and_cooling
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - ai_power_and_cooling
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - ai_power_and_cooling
+          match_sources:
+            - sec_issuer_reference
+        - symbol: BE
+          expected_lane_id: ai_power_and_cooling
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          match_sources:
+            - sec_issuer_reference
+        - symbol: OKLO
+          expected_lane_id: ai_power_and_cooling
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          match_sources:
+            - sec_issuer_reference
+        - symbol: LEU
+          expected_lane_id: ai_power_and_cooling
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          match_sources:
+            - sec_issuer_reference
+        - symbol: CRDO
+          expected_lane_id: semiconductor_interconnect_and_memory
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - semiconductor_interconnect_and_memory
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - semiconductor_interconnect_and_memory
+          match_sources:
+            - sec_issuer_reference
+        - symbol: ALAB
+          expected_lane_id: semiconductor_interconnect_and_memory
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - semiconductor_interconnect_and_memory
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - semiconductor_interconnect_and_memory
+          match_sources:
+            - sec_issuer_reference
+        - symbol: MU
+          expected_lane_id: semiconductor_interconnect_and_memory
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - semiconductor_interconnect_and_memory
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - semiconductor_interconnect_and_memory
+          match_sources:
+            - sec_issuer_reference
+        - symbol: OKLO
+          expected_lane_id: advanced_nuclear_and_grid_constraints
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          match_sources:
+            - sec_issuer_reference
+        - symbol: LEU
+          expected_lane_id: advanced_nuclear_and_grid_constraints
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          match_sources:
+            - sec_issuer_reference
+        - symbol: BE
+          expected_lane_id: advanced_nuclear_and_grid_constraints
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - advanced_nuclear_and_grid_constraints
+            - ai_power_and_cooling
+          match_sources:
+            - sec_issuer_reference
+        - symbol: IONQ
+          expected_lane_id: quantum_computing_and_networking
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - quantum_computing_and_networking
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - quantum_computing_and_networking
+          match_sources:
+            - sec_issuer_reference
+        - symbol: CRCL
+          expected_lane_id: programmable_money_infrastructure
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - programmable_money_infrastructure
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - programmable_money_infrastructure
+          match_sources:
+            - sec_issuer_reference
+        - symbol: OPENAI
+          expected_lane_id: frontier_ai_public_platforms
+          status: out_of_scope_private_or_future_proxy
+          recall_scope: out_of_scope_private_or_future_proxy
+          missed_reason: Proxy is intentionally outside the current SEC-listed public
+            recall denominator.
+          suggested_review: Move this symbol into current_public_proxies only after it
+            becomes an eligible SEC-listed public security for deterministic
+            recall.
+          matched_expected_lane_ids: []
+          organic_matched_expected_lane_ids: []
+          matched_lane_ids: []
+          match_sources: []
+        - symbol: ANTHROPIC
+          expected_lane_id: frontier_ai_public_platforms
+          status: out_of_scope_private_or_future_proxy
+          recall_scope: out_of_scope_private_or_future_proxy
+          missed_reason: Proxy is intentionally outside the current SEC-listed public
+            recall denominator.
+          suggested_review: Move this symbol into current_public_proxies only after it
+            becomes an eligible SEC-listed public security for deterministic
+            recall.
+          matched_expected_lane_ids: []
+          organic_matched_expected_lane_ids: []
+          matched_lane_ids: []
+          match_sources: []
+        - symbol: SPACEX
+          expected_lane_id: frontier_ai_public_platforms
+          status: out_of_scope_private_or_future_proxy
+          recall_scope: out_of_scope_private_or_future_proxy
+          missed_reason: Proxy is intentionally outside the current SEC-listed public
+            recall denominator.
+          suggested_review: Move this symbol into current_public_proxies only after it
+            becomes an eligible SEC-listed public security for deterministic
+            recall.
+          matched_expected_lane_ids: []
+          organic_matched_expected_lane_ids: []
+          matched_lane_ids: []
+          match_sources: []
     caveats:
       - Deterministic keyword matches are raw leads, not recommendations.
-      - This scan checks SEC listed issuer reference names and symbols only.
+      - This scan checks SEC listed issuer reference names and symbols plus
+        optional caller-supplied profile text.
       - Serious discovery still requires independent agentic bottleneck research
         and source-backed readiness work.
   - command: npm run check:data
@@ -655,8 +5442,8 @@ valuation_states:
     valuation_state: too_uncertain
     price_attractiveness: too_uncertain
     thesis_state: watch_only
-    risk_state: leverage_utilization_and_customer_risk
-    source_ids: yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30
+    risk_state: leverage_utilization_customer_and_integration_risk
+    source_ids: yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30;nbis_magicbyte_eigen_2026_05_01
   - symbol: MU
     as_of: 2026-05-29
     price: "971.00"
@@ -679,8 +5466,8 @@ valuation_states:
     valuation_state: too_uncertain
     price_attractiveness: too_uncertain
     thesis_state: watch_only
-    risk_state: reserve_economics_and_regulatory_risk
-    source_ids: crcl_q1_2026;yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30
+    risk_state: reserve_token_economics_and_regulatory_risk
+    source_ids: crcl_q1_2026;yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30;crcl_form_d_token_purchase_2026_05_22
   - symbol: CBRS
     as_of: 2026-05-29
     price: "236.99"
@@ -695,16 +5482,16 @@ valuation_states:
     valuation_state: too_uncertain
     price_attractiveness: too_uncertain
     thesis_state: watch_only
-    risk_state: bitcoin_exposure_financing_ai_customer_and_guarantee_risk
-    source_ids: yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30;iren_dell_gpu_purchase_2026_05_26
+    risk_state: bitcoin_exposure_convertible_financing_ai_customer_and_guarantee_risk
+    source_ids: yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30;iren_dell_gpu_purchase_2026_05_26;iren_convertible_notes_2026_05_14
   - symbol: OKLO
     as_of: 2026-05-29
     price: "66.88"
     valuation_state: too_uncertain
     price_attractiveness: too_uncertain
     thesis_state: watch_only
-    risk_state: pre_commercial_licensing_and_liquidity_risk
-    source_ids: yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30
+    risk_state: pre_commercial_licensing_liquidity_and_dilution_risk
+    source_ids: yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30;oklo_atm_2026_05_13
   - symbol: BE
     as_of: 2026-05-29
     price: "285.00"
@@ -743,8 +5530,8 @@ valuation_states:
     valuation_state: too_uncertain
     price_attractiveness: too_uncertain
     thesis_state: watch_only
-    risk_state: early_commercial_evidence_and_burn_risk
-    source_ids: ionq_q1_2026;yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30
+    risk_state: early_commercial_evidence_burn_and_transaction_risk
+    source_ids: ionq_q1_2026;yahoo_chart_close_2026_05_29;sec_active_universe_filings_2026_05_30;ionq_skywater_425_2026_05_07
   - symbol: LUNR
     as_of: 2026-05-29
     price: "43.83"
@@ -761,18 +5548,34 @@ valuation_states:
     thesis_state: research_only
     risk_state: valuation_dilution_runway_and_short_public_record_risk
     source_ids: fly_q1_2026_results;fly_10q_q1_2026;fly_s1_offering_2026_05_26;fly_424b3_offering_2026_05_26;yahoo_chart_fly_2026_05_29;sec_companyfacts_fly_2026_05_31;sec_fly_submissions_2026_05_31
+  - symbol: FN
+    as_of: 2026-05-29
+    price: "654.16"
+    valuation_state: fair
+    price_attractiveness: too_uncertain
+    thesis_state: research_only
+    risk_state: customer_concentration_contract_manufacturing_and_pricing_power_risk
+    source_ids: fn_q3_fy2026_results;fn_10q_q3_fy2026;sec_companyfacts_fn_2026_05_31;yahoo_chart_fn_2026_05_29
+  - symbol: LITE
+    as_of: 2026-05-29
+    price: "854.96"
+    valuation_state: too_expensive
+    price_attractiveness: too_expensive
+    thesis_state: strengthened
+    risk_state: valuation_customer_concentration_debt_and_dilution_complexity
+    source_ids: lite_q3_fy2026_results;lite_10q_q3_fy2026;lite_nvidia_preferred_2026_03_02;lite_debt_exchange_2026_04_08;lite_greensboro_facility_2026_03_26;sec_companyfacts_lite_2026_05_31;yahoo_chart_lite_2026_05_29
 quality_metrics:
   path: research/quality-metrics.yml
   decision_readiness:
     status: ready
     scope: repository_and_public_observable_information
     can_recommend_buys: true
-    reason: Active watchlist coverage remains current, and FLY's publicly reachable
-      readiness sprint was completed to an evidence-based incubate
-      classification with dashboard-facing research-only coverage.
-      Repository-public readiness excludes user-only broker facts and execution
-      instructions; those are execution prerequisites, not research-readiness
-      blockers.
+    reason: Active watchlist coverage remains current after targeted FN and LITE
+      optical-infrastructure triage, and FLY's publicly reachable readiness
+      sprint was completed to an evidence-based incubate classification with
+      dashboard-facing research-only coverage. Repository-public readiness
+      excludes user-only broker facts and execution instructions; those are
+      execution prerequisites, not research-readiness blockers.
     user_only_execution_prerequisites:
       - broker cash and buying-power confirmation before order entry
       - broker order preview for commissions, fees, fractional-share support,
@@ -782,15 +5585,15 @@ quality_metrics:
   coverage:
     universe_scan_as_of: 2026-05-31
     discovery_lane_map_as_of: 2026-05-30
-    watchlist_symbols: 23
-    watchlist_symbols_with_current_cycle_review: 23
+    watchlist_symbols: 25
+    watchlist_symbols_with_current_cycle_review: 25
     watchlist_symbols_missing_current_cycle_review: 0
     active_discovery_lanes: 9
     emerging_discovery_lanes: 1
-    active_watchlist_symbols: 18
-    active_symbols_with_current_valuation_state: 18
+    active_watchlist_symbols: 19
+    active_symbols_with_current_valuation_state: 19
     active_symbols_missing_valuation_state: 0
-    active_symbols_with_latest_filing_review: 18
+    active_symbols_with_latest_filing_review: 19
     active_symbols_missing_latest_filing_review: 0
     raw_discovery_candidates_open: 1
   discovery_process:
@@ -816,6 +5619,7 @@ quality_metrics:
     skipped_xhigh_roles: []
     allocation_relevant_lanes:
       - space_infrastructure
+      - direct_to_device_connectivity
     unresolved_subagent_conflicts: 0
     open_candidates_without_readiness_sprint: 0
     material_open_candidates: 1
@@ -849,7 +5653,6 @@ discovery_lane_summary:
     current_public_proxies:
       - ASTS
       - GSAT
-      - SPACEX
   - id: ai_compute_infrastructure
     name: AI Compute Infrastructure
     status: active
@@ -860,7 +5663,6 @@ discovery_lane_summary:
       - CRWV
       - NBIS
       - IREN
-      - SPACEX
   - id: ai_power_and_cooling
     name: AI Data-Center Power And Cooling
     status: active
@@ -913,10 +5715,7 @@ discovery_lane_summary:
     bottleneck_thesis: Frontier AI platforms may become application, infrastructure,
       and distribution layers if compute, data, product adoption, and capital
       access reinforce each other.
-    current_public_proxies:
-      - OPENAI
-      - ANTHROPIC
-      - SPACEX
+    current_public_proxies: []
   - id: unknown_future_bottlenecks
     name: Unknown Future Bottlenecks
     status: emerging

@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T20:11:15.039Z",
+  "source": "sec_submissions_metadata",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "sicDescription",
+    "category",
+    "entityType"
+  ],
+  "source_files": [
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "https://data.sec.gov/submissions"
+  ],
+  "submissions_cache_dir": "",
+  "submissions_cache_hits": 0,
+  "submissions_cache_misses": 0,
+  "submissions_cache_writes": 0,
+  "submissions_cache_only": false,
+  "submissions_ledger_output": "",
+  "submissions_ledger_count": 9,
+  "submissions_ledger": [
+    {
+      "symbol": "NNE",
+      "cik": "0001923891",
+      "source_url": "https://data.sec.gov/submissions/CIK0001923891.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "1030fc39bc0d3a731ce38f00a72da9c02f27eacd2b30d6970bff604b21ef9708",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "FNUC",
+      "cik": "0001769697",
+      "source_url": "https://data.sec.gov/submissions/CIK0001769697.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "b55c8dbd1d7d6eda6ec0e89bde9ff45caac324f7306d0d7a6f9431e327b4b1d8",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "ARQQ",
+      "cik": "0001859690",
+      "source_url": "https://data.sec.gov/submissions/CIK0001859690.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "eec31de22411f5c6430f3140e095be4182e842e124f79e9a30e1137efb075341",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "QBTS",
+      "cik": "0001907982",
+      "source_url": "https://data.sec.gov/submissions/CIK0001907982.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "e8ca3a7069e8fdcc09375083eceb2a0dd056886341587e5eaa7962371727590c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "QUBT",
+      "cik": "0001758009",
+      "source_url": "https://data.sec.gov/submissions/CIK0001758009.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "8608aa6799a2b3a1acabd7f973596d04956154636e44a186a77ca42db1b03c76",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "OCC",
+      "cik": "0001000230",
+      "source_url": "https://data.sec.gov/submissions/CIK0001000230.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "d21b88947ffacf0b7e608ca0fe18af48499577ea5b28d4f5d9f282bc3d039efc",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "SDEV",
+      "cik": "0001389545",
+      "source_url": "https://data.sec.gov/submissions/CIK0001389545.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "130650c6decb87a751c8b10e2abc50daaef8df4a94c6841ddeff9bd9019b1fd3",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "MTSI",
+      "cik": "0001493594",
+      "source_url": "https://data.sec.gov/submissions/CIK0001493594.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "b269ce0adf3cef8f3bf16d52644ffa54395e23c9d06f78cdb37737da7119f462",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    },
+    {
+      "symbol": "SMCI",
+      "cik": "0001375365",
+      "source_url": "https://data.sec.gov/submissions/CIK0001375365.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-05-31T20:11:15.039Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "365a2e52febc01ef4416c8877d77746b759be2f26d64ba69dad6c1bc83f4fa91",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-01",
+      "fetched_at": "2026-05-31T20:11:15.039Z"
+    }
+  ],
+  "max_submissions_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest discovery research",
+  "sec_min_complete_universe_request_delay_ms": 100,
+  "sec_request_delay_ms": 0,
+  "selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "NNE",
+    "FNUC",
+    "ARQQ",
+    "QBTS",
+    "QUBT",
+    "OCC",
+    "SDEV",
+    "MTSI",
+    "SMCI"
+  ],
+  "selected_symbol_count": 9,
+  "eligible_universe_count": 7575,
+  "coverage_limit": 9,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "profile_count": 9,
+  "skipped_symbols": [],
+  "profiles": [
+    {
+      "symbol": "ARQQ",
+      "cik": "0001859690",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001859690.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Services-Prepackaged Software\nAccelerated filer<br>Emerging growth company\nother",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Services-Prepackaged Software",
+        "category": "Accelerated filer<br>Emerging growth company",
+        "entityType": "other"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "FNUC",
+      "cik": "0001769697",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001769697.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Miscellaneous Metal Ores\nNon-accelerated filer<br>Emerging growth company\nother",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Miscellaneous Metal Ores",
+        "category": "Non-accelerated filer<br>Emerging growth company",
+        "entityType": "other"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "MTSI",
+      "cik": "0001493594",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001493594.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Semiconductors & Related Devices\nLarge accelerated filer\noperating",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Semiconductors & Related Devices",
+        "category": "Large accelerated filer",
+        "entityType": "operating"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "NNE",
+      "cik": "0001923891",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001923891.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Electric Services\n<br>Emerging growth company\noperating",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Electric Services",
+        "category": "<br>Emerging growth company",
+        "entityType": "operating"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "OCC",
+      "cik": "0001000230",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001000230.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Drawing & Insulating of  Nonferrous Wire\nNon-accelerated filer<br>Smaller reporting company\noperating",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Drawing & Insulating of  Nonferrous Wire",
+        "category": "Non-accelerated filer<br>Smaller reporting company",
+        "entityType": "operating"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "QBTS",
+      "cik": "0001907982",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001907982.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Services-Computer Processing & Data Preparation\nNon-accelerated filer\noperating",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Services-Computer Processing & Data Preparation",
+        "category": "Non-accelerated filer",
+        "entityType": "operating"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "QUBT",
+      "cik": "0001758009",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001758009.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Services-Prepackaged Software\nLarge accelerated filer\noperating",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Services-Prepackaged Software",
+        "category": "Large accelerated filer",
+        "entityType": "operating"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "SDEV",
+      "cik": "0001389545",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001389545.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Pharmaceutical Preparations\nNon-accelerated filer<br>Smaller reporting company\noperating",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Pharmaceutical Preparations",
+        "category": "Non-accelerated filer<br>Smaller reporting company",
+        "entityType": "operating"
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "SMCI",
+      "cik": "0001375365",
+      "source_name": "SEC submissions metadata",
+      "source_url": "https://data.sec.gov/submissions/CIK0001375365.json",
+      "source_published_at": "not listed on SEC submissions metadata",
+      "retrieved_at": "2026-06-01",
+      "text": "Electronic Computers\nLarge accelerated filer\noperating",
+      "profile_text_fields": [
+        "sicDescription",
+        "category",
+        "entityType"
+      ],
+      "profile_field_texts": {
+        "sicDescription": "Electronic Computers",
+        "category": "Large accelerated filer",
+        "entityType": "operating"
+      },
+      "profile_text_truncated": false
+    }
+  ]
+}

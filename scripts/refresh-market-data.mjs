@@ -1,6 +1,14 @@
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { parse as parseYaml } from "yaml";
+import {
+  createFmpClient,
+  defaultFmpCacheDir,
+  defaultFmpDailyCallBudget,
+  defaultFmpMaxCacheAgeDays,
+  firstFmpRecord,
+} from "./fmp-fetch-lib.mjs";
+import { fetchSecJsonWithRetry } from "./sec-fetch-lib.mjs";
 
 const accountStateFile = "data/account/state.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
@@ -20,9 +28,10 @@ const marketTimeZone = "America/New_York";
 const defaultCurrency = "USD";
 const priceHistorySource = "Yahoo Finance chart";
 const companyFactsSource = "SEC EDGAR companyfacts";
-const secUserAgent =
-  process.env.SEC_USER_AGENT ||
-  "WineChordInvest/1.0 (public dashboard market data refresh)";
+const fmpSource = "Financial Modeling Prep stable API";
+const fmpCombinedSource = `${companyFactsSource}; ${fmpSource}`;
+const defaultFmpMode = "missing";
+const allowedFmpModes = new Set(["off", "missing", "all"]);
 const marketDataUserAgent =
   process.env.MARKET_DATA_USER_AGENT ||
   "Mozilla/5.0 (compatible; WineChordInvest/1.0; market data refresh)";
@@ -177,6 +186,24 @@ const historyDays = Number(
   firstNonEmpty(options.historyDays, process.env.MARKET_DATA_HISTORY_DAYS) ??
     defaultHistoryDays,
 );
+const fmpMode = normalizedFmpMode(
+  firstNonEmpty(options.fmpMode, process.env.FMP_MARKET_DATA_MODE) ??
+    defaultFmpMode,
+);
+const fmpClient = createFmpClient({
+  asOfDate,
+  cacheDir: firstNonEmpty(options.fmpCacheDir, process.env.FMP_CACHE_DIR) ?? defaultFmpCacheDir,
+  dailyCallBudget: nonNegativeIntegerOrDefault(
+    firstNonEmpty(options.fmpDailyCallBudget, process.env.FMP_DAILY_CALL_BUDGET),
+    defaultFmpDailyCallBudget,
+  ),
+  enabled: fmpMode !== "off" && (!options.dryRun || options.allowFmpInDryRun),
+  maxCacheAgeDays: nonNegativeIntegerOrDefault(
+    firstNonEmpty(options.fmpMaxCacheAgeDays, process.env.FMP_MAX_CACHE_AGE_DAYS),
+    defaultFmpMaxCacheAgeDays,
+  ),
+  retrievedAt,
+});
 
 if (!isIsoDate(asOfDate)) {
   throw new Error(`Invalid as-of date: ${asOfDate}`);
@@ -303,7 +330,10 @@ writeCsvFile(
 );
 
 const companyMetricRows = preserveRetrievedAt(
-  await buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol),
+  await buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol, {
+    fmpClient,
+    fmpMode,
+  }),
   existingCompanyMetrics,
   ["symbol"],
 );
@@ -327,11 +357,17 @@ if (equityUpdate === null) {
 if (options.dryRun) {
   console.log("Dry run completed; no files were written.");
 }
+console.log(`FMP summary ${JSON.stringify(fmpClient.summary())}`);
 
 function parseArgs(args) {
   const parsed = {
     asOf: null,
+    allowFmpInDryRun: false,
     dryRun: false,
+    fmpCacheDir: null,
+    fmpDailyCallBudget: null,
+    fmpMaxCacheAgeDays: null,
+    fmpMode: null,
     help: false,
     historyDays: null,
   };
@@ -342,6 +378,30 @@ function parseArgs(args) {
       parsed.help = true;
     } else if (arg === "--dry-run") {
       parsed.dryRun = true;
+    } else if (arg === "--allow-fmp-in-dry-run") {
+      parsed.allowFmpInDryRun = true;
+    } else if (arg === "--no-fmp") {
+      parsed.fmpMode = "off";
+    } else if (arg === "--fmp-mode") {
+      parsed.fmpMode = args[index + 1] ?? "";
+      index += 1;
+    } else if (arg.startsWith("--fmp-mode=")) {
+      parsed.fmpMode = arg.slice("--fmp-mode=".length);
+    } else if (arg === "--fmp-cache-dir") {
+      parsed.fmpCacheDir = args[index + 1] ?? "";
+      index += 1;
+    } else if (arg.startsWith("--fmp-cache-dir=")) {
+      parsed.fmpCacheDir = arg.slice("--fmp-cache-dir=".length);
+    } else if (arg === "--fmp-daily-call-budget") {
+      parsed.fmpDailyCallBudget = args[index + 1] ?? "";
+      index += 1;
+    } else if (arg.startsWith("--fmp-daily-call-budget=")) {
+      parsed.fmpDailyCallBudget = arg.slice("--fmp-daily-call-budget=".length);
+    } else if (arg === "--fmp-max-cache-age-days") {
+      parsed.fmpMaxCacheAgeDays = args[index + 1] ?? "";
+      index += 1;
+    } else if (arg.startsWith("--fmp-max-cache-age-days=")) {
+      parsed.fmpMaxCacheAgeDays = arg.slice("--fmp-max-cache-age-days=".length);
     } else if (arg === "--as-of") {
       parsed.asOf = args[index + 1] ?? "";
       index += 1;
@@ -375,6 +435,12 @@ is available.
 Options:
   --as-of YYYY-MM-DD        Market date upper bound. Defaults to current New York date.
   --history-days N          Calendar-day price-history window. Defaults to ${defaultHistoryDays}.
+  --fmp-mode MODE           Optional FMP supplemental fundamentals: off, missing, or all. Defaults to ${defaultFmpMode}.
+  --fmp-daily-call-budget N Maximum uncached FMP calls per as-of date. Defaults to ${defaultFmpDailyCallBudget}.
+  --fmp-max-cache-age-days N Reuse FMP cache for this many days. Defaults to ${defaultFmpMaxCacheAgeDays}.
+  --fmp-cache-dir DIR       Local ignored FMP cache and usage directory. Defaults to ${defaultFmpCacheDir}.
+  --allow-fmp-in-dry-run    Permit dry-run to spend FMP API quota and write ignored cache/usage files.
+  --no-fmp                  Disable optional FMP calls even when FMP_API_KEY is configured.
   --dry-run                 Fetch and calculate without writing files.
   --help                    Show this help.
 `);
@@ -455,6 +521,26 @@ function publicSecurityRow(watchlistRow, metadata) {
   };
 }
 
+function normalizedFmpMode(value) {
+  const mode = String(value ?? "").trim().toLowerCase();
+  if (!allowedFmpModes.has(mode)) {
+    throw new Error(`FMP mode must be one of: ${[...allowedFmpModes].join(", ")}`);
+  }
+  return mode;
+}
+
+function nonNegativeIntegerOrDefault(value, fallback) {
+  const text = String(value ?? "").trim();
+  if (text === "") {
+    return fallback;
+  }
+  const parsed = Number(text);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new Error(`Expected non-negative integer, got ${text}`);
+  }
+  return parsed;
+}
+
 async function fetchPublicSecurityMetadata(symbol, secTickerMap) {
   const secRow = secTickerMap.get(symbol);
   if (secRow === undefined) {
@@ -475,20 +561,11 @@ async function fetchPublicSecurityMetadata(symbol, secTickerMap) {
 }
 
 async function fetchSecTickerMap() {
-  const response = await fetch(
-    "https://www.sec.gov/files/company_tickers_exchange.json",
-    {
-      headers: {
-        "User-Agent": secUserAgent,
-      },
-    },
-  );
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} from SEC ticker metadata`);
-  }
-
-  const payload = await response.json();
+  const response = await fetchSecJsonWithRetry({
+    context: "SEC ticker metadata request failed",
+    sourceUrl: "https://www.sec.gov/files/company_tickers_exchange.json",
+  });
+  const payload = response.json;
   const fields = Array.isArray(payload.fields) ? payload.fields : [];
   const data = Array.isArray(payload.data) ? payload.data : [];
   return new Map(
@@ -734,7 +811,10 @@ function buildTechnicalSnapshotRow(symbol, history) {
   };
 }
 
-async function buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol) {
+async function buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol, {
+  fmpClient,
+  fmpMode,
+}) {
   const rows = [];
 
   for (const symbol of symbols) {
@@ -746,10 +826,22 @@ async function buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol
 
     try {
       const facts = await fetchCompanyFacts(security.sec_cik);
-      rows.push(buildCompanyMetricRow(symbol, latest, facts));
+      const row = buildCompanyMetricRow(symbol, latest, facts);
+      rows.push(await maybeSupplementCompanyMetricRowWithFmp({
+        fmpClient,
+        fmpMode,
+        row,
+        symbol,
+      }));
       console.log(`ok metrics ${symbol}`);
     } catch (error) {
-      rows.push(emptyCompanyMetricRow(symbol, latest, `Metrics unavailable: ${error.message}`));
+      const row = emptyCompanyMetricRow(symbol, latest, `Metrics unavailable: ${error.message}`);
+      rows.push(await maybeSupplementCompanyMetricRowWithFmp({
+        fmpClient,
+        fmpMode,
+        row,
+        symbol,
+      }));
       console.warn(`Skipped metrics ${symbol}: ${error.message}`);
     }
   }
@@ -760,17 +852,141 @@ async function buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol
 async function fetchCompanyFacts(cik) {
   const normalized = String(cik).padStart(10, "0");
   const url = `https://data.sec.gov/api/xbrl/companyfacts/CIK${normalized}.json`;
-  const response = await fetch(url, {
-    headers: {
-      "User-Agent": secUserAgent,
-    },
+  const response = await fetchSecJsonWithRetry({
+    context: `SEC companyfacts request failed for CIK${normalized}`,
+    sourceUrl: url,
   });
+  return response.json;
+}
 
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} from SEC companyfacts`);
+async function maybeSupplementCompanyMetricRowWithFmp({
+  fmpClient,
+  fmpMode,
+  row,
+  symbol,
+}) {
+  if (!shouldFetchFmpSupplement(row, fmpMode)) {
+    return row;
   }
+  const keyMetricsResult = await fmpClient.getJson({
+    endpoint: "key-metrics-ttm",
+    params: { symbol },
+    symbol,
+  });
+  if (!keyMetricsResult.ok) {
+    return row;
+  }
+  const ratiosResult = await fmpClient.getJson({
+    endpoint: "ratios-ttm",
+    params: { symbol },
+    symbol,
+  });
+  const keyMetrics = firstFmpRecord(keyMetricsResult.data);
+  const ratios = ratiosResult.ok ? firstFmpRecord(ratiosResult.data) : {};
+  const supplemented = supplementMetricFieldsFromFmp({
+    keyMetrics,
+    ratios,
+    row,
+  });
+  const supplementedFields = changedMetricFields(row, supplemented);
+  if (supplementedFields.length === 0) {
+    return row;
+  }
+  return {
+    ...supplemented,
+    source: row.source === companyFactsSource ? fmpCombinedSource : row.source,
+    notes: appendNote(row.notes, `FMP supplemented ${supplementedFields.join("; ")} using cached quota-aware responses.`),
+  };
+}
 
-  return response.json();
+function shouldFetchFmpSupplement(row, fmpMode) {
+  if (fmpMode === "off") {
+    return false;
+  }
+  if (fmpMode === "all") {
+    return true;
+  }
+  return [
+    "market_cap",
+    "enterprise_value",
+    "ttm_revenue",
+    "price_to_sales",
+    "enterprise_value_to_sales",
+  ].some((field) => String(row[field] ?? "") === "");
+}
+
+function supplementMetricFieldsFromFmp({
+  keyMetrics,
+  ratios,
+  row,
+}) {
+  const marketCap = finiteNumber(keyMetrics.marketCap);
+  const enterpriseValue = finiteNumber(keyMetrics.enterpriseValueTTM);
+  const evToSales = finiteNumber(keyMetrics.evToSalesTTM);
+  const derivedRevenue =
+    enterpriseValue !== null && evToSales !== null && evToSales > 0
+      ? enterpriseValue / evToSales
+      : null;
+  const revenue = toNumber(row.ttm_revenue) ?? derivedRevenue;
+  const next = {
+    ...row,
+    market_cap: keepOrFormat(row.market_cap, marketCap, 2),
+    enterprise_value: keepOrFormat(row.enterprise_value, enterpriseValue, 2),
+    ttm_revenue: keepOrFormat(row.ttm_revenue, derivedRevenue, 2),
+    gross_margin_ttm: keepOrFormat(row.gross_margin_ttm, ratioToPercent(ratios.grossProfitMarginTTM), 4),
+    operating_margin_ttm: keepOrFormat(row.operating_margin_ttm, ratioToPercent(ratios.operatingProfitMarginTTM), 4),
+    price_to_sales: keepOrFormat(
+      row.price_to_sales,
+      marketCap !== null && revenue !== null && revenue > 0 ? marketCap / revenue : null,
+      4,
+    ),
+    enterprise_value_to_sales: keepOrFormat(row.enterprise_value_to_sales, evToSales, 4),
+  };
+  const netMargin = ratioToPercent(ratios.netProfitMarginTTM);
+  if (String(next.net_income_ttm ?? "") === "" && netMargin !== null && revenue !== null) {
+    next.net_income_ttm = formatOptionalDecimal((netMargin / 100) * revenue, 2);
+  }
+  return next;
+}
+
+function keepOrFormat(currentValue, candidate, digits) {
+  if (String(currentValue ?? "") !== "") {
+    return currentValue;
+  }
+  return formatOptionalDecimal(candidate, digits);
+}
+
+function ratioToPercent(value) {
+  const number = finiteNumber(value);
+  return number === null ? null : number * 100;
+}
+
+function changedMetricFields(before, after) {
+  return [
+    "market_cap",
+    "enterprise_value",
+    "ttm_revenue",
+    "gross_margin_ttm",
+    "operating_margin_ttm",
+    "net_income_ttm",
+    "price_to_sales",
+    "enterprise_value_to_sales",
+  ].filter((field) =>
+    String(before[field] ?? "") !== String(after[field] ?? "") &&
+    String(after[field] ?? "") !== "",
+  );
+}
+
+function appendNote(existing, note) {
+  const base = String(existing ?? "").trim();
+  const addition = String(note ?? "").trim();
+  if (addition === "") {
+    return base;
+  }
+  if (base === "") {
+    return addition;
+  }
+  return `${base} ${addition}`;
 }
 
 function buildCompanyMetricRow(symbol, latestPrice, companyFacts) {

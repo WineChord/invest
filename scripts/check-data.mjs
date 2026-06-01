@@ -1,4 +1,5 @@
-import { existsSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { parse as parseYaml } from "yaml";
 
 const csvFiles = [
@@ -51,6 +52,9 @@ const watchlistCycleReviewsFile = "research/watchlist-cycle-reviews.csv";
 const watchlistTransitionsFile = "research/watchlist-transitions.csv";
 const watchlistFile = "research/watchlist.csv";
 const watchlistPricesFile = "data/market/watchlist_prices.csv";
+const secCompanyTickersExchangeUrl = "https://www.sec.gov/files/company_tickers_exchange.json";
+const defaultDiscoveryScope = "active_emerging_incubating";
+const noProfileSemanticCoverageStatus = "absent_name_ticker_only";
 
 const requiredCsvHeaders = new Map([
   [
@@ -406,6 +410,18 @@ const allowedSubagentSkipReasons = new Set([
   "not_material_to_request",
   "already_resolved_by_primary_evidence",
 ]);
+const allowedSemanticReasoningLevels = new Set(["low", "medium", "high", "xhigh"]);
+const allowedSemanticEscalations = new Set([
+  "none",
+  "reject_or_archive",
+  "medium_lane_compare",
+  "xhigh_readiness_candidate",
+]);
+const allowedSemanticBottleneckExposure = new Set(["none", "weak", "possible", "strong"]);
+const allowedSemanticDirectness = new Set(["none", "weak_proxy", "indirect", "direct", "unknown"]);
+const allowedSemanticCompanyStage = new Set(["too_large_mature", "mature", "growth", "early", "newly_public", "unknown"]);
+const allowedSemanticExtremeUpsideFit = new Set(["unlikely", "possible", "strong", "unknown"]);
+const allowedSemanticConfidence = new Set(["low", "medium", "high"]);
 const requiredFirstLayerQuestionKeys = [
   "what_could_become_scarce",
   "who_controls_or_removes_scarcity",
@@ -425,6 +441,8 @@ const requiredCompleteDiscoverySourceFamilyIds = [
   "issuer_material",
   "market_data",
   "current_world_context",
+  "new_listings_ipo_spinoff_transactions",
+  "lane_evolution_current_world_search",
 ];
 const requiredReadinessSections = [
   "## Bottleneck Fit",
@@ -575,6 +593,8 @@ validateCompanyAnalysis();
 validateWatchlistCycleReviews();
 validatePromotionData();
 validateQualityMetrics();
+validateDiscoveryRunJsonArtifacts();
+validateDurableDiscoveryArtifactPortability();
 
 function validateHeader(file, actualHeader) {
   const expectedHeader = requiredCsvHeaders.get(file);
@@ -625,6 +645,45 @@ function requireNumber(value, context) {
   }
 }
 
+function requireNonNegativeInteger(value, context) {
+  requireNumber(value, context);
+  if (!Number.isInteger(value) || value < 0) {
+    throw new Error(`${context} must be a non-negative integer`);
+  }
+}
+
+function requirePositiveNumber(value, context) {
+  requireNumber(value, context);
+  if (value <= 0) {
+    throw new Error(`${context} must be positive`);
+  }
+}
+
+function requireIsoTimestamp(value, context) {
+  requireString(value, context);
+  const text = value.trim();
+  const match = text.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/);
+  if (match === null) {
+    throw new Error(`${context} must be an ISO timestamp with timezone`);
+  }
+  parseDate(match[1], `${context} date`);
+  const [, , hour, minute, second] = match;
+  if (Number(hour) > 23 || Number(minute) > 59 || Number(second) > 59) {
+    throw new Error(`${context} must contain a valid time`);
+  }
+  if (Number.isNaN(Date.parse(text))) {
+    throw new Error(`${context} must be a valid ISO timestamp`);
+  }
+}
+
+function requireSha256String(value, context) {
+  requireString(value, context);
+  const text = value.trim();
+  if (!/^[a-f0-9]{64}$/.test(text)) {
+    throw new Error(`${context} must be a SHA-256 hex string`);
+  }
+}
+
 function requireBoolean(value, context) {
   if (typeof value !== "boolean") {
     throw new Error(`${context} must be boolean`);
@@ -640,6 +699,53 @@ function requireStringArray(value, context) {
       throw new Error(`${context}[${index}] must be a non-empty string`);
     }
   });
+}
+
+function requireNonEmptyStringArray(value, context) {
+  requireStringArray(value, context);
+  if (value.length === 0) {
+    throw new Error(`${context} must contain at least one entry`);
+  }
+}
+
+function validateDurableDiscoveryArtifactPortability() {
+  [
+    "research/discovery/runs",
+    "research/process",
+  ].forEach((directory) => {
+    portableArtifactFiles(directory).forEach((file) => {
+      const content = readFileSync(file, "utf8");
+      localOnlyPathPatterns().forEach((pattern) => {
+        if (pattern.test(content)) {
+          throw new Error(`${file} contains local-only filesystem path material matching ${pattern}`);
+        }
+      });
+    });
+  });
+  console.log("ok durable discovery artifact portability checks");
+}
+
+function portableArtifactFiles(directory) {
+  if (!existsSync(directory)) {
+    return [];
+  }
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const file = `${directory}/${entry.name}`;
+    if (entry.isDirectory()) {
+      return portableArtifactFiles(file);
+    }
+    return /\.(csv|json|md|ya?ml)$/.test(entry.name) ? [file] : [];
+  });
+}
+
+function localOnlyPathPatterns() {
+  return [
+    /\/Users\//,
+    /\/private\/var\//,
+    /\/var\/folders\//,
+    /\/tmp\//,
+    /\\\\Users\\\\/,
+  ];
 }
 
 function requirePositiveNumberString(value, context) {
@@ -663,11 +769,19 @@ function parseDate(value, context) {
     return value.getTime();
   }
   requireString(value, context);
-  const timestamp = Date.parse(`${value}T00:00:00Z`);
-  if (Number.isNaN(timestamp)) {
-    throw new Error(`${context} must be a valid YYYY-MM-DD date`);
+  const text = value.trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    throw new Error(`${context} must use YYYY-MM-DD`);
+  }
+  const timestamp = Date.parse(`${text}T00:00:00.000Z`);
+  if (Number.isNaN(timestamp) || new Date(timestamp).toISOString().slice(0, 10) !== text) {
+    throw new Error(`${context} must be a valid YYYY-MM-DD calendar date`);
   }
   return timestamp;
+}
+
+function isStrictDateLike(value) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(String(value ?? "").trim());
 }
 
 function daysBetween(start, end) {
@@ -679,6 +793,12 @@ function sourceIds() {
   const parsed = parsedYamlFiles.get(sourcesFile);
   const entries = Array.isArray(parsed?.sources) ? parsed.sources : [];
   return new Set(entries.map((source) => source?.id).filter(Boolean));
+}
+
+function sourcesById() {
+  const parsed = parsedYamlFiles.get(sourcesFile);
+  const entries = Array.isArray(parsed?.sources) ? parsed.sources : [];
+  return new Map(entries.map((source) => [source?.id, source]).filter(([id]) => Boolean(id)));
 }
 
 function splitSemicolonList(value) {
@@ -904,6 +1024,11 @@ function validateSources() {
       (field) => requireString(source?.[field], `${context} ${field}`),
     );
     requireScalar(source?.source_published_at, `${context} source_published_at`);
+    parseDate(source.retrieved_at, `${context} retrieved_at`);
+    parseDate(source.first_seen_at, `${context} first_seen_at`);
+    if (isStrictDateLike(source.source_published_at)) {
+      parseDate(source.source_published_at, `${context} source_published_at`);
+    }
     if (ids.has(source.id)) {
       throw new Error(`${sourcesFile} has duplicate id ${source.id}`);
     }
@@ -1114,9 +1239,17 @@ function validateDiscoveryLanes() {
       "current_public_proxies",
       "candidate_entry_points",
     ].forEach((field) => requireStringArray(lane?.[field], `${context} ${field}`));
+    if (lane.private_or_future_proxies !== undefined) {
+      requireStringArray(lane.private_or_future_proxies, `${context} private_or_future_proxies`);
+    }
     lane.current_public_proxies.forEach((symbol) => {
       if (!watchlistSymbols.has(symbol)) {
         throw new Error(`${context} current_public_proxies references unknown watchlist symbol ${symbol}`);
+      }
+    });
+    (lane.private_or_future_proxies ?? []).forEach((symbol) => {
+      if (!watchlistSymbols.has(symbol)) {
+        throw new Error(`${context} private_or_future_proxies references unknown watchlist symbol ${symbol}`);
       }
     });
   });
@@ -1216,9 +1349,6 @@ function validateCandidateReadiness() {
     if (row.readiness_path !== undefined && row.readiness_path !== "" && !existsSync(row.readiness_path)) {
       throw new Error(`${context} readiness_path does not exist: ${row.readiness_path}`);
     }
-    if (row.readiness_path !== undefined && row.readiness_path !== "") {
-      validateReadinessSprintNote(row.readiness_path, row.symbol);
-    }
     if (row.material_to_current_allocation && row.readiness_path === "") {
       throw new Error(`${context} material candidate needs readiness_path`);
     }
@@ -1272,6 +1402,9 @@ function validateCandidateReadiness() {
     ) {
       throw new Error(`${context} still has reachable evidence remaining after terminal readiness triage`);
     }
+    if (row.readiness_path !== undefined && row.readiness_path !== "") {
+      validateReadinessSprintNote(row.readiness_path, row.symbol, row);
+    }
   });
 
   openCandidateSymbols.forEach((symbol) => {
@@ -1283,11 +1416,44 @@ function validateCandidateReadiness() {
   console.log(`ok ${candidateReadinessFile} semantic checks`);
 }
 
-function validateReadinessSprintNote(file, symbol) {
+function validateReadinessSprintNote(file, symbol, readinessRecord) {
   const content = readFileSync(file, "utf8");
   if (!content.includes(`symbol: ${symbol}`)) {
     throw new Error(`${file} must identify symbol ${symbol}`);
   }
+  const metadata = firstYamlBlock(content, file);
+  [
+    "symbol",
+    "review_date",
+    "readiness_status",
+    "blocker_type",
+    "classification",
+    "dashboard_surface_status",
+    "readiness_index_record",
+  ].forEach((field) => requireString(metadata?.[field], `${file} readiness metadata.${field}`));
+  if (metadata.symbol !== symbol) {
+    throw new Error(`${file} readiness metadata.symbol must be ${symbol}`);
+  }
+  if (metadata.readiness_status !== readinessRecord.readiness_status) {
+    throw new Error(`${file} readiness metadata.readiness_status must match ${candidateReadinessFile}`);
+  }
+  if (metadata.blocker_type !== readinessRecord.blocker_type) {
+    throw new Error(`${file} readiness metadata.blocker_type must match ${candidateReadinessFile}`);
+  }
+  if (metadata.dashboard_surface_status !== readinessRecord.dashboard_surface_status) {
+    throw new Error(`${file} readiness metadata.dashboard_surface_status must match ${candidateReadinessFile}`);
+  }
+  if (metadata.readiness_index_record !== candidateReadinessFile) {
+    throw new Error(`${file} readiness metadata.readiness_index_record must be ${candidateReadinessFile}`);
+  }
+  requireNonEmptyStringArray(metadata.source_ids, `${file} readiness metadata.source_ids`);
+  const knownSourceIds = sourceIds();
+  metadata.source_ids.forEach((sourceId) => {
+    if (!knownSourceIds.has(sourceId)) {
+      throw new Error(`${file} readiness metadata.source_ids references unknown source id ${sourceId}`);
+    }
+  });
+  parseDate(metadata.review_date, `${file} readiness metadata.review_date`);
   requiredReadinessSections.forEach((section) => {
     if (!content.includes(section)) {
       throw new Error(`${file} is missing ${section}`);
@@ -1298,6 +1464,18 @@ function validateReadinessSprintNote(file, symbol) {
       throw new Error(`${file} is missing ${phrase}`);
     }
   });
+}
+
+function firstYamlBlock(content, file) {
+  const match = content.match(/```yaml\n([\s\S]*?)\n```/);
+  if (match === null) {
+    throw new Error(`${file} must contain a YAML metadata block`);
+  }
+  const parsed = parseYaml(match[1]);
+  if (parsed === null || typeof parsed !== "object" || Array.isArray(parsed)) {
+    throw new Error(`${file} YAML metadata block must be an object`);
+  }
+  return parsed;
 }
 
 function validateFreshnessEvents() {
@@ -1700,10 +1878,47 @@ function validateQualityMetrics() {
     "skipped_xhigh_roles",
     "allocation_relevant_lanes",
   ].forEach((field) => requireStringArray(discoveryProcess[field], `${qualityMetricsFile} discovery_process.${field}`));
+  [
+    "first_layer_questions_status",
+    "broad_source_search_status",
+    "independent_xhigh_subagents_status",
+  ].forEach((field) => {
+    if (discoveryProcess[field] !== "complete") {
+      throw new Error(`${qualityMetricsFile} discovery_process.${field} must be complete`);
+    }
+  });
+  const completedDiscoveryRoles = new Set(discoveryProcess.completed_xhigh_roles);
+  const skippedDiscoveryRoles = new Set(discoveryProcess.skipped_xhigh_roles);
+  completedDiscoveryRoles.forEach((role) => {
+    if (skippedDiscoveryRoles.has(role)) {
+      throw new Error(`${qualityMetricsFile} discovery_process role ${role} must not be both completed and skipped`);
+    }
+  });
+  discoveryProcess.required_xhigh_roles.forEach((role) => {
+    if (!completedDiscoveryRoles.has(role) && !skippedDiscoveryRoles.has(role)) {
+      throw new Error(`${qualityMetricsFile} discovery_process.resolved_xhigh_roles is missing required role ${role}`);
+    }
+  });
+  if (readiness.can_recommend_buys) {
+    discoveryProcess.required_xhigh_roles.forEach((role) => {
+      if (!completedDiscoveryRoles.has(role)) {
+        throw new Error(`${qualityMetricsFile} buy-capable discovery_process.completed_xhigh_roles is missing required role ${role}`);
+      }
+    });
+    if (discoveryProcess.skipped_xhigh_roles.length > 0) {
+      throw new Error(`${qualityMetricsFile} buy-capable discovery_process must not skip required xhigh roles`);
+    }
+  }
   const laneIds = discoveryLaneIds();
   discoveryProcess.allocation_relevant_lanes.forEach((laneId) => {
     if (!laneIds.has(laneId)) {
       throw new Error(`${qualityMetricsFile} discovery_process.allocation_relevant_lanes references unknown lane ${laneId}`);
+    }
+  });
+  const derivedAllocationRelevantLanes = derivedAllocationRelevantLaneIds(parsed, discoveryProcess);
+  derivedAllocationRelevantLanes.forEach((laneId) => {
+    if (!discoveryProcess.allocation_relevant_lanes.includes(laneId)) {
+      throw new Error(`${qualityMetricsFile} discovery_process.allocation_relevant_lanes is missing derived allocation-relevant lane ${laneId}`);
     }
   });
   [
@@ -1735,6 +1950,7 @@ function validateQualityMetrics() {
   const asOfTimestamp = parseDate(parsed.as_of, `${qualityMetricsFile} as_of`);
   const universeScanTimestamp = parseDate(coverage.universe_scan_as_of, `${qualityMetricsFile} coverage.universe_scan_as_of`);
   const laneMapTimestamp = parseDate(coverage.discovery_lane_map_as_of, `${qualityMetricsFile} coverage.discovery_lane_map_as_of`);
+  validateDiscoveryProcessUniverseScanFreshness(discoveryProcess, coverage.universe_scan_as_of);
   if (daysBetween(universeScanTimestamp, asOfTimestamp) > gates.discovery_scan_max_age_days) {
     throw new Error(`${qualityMetricsFile} universe_scan_as_of is older than discovery_scan_max_age_days`);
   }
@@ -1777,12 +1993,17 @@ function validateQualityMetrics() {
       `${qualityMetricsFile} active_symbols_missing_valuation_state is ${coverage.active_symbols_missing_valuation_state}, expected ${missingValuations}`,
     );
   }
-  if (
-    coverage.active_symbols_with_latest_filing_review
-      + coverage.active_symbols_missing_latest_filing_review
-    !== activeSymbols.length
-  ) {
-    throw new Error(`${qualityMetricsFile} filing review coverage must equal active_watchlist_symbols`);
+  const activeSymbolsWithLatestFilingReview = currentFilingReviewSymbolSet(activeSymbols, asOfTimestamp, gates.watchlist_cycle_review_max_age_days);
+  if (coverage.active_symbols_with_latest_filing_review !== activeSymbolsWithLatestFilingReview.size) {
+    throw new Error(
+      `${qualityMetricsFile} active_symbols_with_latest_filing_review is ${coverage.active_symbols_with_latest_filing_review}, expected ${activeSymbolsWithLatestFilingReview.size}`,
+    );
+  }
+  const missingFilingReviews = activeSymbols.length - activeSymbolsWithLatestFilingReview.size;
+  if (coverage.active_symbols_missing_latest_filing_review !== missingFilingReviews) {
+    throw new Error(
+      `${qualityMetricsFile} active_symbols_missing_latest_filing_review is ${coverage.active_symbols_missing_latest_filing_review}, expected ${missingFilingReviews}`,
+    );
   }
 
   const openDiscoveryCount = csvRecords(discoveryFile)
@@ -1792,7 +2013,12 @@ function validateQualityMetrics() {
     throw new Error(`${qualityMetricsFile} raw_discovery_candidates_open is ${coverage.raw_discovery_candidates_open}, expected ${openDiscoveryCount}`);
   }
   const readinessStats = candidateReadinessStats();
-  validateAllocationRelevantCandidateMateriality(discoveryProcess.allocation_relevant_lanes);
+  validateAllocationRelevantCandidateMateriality([
+    ...new Set([
+      ...discoveryProcess.allocation_relevant_lanes,
+      ...derivedAllocationRelevantLanes,
+    ]),
+  ]);
   validateMaterialCandidateDashboardCoverage(asOfTimestamp, gates.discovery_scan_max_age_days);
   if (discoveryProcess.open_candidates_without_readiness_sprint !== readinessStats.withoutSprint) {
     throw new Error(`${qualityMetricsFile} open_candidates_without_readiness_sprint is ${discoveryProcess.open_candidates_without_readiness_sprint}, expected ${readinessStats.withoutSprint}`);
@@ -1825,7 +2051,7 @@ function validateQualityMetrics() {
       openCriticalEvents > 0
       || openHighEvents > 0
       || missingValuations > 0
-      || coverage.active_symbols_missing_latest_filing_review > 0
+      || missingFilingReviews > 0
       || missingCycleReviews > 0
       || freshness.stale_theses_over_90_days > 0
       || freshness.stale_valuation_states_over_45_days > 0
@@ -1876,6 +2102,50 @@ function validateAllocationRelevantCandidateMateriality(allocationRelevantLanes)
   });
 }
 
+function derivedAllocationRelevantLaneIds(parsed, discoveryProcess) {
+  const lanes = parsedYamlFiles.get(discoveryLanesFile)?.lanes ?? [];
+  const laneIds = discoveryLaneIds();
+  const candidateRowsBySymbol = new Map(csvRecords(discoveryFile).map((row) => [row.symbol, row]));
+  const derived = new Set();
+
+  openDiscoveryCandidates().forEach((candidate) => {
+    if (laneIds.has(candidate.theme)) {
+      derived.add(candidate.theme);
+    }
+  });
+
+  const agenticPath = discoveryProcess.latest_agentic_discovery_path;
+  if (typeof agenticPath === "string" && agenticPath !== "" && existsSync(agenticPath)) {
+    const agenticRun = parseYaml(readFileSync(agenticPath, "utf8"));
+    discoveryRunCandidateScopeSymbols(agenticRun).forEach((symbol) => {
+      const candidate = candidateRowsBySymbol.get(symbol);
+      if (candidate !== undefined && laneIds.has(candidate.theme)) {
+        derived.add(candidate.theme);
+      }
+    });
+  }
+
+  const currentBuyZoneSymbols = csvRecords(buyZonesFile)
+    .filter((row) => row.as_of === parsed.as_of && row.buy_zone_status === "in_buy_zone")
+    .map((row) => row.symbol);
+  currentBuyZoneSymbols.forEach((symbol) => {
+    let foundLane = false;
+    lanes
+      .filter((lane) => Array.isArray(lane.current_public_proxies) && lane.current_public_proxies.includes(symbol))
+      .forEach((lane) => {
+        foundLane = true;
+        if (laneIds.has(lane.id)) {
+          derived.add(lane.id);
+        }
+      });
+    if (!foundLane) {
+      throw new Error(`${qualityMetricsFile} current in-buy-zone symbol ${symbol} is missing from discovery lane current_public_proxies`);
+    }
+  });
+
+  return [...derived].sort();
+}
+
 function validateDiscoveryRunArtifacts(discoveryProcess) {
   const files = new Set([
     discoveryProcess.latest_discovery_run_path,
@@ -1907,8 +2177,11 @@ function validateDiscoveryRunArtifact(file, discoveryProcess) {
   if (!Array.isArray(sourceFamilies) || sourceFamilies.length === 0) {
     throw new Error(`${file} source_coverage.source_families_checked must contain at least one family`);
   }
-  const knownSourceIds = sourceIds();
+  const knownSourcesById = sourcesById();
+  const knownSourceIds = new Set(knownSourcesById.keys());
   const sourceFamilyIds = new Set();
+  const qualityMetrics = parsedYamlFiles.get(qualityMetricsFile);
+  const sourceMaxAgeDays = qualityMetrics.quality_gates?.discovery_scan_max_age_days ?? 31;
   sourceFamilies.forEach((family, index) => {
     const context = `${file} source_families_checked[${index}]`;
     ["family_id", "family", "retrieved_at", "material_findings"].forEach((field) =>
@@ -1916,12 +2189,14 @@ function validateDiscoveryRunArtifact(file, discoveryProcess) {
     );
     sourceFamilyIds.add(family.family_id);
     parseDate(family.retrieved_at, `${context} retrieved_at`);
-    requireStringArray(family.sources_or_queries, `${context} sources_or_queries`);
-    requireStringArray(family.source_ids, `${context} source_ids`);
+    requireNonEmptyStringArray(family.sources_or_queries, `${context} sources_or_queries`);
+    requireNonEmptyStringArray(family.source_ids, `${context} source_ids`);
     family.source_ids.forEach((sourceId) => {
-      if (!knownSourceIds.has(sourceId)) {
+      const source = knownSourcesById.get(sourceId);
+      if (source === undefined) {
         throw new Error(`${context} references unknown source id ${sourceId}`);
       }
+      validateDiscoverySourceFreshness(source, family.retrieved_at, sourceMaxAgeDays, `${context} source_id ${sourceId}`);
     });
   });
   const broadSearch = sourceCoverage.broad_current_world_search ?? {};
@@ -1949,8 +2224,10 @@ function validateDiscoveryRunArtifact(file, discoveryProcess) {
     if (command.output_path !== undefined && command.output_path !== "" && command.output_path !== "not_saved_for_original_run" && !existsSync(command.output_path)) {
       throw new Error(`${context} output_path does not exist: ${command.output_path}`);
     }
+    validateDeterministicCommandOutput(command, context);
   });
 
+  validateUnknownFutureReview(file, parsed);
   validateFirstLayerQuestions(file, parsed.first_layer_bottleneck_questions);
   validateDiscoveryRunSubagents(file, parsed.subagents, discoveryProcess);
 
@@ -2002,6 +2279,52 @@ function validateDiscoveryRunArtifact(file, discoveryProcess) {
       }
     });
   });
+  const sprintSymbols = new Set(parsed.readiness_sprints.map((sprint) => sprint.symbol).filter(Boolean));
+  const scopedCandidateSymbols = discoveryRunCandidateScopeSymbols(parsed);
+  readinessBySymbol.forEach((record, symbol) => {
+    if (scopedCandidateSymbols.has(symbol) && record.material_to_current_allocation && !sprintSymbols.has(symbol)) {
+      throw new Error(`${file} readiness_sprints is missing material scoped readiness symbol ${symbol}`);
+    }
+  });
+}
+
+function validateDiscoverySourceFreshness(source, familyRetrievedAt, maxAgeDays, context) {
+  const familyRetrievedTimestamp = parseDate(familyRetrievedAt, `${context} family retrieved_at`);
+  const sourceRetrievedTimestamp = parseDate(source.retrieved_at, `${context} ${sourcesFile} retrieved_at`);
+  if (sourceRetrievedTimestamp > familyRetrievedTimestamp) {
+    throw new Error(`${context} ${sourcesFile} retrieved_at is after source family retrieved_at`);
+  }
+  if (daysBetween(sourceRetrievedTimestamp, familyRetrievedTimestamp) > maxAgeDays) {
+    throw new Error(`${context} ${sourcesFile} retrieved_at is older than discovery_scan_max_age_days for the run`);
+  }
+  if (isStrictDateLike(source.source_published_at)) {
+    const publishedTimestamp = parseDate(source.source_published_at, `${context} ${sourcesFile} source_published_at`);
+    if (publishedTimestamp > familyRetrievedTimestamp) {
+      throw new Error(`${context} ${sourcesFile} source_published_at is after source family retrieved_at`);
+    }
+  }
+}
+
+function validateUnknownFutureReview(file, parsed) {
+  const deterministicOutputs = (parsed.source_coverage?.deterministic_commands ?? [])
+    .map((command) => loadDeterministicCommandJsonOutput(command)?.parsed)
+    .filter((output) => output !== undefined && Number(output.exploratory_match_count ?? 0) > 0);
+  if (deterministicOutputs.length === 0) {
+    return;
+  }
+  const review = parsed.unknown_future_review ?? {};
+  const expectedCount = Math.max(...deterministicOutputs.map((output) => Number(output.exploratory_match_count ?? 0)));
+  requireNumber(review.exploratory_match_count, `${file} unknown_future_review.exploratory_match_count`);
+  if (review.exploratory_match_count !== expectedCount) {
+    throw new Error(`${file} unknown_future_review.exploratory_match_count must match deterministic exploratory matches`);
+  }
+  [
+    "top_clusters",
+    "sampled_symbols",
+    "false_positive_patterns",
+    "lane_decisions",
+  ].forEach((field) => requireNonEmptyStringArray(review[field], `${file} unknown_future_review.${field}`));
+  requireString(review.disposition, `${file} unknown_future_review.disposition`);
 }
 
 function validateSubagentEvidencePacket(file, discoveryProcess) {
@@ -2015,8 +2338,10 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
     "mission",
     "policy_version",
     "specific_question",
+    "active_watchlist_scope",
   ].forEach((field) => requireString(parsed[field], `${file} ${field}`));
   parseDate(parsed.current_date, `${file} current_date`);
+  validateEvidencePacketChronology(file, parsed);
   [
     "quality_metrics_as_of",
     "universe_scan_as_of",
@@ -2025,6 +2350,7 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
   ].forEach((field) => {
     requireScalar(parsed.freshness_window?.[field], `${file} freshness_window.${field}`);
   });
+  validateEvidencePacketQualityMetrics(file, parsed);
   [
     "account_state_path",
     "status",
@@ -2072,7 +2398,24 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
     if (!knownSourceIds.has(source.id)) {
       throw new Error(`${context} references unknown source id ${source.id}`);
     }
+    const canonical = sourcesById().get(source.id);
+    [
+      "source_type",
+      "source_published_at",
+      "retrieved_at",
+      "summary",
+    ].forEach((field) => {
+      if (JSON.stringify(source[field] ?? null) !== JSON.stringify(canonical[field] ?? null)) {
+        throw new Error(`${context} ${field} does not match ${sourcesFile}`);
+      }
+    });
+    requireMatchingStringArray(
+      source.related_symbols ?? [],
+      canonical.related_symbols ?? [],
+      `${context} related_symbols`,
+    );
   });
+  validateEvidencePacketCanonicalArrays(file, parsed);
   requireString(parsed.quality_metrics?.path, `${file} quality_metrics.path`);
   if (parsed.quality_metrics.path !== qualityMetricsFile) {
     throw new Error(`${file} quality_metrics.path must be ${qualityMetricsFile}`);
@@ -2102,6 +2445,7 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
       throw new Error(`${file} subagent_defaults.roles is missing required role ${role}`);
     }
   });
+  validateEvidencePacketDeterministicOutputs(file, parsed);
   const readinessBySymbol = candidateReadinessRecordsBySymbol();
   parsed.candidate_readiness.forEach((record, index) => {
     const context = `${file} candidate_readiness[${index}]`;
@@ -2127,6 +2471,1532 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
       throw new Error(`${context} affected_lanes does not match ${candidateReadinessFile}`);
     }
   });
+  const packetReadinessSymbols = new Set(parsed.candidate_readiness.map((record) => record.symbol).filter(Boolean));
+  const packetCandidateSymbols = new Set(parsed.candidate_set.map((record) => record.symbol).filter(Boolean));
+  readinessBySymbol.forEach((_record, symbol) => {
+    if (packetCandidateSymbols.has(symbol) && !packetReadinessSymbols.has(symbol)) {
+      throw new Error(`${file} candidate_readiness is missing scoped readiness symbol ${symbol}`);
+    }
+  });
+  validateEvidencePacketCandidateSetScope(file, parsed);
+  validateEvidencePacketWatchlistScope(file, parsed);
+}
+
+function validateEvidencePacketChronology(file, parsed) {
+  requireIsoTimestamp(parsed.generated_at, `${file} generated_at`);
+  const qualityMetricsAsOf = yamlDateString(parsedYamlFiles.get(qualityMetricsFile)?.as_of);
+  if (parsed.current_date !== qualityMetricsAsOf) {
+    throw new Error(`${file} current_date must match ${qualityMetricsFile} as_of`);
+  }
+  const match = file.match(/(?:^|\/)(\d{4}-\d{2}-\d{2})-subagent-evidence-packet\.ya?ml$/);
+  if (match === null) {
+    throw new Error(`${file} filename must include the evidence packet date`);
+  }
+  if (parsed.current_date !== match[1]) {
+    throw new Error(`${file} current_date must match filename date ${match[1]}`);
+  }
+}
+
+function validateEvidencePacketCanonicalArrays(file, parsed) {
+  requireMatchingJson(
+    parsed.fresh_sources,
+    expectedEvidencePacketFreshSources(),
+    `${file} fresh_sources must contain exactly ${sourcesFile} sources`,
+  );
+  requireMatchingJson(
+    parsed.open_freshness_events,
+    csvRecords(freshnessFile).filter((row) => row.status === "new" || row.status === "stale"),
+    `${file} open_freshness_events must match ${freshnessFile}`,
+  );
+  requireMatchingJson(
+    parsed.valuation_states,
+    expectedEvidencePacketValuationStates(),
+    `${file} valuation_states must match ${valuationStatesFile}`,
+  );
+  requireMatchingJson(
+    parsed.discovery_lane_summary,
+    expectedEvidencePacketDiscoveryLaneSummary(),
+    `${file} discovery_lane_summary must match ${discoveryLanesFile}`,
+  );
+}
+
+function expectedEvidencePacketFreshSources() {
+  const parsed = parsedYamlFiles.get(sourcesFile);
+  return (parsed.sources ?? []).map((source) => ({
+    id: source.id,
+    source_type: source.source_type,
+    source_published_at: source.source_published_at,
+    retrieved_at: source.retrieved_at,
+    related_symbols: source.related_symbols,
+    summary: source.summary,
+  }));
+}
+
+function expectedEvidencePacketValuationStates() {
+  return csvRecords(valuationStatesFile).map((row) => ({
+    symbol: row.symbol,
+    as_of: row.as_of,
+    price: row.price,
+    valuation_state: row.valuation_state,
+    price_attractiveness: row.price_attractiveness,
+    thesis_state: row.thesis_state,
+    risk_state: row.risk_state,
+    source_ids: row.source_ids,
+  }));
+}
+
+function expectedEvidencePacketDiscoveryLaneSummary() {
+  const parsed = parsedYamlFiles.get(discoveryLanesFile);
+  return (parsed.lanes ?? []).map((lane) => ({
+    id: lane.id,
+    name: lane.name,
+    status: lane.status,
+    bottleneck_thesis: lane.bottleneck_thesis,
+    current_public_proxies: lane.current_public_proxies,
+  }));
+}
+
+function yamlDateString(value) {
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10);
+  }
+  return String(value ?? "");
+}
+
+function validateEvidencePacketQualityMetrics(file, parsed) {
+  const qualityMetrics = parsedYamlFiles.get(qualityMetricsFile);
+  const expectedFreshnessWindow = {
+    quality_metrics_as_of: qualityMetrics.as_of,
+    universe_scan_as_of: qualityMetrics.coverage?.universe_scan_as_of,
+    discovery_lane_map_as_of: qualityMetrics.coverage?.discovery_lane_map_as_of,
+    latest_research_engine_run_as_of: qualityMetrics.last_research_engine_run?.as_of,
+  };
+  Object.entries(expectedFreshnessWindow).forEach(([field, expected]) => {
+    if (parsed.freshness_window?.[field] !== expected) {
+      throw new Error(`${file} freshness_window.${field} does not match ${qualityMetricsFile}`);
+    }
+  });
+  [
+    "coverage",
+    "decision_readiness",
+    "discovery_process",
+    "freshness",
+  ].forEach((field) => {
+    requireMatchingJson(parsed.quality_metrics?.[field] ?? {}, qualityMetrics[field] ?? {}, `${file} quality_metrics.${field}`);
+  });
+}
+
+function validateEvidencePacketCandidateSetScope(file, parsed) {
+  const packetRowsBySymbol = new Map(parsed.candidate_set.map((row) => [row?.symbol, row]));
+  const canonicalOpenCandidates = openDiscoveryCandidates();
+  if (packetRowsBySymbol.size !== parsed.candidate_set.length) {
+    throw new Error(`${file} candidate_set must not contain duplicate symbols`);
+  }
+  if (packetRowsBySymbol.size !== canonicalOpenCandidates.length) {
+    throw new Error(`${file} candidate_set must contain exactly the open discovery candidates`);
+  }
+  const packetReadinessSymbols = new Set(parsed.candidate_readiness.map((record) => record.symbol).filter(Boolean));
+  canonicalOpenCandidates.forEach((row) => {
+    const context = `${file} candidate_set ${row.symbol}`;
+    const packetRow = packetRowsBySymbol.get(row.symbol);
+    if (packetRow === undefined) {
+      throw new Error(`${context} is missing open discovery candidate`);
+    }
+    [
+      "name",
+      "exchange",
+      "asset_type",
+      "discovered_at",
+      "discovery_source",
+      "source_url",
+      "source_published_at",
+      "retrieved_at",
+      "first_seen_at",
+      "theme",
+      "why_it_might_matter",
+      "status",
+      "next_action",
+      "notes",
+    ].forEach((field) => {
+      if (packetRow[field] !== row[field]) {
+        throw new Error(`${context} ${field} does not match ${discoveryFile}`);
+      }
+    });
+    if (!packetReadinessSymbols.has(row.symbol)) {
+      throw new Error(`${file} candidate_readiness is missing scoped readiness symbol ${row.symbol}`);
+    }
+  });
+}
+
+function validateEvidencePacketWatchlistScope(file, parsed) {
+  const packetRowsBySymbol = new Map(parsed.active_watchlist.map((row) => [row?.symbol, row]));
+  csvRecords(watchlistFile)
+    .filter((row) => row.status !== "removed")
+    .forEach((row) => {
+      const context = `${file} active_watchlist ${row.symbol}`;
+      const packetRow = packetRowsBySymbol.get(row.symbol);
+      if (packetRow === undefined) {
+        throw new Error(`${context} is missing non-removed watchlist symbol`);
+      }
+      ["name", "theme", "status", "priority", "initial_role", "next_review_trigger", "notes"].forEach((field) => {
+        if (packetRow[field] !== row[field]) {
+          throw new Error(`${context} ${field} does not match ${watchlistFile}`);
+        }
+      });
+    });
+}
+
+function validateDiscoveryProcessUniverseScanFreshness(discoveryProcess, expectedAsOf) {
+  const file = discoveryProcess.latest_agentic_discovery_path;
+  const parsed = parseYaml(readFileSync(file, "utf8"));
+  const commands = parsed?.source_coverage?.deterministic_commands ?? [];
+  let sawSavedJsonOutput = false;
+  let sawMatchingBroadAsOf = false;
+  commands.forEach((command, index) => {
+    const output = loadDeterministicCommandJsonOutput(command);
+    if (output === undefined) {
+      return;
+    }
+    sawSavedJsonOutput = true;
+    if (typeof output.parsed.as_of === "string") {
+      parseDate(output.parsed.as_of, `${file} deterministic_commands[${index}] output as_of`);
+      if (
+        output.parsed.as_of === expectedAsOf &&
+        supportsBroadUniverseFreshness(output.parsed)
+      ) {
+        sawMatchingBroadAsOf = true;
+      }
+    }
+  });
+  if (!sawSavedJsonOutput) {
+    throw new Error(`${qualityMetricsFile} discovery_process.latest_agentic_discovery_path must reference at least one saved deterministic JSON output`);
+  }
+  if (!sawMatchingBroadAsOf) {
+    throw new Error(`${qualityMetricsFile} coverage.universe_scan_as_of ${expectedAsOf} has no matching broad deterministic command output as_of in ${file}`);
+  }
+}
+
+function discoveryRunCandidateScopeSymbols(parsed) {
+  const delta = parsed.candidate_delta ?? {};
+  return new Set([
+    ...stringArrayOrEmpty(delta.candidates_added),
+    ...stringArrayOrEmpty(delta.candidates_rejected_or_archived),
+    ...stringArrayOrEmpty(delta.candidates_promoted),
+    ...stringArrayOrEmpty(delta.candidates_incubated),
+  ].map((symbol) => symbol.toUpperCase()));
+}
+
+function stringArrayOrEmpty(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value
+    .filter((item) => typeof item === "string" && item.trim() !== "")
+    .map((item) => item.trim());
+}
+
+function validateDiscoveryRunJsonArtifacts() {
+  const artifactFiles = portableArtifactFiles("research/discovery/runs")
+    .filter((file) => file.endsWith(".json") || file.endsWith(".csv"))
+    .sort();
+  artifactFiles.forEach(validateDiscoveryRunArtifactLocation);
+  const jsonFiles = artifactFiles.filter((file) => file.endsWith(".json"));
+  const csvFiles = artifactFiles.filter((file) => file.endsWith(".csv"));
+  const hashAnchors = discoveryArtifactHashAnchors(jsonFiles);
+  jsonFiles.forEach((file) => {
+    const artifact = JSON.parse(readFileSync(file, "utf8"));
+    if (artifact?.schema_version !== 1) {
+      throw new Error(`${file} schema_version must be 1`);
+    }
+    if (artifact.source !== "discovery_artifact_index") {
+      validateDiscoveryArtifactHashAnchor(file, hashAnchors);
+    } else {
+      validateDiscoveryArtifactIndexFileName(file);
+    }
+    if (typeof artifact.as_of === "string" && "candidate_count" in artifact) {
+      validateDiscoveryScanOutput(artifact, file, {
+        requireBroadFreshness: false,
+      });
+    }
+    if (artifact.source === "sec_filing_discovery_index") {
+      validateSecFilingDiscoveryIndexArtifact(artifact, file);
+    }
+    if (artifact.source === "sec_registration_transaction_candidates") {
+      validateSecRegistrationTransactionCandidateArtifact(artifact, file);
+    }
+    if (artifact.source === "semantic_issuer_packets") {
+      validateSemanticIssuerPacketsArtifact(artifact, file);
+    }
+    if (artifact.source === "semantic_discovery_batch_manifest") {
+      validateSemanticBatchManifestArtifact(artifact, file);
+    }
+    if (artifact.source === "semantic_classification_import") {
+      validateSemanticClassificationImportArtifact(artifact, file);
+    }
+    if (artifact.source === "semantic_discovery_run") {
+      validateSemanticDiscoveryRunArtifact(artifact, file);
+    }
+  });
+  csvFiles.forEach((file) => {
+    validateDiscoveryArtifactHashAnchor(file, hashAnchors);
+  });
+  console.log("ok discovery run artifact semantic checks");
+}
+
+function validateDiscoveryRunArtifactLocation(file) {
+  if (!isCacheOnlyDiscoveryIntermediate(file)) {
+    return;
+  }
+  throw new Error(`${file} is a cache-only discovery intermediate; write it under research/cache/discovery/ and commit only the durable summary, hash, and source metadata`);
+}
+
+function isCacheOnlyDiscoveryIntermediate(file) {
+  const name = file.split("/").pop() ?? "";
+  return name.endsWith("-semantic-packets.json")
+    || name.endsWith("-semantic-batch-manifest.json")
+    || name.endsWith("-full-sec-issuer-profiles.json")
+    || name.includes("-semantic-smoke-")
+    || name.includes("-semantic-validation-")
+    || file.includes("-semantic-batches/");
+}
+
+function discoveryArtifactHashAnchors(jsonFiles) {
+  const anchors = new Map();
+  addQualityMetricDiscoveryHashAnchors(anchors);
+  jsonFiles.forEach((file) => {
+    const artifact = JSON.parse(readFileSync(file, "utf8"));
+    if (artifact.source === "sec_filing_discovery_index") {
+      addSecFilingIndexHashAnchors(anchors, artifact, file);
+    }
+    if (artifact.source === "discovery_artifact_index") {
+      addDiscoveryArtifactIndexHashAnchors(anchors, artifact, file);
+    }
+  });
+  return anchors;
+}
+
+function addQualityMetricDiscoveryHashAnchors(anchors) {
+  const qualityMetrics = parsedYamlFiles.get(qualityMetricsFile);
+  const discoveryProcess = qualityMetrics.discovery_process ?? {};
+  [
+    discoveryProcess.latest_agentic_discovery_path,
+    discoveryProcess.latest_evidence_packet_path,
+  ].forEach((file) => {
+    if (typeof file !== "string" || file === "" || !existsSync(file)) {
+      return;
+    }
+    const parsed = parseYaml(readFileSync(file, "utf8"));
+    const commands = parsed?.source_coverage?.deterministic_commands ?? parsed?.deterministic_outputs ?? [];
+    commands.forEach((entry, index) => {
+      if (typeof entry?.output_path !== "string" || !entry.output_path.endsWith(".json")) {
+        return;
+      }
+      addArtifactHashAnchor(anchors, {
+        context: `${file} deterministic output ${index}`,
+        path: entry.output_path,
+        sha256Value: entry.output_sha256,
+      });
+    });
+  });
+}
+
+function addSecFilingIndexHashAnchors(anchors, artifact, file) {
+  [
+    ["manifest_metadata_path", "manifest_metadata_sha256"],
+    ["profile_path", "profile_sha256"],
+    ["scan_path", "scan_sha256"],
+  ].forEach(([pathField, hashField]) => {
+    addArtifactHashAnchor(anchors, {
+      context: `${file} ${pathField}`,
+      path: artifact[pathField],
+      sha256Value: artifact[hashField],
+    });
+  });
+}
+
+function addDiscoveryArtifactIndexHashAnchors(anchors, artifact, file) {
+  const fileAsOf = validateDiscoveryArtifactIndexFileName(file);
+  requireString(artifact.as_of, `${file} as_of`);
+  parseDate(artifact.as_of, `${file} as_of`);
+  if (artifact.as_of !== fileAsOf) {
+    throw new Error(`${file} as_of must match filename date ${fileAsOf}`);
+  }
+  requireIsoTimestamp(artifact.generated_at, `${file} generated_at`);
+  if (!Array.isArray(artifact.artifacts) || artifact.artifacts.length === 0) {
+    throw new Error(`${file} artifacts must contain at least one entry`);
+  }
+  artifact.artifacts.forEach((entry, index) => {
+    const context = `${file} artifacts[${index}]`;
+    validateDiscoveryArtifactIndexEntryPath(entry?.path, artifact.as_of, context);
+    requireAllowed(entry.role, discoveryArtifactIndexRoles(), `${context} role`);
+    validateDiscoveryArtifactIndexEntryMetadata(entry, artifact.as_of, context);
+    addArtifactHashAnchor(anchors, {
+      context,
+      path: entry?.path,
+      sha256Value: entry?.sha256,
+    });
+  });
+}
+
+function validateDiscoveryArtifactIndexEntryMetadata(entry, asOf, context) {
+  requireString(entry?.path, `${context} path`);
+  const expectedRole = discoveryArtifactRole(entry.path);
+  if (entry.role !== expectedRole) {
+    throw new Error(`${context} role must be ${expectedRole}`);
+  }
+  if (entry.path.endsWith(".json")) {
+    const parsed = JSON.parse(readFileSync(entry.path, "utf8"));
+    if (typeof parsed.as_of === "string" && parsed.as_of !== asOf) {
+      throw new Error(`${context} JSON as_of must match index date ${asOf}`);
+    }
+    if (typeof parsed.retrieved_at === "string" && parsed.retrieved_at !== asOf) {
+      throw new Error(`${context} JSON retrieved_at must match index date ${asOf}`);
+    }
+    if (Array.isArray(parsed.profiles)) {
+      parsed.profiles.forEach((profile, profileIndex) => {
+        if (typeof profile.retrieved_at === "string" && profile.retrieved_at !== asOf) {
+          throw new Error(`${context} profiles[${profileIndex}] retrieved_at must match index date ${asOf}`);
+        }
+        if (Array.isArray(profile.sources)) {
+          profile.sources.forEach((source, sourceIndex) => {
+            if (typeof source.retrieved_at === "string" && source.retrieved_at !== asOf) {
+              throw new Error(`${context} profiles[${profileIndex}].sources[${sourceIndex}] retrieved_at must match index date ${asOf}`);
+            }
+          });
+        }
+      });
+    }
+  }
+  if (entry.path.endsWith(".csv")) {
+    const rows = parseCsv(readFileSync(entry.path, "utf8"));
+    const header = rows[0] ?? [];
+    const retrievedAtIndex = header.indexOf("retrieved_at");
+    if (retrievedAtIndex === -1) {
+      return;
+    }
+    rows.slice(1).forEach((row, rowIndex) => {
+      const retrievedAt = row[retrievedAtIndex] ?? "";
+      if (retrievedAt !== "" && retrievedAt !== asOf) {
+        throw new Error(`${context} CSV row ${rowIndex + 2} retrieved_at must match index date ${asOf}`);
+      }
+    });
+  }
+}
+
+function discoveryArtifactRole(file) {
+  const name = file.split("/").pop() ?? "";
+  if (name.endsWith("-index.metadata.json")) {
+    return "sec_filing_index_metadata";
+  }
+  if (name.endsWith(".metadata.json")) {
+    return "metadata_artifact";
+  }
+  if (
+    name.endsWith("-profile-input.json") ||
+    name.endsWith("-profiles.json") ||
+    name.endsWith("-profile-enriched-scan.json")
+  ) {
+    return "profile_or_profile_scan_artifact";
+  }
+  if (name.endsWith("-registration-transaction-candidates.json")) {
+    return "sec_registration_transaction_candidate_artifact";
+  }
+  if (name.endsWith("-semantic-packets.json")) {
+    return "semantic_issuer_packet_artifact";
+  }
+  if (name.endsWith("-semantic-batch-manifest.json")) {
+    return "semantic_batch_manifest_artifact";
+  }
+  if (name.endsWith("-semantic-import.json")) {
+    return "semantic_classification_import_artifact";
+  }
+  if (name.endsWith("-semantic-discovery-run.json")) {
+    return "semantic_discovery_run_artifact";
+  }
+  if (name.endsWith("-scan.json")) {
+    return "deterministic_scan_artifact";
+  }
+  if (name.endsWith(".csv")) {
+    return "generated_csv_artifact";
+  }
+  return "generated_discovery_artifact";
+}
+
+function discoveryArtifactIndexRoles() {
+  return new Set([
+    "deterministic_scan_artifact",
+    "generated_csv_artifact",
+    "generated_discovery_artifact",
+    "metadata_artifact",
+    "profile_or_profile_scan_artifact",
+    "semantic_batch_manifest_artifact",
+    "semantic_classification_import_artifact",
+    "semantic_discovery_run_artifact",
+    "semantic_issuer_packet_artifact",
+    "sec_registration_transaction_candidate_artifact",
+    "sec_filing_index_metadata",
+  ]);
+}
+
+function validateDiscoveryArtifactIndexEntryPath(file, asOf, context) {
+  requireString(file, `${context} path`);
+  if (file.endsWith("-discovery-artifact-index.json")) {
+    throw new Error(`${context} must not anchor discovery artifact index files`);
+  }
+  if (!file.startsWith(`research/discovery/runs/${asOf}-`)) {
+    throw new Error(`${context} path must start with research/discovery/runs/${asOf}-`);
+  }
+  if (!/\.(csv|json)$/.test(file)) {
+    throw new Error(`${context} path must be a discovery CSV or JSON artifact`);
+  }
+}
+
+function addArtifactHashAnchor(anchors, {
+  context,
+  path,
+  sha256Value,
+}) {
+  requireString(path, `${context} path`);
+  requireSha256String(sha256Value, `${context} sha256`);
+  if (path.endsWith("-discovery-artifact-index.json")) {
+    throw new Error(`${context} must not anchor discovery artifact index files`);
+  }
+  if (!existsSync(path)) {
+    throw new Error(`${context} path does not exist: ${path}`);
+  }
+  const current = anchors.get(path);
+  if (current !== undefined && current !== sha256Value) {
+    throw new Error(`${context} has conflicting hash anchor for ${path}`);
+  }
+  anchors.set(path, sha256Value);
+}
+
+function validateDiscoveryArtifactIndexFileName(file) {
+  const match = file.match(/^research\/discovery\/runs\/(\d{4}-\d{2}-\d{2})-discovery-artifact-index\.json$/);
+  if (match === null) {
+    throw new Error(`${file} has source discovery_artifact_index but is not named YYYY-MM-DD-discovery-artifact-index.json`);
+  }
+  return match[1];
+}
+
+function validateDiscoveryArtifactHashAnchor(file, anchors) {
+  const expected = anchors.get(file);
+  if (expected === undefined) {
+    throw new Error(`${file} is not hash-anchored by an agentic run, evidence packet, SEC filing index, or discovery artifact index`);
+  }
+  const actual = sha256(readFileSync(file, "utf8"));
+  if (expected !== actual) {
+    throw new Error(`${file} hash anchor does not match current artifact content`);
+  }
+}
+
+function validateSecFilingDiscoveryIndexArtifact(artifact, file) {
+  ["as_of", "source", "index_scope", "manifest_path", "manifest_metadata_path", "profile_path", "scan_path"].forEach((field) =>
+    requireString(artifact[field], `${file} ${field}`),
+  );
+  [
+    ["manifest_path", "manifest_sha256"],
+    ["manifest_metadata_path", "manifest_metadata_sha256"],
+    ["profile_path", "profile_sha256"],
+    ["scan_path", "scan_sha256"],
+  ].forEach(([pathField, hashField]) => {
+    const targetPath = artifact[pathField];
+    if (!existsSync(targetPath)) {
+      throw new Error(`${file} ${pathField} does not exist: ${targetPath}`);
+    }
+    requireString(artifact[hashField], `${file} ${hashField}`);
+    const actualHash = sha256(readFileSync(targetPath, "utf8"));
+    if (artifact[hashField] !== actualHash) {
+      throw new Error(`${file} ${hashField} does not match ${targetPath}`);
+    }
+  });
+}
+
+function validateSecRegistrationTransactionCandidateArtifact(artifact, file) {
+  requireIsoTimestamp(artifact.generated_at, `${file} generated_at`);
+  [
+    "as_of",
+    "retrieved_at",
+    "source_published_at",
+    "coverage_start",
+    "coverage_end",
+    "input_source",
+  ].forEach((field) => {
+    requireString(artifact[field], `${file} ${field}`);
+    if (field !== "input_source") {
+      parseDate(artifact[field], `${file} ${field}`);
+    }
+  });
+  if (artifact.source !== "sec_registration_transaction_candidates") {
+    throw new Error(`${file} source must be sec_registration_transaction_candidates`);
+  }
+  if (artifact.coverage_start > artifact.coverage_end) {
+    throw new Error(`${file} coverage_start must be on or before coverage_end`);
+  }
+  requireBoolean(artifact.strict_date_coverage, `${file} strict_date_coverage`);
+  requireStringArray(artifact.target_filing_families, `${file} target_filing_families`);
+  requireStringArray(artifact.covered_dates, `${file} covered_dates`);
+  requireStringArray(artifact.missing_or_unscanned_dates, `${file} missing_or_unscanned_dates`);
+  requireStringArray(artifact.caveats, `${file} caveats`);
+  validateRegistrationCandidateDates(artifact.covered_dates, artifact, `${file} covered_dates`);
+  validateRegistrationCandidateDates(artifact.missing_or_unscanned_dates, artifact, `${file} missing_or_unscanned_dates`);
+  requireNonNegativeInteger(artifact.source_row_count, `${file} source_row_count`);
+  requireNonNegativeInteger(artifact.provisional_candidate_count, `${file} provisional_candidate_count`);
+  if (!Array.isArray(artifact.daily_indices) || artifact.daily_indices.length === 0) {
+    throw new Error(`${file} daily_indices must contain at least one entry`);
+  }
+  if (!Array.isArray(artifact.provisional_candidates)) {
+    throw new Error(`${file} provisional_candidates must be an array`);
+  }
+  if (artifact.provisional_candidate_count !== artifact.provisional_candidates.length) {
+    throw new Error(`${file} provisional_candidate_count must match provisional_candidates length`);
+  }
+  validateRegistrationCandidateArtifactDailyIndexScope(artifact, file);
+  validateRegistrationCandidateCoverageScope(artifact, file);
+  artifact.provisional_candidates.forEach((candidate, index) =>
+    validateRegistrationTransactionCandidate(candidate, artifact, `${file} provisional_candidates[${index}]`),
+  );
+}
+
+function validateRegistrationCandidateArtifactDailyIndexScope(artifact, file) {
+  artifact.daily_indices.forEach((entry, index) => {
+    const context = `${file} daily_indices[${index}]`;
+    requireString(entry?.as_of, `${context} as_of`);
+    parseDate(entry.as_of, `${context} as_of`);
+    requireString(entry?.input_source, `${context} input_source`);
+    requireSha256String(entry?.sha256, `${context} sha256`);
+    requireNonNegativeInteger(entry?.row_count, `${context} row_count`);
+    if (typeof entry.path !== "string") {
+      throw new Error(`${context} path must be a string`);
+    }
+    if (entry.path.includes("/")) {
+      throw new Error(`${context} path must be a basename, not a local path`);
+    }
+    if (typeof entry.url !== "string") {
+      throw new Error(`${context} url must be a string`);
+    }
+  });
+  if (artifact.daily_indices.length === 1) {
+    requireSha256String(artifact.daily_index_sha256, `${file} daily_index_sha256`);
+    if (artifact.daily_index_sha256 !== artifact.daily_indices[0].sha256) {
+      throw new Error(`${file} daily_index_sha256 must match daily_indices[0].sha256`);
+    }
+    return;
+  }
+  if (typeof artifact.daily_index_sha256 !== "string" || artifact.daily_index_sha256 !== "") {
+    throw new Error(`${file} daily_index_sha256 must be empty for range artifacts`);
+  }
+}
+
+function validateRegistrationCandidateCoverageScope(artifact, file) {
+  const expectedDates = datesBetween(artifact.coverage_start, artifact.coverage_end);
+  const coveredDates = sortedUniqueDates(artifact.covered_dates, `${file} covered_dates`);
+  const missingDates = sortedUniqueDates(artifact.missing_or_unscanned_dates, `${file} missing_or_unscanned_dates`);
+  const dailyIndexDates = sortedUniqueDates(
+    artifact.daily_indices.map((entry) => entry.as_of),
+    `${file} daily_indices as_of values`,
+  );
+  if (JSON.stringify(coveredDates) !== JSON.stringify(dailyIndexDates)) {
+    throw new Error(`${file} covered_dates must match daily_indices as_of values`);
+  }
+  const coveredDateSet = new Set(coveredDates);
+  const expectedMissingDates = expectedDates.filter((date) => !coveredDateSet.has(date));
+  if (JSON.stringify(missingDates) !== JSON.stringify(expectedMissingDates)) {
+    throw new Error(`${file} missing_or_unscanned_dates must match coverage range minus covered_dates`);
+  }
+  if (artifact.strict_date_coverage && missingDates.length > 0) {
+    throw new Error(`${file} strict_date_coverage cannot have missing_or_unscanned_dates`);
+  }
+}
+
+function sortedUniqueDates(values, context) {
+  const sorted = [...values].sort();
+  if (JSON.stringify(values) !== JSON.stringify(sorted)) {
+    throw new Error(`${context} must be sorted ascending`);
+  }
+  const unique = [...new Set(sorted)];
+  if (unique.length !== sorted.length) {
+    throw new Error(`${context} must not contain duplicate dates`);
+  }
+  return sorted;
+}
+
+function datesBetween(startDate, endDate) {
+  const dates = [];
+  let cursor = Date.parse(`${startDate}T00:00:00.000Z`);
+  const end = Date.parse(`${endDate}T00:00:00.000Z`);
+  while (cursor <= end) {
+    dates.push(new Date(cursor).toISOString().slice(0, 10));
+    cursor += 24 * 60 * 60 * 1000;
+  }
+  return dates;
+}
+
+function validateRegistrationCandidateDates(dates, artifact, context) {
+  dates.forEach((date, index) => {
+    parseDate(date, `${context}[${index}]`);
+    if (date < artifact.coverage_start || date > artifact.coverage_end) {
+      throw new Error(`${context}[${index}] must be within coverage_start and coverage_end`);
+    }
+  });
+}
+
+function validateRegistrationTransactionCandidate(candidate, artifact, context) {
+  [
+    "cik",
+    "company_name",
+    "filing_type",
+    "filing_family",
+    "filing_family_type",
+    "filing_date",
+    "source_published_at",
+    "retrieved_at",
+    "accession_or_document_id",
+    "source_url",
+    "candidate_status",
+    "tradability_status",
+    "security_metadata_dependency",
+    "why_it_might_matter",
+    "required_next_step",
+    "policy_boundary",
+  ].forEach((field) => requireString(candidate?.[field], `${context} ${field}`));
+  if (!/^\d{10}$/.test(candidate.cik)) {
+    throw new Error(`${context} cik must be a 10-digit SEC CIK`);
+  }
+  ["filing_date", "source_published_at", "retrieved_at"].forEach((field) =>
+    parseDate(candidate[field], `${context} ${field}`),
+  );
+  if (candidate.source_published_at !== candidate.filing_date) {
+    throw new Error(`${context} source_published_at must match filing_date`);
+  }
+  if (candidate.retrieved_at !== artifact.retrieved_at) {
+    throw new Error(`${context} retrieved_at must match artifact retrieved_at`);
+  }
+  requireAllowed(candidate.filing_family_type, new Set(["registration", "transaction", "other"]), `${context} filing_family_type`);
+  requireAllowed(candidate.candidate_status, new Set(["pre_listing_or_transaction_candidate"]), `${context} candidate_status`);
+  requireAllowed(
+    candidate.tradability_status,
+    new Set(["not_tradable_until_security_metadata_confirms_policy_eligible_listing"]),
+    `${context} tradability_status`,
+  );
+  requireAllowed(
+    candidate.security_metadata_dependency,
+    new Set(["requires_exchange_ticker_confirmation"]),
+    `${context} security_metadata_dependency`,
+  );
+  if (!candidate.source_url.startsWith("https://www.sec.gov/Archives/")) {
+    throw new Error(`${context} source_url must point to SEC Archives`);
+  }
+}
+
+function validateSemanticIssuerPacketsArtifact(artifact, file) {
+  requireIsoTimestamp(artifact.generated_at, `${file} generated_at`);
+  parseDate(artifact.as_of, `${file} as_of`);
+  if (artifact.packet_schema_version !== 1) {
+    throw new Error(`${file} packet_schema_version must be 1`);
+  }
+  ["sec_input_source", "sec_input_sha256", "lane_map_path", "lane_map_sha256"].forEach((field) =>
+    requireString(artifact[field], `${file} ${field}`),
+  );
+  requirePositiveNumber(artifact.sec_input_row_count, `${file} sec_input_row_count`);
+  requirePositiveNumber(artifact.eligible_universe_count, `${file} eligible_universe_count`);
+  requireNonNegativeInteger(artifact.selected_symbol_count, `${file} selected_symbol_count`);
+  requireNonNegativeInteger(artifact.packet_count, `${file} packet_count`);
+  requireSha256String(artifact.sec_input_sha256, `${file} sec_input_sha256`);
+  requireSha256String(artifact.lane_map_sha256, `${file} lane_map_sha256`);
+  if (existsSync(artifact.lane_map_path) && artifact.lane_map_sha256 !== sha256(readFileSync(artifact.lane_map_path, "utf8"))) {
+    throw new Error(`${file} lane_map_sha256 does not match ${artifact.lane_map_path}`);
+  }
+  requireStringArray(artifact.cache_invalidation_policy ?? [], `${file} cache_invalidation_policy`);
+  requireStringArray(artifact.lane_map_lane_ids ?? [], `${file} lane_map_lane_ids`);
+  if (!Array.isArray(artifact.packets)) {
+    throw new Error(`${file} packets must be an array`);
+  }
+  if (artifact.packet_count !== artifact.packets.length) {
+    throw new Error(`${file} packet_count must match packets length`);
+  }
+  artifact.packets.forEach((packet, index) =>
+    validateSemanticIssuerPacket(packet, artifact, `${file} packets[${index}]`),
+  );
+}
+
+function validateSemanticIssuerPacket(packet, artifact, context) {
+  [
+    "symbol",
+    "cik",
+    "name",
+    "exchange",
+    "identity_hash",
+    "issuer_packet_hash",
+    "lane_map_sha256",
+  ].forEach((field) => requireString(packet?.[field], `${context} ${field}`));
+  if (!/^[A-Z0-9.\-]+$/.test(packet.symbol)) {
+    throw new Error(`${context} symbol must be normalized uppercase ticker text`);
+  }
+  if (!/^\d{10}$/.test(packet.cik)) {
+    throw new Error(`${context} cik must be a 10-digit SEC CIK`);
+  }
+  requireSha256String(packet.identity_hash, `${context} identity_hash`);
+  requireSha256String(packet.issuer_packet_hash, `${context} issuer_packet_hash`);
+  requireSha256String(packet.lane_map_sha256, `${context} lane_map_sha256`);
+  if (packet.lane_map_sha256 !== artifact.lane_map_sha256) {
+    throw new Error(`${context} lane_map_sha256 must match packet artifact`);
+  }
+  if (!Array.isArray(packet.source_blocks) || packet.source_blocks.length === 0) {
+    throw new Error(`${context} source_blocks must contain at least one block`);
+  }
+  packet.source_blocks.forEach((block, index) => {
+    const blockContext = `${context} source_blocks[${index}]`;
+    ["block_id", "source_name", "source_published_at", "retrieved_at", "text", "text_sha256"].forEach((field) => {
+      if (field === "retrieved_at" && block?.[field] === "") {
+        return;
+      }
+      requireString(block?.[field], `${blockContext} ${field}`);
+    });
+    requireSha256String(block.text_sha256, `${blockContext} text_sha256`);
+    if (stableSha256(block.text) !== block.text_sha256) {
+      throw new Error(`${blockContext} text_sha256 does not match text`);
+    }
+  });
+  requireStringArray(packet.invalidation_triggers ?? [], `${context} invalidation_triggers`);
+  const packetBase = { ...packet };
+  delete packetBase.issuer_packet_hash;
+  delete packetBase.invalidation_triggers;
+  if (stableSha256(packetBase) !== packet.issuer_packet_hash) {
+    throw new Error(`${context} issuer_packet_hash does not match stable packet content`);
+  }
+}
+
+function validateSemanticBatchManifestArtifact(artifact, file) {
+  requireIsoTimestamp(artifact.generated_at, `${file} generated_at`);
+  parseDate(artifact.as_of, `${file} as_of`);
+  requireAllowed(artifact.reasoning_level, allowedSemanticReasoningLevels, `${file} reasoning_level`);
+  if (artifact.classification_schema_version !== 1) {
+    throw new Error(`${file} classification_schema_version must be 1`);
+  }
+  ["packet_artifact_path", "packet_artifact_sha256"].forEach((field) => requireString(artifact[field], `${file} ${field}`));
+  requireSha256String(artifact.packet_artifact_sha256, `${file} packet_artifact_sha256`);
+  if (existsSync(artifact.packet_artifact_path) && artifact.packet_artifact_sha256 !== sha256(readFileSync(artifact.packet_artifact_path, "utf8"))) {
+    throw new Error(`${file} packet_artifact_sha256 does not match ${artifact.packet_artifact_path}`);
+  }
+  ["packet_count", "selected_packet_count", "skipped_current_cache_count", "stale_cache_count", "batch_size", "batch_count"].forEach((field) =>
+    requireNonNegativeInteger(artifact[field], `${file} ${field}`),
+  );
+  if (!Array.isArray(artifact.batches)) {
+    throw new Error(`${file} batches must be an array`);
+  }
+  if (artifact.batch_count !== artifact.batches.length) {
+    throw new Error(`${file} batch_count must match batches length`);
+  }
+  artifact.batches.forEach((batch, index) => {
+    const context = `${file} batches[${index}]`;
+    ["batch_id", "batch_path", "batch_sha256", "prompt_path", "prompt_sha256"].forEach((field) =>
+      requireString(batch?.[field], `${context} ${field}`),
+    );
+    requireSha256String(batch.batch_sha256, `${context} batch_sha256`);
+    requireSha256String(batch.prompt_sha256, `${context} prompt_sha256`);
+    requireStringArray(batch.symbols ?? [], `${context} symbols`);
+    if (existsSync(batch.batch_path) && batch.batch_sha256 !== sha256(readFileSync(batch.batch_path, "utf8"))) {
+      throw new Error(`${context} batch_sha256 does not match ${batch.batch_path}`);
+    }
+    if (existsSync(batch.prompt_path) && batch.prompt_sha256 !== sha256(readFileSync(batch.prompt_path, "utf8"))) {
+      throw new Error(`${context} prompt_sha256 does not match ${batch.prompt_path}`);
+    }
+  });
+}
+
+function validateSemanticClassificationImportArtifact(artifact, file) {
+  requireIsoTimestamp(artifact.generated_at, `${file} generated_at`);
+  parseDate(artifact.as_of, `${file} as_of`);
+  [
+    "packet_artifact_path",
+    "packet_artifact_sha256",
+    "result_path",
+    "result_sha256",
+    "cache_output_path",
+  ].forEach((field) => requireString(artifact[field], `${file} ${field}`));
+  ["packet_artifact_sha256", "result_sha256"].forEach((field) => requireSha256String(artifact[field], `${file} ${field}`));
+  ["imported_count", "cache_record_count", "current_cache_count", "stale_cache_count"].forEach((field) =>
+    requireNonNegativeInteger(artifact[field], `${file} ${field}`),
+  );
+  if (existsSync(artifact.packet_artifact_path) && artifact.packet_artifact_sha256 !== sha256(readFileSync(artifact.packet_artifact_path, "utf8"))) {
+    throw new Error(`${file} packet_artifact_sha256 does not match ${artifact.packet_artifact_path}`);
+  }
+  if (existsSync(artifact.result_path) && artifact.result_sha256 !== sha256(readFileSync(artifact.result_path, "utf8"))) {
+    throw new Error(`${file} result_sha256 does not match ${artifact.result_path}`);
+  }
+}
+
+function validateSemanticDiscoveryRunArtifact(artifact, file) {
+  requireIsoTimestamp(artifact.generated_at, `${file} generated_at`);
+  parseDate(artifact.as_of, `${file} as_of`);
+  [
+    "packet_artifact_path",
+    "packet_artifact_sha256",
+    "cache_path",
+    "cache_sha256",
+  ].forEach((field) => requireString(artifact[field], `${file} ${field}`));
+  requireSha256String(artifact.packet_artifact_sha256, `${file} packet_artifact_sha256`);
+  requireSha256String(artifact.cache_sha256, `${file} cache_sha256`);
+  [
+    "packet_count",
+    "classified_current_count",
+    "unclassified_count",
+    "stale_cache_count",
+  ].forEach((field) => requireNonNegativeInteger(artifact[field], `${file} ${field}`));
+  requireNumber(artifact.classification_coverage_ratio, `${file} classification_coverage_ratio`);
+  if (artifact.classification_coverage_ratio < 0 || artifact.classification_coverage_ratio > 1) {
+    throw new Error(`${file} classification_coverage_ratio must be between 0 and 1`);
+  }
+  [
+    "medium_lane_compare",
+    "xhigh_readiness_candidates",
+    "reject_or_archive",
+    "no_escalation",
+  ].forEach((field) => {
+    if (!Array.isArray(artifact[field])) {
+      throw new Error(`${file} ${field} must be an array`);
+    }
+    artifact[field].forEach((record, index) =>
+      validateSemanticCompactRecord(record, `${file} ${field}[${index}]`),
+    );
+  });
+  requireStringArray(artifact.unclassified_symbols ?? [], `${file} unclassified_symbols`);
+  requireStringArray(artifact.required_next_steps ?? [], `${file} required_next_steps`);
+  requireStringArray(artifact.caveats ?? [], `${file} caveats`);
+  if (existsSync(artifact.packet_artifact_path) && artifact.packet_artifact_sha256 !== sha256(readFileSync(artifact.packet_artifact_path, "utf8"))) {
+    throw new Error(`${file} packet_artifact_sha256 does not match ${artifact.packet_artifact_path}`);
+  }
+  if (existsSync(artifact.cache_path) && artifact.cache_sha256 !== sha256(readFileSync(artifact.cache_path, "utf8"))) {
+    throw new Error(`${file} cache_sha256 does not match ${artifact.cache_path}`);
+  }
+}
+
+function validateSemanticCompactRecord(record, context) {
+  ["symbol", "name", "business_plain_english", "notes"].forEach((field) =>
+    requireString(record?.[field], `${context} ${field}`),
+  );
+  requireAllowed(record.bottleneck_exposure, allowedSemanticBottleneckExposure, `${context} bottleneck_exposure`);
+  requireAllowed(record.directness, allowedSemanticDirectness, `${context} directness`);
+  requireAllowed(record.company_stage, allowedSemanticCompanyStage, `${context} company_stage`);
+  requireAllowed(record.extreme_upside_fit, allowedSemanticExtremeUpsideFit, `${context} extreme_upside_fit`);
+  requireAllowed(record.confidence, allowedSemanticConfidence, `${context} confidence`);
+  requireStringArray(record.matched_lane_ids ?? [], `${context} matched_lane_ids`);
+}
+
+function validateDiscoveryScanOutput(output, context, {
+  requireBroadFreshness,
+}) {
+  if (output.schema_version !== 1) {
+    throw new Error(`${context} schema_version must be 1`);
+  }
+  requireString(output.as_of, `${context} as_of`);
+  parseDate(output.as_of, `${context} as_of`);
+  requireIsoTimestamp(output.generated_at, `${context} generated_at`);
+  requireAllowed(output.discovery_scope, new Set([defaultDiscoveryScope, "active_only"]), `${context} discovery_scope`);
+  requireString(output.source_url, `${context} source_url`);
+  requireString(output.sec_input_source, `${context} sec_input_source`);
+  requireIsoTimestamp(output.sec_input_fetched_at, `${context} sec_input_fetched_at`);
+  requirePositiveNumber(output.sec_input_row_count, `${context} sec_input_row_count`);
+  requirePositiveNumber(output.sec_input_eligible_universe_count, `${context} sec_input_eligible_universe_count`);
+  requireSha256String(output.sec_input_sha256, `${context} sec_input_sha256`);
+  requireString(output.lane_map_path, `${context} lane_map_path`);
+  requireString(output.lane_map_as_of, `${context} lane_map_as_of`);
+  requireSha256String(output.lane_map_sha256, `${context} lane_map_sha256`);
+  [
+    "profile_coverage_gap_count",
+    "profile_coverage_ratio",
+    "issuer_profile_semantic_gap_count",
+    "issuer_profile_semantic_coverage_ratio",
+    "recall_expected_lane_miss_count",
+    "recall_expected_proxy_miss_count",
+    "recall_organic_expected_proxy_count",
+    "recall_organic_expected_proxy_miss_count",
+    "recall_ticker_only_expected_proxy_count",
+  ].forEach((field) => requireNumber(output[field], `${context} ${field}`));
+  requireString(output.profile_coverage_status, `${context} profile_coverage_status`);
+  requireString(output.issuer_profile_coverage_status, `${context} issuer_profile_coverage_status`);
+  if (typeof output.profile_input_path === "string" && output.profile_input_path !== "") {
+    requireSha256String(output.profile_input_sha256, `${context} profile_input_sha256`);
+    if (existsSync(output.profile_input_path) && output.profile_input_sha256 !== sha256(readFileSync(output.profile_input_path, "utf8"))) {
+      throw new Error(`${context} profile_input_sha256 does not match ${output.profile_input_path}`);
+    }
+  }
+  requireString(output.recall_organic_expected_proxy_status, `${context} recall_organic_expected_proxy_status`);
+  requireStringArray(output.recall_ticker_only_expected_proxy_symbols ?? [], `${context} recall_ticker_only_expected_proxy_symbols`);
+  validateDiscoveryScanSemanticCoverage(output, context);
+  validateDiscoveryScanRecallMetrics(output, context);
+  if (!existsSync(output.lane_map_path)) {
+    throw new Error(`${context} lane_map_path does not exist: ${output.lane_map_path}`);
+  }
+  const currentLaneMapHash = sha256(readFileSync(output.lane_map_path, "utf8"));
+  if (output.lane_map_sha256 !== currentLaneMapHash) {
+    throw new Error(`${context} lane_map_sha256 does not match ${output.lane_map_path}`);
+  }
+  requirePositiveNumber(output.deterministic_limit, `${context} deterministic_limit`);
+  requireNumber(output.candidate_count, `${context} candidate_count`);
+  requireNumber(output.returned_candidate_count, `${context} returned_candidate_count`);
+  requireNumber(output.total_match_count, `${context} total_match_count`);
+  requireNumber(output.omitted_candidate_count, `${context} omitted_candidate_count`);
+  requireBoolean(output.truncated, `${context} truncated`);
+  [
+    "candidates",
+    "omitted_candidates",
+    "suppressed_known_matches",
+    "exploratory_matches",
+    "recall_diagnostics",
+    "lanes_scanned",
+  ].forEach((field) => {
+    if (!Array.isArray(output[field])) {
+      throw new Error(`${context} ${field} must be an array`);
+    }
+  });
+  if (output.omitted_candidate_count !== output.omitted_candidates.length) {
+    throw new Error(`${context} omitted_candidate_count must match omitted_candidates length`);
+  }
+  if (output.candidate_count !== output.candidates.length) {
+    throw new Error(`${context} candidate_count must match candidates length`);
+  }
+  if (requireBroadFreshness) {
+    if (output.profile_purpose === "issuer_universe_discovery") {
+      throw new Error(`${context} issuer profile scan cannot use non-profile broad freshness validation`);
+    }
+    if (output.discovery_scope !== defaultDiscoveryScope) {
+      throw new Error(`${context} broad universe freshness requires discovery_scope ${defaultDiscoveryScope}`);
+    }
+    if (output.input_path !== "") {
+      throw new Error(`${context} broad universe freshness requires the default SEC universe input`);
+    }
+    if (output.source_url !== secCompanyTickersExchangeUrl || output.sec_input_source !== secCompanyTickersExchangeUrl) {
+      throw new Error(`${context} broad universe freshness requires SEC company_tickers_exchange source`);
+    }
+    if (output.truncated) {
+      throw new Error(`${context} broad universe freshness requires a non-truncated deterministic scan artifact`);
+    }
+    if (output.recall_expected_proxy_miss_count > 0) {
+      throw new Error(`${context} broad universe freshness has known public proxy recall misses`);
+    }
+  }
+}
+
+function validateDiscoveryScanSemanticCoverage(output, context) {
+  const profilePurpose = output.profile_purpose ?? "";
+  if (profilePurpose === "") {
+    if (output.issuer_profile_coverage_status !== noProfileSemanticCoverageStatus) {
+      throw new Error(`${context} issuer_profile_coverage_status must be ${noProfileSemanticCoverageStatus} when profile_input_path is absent`);
+    }
+    if (output.issuer_profile_semantic_gap_count !== output.sec_input_eligible_universe_count) {
+      throw new Error(`${context} issuer_profile_semantic_gap_count must equal sec_input_eligible_universe_count when no issuer profiles are supplied`);
+    }
+    if (output.issuer_profile_semantic_coverage_ratio !== 0) {
+      throw new Error(`${context} issuer_profile_semantic_coverage_ratio must be 0 when no issuer profiles are supplied`);
+    }
+    return;
+  }
+  if (profilePurpose === "issuer_universe_discovery") {
+    if (
+      output.profile_coverage_status === "complete" &&
+      output.issuer_profile_coverage_status === "complete_scope_with_profile_skips"
+    ) {
+      if (output.profile_coverage_gap_count !== 0) {
+        throw new Error(`${context} complete profile coverage with skips must have zero audited coverage gap`);
+      }
+      if (output.issuer_profile_semantic_gap_count !== output.profile_skipped_symbol_count) {
+        throw new Error(`${context} issuer_profile_semantic_gap_count must match profile_skipped_symbol_count for complete profile coverage with skips`);
+      }
+      return;
+    }
+    if (output.issuer_profile_coverage_status !== output.profile_coverage_status) {
+      throw new Error(`${context} issuer_profile_coverage_status must match profile_coverage_status for issuer profile scans`);
+    }
+    if (output.issuer_profile_semantic_gap_count !== output.profile_coverage_gap_count) {
+      throw new Error(`${context} issuer_profile_semantic_gap_count must match profile_coverage_gap_count for issuer profile scans`);
+    }
+    if (output.issuer_profile_semantic_coverage_ratio !== output.profile_coverage_ratio) {
+      throw new Error(`${context} issuer_profile_semantic_coverage_ratio must match profile_coverage_ratio for issuer profile scans`);
+    }
+  }
+}
+
+function validateDiscoveryScanRecallMetrics(output, context) {
+  const inScopeDiagnostics = output.recall_diagnostics.filter((diagnostic) =>
+    diagnostic.recall_scope === "sec_listed_public_proxy",
+  );
+  const organicMissCount = inScopeDiagnostics.filter((diagnostic) =>
+    diagnostic.organic_matched_any_expected_lane !== true,
+  ).length;
+  const organicCount = inScopeDiagnostics.length - organicMissCount;
+  const tickerOnlySymbols = inScopeDiagnostics
+    .filter((diagnostic) =>
+      diagnostic.status === "matched_expected_lane"
+      && diagnostic.organic_matched_any_expected_lane !== true,
+    )
+    .map((diagnostic) => diagnostic.symbol)
+    .sort();
+  if (output.recall_organic_expected_proxy_count !== organicCount) {
+    throw new Error(`${context} recall_organic_expected_proxy_count must match recall_diagnostics`);
+  }
+  if (output.recall_organic_expected_proxy_miss_count !== organicMissCount) {
+    throw new Error(`${context} recall_organic_expected_proxy_miss_count must match recall_diagnostics`);
+  }
+  requireMatchingStringArray(
+    output.recall_ticker_only_expected_proxy_symbols ?? [],
+    tickerOnlySymbols,
+    `${context} recall_ticker_only_expected_proxy_symbols`,
+  );
+  const expectedStatus = recallOrganicStatus({
+    inScopeCount: inScopeDiagnostics.length,
+    organicRecallMissCount: organicMissCount,
+    tickerOnlyExpectedProxyCount: tickerOnlySymbols.length,
+  });
+  if (output.recall_organic_expected_proxy_status !== expectedStatus) {
+    throw new Error(`${context} recall_organic_expected_proxy_status must match recall_diagnostics`);
+  }
+}
+
+function recallOrganicStatus({
+  inScopeCount,
+  organicRecallMissCount,
+  tickerOnlyExpectedProxyCount,
+}) {
+  if (inScopeCount === 0) {
+    return "not_applicable_no_expected_public_proxies";
+  }
+  if (organicRecallMissCount === 0) {
+    return "organic_recall_complete";
+  }
+  if (tickerOnlyExpectedProxyCount === inScopeCount) {
+    return "insufficient_all_expected_proxies_ticker_only";
+  }
+  return "partial_organic_recall_gap";
+}
+
+function expectedBroadUniverseScanBinding() {
+  const qualityMetrics = parsedYamlFiles.get(qualityMetricsFile);
+  const expectedAsOf = qualityMetrics?.coverage?.universe_scan_as_of;
+  const agenticPath = qualityMetrics?.discovery_process?.latest_agentic_discovery_path;
+  requireString(expectedAsOf, `${qualityMetricsFile} coverage.universe_scan_as_of`);
+  requireString(agenticPath, `${qualityMetricsFile} discovery_process.latest_agentic_discovery_path`);
+  const agenticRun = parseYaml(readFileSync(agenticPath, "utf8"));
+  const commands = agenticRun?.source_coverage?.deterministic_commands ?? [];
+  for (const command of commands) {
+    const output = loadDeterministicCommandJsonOutput(command);
+    if (output === undefined || output.parsed.profile_purpose === "issuer_universe_discovery") {
+      continue;
+    }
+    if (output.parsed.as_of !== expectedAsOf) {
+      continue;
+    }
+    validateDiscoveryScanOutput(output.parsed, `${agenticPath} broad universe SEC binding`, {
+      requireBroadFreshness: true,
+    });
+    return {
+      laneMapSha256: output.parsed.lane_map_sha256,
+      secInputEligibleUniverseCount: output.parsed.sec_input_eligible_universe_count,
+      secInputRowCount: output.parsed.sec_input_row_count,
+      secInputSha256: output.parsed.sec_input_sha256,
+    };
+  }
+  throw new Error(`${qualityMetricsFile} has no non-profile broad deterministic scan output to bind complete issuer-profile evidence`);
+}
+
+function validateDeterministicCommandOutput(command, context) {
+  const loaded = loadDeterministicCommandJsonOutput(command);
+  if (loaded === undefined) {
+    return;
+  }
+  const output = loaded.parsed;
+  requireString(command.output_sha256, `${context} output_sha256`);
+  if (command.output_sha256 !== loaded.sha256) {
+    throw new Error(`${context} output_sha256 does not match ${command.output_path}`);
+  }
+  if (typeof output.as_of === "string") {
+    parseDate(output.as_of, `${context} output as_of`);
+  }
+  if (output.profile_purpose !== "issuer_universe_discovery") {
+    validateDiscoveryScanOutput(output, context, {
+      requireBroadFreshness: false,
+    });
+    return;
+  }
+  validateDiscoveryScanOutput(output, context, {
+    requireBroadFreshness: false,
+  });
+  requireString(command.profile_coverage_scope, `${context} profile_coverage_scope`);
+  requireString(command.profile_coverage_status, `${context} profile_coverage_status`);
+  requireStringArray(command.profile_requested_symbols, `${context} profile_requested_symbols`);
+  requireString(output.profile_coverage_status, `${context} output profile_coverage_status`);
+  requireString(output.profile_coverage_scope, `${context} output profile_coverage_scope`);
+  requireNumber(output.profile_coverage_gap_count, `${context} output profile_coverage_gap_count`);
+  requireNumber(output.profile_coverage_ratio, `${context} output profile_coverage_ratio`);
+  requireNumber(output.profile_selected_symbol_count, `${context} output profile_selected_symbol_count`);
+  requireNumber(output.profile_eligible_universe_count, `${context} output profile_eligible_universe_count`);
+  requireNumber(output.profile_symbol_count, `${context} output profile_symbol_count`);
+  requireNumber(output.sec_input_eligible_universe_count, `${context} output sec_input_eligible_universe_count`);
+  if (output.profile_eligible_universe_count !== output.sec_input_eligible_universe_count) {
+    throw new Error(`${context} output profile_eligible_universe_count must match current SEC input eligible universe count`);
+  }
+  if (command.profile_coverage_scope !== output.profile_coverage_scope) {
+    throw new Error(`${context} profile_coverage_scope must match deterministic output`);
+  }
+  if (command.profile_coverage_status !== output.profile_coverage_status) {
+    throw new Error(`${context} profile_coverage_status must match deterministic output`);
+  }
+  const outputRequestedSymbols = stringArrayOrEmpty(output.profile_requested_symbols);
+  if (normalizedJoin(command.profile_requested_symbols) !== normalizedJoin(outputRequestedSymbols)) {
+    throw new Error(`${context} profile_requested_symbols must match deterministic output`);
+  }
+  if (output.profile_coverage_status === "complete") {
+    validateCompleteIssuerProfileOutput(output, context);
+    return;
+  }
+  requireBoolean(command.targeted_scope_acknowledged, `${context} targeted_scope_acknowledged`);
+  if (command.targeted_scope_acknowledged !== true) {
+    throw new Error(`${context} uses partial issuer-universe profile coverage without targeted_scope_acknowledged`);
+  }
+  requireString(command.targeted_scope_reason, `${context} targeted_scope_reason`);
+  if (output.profile_coverage_scope === "complete_sec_universe") {
+    throw new Error(`${context} non-complete issuer profile output must not claim complete_sec_universe coverage_scope`);
+  }
+}
+
+function validateCompleteIssuerProfileOutput(output, context) {
+  const binding = expectedBroadUniverseScanBinding();
+  if (
+    output.profile_coverage_scope !== "complete_sec_universe"
+    || output.profile_coverage_gap_count !== 0
+    || output.profile_coverage_ratio !== 1
+    || output.profile_selected_symbol_count !== output.profile_eligible_universe_count
+    || output.profile_symbol_count !== output.profile_eligible_universe_count
+    || output.profile_eligible_universe_count !== output.sec_input_eligible_universe_count
+  ) {
+    throw new Error(`${context} complete issuer-universe profile coverage must have zero gap, full ratio, and matching selected/profile/eligible counts`);
+  }
+  if (
+    output.sec_input_sha256 !== binding.secInputSha256
+    || output.sec_input_row_count !== binding.secInputRowCount
+    || output.sec_input_eligible_universe_count !== binding.secInputEligibleUniverseCount
+  ) {
+    throw new Error(`${context} complete issuer-universe profile coverage does not match broad universe SEC input binding`);
+  }
+  if (output.lane_map_sha256 !== binding.laneMapSha256) {
+    throw new Error(`${context} complete issuer-universe profile coverage does not match current broad universe lane-map binding`);
+  }
+}
+
+function supportsBroadUniverseFreshness(output) {
+  if (output.profile_purpose !== "issuer_universe_discovery") {
+    validateDiscoveryScanOutput(output, "broad universe freshness output", {
+      requireBroadFreshness: true,
+    });
+    return true;
+  }
+  const complete = (
+    output.profile_coverage_status === "complete" &&
+    output.profile_coverage_scope === "complete_sec_universe" &&
+    output.profile_coverage_gap_count === 0 &&
+    output.profile_coverage_ratio === 1 &&
+    output.profile_selected_symbol_count === output.profile_eligible_universe_count &&
+    output.profile_symbol_count === output.profile_eligible_universe_count &&
+    output.profile_eligible_universe_count === output.sec_input_eligible_universe_count
+  );
+  if (complete) {
+    validateCompleteIssuerProfileOutput(output, "broad universe freshness issuer-profile output");
+  }
+  return complete;
+}
+
+function validateEvidencePacketDeterministicOutputs(file, parsed) {
+  const expectedAsOf = parsed.quality_metrics?.coverage?.universe_scan_as_of;
+  requireString(expectedAsOf, `${file} quality_metrics.coverage.universe_scan_as_of`);
+  let sawMatchingBroadAsOf = false;
+  parsed.deterministic_outputs.forEach((entry, index) => {
+    const context = `${file} deterministic_outputs[${index}]`;
+    const outputPath = entry?.output_path;
+    if (typeof outputPath !== "string" || outputPath === "" || !outputPath.endsWith(".json")) {
+      return;
+    }
+    if (!existsSync(outputPath)) {
+      throw new Error(`${context} output_path does not exist: ${outputPath}`);
+    }
+    requireString(entry.output_sha256, `${context} output_sha256`);
+    const content = readFileSync(outputPath, "utf8");
+    if (entry.output_sha256 !== sha256(content)) {
+      throw new Error(`${context} output_sha256 does not match ${outputPath}`);
+    }
+    const output = JSON.parse(content);
+    if ("candidate_count" in output) {
+      validateDiscoveryScanOutput(output, context, {
+        requireBroadFreshness: false,
+      });
+      validateEvidencePacketScanPayloadSummary(entry, output, context);
+    }
+    if (typeof output.as_of === "string") {
+      parseDate(output.as_of, `${context} output as_of`);
+      if (output.as_of === expectedAsOf && supportsBroadUniverseFreshness(output)) {
+        sawMatchingBroadAsOf = true;
+      }
+    }
+    if (output.profile_purpose === "issuer_universe_discovery") {
+      requireString(entry.profile_coverage_scope, `${context} profile_coverage_scope`);
+      requireString(entry.profile_coverage_status, `${context} profile_coverage_status`);
+      requireStringArray(entry.profile_requested_symbols, `${context} profile_requested_symbols`);
+      if (entry.profile_coverage_scope !== output.profile_coverage_scope) {
+        throw new Error(`${context} profile_coverage_scope must match deterministic output`);
+      }
+      if (entry.profile_coverage_status !== output.profile_coverage_status) {
+        throw new Error(`${context} profile_coverage_status must match deterministic output`);
+      }
+      if (normalizedJoin(entry.profile_requested_symbols) !== normalizedJoin(stringArrayOrEmpty(output.profile_requested_symbols))) {
+        throw new Error(`${context} profile_requested_symbols must match deterministic output`);
+      }
+    }
+  });
+  if (!sawMatchingBroadAsOf) {
+    throw new Error(`${file} deterministic_outputs has no matching broad universe_scan_as_of ${expectedAsOf}`);
+  }
+}
+
+function validateEvidencePacketScanPayloadSummary(entry, output, context) {
+  const summary = entry.scan_payload_summary;
+  if (summary === null || typeof summary !== "object" || Array.isArray(summary)) {
+    throw new Error(`${context} scan_payload_summary is required for discovery scan outputs`);
+  }
+  [
+    "returned_candidate_count",
+    "omitted_candidate_count",
+    "total_match_count",
+    "exploratory_match_count",
+    "suppressed_known_match_count",
+    "recall_expected_lane_miss_count",
+    "recall_expected_proxy_miss_count",
+    "recall_organic_expected_proxy_count",
+    "recall_organic_expected_proxy_miss_count",
+    "recall_ticker_only_expected_proxy_count",
+  ].forEach((field) => {
+    requireNumber(summary[field], `${context} scan_payload_summary.${field}`);
+    if (summary[field] !== output[field]) {
+      throw new Error(`${context} scan_payload_summary.${field} must match deterministic output`);
+    }
+  });
+  requireBoolean(summary.truncated, `${context} scan_payload_summary.truncated`);
+  if (summary.truncated !== output.truncated) {
+    throw new Error(`${context} scan_payload_summary.truncated must match deterministic output`);
+  }
+  requireString(summary.recall_organic_expected_proxy_status, `${context} scan_payload_summary.recall_organic_expected_proxy_status`);
+  if (summary.recall_organic_expected_proxy_status !== output.recall_organic_expected_proxy_status) {
+    throw new Error(`${context} scan_payload_summary.recall_organic_expected_proxy_status must match deterministic output`);
+  }
+  requireMatchingStringArray(
+    summary.recall_ticker_only_expected_proxy_symbols ?? [],
+    output.recall_ticker_only_expected_proxy_symbols ?? [],
+    `${context} scan_payload_summary.recall_ticker_only_expected_proxy_symbols`,
+  );
+  [
+    "candidate_counts_by_priority",
+    "candidate_counts_by_lane",
+    "false_positive_flag_counts",
+    "exploratory_match_counts_by_lane",
+  ].forEach((field) => {
+    requireMatchingJson(summary[field] ?? {}, output[field] ?? {}, `${context} scan_payload_summary.${field}`);
+  });
+  [
+    ["returned_candidates", output.candidates ?? []],
+    ["omitted_candidates", output.omitted_candidates ?? []],
+    ["exploratory_unknown_lane_matches", output.exploratory_matches ?? []],
+    ["suppressed_known_matches", output.suppressed_known_matches ?? []],
+  ].forEach(([field, expected]) => {
+    validateEvidencePacketCandidateSummaries(summary[field], expected, `${context} scan_payload_summary.${field}`);
+  });
+  validateEvidencePacketRecallSummaries(
+    summary.recall_diagnostics,
+    output.recall_diagnostics ?? [],
+    `${context} scan_payload_summary.recall_diagnostics`,
+  );
+}
+
+function validateEvidencePacketCandidateSummaries(actual, expected, context) {
+  if (!Array.isArray(actual)) {
+    throw new Error(`${context} must be an array`);
+  }
+  if (actual.length !== expected.length) {
+    throw new Error(`${context} length must match deterministic output`);
+  }
+  actual.forEach((candidate, index) => {
+    const expectedCandidate = expected[index];
+    const itemContext = `${context}[${index}]`;
+    ["symbol", "name", "primary_lane_id", "deterministic_priority", "recommended_review_depth"].forEach((field) => {
+      requireString(candidate?.[field], `${itemContext} ${field}`);
+    });
+    if (candidate.symbol !== expectedCandidate.symbol) {
+      throw new Error(`${itemContext} symbol must match deterministic output`);
+    }
+    [
+      "name",
+      "exchange",
+      "deterministic_priority",
+      "recommended_review_depth",
+      "keyword_signal",
+      "security_form",
+      "security_form_confidence",
+      "required_next_step",
+    ].forEach((field) => {
+      if ((candidate[field] ?? "") !== (expectedCandidate[field] ?? "")) {
+        throw new Error(`${itemContext} ${field} must match deterministic output`);
+      }
+    });
+    if ((candidate.requires_security_type_confirmation ?? false) !== (expectedCandidate.requires_security_type_confirmation ?? false)) {
+      throw new Error(`${itemContext} requires_security_type_confirmation must match deterministic output`);
+    }
+    if ((candidate.triage_score ?? null) !== (expectedCandidate.triage_score ?? null)) {
+      throw new Error(`${itemContext} triage_score must match deterministic output`);
+    }
+    if ((candidate.profile_enriched ?? false) !== (expectedCandidate.profile_enriched ?? false)) {
+      throw new Error(`${itemContext} profile_enriched must match deterministic output`);
+    }
+    if ((candidate.primary_lane_id ?? "") !== (expectedCandidate.primary_lane_id ?? expectedCandidate.lane_id ?? "")) {
+      throw new Error(`${itemContext} primary_lane_id must match deterministic output`);
+    }
+    [
+      "secondary_lane_ids",
+      "matched_fields",
+      "matched_keywords",
+      "match_sources",
+      "false_positive_flags",
+      "known_sources",
+    ].forEach((field) => {
+      requireStringArray(candidate[field] ?? [], `${itemContext} ${field}`);
+      requireMatchingStringArray(
+        candidate[field] ?? [],
+        expectedCandidate[field] ?? [],
+        `${itemContext} ${field}`,
+      );
+    });
+    requireMatchingJson(
+      candidate.matched_keyword_fields ?? {},
+      expectedCandidate.matched_keyword_fields ?? {},
+      `${itemContext} matched_keyword_fields`,
+    );
+    requireMatchingJson(
+      candidate.matched_keyword_variants ?? {},
+      expectedCandidate.matched_keyword_variants ?? {},
+      `${itemContext} matched_keyword_variants`,
+    );
+    requireMatchingJson(
+      candidate.matched_profile_snippets ?? [],
+      expectedCandidate.matched_profile_snippets ?? [],
+      `${itemContext} matched_profile_snippets`,
+    );
+    ["exploratory_reason", "recheck_reason"].forEach((field) => {
+      if ((candidate[field] ?? "") !== (expectedCandidate[field] ?? "")) {
+        throw new Error(`${itemContext} ${field} must match deterministic output`);
+      }
+    });
+  });
+}
+
+function validateEvidencePacketRecallSummaries(actual, expected, context) {
+  if (!Array.isArray(actual)) {
+    throw new Error(`${context} must be an array`);
+  }
+  if (actual.length !== expected.length) {
+    throw new Error(`${context} length must match deterministic output`);
+  }
+  actual.forEach((diagnostic, index) => {
+    const expectedDiagnostic = expected[index];
+    const itemContext = `${context}[${index}]`;
+    requireString(diagnostic?.symbol, `${itemContext} symbol`);
+    requireString(diagnostic?.status, `${itemContext} status`);
+    if (diagnostic.symbol !== expectedDiagnostic.symbol) {
+      throw new Error(`${itemContext} symbol must match deterministic output`);
+    }
+    [
+      "expected_lane_id",
+      "status",
+      "recall_scope",
+      "missed_reason",
+      "suggested_review",
+    ].forEach((field) => {
+      if ((diagnostic[field] ?? "") !== (expectedDiagnostic[field] ?? "")) {
+        throw new Error(`${itemContext} ${field} must match deterministic output`);
+      }
+    });
+    [
+      "matched_expected_lane_ids",
+      "organic_matched_expected_lane_ids",
+      "matched_lane_ids",
+      "match_sources",
+    ].forEach((field) => {
+      requireStringArray(diagnostic[field] ?? [], `${itemContext} ${field}`);
+      requireMatchingStringArray(
+        diagnostic[field] ?? [],
+        expectedDiagnostic[field] ?? [],
+        `${itemContext} ${field}`,
+      );
+    });
+    [
+      "organic_matched_any_expected_lane",
+      "ticker_only_expected_lane_recall",
+    ].forEach((field) => {
+      if ((diagnostic[field] ?? false) !== (expectedDiagnostic[field] ?? false)) {
+        throw new Error(`${itemContext} ${field} must match deterministic output`);
+      }
+    });
+  });
+}
+
+function requireMatchingStringArray(actual, expected, context) {
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    throw new Error(`${context} must match deterministic output`);
+  }
+}
+
+function requireMatchingJson(actual, expected, context) {
+  if (JSON.stringify(actual ?? {}) !== JSON.stringify(expected ?? {})) {
+    throw new Error(`${context} must match deterministic output`);
+  }
+}
+
+function loadDeterministicCommandJsonOutput(command) {
+  if (
+    command.output_path === undefined ||
+    command.output_path === "" ||
+    command.output_path === "not_saved_for_original_run" ||
+    !command.output_path.endsWith(".json")
+  ) {
+    return undefined;
+  }
+  const content = readFileSync(command.output_path, "utf8");
+  return {
+    parsed: JSON.parse(content),
+    sha256: sha256(content),
+  };
+}
+
+function normalizedJoin(values) {
+  return values.map((value) => value.toUpperCase()).sort().join(",");
+}
+
+function sha256(content) {
+  return createHash("sha256").update(content).digest("hex");
+}
+
+function stableSha256(value) {
+  return sha256(JSON.stringify(sortForStableStringify(value)));
+}
+
+function sortForStableStringify(value) {
+  if (Array.isArray(value)) {
+    return value.map(sortForStableStringify);
+  }
+  if (value !== null && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value)
+        .sort(([left], [right]) => left.localeCompare(right))
+        .map(([key, item]) => [key, sortForStableStringify(item)]),
+    );
+  }
+  return value;
 }
 
 function validateFirstLayerQuestions(file, questions) {
@@ -2137,7 +4007,7 @@ function validateFirstLayerQuestions(file, questions) {
     ["facts", "inferences", "disconfirming_evidence", "investment_implication"].forEach((field) =>
       requireString(question?.[field], `${context} ${field}`),
     );
-    requireStringArray(question?.source_ids, `${context} source_ids`);
+    requireNonEmptyStringArray(question?.source_ids, `${context} source_ids`);
     question.source_ids.forEach((sourceId) => {
       if (!knownSourceIds.has(sourceId)) {
         throw new Error(`${context} references unknown source id ${sourceId}`);
@@ -2151,6 +4021,7 @@ function validateDiscoveryRunSubagents(file, subagents, discoveryProcess) {
   if (!Array.isArray(roles) || roles.length === 0) {
     throw new Error(`${file} subagents.required_roles must contain at least one role`);
   }
+  const knownSourceIds = sourceIds();
   const completedRoles = new Set();
   roles.forEach((role, index) => {
     const context = `${file} subagents.required_roles[${index}]`;
@@ -2159,7 +4030,7 @@ function validateDiscoveryRunSubagents(file, subagents, discoveryProcess) {
     );
     requiredDiscoveryRunSubagentFields.forEach((field) => {
       if (Array.isArray(role?.[field])) {
-        requireStringArray(role[field], `${context} ${field}`);
+        requireNonEmptyStringArray(role[field], `${context} ${field}`);
       } else {
         requireString(role?.[field], `${context} ${field}`);
       }
@@ -2177,11 +4048,22 @@ function validateDiscoveryRunSubagents(file, subagents, discoveryProcess) {
     } else {
       requireAllowed(role.skip_reason, allowedSubagentSkipReasons, `${context} skip_reason`);
     }
+    role.sources_checked.forEach((sourceId) => {
+      if (!knownSourceIds.has(sourceId)) {
+        throw new Error(`${context} sources_checked references unknown source id ${sourceId}`);
+      }
+    });
   });
 
   discoveryProcess.completed_xhigh_roles.forEach((role) => {
     if (!completedRoles.has(role)) {
       throw new Error(`${qualityMetricsFile} completed_xhigh_roles includes ${role}, but ${file} does not mark it completed`);
+    }
+  });
+  discoveryProcess.skipped_xhigh_roles.forEach((role) => {
+    const matchingRole = roles.find((entry) => entry?.role === role);
+    if (matchingRole === undefined || matchingRole.completed) {
+      throw new Error(`${qualityMetricsFile} skipped_xhigh_roles includes ${role}, but ${file} does not mark it skipped`);
     }
   });
   requireNumber(subagents.unresolved_conflicts, `${file} subagents.unresolved_conflicts`);
@@ -2242,6 +4124,65 @@ function validateCurrentBuyZoneRows(asOfDate) {
         throw new Error(`${buyZonesFile} buy-zone row is not current for active symbol ${row.symbol}`);
       }
     });
+}
+
+function currentFilingReviewSymbolSet(activeSymbols, asOfTimestamp, maxAgeDays) {
+  const activeSet = new Set(activeSymbols);
+  const currentSymbols = new Set();
+  const latestFilingRows = new Map();
+  csvRecords(freshnessFile)
+    .filter((row) =>
+      activeSet.has(row.symbol)
+        && row.source_type === "sec_filing",
+    )
+    .forEach((row) => {
+      const sourcePublishedAt = parseDate(row.source_published_at, `${freshnessFile} ${row.event_id} source_published_at`);
+      if (sourcePublishedAt > asOfTimestamp) {
+        return;
+      }
+      const current = latestFilingRows.get(row.symbol);
+      if (current === undefined || compareSecFilingEventRows(row, current) > 0) {
+        latestFilingRows.set(row.symbol, row);
+      }
+    });
+  latestFilingRows.forEach((row) => {
+    if (isReviewedLatestSecFiling(row, asOfTimestamp, maxAgeDays)) {
+      currentSymbols.add(row.symbol);
+    }
+  });
+  return currentSymbols;
+}
+
+function compareSecFilingEventRows(left, right) {
+  return compareString(left.source_published_at, right.source_published_at)
+    || compareString(left.event_date, right.event_date)
+    || compareString(left.event_id, right.event_id);
+}
+
+function compareString(left, right) {
+  if (left > right) {
+    return 1;
+  }
+  if (left < right) {
+    return -1;
+  }
+  return 0;
+}
+
+function isReviewedLatestSecFiling(row, asOfTimestamp, maxAgeDays) {
+  if (row.status === "reviewed") {
+    const reviewedAt = parseDate(row.reviewed_at, `${freshnessFile} ${row.event_id} reviewed_at`);
+    if (daysBetween(reviewedAt, asOfTimestamp) > maxAgeDays) {
+      return false;
+    }
+    return (row.review_path !== "" && existsSync(row.review_path))
+      || row.immaterial_reason !== "";
+  }
+  if (row.status === "ignored_with_reason" && row.immaterial_reason !== "") {
+    const retrievedAt = parseDate(row.retrieved_at, `${freshnessFile} ${row.event_id} retrieved_at`);
+    return daysBetween(retrievedAt, asOfTimestamp) <= maxAgeDays;
+  }
+  return false;
 }
 
 function currentValuationSymbolSet(activeSymbols, asOfTimestamp, maxAgeDays) {

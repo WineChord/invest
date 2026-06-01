@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-05-30
+as_of: 2026-06-01
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -68,6 +68,7 @@ lanes:
     current_public_proxies:
       - ASTS
       - GSAT
+    private_or_future_proxies:
       - SPACEX
     candidate_entry_points:
       - newly listed satellite connectivity companies
@@ -92,10 +93,15 @@ lanes:
       - inference
       - training cluster
       - compute
+    profile_keywords:
+      - electronic computers
+      - computer processing
+      - data preparation
     current_public_proxies:
       - CRWV
       - NBIS
       - IREN
+    private_or_future_proxies:
       - SPACEX
     candidate_entry_points:
       - newly public neoclouds
@@ -148,6 +154,8 @@ lanes:
       - CXL
       - retimer
       - optical
+    profile_keywords:
+      - semiconductors & related devices
     current_public_proxies:
       - CRDO
       - ALAB
@@ -252,7 +260,8 @@ lanes:
       - foundation model
       - AI platform
       - agentic
-    current_public_proxies:
+    current_public_proxies: []
+    private_or_future_proxies:
       - OPENAI
       - ANTHROPIC
       - SPACEX

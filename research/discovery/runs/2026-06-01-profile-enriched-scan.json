@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-31T22:46:58.017Z",
-  "as_of": "2026-05-31",
+  "generated_at": "2026-05-31T22:46:58.477Z",
+  "as_of": "2026-06-01",
   "discovery_scope": "active_emerging_incubating",
   "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
   "sec_input_source": "https://www.sec.gov/files/company_tickers_exchange.json",
-  "sec_input_fetched_at": "2026-05-31T22:46:55.609Z",
+  "sec_input_fetched_at": "2026-05-31T22:46:55.666Z",
   "sec_input_row_count": 10365,
   "sec_input_eligible_universe_count": 7575,
   "sec_input_sha256": "27a0d81776e908cfdc6cc71064bf7692c8aea14f01ff074e46c2b7015ffbf5ee",
@@ -13,12 +13,18 @@
   "lane_map_path": "research/discovery/lanes.yml",
   "lane_map_as_of": "2026-06-01",
   "lane_map_sha256": "6c288d7da254cf6c16705e0b42c11f477717c926bc45b383b8f6107d929d488d",
-  "profile_input_path": "",
-  "profile_purpose": "",
-  "profile_source": "",
-  "profile_generated_at": "",
-  "profile_source_files": [],
-  "profile_text_fields": [],
+  "profile_input_path": "research/discovery/runs/2026-06-01-profile-input.json",
+  "profile_purpose": "repo_research_recall_calibration",
+  "profile_source": "repo_company_analysis",
+  "profile_generated_at": "2026-05-31T20:11:15.050Z",
+  "profile_source_files": [
+    "research/company-analysis.yml",
+    "data/market/security_master.csv"
+  ],
+  "profile_text_fields": [
+    "summary",
+    "upside_path"
+  ],
   "profile_coverage_strategy": "",
   "profile_coverage_scope": "",
   "profile_requested_symbols": [],
@@ -28,10 +34,10 @@
   "profile_coverage_limit": 0,
   "profile_coverage_gap_count": 0,
   "profile_coverage_ratio": 0,
-  "profile_coverage_status": "not_applicable_no_profile_input",
+  "profile_coverage_status": "not_applicable_recall_calibration",
   "profile_sampling_note": "",
-  "profile_declared_count": 0,
-  "profile_symbol_count": 0,
+  "profile_declared_count": 22,
+  "profile_symbol_count": 22,
   "deterministic_limit": 1000,
   "known_symbol_count": 25,
   "lanes_scanned": [
@@ -146,11 +152,11 @@
   },
   "profile_enriched_candidate_count": 0,
   "profile_enriched_returned_candidate_count": 0,
-  "profile_enriched_suppressed_match_count": 0,
+  "profile_enriched_suppressed_match_count": 21,
   "profile_enriched_exploratory_match_count": 0,
-  "profile_known_symbol_count": 0,
+  "profile_known_symbol_count": 22,
   "profile_unknown_symbol_count": 0,
-  "total_match_count": 121,
+  "total_match_count": 124,
   "all_candidate_count": 46,
   "returned_candidate_count": 46,
   "omitted_candidate_count": 0,
@@ -167,7 +173,7 @@
   "recall_unique_expected_proxy_miss_count": 0,
   "recall_expected_proxy_count": 22,
   "recall_expected_proxy_miss_count": 0,
-  "recall_ticker_only_expected_proxy_count": 22,
+  "recall_ticker_only_expected_proxy_count": 0,
   "candidate_count": 46,
   "candidates": [
     {
@@ -9197,132 +9203,6 @@
   ],
   "suppressed_known_matches": [
     {
-      "symbol": "BE",
-      "name": "Bloom Energy Corp",
-      "cik": "1664703",
-      "exchange": "NYSE",
-      "primary_lane_id": "advanced_nuclear_and_grid_constraints",
-      "lane_id": "advanced_nuclear_and_grid_constraints",
-      "lane_name": "Advanced Nuclear And Grid Constraints",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "advanced_nuclear_and_grid_constraints",
-          "lane_name": "Advanced Nuclear And Grid Constraints",
-          "lane_status": "active",
-          "matched_keywords": [
-            "BE"
-          ],
-          "matched_keyword_scopes": {
-            "BE": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "BE": [
-              "be"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "BE": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        },
-        {
-          "lane_id": "ai_power_and_cooling",
-          "lane_name": "AI Data-Center Power And Cooling",
-          "lane_status": "active",
-          "matched_keywords": [
-            "BE"
-          ],
-          "matched_keyword_scopes": {
-            "BE": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "BE": [
-              "be"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "BE": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [
-        "ai_power_and_cooling"
-      ],
-      "matched_keywords": [
-        "BE"
-      ],
-      "matched_keyword_scopes": {
-        "BE": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "BE": [
-          "be"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "BE": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:watch",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
       "symbol": "LEU",
       "name": "CENTRUS ENERGY CORP",
       "cik": "1065059",
@@ -9337,33 +9217,69 @@
           "lane_name": "Advanced Nuclear And Grid Constraints",
           "lane_status": "active",
           "matched_keywords": [
-            "LEU"
+            "LEU",
+            "nuclear",
+            "HALEU"
           ],
           "matched_keyword_scopes": {
-            "LEU": "current_public_proxy_symbols"
+            "LEU": "current_public_proxy_symbols",
+            "nuclear": "screen_keywords",
+            "HALEU": "screen_keywords"
           },
           "matched_keyword_variants": {
             "LEU": [
               "leu"
+            ],
+            "nuclear": [
+              "nuclear"
+            ],
+            "HALEU": [
+              "haleu"
             ]
           },
           "matched_fields": [
+            "profile_text",
             "ticker"
           ],
           "matched_keyword_fields": {
             "LEU": [
               "ticker"
+            ],
+            "nuclear": [
+              "profile_text"
+            ],
+            "HALEU": [
+              "profile_text"
             ]
           },
-          "matched_profile_snippets": [],
+          "matched_profile_snippets": [
+            {
+              "keyword": "nuclear",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "control the thesis. Benefit if U.S. fuel-security policy and advanced nuclear demand make HALEU capacity strategically scarce."
+            },
+            {
+              "keyword": "HALEU",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Centrus has distinct HALEU scarcity exposure at a less extreme valuation, but policy and scale-u"
+            }
+          ],
           "match_sources": [
+            "profile_input",
             "sec_issuer_reference"
           ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
+          "profile_enriched": true,
+          "score": 135,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
           "false_positive_flags": []
         },
         {
@@ -9405,166 +9321,87 @@
         "ai_power_and_cooling"
       ],
       "matched_keywords": [
-        "LEU"
+        "LEU",
+        "nuclear",
+        "HALEU"
       ],
       "matched_keyword_scopes": {
-        "LEU": "current_public_proxy_symbols"
+        "LEU": "current_public_proxy_symbols",
+        "nuclear": "screen_keywords",
+        "HALEU": "screen_keywords"
       },
       "matched_keyword_variants": {
         "LEU": [
           "leu"
+        ],
+        "nuclear": [
+          "nuclear"
+        ],
+        "HALEU": [
+          "haleu"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
         "LEU": [
           "ticker"
+        ],
+        "nuclear": [
+          "profile_text"
+        ],
+        "HALEU": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:watch",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "OKLO",
-      "name": "Oklo Inc.",
-      "cik": "1849056",
-      "exchange": "NYSE",
-      "primary_lane_id": "advanced_nuclear_and_grid_constraints",
-      "lane_id": "advanced_nuclear_and_grid_constraints",
-      "lane_name": "Advanced Nuclear And Grid Constraints",
-      "lane_status": "active",
-      "lane_matches": [
+      "matched_profile_snippets": [
         {
-          "lane_id": "advanced_nuclear_and_grid_constraints",
-          "lane_name": "Advanced Nuclear And Grid Constraints",
-          "lane_status": "active",
-          "matched_keywords": [
-            "OKLO"
+          "keyword": "nuclear",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
           ],
-          "matched_keyword_scopes": {
-            "OKLO": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "OKLO": [
-              "oklo"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "OKLO": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
+          "snippet": "control the thesis. Benefit if U.S. fuel-security policy and advanced nuclear demand make HALEU capacity strategically scarce."
         },
         {
-          "lane_id": "ai_power_and_cooling",
-          "lane_name": "AI Data-Center Power And Cooling",
-          "lane_status": "active",
-          "matched_keywords": [
-            "OKLO"
+          "keyword": "HALEU",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
           ],
-          "matched_keyword_scopes": {
-            "OKLO": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "OKLO": [
-              "oklo"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "OKLO": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
+          "snippet": "Centrus has distinct HALEU scarcity exposure at a less extreme valuation, but policy and scale-u"
         }
       ],
-      "secondary_lane_ids": [
-        "ai_power_and_cooling"
-      ],
-      "matched_keywords": [
-        "OKLO"
-      ],
-      "matched_keyword_scopes": {
-        "OKLO": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "OKLO": [
-          "oklo"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "OKLO": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "keyword_signal": "high_signal",
+      "triage_score": 135,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-leu-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
@@ -9589,72 +9426,153 @@
           "lane_name": "AI Compute Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "CRWV"
+            "CRWV",
+            "AI cloud",
+            "GPU"
           ],
           "matched_keyword_scopes": {
-            "CRWV": "current_public_proxy_symbols"
+            "CRWV": "current_public_proxy_symbols",
+            "AI cloud": "screen_keywords",
+            "GPU": "screen_keywords"
           },
           "matched_keyword_variants": {
             "CRWV": [
               "crwv"
+            ],
+            "AI cloud": [
+              "ai cloud"
+            ],
+            "GPU": [
+              "gpu"
             ]
           },
           "matched_fields": [
+            "profile_text",
             "ticker"
           ],
           "matched_keyword_fields": {
             "CRWV": [
               "ticker"
+            ],
+            "AI cloud": [
+              "profile_text"
+            ],
+            "GPU": [
+              "profile_text"
             ]
           },
-          "matched_profile_snippets": [],
+          "matched_profile_snippets": [
+            {
+              "keyword": "AI cloud",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "CoreWeave is direct AI cloud capacity exposure, but heavy debt and customer concentration keep ent"
+            },
+            {
+              "keyword": "GPU",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "d customer concentration keep entry too uncertain. Compound if scarce GPU capacity and power access support durable utilization and pricing."
+            }
+          ],
           "match_sources": [
+            "profile_input",
             "sec_issuer_reference"
           ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
+          "profile_enriched": true,
+          "score": 135,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
           "false_positive_flags": []
         }
       ],
       "secondary_lane_ids": [],
       "matched_keywords": [
-        "CRWV"
+        "CRWV",
+        "AI cloud",
+        "GPU"
       ],
       "matched_keyword_scopes": {
-        "CRWV": "current_public_proxy_symbols"
+        "CRWV": "current_public_proxy_symbols",
+        "AI cloud": "screen_keywords",
+        "GPU": "screen_keywords"
       },
       "matched_keyword_variants": {
         "CRWV": [
           "crwv"
+        ],
+        "AI cloud": [
+          "ai cloud"
+        ],
+        "GPU": [
+          "gpu"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
         "CRWV": [
           "ticker"
+        ],
+        "AI cloud": [
+          "profile_text"
+        ],
+        "GPU": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
+      "matched_profile_snippets": [
+        {
+          "keyword": "AI cloud",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary"
+          ],
+          "snippet": "CoreWeave is direct AI cloud capacity exposure, but heavy debt and customer concentration keep ent"
+        },
+        {
+          "keyword": "GPU",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "d customer concentration keep entry too uncertain. Compound if scarce GPU capacity and power access support durable utilization and pricing."
+        }
+      ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "keyword_signal": "high_signal",
+      "triage_score": 135,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-crwv-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
@@ -9679,72 +9597,155 @@
           "lane_name": "AI Compute Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "IREN"
+            "IREN",
+            "AI cloud",
+            "GPU"
           ],
           "matched_keyword_scopes": {
-            "IREN": "current_public_proxy_symbols"
+            "IREN": "current_public_proxy_symbols",
+            "AI cloud": "screen_keywords",
+            "GPU": "screen_keywords"
           },
           "matched_keyword_variants": {
             "IREN": [
               "iren"
+            ],
+            "AI cloud": [
+              "ai cloud"
+            ],
+            "GPU": [
+              "gpu"
             ]
           },
           "matched_fields": [
+            "profile_text",
             "ticker"
           ],
           "matched_keyword_fields": {
             "IREN": [
               "ticker"
+            ],
+            "AI cloud": [
+              "profile_text"
+            ],
+            "GPU": [
+              "profile_text"
             ]
           },
-          "matched_profile_snippets": [],
+          "matched_profile_snippets": [
+            {
+              "keyword": "AI cloud",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "IREN's USD 3.0 billion convertible notes improve AI cloud buildout liquidity but add leverage, conversion, and capital-deployme"
+            },
+            {
+              "keyword": "GPU",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "age, conversion, and capital-deployment risk. Convert power sites and GPU procurement into durable AI cloud revenue if customer economics and u"
+            }
+          ],
           "match_sources": [
+            "profile_input",
             "sec_issuer_reference"
           ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
+          "profile_enriched": true,
+          "score": 135,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
           "false_positive_flags": []
         }
       ],
       "secondary_lane_ids": [],
       "matched_keywords": [
-        "IREN"
+        "IREN",
+        "AI cloud",
+        "GPU"
       ],
       "matched_keyword_scopes": {
-        "IREN": "current_public_proxy_symbols"
+        "IREN": "current_public_proxy_symbols",
+        "AI cloud": "screen_keywords",
+        "GPU": "screen_keywords"
       },
       "matched_keyword_variants": {
         "IREN": [
           "iren"
+        ],
+        "AI cloud": [
+          "ai cloud"
+        ],
+        "GPU": [
+          "gpu"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
         "IREN": [
           "ticker"
+        ],
+        "AI cloud": [
+          "profile_text"
+        ],
+        "GPU": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
+      "matched_profile_snippets": [
+        {
+          "keyword": "AI cloud",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "IREN's USD 3.0 billion convertible notes improve AI cloud buildout liquidity but add leverage, conversion, and capital-deployme"
+        },
+        {
+          "keyword": "GPU",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "age, conversion, and capital-deployment risk. Convert power sites and GPU procurement into durable AI cloud revenue if customer economics and u"
+        }
+      ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "keyword_signal": "high_signal",
+      "triage_score": 135,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-IREN-8K-CONVERTIBLE-NOTES-000114036126021285.md",
+          "source_name": "repo_company_analysis:2026-05-31-iren-convertible-notes",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
@@ -9769,702 +9770,153 @@
           "lane_name": "AI Compute Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "NBIS"
+            "NBIS",
+            "AI cloud",
+            "GPU"
           ],
           "matched_keyword_scopes": {
-            "NBIS": "current_public_proxy_symbols"
+            "NBIS": "current_public_proxy_symbols",
+            "AI cloud": "screen_keywords",
+            "GPU": "screen_keywords"
           },
           "matched_keyword_variants": {
             "NBIS": [
               "nbis"
+            ],
+            "AI cloud": [
+              "ai cloud"
+            ],
+            "GPU": [
+              "gpu"
             ]
           },
           "matched_fields": [
+            "profile_text",
             "ticker"
           ],
           "matched_keyword_fields": {
             "NBIS": [
               "ticker"
+            ],
+            "AI cloud": [
+              "profile_text"
+            ],
+            "GPU": [
+              "profile_text"
             ]
           },
-          "matched_profile_snippets": [],
+          "matched_profile_snippets": [
+            {
+              "keyword": "AI cloud",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "e financing, utilization, or customer economics. Build differentiated AI cloud capacity and software capability if GPU supply, power access, and cus"
+            },
+            {
+              "keyword": "GPU",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "cs. Build differentiated AI cloud capacity and software capability if GPU supply, power access, and customer demand stay constrained."
+            }
+          ],
           "match_sources": [
+            "profile_input",
             "sec_issuer_reference"
           ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
+          "profile_enriched": true,
+          "score": 135,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
           "false_positive_flags": []
         }
       ],
       "secondary_lane_ids": [],
       "matched_keywords": [
-        "NBIS"
+        "NBIS",
+        "AI cloud",
+        "GPU"
       ],
       "matched_keyword_scopes": {
-        "NBIS": "current_public_proxy_symbols"
+        "NBIS": "current_public_proxy_symbols",
+        "AI cloud": "screen_keywords",
+        "GPU": "screen_keywords"
       },
       "matched_keyword_variants": {
         "NBIS": [
           "nbis"
+        ],
+        "AI cloud": [
+          "ai cloud"
+        ],
+        "GPU": [
+          "gpu"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
         "NBIS": [
           "ticker"
+        ],
+        "AI cloud": [
+          "profile_text"
+        ],
+        "GPU": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:watch",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "ASTS",
-      "name": "AST SpaceMobile, Inc.",
-      "cik": "1780312",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "direct_to_device_connectivity",
-      "lane_id": "direct_to_device_connectivity",
-      "lane_name": "Direct-To-Device Connectivity",
-      "lane_status": "active",
-      "lane_matches": [
+      "matched_profile_snippets": [
         {
-          "lane_id": "direct_to_device_connectivity",
-          "lane_name": "Direct-To-Device Connectivity",
-          "lane_status": "active",
-          "matched_keywords": [
-            "ASTS"
+          "keyword": "AI cloud",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
           ],
-          "matched_keyword_scopes": {
-            "ASTS": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "ASTS": [
-              "asts"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
+          "snippet": "e financing, utilization, or customer economics. Build differentiated AI cloud capacity and software capability if GPU supply, power access, and cus"
+        },
+        {
+          "keyword": "GPU",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
           ],
-          "matched_keyword_fields": {
-            "ASTS": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
+          "snippet": "cs. Build differentiated AI cloud capacity and software capability if GPU supply, power access, and customer demand stay constrained."
         }
       ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "ASTS"
-      ],
-      "matched_keyword_scopes": {
-        "ASTS": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "ASTS": [
-          "asts"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "ASTS": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "keyword_signal": "high_signal",
+      "triage_score": 135,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:active_core_candidate",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "GSAT",
-      "name": "Globalstar, Inc.",
-      "cik": "1366868",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "direct_to_device_connectivity",
-      "lane_id": "direct_to_device_connectivity",
-      "lane_name": "Direct-To-Device Connectivity",
-      "lane_status": "active",
-      "lane_matches": [
+      "profile_sources": [
         {
-          "lane_id": "direct_to_device_connectivity",
-          "lane_name": "Direct-To-Device Connectivity",
-          "lane_status": "active",
-          "matched_keywords": [
-            "GSAT"
-          ],
-          "matched_keyword_scopes": {
-            "GSAT": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "GSAT": [
-              "gsat"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "GSAT": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
+          "source_url": "research/filings/2026-05-31-NBIS-6K-MAGICBYTE-000110465926053464.md",
+          "source_name": "repo_company_analysis:2026-05-31-nbis-magicbyte-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
         }
       ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "GSAT"
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
       ],
-      "matched_keyword_scopes": {
-        "GSAT": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "GSAT": [
-          "gsat"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "GSAT": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:watch",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "CRCL",
-      "name": "Circle Internet Group, Inc.",
-      "cik": "1876042",
-      "exchange": "NYSE",
-      "primary_lane_id": "programmable_money_infrastructure",
-      "lane_id": "programmable_money_infrastructure",
-      "lane_name": "Programmable Money Infrastructure",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "programmable_money_infrastructure",
-          "lane_name": "Programmable Money Infrastructure",
-          "lane_status": "active",
-          "matched_keywords": [
-            "CRCL"
-          ],
-          "matched_keyword_scopes": {
-            "CRCL": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "CRCL": [
-              "crcl"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "CRCL": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "CRCL"
-      ],
-      "matched_keyword_scopes": {
-        "CRCL": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "CRCL": [
-          "crcl"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "CRCL": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:watch",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "IONQ",
-      "name": "IonQ, Inc.",
-      "cik": "1824920",
-      "exchange": "NYSE",
-      "primary_lane_id": "quantum_computing_and_networking",
-      "lane_id": "quantum_computing_and_networking",
-      "lane_name": "Quantum Computing And Networking",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "quantum_computing_and_networking",
-          "lane_name": "Quantum Computing And Networking",
-          "lane_status": "active",
-          "matched_keywords": [
-            "IONQ"
-          ],
-          "matched_keyword_scopes": {
-            "IONQ": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "IONQ": [
-              "ionq"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "IONQ": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "IONQ"
-      ],
-      "matched_keyword_scopes": {
-        "IONQ": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "IONQ": [
-          "ionq"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "IONQ": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:watch",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "ALAB",
-      "name": "Astera Labs, Inc.",
-      "cik": "1736297",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "semiconductor_interconnect_and_memory",
-      "lane_id": "semiconductor_interconnect_and_memory",
-      "lane_name": "Semiconductor Interconnect And Memory",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "semiconductor_interconnect_and_memory",
-          "lane_name": "Semiconductor Interconnect And Memory",
-          "lane_status": "active",
-          "matched_keywords": [
-            "ALAB"
-          ],
-          "matched_keyword_scopes": {
-            "ALAB": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "ALAB": [
-              "alab"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "ALAB": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "ALAB"
-      ],
-      "matched_keyword_scopes": {
-        "ALAB": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "ALAB": [
-          "alab"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "ALAB": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:active_candidate",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "CRDO",
-      "name": "Credo Technology Group Holding Ltd",
-      "cik": "1807794",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "semiconductor_interconnect_and_memory",
-      "lane_id": "semiconductor_interconnect_and_memory",
-      "lane_name": "Semiconductor Interconnect And Memory",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "semiconductor_interconnect_and_memory",
-          "lane_name": "Semiconductor Interconnect And Memory",
-          "lane_status": "active",
-          "matched_keywords": [
-            "CRDO"
-          ],
-          "matched_keyword_scopes": {
-            "CRDO": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "CRDO": [
-              "crdo"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "CRDO": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "CRDO"
-      ],
-      "matched_keyword_scopes": {
-        "CRDO": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "CRDO": [
-          "crdo"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "CRDO": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
-      "profile_text_truncated": false,
-      "deterministic_only": true,
-      "required_next_step": "primary_source_skim_and_readiness_triage",
-      "known_sources": [
-        "watchlist:active_core_candidate",
-        "security_master:tradable"
-      ],
-      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
-    },
-    {
-      "symbol": "MU",
-      "name": "MICRON TECHNOLOGY INC",
-      "cik": "723125",
-      "exchange": "Nasdaq",
-      "primary_lane_id": "semiconductor_interconnect_and_memory",
-      "lane_id": "semiconductor_interconnect_and_memory",
-      "lane_name": "Semiconductor Interconnect And Memory",
-      "lane_status": "active",
-      "lane_matches": [
-        {
-          "lane_id": "semiconductor_interconnect_and_memory",
-          "lane_name": "Semiconductor Interconnect And Memory",
-          "lane_status": "active",
-          "matched_keywords": [
-            "MU"
-          ],
-          "matched_keyword_scopes": {
-            "MU": "current_public_proxy_symbols"
-          },
-          "matched_keyword_variants": {
-            "MU": [
-              "mu"
-            ]
-          },
-          "matched_fields": [
-            "ticker"
-          ],
-          "matched_keyword_fields": {
-            "MU": [
-              "ticker"
-            ]
-          },
-          "matched_profile_snippets": [],
-          "match_sources": [
-            "sec_issuer_reference"
-          ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
-          "keyword_signal": "generic_signal",
-          "false_positive_flags": []
-        }
-      ],
-      "secondary_lane_ids": [],
-      "matched_keywords": [
-        "MU"
-      ],
-      "matched_keyword_scopes": {
-        "MU": "current_public_proxy_symbols"
-      },
-      "matched_keyword_variants": {
-        "MU": [
-          "mu"
-        ]
-      },
-      "matched_fields": [
-        "ticker"
-      ],
-      "matched_keyword_fields": {
-        "MU": [
-          "ticker"
-        ]
-      },
-      "matched_profile_snippets": [],
-      "match_sources": [
-        "sec_issuer_reference"
-      ],
-      "security_form": "unconfirmed_public_equity",
-      "security_form_confidence": "low",
-      "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
-      "false_positive_flags": [],
-      "profile_enriched": false,
-      "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
@@ -10489,72 +9941,248 @@
           "lane_name": "Space Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "FLY"
+            "FLY",
+            "launch",
+            "spacecraft",
+            "space"
           ],
           "matched_keyword_scopes": {
-            "FLY": "current_public_proxy_symbols"
+            "FLY": "current_public_proxy_symbols",
+            "launch": "screen_keywords",
+            "spacecraft": "screen_keywords",
+            "space": "screen_keywords"
           },
           "matched_keyword_variants": {
             "FLY": [
               "fly"
+            ],
+            "launch": [
+              "launch"
+            ],
+            "spacecraft": [
+              "spacecraft"
+            ],
+            "space": [
+              "space"
             ]
           },
           "matched_fields": [
+            "profile_text",
             "ticker"
           ],
           "matched_keyword_fields": {
             "FLY": [
               "ticker"
+            ],
+            "launch": [
+              "profile_text"
+            ],
+            "spacecraft": [
+              "profile_text"
+            ],
+            "space": [
+              "profile_text"
             ]
           },
-          "matched_profile_snippets": [],
+          "matched_profile_snippets": [
+            {
+              "keyword": "launch",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ing-holder risk, and short public history are unresolved. Compound if launch cadence, spacecraft manufacturing, mission operations, and defense-sp"
+            },
+            {
+              "keyword": "spacecraft",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "and short public history are unresolved. Compound if launch cadence, spacecraft manufacturing, mission operations, and defense-space demand become du"
+            },
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Firefly Aerospace is direct enough for the space infrastructure research universe, but"
+            }
+          ],
           "match_sources": [
+            "profile_input",
             "sec_issuer_reference"
           ],
-          "profile_enriched": false,
-          "score": 44,
-          "priority": "low",
-          "review_depth": "false_positive_filter_before_primary_skim",
+          "profile_enriched": true,
+          "score": 135,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure",
+            "bottleneck"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords",
+            "bottleneck": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ],
+            "bottleneck": [
+              "bottlenecks"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "profile_text"
+            ],
+            "bottleneck": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "Firefly Aerospace is direct enough for the space infrastructure research universe, but current evidence keeps it research-only becaus"
+            },
+            {
+              "keyword": "bottleneck",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "acturing, mission operations, and defense-space demand become durable bottlenecks that Firefly can convert into backlog, margin, and disciplined reinve"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
           "keyword_signal": "generic_signal",
           "false_positive_flags": []
         }
       ],
-      "secondary_lane_ids": [],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
       "matched_keywords": [
-        "FLY"
+        "FLY",
+        "launch",
+        "spacecraft",
+        "space"
       ],
       "matched_keyword_scopes": {
-        "FLY": "current_public_proxy_symbols"
+        "FLY": "current_public_proxy_symbols",
+        "launch": "screen_keywords",
+        "spacecraft": "screen_keywords",
+        "space": "screen_keywords"
       },
       "matched_keyword_variants": {
         "FLY": [
           "fly"
+        ],
+        "launch": [
+          "launch"
+        ],
+        "spacecraft": [
+          "spacecraft"
+        ],
+        "space": [
+          "space"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
         "FLY": [
           "ticker"
+        ],
+        "launch": [
+          "profile_text"
+        ],
+        "spacecraft": [
+          "profile_text"
+        ],
+        "space": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
+      "matched_profile_snippets": [
+        {
+          "keyword": "launch",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "ing-holder risk, and short public history are unresolved. Compound if launch cadence, spacecraft manufacturing, mission operations, and defense-sp"
+        },
+        {
+          "keyword": "spacecraft",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "and short public history are unresolved. Compound if launch cadence, spacecraft manufacturing, mission operations, and defense-space demand become du"
+        },
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Firefly Aerospace is direct enough for the space infrastructure research universe, but"
+        }
+      ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
-      "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "keyword_signal": "high_signal",
+      "triage_score": 135,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-FLY-10Q-S1-000186016026000009.md",
+          "source_name": "repo_company_analysis:2026-05-31-fly-discovery-readiness",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
@@ -10562,6 +10190,222 @@
         "watchlist:research_only",
         "security_master:tradable",
         "discovery_candidates:incubating"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "CRCL",
+      "name": "Circle Internet Group, Inc.",
+      "cik": "1876042",
+      "exchange": "NYSE",
+      "primary_lane_id": "programmable_money_infrastructure",
+      "lane_id": "programmable_money_infrastructure",
+      "lane_name": "Programmable Money Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "programmable_money_infrastructure",
+          "lane_name": "Programmable Money Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "CRCL",
+            "USDC",
+            "programmable money"
+          ],
+          "matched_keyword_scopes": {
+            "CRCL": "current_public_proxy_symbols",
+            "USDC": "screen_keywords",
+            "programmable money": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "CRCL": [
+              "crcl"
+            ],
+            "USDC": [
+              "usdc"
+            ],
+            "programmable money": [
+              "programmable money"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "CRCL": [
+              "ticker"
+            ],
+            "USDC": [
+              "profile_text"
+            ],
+            "programmable money": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "USDC",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "tock promotion. Become regulated programmable-money infrastructure if USDC utility, distribution, reserves, and developer adoption produce durab"
+            },
+            {
+              "keyword": "programmable money",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "conomics question before any common-stock promotion. Become regulated programmable-money infrastructure if USDC utility, distribution, reserves, and dev"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 110,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "efore any common-stock promotion. Become regulated programmable-money infrastructure if USDC utility, distribution, reserves, and developer adoption produ"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "CRCL",
+        "USDC",
+        "programmable money"
+      ],
+      "matched_keyword_scopes": {
+        "CRCL": "current_public_proxy_symbols",
+        "USDC": "screen_keywords",
+        "programmable money": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "CRCL": [
+          "crcl"
+        ],
+        "USDC": [
+          "usdc"
+        ],
+        "programmable money": [
+          "programmable money"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "CRCL": [
+          "ticker"
+        ],
+        "USDC": [
+          "profile_text"
+        ],
+        "programmable money": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "USDC",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "tock promotion. Become regulated programmable-money infrastructure if USDC utility, distribution, reserves, and developer adoption produce durab"
+        },
+        {
+          "keyword": "programmable money",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "conomics question before any common-stock promotion. Become regulated programmable-money infrastructure if USDC utility, distribution, reserves, and dev"
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 110,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-CRCL-FORMD-TOKEN-PURCHASE-000123191926000528.md",
+          "source_name": "repo_company_analysis:2026-05-31-crcl-token-purchase-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable"
       ],
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     },
@@ -10580,21 +10424,756 @@
           "lane_name": "Space Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "KTOS"
+            "KTOS",
+            "satellite",
+            "space"
           ],
           "matched_keyword_scopes": {
-            "KTOS": "current_public_proxy_symbols"
+            "KTOS": "current_public_proxy_symbols",
+            "satellite": "screen_keywords",
+            "space": "screen_keywords"
           },
           "matched_keyword_variants": {
             "KTOS": [
               "ktos"
+            ],
+            "satellite": [
+              "satellite"
+            ],
+            "space": [
+              "space"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "KTOS": [
+              "ticker"
+            ],
+            "satellite": [
+              "profile_text"
+            ],
+            "space": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "satellite",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ompound if unmanned systems, hypersonic targets, tactical drones, and satellite communications become higher-priority defense infrastructure."
+            },
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "Kratos has useful defense and space exposure, but contractor economics and program timing cap asymmetry."
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 110,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "l drones, and satellite communications become higher-priority defense infrastructure."
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "KTOS",
+        "satellite",
+        "space"
+      ],
+      "matched_keyword_scopes": {
+        "KTOS": "current_public_proxy_symbols",
+        "satellite": "screen_keywords",
+        "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "KTOS": [
+          "ktos"
+        ],
+        "satellite": [
+          "satellite"
+        ],
+        "space": [
+          "space"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "KTOS": [
+          "ticker"
+        ],
+        "satellite": [
+          "profile_text"
+        ],
+        "space": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "satellite",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "ompound if unmanned systems, hypersonic targets, tactical drones, and satellite communications become higher-priority defense infrastructure."
+        },
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary"
+          ],
+          "snippet": "Kratos has useful defense and space exposure, but contractor economics and program timing cap asymmetry."
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 110,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-ktos-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corp",
+      "cik": "1819994",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "space_infrastructure",
+      "lane_id": "space_infrastructure",
+      "lane_name": "Space Infrastructure",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "RKLB",
+            "launch",
+            "space"
+          ],
+          "matched_keyword_scopes": {
+            "RKLB": "current_public_proxy_symbols",
+            "launch": "screen_keywords",
+            "space": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "RKLB": [
+              "rklb"
+            ],
+            "launch": [
+              "launch"
+            ],
+            "space": [
+              "space"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "RKLB": [
+              "ticker"
+            ],
+            "launch": [
+              "profile_text"
+            ],
+            "space": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "launch",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "current price already discounts substantial success. Compound through launch, space systems, defense programs, and Neutron if execution continues."
+            },
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Rocket Lab remains the strongest execution-led space platform candidate, but the current price already discounts substanti"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 110,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "platform"
+          ],
+          "matched_keyword_scopes": {
+            "platform": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "platform": [
+              "platform"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "platform": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "platform",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "Rocket Lab remains the strongest execution-led space platform candidate, but the current price already discounts substantial succes"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "RKLB",
+        "launch",
+        "space"
+      ],
+      "matched_keyword_scopes": {
+        "RKLB": "current_public_proxy_symbols",
+        "launch": "screen_keywords",
+        "space": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "RKLB": [
+          "rklb"
+        ],
+        "launch": [
+          "launch"
+        ],
+        "space": [
+          "space"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "RKLB": [
+          "ticker"
+        ],
+        "launch": [
+          "profile_text"
+        ],
+        "space": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "launch",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "current price already discounts substantial success. Compound through launch, space systems, defense programs, and Neutron if execution continues."
+        },
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Rocket Lab remains the strongest execution-led space platform candidate, but the current price already discounts substanti"
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 110,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-rklb-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:active_core_candidate",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "ASTS",
+      "name": "AST SpaceMobile, Inc.",
+      "cik": "1780312",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "direct_to_device_connectivity",
+      "lane_id": "direct_to_device_connectivity",
+      "lane_name": "Direct-To-Device Connectivity",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "direct_to_device_connectivity",
+          "lane_name": "Direct-To-Device Connectivity",
+          "lane_status": "active",
+          "matched_keywords": [
+            "ASTS",
+            "satellite-to-phone",
+            "direct-to-device",
+            "connectivity"
+          ],
+          "matched_keyword_scopes": {
+            "ASTS": "current_public_proxy_symbols",
+            "satellite-to-phone": "screen_keywords",
+            "direct-to-device": "screen_keywords",
+            "connectivity": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "ASTS": [
+              "asts"
+            ],
+            "satellite-to-phone": [
+              "satellite to phone"
+            ],
+            "direct-to-device": [
+              "direct to device"
+            ],
+            "connectivity": [
+              "connectivity"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "ASTS": [
+              "ticker"
+            ],
+            "satellite-to-phone": [
+              "profile_text"
+            ],
+            "direct-to-device": [
+              "profile_text"
+            ],
+            "connectivity": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "satellite-to-phone",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ty, but revenue remains pre-scale and execution risk is high. Build a satellite-to-phone connectivity layer through MNO and government channels."
+            },
+            {
+              "keyword": "direct-to-device",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "ASTS still offers extreme direct-to-device optionality, but revenue remains pre-scale and execution ri"
+            },
+            {
+              "keyword": "connectivity",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ains pre-scale and execution risk is high. Build a satellite-to-phone connectivity layer through MNO and government channels."
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 102,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "space_infrastructure",
+          "lane_name": "Space Infrastructure",
+          "lane_status": "active",
+          "matched_keywords": [
+            "satellite"
+          ],
+          "matched_keyword_scopes": {
+            "satellite": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "satellite": [
+              "satellite"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "satellite": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "satellite",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ty, but revenue remains pre-scale and execution risk is high. Build a satellite-to-phone connectivity layer through MNO and government channels."
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 74,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "space_infrastructure"
+      ],
+      "matched_keywords": [
+        "ASTS",
+        "satellite-to-phone",
+        "direct-to-device",
+        "connectivity"
+      ],
+      "matched_keyword_scopes": {
+        "ASTS": "current_public_proxy_symbols",
+        "satellite-to-phone": "screen_keywords",
+        "direct-to-device": "screen_keywords",
+        "connectivity": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "ASTS": [
+          "asts"
+        ],
+        "satellite-to-phone": [
+          "satellite to phone"
+        ],
+        "direct-to-device": [
+          "direct to device"
+        ],
+        "connectivity": [
+          "connectivity"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "ASTS": [
+          "ticker"
+        ],
+        "satellite-to-phone": [
+          "profile_text"
+        ],
+        "direct-to-device": [
+          "profile_text"
+        ],
+        "connectivity": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "satellite-to-phone",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "ty, but revenue remains pre-scale and execution risk is high. Build a satellite-to-phone connectivity layer through MNO and government channels."
+        },
+        {
+          "keyword": "direct-to-device",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary"
+          ],
+          "snippet": "ASTS still offers extreme direct-to-device optionality, but revenue remains pre-scale and execution ri"
+        },
+        {
+          "keyword": "connectivity",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "ains pre-scale and execution risk is high. Build a satellite-to-phone connectivity layer through MNO and government channels."
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 102,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-asts-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:active_core_candidate",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "OKLO",
+      "name": "Oklo Inc.",
+      "cik": "1849056",
+      "exchange": "NYSE",
+      "primary_lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_id": "advanced_nuclear_and_grid_constraints",
+      "lane_name": "Advanced Nuclear And Grid Constraints",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "advanced_nuclear_and_grid_constraints",
+          "lane_name": "Advanced Nuclear And Grid Constraints",
+          "lane_status": "active",
+          "matched_keywords": [
+            "OKLO",
+            "nuclear"
+          ],
+          "matched_keyword_scopes": {
+            "OKLO": "current_public_proxy_symbols",
+            "nuclear": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "OKLO": [
+              "oklo"
+            ],
+            "nuclear": [
+              "nuclear"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "OKLO": [
+              "ticker"
+            ],
+            "nuclear": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "nuclear",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "Oklo remains an advanced nuclear option, but a new USD 1.0 billion ATM reinforces dilution risk before"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 100,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "ai_power_and_cooling",
+          "lane_name": "AI Data-Center Power And Cooling",
+          "lane_status": "active",
+          "matched_keywords": [
+            "OKLO"
+          ],
+          "matched_keyword_scopes": {
+            "OKLO": "current_public_proxy_symbols"
+          },
+          "matched_keyword_variants": {
+            "OKLO": [
+              "oklo"
             ]
           },
           "matched_fields": [
             "ticker"
           ],
           "matched_keyword_fields": {
-            "KTOS": [
+            "OKLO": [
               "ticker"
             ]
           },
@@ -10610,47 +11189,1113 @@
           "false_positive_flags": []
         }
       ],
-      "secondary_lane_ids": [],
+      "secondary_lane_ids": [
+        "ai_power_and_cooling"
+      ],
       "matched_keywords": [
-        "KTOS"
+        "OKLO",
+        "nuclear"
       ],
       "matched_keyword_scopes": {
-        "KTOS": "current_public_proxy_symbols"
+        "OKLO": "current_public_proxy_symbols",
+        "nuclear": "screen_keywords"
       },
       "matched_keyword_variants": {
-        "KTOS": [
-          "ktos"
+        "OKLO": [
+          "oklo"
+        ],
+        "nuclear": [
+          "nuclear"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
-        "KTOS": [
+        "OKLO": [
           "ticker"
+        ],
+        "nuclear": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
+      "matched_profile_snippets": [
+        {
+          "keyword": "nuclear",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary"
+          ],
+          "snippet": "Oklo remains an advanced nuclear option, but a new USD 1.0 billion ATM reinforces dilution risk before"
+        }
+      ],
       "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 100,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-OKLO-8K-424B5-ATM-000110465926060385.md",
+          "source_name": "repo_company_analysis:2026-05-31-oklo-atm-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "IONQ",
+      "name": "IonQ, Inc.",
+      "cik": "1824920",
+      "exchange": "NYSE",
+      "primary_lane_id": "quantum_computing_and_networking",
+      "lane_id": "quantum_computing_and_networking",
+      "lane_name": "Quantum Computing And Networking",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "quantum_computing_and_networking",
+          "lane_name": "Quantum Computing And Networking",
+          "lane_status": "active",
+          "matched_keywords": [
+            "IONQ",
+            "quantum"
+          ],
+          "matched_keyword_scopes": {
+            "IONQ": "current_public_proxy_symbols",
+            "quantum": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "IONQ": [
+              "ionq"
+            ],
+            "quantum": [
+              "quantum"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "IONQ": [
+              "ticker"
+            ],
+            "quantum": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "quantum",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ransaction integration remain too uncertain for promotion. Benefit if quantum computing, networking, sensing, or security becomes commercially esse"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 100,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "IONQ",
+        "quantum"
+      ],
+      "matched_keyword_scopes": {
+        "IONQ": "current_public_proxy_symbols",
+        "quantum": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "IONQ": [
+          "ionq"
+        ],
+        "quantum": [
+          "quantum"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "IONQ": [
+          "ticker"
+        ],
+        "quantum": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "quantum",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "ransaction integration remain too uncertain for promotion. Benefit if quantum computing, networking, sensing, or security becomes commercially esse"
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 100,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-IONQ-425-SKYWATER-000095014226001324.md",
+          "source_name": "repo_company_analysis:2026-05-31-ionq-skywater-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "ALAB",
+      "name": "Astera Labs, Inc.",
+      "cik": "1736297",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "semiconductor_interconnect_and_memory",
+      "lane_id": "semiconductor_interconnect_and_memory",
+      "lane_name": "Semiconductor Interconnect And Memory",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "semiconductor_interconnect_and_memory",
+          "lane_name": "Semiconductor Interconnect And Memory",
+          "lane_status": "active",
+          "matched_keywords": [
+            "ALAB",
+            "CXL"
+          ],
+          "matched_keyword_scopes": {
+            "ALAB": "current_public_proxy_symbols",
+            "CXL": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "ALAB": [
+              "alab"
+            ],
+            "CXL": [
+              "cxl"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "ALAB": [
+              "ticker"
+            ],
+            "CXL": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "CXL",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "istakes. Become a core rack-scale AI connectivity vendor across PCIe, CXL, Ethernet, and related fabrics."
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 100,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "direct_to_device_connectivity",
+          "lane_name": "Direct-To-Device Connectivity",
+          "lane_status": "active",
+          "matched_keywords": [
+            "connectivity"
+          ],
+          "matched_keyword_scopes": {
+            "connectivity": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "connectivity": [
+              "connectivity"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "connectivity": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "connectivity",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Astera Labs remains a high-quality AI connectivity platform, but price-to-sales near 66 leaves little margin for mistake"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "platform"
+          ],
+          "matched_keyword_scopes": {
+            "platform": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "platform": [
+              "platform"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "platform": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "platform",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "Astera Labs remains a high-quality AI connectivity platform, but price-to-sales near 66 leaves little margin for mistakes. Become"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "direct_to_device_connectivity",
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "ALAB",
+        "CXL"
+      ],
+      "matched_keyword_scopes": {
+        "ALAB": "current_public_proxy_symbols",
+        "CXL": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "ALAB": [
+          "alab"
+        ],
+        "CXL": [
+          "cxl"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "ALAB": [
+          "ticker"
+        ],
+        "CXL": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "CXL",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "istakes. Become a core rack-scale AI connectivity vendor across PCIe, CXL, Ethernet, and related fabrics."
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 100,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-alab-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:active_candidate",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "cik": "723125",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "semiconductor_interconnect_and_memory",
+      "lane_id": "semiconductor_interconnect_and_memory",
+      "lane_name": "Semiconductor Interconnect And Memory",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "semiconductor_interconnect_and_memory",
+          "lane_name": "Semiconductor Interconnect And Memory",
+          "lane_status": "active",
+          "matched_keywords": [
+            "MU",
+            "HBM"
+          ],
+          "matched_keyword_scopes": {
+            "MU": "current_public_proxy_symbols",
+            "HBM": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "MU": [
+              "mu"
+            ],
+            "HBM": [
+              "hbm"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "MU": [
+              "ticker"
+            ],
+            "HBM": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "HBM",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Micron has powerful HBM and AI memory exposure, but trillion-dollar scale and memory cyclical"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 95,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "bottleneck"
+          ],
+          "matched_keyword_scopes": {
+            "bottleneck": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "bottleneck": [
+              "bottlenecks"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "bottleneck": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "bottleneck",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "asymmetry. Benefit if HBM and advanced DRAM remain durable AI system bottlenecks."
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 50,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "MU",
+        "HBM"
+      ],
+      "matched_keyword_scopes": {
+        "MU": "current_public_proxy_symbols",
+        "HBM": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "MU": [
+          "mu"
+        ],
+        "HBM": [
+          "hbm"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "MU": [
+          "ticker"
+        ],
+        "HBM": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "HBM",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Micron has powerful HBM and AI memory exposure, but trillion-dollar scale and memory cyclical"
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 95,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-mu-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "GSAT",
+      "name": "Globalstar, Inc.",
+      "cik": "1366868",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "direct_to_device_connectivity",
+      "lane_id": "direct_to_device_connectivity",
+      "lane_name": "Direct-To-Device Connectivity",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "direct_to_device_connectivity",
+          "lane_name": "Direct-To-Device Connectivity",
+          "lane_status": "active",
+          "matched_keywords": [
+            "GSAT",
+            "direct-to-device",
+            "spectrum",
+            "connectivity"
+          ],
+          "matched_keyword_scopes": {
+            "GSAT": "current_public_proxy_symbols",
+            "direct-to-device": "screen_keywords",
+            "spectrum": "screen_keywords",
+            "connectivity": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "GSAT": [
+              "gsat"
+            ],
+            "direct-to-device": [
+              "direct to device"
+            ],
+            "spectrum": [
+              "spectrum"
+            ],
+            "connectivity": [
+              "connectivity"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "GSAT": [
+              "ticker"
+            ],
+            "direct-to-device": [
+              "profile_text"
+            ],
+            "spectrum": [
+              "profile_text"
+            ],
+            "connectivity": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "direct-to-device",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Globalstar adds spectrum-backed direct-to-device optionality, but partner concentration and network economic"
+            },
+            {
+              "keyword": "spectrum",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Globalstar adds spectrum-backed direct-to-device optionality, but partner concentration and ne"
+            },
+            {
+              "keyword": "connectivity",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "remain unresolved. Turn spectrum and device partnerships into durable connectivity economics if direct-to-device demand broadens."
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 94,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "network",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "um-backed direct-to-device optionality, but partner concentration and network economics remain unresolved. Turn spectrum and device partnerships in"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "GSAT",
+        "direct-to-device",
+        "spectrum",
+        "connectivity"
+      ],
+      "matched_keyword_scopes": {
+        "GSAT": "current_public_proxy_symbols",
+        "direct-to-device": "screen_keywords",
+        "spectrum": "screen_keywords",
+        "connectivity": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "GSAT": [
+          "gsat"
+        ],
+        "direct-to-device": [
+          "direct to device"
+        ],
+        "spectrum": [
+          "spectrum"
+        ],
+        "connectivity": [
+          "connectivity"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "GSAT": [
+          "ticker"
+        ],
+        "direct-to-device": [
+          "profile_text"
+        ],
+        "spectrum": [
+          "profile_text"
+        ],
+        "connectivity": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "direct-to-device",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Globalstar adds spectrum-backed direct-to-device optionality, but partner concentration and network economic"
+        },
+        {
+          "keyword": "spectrum",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Globalstar adds spectrum-backed direct-to-device optionality, but partner concentration and ne"
+        },
+        {
+          "keyword": "connectivity",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "remain unresolved. Turn spectrum and device partnerships into durable connectivity economics if direct-to-device demand broadens."
+        }
+      ],
+      "match_sources": [
+        "profile_input",
+        "sec_issuer_reference"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 94,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-gsat-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "CRDO",
+      "name": "Credo Technology Group Holding Ltd",
+      "cik": "1807794",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "semiconductor_interconnect_and_memory",
+      "lane_id": "semiconductor_interconnect_and_memory",
+      "lane_name": "Semiconductor Interconnect And Memory",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "semiconductor_interconnect_and_memory",
+          "lane_name": "Semiconductor Interconnect And Memory",
+          "lane_status": "active",
+          "matched_keywords": [
+            "CRDO",
+            "interconnect"
+          ],
+          "matched_keyword_scopes": {
+            "CRDO": "current_public_proxy_symbols",
+            "interconnect": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "CRDO": [
+              "crdo"
+            ],
+            "interconnect": [
+              "interconnect"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "CRDO": [
+              "ticker"
+            ],
+            "interconnect": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "interconnect",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "Credo has strong AI interconnect growth and margin quality, but valuation and customer concentration l"
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 75,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "direct_to_device_connectivity",
+          "lane_name": "Direct-To-Device Connectivity",
+          "lane_status": "active",
+          "matched_keywords": [
+            "connectivity"
+          ],
+          "matched_keyword_scopes": {
+            "connectivity": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "connectivity": [
+              "connectivity"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "connectivity": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "connectivity",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "mer concentration limit entry quality. Capture durable AI data-center connectivity demand as network complexity rises."
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 52,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "network"
+          ],
+          "matched_keyword_scopes": {
+            "network": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "network": [
+              "network"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "network": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "network",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "entry quality. Capture durable AI data-center connectivity demand as network complexity rises."
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 42,
+          "priority": "low",
+          "review_depth": "false_positive_filter_before_primary_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "direct_to_device_connectivity",
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "CRDO",
+        "interconnect"
+      ],
+      "matched_keyword_scopes": {
+        "CRDO": "current_public_proxy_symbols",
+        "interconnect": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "CRDO": [
+          "crdo"
+        ],
+        "interconnect": [
+          "interconnect"
+        ]
+      },
+      "matched_fields": [
+        "profile_text",
+        "ticker"
+      ],
+      "matched_keyword_fields": {
+        "CRDO": [
+          "ticker"
+        ],
+        "interconnect": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "interconnect",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary"
+          ],
+          "snippet": "Credo has strong AI interconnect growth and margin quality, but valuation and customer concentration l"
+        }
+      ],
+      "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
       "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "triage_score": 75,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-crdo-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
       "known_sources": [
-        "watchlist:watch",
+        "watchlist:active_core_candidate",
         "security_master:tradable"
       ],
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
@@ -10670,29 +12315,109 @@
           "lane_name": "Space Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "LUNR"
+            "LUNR",
+            "space"
           ],
           "matched_keyword_scopes": {
-            "LUNR": "current_public_proxy_symbols"
+            "LUNR": "current_public_proxy_symbols",
+            "space": "screen_keywords"
           },
           "matched_keyword_variants": {
             "LUNR": [
               "lunr"
+            ],
+            "space": [
+              "space"
             ]
           },
           "matched_fields": [
+            "profile_text",
             "ticker"
           ],
           "matched_keyword_fields": {
             "LUNR": [
               "ticker"
+            ],
+            "space": [
+              "profile_text"
             ]
           },
-          "matched_profile_snippets": [],
+          "matched_profile_snippets": [
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Intuitive Machines has lunar and space infrastructure upside, but mission execution, integration, and financ"
+            }
+          ],
           "match_sources": [
+            "profile_input",
             "sec_issuer_reference"
           ],
-          "profile_enriched": false,
+          "profile_enriched": true,
+          "score": 75,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "platform",
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "platform": "screen_keywords",
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "platform": [
+              "platform"
+            ],
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "platform": [
+              "profile_text"
+            ],
+            "infrastructure": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "platform",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ace infrastructure contracts into a broader government and commercial platform."
+            },
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Intuitive Machines has lunar and space infrastructure upside, but mission execution, integration, and financing risk remain"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
           "score": 44,
           "priority": "low",
           "review_depth": "false_positive_filter_before_primary_skim",
@@ -10700,42 +12425,75 @@
           "false_positive_flags": []
         }
       ],
-      "secondary_lane_ids": [],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
       "matched_keywords": [
-        "LUNR"
+        "LUNR",
+        "space"
       ],
       "matched_keyword_scopes": {
-        "LUNR": "current_public_proxy_symbols"
+        "LUNR": "current_public_proxy_symbols",
+        "space": "screen_keywords"
       },
       "matched_keyword_variants": {
         "LUNR": [
           "lunr"
+        ],
+        "space": [
+          "space"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
         "LUNR": [
           "ticker"
+        ],
+        "space": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
+      "matched_profile_snippets": [
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Intuitive Machines has lunar and space infrastructure upside, but mission execution, integration, and financ"
+        }
+      ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
       "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "triage_score": 75,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-lunr-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
@@ -10760,72 +12518,166 @@
           "lane_name": "Space Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "RDW"
+            "RDW",
+            "space"
           ],
           "matched_keyword_scopes": {
-            "RDW": "current_public_proxy_symbols"
+            "RDW": "current_public_proxy_symbols",
+            "space": "screen_keywords"
           },
           "matched_keyword_variants": {
             "RDW": [
               "rdw"
+            ],
+            "space": [
+              "space"
             ]
           },
           "matched_fields": [
+            "profile_text",
             "ticker"
           ],
           "matched_keyword_fields": {
             "RDW": [
               "ticker"
+            ],
+            "space": [
+              "profile_text"
             ]
           },
-          "matched_profile_snippets": [],
+          "matched_profile_snippets": [
+            {
+              "keyword": "space",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "dilution, control, and integration risk remain high. Become a scaled space infrastructure and defense systems supplier if Edge Autonomy integrat"
+            }
+          ],
           "match_sources": [
+            "profile_input",
             "sec_issuer_reference"
           ],
-          "profile_enriched": false,
-          "score": 44,
+          "profile_enriched": true,
+          "score": 75,
+          "priority": "high",
+          "review_depth": "readiness_triage_priority",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "infrastructure"
+          ],
+          "matched_keyword_scopes": {
+            "infrastructure": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "infrastructure": [
+              "infrastructure"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "infrastructure": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "infrastructure",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ion, control, and integration risk remain high. Become a scaled space infrastructure and defense systems supplier if Edge Autonomy integration and cash ge"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 42,
           "priority": "low",
           "review_depth": "false_positive_filter_before_primary_skim",
           "keyword_signal": "generic_signal",
           "false_positive_flags": []
         }
       ],
-      "secondary_lane_ids": [],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
       "matched_keywords": [
-        "RDW"
+        "RDW",
+        "space"
       ],
       "matched_keyword_scopes": {
-        "RDW": "current_public_proxy_symbols"
+        "RDW": "current_public_proxy_symbols",
+        "space": "screen_keywords"
       },
       "matched_keyword_variants": {
         "RDW": [
           "rdw"
+        ],
+        "space": [
+          "space"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
         "RDW": [
           "ticker"
+        ],
+        "space": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
+      "matched_profile_snippets": [
+        {
+          "keyword": "space",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "dilution, control, and integration risk remain high. Become a scaled space infrastructure and defense systems supplier if Edge Autonomy integrat"
+        }
+      ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
       "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "triage_score": 75,
+      "deterministic_priority": "high",
+      "recommended_review_depth": "readiness_triage_priority",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-RDW-424B5-8K-ATM-CONVERSION.md",
+          "source_name": "repo_company_analysis:2026-05-31-rdw-atm-conversion-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
@@ -10836,35 +12688,605 @@
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     },
     {
-      "symbol": "RKLB",
-      "name": "Rocket Lab Corp",
-      "cik": "1819994",
+      "symbol": "CBRS",
+      "name": "Cerebras Systems Inc.",
+      "cik": "2021728",
       "exchange": "Nasdaq",
-      "primary_lane_id": "space_infrastructure",
-      "lane_id": "space_infrastructure",
-      "lane_name": "Space Infrastructure",
+      "primary_lane_id": "ai_compute_infrastructure",
+      "lane_id": "ai_compute_infrastructure",
+      "lane_name": "AI Compute Infrastructure",
       "lane_status": "active",
       "lane_matches": [
         {
-          "lane_id": "space_infrastructure",
-          "lane_name": "Space Infrastructure",
+          "lane_id": "ai_compute_infrastructure",
+          "lane_name": "AI Compute Infrastructure",
           "lane_status": "active",
           "matched_keywords": [
-            "RKLB"
+            "inference"
           ],
           "matched_keyword_scopes": {
-            "RKLB": "current_public_proxy_symbols"
+            "inference": "screen_keywords"
           },
           "matched_keyword_variants": {
-            "RKLB": [
-              "rklb"
+            "inference": [
+              "inference"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "inference": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "inference",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "metrics make underwriting premature. Convert wafer-scale systems and inference demand into durable public-company revenue."
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 74,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [],
+      "matched_keywords": [
+        "inference"
+      ],
+      "matched_keyword_scopes": {
+        "inference": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "inference": [
+          "inference"
+        ]
+      },
+      "matched_fields": [
+        "profile_text"
+      ],
+      "matched_keyword_fields": {
+        "inference": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "inference",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "metrics make underwriting premature. Convert wafer-scale systems and inference demand into durable public-company revenue."
+        }
+      ],
+      "match_sources": [
+        "profile_input"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 74,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-cbrs-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "FN",
+      "name": "Fabrinet",
+      "cik": "1408710",
+      "exchange": "NYSE",
+      "primary_lane_id": "semiconductor_interconnect_and_memory",
+      "lane_id": "semiconductor_interconnect_and_memory",
+      "lane_name": "Semiconductor Interconnect And Memory",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "semiconductor_interconnect_and_memory",
+          "lane_name": "Semiconductor Interconnect And Memory",
+          "lane_status": "active",
+          "matched_keywords": [
+            "interconnect",
+            "optical"
+          ],
+          "matched_keyword_scopes": {
+            "interconnect": "screen_keywords",
+            "optical": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "interconnect": [
+              "interconnect"
+            ],
+            "optical": [
+              "optical"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "interconnect": [
+              "profile_text"
+            ],
+            "optical": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "interconnect",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "on is material. Benefit if AI data-center optical modules, datacenter interconnect, and high-performance computing assemblies become durable manufacturi"
+            },
+            {
+              "keyword": "optical",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Fabrinet has real AI datacom and advanced optical manufacturing exposure, but the evidence supports research-only cover"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 74,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "bottleneck"
+          ],
+          "matched_keyword_scopes": {
+            "bottleneck": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "bottleneck": [
+              "bottlenecks"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "bottleneck": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "bottleneck",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "nd high-performance computing assemblies become durable manufacturing bottlenecks that Fabrinet can scale without margin compression."
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 50,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "interconnect",
+        "optical"
+      ],
+      "matched_keyword_scopes": {
+        "interconnect": "screen_keywords",
+        "optical": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "interconnect": [
+          "interconnect"
+        ],
+        "optical": [
+          "optical"
+        ]
+      },
+      "matched_fields": [
+        "profile_text"
+      ],
+      "matched_keyword_fields": {
+        "interconnect": [
+          "profile_text"
+        ],
+        "optical": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "interconnect",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "on is material. Benefit if AI data-center optical modules, datacenter interconnect, and high-performance computing assemblies become durable manufacturi"
+        },
+        {
+          "keyword": "optical",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Fabrinet has real AI datacom and advanced optical manufacturing exposure, but the evidence supports research-only cover"
+        }
+      ],
+      "match_sources": [
+        "profile_input"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 74,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-31-fn-watchlist-triage.md",
+          "source_name": "repo_company_analysis:2026-05-31-fn-watchlist-triage",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:research_only",
+        "security_master:tradable",
+        "discovery_candidates:promoted"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "LITE",
+      "name": "Lumentum Holdings Inc.",
+      "cik": "1633978",
+      "exchange": "Nasdaq",
+      "primary_lane_id": "semiconductor_interconnect_and_memory",
+      "lane_id": "semiconductor_interconnect_and_memory",
+      "lane_name": "Semiconductor Interconnect And Memory",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "semiconductor_interconnect_and_memory",
+          "lane_name": "Semiconductor Interconnect And Memory",
+          "lane_status": "active",
+          "matched_keywords": [
+            "interconnect",
+            "optical"
+          ],
+          "matched_keyword_scopes": {
+            "interconnect": "screen_keywords",
+            "optical": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "interconnect": [
+              "interconnect"
+            ],
+            "optical": [
+              "optical"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "interconnect": [
+              "profile_text"
+            ],
+            "optical": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "interconnect",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary"
+              ],
+              "snippet": "Lumentum has direct AI optical and photonic interconnect exposure, strengthened by Q3 FY2026 growth, margin expansion, and NVI"
+            },
+            {
+              "keyword": "optical",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "summary",
+                "upside_path"
+              ],
+              "snippet": "Lumentum has direct AI optical and photonic interconnect exposure, strengthened by Q3 FY2026 growth,"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 74,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "high_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "unknown_future_bottlenecks",
+          "lane_name": "Unknown Future Bottlenecks",
+          "lane_status": "emerging",
+          "matched_keywords": [
+            "bottleneck"
+          ],
+          "matched_keyword_scopes": {
+            "bottleneck": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "bottleneck": [
+              "bottlenecks"
+            ]
+          },
+          "matched_fields": [
+            "profile_text"
+          ],
+          "matched_keyword_fields": {
+            "bottleneck": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "bottleneck",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ems, CPO, and optical circuit switching become durable AI data-center bottlenecks that Lumentum can convert into pricing power and disciplined reinvest"
+            }
+          ],
+          "match_sources": [
+            "profile_input"
+          ],
+          "profile_enriched": true,
+          "score": 50,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        }
+      ],
+      "secondary_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "matched_keywords": [
+        "interconnect",
+        "optical"
+      ],
+      "matched_keyword_scopes": {
+        "interconnect": "screen_keywords",
+        "optical": "screen_keywords"
+      },
+      "matched_keyword_variants": {
+        "interconnect": [
+          "interconnect"
+        ],
+        "optical": [
+          "optical"
+        ]
+      },
+      "matched_fields": [
+        "profile_text"
+      ],
+      "matched_keyword_fields": {
+        "interconnect": [
+          "profile_text"
+        ],
+        "optical": [
+          "profile_text"
+        ]
+      },
+      "matched_profile_snippets": [
+        {
+          "keyword": "interconnect",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary"
+          ],
+          "snippet": "Lumentum has direct AI optical and photonic interconnect exposure, strengthened by Q3 FY2026 growth, margin expansion, and NVI"
+        },
+        {
+          "keyword": "optical",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "summary",
+            "upside_path"
+          ],
+          "snippet": "Lumentum has direct AI optical and photonic interconnect exposure, strengthened by Q3 FY2026 growth,"
+        }
+      ],
+      "match_sources": [
+        "profile_input"
+      ],
+      "security_form": "unconfirmed_public_equity",
+      "security_form_confidence": "low",
+      "requires_security_type_confirmation": true,
+      "keyword_signal": "high_signal",
+      "triage_score": 74,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
+      "false_positive_flags": [],
+      "profile_enriched": true,
+      "profile_metadata": {},
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-31-lite-watchlist-triage.md",
+          "source_name": "repo_company_analysis:2026-05-31-lite-watchlist-triage",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_text_truncated": false,
+      "deterministic_only": true,
+      "required_next_step": "primary_source_skim_and_readiness_triage",
+      "known_sources": [
+        "watchlist:watch",
+        "security_master:tradable",
+        "discovery_candidates:promoted"
+      ],
+      "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
+    },
+    {
+      "symbol": "BE",
+      "name": "Bloom Energy Corp",
+      "cik": "1664703",
+      "exchange": "NYSE",
+      "primary_lane_id": "ai_power_and_cooling",
+      "lane_id": "ai_power_and_cooling",
+      "lane_name": "AI Data-Center Power And Cooling",
+      "lane_status": "active",
+      "lane_matches": [
+        {
+          "lane_id": "ai_power_and_cooling",
+          "lane_name": "AI Data-Center Power And Cooling",
+          "lane_status": "active",
+          "matched_keywords": [
+            "BE",
+            "onsite power"
+          ],
+          "matched_keyword_scopes": {
+            "BE": "current_public_proxy_symbols",
+            "onsite power": "screen_keywords"
+          },
+          "matched_keyword_variants": {
+            "BE": [
+              "be"
+            ],
+            "onsite power": [
+              "onsite power"
+            ]
+          },
+          "matched_fields": [
+            "profile_text",
+            "ticker"
+          ],
+          "matched_keyword_fields": {
+            "BE": [
+              "ticker"
+            ],
+            "onsite power": [
+              "profile_text"
+            ]
+          },
+          "matched_profile_snippets": [
+            {
+              "keyword": "onsite power",
+              "keyword_scope": "screen_keywords",
+              "profile_text_field_ids": [
+                "upside_path"
+              ],
+              "snippet": "ice economics, and debt keep it from buy readiness. Become a credible onsite power provider for constrained AI data-center and industrial demand."
+            }
+          ],
+          "match_sources": [
+            "profile_input",
+            "sec_issuer_reference"
+          ],
+          "profile_enriched": true,
+          "score": 70,
+          "priority": "medium",
+          "review_depth": "primary_source_skim",
+          "keyword_signal": "generic_signal",
+          "false_positive_flags": []
+        },
+        {
+          "lane_id": "advanced_nuclear_and_grid_constraints",
+          "lane_name": "Advanced Nuclear And Grid Constraints",
+          "lane_status": "active",
+          "matched_keywords": [
+            "BE"
+          ],
+          "matched_keyword_scopes": {
+            "BE": "current_public_proxy_symbols"
+          },
+          "matched_keyword_variants": {
+            "BE": [
+              "be"
             ]
           },
           "matched_fields": [
             "ticker"
           ],
           "matched_keyword_fields": {
-            "RKLB": [
+            "BE": [
               "ticker"
             ]
           },
@@ -10880,53 +13302,85 @@
           "false_positive_flags": []
         }
       ],
-      "secondary_lane_ids": [],
+      "secondary_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
       "matched_keywords": [
-        "RKLB"
+        "BE",
+        "onsite power"
       ],
       "matched_keyword_scopes": {
-        "RKLB": "current_public_proxy_symbols"
+        "BE": "current_public_proxy_symbols",
+        "onsite power": "screen_keywords"
       },
       "matched_keyword_variants": {
-        "RKLB": [
-          "rklb"
+        "BE": [
+          "be"
+        ],
+        "onsite power": [
+          "onsite power"
         ]
       },
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "matched_keyword_fields": {
-        "RKLB": [
+        "BE": [
           "ticker"
+        ],
+        "onsite power": [
+          "profile_text"
         ]
       },
-      "matched_profile_snippets": [],
+      "matched_profile_snippets": [
+        {
+          "keyword": "onsite power",
+          "keyword_scope": "screen_keywords",
+          "profile_text_field_ids": [
+            "upside_path"
+          ],
+          "snippet": "ice economics, and debt keep it from buy readiness. Become a credible onsite power provider for constrained AI data-center and industrial demand."
+        }
+      ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
       "security_form": "unconfirmed_public_equity",
       "security_form_confidence": "low",
       "requires_security_type_confirmation": true,
       "keyword_signal": "generic_signal",
-      "triage_score": 44,
-      "deterministic_priority": "low",
-      "recommended_review_depth": "false_positive_filter_before_primary_skim",
+      "triage_score": 70,
+      "deterministic_priority": "medium",
+      "recommended_review_depth": "primary_source_skim",
       "false_positive_flags": [],
-      "profile_enriched": false,
+      "profile_enriched": true,
       "profile_metadata": {},
-      "profile_sources": [],
-      "profile_text_fields": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-be-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
       "profile_text_truncated": false,
       "deterministic_only": true,
       "required_next_step": "primary_source_skim_and_readiness_triage",
       "known_sources": [
-        "watchlist:active_core_candidate",
+        "watchlist:watch",
         "security_master:tradable"
       ],
       "recheck_reason": "Known repo symbol still matched current lane scan; review only if stale, newly stronger, or price-dislocated."
     }
   ],
-  "suppressed_known_match_count": 18,
+  "suppressed_known_match_count": 21,
   "recall_diagnostics": [
     {
       "symbol": "RKLB",
@@ -10942,19 +13396,32 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-rklb-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -10972,19 +13439,32 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-FLY-10Q-S1-000186016026000009.md",
+          "source_name": "repo_company_analysis:2026-05-31-fly-discovery-readiness",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11002,19 +13482,32 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-lunr-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11032,19 +13525,32 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-RDW-424B5-8K-ATM-CONVERSION.md",
+          "source_name": "repo_company_analysis:2026-05-31-rdw-atm-conversion-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11062,19 +13568,32 @@
       "matched_expected_lane_ids": [
         "space_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "space_infrastructure"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "space_infrastructure",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-ktos-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11092,19 +13611,32 @@
       "matched_expected_lane_ids": [
         "direct_to_device_connectivity"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "direct_to_device_connectivity"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "direct_to_device_connectivity",
+        "space_infrastructure"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-asts-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11122,19 +13654,32 @@
       "matched_expected_lane_ids": [
         "direct_to_device_connectivity"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "direct_to_device_connectivity"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "direct_to_device_connectivity",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-gsat-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11171,19 +13716,31 @@
       "matched_expected_lane_ids": [
         "ai_compute_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "ai_compute_infrastructure"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-crwv-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11201,19 +13758,31 @@
       "matched_expected_lane_ids": [
         "ai_compute_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "ai_compute_infrastructure"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-NBIS-6K-MAGICBYTE-000110465926053464.md",
+          "source_name": "repo_company_analysis:2026-05-31-nbis-magicbyte-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11231,19 +13800,31 @@
       "matched_expected_lane_ids": [
         "ai_compute_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "ai_compute_infrastructure"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-IREN-8K-CONVERTIBLE-NOTES-000114036126021285.md",
+          "source_name": "repo_company_analysis:2026-05-31-iren-convertible-notes",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11280,19 +13861,31 @@
       "matched_expected_lane_ids": [
         "ai_power_and_cooling"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "ai_power_and_cooling"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "ai_power_and_cooling"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-vrt-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11309,23 +13902,35 @@
       "would_match_expected_lane": true,
       "matched_any_expected_lane": true,
       "matched_expected_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
+        "ai_power_and_cooling",
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "ai_power_and_cooling"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
-        "ai_power_and_cooling"
+        "ai_power_and_cooling",
+        "advanced_nuclear_and_grid_constraints"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-be-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11345,20 +13950,32 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-OKLO-8K-424B5-ATM-000110465926060385.md",
+          "source_name": "repo_company_analysis:2026-05-31-oklo-atm-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11378,20 +13995,32 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-leu-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11409,19 +14038,33 @@
       "matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory",
+        "direct_to_device_connectivity",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-crdo-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11439,19 +14082,33 @@
       "matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory",
+        "direct_to_device_connectivity",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-alab-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11469,19 +14126,32 @@
       "matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "semiconductor_interconnect_and_memory"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-mu-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11501,20 +14171,32 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-OKLO-8K-424B5-ATM-000110465926060385.md",
+          "source_name": "repo_company_analysis:2026-05-31-oklo-atm-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11534,20 +14216,32 @@
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "advanced_nuclear_and_grid_constraints",
         "ai_power_and_cooling"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-leu-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11564,23 +14258,35 @@
       "would_match_expected_lane": true,
       "matched_any_expected_lane": true,
       "matched_expected_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
+        "ai_power_and_cooling",
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "ai_power_and_cooling"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
-        "ai_power_and_cooling"
+        "ai_power_and_cooling",
+        "advanced_nuclear_and_grid_constraints"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/2026-05-30-ready-state-refresh.md",
+          "source_name": "repo_company_analysis:2026-05-30-be-ready-state-refresh",
+          "source_published_at": "2026-05-30",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11598,19 +14304,31 @@
       "matched_expected_lane_ids": [
         "quantum_computing_and_networking"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "ticker_only_expected_lane_recall": false,
       "matched_lane_ids": [
         "quantum_computing_and_networking"
       ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-IONQ-425-SKYWATER-000095014226001324.md",
+          "source_name": "repo_company_analysis:2026-05-31-ionq-skywater-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11628,19 +14346,32 @@
       "matched_expected_lane_ids": [
         "programmable_money_infrastructure"
       ],
-      "organic_matched_any_expected_lane": false,
-      "organic_matched_expected_lane_ids": [],
-      "ticker_only_expected_lane_recall": true,
-      "matched_lane_ids": [
+      "organic_matched_any_expected_lane": true,
+      "organic_matched_expected_lane_ids": [
         "programmable_money_infrastructure"
       ],
+      "ticker_only_expected_lane_recall": false,
+      "matched_lane_ids": [
+        "programmable_money_infrastructure",
+        "unknown_future_bottlenecks"
+      ],
       "matched_fields": [
+        "profile_text",
         "ticker"
       ],
       "match_sources": [
+        "profile_input",
         "sec_issuer_reference"
       ],
-      "profile_sources": [],
+      "profile_sources": [
+        {
+          "source_url": "research/filings/2026-05-31-CRCL-FORMD-TOKEN-PURCHASE-000123191926000528.md",
+          "source_name": "repo_company_analysis:2026-05-31-crcl-token-purchase-review",
+          "source_published_at": "2026-05-31",
+          "retrieved_at": "2026-06-01",
+          "profile_metadata": {}
+        }
+      ],
       "missed_reason": "",
       "suggested_review": "No recall action from deterministic scanner."
     },
@@ -11707,34 +14438,12 @@
     "This scan checks SEC listed issuer reference names and symbols plus optional caller-supplied profile text.",
     "Serious discovery still requires independent agentic bottleneck research and source-backed readiness work."
   ],
-  "recall_organic_expected_proxy_count": 0,
-  "recall_organic_expected_proxy_miss_count": 22,
-  "recall_organic_expected_proxy_status": "insufficient_all_expected_proxies_ticker_only",
-  "recall_ticker_only_expected_proxy_symbols": [
-    "ALAB",
-    "ASTS",
-    "BE",
-    "BE",
-    "CRCL",
-    "CRDO",
-    "CRWV",
-    "FLY",
-    "GSAT",
-    "IONQ",
-    "IREN",
-    "KTOS",
-    "LEU",
-    "LEU",
-    "LUNR",
-    "MU",
-    "NBIS",
-    "OKLO",
-    "OKLO",
-    "RDW",
-    "RKLB",
-    "VRT"
-  ],
-  "issuer_profile_coverage_status": "absent_name_ticker_only",
-  "issuer_profile_semantic_gap_count": 7575,
-  "issuer_profile_semantic_coverage_ratio": 0
+  "recall_organic_expected_proxy_count": 22,
+  "recall_organic_expected_proxy_miss_count": 0,
+  "recall_organic_expected_proxy_status": "organic_recall_complete",
+  "recall_ticker_only_expected_proxy_symbols": [],
+  "issuer_profile_coverage_status": "not_applicable_recall_calibration",
+  "issuer_profile_semantic_gap_count": 0,
+  "issuer_profile_semantic_coverage_ratio": 0,
+  "profile_input_sha256": "880c109a018b46b3e2409210e35d7d677cd28b6c6ec43b883a7bfc6a34326182"
 }

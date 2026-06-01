@@ -32,11 +32,20 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: research/cache/fmp
+          key: fmp-cache-${{ github.ref_name }}
+          restore-keys: |
+            fmp-cache-
       - run: npm ci
       - name: Refresh close prices
         run: node scripts/refresh-market-data.mjs
         env:
           MARKET_DATA_AS_OF: ${{ github.event.inputs.as_of }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          FMP_DAILY_CALL_BUDGET: "60"
+          FMP_MARKET_DATA_MODE: missing
       - run: npm run verify
       - name: Commit refreshed data
         id: commit

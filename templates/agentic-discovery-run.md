@@ -21,10 +21,23 @@ source_coverage:
     - command:
       dry_run: true
       output_path:
+      output_sha256:
       retrieved_at:
+      profile_coverage_scope:
+      profile_coverage_status:
+      profile_requested_symbols:
+      targeted_scope_acknowledged: false
+      targeted_scope_reason:
+      candidate_payload_summary:
+        returned_candidates:
+        omitted_candidates:
+        exploratory_unknown_lane_matches:
+        suppressed_known_matches:
+        recall_diagnostics:
+        miss_counts:
       result_summary:
   source_families_checked:
-    - family_id: primary_filings_regulatory | issuer_material | market_data | current_world_context
+    - family_id: primary_filings_regulatory | issuer_material | market_data | current_world_context | new_listings_ipo_spinoff_transactions | lane_evolution_current_world_search
       family:
       sources_or_queries:
       source_ids:
@@ -35,6 +48,13 @@ source_coverage:
     status: complete | not_required | blocked
     retrieval_window:
     notes:
+  unknown_future_review:
+    exploratory_match_count:
+    top_clusters:
+    sampled_symbols:
+    false_positive_patterns:
+    lane_decisions:
+    disposition:
 
 first_layer_bottleneck_questions:
   what_could_become_scarce:
@@ -117,5 +137,7 @@ quality_gate_implication:
 ```
 
 Allowed subagent skip reasons are `tool_unavailable`, `not_material_to_request`, or `already_resolved_by_primary_evidence`. Do not use time pressure, convenience, or omitted context as a skip reason for a buy recommendation.
+
+For every saved deterministic JSON output, record `output_sha256` from the saved file. For issuer-profile discovery outputs, also record `profile_coverage_scope`, `profile_coverage_status`, and `profile_requested_symbols` from the saved JSON output. Partial issuer-profile scans must set `targeted_scope_acknowledged: true` with a concrete `targeted_scope_reason`, but they remain targeted evidence and must not satisfy broad `coverage.universe_scan_as_of` freshness. Only outputs with zero gap, full coverage ratio, matching selected/profile/eligible counts, and eligible-universe counts tied to the current SEC input may be treated as `complete` universe evidence. Broad universe freshness must not have unresolved known public proxy recall misses. If any deterministic output surfaces `exploratory_matches`, fill `unknown_future_review` so the open-ended lane cannot silently become passive.
 
 Discovery is not complete when the artifact merely names candidates. Plausible candidates that could affect allocation must link to a readiness sprint and `research/discovery/candidate-readiness.yml` record. The quality gate should not be left not ready as a final state; keep iterating until the sprint is completed, incubated with dashboard-facing coverage, rejected from evidence, archived from evidence, externally blocked, not tradable, or explicitly not material to the current allocation.

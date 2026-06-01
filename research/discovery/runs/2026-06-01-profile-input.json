@@ -1,0 +1,427 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T20:11:15.050Z",
+  "source": "repo_company_analysis",
+  "profile_purpose": "repo_research_recall_calibration",
+  "profile_text_fields": [
+    "summary",
+    "upside_path"
+  ],
+  "source_files": [
+    "research/company-analysis.yml",
+    "data/market/security_master.csv"
+  ],
+  "profile_count": 22,
+  "skipped_symbols": [
+    {
+      "symbol": "ANTHROPIC",
+      "reason": "missing_sec_cik"
+    },
+    {
+      "symbol": "OPENAI",
+      "reason": "missing_sec_cik"
+    },
+    {
+      "symbol": "SPACEX",
+      "reason": "not_tradable:not_tradable"
+    }
+  ],
+  "profiles": [
+    {
+      "symbol": "ALAB",
+      "cik": "0001736297",
+      "source_name": "repo_company_analysis:2026-05-30-alab-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Astera Labs remains a high-quality AI connectivity platform, but price-to-sales near 66 leaves little margin for mistakes.\nBecome a core rack-scale AI connectivity vendor across PCIe, CXL, Ethernet, and related fabrics.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Astera Labs remains a high-quality AI connectivity platform, but price-to-sales near 66 leaves little margin for mistakes.",
+        "upside_path": "Become a core rack-scale AI connectivity vendor across PCIe, CXL, Ethernet, and related fabrics."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "source_name": "repo_company_analysis:2026-05-30-asts-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "ASTS still offers extreme direct-to-device optionality, but revenue remains pre-scale and execution risk is high.\nBuild a satellite-to-phone connectivity layer through MNO and government channels.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "ASTS still offers extreme direct-to-device optionality, but revenue remains pre-scale and execution risk is high.",
+        "upside_path": "Build a satellite-to-phone connectivity layer through MNO and government channels."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "BE",
+      "cik": "0001664703",
+      "source_name": "repo_company_analysis:2026-05-30-be-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Bloom has AI power-scarcity relevance, but valuation, service economics, and debt keep it from buy readiness.\nBecome a credible onsite power provider for constrained AI data-center and industrial demand.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Bloom has AI power-scarcity relevance, but valuation, service economics, and debt keep it from buy readiness.",
+        "upside_path": "Become a credible onsite power provider for constrained AI data-center and industrial demand."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "CBRS",
+      "cik": "0002021728",
+      "source_name": "repo_company_analysis:2026-05-30-cbrs-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Cerebras is an AI systems option, but recent IPO status and sparse public metrics make underwriting premature.\nConvert wafer-scale systems and inference demand into durable public-company revenue.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Cerebras is an AI systems option, but recent IPO status and sparse public metrics make underwriting premature.",
+        "upside_path": "Convert wafer-scale systems and inference demand into durable public-company revenue."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "CRCL",
+      "cik": "0001876042",
+      "source_name": "repo_company_analysis:2026-05-31-crcl-token-purchase-review",
+      "source_url": "research/filings/2026-05-31-CRCL-FORMD-TOKEN-PURCHASE-000123191926000528.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "Circle's Form D for USD 222 million of token purchase agreements adds an unresolved token-economics question before any common-stock promotion.\nBecome regulated programmable-money infrastructure if USDC utility, distribution, reserves, and developer adoption produce durable common-stock economics.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Circle's Form D for USD 222 million of token purchase agreements adds an unresolved token-economics question before any common-stock promotion.",
+        "upside_path": "Become regulated programmable-money infrastructure if USDC utility, distribution, reserves, and developer adoption produce durable common-stock economics."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "source_name": "repo_company_analysis:2026-05-30-crdo-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Credo has strong AI interconnect growth and margin quality, but valuation and customer concentration limit entry quality.\nCapture durable AI data-center connectivity demand as network complexity rises.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Credo has strong AI interconnect growth and margin quality, but valuation and customer concentration limit entry quality.",
+        "upside_path": "Capture durable AI data-center connectivity demand as network complexity rises."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "CRWV",
+      "cik": "0001769628",
+      "source_name": "repo_company_analysis:2026-05-30-crwv-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "CoreWeave is direct AI cloud capacity exposure, but heavy debt and customer concentration keep entry too uncertain.\nCompound if scarce GPU capacity and power access support durable utilization and pricing.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "CoreWeave is direct AI cloud capacity exposure, but heavy debt and customer concentration keep entry too uncertain.",
+        "upside_path": "Compound if scarce GPU capacity and power access support durable utilization and pricing."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "FLY",
+      "cik": "0001860160",
+      "source_name": "repo_company_analysis:2026-05-31-fly-discovery-readiness",
+      "source_url": "research/filings/2026-05-31-FLY-10Q-S1-000186016026000009.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "Firefly Aerospace is direct enough for the space infrastructure research universe, but current evidence keeps it research-only because valuation, losses, runway, dilution, selling-holder risk, and short public history are unresolved.\nCompound if launch cadence, spacecraft manufacturing, mission operations, and defense-space demand become durable bottlenecks that Firefly can convert into backlog, margin, and disciplined reinvestment.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Firefly Aerospace is direct enough for the space infrastructure research universe, but current evidence keeps it research-only because valuation, losses, runway, dilution, selling-holder risk, and short public history are unresolved.",
+        "upside_path": "Compound if launch cadence, spacecraft manufacturing, mission operations, and defense-space demand become durable bottlenecks that Firefly can convert into backlog, margin, and disciplined reinvestment."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "FN",
+      "cik": "0001408710",
+      "source_name": "repo_company_analysis:2026-05-31-fn-watchlist-triage",
+      "source_url": "research/2026-05-31-fn-watchlist-triage.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "Fabrinet has real AI datacom and advanced optical manufacturing exposure, but the evidence supports research-only coverage rather than a buy or active watch promotion because economics remain contract-manufacturing-like and customer concentration is material.\nBenefit if AI data-center optical modules, datacenter interconnect, and high-performance computing assemblies become durable manufacturing bottlenecks that Fabrinet can scale without margin compression.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Fabrinet has real AI datacom and advanced optical manufacturing exposure, but the evidence supports research-only coverage rather than a buy or active watch promotion because economics remain contract-manufacturing-like and customer concentration is material.",
+        "upside_path": "Benefit if AI data-center optical modules, datacenter interconnect, and high-performance computing assemblies become durable manufacturing bottlenecks that Fabrinet can scale without margin compression."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "GSAT",
+      "cik": "0001366868",
+      "source_name": "repo_company_analysis:2026-05-30-gsat-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Globalstar adds spectrum-backed direct-to-device optionality, but partner concentration and network economics remain unresolved.\nTurn spectrum and device partnerships into durable connectivity economics if direct-to-device demand broadens.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Globalstar adds spectrum-backed direct-to-device optionality, but partner concentration and network economics remain unresolved.",
+        "upside_path": "Turn spectrum and device partnerships into durable connectivity economics if direct-to-device demand broadens."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "IONQ",
+      "cik": "0001824920",
+      "source_name": "repo_company_analysis:2026-05-31-ionq-skywater-review",
+      "source_url": "research/filings/2026-05-31-IONQ-425-SKYWATER-000095014226001324.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "IonQ's SkyWater transaction material may broaden capability, but commercial proof and transaction integration remain too uncertain for promotion.\nBenefit if quantum computing, networking, sensing, or security becomes commercially essential and IonQ can scale useful systems.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "IonQ's SkyWater transaction material may broaden capability, but commercial proof and transaction integration remain too uncertain for promotion.",
+        "upside_path": "Benefit if quantum computing, networking, sensing, or security becomes commercially essential and IonQ can scale useful systems."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "source_name": "repo_company_analysis:2026-05-31-iren-convertible-notes",
+      "source_url": "research/filings/2026-05-31-IREN-8K-CONVERTIBLE-NOTES-000114036126021285.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "IREN's USD 3.0 billion convertible notes improve AI cloud buildout liquidity but add leverage, conversion, and capital-deployment risk.\nConvert power sites and GPU procurement into durable AI cloud revenue if customer economics and utilization prove strong.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "IREN's USD 3.0 billion convertible notes improve AI cloud buildout liquidity but add leverage, conversion, and capital-deployment risk.",
+        "upside_path": "Convert power sites and GPU procurement into durable AI cloud revenue if customer economics and utilization prove strong."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "KTOS",
+      "cik": "0001069258",
+      "source_name": "repo_company_analysis:2026-05-30-ktos-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Kratos has useful defense and space exposure, but contractor economics and program timing cap asymmetry.\nCompound if unmanned systems, hypersonic targets, tactical drones, and satellite communications become higher-priority defense infrastructure.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Kratos has useful defense and space exposure, but contractor economics and program timing cap asymmetry.",
+        "upside_path": "Compound if unmanned systems, hypersonic targets, tactical drones, and satellite communications become higher-priority defense infrastructure."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "LEU",
+      "cik": "0001065059",
+      "source_name": "repo_company_analysis:2026-05-30-leu-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Centrus has distinct HALEU scarcity exposure at a less extreme valuation, but policy and scale-up risk control the thesis.\nBenefit if U.S. fuel-security policy and advanced nuclear demand make HALEU capacity strategically scarce.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Centrus has distinct HALEU scarcity exposure at a less extreme valuation, but policy and scale-up risk control the thesis.",
+        "upside_path": "Benefit if U.S. fuel-security policy and advanced nuclear demand make HALEU capacity strategically scarce."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "LITE",
+      "cik": "0001633978",
+      "source_name": "repo_company_analysis:2026-05-31-lite-watchlist-triage",
+      "source_url": "research/2026-05-31-lite-watchlist-triage.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "Lumentum has direct AI optical and photonic interconnect exposure, strengthened by Q3 FY2026 growth, margin expansion, and NVIDIA's USD 2.0 billion preferred-stock investment, but valuation and capital-structure complexity block buy readiness.\nBenefit if laser chips, optical subsystems, CPO, and optical circuit switching become durable AI data-center bottlenecks that Lumentum can convert into pricing power and disciplined reinvestment.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Lumentum has direct AI optical and photonic interconnect exposure, strengthened by Q3 FY2026 growth, margin expansion, and NVIDIA's USD 2.0 billion preferred-stock investment, but valuation and capital-structure complexity block buy readiness.",
+        "upside_path": "Benefit if laser chips, optical subsystems, CPO, and optical circuit switching become durable AI data-center bottlenecks that Lumentum can convert into pricing power and disciplined reinvestment."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "LUNR",
+      "cik": "0001844452",
+      "source_name": "repo_company_analysis:2026-05-30-lunr-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Intuitive Machines has lunar and space infrastructure upside, but mission execution, integration, and financing risk remain high.\nConvert lunar and space infrastructure contracts into a broader government and commercial platform.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Intuitive Machines has lunar and space infrastructure upside, but mission execution, integration, and financing risk remain high.",
+        "upside_path": "Convert lunar and space infrastructure contracts into a broader government and commercial platform."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "MU",
+      "cik": "0000723125",
+      "source_name": "repo_company_analysis:2026-05-30-mu-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Micron has powerful HBM and AI memory exposure, but trillion-dollar scale and memory cyclicality reduce portfolio asymmetry.\nBenefit if HBM and advanced DRAM remain durable AI system bottlenecks.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Micron has powerful HBM and AI memory exposure, but trillion-dollar scale and memory cyclicality reduce portfolio asymmetry.",
+        "upside_path": "Benefit if HBM and advanced DRAM remain durable AI system bottlenecks."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "NBIS",
+      "cik": "0001513845",
+      "source_name": "repo_company_analysis:2026-05-31-nbis-magicbyte-review",
+      "source_url": "research/filings/2026-05-31-NBIS-6K-MAGICBYTE-000110465926053464.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "Nebius' MagicByte/Eigen AI Labs acquisition is strategically relevant, but it does not solve financing, utilization, or customer economics.\nBuild differentiated AI cloud capacity and software capability if GPU supply, power access, and customer demand stay constrained.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Nebius' MagicByte/Eigen AI Labs acquisition is strategically relevant, but it does not solve financing, utilization, or customer economics.",
+        "upside_path": "Build differentiated AI cloud capacity and software capability if GPU supply, power access, and customer demand stay constrained."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "OKLO",
+      "cik": "0001849056",
+      "source_name": "repo_company_analysis:2026-05-31-oklo-atm-review",
+      "source_url": "research/filings/2026-05-31-OKLO-8K-424B5-ATM-000110465926060385.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "Oklo remains an advanced nuclear option, but a new USD 1.0 billion ATM reinforces dilution risk before commercial deployment evidence exists.\nBecome a deployable advanced-fission power supplier if licensing, fuel, customer contracts, and project execution converge.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Oklo remains an advanced nuclear option, but a new USD 1.0 billion ATM reinforces dilution risk before commercial deployment evidence exists.",
+        "upside_path": "Become a deployable advanced-fission power supplier if licensing, fuel, customer contracts, and project execution converge."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "RDW",
+      "cik": "0001819810",
+      "source_name": "repo_company_analysis:2026-05-31-rdw-atm-conversion-review",
+      "source_url": "research/filings/2026-05-31-RDW-424B5-8K-ATM-CONVERSION.md",
+      "source_published_at": "2026-05-31",
+      "retrieved_at": "2026-06-01",
+      "text": "Redwire's USD 350 million ATM and preferred conversion keep it research-only because capitalization, dilution, control, and integration risk remain high.\nBecome a scaled space infrastructure and defense systems supplier if Edge Autonomy integration and cash generation improve.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Redwire's USD 350 million ATM and preferred conversion keep it research-only because capitalization, dilution, control, and integration risk remain high.",
+        "upside_path": "Become a scaled space infrastructure and defense systems supplier if Edge Autonomy integration and cash generation improve."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "source_name": "repo_company_analysis:2026-05-30-rklb-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Rocket Lab remains the strongest execution-led space platform candidate, but the current price already discounts substantial success.\nCompound through launch, space systems, defense programs, and Neutron if execution continues.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Rocket Lab remains the strongest execution-led space platform candidate, but the current price already discounts substantial success.",
+        "upside_path": "Compound through launch, space systems, defense programs, and Neutron if execution continues."
+      },
+      "profile_text_truncated": false
+    },
+    {
+      "symbol": "VRT",
+      "cik": "0001674101",
+      "source_name": "repo_company_analysis:2026-05-30-vrt-ready-state-refresh",
+      "source_url": "research/2026-05-30-ready-state-refresh.md",
+      "source_published_at": "2026-05-30",
+      "retrieved_at": "2026-06-01",
+      "text": "Vertiv has real AI power and cooling evidence, but its large size makes extreme portfolio upside harder.\nCompound through AI data-center power, cooling, liquid-cooling, and service demand.",
+      "profile_text_fields": [
+        "summary",
+        "upside_path"
+      ],
+      "profile_field_texts": {
+        "summary": "Vertiv has real AI power and cooling evidence, but its large size makes extreme portfolio upside harder.",
+        "upside_path": "Compound through AI data-center power, cooling, liquid-cooling, and service demand."
+      },
+      "profile_text_truncated": false
+    }
+  ]
+}

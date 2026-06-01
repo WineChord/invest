@@ -27,7 +27,17 @@ discovery_lanes_reviewed:
 sec_filings_window:
 company_ir_window:
 market_data_window:
+optional_market_data_providers:
+  fmp_api_key_available:
+  fmp_mode:
+  fmp_daily_call_budget:
+  fmp_uncached_calls_used:
+  fmp_cache_status:
+  fmp_fallbacks:
 news_and_industry_window:
+cache_inputs_reused:
+cache_inputs_invalidated:
+semantic_profile_coverage:
 unavailable_sources:
 ```
 
@@ -49,6 +59,14 @@ new_lanes_considered:
 lanes_added_or_revised:
 unknown_future_bottlenecks_review:
 dry_run_candidate_scan:
+coarse_to_fine_semantic_pass:
+semantic_packet_artifact:
+semantic_batch_manifest:
+semantic_classification_import:
+semantic_discovery_run:
+semantic_batch_cache_status:
+cache_only_intermediates:
+durable_semantic_summary:
 agentic_discovery_subagents:
 agentic_discovery_run_path:
 subagent_evidence_packet_path:
@@ -63,6 +81,8 @@ candidate_readiness_index:
 ```
 
 Do not deep-research every symbol found in the scan. Explain which theme filters and quick rejection criteria were used before any company entered the deep-dive queue. Serious discovery must answer the first-layer bottleneck questions before ticker lists become important. For candidates that could affect allocation, opportunity cost, lane completeness, or watchlist priority, do not stop at a shallow raw-candidate label. Run a readiness sprint and gather public market data, security metadata, primary filings, issuer reports, industry context, material filing review, valuation state, same-lane peer comparison, and dashboard-facing research coverage when available before concluding that the candidate is not buy-ready.
+
+Use cache-aware coarse-to-fine discovery when the universe is large. Reuse source-backed unchanged issuer packets, filing extracts, semantic classifications, and prior rejection/incubation reasons when their hashes, dates, scope, and invalidation rules remain valid. Refresh or invalidate caches for new filings, new listings, changed lane maps, market-cap or price dislocations, financing/dilution updates, contracts, regulator actions, or any candidate that could affect allocation. Use low-reasoning batched subagents for broad semantic classification, medium reasoning for lane comparison and false-positive rejection, and xhigh only for material readiness, promotion, valuation, allocation, or unresolved conflict. Large work-order artifacts such as complete-universe SEC issuer profiles, semantic issuer packets, semantic batch JSON, batch prompts, smoke artifacts, and validation artifacts must stay under ignored `research/cache/discovery/`; the committed run should keep only durable summaries, hashes, source metadata, and classification cache records that remain reviewable.
 
 For material discovery, save a structured run artifact using [agentic-discovery-run.md](agentic-discovery-run.md). For material raw candidates, save or update [discovery-readiness-sprint.md](discovery-readiness-sprint.md) and `research/discovery/candidate-readiness.yml`.
 
@@ -119,6 +139,7 @@ subagents_run:
   - role:
     reasoning_level:
     scope:
+    cache_or_fresh_input:
     key_findings:
     missing_or_stale_evidence:
     durable_updates_recommended:

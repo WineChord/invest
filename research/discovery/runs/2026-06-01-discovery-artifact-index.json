@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-06-01T05:15:01.143Z",
+  "as_of": "2026-06-01",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-06-01.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-06-01-full-profile-universe-scan.json",
+      "sha256": "e46d89f97ba2d45266916d04ba0e41f38d1b69a0668f6715763540ef472670ef",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-improvement-baseline.json",
+      "sha256": "8d4bf61327778516c3372cf32ceda67bc6005ef5c00d43dc5569406736a6794c",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-profile-enriched-scan.json",
+      "sha256": "9c3487271209f7b76da4ec49cfb0937c1c9b24d441d33cdd8f2ac4841d73b7ac",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-profile-input.json",
+      "sha256": "880c109a018b46b3e2409210e35d7d677cd28b6c6ec43b883a7bfc6a34326182",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-index-index.metadata.json",
+      "sha256": "1ec40abb7393550e800613545cef80d2c413572f62d01191c6a1552e124f8620",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-index-manifest.csv",
+      "sha256": "beaded2df762af188da80038784dba78f85e7871b41625c991def2a51c6a2254",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-index-manifest.metadata.json",
+      "sha256": "38d9495099c921a93c58841d851e257740c77edc908f6e63176bf0e69eda95a6",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-index-profiles.json",
+      "sha256": "6ed273012382fff7023f02a1fec30017eb33d3e516e5b706558129c82ff679bc",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-index-scan.json",
+      "sha256": "c90c68f1de72e611ce67f222620b78c0ec9565b73725f704a13b933de7bc9576",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-manifest.csv",
+      "sha256": "beaded2df762af188da80038784dba78f85e7871b41625c991def2a51c6a2254",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-manifest.metadata.json",
+      "sha256": "b87c38f2ad1782e85bb8c20b705a15c19f018d9c2ae900fc46263466e590fc0e",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-profile-input.json",
+      "sha256": "d47c30722fd72115886573adf776719c2b44cd270ff6ac4bbbc94755059800fe",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-filing-scan.json",
+      "sha256": "42edc5695f49e2a7ba30152759374f32cb552ce313cc5522423ea54447b12ce9",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-issuer-profile-input.json",
+      "sha256": "590b4c8962cebff12e6fa8f0a947239d67683761331705de392f10c4b375d143",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-sec-issuer-scan.json",
+      "sha256": "13a8b331d7d85b6fe74e053d285a7dc700494e057554abaa18b74b489a823791",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-semantic-discovery-run.json",
+      "sha256": "4cf45f4557176fce347eb069b910d62209b01e5a6ed0d5a0f2850a3dee02d28c",
+      "role": "semantic_discovery_run_artifact"
+    }
+  ]
+}
