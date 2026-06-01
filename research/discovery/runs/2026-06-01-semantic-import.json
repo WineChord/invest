@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source": "semantic_classification_import",
+  "generated_at": "2026-06-01T06:11:54.389Z",
+  "as_of": "2026-06-01",
+  "packet_artifact_path": "research/cache/discovery/2026-06-01/2026-06-01-semantic-packets.json",
+  "packet_artifact_sha256": "b6a948d72d96dc128fb8f26d3bc0d92b0e59f1f03f1af7b4dcaa2da256b3c746",
+  "result_path": "research/cache/discovery/2026-06-01/semantic-heuristic-results.jsonl",
+  "result_sha256": "80ccd8ce4c96969bc4addba61dc5b727cdd246b84c4eed3216ef5fd98b942d4f",
+  "input_cache_path": "research/discovery/semantic-cache.jsonl",
+  "input_cache_sha256": "d5d7c69a0c4ced8878eedf436756555e3ef5dc8ba6d49c68601075169ff77fc1",
+  "cache_output_path": "research/discovery/semantic-cache.jsonl",
+  "classifier_version": "semantic_triage_v2",
+  "imported_count": 7575,
+  "cache_record_count": 7575,
+  "current_cache_count": 7575,
+  "stale_cache_count": 0,
+  "escalation_counts": {
+    "medium_lane_compare": 227,
+    "none": 7262,
+    "reject_or_archive": 36,
+    "xhigh_readiness_candidate": 50
+  }
+}

@@ -6,6 +6,7 @@ import { fetchSecTextWithRetry } from "./sec-fetch-lib.mjs";
 
 export const semanticPacketSchemaVersion = 1;
 export const semanticClassificationSchemaVersion = 1;
+export const semanticClassifierVersion = "semantic_triage_v2";
 export const semanticBatchSchemaVersion = 1;
 export const semanticDiscoveryRunSchemaVersion = 1;
 export const secCompanyTickersExchangeUrl = "https://www.sec.gov/files/company_tickers_exchange.json";
@@ -320,6 +321,7 @@ export function countBy(values, keyFn) {
 }
 
 export function currentSemanticCacheRecords({
+  classifierVersion = semanticClassifierVersion,
   classificationSchemaVersion = semanticClassificationSchemaVersion,
   laneMapSha256,
   packetBySymbol,
@@ -333,6 +335,7 @@ export function currentSemanticCacheRecords({
     const key = semanticCacheKey(record);
     if (
       packet !== undefined &&
+      record.classifier_version === classifierVersion &&
       record.classification_schema_version === classificationSchemaVersion &&
       record.issuer_packet_hash === packet.issuer_packet_hash &&
       record.lane_map_sha256 === laneMapSha256 &&

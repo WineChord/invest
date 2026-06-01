@@ -32,6 +32,11 @@ try {
   writeFileSync(path.join(runsDir, "2026-06-01-sec-filing-manifest.csv"), "symbol,cik\nARCD,0000002001\n");
   writeFileSync(path.join(runsDir, "2026-06-01-semantic-packets.json"), "{}\n");
   writeFileSync(path.join(runsDir, "2026-06-01-semantic-batch-manifest.json"), "{}\n");
+  writeFileSync(path.join(runsDir, "2026-06-01-semantic-review-packet.json"), `${JSON.stringify({
+    schema_version: 1,
+    source: "semantic_review_packet",
+    as_of: "2026-06-01",
+  }, null, 2)}\n`);
   mkdirSync(path.join(runsDir, "2026-06-01-semantic-batches"), { recursive: true });
   writeFileSync(path.join(runsDir, "2026-06-01-semantic-batches", "2026-06-01-semantic-0001.json"), "{}\n");
   writeFileSync(path.join(runsDir, "2026-05-31-old-scan.json"), "{}\n");
@@ -53,7 +58,7 @@ try {
   assert(index.source === "discovery_artifact_index", "artifact index should declare source");
   assert(index.as_of === "2026-06-01", "artifact index should preserve as-of date");
   assert(index.generated_at === "2026-06-01T00:00:00.000Z", "artifact index should preserve generated-at timestamp");
-  assert(index.artifacts.length === 5, "artifact index should include only matching non-index artifacts");
+  assert(index.artifacts.length === 6, "artifact index should include only matching non-index artifacts");
   assert(!index.artifacts.some((artifact) => artifact.path.endsWith("-discovery-artifact-index.json")), "artifact index should not include itself");
   assert(!index.artifacts.some((artifact) => artifact.path.includes("2026-05-31")), "artifact index should not include other dates");
   assert(!index.artifacts.some((artifact) => artifact.path.endsWith("-semantic-packets.json")), "artifact index should not include cache-only semantic packet artifacts");
@@ -68,6 +73,9 @@ try {
   const registrationTransaction = index.artifacts.find((artifact) => artifact.path.endsWith("2026-06-01-registration-transaction-candidates.json"));
   assert(registrationTransaction !== undefined, "artifact index should include registration/transaction candidate artifacts");
   assert(registrationTransaction.role === "sec_registration_transaction_candidate_artifact", "artifact index should classify registration/transaction artifacts");
+  const reviewPacket = index.artifacts.find((artifact) => artifact.path.endsWith("2026-06-01-semantic-review-packet.json"));
+  assert(reviewPacket !== undefined, "artifact index should include semantic review packet artifacts");
+  assert(reviewPacket.role === "semantic_review_packet_artifact", "artifact index should classify semantic review packet artifacts");
 
   runExpectFailure("scripts/build-discovery-artifact-index.mjs", [
     "--as-of",

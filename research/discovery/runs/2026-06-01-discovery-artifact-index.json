@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": "discovery_artifact_index",
-  "generated_at": "2026-06-01T05:15:01.143Z",
+  "generated_at": "2026-06-01T06:11:55.583Z",
   "as_of": "2026-06-01",
   "purpose": "Hash-anchor generated discovery artifacts from 2026-06-01.",
   "artifacts": [
@@ -82,8 +82,18 @@
     },
     {
       "path": "research/discovery/runs/2026-06-01-semantic-discovery-run.json",
-      "sha256": "4cf45f4557176fce347eb069b910d62209b01e5a6ed0d5a0f2850a3dee02d28c",
+      "sha256": "e6d6fb7ee440b16cd697a09814a4de5104da1dbf26edec7d37f71e9fbf0c099a",
       "role": "semantic_discovery_run_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-semantic-import.json",
+      "sha256": "7e6d9afa79d684bf037b6a256cd5b4af2e6d95293ab190938316fdb94fa95b54",
+      "role": "semantic_classification_import_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-01-semantic-review-packet.json",
+      "sha256": "57773126ea432a4955111e81c352be55877a559ce7a5b7e93520946cd4eeb774",
+      "role": "semantic_review_packet_artifact"
     }
   ]
 }

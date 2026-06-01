@@ -1,111 +1,757 @@
 {
   "schema_version": 1,
-  "source": "semantic_discovery_run",
-  "generated_at": "2026-06-01T06:11:54.920Z",
+  "source": "semantic_review_packet",
+  "generated_at": "2026-06-01T06:11:55.329Z",
   "as_of": "2026-06-01",
+  "semantic_run_path": "research/discovery/runs/2026-06-01-semantic-discovery-run.json",
+  "semantic_run_sha256": "e6d6fb7ee440b16cd697a09814a4de5104da1dbf26edec7d37f71e9fbf0c099a",
+  "semantic_cache_path": "research/discovery/semantic-cache.jsonl",
+  "semantic_cache_sha256": "d5d7c69a0c4ced8878eedf436756555e3ef5dc8ba6d49c68601075169ff77fc1",
   "packet_artifact_path": "research/cache/discovery/2026-06-01/2026-06-01-semantic-packets.json",
   "packet_artifact_sha256": "b6a948d72d96dc128fb8f26d3bc0d92b0e59f1f03f1af7b4dcaa2da256b3c746",
-  "packet_artifact_metadata": {
-    "cache_invalidation_policy": [
-      "issuer_identity_hash_change",
-      "issuer_packet_hash_change",
-      "lane_map_sha256_change",
-      "new_material_filing_or_event",
-      "material_price_or_market_cap_change",
-      "classification_schema_version_change",
-      "classifier_version_change"
-    ],
-    "eligible_universe_count": 7575,
-    "lane_map_as_of": "2026-06-01",
-    "lane_map_lane_ids": [
-      "space_infrastructure",
-      "direct_to_device_connectivity",
-      "ai_compute_infrastructure",
-      "ai_power_and_cooling",
-      "semiconductor_interconnect_and_memory",
-      "advanced_nuclear_and_grid_constraints",
-      "quantum_computing_and_networking",
-      "programmable_money_infrastructure",
-      "frontier_ai_public_platforms",
-      "unknown_future_bottlenecks"
-    ],
-    "lane_map_path": "research/discovery/lanes.yml",
-    "lane_map_sha256": "6c288d7da254cf6c16705e0b42c11f477717c926bc45b383b8f6107d929d488d",
-    "market_context_files": [
-      {
-        "path": "data/market/security_master.csv",
-        "sha256": "0c482f2fb0a10c13047e3dd6b953ae28134db858ff22a71b2ce571a4543872c3"
-      },
-      {
-        "path": "research/watchlist.csv",
-        "sha256": "be53f08e27ac0ce4a1e384cbaaa10ea8ae1bd8514b0e00af27d5b5d4f9396dbe"
-      },
-      {
-        "path": "research/discovery/candidates.csv",
-        "sha256": "23e6725dafd491fb231709d9d819a53553585f0bab72fa494180cda77eb18724"
-      },
-      {
-        "path": "data/market/company_metrics.csv",
-        "sha256": "8915d846b2527b77b5853b1e092061f64d7279c522a2d1f8f2c32cae8df18f2e"
-      }
-    ],
+  "summary": {
+    "classifier_version": "semantic_triage_v2",
     "packet_count": 7575,
-    "packet_schema_version": 1,
-    "profile_input_files": [
-      {
-        "path": "research/cache/discovery/2026-06-01/2026-06-01-full-sec-issuer-profiles.json",
-        "sha256": "e1a55371be049ba068760de120abf68b92370355e1f7bedcfa866ad1b5e64046",
-        "source": "sec_submissions_metadata",
-        "profile_purpose": "issuer_universe_discovery",
-        "profile_count": 6004
-      }
-    ],
-    "requested_symbols": [],
-    "sec_input_row_count": 10365,
-    "sec_input_sha256": "27a0d81776e908cfdc6cc71064bf7692c8aea14f01ff074e46c2b7015ffbf5ee",
-    "sec_input_source": "research/cache/company_tickers_exchange-2026-06-01.json",
-    "selected_symbol_count": 7575,
-    "selection_strategy": "complete_sec_universe",
-    "source": "semantic_issuer_packets"
+    "classified_current_count": 7575,
+    "unclassified_count": 0,
+    "stale_cache_count": 0,
+    "classification_coverage_ratio": 1,
+    "escalation_counts": {
+      "medium_lane_compare": 227,
+      "none": 7262,
+      "reject_or_archive": 36,
+      "xhigh_readiness_candidate": 50
+    },
+    "bottleneck_exposure_counts": {
+      "none": 7255,
+      "possible": 43,
+      "strong": 19,
+      "weak": 258
+    },
+    "directness_counts": {
+      "direct": 19,
+      "indirect": 43,
+      "none": 7291,
+      "weak_proxy": 222
+    },
+    "lane_counts": {
+      "advanced_nuclear_and_grid_constraints": 12,
+      "ai_compute_infrastructure": 94,
+      "ai_power_and_cooling": 6,
+      "direct_to_device_connectivity": 5,
+      "frontier_ai_public_platforms": 1,
+      "programmable_money_infrastructure": 2,
+      "quantum_computing_and_networking": 16,
+      "semiconductor_interconnect_and_memory": 110,
+      "space_infrastructure": 27,
+      "unknown_future_bottlenecks": 52
+    }
   },
-  "cache_path": "research/discovery/semantic-cache.jsonl",
-  "cache_sha256": "d5d7c69a0c4ced8878eedf436756555e3ef5dc8ba6d49c68601075169ff77fc1",
-  "classifier_version": "semantic_triage_v2",
-  "packet_count": 7575,
-  "classified_current_count": 7575,
-  "unclassified_count": 0,
-  "stale_cache_count": 0,
-  "classification_coverage_ratio": 1,
-  "escalation_counts": {
-    "medium_lane_compare": 227,
-    "none": 7262,
-    "reject_or_archive": 36,
-    "xhigh_readiness_candidate": 50
-  },
-  "bottleneck_exposure_counts": {
-    "none": 7255,
-    "possible": 43,
-    "strong": 19,
-    "weak": 258
-  },
-  "directness_counts": {
-    "direct": 19,
-    "indirect": 43,
-    "none": 7291,
-    "weak_proxy": 222
-  },
-  "lane_counts": {
-    "advanced_nuclear_and_grid_constraints": 12,
-    "ai_compute_infrastructure": 94,
-    "ai_power_and_cooling": 6,
-    "direct_to_device_connectivity": 5,
-    "frontier_ai_public_platforms": 1,
-    "programmable_money_infrastructure": 2,
-    "quantum_computing_and_networking": 16,
-    "semiconductor_interconnect_and_memory": 110,
-    "space_infrastructure": 27,
-    "unknown_future_bottlenecks": 52
-  },
+  "xhigh_readiness_candidates": [
+    {
+      "symbol": "ALAB",
+      "name": "Astera Labs, Inc.",
+      "business_plain_english": "Astera Labs, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "ARQQ",
+      "name": "Arqit Quantum Inc.",
+      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "ARQQW",
+      "name": "Arqit Quantum Inc.",
+      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "ASTS",
+      "name": "AST SpaceMobile, Inc.",
+      "business_plain_english": "AST SpaceMobile, Inc. is a SEC-listed issuer described by the packet as: Communications Services, NEC Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "direct_to_device_connectivity"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "BE",
+      "name": "Bloom Energy Corp",
+      "business_plain_english": "Bloom Energy Corp is a SEC-listed issuer described by the packet as: Electrical Industrial Apparatus Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints",
+        "ai_power_and_cooling"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "CBRS",
+      "name": "Cerebras Systems Inc.",
+      "business_plain_english": "Cerebras Systems Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices other.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "indirect",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: semiconductors & related devices."
+    },
+    {
+      "symbol": "CRCL",
+      "name": "Circle Internet Group, Inc.",
+      "business_plain_english": "Circle Internet Group, Inc. is a SEC-listed issuer described by the packet as: Finance Services Non-accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "programmable_money_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "CRDO",
+      "name": "Credo Technology Group Holding Ltd",
+      "business_plain_english": "Credo Technology Group Holding Ltd is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "CRWV",
+      "name": "CoreWeave, Inc.",
+      "business_plain_english": "CoreWeave, Inc. is a SEC-listed issuer described by the packet as: Services-Prepackaged Software Non-accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "FJET",
+      "name": "Starfighters Space, Inc.",
+      "business_plain_english": "Starfighters Space, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: space."
+    },
+    {
+      "symbol": "FLY",
+      "name": "Firefly Aerospace Inc.",
+      "business_plain_english": "Firefly Aerospace Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "FNUC",
+      "name": "Frontier Nuclear & Minerals Inc.",
+      "business_plain_english": "Frontier Nuclear & Minerals Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: nuclear."
+    },
+    {
+      "symbol": "GEMI",
+      "name": "Gemini Space Station, Inc.",
+      "business_plain_english": "Gemini Space Station, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: space."
+    },
+    {
+      "symbol": "GILT",
+      "name": "GILAT SATELLITE NETWORKS LTD",
+      "business_plain_english": "GILAT SATELLITE NETWORKS LTD is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: satellite."
+    },
+    {
+      "symbol": "GSAT",
+      "name": "Globalstar, Inc.",
+      "business_plain_english": "Globalstar, Inc. is a SEC-listed issuer described by the packet as: Communications Services, NEC Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "direct_to_device_connectivity"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "HQ",
+      "name": "Horizon Quantum Holdings Ltd.",
+      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "HQWWW",
+      "name": "Horizon Quantum Holdings Ltd.",
+      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "IONQ",
+      "name": "IonQ, Inc.",
+      "business_plain_english": "IonQ, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Integrated Systems Design Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "IREN",
+      "name": "IREN Ltd",
+      "business_plain_english": "IREN Ltd is a SEC-listed issuer described by the packet as: Finance Services Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "JAGU",
+      "name": "Jaguar Uranium Corp.",
+      "business_plain_english": "Jaguar Uranium Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: uranium."
+    },
+    {
+      "symbol": "KTOS",
+      "name": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",
+      "business_plain_english": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC. is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "LEU",
+      "name": "CENTRUS ENERGY CORP",
+      "business_plain_english": "CENTRUS ENERGY CORP is a SEC-listed issuer described by the packet as: Mining & Quarrying of Nonmetallic Minerals (No Fuels) Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints",
+        "ai_power_and_cooling"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "LUNR",
+      "name": "Intuitive Machines, Inc.",
+      "business_plain_english": "Intuitive Machines, Inc. is a SEC-listed issuer described by the packet as: Search, Detection, Navigation, Guidance, Aeronautical Sys Non-accelerated filer Emerging growth company operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "MDA",
+      "name": "MDA Space Ltd.",
+      "business_plain_english": "MDA Space Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: space."
+    },
+    {
+      "symbol": "MNTS",
+      "name": "Momentus Inc.",
+      "business_plain_english": "Momentus Inc. is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Non-accelerated filer Smaller reporting company operating.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: space."
+    },
+    {
+      "symbol": "MSAI",
+      "name": "MultiSensor AI Holdings, Inc.",
+      "business_plain_english": "MultiSensor AI Holdings, Inc. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company Emerging growth company operating.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: optical."
+    },
+    {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "business_plain_english": "MICRON TECHNOLOGY INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "NBIS",
+      "name": "Nebius Group N.V.",
+      "business_plain_english": "Nebius Group N.V. is a SEC-listed issuer described by the packet as: Services-Computer Programming, Data Processing, Etc. Large accelerated filer other.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "NNE",
+      "name": "Nano Nuclear Energy Inc.",
+      "business_plain_english": "Nano Nuclear Energy Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: nuclear."
+    },
+    {
+      "symbol": "NUCL",
+      "name": "Eagle Nuclear Energy Corp.",
+      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: nuclear."
+    },
+    {
+      "symbol": "NUCLW",
+      "name": "Eagle Nuclear Energy Corp.",
+      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "indirect",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: nuclear."
+    },
+    {
+      "symbol": "OCC",
+      "name": "OPTICAL CABLE CORP",
+      "business_plain_english": "OPTICAL CABLE CORP is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: optical."
+    },
+    {
+      "symbol": "OKLO",
+      "name": "Oklo Inc.",
+      "business_plain_english": "Oklo Inc. is a SEC-listed issuer described by the packet as: Electric Services Emerging growth company operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints",
+        "ai_power_and_cooling"
+      ],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "OPTX",
+      "name": "SYNTEC OPTICS HOLDINGS, INC.",
+      "business_plain_english": "SYNTEC OPTICS HOLDINGS, INC. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company Emerging growth company operating.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: optical."
+    },
+    {
+      "symbol": "OPXS",
+      "name": "Optex Systems Holdings Inc",
+      "business_plain_english": "Optex Systems Holdings Inc is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company operating.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: optical."
+    },
+    {
+      "symbol": "QBTS",
+      "name": "D-Wave Quantum Inc.",
+      "business_plain_english": "D-Wave Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "ai_compute_infrastructure",
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Low-cost screen matched lane keywords: computer processing; data preparation; quantum."
+    },
+    {
+      "symbol": "QMCO",
+      "name": "QUANTUM CORP /DE/",
+      "business_plain_english": "QUANTUM CORP /DE/ is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "QNC",
+      "name": "Quantum eMotion Corp",
+      "business_plain_english": "Quantum eMotion Corp is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "QSI",
+      "name": "Quantum-Si Inc",
+      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "QSIAW",
+      "name": "Quantum-Si Inc",
+      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "QXL",
+      "name": "QUANTUM X LABS INC.",
+      "business_plain_english": "QUANTUM X LABS INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: quantum."
+    },
+    {
+      "symbol": "RCKTW",
+      "name": "ROCKET PHARMACEUTICALS, INC.",
+      "business_plain_english": "ROCKET PHARMACEUTICALS, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "indirect",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: ."
+    },
+    {
+      "symbol": "RDW",
+      "name": "Redwire Corp",
+      "business_plain_english": "Redwire Corp is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corp",
+      "business_plain_english": "Rocket Lab Corp is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "SIDU",
+      "name": "Sidus Space Inc.",
+      "business_plain_english": "Sidus Space Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: space."
+    },
+    {
+      "symbol": "UROY",
+      "name": "Uranium Royalty Corp.",
+      "business_plain_english": "Uranium Royalty Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: uranium."
+    },
+    {
+      "symbol": "VOYG",
+      "name": "Voyager Technologies, Inc./DE",
+      "business_plain_english": "Voyager Technologies, Inc./DE is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Non-accelerated filer Emerging growth company operating.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: space."
+    },
+    {
+      "symbol": "VRT",
+      "name": "Vertiv Holdings Co",
+      "business_plain_english": "Vertiv Holdings Co is a SEC-listed issuer described by the packet as: Electronic Components, NEC Large accelerated filer operating.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "ai_power_and_cooling"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
+    },
+    {
+      "symbol": "XNDU",
+      "name": "Xanadu Quantum Technologies Ltd",
+      "business_plain_english": "Xanadu Quantum Technologies Ltd is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "ai_compute_infrastructure",
+        "quantum_computing_and_networking"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: electronic computers; quantum."
+    },
+    {
+      "symbol": "YSS",
+      "name": "York Space Systems Inc.",
+      "business_plain_english": "York Space Systems Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Low-cost screen matched lane keywords: space."
+    }
+  ],
   "medium_lane_compare": [
     {
       "symbol": "AAOI",
@@ -3288,711 +3934,6 @@
       "notes": "Low-cost screen found only weak or generic lane evidence; keep cached unless fresher source evidence changes the packet."
     }
   ],
-  "xhigh_readiness_candidates": [
-    {
-      "symbol": "ALAB",
-      "name": "Astera Labs, Inc.",
-      "business_plain_english": "Astera Labs, Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "ARQQ",
-      "name": "Arqit Quantum Inc.",
-      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "ARQQW",
-      "name": "Arqit Quantum Inc.",
-      "business_plain_english": "Arqit Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "ASTS",
-      "name": "AST SpaceMobile, Inc.",
-      "business_plain_english": "AST SpaceMobile, Inc. is a SEC-listed issuer described by the packet as: Communications Services, NEC Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "direct_to_device_connectivity"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "BE",
-      "name": "Bloom Energy Corp",
-      "business_plain_english": "Bloom Energy Corp is a SEC-listed issuer described by the packet as: Electrical Industrial Apparatus Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
-        "ai_power_and_cooling"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "CBRS",
-      "name": "Cerebras Systems Inc.",
-      "business_plain_english": "Cerebras Systems Inc. is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices other.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: semiconductors & related devices."
-    },
-    {
-      "symbol": "CRCL",
-      "name": "Circle Internet Group, Inc.",
-      "business_plain_english": "Circle Internet Group, Inc. is a SEC-listed issuer described by the packet as: Finance Services Non-accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "programmable_money_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "growth",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "CRDO",
-      "name": "Credo Technology Group Holding Ltd",
-      "business_plain_english": "Credo Technology Group Holding Ltd is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "CRWV",
-      "name": "CoreWeave, Inc.",
-      "business_plain_english": "CoreWeave, Inc. is a SEC-listed issuer described by the packet as: Services-Prepackaged Software Non-accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "growth",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "FJET",
-      "name": "Starfighters Space, Inc.",
-      "business_plain_english": "Starfighters Space, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "FLY",
-      "name": "Firefly Aerospace Inc.",
-      "business_plain_english": "Firefly Aerospace Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "FNUC",
-      "name": "Frontier Nuclear & Minerals Inc.",
-      "business_plain_english": "Frontier Nuclear & Minerals Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "GEMI",
-      "name": "Gemini Space Station, Inc.",
-      "business_plain_english": "Gemini Space Station, Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "GILT",
-      "name": "GILAT SATELLITE NETWORKS LTD",
-      "business_plain_english": "GILAT SATELLITE NETWORKS LTD is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: satellite."
-    },
-    {
-      "symbol": "GSAT",
-      "name": "Globalstar, Inc.",
-      "business_plain_english": "Globalstar, Inc. is a SEC-listed issuer described by the packet as: Communications Services, NEC Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "direct_to_device_connectivity"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "HQ",
-      "name": "Horizon Quantum Holdings Ltd.",
-      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "HQWWW",
-      "name": "Horizon Quantum Holdings Ltd.",
-      "business_plain_english": "Horizon Quantum Holdings Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "IONQ",
-      "name": "IonQ, Inc.",
-      "business_plain_english": "IonQ, Inc. is a SEC-listed issuer described by the packet as: Services-Computer Integrated Systems Design Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "IREN",
-      "name": "IREN Ltd",
-      "business_plain_english": "IREN Ltd is a SEC-listed issuer described by the packet as: Finance Services Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "JAGU",
-      "name": "Jaguar Uranium Corp.",
-      "business_plain_english": "Jaguar Uranium Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: uranium."
-    },
-    {
-      "symbol": "KTOS",
-      "name": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",
-      "business_plain_english": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC. is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "LEU",
-      "name": "CENTRUS ENERGY CORP",
-      "business_plain_english": "CENTRUS ENERGY CORP is a SEC-listed issuer described by the packet as: Mining & Quarrying of Nonmetallic Minerals (No Fuels) Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
-        "ai_power_and_cooling"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "LUNR",
-      "name": "Intuitive Machines, Inc.",
-      "business_plain_english": "Intuitive Machines, Inc. is a SEC-listed issuer described by the packet as: Search, Detection, Navigation, Guidance, Aeronautical Sys Non-accelerated filer Emerging growth company operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "MDA",
-      "name": "MDA Space Ltd.",
-      "business_plain_english": "MDA Space Ltd. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "MNTS",
-      "name": "Momentus Inc.",
-      "business_plain_english": "Momentus Inc. is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "MSAI",
-      "name": "MultiSensor AI Holdings, Inc.",
-      "business_plain_english": "MultiSensor AI Holdings, Inc. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company Emerging growth company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "MU",
-      "name": "MICRON TECHNOLOGY INC",
-      "business_plain_english": "MICRON TECHNOLOGY INC is a SEC-listed issuer described by the packet as: Semiconductors & Related Devices Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "NBIS",
-      "name": "Nebius Group N.V.",
-      "business_plain_english": "Nebius Group N.V. is a SEC-listed issuer described by the packet as: Services-Computer Programming, Data Processing, Etc. Large accelerated filer other.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "NNE",
-      "name": "Nano Nuclear Energy Inc.",
-      "business_plain_english": "Nano Nuclear Energy Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "NUCL",
-      "name": "Eagle Nuclear Energy Corp.",
-      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "NUCLW",
-      "name": "Eagle Nuclear Energy Corp.",
-      "business_plain_english": "Eagle Nuclear Energy Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: nuclear."
-    },
-    {
-      "symbol": "OCC",
-      "name": "OPTICAL CABLE CORP",
-      "business_plain_english": "OPTICAL CABLE CORP is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "OKLO",
-      "name": "Oklo Inc.",
-      "business_plain_english": "Oklo Inc. is a SEC-listed issuer described by the packet as: Electric Services Emerging growth company operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints",
-        "ai_power_and_cooling"
-      ],
-      "directness": "direct",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "OPTX",
-      "name": "SYNTEC OPTICS HOLDINGS, INC.",
-      "business_plain_english": "SYNTEC OPTICS HOLDINGS, INC. is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company Emerging growth company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "OPXS",
-      "name": "Optex Systems Holdings Inc",
-      "business_plain_english": "Optex Systems Holdings Inc is a SEC-listed issuer described by the packet as: Optical Instruments & Lenses Non-accelerated filer Smaller reporting company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "semiconductor_interconnect_and_memory"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: optical."
-    },
-    {
-      "symbol": "QBTS",
-      "name": "D-Wave Quantum Inc.",
-      "business_plain_english": "D-Wave Quantum Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure",
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "medium",
-      "notes": "Low-cost screen matched lane keywords: computer processing; data preparation; quantum."
-    },
-    {
-      "symbol": "QMCO",
-      "name": "QUANTUM CORP /DE/",
-      "business_plain_english": "QUANTUM CORP /DE/ is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QNC",
-      "name": "Quantum eMotion Corp",
-      "business_plain_english": "Quantum eMotion Corp is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QSI",
-      "name": "Quantum-Si Inc",
-      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QSIAW",
-      "name": "Quantum-Si Inc",
-      "business_plain_english": "Quantum-Si Inc is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "QXL",
-      "name": "QUANTUM X LABS INC.",
-      "business_plain_english": "QUANTUM X LABS INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "growth",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: quantum."
-    },
-    {
-      "symbol": "RCKTW",
-      "name": "ROCKET PHARMACEUTICALS, INC.",
-      "business_plain_english": "ROCKET PHARMACEUTICALS, INC. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [],
-      "directness": "indirect",
-      "company_stage": "unknown",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: ."
-    },
-    {
-      "symbol": "RDW",
-      "name": "Redwire Corp",
-      "business_plain_english": "Redwire Corp is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "RKLB",
-      "name": "Rocket Lab Corp",
-      "business_plain_english": "Rocket Lab Corp is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "SIDU",
-      "name": "Sidus Space Inc.",
-      "business_plain_english": "Sidus Space Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "UROY",
-      "name": "Uranium Royalty Corp.",
-      "business_plain_english": "Uranium Royalty Corp. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "advanced_nuclear_and_grid_constraints"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: uranium."
-    },
-    {
-      "symbol": "VOYG",
-      "name": "Voyager Technologies, Inc./DE",
-      "business_plain_english": "Voyager Technologies, Inc./DE is a SEC-listed issuer described by the packet as: Guided Missiles & Space Vehicles & Parts Non-accelerated filer Emerging growth company operating.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    },
-    {
-      "symbol": "VRT",
-      "name": "Vertiv Holdings Co",
-      "business_plain_english": "Vertiv Holdings Co is a SEC-listed issuer described by the packet as: Electronic Components, NEC Large accelerated filer operating.",
-      "bottleneck_exposure": "strong",
-      "matched_lane_ids": [
-        "ai_power_and_cooling"
-      ],
-      "directness": "direct",
-      "company_stage": "mature",
-      "extreme_upside_fit": "strong",
-      "confidence": "high",
-      "notes": "Low-cost screen matched a current public proxy; requires normal freshness, valuation, and readiness review before any action."
-    },
-    {
-      "symbol": "XNDU",
-      "name": "Xanadu Quantum Technologies Ltd",
-      "business_plain_english": "Xanadu Quantum Technologies Ltd is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "ai_compute_infrastructure",
-        "quantum_computing_and_networking"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: electronic computers; quantum."
-    },
-    {
-      "symbol": "YSS",
-      "name": "York Space Systems Inc.",
-      "business_plain_english": "York Space Systems Inc. is a SEC-listed issuer; the current packet contains only name-level business evidence.",
-      "bottleneck_exposure": "possible",
-      "matched_lane_ids": [
-        "space_infrastructure"
-      ],
-      "directness": "indirect",
-      "company_stage": "newly_public",
-      "extreme_upside_fit": "possible",
-      "confidence": "low",
-      "notes": "Low-cost screen matched lane keywords: space."
-    }
-  ],
   "reject_or_archive": [
     {
       "symbol": "AIIA",
@@ -4499,7 +4440,7 @@
       "notes": "Low-cost screen flagged security or issuer form risk: fund_or_etf."
     }
   ],
-  "no_escalation_sample": [
+  "none_sample": [
     {
       "symbol": "A",
       "name": "AGILENT TECHNOLOGIES, INC.",
@@ -5103,14 +5044,10 @@
       "notes": "Low-cost screen found no current lane evidence in the bounded issuer packet."
     }
   ],
-  "unclassified_symbols": [],
-  "required_next_steps": [
-    "Run medium-reasoning lane comparison for medium_lane_compare symbols.",
-    "Run xhigh readiness review before promoting any xhigh_readiness_candidate."
-  ],
-  "caveats": [
-    "Semantic classifications are triage signals, not buy recommendations.",
-    "The main agent must spawn subagents and reconcile outputs; scripts only prepare, validate, cache, and summarize artifacts.",
-    "Material candidates still require source-backed readiness sprint, valuation, promotion, and allocation review before buy consideration."
+  "review_questions": [
+    "Which xhigh_readiness_candidate symbols are genuine material readiness sprint candidates versus known names, too-large mature issuers, weak proxies, or false positives?",
+    "Which medium_lane_compare symbols should be promoted to xhigh, rejected, or kept cached until source evidence changes?",
+    "Which lane keywords or issuer-profile fields caused noisy matches and should be tightened?",
+    "Did the packet set miss a new structural bottleneck lane or newly public direct beneficiary that fixed screens could miss?"
   ]
 }

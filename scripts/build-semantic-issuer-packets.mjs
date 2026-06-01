@@ -80,6 +80,7 @@ const result = {
     "new_material_filing_or_event",
     "material_price_or_market_cap_change",
     "classification_schema_version_change",
+    "classifier_version_change",
   ],
   packets,
 };
@@ -309,6 +310,7 @@ function issuerPacket({
       "new_material_filing_or_event",
       "material_price_or_market_cap_change",
       "classification_schema_version_change",
+      "classifier_version_change",
     ],
   };
 }

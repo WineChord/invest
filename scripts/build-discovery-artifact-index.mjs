@@ -145,6 +145,9 @@ function artifactRole(file) {
   if (name.endsWith("-semantic-discovery-run.json")) {
     return "semantic_discovery_run_artifact";
   }
+  if (name.endsWith("-semantic-review-packet.json")) {
+    return "semantic_review_packet_artifact";
+  }
   if (name.endsWith("-scan.json")) {
     return "deterministic_scan_artifact";
   }

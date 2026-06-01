@@ -6,6 +6,7 @@ import {
   readJsonl,
   relativePath,
   requireNextArg,
+  semanticClassifierVersion,
   semanticDiscoveryRunSchemaVersion,
   strictDate,
   writeJson,
@@ -40,6 +41,7 @@ const result = {
   packet_artifact_metadata: packetArtifactMetadata(packetArtifact),
   cache_path: relativePath(options.cache),
   cache_sha256: fileSha256(options.cache),
+  classifier_version: semanticClassifierVersion,
   packet_count: packets.length,
   classified_current_count: currentRecords.length,
   unclassified_count: unclassifiedPackets.length,
@@ -54,7 +56,7 @@ const result = {
   medium_lane_compare: compactRecords(escalationBuckets.medium_lane_compare ?? []),
   xhigh_readiness_candidates: compactRecords(escalationBuckets.xhigh_readiness_candidate ?? []),
   reject_or_archive: compactRecords(escalationBuckets.reject_or_archive ?? []),
-  no_escalation: compactRecords(escalationBuckets.none ?? []),
+  no_escalation_sample: compactRecords((escalationBuckets.none ?? []).slice(0, options.noEscalationSampleSize)),
   unclassified_symbols: unclassifiedPackets.map((packet) => packet.symbol),
   required_next_steps: nextSteps({
     currentRecords,
@@ -71,7 +73,9 @@ writeJson(options.output, result);
 console.log(`Wrote semantic discovery run to ${options.output}.`);
 
 function parseArgs(args) {
-  const parsed = {};
+  const parsed = {
+    noEscalationSampleSize: 50,
+  };
   for (let index = 0; index < args.length; index += 1) {
     const arg = args[index];
     if (arg === "--as-of") {
@@ -86,6 +90,9 @@ function parseArgs(args) {
     } else if (arg === "--cache") {
       parsed.cache = requireNextArg(args, index, arg);
       index += 1;
+    } else if (arg === "--no-escalation-sample-size") {
+      parsed.noEscalationSampleSize = nonNegativeInteger(requireNextArg(args, index, arg), arg);
+      index += 1;
     } else if (arg === "--output") {
       parsed.output = requireNextArg(args, index, arg);
       index += 1;
@@ -99,6 +106,13 @@ function parseArgs(args) {
     }
   });
   return parsed;
+}
+
+function nonNegativeInteger(value, context) {
+  if (!/^\d+$/.test(String(value))) {
+    throw new Error(`${context} must be a non-negative integer`);
+  }
+  return Number(value);
 }
 
 function bucketByEscalation(records) {

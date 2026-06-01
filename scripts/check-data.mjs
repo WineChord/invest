@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { parse as parseYaml } from "yaml";
 
@@ -594,6 +595,7 @@ validateWatchlistCycleReviews();
 validatePromotionData();
 validateQualityMetrics();
 validateDiscoveryRunJsonArtifacts();
+validateNoTrackedIgnoredCacheArtifacts();
 validateDurableDiscoveryArtifactPortability();
 
 function validateHeader(file, actualHeader) {
@@ -723,6 +725,31 @@ function validateDurableDiscoveryArtifactPortability() {
     });
   });
   console.log("ok durable discovery artifact portability checks");
+}
+
+function validateNoTrackedIgnoredCacheArtifacts() {
+  if (!isInsideGitWorkTree()) {
+    console.log("ok ignored cache/download tracking check skipped outside git worktree");
+    return;
+  }
+  const output = execFileSync("git", ["ls-files", "research/cache", "research/downloads"], {
+    encoding: "utf8",
+  }).trim();
+  if (output !== "") {
+    throw new Error(`Ignored cache/download artifacts must not be tracked:\n${output}`);
+  }
+  console.log("ok ignored cache/download files are untracked");
+}
+
+function isInsideGitWorkTree() {
+  try {
+    return execFileSync("git", ["rev-parse", "--is-inside-work-tree"], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim() === "true";
+  } catch {
+    return false;
+  }
 }
 
 function portableArtifactFiles(directory) {
@@ -2736,6 +2763,9 @@ function validateDiscoveryRunJsonArtifacts() {
     if (artifact.source === "semantic_discovery_run") {
       validateSemanticDiscoveryRunArtifact(artifact, file);
     }
+    if (artifact.source === "semantic_review_packet") {
+      validateSemanticReviewPacketArtifact(artifact, file);
+    }
   });
   csvFiles.forEach((file) => {
     validateDiscoveryArtifactHashAnchor(file, hashAnchors);
@@ -2913,6 +2943,9 @@ function discoveryArtifactRole(file) {
   if (name.endsWith("-semantic-discovery-run.json")) {
     return "semantic_discovery_run_artifact";
   }
+  if (name.endsWith("-semantic-review-packet.json")) {
+    return "semantic_review_packet_artifact";
+  }
   if (name.endsWith("-scan.json")) {
     return "deterministic_scan_artifact";
   }
@@ -2932,6 +2965,7 @@ function discoveryArtifactIndexRoles() {
     "semantic_batch_manifest_artifact",
     "semantic_classification_import_artifact",
     "semantic_discovery_run_artifact",
+    "semantic_review_packet_artifact",
     "semantic_issuer_packet_artifact",
     "sec_registration_transaction_candidate_artifact",
     "sec_filing_index_metadata",
@@ -3314,6 +3348,7 @@ function validateSemanticClassificationImportArtifact(artifact, file) {
     "result_path",
     "result_sha256",
     "cache_output_path",
+    "classifier_version",
   ].forEach((field) => requireString(artifact[field], `${file} ${field}`));
   ["packet_artifact_sha256", "result_sha256"].forEach((field) => requireSha256String(artifact[field], `${file} ${field}`));
   ["imported_count", "cache_record_count", "current_cache_count", "stale_cache_count"].forEach((field) =>
@@ -3335,6 +3370,7 @@ function validateSemanticDiscoveryRunArtifact(artifact, file) {
     "packet_artifact_sha256",
     "cache_path",
     "cache_sha256",
+    "classifier_version",
   ].forEach((field) => requireString(artifact[field], `${file} ${field}`));
   requireSha256String(artifact.packet_artifact_sha256, `${file} packet_artifact_sha256`);
   requireSha256String(artifact.cache_sha256, `${file} cache_sha256`);
@@ -3352,7 +3388,7 @@ function validateSemanticDiscoveryRunArtifact(artifact, file) {
     "medium_lane_compare",
     "xhigh_readiness_candidates",
     "reject_or_archive",
-    "no_escalation",
+    "no_escalation_sample",
   ].forEach((field) => {
     if (!Array.isArray(artifact[field])) {
       throw new Error(`${file} ${field} must be an array`);
@@ -3370,6 +3406,77 @@ function validateSemanticDiscoveryRunArtifact(artifact, file) {
   if (existsSync(artifact.cache_path) && artifact.cache_sha256 !== sha256(readFileSync(artifact.cache_path, "utf8"))) {
     throw new Error(`${file} cache_sha256 does not match ${artifact.cache_path}`);
   }
+}
+
+function validateSemanticReviewPacketArtifact(artifact, file) {
+  requireIsoTimestamp(artifact.generated_at, `${file} generated_at`);
+  parseDate(artifact.as_of, `${file} as_of`);
+  [
+    "semantic_run_path",
+    "semantic_run_sha256",
+    "semantic_cache_path",
+    "semantic_cache_sha256",
+    "packet_artifact_path",
+    "packet_artifact_sha256",
+  ].forEach((field) => requireString(artifact[field], `${file} ${field}`));
+  [
+    "semantic_run_sha256",
+    "semantic_cache_sha256",
+    "packet_artifact_sha256",
+  ].forEach((field) => requireSha256String(artifact[field], `${file} ${field}`));
+  if (!existsSync(artifact.semantic_run_path)) {
+    throw new Error(`${file} semantic_run_path does not exist: ${artifact.semantic_run_path}`);
+  }
+  if (artifact.semantic_run_sha256 !== sha256(readFileSync(artifact.semantic_run_path, "utf8"))) {
+    throw new Error(`${file} semantic_run_sha256 does not match ${artifact.semantic_run_path}`);
+  }
+  const semanticRun = JSON.parse(readFileSync(artifact.semantic_run_path, "utf8"));
+  if (semanticRun.source !== "semantic_discovery_run") {
+    throw new Error(`${file} semantic_run_path must point to a semantic_discovery_run artifact`);
+  }
+  if (semanticRun.as_of !== artifact.as_of) {
+    throw new Error(`${file} semantic run as_of must match review packet as_of`);
+  }
+  if (artifact.semantic_cache_path !== semanticRun.cache_path || artifact.semantic_cache_sha256 !== semanticRun.cache_sha256) {
+    throw new Error(`${file} semantic cache path/hash must match semantic run`);
+  }
+  if (artifact.packet_artifact_path !== semanticRun.packet_artifact_path || artifact.packet_artifact_sha256 !== semanticRun.packet_artifact_sha256) {
+    throw new Error(`${file} packet artifact path/hash must match semantic run`);
+  }
+  const summary = artifact.summary ?? {};
+  [
+    "packet_count",
+    "classified_current_count",
+    "unclassified_count",
+    "stale_cache_count",
+  ].forEach((field) => {
+    requireNonNegativeInteger(summary[field], `${file} summary.${field}`);
+    if (summary[field] !== semanticRun[field]) {
+      throw new Error(`${file} summary.${field} must match semantic run ${field}`);
+    }
+  });
+  requireNumber(summary.classification_coverage_ratio, `${file} summary.classification_coverage_ratio`);
+  if (summary.classification_coverage_ratio !== semanticRun.classification_coverage_ratio) {
+    throw new Error(`${file} summary.classification_coverage_ratio must match semantic run`);
+  }
+  requireString(summary.classifier_version, `${file} summary.classifier_version`);
+  if (summary.classifier_version !== semanticRun.classifier_version) {
+    throw new Error(`${file} summary.classifier_version must match semantic run`);
+  }
+  [
+    ["xhigh_readiness_candidates", semanticRun.xhigh_readiness_candidates],
+    ["medium_lane_compare", semanticRun.medium_lane_compare],
+    ["reject_or_archive", semanticRun.reject_or_archive],
+    ["none_sample", semanticRun.no_escalation_sample],
+  ].forEach(([field, expected]) => {
+    if (!Array.isArray(artifact[field])) {
+      throw new Error(`${file} ${field} must be an array`);
+    }
+    if (artifact[field].length !== (expected ?? []).length) {
+      throw new Error(`${file} ${field} length must match semantic run`);
+    }
+  });
+  requireNonEmptyStringArray(artifact.review_questions ?? [], `${file} review_questions`);
 }
 
 function validateSemanticCompactRecord(record, context) {

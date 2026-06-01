@@ -35,8 +35,9 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: research/cache/fmp
-          key: fmp-cache-${{ github.ref_name }}
+          key: fmp-cache-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
+            fmp-cache-${{ github.ref_name }}-
             fmp-cache-
       - run: npm ci
       - name: Refresh close prices
@@ -50,7 +51,7 @@ jobs:
       - name: Commit refreshed data
         id: commit
         run: |
-          if git diff --quiet -- data/account/equity_curve.csv data/market/company_metrics.csv data/market/price_history.csv data/market/technical_snapshots.csv data/market/watchlist_prices.csv; then
+          if git diff --quiet -- data/account/equity_curve.csv data/market/company_metrics.csv data/market/price_history.csv data/market/security_master.csv data/market/technical_snapshots.csv data/market/watchlist_prices.csv; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No market data changes to commit."
             exit 0
@@ -58,7 +59,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/account/equity_curve.csv data/market/company_metrics.csv data/market/price_history.csv data/market/technical_snapshots.csv data/market/watchlist_prices.csv
+          git add data/account/equity_curve.csv data/market/company_metrics.csv data/market/price_history.csv data/market/security_master.csv data/market/technical_snapshots.csv data/market/watchlist_prices.csv
           git commit -m "data: refresh daily close prices"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"

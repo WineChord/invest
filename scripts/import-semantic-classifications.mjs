@@ -17,6 +17,7 @@ import {
   requireString,
   requireStringArray,
   semanticCacheKey,
+  semanticClassifierVersion,
   semanticClassificationSchemaVersion,
   strictDate,
   writeJson,
@@ -62,6 +63,7 @@ const summary = {
   input_cache_path: options.cache === undefined ? "" : relativePath(options.cache),
   input_cache_sha256: options.cache === undefined ? "" : fileSha256(options.cache),
   cache_output_path: relativePath(options.cacheOutput),
+  classifier_version: semanticClassifierVersion,
   imported_count: imported.length,
   cache_record_count: merged.length,
   current_cache_count: cacheStatus.current.size,
@@ -133,6 +135,10 @@ function normalizeAndValidateResult({
   if (record.classification_schema_version !== semanticClassificationSchemaVersion) {
     throw new Error(`${context} classification_schema_version must be ${semanticClassificationSchemaVersion}`);
   }
+  const classifierVersion = String(record.classifier_version ?? semanticClassifierVersion).trim();
+  if (classifierVersion !== semanticClassifierVersion) {
+    throw new Error(`${context} classifier_version must be ${semanticClassifierVersion}`);
+  }
   const matchedLaneIds = requireStringArray(record.matched_lane_ids ?? [], `${context} matched_lane_ids`);
   matchedLaneIds.forEach((laneId) => {
     if (!packetArtifact.lane_map_lane_ids?.includes(laneId) && Array.isArray(packetArtifact.lane_map_lane_ids)) {
@@ -147,6 +153,7 @@ function normalizeAndValidateResult({
     as_of: options.asOf,
     cache_valid: true,
     classification_schema_version: semanticClassificationSchemaVersion,
+    classifier_version: classifierVersion,
     reasoning_level: requireAllowed(record.reasoning_level, allowedReasoningLevels, `${context} reasoning_level`),
     symbol,
     cik: packet.cik,
@@ -199,7 +206,11 @@ function mergeCacheRecords({
   imported,
 }) {
   const byKey = new Map();
+  const superseded = new Set(imported.map((record) => semanticCacheSupersedeKey(record)));
   existingCache.forEach((record) => {
+    if (superseded.has(semanticCacheSupersedeKey(record))) {
+      return;
+    }
     byKey.set(semanticCacheKey(record), record);
   });
   imported.forEach((record) => {
@@ -212,6 +223,15 @@ function mergeCacheRecords({
   });
 }
 
+function semanticCacheSupersedeKey(record) {
+  return [
+    String(record.symbol ?? "").toUpperCase(),
+    String(record.cik ?? ""),
+    String(record.lane_map_sha256 ?? ""),
+    String(record.classification_schema_version ?? ""),
+  ].join("|");
+}
+
 function escalationCounts(records) {
   const counts = {};
   records.forEach((record) => {
@@ -219,4 +239,3 @@ function escalationCounts(records) {
   });
   return Object.fromEntries(Object.entries(counts).sort(([left], [right]) => left.localeCompare(right)));
 }
-
