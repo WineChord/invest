@@ -14,6 +14,7 @@ The root objective is multi-decade asymmetric compounding: pursue outcomes that 
 Before making recommendations or changing state, read the relevant canonical files:
 
 - `CONSTITUTION.md` for the highest-order mission and operating principles.
+- `PUBLICATION_POLICY.md` before public commits, pushes, deployments, dashboard copy, decision notes, execution records, performance displays, or external posts.
 - `AGENTS.md` for mandatory agent behavior, immutable rules, operating triggers, self-evolution, and Git rules.
 - `SPEC.md` for system design, data models, research engine, dashboard behavior, and audit requirements.
 - `data/policy/policy-v1.1.md` for the current investment policy.
@@ -27,6 +28,7 @@ Before making recommendations or changing state, read the relevant canonical fil
   - `discovery-readiness-sprint.md` for plausible raw candidates that could affect allocation or lane completeness.
   - `promotion-review.md` for moving a researched symbol toward active, core, or buy-zone status.
   - `execution-confirmation.md` for broker-confirmed trades or deposits.
+  - `publication-release-review.md` before public release of decision, trade, account, performance, or dashboard content.
   - `research-engine-run.md` for discovery, freshness, valuation, priority, and cleanup runs.
   - `meta-self-improvement.md` for process upgrades and methodology reviews.
 
@@ -53,6 +55,7 @@ Before making recommendations or changing state, read the relevant canonical fil
 - Keep deterministic commands, durable file edits, account-state reconstruction, validation, commits, pushes, and final synthesis in the main agent. Treat unresolved material subagent disagreement as a reason to gather more evidence or default to no trade, hold cash, or the approved liquidity reserve.
 - During meta-self-improvement, check whether this repo-scoped skill should be updated because workflow triggers, canonical files, safety boundaries, or validation commands changed.
 - Never answer from the old watchlist alone. Re-check discovery lanes, discovery candidates, freshness, thesis delta, entry delta, priority delta, opportunity cost, and lane delta.
+- Never publicly release actionable trading content before the embargo in `PUBLICATION_POLICY.md` expires. Same-day trades, exact order sizes, order previews, and unexpired proposed orders must remain local and unpublished or be redacted.
 
 ## Safety Boundaries
 
@@ -60,6 +63,7 @@ Before making recommendations or changing state, read the relevant canonical fil
 - Never mutate broker-confirmed account records without the required execution confirmation fields.
 - Do not infer broker cash, cost basis, positions, fees, or settlement dates from recommendations, screenshots, or market prices.
 - Keep the repository clone-portable; do not commit secrets, local-only paths, caches, or generated scratch artifacts.
+- Keep public records delayed and redacted; do not commit raw broker documents, screenshots, account numbers, full confirmation IDs, full order IDs, secrets, cookies, tokens, or private cache payloads.
 - Preserve audit history. Use corrections and dated notes instead of silent rewrites.
 
 ## Useful Commands

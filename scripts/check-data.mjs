@@ -33,6 +33,7 @@ const yamlFiles = [
 
 const markdownFiles = [
   "CONSTITUTION.md",
+  "PUBLICATION_POLICY.md",
 ];
 
 const companyAnalysisFile = "research/company-analysis.yml";
@@ -45,6 +46,7 @@ const freshnessFile = "research/freshness/events.csv";
 const buyZonesFile = "research/buy-zones.csv";
 const priceHistoryFile = "data/market/price_history.csv";
 const qualityMetricsFile = "research/quality-metrics.yml";
+const publicationPolicyFile = "PUBLICATION_POLICY.md";
 const securityMasterFile = "data/market/security_master.csv";
 const sourcesFile = "research/sources.yml";
 const technicalSnapshotsFile = "data/market/technical_snapshots.csv";
@@ -583,6 +585,8 @@ for (const file of yamlFiles) {
 
 validateSources();
 validateConstitution();
+validatePublicationPolicy();
+validatePublicDisclaimerSurfaces();
 validateWatchlist();
 validateMarketDataFiles();
 validateDiscoveryLanes();
@@ -1076,6 +1080,7 @@ function validateConstitution() {
     "Bottleneck-Map-First",
     "Self-Evolution",
     "Meta-Self-Evolution",
+    "Public Release Safety",
     "The repository may recommend. It must never execute trades.",
   ].forEach((phrase) => {
     if (!content.includes(phrase)) {
@@ -1083,6 +1088,46 @@ function validateConstitution() {
     }
   });
   console.log(`ok ${constitutionFile} semantic checks`);
+}
+
+function validatePublicationPolicy() {
+  const content = readFileSync(publicationPolicyFile, "utf8");
+  [
+    "Not investment advice",
+    "public release embargo",
+    "raw broker documents",
+    "no compensation",
+    "regular market close",
+    "sensitive-field review",
+    "buy, sell, hold, or size",
+  ].forEach((phrase) => {
+    if (!content.includes(phrase)) {
+      throw new Error(`${publicationPolicyFile} is missing required phrase: ${phrase}`);
+    }
+  });
+  console.log(`ok ${publicationPolicyFile} semantic checks`);
+}
+
+function validatePublicDisclaimerSurfaces() {
+  [
+    "README.md",
+    "src/components/InvestDashboard.tsx",
+    "src/components/ResearchStockPage.tsx",
+  ].forEach((file) => {
+    if (!existsSync(file)) {
+      return;
+    }
+    const content = readFileSync(file, "utf8");
+    [
+      "Not investment advice",
+      "buy, sell, hold",
+    ].forEach((phrase) => {
+      if (!content.includes(phrase)) {
+        throw new Error(`${file} is missing public disclaimer phrase: ${phrase}`);
+      }
+    });
+  });
+  console.log("ok public disclaimer surfaces");
 }
 
 function validateWatchlist() {

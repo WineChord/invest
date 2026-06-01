@@ -30,6 +30,10 @@ current_positions:
 pending_orders:
 constraints_or_preferences:
 latest_ai_cycle_monitor:
+publication_release_status:
+public_release_earliest_at:
+contains_actionable_trading_content:
+sensitive_field_review_status:
 ```
 
 Natural-language trigger:
@@ -49,9 +53,11 @@ Minimum needed for exact share counts:
 
 The agent must run the full decision operating cycle before recommending any orders. This is not just a price refresh; it is the required exploration, freshness, research, valuation, allocation, cleanup, and validation loop that keeps the repository from choosing from a stale watchlist.
 
+The agent must also apply [PUBLICATION_POLICY.md](../PUBLICATION_POLICY.md). A decision that includes exact proposed orders, exact share counts, exact dollar order sizes, reserve-sale instructions, same-day trade intent, broker order previews, or confirmed same-day execution details is actionable trading content. It must remain local and unpublished until the public release embargo expires, unless the public artifact removes the actionable details or marks the decision as expired.
+
 Full decision operating cycle before proposing orders:
 
-- Load `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, current policy, account files, prior decisions, package scripts, research state, and dashboard/data surfaces relevant to the request.
+- Load `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, `PUBLICATION_POLICY.md`, current policy, account files, prior decisions, package scripts, research state, and dashboard/data surfaces relevant to the request.
 - Determine the freshness window from the latest decision, latest research-engine run, latest market-data refresh, and the decision date.
 - Refresh deterministic market data with repository tooling when available.
 - Review `research/discovery/lanes.yml` and use [bottleneck-lane-review.md](bottleneck-lane-review.md) when material. Start from the bottleneck map, explicitly ask whether a new lane appeared, and record whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged.
@@ -83,6 +89,7 @@ Full decision operating cycle before proposing orders:
 - Confirm the target passes the mission gate, evidence gate, and entry gate from `AGENTS.md`.
 - Run the meta-self-improvement check: note whether the cycle exposed a durable process defect, missed-lane risk, source gap, weak template, automation opportunity, validation gap, scoring ambiguity, or dashboard/data problem.
 - Run repository cleanup before finishing: demote stale research, remove or ignore scratch/generated noise, update canonical docs or templates when behavior changes, and preserve auditability.
+- Run the publication release checklist before any commit, push, deployment, or external post. Delay or redact actionable trading content, raw broker identifiers, raw screenshots, local paths, private cache payloads, secrets, and compensated or personalized language.
 - Run applicable validation. Use `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
 - Do not finish the turn with `research/quality-metrics.yml` in a repository not-ready state. If repository or public-observable evidence is missing, keep iterating until the gap is resolved, classified immaterial, rejected/incubated from evidence, or proven genuinely external. User-only broker facts, broker order previews, and final execution instructions are execution prerequisites, not repository-readiness blockers.
 - If any applicable operating-cycle step cannot be completed, do not give a buy recommendation unless the missing item is explicitly reviewed, marked immaterial, genuinely unavailable, user-only, broker-specific, legally inaccessible, caused by market closure or missing quote, or already resolved by evidence showing the candidate fails a gate.
@@ -90,6 +97,7 @@ Full decision operating cycle before proposing orders:
 Output discipline:
 
 - Include a `Decision operating cycle` section with constitutional alignment, sources checked, discovery lane changes, discovery candidate changes, watchlist-cycle review result, watchlist priority changes, thesis/entry deltas, freshness events, filing-review status, valuation-state status, meta-self-improvement findings, cleanup performed, validations run, readiness result, unavailable evidence, and validity window.
+- Include a `Publication release` section with whether the content is actionable, the earliest public release time, embargo status, redaction status, sensitive-field review result, and any reason a commit, push, or deployment must wait.
 - Include a `Subagent reviews` section when subagents ran or should have run. State which reviewers ran, which were skipped and why, the major disagreements, how the main agent resolved them, and whether any unresolved conflict forced no trade, hold cash, or the approved liquidity reserve.
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.

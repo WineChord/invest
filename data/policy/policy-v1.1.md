@@ -99,6 +99,16 @@ Deposits, SGOV buys, SGOV sells, common-stock buys, common-stock sells, dividend
 
 Ledger entries are append-only. Corrections are separate events.
 
+Public records must use normalized and redacted repository fields. Do not commit raw broker documents, screenshots, statements, account numbers, full order IDs, or full confirmation numbers.
+
+## Publication Standard
+
+This policy permits public transparency only under [PUBLICATION_POLICY.md](../../PUBLICATION_POLICY.md). Public content must be delayed, non-personalized, uncompensated, and framed as the account owner's historical research process or account audit trail.
+
+No proposed order, exact share count, exact dollar order, reserve-sale instruction, broker order preview, same-day trade intent, or confirmed same-day execution detail may be committed, pushed, published, or deployed until the public release embargo has expired.
+
+No public content may tell a reader what they should buy, sell, hold, or size. No public content may present repository performance, watchlist entries, decision notes, or trade records as investment advice, a model portfolio, a signal service, copy-trading instructions, a paid newsletter, a broker referral funnel, or compensated promotional research.
+
 ## Research Standard
 
 Primary sources are preferred. Historical repository research is used as memory, not as proof that facts remain current.

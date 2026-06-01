@@ -926,6 +926,8 @@ export default function InvestDashboard({ data }: Props) {
           </div>
         </section>
 
+        <PublicationNotice />
+
         <section className="metric-grid" aria-label="Portfolio summary">
           <MetricCard
             icon={<Wallet size={20} />}
@@ -1135,6 +1137,19 @@ function BrandLogo({
       <circle cx="24.8" cy="11.2" fill="#9dd6cd" opacity="0.9" r="1.25" />
       <circle cx="38.4" cy="31.8" fill="#9dd6cd" opacity="0.78" r="1.1" />
     </svg>
+  );
+}
+
+function PublicationNotice() {
+  return (
+    <section className="publication-notice" aria-label="Publication boundary">
+      <ShieldCheck size={18} />
+      <p>
+        <strong>Not investment advice.</strong> This is a delayed personal
+        research journal and account audit trail, not a recommendation or
+        signal for public readers to buy, sell, hold, or size any security.
+      </p>
+    </section>
   );
 }
 

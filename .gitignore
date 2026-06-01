@@ -3,5 +3,12 @@ dist/
 .astro/
 .DS_Store
 npm-debug.log*
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+cookies*.txt
 research/cache/
 research/downloads/

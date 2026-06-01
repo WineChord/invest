@@ -79,3 +79,13 @@ Meta-self-improvement is useful only when it improves mission fit, freshness, si
 This repository can store durable state and deterministic automation can refresh allowed data surfaces. Qualitative judgment, allocation decisions, broker-record changes, and trades require user-triggered agent work and the repository's confirmation rules.
 
 The repository may recommend. It must never execute trades.
+
+## Article 11 — Public Release Safety
+
+The repository may be public, but it must not become a public investment-advice, signal, copy-trading, promotion, or compensation platform.
+
+Public material must be delayed, source-backed, non-personalized, and clearly framed as the account owner's historical research process and account audit trail. It must not tell public readers what they should buy, sell, hold, or size.
+
+No upside narrative, transparency goal, dashboard feature, performance display, social interaction, or open-source habit justifies publishing raw broker documents, sensitive identifiers, secrets, local-only state, unexpired actionable orders, same-day trade intent before the public release embargo expires, or compensated promotional content.
+
+If transparency conflicts with privacy, security, anti-signal controls, compensation boundaries, or legal uncertainty, reduce or delay the public disclosure. The mission requires survival, and avoidable publication risk is a form of avoidable ruin.

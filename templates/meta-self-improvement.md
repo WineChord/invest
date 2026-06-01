@@ -118,6 +118,7 @@ Confirm the change did not weaken:
 - source freshness and hierarchy;
 - auditability;
 - clone portability;
+- public-release safety, including no personalized public advice, no compensated promotion, delayed actionable trading content, and redacted broker records;
 - allowed-asset policy;
 - multi-decade asymmetric compounding with avoidable-ruin controls;
 - repository noise hygiene.

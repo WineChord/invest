@@ -35,6 +35,10 @@ Monthly contributions are cash-flow inputs, not sizing limits. When a rare high-
 
 Highest-order mission and operating principles.
 
+`PUBLICATION_POLICY.md`
+
+Public-release rules for disclaimers, delayed trade publication, anti-signal boundaries, compensation boundaries, privacy, secrets, and sensitive-field review.
+
 `AGENTS.md`
 
 Rules for every future agent.
@@ -97,6 +101,28 @@ There are four levels of truth:
 
 Only level 1 can mutate account records. Levels 2 to 4 can inform a proposed decision but cannot change the ledger.
 
+## Publication Safety Model
+
+The repository is intended to be public, but public availability is not allowed to turn the system into investment advice, a signal service, a copy-trading workflow, a compensated endorsement channel, or a public suitability tool.
+
+Public material must be delayed, source-backed, non-personalized, and framed as the account owner's historical research process or account audit trail. The public surface may show normalized confirmed transactions, performance, research history, source metadata, and process rules after the release gates are satisfied. It must not tell public readers what they should buy, sell, hold, or size.
+
+The canonical publication rules live in [PUBLICATION_POLICY.md](PUBLICATION_POLICY.md). They control:
+
+- visible disclaimers on public surfaces;
+- the public release embargo for actionable trading content;
+- redaction of broker confirmations and sensitive account fields;
+- no raw broker documents, screenshots, statements, account numbers, full order IDs, or full confirmation numbers;
+- no secrets, cookies, tokens, local paths, private cache payloads, or credential-bearing source dumps;
+- no compensated promotions, referrals, affiliate funnels, issuer payments, sponsored research, or paid copy-trading behavior;
+- no personalized public-reader guidance.
+
+If an investment workflow produces exact proposed orders, exact share counts, exact dollar order sizes, reserve-sale instructions, same-day trade intent, broker order previews, or confirmed same-day execution details, that content is actionable trading content. It must remain local and unpublished until the order is executed, cancelled, expired, or explicitly abandoned, the relevant regular market close plus safety buffer has passed, sensitive-field review is complete, and the public text frames the record as historical rather than instructional.
+
+Research-only content can be published before market close only if it does not contain actionable order sizing, same-day trading intent, or time-sensitive instructions. If the distinction is unclear, treat the content as actionable and delay publication.
+
+No legal, compliance, privacy, or relationship risk can be eliminated completely. The system design should reduce avoidable publication risk by defaulting to delay, redaction, general education, non-personalization, and no compensation.
+
 ## Data Model
 
 Account state is stored in [data/account/state.yml](data/account/state.yml).
@@ -126,6 +152,8 @@ event_id,event_type,status,broker,account_alias,confirmation_id,trade_date,
 settlement_date,symbol,side,quantity,average_price,fees,gross_amount,
 net_cash_effect,currency,source,created_at,notes
 ```
+
+The `confirmation_id` column is a repository reference, not permission to publish a raw broker identifier. Public records should use a stable redacted alias or non-reversible hash. Raw broker confirmations, order tickets, account numbers, and screenshots must stay out of committed state.
 
 Positions are derived from the ledger and stored in [data/account/positions.csv](data/account/positions.csv).
 
@@ -1141,6 +1169,7 @@ The dashboard may include browser-only demo data for testing visual logic while 
 
 Required dashboard surfaces:
 
+- visible `Not investment advice` disclaimer near the primary dashboard content;
 - total equity;
 - confirmed cash;
 - cumulative deposits;
@@ -1152,7 +1181,7 @@ Required dashboard surfaces:
 - equity curve;
 - buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
 - active research/watchlist workspace with company cards, committed price sparklines with a global window control, recent 1D and 5D price moves with percent or dollar display, key technical and valuation metrics, hover or focus quick briefs, click or tap detail drilldown, symbol-specific confirmed trade markers on price charts, and historical analysis timeline;
-- per-symbol research pages under `/research/<symbol>/` with committed price charts, symbol-specific confirmed trade markers, market/technical/fundamental metrics, analysis provenance, external links, and an optional live TradingView preview;
+- per-symbol research pages under `/research/<symbol>/` with committed price charts, symbol-specific confirmed trade markers, market/technical/fundamental metrics, analysis provenance, external links, a visible `Not investment advice` disclaimer, and an optional live TradingView preview;
 - open-source repository link.
 
 The equity curve uses TradingView Lightweight Charts as a client-side chart engine. The engine supplies chart interaction only: time and price axes, crosshair behavior, viewport range controls, touch gestures, and ledger event markers. It must not be treated as a data provider. Real points still come from committed account files, and demo points still come only from browser-only fixtures. Keep TradingView attribution visible through either the built-in mark or a restrained public attribution link near the chart.
@@ -1181,6 +1210,7 @@ TradingView-grade chart benchmark, captured on 2026-05-26 from official TradingV
 Dashboard evolution rules:
 
 - Every dashboard surface must have a clear committed data source or an explicitly labeled browser-only demo source.
+- Every public display surface must preserve the publication boundary: historical account data and research analysis are not investment advice, not a current signal, and not personalized guidance for readers.
 - Every major surface should explain its state through the data itself, a compact label, or an empty state. Avoid decorative complexity that does not help the user understand capital, risk, operations, performance, or research freshness.
 - Dashboard panels must maintain visible alignment discipline: headings use one consistent left-aligned structure, numeric table columns align right with tabular numerals, and ledger rows align date, content, and type badge on a predictable grid.
 - Summary metric cards should stay compact. Use enough padding for legibility, but avoid oversized vertical whitespace that makes the top dashboard row feel heavier than the chart and account sections.
@@ -1192,6 +1222,7 @@ Dashboard evolution rules:
 - On desktop, the company research detail should behave like a sticky inspector while the research card grid scrolls. Its visible height should be bounded by the viewport and by the left card grid's bottom edge; when the detail content is longer, the panel scrolls internally instead of stretching the whole research workspace. On mobile, it remains in normal document flow.
 - Company research detail and per-symbol pages should preserve provenance by separating committed market history, SEC-derived metrics, historical research analysis, and external live preview links. If a metric is unavailable or not meaningful, show `N/A` or `N/M` instead of manufacturing a value.
 - Historical research UI must not imply freshness. Dated baseline entries are memory and provenance; monthly trade decisions still require fresh price, SEC, IR, regulatory, and news checks.
+- Confirmed trade markers must be delayed committed history only. They must not expose same-day actionable trade intent before the public release embargo expires and must never expose raw broker confirmation identifiers.
 - Interactive chart features should support both pointer and keyboard focus when practical, avoid mobile overflow, and expose the underlying operation or metric detail rather than only adding visual decoration.
 - Chart operation tooltips should be compact, light, and non-dominating. They must keep side badges horizontal, avoid large dark blocks over the chart, and preserve readable layout for one or many same-day trades.
 - Market movement colors must be tokenized and user-switchable. The default browser convention is Mainland China style, where gains are red and losses are green. The alternate convention is Western style, where gains are green and losses are red. The selected convention should be remembered in browser storage and applied consistently to return metrics, chart direction, and profit/loss fields without changing the underlying data.
@@ -1261,6 +1292,20 @@ Ledger contaminated by recommendations:
 
 - Keep decisions in `decisions/`.
 - Keep confirmed broker facts in `data/account/`.
+
+Public material mistaken for investment advice or a trade signal:
+
+- Follow `PUBLICATION_POLICY.md`.
+- Show visible `Not investment advice` disclaimers on public surfaces.
+- Delay actionable trading content until the public release embargo has expired.
+- Never personalize public-reader responses or publish copy-trading instructions.
+- Keep compensation, referral, sponsorship, and issuer-promotion activity out of the repository unless a later policy and qualified legal review explicitly permit it.
+
+Private broker or credential material leaked:
+
+- Commit normalized and redacted repository records only.
+- Never commit raw broker documents, full confirmation identifiers, account numbers, screenshots, secrets, cookies, tokens, local paths, or private cache payloads.
+- Use secret scanning and manual sensitive-field review before public release when trade, account, or dashboard surfaces changed.
 
 Narrative overconfidence:
 

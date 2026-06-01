@@ -8,7 +8,7 @@ The mission is to support a multi-decade satellite portfolio whose goal is asymm
 
 [CONSTITUTION.md](CONSTITUTION.md) is the compact constitutional anchor for this repository. It states the highest-order mission and operating principles in plain language. If `CONSTITUTION.md`, this file, `SPEC.md`, templates, or scripts appear to conflict, preserve the constitution's mission, truth, freshness, auditability, and avoidable-ruin controls, then fix the lower-level artifact.
 
-This mission is the repository's highest objective. Every policy, template, source list, research lane, dashboard surface, self-evolution rule, meta-self-improvement change, cleanup decision, and validation check exists to improve the odds of that outcome without weakening broker-confirmation truth, source freshness, auditability, clone portability, or avoidable-ruin controls.
+This mission is the repository's highest objective. Every policy, template, source list, research lane, dashboard surface, self-evolution rule, meta-self-improvement change, cleanup decision, publication rule, and validation check exists to improve the odds of that outcome without weakening broker-confirmation truth, source freshness, auditability, clone portability, public-release safety, or avoidable-ruin controls.
 
 The primary discovery frame is bottleneck-map-first, not stock-list-first. Do not begin serious research by asking "which stocks look interesting?" Begin by asking which scarce resources, technical capabilities, distribution points, regulatory permissions, infrastructure constraints, or capital-formation changes could become system bottlenecks over the next decade or longer; which bottlenecks could create exceptional pricing power; which public companies are direct beneficiaries rather than weak proxies; and which candidates are small, early, awkward, or newly public enough that conventional screens may miss them.
 
@@ -35,6 +35,11 @@ The reverse is also true: the latest USD 888 contribution is not a sizing cap. I
 11. When adding or changing product behavior, data records, dashboard behavior, research workflow, or automation, evaluate whether `SPEC.md` and templates need to be updated in the same change. Update them when the behavior becomes part of the durable process.
 12. Treat repository hygiene as part of the product. After meaningful decisions, research updates, dashboard work, or tooling changes, check whether the repository accumulated stale, duplicated, misleading, or low-signal material. Clean it up without weakening auditability.
 13. Treat SGOV or an equivalent short-duration U.S. Treasury reserve as cash management only, never as a return-seeking satellite allocation. SGOV is an ETF, not cash; record confirmed SGOV buys and sells like any other broker-confirmed trade.
+14. Follow [PUBLICATION_POLICY.md](PUBLICATION_POLICY.md) before any public commit, push, deployment, dashboard change, decision note, execution record, external post, or performance display.
+15. Never publish personalized investment advice for public readers, copy-trading instructions, signal-service content, compensated endorsements, referral-driven recommendations, issuer promotions, or public answers that tell another person what they should buy, sell, hold, or size.
+16. Never commit or publish raw broker documents, raw screenshots, account numbers, full broker order IDs, full confirmation numbers, tax identifiers, legal identity documents, secrets, cookies, tokens, local absolute paths, local-only cache payloads, or unlicensed raw market-data dumps.
+17. Do not commit, push, publish, deploy, or externally post actionable trading content until the public release embargo in `PUBLICATION_POLICY.md` has expired. Same-day executed trades and any decision containing exact unexpired order sizing must stay local and unpublished until broker execution, cancellation, expiry, or no-action decision is confirmed, the regular market close plus safety buffer has passed, and sensitive-field review is complete.
+18. Every public-facing dashboard, README, decision surface, and per-symbol research page must make clear that the repository is a personal historical research journal and not investment advice.
 
 ## Source Hierarchy
 
@@ -60,6 +65,8 @@ A fact is new only when `source_published_at` is later than the prior decision. 
 Do not commit large raw SEC filings, PDFs, transcripts, presentations, market-data dumps, or scraped pages by default. Store source metadata, durable URLs, accession numbers, retrieved dates, structured metric extracts, analysis notes, and completed filing reviews instead.
 
 Use ignored local scratch directories such as `research/cache/` or `research/downloads/` for temporary downloads during analysis. Commit a raw source file only when it is small, legally redistributable, uniquely important, and unlikely to remain available from the original source.
+
+Public release adds a stricter layer: do not commit raw broker artifacts, raw screenshots, unredacted confirmation identifiers, personal documents, secrets, local credential paths, private messages, or other sensitive material even when it would improve transparency. Normalize and redact broker-confirmed facts into repository schemas instead.
 
 ## Writing Format
 
@@ -108,7 +115,7 @@ Trigger tiers:
 
 Full decision operating cycle:
 
-1. Load `AGENTS.md`, `SPEC.md`, current policy, templates, confirmed account files, prior decisions, research state, market snapshots, and package scripts.
+1. Load `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, `PUBLICATION_POLICY.md`, current policy, templates, confirmed account files, prior decisions, research state, market snapshots, and package scripts.
 2. Reconstruct confirmed deployable liquidity from durable broker-confirmed records and any user-provided broker snapshot. Ask only for missing broker facts that cannot be inferred safely.
 3. Run deterministic repository tooling that is applicable and safe, including market-data refresh, dry-run universe discovery, data checks, build checks, or dashboard checks when the request touches those surfaces.
 4. Run bottleneck-map review before allocation judgment: review `research/discovery/lanes.yml` and [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md), explicitly ask whether a new lane appeared, and only then scan existing discovery candidates, mission-relevant themes, newly public companies, spinoffs, IPOs, direct listings, and new public proxies. Add raw candidates to `research/discovery/candidates.csv` when they plausibly matter, and quickly reject or archive weak fits when the evidence supports doing so.
@@ -122,11 +129,11 @@ Full decision operating cycle:
 12. Run or cite the AI cycle and market-regime monitor whenever the decision depends on AI capex, financing, semiconductor supply chains, data-center power, credit conditions, space infrastructure, or broad bubble risk.
 13. Compare all active candidates and holdings together. Do not anchor on the previous favorite if a new candidate, new industry, new filing, valuation change, thesis delta, or cleanup finding changes the opportunity set.
 14. Produce a proposed decision only after the preceding steps are complete or explicitly marked unavailable. The output must include proposed orders, exact sizing, cash impact, source dates, retrieval dates, validity window, trigger conditions, invalidation conditions, and unavailable evidence.
-15. Update durable research, market, source, decision, and dashboard-facing records when the run creates durable facts or conclusions. Never mutate broker-confirmed ledger, positions, cost basis, or cash without execution confirmation.
+15. Update durable research, market, source, decision, and dashboard-facing records when the run creates durable facts or conclusions. Never mutate broker-confirmed ledger, positions, cost basis, or cash without execution confirmation. Before public commit, push, or deployment, run the publication release checklist for any decision, trade, account, performance, or dashboard-facing content.
 16. Run the meta-self-improvement check: identify whether the process, templates, source lists, scoring model, automation, dashboard, validation, or repository structure should be improved because this run exposed friction, stale assumptions, missing coverage, weak feedback loops, or avoidable noise.
 17. Run repository hygiene cleanup before finishing: remove or demote stale/noisy material, update canonical docs or templates when behavior changes, keep demo/cache/generated artifacts out of durable state, and preserve auditability.
 18. Validate the changed surfaces. For data/research changes, run `npm run check:data`; for dashboard or broad repository changes, run `npm run verify` when practical.
-19. Commit and push coherent durable changes to the default remote when the repository's Git Rules call for it.
+19. Commit and push coherent durable changes to the default remote when the repository's Git Rules and the public release embargo allow it.
 
 ## Subagent Protocol
 
@@ -404,7 +411,7 @@ This workflow is a hard trigger, not optional background reading. Treat any user
 
 Before giving any proposed order, run the full decision operating cycle. Do not answer from the existing watchlist alone. The cycle is mandatory because the account's edge depends on continuously discovering and re-evaluating the best public companies for the mission, not repeatedly choosing from a stale static list. The first discovery question is always bottleneck-map-first: what future constraint matters, who directly benefits, and what evidence would prove it investable?
 
-Decision operating-cycle execution:
+Decision operating-cycle execution. Read `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, `PUBLICATION_POLICY.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state before proposing orders.
 
 1. Start from the confirmed ledger and confirmed positions only.
 2. Check whether the user confirmed a new deposit. If not confirmed, planned contribution cash is not investable cash.
@@ -419,7 +426,7 @@ Decision operating-cycle execution:
 11. Run and record the full watchlist-cycle review for every non-removed `research/watchlist.csv` row. Update `research/watchlist-cycle-reviews.csv` even when the conclusion is no change, and update `research/watchlist.csv`, `research/watchlist-transitions.csv`, or `research/buy-zones.csv` when fresh evidence supports a durable status, priority, trigger, or buy-zone change.
 12. Update or cite the durable research state changed by the operating cycle: `research/discovery/candidates.csv`, `research/freshness/events.csv`, `research/valuation-states.csv`, `research/watchlist-cycle-reviews.csv`, `research/quality-metrics.yml`, filing reviews, and a dated research-engine run note when the run changes durable research state.
 13. Check `research/quality-metrics.yml`. If critical events, stale valuation states, stale theses, missing watchlist-cycle reviews, missing filing reviews, or an incomplete operating-cycle step make the repository-public research state fail readiness, keep refreshing and analyzing evidence until it is ready. User-only broker facts, broker previews, and final user instructions should be recorded as execution prerequisites rather than readiness failures.
-14. In the final decision, include a concise operating-cycle summary covering sources checked, discovery changes, freshness events, filing reviews, watchlist-cycle review result, valuation-state changes, cleanup performed, validation run, readiness status, unavailable data, and the exact validity window.
+14. In the final decision, include a concise operating-cycle summary covering sources checked, discovery changes, freshness events, filing reviews, watchlist-cycle review result, valuation-state changes, cleanup performed, validation run, readiness status, unavailable data, publication-release status, and the exact validity window.
 15. Compare new evidence against the stored thesis, kill criteria, prior decision notes, freshness events, and valuation state.
 16. Use the subagent protocol when available for critical capital allocation decisions: evidence/freshness, bull-case, bear-case, and allocation/risk reviewers at the highest useful reasoning level, normally `xhigh`; add discovery-lane/candidate triage when discovery output could affect the decision.
 17. Run the meta-self-improvement check from this file and `SPEC.md`; record durable process lessons when the cycle exposes one.
@@ -427,17 +434,20 @@ Decision operating-cycle execution:
 19. Produce proposed orders with exact share counts, estimated dollar use, estimated remaining cash, the price basis used, and the order validity window.
 20. Mark the output as a proposed decision only. Do not mutate the ledger.
 21. When confirmed cash or positions exist, update the equity-curve valuation snapshot for the decision date from confirmed account state and fresh market prices. Backfill missing month-end snapshots only from historical close data, and never use today's price for an old valuation date.
+22. If a decision artifact contains actionable trading content, keep it local and unpublished until the `PUBLICATION_POLICY.md` public release embargo has expired or redact exact order, timing, and sizing fields before public release.
 
 ## Execution Update Workflow
 
 When the user says trades or deposits were actually completed:
 
-1. Check that all required fields are present: broker/account alias, confirmation ID or equivalent evidence, side, symbol, quantity, average price, fees, currency, trade date, and settlement date.
+1. Check that all required fields are present: broker/account alias, redacted confirmation ID or equivalent evidence, side, symbol, quantity, average price, fees, currency, trade date, and settlement date.
 2. If fields are missing, ask for the missing fields. Do not use current market prices as substitutes.
-3. Append a new event to [data/account/ledger.csv](data/account/ledger.csv).
-4. Recalculate [data/account/positions.csv](data/account/positions.csv) and [data/account/state.yml](data/account/state.yml) from confirmed events.
-5. Add or refresh the equity-curve valuation snapshot for the confirmed event date when prices for that date are available. If price data is unavailable, leave the valuation gap rather than inventing a price.
-6. Never silently edit old ledger rows. Use a `correction` event if a past record was wrong.
+3. Convert broker evidence into normalized, redacted repository fields. Never commit raw broker screenshots, PDFs, statements, account numbers, full broker order IDs, or full confirmation numbers.
+4. Append a new event to [data/account/ledger.csv](data/account/ledger.csv).
+5. Recalculate [data/account/positions.csv](data/account/positions.csv) and [data/account/state.yml](data/account/state.yml) from confirmed events.
+6. Add or refresh the equity-curve valuation snapshot for the confirmed event date when prices for that date are available. If price data is unavailable, leave the valuation gap rather than inventing a price.
+7. Never silently edit old ledger rows. Use a `correction` event if a past record was wrong.
+8. Do not commit, push, publish, or deploy same-day trade details until the `PUBLICATION_POLICY.md` public release embargo has expired. If market-close timing is uncertain, wait until the next regular trading day.
 
 ## Public Dashboard Workflow
 
@@ -459,6 +469,8 @@ Dashboard rules:
 12. Treat the equity chart as a broker-grade analytical surface, with TradingView as the quality benchmark. Chart work should prioritize accurate axes, crosshair detail, range controls, touch and mouse interaction, confirmed-operation markers, and low-noise layout before decorative styling. The chart is display-only and must never imply broker connection, order entry, or automatic execution.
 13. Treat the research universe as an interactive research workspace, not a static table. Company cards should support compact scanning, hover and keyboard-focus latest-analysis previews, click or tap detail drilldowns, and historical analysis timelines sourced from committed research records.
 14. Research drilldowns must preserve provenance. Show analysis dates, stances, policy versions, analysis types, and source links when available, and make clear through dated labels that historical analysis is memory rather than fresh market truth.
+15. The dashboard and every per-symbol research page must include visible `Not investment advice` copy near the primary content. The copy must explain that records are historical, delayed, personal account records or research notes, not instructions for public readers.
+16. The dashboard must not expose raw broker artifacts, full confirmation identifiers, broker login flows, order tickets, alert-signup forms, copy-trade controls, reader portfolio intake, or execution controls.
 
 ## Continuous Improvement and Noise Hygiene
 
@@ -527,4 +539,4 @@ Liquidity reserve sales are different from return-seeking position sales. Sellin
 
 The user allows direct commits and pushes to `main` for this repository.
 
-Commit after meaningful changes to policy, records, research, or decisions. Push to the default remote when the work is coherent. Use concise commit messages in the repository's style. Never commit secrets or local-only paths.
+Commit after meaningful changes to policy, records, research, or decisions when the public release embargo allows the changed content to become public. Push to the default remote when the work is coherent and `PUBLICATION_POLICY.md` has been satisfied. Use concise commit messages in the repository's style. Never commit secrets, raw broker artifacts, unredacted broker identifiers, actionable pre-close trading content, or local-only paths.

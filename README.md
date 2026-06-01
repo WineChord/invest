@@ -6,22 +6,26 @@ The account objective is multi-decade asymmetric compounding: pursue outcomes th
 
 Public dashboard: [www.wineandchord.com/invest](https://www.wineandchord.com/invest/). It is built from this open-source repository and deployed as a static GitHub Pages project site.
 
+Not investment advice, legal advice, tax advice, or accounting advice. This repository and dashboard are a personal historical research journal and account audit trail, not a recommendation that any public reader buy, sell, hold, or size any security. Public records are delayed, normalized, and source-backed; raw broker documents, sensitive identifiers, secrets, and unexpired actionable trading content must not be published.
+
 Operating model: the repository stores the durable operating system. Codex or a future agent supplies active compute when the user starts a conversation in this workspace. When no agent is active, only deterministic automation such as GitHub Actions may run; qualitative research judgment, allocation recommendations, broker-record changes, and trades require user-triggered agent work and the repository's confirmation rules.
 
 Start here:
 
 1. Read [CONSTITUTION.md](CONSTITUTION.md) for the highest-order mission and operating principles.
-2. Read [AGENTS.md](AGENTS.md) for the rules every future agent must follow.
-3. Read [SPEC.md](SPEC.md) for the full portfolio system design.
-4. Read [policy-v1.1.md](data/policy/policy-v1.1.md) for the current investment policy.
-5. Use [templates/monthly-decision.md](templates/monthly-decision.md) when asking for a monthly buy, sell, hold-cash, or SGOV liquidity-reserve plan.
-6. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
-7. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
-8. Use [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md) when reviewing the bottleneck map before naming stocks.
-9. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
-10. Use [templates/meta-self-improvement.md](templates/meta-self-improvement.md) when improving the repository's own process.
-11. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md) when asking the agent to run the whole repository flow or execute every applicable workflow.
-12. Run `npm run dev` to preview the public dashboard locally.
+2. Read [PUBLICATION_POLICY.md](PUBLICATION_POLICY.md) before publishing decisions, trades, account records, performance, dashboard copy, or external posts.
+3. Read [AGENTS.md](AGENTS.md) for the rules every future agent must follow.
+4. Read [SPEC.md](SPEC.md) for the full portfolio system design.
+5. Read [policy-v1.1.md](data/policy/policy-v1.1.md) for the current investment policy.
+6. Use [templates/monthly-decision.md](templates/monthly-decision.md) when asking for a monthly buy, sell, hold-cash, or SGOV liquidity-reserve plan.
+7. Use [templates/execution-confirmation.md](templates/execution-confirmation.md) after trades or deposits are actually completed.
+8. Use [templates/publication-release-review.md](templates/publication-release-review.md) before public release of decision, trade, account, performance, or dashboard content.
+9. Use [templates/filing-review.md](templates/filing-review.md) when a material SEC filing or official report appears.
+10. Use [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md) when reviewing the bottleneck map before naming stocks.
+11. Use [templates/research-engine-run.md](templates/research-engine-run.md) when running the discovery, freshness, valuation, and cleanup loop.
+12. Use [templates/meta-self-improvement.md](templates/meta-self-improvement.md) when improving the repository's own process.
+13. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md) when asking the agent to run the whole repository flow or execute every applicable workflow.
+14. Run `npm run dev` to preview the public dashboard locally.
 
 Repository state:
 

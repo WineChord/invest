@@ -1,4 +1,4 @@
-import { BookOpen, ExternalLink, Home, LineChart, SquareArrowOutUpRight } from "lucide-react";
+import { BookOpen, ExternalLink, Home, LineChart, ShieldCheck, SquareArrowOutUpRight } from "lucide-react";
 import type { IChartApi, Time } from "lightweight-charts";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type {
@@ -155,6 +155,15 @@ export default function ResearchStockPage({
             <small>{item.priceAsOf ?? "No dated price"}</small>
           </div>
         </header>
+
+        <section className="publication-notice" aria-label="Publication boundary">
+          <ShieldCheck size={18} />
+          <p>
+            <strong>Not investment advice.</strong> This research page is a
+            delayed personal research record, not a recommendation or signal
+            for public readers to buy, sell, hold, or size this security.
+          </p>
+        </section>
 
         <section className="research-page-grid">
           <article className="research-page-main">

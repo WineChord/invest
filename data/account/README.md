@@ -11,6 +11,8 @@ Rules:
 - `equity_curve.csv` stores derived performance snapshots for reporting.
 - Recommendations in `decisions/` never mutate this directory.
 - SGOV and equivalent liquidity-reserve instruments are securities, not cash. Record confirmed reserve buys and sells in `ledger.csv`; do not silently merge them into `confirmed_cash`.
+- Public account records must be normalized and redacted under `PUBLICATION_POLICY.md`. Do not commit raw broker documents, screenshots, account numbers, full broker order IDs, full confirmation numbers, or tax/identity details. Use a stable redacted alias or non-reversible hash in `confirmation_id`.
+- Same-day trade records and actionable execution details must not be committed, pushed, published, or deployed until the public release embargo has expired.
 
 Equity curve cadence:
 

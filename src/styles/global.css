@@ -254,6 +254,33 @@ h1 {
   color: var(--muted);
 }
 
+.publication-notice {
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  display: flex;
+  gap: 0.7rem;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+}
+
+.publication-notice svg {
+  color: var(--teal);
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+}
+
+.publication-notice p {
+  margin: 0;
+}
+
+.publication-notice strong {
+  color: var(--ink);
+}
+
 .metric-grid {
   display: grid;
   gap: 0.75rem;

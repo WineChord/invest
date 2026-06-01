@@ -15,6 +15,10 @@ account_update_requested:
 dashboard_update_requested:
 research_refresh_requested:
 commit_and_push_allowed:
+publication_release_status:
+public_release_earliest_at:
+contains_actionable_trading_content:
+sensitive_field_review_status:
 ```
 
 ## Trigger Interpretation
@@ -34,7 +38,7 @@ If the user asked for a decision, this template must be used together with [mont
 
 Run every applicable item in this order. If an item is not applicable, say why.
 
-1. Load rules and state: `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state.
+1. Load rules and state: `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, `PUBLICATION_POLICY.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state.
 2. Protect confirmed broker truth: separate confirmed account facts from market data, research, analysis, user estimates, screenshots, and proposed orders.
 3. Refresh deterministic data: run market-data refresh, data checks, and build/dashboard checks when the request touches those surfaces and tooling is available.
 4. Run bottleneck-lane review: read `research/discovery/lanes.yml`, use [bottleneck-lane-review.md](bottleneck-lane-review.md) when the review is material, ask which future bottlenecks can become unavoidable, valuable, and publicly investable, ask whether a new lane appeared, decide whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged, and record the lane delta.
@@ -50,9 +54,10 @@ Run every applicable item in this order. If an item is not applicable, say why.
 14. Run allocation analysis when the user asks for a decision: compare all active candidates and holdings, test mission/evidence/entry/survival/opportunity-cost gates, reconcile xhigh evidence/freshness, valuation/entry, bull-case, bear-case, and allocation/risk reviews, size proposed actions from confirmed deployable liquidity, and state trigger and invalidation conditions. If a non-active symbol now appears superior because of fresh evidence or price dislocation, run a fast-path promotion review before including it in proposed orders.
 15. Run meta-self-improvement: identify process defects, missed-lane risk, source gaps, weak templates, scoring ambiguity, automation opportunities, validation gaps, dashboard confusion, repo-scoped skill updates, or cleanup rules exposed by the run. Use [meta-self-improvement.md](meta-self-improvement.md) for substantial changes.
 16. Update durable records: research notes, source register, discovery lanes, discovery candidates, freshness events, valuation states, watchlist-cycle reviews, watchlist priority/status, watchlist transitions, buy-zone rows, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, templates, and process reviews when the run creates durable facts or behavior.
-17. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
-18. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical. A material run is not complete until `research/quality-metrics.yml` is ready for repository and public-observable evidence. Missing user-only broker facts should be reported as execution prerequisites, not as repository not-readiness.
-19. Commit and push coherent durable changes when the repository's Git Rules call for it.
+17. Run the publication release checklist from `PUBLICATION_POLICY.md`: identify actionable trading content, public release earliest time, embargo status, redaction status, sensitive-field review result, compensation or material-connection issues, and whether commit, push, deployment, or external posting must wait.
+18. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
+19. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical. A material run is not complete until `research/quality-metrics.yml` is ready for repository and public-observable evidence. Missing user-only broker facts should be reported as execution prerequisites, not as repository not-readiness.
+20. Commit and push coherent durable changes only when the repository's Git Rules and the public release embargo allow it.
 
 ## Completion Report
 
@@ -84,6 +89,7 @@ candidate_readiness_blockers:
 meta_self_improvement:
 unavailable_evidence:
 next_required_user_input:
+publication_release:
 ```
 
 Do not claim full-cycle completion when an applicable repository or public-evidence step was skipped. Continue until the repository-public research state is ready, or until the only remaining items are genuine external blockers or user-only execution prerequisites such as broker cash confirmation, broker order preview, or final user instruction.
