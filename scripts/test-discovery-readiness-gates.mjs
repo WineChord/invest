@@ -300,7 +300,11 @@ const testCases = [
     name: "rejects stale discovery source retrieval",
     mutate: (cwd) => {
       updateYaml(cwd, "research/sources.yml", (doc) => {
-        const source = doc.sources.find((entry) => entry.id === "yss_q1_2026_10q");
+        const source = doc.sources.find((entry) => entry.id === "rklb_q1_2026");
+        source.retrieved_at = "1900-01-01";
+      });
+      updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
+        const source = doc.fresh_sources.find((entry) => entry.id === "rklb_q1_2026");
         source.retrieved_at = "1900-01-01";
       });
     },
@@ -347,7 +351,8 @@ const testCases = [
     name: "rejects missing material readiness sprint",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        doc.readiness_sprints = doc.readiness_sprints.slice(1);
+        doc.candidate_delta.candidates_incubated = ["FLY"];
+        doc.readiness_sprints = [];
       });
     },
     expected: "readiness_sprints is missing material scoped readiness symbol",
@@ -776,7 +781,10 @@ const testCases = [
     name: "rejects broad deterministic output hash mismatch",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        doc.source_coverage.deterministic_commands[0].output_sha256 = "0".repeat(64);
+        const broadCommand = doc.source_coverage.deterministic_commands.find((command) =>
+          command.output_path.endsWith("universe-scan.json"),
+        );
+        broadCommand.output_sha256 = "0".repeat(64);
       });
     },
     expected: "output_sha256 does not match",

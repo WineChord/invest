@@ -1,20 +1,20 @@
 schema_version: 1
-as_of: 2026-06-01
+as_of: 2026-06-02
 last_research_engine_run:
-  as_of: 2026-06-01
-  scope: post_discovery_readiness_for_semantic_xhigh_misses
-  notes: Completed post-discovery readiness for MNTS, VOYG, XNDU, and YSS after the semantic discovery run found them as xhigh names missing from the watchlist. MNTS was rejected after evidence review; VOYG and XNDU were added as research-only coverage; YSS was added as watchlist coverage. Corrected XNDU valuation to use F-1 Class A/Class B shares outstanding rather than weighted-average companyfacts shares. Account records remain unchanged.
+  as_of: 2026-06-02
+  scope: price_decision_rerun_for_confirmed_cash
+  notes: Refreshed market data through 2026-06-01, generated 2026-06-02 universe and SEC event-filing dry-run artifacts, built a fresh subagent evidence packet, ran discovery, freshness, bull, bear, and allocation reviewers, reviewed the RKLB 2026-06-01 Form 4 cluster, recorded the RKLB/ASTS staged setup as an expired simulation with no actual trade, and kept all other watchlist priorities unchanged. Account records remain unchanged.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Active watchlist coverage remains current after post-discovery readiness. FLY, VOYG, XNDU, and YSS all have terminal readiness records and dashboard-facing coverage where required, while MNTS was rejected after review. Repository-public readiness excludes user-only broker facts and execution instructions; those are execution prerequisites, not research-readiness blockers.
+  reason: Active watchlist coverage remains current after the 2026-06-02 price decision simulation rerun. The RKLB Form 4 cluster was reviewed as a non-thesis-breaking sentiment and valuation update, ASTS had no new post-decision filing blocker, and no deterministic discovery lead displaced the RKLB/ASTS research buy-zone setup. The user confirmed the run was simulation only; repository account records remain unchanged.
   user_only_execution_prerequisites:
-    - broker cash and buying-power confirmation before order entry
-    - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction
-    - current live quote or accepted limit price at the time the user chooses to act
+    - fresh broker cash and buying-power confirmation before any future real order
+    - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any future real order
+    - fresh quote and issuer-event check if the user chooses to run a new real decision
 coverage:
-  universe_scan_as_of: 2026-06-01
+  universe_scan_as_of: 2026-06-02
   discovery_lane_map_as_of: 2026-06-01
   watchlist_symbols: 28
   watchlist_symbols_with_current_cycle_review: 28
@@ -28,10 +28,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 4
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-06-01-post-discovery-readiness.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-06-01-post-discovery-readiness.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-06-01-post-discovery-readiness.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-06-01-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-06-02-price-decision-agentic-discovery.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-06-02-price-decision-agentic-discovery.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-06-02-price-decision-agentic-discovery.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-06-02-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -52,6 +52,7 @@ discovery_process:
     - space_infrastructure
     - direct_to_device_connectivity
     - quantum_computing_and_networking
+    - semiconductor_interconnect_and_memory
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
   material_open_candidates: 4
@@ -89,4 +90,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-01 post-discovery pass also records a data-quality lesson: newly public dual-class or transaction issuers may need manual share-count and debt overrides when generic companyfacts fields understate current economic capitalization.
+  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as future execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-02 rerun records a process lesson: large price moves beyond a buy-zone stale threshold require a fresh price/freshness rerun before even simulating a renewed order, even when the move improves entry. Insider-sale forms such as Form 4 and Form 144 are outside the event-filing scan and need a direct SEC submissions check for buy-zone names.

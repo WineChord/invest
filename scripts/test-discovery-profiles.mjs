@@ -69,6 +69,13 @@ const secIssuerOutputPath = path.join(fixtureRoot, "sec-issuer-profiles.json");
 const secCompleteFixturePath = path.join(fixtureRoot, "sec-complete-company-tickers-exchange.json");
 const secFixturePath = path.join(fixtureRoot, "sec-company-tickers-exchange.json");
 const secTickerMismatchFixturePath = path.join(fixtureRoot, "sec-ticker-mismatch-company-tickers-exchange.json");
+const secFixtureCurrentCacheTime = new Date("2026-06-01T00:00:00.000Z");
+
+function touchJsonFilesInDir(dir, timestamp) {
+  readdirSync(dir)
+    .filter((fileName) => fileName.endsWith(".json"))
+    .forEach((fileName) => utimesSync(path.join(dir, fileName), timestamp, timestamp));
+}
 
 writeFixtureRepo(fixtureRepo);
 writeFileSync(
@@ -574,6 +581,9 @@ writeFileSync(
       },
     },
   })}\n`,
+);
+[secSubmissionsDir, secMismatchedSubmissionsDir, secTickerMismatchSubmissionsDir].forEach((dir) =>
+  touchJsonFilesInDir(dir, secFixtureCurrentCacheTime),
 );
 
 run("scripts/build-discovery-profiles.mjs", [
@@ -1205,6 +1215,10 @@ await withFilingRetryServer((filingUrl) => {
   assert(existsSync(cacheMetadataPath), "SEC filing profile builder should write filing cache metadata");
   const cacheTime = new Date("2026-06-01T00:00:00.000Z");
   utimesSync(cachePath, cacheTime, cacheTime);
+  const cacheMetadata = JSON.parse(readFileSync(cacheMetadataPath, "utf8"));
+  cacheMetadata.fetched_at = cacheTime.toISOString();
+  cacheMetadata.retrieved_at = cacheTime.toISOString().slice(0, 10);
+  writeFileSync(cacheMetadataPath, `${JSON.stringify(cacheMetadata, null, 2)}\n`);
   run("scripts/build-sec-filing-profiles.mjs", [
     "--as-of",
     "2026-06-01",

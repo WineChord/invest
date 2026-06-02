@@ -5,105 +5,63 @@ description: Use when working in the WineChord invest repository on investment d
 
 # Invest Operating Cycle
 
-This is a repo-scoped skill for the WineChord invest repository. It should guide Codex into the repository's durable operating system without duplicating the full rules.
+This repo-scoped skill is a compact router for the WineChord invest repository. It should point Codex to canonical files, not duplicate the full operating manual.
 
-The root objective is multi-decade asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin. Use every workflow below as a means to that objective, not as a checklist for its own sake.
+Root objective: multi-decade asymmetric compounding with avoidable-ruin controls. Use every workflow as a means to that objective, never as checklist ceremony.
 
 ## First Read
 
-Before making recommendations or changing state, read the relevant canonical files:
+Read only the canonical files relevant to the request:
 
-- `CONSTITUTION.md` for the highest-order mission and operating principles.
-- `PUBLICATION_POLICY.md` before public commits, pushes, deployments, dashboard copy, decision notes, execution records, performance displays, or external posts.
-- `AGENTS.md` for mandatory agent behavior, immutable rules, operating triggers, self-evolution, and Git rules.
-- `SPEC.md` for system design, data models, research engine, dashboard behavior, and audit requirements.
-- `data/policy/policy-v1.1.md` for the current investment policy.
-- `research/discovery/lanes.yml` for the current structural bottleneck lane map before judging whether the watchlist is complete.
-- `templates/bottleneck-lane-review.md` when a full cycle, monthly decision, or discovery run needs to review lanes before naming stocks.
-- The relevant template under `templates/`:
-  - `monthly-decision.md` for buy, sell, hold-cash, SGOV, or allocation requests.
-  - `full-operating-cycle.md` for full-cycle repository requests.
-  - `bottleneck-lane-review.md` for bottleneck-map-first discovery review.
-  - `agentic-discovery-run.md` for structured xhigh discovery audit artifacts.
-  - `discovery-readiness-sprint.md` for plausible raw candidates that could affect allocation or lane completeness.
-  - `promotion-review.md` for moving a researched symbol toward active, core, or buy-zone status.
-  - `execution-confirmation.md` for broker-confirmed trades or deposits.
-  - `publication-release-review.md` before public release of decision, trade, account, performance, or dashboard content.
-  - `research-engine-run.md` for discovery, freshness, valuation, priority, and cleanup runs.
-  - `meta-self-improvement.md` for process upgrades and methodology reviews.
+- `CONSTITUTION.md`: highest-order mission and operating principles.
+- `PUBLICATION_POLICY.md`: required before public commits, pushes, deployments, dashboard copy, decision notes, execution records, performance displays, or external posts.
+- `AGENTS.md`: mandatory agent behavior, trigger routing, safety boundaries, self-evolution, cleanup, and Git rules.
+- `SPEC.md`: system design, data models, research engine, dashboard behavior, and audit requirements.
+- `data/policy/policy-v1.1.md`: current investment policy.
+- `docs/research-command-reference.md`: detailed discovery, SEC, semantic-discovery, FMP, and validation command notes.
+- `docs/subagent-protocol-reference.md`: bounded subagent evidence-packet and minimum-output schemas.
 
-## Trigger Behavior
+Use the relevant template under `templates/`:
 
-- Treat questions about deposits, cash deployment, buying, selling, SGOV, allocation, or "what should I do" as full decision operating-cycle requests.
-- Treat "run everything", "full refresh", "full monthly cycle", "全量执行", or equivalent language as full-cycle repository requests.
-- During serious research or decision work, run self-evolution and meta-self-improvement checks before finishing.
-- During every full-cycle or monthly decision, explicitly ask whether a new discovery lane appeared and whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged.
-- Never start serious discovery from a stock list. Start from structural bottlenecks, then derive direct public beneficiaries and only then compare companies.
-- Treat deterministic discovery scripts as scaffolding, not the full search. Use independent fresh-context xhigh discovery subagents when discovery could affect allocation, lane completeness, or watchlist priority; they should search broad current public sources and answer the first-layer bottleneck questions before producing ticker lists: what could become scarce, who controls or can remove the scarcity, who can monetize it into shareholder value, whether a public security directly expresses the exposure, and whether the company is early, small, misunderstood, newly listed, awkward, or underfollowed enough for extreme asymmetry.
-- For broad discovery, prefer cache-aware coarse-to-fine semantic coverage over repeated full deep reads. Reuse source-backed unchanged issuer packets, filing extracts, semantic classifications, and rejection/incubation reasons when provenance and invalidation rules are valid; refresh volatile evidence and changed sources; use low-reasoning batched subagents for broad semantic classification, medium reasoning for lane comparison and false-positive rejection, and xhigh for material readiness, promotion, valuation, allocation, or unresolved conflicts.
-- For SEC-backed discovery or market refreshes, prefer the shared SEC request helper path in repository scripts. It centralizes SEC user-agent handling, accept and compression headers, bounded retry/backoff, `Retry-After` handling, and access-control or throttling retry audit fields; set `SEC_USER_AGENT` locally when a live run needs a specific contact identity.
-- Use optional `FMP_API_KEY` support only as a quota-limited market/fundamentals supplement. Never commit the key, never log it, prefer cached responses under ignored `research/cache/fmp/`, preserve SEC/Yahoo fallbacks, and keep the default daily uncached-call budget conservative unless the provider plan justifies more.
-- Use advisory xhigh subagents when available for material monthly decisions, full-cycle runs, discovery lane changes, freshness or filing gaps, watchlist reprioritization, valuation changes, allocation decisions, and substantial process changes. Default roles are discovery-lane/candidate triage, freshness/filing review, bull case, bear case, and allocation/risk.
-- When a plausible new candidate appears, run the discovery readiness sprint before ending the cycle whenever public evidence can be gathered: market data, security metadata, filings, issuer reports, industry context, filing review, valuation state, same-lane peer comparison, and dashboard-facing research coverage. Do not leave "not buy-ready" as a mere missing-data status when the missing data is reachable.
-- Candidate ready means terminal classification plus evidence surface, not a ticker mention. The ready surface includes the raw candidate record, candidate-readiness record with `dashboard_surface_status`, readiness note, durable sources, reviewed freshness or filing evidence, valuation state, same-lane comparison, company-analysis entry, and, for material completed or incubated public stocks, the research-only dashboard surface.
-- Do not leave a material incubating public candidate hidden in discovery-only files. If it remains material enough to keep, it needs research-only dashboard visibility with security metadata, price history, latest price, technical snapshot, company metrics, valuation state, freshness or filing review, company-analysis entry, and generated per-symbol page. If it does not deserve that treatment, reject, archive, or classify it as not material with evidence.
-- For material discovery work, leave a structured audit trail: an agentic discovery run under `research/discovery/runs/`, a candidate readiness record in `research/discovery/candidate-readiness.yml`, and a sprint note under `research/discovery/readiness/` when a raw candidate could affect allocation. The run should structure source coverage by primary filings or regulatory data, issuer material, market data, and current-world context. Candidate readiness should record affected lanes, materiality reason, and blocking scope. Quality metrics should record allocation-relevant lanes so same-lane candidates cannot be hidden as immaterial without evidence. A material open candidate with repository-reachable evidence outstanding is a validation failure that must be fixed before final response.
-- Do not finish a material investment, discovery, or process turn with the repository in `not_ready`. `decision_readiness.status` is scoped to repository and public-observable evidence. User-only broker facts, broker order previews, and final execution instructions are execution prerequisites, not repository-readiness blockers. If repository or public evidence is missing, keep iterating until it is gathered, classified immaterial, rejected/incubated from evidence, or shown to be genuinely external.
-- During every full-cycle or monthly decision run, perform the full watchlist-cycle review. Every non-removed `research/watchlist.csv` symbol needs a current `research/watchlist-cycle-reviews.csv` row covering thesis delta, entry delta, priority delta, status delta, buy-zone delta, action required, next review trigger, sources, and reviewer roles. `No change` still needs a row. Missing current rows, stale active theses, stale active valuation states, stale active/core buy-zone rows, or open high/critical events mean the repository is not ready.
-- Treat promotion as a separate agentic gate after discovery readiness. A `research_only`, `watch`, `probation`, or `frozen` symbol cannot enter `active_candidate`, `active_core_candidate`, buy-zone ranking, or proposed orders until a fresh promotion review compares it against mission, evidence, entry, survival, opportunity cost, current core candidates, cash, and the approved liquidity reserve.
-- Use independent fresh-context xhigh promotion reviewers when promotion could affect allocation: evidence/freshness, valuation/entry, bull case, bear case, and opportunity-cost/allocation. Fast material events or price dislocations should trigger a same-session or next-approved-wakeup promotion review; speed means promptly running the gates, not skipping them.
-- Keep deterministic commands, durable file edits, account-state reconstruction, validation, commits, pushes, and final synthesis in the main agent. Treat unresolved material subagent disagreement as a reason to gather more evidence or default to no trade, hold cash, or the approved liquidity reserve.
-- During meta-self-improvement, check whether this repo-scoped skill should be updated because workflow triggers, canonical files, safety boundaries, or validation commands changed.
-- Never answer from the old watchlist alone. Re-check discovery lanes, discovery candidates, freshness, thesis delta, entry delta, priority delta, opportunity cost, and lane delta.
-- Never publicly release actionable trading content before the embargo in `PUBLICATION_POLICY.md` expires. Same-day trades, exact order sizes, order previews, and unexpired proposed orders must remain local and unpublished or be redacted.
+- `monthly-decision.md`: buy, sell, hold-cash, SGOV, or allocation requests.
+- `full-operating-cycle.md`: full-cycle repository requests.
+- `execution-confirmation.md`: broker-confirmed trades or deposits.
+- `publication-release-review.md`: public release of decision, trade, account, performance, or dashboard content.
+- `research-engine-run.md`: discovery, freshness, valuation, priority, and cleanup runs.
+- `bottleneck-lane-review.md`: bottleneck-map-first discovery review.
+- `agentic-discovery-run.md`: structured xhigh discovery audit artifacts.
+- `discovery-readiness-sprint.md`: plausible raw candidates that could affect allocation or lane completeness.
+- `promotion-review.md`: moving a researched symbol toward active, core, or buy-zone status.
+- `meta-self-improvement.md`: process upgrades and methodology reviews.
+
+## Trigger Routing
+
+- Questions about deposits, cash deployment, buying, selling, SGOV, allocation, or "what should I do" are full decision operating-cycle requests.
+- "Run everything", "full refresh", "full monthly cycle", "全量执行", or equivalent language is a full-cycle repository request.
+- Serious research or decision work must run self-evolution and meta-self-improvement checks before finishing.
+- Full-cycle and monthly decision runs must start from the bottleneck map, ask whether a new lane appeared, run current discovery/freshness/valuation/watchlist review, and avoid answering from the old watchlist alone.
+- Material discovery, promotion, valuation, allocation, or process conclusions require advisory xhigh subagents when tooling is available unless explicitly skipped with an allowed reason. The material-decision roles are discovery-lane/candidate triage, freshness/filing review, bull case, bear case, and allocation/risk.
+- Plausible material raw candidates require discovery readiness work before the cycle ends unless primary evidence rejects them, they are ineligible or not material, or the remaining blocker is genuinely external.
+- A material incubating public candidate must not remain hidden in discovery-only files; either give it research-only dashboard visibility with comparable evidence or reject, archive, mark not tradable, externally blocked, or not material with evidence.
+- A `research_only`, `watch`, `probation`, or `frozen` symbol cannot enter `active_candidate`, `active_core_candidate`, buy-zone ranking, or proposed orders without a fresh promotion review.
+- Do not finish material investment, discovery, or process work with repository-public evidence still in `not_ready` when the missing evidence is reachable.
 
 ## Safety Boundaries
 
 - Never execute trades.
 - Never mutate broker-confirmed account records without the required execution confirmation fields.
 - Do not infer broker cash, cost basis, positions, fees, or settlement dates from recommendations, screenshots, or market prices.
-- Keep the repository clone-portable; do not commit secrets, local-only paths, caches, or generated scratch artifacts.
-- Keep public records delayed and redacted; do not commit raw broker documents, screenshots, account numbers, full confirmation IDs, full order IDs, secrets, cookies, tokens, or private cache payloads.
+- Keep deterministic commands, durable file edits, account-state reconstruction, validation, commits, pushes, and final synthesis in the main agent.
+- Keep the repository clone-portable; do not commit secrets, local-only paths, caches, generated scratch artifacts, raw broker documents, screenshots, account numbers, full confirmation IDs, full order IDs, cookies, tokens, or private cache payloads.
+- Never publicly release actionable trading content before the embargo in `PUBLICATION_POLICY.md` expires. Same-day trades, exact order sizes, order previews, and unexpired proposed orders must remain local and unpublished or be redacted.
 - Preserve audit history. Use corrections and dated notes instead of silent rewrites.
 
-## Useful Commands
+## Validation
 
-```bash
-npm run refresh:market -- --dry-run
-npm run discover:universe -- --dry-run
-npm run build:sec-registration-transaction-candidates -- --as-of YYYY-MM-DD --daily-index SEC_MASTER_IDX --output research/discovery/runs/YYYY-MM-DD-registration-transaction-candidates.json
-npm run discover:sec-event-filing-index -- --as-of YYYY-MM-DD --symbols SYMBOL --output-prefix research/discovery/runs/YYYY-MM-DD-sec-event-filing-index
-npm run build:discovery-artifact-index -- --as-of YYYY-MM-DD
-npm run build:semantic-issuer-packets -- --as-of YYYY-MM-DD --profile-input PROFILE.json --output research/cache/discovery/YYYY-MM-DD/semantic-packets.json
-npm run build:semantic-batches -- --as-of YYYY-MM-DD --packets research/cache/discovery/YYYY-MM-DD/semantic-packets.json --cache research/discovery/semantic-cache.jsonl --output-dir research/cache/discovery/YYYY-MM-DD/semantic-batches --output research/cache/discovery/YYYY-MM-DD/semantic-batch-manifest.json
-npm run classify:semantic-heuristic -- --as-of YYYY-MM-DD --packets research/cache/discovery/YYYY-MM-DD/semantic-packets.json --cache research/discovery/semantic-cache.jsonl --output research/cache/discovery/YYYY-MM-DD/semantic-heuristic-results.jsonl
-npm run import:semantic-classifications -- --as-of YYYY-MM-DD --packets research/cache/discovery/YYYY-MM-DD/semantic-packets.json --results research/cache/discovery/YYYY-MM-DD/semantic-results.jsonl --cache research/discovery/semantic-cache.jsonl --cache-output research/discovery/semantic-cache.jsonl --output research/discovery/runs/YYYY-MM-DD-semantic-import.json
-npm run build:semantic-discovery-run -- --as-of YYYY-MM-DD --packets research/cache/discovery/YYYY-MM-DD/semantic-packets.json --cache research/discovery/semantic-cache.jsonl --output research/discovery/runs/YYYY-MM-DD-semantic-discovery-run.json
-npm run build:semantic-review-packet -- --as-of YYYY-MM-DD --semantic-run research/discovery/runs/YYYY-MM-DD-semantic-discovery-run.json --output research/discovery/runs/YYYY-MM-DD-semantic-review-packet.json
-npm run build:evidence-packet -- --as-of YYYY-MM-DD --deterministic-output research/discovery/runs/YYYY-MM-DD-scan.json --output research/discovery/runs/YYYY-MM-DD-subagent-evidence-packet.yml
-npm run check:data
-npm run test:discovery-artifact-index
-npm run test:discovery-profiles
-npm run test:semantic-discovery
-npm run test:discovery-gates
-npm run test:sec-registration-transaction-candidates
-npm run test:watchlist-cycle-gates
-npm run verify
-```
-
-Use `npm run build:sec-registration-transaction-candidates` when IPO, direct-listing, spinoff, de-SPAC, merger, or other transaction filings may surface a candidate before the SEC listed-ticker reference catches it; use `--daily-index-dir`, `--start-date`, and `--end-date` when the cycle needs interval coverage, and reserve `--strict-date-coverage` for cases where every requested calendar date must have a local daily index. Use `npm run discover:sec-event-filing-index` when event-driven filings such as 8-K, 6-K, 10-Q, S-4, F-4, or DEF 14A could surface a newly investable bottleneck. Use the semantic discovery scripts as a main-agent coordination protocol: build packets under ignored `research/cache/discovery/`, optionally run the low-cost heuristic classifier to get complete coarse coverage, build cached batches and prompts for subagents when judgment is needed, import JSONL results, then build the durable semantic discovery run and semantic review packet summaries under `research/discovery/runs/`. The scripts do not call subagents themselves. Semantic classification cache validity includes packet hash, lane-map hash, schema version, classifier version, and `cache_valid`; bumping classifier logic should invalidate old rows instead of silently reusing them. Use `npm run build:discovery-artifact-index` after generating standalone discovery artifacts that need durable hash anchoring; it intentionally excludes cache-only semantic packet, batch, smoke, validation, and full SEC issuer-profile intermediates. Use `npm run build:evidence-packet` before spawning independent xhigh subagents for material discovery or allocation work. Use `npm run check:data` for data and research changes. Use `npm run test:discovery-artifact-index` when changing artifact index generation or hash anchoring. Use `npm run test:discovery-profiles` when changing SEC or issuer profile generation. Use `npm run test:semantic-discovery` when changing semantic packet, batch, cache, import, or run-summary behavior. Use `npm run test:discovery-gates` when changing discovery readiness rules or validation. Use `npm run test:sec-registration-transaction-candidates` when changing pre-ticker registration or transaction discovery. Use `npm run test:watchlist-cycle-gates` when changing stale-prevention, priority/status refresh, or buy-zone currentness rules. Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
+- Use `npm run check:data` for data or research changes.
+- Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
+- Use the focused validation commands in `docs/research-command-reference.md` when changing discovery, SEC, semantic-discovery, readiness, promotion, watchlist-cycle, or market-refresh behavior.
 
 ## Output Standard
 
-Final responses for serious runs should state:
-
-- which operating-cycle steps ran;
-- which steps were skipped and why;
-- whether watchlist priority or thesis/entry deltas changed;
-- whether discovery lanes or raw discovery candidates changed;
-- whether meta-self-improvement found a durable lesson;
-- which xhigh subagents ran or were skipped and how material disagreements were resolved;
-- files changed;
-- validations run;
-- whether changes were committed and pushed;
-- any unavailable evidence or required user input.
+Final responses for serious runs should state which operating-cycle steps ran or were skipped, subagents run or skipped, material disagreements and resolution, watchlist or discovery deltas, meta-self-improvement findings, publication-release status, files changed, validations run, whether changes were committed and pushed, and any unavailable evidence or required user input.

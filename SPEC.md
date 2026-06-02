@@ -67,6 +67,11 @@ Dated monthly recommendations and simulated analyses. These are proposals, not b
 
 Prompt and record templates for monthly decisions, execution confirmations, company research cards, and policy changes.
 
+`docs/`
+
+Cold-path operational references for long command notes and implementation details that should not bloat `README.md`, `AGENTS.md`, or repo-scoped skills. These references must point back to canonical rules in this spec, `AGENTS.md`, policies, templates, and scripts rather than creating a parallel source of truth.
+`docs/research-command-reference.md` stores detailed discovery, SEC, semantic-discovery, FMP, and validation command notes. `docs/subagent-protocol-reference.md` stores bounded subagent evidence-packet and minimum-output schemas.
+
 `.github/workflows/pages.yml`
 
 GitHub Pages workflow that publishes the static dashboard to `https://www.wineandchord.com/invest/`.
@@ -439,7 +444,7 @@ Operating-cycle trigger model:
 - Material full-cycle and decision runs should use the advisory subagent model after deterministic refresh has produced an auditable evidence packet. Subagents may help find, retrieve, and interpret missing primary evidence, but their reasoning is not a substitute for actually recording source-backed evidence, source dates, retrieval dates, and uncertainty.
 - The cycle may add raw candidates to `research/discovery/candidates.csv` and material events to `research/freshness/events.csv`. It must not automatically promote a company to buy eligibility or make an allocation decision without agent or human judgment.
 - If any applicable workflow cannot be completed, the agent must first make a reasonable best effort to complete it when the missing evidence is publicly reachable or available through repository tooling. The agent should not return to the user with the repository in a not-ready research state; it must either resolve the gap into ready evidence, an evidence-based reject/incubate/no-buy conclusion, an immaterial classification, or a genuine external blocker. User-only broker facts remain execution prerequisites and do not make the repository-public research state not ready.
-- Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery lane changes, discovery candidate changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, unavailable evidence, and validity window.
+- Every allocation recommendation must include a concise operating-cycle summary: retrieval dates, sources checked, discovery lane changes, discovery candidate changes, freshness events, filing-review status, valuation-state status, cleanup performed, validation run, readiness result, publication-release status, unavailable evidence, and validity window.
 
 Research funnel ruling:
 
@@ -885,7 +890,7 @@ Bubble risk dimensions:
 8. Run discovery readiness sprints for plausible new candidates that could affect allocation, opportunity cost, lane completeness, or watchlist priority. Do the reachable public research before declaring the candidate not buy-ready because of missing repository data.
 9. Run or cite the AI cycle and market regime monitor when the allocation depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk.
 10. Check `research/quality-metrics.yml` and resolve open critical events, missing filing reviews, stale valuation states, stale theses, and any incomplete operating-cycle item. Explicit disclosure is not enough when the missing evidence can be gathered during the cycle.
-11. Run xhigh advisory subagents when available. For any decision that could deploy cash, sell a reserve, add, trim, exit, or hold despite available deployable liquidity, use at least freshness/evidence, bull-case, bear-case, and allocation/risk reviewers.
+11. Run xhigh advisory subagents when available. For any decision that could deploy cash, sell a reserve, add, trim, exit, or hold despite available deployable liquidity, use at least discovery-lane/candidate triage, freshness/evidence, bull-case, bear-case, and allocation/risk reviewers unless a required role is explicitly skipped with an allowed reason such as unavailable tooling, non-material scope, or primary evidence already resolving the question.
 12. Update watchlist status durably when the evidence supports a change. Do not merely update status mentally when the change affects active/core standing, buy-zone eligibility, or allocation ranking; record the transition and buy-zone state.
 13. Run the thesis check: `strengthened`, `unchanged`, `weakened`, or `broken`.
 14. Run the risk check: concentration, liquidity, valuation, dilution, debt, customer concentration, execution, regulatory, funding runway, macro regime, credit stress, and AI-cycle crowding.

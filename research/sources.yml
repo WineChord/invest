@@ -774,3 +774,84 @@ sources:
     first_seen_at: 2026-06-01
     related_symbols: [YSS]
     summary: SEC companyfacts snapshot supplied York's current XBRL fundamentals used in the market-data and valuation refresh.
+  - id: yahoo_chart_close_2026_06_01
+    title: Yahoo Finance Chart Daily Close Snapshot for Watchlist
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, FLY, FN, GSAT, IONQ, IREN, KTOS, LEU, LITE, LUNR, MU, NBIS, OKLO, RDW, RKLB, VOYG, VRT, XNDU, YSS]
+    summary: Repository market refresh retrieved latest daily closes through 2026-06-01 for tradable watchlist symbols.
+  - id: sec_company_tickers_exchange_2026_06_02
+    title: SEC Company Tickers Exchange Universe Snapshot
+    source_type: sec_filing_index
+    url: https://www.sec.gov/files/company_tickers_exchange.json
+    source_published_at: 2026-06-02
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: []
+    summary: SEC company ticker and exchange universe snapshot supplied the broad U.S.-listed issuer input for the 2026-06-02 dry-run universe discovery scan.
+  - id: sec_event_filing_index_2026_06_02
+    title: SEC Event Filing Index Scan for Active Watchlist
+    source_type: sec_filing_index
+    url: research/discovery/runs/2026-06-02-sec-event-filing-index-scan.json
+    source_published_at: 2026-06-02
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, FLY, FN, GSAT, IONQ, IREN, KTOS, LEU, LITE, LUNR, MU, NBIS, OKLO, RDW, RKLB, VOYG, VRT, XNDU, YSS]
+    summary: Targeted dry-run SEC filing discovery index checked current event and periodic filings for tradable watchlist symbols before the 2026-06-02 price decision.
+  - id: rklb_form4_cluster_2026_06_01
+    title: Rocket Lab June 2026 Form 4 Insider-Sale Cluster
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000200101126000079/xslF345X06/edgardoc.xml
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [RKLB]
+    summary: Four Rocket Lab Form 4 filings accepted on 2026-06-01 reported 2026-05-28 insider or director-related sales totaling about 124164 shares; reviewed as a non-thesis-breaking sentiment and valuation update.
+  - id: sec_companyfacts_rklb_2026_06_02
+    title: Rocket Lab SEC Companyfacts Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001819994.json
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [RKLB]
+    summary: SEC companyfacts snapshot supplied Rocket Lab fundamentals used with the 2026-06-01 close for refreshed valuation metrics.
+  - id: sec_companyfacts_asts_2026_06_02
+    title: AST SpaceMobile SEC Companyfacts Snapshot
+    source_type: sec_filing
+    url: https://data.sec.gov/api/xbrl/companyfacts/CIK0001780312.json
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [ASTS]
+    summary: SEC companyfacts snapshot supplied AST SpaceMobile fundamentals used with the 2026-06-01 close for refreshed valuation metrics.
+  - id: crdo_fy2026_8k_2026_06_01
+    title: Credo Technology Group Form 8-K Furnishing Fiscal 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/crdo-20260528.htm
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [CRDO]
+    summary: Credo filed a Form 8-K furnishing fiscal 2026 results; reviewed as relevant to the AI interconnect lane but not enough to overcome valuation and customer-concentration concerns for the current first-deposit decision.
+  - id: lite_exchange_8k_2026_06_01
+    title: Lumentum Form 8-K for Privately Negotiated Note Exchange Agreements
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1633978/000119312526249535/d112771d8k.htm
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [LITE]
+    summary: Lumentum filed a Form 8-K for note exchange agreements involving about USD 650.4 million principal amount of notes and about 5.0 million common shares, reinforcing capital-structure and dilution complexity.
+  - id: voyg_annual_meeting_8k_2026_06_01
+    title: Voyager Technologies Form 8-K for Annual Meeting and Redomestication Approval
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1788060/000162828026039572/voyg-20260529.htm
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-06-02
+    first_seen_at: 2026-06-02
+    related_symbols: [VOYG]
+    summary: Voyager filed annual meeting results and approval to redomesticate from Delaware to Texas; reviewed as a governance event that does not change VOYG research-only status.
