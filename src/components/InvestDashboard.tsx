@@ -2539,12 +2539,12 @@ function operationTitle(event: LedgerEvent): string {
 
 function operationDetail(event: LedgerEvent): string {
   if (event.eventType === "deposit") {
-    return `${formatCurrency(Math.abs(event.netCashEffect ?? 0))} ${event.notes}`;
+    return formatCurrency(Math.abs(event.netCashEffect ?? 0));
   }
   const quantity =
     event.quantity?.toLocaleString("en-US", { maximumFractionDigits: 4 }) ??
     "-";
-  return `${quantity} shares @ ${formatCurrency(event.averagePrice)} - ${event.notes}`;
+  return `${quantity} shares @ ${formatCurrency(event.averagePrice)}`;
 }
 
 function WatchlistTable({
