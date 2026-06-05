@@ -902,9 +902,9 @@ export default function InvestDashboard({ data }: Props) {
             <p className="eyebrow">Policy {activeData.policyVersion}</p>
             <h1>Satellite Portfolio Dashboard</h1>
             <p className="hero-copy">
-              Confirmed account records and research state come from the
-              repository. Demo data exists only in the browser to test charts,
-              operation flow, and metrics.
+              Confirmed account records are delayed, redacted historical
+              repository records. Demo data exists only in the browser to test
+              charts, operation flow, and metrics.
             </p>
           </div>
           <div className="status-stack">
@@ -1147,7 +1147,9 @@ function PublicationNotice() {
       <p>
         <strong>Not investment advice.</strong> This is a delayed personal
         research journal and account audit trail, not a recommendation or
-        signal for public readers to buy, sell, hold, or size any security.
+        signal for public readers to buy, sell, hold, copy, mirror, or size
+        any security. Demo mode is browser-only simulation; confirmed records
+        are delayed historical records after the publication embargo clears.
       </p>
     </section>
   );
@@ -1265,7 +1267,7 @@ function accountStatusDisplayFor(
   return {
     badge: "Confirmed",
     description:
-      "Displayed balances come from committed account records and derived files.",
+      "Displayed balances come from delayed committed account records and derived files.",
     label: readableStatusLabel(data.accountState.status),
     tone: "safe",
   };

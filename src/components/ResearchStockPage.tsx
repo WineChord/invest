@@ -161,7 +161,9 @@ export default function ResearchStockPage({
           <p>
             <strong>Not investment advice.</strong> This research page is a
             delayed personal research record, not a recommendation or signal
-            for public readers to buy, sell, hold, or size this security.
+            for public readers to buy, sell, hold, copy, mirror, or size this
+            security. Any plotted account activity is delayed and historical,
+            not an active instruction.
           </p>
         </section>
 

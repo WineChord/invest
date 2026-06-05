@@ -6,7 +6,9 @@ The account objective is multi-decade asymmetric compounding: pursue outcomes th
 
 Public dashboard: [www.wineandchord.com/invest](https://www.wineandchord.com/invest/). It is built from this open-source repository and deployed as a static GitHub Pages project site.
 
-Not investment advice, legal advice, tax advice, or accounting advice. This repository and dashboard are a personal historical research journal and account audit trail, not a recommendation that any public reader buy, sell, hold, or size any security. Public records are delayed, normalized, and source-backed; raw broker documents, sensitive identifiers, secrets, and unexpired actionable trading content must not be published.
+Not investment advice, legal advice, tax advice, or accounting advice. This repository and dashboard are a personal historical research journal and account audit trail, not a recommendation that any public reader buy, sell, hold, copy, mirror, or size any security. Public records are delayed, normalized, redacted, and source-backed; raw broker documents, sensitive identifiers, secrets, and unexpired actionable trading content must not be published.
+
+Public readers should treat every dashboard surface as historical context for this repository only. Browser-only demo data is simulated and exists solely to test charts and UI behavior. Confirmed account records, when shown, are delayed and redacted historical records for this repository, not trading instructions, model-portfolio signals, or evidence that any other person should take the same action.
 
 Operating model: the repository stores the durable operating system. Codex or a future agent supplies active compute when the user starts a conversation in this workspace. When no agent is active, only deterministic automation such as GitHub Actions may run; qualitative research judgment, allocation recommendations, broker-record changes, and trades require user-triggered agent work and the repository's confirmation rules.
 
@@ -33,11 +35,12 @@ Operating model: the repository stores the durable operating system. Codex or a 
 
 Decision requests are full operating-cycle triggers. When the user reports new cash or asks what to buy, sell, hold, use as SGOV reserve, or allocate, future agents must run the full decision operating cycle before proposing orders. Full-cycle requests go further and must run every applicable repository capability in a safe order; skipped applicable steps must be explained, and the agent must not claim full-cycle completion when reachable repository or public-evidence work remains unfinished.
 
-## Current State
+## Publication Boundary
 
-- Confirmed positions: empty.
-- Confirmed cash balance: USD 888.
-- Confirmed ledger events: one deposit event on 2026-05-30.
+- Public account displays must be delayed, normalized, redacted, and source-backed.
+- Browser-only demo data is simulated and must never mutate account files.
+- Confirmed account records are historical audit records only, not public recommendations or copy-trading signals.
+- Same-day or unexpired actionable order details must stay unpublished until the public release embargo in [PUBLICATION_POLICY.md](PUBLICATION_POLICY.md) has cleared.
 - Current policy: [policy-v1.1.md](data/policy/policy-v1.1.md), which allows SGOV or a materially equivalent short-duration U.S. Treasury reserve for cash management only.
 - Initial research baseline: [research/2026-05-26-initial-baseline.md](research/2026-05-26-initial-baseline.md).
 - Initial simulated decision: [decisions/2026-05-26-initial-simulation.md](decisions/2026-05-26-initial-simulation.md).
@@ -66,7 +69,7 @@ Build and verify:
 npm run verify
 ```
 
-The dashboard defaults to committed real data. Because the account currently has confirmed cash but no confirmed security positions, the real view shows funded cash, empty holdings, and a deposit-only equity curve. The "Demo data" control switches to browser-only demo data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "Real data" switches back to committed repository data without changing files.
+The dashboard defaults to committed repository data. The "Demo data" control switches to browser-only simulated data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "Real data" switches back to delayed committed repository records without changing files. Neither mode is investment advice; demo mode is UI-only simulation, and real mode is a delayed historical journal for this repository rather than a public trading signal.
 
 Daily market-data, discovery, SEC filing, semantic-discovery, FMP, and validation command details live in [docs/research-command-reference.md](docs/research-command-reference.md).
 
