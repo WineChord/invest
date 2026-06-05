@@ -855,3 +855,120 @@ sources:
     first_seen_at: 2026-06-02
     related_symbols: [VOYG]
     summary: Voyager filed annual meeting results and approval to redomesticate from Delaware to Texas; reviewed as a governance event that does not change VOYG research-only status.
+  - id: market_quote_snapshot_2026_06_04
+    title: Current Quote Snapshot for June 4 Decision
+    source_type: market_data
+    url: https://finance.yahoo.com/quotes/RKLB,ASTS,CRDO,ALAB,VRT,SGOV/view/v1
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, SGOV]
+    summary: External quote snapshot used after the repository Yahoo chart refresh returned HTTP 429 and Stooq returned N/D; prices used were RKLB USD 114.70, ASTS USD 107.73, CRDO USD 214.60, ALAB USD 363.54, VRT USD 331.44, and SGOV USD 100.41.
+  - id: sec_company_tickers_exchange_2026_06_04
+    title: SEC Company Tickers Exchange Universe Snapshot
+    source_type: sec_filing_index
+    url: https://www.sec.gov/files/company_tickers_exchange.json
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: []
+    summary: SEC company ticker and exchange universe snapshot supplied the broad U.S.-listed issuer input for the 2026-06-04 dry-run universe discovery scan.
+  - id: sec_event_filing_index_2026_06_04
+    title: SEC Event Filing Index Scan for Active Watchlist
+    source_type: sec_filing_index
+    url: research/discovery/runs/2026-06-04-sec-event-filing-index-scan.json
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, FLY, FN, GSAT, IONQ, IREN, KTOS, LEU, LITE, LUNR, MU, NBIS, OKLO, RDW, RKLB, VOYG, VRT, XNDU, YSS]
+    summary: Targeted dry-run SEC filing discovery index checked current event and periodic filings for tradable watchlist symbols before the 2026-06-04 monthly decision.
+  - id: ishares_sgov_2026_06_04
+    title: iShares 0-3 Month Treasury Bond ETF
+    source_type: fund_provider
+    url: https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf-fund
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [SGOV]
+    summary: iShares official fund page describes SGOV as 0-3 month U.S. Treasury exposure appropriate for capital preservation and liquidity management, subject to broker eligibility and settlement checks.
+  - id: rklb_form4_trust_transfers_2026_06_02
+    title: Rocket Lab June 2026 Form 4 Trust Transfer Cluster
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/CIK0001819994.json
+    source_published_at: 2026-06-02
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [RKLB]
+    summary: Rocket Lab ownership filings accepted on 2026-06-02 reflected director and CFO trust or gift transfers rather than open-market selling; reviewed as non-blocking for the staged entry.
+  - id: asts_form4_tax_withholding_2026_06_02
+    title: AST SpaceMobile June 2026 Form 4 RSU Tax Withholding Cluster
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/CIK0001780312.json
+    source_published_at: 2026-06-02
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [ASTS]
+    summary: AST SpaceMobile ownership filings accepted on 2026-06-02 reflected RSU tax withholding, not discretionary open-market selling; reviewed as non-blocking for the smaller convexity sleeve.
+  - id: fly_offering_8k_2026_06_02
+    title: Firefly Aerospace Form 8-K Offering Close
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1860160/000119312526252407/d156539d8k.htm
+    source_published_at: 2026-06-02
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [FLY]
+    summary: Firefly priced a USD 48.00 per share offering with 4.0 million primary shares, 8.0 million selling-holder shares, and a 30-day option for up to 1.8 million additional selling-holder shares; this reinforces research-only status.
+  - id: lunr_atm_2026_06_03
+    title: Intuitive Machines Form 8-K and 424B5 At-The-Market Program
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1844452/000119312526254475/d62861d8k.htm
+    source_published_at: 2026-06-03
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [LUNR]
+    summary: Intuitive Machines filed a sales agreement and prospectus supplement for up to USD 500.0 million of Class A common stock through an at-the-market program, increasing dilution overhang.
+  - id: iren_project_financing_2026_06_01
+    title: IREN Form 8-K Project Financing for Microsoft GPU Services
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000114036126023427/ef20075181_8k.htm
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [IREN]
+    summary: IREN disclosed about USD 3.6 billion of project financing, including an approximately USD 1.5 billion delayed draw term loan and USD 2.1 billion of senior notes, tied to Microsoft dedicated GPU services.
+  - id: crwv_sale_cluster_2026_06_04
+    title: CoreWeave June 2026 Ownership Sale Cluster
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/CIK0001769628.json
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [CRWV]
+    summary: CoreWeave ownership and Form 144 activity accepted from 2026-06-02 through 2026-06-04 reinforced selling-overhang risk and watch-only status.
+  - id: xndu_424b3_yorkville_2026_06_01
+    title: Xanadu Form 424B3 Yorkville Resale Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2097163/000121390026063514/ea0292850-424b3_xanadu.htm
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [XNDU]
+    summary: Xanadu's resale prospectus and effectiveness notice confirmed the Yorkville standby equity and resale path previously identified in readiness review.
+  - id: yss_solestial_acquisition_2026_05_19
+    title: York Space Systems Form 8-K Solestial Acquisition Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086587/000162828026036161/yss-20260515.htm
+    source_published_at: 2026-05-19
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [YSS]
+    summary: York disclosed an agreement to acquire Solestial with up to approximately 2.35 million shares expected at closing and the remainder in cash, adding strategic optionality and integration risk.
+  - id: vrt_dividend_8k_2026_06_03
+    title: Vertiv Form 8-K Quarterly Dividend
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1674101/000162828026040031/vrt-20260603.htm
+    source_published_at: 2026-06-03
+    retrieved_at: 2026-06-04
+    first_seen_at: 2026-06-04
+    related_symbols: [VRT]
+    summary: Vertiv declared a quarterly cash dividend of USD 0.0625 per Class A common share, a low-severity event that does not change thesis or entry status.

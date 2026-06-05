@@ -1,0 +1,347 @@
+schema_version: 1
+run_id: 2026-06-04-full-cycle-decision
+run_date: 2026-06-04
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: expired simulation; next available U.S. regular trading session after 2026-06-04 decision only, rerun before any real action
+linked_decision_or_research_note: decisions/2026-06-04-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-06-04-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-06-04
+      dry_run: false
+      output_path: data/market/
+      output_sha256:
+      retrieved_at: 2026-06-04
+      profile_coverage_scope: watchlist_market_refresh
+      profile_coverage_status: blocked_by_yahoo_429
+      profile_requested_symbols:
+        - all tradable watchlist symbols
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: Refresh current watchlist price, technical, and company metrics before a live decision.
+      candidate_payload_summary:
+        returned_candidates: 0
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 0
+        suppressed_known_matches: 0
+        recall_diagnostics: not_applicable_market_refresh
+        miss_counts: {}
+      result_summary: Yahoo chart requests returned HTTP 429 for all non-held symbols, and no confirmed positions exist for an equity snapshot. Invalid partial market-file edits from the failed path were restored.
+    - command: npm run discover:universe -- --dry-run --json --as-of 2026-06-04 --output research/discovery/runs/2026-06-04-universe-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-06-04-universe-scan.json
+      output_sha256: 599f7974eb044e73a01b158ec669b6c56c86a1df34fe9d4dbddf458ae9332023
+      retrieved_at: 2026-06-04
+      profile_coverage_scope:
+      profile_coverage_status: not_applicable_no_profile_input
+      profile_requested_symbols: []
+      targeted_scope_acknowledged: false
+      targeted_scope_reason:
+      candidate_payload_summary:
+        returned_candidates: 43
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 59
+        suppressed_known_matches: 21
+        recall_diagnostics: zero expected-proxy miss count
+        miss_counts:
+          expected_proxy_miss_count: 0
+      result_summary: Candidate and exploratory sets were mechanically unchanged from 2026-06-02; no new deterministic lead displaced RKLB or ASTS.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-06-04 --symbols ALAB,ASTS,BE,CBRS,CRCL,CRDO,CRWV,FLY,FN,GSAT,IONQ,IREN,KTOS,LEU,LITE,LUNR,MU,NBIS,OKLO,RDW,RKLB,VOYG,VRT,XNDU,YSS --output-prefix research/discovery/runs/2026-06-04-sec-event-filing-index
+      dry_run: true
+      output_path: research/discovery/runs/2026-06-04-sec-event-filing-index-scan.json
+      output_sha256: d2870de5060c087740f044a3ac3b48a3ac1ad3cd7e2d5c6db77abb649759b6ee
+      retrieved_at: 2026-06-04
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols:
+        - ALAB
+        - ASTS
+        - BE
+        - CBRS
+        - CRCL
+        - CRDO
+        - CRWV
+        - FLY
+        - FN
+        - GSAT
+        - IONQ
+        - IREN
+        - KTOS
+        - LEU
+        - LITE
+        - LUNR
+        - MU
+        - NBIS
+        - OKLO
+        - RDW
+        - RKLB
+        - VOYG
+        - VRT
+        - XNDU
+        - YSS
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: Check event and periodic filings for the tradable watchlist before renewing a buy decision.
+      candidate_payload_summary:
+        returned_candidates: 43
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 59
+        suppressed_known_matches: 21
+        recall_diagnostics: targeted filing scan, not broad discovery proof
+        miss_counts:
+          expected_proxy_miss_count: 0
+      result_summary: No new RKLB or ASTS operating, financing, launch, regulatory, quarterly, or contract filing blocked a small staged entry; LUNR, FLY, IREN, CRWV, XNDU, and YSS received freshness updates.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, submissions, ownership forms, and event filings
+      sources_or_queries:
+        - https://data.sec.gov/submissions/CIK0001819994.json
+        - https://data.sec.gov/submissions/CIK0001780312.json
+        - https://www.sec.gov/Archives/edgar/data/1860160/000119312526252407/d156539d8k.htm
+        - https://www.sec.gov/Archives/edgar/data/1844452/000119312526254475/d62861d8k.htm
+        - https://www.sec.gov/Archives/edgar/data/1878848/000114036126023427/ef20075181_8k.htm
+        - https://www.sec.gov/Archives/edgar/data/2086587/000162828026036161/yss-20260515.htm
+      source_ids:
+        - rklb_form4_trust_transfers_2026_06_02
+        - asts_form4_tax_withholding_2026_06_02
+        - fly_offering_8k_2026_06_02
+        - lunr_atm_2026_06_03
+        - iren_project_financing_2026_06_01
+        - yss_solestial_acquisition_2026_05_19
+        - sec_event_filing_index_2026_06_04
+      retrieved_at: 2026-06-04
+      material_findings: RKLB and ASTS had no blocking operating event. FLY, LUNR, IREN, CRWV, XNDU, and YSS events strengthened no-buy or watch-only conclusions for those names.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Current quote and liquidity reserve evidence
+      sources_or_queries:
+        - https://finance.yahoo.com/quotes/RKLB,ASTS,CRDO,ALAB,VRT,SGOV/view/v1
+        - https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf-fund
+      source_ids:
+        - market_quote_snapshot_2026_06_04
+        - ishares_sgov_2026_06_04
+      retrieved_at: 2026-06-04
+      material_findings: RKLB and ASTS remained below refreshed quote-based caps; SGOV is acceptable only as a future cash-management reserve after broker checks.
+      unavailable_or_skipped_reason: Repository Yahoo chart refresh returned HTTP 429, and Stooq returned N/D for the current watchlist quote query.
+    - family_id: issuer_material
+      family: Company investor relations and issuer updates
+      sources_or_queries:
+        - https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-first-quarter-2026-financial-results
+        - https://www.businesswire.com/news/home/20260511685431/en/AST-SpaceMobile-Provides-Business-Update-and-First-Quarter-2026-Results
+      source_ids:
+        - rklb_q1_2026
+        - asts_q1_2026
+      retrieved_at: 2026-06-04
+      material_findings: Prior issuer updates still define the RKLB and ASTS thesis baselines; the current filing scan found no newer issuer event that displaced or blocked a small staged entry.
+      unavailable_or_skipped_reason:
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: SEC listed issuer reference and deterministic discovery
+      sources_or_queries:
+        - research/discovery/runs/2026-06-04-universe-scan.json
+      source_ids:
+        - sec_company_tickers_exchange_2026_06_04
+      retrieved_at: 2026-06-04
+      material_findings: No new raw candidate appeared after 2026-06-02. MDA remains future same-lane readiness backlog.
+      unavailable_or_skipped_reason:
+    - family_id: current_world_context
+      family: Current industry, valuation, and risk context
+      sources_or_queries:
+        - research/discovery/lanes.yml
+        - https://www.federalreserve.gov/publications/files/financial-stability-report-20260508.pdf
+      source_ids:
+        - federal_reserve_financial_stability_2026_05_08
+      retrieved_at: 2026-06-04
+      material_findings: High-valuation market context supports partial deployment, residual cash retention, and strict limit discipline rather than full use of confirmed cash.
+      unavailable_or_skipped_reason:
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lane review and unknown-future scan
+      sources_or_queries:
+        - research/discovery/lanes.yml
+        - research/discovery/runs/2026-06-04-universe-scan.json
+        - research/discovery/candidate-readiness.yml
+      source_ids:
+        - sec_company_tickers_exchange_2026_06_04
+      retrieved_at: 2026-06-04
+      material_findings: Keep all current lanes unchanged; no lane addition, split, merge, demotion, or retirement affected the decision.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-06-04
+    notes: Covered deterministic scan, SEC event index, direct SEC ownership checks, official SGOV fund page, and current quote snapshot. External broker-only facts remain execution prerequisites.
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - generic platform and infrastructure name matches
+    - quantum name matches
+    - space name matches
+  sampled_symbols:
+    - MDA
+    - GILT
+    - FJET
+    - SDEV
+    - NNE
+    - ARQQ
+  false_positive_patterns:
+    - generic issuer-name matches without primary-source bottleneck proof
+    - funds, SPAC units, and ticker-only collisions
+    - thematically adjacent companies without clear shareholder-value capture
+  lane_decisions:
+    - no new lane promoted
+    - keep unknown_future_bottlenecks emerging
+    - keep MDA as future readiness sprint backlog
+  disposition: future readiness backlog rather than current allocation blocker
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Launch cadence, spacecraft manufacturing, defense-space backlog conversion, direct-to-device spectrum and carrier distribution, AI interconnect, AI power, nuclear fuel and licensing, and quantum commercialization remain the current scarce constraints.
+    inferences: Space infrastructure and direct-to-device connectivity remain the lanes most relevant to the first deployment.
+    disconfirming_evidence: New same-lane candidates still show valuation, dilution, financing, or short-history blockers.
+    source_ids:
+      - sec_company_tickers_exchange_2026_06_04
+      - sec_event_filing_index_2026_06_04
+      - market_quote_snapshot_2026_06_04
+    investment_implication: RKLB and ASTS remain the current outputs of the bottleneck map.
+  who_controls_or_removes_scarcity:
+    facts: RKLB controls a public launch and space-systems execution path; ASTS controls a direct-to-device satellite network path; YSS, FLY, VOYG, and MDA may matter but remain less buy-ready.
+    inferences: RKLB is still the broadest public space-platform expression; ASTS is still the cleanest D2D convexity expression.
+    disconfirming_evidence: FLY's offering, YSS integration risk, VOYG margin/debt issues, and raw-candidate uncertainty prevent displacement.
+    source_ids:
+      - rklb_q1_2026
+      - asts_q1_2026
+      - fly_offering_8k_2026_06_02
+      - yss_solestial_acquisition_2026_05_19
+    investment_implication: Keep RKLB larger than ASTS in a staged starter.
+  who_can_monetize_into_shareholder_value:
+    facts: RKLB has current revenue, backlog, liquidity, and defense-space contract evidence. ASTS has high potential but still needs launch, regulatory, and commercial proof.
+    inferences: RKLB deserves the larger staged position; ASTS deserves only a small optionality sleeve.
+    disconfirming_evidence: Both companies remain high-multiple and dilution-sensitive.
+    source_ids:
+      - rklb_q1_2026
+      - asts_q1_2026
+      - market_quote_snapshot_2026_06_04
+    investment_implication: Partial deployment is better than full deployment.
+  public_security_expression:
+    facts: RKLB and ASTS are U.S.-listed common stocks and policy-eligible; watch, research-only, raw, and not-tradable names cannot receive buy recommendations without promotion or public tradability.
+    inferences: The actionable candidate set is limited to current public buy-zone securities.
+    disconfirming_evidence: Some raw leads are policy-ineligible, generic, or weak proxies.
+    source_ids:
+      - sec_company_tickers_exchange_2026_06_04
+      - sec_event_filing_index_2026_06_04
+    investment_implication: Do not use private, OTC, fund, or token substitutes.
+  early_small_misunderstood_or_newly_public:
+    facts: YSS, FLY, VOYG, and XNDU already add newer public coverage, while MDA remains future backlog.
+    inferences: Peer-map completeness improved, but no newly public name clears mission, evidence, and entry gates today.
+    disconfirming_evidence: Offering, ATM, resale, acquisition, control, and short-record risks are material.
+    source_ids:
+      - fly_offering_8k_2026_06_02
+      - yss_solestial_acquisition_2026_05_19
+      - xndu_424b3_yorkville_2026_06_01
+    investment_implication: Keep future readiness work active without delaying today's staged decision.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used: evidence packet, lane map, candidates, readiness, watchlist, deterministic scans
+      sources_checked:
+        - sec_company_tickers_exchange_2026_06_04
+        - sec_event_filing_index_2026_06_04
+      facts_verified: No new lane or candidate since 2026-06-02 displaces RKLB or ASTS; MDA remains future readiness backlog.
+      stale_or_missing_evidence: MDA primary-source readiness sprint remains future work.
+      confidence: medium_high
+      key_findings: Current lanes unchanged; no candidate delta changes allocation.
+      conflicts: none
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used: evidence packet, freshness ledger, SEC event index, filing reviews, valuation and buy-zone state
+      sources_checked:
+        - rklb_form4_trust_transfers_2026_06_02
+        - asts_form4_tax_withholding_2026_06_02
+        - fly_offering_8k_2026_06_02
+        - lunr_atm_2026_06_03
+        - iren_project_financing_2026_06_01
+        - xndu_424b3_yorkville_2026_06_01
+      facts_verified: No new RKLB or ASTS operating event blocks a small staged entry; several alternative names remain no-buy after new financing or overhang events.
+      stale_or_missing_evidence: Ownership-form checks are outside the SEC event scan and must remain explicit.
+      confidence: medium_high
+      key_findings: Freshness does not block RKLB/ASTS, but durable rows were needed and have been added.
+      conflicts: none
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used: evidence packet, watchlist, company analysis, valuation states, buy-zones, prior decision
+      sources_checked:
+        - rklb_q1_2026
+        - asts_q1_2026
+        - market_quote_snapshot_2026_06_04
+      facts_verified: RKLB remains strongest current buy case; ASTS merits smaller convexity sleeve; no other candidate displaces them.
+      stale_or_missing_evidence: Broker preview and execution constraints remain external.
+      confidence: medium_high
+      key_findings: Support small RKLB-led staged buy, optional smaller ASTS sleeve, and residual cash.
+      conflicts: bear-case no-buy objection resolved by durable updates and tighter caps.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used: evidence packet, valuation states, buy-zones, freshness events, prior decision, SEC filings
+      sources_checked:
+        - market_quote_snapshot_2026_06_04
+        - rklb_form4_trust_transfers_2026_06_02
+        - asts_form4_tax_withholding_2026_06_02
+      facts_verified: The 2026-06-02 setup was expired; repository market data was stale; missing ownership rows needed durable review before action.
+      stale_or_missing_evidence: Broker preview, exact executable quotes, and current buying power remain external.
+      confidence: medium_high
+      key_findings: No-buy was defensible before durable review; after review, the objection argues for tighter staged limits rather than no action.
+      conflicts: The main synthesis adopts a staged buy only after resolving missing freshness rows and tightening caps.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason:
+      inputs_used: evidence packet, account state, policy, valuation states, buy-zones, current quotes
+      sources_checked:
+        - market_quote_snapshot_2026_06_04
+        - rklb_q1_2026
+        - asts_q1_2026
+      facts_verified: Confirmed cash is USD 888, no holdings exist, RKLB/ASTS are the only current buy-zone names.
+      stale_or_missing_evidence: Broker preview and fees remain user-only execution prerequisites.
+      confidence: medium
+      key_findings: Recommend 3 RKLB and 1 ASTS only if broker preview holds within caps; hold residual cash.
+      conflicts: none
+  unresolved_conflicts: 0
+  conflict_resolution: Bear-case no-buy was treated as a valid process challenge. The main cycle added missing durable freshness rows, refreshed valuation and buy-zone rows with quote evidence, and used tighter caps. The resulting recommendation is smaller staged entry, not expanded deployment.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: no new lane; keep emerging reminder and future MDA readiness backlog
+  no_change_reason: Deterministic scans and subagent review found no new lane or candidate that displaced current space and direct-to-device priorities.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: []
+  false_positive_patterns:
+    - generic issuer-name matches
+    - funds, SPAC units, and ticker collisions
+    - high-dilution early public companies that fit a theme but fail entry
+
+readiness_sprints: []
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Repository-public evidence and current public-source checks are sufficient for a small RKLB/ASTS staged recommendation. Broker preview, fees, current buying power, and final execution remain user-only prerequisites.
