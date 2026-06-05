@@ -972,3 +972,57 @@ sources:
     first_seen_at: 2026-06-04
     related_symbols: [VRT]
     summary: Vertiv declared a quarterly cash dividend of USD 0.0625 per Class A common share, a low-severity event that does not change thesis or entry status.
+  - id: market_quote_snapshot_2026_06_05
+    title: Current Quote Snapshot for June 5 Decision
+    source_type: market_data
+    url: https://finance.yahoo.com/quotes/RKLB,ASTS,CRDO,ALAB,VRT,SGOV/view/v1
+    source_published_at: 2026-06-05
+    retrieved_at: 2026-06-05
+    first_seen_at: 2026-06-05
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, SGOV]
+    summary: Current quote snapshot used for the 2026-06-05 simulation review; prices observed were RKLB USD 119.95, ASTS USD 107.29, CRDO USD 217.50, ALAB USD 358.05, VRT USD 323.92, and SGOV USD 100.42.
+  - id: sec_company_tickers_exchange_2026_06_05
+    title: SEC Company Tickers Exchange Universe Snapshot
+    source_type: sec_filing_index
+    url: https://www.sec.gov/files/company_tickers_exchange.json
+    source_published_at: 2026-06-05
+    retrieved_at: 2026-06-05
+    first_seen_at: 2026-06-05
+    related_symbols: []
+    summary: SEC company ticker and exchange universe snapshot supplied the broad U.S.-listed issuer input for the 2026-06-05 dry-run universe discovery scan.
+  - id: sec_event_filing_index_2026_06_05
+    title: SEC Event Filing Index Scan for Active Watchlist
+    source_type: sec_filing_index
+    url: research/discovery/runs/2026-06-05-sec-event-filing-index-scan.json
+    source_published_at: 2026-06-05
+    retrieved_at: 2026-06-05
+    first_seen_at: 2026-06-05
+    related_symbols: [ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, FLY, FN, GSAT, IONQ, IREN, KTOS, LEU, LITE, LUNR, MU, NBIS, OKLO, RDW, RKLB, VOYG, VRT, XNDU, YSS]
+    summary: Targeted dry-run SEC filing discovery index checked current event and periodic filings for tradable watchlist symbols before the 2026-06-05 full-cycle simulation review.
+  - id: yss_solestial_closing_8ka_2026_06_04
+    title: York Space Systems Form 8-K/A Solestial Acquisition Closing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086587/000162828026040636/yss-20260515.htm
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-06-05
+    first_seen_at: 2026-06-05
+    related_symbols: [YSS]
+    summary: York closed the Solestial acquisition on 2026-06-04, issued 1,703,577 shares at a negotiated value of USD 34.00 per share, and paid mixed cash and stock consideration of about USD 67.0 million.
+  - id: voyg_astrobotic_acquisition_8k_2026_06_04
+    title: Voyager Technologies Form 8-K Astrobotic Acquisition Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1788060/000162828026040850/voyg-20260601.htm
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-06-05
+    first_seen_at: 2026-06-05
+    related_symbols: [VOYG]
+    summary: Voyager agreed to acquire Astrobotic Technology and may issue up to 2,031,694 closing shares, subject to adjustments, plus contingent consideration.
+  - id: crwv_form4_sale_extension_2026_06_05
+    title: CoreWeave Form 4 Ownership Sale Extension
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000264/xslF345X06/form4.xml
+    source_published_at: 2026-06-05
+    retrieved_at: 2026-06-05
+    first_seen_at: 2026-06-05
+    related_symbols: [CRWV]
+    summary: CoreWeave Form 4 accepted at 2026-06-05T01:10:05Z extended the ownership-sale cluster and reinforced selling-overhang risk.

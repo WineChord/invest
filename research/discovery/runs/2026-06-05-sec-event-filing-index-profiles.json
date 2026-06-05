@@ -1,0 +1,1127 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-05T12:00:10.081Z",
+  "source": "sec_filing_business_sections",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "business_description"
+  ],
+  "source_files": [
+    "research/discovery/runs/2026-06-05-sec-event-filing-index-manifest.csv",
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "research/discovery/runs/2026-06-05-sec-event-filing-index-manifest.metadata.json"
+  ],
+  "filing_cache_dir": "",
+  "filing_cache_hits": 0,
+  "filing_cache_misses": 0,
+  "filing_cache_writes": 0,
+  "filing_cache_only": false,
+  "filing_ledger_output": "",
+  "filing_ledger_count": 25,
+  "filing_ledger": [
+    {
+      "symbol": "ALAB",
+      "cik": "0001736297",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1736297/000173629726000020/alab-20260331.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "6e0a5e878c1b9fe76532efed59e9417c477eb6b7df0629b0e333c7d385193d6d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000119312526216950/asts-20260331.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "68dadf789a75bc76ac5469ee30af0fd8217ec9cbb11521945b30b3b48ea47754",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "BE",
+      "cik": "0001664703",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026038451/be-20260521.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "b1d0b38f12ed0483cb54dea00071ab0eac444ad996483ff6132589acc238b6dd",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "CBRS",
+      "cik": "0002021728",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026035605/closing8-k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "dbfcaf2bdf467b3d4c495ff982090d6df90103c3bc0bd97b490869383dab35a1",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "CRCL",
+      "cik": "0001876042",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1876042/000187604226000159/crcl-20260514.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "908438d2d0c2dc818d34dad1240f14703f16c6568beab0398f22d79637f4be31",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/crdo-20260528.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "605359ee1031c5a43b07d1aa648f1103487f7abde6f30fcc8088c5e865049178",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "CRWV",
+      "cik": "0001769628",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000236/crwv-20260515.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "162ec8d4bb9af3b85c16ccbfdb086908dbb8b83649133f1b093bfff9d878e5f2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "FLY",
+      "cik": "0001860160",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1860160/000119312526252407/d156539d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "b2d1c0c05c6e711e132365b2157d1a0b7f9792b4075bc0ebbb36e0e57a58874a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "FN",
+      "cik": "0001408710",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000016/fn-20260327.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "3f81184b9c7862f22ac15269861ff1440f086997ff527c49a3fcb92f59b97bb5",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "GSAT",
+      "cik": "0001366868",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1366868/000136686826000031/gsat-20260513.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "6024b4d6406742abcf3a2e57463d78bb5bfe4e153014f6e6906a6401ae8b221d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "IONQ",
+      "cik": "0001824920",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526211876/ionq-20260331.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "f73f5da7b552cb39d333f4df557561937e7ee3c6868678dde78e1d96b885619c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126023427/ef20075181_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "dcacb35ef4ceba5e3a8d068b2bbabeeb9f8e4c38c59aeb95b9a23f5f8a3082ab",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "KTOS",
+      "cik": "0001069258",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000064/ktos-20260515.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "5c1cc89fe09ca6de857bec37499998cf68d33f4293b20499157fd116a13cdbc6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "LEU",
+      "cik": "0001065059",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026030891/leu-20260331.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "3982ae1559e65232c8310d7843dc5a6d3889a39c06751eda878d43295b28ded8",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "LITE",
+      "cik": "0001633978",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1633978/000119312526249535/d112771d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "f50dc88e8ff46503861fa452e9de56b159a5e3f1708c25d377eb9887e2faf8ea",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "LUNR",
+      "cik": "0001844452",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526254475/d62861d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "44c5742a17254b814fa148c87139fe483e29007e3cbc5b656d3c063c109c5a85",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "MU",
+      "cik": "0000723125",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926038249/tm2610810d1_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "547023793db07a55b4775940c78d036d5a00f718326d477cb874d298c3c178a6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "NBIS",
+      "cik": "0001513845",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331x6k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "5744b376c09c46c3353a9309e1e9739d84c5e1a9be4469f91a6dcb8e2e471a64",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "OKLO",
+      "cik": "0001849056",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465926060385/tm2614461d1_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "42b89d7c7e7ab166266c4774acbc987b90f7ab77e23234674bde2a9f3a8fe3c4",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "RDW",
+      "cik": "0001819810",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819810/000181981026000065/rdw-20260520.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "fda7f9d1edc83821896b8246f346cead85e110a7896e7b8cf20f29b79b32bbd4",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000048/rklb-20260520.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "8f504eb0b8319e6fdeed2a50e64b187dda94e457f8c60fdf14d789332854422a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "VOYG",
+      "cik": "0001788060",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1788060/000162828026040850/voyg-20260601.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "c35595e42b1a0e545229e159becb1c580d4df4a4fcc5bacd36efd0b7f6ee9df9",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "VRT",
+      "cik": "0001674101",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026040031/vrt-20260603.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "a3280c483bc473c4c5971d2f3b01cb02671458d52dc694d2d763cc3058ae28bf",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "XNDU",
+      "cik": "0002097163",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2097163/000121390026059832/ea0291791-6k_xanadu.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "341780e983f5b4b1f751cd556c1d9f4704eefabfe091c92e00651208d0b3d3c6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    },
+    {
+      "symbol": "YSS",
+      "cik": "0002086587",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2086587/000162828026040636/yss-20260515.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-06-05T12:00:10.081Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "6017fe6e2b173afdd84192f7c0e2426ccaf883b7d1e0292af6021cc40c0d0f5b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-05",
+      "fetched_at": "2026-06-05T12:00:10.081Z"
+    }
+  ],
+  "max_filing_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_request_delay_ms": 0,
+  "selection_strategy": "manifest_filing_sections",
+  "manifest_selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "ALAB",
+    "ASTS",
+    "BE",
+    "CBRS",
+    "CRCL",
+    "CRDO",
+    "CRWV",
+    "FLY",
+    "FN",
+    "GSAT",
+    "IONQ",
+    "IREN",
+    "KTOS",
+    "LEU",
+    "LITE",
+    "LUNR",
+    "MU",
+    "NBIS",
+    "OKLO",
+    "RDW",
+    "RKLB",
+    "VOYG",
+    "VRT",
+    "XNDU",
+    "YSS"
+  ],
+  "selected_symbol_count": 25,
+  "eligible_universe_count": 7587,
+  "coverage_limit": 25,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "manifest_metadata_path": "research/discovery/runs/2026-06-05-sec-event-filing-index-manifest.metadata.json",
+  "manifest_row_count": 25,
+  "profile_count": 11,
+  "skipped_symbols": [
+    {
+      "symbol": "ALAB",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "ASTS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "BE",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "CRCL",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "CRDO",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "FN",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "GSAT",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "IONQ",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "KTOS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "LITE",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "NBIS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "RDW",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "RKLB",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "VOYG",
+      "reason": "missing_business_section_start"
+    }
+  ],
+  "profiles": [
+    {
+      "symbol": "CBRS",
+      "cik": "0002021728",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026035605/closing8-k.htm",
+      "source_published_at": "2026-05-15",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 8.01 Other Events. On May 15, 2026, the Company completed its initial public offering of an aggregate of 34,500,000 shares of Class A Common Stock at a price to the public of $185.00 per share, which includes the exercise in full by the underwriters of their option to purchase from the Company an additional 4,500,000 shares of Class A Common Stock. The gross proceeds to the Company from the initial public offering were $6.4 billion, before deducting underwriting discounts and commissions and estimated offering expenses payable by the Company.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 8.01 Other Events. On May 15, 2026, the Company completed its initial public offering of an aggregate of 34,500,000 shares of Class A Common Stock at a price to the public of $185.00 per share, which includes the exercise in full by the underwriters of their option to purchase from the Company an additional 4,500,000 shares of Class A Common Stock. The gross proceeds to the Company from the initial public offering were $6.4 billion, before deducting underwriting discounts and commissions and estimated offering expenses payable by the Company."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001628280-26-035605/closing8-k.htm",
+      "filing_accession_number": "0001628280-26-035605",
+      "filing_acceptance_datetime": "2026-05-15T20:23:01.000Z",
+      "filing_content_sha256": "dbfcaf2bdf467b3d4c495ff982090d6df90103c3bc0bd97b490869383dab35a1",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "closing8-k.htm",
+      "filing_report_date": "2026-05-15",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002021728.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 3451,
+      "extraction_end_offset": 4005,
+      "extraction_section_length": 553,
+      "extraction_start_pattern": "item_8_01_other_events",
+      "extraction_start_pattern_label": "Item 8.01 other events",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "CRWV",
+      "cik": "0001769628",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000236/crwv-20260515.htm",
+      "source_published_at": "2026-05-18",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement. On May 15, 2026, CoreWeave Financing DDTL V, LLC (the “Borrower”), a Delaware limited liability company and an indirect subsidiary of CoreWeave, Inc., a Delaware corporation (the “Parent”), entered into a credit agreement (the “Credit Agreement”) with Morgan Stanley Senior Funding, Inc., as administrative agent, U.S. Bank Trust Company, National Association as collateral agent, U.S. Bank National Association, as depository bank, MUFG Bank, Ltd. and Morgan Stanley Senior Funding, Inc. as coordinating lead arrangers and joint bookrunners, and the lenders party thereto, providing for a $3.1 billion delayed draw term loan facility (the “DDTL 5.0 Facility”). The DDTL 5.0 Facility was entered into primarily to finance capital expenditures required to perform certain customer contracts, including the acquisition of GPU servers and related infrastructure. Availability and Maturity The DDTL 5.0 Facility provides for delayed draw term loans available in one or more draws until the commitment termination date in September 2026. The maturity date of the DDTL 5.0 Facility is November 15, 2031. Interest Rate and Fees Amounts borrowed under the DDTL 5.0 Facility are subject to an interest rate per annum equal to (i) for SOFR loans, daily compounded SOFR (subject to a 0.00% floor) plus an applicable margin of 4.50% per annum, and (ii) for base rate loans, the base rate (determined by reference to the highest of (A) the prime rate, (B) the federal funds effective rate plus 0.50% and (C) daily simple SOFR plus 1.00%) (subject to a 0.00% floor), plus an applicable margin of 3.50% per annum. The DDTL 5.0 Facility provides for payment of, among others, undrawn fees in an amount equal to 0.50% per annum on the average daily undrawn portion of the DDTL 5.0 Facility, which undrawn fees are payable monthly in arrears. Guarantees and Security All obligations under the DDTL 5.0 Facility are unconditionally guaranteed by the Parent pursuant to a parent guarantee and pledge agreement, dated as of May 15, 2026, by and among the Parent, CW Financing DDTL V Holdco, LLC, a Delaware limited liability company, and U.S. Bank Trust Company, National Association (the “Parent Guarantee and Pledge Agreement”), and all obligations under the DDTL 5.0 Facility are also unconditionally guaranteed by the subsidiaries of the Borrower pursuant to a collateral agreement. All obligations under the DDTL 5.0 Facility are secured by substantially all assets of the Borrower and its subsidiaries and a pledge of 100% of the equity interests in the Borrower held by CW Financing DDTL V Holdco, LLC. Covenants The Borrower is required to comply with the following financial covenants, among others described in the Credit Agreement: Debt Service Coverage Ratio. Beginning the first full calendar month after the earlier to occur of (a) the date on which the commitments are reduced to zero and (b) September 30, 2026, the Borrower is required to maintain a debt service coverage ratio of at least 1.35x. Certain Other Covenants and Events of Default. The DDTL 5.0 Facility contains a number of other customary negative covenants, and the Credit Agreement contains customary events of default, including payment defaults, failure to perform or observe covenants, cross-defaults with certain other indebtedness, a change of control, and certain bankruptcy events. The Credit Agreement also contains events of default related to certain adverse events with respect to certain material contracts. The foregoing summary of the DDTL 5.0 Facility does not purport to be complete and is qualified in its entirety by reference to the complete terms of the Credit Agreement and the Parent Guarantee and Pledge Agreement, which are filed as Exhibits 10.1 and 10.2 hereto respectively, and incorporated by reference into this Item 1.01. Item 2.03 Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant The info",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement. On May 15, 2026, CoreWeave Financing DDTL V, LLC (the “Borrower”), a Delaware limited liability company and an indirect subsidiary of CoreWeave, Inc., a Delaware corporation (the “Parent”), entered into a credit agreement (the “Credit Agreement”) with Morgan Stanley Senior Funding, Inc., as administrative agent, U.S. Bank Trust Company, National Association as collateral agent, U.S. Bank National Association, as depository bank, MUFG Bank, Ltd. and Morgan Stanley Senior Funding, Inc. as coordinating lead arrangers and joint bookrunners, and the lenders party thereto, providing for a $3.1 billion delayed draw term loan facility (the “DDTL 5.0 Facility”). The DDTL 5.0 Facility was entered into primarily to finance capital expenditures required to perform certain customer contracts, including the acquisition of GPU servers and related infrastructure. Availability and Maturity The DDTL 5.0 Facility provides for delayed draw term loans available in one or more draws until the commitment termination date in September 2026. The maturity date of the DDTL 5.0 Facility is November 15, 2031. Interest Rate and Fees Amounts borrowed under the DDTL 5.0 Facility are subject to an interest rate per annum equal to (i) for SOFR loans, daily compounded SOFR (subject to a 0.00% floor) plus an applicable margin of 4.50% per annum, and (ii) for base rate loans, the base rate (determined by reference to the highest of (A) the prime rate, (B) the federal funds effective rate plus 0.50% and (C) daily simple SOFR plus 1.00%) (subject to a 0.00% floor), plus an applicable margin of 3.50% per annum. The DDTL 5.0 Facility provides for payment of, among others, undrawn fees in an amount equal to 0.50% per annum on the average daily undrawn portion of the DDTL 5.0 Facility, which undrawn fees are payable monthly in arrears. Guarantees and Security All obligations under the DDTL 5.0 Facility are unconditionally guaranteed by the Parent pursuant to a parent guarantee and pledge agreement, dated as of May 15, 2026, by and among the Parent, CW Financing DDTL V Holdco, LLC, a Delaware limited liability company, and U.S. Bank Trust Company, National Association (the “Parent Guarantee and Pledge Agreement”), and all obligations under the DDTL 5.0 Facility are also unconditionally guaranteed by the subsidiaries of the Borrower pursuant to a collateral agreement. All obligations under the DDTL 5.0 Facility are secured by substantially all assets of the Borrower and its subsidiaries and a pledge of 100% of the equity interests in the Borrower held by CW Financing DDTL V Holdco, LLC. Covenants The Borrower is required to comply with the following financial covenants, among others described in the Credit Agreement: Debt Service Coverage Ratio. Beginning the first full calendar month after the earlier to occur of (a) the date on which the commitments are reduced to zero and (b) September 30, 2026, the Borrower is required to maintain a debt service coverage ratio of at least 1.35x. Certain Other Covenants and Events of Default. The DDTL 5.0 Facility contains a number of other customary negative covenants, and the Credit Agreement contains customary events of default, including payment defaults, failure to perform or observe covenants, cross-defaults with certain other indebtedness, a change of control, and certain bankruptcy events. The Credit Agreement also contains events of default related to certain adverse events with respect to certain material contracts. The foregoing summary of the DDTL 5.0 Facility does not purport to be complete and is qualified in its entirety by reference to the complete terms of the Credit Agreement and the Parent Guarantee and Pledge Agreement, which are filed as Exhibits 10.1 and 10.2 hereto respectively, and incorporated by reference into this Item 1.01. Item 2.03 Creation of a Direct Financial Obligation or an Obligation under an Off-Balance Sheet Arrangement of a Registrant The info"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001769628-26-000236/crwv-20260515.htm",
+      "filing_accession_number": "0001769628-26-000236",
+      "filing_acceptance_datetime": "2026-05-18T20:06:36.000Z",
+      "filing_content_sha256": "162ec8d4bb9af3b85c16ccbfdb086908dbb8b83649133f1b093bfff9d878e5f2",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "crwv-20260515.htm",
+      "filing_report_date": "2026-05-15",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001769628.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2342,
+      "extraction_end_offset": 7249,
+      "extraction_section_length": 4906,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "FLY",
+      "cik": "0001860160",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1860160/000119312526252407/d156539d8k.htm",
+      "source_published_at": "2026-06-02",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 1.01. Entry into a Material Definitive Agreement. On May 28, 2026, Firefly Aerospace Inc. (the “Company”) priced the previously announced offering (the “Offering”) of its common stock, par value $0.0001 per share (the “Common Stock”), at a public offering price of $48.00 per share (the “Offering Price”), pursuant to the Company’s registration statement on Form S-1 (File No. 333-296233) (the “Registration Statement”). On May 28, 2026, in connection with the pricing of the Offering, the Company entered into an underwriting agreement (the “Underwriting Agreement”) with Goldman Sachs & Co. LLC, J.P. Morgan Securities LLC, Jefferies LLC and Wells Fargo Securities, LLC, as representatives of the several underwriters listed on Schedule I thereto (collectively, the “Underwriters”), and the selling stockholders listed on Schedule II thereto (the “Selling Stockholders”), pursuant to which the Company agreed to offer and sell 4,000,000 shares of Common Stock and the Selling Stockholders agreed to sell 8,000,000 shares of Common Stock at the Offering Price. The Selling Stockholders granted the Underwriters a 30-day option to purchase up to an additional 1,800,000 shares of Common Stock. The Offering closed and the shares were delivered on June 1, 2026. The material terms of the Offering are described in the prospectus, dated May 28, 2026, filed by the Company with the U.S. Securities and Exchange Commission (the “Commission”) on June 1, 2026, pursuant to Rule 424(b) under the Securities Act of 1933, as amended (the “Securities Act”). The Offering is registered with the Commission pursuant to the Registration Statement. The Underwriting Agreement contains customary representations and warranties, agreements and obligations, closing conditions and termination provisions. The Company and the Selling Stockholders have agreed to indemnify the Underwriters against (or contribute to the payment of) certain liabilities, including liabilities under the Securities Act. This description of the Underwriting Agreement does not purport to be complete and is qualified in its entirety by reference to the full text of the Underwriting Agreement attached hereto as Exhibit 1.1, which is incorporated by reference into this Item 1.01.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01. Entry into a Material Definitive Agreement. On May 28, 2026, Firefly Aerospace Inc. (the “Company”) priced the previously announced offering (the “Offering”) of its common stock, par value $0.0001 per share (the “Common Stock”), at a public offering price of $48.00 per share (the “Offering Price”), pursuant to the Company’s registration statement on Form S-1 (File No. 333-296233) (the “Registration Statement”). On May 28, 2026, in connection with the pricing of the Offering, the Company entered into an underwriting agreement (the “Underwriting Agreement”) with Goldman Sachs & Co. LLC, J.P. Morgan Securities LLC, Jefferies LLC and Wells Fargo Securities, LLC, as representatives of the several underwriters listed on Schedule I thereto (collectively, the “Underwriters”), and the selling stockholders listed on Schedule II thereto (the “Selling Stockholders”), pursuant to which the Company agreed to offer and sell 4,000,000 shares of Common Stock and the Selling Stockholders agreed to sell 8,000,000 shares of Common Stock at the Offering Price. The Selling Stockholders granted the Underwriters a 30-day option to purchase up to an additional 1,800,000 shares of Common Stock. The Offering closed and the shares were delivered on June 1, 2026. The material terms of the Offering are described in the prospectus, dated May 28, 2026, filed by the Company with the U.S. Securities and Exchange Commission (the “Commission”) on June 1, 2026, pursuant to Rule 424(b) under the Securities Act of 1933, as amended (the “Securities Act”). The Offering is registered with the Commission pursuant to the Registration Statement. The Underwriting Agreement contains customary representations and warranties, agreements and obligations, closing conditions and termination provisions. The Company and the Selling Stockholders have agreed to indemnify the Underwriters against (or contribute to the payment of) certain liabilities, including liabilities under the Securities Act. This description of the Underwriting Agreement does not purport to be complete and is qualified in its entirety by reference to the full text of the Underwriting Agreement attached hereto as Exhibit 1.1, which is incorporated by reference into this Item 1.01."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-252407/d156539d8k.htm",
+      "filing_accession_number": "0001193125-26-252407",
+      "filing_acceptance_datetime": "2026-06-02T10:21:08.000Z",
+      "filing_content_sha256": "b2d1c0c05c6e711e132365b2157d1a0b7f9792b4075bc0ebbb36e0e57a58874a",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "d156539d8k.htm",
+      "filing_report_date": "2026-05-28",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001860160.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2019,
+      "extraction_end_offset": 4266,
+      "extraction_section_length": 2246,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126023427/ef20075181_8k.htm",
+      "source_published_at": "2026-06-01",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 1.01 Entry Into a Material Definitive Agreement. Financing Agreements Following previous disclosure by IREN Limited (the “Parent”), IE US Hardware 3 LLC (“Hardware 3”), a wholly owned subsidiary of the Parent, has entered into certain financing agreements, each dated May 29, 2026 (collectively, the “Financing Agreements”), for an aggregate financing of approximately $3.6 billion, comprised of (i) an approximately $1.5 billion delayed draw term loan facility (the “DDTL”) pursuant to a credit agreement (the “Credit Agreement”) among Hardware 3, as borrower (in such capacity, the “Borrower”), CSC Delaware Trust Company, as administrative agent (in such capacity, the “Administrative Agent”), Goldman Sachs Bank USA and JPMorgan Chase Bank, N.A., as joint lead arrangers and joint bookrunners, and the lenders party thereto (the “Lenders”); (ii) $2.1 billion aggregate principal amount of Hardware 3’s 5.96% senior notes due December 31, 2031 (the “Notes”) pursuant to a note purchase agreement (the “Note Purchase Agreement”) among Hardware 3, as issuer (in such capacity, the “Issuer”), CSC Delaware Trust Company, as intercreditor agent (in such capacity, the “Intercreditor Agent”), collateral agent (in such capacity, the “Collateral Agent”) and note agent, and the purchasers party thereto (the “Purchasers”); and (iii) a common terms agreement (the “Common Terms Agreement”) among Hardware 3, the Intercreditor Agent, the Administrative Agent, the Collateral Agent, the Lenders and Purchasers party thereto and each other person that may become party from time to time, which provides terms applicable to both the Credit Agreement and the Note Purchase Agreement. The Financing Agreements were entered into to partially fund the acquisition of the GPU infrastructure and other costs to support Hardware 3’s agreement dated November 2, 2025 (the “Microsoft Contract”) with Microsoft Corporation (“Microsoft”) to provide dedicated GPU services in tranches at data center facilities located in Childress, Texas. Availability and Maturity Borrowings under the DDTL and issuances of Notes will be made in tranches, and are available until May 29, 2027, subject to certain extensions (the “Delayed Draw Availability Period”). The maturity date for borrowings under the DDTL and the Notes is December 31, 2031, or such earlier date as the final service fee with respect to all tranches under the Microsoft Contract shall have been paid in full. Interest, Commitment Fees and Amortization Borrowings under the DDTL bear interest at a per annum rate equal to term SOFR plus a margin of 2.25%. The Borrower is also required to pay a commitment fee of 0.40% per annum on the undrawn portion of the DDTL commitments during the Delayed Draw Availability Period. The Notes bear interest at a fixed rate of 5.96% per annum. Principal amounts outstanding under each tranche of the DDTL and the Notes amortize in accordance with applicable amortization schedules. Guarantees and Security On May 29, 2026, the Parent, as Guarantor, entered into Limited Parent Guarantees (the “Parent Guarantees”) with the Collateral Agent with respect to certain obligations. Such guarantees are limited to (a) the performance by IE US Development Holdings 3 Inc. (a wholly owned subsidiary of the Parent), as manager, of its obligations to Hardware 3 under a managed services agreement dated as of May 29, 2026, for the term of the Financing Agreements (the Parent does not, under this guarantee, guarantee any obligations of Hardware 3), and (b) any shortfall in Hardware 3’s payment obligations attributable to a tranche of GPU services that Microsoft does not accept or terminates, to the extent not satisfied through Hardware 3’s exercise of a right to dispose of, or remarket, the relevant GPU infrastructure. The obligations of Hardware 3, in its capacities as Borrower and Issuer, are secured by all its assets, including the GPUs acquired by Hardware 3 to service the Microsoft Contract, a pledge of 100% of t",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry Into a Material Definitive Agreement. Financing Agreements Following previous disclosure by IREN Limited (the “Parent”), IE US Hardware 3 LLC (“Hardware 3”), a wholly owned subsidiary of the Parent, has entered into certain financing agreements, each dated May 29, 2026 (collectively, the “Financing Agreements”), for an aggregate financing of approximately $3.6 billion, comprised of (i) an approximately $1.5 billion delayed draw term loan facility (the “DDTL”) pursuant to a credit agreement (the “Credit Agreement”) among Hardware 3, as borrower (in such capacity, the “Borrower”), CSC Delaware Trust Company, as administrative agent (in such capacity, the “Administrative Agent”), Goldman Sachs Bank USA and JPMorgan Chase Bank, N.A., as joint lead arrangers and joint bookrunners, and the lenders party thereto (the “Lenders”); (ii) $2.1 billion aggregate principal amount of Hardware 3’s 5.96% senior notes due December 31, 2031 (the “Notes”) pursuant to a note purchase agreement (the “Note Purchase Agreement”) among Hardware 3, as issuer (in such capacity, the “Issuer”), CSC Delaware Trust Company, as intercreditor agent (in such capacity, the “Intercreditor Agent”), collateral agent (in such capacity, the “Collateral Agent”) and note agent, and the purchasers party thereto (the “Purchasers”); and (iii) a common terms agreement (the “Common Terms Agreement”) among Hardware 3, the Intercreditor Agent, the Administrative Agent, the Collateral Agent, the Lenders and Purchasers party thereto and each other person that may become party from time to time, which provides terms applicable to both the Credit Agreement and the Note Purchase Agreement. The Financing Agreements were entered into to partially fund the acquisition of the GPU infrastructure and other costs to support Hardware 3’s agreement dated November 2, 2025 (the “Microsoft Contract”) with Microsoft Corporation (“Microsoft”) to provide dedicated GPU services in tranches at data center facilities located in Childress, Texas. Availability and Maturity Borrowings under the DDTL and issuances of Notes will be made in tranches, and are available until May 29, 2027, subject to certain extensions (the “Delayed Draw Availability Period”). The maturity date for borrowings under the DDTL and the Notes is December 31, 2031, or such earlier date as the final service fee with respect to all tranches under the Microsoft Contract shall have been paid in full. Interest, Commitment Fees and Amortization Borrowings under the DDTL bear interest at a per annum rate equal to term SOFR plus a margin of 2.25%. The Borrower is also required to pay a commitment fee of 0.40% per annum on the undrawn portion of the DDTL commitments during the Delayed Draw Availability Period. The Notes bear interest at a fixed rate of 5.96% per annum. Principal amounts outstanding under each tranche of the DDTL and the Notes amortize in accordance with applicable amortization schedules. Guarantees and Security On May 29, 2026, the Parent, as Guarantor, entered into Limited Parent Guarantees (the “Parent Guarantees”) with the Collateral Agent with respect to certain obligations. Such guarantees are limited to (a) the performance by IE US Development Holdings 3 Inc. (a wholly owned subsidiary of the Parent), as manager, of its obligations to Hardware 3 under a managed services agreement dated as of May 29, 2026, for the term of the Financing Agreements (the Parent does not, under this guarantee, guarantee any obligations of Hardware 3), and (b) any shortfall in Hardware 3’s payment obligations attributable to a tranche of GPU services that Microsoft does not accept or terminates, to the extent not satisfied through Hardware 3’s exercise of a right to dispose of, or remarket, the relevant GPU infrastructure. The obligations of Hardware 3, in its capacities as Borrower and Issuer, are secured by all its assets, including the GPUs acquired by Hardware 3 to service the Microsoft Contract, a pledge of 100% of t"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001140361-26-023427/ef20075181_8k.htm",
+      "filing_accession_number": "0001140361-26-023427",
+      "filing_acceptance_datetime": "2026-06-01T11:06:02.000Z",
+      "filing_content_sha256": "dcacb35ef4ceba5e3a8d068b2bbabeeb9f8e4c38c59aeb95b9a23f5f8a3082ab",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ef20075181_8k.htm",
+      "filing_report_date": "2026-05-29",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001878848.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2054,
+      "extraction_end_offset": 8873,
+      "extraction_section_length": 6819,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": [
+        "missing_auto_end_marker"
+      ]
+    },
+    {
+      "symbol": "LEU",
+      "cik": "0001065059",
+      "filing_type": "10-Q",
+      "source_name": "sec_filing_business_sections:10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026030891/leu-20260331.htm",
+      "source_published_at": "2026-05-06",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 31",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 31"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001628280-26-030891/leu-20260331.htm",
+      "filing_accession_number": "0001628280-26-030891",
+      "filing_acceptance_datetime": "2026-05-06T11:02:42.000Z",
+      "filing_content_sha256": "3982ae1559e65232c8310d7843dc5a6d3889a39c06751eda878d43295b28ded8",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "leu-20260331.htm",
+      "filing_report_date": "2026-03-31",
+      "filing_sec_form_original": "10-Q",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-Q",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001065059.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-q_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 11838,
+      "extraction_end_offset": 11935,
+      "extraction_section_length": 96,
+      "extraction_start_pattern": "item_2_mdna",
+      "extraction_start_pattern_label": "Item 2 management discussion",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "LUNR",
+      "cik": "0001844452",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526254475/d62861d8k.htm",
+      "source_published_at": "2026-06-03",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement. Sales Agreement In connection with Intuitive Machines, Inc.’s (the “Company”) Registration Statement on Form S-3 (File No. 333-296442) (the “Registration Statement”), which became effective on June 2, 2026, which included a base prospectus and a prospectus supplement relating to the offer and sale, from time to time through the Agents (as defined below), of shares of the Company’s Class A common stock, par value $0.0001 per share, for aggregate gross proceeds of up to $500.0 million (the “Shares”) which was filed with the SEC on June 2, 2026 (the “Prospectus”), the Company is hereby filing a copy of the Sales Agreement (the “Sales Agreement”) by and among the Company and Barclays Capital Inc., Cantor Fitzgerald & Co., B. Riley Securities, Inc., Canaccord Genuity LLC, Clear Street LLC, Craig-Hallum Capital Group LLC, Deutsche Bank Securities Inc., KeyBanc Capital Markets Inc., Roth Capital Partners, LLC and Stifel, Nicolaus & Company, Incorporated (collectively, the “Agents”) which is filed herewith as Exhibit 1.1. The Sales Agreement contains customary representations, warranties and agreements by the Company, and indemnification obligations of the Company and the Agents and other obligations of the parties. Under the terms of the Sales Agreement, the Company has agreed to pay the Agents a commission of up to 3.0% of the sales price per share sold under the Sales Agreement. In addition, the Company has agreed to reimburse certain expenses incurred by the Agents in connection with the Sales Agreement. The foregoing description of the Sales Agreement is not complete and is qualified in its entirety by reference to the full text of such agreement, a copy of which is filed herewith as Exhibit 1.1 to this Current Report on Form 8-K and is incorporated herein by reference. The Shares will be sold pursuant to the Registration Statement, and offerings of the Shares will be made only by means of the Prospectus. This Current Report on Form 8-K shall not constitute an offer to sell or a solicitation of an offer to buy any securities, nor shall there be any sale of these securities in any state or jurisdiction in which such an offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or other jurisdiction.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement. Sales Agreement In connection with Intuitive Machines, Inc.’s (the “Company”) Registration Statement on Form S-3 (File No. 333-296442) (the “Registration Statement”), which became effective on June 2, 2026, which included a base prospectus and a prospectus supplement relating to the offer and sale, from time to time through the Agents (as defined below), of shares of the Company’s Class A common stock, par value $0.0001 per share, for aggregate gross proceeds of up to $500.0 million (the “Shares”) which was filed with the SEC on June 2, 2026 (the “Prospectus”), the Company is hereby filing a copy of the Sales Agreement (the “Sales Agreement”) by and among the Company and Barclays Capital Inc., Cantor Fitzgerald & Co., B. Riley Securities, Inc., Canaccord Genuity LLC, Clear Street LLC, Craig-Hallum Capital Group LLC, Deutsche Bank Securities Inc., KeyBanc Capital Markets Inc., Roth Capital Partners, LLC and Stifel, Nicolaus & Company, Incorporated (collectively, the “Agents”) which is filed herewith as Exhibit 1.1. The Sales Agreement contains customary representations, warranties and agreements by the Company, and indemnification obligations of the Company and the Agents and other obligations of the parties. Under the terms of the Sales Agreement, the Company has agreed to pay the Agents a commission of up to 3.0% of the sales price per share sold under the Sales Agreement. In addition, the Company has agreed to reimburse certain expenses incurred by the Agents in connection with the Sales Agreement. The foregoing description of the Sales Agreement is not complete and is qualified in its entirety by reference to the full text of such agreement, a copy of which is filed herewith as Exhibit 1.1 to this Current Report on Form 8-K and is incorporated herein by reference. The Shares will be sold pursuant to the Registration Statement, and offerings of the Shares will be made only by means of the Prospectus. This Current Report on Form 8-K shall not constitute an offer to sell or a solicitation of an offer to buy any securities, nor shall there be any sale of these securities in any state or jurisdiction in which such an offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or other jurisdiction."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-254475/d62861d8k.htm",
+      "filing_accession_number": "0001193125-26-254475",
+      "filing_acceptance_datetime": "2026-06-03T10:01:41.000Z",
+      "filing_content_sha256": "44c5742a17254b814fa148c87139fe483e29007e3cbc5b656d3c063c109c5a85",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "d62861d8k.htm",
+      "filing_report_date": "2026-06-02",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001844452.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2033,
+      "extraction_end_offset": 4392,
+      "extraction_section_length": 2358,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "MU",
+      "cik": "0000723125",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926038249/tm2610810d1_8k.htm",
+      "source_published_at": "2026-04-01",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 8.01. Other Events. On March 31, 2026, Micron Technology, Inc. (the “Company”) issued a press release announcing the pricing of its cash tender offers for any and all of its outstanding 5.300% Senior Notes due 2031 (the “2031 Notes”), 5.650% Senior Notes due 2032 (the “2032 Notes”), 5.875% Senior Notes due 2033 (the “2033A Notes”), 5.875% Senior Notes due 2033 (the “2033B Notes”), 5.800% Senior Notes due 2035 (the “2035A Notes”), and 6.050% Senior Notes due 2035 (the “2023B Notes”, and, together with the 2031 Notes, the 2032 Notes, the 2033A Notes, the 2033B Notes and the 2035A Notes, the “Notes”), in connection with the Company’s previously announced cash tender offers commenced on March 25, 2026. On April 1, 2026, the Company issued a press release announcing the expiration of its previously announced cash tender offers to purchase any and all of the Notes. Copies of the press releases are attached hereto as Exhibit 99.1 and Exhibit 99.2, respectively, and incorporated herein by reference.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 8.01. Other Events. On March 31, 2026, Micron Technology, Inc. (the “Company”) issued a press release announcing the pricing of its cash tender offers for any and all of its outstanding 5.300% Senior Notes due 2031 (the “2031 Notes”), 5.650% Senior Notes due 2032 (the “2032 Notes”), 5.875% Senior Notes due 2033 (the “2033A Notes”), 5.875% Senior Notes due 2033 (the “2033B Notes”), 5.800% Senior Notes due 2035 (the “2035A Notes”), and 6.050% Senior Notes due 2035 (the “2023B Notes”, and, together with the 2031 Notes, the 2032 Notes, the 2033A Notes, the 2033B Notes and the 2035A Notes, the “Notes”), in connection with the Company’s previously announced cash tender offers commenced on March 25, 2026. On April 1, 2026, the Company issued a press release announcing the expiration of its previously announced cash tender offers to purchase any and all of the Notes. Copies of the press releases are attached hereto as Exhibit 99.1 and Exhibit 99.2, respectively, and incorporated herein by reference."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001104659-26-038249/tm2610810d1_8k.htm",
+      "filing_accession_number": "0001104659-26-038249",
+      "filing_acceptance_datetime": "2026-04-01T12:33:36.000Z",
+      "filing_content_sha256": "547023793db07a55b4775940c78d036d5a00f718326d477cb874d298c3c178a6",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "tm2610810d1_8k.htm",
+      "filing_report_date": "2026-03-31",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0000723125.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1999,
+      "extraction_end_offset": 3011,
+      "extraction_section_length": 1011,
+      "extraction_start_pattern": "item_8_01_other_events",
+      "extraction_start_pattern_label": "Item 8.01 other events",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "OKLO",
+      "cik": "0001849056",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465926060385/tm2614461d1_8k.htm",
+      "source_published_at": "2026-05-13",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 1.01. Entry into a Material Definitive Agreement. On May 13, 2026, Oklo Inc. (the “Company”) entered into an equity distribution agreement (the “Sales Agreement”) with Goldman Sachs & Co. LLC, BofA Securities, Inc., Citigroup Global Markets Inc., J.P. Morgan Securities LLC, Morgan Stanley & Co. LLC, Barclays Capital Inc., Cantor Fitzgerald & Co., Guggenheim Securities, LLC, Canaccord Genuity LLC and William Blair & Company, L.L.C. under which the Company may offer and sell, from time to time in its sole discretion, shares of the Company’s Class A common stock, par value $0.0001 per share (the “Common Stock”), with aggregate gross sales proceeds of up to $1,000,000,000 through an “at the market” equity offering program under which Goldman Sachs & Co. LLC, BofA Securities, Inc., Citigroup Global Markets Inc., J.P. Morgan Securities LLC, Morgan Stanley & Co. LLC, Barclays Capital Inc., Cantor Fitzgerald & Co., Guggenheim Securities, LLC, Canaccord Genuity LLC and William Blair & Company, L.L.C. will act as the agents (each, a “Sales Agent” and collectively, the “Sales Agents”). Sales, if any, of Common Stock under the Sales Agreement may be made in ordinary brokers’ transactions, to or through a market maker, on or through the New York Stock Exchange or any other market venue where the securities may be traded, in the over-the-counter market, in privately negotiated transactions, in block trades, in transactions that are deemed to be “at the market offerings” as defined in Rule 415(a)(4) under the Securities Act of 1933, as amended, or through a combination of any such methods of sale. The Sales Agents may also sell Common Stock by any other method permitted by law. The securities may be sold at market prices prevailing at the time of sale, at prices related to such prevailing market prices or at negotiated prices. The Company will designate the maximum amount of Common Stock to be sold through the Sales Agents on a daily basis or otherwise as the Company and the Sales Agents agree and the minimum price per share at which such Common Stock may be sold. Subject to the terms and conditions of the Sales Agreement, the Sales Agents will use their reasonable efforts consistent with their normal sales and trading practices to sell on the Company’s behalf all of the designated shares of Common Stock. The Company may instruct the Sales Agents not to sell any Common Stock if the sales cannot be effected at or above the price designated by the Company in any such instruction. The Company or any of the Sales Agents may suspend the offering of Common Stock by notifying the other party. The Sales Agreement provides that the Company will pay the Sales Agents a commission of up to 1.5% of the gross sales price per share of Common Stock sold through such Sales Agents under the Sales Agreement, and the Company will reimburse the Sales Agents for certain expenses incurred in connection with their services under the Sales Agreement. The offering of Common Stock pursuant to the Sales Agreement will terminate upon the termination of the Sales Agreement by the Company or by the Sales Agents, as provided therein. The Sales Agreement contains representations and warranties and covenants that are customary for transactions of this type. In addition, the Company has agreed to indemnify the Sales Agents against certain liabilities on customary terms, subject to limitations on such arrangements imposed by applicable law and regulation. In the ordinary course of its business, the Sales Agents and their affiliates have engaged in, and may in the future engage in, investment banking and other commercial dealings in the ordinary course of business with the Company and its affiliates. The Sales Agents have received, or may in the future receive, customary fees and commissions for these transactions. The shares will be issued pursuant to the Company’s shelf registration statement on Form S-3 (File No. 333-291157) as subsequently amended by that Amendment No.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01. Entry into a Material Definitive Agreement. On May 13, 2026, Oklo Inc. (the “Company”) entered into an equity distribution agreement (the “Sales Agreement”) with Goldman Sachs & Co. LLC, BofA Securities, Inc., Citigroup Global Markets Inc., J.P. Morgan Securities LLC, Morgan Stanley & Co. LLC, Barclays Capital Inc., Cantor Fitzgerald & Co., Guggenheim Securities, LLC, Canaccord Genuity LLC and William Blair & Company, L.L.C. under which the Company may offer and sell, from time to time in its sole discretion, shares of the Company’s Class A common stock, par value $0.0001 per share (the “Common Stock”), with aggregate gross sales proceeds of up to $1,000,000,000 through an “at the market” equity offering program under which Goldman Sachs & Co. LLC, BofA Securities, Inc., Citigroup Global Markets Inc., J.P. Morgan Securities LLC, Morgan Stanley & Co. LLC, Barclays Capital Inc., Cantor Fitzgerald & Co., Guggenheim Securities, LLC, Canaccord Genuity LLC and William Blair & Company, L.L.C. will act as the agents (each, a “Sales Agent” and collectively, the “Sales Agents”). Sales, if any, of Common Stock under the Sales Agreement may be made in ordinary brokers’ transactions, to or through a market maker, on or through the New York Stock Exchange or any other market venue where the securities may be traded, in the over-the-counter market, in privately negotiated transactions, in block trades, in transactions that are deemed to be “at the market offerings” as defined in Rule 415(a)(4) under the Securities Act of 1933, as amended, or through a combination of any such methods of sale. The Sales Agents may also sell Common Stock by any other method permitted by law. The securities may be sold at market prices prevailing at the time of sale, at prices related to such prevailing market prices or at negotiated prices. The Company will designate the maximum amount of Common Stock to be sold through the Sales Agents on a daily basis or otherwise as the Company and the Sales Agents agree and the minimum price per share at which such Common Stock may be sold. Subject to the terms and conditions of the Sales Agreement, the Sales Agents will use their reasonable efforts consistent with their normal sales and trading practices to sell on the Company’s behalf all of the designated shares of Common Stock. The Company may instruct the Sales Agents not to sell any Common Stock if the sales cannot be effected at or above the price designated by the Company in any such instruction. The Company or any of the Sales Agents may suspend the offering of Common Stock by notifying the other party. The Sales Agreement provides that the Company will pay the Sales Agents a commission of up to 1.5% of the gross sales price per share of Common Stock sold through such Sales Agents under the Sales Agreement, and the Company will reimburse the Sales Agents for certain expenses incurred in connection with their services under the Sales Agreement. The offering of Common Stock pursuant to the Sales Agreement will terminate upon the termination of the Sales Agreement by the Company or by the Sales Agents, as provided therein. The Sales Agreement contains representations and warranties and covenants that are customary for transactions of this type. In addition, the Company has agreed to indemnify the Sales Agents against certain liabilities on customary terms, subject to limitations on such arrangements imposed by applicable law and regulation. In the ordinary course of its business, the Sales Agents and their affiliates have engaged in, and may in the future engage in, investment banking and other commercial dealings in the ordinary course of business with the Company and its affiliates. The Sales Agents have received, or may in the future receive, customary fees and commissions for these transactions. The shares will be issued pursuant to the Company’s shelf registration statement on Form S-3 (File No. 333-291157) as subsequently amended by that Amendment No."
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001104659-26-060385/tm2614461d1_8k.htm",
+      "filing_accession_number": "0001104659-26-060385",
+      "filing_acceptance_datetime": "2026-05-13T21:22:13.000Z",
+      "filing_content_sha256": "42b89d7c7e7ab166266c4774acbc987b90f7ab77e23234674bde2a9f3a8fe3c4",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "tm2614461d1_8k.htm",
+      "filing_report_date": "2026-05-13",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001849056.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2052,
+      "extraction_end_offset": 8734,
+      "extraction_section_length": 6681,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "VRT",
+      "cik": "0001674101",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026040031/vrt-20260603.htm",
+      "source_published_at": "2026-06-03",
+      "retrieved_at": "2026-06-05",
+      "text": "Item 8.01 Other Events On June 3, 2026, Vertiv Holdings Co, a Delaware corporation (the “Company”), issued a press release announcing that its Board of Directors has declared a quarterly cash dividend of $0.0625 per share of Class A common stock. The dividend is payable to the Company’s stockholders of record as of the close of business on June 15, 2026, and is expected to be paid on June 25, 2026. A copy of the press release is attached to this report on Exhibit 99.1. Item 9.01 (d) Financial Statements and Exhibits Exhibit No. Exhibit Description 99.1 Press release of Vertiv Holdings Co, dated June 3, 2026 104 Cover Page Interactive Data File (embedded within the Inline XBRL document)",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 8.01 Other Events On June 3, 2026, Vertiv Holdings Co, a Delaware corporation (the “Company”), issued a press release announcing that its Board of Directors has declared a quarterly cash dividend of $0.0625 per share of Class A common stock. The dividend is payable to the Company’s stockholders of record as of the close of business on June 15, 2026, and is expected to be paid on June 25, 2026. A copy of the press release is attached to this report on Exhibit 99.1. Item 9.01 (d) Financial Statements and Exhibits Exhibit No. Exhibit Description 99.1 Press release of Vertiv Holdings Co, dated June 3, 2026 104 Cover Page Interactive Data File (embedded within the Inline XBRL document)"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001628280-26-040031/vrt-20260603.htm",
+      "filing_accession_number": "0001628280-26-040031",
+      "filing_acceptance_datetime": "2026-06-03T10:36:25.000Z",
+      "filing_content_sha256": "a3280c483bc473c4c5971d2f3b01cb02671458d52dc694d2d763cc3058ae28bf",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "vrt-20260603.htm",
+      "filing_report_date": "2026-06-03",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001674101.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1968,
+      "extraction_end_offset": 2663,
+      "extraction_section_length": 694,
+      "extraction_start_pattern": "item_8_01_other_events",
+      "extraction_start_pattern_label": "Item 8.01 other events",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "XNDU",
+      "cik": "0002097163",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2097163/000121390026059832/ea0291791-6k_xanadu.htm",
+      "source_published_at": "2026-05-21",
+      "retrieved_at": "2026-06-05",
+      "text": "press release entitled &ldquo;Xanadu Announces up to $300 Million Synthetic At-The-Market Program&rdquo;. A copy of the press release is attached hereto as Exhibit 99.1 and is incorporated herein by reference. This report does not constitute an offer to sell or the solicitation of offers to buy any securities of the Company, and shall not constitute an offer, solicitation or sale of any security in any jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such jurisdiction. 2",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "press release entitled &ldquo;Xanadu Announces up to $300 Million Synthetic At-The-Market Program&rdquo;. A copy of the press release is attached hereto as Exhibit 99.1 and is incorporated herein by reference. This report does not constitute an offer to sell or the solicitation of offers to buy any securities of the Company, and shall not constitute an offer, solicitation or sale of any security in any jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such jurisdiction. 2"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001213900-26-059832/ea0291791-6k_xanadu.htm",
+      "filing_accession_number": "0001213900-26-059832",
+      "filing_acceptance_datetime": "2026-05-21T11:36:54.000Z",
+      "filing_content_sha256": "341780e983f5b4b1f751cd556c1d9f4704eefabfe091c92e00651208d0b3d3c6",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ea0291791-6k_xanadu.htm",
+      "filing_report_date": "2026-05-21",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002097163.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 10810,
+      "extraction_end_offset": 11382,
+      "extraction_section_length": 571,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "YSS",
+      "cik": "0002086587",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2086587/000162828026040636/yss-20260515.htm",
+      "source_published_at": "2026-06-04",
+      "retrieved_at": "2026-06-05",
+      "text": "Explanatory Note This Amendment No. 1 to the Current Report on Form 8-K (this “Amendment”) is being filed by York Space Systems Inc., a Delaware corporation (the “Company”) for the purpose of amending and supplementing Item 3.02 of that certain Current Report on Form 8-K originally filed by the Company with the U.S. Securities and Exchange Commission on May 19, 2026 (the “Original Form 8-K”). This Amendment is being filed to update the number of shares of the Company's common stock, par value $0.0001 per share (the “Company Shares”) that were issued as merger consideration in connection with the Company’s acquisition of Solestial, Inc. (the “Acquisition”). No other changes have been made to the Original Form 8-K. Item 3.02 Unregistered Sales of Equity Securities. The information set forth in Item 3.02 of the Original Form 8-K is hereby supplemented as follows: On June 4, 2026, the Company closed the Acquisition with the issuance of 1,703,577 Company Shares using a negotiated value of $34.00 per share and paid with a mix of cash and stock for a purchase price of approximately $67 million paid to the seller at closing. The Company Shares were issued pursuant to one or more exemptions from registration under the Securities Act of 1933, as amended, including those under Section 4(a)(2) thereof or Regulation D promulgated thereunder. Forward-Looking Statements This Current Report on Form 8-K contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, Section 27A of the Securities Act, and Section 21E of the Securities Exchange Act of 1934, as amended, which include all statements that do not relate solely to historical or current facts, such as statements regarding the Company’s expectations, intentions or strategies regarding the future, including strategies or plans as they relate to the recently completed transaction. In some cases, you can identify forward-looking statements by the following words: “may,” “will,” “could,” “would,” “should,” “expect,” “intend,” “plan,” “anticipate,” “believe,” “estimate,” “predict,” “project,” “aim,” “potential,” “continue,” “ongoing,” “goal,” “can,” “seek,” “target” or the negative of these terms or other similar expressions, although not all forward-looking statements contain these words. These forward-looking statements are based on management’s beliefs, as well as assumptions made by, and information currently available to, the Company. Because such statements are based on expectations and are not statements of fact, actual results may differ materially from those projected and are subject to a number of known and unknown risks and uncertainties, including: (i) the effect of the announcement or pendency of the transaction on the Company’s stock price, business relationships, operating results and business generally; (vi) risks that the transaction may disrupt the Company’s current business plans and operations; and (vii) other risks described in the Company’s filings with the Securities and Exchange Commission (the “SEC”), including its Annual Report on Form 10-K for the fiscal year ended December 31, 2025, as may be updated or supplemented by any subsequent Quarterly Reports on Form 10-Q or other filings with the SEC. All such factors are difficult to predict and are beyond the Company’s control. While the list of risks and uncertainties presented here is considered representative, no such list or discussion should be considered a complete statement of all potential risks and uncertainties. Unlisted factors may present significant additional obstacles to the realization of forward-looking statements. Consequences of material differences in results as compared with those anticipated in the forward-looking statements could include, among other things, business disruption, operational problems, financial loss, and legal liability to third parties and similar risks, any of which could have a material adverse effect on the completion of the pro",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Explanatory Note This Amendment No. 1 to the Current Report on Form 8-K (this “Amendment”) is being filed by York Space Systems Inc., a Delaware corporation (the “Company”) for the purpose of amending and supplementing Item 3.02 of that certain Current Report on Form 8-K originally filed by the Company with the U.S. Securities and Exchange Commission on May 19, 2026 (the “Original Form 8-K”). This Amendment is being filed to update the number of shares of the Company's common stock, par value $0.0001 per share (the “Company Shares”) that were issued as merger consideration in connection with the Company’s acquisition of Solestial, Inc. (the “Acquisition”). No other changes have been made to the Original Form 8-K. Item 3.02 Unregistered Sales of Equity Securities. The information set forth in Item 3.02 of the Original Form 8-K is hereby supplemented as follows: On June 4, 2026, the Company closed the Acquisition with the issuance of 1,703,577 Company Shares using a negotiated value of $34.00 per share and paid with a mix of cash and stock for a purchase price of approximately $67 million paid to the seller at closing. The Company Shares were issued pursuant to one or more exemptions from registration under the Securities Act of 1933, as amended, including those under Section 4(a)(2) thereof or Regulation D promulgated thereunder. Forward-Looking Statements This Current Report on Form 8-K contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, Section 27A of the Securities Act, and Section 21E of the Securities Exchange Act of 1934, as amended, which include all statements that do not relate solely to historical or current facts, such as statements regarding the Company’s expectations, intentions or strategies regarding the future, including strategies or plans as they relate to the recently completed transaction. In some cases, you can identify forward-looking statements by the following words: “may,” “will,” “could,” “would,” “should,” “expect,” “intend,” “plan,” “anticipate,” “believe,” “estimate,” “predict,” “project,” “aim,” “potential,” “continue,” “ongoing,” “goal,” “can,” “seek,” “target” or the negative of these terms or other similar expressions, although not all forward-looking statements contain these words. These forward-looking statements are based on management’s beliefs, as well as assumptions made by, and information currently available to, the Company. Because such statements are based on expectations and are not statements of fact, actual results may differ materially from those projected and are subject to a number of known and unknown risks and uncertainties, including: (i) the effect of the announcement or pendency of the transaction on the Company’s stock price, business relationships, operating results and business generally; (vi) risks that the transaction may disrupt the Company’s current business plans and operations; and (vii) other risks described in the Company’s filings with the Securities and Exchange Commission (the “SEC”), including its Annual Report on Form 10-K for the fiscal year ended December 31, 2025, as may be updated or supplemented by any subsequent Quarterly Reports on Form 10-Q or other filings with the SEC. All such factors are difficult to predict and are beyond the Company’s control. While the list of risks and uncertainties presented here is considered representative, no such list or discussion should be considered a complete statement of all potential risks and uncertainties. Unlisted factors may present significant additional obstacles to the realization of forward-looking statements. Consequences of material differences in results as compared with those anticipated in the forward-looking statements could include, among other things, business disruption, operational problems, financial loss, and legal liability to third parties and similar risks, any of which could have a material adverse effect on the completion of the pro"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001628280-26-040636/yss-20260515.htm",
+      "filing_accession_number": "0001628280-26-040636",
+      "filing_acceptance_datetime": "2026-06-04T12:52:18.000Z",
+      "filing_content_sha256": "6017fe6e2b173afdd84192f7c0e2426ccaf883b7d1e0292af6021cc40c0d0f5b",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "yss-20260515.htm",
+      "filing_report_date": "2026-05-15",
+      "filing_sec_form_original": "8-K/A",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002086587.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2063,
+      "extraction_end_offset": 7276,
+      "extraction_section_length": 5213,
+      "extraction_start_pattern": "explanatory_note",
+      "extraction_start_pattern_label": "Explanatory Note",
+      "extraction_warnings": [
+        "missing_auto_end_marker"
+      ]
+    }
+  ]
+}

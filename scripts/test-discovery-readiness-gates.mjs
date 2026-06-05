@@ -810,22 +810,35 @@ const testCases = [
   {
     name: "rejects missing derived allocation-relevant lane",
     mutate: (cwd) => {
-      updateYaml(cwd, "research/quality-metrics.yml", (doc) => {
+      const removeLane = (doc) => {
         doc.discovery_process.allocation_relevant_lanes = doc.discovery_process.allocation_relevant_lanes
-          .filter((lane) => lane !== "direct_to_device_connectivity");
+          .filter((lane) => lane !== "space_infrastructure");
+      };
+      updateYaml(cwd, "research/quality-metrics.yml", removeLane);
+      updateYaml(cwd, "research/discovery/runs/2026-06-05-subagent-evidence-packet.yml", (doc) => {
+        removeLane(doc.quality_metrics);
       });
     },
-    expected: "allocation_relevant_lanes is missing derived allocation-relevant lane direct_to_device_connectivity",
+    expected: "allocation_relevant_lanes is missing derived allocation-relevant lane space_infrastructure",
   },
   {
     name: "rejects current buy-zone symbol missing from lane proxies",
     mutate: (cwd) => {
-      updateYaml(cwd, "research/discovery/lanes.yml", (doc) => {
-        const lane = doc.lanes.find((entry) => entry.id === "space_infrastructure");
-        lane.current_public_proxies = lane.current_public_proxies.filter((symbol) => symbol !== "RKLB");
+      appendCsvRow(cwd, "research/buy-zones.csv", {
+        symbol: "OPENAI",
+        as_of: "2026-06-05",
+        buy_zone_status: "in_buy_zone",
+        entry_trigger: "fixture_missing_lane_proxy",
+        max_staged_entry_price: "1",
+        stale_if_price_moves_pct: "1",
+        position_role: "fixture",
+        sizing_tier: "fixture",
+        source_path: "decisions/2026-06-05-monthly-decision.md",
+        source_ids: "sec_company_tickers_exchange_2026_06_05",
+        notes: "fixture",
       });
     },
-    expected: "current in-buy-zone symbol RKLB is missing from discovery lane current_public_proxies",
+    expected: "current in-buy-zone symbol OPENAI is missing from discovery lane current_public_proxies",
   },
   {
     name: "rejects discovery run evidence packet mismatch",
