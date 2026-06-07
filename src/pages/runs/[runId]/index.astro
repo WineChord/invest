@@ -1,0 +1,53 @@
+---
+import OperatingRunDetailPage from "../../../components/OperatingRunDetailPage";
+import { loadPortfolioData } from "../../../lib/portfolioData";
+import "../../../styles/global.css";
+
+export function getStaticPaths() {
+  const data = loadPortfolioData();
+  return data.operatingRuns.map((run) => ({
+    params: {
+      runId: run.runId,
+    },
+    props: {
+      ledgerEvents: data.ledger.filter((event) =>
+        run.confirmedLedgerEventIds.includes(event.eventId),
+      ),
+      publicUrl: data.publicUrl,
+      repositoryUrl: data.repositoryUrl,
+      run,
+    },
+  }));
+}
+
+const { ledgerEvents, publicUrl, repositoryUrl, run } = Astro.props;
+const canonicalUrl = `${publicUrl}runs/${run.runId}/`;
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const faviconUrl = `${baseUrl}favicon-cn.svg`;
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content={`${run.title} delayed full-cycle operating record for WineChord Invest. Not investment advice.`}
+    />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href={faviconUrl} />
+    <title>{run.title} | WineChord Invest</title>
+  </head>
+  <body>
+    <OperatingRunDetailPage
+      client:idle
+      ledgerEvents={ledgerEvents}
+      publicUrl={publicUrl}
+      repositoryUrl={repositoryUrl}
+      run={run}
+    />
+  </body>
+</html>

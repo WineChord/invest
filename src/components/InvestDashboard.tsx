@@ -37,6 +37,7 @@ import type {
   EquityPoint,
   LedgerEvent,
   MacroOverlayData,
+  OperatingRunRecord,
   PortfolioData,
   PositionRecord,
   PriceHistoryPoint,
@@ -1013,6 +1014,10 @@ export default function InvestDashboard({ data }: Props) {
             <OperationsList events={activeData.ledger} />
           </Panel>
         </section>
+
+        <Panel title="Operating runs" eyebrow="full-cycle audit">
+          <OperatingRunsPreview runs={activeData.operatingRuns} />
+        </Panel>
 
         <Panel title="Research universe" eyebrow="active universe">
           <WatchlistTable
@@ -2642,6 +2647,56 @@ function operationDetail(event: LedgerEvent): string {
   return `${quantity} shares @ ${formatCurrency(event.averagePrice)}`;
 }
 
+function OperatingRunsPreview({ runs }: { runs: OperatingRunRecord[] }) {
+  if (runs.length === 0) {
+    return (
+      <div className="empty-state">
+        <strong>No full-cycle runs recorded yet</strong>
+        <span>Completed operating-cycle summaries will appear here.</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="operating-runs-preview">
+      <div className="operating-runs-toolbar">
+        <span>
+          <History size={16} />
+          Latest full-cycle records
+        </span>
+        <a className="research-action-link" href="runs/">
+          <ListChecks size={14} />
+          <span>View all runs</span>
+        </a>
+      </div>
+      <ol className="operating-run-card-list">
+        {runs.slice(0, 3).map((run) => (
+          <li className="operating-run-card" key={run.runId}>
+            <div className="operating-run-card-head">
+              <div>
+                <span>{run.runDate}</span>
+                <strong>{run.title}</strong>
+              </div>
+              <span className={`operating-run-status operating-run-status-${run.status}`}>
+                {readableStatusLabel(run.status)}
+              </span>
+            </div>
+            <p>{run.decisionSummary}</p>
+            <div className="operating-run-meta">
+              <span>{run.primarySymbols.join(" / ")}</span>
+              <span>{run.confirmedLedgerEventIds.length === 0 ? "No linked execution" : `${run.confirmedLedgerEventIds.length} ledger events`}</span>
+            </div>
+            <a className="operating-run-detail-link" href={operatingRunPath(run.runId)}>
+              <span>Open run detail</span>
+              <ExternalLink size={14} />
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
 function WatchlistTable({
   events,
   items,
@@ -3829,6 +3884,10 @@ function latestAnalysisFor(item: WatchlistItem): ResearchAnalysisEntry | null {
 
 function researchPagePath(symbol: string): string {
   return `research/${symbol.toLowerCase()}/`;
+}
+
+function operatingRunPath(runId: string): string {
+  return `runs/${runId}/`;
 }
 
 function watchStatusLabel(status: string): string {

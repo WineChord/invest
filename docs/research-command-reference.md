@@ -17,6 +17,8 @@ npm run verify
 
 `npm run verify` includes data validation, deterministic discovery-scan regression tests, discovery-readiness negative gate tests, promotion/watchlist-cycle gate tests, and the static dashboard build.
 
+The public dashboard includes `/runs/` and `/runs/<run_id>/` pages backed by `research/operating-runs.csv`. Update that file after full operating-cycle or monthly-decision full-cycle runs so the site can show the run summary, decision note link, structured artifact link, validation result, publication boundary, and any actual execution that is already confirmed in `data/account/ledger.csv`.
+
 ## Daily Market Data Refresh
 
 ```bash

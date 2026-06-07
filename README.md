@@ -53,6 +53,7 @@ Decision requests are full operating-cycle triggers. When the user reports new c
 - Material freshness events: [research/freshness/events.csv](research/freshness/events.csv).
 - Valuation and entry states: [research/valuation-states.csv](research/valuation-states.csv).
 - Macro risk-overlay records: [research/macro](research/macro).
+- Full-cycle operating run index: [research/operating-runs.csv](research/operating-runs.csv).
 - Public community source configuration: [research/community-sources.yml](research/community-sources.yml).
 - Research health metrics: [research/quality-metrics.yml](research/quality-metrics.yml).
 - Completed filing reviews: [research/filings](research/filings).

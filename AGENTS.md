@@ -243,16 +243,17 @@ Research is organized as a pipeline:
 5. `research/valuation-states.csv` for current valuation and entry-attractiveness state.
 6. `research/macro/` for macro-regime snapshots, per-symbol macro sensitivity, financing fragility, shared risk factors, and event-calendar triggers.
 7. `research/community-sources.yml` and sanitized community triage artifacts for public no-token attention shifts and lead-generation inputs.
-8. `research/quality-metrics.yml` for coverage, freshness, lane-map health, macro-process health, stale analysis, and open-event health checks.
-9. `research/filings/` for completed material filing reviews linked from freshness events.
-10. `research/promotion/` for promotion reviews.
-11. `research/watchlist.csv` for candidates that deserve ongoing active monitoring.
-12. `research/watchlist-cycle-reviews.csv` for the per-cycle review row that every non-removed watchlist symbol must receive during full-cycle and monthly-decision runs.
-13. `research/watchlist-transitions.csv` for machine-checkable status and priority changes.
-14. `research/buy-zones.csv` for symbol-level current buy-zone state.
-15. `research/company-analysis.yml` for dashboard-visible historical analysis.
-16. `research/process/decision-retrospectives.csv` for post-decision and post-discovery process review loops.
-17. `research/sources.yml` for durable source metadata.
+8. `research/operating-runs.csv` for public-safe full-cycle dashboard summaries, source links, validation state, publication status, and confirmed ledger event links.
+9. `research/quality-metrics.yml` for coverage, freshness, lane-map health, macro-process health, stale analysis, and open-event health checks.
+10. `research/filings/` for completed material filing reviews linked from freshness events.
+11. `research/promotion/` for promotion reviews.
+12. `research/watchlist.csv` for candidates that deserve ongoing active monitoring.
+13. `research/watchlist-cycle-reviews.csv` for the per-cycle review row that every non-removed watchlist symbol must receive during full-cycle and monthly-decision runs.
+14. `research/watchlist-transitions.csv` for machine-checkable status and priority changes.
+15. `research/buy-zones.csv` for symbol-level current buy-zone state.
+16. `research/company-analysis.yml` for dashboard-visible historical analysis.
+17. `research/process/decision-retrospectives.csv` for post-decision and post-discovery process review loops.
+18. `research/sources.yml` for durable source metadata.
 
 When adding a durable company analysis that should appear on the public dashboard, add or append a structured entry in [research/company-analysis.yml](research/company-analysis.yml) and link it to the dated source note. Do not parse long-form Markdown as the dashboard database when a structured index can carry the needed summary and provenance.
 

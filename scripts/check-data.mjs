@@ -20,6 +20,7 @@ const csvFiles = [
   "research/macro/regime-snapshots.csv",
   "research/macro/watchlist-risk-matrix.csv",
   "research/macro/watchlist-sensitivity.csv",
+  "research/operating-runs.csv",
   "research/process/decision-retrospectives.csv",
   "research/valuation-states.csv",
   "research/watchlist-cycle-reviews.csv",
@@ -55,6 +56,7 @@ const macroFinancingScoresFile = "research/macro/financing-runway-scores.csv";
 const macroRegimeSnapshotsFile = "research/macro/regime-snapshots.csv";
 const macroRiskMatrixFile = "research/macro/watchlist-risk-matrix.csv";
 const macroWatchlistSensitivityFile = "research/macro/watchlist-sensitivity.csv";
+const operatingRunsFile = "research/operating-runs.csv";
 const priceHistoryFile = "data/market/price_history.csv";
 const decisionRetrospectivesFile = "research/process/decision-retrospectives.csv";
 const qualityMetricsFile = "research/quality-metrics.yml";
@@ -255,6 +257,30 @@ const requiredCsvHeaders = new Map([
       "customer_concentration_sensitivity",
       "primary_sensitive_lanes",
       "macro_priority_trigger",
+      "notes",
+    ],
+  ],
+  [
+    operatingRunsFile,
+    [
+      "run_id",
+      "run_date",
+      "run_type",
+      "status",
+      "policy_version",
+      "title",
+      "decision_summary",
+      "analysis_summary",
+      "decision_result",
+      "execution_summary",
+      "confirmed_ledger_event_ids",
+      "primary_symbols",
+      "linked_decision_path",
+      "linked_run_artifact_path",
+      "evidence_packet_path",
+      "validation_summary",
+      "publication_status",
+      "next_review_trigger",
       "notes",
     ],
   ],
@@ -528,6 +554,12 @@ const allowedMacroEventImportances = new Set([
   "high",
   "critical",
 ]);
+const allowedOperatingRunStatuses = new Set([
+  "completed_with_confirmed_execution",
+  "completed_no_action",
+  "expired_no_execution",
+  "superseded",
+]);
 const allowedWatchlistCycleActions = new Set([
   "no_change",
   "update_watchlist",
@@ -758,6 +790,7 @@ validateValuationStates();
 validateCompanyAnalysis();
 validateWatchlistCycleReviews();
 validatePromotionData();
+validateOperatingRuns();
 validateDecisionRetrospectives();
 validateQualityMetrics();
 validateDiscoveryRunJsonArtifacts();
@@ -2186,6 +2219,77 @@ function validateDecisionRetrospectives() {
     }
   });
   console.log(`ok ${decisionRetrospectivesFile} semantic checks`);
+}
+
+function validateOperatingRuns() {
+  const runIds = new Set();
+  const ledgerEventIds = new Set(csvRecords("data/account/ledger.csv").map((row) => row.event_id));
+  const watchlistSymbols = new Set(csvRecords(watchlistFile).map((row) => row.symbol));
+  const ledgerSymbols = new Set(csvRecords("data/account/ledger.csv").map((row) => row.symbol).filter(Boolean));
+
+  csvRecords(operatingRunsFile).forEach((row, index) => {
+    const context = `${operatingRunsFile} row ${index + 2}`;
+    [
+      "run_id",
+      "run_date",
+      "run_type",
+      "status",
+      "policy_version",
+      "title",
+      "decision_summary",
+      "analysis_summary",
+      "decision_result",
+      "execution_summary",
+      "primary_symbols",
+      "linked_decision_path",
+      "validation_summary",
+      "publication_status",
+      "next_review_trigger",
+      "notes",
+    ].forEach((field) => requireString(row[field], `${context} ${field}`));
+
+    if (!/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/.test(row.run_id)) {
+      throw new Error(`${context} run_id must be a dated lowercase slug`);
+    }
+    if (runIds.has(row.run_id)) {
+      throw new Error(`${operatingRunsFile} has duplicate run_id ${row.run_id}`);
+    }
+    runIds.add(row.run_id);
+
+    parseDate(row.run_date, `${context} run_date`);
+    requireAllowed(row.status, allowedOperatingRunStatuses, `${context} status`);
+
+    splitSemicolonList(row.primary_symbols).forEach((symbol) => {
+      if (!watchlistSymbols.has(symbol) && !ledgerSymbols.has(symbol)) {
+        throw new Error(`${context} primary_symbols references unknown symbol ${symbol}`);
+      }
+    });
+
+    splitSemicolonList(row.confirmed_ledger_event_ids).forEach((eventId) => {
+      if (!ledgerEventIds.has(eventId)) {
+        throw new Error(`${context} confirmed_ledger_event_ids references unknown ledger event ${eventId}`);
+      }
+    });
+
+    if (row.status === "completed_with_confirmed_execution" && splitSemicolonList(row.confirmed_ledger_event_ids).length === 0) {
+      throw new Error(`${context} completed_with_confirmed_execution requires confirmed_ledger_event_ids`);
+    }
+    if (row.status === "expired_no_execution" && splitSemicolonList(row.confirmed_ledger_event_ids).length > 0) {
+      throw new Error(`${context} expired_no_execution must not link confirmed ledger events`);
+    }
+
+    [
+      "linked_decision_path",
+      "linked_run_artifact_path",
+      "evidence_packet_path",
+    ].forEach((field) => {
+      if (row[field] !== "" && !existsSync(row[field])) {
+        throw new Error(`${context} ${field} does not exist: ${row[field]}`);
+      }
+    });
+  });
+
+  console.log(`ok ${operatingRunsFile} semantic checks`);
 }
 
 function validateQualityMetrics() {

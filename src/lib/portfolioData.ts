@@ -238,6 +238,28 @@ export interface MacroOverlayData {
   eventCalendar: MacroEventRecord[];
 }
 
+export interface OperatingRunRecord {
+  runId: string;
+  runDate: string;
+  runType: string;
+  status: string;
+  policyVersion: string;
+  title: string;
+  decisionSummary: string;
+  analysisSummary: string;
+  decisionResult: string;
+  executionSummary: string;
+  confirmedLedgerEventIds: string[];
+  primarySymbols: string[];
+  linkedDecisionPath: string;
+  linkedRunArtifactPath: string;
+  evidencePacketPath: string;
+  validationSummary: string;
+  publicationStatus: string;
+  nextReviewTrigger: string;
+  notes: string;
+}
+
 export interface WatchlistItem {
   symbol: string;
   name: string;
@@ -284,6 +306,7 @@ export interface PortfolioData {
   positions: PositionRecord[];
   equityCurve: EquityPoint[];
   macro: MacroOverlayData;
+  operatingRuns: OperatingRunRecord[];
   watchlist: WatchlistItem[];
   prices: PriceSnapshot[];
 }
@@ -651,6 +674,30 @@ function readMacroEventCalendar(): MacroEventRecord[] {
   })).sort((left, right) => left.reviewRequiredBy.localeCompare(right.reviewRequiredBy));
 }
 
+function readOperatingRuns(): OperatingRunRecord[] {
+  return readCsv("research/operating-runs.csv").map((row) => ({
+    runId: row.run_id,
+    runDate: row.run_date,
+    runType: row.run_type,
+    status: row.status,
+    policyVersion: row.policy_version,
+    title: row.title,
+    decisionSummary: row.decision_summary,
+    analysisSummary: row.analysis_summary,
+    decisionResult: row.decision_result,
+    executionSummary: row.execution_summary,
+    confirmedLedgerEventIds: splitList(row.confirmed_ledger_event_ids),
+    primarySymbols: splitList(row.primary_symbols),
+    linkedDecisionPath: row.linked_decision_path,
+    linkedRunArtifactPath: row.linked_run_artifact_path,
+    evidencePacketPath: row.evidence_packet_path,
+    validationSummary: row.validation_summary,
+    publicationStatus: row.publication_status,
+    nextReviewTrigger: row.next_review_trigger,
+    notes: row.notes,
+  })).sort((left, right) => right.runDate.localeCompare(left.runDate));
+}
+
 function readResearchAnalysis(): ResearchAnalysisEntry[] {
   const parsed = parseYaml(readRequiredFile("research/company-analysis.yml")) as Record<string, unknown>;
   const entries = Array.isArray(parsed.entries) ? parsed.entries : [];
@@ -749,6 +796,13 @@ function latestBySymbol<T extends { asOf: string; symbol: string }>(rows: T[]): 
   return latest;
 }
 
+function splitList(value: string): string[] {
+  return value
+    .split(";")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
 export function loadPortfolioData(): PortfolioData {
   const prices = readPrices();
   const priceHistory = readPriceHistory();
@@ -773,6 +827,7 @@ export function loadPortfolioData(): PortfolioData {
       riskMatrix: readMacroRiskMatrix(),
       eventCalendar: readMacroEventCalendar(),
     },
+    operatingRuns: readOperatingRuns(),
     watchlist: readWatchlist(
       prices,
       researchAnalysis,

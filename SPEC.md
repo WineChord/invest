@@ -243,6 +243,8 @@ Macro and regime risk-overlay state is stored under `research/macro/`.
 
 `research/process/decision-retrospectives.csv` records post-decision and post-discovery process reviews after enough evidence has elapsed. Use it to capture missed candidates, unskimmed community leads, overly conservative entry discipline, overly aggressive entry discipline, and durable process lessons.
 
+`research/operating-runs.csv` records public-safe dashboard summaries for full operating-cycle and monthly-decision full-cycle runs. Each row links the run summary page to the decision note, structured run artifact when available, evidence packet, validation summary, publication status, primary symbols, and broker-confirmed ledger event IDs when later execution was confirmed. Execution must be displayed only from linked ledger events, never inferred from proposed orders or simulation notes.
+
 `research/quality-metrics.yml` records whether the research engine itself is healthy enough to support a monthly allocation decision. It is a compact operational dashboard for coverage, staleness, open event risk, and unresolved research debt.
 
 Required sections:
@@ -1204,6 +1206,7 @@ The dashboard's real-data view is built from committed repository files:
 - `data/market/security_master.csv` for tradability, exchange, SEC CIK, and external research/chart links;
 - `research/watchlist.csv` for the research pool.
 - `research/company-analysis.yml` for structured company briefs and historical analysis drilldowns.
+- `research/operating-runs.csv` for full-cycle run summaries, decision links, validation state, and confirmed execution links.
 
 The dashboard may include browser-only demo data for testing visual logic while the real account has no records. Demo data must be clearly labeled and must not write files, update the ledger, or appear in committed account records.
 
@@ -1222,6 +1225,7 @@ Required dashboard surfaces:
 - buy and sell markers on the equity curve, sourced from the confirmed ledger when real data exists;
 - active research/watchlist workspace with company cards, committed price sparklines with a global window control, recent 1D and 5D price moves with percent or dollar display, key technical and valuation metrics, hover or focus quick briefs, click or tap detail drilldown, symbol-specific confirmed trade markers on price charts, and historical analysis timeline;
 - per-symbol research pages under `/research/<symbol>/` with committed price charts, symbol-specific confirmed trade markers, market/technical/fundamental metrics, analysis provenance, external links, a visible `Not investment advice` disclaimer, and an optional live TradingView preview;
+- full-cycle operating run pages under `/runs/` and `/runs/<run_id>/` with decision summary, analysis summary, result, validation, publication boundary, source links, and confirmed historical execution rows when linked ledger events exist;
 - open-source repository link.
 
 The equity curve uses TradingView Lightweight Charts as a client-side chart engine. The engine supplies chart interaction only: time and price axes, crosshair behavior, viewport range controls, touch gestures, and ledger event markers. It must not be treated as a data provider. Real points still come from committed account files, and demo points still come only from browser-only fixtures. Keep TradingView attribution visible through either the built-in mark or a restrained public attribution link near the chart.
@@ -1263,6 +1267,7 @@ Dashboard evolution rules:
 - Company research detail and per-symbol pages should preserve provenance by separating committed market history, SEC-derived metrics, historical research analysis, and external live preview links. If a metric is unavailable or not meaningful, show `N/A` or `N/M` instead of manufacturing a value.
 - Historical research UI must not imply freshness. Dated baseline entries are memory and provenance; monthly trade decisions still require fresh price, SEC, IR, regulatory, and news checks.
 - Confirmed trade markers must be delayed committed history only. They must not expose same-day actionable trade intent before the public release embargo expires and must never expose raw broker confirmation identifiers.
+- Operating run pages must keep decision/simulation text separate from confirmed execution. A proposed order can appear only as historical source-note context after the publication policy allows it; the dashboard execution table must be sourced from `data/account/ledger.csv` through `research/operating-runs.csv` event IDs.
 - Interactive chart features should support both pointer and keyboard focus when practical, avoid mobile overflow, and expose the underlying operation or metric detail rather than only adding visual decoration.
 - Chart operation tooltips should be compact, light, and non-dominating. They must keep side badges horizontal, avoid large dark blocks over the chart, and preserve readable layout for one or many same-day trades.
 - Market movement colors must be tokenized and user-switchable. The default browser convention is Mainland China style, where gains are red and losses are green. The alternate convention is Western style, where gains are green and losses are red. The selected convention should be remembered in browser storage and applied consistently to return metrics, chart direction, and profit/loss fields without changing the underlying data.

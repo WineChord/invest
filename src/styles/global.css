@@ -1238,6 +1238,143 @@ td span {
   overflow-wrap: anywhere;
 }
 
+.operating-runs-preview {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.operating-runs-toolbar {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.operating-runs-toolbar > span {
+  align-items: center;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 900;
+  gap: 0.35rem;
+  text-transform: uppercase;
+}
+
+.operating-run-card-list,
+.operating-run-index {
+  display: grid;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.operating-run-card-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.operating-run-card,
+.operating-run-index-card,
+.operating-run-section {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.58rem;
+  min-width: 0;
+  padding: 0.72rem;
+}
+
+.operating-run-card-head {
+  align-items: start;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: space-between;
+}
+
+.operating-run-card-head div {
+  display: grid;
+  gap: 0.16rem;
+  min-width: 0;
+}
+
+.operating-run-card-head span:first-child {
+  color: var(--coral);
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.operating-run-card-head strong,
+.operating-run-card-head h2 {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.operating-run-card p,
+.operating-run-index-card p,
+.operating-run-section p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.48;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.operating-run-status {
+  border-radius: 999px;
+  flex: 0 0 auto;
+  font-size: 0.66rem;
+  font-weight: 900;
+  line-height: 1;
+  max-width: 11rem;
+  overflow: hidden;
+  padding: 0.34rem 0.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.operating-run-status-completed_with_confirmed_execution {
+  background: rgba(45, 125, 70, 0.1);
+  color: var(--green);
+}
+
+.operating-run-status-completed_no_action,
+.operating-run-status-expired_no_execution,
+.operating-run-status-superseded {
+  background: rgba(185, 133, 33, 0.14);
+  color: var(--amber);
+}
+
+.operating-run-meta {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.76rem;
+  font-weight: 800;
+  gap: 0.45rem;
+  justify-content: space-between;
+}
+
+.operating-run-detail-link {
+  align-items: center;
+  color: var(--indigo);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 850;
+  gap: 0.3rem;
+  width: fit-content;
+}
+
+.operating-run-detail-link:hover,
+.operating-run-detail-link:focus-visible {
+  color: var(--ink);
+  outline: none;
+  text-decoration: underline;
+}
+
 .research-workspace {
   --research-detail-sticky-top: 5.3rem;
   --research-left-column-height: 100vh;
@@ -2280,6 +2417,161 @@ td span {
   margin: 0;
 }
 
+.operating-runs-page .research-page-hero h1,
+.operating-run-detail-page .research-page-hero h1 {
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 1;
+  white-space: normal;
+}
+
+.operating-run-index {
+  grid-template-columns: 1fr;
+}
+
+.operating-run-index-card {
+  background: white;
+  box-shadow: 0 14px 34px rgba(18, 42, 35, 0.08);
+  padding: 0.9rem;
+}
+
+.operating-run-index-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+.operating-run-index-grid div,
+.research-page-snapshot section {
+  background: rgba(238, 247, 244, 0.68);
+  border: 1px solid rgba(216, 227, 223, 0.78);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.16rem;
+  min-width: 0;
+  padding: 0.58rem;
+}
+
+.operating-run-index-grid dt,
+.research-page-snapshot h4 {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 850;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.operating-run-index-grid dd,
+.research-page-snapshot p {
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.35;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.operating-run-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.operating-run-detail-grid {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.35fr);
+}
+
+.operating-run-detail-main,
+.operating-run-detail-side {
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.operating-run-detail-side .research-page-snapshot {
+  grid-template-columns: 1fr;
+}
+
+.operating-run-source-list {
+  display: grid;
+  gap: 0.48rem;
+}
+
+.operating-run-source-empty {
+  align-items: center;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 850;
+  gap: 0.28rem;
+}
+
+.run-ledger-table-wrap {
+  overflow-x: auto;
+}
+
+.run-ledger-table {
+  min-width: 42rem;
+}
+
+.run-ledger-card-list {
+  display: none;
+}
+
+.run-ledger-card {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.64rem;
+}
+
+.run-ledger-card header {
+  align-items: center;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: space-between;
+}
+
+.run-ledger-card header span,
+.run-ledger-card small,
+.run-ledger-card dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.run-ledger-card header strong {
+  font-size: 0.94rem;
+}
+
+.run-ledger-card dl {
+  display: grid;
+  gap: 0.42rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+.run-ledger-card dt,
+.run-ledger-card dd {
+  margin: 0;
+}
+
+.run-ledger-card dd {
+  font-size: 0.86rem;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.run-ledger-table td:first-child,
+.run-ledger-table th:first-child {
+  text-align: left;
+}
+
 @media (max-width: 1120px) {
   h1 {
     white-space: normal;
@@ -2291,6 +2583,12 @@ td span {
 
   .macro-metric-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .operating-run-card-list,
+  .operating-run-detail-grid,
+  .operating-run-index-grid {
+    grid-template-columns: 1fr;
   }
 
   .dashboard-grid,
@@ -2409,6 +2707,30 @@ td span {
   .research-page-facts,
   .research-page-snapshot {
     grid-template-columns: 1fr;
+  }
+
+  .run-ledger-table-wrap {
+    display: none;
+  }
+
+  .run-ledger-card-list {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .run-ledger-card dl {
+    grid-template-columns: 1fr;
+  }
+
+  .operating-runs-toolbar,
+  .operating-run-card-head {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .operating-run-status {
+    justify-self: start;
   }
 
   .research-page-chart-heading {
