@@ -967,10 +967,6 @@ export default function InvestDashboard({ data }: Props) {
           />
         </section>
 
-        <Panel title="Macro regime" eyebrow="risk overlay">
-          <MacroRegimePanel macro={activeData.macro} />
-        </Panel>
-
         <section className="dashboard-grid">
           <Panel
             title="Equity curve"
@@ -1015,10 +1011,6 @@ export default function InvestDashboard({ data }: Props) {
           </Panel>
         </section>
 
-        <Panel title="Operating runs" eyebrow="full-cycle audit">
-          <OperatingRunsPreview runs={activeData.operatingRuns} />
-        </Panel>
-
         <Panel title="Research universe" eyebrow="active universe">
           <WatchlistTable
             events={activeData.ledger}
@@ -1026,6 +1018,14 @@ export default function InvestDashboard({ data }: Props) {
             marketColorScheme={marketColorScheme}
             repositoryUrl={activeData.repositoryUrl}
           />
+        </Panel>
+
+        <Panel title="Macro regime" eyebrow="risk overlay">
+          <MacroRegimePanel macro={activeData.macro} />
+        </Panel>
+
+        <Panel title="Operating runs" eyebrow="full-cycle audit">
+          <OperatingRunsPreview runs={activeData.operatingRuns} />
         </Panel>
       </main>
     </div>
