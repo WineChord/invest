@@ -144,6 +144,10 @@ assert(rklb, "RKLB should be surfaced from Reddit and Stocktwits");
 assert.equal(rklb.known_repo_symbol, true);
 assert.equal(rklb.security_metadata_status, "known_repo_tradable_security");
 assert(rklb.sample_urls.every((url) => !url.includes("body")), "sample URLs should not include raw content");
+assert(
+  rklb.reason_keywords.some((row) => row.keyword === "satellite"),
+  "symbol rows should explain theme co-mentions without retaining raw text",
+);
 
 const unknown = result.symbol_signals.find((row) => row.symbol === "NEWT");
 assert(unknown, "Stocktwits trending stock should be surfaced even if not in repo metadata");
@@ -152,6 +156,20 @@ assert.equal(unknown.security_metadata_status, "stocktwits_us_stock");
 assert(!result.symbol_signals.some((row) => row.symbol === "PENGU.X"), "crypto symbols should be excluded by policy filters");
 assert(result.lane_keyword_signals.some((row) => row.lane_id === "ai_power_and_cooling" && row.keyword === "data center power"));
 assert(result.lane_keyword_signals.some((row) => row.lane_id === "space_infrastructure" && row.keyword === "satellite"));
+
+const redditRanking = result.source_symbol_rankings.find((row) => row.source_id === "fixture_reddit");
+assert(redditRanking, "scan should emit per-source symbol rankings");
+assert(
+  redditRanking.symbols.some((row) => row.symbol === "RKLB" && row.mention_count === 1),
+  "per-source ranking should count Reddit cash tags",
+);
+
+const stocktwitsTypeRanking = result.source_type_symbol_rankings.find((row) => row.source_type === "stocktwits_symbol_stream");
+assert(stocktwitsTypeRanking, "scan should emit per-source-type symbol rankings");
+assert(
+  stocktwitsTypeRanking.symbols.some((row) => row.symbol === "RKLB" && row.mention_count >= 2),
+  "source-type ranking should aggregate Stocktwits stream mentions",
+);
 
 console.log("community scan tests passed");
 

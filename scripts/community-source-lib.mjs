@@ -172,6 +172,9 @@ export async function runCommunitySourceScan({
 } = {}) {
   const normalizedAsOf = strictDate(asOf, "--as-of");
   const sourceResults = [];
+  const sourceSymbolSignals = new Map();
+  const sourceTypeSymbolSignals = new Map();
+  const symbolKeywordSignals = new Map();
   const symbolSignals = new Map();
   const laneKeywordSignals = new Map();
   const stocktwitsTrendingSymbols = [];
@@ -189,7 +192,10 @@ export async function runCommunitySourceScan({
     repoSymbols,
     retrievedAt,
     sourceResults,
+    sourceSymbolSignals,
+    sourceTypeSymbolSignals,
     stocktwitsTrendingSymbols,
+    symbolKeywordSignals,
     symbolSignals,
   };
 
@@ -199,7 +205,7 @@ export async function runCommunitySourceScan({
   await scanHackerNews(context);
 
   const symbolRows = [...symbolSignals.values()].map((record) =>
-    finalizeSymbolSignal(record, repoSymbols),
+    finalizeSymbolSignal(record, repoSymbols, symbolKeywordSignals),
   ).sort(compareSymbolSignals);
   const laneKeywordRows = [...laneKeywordSignals.values()].map(finalizeLaneKeywordSignal)
     .sort((left, right) =>
@@ -207,6 +213,18 @@ export async function runCommunitySourceScan({
       || left.lane_id.localeCompare(right.lane_id)
       || left.keyword.localeCompare(right.keyword),
     );
+  const sourceSymbolRankings = finalizeScopedSymbolRankings(
+    sourceSymbolSignals,
+    repoSymbols,
+    sourceResults,
+    "source",
+  );
+  const sourceTypeSymbolRankings = finalizeScopedSymbolRankings(
+    sourceTypeSymbolSignals,
+    repoSymbols,
+    sourceResults,
+    "source_type",
+  );
 
   return {
     schema_version: communityScanSchemaVersion,
@@ -231,6 +249,8 @@ export async function runCommunitySourceScan({
     symbol_signals: symbolRows,
     lane_keyword_signal_count: laneKeywordRows.length,
     lane_keyword_signals: laneKeywordRows,
+    source_symbol_rankings: sourceSymbolRankings,
+    source_type_symbol_rankings: sourceTypeSymbolRankings,
     stocktwits_trending_symbols: stocktwitsTrendingSymbols,
     caveats,
   };
@@ -388,7 +408,8 @@ async function scanStocktwitsSymbolStreams(context, section) {
         const sampleUrl = stocktwitsMessageUrl(message.id);
         const publishedAt = String(message.created_at ?? "");
         const text = String(message.body ?? "");
-        extractTokenizedCashTags(message).forEach((cashTag) => {
+        const cashTags = extractTokenizedCashTags(message);
+        cashTags.forEach((cashTag) => {
           addSymbolSignal(context, cashTag, {
             publishedAt,
             sampleUrl,
@@ -403,6 +424,7 @@ async function scanStocktwitsSymbolStreams(context, section) {
           scanCashTags: false,
           sourceId: id,
           sourceType: "stocktwits_symbol_stream",
+          symbolsForKeywordContext: cashTags,
           text,
           url: sampleUrl,
         });
@@ -495,11 +517,13 @@ function scanCommunityText({
   scanCashTags = true,
   sourceId,
   sourceType,
+  symbolsForKeywordContext = [],
   text,
   url,
 }) {
+  const detectedSymbols = scanCashTags ? extractCashTags(text) : [];
   if (scanCashTags) {
-    extractCashTags(text).forEach((symbol) => {
+    detectedSymbols.forEach((symbol) => {
       addSymbolSignal(context, symbol, {
         publishedAt,
         sampleUrl: url,
@@ -509,20 +533,54 @@ function scanCommunityText({
       });
     });
   }
+  const matchedKeywords = matchingLaneKeywords(context.laneMap, text);
+  matchedKeywords.forEach((match) => {
+    addLaneKeywordSignal(context, match.lane, match.keyword, {
+      publishedAt,
+      sampleUrl: url,
+      sourceId,
+      sourceType,
+    });
+  });
+  const reasonSymbols = uniqueSymbols([...detectedSymbols, ...symbolsForKeywordContext]);
+  reasonSymbols.forEach((symbol) => {
+    matchedKeywords.forEach((match) => {
+      addSymbolKeywordSignal(context, symbol, match.lane, match.keyword, {
+        publishedAt,
+        sampleUrl: url,
+        sourceId,
+        sourceType,
+      });
+    });
+  });
+}
+
+function matchingLaneKeywords(laneMap, text) {
   const normalizedText = normalizeText(text);
-  context.laneMap.lanes.forEach((lane) => {
+  if (normalizedText === "") {
+    return [];
+  }
+  const matches = [];
+  const seen = new Set();
+  laneMap.lanes.forEach((lane) => {
     const keywords = [...lane.screenKeywords, ...lane.profileKeywords];
     keywords.forEach((keyword) => {
-      if (normalizedText.includes(normalizeText(keyword))) {
-        addLaneKeywordSignal(context, lane, keyword, {
-          publishedAt,
-          sampleUrl: url,
-          sourceId,
-          sourceType,
+      const normalizedKeyword = normalizeText(keyword);
+      const key = `${lane.id}|${normalizedKeyword}`;
+      if (
+        normalizedKeyword !== ""
+        && normalizedText.includes(normalizedKeyword)
+        && !seen.has(key)
+      ) {
+        seen.add(key);
+        matches.push({
+          keyword,
+          lane,
         });
       }
     });
   });
+  return matches;
 }
 
 export function extractCashTags(text) {
@@ -727,6 +785,8 @@ function addSymbolSignal(context, rawSymbol, detail) {
   if (Number.isFinite(Number(detail.stocktwitsRank))) {
     record.stocktwitsRanks.push(Number(detail.stocktwitsRank));
   }
+  addScopedSymbolSignal(context.sourceSymbolSignals, detail.sourceId, "source", symbol, detail);
+  addScopedSymbolSignal(context.sourceTypeSymbolSignals, detail.sourceType, "source_type", symbol, detail);
 }
 
 function addLaneKeywordSignal(context, lane, keyword, detail) {
@@ -752,7 +812,79 @@ function addLaneKeywordSignal(context, lane, keyword, detail) {
   record.latestPublishedAt = latestTimestamp(record.latestPublishedAt, detail.publishedAt);
 }
 
-function finalizeSymbolSignal(record, repoSymbols) {
+function addSymbolKeywordSignal(context, rawSymbol, lane, keyword, detail) {
+  const symbol = normalizeSymbol(rawSymbol);
+  const normalizedKeyword = normalizeText(keyword);
+  if (symbol === "" || normalizedKeyword === "") {
+    return;
+  }
+  const key = `${symbol}|${lane.id}|${normalizedKeyword}`;
+  const record = getOrCreate(context.symbolKeywordSignals, key, () => ({
+    keyword: String(keyword),
+    laneId: lane.id,
+    laneName: lane.name,
+    latestPublishedAt: "",
+    mentionCount: 0,
+    sampleUrls: [],
+    sourceIds: new Set(),
+    sourceTypes: new Set(),
+    symbol,
+  }));
+  record.mentionCount += 1;
+  addIfText(record.sourceIds, detail.sourceId);
+  addIfText(record.sourceTypes, detail.sourceType);
+  addSampleUrl(record.sampleUrls, detail.sampleUrl, context.maxSampleUrls);
+  record.latestPublishedAt = latestTimestamp(record.latestPublishedAt, detail.publishedAt);
+}
+
+function addScopedSymbolSignal(map, scopeId, scopeKind, rawSymbol, detail) {
+  const normalizedScopeId = String(scopeId ?? "").trim();
+  const symbol = normalizeSymbol(rawSymbol);
+  if (normalizedScopeId === "" || symbol === "") {
+    return;
+  }
+  const key = `${scopeKind}|${normalizedScopeId}|${symbol}`;
+  const record = getOrCreate(map, key, () => ({
+    exchanges: new Set(),
+    instrumentClasses: new Set(),
+    latestPublishedAt: "",
+    mentionCount: 0,
+    names: new Set(),
+    sampleUrls: [],
+    scopeId: normalizedScopeId,
+    scopeKind,
+    scopeType: String(detail.sourceType ?? "").trim(),
+    signalTypes: new Set(),
+    stocktwitsRanks: [],
+    stocktwitsTrendingScore: undefined,
+    stocktwitsWatchlistCount: undefined,
+    symbol,
+  }));
+  record.mentionCount += 1;
+  addIfText(record.exchanges, detail.exchange);
+  addIfText(record.instrumentClasses, detail.instrumentClass);
+  addIfText(record.names, detail.name);
+  addIfText(record.signalTypes, detail.type);
+  addSampleUrl(record.sampleUrls, detail.sampleUrl, defaultMaxSampleUrls);
+  record.latestPublishedAt = latestTimestamp(record.latestPublishedAt, detail.publishedAt);
+  if (Number.isFinite(Number(detail.stocktwitsTrendingScore))) {
+    record.stocktwitsTrendingScore = Math.max(
+      Number(record.stocktwitsTrendingScore ?? 0),
+      Number(detail.stocktwitsTrendingScore),
+    );
+  }
+  if (Number.isFinite(Number(detail.stocktwitsWatchlistCount))) {
+    record.stocktwitsWatchlistCount = Math.max(
+      Number(record.stocktwitsWatchlistCount ?? 0),
+      Number(detail.stocktwitsWatchlistCount),
+    );
+  }
+  if (Number.isFinite(Number(detail.stocktwitsRank))) {
+    record.stocktwitsRanks.push(Number(detail.stocktwitsRank));
+  }
+}
+
+function finalizeSymbolSignal(record, repoSymbols, symbolKeywordSignals) {
   const repoSymbol = repoSymbols.get(record.symbol);
   const sourceCount = record.sourceIds.size;
   const trendingScore = Number(record.stocktwitsTrendingScore ?? 0);
@@ -767,6 +899,7 @@ function finalizeSymbolSignal(record, repoSymbols) {
     source_ids: [...record.sourceIds].sort(),
     source_types: [...record.sourceTypes].sort(),
     signal_types: [...record.signalTypes].sort(),
+    reason_keywords: finalizeSymbolReasonKeywords(record.symbol, symbolKeywordSignals),
     community_signal_score: Number(communitySignalScore.toFixed(3)),
     sample_urls: record.sampleUrls,
     latest_source_published_at: record.latestPublishedAt,
@@ -783,6 +916,32 @@ function finalizeSymbolSignal(record, repoSymbols) {
   };
 }
 
+function finalizeSymbolReasonKeywords(symbol, symbolKeywordSignals) {
+  return [...symbolKeywordSignals.values()]
+    .filter((record) => record.symbol === symbol)
+    .map(finalizeSymbolKeywordSignal)
+    .sort((left, right) =>
+      right.mention_count - left.mention_count
+      || left.lane_id.localeCompare(right.lane_id)
+      || left.keyword.localeCompare(right.keyword),
+    )
+    .slice(0, 10);
+}
+
+function finalizeSymbolKeywordSignal(record) {
+  return {
+    lane_id: record.laneId,
+    lane_name: record.laneName,
+    keyword: record.keyword,
+    mention_count: record.mentionCount,
+    source_count: record.sourceIds.size,
+    source_ids: [...record.sourceIds].sort(),
+    source_types: [...record.sourceTypes].sort(),
+    sample_urls: record.sampleUrls,
+    latest_source_published_at: record.latestPublishedAt,
+  };
+}
+
 function finalizeLaneKeywordSignal(record) {
   return {
     lane_id: record.laneId,
@@ -796,6 +955,86 @@ function finalizeLaneKeywordSignal(record) {
     latest_source_published_at: record.latestPublishedAt,
     required_next_step: "bottleneck_lane_review_if_signal_is_material",
   };
+}
+
+function finalizeScopedSymbolRankings(scopedSignals, repoSymbols, sourceResults, scopeKind) {
+  const sourceById = new Map(sourceResults.map((source) => [source.id, source]));
+  const sourceTypeGroups = new Map();
+  sourceResults.forEach((source) => {
+    const records = getOrCreate(sourceTypeGroups, source.type, () => []);
+    records.push(source);
+  });
+  const groups = new Map();
+  [...scopedSignals.values()].forEach((record) => {
+    const group = getOrCreate(groups, record.scopeId, () => ({
+      scopeId: record.scopeId,
+      scopeKind,
+      scopeType: record.scopeType,
+      symbols: [],
+    }));
+    group.symbols.push(finalizeScopedSymbolSignal(record, repoSymbols));
+  });
+  return [...groups.values()]
+    .map((group) => finalizeScopedSymbolGroup(group, sourceById, sourceTypeGroups))
+    .sort((left, right) => {
+      const leftId = left.source_id ?? left.source_type ?? "";
+      const rightId = right.source_id ?? right.source_type ?? "";
+      return leftId.localeCompare(rightId);
+    });
+}
+
+function finalizeScopedSymbolGroup(group, sourceById, sourceTypeGroups) {
+  const symbols = group.symbols.sort(compareScopedSymbolSignals).slice(0, 20);
+  if (group.scopeKind === "source") {
+    const source = sourceById.get(group.scopeId);
+    return {
+      source_id: group.scopeId,
+      source_type: source?.type ?? group.scopeType,
+      source_url: source?.url ?? "",
+      source_status: source?.status ?? "",
+      symbol_count: group.symbols.length,
+      symbols,
+    };
+  }
+  const sources = sourceTypeGroups.get(group.scopeId) ?? [];
+  return {
+    source_type: group.scopeId,
+    source_count: sources.length,
+    source_ids: sources.map((source) => source.id).sort(),
+    symbol_count: group.symbols.length,
+    symbols,
+  };
+}
+
+function finalizeScopedSymbolSignal(record, repoSymbols) {
+  const repoSymbol = repoSymbols.get(record.symbol);
+  const trendingScore = Number(record.stocktwitsTrendingScore ?? 0);
+  const communitySignalScore = record.mentionCount
+    + Math.max(0, trendingScore) * communitySignalScoreTrendingWeight;
+  return {
+    symbol: record.symbol,
+    name: firstNonEmpty([...record.names]) || repoSymbol?.name || "",
+    mention_count: record.mentionCount,
+    signal_types: [...record.signalTypes].sort(),
+    community_signal_score: Number(communitySignalScore.toFixed(3)),
+    sample_urls: record.sampleUrls,
+    latest_source_published_at: record.latestPublishedAt,
+    known_repo_symbol: repoSymbol !== undefined,
+    security_metadata_status: securityMetadataStatus(record, repoSymbol),
+    repo_status: repoSymbol?.status ?? "",
+    repo_tradability: repoSymbol?.tradability ?? "",
+    exchanges: [...record.exchanges].sort(),
+    instrument_classes: [...record.instrumentClasses].sort(),
+    stocktwits_watchlist_count: record.stocktwitsWatchlistCount ?? null,
+    stocktwits_trending_score: record.stocktwitsTrendingScore ?? null,
+    stocktwits_best_rank: record.stocktwitsRanks.length === 0 ? null : Math.min(...record.stocktwitsRanks),
+  };
+}
+
+function compareScopedSymbolSignals(left, right) {
+  return right.community_signal_score - left.community_signal_score
+    || right.mention_count - left.mention_count
+    || left.symbol.localeCompare(right.symbol);
 }
 
 function compareSymbolSignals(left, right) {
@@ -928,6 +1167,17 @@ function upsertRepoSymbol(symbols, rawSymbol, updates) {
 
 function normalizeSymbol(value) {
   return String(value ?? "").replace(/^\$/, "").trim().toUpperCase();
+}
+
+function uniqueSymbols(values) {
+  const symbols = new Set();
+  values.forEach((value) => {
+    const symbol = normalizeSymbol(value);
+    if (symbol !== "" && !invalidSymbolSuffixes.some((suffix) => symbol.endsWith(suffix))) {
+      symbols.add(symbol);
+    }
+  });
+  return [...symbols].sort();
 }
 
 function normalizeText(value) {

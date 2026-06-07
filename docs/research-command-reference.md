@@ -94,7 +94,7 @@ npm run scan:community
 
 The public community scan is a no-token, no-cookie lead-generation layer. It reads the configured public sources in `research/community-sources.yml`, currently Reddit RSS/Atom feeds, Stocktwits public trending and symbol stream endpoints, Hacker News Algolia search, and generic RSS feeds. It deliberately excludes X because official X search requires API credentials and web scraping is not an acceptable repository workflow.
 
-By default, the command writes an aggregate JSON file under ignored `research/cache/community/YYYY-MM-DD/`. The artifact stores source status, symbol mention counts, lane keyword counts, Stocktwits public trend metadata, sample URLs, retrieval timestamps, and caveats. It must not store raw post bodies, author names, cookies, tokens, or private payloads. Use `--output PATH` only when intentionally saving a durable aggregate artifact after checking publication safety.
+By default, the command writes an aggregate JSON file under ignored `research/cache/community/YYYY-MM-DD/`. The artifact stores source status, global symbol mention counts, per-source symbol rankings, per-source-type symbol rankings, lane keyword counts, symbol reason-keyword co-mentions, Stocktwits public trend metadata, sample URLs, retrieval timestamps, and caveats. It must not store raw post bodies, author names, cookies, tokens, or private payloads. Use `--output PATH` only when intentionally saving a durable aggregate artifact after checking publication safety.
 
 Useful options:
 

@@ -294,7 +294,7 @@ hacker_news:
 generic_rss:
 ```
 
-Community scan outputs are aggregate artifacts. They may record source status, source URLs, retrieval timestamps, symbol mention counts, lane keyword counts, Stocktwits public trend metadata, sample URLs, and caveats. They must not retain raw post bodies, author names, cookies, tokens, private payloads, or unlicensed raw community dumps in committed outputs. Default outputs belong under ignored `research/cache/community/`; saving a durable aggregate artifact requires the same publication-safety review as other research outputs.
+Community scan outputs are aggregate artifacts. They may record source status, source URLs, retrieval timestamps, global symbol mention counts, per-source symbol rankings, per-source-type symbol rankings, lane keyword counts, symbol reason-keyword co-mentions, Stocktwits public trend metadata, sample URLs, and caveats. They must not retain raw post bodies, author names, cookies, tokens, private payloads, or unlicensed raw community dumps in committed outputs. Default outputs belong under ignored `research/cache/community/`; saving a durable aggregate artifact requires the same publication-safety review as other research outputs.
 
 `research/discovery/candidates.csv` records potential new public candidates before they are promoted into the active watchlist.
 
