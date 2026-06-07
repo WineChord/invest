@@ -14,6 +14,7 @@ Files:
 - `discovery/candidate-readiness.yml`: machine-checkable readiness status for open raw candidates.
 - `discovery/runs/`: structured agentic discovery run artifacts, deterministic discovery audit outputs, and bounded subagent evidence packets.
 - `discovery/readiness/`: per-candidate readiness sprint notes.
+- `community-sources.yml`: public no-token community source configuration for weak sentiment and lead-generation scans.
 - `freshness/events.csv`: dated filing, IR, regulatory, contract, financing, dilution, price, and thesis-trigger events that require review.
 - `valuation-states.csv`: latest valuation and entry-attractiveness state for researched symbols.
 - `watchlist-cycle-reviews.csv`: per-cycle stale-prevention review rows for every non-removed watchlist symbol during full-cycle and monthly-decision runs.
@@ -37,5 +38,7 @@ Future company-specific files should follow [templates/company-research-card.md]
 Material SEC filings and official reports should be reviewed with [templates/filing-review.md](../templates/filing-review.md). A filing can update freshness events, valuation state, or dashboard-visible analysis, but it must not mutate broker-confirmed account records.
 
 Use [templates/research-engine-run.md](../templates/research-engine-run.md) for each durable discovery, freshness, valuation, and cleanup run that changes the research engine state.
+
+Use `npm run scan:community` for a no-token public community scan across configured Reddit RSS, Stocktwits public endpoints, Hacker News Algolia search, and generic RSS feeds. The default output is an ignored aggregate cache under `research/cache/community/`; it records source counts, symbol mentions, lane keyword mentions, sample URLs, and retrieval metadata, not raw post bodies or author names. These signals are weak discovery leads only and require primary-source review before any durable candidate, watchlist, readiness, or allocation change.
 
 Do not commit large raw source downloads by default. Use ignored local scratch paths such as `research/cache/` or `research/downloads/` during analysis, then commit source metadata, metric extracts, filing reviews, and conclusions.

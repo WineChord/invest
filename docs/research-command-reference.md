@@ -86,6 +86,26 @@ npm run build:evidence-packet -- --as-of YYYY-MM-DD --deterministic-output resea
 
 Use `npm run build:evidence-packet` before spawning independent xhigh subagents for material discovery or allocation work.
 
+## Public Community Scan
+
+```bash
+npm run scan:community
+```
+
+The public community scan is a no-token, no-cookie lead-generation layer. It reads the configured public sources in `research/community-sources.yml`, currently Reddit RSS/Atom feeds, Stocktwits public trending and symbol stream endpoints, Hacker News Algolia search, and generic RSS feeds. It deliberately excludes X because official X search requires API credentials and web scraping is not an acceptable repository workflow.
+
+By default, the command writes an aggregate JSON file under ignored `research/cache/community/YYYY-MM-DD/`. The artifact stores source status, symbol mention counts, lane keyword counts, Stocktwits public trend metadata, sample URLs, retrieval timestamps, and caveats. It must not store raw post bodies, author names, cookies, tokens, or private payloads. Use `--output PATH` only when intentionally saving a durable aggregate artifact after checking publication safety.
+
+Useful options:
+
+```bash
+npm run scan:community -- --as-of YYYY-MM-DD
+npm run scan:community -- --json
+npm run scan:community -- --output research/cache/community/YYYY-MM-DD/YYYY-MM-DD-public-community-scan.json
+```
+
+Community output is never buy eligibility. A symbol surfaced by this scan can enter durable research only after security metadata confirmation, primary-source skim, and the normal discovery readiness or promotion gates when material.
+
 ## Research Expansion
 
 Research expansion starts with `research/discovery/lanes.yml`, then raw candidates in `research/discovery/candidates.csv`, and only then `research/watchlist.csv` after primary-source evidence supports promotion. For a promoted public ticker, the market-data refresh hydrates missing security metadata, fetches committed price history, updates the latest close and derived metrics, and lets the dashboard generate the card and `/research/<symbol>/` page without changing the workflow. `npm run check:data` enforces that every watchlist row has matching security metadata and that every tradable watchlist symbol has market-data coverage after refresh.
@@ -103,7 +123,8 @@ npm run test:discovery-gates
 npm run test:sec-registration-transaction-candidates
 npm run test:promotion-gates
 npm run test:watchlist-cycle-gates
+npm run test:community-scan
 npm run verify
 ```
 
-Use `npm run check:data` for data and research changes. Use `npm run test:discovery-artifact-index` when changing artifact index generation or hash anchoring. Use `npm run test:discovery-profiles` when changing SEC or issuer profile generation. Use `npm run test:discovery-scan` when changing deterministic universe scan matching or scan output behavior. Use `npm run test:semantic-discovery` when changing semantic packet, batch, cache, import, or run-summary behavior. Use `npm run test:fmp-fetch` when changing optional FMP provider, cache, budget, or fallback behavior. Use `npm run test:discovery-gates` when changing discovery readiness rules or validation. Use `npm run test:sec-registration-transaction-candidates` when changing pre-ticker registration or transaction discovery. Use `npm run test:promotion-gates` when changing promotion-review or active/core/buy-zone gate validation. Use `npm run test:watchlist-cycle-gates` when changing stale-prevention, priority/status refresh, or buy-zone currentness rules. Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
+Use `npm run check:data` for data and research changes. Use `npm run test:discovery-artifact-index` when changing artifact index generation or hash anchoring. Use `npm run test:discovery-profiles` when changing SEC or issuer profile generation. Use `npm run test:discovery-scan` when changing deterministic universe scan matching or scan output behavior. Use `npm run test:semantic-discovery` when changing semantic packet, batch, cache, import, or run-summary behavior. Use `npm run test:fmp-fetch` when changing optional FMP provider, cache, budget, or fallback behavior. Use `npm run test:discovery-gates` when changing discovery readiness rules or validation. Use `npm run test:sec-registration-transaction-candidates` when changing pre-ticker registration or transaction discovery. Use `npm run test:promotion-gates` when changing promotion-review or active/core/buy-zone gate validation. Use `npm run test:watchlist-cycle-gates` when changing stale-prevention, priority/status refresh, or buy-zone currentness rules. Use `npm run test:community-scan` when changing public no-token community source parsing, scoring, or privacy boundaries. Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.

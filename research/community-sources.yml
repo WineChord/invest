@@ -1,0 +1,105 @@
+schema_version: 1
+as_of: 2026-06-07
+purpose: public_no_token_community_lead_generation
+retrieval_boundary:
+  requires_tokens_or_cookies: false
+  raw_user_content_retained_in_committed_outputs: false
+  intended_use: sentiment_and_lead_generation_only
+  decisive_evidence_allowed: false
+notes:
+  - Community discussion can surface weak discovery leads and attention shifts, but it cannot create buy eligibility.
+  - Durable outputs should keep aggregate counts, source URLs, and retrieval metadata rather than raw posts, author names, cookies, or private payloads.
+  - X is intentionally excluded from this no-token source list because official search requires API credentials and web scraping is not an acceptable repository workflow.
+reddit_rss:
+  enabled: true
+  feeds:
+    - id: reddit_wallstreetbets_top_day
+      url: https://www.reddit.com/r/wallstreetbets/top/.rss?t=day
+      max_items: 50
+      notes: Speculative retail attention; noisy but useful for sudden ticker discovery.
+    - id: reddit_wallstreetbets_new
+      url: https://www.reddit.com/r/wallstreetbets/new/.rss
+      max_items: 50
+      notes: Fresh speculative retail ticker mentions.
+    - id: reddit_stocks_new
+      url: https://www.reddit.com/r/stocks/new/.rss
+      max_items: 50
+      notes: Broader retail stock discussion.
+    - id: reddit_stocks_top_week
+      url: https://www.reddit.com/r/stocks/top/.rss?t=week
+      max_items: 50
+      notes: Higher-engagement stock discussion over the past week.
+    - id: reddit_investing_new
+      url: https://www.reddit.com/r/investing/new/.rss
+      max_items: 50
+      notes: Broader investing discussion with lower meme density.
+    - id: reddit_securityanalysis_new
+      url: https://www.reddit.com/r/SecurityAnalysis/new/.rss
+      max_items: 50
+      notes: Long-form security analysis discussion; usually lower volume.
+    - id: reddit_spaceinvestorsdaily_new
+      url: https://www.reddit.com/r/SpaceInvestorsDaily/new/.rss
+      max_items: 50
+      notes: Space-sector community discussion relevant to current lanes.
+stocktwits:
+  enabled: true
+  trending_url: https://api.stocktwits.com/api/2/trending/symbols.json
+  symbol_stream_url_template: https://api.stocktwits.com/api/2/streams/symbol/{symbol}.json
+  max_symbol_streams: 30
+  max_messages_per_symbol: 30
+  symbol_stream_symbols_source: watchlist_and_lane_proxies
+  allowed_regions:
+    - US
+  allowed_instrument_classes:
+    - Stock
+  allowed_exchanges:
+    - NASDAQ
+    - NYSE
+    - NYSE American
+    - NYSEAMERICAN
+hacker_news:
+  enabled: true
+  search_url: https://hn.algolia.com/api/v1/search_by_date
+  queries:
+    - id: hn_ai_compute_infrastructure
+      query: AI infrastructure
+      lane_id: ai_compute_infrastructure
+      tags: story,comment
+      hits_per_page: 20
+    - id: hn_ai_power_and_cooling
+      query: data center power
+      lane_id: ai_power_and_cooling
+      tags: story,comment
+      hits_per_page: 20
+    - id: hn_semiconductor_interconnect
+      query: CXL interconnect
+      lane_id: semiconductor_interconnect_and_memory
+      tags: story,comment
+      hits_per_page: 20
+    - id: hn_space_infrastructure
+      query: satellite infrastructure
+      lane_id: space_infrastructure
+      tags: story,comment
+      hits_per_page: 20
+    - id: hn_quantum_computing
+      query: quantum computing
+      lane_id: quantum_computing_and_networking
+      tags: story,comment
+      hits_per_page: 20
+    - id: hn_advanced_nuclear
+      query: nuclear reactor
+      lane_id: advanced_nuclear_and_grid_constraints
+      tags: story,comment
+      hits_per_page: 20
+    - id: hn_programmable_money
+      query: stablecoin infrastructure
+      lane_id: programmable_money_infrastructure
+      tags: story,comment
+      hits_per_page: 20
+generic_rss:
+  enabled: true
+  feeds:
+    - id: hacker_news_front_page
+      url: https://news.ycombinator.com/rss
+      max_items: 50
+      notes: Broad technical front-page signal; topic discovery only.

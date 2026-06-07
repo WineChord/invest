@@ -33,9 +33,11 @@
     "test:sec-registration-transaction-candidates": "node scripts/test-sec-registration-transaction-candidates.mjs",
     "test:promotion-gates": "node scripts/test-promotion-gates.mjs",
     "test:watchlist-cycle-gates": "node scripts/test-watchlist-cycle-gates.mjs",
+    "test:community-scan": "node scripts/test-community-scan.mjs",
+    "scan:community": "node scripts/scan-community-sources.mjs",
     "discover:universe": "node scripts/discover-universe.mjs",
     "refresh:market": "node scripts/refresh-market-data.mjs",
-    "verify": "npm run check:data && npm run test:discovery-artifact-index && npm run test:discovery-profiles && npm run test:discovery-scan && npm run test:semantic-discovery && npm run test:fmp-fetch && npm run test:discovery-gates && npm run test:sec-registration-transaction-candidates && npm run test:promotion-gates && npm run test:watchlist-cycle-gates && npm run build"
+    "verify": "npm run check:data && npm run test:discovery-artifact-index && npm run test:discovery-profiles && npm run test:discovery-scan && npm run test:semantic-discovery && npm run test:fmp-fetch && npm run test:discovery-gates && npm run test:sec-registration-transaction-candidates && npm run test:promotion-gates && npm run test:watchlist-cycle-gates && npm run test:community-scan && npm run build"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.5",
