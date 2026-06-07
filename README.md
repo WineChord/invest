@@ -52,6 +52,8 @@ Decision requests are full operating-cycle triggers. When the user reports new c
 - Potential new public candidates: [research/discovery/candidates.csv](research/discovery/candidates.csv).
 - Material freshness events: [research/freshness/events.csv](research/freshness/events.csv).
 - Valuation and entry states: [research/valuation-states.csv](research/valuation-states.csv).
+- Macro risk-overlay records: [research/macro](research/macro).
+- Public community source configuration: [research/community-sources.yml](research/community-sources.yml).
 - Research health metrics: [research/quality-metrics.yml](research/quality-metrics.yml).
 - Completed filing reviews: [research/filings](research/filings).
 - Process reviews: [research/process](research/process).
@@ -71,7 +73,7 @@ npm run verify
 
 The dashboard defaults to committed repository data. The "Demo data" control switches to browser-only simulated data for testing charts, operation history, Sharpe ratio, drawdown, and holding tables. "Real data" switches back to delayed committed repository records without changing files. Neither mode is investment advice; demo mode is UI-only simulation, and real mode is a delayed historical journal for this repository rather than a public trading signal.
 
-Daily market-data, discovery, SEC filing, semantic-discovery, FMP, and validation command details live in [docs/research-command-reference.md](docs/research-command-reference.md).
+Daily market-data, macro-regime, public community, discovery, SEC filing, semantic-discovery, FMP, and validation command details live in [docs/research-command-reference.md](docs/research-command-reference.md).
 
 ## Repo-Scoped Skill
 

@@ -69,6 +69,7 @@ const currentScan = {
       security_metadata_status: "known_repo_tradable_security",
       repo_status: "active_core_candidate",
       repo_tradability: "tradable",
+      latest_source_published_at: "2026-06-07",
       sample_urls: ["https://stocktwits.example/rklb"],
     },
     {
@@ -90,6 +91,7 @@ const currentScan = {
       security_metadata_status: "stocktwits_us_stock",
       repo_status: "",
       repo_tradability: "",
+      latest_source_published_at: "2026-06-06",
       stocktwits_trending_score: 4,
       sample_urls: ["https://stocktwits.example/newt"],
     },
@@ -187,11 +189,14 @@ assert.equal(rklb.triage_class, "existing_active_monitor");
 assert.equal(rklb.recommended_next_action, "freshness_check_and_watchlist_cycle_priority_review");
 assert.equal(rklb.previous_scan.mention_delta, 30);
 assert.equal(rklb.buy_eligibility_effect, "none_community_signal_only");
+assert.equal(rklb.score_components.cross_scan_persistence_component, 5);
+assert(rklb.score_components.source_recency_decay_component > 0);
 
 const newt = result.top_leads.find((lead) => lead.symbol === "NEWT");
 assert(newt, "unknown but high-signal stock should be surfaced");
 assert.equal(newt.triage_class, "new_symbol_primary_source_skim");
 assert.equal(newt.recommended_next_action, "confirm_security_type_then_primary_source_skim_before_raw_candidate");
+assert.equal(newt.score_components.cross_scan_persistence_component, 0);
 
 const open = result.top_leads.find((lead) => lead.symbol === "OPEN");
 assert(open, "ambiguous symbols should still be visible");

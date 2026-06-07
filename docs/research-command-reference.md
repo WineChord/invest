@@ -27,6 +27,19 @@ GitHub Actions runs the same market-data refresh on a weekday schedule. It updat
 
 `FMP_API_KEY` is an optional local or GitHub Actions secret for Financial Modeling Prep supplemental market and fundamentals data. The key must stay outside the repository: put it in the local shell environment for manual runs, and put it in the repository or environment secret named `FMP_API_KEY` for scheduled GitHub Actions runs. `scripts/refresh-market-data.mjs` treats FMP as a quota-limited supplement, not the primary source of truth: SEC companyfacts and Yahoo close data remain the default path, FMP is used only when `FMP_MARKET_DATA_MODE` is `missing` or `all`, responses are cached under ignored `research/cache/fmp/`, per-day usage is recorded under the same ignored cache tree without logging the API key, and failures, missing keys, exhausted budget, or rate limits fall back to the existing SEC/Yahoo-derived rows. The daily workflow restores the newest matching ignored FMP cache, saves each run under a unique cache key so new responses can be reused by later runs, and uses a default budget of 60 uncached FMP calls per as-of date, roughly a conservative fraction of a typical free daily quota. Increase the budget only when the provider plan and cache hit rate support it.
 
+## Macro Regime Refresh
+
+```bash
+npm run refresh:macro -- --as-of YYYY-MM-DD
+npm run refresh:macro -- --as-of YYYY-MM-DD --dry-run --json
+```
+
+The macro regime refresh is a risk overlay for entry discipline, sizing, financing review, cash-management priority, and watchlist-cycle urgency. It is not a stock-selection engine and does not create buy eligibility, promotion eligibility, security metadata, raw candidate records, or allocation evidence by itself.
+
+The command writes `research/macro/regime-snapshots.csv`. It uses public no-token inputs only: FRED public CSV series for Treasury yields, real yields, credit spreads, and VIX when available, plus Yahoo chart data for broad market proxies such as QQQ, SMH, and IWM. Any missing or failed indicator is recorded in `unavailable_indicators`; the script must not estimate missing values from memory.
+
+The structured macro layer is split across `research/macro/regime-snapshots.csv`, `research/macro/watchlist-sensitivity.csv`, `research/macro/financing-runway-scores.csv`, `research/macro/watchlist-risk-matrix.csv`, and `research/macro/event-calendar.csv`. Use these files before allocation decisions involving AI infrastructure, financing-sensitive companies, power, space infrastructure, or broad bubble risk. The output should tighten or loosen entry caps and research priority, not bypass company evidence gates.
+
 ## Dry-Run Discovery Scan
 
 ```bash
@@ -99,6 +112,8 @@ By default, the command writes an aggregate JSON file under ignored `research/ca
 
 Run `npm run triage:community` after the scan to convert the aggregate community artifact into an analysis-priority queue. The triage output compares the current scan with the latest prior scan when available, assigns `high`, `medium`, or `low` analysis priority, separates existing-watchlist priority boosts from unknown-symbol primary-source skim candidates, and sends ambiguous ticker strings to identity confirmation. It explicitly records that community signals do not create buy eligibility, promotion eligibility, security metadata, raw candidate records, or allocation evidence.
 
+Community triage scoring includes mention count, source diversity, source quality, source-recency decay, cross-scan persistence, reason-keyword fit, trend delta, Stocktwits trend metadata, novelty, and penalties for ambiguous or broad-market symbols. This reduces one-scan hype while keeping persistent discussion visible.
+
 The default scan and triage outputs are ignored scratch artifacts. If a material discovery run relies on community triage for a durable candidate, readiness, watchlist, or discovery conclusion, rerun the triage command with a sanitized committed output path under `research/discovery/runs/` and record the output hash in the discovery run artifact.
 
 Useful options:
@@ -133,7 +148,9 @@ npm run test:sec-registration-transaction-candidates
 npm run test:promotion-gates
 npm run test:watchlist-cycle-gates
 npm run test:community-scan
+npm run test:community-triage
+npm run test:macro-regime
 npm run verify
 ```
 
-Use `npm run check:data` for data and research changes. Use `npm run test:discovery-artifact-index` when changing artifact index generation or hash anchoring. Use `npm run test:discovery-profiles` when changing SEC or issuer profile generation. Use `npm run test:discovery-scan` when changing deterministic universe scan matching or scan output behavior. Use `npm run test:semantic-discovery` when changing semantic packet, batch, cache, import, or run-summary behavior. Use `npm run test:fmp-fetch` when changing optional FMP provider, cache, budget, or fallback behavior. Use `npm run test:discovery-gates` when changing discovery readiness rules or validation. Use `npm run test:sec-registration-transaction-candidates` when changing pre-ticker registration or transaction discovery. Use `npm run test:promotion-gates` when changing promotion-review or active/core/buy-zone gate validation. Use `npm run test:watchlist-cycle-gates` when changing stale-prevention, priority/status refresh, or buy-zone currentness rules. Use `npm run test:community-scan` when changing public no-token community source parsing, scoring, or privacy boundaries. Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
+Use `npm run check:data` for data and research changes. Use `npm run test:discovery-artifact-index` when changing artifact index generation or hash anchoring. Use `npm run test:discovery-profiles` when changing SEC or issuer profile generation. Use `npm run test:discovery-scan` when changing deterministic universe scan matching or scan output behavior. Use `npm run test:semantic-discovery` when changing semantic packet, batch, cache, import, or run-summary behavior. Use `npm run test:fmp-fetch` when changing optional FMP provider, cache, budget, or fallback behavior. Use `npm run test:discovery-gates` when changing discovery readiness rules or validation. Use `npm run test:sec-registration-transaction-candidates` when changing pre-ticker registration or transaction discovery. Use `npm run test:promotion-gates` when changing promotion-review or active/core/buy-zone gate validation. Use `npm run test:watchlist-cycle-gates` when changing stale-prevention, priority/status refresh, or buy-zone currentness rules. Use `npm run test:community-scan` when changing public no-token community source parsing, scoring, or privacy boundaries. Use `npm run test:macro-regime` when changing macro regime inputs, scoring, or snapshot formatting. Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.

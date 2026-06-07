@@ -15,6 +15,12 @@ const csvFiles = [
   "research/buy-zones.csv",
   "research/discovery/candidates.csv",
   "research/freshness/events.csv",
+  "research/macro/event-calendar.csv",
+  "research/macro/financing-runway-scores.csv",
+  "research/macro/regime-snapshots.csv",
+  "research/macro/watchlist-risk-matrix.csv",
+  "research/macro/watchlist-sensitivity.csv",
+  "research/process/decision-retrospectives.csv",
   "research/valuation-states.csv",
   "research/watchlist-cycle-reviews.csv",
   "research/watchlist-transitions.csv",
@@ -44,7 +50,13 @@ const candidateReadinessFile = "research/discovery/candidate-readiness.yml";
 const discoveryLanesFile = "research/discovery/lanes.yml";
 const freshnessFile = "research/freshness/events.csv";
 const buyZonesFile = "research/buy-zones.csv";
+const macroEventCalendarFile = "research/macro/event-calendar.csv";
+const macroFinancingScoresFile = "research/macro/financing-runway-scores.csv";
+const macroRegimeSnapshotsFile = "research/macro/regime-snapshots.csv";
+const macroRiskMatrixFile = "research/macro/watchlist-risk-matrix.csv";
+const macroWatchlistSensitivityFile = "research/macro/watchlist-sensitivity.csv";
 const priceHistoryFile = "data/market/price_history.csv";
+const decisionRetrospectivesFile = "research/process/decision-retrospectives.csv";
 const qualityMetricsFile = "research/quality-metrics.yml";
 const publicationPolicyFile = "PUBLICATION_POLICY.md";
 const securityMasterFile = "data/market/security_master.csv";
@@ -139,6 +151,110 @@ const requiredCsvHeaders = new Map([
       "sizing_tier",
       "source_path",
       "source_ids",
+      "notes",
+    ],
+  ],
+  [
+    macroEventCalendarFile,
+    [
+      "event_id",
+      "event_date",
+      "event_type",
+      "scope",
+      "symbols_or_lanes",
+      "source_id",
+      "status",
+      "importance",
+      "decision_effect",
+      "review_required_by",
+      "notes",
+    ],
+  ],
+  [
+    macroFinancingScoresFile,
+    [
+      "symbol",
+      "as_of",
+      "cash_runway_score",
+      "debt_maturity_score",
+      "variable_rate_exposure_score",
+      "atm_or_equity_program_score",
+      "convertible_or_preferred_overhang_score",
+      "project_finance_complexity_score",
+      "customer_concentration_score",
+      "overall_financing_fragility_score",
+      "review_source_ids",
+      "next_review_trigger",
+      "notes",
+    ],
+  ],
+  [
+    macroRegimeSnapshotsFile,
+    [
+      "as_of",
+      "retrieved_at",
+      "policy_version",
+      "source_ids",
+      "regime_label",
+      "action_bias",
+      "two_year_yield_pct",
+      "ten_year_yield_pct",
+      "ten_two_spread_bp",
+      "real_10y_yield_pct",
+      "hy_oas_bp",
+      "ig_oas_bp",
+      "vix",
+      "qqq_close",
+      "qqq_63d_return_pct",
+      "smh_close",
+      "smh_63d_return_pct",
+      "iwm_close",
+      "iwm_63d_return_pct",
+      "ai_capex_state",
+      "credit_stress_score",
+      "bubble_score_total",
+      "valuation_excess_score",
+      "capex_overheating_score",
+      "financing_fragility_score",
+      "real_demand_conversion_score",
+      "supply_glut_risk_score",
+      "leader_earnings_quality_score",
+      "second_tier_fragility_score",
+      "credit_market_stress_score",
+      "breadth_deterioration_score",
+      "regulatory_geopolitical_score",
+      "mega_ipo_private_market_drain_score",
+      "unavailable_indicators",
+      "notes",
+    ],
+  ],
+  [
+    macroRiskMatrixFile,
+    [
+      "risk_factor",
+      "as_of",
+      "high_symbols",
+      "medium_symbols",
+      "monitor_source",
+      "portfolio_handling",
+      "notes",
+    ],
+  ],
+  [
+    macroWatchlistSensitivityFile,
+    [
+      "symbol",
+      "as_of",
+      "rate_sensitivity",
+      "credit_sensitivity",
+      "ai_capex_sensitivity",
+      "financing_sensitivity",
+      "dilution_sensitivity",
+      "regulatory_sensitivity",
+      "commodity_or_energy_sensitivity",
+      "customer_concentration_sensitivity",
+      "primary_sensitive_lanes",
+      "macro_priority_trigger",
       "notes",
     ],
   ],
@@ -300,6 +416,23 @@ const requiredCsvHeaders = new Map([
       "next_review_trigger",
     ],
   ],
+  [
+    decisionRetrospectivesFile,
+    [
+      "review_id",
+      "as_of",
+      "lookback_start",
+      "lookback_end",
+      "decision_or_scan_path",
+      "missed_candidates",
+      "overconservative_calls",
+      "overaggressive_calls",
+      "community_leads_not_skimmed",
+      "process_lesson",
+      "durable_change_path",
+      "notes",
+    ],
+  ],
 ]);
 
 const buyEligibleWatchlistStatuses = new Set([
@@ -367,6 +500,33 @@ const allowedBuyZoneStatuses = new Set([
   "not_in_buy_zone",
   "trigger_only",
   "no_buy_until_new_evidence",
+]);
+const allowedMacroRegimeLabels = new Set([
+  "strong_trend",
+  "top_formation",
+  "early_downtrend",
+  "bubble_break_initial",
+  "credit_stress",
+  "macro_data_incomplete",
+  "survivor_reset",
+]);
+const allowedMacroActionBiases = new Set([
+  "company_evidence_first_with_normal_price_discipline",
+  "price_disciplined_wait_or_staged_only",
+  "refresh_sources_before_macro_sensitive_decision",
+  "wait_or_reduce_financing_sensitive_risk",
+]);
+const allowedMacroEventStatuses = new Set([
+  "scheduled",
+  "reviewed",
+  "superseded",
+  "deferred_with_reason",
+]);
+const allowedMacroEventImportances = new Set([
+  "low",
+  "medium",
+  "high",
+  "critical",
 ]);
 const allowedWatchlistCycleActions = new Set([
   "no_change",
@@ -593,10 +753,12 @@ validateDiscoveryLanes();
 validateDiscoveryCandidates();
 validateCandidateReadiness();
 validateFreshnessEvents();
+validateMacroRiskOverlay();
 validateValuationStates();
 validateCompanyAnalysis();
 validateWatchlistCycleReviews();
 validatePromotionData();
+validateDecisionRetrospectives();
 validateQualityMetrics();
 validateDiscoveryRunJsonArtifacts();
 validateNoTrackedIgnoredCacheArtifacts();
@@ -792,6 +954,14 @@ function requireNonNegativeIntegerString(value, context) {
   const parsed = Number(value);
   if (!Number.isInteger(parsed) || parsed < 0) {
     throw new Error(`${context} must be a non-negative integer`);
+  }
+}
+
+function requireZeroToFiveIntegerString(value, context) {
+  requireString(value, context);
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < 0 || parsed > 5) {
+    throw new Error(`${context} must be an integer from 0 to 5`);
   }
 }
 
@@ -1582,6 +1752,155 @@ function validateFreshnessEvents() {
   console.log(`ok ${freshnessFile} semantic checks`);
 }
 
+function validateMacroRiskOverlay() {
+  const sourceIdSet = sourceIds();
+  const watchlistRows = csvRecords(watchlistFile);
+  const watchlistSymbols = new Set(watchlistRows.map((row) => row.symbol));
+  const nonRemovedTradableSymbols = watchlistRows
+    .filter((row) => row.status !== "removed" && row.status !== "not_tradable")
+    .map((row) => row.symbol);
+  const laneIds = discoveryLaneIds();
+
+  const sensitivitySymbols = new Set();
+  csvRecords(macroWatchlistSensitivityFile).forEach((row, index) => {
+    const context = `${macroWatchlistSensitivityFile} row ${index + 2}`;
+    ["symbol", "as_of", "primary_sensitive_lanes", "macro_priority_trigger", "notes"].forEach((field) =>
+      requireString(row[field], `${context} ${field}`),
+    );
+    if (!watchlistSymbols.has(row.symbol)) {
+      throw new Error(`${context} references unknown watchlist symbol ${row.symbol}`);
+    }
+    parseDate(row.as_of, `${context} as_of`);
+    [
+      "rate_sensitivity",
+      "credit_sensitivity",
+      "ai_capex_sensitivity",
+      "financing_sensitivity",
+      "dilution_sensitivity",
+      "regulatory_sensitivity",
+      "commodity_or_energy_sensitivity",
+      "customer_concentration_sensitivity",
+    ].forEach((field) => requireZeroToFiveIntegerString(row[field], `${context} ${field}`));
+    splitSemicolonList(row.primary_sensitive_lanes).forEach((laneId) => {
+      if (!laneIds.has(laneId)) {
+        throw new Error(`${context} primary_sensitive_lanes references unknown lane ${laneId}`);
+      }
+    });
+    if (sensitivitySymbols.has(row.symbol)) {
+      throw new Error(`${macroWatchlistSensitivityFile} has duplicate symbol ${row.symbol}`);
+    }
+    sensitivitySymbols.add(row.symbol);
+  });
+  nonRemovedTradableSymbols.forEach((symbol) => {
+    if (!sensitivitySymbols.has(symbol)) {
+      throw new Error(`${macroWatchlistSensitivityFile} is missing non-removed tradable watchlist symbol ${symbol}`);
+    }
+  });
+
+  const financingSymbols = new Set();
+  csvRecords(macroFinancingScoresFile).forEach((row, index) => {
+    const context = `${macroFinancingScoresFile} row ${index + 2}`;
+    ["symbol", "as_of", "review_source_ids", "next_review_trigger", "notes"].forEach((field) =>
+      requireString(row[field], `${context} ${field}`),
+    );
+    if (!watchlistSymbols.has(row.symbol)) {
+      throw new Error(`${context} references unknown watchlist symbol ${row.symbol}`);
+    }
+    parseDate(row.as_of, `${context} as_of`);
+    [
+      "cash_runway_score",
+      "debt_maturity_score",
+      "variable_rate_exposure_score",
+      "atm_or_equity_program_score",
+      "convertible_or_preferred_overhang_score",
+      "project_finance_complexity_score",
+      "customer_concentration_score",
+      "overall_financing_fragility_score",
+    ].forEach((field) => requireZeroToFiveIntegerString(row[field], `${context} ${field}`));
+    splitSemicolonList(row.review_source_ids).forEach((sourceId) => {
+      if (!sourceIdSet.has(sourceId)) {
+        throw new Error(`${context} review_source_ids references unknown source ${sourceId}`);
+      }
+    });
+    if (financingSymbols.has(row.symbol)) {
+      throw new Error(`${macroFinancingScoresFile} has duplicate symbol ${row.symbol}`);
+    }
+    financingSymbols.add(row.symbol);
+  });
+  nonRemovedTradableSymbols.forEach((symbol) => {
+    if (!financingSymbols.has(symbol)) {
+      throw new Error(`${macroFinancingScoresFile} is missing non-removed tradable watchlist symbol ${symbol}`);
+    }
+  });
+
+  csvRecords(macroRegimeSnapshotsFile).forEach((row, index) => {
+    const context = `${macroRegimeSnapshotsFile} row ${index + 2}`;
+    ["as_of", "retrieved_at", "policy_version", "source_ids", "regime_label", "action_bias", "ai_capex_state", "notes"].forEach((field) =>
+      requireString(row[field], `${context} ${field}`),
+    );
+    parseDate(row.as_of, `${context} as_of`);
+    requireIsoTimestamp(row.retrieved_at, `${context} retrieved_at`);
+    requireAllowed(row.regime_label, allowedMacroRegimeLabels, `${context} regime_label`);
+    requireAllowed(row.action_bias, allowedMacroActionBiases, `${context} action_bias`);
+    splitSemicolonList(row.source_ids).forEach((sourceId) => {
+      if (!sourceIdSet.has(sourceId)) {
+        throw new Error(`${context} source_ids references unknown source ${sourceId}`);
+      }
+    });
+    [
+      "credit_stress_score",
+      "valuation_excess_score",
+      "capex_overheating_score",
+      "financing_fragility_score",
+      "second_tier_fragility_score",
+      "credit_market_stress_score",
+      "breadth_deterioration_score",
+    ].forEach((field) => {
+      if (row[field] !== "") {
+        requireZeroToFiveIntegerString(row[field], `${context} ${field}`);
+      }
+    });
+    if (row.bubble_score_total !== "") {
+      requireNonNegativeIntegerString(row.bubble_score_total, `${context} bubble_score_total`);
+    }
+  });
+
+  csvRecords(macroRiskMatrixFile).forEach((row, index) => {
+    const context = `${macroRiskMatrixFile} row ${index + 2}`;
+    ["risk_factor", "as_of", "monitor_source", "portfolio_handling", "notes"].forEach((field) =>
+      requireString(row[field], `${context} ${field}`),
+    );
+    parseDate(row.as_of, `${context} as_of`);
+    [
+      ...splitSemicolonList(row.high_symbols.replaceAll(",", ";")),
+      ...splitSemicolonList(row.medium_symbols.replaceAll(",", ";")),
+    ].forEach((symbol) => {
+      if (!watchlistSymbols.has(symbol)) {
+        throw new Error(`${context} references unknown symbol ${symbol}`);
+      }
+    });
+    if (!existsSync(row.monitor_source) && !sourceIdSet.has(row.monitor_source)) {
+      throw new Error(`${context} monitor_source must be an existing path or source id`);
+    }
+  });
+
+  csvRecords(macroEventCalendarFile).forEach((row, index) => {
+    const context = `${macroEventCalendarFile} row ${index + 2}`;
+    ["event_id", "event_date", "event_type", "scope", "symbols_or_lanes", "source_id", "status", "importance", "decision_effect", "review_required_by", "notes"].forEach((field) =>
+      requireString(row[field], `${context} ${field}`),
+    );
+    parseDate(row.event_date, `${context} event_date`);
+    parseDate(row.review_required_by, `${context} review_required_by`);
+    requireAllowed(row.status, allowedMacroEventStatuses, `${context} status`);
+    requireAllowed(row.importance, allowedMacroEventImportances, `${context} importance`);
+    if (!sourceIdSet.has(row.source_id)) {
+      throw new Error(`${context} source_id references unknown source ${row.source_id}`);
+    }
+  });
+
+  console.log("ok macro risk overlay semantic checks");
+}
+
 function validateValuationStates() {
   const knownSourceIds = sourceIds();
   const knownWatchlistSymbols = new Set(csvRecords(watchlistFile).map((row) => row.symbol));
@@ -1837,6 +2156,36 @@ function validatePromotionData() {
   });
 
   console.log("ok promotion and buy-zone semantic checks");
+}
+
+function validateDecisionRetrospectives() {
+  csvRecords(decisionRetrospectivesFile).forEach((row, index) => {
+    const context = `${decisionRetrospectivesFile} row ${index + 2}`;
+    [
+      "review_id",
+      "as_of",
+      "lookback_start",
+      "lookback_end",
+      "decision_or_scan_path",
+      "missed_candidates",
+      "overconservative_calls",
+      "overaggressive_calls",
+      "community_leads_not_skimmed",
+      "process_lesson",
+      "durable_change_path",
+      "notes",
+    ].forEach((field) => requireString(row[field], `${context} ${field}`));
+    parseDate(row.as_of, `${context} as_of`);
+    parseDate(row.lookback_start, `${context} lookback_start`);
+    parseDate(row.lookback_end, `${context} lookback_end`);
+    if (!existsSync(row.decision_or_scan_path)) {
+      throw new Error(`${context} decision_or_scan_path does not exist: ${row.decision_or_scan_path}`);
+    }
+    if (!existsSync(row.durable_change_path)) {
+      throw new Error(`${context} durable_change_path does not exist: ${row.durable_change_path}`);
+    }
+  });
+  console.log(`ok ${decisionRetrospectivesFile} semantic checks`);
 }
 
 function validateQualityMetrics() {

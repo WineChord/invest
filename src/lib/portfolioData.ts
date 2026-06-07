@@ -138,6 +138,106 @@ export interface CompanyMetrics {
   notes: string;
 }
 
+export interface WatchlistSensitivity {
+  symbol: string;
+  asOf: string;
+  rateSensitivity: number | null;
+  creditSensitivity: number | null;
+  aiCapexSensitivity: number | null;
+  financingSensitivity: number | null;
+  dilutionSensitivity: number | null;
+  regulatorySensitivity: number | null;
+  commodityOrEnergySensitivity: number | null;
+  customerConcentrationSensitivity: number | null;
+  primarySensitiveLanes: string;
+  macroPriorityTrigger: string;
+  notes: string;
+}
+
+export interface FinancingRunwayScore {
+  symbol: string;
+  asOf: string;
+  cashRunwayScore: number | null;
+  debtMaturityScore: number | null;
+  variableRateExposureScore: number | null;
+  atmOrEquityProgramScore: number | null;
+  convertibleOrPreferredOverhangScore: number | null;
+  projectFinanceComplexityScore: number | null;
+  customerConcentrationScore: number | null;
+  overallFinancingFragilityScore: number | null;
+  reviewSourceIds: string;
+  nextReviewTrigger: string;
+  notes: string;
+}
+
+export interface MacroRegimeSnapshot {
+  asOf: string;
+  retrievedAt: string;
+  policyVersion: string;
+  sourceIds: string;
+  regimeLabel: string;
+  actionBias: string;
+  twoYearYieldPct: number | null;
+  tenYearYieldPct: number | null;
+  tenTwoSpreadBp: number | null;
+  real10yYieldPct: number | null;
+  hyOasBp: number | null;
+  igOasBp: number | null;
+  vix: number | null;
+  qqqClose: number | null;
+  qqq63dReturnPct: number | null;
+  smhClose: number | null;
+  smh63dReturnPct: number | null;
+  iwmClose: number | null;
+  iwm63dReturnPct: number | null;
+  aiCapexState: string;
+  creditStressScore: number | null;
+  bubbleScoreTotal: number | null;
+  valuationExcessScore: number | null;
+  capexOverheatingScore: number | null;
+  financingFragilityScore: number | null;
+  realDemandConversionScore: number | null;
+  supplyGlutRiskScore: number | null;
+  leaderEarningsQualityScore: number | null;
+  secondTierFragilityScore: number | null;
+  creditMarketStressScore: number | null;
+  breadthDeteriorationScore: number | null;
+  regulatoryGeopoliticalScore: number | null;
+  megaIpoPrivateMarketDrainScore: number | null;
+  unavailableIndicators: string;
+  notes: string;
+}
+
+export interface MacroRiskMatrixRecord {
+  riskFactor: string;
+  asOf: string;
+  highSymbols: string;
+  mediumSymbols: string;
+  monitorSource: string;
+  portfolioHandling: string;
+  notes: string;
+}
+
+export interface MacroEventRecord {
+  eventId: string;
+  eventDate: string;
+  eventType: string;
+  scope: string;
+  symbolsOrLanes: string;
+  sourceId: string;
+  status: string;
+  importance: string;
+  decisionEffect: string;
+  reviewRequiredBy: string;
+  notes: string;
+}
+
+export interface MacroOverlayData {
+  latestRegime: MacroRegimeSnapshot | null;
+  riskMatrix: MacroRiskMatrixRecord[];
+  eventCalendar: MacroEventRecord[];
+}
+
 export interface WatchlistItem {
   symbol: string;
   name: string;
@@ -154,6 +254,8 @@ export interface WatchlistItem {
   priceHistory: PriceHistoryPoint[];
   technical: TechnicalSnapshot | null;
   metrics: CompanyMetrics | null;
+  macroSensitivity: WatchlistSensitivity | null;
+  financingRunway: FinancingRunwayScore | null;
   analysisHistory: ResearchAnalysisEntry[];
 }
 
@@ -181,6 +283,7 @@ export interface PortfolioData {
   ledger: LedgerEvent[];
   positions: PositionRecord[];
   equityCurve: EquityPoint[];
+  macro: MacroOverlayData;
   watchlist: WatchlistItem[];
   prices: PriceSnapshot[];
 }
@@ -444,6 +547,110 @@ function readCompanyMetrics(): CompanyMetrics[] {
   }));
 }
 
+function readMacroSensitivity(): WatchlistSensitivity[] {
+  return readCsv("research/macro/watchlist-sensitivity.csv").map((row) => ({
+    symbol: row.symbol,
+    asOf: row.as_of,
+    rateSensitivity: toNumber(row.rate_sensitivity),
+    creditSensitivity: toNumber(row.credit_sensitivity),
+    aiCapexSensitivity: toNumber(row.ai_capex_sensitivity),
+    financingSensitivity: toNumber(row.financing_sensitivity),
+    dilutionSensitivity: toNumber(row.dilution_sensitivity),
+    regulatorySensitivity: toNumber(row.regulatory_sensitivity),
+    commodityOrEnergySensitivity: toNumber(row.commodity_or_energy_sensitivity),
+    customerConcentrationSensitivity: toNumber(row.customer_concentration_sensitivity),
+    primarySensitiveLanes: row.primary_sensitive_lanes,
+    macroPriorityTrigger: row.macro_priority_trigger,
+    notes: row.notes,
+  }));
+}
+
+function readFinancingRunwayScores(): FinancingRunwayScore[] {
+  return readCsv("research/macro/financing-runway-scores.csv").map((row) => ({
+    symbol: row.symbol,
+    asOf: row.as_of,
+    cashRunwayScore: toNumber(row.cash_runway_score),
+    debtMaturityScore: toNumber(row.debt_maturity_score),
+    variableRateExposureScore: toNumber(row.variable_rate_exposure_score),
+    atmOrEquityProgramScore: toNumber(row.atm_or_equity_program_score),
+    convertibleOrPreferredOverhangScore: toNumber(row.convertible_or_preferred_overhang_score),
+    projectFinanceComplexityScore: toNumber(row.project_finance_complexity_score),
+    customerConcentrationScore: toNumber(row.customer_concentration_score),
+    overallFinancingFragilityScore: toNumber(row.overall_financing_fragility_score),
+    reviewSourceIds: row.review_source_ids,
+    nextReviewTrigger: row.next_review_trigger,
+    notes: row.notes,
+  }));
+}
+
+function readMacroRegimeSnapshots(): MacroRegimeSnapshot[] {
+  return readCsv("research/macro/regime-snapshots.csv").map((row) => ({
+    asOf: row.as_of,
+    retrievedAt: row.retrieved_at,
+    policyVersion: row.policy_version,
+    sourceIds: row.source_ids,
+    regimeLabel: row.regime_label,
+    actionBias: row.action_bias,
+    twoYearYieldPct: toNumber(row.two_year_yield_pct),
+    tenYearYieldPct: toNumber(row.ten_year_yield_pct),
+    tenTwoSpreadBp: toNumber(row.ten_two_spread_bp),
+    real10yYieldPct: toNumber(row.real_10y_yield_pct),
+    hyOasBp: toNumber(row.hy_oas_bp),
+    igOasBp: toNumber(row.ig_oas_bp),
+    vix: toNumber(row.vix),
+    qqqClose: toNumber(row.qqq_close),
+    qqq63dReturnPct: toNumber(row.qqq_63d_return_pct),
+    smhClose: toNumber(row.smh_close),
+    smh63dReturnPct: toNumber(row.smh_63d_return_pct),
+    iwmClose: toNumber(row.iwm_close),
+    iwm63dReturnPct: toNumber(row.iwm_63d_return_pct),
+    aiCapexState: row.ai_capex_state,
+    creditStressScore: toNumber(row.credit_stress_score),
+    bubbleScoreTotal: toNumber(row.bubble_score_total),
+    valuationExcessScore: toNumber(row.valuation_excess_score),
+    capexOverheatingScore: toNumber(row.capex_overheating_score),
+    financingFragilityScore: toNumber(row.financing_fragility_score),
+    realDemandConversionScore: toNumber(row.real_demand_conversion_score),
+    supplyGlutRiskScore: toNumber(row.supply_glut_risk_score),
+    leaderEarningsQualityScore: toNumber(row.leader_earnings_quality_score),
+    secondTierFragilityScore: toNumber(row.second_tier_fragility_score),
+    creditMarketStressScore: toNumber(row.credit_market_stress_score),
+    breadthDeteriorationScore: toNumber(row.breadth_deterioration_score),
+    regulatoryGeopoliticalScore: toNumber(row.regulatory_geopolitical_score),
+    megaIpoPrivateMarketDrainScore: toNumber(row.mega_ipo_private_market_drain_score),
+    unavailableIndicators: row.unavailable_indicators,
+    notes: row.notes,
+  })).sort((left, right) => left.asOf.localeCompare(right.asOf));
+}
+
+function readMacroRiskMatrix(): MacroRiskMatrixRecord[] {
+  return readCsv("research/macro/watchlist-risk-matrix.csv").map((row) => ({
+    riskFactor: row.risk_factor,
+    asOf: row.as_of,
+    highSymbols: row.high_symbols,
+    mediumSymbols: row.medium_symbols,
+    monitorSource: row.monitor_source,
+    portfolioHandling: row.portfolio_handling,
+    notes: row.notes,
+  }));
+}
+
+function readMacroEventCalendar(): MacroEventRecord[] {
+  return readCsv("research/macro/event-calendar.csv").map((row) => ({
+    eventId: row.event_id,
+    eventDate: row.event_date,
+    eventType: row.event_type,
+    scope: row.scope,
+    symbolsOrLanes: row.symbols_or_lanes,
+    sourceId: row.source_id,
+    status: row.status,
+    importance: row.importance,
+    decisionEffect: row.decision_effect,
+    reviewRequiredBy: row.review_required_by,
+    notes: row.notes,
+  })).sort((left, right) => left.reviewRequiredBy.localeCompare(right.reviewRequiredBy));
+}
+
 function readResearchAnalysis(): ResearchAnalysisEntry[] {
   const parsed = parseYaml(readRequiredFile("research/company-analysis.yml")) as Record<string, unknown>;
   const entries = Array.isArray(parsed.entries) ? parsed.entries : [];
@@ -475,6 +682,8 @@ function readWatchlist(
   priceHistory: RawPriceHistoryPoint[],
   technicalSnapshots: TechnicalSnapshot[],
   companyMetrics: CompanyMetrics[],
+  macroSensitivity: WatchlistSensitivity[],
+  financingRunwayScores: FinancingRunwayScore[],
 ): WatchlistItem[] {
   const priceBySymbol = new Map(prices.map((price) => [price.symbol, price]));
   const securityBySymbol = new Map(securityMaster.map((row) => [row.symbol, row]));
@@ -482,6 +691,8 @@ function readWatchlist(
     technicalSnapshots.map((row) => [row.symbol, row]),
   );
   const metricsBySymbol = new Map(companyMetrics.map((row) => [row.symbol, row]));
+  const macroSensitivityBySymbol = latestBySymbol(macroSensitivity);
+  const financingBySymbol = latestBySymbol(financingRunwayScores);
   const historyBySymbol = new Map<string, RawPriceHistoryPoint[]>();
   priceHistory.forEach((point) => {
     const history = historyBySymbol.get(point.symbol) ?? [];
@@ -520,9 +731,22 @@ function readWatchlist(
       priceHistory: priceHistoryPoints,
       technical: technicalBySymbol.get(row.symbol) ?? null,
       metrics: metricsBySymbol.get(row.symbol) ?? null,
+      macroSensitivity: macroSensitivityBySymbol.get(row.symbol) ?? null,
+      financingRunway: financingBySymbol.get(row.symbol) ?? null,
       analysisHistory: analysisBySymbol.get(row.symbol) ?? [],
     };
   });
+}
+
+function latestBySymbol<T extends { asOf: string; symbol: string }>(rows: T[]): Map<string, T> {
+  const latest = new Map<string, T>();
+  rows.forEach((row) => {
+    const current = latest.get(row.symbol);
+    if (current === undefined || row.asOf >= current.asOf) {
+      latest.set(row.symbol, row);
+    }
+  });
+  return latest;
 }
 
 export function loadPortfolioData(): PortfolioData {
@@ -531,6 +755,9 @@ export function loadPortfolioData(): PortfolioData {
   const securityMaster = readSecurityMaster();
   const technicalSnapshots = readTechnicalSnapshots();
   const companyMetrics = readCompanyMetrics();
+  const macroSensitivity = readMacroSensitivity();
+  const financingRunwayScores = readFinancingRunwayScores();
+  const macroRegimeSnapshots = readMacroRegimeSnapshots();
   const researchAnalysis = readResearchAnalysis();
   return {
     generatedAt: new Date().toISOString(),
@@ -541,6 +768,11 @@ export function loadPortfolioData(): PortfolioData {
     ledger: readLedger(),
     positions: readPositions(),
     equityCurve: readEquityCurve(),
+    macro: {
+      latestRegime: macroRegimeSnapshots.at(-1) ?? null,
+      riskMatrix: readMacroRiskMatrix(),
+      eventCalendar: readMacroEventCalendar(),
+    },
     watchlist: readWatchlist(
       prices,
       researchAnalysis,
@@ -548,6 +780,8 @@ export function loadPortfolioData(): PortfolioData {
       priceHistory,
       technicalSnapshots,
       companyMetrics,
+      macroSensitivity,
+      financingRunwayScores,
     ),
     prices,
   };

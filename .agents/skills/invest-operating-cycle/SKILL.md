@@ -18,7 +18,7 @@ Read only the canonical files relevant to the request:
 - `AGENTS.md`: mandatory agent behavior, trigger routing, safety boundaries, self-evolution, cleanup, and Git rules.
 - `SPEC.md`: system design, data models, research engine, dashboard behavior, and audit requirements.
 - `data/policy/policy-v1.1.md`: current investment policy.
-- `docs/research-command-reference.md`: detailed discovery, SEC, semantic-discovery, FMP, and validation command notes.
+- `docs/research-command-reference.md`: detailed discovery, macro-regime, community, SEC, semantic-discovery, FMP, and validation command notes.
 - `docs/subagent-protocol-reference.md`: bounded subagent evidence-packet and minimum-output schemas.
 
 Use the relevant template under `templates/`:
@@ -32,6 +32,7 @@ Use the relevant template under `templates/`:
 - `agentic-discovery-run.md`: structured xhigh discovery audit artifacts.
 - `discovery-readiness-sprint.md`: plausible raw candidates that could affect allocation or lane completeness.
 - `promotion-review.md`: moving a researched symbol toward active, core, or buy-zone status.
+- `decision-retrospective.md`: post-decision and post-discovery review of missed candidates, source gaps, and process lessons.
 - `meta-self-improvement.md`: process upgrades and methodology reviews.
 
 ## Trigger Routing
@@ -40,6 +41,7 @@ Use the relevant template under `templates/`:
 - "Run everything", "full refresh", "full monthly cycle", "全量执行", or equivalent language is a full-cycle repository request.
 - Serious research or decision work must run self-evolution and meta-self-improvement checks before finishing.
 - Full-cycle and monthly decision runs must start from the bottleneck map, ask whether a new lane appeared, run current discovery/freshness/valuation/watchlist review, and avoid answering from the old watchlist alone.
+- Full-cycle and monthly decision runs should refresh or cite the structured macro overlay and public community triage when they can affect analysis priority, risk review, or entry discipline. These inputs do not create buy eligibility, promotion eligibility, or allocation evidence by themselves.
 - Material discovery, promotion, valuation, allocation, or process conclusions require advisory xhigh subagents when tooling is available unless explicitly skipped with an allowed reason. The material-decision roles are discovery-lane/candidate triage, freshness/filing review, bull case, bear case, and allocation/risk.
 - Plausible material raw candidates require discovery readiness work before the cycle ends unless primary evidence rejects them, they are ineligible or not material, or the remaining blocker is genuinely external.
 - A material incubating public candidate must not remain hidden in discovery-only files; either give it research-only dashboard visibility with comparable evidence or reject, archive, mark not tradable, externally blocked, or not material with evidence.

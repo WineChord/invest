@@ -99,7 +99,7 @@ Trigger tiers:
 
 1. Every repository interaction: read the relevant rules, inspect current state before changing files, preserve user changes, decide whether stale, duplicated, misleading, or low-signal material should be cleaned up, and run the relevant validation after meaningful changes.
 2. Investment decision request: any request about new cash, monthly contribution, buying, selling, holding cash, using SGOV, allocation, portfolio action, or "what should I do" triggers the full decision operating cycle before any proposed order. Use [templates/monthly-decision.md](templates/monthly-decision.md).
-3. Full-cycle request: phrases such as "run the whole repo flow", "execute everything", "full refresh", "full monthly cycle", "全量执行", or similar language trigger every applicable repository workflow in safe order. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md), and use the monthly template too when allocation is requested.
+3. Full-cycle request: phrases such as "run the whole repo flow", "execute everything", "full refresh", "full monthly cycle", "全量执行", or similar language trigger every applicable repository workflow in safe order, including market data, macro-regime refresh, community lead triage, research readiness, validation, and dashboard checks when applicable. Use [templates/full-operating-cycle.md](templates/full-operating-cycle.md), and use the monthly template too when allocation is requested.
 4. Execution-confirmation update: when the user says trades or deposits were actually completed, use [templates/execution-confirmation.md](templates/execution-confirmation.md) and update broker-confirmed account files only from the required confirmed fields.
 5. Research, discovery, freshness, valuation, promotion, or cleanup run: use [templates/research-engine-run.md](templates/research-engine-run.md), [templates/bottleneck-lane-review.md](templates/bottleneck-lane-review.md), [templates/agentic-discovery-run.md](templates/agentic-discovery-run.md), [templates/discovery-readiness-sprint.md](templates/discovery-readiness-sprint.md), and [templates/promotion-review.md](templates/promotion-review.md) as applicable.
 6. Dashboard or product work: use the Public Dashboard section of `SPEC.md`, `PUBLICATION_POLICY.md`, committed data files, and the relevant frontend source. Inspect desktop and mobile behavior after visual changes when practical.
@@ -112,6 +112,7 @@ Mandatory workflow invariants:
 - Serious research starts from the bottleneck map, not from a static stock list.
 - Monthly decisions require fresh data retrieved during that cycle and must cite source publication dates, retrieval dates, validity windows, trigger conditions, invalidation conditions, and unavailable evidence.
 - Deterministic discovery scripts are scaffolding and first-pass lead generators. They do not create buy eligibility or replace primary-source research.
+- Macro-regime files and public community scans are risk-overlay and lead-generation inputs. They may raise analysis priority, tighten entry discipline, or trigger freshness review, but they do not create buy eligibility, promotion eligibility, raw-candidate records, security metadata, or allocation evidence by themselves.
 - Every full operating cycle and monthly decision must record a current watchlist-cycle review row for every non-removed `research/watchlist.csv` symbol, even when the result is `no_change`.
 - Plausible material raw candidates must move through discovery readiness before they can affect allocation, unless primary evidence rejects them, the instrument is ineligible, they are explicitly not material, or the remaining blocker is genuinely external.
 - Promotion is separate from discovery readiness. A lower-status symbol cannot enter `active_candidate`, `active_core_candidate`, buy-zone ranking, or proposed orders without a fresh promotion review.
@@ -240,15 +241,18 @@ Research is organized as a pipeline:
 3. `research/discovery/candidate-readiness.yml` for readiness status of open raw candidates.
 4. `research/freshness/events.csv` for material filings, IR releases, contracts, financing, dilution, regulatory events, price dislocations, and thesis triggers.
 5. `research/valuation-states.csv` for current valuation and entry-attractiveness state.
-6. `research/quality-metrics.yml` for coverage, freshness, lane-map health, stale analysis, and open-event health checks.
-7. `research/filings/` for completed material filing reviews linked from freshness events.
-8. `research/promotion/` for promotion reviews.
-9. `research/watchlist.csv` for candidates that deserve ongoing active monitoring.
-10. `research/watchlist-cycle-reviews.csv` for the per-cycle review row that every non-removed watchlist symbol must receive during full-cycle and monthly-decision runs.
-11. `research/watchlist-transitions.csv` for machine-checkable status and priority changes.
-12. `research/buy-zones.csv` for symbol-level current buy-zone state.
-13. `research/company-analysis.yml` for dashboard-visible historical analysis.
-14. `research/sources.yml` for durable source metadata.
+6. `research/macro/` for macro-regime snapshots, per-symbol macro sensitivity, financing fragility, shared risk factors, and event-calendar triggers.
+7. `research/community-sources.yml` and sanitized community triage artifacts for public no-token attention shifts and lead-generation inputs.
+8. `research/quality-metrics.yml` for coverage, freshness, lane-map health, macro-process health, stale analysis, and open-event health checks.
+9. `research/filings/` for completed material filing reviews linked from freshness events.
+10. `research/promotion/` for promotion reviews.
+11. `research/watchlist.csv` for candidates that deserve ongoing active monitoring.
+12. `research/watchlist-cycle-reviews.csv` for the per-cycle review row that every non-removed watchlist symbol must receive during full-cycle and monthly-decision runs.
+13. `research/watchlist-transitions.csv` for machine-checkable status and priority changes.
+14. `research/buy-zones.csv` for symbol-level current buy-zone state.
+15. `research/company-analysis.yml` for dashboard-visible historical analysis.
+16. `research/process/decision-retrospectives.csv` for post-decision and post-discovery process review loops.
+17. `research/sources.yml` for durable source metadata.
 
 When adding a durable company analysis that should appear on the public dashboard, add or append a structured entry in [research/company-analysis.yml](research/company-analysis.yml) and link it to the dated source note. Do not parse long-form Markdown as the dashboard database when a structured index can carry the needed summary and provenance.
 

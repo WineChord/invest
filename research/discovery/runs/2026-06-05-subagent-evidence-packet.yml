@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: 2026-06-05T12:24:49.628Z
+generated_at: 2026-06-07T10:22:55.040Z
 current_date: 2026-06-05
 request_type: monthly_decision_full_cycle
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
@@ -11,14 +11,34 @@ freshness_window:
   latest_research_engine_run_as_of: 2026-06-05
 confirmed_account_facts:
   account_state_path: data/account/state.yml
-  status: funded_no_positions
-  confirmed_cash: 888
-  settled_cash: 888
-  buying_power: 888
-  positions_count: 0
-  last_confirmed_ledger_event_id: 2026-05-30-deposit-001
+  status: funded_with_positions
+  confirmed_cash: 431.77
+  settled_cash: 431.77
+  buying_power: 431.77
+  positions_count: 2
+  last_confirmed_ledger_event_id: 2026-06-05-buy-rklb-001
 planned_but_unconfirmed_cash: null
-current_positions: []
+current_positions:
+  - symbol: ASTS
+    asset_type: common_stock
+    exchange: Nasdaq
+    quantity: "1"
+    average_cost: "103.19"
+    cost_basis: "103.19"
+    currency: USD
+    first_trade_date: 2026-06-05
+    last_trade_date: 2026-06-05
+    notes: Confirmed buy from 2026-06-05 ledger event.
+  - symbol: RKLB
+    asset_type: common_stock
+    exchange: Nasdaq
+    quantity: "3"
+    average_cost: "117.68"
+    cost_basis: "353.04"
+    currency: USD
+    first_trade_date: 2026-06-05
+    last_trade_date: 2026-06-05
+    notes: Confirmed buy from 2026-06-05 ledger event.
 liquidity_reserve_status: No confirmed liquidity reserve position is recorded.
 allowed_assets_and_exclusions:
   policy_file: data/policy/policy-v1.1.md
@@ -1601,6 +1621,33 @@ fresh_sources:
       - CRWV
     summary: CoreWeave Form 4 accepted at 2026-06-05T01:10:05Z extended the
       ownership-sale cluster and reinforced selling-overhang risk.
+  - id: fred_public_macro_series
+    source_type: macro_data
+    source_published_at: 2026-06-07
+    retrieved_at: 2026-06-07
+    related_symbols: []
+    summary: Public no-token FRED CSV series used for macro risk-overlay snapshots,
+      including Treasury yields, TIPS real yields, credit option-adjusted
+      spreads, and VIX when available.
+  - id: yahoo_chart_macro_proxy
+    source_type: market_data
+    source_published_at: 2026-06-07
+    retrieved_at: 2026-06-07
+    related_symbols:
+      - QQQ
+      - SMH
+      - IWM
+    summary: Public Yahoo chart endpoint used as a no-token proxy for broad index
+      and factor tape in the macro risk overlay; unavailable fields are recorded
+      rather than estimated.
+  - id: public_community_scan_method_2026_06_07
+    source_type: process
+    source_published_at: 2026-06-07
+    retrieved_at: 2026-06-07
+    related_symbols: []
+    summary: Repository process source describing Reddit RSS, Stocktwits public
+      endpoints, Hacker News Algolia, and generic RSS community scans as
+      lead-generation inputs only, with no buy or promotion eligibility effect.
 deterministic_outputs:
   - command: caller-supplied deterministic discovery output
     output_path: research/discovery/runs/2026-06-05-universe-scan.json

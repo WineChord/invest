@@ -969,6 +969,156 @@ h1 {
   color: var(--amber);
 }
 
+.macro-empty-state {
+  min-height: 7rem;
+}
+
+.macro-regime-panel {
+  display: grid;
+  gap: 0.78rem;
+  min-width: 0;
+}
+
+.macro-regime-head {
+  align-items: start;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.macro-regime-head > div {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.macro-regime-head strong {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.macro-regime-head small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.macro-kicker,
+.macro-list-title,
+.macro-sensitivity-heading {
+  align-items: center;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 900;
+  gap: 0.28rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.macro-score-badge {
+  border-radius: 999px;
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 0.38rem 0.56rem;
+  white-space: nowrap;
+}
+
+.macro-score-badge.macro-score-high {
+  background: rgba(201, 68, 49, 0.12);
+}
+
+.macro-score-badge.macro-score-medium {
+  background: rgba(185, 133, 33, 0.14);
+}
+
+.macro-score-badge.macro-score-low {
+  background: rgba(45, 125, 70, 0.1);
+}
+
+.macro-score-badge.macro-score-neutral {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--border);
+}
+
+.macro-metric-grid {
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.macro-metric {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+  padding: 0.54rem;
+}
+
+.macro-metric span {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.macro-metric strong {
+  font-size: 0.82rem;
+  line-height: 1.15;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.macro-regime-columns {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.macro-list-block {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 0.68rem;
+}
+
+.macro-list-block ol {
+  display: grid;
+  gap: 0.48rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.macro-list-block li {
+  display: grid;
+  gap: 0.16rem;
+  min-width: 0;
+}
+
+.macro-list-block strong {
+  font-size: 0.82rem;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.macro-list-block span:last-child {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
 .table-wrap {
   overflow-x: auto;
 }
@@ -1545,6 +1695,63 @@ td span {
   white-space: nowrap;
 }
 
+.macro-sensitivity-block {
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.6rem;
+}
+
+.macro-sensitivity-grid {
+  display: grid;
+  gap: 0.38rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.macro-score {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.12rem;
+  min-width: 0;
+  padding: 0.46rem;
+}
+
+.macro-score span {
+  color: var(--muted);
+  font-size: 0.64rem;
+  font-weight: 850;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.macro-score strong {
+  font-size: 0.82rem;
+  line-height: 1.15;
+}
+
+.macro-score-high {
+  color: var(--coral);
+}
+
+.macro-score-medium {
+  color: var(--amber);
+}
+
+.macro-score-low {
+  color: var(--green);
+}
+
+.macro-score-neutral {
+  color: var(--muted);
+}
+
 .stock-chart-wrap {
   --chart-tone: var(--muted);
   background: rgba(255, 255, 255, 0.76);
@@ -2082,6 +2289,10 @@ td span {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .macro-metric-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .dashboard-grid,
   .dashboard-grid-wide-left {
     grid-template-columns: 1fr;
@@ -2154,6 +2365,21 @@ td span {
   .metric-grid,
   .watchlist-grid {
     grid-template-columns: 1fr;
+  }
+
+  .macro-regime-head,
+  .macro-regime-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .macro-score-badge {
+    justify-self: start;
+  }
+
+  .macro-metric-grid,
+  .macro-sensitivity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .research-display-toolbar {

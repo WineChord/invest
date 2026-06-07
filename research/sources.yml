@@ -1026,3 +1026,30 @@ sources:
     first_seen_at: 2026-06-05
     related_symbols: [CRWV]
     summary: CoreWeave Form 4 accepted at 2026-06-05T01:10:05Z extended the ownership-sale cluster and reinforced selling-overhang risk.
+  - id: fred_public_macro_series
+    title: Federal Reserve Economic Data Public Macro Series
+    source_type: macro_data
+    url: https://fred.stlouisfed.org/graph/fredgraph.csv
+    source_published_at: 2026-06-07
+    retrieved_at: 2026-06-07
+    first_seen_at: 2026-06-07
+    related_symbols: []
+    summary: Public no-token FRED CSV series used for macro risk-overlay snapshots, including Treasury yields, TIPS real yields, credit option-adjusted spreads, and VIX when available.
+  - id: yahoo_chart_macro_proxy
+    title: Yahoo Chart Public Market Proxy Data
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/QQQ
+    source_published_at: 2026-06-07
+    retrieved_at: 2026-06-07
+    first_seen_at: 2026-06-07
+    related_symbols: [QQQ, SMH, IWM]
+    summary: Public Yahoo chart endpoint used as a no-token proxy for broad index and factor tape in the macro risk overlay; unavailable fields are recorded rather than estimated.
+  - id: public_community_scan_method_2026_06_07
+    title: Public No-Token Community Scan Method
+    source_type: process
+    url: docs/research-command-reference.md
+    source_published_at: 2026-06-07
+    retrieved_at: 2026-06-07
+    first_seen_at: 2026-06-07
+    related_symbols: []
+    summary: Repository process source describing Reddit RSS, Stocktwits public endpoints, Hacker News Algolia, and generic RSS community scans as lead-generation inputs only, with no buy or promotion eligibility effect.

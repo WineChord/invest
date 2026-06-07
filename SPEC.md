@@ -229,6 +229,20 @@ Market snapshots used for display and decision support are stored in `data/marke
 
 Research engine state is stored under `research/`.
 
+Macro and regime risk-overlay state is stored under `research/macro/`.
+
+`research/macro/regime-snapshots.csv` records dated public macro, credit, trend, and bubble-risk snapshots. It is a risk overlay for entry, sizing, financing review, and cash-management priority only. It does not create buy eligibility or override company primary evidence.
+
+`research/macro/watchlist-sensitivity.csv` records per-symbol sensitivity to rates, credit, AI capex, financing, dilution, regulation, energy or commodity conditions, and customer concentration. Every non-removed tradable watchlist symbol should have a current row so macro changes can map to research priority without guessing.
+
+`research/macro/financing-runway-scores.csv` records cash runway, debt maturity, variable-rate exposure, ATM or equity-program risk, convertible or preferred overhang, project-finance complexity, customer concentration, and an overall financing-fragility score. The score may tighten entry and promotion thresholds, especially for pre-scale or project-financed companies, but it is not a standalone rejection when primary evidence improves.
+
+`research/macro/watchlist-risk-matrix.csv` records shared risk factors that cut across themes, such as long-duration valuation, credit and project finance, AI capex, space execution, regulatory policy, customer concentration, and community crowding. Use it to avoid mistaking theme diversity for stress-scenario diversification.
+
+`research/macro/event-calendar.csv` records recurring and dated macro, AI-cycle, financing, community, policy, and company-specific review triggers. Events prompt freshness work; they are not account instructions.
+
+`research/process/decision-retrospectives.csv` records post-decision and post-discovery process reviews after enough evidence has elapsed. Use it to capture missed candidates, unskimmed community leads, overly conservative entry discipline, overly aggressive entry discipline, and durable process lessons.
+
 `research/quality-metrics.yml` records whether the research engine itself is healthy enough to support a monthly allocation decision. It is a compact operational dashboard for coverage, staleness, open event risk, and unresolved research debt.
 
 Required sections:
@@ -861,6 +875,7 @@ Required coverage:
 - Financing and IPO pressure: public offerings, convertible debt, private funding rounds, secondary-market valuation changes, IPO filings, lockups, and data-center financing terms for relevant AI and space infrastructure companies.
 - Regulation and geopolitics: chip export controls, antitrust, data regulation, energy permitting, power-grid constraints, defense budgets, launch regulation, spectrum regulation, and major geopolitical shocks.
 - Market calendar: U.S. market holidays and shortened sessions must be stated explicitly when they affect weekly data.
+- Structured repository surfaces: cite or refresh `research/macro/regime-snapshots.csv`, `research/macro/watchlist-sensitivity.csv`, `research/macro/financing-runway-scores.csv`, `research/macro/watchlist-risk-matrix.csv`, and `research/macro/event-calendar.csv` when the decision depends on macro, financing, credit, AI capex, or broad bubble risk.
 
 The required coverage list is a 2026 starting checklist, not a permanent list of sacred indicators. The durable questions are broader: where is capital being over-allocated, where are bottlenecks real, where are unit economics improving or deteriorating, where is financing becoming fragile, and where is market structure hiding risk. Future reviews should replace obsolete tickers, data series, cycle analogies, and source families when technology, market plumbing, or the account policy changes. Keep the economic question; update the proxy.
 
@@ -882,6 +897,7 @@ Output requirements:
 - Score bubble risk dimensions from 0 to 5 and explain the change from the prior monitor if a prior monitor exists.
 - Convert the regime view into account-permitted actions with trigger conditions, invalidation conditions, and a time horizon.
 - If there is no clear account-permitted trade, say `no clear account-permitted trade`.
+- Record whether the structured macro files changed. If a material macro or credit change affects entry, sizing, or priority, update the relevant macro CSV rather than leaving the conclusion only in prose.
 
 Bubble risk dimensions:
 

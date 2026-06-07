@@ -98,6 +98,7 @@ Record the latest verified facts. Write `unavailable` or `unverified` instead of
 | AI unit economics | Inference cost, GPU rental prices, margins, depreciation |  |  |
 | Financing and IPOs | SpaceX, OpenAI, Anthropic, CoreWeave, Nebius, xAI, data-center financing |  |  |
 | Regulation and geopolitics | Export controls, antitrust, data regulation, energy permitting, conflicts |  |  |
+| Structured macro layer | regime snapshot, watchlist sensitivity, financing fragility, shared risk matrix, event calendar |  | `research/macro/` |
 
 ## 5. Holdings and Watchlist Handling
 
@@ -167,6 +168,18 @@ Use this section when an indicator has become stale or a new bottleneck has beco
 |  |  |  |  |
 
 Do not remove an indicator merely because current data is inconvenient to collect. Retire it only when it no longer maps to the opportunity set, the source quality has degraded, or a better source-backed proxy exists.
+
+## 9A. Structured Macro Records
+
+Files checked or updated:
+
+| File | Changed | Why |
+| --- | --- | --- |
+| `research/macro/regime-snapshots.csv` |  |  |
+| `research/macro/watchlist-sensitivity.csv` |  |  |
+| `research/macro/financing-runway-scores.csv` |  |  |
+| `research/macro/watchlist-risk-matrix.csv` |  |  |
+| `research/macro/event-calendar.csv` |  |  |
 
 ## 10. Fact, Inference, Scenario, and Action Separation
 

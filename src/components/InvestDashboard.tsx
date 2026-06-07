@@ -2,8 +2,10 @@ import {
   Activity,
   BarChart3,
   BookOpen,
+  CalendarClock,
   Database,
   ExternalLink,
+  Gauge,
   Github,
   History,
   LineChart,
@@ -34,6 +36,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   EquityPoint,
   LedgerEvent,
+  MacroOverlayData,
   PortfolioData,
   PositionRecord,
   PriceHistoryPoint,
@@ -963,6 +966,10 @@ export default function InvestDashboard({ data }: Props) {
           />
         </section>
 
+        <Panel title="Macro regime" eyebrow="risk overlay">
+          <MacroRegimePanel macro={activeData.macro} />
+        </Panel>
+
         <section className="dashboard-grid">
           <Panel
             title="Equity curve"
@@ -1236,6 +1243,94 @@ function AccountStatusCard({ status }: { status: AccountStatusDisplay }) {
       >
         {status.badge}
       </span>
+    </div>
+  );
+}
+
+function MacroRegimePanel({ macro }: { macro: MacroOverlayData }) {
+  const regime = macro.latestRegime;
+
+  if (regime === null) {
+    return (
+      <div className="empty-state macro-empty-state">
+        <strong>Macro snapshot pending</strong>
+        <span>No committed macro regime snapshot is available.</span>
+      </div>
+    );
+  }
+
+  const nextEvents = macro.eventCalendar
+    .filter((event) => event.status === "scheduled")
+    .slice(0, 4);
+  const riskRows = macro.riskMatrix.slice(0, 4);
+
+  return (
+    <div className="macro-regime-panel">
+      <div className="macro-regime-head">
+        <div>
+          <span className="macro-kicker">
+            <Gauge size={15} />
+            {readableStatusLabel(regime.regimeLabel)}
+          </span>
+          <strong>{readableStatusLabel(regime.actionBias)}</strong>
+          <small>
+            {regime.asOf} · unavailable {unavailableIndicatorCount(regime.unavailableIndicators)}
+          </small>
+        </div>
+        <span className={macroScoreBadgeClass(regime.creditStressScore)}>
+          Credit {formatScore(regime.creditStressScore)}
+        </span>
+      </div>
+
+      <div className="macro-metric-grid">
+        <MacroMetric label="2Y" value={formatPlainPercent(regime.twoYearYieldPct)} />
+        <MacroMetric label="10Y" value={formatPlainPercent(regime.tenYearYieldPct)} />
+        <MacroMetric label="10Y-2Y" value={formatBasisPoints(regime.tenTwoSpreadBp)} />
+        <MacroMetric label="HY OAS" value={formatBasisPoints(regime.hyOasBp)} />
+        <MacroMetric label="VIX" value={formatNumber(regime.vix, 1)} />
+        <MacroMetric label="Bubble" value={formatNumber(regime.bubbleScoreTotal, 0)} />
+        <MacroMetric label="QQQ 63D" value={formatSignedPercent(regime.qqq63dReturnPct)} />
+        <MacroMetric label="SMH 63D" value={formatSignedPercent(regime.smh63dReturnPct)} />
+      </div>
+
+      <div className="macro-regime-columns">
+        <div className="macro-list-block">
+          <span className="macro-list-title">Shared risks</span>
+          <ol>
+            {riskRows.map((row) => (
+              <li key={row.riskFactor}>
+                <strong>{readableStatusLabel(row.riskFactor)}</strong>
+                <span>{row.portfolioHandling}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="macro-list-block">
+          <span className="macro-list-title">
+            <CalendarClock size={14} />
+            Review triggers
+          </span>
+          <ol>
+            {nextEvents.map((event) => (
+              <li key={event.eventId}>
+                <strong>{readableStatusLabel(event.scope)}</strong>
+                <span>
+                  {event.reviewRequiredBy}: {event.decisionEffect}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MacroMetric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="macro-metric">
+      <span>{label}</span>
+      <strong>{value}</strong>
     </div>
   );
 }
@@ -3175,6 +3270,8 @@ function ResearchDetailPanel({
 
       <MarketMetricStrip item={item} />
 
+      <MacroSensitivityStrip item={item} />
+
       <StockPriceChart
         events={events}
         item={item}
@@ -3265,6 +3362,43 @@ function MarketMetric({ label, value }: { label: string; value: string }) {
     <div className="market-metric">
       <span>{label}</span>
       <strong>{value}</strong>
+    </div>
+  );
+}
+
+function MacroSensitivityStrip({ item }: { item: WatchlistItem }) {
+  const sensitivity = item.macroSensitivity;
+  const financing = item.financingRunway;
+
+  if (sensitivity === null && financing === null) {
+    return null;
+  }
+
+  return (
+    <div className="macro-sensitivity-block">
+      <div className="macro-sensitivity-heading">
+        <Gauge size={15} />
+        <span>Macro sensitivity</span>
+      </div>
+      <div className="macro-sensitivity-grid">
+        <MacroScore label="Rate" value={sensitivity?.rateSensitivity ?? null} />
+        <MacroScore label="Credit" value={sensitivity?.creditSensitivity ?? null} />
+        <MacroScore label="AI capex" value={sensitivity?.aiCapexSensitivity ?? null} />
+        <MacroScore label="Financing" value={sensitivity?.financingSensitivity ?? null} />
+        <MacroScore label="Dilution" value={sensitivity?.dilutionSensitivity ?? null} />
+        <MacroScore label="Fragility" value={financing?.overallFinancingFragilityScore ?? null} />
+      </div>
+      <p>{sensitivity?.macroPriorityTrigger ?? financing?.nextReviewTrigger}</p>
+      {financing === null ? null : <small>{financing.notes}</small>}
+    </div>
+  );
+}
+
+function MacroScore({ label, value }: { label: string; value: number | null }) {
+  return (
+    <div className="macro-score">
+      <span>{label}</span>
+      <strong className={macroScoreTextClass(value)}>{formatScore(value)}</strong>
     </div>
   );
 }
@@ -3715,6 +3849,53 @@ function formatWatchPrice(item: WatchlistItem): string {
   }
 
   return `${formatCurrency(item.price)} · ${item.priceAsOf ?? "undated"}`;
+}
+
+function formatBasisPoints(value: number | null): string {
+  if (value === null) {
+    return "Not enough data";
+  }
+
+  return `${value.toFixed(0)} bp`;
+}
+
+function formatScore(value: number | null): string {
+  if (value === null) {
+    return "Not enough data";
+  }
+
+  return `${value.toFixed(0)}/5`;
+}
+
+function unavailableIndicatorCount(value: string | null): number {
+  if (value === null || value.trim() === "" || value === "none") {
+    return 0;
+  }
+
+  return value
+    .split(";")
+    .map((indicator) => indicator.trim())
+    .filter(Boolean).length;
+}
+
+function macroScoreTextClass(value: number | null): string {
+  if (value === null) {
+    return "macro-score-neutral";
+  }
+
+  if (value >= 4) {
+    return "macro-score-high";
+  }
+
+  if (value >= 2) {
+    return "macro-score-medium";
+  }
+
+  return "macro-score-low";
+}
+
+function macroScoreBadgeClass(value: number | null): string {
+  return `macro-score-badge ${macroScoreTextClass(value)}`;
 }
 
 function analysisCountLabel(count: number): string {

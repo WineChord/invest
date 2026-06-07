@@ -185,6 +185,7 @@ export function runCommunityLeadTriage({
     .map((row) => triageSymbol(row, previousBySymbol.get(row.symbol), {
       highScore,
       mediumScore,
+      scanAsOf: normalizedAsOf,
     }))
     .sort(compareLeadPriority);
   const topLeads = leads.slice(0, top);
@@ -218,7 +219,7 @@ export function runCommunityLeadTriage({
       high_priority_score: highScore,
       medium_priority_score: mediumScore,
       components:
-        "mention_count, source_diversity, source_quality, reason_keyword_fit, trend_delta, stocktwits_trending_score, novelty, and penalties for ambiguous or broad-market symbols",
+        "mention_count, source_diversity, source_quality, source_recency_decay, cross_scan_persistence, reason_keyword_fit, trend_delta, stocktwits_trending_score, novelty, and penalties for ambiguous or broad-market symbols",
     },
     source_status_counts: scan.source_status_counts ?? {},
     source_counts_by_type: scan.source_counts_by_type ?? {},
@@ -254,8 +255,9 @@ export function runCommunityLeadTriage({
 function triageSymbol(row, previous, {
   highScore,
   mediumScore,
+  scanAsOf,
 }) {
-  const scoreComponents = scoreSymbol(row, previous);
+  const scoreComponents = scoreSymbol(row, previous, scanAsOf);
   const analysisPriorityScore = scoreComponents.total_score;
   return {
     symbol: row.symbol,
@@ -299,12 +301,14 @@ function triageSymbol(row, previous, {
   };
 }
 
-function scoreSymbol(row, previous) {
+function scoreSymbol(row, previous, scanAsOf) {
   const mentionCount = Number(row.mention_count ?? 0);
   const sourceCount = Number(row.source_count ?? 0);
   const reasonMentionCount = (row.reason_keywords ?? [])
     .reduce((sum, reason) => sum + Number(reason.mention_count ?? 0), 0);
   const sourceQualityScore = sourceQuality(row.source_ids ?? []);
+  const sourceRecencyScore = sourceRecency(row.latest_source_published_at, scanAsOf);
+  const persistenceScore = previous !== undefined && Number(previous.mention_count ?? 0) > 0 ? 5 : 0;
   const trendDelta = previous === undefined
     ? 0
     : Math.max(0, mentionCount - Number(previous.mention_count ?? 0));
@@ -320,6 +324,8 @@ function scoreSymbol(row, previous) {
     Math.min(35, mentionCount * 0.75)
     + Math.min(20, sourceCount * 2)
     + sourceQualityScore
+    + sourceRecencyScore
+    + persistenceScore
     + Math.min(20, reasonMentionCount * 1.25)
     + Math.min(15, trendDelta * 1.5)
     + Math.min(15, stocktwitsTrendingScore * 2)
@@ -333,6 +339,8 @@ function scoreSymbol(row, previous) {
     mention_component: Number(Math.min(35, mentionCount * 0.75).toFixed(3)),
     source_diversity_component: Math.min(20, sourceCount * 2),
     source_quality_component: sourceQualityScore,
+    source_recency_decay_component: sourceRecencyScore,
+    cross_scan_persistence_component: persistenceScore,
     reason_keyword_component: Number(Math.min(20, reasonMentionCount * 1.25).toFixed(3)),
     trend_delta_component: Number(Math.min(15, trendDelta * 1.5).toFixed(3)),
     stocktwits_trending_component: Number(Math.min(15, stocktwitsTrendingScore * 2).toFixed(3)),
@@ -351,6 +359,39 @@ function sourceQuality(sourceIds) {
     return sum + (match?.weight ?? 3);
   }, 0);
   return Math.min(20, score);
+}
+
+function sourceRecency(sourcePublishedAt, scanAsOf) {
+  const published = strictDateOrUndefined(sourcePublishedAt);
+  const asOf = strictDateOrUndefined(scanAsOf);
+  if (published === undefined || asOf === undefined || published > asOf) {
+    return 0;
+  }
+  const ageDays = daysBetween(published, asOf);
+  if (ageDays <= 1) {
+    return 8;
+  }
+  if (ageDays <= 3) {
+    return 5;
+  }
+  if (ageDays <= 7) {
+    return 2;
+  }
+  return 0;
+}
+
+function strictDateOrUndefined(value) {
+  const text = String(value ?? "").slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    return undefined;
+  }
+  const parsed = new Date(`${text}T00:00:00.000Z`);
+  return Number.isNaN(parsed.getTime()) ? undefined : text;
+}
+
+function daysBetween(startDate, endDate) {
+  const millisecondsPerDay = 24 * 60 * 60 * 1000;
+  return Math.floor((Date.parse(`${endDate}T00:00:00.000Z`) - Date.parse(`${startDate}T00:00:00.000Z`)) / millisecondsPerDay);
 }
 
 function priorityBucket(score, highScore, mediumScore) {
