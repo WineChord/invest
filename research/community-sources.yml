@@ -64,37 +64,30 @@ hacker_news:
     - id: hn_ai_compute_infrastructure
       query: AI infrastructure
       lane_id: ai_compute_infrastructure
-      tags: story,comment
       hits_per_page: 20
     - id: hn_ai_power_and_cooling
       query: data center power
       lane_id: ai_power_and_cooling
-      tags: story,comment
       hits_per_page: 20
     - id: hn_semiconductor_interconnect
       query: CXL interconnect
       lane_id: semiconductor_interconnect_and_memory
-      tags: story,comment
       hits_per_page: 20
     - id: hn_space_infrastructure
       query: satellite infrastructure
       lane_id: space_infrastructure
-      tags: story,comment
       hits_per_page: 20
     - id: hn_quantum_computing
       query: quantum computing
       lane_id: quantum_computing_and_networking
-      tags: story,comment
       hits_per_page: 20
     - id: hn_advanced_nuclear
       query: nuclear reactor
       lane_id: advanced_nuclear_and_grid_constraints
-      tags: story,comment
       hits_per_page: 20
     - id: hn_programmable_money
       query: stablecoin infrastructure
       lane_id: programmable_money_infrastructure
-      tags: story,comment
       hits_per_page: 20
 generic_rss:
   enabled: true
