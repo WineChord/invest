@@ -36,6 +36,18 @@ source_coverage:
         recall_diagnostics:
         miss_counts:
       result_summary:
+  community_attention:
+    scan_command:
+    scan_output_path:
+    scan_output_sha256:
+    triage_command:
+    triage_output_path:
+    triage_output_sha256:
+    previous_scan_status:
+    top_existing_priority_boosts:
+    top_new_primary_source_queue:
+    identity_confirmation_queue:
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
   source_families_checked:
     - family_id: primary_filings_regulatory | issuer_material | market_data | current_world_context | new_listings_ipo_spinoff_transactions | lane_evolution_current_world_search
       family:

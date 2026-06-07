@@ -90,11 +90,16 @@ Use `npm run build:evidence-packet` before spawning independent xhigh subagents 
 
 ```bash
 npm run scan:community
+npm run triage:community
 ```
 
 The public community scan is a no-token, no-cookie lead-generation layer. It reads the configured public sources in `research/community-sources.yml`, currently Reddit RSS/Atom feeds, Stocktwits public trending and symbol stream endpoints, Hacker News Algolia search, and generic RSS feeds. It deliberately excludes X because official X search requires API credentials and web scraping is not an acceptable repository workflow.
 
 By default, the command writes an aggregate JSON file under ignored `research/cache/community/YYYY-MM-DD/`. The artifact stores source status, global symbol mention counts, per-source symbol rankings, per-source-type symbol rankings, lane keyword counts, symbol reason-keyword co-mentions, Stocktwits public trend metadata, sample URLs, retrieval timestamps, and caveats. It must not store raw post bodies, author names, cookies, tokens, or private payloads. Use `--output PATH` only when intentionally saving a durable aggregate artifact after checking publication safety.
+
+Run `npm run triage:community` after the scan to convert the aggregate community artifact into an analysis-priority queue. The triage output compares the current scan with the latest prior scan when available, assigns `high`, `medium`, or `low` analysis priority, separates existing-watchlist priority boosts from unknown-symbol primary-source skim candidates, and sends ambiguous ticker strings to identity confirmation. It explicitly records that community signals do not create buy eligibility, promotion eligibility, security metadata, raw candidate records, or allocation evidence.
+
+The default scan and triage outputs are ignored scratch artifacts. If a material discovery run relies on community triage for a durable candidate, readiness, watchlist, or discovery conclusion, rerun the triage command with a sanitized committed output path under `research/discovery/runs/` and record the output hash in the discovery run artifact.
 
 Useful options:
 
@@ -102,6 +107,10 @@ Useful options:
 npm run scan:community -- --as-of YYYY-MM-DD
 npm run scan:community -- --json
 npm run scan:community -- --output research/cache/community/YYYY-MM-DD/YYYY-MM-DD-public-community-scan.json
+npm run triage:community -- --as-of YYYY-MM-DD
+npm run triage:community -- --scan research/cache/community/YYYY-MM-DD/YYYY-MM-DD-public-community-scan.json
+npm run triage:community -- --previous-scan research/cache/community/YYYY-MM-DD/YYYY-MM-DD-public-community-scan.json
+npm run triage:community -- --output research/discovery/runs/YYYY-MM-DD-community-triage.json
 ```
 
 Community output is never buy eligibility. A symbol surfaced by this scan can enter durable research only after security metadata confirmation, primary-source skim, and the normal discovery readiness or promotion gates when material.

@@ -67,6 +67,22 @@ semantic_discovery_run:
 semantic_review_packet:
 semantic_classifier_version:
 semantic_batch_cache_status:
+community_scan:
+  command:
+  output_path:
+  output_sha256:
+  retrieved_at:
+  source_status_counts:
+community_triage:
+  command:
+  output_path:
+  output_sha256:
+  previous_scan_status:
+  high_priority_leads:
+  medium_priority_leads:
+  top_existing_priority_boosts:
+  top_new_primary_source_queue:
+  identity_confirmation_queue:
 cache_only_intermediates:
 durable_semantic_summary:
 agentic_discovery_subagents:
