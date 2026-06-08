@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: 2026-06-08T11:15:54.194Z
+generated_at: 2026-06-08T12:08:24.332Z
 current_date: 2026-06-08
 request_type: targeted_power_industrials_watchlist_triage
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
@@ -1755,6 +1755,79 @@ fresh_sources:
     summary: Repository research note documenting the targeted PWR, ETN, and CAT
       triage conclusion; ETN and PWR were added to research-only coverage and
       CAT was rejected for watchlist inclusion.
+  - id: sivers_globalfoundries_2026_06_02
+    source_type: company_ir
+    source_published_at: 2026-06-02
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: Sivers announced a collaboration with GlobalFoundries to integrate
+      Sivers laser arrays into GF silicon photonics reference designs and SCALE
+      optical engine solutions for AI infrastructure.
+  - id: sivers_q1_2026_interim_release
+    source_type: company_ir
+    source_published_at: 2026-05-29
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: Sivers reported Q1 2026 results, including lower year-over-year net
+      sales, negative adjusted EBITDA, negative operating cash flow,
+      opportunity-pipeline growth, a directed share issue, and preparations for
+      a potential U.S. dual listing.
+  - id: sivers_jabil_2026_04_15
+    source_type: company_ir
+    source_published_at: 2026-04-15
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: Sivers announced that Jabil plans to develop a 1.6T linear receive
+      optical transceiver module using Sivers high-performance DFB lasers for AI
+      data-center optical interconnects.
+  - id: sivers_ai_datacom_application_page_2026_06_08
+    source_type: company_ir
+    source_published_at: 2026-06-08
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: Sivers describes its photonics products as DFB lasers for AI and data
+      optical interconnects, CPO, optical I/O, high-speed data links, data
+      centers, and HPC clusters.
+  - id: sivers_agm_notice_2026_05_14
+    source_type: company_ir
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: Sivers AGM notice documents ordinary-share and voting counts, incentive
+      dilution, proposed issue authorization, a possible Nasdaq New York dual
+      listing, and convertible financing details.
+  - id: sivef_stockanalysis_quote_2026_06_08
+    source_type: market_data
+    source_published_at: 2026-06-08
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: Third-party quote page identifying SIVEF as Sivers Semiconductors AB on
+      OTC markets; used only for security-identity and exchange confirmation,
+      not as decisive investment evidence.
+  - id: sivef_community_scan_2026_06_07
+    source_type: community_scan
+    source_published_at: 2026-06-07
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: The no-token community scan recorded a weak Stocktwits SIVEF signal
+      tied to artificial intelligence, interconnect, and optical keywords and
+      required primary-source skim plus security-type confirmation.
+  - id: sivers_semiconductors_triage_2026_06_08
+    source_type: research_note
+    source_published_at: 2026-06-08
+    retrieved_at: 2026-06-08
+    related_symbols:
+      - SIVEF
+    summary: Repository research note documenting why Sivers is a legitimate AI
+      optical interconnect lane signal but SIVEF is rejected for eligible
+      watchlist inclusion under policy v1.1 because it is OTC.
 deterministic_outputs:
   - command: caller-supplied deterministic discovery output
     output_path: research/discovery/runs/2026-06-08-universe-scan.json
