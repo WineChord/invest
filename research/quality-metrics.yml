@@ -1,14 +1,14 @@
 schema_version: 1
-as_of: 2026-06-05
+as_of: 2026-06-08
 last_research_engine_run:
-  as_of: 2026-06-05
-  scope: full_operating_cycle_and_monthly_decision_for_confirmed_cash
-  notes: Ran the 2026-06-05 market refresh, deterministic universe scan, targeted SEC event-filing index, direct SEC ownership checks, and xhigh discovery, freshness, bull, bear, and allocation reviewers. RKLB remains the best-ranked company but moved out of current buy-zone because the fresh quote was above the prior cap and no new de-risking evidence justified chasing. ASTS remains the only below-cap private simulation candidate, but exact same-day actionable order details are withheld from public repository records until the publication embargo clears. YSS, VOYG, and CRWV freshness updates were added. Account records remain unchanged.
+  as_of: 2026-06-08
+  scope: targeted_power_industrials_watchlist_triage
+  notes: Ran targeted PWR, ETN, and CAT primary-source triage for the AI data-center power and grid bottleneck lane, refreshed the lane map, and rebuilt the deterministic universe scan after adding ETN and PWR as research-only lane proxies. ETN and PWR were added to research-only coverage with current cycle-review rows and no buy eligibility; CAT was recorded as a rejected discovery candidate and industry reference only. The prior 2026-06-05 full-cycle decision remains the latest allocation run, and account records remain unchanged.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Active watchlist coverage remains current after the 2026-06-05 full-cycle review. No new lane or candidate displaced RKLB/ASTS, no new RKLB or ASTS operating filing broke the thesis, RKLB is withheld by price discipline rather than freshness, and new YSS, VOYG, and CRWV events were reviewed and durably recorded. Repository account records remain unchanged because no broker execution confirmation exists.
+  reason: Active watchlist coverage remains current after the 2026-06-05 full-cycle review and 2026-06-08 targeted power-industrials triage. ETN and PWR improve research-only coverage of the AI data-center power lane but do not create buy eligibility or displace current active candidates. CAT was rejected for watchlist inclusion. Repository account records remain unchanged because no broker execution confirmation exists.
   user_only_execution_prerequisites:
     - fresh broker cash and buying-power confirmation before any real order
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
@@ -17,10 +17,10 @@ decision_readiness:
     - do not execute if new material issuer evidence appears before order entry
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-06-05
-  discovery_lane_map_as_of: 2026-06-01
-  watchlist_symbols: 28
-  watchlist_symbols_with_current_cycle_review: 28
+  universe_scan_as_of: 2026-06-08
+  discovery_lane_map_as_of: 2026-06-08
+  watchlist_symbols: 30
+  watchlist_symbols_with_current_cycle_review: 30
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
@@ -31,10 +31,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 4
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-06-05-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-06-05-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-06-05-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-06-05-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-06-08-power-industrials-triage.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-06-08-power-industrials-triage.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-06-08-power-industrials-triage.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-06-08-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -54,6 +54,7 @@ discovery_process:
   allocation_relevant_lanes:
     - space_infrastructure
     - direct_to_device_connectivity
+    - ai_power_and_cooling
     - quantum_computing_and_networking
     - semiconductor_interconnect_and_memory
   unresolved_subagent_conflicts: 0

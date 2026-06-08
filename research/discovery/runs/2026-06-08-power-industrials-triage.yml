@@ -1,0 +1,297 @@
+schema_version: 1
+run_id: 2026-06-08-power-industrials-triage
+run_date: 2026-06-08
+request_type: targeted_power_industrials_watchlist_triage
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: research-only coverage update; no buy eligibility or allocation change
+linked_decision_or_research_note: research/2026-06-08-power-industrials-triage.md
+subagent_evidence_packet_path: research/discovery/runs/2026-06-08-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --json --as-of 2026-06-08 --output research/discovery/runs/2026-06-08-universe-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-06-08-universe-scan.json
+      output_sha256: c7fe79c7537c46145ed2b1aae559b5d60d9cac4d0f53bc4e47585e139287a996
+      retrieved_at: 2026-06-08
+      profile_coverage_scope:
+      profile_coverage_status: not_applicable_no_profile_input
+      profile_requested_symbols: []
+      targeted_scope_acknowledged: false
+      targeted_scope_reason:
+      candidate_payload_summary:
+        returned_candidates: 44
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 59
+        suppressed_known_matches: 22
+        recall_diagnostics: zero expected-proxy miss count; organic ticker-only recall remains incomplete for known proxy symbols
+        miss_counts:
+          expected_proxy_miss_count: 0
+          organic_expected_proxy_miss_count: 25
+      result_summary: The refreshed dry-run universe scan was rebuilt after adding ETN and PWR to the AI power lane map. ETN and PWR matched the expected lane recall set; neither created a new raw buy candidate.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings and SEC listed-issuer universe reference
+      sources_or_queries:
+        - https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm
+        - https://www.sec.gov/Archives/edgar/data/1050915/000105091526000016/pwr-20260331.htm
+        - https://www.sec.gov/Archives/edgar/data/18230/000001823026000021/cat-20260331.htm
+        - https://www.sec.gov/files/company_tickers_exchange.json
+      source_ids:
+        - etn_q1_2026_10q
+        - pwr_q1_2026_10q
+        - cat_q1_2026_10q
+        - sec_company_tickers_exchange_2026_06_08
+      retrieved_at: 2026-06-08
+      material_findings: Eaton and Quanta have direct AI data-center power, cooling, grid, and large-load infrastructure exposure. Caterpillar has visible data-center power-generation demand but is a broad cyclical proxy rather than a focused bottleneck owner.
+      unavailable_or_skipped_reason:
+    - family_id: issuer_material
+      family: Company investor relations and issuer updates
+      sources_or_queries:
+        - https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-completes-acquisition-of-leading-liquid-cooling-solutions-provider-boyd-thermal.html
+        - https://investors.quantaservices.com/news-events/press-releases/detail/380/quanta-services-acquires-dynamic-systems-a-premier-turnkey-mechanical-and-process-infrastructure-solutions-provider
+        - https://investors.caterpillar.com/news/news-details/2026/Caterpillar-Reports-First-Quarter-2026-Results/default.aspx
+      source_ids:
+        - etn_boyd_thermal_2026_03_12
+        - pwr_dynamic_systems_2025_07_31
+        - cat_q1_2026_results
+      retrieved_at: 2026-06-08
+      material_findings: Eaton's Boyd Thermal acquisition strengthens grid-to-chip liquid-cooling coverage. Quanta's Dynamic Systems acquisition adds mechanical and process infrastructure exposure. Caterpillar's results validate data-center power demand but do not make CAT a focused satellite candidate.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Current quote and scale context
+      sources_or_queries:
+        - https://finance.yahoo.com/quotes/PWR,ETN,CAT/view/v1
+      source_ids:
+        - market_quote_snapshot_2026_06_08_power_industrials
+      retrieved_at: 2026-06-08
+      material_findings: PWR, ETN, and CAT were already very large public companies at the time of review, which lowers extreme-upside asymmetry versus smaller direct bottleneck names.
+      unavailable_or_skipped_reason: Broker quote, fees, buying power, and execution preview remain user-only execution prerequisites for any future decision cycle.
+    - family_id: current_world_context
+      family: Current valuation and macro risk context
+      sources_or_queries:
+        - https://www.federalreserve.gov/publications/files/financial-stability-report-20260508.pdf
+      source_ids:
+        - federal_reserve_financial_stability_2026_05_08
+      retrieved_at: 2026-06-08
+      material_findings: High-valuation market context supports research-only monitoring and strict promotion gates for mature industrial AI-infrastructure beneficiaries.
+      unavailable_or_skipped_reason:
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: SEC listed issuer universe scan
+      sources_or_queries:
+        - research/discovery/runs/2026-06-08-universe-scan.json
+      source_ids:
+        - sec_company_tickers_exchange_2026_06_08
+      retrieved_at: 2026-06-08
+      material_findings: The broad issuer scan did not surface a new allocation-displacing lead from this targeted power-industrials request.
+      unavailable_or_skipped_reason:
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lane review and targeted power-industrials search
+      sources_or_queries:
+        - research/discovery/lanes.yml
+        - research/discovery/runs/2026-06-08-universe-scan.json
+        - research/2026-06-08-power-industrials-triage.md
+      source_ids:
+        - sec_company_tickers_exchange_2026_06_08
+        - power_industrials_triage_2026_06_08
+      retrieved_at: 2026-06-08
+      material_findings: The AI power and cooling lane map now includes ETN and PWR as research-only public proxies. CAT remains an industry reference rather than a watchlist company.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-06-08
+    notes: Covered the refreshed deterministic issuer scan, updated AI power lane map, current quote snapshot, SEC filings, and company materials for PWR, ETN, and CAT. This targeted run did not replace the 2026-06-05 allocation decision.
+
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - quantum name matches
+    - advanced nuclear and grid names
+    - space infrastructure name matches
+  sampled_symbols:
+    - QTEX
+    - FNUC
+    - NNE
+    - GILT
+    - ARQQ
+    - QBTS
+  false_positive_patterns:
+    - generic issuer-name matches without primary-source bottleneck proof
+    - ticker-only known proxy recall
+    - thematically adjacent companies without clear shareholder-value capture
+  lane_decisions:
+    - add ETN and PWR to AI power and cooling lane proxies
+    - keep CAT rejected as an industry reference
+    - do not add a new lane from this targeted request
+  disposition: targeted lane coverage improvement rather than a new allocation blocker
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: AI data-center buildout can be constrained by electrical equipment, grid interconnection, substation and transmission work, power quality, large-load project execution, and liquid cooling.
+    inferences: ETN and PWR improve coverage of the physical AI infrastructure bottleneck map, while CAT mainly confirms broader power-generation demand.
+    disconfirming_evidence: All three companies are already large, mature, and diversified, which limits the probability of extreme satellite-account upside from this entry point.
+    source_ids:
+      - etn_q1_2026_10q
+      - pwr_q1_2026_10q
+      - cat_q1_2026_results
+    investment_implication: Add ETN and PWR to research-only coverage; do not add CAT to the watchlist.
+  who_controls_or_removes_scarcity:
+    facts: Eaton supplies electrical distribution, power quality, and liquid-cooling capability. Quanta supplies grid, transmission, substation, large-load, and mechanical infrastructure execution. Caterpillar supplies power-generation equipment through a broader industrial platform.
+    inferences: PWR and ETN are closer to the bottleneck execution layer than CAT, but neither is small or pure enough for immediate active status.
+    disconfirming_evidence: Contractor execution risk, acquisition integration, commodity and wage inflation, and diversified segment exposure can dilute bottleneck economics.
+    source_ids:
+      - etn_boyd_thermal_2026_03_12
+      - pwr_dynamic_systems_2025_07_31
+      - cat_q1_2026_10q
+    investment_implication: Prioritize ETN and PWR for monitoring of backlog and data-center order evidence, not buy-zone ranking.
+  who_can_monetize_into_shareholder_value:
+    facts: ETN monetizes through product margins, services, and backlog conversion. PWR monetizes through infrastructure-service margins and remaining performance obligations. CAT monetizes through equipment sales, dealer channels, and power-generation demand.
+    inferences: ETN likely has better product-pricing leverage than PWR, while PWR has more direct grid-build execution leverage. CAT's exposure is less clean.
+    disconfirming_evidence: Valuation, cyclicality, project risk, and current scale can absorb much of the visible demand before it becomes asymmetric shareholder value.
+    source_ids:
+      - etn_q1_2026_10q
+      - pwr_q1_2026_10q
+      - market_quote_snapshot_2026_06_08_power_industrials
+    investment_implication: Keep ETN and PWR research-only until a future promotion review shows a stronger upside-to-risk path.
+  public_security_expression:
+    facts: ETN, PWR, and CAT are U.S.-listed common stocks with public disclosures and normal retail liquidity under policy v1.1.
+    inferences: Tradability is not the blocker; buy eligibility is blocked by status, valuation, scale, and the absence of a promotion review.
+    disconfirming_evidence: None of the three creates a new broker-confirmed account fact or execution instruction.
+    source_ids:
+      - sec_company_tickers_exchange_2026_06_08
+      - market_quote_snapshot_2026_06_08_power_industrials
+    investment_implication: ETN and PWR can be listed as research-only; CAT should remain a rejected discovery candidate and industry reference.
+  early_small_misunderstood_or_newly_public:
+    facts: ETN, PWR, and CAT are mature large-cap companies rather than newly public or underfollowed small companies.
+    inferences: The main reason to keep ETN and PWR is lane completeness and opportunity-cost monitoring, not likely immediate extreme upside.
+    disconfirming_evidence: If a future dislocation or spinout creates a cleaner bottleneck expression, this conclusion should be reopened.
+    source_ids:
+      - market_quote_snapshot_2026_06_08_power_industrials
+      - power_industrials_triage_2026_06_08
+    investment_implication: Research-only coverage is appropriate; active promotion requires a later promotion review.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/discovery/runs/2026-06-05-full-cycle-decision.yml
+        - research/2026-06-08-power-industrials-triage.md
+      sources_checked:
+        - sec_company_tickers_exchange_2026_06_08
+        - etn_q1_2026_10q
+        - pwr_q1_2026_10q
+        - cat_q1_2026_10q
+      facts_verified:
+        - ETN and PWR fit the AI power lane better than CAT.
+        - ETN and PWR are research-only additions rather than buy candidates.
+      stale_or_missing_evidence:
+        - No broker-only execution evidence was requested or used.
+      confidence: medium
+      key_findings: The 2026-06-05 full-cycle control context remains current; the 2026-06-08 targeted review adds ETN and PWR to research-only lane coverage and rejects CAT.
+      conflicts: none
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/2026-06-08-power-industrials-triage.md
+      sources_checked:
+        - etn_q1_2026_10q
+        - pwr_q1_2026_10q
+        - cat_q1_2026_10q
+      facts_verified:
+        - Current primary filings were reviewed for the targeted symbols.
+        - No targeted symbol was promoted into buy eligibility.
+      stale_or_missing_evidence:
+        - No separate filing review was required because the targeted conclusion is research-only or rejected.
+      confidence: medium
+      key_findings: Fresh filings support ETN and PWR monitoring but do not create active-candidate promotion.
+      conflicts: none
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/2026-06-08-power-industrials-triage.md
+      sources_checked:
+        - etn_boyd_thermal_2026_03_12
+        - pwr_dynamic_systems_2025_07_31
+        - cat_q1_2026_results
+      facts_verified:
+        - ETN adds liquid-cooling and electrical infrastructure exposure.
+        - PWR adds grid, large-load, and mechanical/process execution exposure.
+      stale_or_missing_evidence:
+        - Future backlog and customer-specific data-center order quality remain next-review triggers.
+      confidence: medium
+      key_findings: The bull case is strongest for ETN and PWR as lane-completeness monitors, not immediate asymmetric buys.
+      conflicts: none
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/2026-06-08-power-industrials-triage.md
+      sources_checked:
+        - etn_q1_2026_10q
+        - pwr_q1_2026_10q
+        - cat_q1_2026_10q
+      facts_verified:
+        - Large current scale, mature diversification, integration risk, contractor economics, cyclicality, and valuation cap the satellite-account fit.
+      stale_or_missing_evidence:
+        - None that blocks the research-only classification.
+      confidence: medium
+      key_findings: The bear case blocks active promotion for ETN and PWR and blocks watchlist inclusion for CAT.
+      conflicts: none
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/quality-metrics.yml
+        - research/buy-zones.csv
+        - research/2026-06-08-power-industrials-triage.md
+      sources_checked:
+        - market_quote_snapshot_2026_06_08_power_industrials
+        - power_industrials_triage_2026_06_08
+      facts_verified:
+        - ETN and PWR do not enter active status or buy-zone ranking.
+        - CAT does not enter the watchlist.
+      stale_or_missing_evidence:
+        - Any future buy action would require a fresh promotion review and decision cycle.
+      confidence: medium
+      key_findings: The targeted update raises analysis coverage of the AI power lane without changing allocation priority.
+      conflicts: none
+  unresolved_conflicts: 0
+  conflict_resolution: No conflict affects buy eligibility because the targeted conclusion is research-only or rejected.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised:
+    - ai_power_and_cooling
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: no new lane promoted
+  no_change_reason: The request improved coverage inside an existing active lane rather than creating a distinct bottleneck lane.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived:
+    - CAT
+  candidates_promoted:
+    - ETN
+    - PWR
+  candidates_incubated: []
+  false_positive_patterns:
+    - large diversified industrial proxy with only partial data-center bottleneck purity
+    - contractor or equipment beneficiary where current scale caps extreme-upside fit
+
+readiness_sprints: []
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Repository-public coverage is current after the 2026-06-08 targeted update. ETN and PWR are research-only coverage additions and CAT is rejected, so no promotion or allocation change is introduced.

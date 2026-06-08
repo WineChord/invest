@@ -790,6 +790,15 @@ const testCases = [
     expected: "output_sha256 does not match",
   },
   {
+    name: "rejects current universe scan lane map hash mismatch",
+    mutate: (cwd) => {
+      updateCurrentUniverseScanArtifact(cwd, (doc) => {
+        doc.lane_map_sha256 = "0".repeat(64);
+      });
+    },
+    expected: "lane_map_sha256 does not match research/discovery/lanes.yml",
+  },
+  {
     name: "rejects missing unknown future review",
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
@@ -1184,6 +1193,49 @@ function writeIndexedJsonArtifact(cwd, relativePath, payload, role) {
       sha256: createHash("sha256").update(content).digest("hex"),
       role,
     });
+  });
+}
+
+function updateCurrentUniverseScanArtifact(cwd, mutate) {
+  const scanPath = baselineUniverseScanPath(cwd);
+  const filePath = path.join(cwd, scanPath);
+  const doc = JSON.parse(readFileSync(filePath, "utf8"));
+  mutate(doc);
+  const content = `${JSON.stringify(doc, null, 2)}\n`;
+  writeFileSync(filePath, content);
+  const nextSha = createHash("sha256").update(content).digest("hex");
+  updateLatestAgenticCommandHash(cwd, scanPath, nextSha);
+  updateLatestEvidencePacketHash(cwd, scanPath, nextSha);
+  updateDiscoveryArtifactIndexHash(cwd, doc.as_of, scanPath, nextSha);
+}
+
+function updateLatestAgenticCommandHash(cwd, outputPath, nextSha) {
+  updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
+    const command = doc.source_coverage.deterministic_commands.find((entry) => entry.output_path === outputPath);
+    if (command === undefined) {
+      throw new Error(`Missing agentic deterministic command for ${outputPath}`);
+    }
+    command.output_sha256 = nextSha;
+  });
+}
+
+function updateLatestEvidencePacketHash(cwd, outputPath, nextSha) {
+  updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
+    const output = doc.deterministic_outputs.find((entry) => entry.output_path === outputPath);
+    if (output === undefined) {
+      throw new Error(`Missing evidence packet deterministic output for ${outputPath}`);
+    }
+    output.output_sha256 = nextSha;
+  });
+}
+
+function updateDiscoveryArtifactIndexHash(cwd, asOf, outputPath, nextSha) {
+  updateJson(cwd, `research/discovery/runs/${asOf}-discovery-artifact-index.json`, (doc) => {
+    const artifact = doc.artifacts.find((entry) => entry.path === outputPath);
+    if (artifact === undefined) {
+      throw new Error(`Missing discovery artifact index entry for ${outputPath}`);
+    }
+    artifact.sha256 = nextSha;
   });
 }
 

@@ -3736,9 +3736,7 @@ function validateSemanticIssuerPacketsArtifact(artifact, file) {
   requireNonNegativeInteger(artifact.packet_count, `${file} packet_count`);
   requireSha256String(artifact.sec_input_sha256, `${file} sec_input_sha256`);
   requireSha256String(artifact.lane_map_sha256, `${file} lane_map_sha256`);
-  if (existsSync(artifact.lane_map_path) && artifact.lane_map_sha256 !== sha256(readFileSync(artifact.lane_map_path, "utf8"))) {
-    throw new Error(`${file} lane_map_sha256 does not match ${artifact.lane_map_path}`);
-  }
+  validateLaneMapHashForCurrentMap(file, artifact.lane_map_path, artifact.lane_map_sha256, artifact.as_of);
   requireStringArray(artifact.cache_invalidation_policy ?? [], `${file} cache_invalidation_policy`);
   requireStringArray(artifact.lane_map_lane_ids ?? [], `${file} lane_map_lane_ids`);
   if (!Array.isArray(artifact.packets)) {
@@ -4031,13 +4029,7 @@ function validateDiscoveryScanOutput(output, context, {
   requireStringArray(output.recall_ticker_only_expected_proxy_symbols ?? [], `${context} recall_ticker_only_expected_proxy_symbols`);
   validateDiscoveryScanSemanticCoverage(output, context);
   validateDiscoveryScanRecallMetrics(output, context);
-  if (!existsSync(output.lane_map_path)) {
-    throw new Error(`${context} lane_map_path does not exist: ${output.lane_map_path}`);
-  }
-  const currentLaneMapHash = sha256(readFileSync(output.lane_map_path, "utf8"));
-  if (output.lane_map_sha256 !== currentLaneMapHash) {
-    throw new Error(`${context} lane_map_sha256 does not match ${output.lane_map_path}`);
-  }
+  validateLaneMapHashForCurrentMap(context, output.lane_map_path, output.lane_map_sha256, output.lane_map_as_of);
   requirePositiveNumber(output.deterministic_limit, `${context} deterministic_limit`);
   requireNumber(output.candidate_count, `${context} candidate_count`);
   requireNumber(output.returned_candidate_count, `${context} returned_candidate_count`);
@@ -4081,6 +4073,24 @@ function validateDiscoveryScanOutput(output, context, {
     if (output.recall_expected_proxy_miss_count > 0) {
       throw new Error(`${context} broad universe freshness has known public proxy recall misses`);
     }
+  }
+}
+
+function validateLaneMapHashForCurrentMap(context, laneMapPath, laneMapSha256, laneMapAsOf) {
+  if (!existsSync(laneMapPath)) {
+    throw new Error(`${context} lane_map_path does not exist: ${laneMapPath}`);
+  }
+  const currentLaneMapAsOf = yamlDateString(parsedYamlFiles.get(discoveryLanesFile)?.as_of);
+  const artifactLaneMapAsOf = yamlDateString(laneMapAsOf);
+  const shouldCompareCurrentHash = laneMapPath !== discoveryLanesFile
+    || artifactLaneMapAsOf === ""
+    || artifactLaneMapAsOf === currentLaneMapAsOf;
+  if (!shouldCompareCurrentHash) {
+    return;
+  }
+  const currentLaneMapHash = sha256(readFileSync(laneMapPath, "utf8"));
+  if (laneMapSha256 !== currentLaneMapHash) {
+    throw new Error(`${context} lane_map_sha256 does not match ${laneMapPath}`);
   }
 }
 

@@ -635,3 +635,27 @@ entries:
     risk_watch: Contract-accounting estimates, customer concentration, material weakness, acquisition integration, government funding shifts, controlled-company governance, short public history, and valuation.
     next_check: Next quarterly report, backlog conversion, major award, customer diversification, material weakness remediation, margin update, or price dislocation.
     source_path: research/discovery/readiness/2026-06-01-YSS-readiness.md
+  - id: 2026-06-08-etn-power-industrials-triage
+    symbol: ETN
+    analyzed_at: "2026-06-08"
+    analysis_type: watchlist_triage
+    policy_version: v1.1
+    title: Power industrials triage
+    stance: B-
+    summary: Eaton has direct data-center electrical and liquid-cooling evidence through Electrical Americas, Electrical Global, Fibrebond, Resilient Power, and Boyd Thermal, but its large diversified scale keeps it research-only.
+    upside_path: Benefit if data-center grid-to-chip power, distribution, power quality, and liquid cooling become durable constraints that Eaton can convert into backlog, margin, and reinvestment paths.
+    risk_watch: Large-cap asymmetry limits, Boyd Thermal integration and acquisition premium, commodity and wage inflation, margin compression, utility or industrial slowdown, and hyperscaler bargaining power.
+    next_check: Next quarterly report, Electrical Americas or Electrical Global backlog update, Boyd Thermal integration update, data-center customer order update, or price dislocation.
+    source_path: research/2026-06-08-power-industrials-triage.md
+  - id: 2026-06-08-pwr-power-industrials-triage
+    symbol: PWR
+    analyzed_at: "2026-06-08"
+    analysis_type: watchlist_triage
+    policy_version: v1.1
+    title: Power industrials triage
+    stance: B-
+    summary: Quanta directly expresses grid, transmission, substation, renewable interconnection, and large-load execution constraints, but contractor economics and current scale keep it research-only.
+    upside_path: Benefit if AI data-center power demand, utility grid modernization, renewable interconnection, and large-load facility construction keep scarce skilled execution capacity in structural shortage.
+    risk_watch: Project estimate risk, labor availability and cost, weather and seasonality, MSA backlog softness, utility capex cyclicality, DSI integration, and large-cap asymmetry limits.
+    next_check: Next quarterly report, remaining performance obligation or backlog update, large-load data-center award, utility capex change, DSI integration update, or price dislocation.
+    source_path: research/2026-06-08-power-industrials-triage.md
