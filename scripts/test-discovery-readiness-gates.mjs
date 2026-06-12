@@ -299,12 +299,14 @@ const testCases = [
   {
     name: "rejects stale discovery source retrieval",
     mutate: (cwd) => {
+      const sourceId = firstCurrentDiscoveryRunSourceId(cwd);
       updateYaml(cwd, "research/sources.yml", (doc) => {
-        const source = doc.sources.find((entry) => entry.id === "rklb_q1_2026");
+        const source = doc.sources.find((entry) => entry.id === sourceId);
         source.retrieved_at = "1900-01-01";
       });
-      updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
-        const source = doc.fresh_sources.find((entry) => entry.id === "rklb_q1_2026");
+      const qualityMetrics = readQualityMetrics(cwd);
+      updateYaml(cwd, qualityMetrics.discovery_process.latest_evidence_packet_path, (doc) => {
+        const source = doc.fresh_sources.find((entry) => entry.id === sourceId);
         source.retrieved_at = "1900-01-01";
       });
     },
@@ -833,9 +835,10 @@ const testCases = [
   {
     name: "rejects current buy-zone symbol missing from lane proxies",
     mutate: (cwd) => {
+      const qualityMetrics = readQualityMetrics(cwd);
       appendCsvRow(cwd, "research/buy-zones.csv", {
         symbol: "OPENAI",
-        as_of: "2026-06-05",
+        as_of: qualityMetrics.as_of,
         buy_zone_status: "in_buy_zone",
         entry_trigger: "fixture_missing_lane_proxy",
         max_staged_entry_price: "1",
@@ -1130,6 +1133,27 @@ function updateCandidateReadiness(cwd, mutate) {
   });
 }
 
+function readQualityMetrics(cwd) {
+  return parseYaml(readFileSync(path.join(cwd, "research/quality-metrics.yml"), "utf8"));
+}
+
+function firstCurrentDiscoveryRunSourceId(cwd) {
+  const qualityMetrics = readQualityMetrics(cwd);
+  const runPath = qualityMetrics.discovery_process?.latest_agentic_discovery_path;
+  if (typeof runPath !== "string" || runPath === "") {
+    throw new Error("Missing quality metrics discovery_process.latest_agentic_discovery_path");
+  }
+  const run = parseYaml(readFileSync(path.join(cwd, runPath), "utf8"));
+  const family = run.source_coverage?.source_families_checked?.find((entry) =>
+    Array.isArray(entry?.source_ids) && entry.source_ids.length > 0,
+  );
+  const sourceId = family?.source_ids?.[0];
+  if (typeof sourceId !== "string" || sourceId === "") {
+    throw new Error("Missing current discovery run source id fixture");
+  }
+  return sourceId;
+}
+
 function updateYaml(cwd, relativePath, mutate) {
   const filePath = path.join(cwd, resolveFixtureYamlPath(cwd, relativePath));
   const doc = parseYaml(readFileSync(filePath, "utf8"));
@@ -1156,7 +1180,7 @@ function latestEvidencePacketPath(cwd) {
 }
 
 function latestDiscoveryProcessPath(cwd, field) {
-  const qualityMetrics = parseYaml(readFileSync(path.join(cwd, "research/quality-metrics.yml"), "utf8"));
+  const qualityMetrics = readQualityMetrics(cwd);
   const value = qualityMetrics.discovery_process?.[field];
   if (typeof value !== "string" || value === "") {
     throw new Error(`Missing quality metrics discovery_process.${field}`);

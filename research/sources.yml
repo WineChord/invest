@@ -1206,3 +1206,75 @@ sources:
     first_seen_at: 2026-06-08
     related_symbols: [SIVEF]
     summary: Repository research note documenting why Sivers is a legitimate AI optical interconnect lane signal but SIVEF is rejected for eligible watchlist inclusion under policy v1.1 because it is OTC.
+  - id: spcx_final_pricing_fwp_2026_06_11
+    title: SpaceX Final IPO Pricing Free Writing Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026042466/spaceexplorationtechnologi.htm
+    source_published_at: 2026-06-11
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [SPCX]
+    summary: SpaceX disclosed final IPO pricing for 555555555 primary Class A shares at USD 135.00 per share, symbol SPCX, Nasdaq and Nasdaq Texas listing, and June 12 2026 trade date.
+  - id: spcx_424b4_2026_06_12
+    title: SpaceX 424B4 Final Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm
+    source_published_at: 2026-06-12
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [SPCX]
+    summary: Final prospectus for SpaceX Class A common stock, including post-offering share count, risk factors, controlled-company governance, xAI/X recast financials, and IPO dilution.
+  - id: spcx_8a_2026_06_10
+    title: SpaceX Form 8-A Registration
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026042109/spaceexplorationtechnologi.htm
+    source_published_at: 2026-06-10
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [SPCX]
+    summary: SpaceX registered Class A common stock under Section 12(b), supporting public-security status for SPCX.
+  - id: spcx_market_quote_2026_06_12
+    title: SPCX First Trading Day Quote Cross-Check
+    source_type: market_data
+    url: https://stockanalysis.com/stocks/spcx/
+    source_published_at: 2026-06-12
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [SPCX]
+    summary: Public market quote cross-check used for the first-day SPCX close after the automated Yahoo chart request returned HTTP 429 during the decision cycle.
+  - id: market_quote_snapshot_2026_06_12
+    title: 2026-06-12 Watchlist Market Data Refresh
+    source_type: market_data
+    url: data/market/watchlist_prices.csv
+    source_published_at: 2026-06-12
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, SPCX]
+    summary: Repository market-data refresh and first-day SPCX quote cross-check used for the 2026-06-12 full-cycle decision.
+  - id: sec_event_filing_index_2026_06_12
+    title: 2026-06-12 SEC Event Filing Index
+    source_type: sec_filing_index
+    url: research/discovery/runs/2026-06-12-sec-event-filing-index-index.metadata.json
+    source_published_at: 2026-06-12
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, SPCX]
+    summary: Targeted SEC event-filing index for active and decision-relevant watchlist names, excluding SGOV because ETF sources are not SEC company issuers.
+  - id: community_triage_2026_06_12
+    title: 2026-06-12 Public Community Triage
+    source_type: community_scan
+    url: research/discovery/runs/2026-06-12-community-triage.json
+    source_published_at: 2026-06-12
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [SPCX, ASTS, RKLB, LUNR, RDW, FLY, YSS, VOYG]
+    summary: Public no-token community triage raised analysis priority for SPCX and existing space names; it creates no buy eligibility or promotion eligibility.
+  - id: vrt_thermokey_8k_2026_06_12
+    title: Vertiv ThermoKey Acquisition Closing 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1674101/000162828026042641/vrt-20260612.htm
+    source_published_at: 2026-06-12
+    retrieved_at: 2026-06-12
+    first_seen_at: 2026-06-12
+    related_symbols: [VRT]
+    summary: Vertiv announced the closing of the ThermoKey acquisition, a medium AI power and cooling lane event but not a current buy-zone upgrade.

@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-06-08
+as_of: 2026-06-12
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -38,6 +38,7 @@ lanes:
       - space
     current_public_proxies:
       - RKLB
+      - SPCX
       - FLY
       - YSS
       - VOYG
@@ -69,9 +70,9 @@ lanes:
       - connectivity
     current_public_proxies:
       - ASTS
+      - SPCX
       - GSAT
-    private_or_future_proxies:
-      - SPACEX
+    private_or_future_proxies: []
     candidate_entry_points:
       - newly listed satellite connectivity companies
       - public spectrum holders with credible satellite-to-phone economics
@@ -100,11 +101,11 @@ lanes:
       - computer processing
       - data preparation
     current_public_proxies:
+      - SPCX
       - CRWV
       - NBIS
       - IREN
-    private_or_future_proxies:
-      - SPACEX
+    private_or_future_proxies: []
     candidate_entry_points:
       - newly public neoclouds
       - power-backed compute conversions
@@ -265,11 +266,11 @@ lanes:
       - foundation model
       - AI platform
       - agentic
-    current_public_proxies: []
+    current_public_proxies:
+      - SPCX
     private_or_future_proxies:
       - OPENAI
       - ANTHROPIC
-      - SPACEX
     candidate_entry_points:
       - future public listings of frontier AI labs
       - public subsidiaries or spinoffs with direct model economics

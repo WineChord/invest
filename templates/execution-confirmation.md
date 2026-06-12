@@ -8,6 +8,17 @@ If the event is a same-day trade or includes actionable trading content, do not 
 
 ## Deposit
 
+Deposit confirmations may use repository defaults when the user explicitly confirms that a cash amount is deposited, posted, or available in the brokerage account and does not indicate a broker or account change. In that case:
+
+- use the latest confirmed ledger `broker` and `account_alias`;
+- use `user-confirmed-YYYY-MM-DD-AMOUNT-deposit` as the redacted `confirmation_id`, with the amount normalized without punctuation when needed;
+- use the user-stated available date when present, otherwise the current decision or confirmation date as `deposit_available_date`;
+- use `USD` unless the user states another currency;
+- use the current local timestamp as `created_at`;
+- mark notes to say default deposit fields were used.
+
+Do not use these defaults for trades, dividends, corrections, fees, or broker/account changes.
+
 ```yaml
 event_type: deposit
 broker:
@@ -79,4 +90,4 @@ sensitive_field_review_status:
 notes:
 ```
 
-If any required field is missing, the agent must ask for it before updating the ledger.
+If any required non-defaultable field is missing, the agent must ask for it before updating the ledger. Deposit-only defaults above are allowed because they preserve a redacted audit trail without requiring repetitive broker/account restatement.

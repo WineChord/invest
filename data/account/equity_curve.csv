@@ -1,3 +1,4 @@
 date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,period_return_pct,notes
 2026-05-30,0.00,888.00,888.00,888.00,0.0000,,Confirmed deposit snapshot; no broker-confirmed security positions.
 2026-06-05,423.84,431.77,855.61,888.00,-3.6475,-3.6475,Automated daily close valuation from Yahoo Finance chart.
+2026-06-12,1168.74,518.96,1687.70,1776.00,-4.9718,97.2511,Confirmed 2026-06-12 deposit and execution-date close valuation using 2026-06-12 market prices.

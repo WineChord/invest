@@ -1,0 +1,318 @@
+schema_version: 1
+run_id: 2026-06-12-full-cycle-decision
+run_date: 2026-06-12
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: private order guidance only until the next regular-session quote, any new material filing or issuer news, or broker preview changes execution economics
+linked_decision_or_research_note: decisions/2026-06-12-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-06-12-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --as-of 2026-06-12 --json --output research/discovery/runs/2026-06-12-universe-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-06-12-universe-scan.json
+      output_sha256: be7defc136ccb1cbc68d8b58effb4f42a4916f9cf49fc1ddc753d51fedf731af
+      retrieved_at: 2026-06-12
+      result_summary: The broad deterministic issuer scan remained a lead generator and did not by itself create buy eligibility; SPCX required primary-source reconciliation because SpaceX became a public listed issuer.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, registration statements, final prospectus, and event-filing index
+      sources_or_queries:
+        - https://www.sec.gov/Archives/edgar/data/1181412/000162828026042466/spaceexplorationtechnologi.htm
+        - https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm
+        - https://www.sec.gov/Archives/edgar/data/1181412/000162828026042109/spaceexplorationtechnologi.htm
+        - research/discovery/runs/2026-06-12-sec-event-filing-index-index.metadata.json
+        - https://www.sec.gov/Archives/edgar/data/1674101/000162828026042641/vrt-20260612.htm
+      source_ids:
+        - spcx_final_pricing_fwp_2026_06_11
+        - spcx_424b4_2026_06_12
+        - spcx_8a_2026_06_10
+        - sec_event_filing_index_2026_06_12
+        - vrt_thermokey_8k_2026_06_12
+      retrieved_at: 2026-06-12
+      material_findings: SPCX public-tradability is confirmed by SEC registration, final pricing, and final prospectus; VRT closed ThermoKey; active candidate filing review found no thesis-breaking unresolved event.
+      unavailable_or_skipped_reason:
+    - family_id: issuer_material
+      family: Company issuer materials and company-specific primary evidence
+      sources_or_queries:
+        - SpaceX 424B4 final prospectus
+        - SpaceX final IPO pricing FWP
+        - Vertiv ThermoKey acquisition 8-K
+      source_ids:
+        - spcx_424b4_2026_06_12
+        - spcx_final_pricing_fwp_2026_06_11
+        - vrt_thermokey_8k_2026_06_12
+      retrieved_at: 2026-06-12
+      material_findings: SpaceX's public listing materially changes space and AI opportunity-cost analysis, but first-day valuation, governance, xAI/X losses, and IPO dynamics block buy readiness.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Current quote and scale context
+      sources_or_queries:
+        - data/market/watchlist_prices.csv
+        - https://stockanalysis.com/stocks/spcx/
+      source_ids:
+        - market_quote_snapshot_2026_06_12
+        - spcx_market_quote_2026_06_12
+      retrieved_at: 2026-06-12
+      material_findings: RKLB and ASTS were price-dislocated versus prior caps; SPCX closed its first trading day well above IPO price, leaving inadequate entry margin without a dedicated promotion review.
+      unavailable_or_skipped_reason: Broker quote, fees, buying power, fractional-share support, and execution preview remain user-only prerequisites.
+    - family_id: current_world_context
+      family: Macro, broad market, and current tape risk overlay
+      sources_or_queries:
+        - research/macro/regime-snapshots.csv
+        - https://fred.stlouisfed.org/graph/fredgraph.csv
+        - https://query1.finance.yahoo.com/v8/finance/chart/QQQ
+      source_ids:
+        - fred_public_macro_series
+        - yahoo_chart_macro_proxy
+        - market_quote_snapshot_2026_06_12
+      retrieved_at: 2026-06-12
+      material_findings: Macro refresh was incomplete and therefore supports staging and cash retention rather than full deployment; it does not override primary issuer evidence.
+      unavailable_or_skipped_reason: Some public macro endpoints timed out or returned HTTP errors during refresh, so macro is a caution overlay only.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listing, IPO, and transaction evidence
+      sources_or_queries:
+        - SpaceX Form 8-A
+        - SpaceX final IPO pricing FWP
+        - SpaceX final 424B4 prospectus
+      source_ids:
+        - spcx_8a_2026_06_10
+        - spcx_final_pricing_fwp_2026_06_11
+        - spcx_424b4_2026_06_12
+      retrieved_at: 2026-06-12
+      material_findings: SPACEX is no longer a future/private placeholder; SPCX is a public watchlist symbol but remains incubated/watch-only after readiness review.
+      unavailable_or_skipped_reason:
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lane review, public community lead triage, and cross-lane opportunity-cost update
+      sources_or_queries:
+        - research/discovery/lanes.yml
+        - research/discovery/runs/2026-06-12-community-triage.json
+        - research/discovery/runs/2026-06-12-universe-scan.json
+      source_ids:
+        - community_triage_2026_06_12
+        - sec_event_filing_index_2026_06_12
+        - spcx_424b4_2026_06_12
+      retrieved_at: 2026-06-12
+      material_findings: SPCX was added to relevant space, direct-to-device, AI compute, and frontier AI lanes; no new lane was required, and no non-SPCX raw candidate displaced current allocation priorities.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-06-12
+    notes: Covered fresh market refresh, targeted SEC event-filing index, direct SpaceX SEC filings, public community triage, macro overlay refresh with noted gaps, and watchlist cycle review.
+
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - advanced nuclear and grid names
+    - quantum computing and networking names
+    - programmable-money infrastructure names
+  sampled_symbols:
+    - FNUC
+    - NNE
+    - NUCL
+    - SDEV
+    - ARQQ
+    - QBTS
+  false_positive_patterns:
+    - generic issuer-name matches without primary-source bottleneck proof
+    - known proxy recall rather than new allocation-displacing evidence
+    - thematically adjacent large or promotional proxies without direct shareholder-value capture
+  lane_decisions:
+    - update private SpaceX placeholder to public SPCX across existing lanes
+    - do not create a new SpaceX-only lane because SPCX maps to existing bottleneck lanes
+    - keep non-SPCX scan leads in discovery rather than allocation until primary evidence justifies readiness work
+  disposition: full-cycle lane map update and SPCX readiness reconciliation; no unknown future lane promoted
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Launch cadence, orbital logistics, satellite-to-phone capacity, AI compute capacity, power/cooling infrastructure, interconnect bandwidth, and regulated digital distribution remain candidate bottlenecks.
+    inferences: SPCX is now a direct public expression of several bottlenecks, but its size and first-day valuation make it a high-quality opportunity-cost reference rather than a first-day buy.
+    disconfirming_evidence: If SPCX post-IPO reporting shows weaker Starlink economics, xAI/X losses consume more capital, or public shareholders have poor governance protection, direct SpaceX exposure may be structurally unattractive.
+    source_ids:
+      - spcx_424b4_2026_06_12
+      - spcx_final_pricing_fwp_2026_06_11
+      - sec_event_filing_index_2026_06_12
+    investment_implication: Update the lane map to public SPCX and keep staged buying focused on smaller public candidates with better current entry.
+  who_controls_or_removes_scarcity:
+    facts: SpaceX controls Starlink, launch scale, and related AI-adjacent infrastructure; RKLB controls a smaller integrated launch and space-systems platform; ASTS controls a higher-risk direct-to-device satellite architecture.
+    inferences: SPCX raises the opportunity-cost bar for RKLB and ASTS, but also validates the structural scarcity of space infrastructure and satellite connectivity.
+    disconfirming_evidence: RKLB execution failures, ASTS regulatory or deployment setbacks, or SPCX aggressive pricing could weaken smaller public proxies.
+    source_ids:
+      - spcx_424b4_2026_06_12
+      - market_quote_snapshot_2026_06_12
+      - sec_event_filing_index_2026_06_12
+    investment_implication: Keep RKLB as the main staged add, ASTS as a smaller convexity sleeve, and SPCX as watch-only.
+  who_can_monetize_into_shareholder_value:
+    facts: SpaceX has the deepest platform but came public at mega-cap scale and disclosed controlled-company governance and xAI/X loss exposure; RKLB and ASTS remain smaller and more option-like.
+    inferences: Expected upside per dollar is currently more favorable in staged RKLB and tiny ASTS exposure than in first-day SPCX buying.
+    disconfirming_evidence: If RKLB/ASTS dilution or execution risk worsens while SPCX trades down after lockup/float clarity, the ranking should be reopened.
+    source_ids:
+      - spcx_424b4_2026_06_12
+      - spcx_market_quote_2026_06_12
+      - market_quote_snapshot_2026_06_12
+    investment_implication: Do not chase SPCX; leave enough cash to revisit after post-IPO evidence.
+  public_security_expression:
+    facts: SPCX Class A common stock is now registered and listed; RKLB, ASTS, CRDO, ALAB, and VRT remain eligible U.S.-listed common stocks under policy v1.1.
+    inferences: Tradability alone is not buy eligibility; SPCX requires readiness and promotion before allocation.
+    disconfirming_evidence: Any broker inability to trade the security, unexpected fee, settlement restriction, or material post-cycle filing blocks execution.
+    source_ids:
+      - spcx_8a_2026_06_10
+      - spcx_final_pricing_fwp_2026_06_11
+      - market_quote_snapshot_2026_06_12
+    investment_implication: SPCX can be monitored as a public symbol, but no SPCX buy order should be placed this cycle.
+  early_small_misunderstood_or_newly_public:
+    facts: SPCX is newly public but not small; RKLB and ASTS are smaller, more volatile, and less mature public expressions of space bottlenecks.
+    inferences: Newly public status increases SPCX monitoring priority but does not overcome valuation and governance risk.
+    disconfirming_evidence: If SPCX sells off into a materially better valuation or new disclosures de-risk governance and xAI/X exposure, a promotion review is warranted.
+    source_ids:
+      - spcx_market_quote_2026_06_12
+      - spcx_424b4_2026_06_12
+      - community_triage_2026_06_12
+    investment_implication: Add SPCX to dashboard-visible watch coverage and keep current private orders focused on RKLB/ASTS.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/discovery/runs/2026-06-12-subagent-evidence-packet.yml
+        - research/discovery/lanes.yml
+        - research/watchlist.csv
+      sources_checked:
+        - spcx_424b4_2026_06_12
+        - spcx_final_pricing_fwp_2026_06_11
+        - community_triage_2026_06_12
+      facts_verified:
+        - SPCX is now public and material to multiple existing bottleneck lanes.
+        - SPCX should replace the private SpaceX placeholder but remain watch-only.
+      stale_or_missing_evidence:
+        - Dedicated SPCX post-IPO promotion review remains a future step.
+      confidence: medium
+      key_findings: SpaceX/SPCX is a material public opportunity-cost update but not a new buy-ready candidate.
+      conflicts: none
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/discovery/runs/2026-06-12-sec-event-filing-index-scan.json
+        - research/filings/2026-06-12-SPCX-424B4-IPO.md
+        - research/freshness/events.csv
+      sources_checked:
+        - spcx_424b4_2026_06_12
+        - spcx_final_pricing_fwp_2026_06_11
+        - spcx_8a_2026_06_10
+        - vrt_thermokey_8k_2026_06_12
+        - sec_event_filing_index_2026_06_12
+      facts_verified:
+        - SPCX public status and final IPO terms are primary-source confirmed.
+        - VRT ThermoKey closing and active candidate event filings do not create an unresolved critical blocker.
+      stale_or_missing_evidence:
+        - Broker-only execution preview and final buying power are not repository facts.
+      confidence: medium
+      key_findings: Freshness supports a private decision, but SPCX needs post-IPO promotion evidence before any buy.
+      conflicts: none
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/discovery/runs/2026-06-12-subagent-evidence-packet.yml
+        - data/market/watchlist_prices.csv
+      sources_checked:
+        - market_quote_snapshot_2026_06_12
+        - spcx_424b4_2026_06_12
+        - spcx_market_quote_2026_06_12
+      facts_verified:
+        - RKLB remains the strongest current staged buy candidate.
+        - ASTS remains a smaller high-convexity direct-to-device sleeve.
+        - SPCX is the strongest absolute platform but not an attractive first-day entry.
+      stale_or_missing_evidence:
+        - SPCX post-IPO trading, float, lockup, and quarterly reporting remain future evidence.
+      confidence: medium
+      key_findings: Bull case supports staged RKLB and tiny ASTS exposure rather than buying SPCX immediately.
+      conflicts: none
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - research/filings/2026-06-12-SPCX-424B4-IPO.md
+        - research/valuation-states.csv
+      sources_checked:
+        - spcx_424b4_2026_06_12
+        - spcx_market_quote_2026_06_12
+        - market_quote_snapshot_2026_06_12
+      facts_verified:
+        - SPCX first-day valuation, controlled-company governance, xAI/X loss burden, and IPO volatility block a buy.
+        - CRDO, ALAB, and VRT remain lower-priority current buys because valuation or asymmetry is weaker.
+      stale_or_missing_evidence:
+        - No missing reachable public evidence blocks no-buy classification for SPCX.
+      confidence: medium
+      key_findings: Bear case blocks chasing SpaceX/SPCX and supports keeping cash after staged RKLB/ASTS exposure.
+      conflicts: none
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - data/account/state.yml
+        - data/account/positions.csv
+        - research/buy-zones.csv
+        - data/market/watchlist_prices.csv
+      sources_checked:
+        - market_quote_snapshot_2026_06_12
+        - spcx_424b4_2026_06_12
+        - sec_event_filing_index_2026_06_12
+      facts_verified:
+        - Confirmed repository cash remains separate from the user's newly stated 888 USD contribution until broker confirmation fields are supplied.
+        - Staging is preferable to full deployment because macro data was incomplete and SPCX post-IPO evidence is not mature.
+      stale_or_missing_evidence:
+        - Deposit ledger mutation requires broker/account alias, redacted confirmation evidence, trade or deposit dates, currency, amount, and settlement information.
+      confidence: medium
+      key_findings: Use the user's extra 888 USD for private sizing, but keep public account records unchanged and retain a cash buffer.
+      conflicts: none
+  unresolved_conflicts: 0
+  conflict_resolution: Reviewers agreed on no SPCX buy and staged RKLB/ASTS exposure; main synthesis updated sizing after the user's extra 888 USD cash statement while keeping repository account facts unchanged.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised:
+    - space_infrastructure
+    - direct_to_device_connectivity
+    - ai_compute_infrastructure
+    - frontier_ai_public_platforms
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: no new lane promoted
+  no_change_reason: SPCX maps to existing bottleneck lanes; it does not require a new category.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted:
+    - SPCX
+  candidates_incubated: []
+  false_positive_patterns:
+    - listed mega-cap first-day excitement without sufficient entry margin
+    - public community attention that raises analysis priority but not buy eligibility
+
+readiness_sprints:
+  - symbol: SPCX
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_index_record: research/discovery/candidate-readiness.yml#SPCX
+    readiness_path: research/discovery/readiness/2026-06-12-SPCX-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Repository-public evidence is current for a private decision, but exact order quantities and limits are withheld from public records while actionable; account records remain unchanged without complete broker confirmation.

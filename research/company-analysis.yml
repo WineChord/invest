@@ -1,4 +1,16 @@
 entries:
+  - id: 2026-06-12-spcx-ipo-readiness
+    symbol: SPCX
+    analyzed_at: "2026-06-12"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Public IPO readiness
+    stance: B+
+    summary: SpaceX is now a public cross-lane watchlist candidate under SPCX, but first-day valuation and governance keep it outside buy eligibility.
+    upside_path: Compound launch, Starlink connectivity, direct-to-device service, AI compute infrastructure, and frontier AI platform economics into an integrated infrastructure platform.
+    risk_watch: First-day mega-cap valuation, controlled-company governance, xAI/X losses, stock-funded deal dilution, underwriter option and lockup dynamics, Starship execution, Starlink Mobile competition, and spectrum transaction execution.
+    next_check: Post-IPO trading stabilization, underwriter option update, lockup or float update, first public quarterly report, Starship or Starlink Mobile milestone, xAI/X integration update, or thesis-preserving price dislocation.
+    source_path: research/filings/2026-06-12-SPCX-424B4-IPO.md
   - id: 2026-05-26-rklb-initial-baseline
     symbol: RKLB
     analyzed_at: "2026-05-26"
@@ -228,7 +240,7 @@ entries:
     next_check: Next integration, cash-flow, or internal-control update.
     source_path: research/2026-05-26-initial-baseline.md
   - id: 2026-05-26-spacex-initial-baseline
-    symbol: SPACEX
+    symbol: SPCX
     analyzed_at: "2026-05-26"
     analysis_type: future_watch
     policy_version: v1.0
@@ -480,7 +492,7 @@ entries:
     next_check: Next mission, contract, or acquisition integration update.
     source_path: research/2026-05-30-ready-state-refresh.md
   - id: 2026-05-30-spacex-s1-future-watch
-    symbol: SPACEX
+    symbol: SPCX
     analyzed_at: "2026-05-30"
     analysis_type: future_watch
     policy_version: v1.1

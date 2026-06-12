@@ -1083,7 +1083,9 @@ deposit_available_date:
 created_at:
 ```
 
-If any required field is missing, ask for it. Do not fill missing fields from market data.
+Deposit-only defaulting rule: when the user explicitly confirms that a cash amount is deposited, posted, or available in the brokerage account and does not indicate a broker or account change, the agent may fill repetitive administrative fields from repository context rather than asking again. Use the latest confirmed ledger `broker` and `account_alias`, a stable redacted `confirmation_id` of the form `user-confirmed-YYYY-MM-DD-AMOUNT-deposit`, `USD` unless another currency is stated, the user-stated available date or current confirmation date as `deposit_available_date`, and the current local timestamp as `created_at`. Notes must say default deposit fields were used. This default does not apply to trades, dividends, fees, corrections, broker/account changes, or missing trade economics.
+
+If any required non-defaultable field is missing, ask for it. Do not fill trade economics from market data.
 
 Ledger math:
 

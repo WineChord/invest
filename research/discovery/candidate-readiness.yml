@@ -76,3 +76,21 @@ records:
     last_readiness_reviewed_at: 2026-06-01
     next_action: Monitor backlog conversion, major defense constellation awards, customer diversification, material weakness remediation, margins, and price dislocation.
     conclusion: Incubated into watchlist coverage; space-lane peer map improved but no current buy or allocation implication.
+  - symbol: SPCX
+    material_to_current_allocation: true
+    affected_lanes:
+      - space_infrastructure
+      - direct_to_device_connectivity
+      - ai_compute_infrastructure
+      - frontier_ai_public_platforms
+    materiality_reason: SpaceX became public under SPCX on 2026-06-12 and directly overlaps RKLB, ASTS, and AI compute opportunity-cost comparisons.
+    blocking_scope: current_space_and_ai_allocation
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-06-12-SPCX-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: SEC IPO and final prospectus evidence confirms public tradability in form, but first-day mega-cap valuation, controlled-company governance, xAI/X loss burden, Starship and Starlink execution risk, stock-funded transaction capacity, and IPO volatility block buy readiness.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-06-12
+    next_action: Run a dedicated SPCX promotion review after post-IPO trading, float, underwriter option, and lockup evidence are clearer.
+    conclusion: Incubated into watchlist coverage; material opportunity-cost input but not buy-ready.

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-12T22:14:31.649Z",
+  "as_of": "2026-06-12",
+  "source": "sec_filing_discovery_index",
+  "index_scope": "targeted_symbols",
+  "requested_symbols": [
+    "RKLB",
+    "ASTS",
+    "CRDO",
+    "ALAB",
+    "VRT",
+    "SPCX",
+    "FLY",
+    "YSS",
+    "VOYG",
+    "LUNR",
+    "RDW",
+    "GSAT",
+    "KTOS",
+    "NBIS",
+    "CRWV",
+    "IREN",
+    "OKLO",
+    "BE",
+    "LEU",
+    "MU",
+    "CRCL",
+    "LITE",
+    "FN",
+    "IONQ",
+    "XNDU",
+    "ETN",
+    "PWR"
+  ],
+  "output_prefix": "research/discovery/runs/2026-06-12-sec-event-filing-index",
+  "manifest_path": "research/discovery/runs/2026-06-12-sec-event-filing-index-manifest.csv",
+  "manifest_metadata_path": "research/discovery/runs/2026-06-12-sec-event-filing-index-manifest.metadata.json",
+  "profile_path": "research/discovery/runs/2026-06-12-sec-event-filing-index-profiles.json",
+  "scan_path": "research/discovery/runs/2026-06-12-sec-event-filing-index-scan.json",
+  "manifest_sha256": "a143ed0bf4c76df1e01536edf43de090618e9ce3f2396c6a72f6623b0a6d8562",
+  "manifest_metadata_sha256": "0b637ae766b10615655bcd8b9ecf699e8547f8c1b088b53d6dbe51fdfb63e606",
+  "profile_sha256": "e1309b90ad39734537a757821711287f79557b635dbba08acc0554e1a764bd7b",
+  "scan_sha256": "edbac1ce0b205338a6a7f49e8bcdbd64e9d41c7f7a82e4b37b62acee59f37799",
+  "commands": [
+    {
+      "command": "node scripts/build-sec-filing-manifest.mjs --as-of 2026-06-12 --output research/discovery/runs/2026-06-12-sec-event-filing-index-manifest.csv --metadata-output research/discovery/runs/2026-06-12-sec-event-filing-index-manifest.metadata.json --symbols RKLB,ASTS,CRDO,ALAB,VRT,SPCX,FLY,YSS,VOYG,LUNR,RDW,GSAT,KTOS,NBIS,CRWV,IREN,OKLO,BE,LEU,MU,CRCL,LITE,FN,IONQ,XNDU,ETN,PWR --filing-selection-policy latest-supported --filing-types 8-K,6-K,10-Q,S-4,F-4,DEF14A",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/build-sec-filing-profiles.mjs --as-of 2026-06-12 --manifest research/discovery/runs/2026-06-12-sec-event-filing-index-manifest.csv --manifest-metadata research/discovery/runs/2026-06-12-sec-event-filing-index-manifest.metadata.json --output research/discovery/runs/2026-06-12-sec-event-filing-index-profiles.json",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/discover-universe.mjs --dry-run --json --as-of 2026-06-12 --profile-input research/discovery/runs/2026-06-12-sec-event-filing-index-profiles.json --output research/discovery/runs/2026-06-12-sec-event-filing-index-scan.json --limit 50",
+      "output_checked": true
+    }
+  ],
+  "coverage": {
+    "selection_strategy": "requested_symbols",
+    "coverage_scope": "partial_requested_symbols",
+    "selected_symbol_count": 27,
+    "eligible_universe_count": 7602,
+    "manifest_row_count": 26,
+    "profile_count": 7,
+    "profile_coverage_status": "targeted_partial_incomplete_profiles",
+    "profile_coverage_gap_count": 7576,
+    "profile_coverage_ratio": 0.00342,
+    "candidate_count": 44,
+    "total_match_count": 125
+  },
+  "caveats": [
+    "This index is deterministic discovery scaffolding, not buy eligibility.",
+    "Targeted-symbol indexes answer only the requested scope and must not be cited as complete SEC universe coverage.",
+    "Complete SEC universe indexes require --all and the upstream SEC submissions guardrails."
+  ]
+}

@@ -1,40 +1,42 @@
 schema_version: 1
-as_of: 2026-06-08
+as_of: 2026-06-12
 last_research_engine_run:
-  as_of: 2026-06-08
-  scope: targeted_power_industrials_watchlist_triage
-  notes: Ran targeted PWR, ETN, and CAT primary-source triage for the AI data-center power and grid bottleneck lane, refreshed the lane map, and rebuilt the deterministic universe scan after adding ETN and PWR as research-only lane proxies. ETN and PWR were added to research-only coverage with current cycle-review rows and no buy eligibility; CAT was recorded as a rejected discovery candidate and industry reference only. The prior 2026-06-05 full-cycle decision remains the latest allocation run, and account records remain unchanged.
+  as_of: 2026-06-12
+  scope: monthly_decision_full_cycle_with_spcx_listing_refresh
+  notes: Ran the full operating cycle for the 2026-06-12 decision request, including market refresh, macro refresh with incomplete public macro endpoints recorded, deterministic universe scan, targeted SEC event-filing index, public community triage, SPCX primary-source IPO review, full watchlist cycle review, and xhigh subagent review. SPCX replaced the private SpaceX placeholder as a public watchlist candidate and cross-lane opportunity-cost input, but it remains no-buy pending a later promotion review. Repository account records remain unchanged because the user's additional 888 USD cash statement lacks the full broker-confirmation fields needed for ledger mutation.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Active watchlist coverage remains current after the 2026-06-05 full-cycle review and 2026-06-08 targeted power-industrials triage. ETN and PWR improve research-only coverage of the AI data-center power lane but do not create buy eligibility or displace current active candidates. CAT was rejected for watchlist inclusion. Repository account records remain unchanged because no broker execution confirmation exists.
+  reason: Repository-public research coverage is current for a private 2026-06-12 decision after the SPCX listing refresh, active-candidate filing review, market-data refresh, and full watchlist cycle review. SPCX is now public and dashboard-visible but not buy-ready; RKLB and ASTS can receive private staged guidance while exact same-day order details remain outside public repository records until the publication embargo clears. Account records remain unchanged without complete broker confirmation for the 888 USD deposit.
   user_only_execution_prerequisites:
-    - fresh broker cash and buying-power confirmation before any real order
+    - broker cash and buying-power confirmation that includes the newly stated 888 USD before any real order
+    - complete deposit confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
-    - do not execute RKLB unless price discipline is restored through a fresh below-cap quote or a new post-cycle de-risking review
-    - exact same-day ASTS share and limit details must remain outside public repository records until the publication embargo clears
-    - do not execute if new material issuer evidence appears before order entry
+    - use limit orders only; do not use market orders or chase above the private cap if the next regular-session quote moves
+    - exact same-day share and limit details for RKLB and ASTS must remain outside public repository records until the publication embargo clears
+    - do not execute if new material issuer evidence, broker restriction, or a large quote gap appears before order entry
+    - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-06-08
-  discovery_lane_map_as_of: 2026-06-08
+  universe_scan_as_of: 2026-06-12
+  discovery_lane_map_as_of: 2026-06-12
   watchlist_symbols: 30
   watchlist_symbols_with_current_cycle_review: 30
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
-  active_watchlist_symbols: 20
-  active_symbols_with_current_valuation_state: 20
+  active_watchlist_symbols: 21
+  active_symbols_with_current_valuation_state: 21
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 20
+  active_symbols_with_latest_filing_review: 21
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 4
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-06-08-power-industrials-triage.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-06-08-power-industrials-triage.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-06-08-power-industrials-triage.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-06-08-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-06-12-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-06-12-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-06-12-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-06-12-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -54,9 +56,13 @@ discovery_process:
   allocation_relevant_lanes:
     - space_infrastructure
     - direct_to_device_connectivity
+    - ai_compute_infrastructure
     - ai_power_and_cooling
+    - advanced_nuclear_and_grid_constraints
     - quantum_computing_and_networking
+    - programmable_money_infrastructure
     - semiconductor_interconnect_and_memory
+    - frontier_ai_public_platforms
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
   material_open_candidates: 4
@@ -106,4 +112,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as future execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-05 rerun reinforces two process lessons: do not raise a buy cap merely because a best-ranked company trades above it, and keep same-day exact order details out of public repository records until the publication embargo clears. Ownership forms such as Form 4 and Form 144 remain outside the event-filing scan and need direct SEC submissions checks for buy-zone names.
+  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as future execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-12 run adds the durable process rule that a newly public former private opportunity such as SPCX must be reconciled into the lane map, security master, readiness index, filing review, valuation state, watchlist review, and buy-zone records before it can affect allocation. Exact actionable order details remain private while still actionable under the publication policy.

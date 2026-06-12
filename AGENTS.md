@@ -194,14 +194,15 @@ Rows marked `research_only`, `watch`, `not_tradable`, `probation`, `frozen`, or 
 
 When the user says trades or deposits were actually completed:
 
-1. Check that all required fields are present: broker/account alias, redacted confirmation ID or equivalent evidence, side, symbol, quantity, average price, fees, currency, trade date, and settlement date.
-2. If fields are missing, ask for the missing fields. Do not use current market prices as substitutes.
-3. Convert broker evidence into normalized, redacted repository fields. Never commit raw broker screenshots, PDFs, statements, account numbers, full broker order IDs, or full confirmation numbers.
-4. Append a new event to [data/account/ledger.csv](data/account/ledger.csv).
-5. Recalculate [data/account/positions.csv](data/account/positions.csv) and [data/account/state.yml](data/account/state.yml) from confirmed events.
-6. Add or refresh the equity-curve valuation snapshot for the confirmed event date when prices for that date are available. If price data is unavailable, leave the valuation gap rather than inventing a price.
-7. Never silently edit old ledger rows. Use a `correction` event if a past record was wrong.
-8. Do not commit, push, publish, or deploy same-day trade details until the `PUBLICATION_POLICY.md` public release embargo has expired. If market-close timing is uncertain, wait until the next regular trading day.
+1. Check that all required fields are present. Trades require broker/account alias, redacted confirmation ID or equivalent evidence, side, symbol, quantity, average price, fees, currency, trade date, and settlement date.
+2. For deposits only, if the user explicitly confirms a cash amount is deposited, posted, or available and does not indicate a broker/account change, use the defaulting rule in [templates/execution-confirmation.md](templates/execution-confirmation.md) instead of asking the user to restate repetitive broker/account fields.
+3. If non-defaultable fields are missing, ask for the missing fields. Do not use current market prices as substitutes for trade economics.
+4. Convert broker evidence into normalized, redacted repository fields. Never commit raw broker screenshots, PDFs, statements, account numbers, full broker order IDs, or full confirmation numbers.
+5. Append a new event to [data/account/ledger.csv](data/account/ledger.csv).
+6. Recalculate [data/account/positions.csv](data/account/positions.csv) and [data/account/state.yml](data/account/state.yml) from confirmed events.
+7. Add or refresh the equity-curve valuation snapshot for the confirmed event date when prices for that date are available. If price data is unavailable, leave the valuation gap rather than inventing a price.
+8. Never silently edit old ledger rows. Use a `correction` event if a past record was wrong.
+9. Do not commit, push, publish, or deploy same-day trade details until the `PUBLICATION_POLICY.md` public release embargo has expired. If market-close timing is uncertain, wait until the next regular trading day.
 
 ## Public Dashboard Workflow
 
