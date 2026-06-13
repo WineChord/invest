@@ -22,8 +22,8 @@ OKLO,57.4900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automat
 PWR,707.7400,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 RDW,15.1200,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 RKLB,102.3900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh for confirmed holding.
+SPCX,160.9500,USD,2026-06-12,Public market quote cross-check,2026-06-12T22:30:00.000Z,Manual first-day quote row because automated Yahoo chart request returned HTTP 429 during the decision cycle.
 VOYG,41.1500,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 VRT,302.8700,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 XNDU,11.7900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 YSS,27.6900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-SPCX,160.9500,USD,2026-06-12,Public market quote cross-check,2026-06-12T22:30:00.000Z,Manual first-day quote row because automated Yahoo chart request returned HTTP 429 during the decision cycle.
