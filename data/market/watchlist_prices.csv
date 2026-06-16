@@ -1,29 +1,29 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
 ALAB,367.1500,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-ASTS,82.4100,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh for confirmed holding.
-BE,260.2200,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
+ASTS,87.5700,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh for confirmed holding.
+BE,274.5000,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
 CBRS,214.0000,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 CRCL,77.8400,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-CRDO,250.8100,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
+CRDO,259.4100,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
 CRWV,100.5500,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 ETN,391.3900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 FLY,31.8700,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 FN,611.0100,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 GSAT,81.1600,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-IONQ,57.8500,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-IREN,59.7700,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
+IONQ,61.1800,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
+IREN,60.8500,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
 KTOS,57.7500,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-LEU,162.5800,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-LITE,921.5600,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-LUNR,26.6200,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
+LEU,176.6500,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
+LITE,957.2400,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
+LUNR,25.7600,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
 MU,981.6100,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 NBIS,232.3600,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-OKLO,57.4900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-PWR,707.7400,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-RDW,15.1200,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-RKLB,102.3900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh for confirmed holding.
+OKLO,60.7400,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
+PWR,724.3500,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
+RDW,14.8300,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
+RKLB,109.2500,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh for confirmed holding.
 SPCX,160.9500,USD,2026-06-12,Public market quote cross-check,2026-06-12T22:30:00.000Z,Manual first-day quote row because automated Yahoo chart request returned HTTP 429 during the decision cycle.
 VOYG,41.1500,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
-VRT,302.8700,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
+VRT,311.9300,USD,2026-06-15,Yahoo Finance chart,2026-06-16T09:07:12.767Z,Automated daily close refresh from committed price history.
 XNDU,11.7900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
 YSS,27.6900,USD,2026-06-12,Yahoo Finance chart,2026-06-12T22:11:15.948Z,Automated daily close refresh from committed price history.
