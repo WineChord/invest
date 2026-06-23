@@ -552,6 +552,16 @@ function summarizeSemanticProfileCoverage({
 }) {
   const purpose = companyProfiles.profilePurpose ?? "";
   if (purpose === "issuer_universe_discovery") {
+    if (
+      profileCoverage.status !== "complete" &&
+      profileCoverage.status !== "complete_scope_with_profile_skips"
+    ) {
+      return {
+        gapCount: profileCoverage.gapCount,
+        ratio: profileCoverage.ratio,
+        status: profileCoverage.status,
+      };
+    }
     const loaded = companyProfiles.profileLoadedCount ?? companyProfiles.profileDeclaredCount ?? 0;
     const eligible = companyProfiles.profileEligibleUniverseCount ?? 0;
     const gapCount = Math.max(eligible - loaded, 0);

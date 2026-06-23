@@ -194,9 +194,9 @@ Rows marked `research_only`, `watch`, `not_tradable`, `probation`, `frozen`, or 
 
 When the user says trades or deposits were actually completed:
 
-1. Check that all required fields are present. Trades require broker/account alias, redacted confirmation ID or equivalent evidence, side, symbol, quantity, average price, fees, currency, trade date, and settlement date.
-2. For deposits only, if the user explicitly confirms a cash amount is deposited, posted, or available and does not indicate a broker/account change, use the defaulting rule in [templates/execution-confirmation.md](templates/execution-confirmation.md) instead of asking the user to restate repetitive broker/account fields.
-3. If non-defaultable fields are missing, ask for the missing fields. Do not use current market prices as substitutes for trade economics.
+1. Check that all required non-defaultable facts are present under [templates/execution-confirmation.md](templates/execution-confirmation.md). For trades, those are actual filled/completed status, side, symbol, quantity, average execution price or broker-reported fills, and trade date or broker timestamp. For deposits, the amount is the core non-defaultable fact.
+2. If the user does not indicate a broker/account change, use the defaulting rule in [templates/execution-confirmation.md](templates/execution-confirmation.md) instead of asking the user to restate repetitive broker/account, currency, redacted confirmation alias, standard settlement, zero-fee, or timestamp fields.
+3. If non-defaultable fields are missing, ask one compact question for only those missing fields. Do not use current market prices as substitutes for trade economics.
 4. Convert broker evidence into normalized, redacted repository fields. Never commit raw broker screenshots, PDFs, statements, account numbers, full broker order IDs, or full confirmation numbers.
 5. Append a new event to [data/account/ledger.csv](data/account/ledger.csv).
 6. Recalculate [data/account/positions.csv](data/account/positions.csv) and [data/account/state.yml](data/account/state.yml) from confirmed events.

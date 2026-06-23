@@ -1,0 +1,291 @@
+schema_version: 1
+run_id: 2026-06-18-full-cycle-decision
+run_date: 2026-06-18
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: private order guidance only until the next regular-session quote, any new material filing or issuer news, or broker preview changes execution economics
+linked_decision_or_research_note: decisions/2026-06-18-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-06-18-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --as-of 2026-06-18 --json --output research/discovery/runs/2026-06-18-scan.json
+      dry_run: false
+      output_path: research/discovery/runs/2026-06-18-scan.json
+      output_sha256: 0b21b181ed0c3bc6d80d87962b952d9424bac559e1d8d4d91d958d0aa5b4bb46
+      retrieved_at: 2026-06-18
+      result_summary: The broad deterministic issuer scan remained a lead generator and did not by itself create buy eligibility; no new raw candidate displaced the current RKLB, ASTS, and SPCX opportunity-cost comparison.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, event-filing index, and regulator-sourced issuer records
+      sources_or_queries:
+        - research/discovery/runs/2026-06-18-sec-event-filing-index-index.metadata.json
+        - https://www.sec.gov/Archives/edgar/data/1181412/000162828026043411/spaceexplorationtechnologi.htm
+        - https://www.sec.gov/Archives/edgar/data/1780312/000149315226028544/form8-k.htm
+        - https://www.sec.gov/Archives/edgar/data/1513845/000110465926074352/tm2618059d1_6k.htm
+        - https://www.sec.gov/Archives/edgar/data/1849056/000184905626000037/oklo-20260331.htm
+      source_ids:
+        - sec_event_filing_index_2026_06_18
+        - spcx_cursor_8k_2026_06_16
+        - asts_annual_meeting_8k_2026_06_12
+        - nbis_magicbyte_close_2026_06_16
+        - oklo_10qa_certification_2026_06_17
+      retrieved_at: 2026-06-18
+      material_findings: SPCX filed a material Cursor stock-merger agreement; ASTS annual-meeting 8-K was governance-only; NBIS, BE, and OKLO events did not create current buy eligibility.
+      unavailable_or_skipped_reason:
+    - family_id: issuer_material
+      family: Company issuer materials and company-specific primary evidence
+      sources_or_queries:
+        - AST SpaceMobile BlueBird 8-10 launch company release
+        - Rocket Lab Nasdaq-100 inclusion company announcement
+        - SpaceX Cursor merger 8-K
+      source_ids:
+        - asts_bluebird_8_10_launch_2026_06_17
+        - rklb_nasdaq100_2026_06_12
+        - spcx_cursor_8k_2026_06_16
+      retrieved_at: 2026-06-18
+      material_findings: ASTS launch success materially improves near-term execution evidence; RKLB index inclusion is visibility and flow rather than mission proof; SPCX Cursor strengthens strategic scope but worsens entry through stock issuance and valuation risk.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Current quote and scale context
+      sources_or_queries:
+        - https://www.kraken.com/stocks/rklb
+        - https://www.investing.com/equities/new-providence-acquisition-corp-n
+        - https://www.investing.com/equities/spacex
+        - https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+      source_ids:
+        - rklb_quote_2026_06_18
+        - asts_quote_2026_06_18
+        - spcx_quote_2026_06_18
+        - ishares_sgov_2026_06_04
+      retrieved_at: 2026-06-18
+      material_findings: External quote checks were used because the repository Yahoo refresh returned HTTP 429 for held symbols; prices supported only small capped private adds and no SPCX buy.
+      unavailable_or_skipped_reason: Broker order preview, fees, fractional-share support, buying power, and final execution remain user-only prerequisites.
+    - family_id: current_world_context
+      family: Macro, broad market, public attention, and current tape risk overlay
+      sources_or_queries:
+        - research/macro/regime-snapshots.csv
+        - research/discovery/runs/2026-06-18-community-triage.json
+        - https://fred.stlouisfed.org/graph/fredgraph.csv
+      source_ids:
+        - fred_public_macro_series
+        - yahoo_chart_macro_proxy
+        - community_triage_2026_06_18
+      retrieved_at: 2026-06-18
+      material_findings: Macro and public community signals supported price discipline and monitoring priority only; they did not create buy eligibility for community-favored AI infrastructure names.
+      unavailable_or_skipped_reason: Some Yahoo macro market proxies returned HTTP 429, so macro remains a caution overlay.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listing, IPO, and transaction evidence
+      sources_or_queries:
+        - SpaceX 424B4 final prospectus
+        - SpaceX Cursor merger 8-K
+        - 2026-06-18 SEC event-filing index
+      source_ids:
+        - spcx_424b4_2026_06_12
+        - spcx_cursor_8k_2026_06_16
+        - sec_event_filing_index_2026_06_18
+      retrieved_at: 2026-06-18
+      material_findings: SPCX remains a public cross-lane watch candidate, but Cursor stock consideration, controlled-company governance, mega-cap valuation, and short public trading history block current allocation.
+      unavailable_or_skipped_reason:
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lane review, public community triage, and opportunity-cost update
+      sources_or_queries:
+        - research/discovery/lanes.yml
+        - research/discovery/runs/2026-06-18-scan.json
+        - research/discovery/runs/2026-06-18-community-triage.json
+      source_ids:
+        - community_triage_2026_06_18
+        - sec_event_filing_index_2026_06_18
+        - spcx_cursor_8k_2026_06_16
+      retrieved_at: 2026-06-18
+      material_findings: Existing space, direct-to-device, AI compute, AI infrastructure, and frontier AI lanes covered the new evidence; no new lane was required and no lower-status symbol was promoted.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-06-18
+    notes: Covered deterministic universe scan, public community triage, targeted SEC event-filing index, ASTS launch evidence, SPCX Cursor evidence, macro overlay refresh with provider gaps, and full watchlist cycle review.
+
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - AI compute infrastructure and public cloud capacity leads
+    - space infrastructure and direct-to-device satellite leads
+    - power, cooling, grid, nuclear, quantum, and optical interconnect leads
+  sampled_symbols:
+    - NBIS
+    - SPCX
+    - CRWV
+    - IREN
+    - LITE
+    - CRDO
+  false_positive_patterns:
+    - community attention without primary-source buy eligibility
+    - newly public or promotional names without enough post-listing evidence
+    - large-cap thematic proxies with lower satellite-account asymmetry
+  lane_decisions:
+    - keep SPCX in existing cross-lane watch coverage rather than creating a SpaceX-only lane
+    - keep community-favored AI infrastructure names on watch unless promotion gates are met
+    - do not promote raw discovery leads without primary-source readiness work
+  disposition: full-cycle lane review completed; no new unknown-future lane or raw candidate displaced the RKLB and ASTS private staged decision.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Launch cadence, orbital manufacturing, satellite-to-phone capacity, AI compute capacity, power/cooling infrastructure, interconnect bandwidth, and frontier AI distribution remain plausible bottlenecks.
+    inferences: ASTS launch success improves one scarce direct-to-device capacity path, while SPCX Cursor increases the opportunity-cost bar across space and frontier AI lanes.
+    disconfirming_evidence: Failed ASTS on-orbit operation, RKLB Neutron setbacks, or SPCX post-IPO evidence of poor shareholder economics would weaken the current ranking.
+    source_ids:
+      - asts_bluebird_8_10_launch_2026_06_17
+      - spcx_cursor_8k_2026_06_16
+      - sec_event_filing_index_2026_06_18
+    investment_implication: Use only small capped RKLB and ASTS adds; keep SPCX as no-buy watch coverage.
+  who_controls_or_removes_scarcity:
+    facts: SpaceX controls the strongest public cross-lane platform, RKLB controls a smaller integrated launch and space-systems platform, and ASTS controls a high-risk direct-to-device architecture.
+    inferences: RKLB and ASTS remain more asymmetric public common-stock expressions than SPCX at the current market value, but SPCX is now a stronger opportunity-cost comparator.
+    disconfirming_evidence: Aggressive Starlink Mobile pricing, ASTS deployment issues, RKLB capital-market dilution, or SPCX valuation compression could change the ranking.
+    source_ids:
+      - rklb_nasdaq100_2026_06_12
+      - asts_bluebird_8_10_launch_2026_06_17
+      - spcx_quote_2026_06_18
+    investment_implication: Keep existing holdings, avoid sells, and add only within strict private caps.
+  who_can_monetize_into_shareholder_value:
+    facts: RKLB has meaningful backlog and operating execution evidence; ASTS has improved deployment evidence but remains pre-scale and financing-sensitive; SPCX has the deepest business platform but a very large public-market base.
+    inferences: Per-dollar upside remains more plausible in smaller staged RKLB and tiny ASTS exposure than in chasing SPCX immediately after IPO and Cursor news.
+    disconfirming_evidence: RKLB or ASTS dilution without de-risking, or SPCX trading down after lockup and first-report clarity, would require a fresh promotion and allocation review.
+    source_ids:
+      - rklb_quote_2026_06_18
+      - asts_quote_2026_06_18
+      - spcx_cursor_8k_2026_06_16
+    investment_implication: Do not buy SPCX now; preserve residual cash for future evidence or price dislocation.
+  public_security_expression:
+    facts: RKLB, ASTS, CRDO, ALAB, VRT, SPCX, and other watched names are U.S.-listed common stocks under policy v1.1, while SGOV is only an approved liquidity-reserve candidate after broker checks.
+    inferences: Tradability does not equal buy eligibility; rows below active/core status or outside buy-zone require promotion before allocation.
+    disconfirming_evidence: Broker inability to trade, fees, settlement restrictions, quote gaps, or new material filings before order entry block execution.
+    source_ids:
+      - spcx_424b4_2026_06_12
+      - rklb_quote_2026_06_18
+      - asts_quote_2026_06_18
+    investment_implication: The private order set should use limit orders only and remain inside confirmed cash.
+  early_small_misunderstood_or_newly_public:
+    facts: SPCX is newly public but not small; ASTS and RKLB are smaller, more volatile, and more execution-dependent than mature AI infrastructure names.
+    inferences: The mission favors small staged exposure to the still-early public space names over mature large-cap proxies when evidence gates are met.
+    disconfirming_evidence: If current public valuations keep outrunning evidence, holding cash becomes the default.
+    source_ids:
+      - community_triage_2026_06_18
+      - asts_bluebird_8_10_launch_2026_06_17
+      - spcx_quote_2026_06_18
+    investment_implication: Buy only the small private RKLB and ASTS quantities if live limits are respected; otherwise hold cash.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-06-18 universe scan
+        - 2026-06-18 community triage
+        - 2026-06-18 SEC event index
+      sources_checked:
+        - community_triage_2026_06_18
+        - sec_event_filing_index_2026_06_18
+        - spcx_cursor_8k_2026_06_16
+      facts_verified:
+        - Existing lanes cover SPCX Cursor, ASTS launch, and AI infrastructure attention.
+        - No raw or lower-status candidate should affect allocation without readiness and promotion.
+      stale_or_missing_evidence:
+        - SPCX CIK mapping gap in the automated SEC index requires a future tool alias fix.
+      confidence: medium_high
+      key_findings: No new lane or raw candidate displaced RKLB and ASTS; SPCX remains watch-only.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - targeted SEC event index
+        - ASTS company launch release
+        - SPCX Cursor 8-K
+      sources_checked:
+        - asts_bluebird_8_10_launch_2026_06_17
+        - spcx_cursor_8k_2026_06_16
+        - sec_event_filing_index_2026_06_18
+      facts_verified:
+        - ASTS launch success is a material positive event.
+        - SPCX Cursor merger is material and entry-worsening for public common-stock buying.
+      stale_or_missing_evidence:
+        - ASTS still needs on-orbit health, service activation, and commercial economics evidence.
+      confidence: high
+      key_findings: Freshness is sufficient for private capped guidance; unresolved evidence argues for small sizing.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - RKLB thesis evidence
+        - ASTS launch evidence
+        - quote cross-checks
+      sources_checked:
+        - rklb_nasdaq100_2026_06_12
+        - asts_bluebird_8_10_launch_2026_06_17
+        - rklb_quote_2026_06_18
+      facts_verified:
+        - ASTS launch improves near-term execution evidence.
+        - RKLB remains the stronger execution-led space platform candidate.
+      stale_or_missing_evidence:
+        - RKLB Neutron and ATM usage remain future gating items.
+      confidence: medium_high
+      key_findings: A small RKLB add and tiny ASTS add are defensible if live caps hold.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - ASTS launch review
+        - SPCX Cursor review
+        - valuation states
+      sources_checked:
+        - asts_bluebird_8_10_launch_2026_06_17
+        - spcx_cursor_8k_2026_06_16
+        - spcx_quote_2026_06_18
+      facts_verified:
+        - ASTS launch reduces one execution objection but does not solve on-orbit, financing, or competition risk.
+        - SPCX Cursor makes chasing SPCX less attractive today.
+      stale_or_missing_evidence:
+        - Broker preview and new intraday issuer news remain unknown at the moment of user execution.
+      confidence: high
+      key_findings: The main risk is over-adding after good ASTS news; no sell is required.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - confirmed cash and positions
+        - current external quote checks
+        - subagent disagreements
+      sources_checked:
+        - rklb_quote_2026_06_18
+        - asts_quote_2026_06_18
+        - ishares_sgov_2026_06_04
+      facts_verified:
+        - Confirmed cash is 518.96 USD with ASTS and RKLB positions already recorded.
+        - Residual cash should remain after private capped adds.
+      stale_or_missing_evidence:
+        - SGOV broker eligibility, fees, and settlement handling are not confirmed.
+      confidence: medium_high
+      key_findings: Use small private RKLB and ASTS limits, buy no SPCX, and hold residual cash.
+  unresolved_conflicts: 0
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: []
+
+readiness_sprints: []
+
+decision_synthesis:
+  public_safe_summary: No sells; no SPCX; private small RKLB and ASTS add only if live broker preview stays within private limits; hold residual cash.
+  exact_order_details_publication_status: superseded_by_deposit_rerun_private_order_instructions_omitted
+  account_record_update: none_no_broker_execution_confirmation
+  validation_status: npm run check:data passed on 2026-06-18

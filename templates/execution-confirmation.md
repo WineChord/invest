@@ -17,7 +17,7 @@ Deposit confirmations may use repository defaults when the user explicitly confi
 - use the current local timestamp as `created_at`;
 - mark notes to say default deposit fields were used.
 
-Do not use these defaults for trades, dividends, corrections, fees, or broker/account changes.
+Do not use these deposit defaults for dividends, corrections, broker/account changes, or missing trade economics.
 
 ```yaml
 event_type: deposit
@@ -34,6 +34,31 @@ notes:
 ```
 
 ## Buy or Sell
+
+Use streamlined trade defaulting when the user provides broker-confirmed execution evidence or a clear filled-trade statement and does not indicate a broker/account change. The goal is to finish the ledger update after one user-provided evidence packet instead of asking for repetitive administrative fields.
+
+Non-defaultable trade facts:
+
+- the trade was actually filled or completed;
+- `side`;
+- `symbol`;
+- `quantity`;
+- `average_price` or enough broker-reported fills to compute a weighted average;
+- `trade_date` or a broker timestamp that clearly identifies the trade date.
+
+Defaultable trade fields:
+
+- `broker`: latest confirmed ledger broker;
+- `account_alias`: latest confirmed ledger account alias;
+- `confirmation_id`: stable redacted alias such as `screenshot-YYYY-MM-DD-SYMBOL-001` or `user-confirmed-YYYY-MM-DD-SYMBOL-trade-001`;
+- `fees`: `0.00` for U.S.-listed stock or ETF trades in the established Charles Schwab International satellite account unless the user or broker evidence states a fee;
+- `currency`: `USD` unless the evidence states another currency;
+- `settlement_date`: the next standard U.S. equity/ETF settlement business day, currently T+1, unless the evidence states another settlement date;
+- `created_at`: current local timestamp;
+- `publication_release_earliest_at` and `sensitive_field_review_status`: derive from the public release policy and mark same-day trade details local/unpublished when applicable;
+- `notes`: state which defaults were used and that raw screenshots, full order IDs, and full confirmation numbers are not committed.
+
+If any non-defaultable trade fact is missing, ask one compact question listing only those missing facts. Do not ask for fields covered by the defaulting rule. Never use current market prices, bid/ask/last quotes, recommendation prices, or decision notes as substitutes for broker-reported execution economics.
 
 ```yaml
 event_type: trade
@@ -90,4 +115,4 @@ sensitive_field_review_status:
 notes:
 ```
 
-If any required non-defaultable field is missing, the agent must ask for it before updating the ledger. Deposit-only defaults above are allowed because they preserve a redacted audit trail without requiring repetitive broker/account restatement.
+If any required non-defaultable field is missing, the agent must ask for it before updating the ledger. Defaulting is allowed only for fields covered above because it preserves a redacted audit trail without requiring repetitive broker/account restatement.

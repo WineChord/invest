@@ -1341,6 +1341,7 @@ td span {
 }
 
 .operating-run-status-completed_no_action,
+.operating-run-status-local_unpublished_actionable_decision,
 .operating-run-status-expired_no_execution,
 .operating-run-status-superseded {
   background: rgba(185, 133, 33, 0.14);

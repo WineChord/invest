@@ -784,7 +784,7 @@ const testCases = [
     mutate: (cwd) => {
       updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
         const broadCommand = doc.source_coverage.deterministic_commands.find((command) =>
-          command.output_path.endsWith("universe-scan.json"),
+          command.output_path === baselineUniverseScanPath(cwd),
         );
         broadCommand.output_sha256 = "0".repeat(64);
       });
@@ -1191,7 +1191,7 @@ function latestDiscoveryProcessPath(cwd, field) {
 function firstDeterministicOutput(doc) {
   const output = doc.deterministic_outputs?.find((entry) =>
     typeof entry?.output_path === "string"
-      && entry.output_path.endsWith("universe-scan.json")
+      && entry.discovery_scope !== undefined
       && entry.scan_payload_summary !== undefined,
   );
   if (output === undefined) {
@@ -1522,11 +1522,24 @@ function baselineUniverseScanPath(cwd) {
   if (typeof asOf !== "string" || asOf === "") {
     throw new Error("Missing quality metrics coverage.universe_scan_as_of");
   }
-  const scanPath = `research/discovery/runs/${asOf}-universe-scan.json`;
-  if (!readFileSync(path.join(cwd, scanPath), "utf8")) {
-    throw new Error(`Missing baseline universe scan fixture ${scanPath}`);
+  const runPath = latestAgenticDiscoveryPath(cwd);
+  const run = parseYaml(readFileSync(path.join(cwd, runPath), "utf8"));
+  const command = run.source_coverage?.deterministic_commands?.find((entry) => {
+    if (typeof entry?.output_path !== "string" || !entry.output_path.endsWith(".json")) {
+      return false;
+    }
+    const outputPath = path.join(cwd, entry.output_path);
+    try {
+      const output = JSON.parse(readFileSync(outputPath, "utf8"));
+      return output.as_of === asOf && output.discovery_scope !== undefined && output.candidate_count !== undefined;
+    } catch {
+      return false;
+    }
+  });
+  if (command === undefined) {
+    throw new Error(`Missing baseline universe scan fixture for ${asOf}`);
   }
-  return scanPath;
+  return command.output_path;
 }
 
 function slug(value) {

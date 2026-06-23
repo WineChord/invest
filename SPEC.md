@@ -245,6 +245,8 @@ Macro and regime risk-overlay state is stored under `research/macro/`.
 
 `research/operating-runs.csv` records public-safe dashboard summaries for full operating-cycle and monthly-decision full-cycle runs. Each row links the run summary page to the decision note, structured run artifact when available, evidence packet, validation summary, publication status, primary symbols, and broker-confirmed ledger event IDs when later execution was confirmed. Execution must be displayed only from linked ledger events, never inferred from proposed orders or simulation notes.
 
+Allowed run statuses are `completed_with_confirmed_execution`, `completed_no_action`, `local_unpublished_actionable_decision`, `expired_no_execution`, and `superseded`. Use `local_unpublished_actionable_decision` only for a same-day private decision whose exact actionable details are still under the publication embargo; keep exact share counts and caps out of public records until execution, cancellation, expiry, or explicit no-action plus the required market-close buffer.
+
 `research/quality-metrics.yml` records whether the research engine itself is healthy enough to support a monthly allocation decision. It is a compact operational dashboard for coverage, staleness, open event risk, and unresolved research debt.
 
 Required sections:
@@ -1054,7 +1056,7 @@ Do not sell because:
 
 A proposed order becomes a ledger event only after the user confirms execution.
 
-Minimum required confirmation fields:
+The ledger schema still stores the full normalized trade record:
 
 ```yaml
 broker:
@@ -1071,7 +1073,20 @@ trade_date:
 settlement_date:
 ```
 
-For deposits, required fields:
+The minimum non-defaultable trade confirmation facts are narrower:
+
+```yaml
+filled_or_completed:
+side:
+symbol:
+quantity:
+average_price:
+trade_date:
+```
+
+`average_price` may be computed from broker-reported fills when the evidence provides fill quantities and prices. It must never be computed from market quotes, recommendation prices, bid/ask/last prices, or decision notes.
+
+For deposits, the minimum non-defaultable confirmation fact is the confirmed amount. The normalized deposit row stores:
 
 ```yaml
 broker:
@@ -1083,9 +1098,13 @@ deposit_available_date:
 created_at:
 ```
 
-Deposit-only defaulting rule: when the user explicitly confirms that a cash amount is deposited, posted, or available in the brokerage account and does not indicate a broker or account change, the agent may fill repetitive administrative fields from repository context rather than asking again. Use the latest confirmed ledger `broker` and `account_alias`, a stable redacted `confirmation_id` of the form `user-confirmed-YYYY-MM-DD-AMOUNT-deposit`, `USD` unless another currency is stated, the user-stated available date or current confirmation date as `deposit_available_date`, and the current local timestamp as `created_at`. Notes must say default deposit fields were used. This default does not apply to trades, dividends, fees, corrections, broker/account changes, or missing trade economics.
+Defaulting rule: when the user explicitly confirms a deposit is posted or a trade was filled and does not indicate a broker/account change, the agent should fill repetitive administrative fields from repository context rather than asking again.
 
-If any required non-defaultable field is missing, ask for it. Do not fill trade economics from market data.
+For deposits, use the latest confirmed ledger `broker` and `account_alias`, a stable redacted `confirmation_id` of the form `user-confirmed-YYYY-MM-DD-AMOUNT-deposit`, `USD` unless another currency is stated, the user-stated available date or current confirmation date as `deposit_available_date`, and the current local timestamp as `created_at`. Notes must say default deposit fields were used.
+
+For U.S.-listed stock or ETF trades in the established Charles Schwab International satellite account, use the latest confirmed ledger `broker` and `account_alias`, a stable redacted `confirmation_id` such as `screenshot-YYYY-MM-DD-SYMBOL-001` or `user-confirmed-YYYY-MM-DD-SYMBOL-trade-001`, `USD` unless another currency is stated, `fees: 0.00` unless the user or broker evidence states a fee, the current local timestamp as `created_at`, and the next standard U.S. equity/ETF settlement business day as `settlement_date`, currently T+1, unless the evidence states another settlement date. Notes must say which fields were defaulted and must not include raw screenshots, full order IDs, full confirmation numbers, account numbers, or other sensitive broker identifiers.
+
+If any required non-defaultable field is missing, ask one compact question listing only those missing facts. Do not ask for fields covered by the defaulting rule. Do not fill trade economics from market data.
 
 Ledger math:
 

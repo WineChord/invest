@@ -229,6 +229,17 @@ function RepositoryLink({
 }
 
 function readableStatusLabel(status: string): string {
+  const labels: Record<string, string> = {
+    completed_with_confirmed_execution: "Confirmed Execution",
+    completed_no_action: "Completed No Action",
+    local_unpublished_actionable_decision: "Publication Embargo",
+    expired_no_execution: "Expired No Execution",
+    superseded: "Superseded",
+  };
+  if (labels[status]) {
+    return labels[status];
+  }
+
   return status
     .split("_")
     .filter(Boolean)

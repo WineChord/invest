@@ -2,7 +2,7 @@
 
 Policy version: v1.1
 
-Status: public-safe decision summary. Exact still-actionable order details are intentionally withheld from this repository record under `PUBLICATION_POLICY.md`. The private user-facing decision may include executable share counts and limit logic.
+Status: public-safe historical decision summary after later broker-confirmed execution. Exact private order-entry instructions remain omitted; confirmed execution is recorded only through redacted ledger events.
 
 ## Account Facts
 

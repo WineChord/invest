@@ -1,26 +1,26 @@
 schema_version: 1
-as_of: 2026-06-12
+as_of: 2026-06-18
 last_research_engine_run:
-  as_of: 2026-06-12
-  scope: monthly_decision_full_cycle_with_spcx_listing_refresh
-  notes: Ran the full operating cycle for the 2026-06-12 decision request, including market refresh, macro refresh with incomplete public macro endpoints recorded, deterministic universe scan, targeted SEC event-filing index, public community triage, SPCX primary-source IPO review, full watchlist cycle review, and xhigh subagent review. SPCX replaced the private SpaceX placeholder as a public watchlist candidate and cross-lane opportunity-cost input, but it remains no-buy pending a later promotion review. Repository account records remain unchanged because the user's additional 888 USD cash statement lacks the full broker-confirmation fields needed for ledger mutation.
+  as_of: 2026-06-18
+  scope: monthly_decision_full_cycle_with_asts_launch_and_spcx_cursor_refresh
+  notes: Ran the full operating cycle for the 2026-06-18 decision request, including macro refresh, deterministic universe scan, public community triage, targeted SEC event-filing index, ASTS launch review, SPCX Cursor 8-K review, full watchlist cycle review, and xhigh subagent review earlier in the same day. After the later user-confirmed USD 888 deposit, the decision rerun updated account cash and refreshed public quote cross-checks while preserving the same evidence gates. Later user-confirmed 2026-06-22 ASTS and RKLB execution evidence has now been normalized into repository account records.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current for a private 2026-06-12 decision after the SPCX listing refresh, active-candidate filing review, market-data refresh, and full watchlist cycle review. SPCX is now public and dashboard-visible but not buy-ready; RKLB and ASTS can receive private staged guidance while exact same-day order details remain outside public repository records until the publication embargo clears. Account records remain unchanged without complete broker confirmation for the 888 USD deposit.
+  reason: Repository-public research coverage is current for a private 2026-06-18 decision after the ASTS launch review, SPCX Cursor 8-K review, active-candidate filing review, quote cross-checks, and full watchlist cycle review. SPCX remains public and dashboard-visible but not buy-ready; RKLB and ASTS received later broker-confirmed execution evidence that has now been normalized into the account records. Confirmed cash is now USD 721.31 after the user-confirmed 2026-06-18 deposit and 2026-06-22 ASTS and RKLB buys.
   user_only_execution_prerequisites:
-    - broker cash and buying-power confirmation that includes the newly stated 888 USD before any real order
-    - complete deposit confirmation fields before mutating repository account records
+    - broker cash and buying-power confirmation still showing at least the recorded confirmed 721.31 USD before any future real order
+    - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - use limit orders only; do not use market orders or chase above the private cap if the next regular-session quote moves
-    - exact same-day share and limit details for RKLB and ASTS must remain outside public repository records until the publication embargo clears
+    - confirmed 2026-06-22 RKLB and ASTS execution details are delayed redacted historical account records after publication-policy embargo and sensitive-field review; future real orders still require fresh broker confirmation
     - do not execute if new material issuer evidence, broker restriction, or a large quote gap appears before order entry
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-06-12
-  discovery_lane_map_as_of: 2026-06-12
+  universe_scan_as_of: 2026-06-18
+  discovery_lane_map_as_of: 2026-06-18
   watchlist_symbols: 30
   watchlist_symbols_with_current_cycle_review: 30
   watchlist_symbols_missing_current_cycle_review: 0
@@ -33,10 +33,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 4
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-06-12-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-06-12-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-06-12-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-06-12-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-06-18-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-06-18-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-06-18-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-06-18-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -112,4 +112,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as future execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-12 run adds the durable process rule that a newly public former private opportunity such as SPCX must be reconciled into the lane map, security master, readiness index, filing review, valuation state, watchlist review, and buy-zone records before it can affect allocation. Exact actionable order details remain private while still actionable under the publication policy.
+  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as future execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-18 run confirmed that ASTS launch success strengthened only a tiny private add, while SPCX Cursor evidence raised strategic opportunity cost but worsened public common-stock entry. The later confirmed USD 888 deposit supported scaling the private RKLB and ASTS staged add without fully deploying cash. The 2026-06-22 broker-confirmed fills are now normalized as historical account records but remain local and unpublished until the publication policy allows release.

@@ -557,6 +557,7 @@ const allowedMacroEventImportances = new Set([
 const allowedOperatingRunStatuses = new Set([
   "completed_with_confirmed_execution",
   "completed_no_action",
+  "local_unpublished_actionable_decision",
   "expired_no_execution",
   "superseded",
 ]);

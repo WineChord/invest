@@ -1278,3 +1278,111 @@ sources:
     first_seen_at: 2026-06-12
     related_symbols: [VRT]
     summary: Vertiv announced the closing of the ThermoKey acquisition, a medium AI power and cooling lane event but not a current buy-zone upgrade.
+  - id: rklb_nasdaq100_2026_06_12
+    title: Rocket Lab Nasdaq-100 Inclusion Announcement
+    source_type: company_ir
+    url: https://www.globenewswire.com/news-release/2026/06/12/3310939/0/en/rocket-lab-to-join-the-nasdaq-100-index.html
+    source_published_at: 2026-06-12
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [RKLB]
+    summary: Rocket Lab announced that it will join the Nasdaq-100 Index before market open on 2026-06-22; reviewed as a visibility and flow event rather than a thesis-changing operating update.
+  - id: rklb_quote_2026_06_18
+    title: RKLB External Quote Cross-Check
+    source_type: market_data
+    url: https://www.kraken.com/stocks/rklb
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [RKLB]
+    summary: External quote cross-check used after the repository Yahoo market refresh returned HTTP 429 for held symbols during the 2026-06-18 decision cycle.
+  - id: asts_bluebird_8_10_launch_2026_06_17
+    title: AST SpaceMobile BlueBird 8-10 Orbital Launch Announcement
+    source_type: company_ir
+    url: https://www.businesswire.com/news/home/20260617420856/en/AST-SpaceMobile-Announces-Successful-Orbital-Launch-of-BlueBirds-8-9-and-10
+    source_published_at: 2026-06-17
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [ASTS]
+    summary: AST SpaceMobile announced the successful orbital launch of BlueBirds 8, 9, and 10; reviewed as a material positive execution event with on-orbit performance and commercial economics still unresolved.
+  - id: asts_annual_meeting_8k_2026_06_12
+    title: AST SpaceMobile Annual Meeting 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1780312/000149315226028544/form8-k.htm
+    source_published_at: 2026-06-15
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [ASTS]
+    summary: Annual meeting voting disclosure reviewed as a governance event that did not change the direct-to-device thesis or sizing discipline.
+  - id: asts_quote_2026_06_18
+    title: ASTS External Quote Cross-Check
+    source_type: market_data
+    url: https://www.investing.com/equities/new-providence-acquisition-corp-n
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [ASTS]
+    summary: External quote cross-check used after the repository Yahoo market refresh returned HTTP 429 for held symbols during the 2026-06-18 decision cycle.
+  - id: spcx_cursor_8k_2026_06_16
+    title: SpaceX Cursor Merger Agreement 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026043411/spaceexplorationtechnologi.htm
+    source_published_at: 2026-06-16
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [SPCX]
+    summary: SpaceX disclosed a stock-based merger agreement with Anysphere/Cursor using a USD 60.0 billion implied Cursor equity value; reviewed as strategically important but entry-worsening for public SPCX common stock.
+  - id: spcx_quote_2026_06_18
+    title: SPCX External Quote Cross-Check
+    source_type: market_data
+    url: https://www.investing.com/equities/spacex
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [SPCX]
+    summary: External quote cross-check used for SPCX valuation and opportunity-cost review during the 2026-06-18 decision cycle.
+  - id: community_triage_2026_06_18
+    title: 2026-06-18 Public Community Triage
+    source_type: community_scan
+    url: research/discovery/runs/2026-06-18-community-triage.json
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [NBIS, SPCX, CRWV, MU, IREN, ASTS, LITE, CRDO, VRT, BE]
+    summary: Public no-token community triage raised analysis priority for AI infrastructure and space names; it creates no buy eligibility or promotion eligibility by itself.
+  - id: sec_event_filing_index_2026_06_18
+    title: 2026-06-18 SEC Event Filing Index
+    source_type: sec_filing_index
+    url: research/discovery/runs/2026-06-18-sec-event-filing-index-index.metadata.json
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+    summary: Targeted SEC event-filing index for decision-relevant watchlist names, with provider gaps documented for newly public SPCX mapping and no direct buy eligibility created by the index alone.
+  - id: nbis_magicbyte_close_2026_06_16
+    title: Nebius MagicByte Eigen AI Labs Closing 6-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926074352/tm2618059d1_6k.htm
+    source_published_at: 2026-06-16
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [NBIS]
+    summary: Nebius disclosed closing of the MagicByte/Eigen AI Labs acquisition; reviewed as strategically relevant but still insufficient to solve financing, utilization, valuation, or customer-economics questions.
+  - id: be_performance_grant_2026_06_17
+    title: Bloom Energy Performance Grant 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1664703/000119312526274388/d100413d8k.htm
+    source_published_at: 2026-06-17
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [BE]
+    summary: Bloom Energy disclosed a CEO performance grant tied to market-cap growth milestones and commercial conditions; reviewed as a non-buy-changing governance and incentive event.
+  - id: oklo_10qa_certification_2026_06_17
+    title: Oklo 2026 Q1 10-Q/A Certification Amendment
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1849056/000184905626000037/oklo-20260331.htm
+    source_published_at: 2026-06-17
+    retrieved_at: 2026-06-18
+    first_seen_at: 2026-06-18
+    related_symbols: [OKLO]
+    summary: Oklo filed a 10-Q/A whose stated purpose was an exhibit certification amendment; reviewed as immaterial to current financial and operating evidence.
