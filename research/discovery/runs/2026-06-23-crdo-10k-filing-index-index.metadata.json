@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-23T01:21:55.875Z",
+  "as_of": "2026-06-23",
+  "source": "sec_filing_discovery_index",
+  "index_scope": "targeted_symbols",
+  "requested_symbols": [
+    "CRDO"
+  ],
+  "output_prefix": "research/discovery/runs/2026-06-23-crdo-10k-filing-index",
+  "manifest_path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.csv",
+  "manifest_metadata_path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.metadata.json",
+  "profile_path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-profiles.json",
+  "scan_path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-scan.json",
+  "manifest_sha256": "1f7dcbcb73c8d466b37762494594f9c918aa77761b5737129d12bfbb25fff33d",
+  "manifest_metadata_sha256": "6e16faed51b30466afe364cff78de6dee29aa0050722b06f4ef4d8ed7058fe7d",
+  "profile_sha256": "8de4e5da7cc239b2d0054929ff20c5b9bd95e85e38361e0dcb3511ba74b8b972",
+  "scan_sha256": "b64a68d50771cda3850745416fa92247afd94b04088b9c190695523d2edb2556",
+  "commands": [
+    {
+      "command": "node scripts/build-sec-filing-manifest.mjs --as-of 2026-06-23 --output research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.csv --metadata-output research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.metadata.json --symbols CRDO --submissions-cache-dir research/cache/sec/submissions --max-submissions-cache-age-days 0 --request-delay-ms 100",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/build-sec-filing-profiles.mjs --as-of 2026-06-23 --manifest research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.csv --manifest-metadata research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.metadata.json --output research/discovery/runs/2026-06-23-crdo-10k-filing-index-profiles.json --filing-cache-dir research/cache/sec/filings --request-delay-ms 100",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/discover-universe.mjs --dry-run --json --as-of 2026-06-23 --profile-input research/discovery/runs/2026-06-23-crdo-10k-filing-index-profiles.json --output research/discovery/runs/2026-06-23-crdo-10k-filing-index-scan.json --limit 10",
+      "output_checked": true
+    }
+  ],
+  "coverage": {
+    "selection_strategy": "requested_symbols",
+    "coverage_scope": "partial_requested_symbols",
+    "selected_symbol_count": 1,
+    "eligible_universe_count": 7610,
+    "manifest_row_count": 1,
+    "profile_count": 1,
+    "profile_coverage_status": "targeted_partial",
+    "profile_coverage_gap_count": 7609,
+    "profile_coverage_ratio": 0.000131,
+    "candidate_count": 10,
+    "total_match_count": 125
+  },
+  "caveats": [
+    "This index is deterministic discovery scaffolding, not buy eligibility.",
+    "Targeted-symbol indexes answer only the requested scope and must not be cited as complete SEC universe coverage.",
+    "Complete SEC universe indexes require --all and the upstream SEC submissions guardrails."
+  ]
+}

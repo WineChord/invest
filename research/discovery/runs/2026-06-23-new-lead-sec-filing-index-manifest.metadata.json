@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-23T01:15:43.093Z",
+  "source": "sec_submissions_recent_filings",
+  "source_files": [
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "https://data.sec.gov/submissions",
+    "research/cache/sec/submissions"
+  ],
+  "sec_company_input_row_count": 10416,
+  "sec_company_input_sha256": "b55a50076b8b27b26bc7dd76f8147d1a4f9b2842a1cffe8785830d591a68e70c",
+  "submissions_source": "https://data.sec.gov/submissions",
+  "submissions_fetched_count": 8,
+  "submissions_cache_dir": "research/cache/sec/submissions",
+  "submissions_cache_hits": 0,
+  "submissions_cache_misses": 8,
+  "submissions_cache_writes": 8,
+  "submissions_cache_only": false,
+  "submissions_ledger_output": "",
+  "submissions_ledger_count": 8,
+  "submissions_ledger": [
+    {
+      "symbol": "FNUC",
+      "cik": "0001769697",
+      "source_url": "https://data.sec.gov/submissions/CIK0001769697.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "24312910a4066441ffce976dcb3e574f295a1ab09605de163a2b796b67814fef",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    },
+    {
+      "symbol": "NNE",
+      "cik": "0001923891",
+      "source_url": "https://data.sec.gov/submissions/CIK0001923891.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "8cd124af076c4d418ced3037c7d422290cf7dbefe1c541bed15d5eaaf51eee49",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    },
+    {
+      "symbol": "NUCL",
+      "cik": "0002089283",
+      "source_url": "https://data.sec.gov/submissions/CIK0002089283.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "8ebbdcc99e9cb7cbae4d0465f8c4a7879c7dd18a3b3b0af68ab37acc79b76605",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    },
+    {
+      "symbol": "SDEV",
+      "cik": "0001389545",
+      "source_url": "https://data.sec.gov/submissions/CIK0001389545.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "d36de5d0dbb2719baaf54882fb5db4610182a0de1d61072b768e61e05aae63d2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    },
+    {
+      "symbol": "PLTR",
+      "cik": "0001321655",
+      "source_url": "https://data.sec.gov/submissions/CIK0001321655.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "dd92d954029cae57cb746b293941a68bd2ff13b78067baa5ea4b0bc1bb991595",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    },
+    {
+      "symbol": "QBTS",
+      "cik": "0001907982",
+      "source_url": "https://data.sec.gov/submissions/CIK0001907982.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "e73d6ebab9c8d5d09b85ad0b9f3660b6a81ade7c6711ec84f520d0713c447599",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    },
+    {
+      "symbol": "QUBT",
+      "cik": "0001758009",
+      "source_url": "https://data.sec.gov/submissions/CIK0001758009.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "81b5dce58ad2ab20ede40e2cbed0626afaf626e649ab7736c2249e028f51cc9c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    },
+    {
+      "symbol": "GILT",
+      "cik": "0000897322",
+      "source_url": "https://data.sec.gov/submissions/CIK0000897322.json",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:15:43.093Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "7e00f9d5915e4e95d93c400dfadbe5d22a919dcff5534112b8df58a72175d3ca",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:15:43.093Z"
+    }
+  ],
+  "max_submissions_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_min_complete_universe_request_delay_ms": 100,
+  "sec_request_delay_ms": 100,
+  "selection_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "FNUC",
+    "NNE",
+    "NUCL",
+    "SDEV",
+    "PLTR",
+    "QBTS",
+    "QUBT",
+    "GILT"
+  ],
+  "selected_symbol_count": 8,
+  "eligible_universe_count": 7610,
+  "coverage_limit": 8,
+  "filing_types": [
+    "10-K",
+    "20-F",
+    "S-1",
+    "F-1",
+    "424B"
+  ],
+  "filing_selection_policy": "foundational-first",
+  "manifest_selection_fields": [
+    "filing_selection_policy",
+    "filing_selection_tier",
+    "filing_selection_family",
+    "selection_reason",
+    "selected_sec_form_base",
+    "newer_supported_filing_displaced_count",
+    "newer_supported_filing_forms",
+    "lower_tier_newer_filing_forms",
+    "foundational_candidate_count",
+    "business_prospectus_424b_candidate_count",
+    "supplement_424b_candidate_count",
+    "unknown_424b_candidate_count",
+    "selection_warnings"
+  ],
+  "retrieved_at": "2026-06-23",
+  "manifest_row_count": 8,
+  "skipped_symbols": [],
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols."
+}

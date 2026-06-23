@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-06-23T01:35:39.208Z",
+  "as_of": "2026-06-23",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-06-23.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-06-23-community-triage.json",
+      "sha256": "f609d92b3f01717de2c986ec1cd6e6979b5deaf15906ec4f886456c6885b4153",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-index.metadata.json",
+      "sha256": "2bdf646ab235dc8ca357468d9bdb8295036a8acf41769ea70a1774878d6101eb",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.csv",
+      "sha256": "1f7dcbcb73c8d466b37762494594f9c918aa77761b5737129d12bfbb25fff33d",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.metadata.json",
+      "sha256": "6e16faed51b30466afe364cff78de6dee29aa0050722b06f4ef4d8ed7058fe7d",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-profiles.json",
+      "sha256": "8de4e5da7cc239b2d0054929ff20c5b9bd95e85e38361e0dcb3511ba74b8b972",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-scan.json",
+      "sha256": "b64a68d50771cda3850745416fa92247afd94b04088b9c190695523d2edb2556",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-index.metadata.json",
+      "sha256": "fcb7d225718186b4805506d7b6e613d98d568ecc0f31e55d2ccde871c10bbc2b",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.csv",
+      "sha256": "ac922c120f6ce022e7b6bfe40cd4dd87457cdc2387d47c5509610776fc555bd0",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.metadata.json",
+      "sha256": "f9e8bbd9dd6dfb293432a6c0ffc5638c29db0e431fb1a457602b85dbebba05cf",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-profiles.json",
+      "sha256": "39e7121c1fdbd2ffca86db6a5f247e33709c8d8982a02e67f97458e5ced36ed0",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-scan.json",
+      "sha256": "b9fa69934362b80fe3214a3df103d963d81c5dcc288b09414a416fc256c60585",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-scan.json",
+      "sha256": "2c04a3c69e5374247530c0466e28a7f49d277c3271d06448adf71ebd6b1454a6",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-sec-event-filing-index-index.metadata.json",
+      "sha256": "e3d56ace49278c1b43094d2df0e4dccc8aa8fce126741d75bae8f2123d3d7aa9",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-sec-event-filing-index-manifest.csv",
+      "sha256": "0cd6b18925617a67d61e2df4d1809bbf987af6ffbc55b30eb39f123df617b8bd",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "655c8e4f7096d3083b530f046cd8607d3a86706b9812f336f7c201670503074a",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-sec-event-filing-index-profiles.json",
+      "sha256": "c915827a97049c6dcd0043b38956729932350144cb4cb9a8b049e39b67a36f62",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-06-23-sec-event-filing-index-scan.json",
+      "sha256": "fdff68e19228668c3eb120961fbd7397db10c2c395be54fbf9f89a3efe93cb35",
+      "role": "deterministic_scan_artifact"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-23T01:21:59.652Z",
+  "source": "sec_filing_business_sections",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "business_description"
+  ],
+  "source_files": [
+    "research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.csv",
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.metadata.json",
+    "research/cache/sec/filings"
+  ],
+  "filing_cache_dir": "research/cache/sec/filings",
+  "filing_cache_hits": 0,
+  "filing_cache_misses": 1,
+  "filing_cache_writes": 1,
+  "filing_cache_only": false,
+  "filing_ledger_output": "",
+  "filing_ledger_count": 1,
+  "filing_ledger": [
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-06-23T01:21:59.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "04a3956a2c8dbfddfa5472365b09e0954a7f0069903d615edb80c28a5281f3b4",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-06-23",
+      "fetched_at": "2026-06-23T01:21:59.652Z"
+    }
+  ],
+  "max_filing_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_request_delay_ms": 100,
+  "selection_strategy": "manifest_filing_sections",
+  "manifest_selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "CRDO"
+  ],
+  "selected_symbol_count": 1,
+  "eligible_universe_count": 7610,
+  "coverage_limit": 1,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "manifest_metadata_path": "research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.metadata.json",
+  "manifest_row_count": 1,
+  "profile_count": 1,
+  "skipped_symbols": [],
+  "profiles": [
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "filing_type": "10-K",
+      "source_name": "sec_filing_business_sections:10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm",
+      "source_published_at": "2026-06-15",
+      "retrieved_at": "2026-06-23",
+      "text": "Item 1. Business Company Overview At Credo, our mission is to transform connectivity at scale through fast, reliable and energy-efficient system solutions. The Company’s highspeed copper and optical interconnect products deliver industry-leading power and performance at up to 1.6T to meet the ever-expanding data infrastructure demands of AI. The Company’s product portfolio includes ZeroFlap (ZF) Active Electrical Cables (AECs) and ZF optical transceivers, OmniConnect memory solutions and a suite of retimers and DSPs for optical and copper Ethernet and PCIe, all leveraging the Company’s PILOT diagnostic and analytics software platform. The Company’s innovations enable our customers to connect the systems that connect the world. Our connectivity solutions are optimized for optical and electrical Ethernet, PCIe and emerging UALink, ESUN and SUE applications, ranging in speeds from 32G (or Gigabits per second per lane) to 200G. Our products are based on our own optimized Serializer/Deserializer (SerDes) and Digital Signal Processor (DSP) technologies. Our product families include integrated circuits (ICs), Active Electrical Cables (AECs) and SerDes Chiplets. Our intellectual property (IP) solutions consist primarily of SerDes IP licensing. Artificial Intelligence (AI) has bred a new generation of data centers over the past 5 years that depend much more heavily on high speed, reliable communications for Front End, Scale Out, Scale Up and emerging Scale In Networks. Our proprietary SerDes and DSP technologies enable us to achieve similar performance to leading competitors’ products but at a lower cost and more highly available legacy node (n-1 advantage). Beyond power and performance, Credo continues to innovate to address customers’ system level requirements. We partnered with Oracle to develop our ZeroFlap Optics that helps address the reliability issues known as Link Flap which plague commodity options in AI data centers enabling faster AI cluster turn on and time to first revenue. The multibillion-dollar data infrastructure market that we serve is driven largely by hyperscale data centers (hyperscalers) and emerging NeoClouds building AI/Machine Learning (ML) Infrastructure as well as general compute and data centers. The demands for increased bandwidth, better reliability and improved power efficiency have grown as AI model sizes have increased from billions to trillions of parameters and the workload has expanded from training to inference. We design, market and sell both product, software and IP solutions. We help define industry conventions and standards within the markets we target by collaborating with technology leaders and standards bodies. We contract with a variety of manufacturing partners to build our products based on our proprietary SerDes and DSP technologies. We develop standard solutions we can sell broadly to our end markets and also develop tailored solutions designed to address specific customer needs. Once developed, these tailored solutions can generally be broadly leveraged across our portfolio and we are able to sell the part or license the IP to the broader market. We have global sales, marketing and business development teams responsible for identifying and building our customer relationships. We sell our products to hyperscalers, NeoClouds and other cloud infrastructure providers. We are engaged with all of the major hyperscalers, and our customer base includes over 20 blue chip clients, including a broad mix of original equipment manufacturers (OEMs), original design manufacturers (ODMs), optical module manufacturers and other leading enterprises. During fiscal 2026 and 2025, we generated $1.3 billion and $436.8 million in total revenue, respectively. 7 Industry Overview We believe we are well positioned to benefit from the strong secular tailwinds driving the data infrastructure market, which is being driven by several factors, including: AI/ML Drives an Explosion in Network Traffic: Our hyperscale c",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1. Business Company Overview At Credo, our mission is to transform connectivity at scale through fast, reliable and energy-efficient system solutions. The Company’s highspeed copper and optical interconnect products deliver industry-leading power and performance at up to 1.6T to meet the ever-expanding data infrastructure demands of AI. The Company’s product portfolio includes ZeroFlap (ZF) Active Electrical Cables (AECs) and ZF optical transceivers, OmniConnect memory solutions and a suite of retimers and DSPs for optical and copper Ethernet and PCIe, all leveraging the Company’s PILOT diagnostic and analytics software platform. The Company’s innovations enable our customers to connect the systems that connect the world. Our connectivity solutions are optimized for optical and electrical Ethernet, PCIe and emerging UALink, ESUN and SUE applications, ranging in speeds from 32G (or Gigabits per second per lane) to 200G. Our products are based on our own optimized Serializer/Deserializer (SerDes) and Digital Signal Processor (DSP) technologies. Our product families include integrated circuits (ICs), Active Electrical Cables (AECs) and SerDes Chiplets. Our intellectual property (IP) solutions consist primarily of SerDes IP licensing. Artificial Intelligence (AI) has bred a new generation of data centers over the past 5 years that depend much more heavily on high speed, reliable communications for Front End, Scale Out, Scale Up and emerging Scale In Networks. Our proprietary SerDes and DSP technologies enable us to achieve similar performance to leading competitors’ products but at a lower cost and more highly available legacy node (n-1 advantage). Beyond power and performance, Credo continues to innovate to address customers’ system level requirements. We partnered with Oracle to develop our ZeroFlap Optics that helps address the reliability issues known as Link Flap which plague commodity options in AI data centers enabling faster AI cluster turn on and time to first revenue. The multibillion-dollar data infrastructure market that we serve is driven largely by hyperscale data centers (hyperscalers) and emerging NeoClouds building AI/Machine Learning (ML) Infrastructure as well as general compute and data centers. The demands for increased bandwidth, better reliability and improved power efficiency have grown as AI model sizes have increased from billions to trillions of parameters and the workload has expanded from training to inference. We design, market and sell both product, software and IP solutions. We help define industry conventions and standards within the markets we target by collaborating with technology leaders and standards bodies. We contract with a variety of manufacturing partners to build our products based on our proprietary SerDes and DSP technologies. We develop standard solutions we can sell broadly to our end markets and also develop tailored solutions designed to address specific customer needs. Once developed, these tailored solutions can generally be broadly leveraged across our portfolio and we are able to sell the part or license the IP to the broader market. We have global sales, marketing and business development teams responsible for identifying and building our customer relationships. We sell our products to hyperscalers, NeoClouds and other cloud infrastructure providers. We are engaged with all of the major hyperscalers, and our customer base includes over 20 blue chip clients, including a broad mix of original equipment manufacturers (OEMs), original design manufacturers (ODMs), optical module manufacturers and other leading enterprises. During fiscal 2026 and 2025, we generated $1.3 billion and $436.8 million in total revenue, respectively. 7 Industry Overview We believe we are well positioned to benefit from the strong secular tailwinds driving the data infrastructure market, which is being driven by several factors, including: AI/ML Drives an Explosion in Network Traffic: Our hyperscale c"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001628280-26-043303/crdo-20260502.htm",
+      "filing_accession_number": "0001628280-26-043303",
+      "filing_acceptance_datetime": "2026-06-15T21:09:27.000Z",
+      "filing_content_sha256": "04a3956a2c8dbfddfa5472365b09e0954a7f0069903d615edb80c28a5281f3b4",
+      "filing_content_cache_status": "cache_miss_fetched",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "crdo-20260502.htm",
+      "filing_report_date": "2026-05-02",
+      "filing_sec_form_original": "10-K",
+      "filing_business_prospectus_424b_candidate_count": "1",
+      "filing_foundational_candidate_count": "8",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-K",
+      "filing_selection_family": "foundational_business_filing",
+      "filing_selection_policy": "foundational-first",
+      "filing_selection_reason": "selected_newest_foundational_business_filing",
+      "filing_selection_tier": "foundational_business_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001807794.json",
+      "filing_supplement_424b_candidate_count": "3",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 32341,
+      "extraction_end_offset": 65650,
+      "extraction_section_length": 33309,
+      "extraction_start_pattern": "item_1_business",
+      "extraction_start_pattern_label": "Item 1 Business",
+      "extraction_warnings": []
+    }
+  ]
+}

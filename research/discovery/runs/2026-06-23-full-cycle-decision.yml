@@ -1,0 +1,340 @@
+schema_version: 1
+run_id: 2026-06-23-full-cycle-decision
+run_date: 2026-06-23
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: no-action conclusion valid until a material issuer event, material quote move, broker cash or buying-power change, SGOV mechanics confirmation, or the next scheduled decision cycle
+linked_decision_or_research_note: decisions/2026-06-23-full-cycle-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-06-23-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-06-23
+      dry_run: false
+      output_path: data/market/watchlist_prices.csv
+      retrieved_at: 2026-06-23
+      result_summary: Updated committed market data through the 2026-06-22 close and refreshed account equity curve to USD 2537.41 for 2026-06-22.
+    - command: npm run refresh:macro -- --as-of 2026-06-23
+      dry_run: false
+      output_path: research/macro/regime-snapshots.csv
+      retrieved_at: 2026-06-23
+      result_summary: Macro regime remained a price-discipline overlay and did not create buy eligibility.
+    - command: npm run discover:universe -- --as-of 2026-06-23 --json --output research/discovery/runs/2026-06-23-scan.json
+      dry_run: false
+      output_path: research/discovery/runs/2026-06-23-scan.json
+      output_sha256: 2c04a3c69e5374247530c0466e28a7f49d277c3271d06448adf71ebd6b1454a6
+      retrieved_at: 2026-06-23
+      result_summary: Broad deterministic scan found leads but no candidate that displaced RKLB, ASTS, or the SPCX opportunity-cost comparison.
+    - command: npm run scan:community -- --as-of 2026-06-23 --output research/cache/community/2026-06-23/2026-06-23-public-community-scan.json
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-06-23
+      result_summary: Public no-token community scan was written under ignored research/cache and used only as lead generation and attention triage; some sources returned HTTP 429.
+    - command: npm run triage:community -- --as-of 2026-06-23 --scan research/cache/community/2026-06-23/2026-06-23-public-community-scan.json --output research/discovery/runs/2026-06-23-community-triage.json
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-06-23
+      result_summary: Triage produced durable artifact research/discovery/runs/2026-06-23-community-triage.json with 287 leads and 40 high-priority leads, but no community signal created promotion or buy eligibility.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-06-23 --symbols RKLB,ASTS,CRDO,ALAB,VRT,NBIS,MU,CRWV,CRCL,LITE,CBRS,IREN,OKLO,BE,LEU,GSAT,KTOS,IONQ,LUNR,RDW,FLY,YSS,VOYG,XNDU,FN,ETN,PWR,SPCX --output-prefix research/discovery/runs/2026-06-23-sec-event-filing-index --submissions-cache-dir research/cache/sec/submissions --filing-cache-dir research/cache/sec/filings --request-delay-ms 100
+      dry_run: false
+      output_path: research/discovery/runs/2026-06-23-sec-event-filing-index-manifest.csv
+      retrieved_at: 2026-06-23
+      result_summary: Targeted SEC event index covered active and watchlist names; the automated SPCX exchange mapping remained incomplete and was handled manually through direct SEC filing review.
+    - command: npm run discover:sec-filing-index -- --as-of 2026-06-23 --symbols FNUC,NNE,NUCL,SDEV,PLTR,QBTS,QUBT,GILT --output-prefix research/discovery/runs/2026-06-23-new-lead-sec-filing-index --submissions-cache-dir research/cache/sec/submissions --filing-cache-dir research/cache/sec/filings --request-delay-ms 100 --discover-limit 30
+      dry_run: false
+      output_path: research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.csv
+      retrieved_at: 2026-06-23
+      result_summary: Supplemental new-lead SEC skim kept PLTR, NNE, QBTS, QUBT, GILT, SDEV, and FNUC as future triage inputs only, with no allocation effect.
+    - command: npm run discover:sec-filing-index -- --as-of 2026-06-23 --symbols CRDO --output-prefix research/discovery/runs/2026-06-23-crdo-10k-filing-index --submissions-cache-dir research/cache/sec/submissions --filing-cache-dir research/cache/sec/filings --request-delay-ms 100 --max-submissions-cache-age-days 0 --discover-limit 10
+      dry_run: false
+      output_path: research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.csv
+      retrieved_at: 2026-06-23
+      result_summary: CRDO FY2026 10-K was selected and reviewed; customer concentration and valuation keep CRDO outside buy-zone.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, event-filing index, and regulator-sourced issuer records
+      sources_or_queries:
+        - research/discovery/runs/2026-06-23-sec-event-filing-index-manifest.csv
+        - research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.csv
+        - research/discovery/runs/2026-06-23-crdo-10k-filing-index-manifest.csv
+        - https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+        - https://www.sec.gov/Archives/edgar/data/1181412/000162828026044489/spcx8-kxlaunchseniornotes.htm
+      source_ids:
+        - sec_event_filing_index_2026_06_23
+        - new_lead_sec_filing_index_2026_06_23
+        - crdo_10k_fy2026
+        - spcx_notes_8k_2026_06_22
+      retrieved_at: 2026-06-23
+      material_findings: CRDO 10-K, SPCX post-IPO notes launch, RKLB ownership flow, CRWV debt filings, and VRT governance/acquisition context were reviewed; none created a new buy.
+      unavailable_or_skipped_reason:
+    - family_id: issuer_material
+      family: Company issuer materials and company-specific primary evidence
+      sources_or_queries:
+        - Rocket Lab VICTUS HAZE company release
+        - ASTS BlueBird 8-10 prior launch release
+        - SpaceX post-IPO notes filing
+      source_ids:
+        - rklb_victus_haze_2026_06_22
+        - asts_bluebird_8_10_launch_2026_06_17
+        - spcx_notes_8k_2026_06_22
+      retrieved_at: 2026-06-23
+      material_findings: RKLB execution evidence strengthened and ASTS launch evidence remained positive, but the account already added both holdings on 2026-06-22; SPCX remained entry-blocked.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Current quote and scale context
+      sources_or_queries:
+        - data/market/watchlist_prices.csv
+        - data/market/company_metrics.csv
+        - data/account/equity_curve.csv
+      source_ids:
+        - market_quote_snapshot_2026_06_23
+      retrieved_at: 2026-06-23
+      material_findings: Updated 2026-06-22 closes made RKLB and ASTS lower but did not justify forced same-week redeployment after the latest confirmed buys.
+      unavailable_or_skipped_reason: Broker order preview, fees, fractional-share support, SGOV ETF mechanics, buying power, and final execution remain user-only prerequisites.
+    - family_id: current_world_context
+      family: Macro, broad market, public attention, and current tape risk overlay
+      sources_or_queries:
+        - research/macro/regime-snapshots.csv
+        - research/discovery/runs/2026-06-23-community-triage.json
+      source_ids:
+        - community_triage_2026_06_23
+      retrieved_at: 2026-06-23
+      material_findings: Community attention lifted monitoring priority for MU, RKLB, ASTS, SPCX, NBIS, LUNR, BE, IONQ, PLTR, and FLY; none bypassed freshness, readiness, promotion, or valuation gates.
+      unavailable_or_skipped_reason:
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listing, IPO, spinoff, and transaction evidence
+      sources_or_queries:
+        - SpaceX 2026-06-15 post-IPO completion and share-plan 8-K
+        - SpaceX 2026-06-16 Cursor merger 8-K
+        - SpaceX 2026-06-22 senior unsecured notes 8-K
+        - supplemental new-lead SEC skim for recently public or promoted community names
+      source_ids:
+        - spcx_424b4_2026_06_12
+        - spcx_cursor_8k_2026_06_16
+        - spcx_ipo_completion_8k_2026_06_15
+        - spcx_director_8k_2026_06_17
+        - spcx_notes_8k_2026_06_22
+        - new_lead_sec_filing_index_2026_06_23
+      retrieved_at: 2026-06-23
+      material_findings: SPCX remains strategically important but entry-blocked by post-IPO valuation, governance, float, notes, and bridge-loan refinancing questions; new community leads remain future triage only.
+      unavailable_or_skipped_reason:
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lane review, public community triage, and opportunity-cost update
+      sources_or_queries:
+        - research/discovery/lanes.yml
+        - research/discovery/runs/2026-06-23-scan.json
+        - research/discovery/runs/2026-06-23-community-triage.json
+        - research/discovery/runs/2026-06-23-new-lead-sec-filing-index-scan.json
+      source_ids:
+        - community_triage_2026_06_23
+        - sec_event_filing_index_2026_06_23
+        - new_lead_sec_filing_index_2026_06_23
+        - spcx_notes_8k_2026_06_22
+      retrieved_at: 2026-06-23
+      material_findings: Existing space, direct-to-device, AI infrastructure, interconnect, power, nuclear, quantum, programmable-money, and frontier-AI lanes cover the new evidence; no new lane or promotion was required.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-06-23
+    notes: Covered market refresh, macro refresh, deterministic universe scan, public community triage, targeted SEC event-filing index, supplemental new-lead SEC skim, CRDO 10-K review, RKLB VICTUS HAZE review, SPCX post-IPO notes review, and full watchlist cycle review.
+
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - AI compute infrastructure and public cloud capacity leads
+    - space infrastructure and direct-to-device satellite leads
+    - power cooling grid nuclear quantum and optical interconnect leads
+  sampled_symbols:
+    - PLTR
+    - NNE
+    - QBTS
+    - QUBT
+    - GILT
+    - SDEV
+  false_positive_patterns:
+    - community attention without primary-source buy eligibility
+    - large-cap thematic proxies with lower satellite-account asymmetry
+    - newly public or promotional names without enough post-listing evidence
+  lane_decisions:
+    - keep existing lane map unchanged
+    - keep SPCX in cross-lane watch coverage rather than buying before promotion
+    - keep PLTR and other new leads as future triage inputs only
+  disposition: Full-cycle lane review completed; no unknown-future lead displaced the no-action cash decision.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: []
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Launch cadence, responsive space, direct-to-device capacity, AI interconnect bandwidth, AI power and cooling, frontier AI distribution, and sovereign infrastructure remain plausible bottlenecks.
+    inferences: RKLB and ASTS remain the best existing mission-aligned public holdings, while SPCX is now the most important public opportunity-cost comparator.
+    disconfirming_evidence: Neutron delay, ASTS on-orbit or financing failure, SPCX valuation reset, CRDO customer concentration deterioration, or a material macro liquidity shock would force a rerun.
+    source_ids:
+      - rklb_victus_haze_2026_06_22
+      - asts_bluebird_8_10_launch_2026_06_17
+      - crdo_10k_fy2026
+      - spcx_notes_8k_2026_06_22
+    investment_implication: Hold cash rather than force a new trade immediately after confirmed RKLB and ASTS adds.
+  who_controls_or_removes_scarcity:
+    facts: Rocket Lab controls a smaller vertical space platform; ASTS controls a high-risk direct-to-device architecture; SpaceX controls the strongest absolute cross-lane platform but now trades as a much larger public common-stock base.
+    inferences: Current per-dollar asymmetry still favors existing RKLB and ASTS exposure over chasing SPCX, but the account should not overweight space immediately after the latest fills.
+    disconfirming_evidence: A large thesis-preserving price reset or major de-risking event could reopen a private capped entry.
+    source_ids:
+      - rklb_victus_haze_2026_06_22
+      - spcx_notes_8k_2026_06_22
+    investment_implication: No sell; no immediate add.
+  who_can_monetize_into_shareholder_value:
+    facts: RKLB has stronger operating execution evidence, ASTS has higher binary convexity, CRDO has strong AI interconnect quality but concentrated customers, and SPCX has unmatched scale with public-entry complexity.
+    inferences: The strongest marginal action is patience, not a forced order.
+    disconfirming_evidence: Customer diversification at CRDO, on-orbit ASTS economics, Neutron proof, or SPCX post-IPO valuation compression could change ranking.
+    source_ids:
+      - crdo_10k_fy2026
+      - market_quote_snapshot_2026_06_23
+    investment_implication: Preserve optionality in USD cash.
+  public_security_expression:
+    facts: The current buyable universe remains U.S.-listed common stocks and approved short-duration Treasury reserve ETFs under policy v1.1; SGOV is an ETF, not cash.
+    inferences: Tradability does not equal buy eligibility; watch, research-only, and not-tradable rows cannot receive new buys without promotion where applicable.
+    disconfirming_evidence: Broker restrictions, quote gaps, new filings, or SGOV mechanics would require private execution review.
+    source_ids:
+      - sec_event_filing_index_2026_06_23
+      - ishares_sgov_2026_06_04
+    investment_implication: No SGOV by default and no lower-status buys.
+  early_small_misunderstood_or_newly_public:
+    facts: RKLB and ASTS are still earlier and more volatile than mature AI infrastructure names; SPCX is newly public but not small; CRDO is high-quality but expensive and concentrated.
+    inferences: The no-action decision best preserves the satellite account's long-horizon optionality.
+    disconfirming_evidence: Fresh de-risking with valuation reset could justify a future capped entry.
+    source_ids:
+      - community_triage_2026_06_23
+      - new_lead_sec_filing_index_2026_06_23
+    investment_implication: Future triage continues, but no current order.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-06-23 universe scan
+        - 2026-06-23 community triage
+        - 2026-06-23 SEC event and new-lead filing indexes
+      sources_checked:
+        - community_triage_2026_06_23
+        - sec_event_filing_index_2026_06_23
+        - new_lead_sec_filing_index_2026_06_23
+      facts_verified:
+        - Existing lanes cover the current public evidence.
+        - New community leads did not complete readiness or promotion gates.
+      stale_or_missing_evidence:
+        - SPCX automated SEC ticker mapping remains incomplete and needs a durable CIK fallback.
+      confidence: medium_high
+      key_findings: No new lane or candidate promotion; PLTR and other community leads are future primary-source triage only and do not affect allocation.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - targeted SEC event index
+        - CRDO 10-K scan
+        - SPCX direct SEC filing checks
+        - RKLB VICTUS HAZE and Form 4 checks
+      sources_checked:
+        - crdo_10k_fy2026
+        - spcx_notes_8k_2026_06_22
+        - rklb_victus_haze_2026_06_22
+        - rklb_kampani_form4_2026_06_18
+      facts_verified:
+        - CRDO 10-K customer concentration is material to entry.
+        - SPCX post-IPO notes launch is material to capital-structure review.
+        - RKLB VICTUS HAZE strengthens execution evidence.
+      stale_or_missing_evidence:
+        - SPCX still needs a dedicated promotion review before buy eligibility.
+      confidence: high
+      key_findings: CRDO 10-K and SPCX post-IPO filings require review, RKLB VICTUS HAZE strengthens execution, and no unresolved filing forces an immediate trade.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - RKLB and ASTS current holding evidence
+        - RKLB VICTUS HAZE evidence
+        - refreshed market data
+      sources_checked:
+        - rklb_victus_haze_2026_06_22
+        - asts_bluebird_8_10_launch_2026_06_17
+        - market_quote_snapshot_2026_06_23
+      facts_verified:
+        - RKLB and ASTS remain mission-aligned existing holdings.
+        - Lower prices improve optionality but do not force immediate redeployment.
+      stale_or_missing_evidence:
+        - Fresh broker preview and user execution intent would be required before any real order.
+      confidence: medium_high
+      key_findings: RKLB and ASTS remain the best existing space exposures, but the bull case does not require full deployment of residual cash.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - account cash and position state
+        - active candidate valuation states
+        - SPCX and CRDO freshness reviews
+      sources_checked:
+        - market_quote_snapshot_2026_06_23
+        - spcx_notes_8k_2026_06_22
+        - crdo_10k_fy2026
+      facts_verified:
+        - Residual cash is not a sizing mandate.
+        - SPCX and CRDO remain outside buy-zone.
+      stale_or_missing_evidence:
+        - Broker SGOV mechanics and final execution conditions are user-only prerequisites.
+      confidence: high
+      key_findings: Do not force deployment after the recent RKLB and ASTS fills; SPCX, CRDO, raw leads, and broad AI infrastructure names remain blocked.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - data/account/state.yml
+        - data/account/positions.csv
+        - refreshed quote and valuation state
+      sources_checked:
+        - market_quote_snapshot_2026_06_23
+        - sec_event_filing_index_2026_06_23
+        - ishares_sgov_2026_06_04
+      facts_verified:
+        - Confirmed cash is USD 721.31 in repository records.
+        - No SGOV position is confirmed.
+        - No current public buy should mutate broker-confirmed records.
+      stale_or_missing_evidence:
+        - Live broker buying power and SGOV ETF mechanics are not repository-public facts.
+      confidence: high
+      key_findings: Confirmed cash is USD 721.31, no SGOV position is confirmed, and the default action is hold cash unless a future broker-preview cycle reopens a capped entry.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+
+decision_output:
+  status: completed_no_action
+  recommendation: hold_cash_no_trade
+  sells: none
+  buys: none
+  liquidity_reserve_action: none
+  broker_record_mutation: none
+  publication_status: public_safe_no_action
+
+quality_gate_implication:
+  repository_public_evidence_status: ready
+  watchlist_cycle_review_status: complete
+  active_filing_review_status: complete
+  allocation_blockers:
+    - no security cleared all mission, evidence, entry, opportunity-cost, and sizing gates strongly enough to force another trade after 2026-06-22 buys
+    - SGOV broker mechanics are not confirmed for reserve use
+    - future real orders require fresh broker preview and user execution instruction
+  process_gap:
+    - SPCX still needs a durable CIK/manual-alias fallback in SEC event discovery while newly public ticker exchange mapping is incomplete.
+
+readiness_sprints: []

@@ -1386,3 +1386,93 @@ sources:
     first_seen_at: 2026-06-18
     related_symbols: [OKLO]
     summary: Oklo filed a 10-Q/A whose stated purpose was an exhibit certification amendment; reviewed as immaterial to current financial and operating evidence.
+  - id: market_quote_snapshot_2026_06_23
+    title: 2026-06-23 Repository Market Refresh
+    source_type: market_data
+    url: data/market/watchlist_prices.csv
+    source_published_at: 2026-06-22
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, SPCX]
+    summary: Repository market refresh updated committed closes through 2026-06-22 and fed valuation, buy-zone, and equity-curve state for the no-action cycle.
+  - id: community_triage_2026_06_23
+    title: 2026-06-23 Public Community Triage
+    source_type: community_scan
+    url: research/discovery/runs/2026-06-23-community-triage.json
+    source_published_at: 2026-06-23
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [MU, RKLB, ASTS, SPCX, NBIS, LUNR, BE, IONQ, PLTR, FLY]
+    summary: Public no-token community triage raised monitoring priority for space, AI infrastructure, quantum, power, and new-lead names; it creates no buy or promotion eligibility by itself.
+  - id: sec_event_filing_index_2026_06_23
+    title: 2026-06-23 SEC Event Filing Index
+    source_type: sec_filing_index
+    url: research/discovery/runs/2026-06-23-sec-event-filing-index-manifest.csv
+    source_published_at: 2026-06-23
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+    summary: Targeted SEC event-filing index for current watchlist names; automated exchange mapping still skipped newly public SPCX, which was handled by direct SEC filing review.
+  - id: new_lead_sec_filing_index_2026_06_23
+    title: 2026-06-23 New-Lead SEC Filing Index
+    source_type: sec_filing_index
+    url: research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.csv
+    source_published_at: 2026-06-23
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [FNUC, NNE, NUCL, SDEV, PLTR, QBTS, QUBT, GILT]
+    summary: Supplemental primary-source skim of community and deterministic new leads; none completed discovery readiness or promotion for current allocation.
+  - id: crdo_10k_fy2026
+    title: Credo Technology FY2026 Form 10-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    source_published_at: 2026-06-15
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [CRDO]
+    summary: Credo's FY2026 10-K strengthened AI interconnect evidence while confirming high customer concentration and valuation risk that keep CRDO outside buy-zone.
+  - id: rklb_victus_haze_2026_06_22
+    title: Rocket Lab VICTUS HAZE Mission Release
+    source_type: company_ir
+    url: https://www.globenewswire.com/news-release/2026/06/22/3315647/0/en/rocket-lab-shatters-responsive-space-record-launches-u-s-space-force-victus-haze-mission-in-16-hours-42-minutes.html
+    source_published_at: 2026-06-22
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [RKLB]
+    summary: Rocket Lab announced VICTUS HAZE launch execution 16 hours and 42 minutes after notice, strengthening responsive-space evidence without forcing a new add.
+  - id: rklb_kampani_form4_2026_06_18
+    title: Rocket Lab Arjun Kampani Form 4 Exchange-Fund Contribution
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1671507/000200101126000105/xslF345X06/edgardoc.xml
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [RKLB]
+    summary: Form 4 disclosed an 88000-share exchange-fund contribution at USD 107.98; reviewed as non-blocking ownership-flow context.
+  - id: spcx_ipo_completion_8k_2026_06_15
+    title: SpaceX IPO Completion and Share-Plan 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/spaceexplorationtechnologi.htm
+    source_published_at: 2026-06-15
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [SPCX]
+    summary: Post-IPO 8-K confirms public-company and equity-plan context for SPCX but does not clear buy eligibility.
+  - id: spcx_director_8k_2026_06_17
+    title: SpaceX Director Appointment 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026043865/spaceexplorationtechnologi.htm
+    source_published_at: 2026-06-17
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [SPCX]
+    summary: Director appointment is governance context and does not change SPCX watch-only status.
+  - id: spcx_notes_8k_2026_06_22
+    title: SpaceX Senior Unsecured Notes Launch 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026044489/spcx8-kxlaunchseniornotes.htm
+    source_published_at: 2026-06-22
+    retrieved_at: 2026-06-23
+    first_seen_at: 2026-06-23
+    related_symbols: [SPCX]
+    summary: SpaceX announced an inaugural senior unsecured notes offering and disclosed intended bridge-loan repayment use of proceeds; strengthens capital-resources context but keeps SPCX entry blocked.

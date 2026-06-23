@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-23T01:15:43.054Z",
+  "as_of": "2026-06-23",
+  "source": "sec_filing_discovery_index",
+  "index_scope": "targeted_symbols",
+  "requested_symbols": [
+    "FNUC",
+    "NNE",
+    "NUCL",
+    "SDEV",
+    "PLTR",
+    "QBTS",
+    "QUBT",
+    "GILT"
+  ],
+  "output_prefix": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index",
+  "manifest_path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.csv",
+  "manifest_metadata_path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.metadata.json",
+  "profile_path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-profiles.json",
+  "scan_path": "research/discovery/runs/2026-06-23-new-lead-sec-filing-index-scan.json",
+  "manifest_sha256": "ac922c120f6ce022e7b6bfe40cd4dd87457cdc2387d47c5509610776fc555bd0",
+  "manifest_metadata_sha256": "f9e8bbd9dd6dfb293432a6c0ffc5638c29db0e431fb1a457602b85dbebba05cf",
+  "profile_sha256": "39e7121c1fdbd2ffca86db6a5f247e33709c8d8982a02e67f97458e5ced36ed0",
+  "scan_sha256": "b9fa69934362b80fe3214a3df103d963d81c5dcc288b09414a416fc256c60585",
+  "commands": [
+    {
+      "command": "node scripts/build-sec-filing-manifest.mjs --as-of 2026-06-23 --output research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.csv --metadata-output research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.metadata.json --symbols FNUC,NNE,NUCL,SDEV,PLTR,QBTS,QUBT,GILT --submissions-cache-dir research/cache/sec/submissions --request-delay-ms 100",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/build-sec-filing-profiles.mjs --as-of 2026-06-23 --manifest research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.csv --manifest-metadata research/discovery/runs/2026-06-23-new-lead-sec-filing-index-manifest.metadata.json --output research/discovery/runs/2026-06-23-new-lead-sec-filing-index-profiles.json --filing-cache-dir research/cache/sec/filings --request-delay-ms 100",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/discover-universe.mjs --dry-run --json --as-of 2026-06-23 --profile-input research/discovery/runs/2026-06-23-new-lead-sec-filing-index-profiles.json --output research/discovery/runs/2026-06-23-new-lead-sec-filing-index-scan.json --limit 30",
+      "output_checked": true
+    }
+  ],
+  "coverage": {
+    "selection_strategy": "requested_symbols",
+    "coverage_scope": "partial_requested_symbols",
+    "selected_symbol_count": 8,
+    "eligible_universe_count": 7610,
+    "manifest_row_count": 8,
+    "profile_count": 6,
+    "profile_coverage_status": "targeted_partial",
+    "profile_coverage_gap_count": 7602,
+    "profile_coverage_ratio": 0.001051,
+    "candidate_count": 30,
+    "total_match_count": 126
+  },
+  "caveats": [
+    "This index is deterministic discovery scaffolding, not buy eligibility.",
+    "Targeted-symbol indexes answer only the requested scope and must not be cited as complete SEC universe coverage.",
+    "Complete SEC universe indexes require --all and the upstream SEC submissions guardrails."
+  ]
+}
