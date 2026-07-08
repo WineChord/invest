@@ -188,6 +188,11 @@ const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
 });
 
+const compactNumberFormatter = new Intl.NumberFormat("en-US", {
+  maximumFractionDigits: 1,
+  notation: "compact",
+});
+
 const largeCurrencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
   maximumFractionDigits: 1,
@@ -366,6 +371,11 @@ function formatPlainPercent(value: number | null): string {
 function formatCompactSignedPercent(value: number | null): string {
   if (value === null) {
     return "N/A";
+  }
+
+  if (Math.abs(value) >= 1000) {
+    const prefix = value > 0 ? "+" : value < 0 ? "-" : "";
+    return `${prefix}${compactNumberFormatter.format(Math.abs(value))}%`;
   }
 
   const digits = Math.abs(value) >= 100 ? 0 : 1;
@@ -1374,6 +1384,17 @@ function accountStatusDisplayFor(
 }
 
 function readableStatusLabel(status: string): string {
+  const labels: Record<string, string> = {
+    completed_no_action: "No Action",
+    completed_with_confirmed_execution: "Confirmed",
+    expired_no_execution: "Expired",
+    local_unpublished_actionable_decision: "Embargoed",
+    superseded: "Superseded",
+  };
+  if (labels[status]) {
+    return labels[status];
+  }
+
   return status
     .split("_")
     .filter(Boolean)
@@ -3849,7 +3870,7 @@ function TradingViewPreview({ item }: { item: WatchlistItem }) {
       <summary>
         <span className="tradingview-preview-title">
           <SquareArrowOutUpRight size={14} />
-          <span>Live 1D TradingView</span>
+          <span>1D</span>
         </span>
         <span className="tradingview-preview-caption">
           {liveIntradayTradingViewCaption}
