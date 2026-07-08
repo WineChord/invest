@@ -1,5 +1,5 @@
 import { ExternalLink, FileText, History, Home, ListChecks, ShieldCheck } from "lucide-react";
-import type { LedgerEvent, OperatingRunRecord } from "../lib/portfolioData";
+import type { DecisionCoverageRow, LedgerEvent, OperatingRunRecord } from "../lib/portfolioData";
 
 interface Props {
   ledgerEvents: LedgerEvent[];
@@ -65,6 +65,7 @@ export default function OperatingRunDetailPage({
           <article className="operating-run-detail-main">
             <RunNarrativeBlock title="Analysis" value={run.analysisSummary} />
             <RunNarrativeBlock title="Decision result" value={run.decisionResult} />
+            <DecisionCoverage coverage={run.decisionCoverage} />
             <RunNarrativeBlock title="Execution boundary" value={run.executionSummary} />
             <section className="operating-run-section">
               <div className="analysis-history-heading">
@@ -173,6 +174,32 @@ export default function OperatingRunDetailPage({
         </section>
       </main>
     </div>
+  );
+}
+
+function DecisionCoverage({ coverage }: { coverage: DecisionCoverageRow[] }) {
+  if (coverage.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="operating-run-section">
+      <div className="analysis-history-heading">
+        <ListChecks size={16} />
+        <span>Symbol coverage</span>
+      </div>
+      <div className="decision-coverage-list">
+        {coverage.map((row) => (
+          <article className="decision-coverage-item" key={row.symbol}>
+            <header>
+              <strong>{row.symbol}</strong>
+              <span>{row.publicRecord}</span>
+            </header>
+            <p>{row.reason}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 

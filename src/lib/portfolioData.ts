@@ -238,6 +238,12 @@ export interface MacroOverlayData {
   eventCalendar: MacroEventRecord[];
 }
 
+export interface DecisionCoverageRow {
+  symbol: string;
+  publicRecord: string;
+  reason: string;
+}
+
 export interface OperatingRunRecord {
   runId: string;
   runDate: string;
@@ -249,6 +255,7 @@ export interface OperatingRunRecord {
   analysisSummary: string;
   decisionResult: string;
   executionSummary: string;
+  decisionCoverage: DecisionCoverageRow[];
   confirmedLedgerEventIds: string[];
   primarySymbols: string[];
   linkedDecisionPath: string;
@@ -686,6 +693,7 @@ function readOperatingRuns(): OperatingRunRecord[] {
     analysisSummary: row.analysis_summary,
     decisionResult: row.decision_result,
     executionSummary: row.execution_summary,
+    decisionCoverage: readDecisionCoverage(row.linked_decision_path),
     confirmedLedgerEventIds: splitList(row.confirmed_ledger_event_ids),
     primarySymbols: splitList(row.primary_symbols),
     linkedDecisionPath: row.linked_decision_path,
@@ -696,6 +704,57 @@ function readOperatingRuns(): OperatingRunRecord[] {
     nextReviewTrigger: row.next_review_trigger,
     notes: row.notes,
   })).sort((left, right) => right.runDate.localeCompare(left.runDate));
+}
+
+function readDecisionCoverage(relativePath: string): DecisionCoverageRow[] {
+  if (relativePath === "") {
+    return [];
+  }
+
+  const absolutePath = path.join(repositoryRoot, relativePath);
+  if (!existsSync(absolutePath)) {
+    return [];
+  }
+
+  const lines = readFileSync(absolutePath, "utf8").split(/\r?\n/);
+  const sectionStart = lines.findIndex((line) => line.trim() === "## Symbol Coverage");
+  if (sectionStart < 0) {
+    return [];
+  }
+
+  const sectionLines: string[] = [];
+  for (let index = sectionStart + 1; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (line.startsWith("## ")) {
+      break;
+    }
+    sectionLines.push(line);
+  }
+
+  return sectionLines
+    .map(parseMarkdownTableRow)
+    .filter((cells) => cells.length >= 3)
+    .filter((cells) => cells[0].toLowerCase() !== "symbol")
+    .filter((cells) => !/^:?-{3,}:?$/.test(cells[0]))
+    .map((cells) => ({
+      symbol: cells[0],
+      publicRecord: cells[1],
+      reason: cells.slice(2).join(" | "),
+    }))
+    .filter((row) => row.symbol !== "" && row.publicRecord !== "" && row.reason !== "");
+}
+
+function parseMarkdownTableRow(line: string): string[] {
+  const trimmed = line.trim();
+  if (!trimmed.startsWith("|")) {
+    return [];
+  }
+
+  return trimmed
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((cell) => cell.trim().replace(/\\\|/g, "|"));
 }
 
 function readResearchAnalysis(): ResearchAnalysisEntry[] {

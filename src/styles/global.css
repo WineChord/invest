@@ -2510,6 +2510,57 @@ td span {
   gap: 0.28rem;
 }
 
+.decision-coverage-list {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.decision-coverage-item {
+  background: rgba(238, 247, 244, 0.68);
+  border: 1px solid rgba(216, 227, 223, 0.78);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.42rem;
+  min-width: 0;
+  padding: 0.62rem;
+}
+
+.decision-coverage-item header {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem 0.55rem;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.decision-coverage-item strong {
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.decision-coverage-item span {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(216, 227, 223, 0.78);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 850;
+  line-height: 1.15;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 0.28rem 0.45rem;
+  text-transform: uppercase;
+}
+
+.decision-coverage-item p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .run-ledger-table-wrap {
   overflow-x: auto;
 }
@@ -2588,6 +2639,7 @@ td span {
 
   .operating-run-card-list,
   .operating-run-detail-grid,
+  .decision-coverage-list,
   .operating-run-index-grid {
     grid-template-columns: 1fr;
   }
