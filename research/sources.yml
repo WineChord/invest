@@ -1476,3 +1476,129 @@ sources:
     first_seen_at: 2026-06-23
     related_symbols: [SPCX]
     summary: SpaceX announced an inaugural senior unsecured notes offering and disclosed intended bridge-loan repayment use of proceeds; strengthens capital-resources context but keeps SPCX entry blocked.
+  - id: alpaca_delayed_sip_snapshot_2026_07_07
+    title: Alpaca Delayed SIP Daily Market Snapshot for 2026-07-07
+    source_type: market_data
+    url: https://alpaca.markets/docs/market-data/
+    source_published_at: 2026-07-07
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+    summary: Current-cycle fallback daily bars and delayed market snapshots used after the local Yahoo chart refresh returned HTTP 429 for confirmed holdings.
+  - id: macro_regime_snapshot_2026_07_08
+    title: Macro Regime Refresh 2026-07-08
+    source_type: repository_run
+    url: research/macro/regime-snapshots.csv
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+    summary: Repository macro refresh marked the regime data incomplete because Yahoo proxy requests for QQQ, SMH, and IWM returned HTTP 429, preserving the need for current issuer review and price discipline.
+  - id: discovery_scan_2026_07_08
+    title: Deterministic Universe Discovery Scan 2026-07-08
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-08-scan.json
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+    summary: Deterministic lane scan refreshed the public issuer lead layer for the current full operating cycle; scan output remains triage evidence only.
+  - id: community_triage_2026_07_08
+    title: Public Community Triage 2026-07-08
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-08-community-triage.json
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [MU, NBIS, SPCX, RKLB, ASTS, VRT, IREN, ALAB, LUNR, CRWV]
+    summary: Public no-token triage raised analysis priority for existing watchlist names and surfaced SNDK as a primary-source skim candidate; it does not create buy eligibility or promotion eligibility.
+  - id: sec_event_filing_index_2026_07_08
+    title: SEC Event Filing Index 2026-07-08
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-08-sec-event-filing-index-index.metadata.json
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+    summary: Supplemental event-filing index checked explicit 8-K, 6-K, 10-Q, S-4, F-4, and DEF 14A forms for the current watchlist and research universe.
+  - id: rklb_iridium_merger_2026_06_29
+    title: Rocket Lab and Iridium Merger Agreement 8-K and Joint Release
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm
+    source_published_at: 2026-06-29
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [RKLB, IRDM]
+    summary: Rocket Lab agreed to acquire Iridium for a notional USD 54 per share in cash and stock, implying about USD 8.0 billion enterprise value and adding major vertical-integration upside plus debt, dilution, regulatory, and integration risk.
+  - id: spcx_notes_closing_2026_06_26
+    title: SpaceX Senior Unsecured Notes Closing 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026045763/spcx-closing8xkjune2026.htm
+    source_published_at: 2026-06-26
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [SPCX]
+    summary: SpaceX issued USD 25.0 billion aggregate principal amount of senior unsecured notes across 2031, 2033, 2036, 2046, and 2056 maturities, strengthening capital-resources evidence while preserving leverage and governance questions for common-stock entry.
+  - id: leu_haleu_contract_2026_07_02
+    title: Centrus DOE HALEU Capacity Contract 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000162828026046801/leu-20260630.htm
+    source_published_at: 2026-07-02
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [LEU]
+    summary: Centrus disclosed a DOE HALEU enrichment-capacity contract with USD 900 million firm fixed-price milestone payments and options for additional HALEU deliveries, strengthening nuclear-fuel bottleneck evidence without clearing policy, execution, or valuation risk.
+  - id: mu_q3_fy2026_10q
+    title: Micron Q3 FY2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm
+    source_published_at: 2026-06-25
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [MU]
+    summary: Micron's latest quarterly filing keeps HBM and AI memory evidence current while reinforcing that the setup remains large-scale, ASP-sensitive, and cyclical rather than a first-choice satellite add.
+  - id: sndk_primary_skim_2026_07_08
+    title: Sandisk Primary-Source Skim
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026029401/sndk-20260403.htm
+    source_published_at: 2026-05-06
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [SNDK]
+    summary: SNDK is a real Nasdaq flash-memory issuer spun out of Western Digital, but primary-source skim shows NAND/storage cyclicality, Flash Ventures obligations, WDC secondary-sale overhang context, and no current reason to displace MU or current core candidates.
+  - id: cbrs_q1_2026_10q
+    title: Cerebras Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2021728/000162828026044981/cbrs-20260331.htm
+    source_published_at: 2026-06-24
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [CBRS]
+    summary: Cerebras' first post-IPO quarterly filing confirms real AI systems exposure while severe customer concentration and short public operating history block promotion.
+  - id: crcl_arc_token_second_closing_2026_07_02
+    title: Circle ARC Token Second Closing 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1876042/000187604226000205/crcl-20260629.htm
+    source_published_at: 2026-07-02
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [CRCL]
+    summary: Circle disclosed a second ARC token presale closing of 67.5 million tokens at USD 0.30 per token, adding programmable-money optionality but also token-economics and repayment-condition complexity.
+  - id: crwv_2032_notes_2026_06_18
+    title: CoreWeave 2032 Senior Notes 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000291/crwv-20260618.htm
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [CRWV]
+    summary: CoreWeave completed USD 1.25 billion of 9.625% senior notes and EUR 2.0 billion of 8.500% senior notes due 2032, reinforcing leverage and refinancing risk.
+  - id: iren_co_ceo_rsu_grants_2026_07_01
+    title: IREN Co-CEO RSU Grants 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000114036126027202/ef20077190_8k.htm
+    source_published_at: 2026-07-01
+    retrieved_at: 2026-07-08
+    first_seen_at: 2026-07-08
+    related_symbols: [IREN]
+    summary: IREN disclosed 9,099,328 RSUs granted to each co-CEO, adding governance and dilution scrutiny to an already financing-sensitive AI cloud and power candidate.

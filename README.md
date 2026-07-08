@@ -2,7 +2,7 @@
 
 This repository is a portable operating system for a long-term satellite investment account.
 
-The account objective is multi-decade asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin. Planned contributions are treated as available only after brokerage-side confirmation.
+The account objective is multi-decade asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin. Account records change only after brokerage-side confirmation.
 
 Public dashboard: [www.wineandchord.com/invest](https://www.wineandchord.com/invest/). It is built from this open-source repository and deployed as a static GitHub Pages project site.
 

@@ -1,0 +1,318 @@
+schema_version: 1
+run_id: 2026-07-08-full-cycle-decision
+run_date: 2026-07-08
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: private actionable conclusion withheld; rerun before any real action if material issuer evidence, quote gap, broker cash or buying-power change, broker restriction, or any RKLB Iridium financing or approval update appears
+linked_decision_or_research_note: decisions/2026-07-08-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-08-subagent-evidence-packet.yml
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:macro -- --as-of 2026-07-08
+      dry_run: false
+      output_path: research/macro/regime-snapshots.csv
+      retrieved_at: 2026-07-08
+      result_summary: Macro refresh completed with macro_data_incomplete because Yahoo proxy requests for QQQ, SMH, and IWM returned HTTP 429; macro was used only to tighten price discipline.
+    - command: npm run refresh:market -- --as-of 2026-07-08
+      dry_run: false
+      output_path: data/market/watchlist_prices.csv
+      retrieved_at: 2026-07-08
+      result_summary: Yahoo chart refresh was blocked by HTTP 429 for held symbols, so the cycle used Alpaca delayed SIP daily bars for 2026-07-07 and refreshed market files and equity curve from that fallback.
+    - command: npm run discover:universe -- --as-of 2026-07-08 --json --output research/discovery/runs/2026-07-08-scan.json
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-08-scan.json
+      output_sha256: 60cca190a7dc9b4818e7651568e169cd048c4d43e7cb3afbf6d7880627bb0425
+      retrieved_at: 2026-07-08
+      result_summary: Deterministic universe scan refreshed the broad lane-led candidate layer with 44 candidates and 57 exploratory matches; no lead displaced RKLB or ASTS.
+    - command: npm run scan:community -- --as-of 2026-07-08 --output research/discovery/runs/2026-07-08-community-scan.json
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-07-08
+      result_summary: Public no-token community scan completed with some HTTP 429s and produced lead-generation input only.
+    - command: npm run triage:community -- --as-of 2026-07-08 --scan research/discovery/runs/2026-07-08-community-scan.json --output research/discovery/runs/2026-07-08-community-triage.json
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-07-08
+      result_summary: Community triage elevated MU, NBIS, SPCX, RKLB, ASTS, VRT, IREN, CRWV, and SNDK for review, but did not create buy eligibility.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-07-08 --symbols RKLB,ASTS,CRDO,ALAB,VRT,NBIS,MU,CRWV,CRCL,LITE,CBRS,IREN,OKLO,BE,LEU,GSAT,KTOS,IONQ,LUNR,RDW,FLY,YSS,VOYG,XNDU,FN,ETN,PWR,SPCX --output-prefix research/discovery/runs/2026-07-08-sec-event-filing-index
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-08-sec-event-filing-index-scan.json
+      output_sha256: f343e08790530b7f671938153be1b0017710c551dd38ea4fb9ecf8ee2d4bdfe9
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols:
+        - RKLB
+        - ASTS
+        - CRDO
+        - ALAB
+        - VRT
+        - NBIS
+        - MU
+        - CRWV
+        - CRCL
+        - LITE
+        - CBRS
+        - IREN
+        - OKLO
+        - BE
+        - LEU
+        - GSAT
+        - KTOS
+        - IONQ
+        - LUNR
+        - RDW
+        - FLY
+        - YSS
+        - VOYG
+        - XNDU
+        - FN
+        - ETN
+        - PWR
+        - SPCX
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: Current decision required fresh event-filing coverage for existing active/watch/research symbols, not a complete SEC issuer-profile sweep.
+      retrieved_at: 2026-07-08
+      result_summary: SEC event-filing index surfaced material RKLB, SPCX, MU, IREN, CRWV, CRCL, CBRS, and LEU filings that were converted into durable freshness and filing-review records.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, event-filing index, and regulator-sourced issuer records
+      sources_or_queries:
+        - research/discovery/runs/2026-07-08-sec-event-filing-index-manifest.csv
+        - research/filings/2026-07-08-RKLB-IRIDIUM-MERGER.md
+        - research/filings/2026-07-08-MATERIAL-FILINGS-REFRESH.md
+      source_ids:
+        - sec_event_filing_index_2026_07_08
+        - rklb_iridium_merger_2026_06_29
+        - spcx_notes_closing_2026_06_26
+        - mu_q3_fy2026_10q
+        - iren_co_ceo_rsu_grants_2026_07_01
+        - crwv_2032_notes_2026_06_18
+        - crcl_arc_token_second_closing_2026_07_02
+        - cbrs_q1_2026_10q
+        - leu_haleu_contract_2026_07_02
+      retrieved_at: 2026-07-08
+      material_findings: RKLB Iridium merger strengthens strategic scope but tightens sizing; LEU improves enough for promotion review; SPCX, MU, IREN, CRWV, CRCL, and CBRS remain no-buy.
+      unavailable_or_skipped_reason:
+    - family_id: issuer_material
+      family: Company issuer materials and company-specific primary evidence
+      sources_or_queries:
+        - Rocket Lab Iridium merger 8-K
+        - ASTS BlueBird 8-10 prior launch release
+        - Centrus DOE HALEU 8-K
+      source_ids:
+        - rklb_iridium_merger_2026_06_29
+        - asts_bluebird_8_10_launch_2026_06_17
+        - leu_haleu_contract_2026_07_02
+      retrieved_at: 2026-07-08
+      material_findings: RKLB and ASTS remain the only current names requiring private allocation review; LEU is strengthened but still below promotion.
+      unavailable_or_skipped_reason:
+    - family_id: market_data
+      family: Current quote, scale context, and account valuation
+      sources_or_queries:
+        - data/market/watchlist_prices.csv
+        - data/market/company_metrics.csv
+        - data/account/equity_curve.csv
+      source_ids:
+        - alpaca_delayed_sip_snapshot_2026_07_07
+      retrieved_at: 2026-07-08
+      material_findings: RKLB and ASTS were below recent cost bases and earlier decision prices, but account concentration required the allocation conclusion to remain conservative and private.
+      unavailable_or_skipped_reason: Yahoo chart provider returned HTTP 429 for the local market refresh; broker order preview remains a user-only prerequisite.
+    - family_id: current_world_context
+      family: Macro, broad market, public attention, and current tape risk overlay
+      sources_or_queries:
+        - research/macro/regime-snapshots.csv
+        - research/discovery/runs/2026-07-08-community-triage.json
+      source_ids:
+        - macro_regime_snapshot_2026_07_08
+        - community_triage_2026_07_08
+      retrieved_at: 2026-07-08
+      material_findings: Macro proxy data was incomplete and public attention raised monitoring priority, so neither surface could relax issuer-level evidence or entry discipline.
+      unavailable_or_skipped_reason:
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listing, IPO, spinoff, and transaction evidence
+      sources_or_queries:
+        - SpaceX notes closing
+        - Rocket Lab Iridium merger
+        - SNDK primary-source skim
+      source_ids:
+        - spcx_notes_closing_2026_06_26
+        - rklb_iridium_merger_2026_06_29
+        - sndk_primary_skim_2026_07_08
+      retrieved_at: 2026-07-08
+      material_findings: RKLB transaction changes risk and opportunity cost; SPCX remains entry-blocked; SNDK is not material to current allocation.
+      unavailable_or_skipped_reason:
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lane review, public community triage, and opportunity-cost update
+      sources_or_queries:
+        - research/discovery/lanes.yml
+        - research/discovery/runs/2026-07-08-scan.json
+        - research/discovery/runs/2026-07-08-community-triage.json
+        - research/discovery/runs/2026-07-08-sec-event-filing-index-scan.json
+      source_ids:
+        - discovery_scan_2026_07_08
+        - community_triage_2026_07_08
+        - sec_event_filing_index_2026_07_08
+      retrieved_at: 2026-07-08
+      material_findings: Existing space, direct-to-device, AI infrastructure, interconnect, power, nuclear, quantum, programmable-money, and frontier-AI lanes remain sufficient; no new lane or allocation-relevant candidate was added.
+      unavailable_or_skipped_reason:
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-08
+    notes: Covered market fallback, macro refresh, deterministic universe scan, public community triage, targeted SEC event-filing index, SNDK primary-source skim, RKLB transaction review, material watchlist filing review, and full watchlist cycle review.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters:
+    - AI compute infrastructure and public cloud capacity leads
+    - space infrastructure and direct-to-device satellite leads
+    - power cooling grid nuclear quantum and optical interconnect leads
+  sampled_symbols:
+    - SNDK
+    - MU
+    - NBIS
+    - SPCX
+    - RKLB
+    - ASTS
+  false_positive_patterns:
+    - community attention without primary-source buy eligibility
+    - large-cap thematic proxies with lower satellite-account asymmetry
+    - newly public or transaction-heavy names needing promotion before allocation
+  lane_decisions:
+    - keep existing lane map unchanged
+    - keep LEU as promotion-review candidate rather than same-cycle buy
+    - keep SNDK out of current material allocation scope
+  disposition: Full-cycle lane review completed; no unknown-future lead displaced the current private allocation review set.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: []
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Launch cadence, responsive space, LEO communications, direct-to-device capacity, AI interconnect bandwidth, AI power, nuclear fuel, and AI cloud capacity remain plausible bottlenecks.
+    inferences: RKLB and ASTS remain the best current public holding expressions; LEU improved but still needs promotion; SPCX is the strongest absolute platform but not the best current entry.
+    disconfirming_evidence: RKLB merger financing deterioration, ASTS on-orbit failure, LEU contract execution failure, SPCX valuation reset, or a broad liquidity shock would force a rerun.
+    source_ids:
+      - rklb_iridium_merger_2026_06_29
+      - asts_bluebird_8_10_launch_2026_06_17
+      - leu_haleu_contract_2026_07_02
+    investment_implication: Keep unexpired action details private and preserve optionality until broker-side facts and current evidence are checked.
+  who_controls_or_removes_scarcity:
+    facts: Rocket Lab may gain Iridium network and spectrum control; ASTS controls a high-risk direct-to-device architecture; Centrus has a DOE-backed HALEU role; SpaceX controls the strongest cross-lane platform.
+    inferences: Scarcity control improved for RKLB and LEU, but only RKLB is already promoted and buy-zone-adjacent under current policy.
+    disconfirming_evidence: Approval delays, financing stress, dilution, or failed operational milestones would reduce the control thesis.
+    source_ids:
+      - rklb_iridium_merger_2026_06_29
+      - leu_haleu_contract_2026_07_02
+      - spcx_notes_closing_2026_06_26
+    investment_implication: Keep LEU and SPCX below promotion/entry eligibility in the public record and keep any current RKLB allocation conclusion private.
+  who_can_monetize_into_shareholder_value:
+    facts: RKLB has operating space execution plus a pending network acquisition; ASTS has high convexity if direct-to-device scales; MU and CRDO show strong AI infrastructure economics but with scale, cycle, or concentration drawbacks.
+    inferences: Marginal capital still favors RKLB first and ASTS second, but not at full-cash size.
+    disconfirming_evidence: Neutron delay, ASTS financing or service-economics failure, CRDO concentration worsening, or memory-cycle reversal would change ranking.
+    source_ids:
+      - alpaca_delayed_sip_snapshot_2026_07_07
+      - mu_q3_fy2026_10q
+      - crdo_10k_fy2026
+    investment_implication: Keep the private allocation conclusion conservative and withhold unexpired execution details from public records.
+  public_security_expression:
+    facts: Current policy permits U.S.-listed common stocks and approved Treasury reserve ETFs; watch, research-only, and not-tradable rows cannot receive buys without the required promotion path.
+    inferences: LEU, SPCX, SNDK, and lower-status names cannot bypass promotion or readiness gates.
+    disconfirming_evidence: Broker restrictions, quote gaps, or new filings before any private action require rerun.
+    source_ids:
+      - sec_event_filing_index_2026_07_08
+      - sndk_primary_skim_2026_07_08
+    investment_implication: Lower-status names and SGOV do not receive a published current-cycle order in this public record.
+  early_small_misunderstood_or_newly_public:
+    facts: RKLB and ASTS remain smaller and more volatile than mature AI infrastructure names; CBRS and SNDK are newly public but not yet better allocation candidates; SPCX is newly public but very large and complex.
+    inferences: The current private allocation review remains centered on existing highest-conviction holdings rather than a new candidate jump.
+    disconfirming_evidence: A thesis-preserving price reset or new primary evidence could justify future promotion review.
+    source_ids:
+      - cbrs_q1_2026_10q
+      - sndk_primary_skim_2026_07_08
+      - spcx_notes_closing_2026_06_26
+    investment_implication: Keep discovery running while withholding any unexpired allocation conclusion from committed public records.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: Evidence packet, community triage, SEC event index, watchlist, market data, and current research surfaces.
+      sources_checked:
+        - community_triage_2026_07_08
+        - discovery_scan_2026_07_08
+        - sec_event_filing_index_2026_07_08
+        - sndk_primary_skim_2026_07_08
+      facts_verified: SNDK was skimmed and not material; deterministic and community leads did not create buy eligibility.
+      stale_or_missing_evidence: No discovery lead remained a reachable allocation blocker after SNDK skim.
+      confidence: medium
+      key_findings: RKLB lower price and Iridium context remained the main opportunity-cost pressure; SNDK did not displace current candidates.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: SEC event-filing manifest, filing reviews, freshness events, valuation states, and market data.
+      sources_checked:
+        - rklb_iridium_merger_2026_06_29
+        - spcx_notes_closing_2026_06_26
+        - mu_q3_fy2026_10q
+        - iren_co_ceo_rsu_grants_2026_07_01
+        - crwv_2032_notes_2026_06_18
+        - crcl_arc_token_second_closing_2026_07_02
+        - cbrs_q1_2026_10q
+        - leu_haleu_contract_2026_07_02
+      facts_verified: Material filing blockers were identified and then recorded through reviewed freshness rows and filing-review artifacts.
+      stale_or_missing_evidence: None after the material filings refresh; broker preview remains user-only.
+      confidence: high
+      key_findings: RKLB, SPCX, MU, IREN, CRWV, CRCL, CBRS, and LEU required durable review before readiness.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: Watchlist, valuation states, market data, SEC index, RKLB review, and current filings.
+      sources_checked:
+        - rklb_iridium_merger_2026_06_29
+        - asts_bluebird_8_10_launch_2026_06_17
+        - leu_haleu_contract_2026_07_02
+        - cbrs_q1_2026_10q
+      facts_verified: RKLB remained strongest, ASTS remained most convex, and LEU improved materially but was not buy-eligible.
+      stale_or_missing_evidence: Material filings needed recording before final allocation; those records were added.
+      confidence: medium
+      key_findings: Bull case supported RKLB first, ASTS second, and LEU promotion review, with no other same-cycle buy.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: Evidence packet, market data, company metrics, RKLB review, and selected official filings.
+      sources_checked:
+        - rklb_iridium_merger_2026_06_29
+        - asts_bluebird_8_10_launch_2026_06_17
+        - spcx_notes_closing_2026_06_26
+        - mu_q3_fy2026_10q
+      facts_verified: RKLB and ASTS both retain substantial execution, financing, competition, and valuation risk.
+      stale_or_missing_evidence: Bear case preferred no new equity until further de-risking; main reconciliation chose a smaller risk-approved staged size.
+      confidence: high
+      key_findings: Do not treat lower RKLB or ASTS prices as automatic cheapness; keep any add very small.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: Account state, current positions, market data, filing reviews, and subagent conflict set.
+      sources_checked:
+        - alpaca_delayed_sip_snapshot_2026_07_07
+        - rklb_iridium_merger_2026_06_29
+        - asts_bluebird_8_10_launch_2026_06_17
+      facts_verified: Current account concentration already made a larger deployment inappropriate.
+      stale_or_missing_evidence: Broker preview and execution confirmation remain user-only prerequisites.
+      confidence: medium
+      key_findings: Allocation/risk review supported a conservative owner-only conclusion; exact unexpired order direction, sizing, timing, and price constraints are withheld from public records.
+  unresolved_conflicts: 0
+
+readiness_sprints: []

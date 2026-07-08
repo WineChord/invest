@@ -1,27 +1,27 @@
 schema_version: 1
-as_of: 2026-06-23
+as_of: 2026-07-08
 last_research_engine_run:
-  as_of: 2026-06-23
-  scope: monthly_decision_full_cycle_no_action
+  as_of: 2026-07-08
+  scope: monthly_decision_full_cycle_with_private_staged_action
   notes: >-
-    Ran the full operating cycle for the 2026-06-23 decision request, including market refresh, macro refresh, deterministic universe scan, public community triage, targeted SEC event-filing index, supplemental new-lead SEC skim, CRDO 10-K review, SPCX post-IPO notes review, RKLB VICTUS HAZE and ownership review, full watchlist cycle review, and xhigh subagent review. The result was public-safe no action: hold USD 721.31 confirmed cash, do not sell, do not buy SPCX or CRDO, and do not force another RKLB or ASTS add after the 2026-06-22 confirmed buys.
+    Ran the full operating cycle for the 2026-07-08 decision request, including confirmed deposit normalization, market-data fallback after Yahoo 429, macro refresh, deterministic universe scan, public community triage, SEC event-filing index, SNDK primary-source skim, RKLB Iridium merger review, material watchlist filing refresh, full watchlist cycle review, and independent xhigh reviewers. The public-safe record keeps unexpired actionable order direction, timing, sizing, and price constraints outside committed files.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current for the 2026-06-23 decision after fresh market, macro, discovery, community, SEC event, new-lead, CRDO 10-K, SPCX post-IPO notes, and RKLB VICTUS HAZE review. The engine is ready to recommend buys if gates pass, but this cycle's resolved decision is hold cash/no trade because no security cleared mission, evidence, entry, opportunity-cost, and sizing gates strongly enough to force another trade after the confirmed 2026-06-22 buys.
+  reason: Repository-public research coverage is current for the 2026-07-08 decision after fresh market, macro, discovery, community, SEC event, material filing, valuation, buy-zone, watchlist-cycle, and xhigh review updates. The engine is ready for a private owner-only allocation conclusion if gates pass, while committed public surfaces withhold any unexpired order direction, timing, sizing, and price constraints.
   user_only_execution_prerequisites:
-    - broker cash and buying-power confirmation still showing at least the recorded confirmed 721.31 USD before any future real order
+    - broker cash and buying-power confirmation still showing at least the recorded confirmed 1609.31 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
-    - use limit orders only; do not use market orders or chase above the private cap if the next regular-session quote moves
-    - confirmed 2026-06-22 RKLB and ASTS execution details are delayed redacted historical account records after publication-policy embargo and sensitive-field review; future real orders still require fresh broker confirmation
-    - do not execute if new material issuer evidence, broker restriction, or a large quote gap appears before order entry
-    - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, bridge-loan refinancing, and xAI/X exposure
+    - private order-entry constraints remain outside the committed public record until the publication embargo clears
+    - do not rely on the committed public record as executable order guidance
+    - do not buy LEU without a fresh promotion review despite the DOE HALEU contract
+    - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-06-23
-  discovery_lane_map_as_of: 2026-06-23
+  universe_scan_as_of: 2026-07-08
+  discovery_lane_map_as_of: 2026-07-08
   watchlist_symbols: 30
   watchlist_symbols_with_current_cycle_review: 30
   watchlist_symbols_missing_current_cycle_review: 0
@@ -34,10 +34,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 4
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-06-23-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-06-23-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-06-23-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-06-23-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-08-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-08-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-08-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-08-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -113,4 +113,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts and final execution instructions are listed as future execution prerequisites rather than making the repository not ready. Material incubating candidates must also have dashboard-facing research-only coverage, not just a hidden note. Discovery lane readiness means the current lane map has been reviewed, and watchlist readiness means every non-removed watchlist row has a current cycle review rather than relying on stale priority or status memory. The 2026-06-23 run confirmed that RKLB VICTUS HAZE strengthens execution, CRDO FY2026 10-K strengthens but concentrates the interconnect thesis, and SPCX post-IPO notes strengthen coverage while keeping entry blocked. The resolved decision is hold cash/no trade; no broker-confirmed account record changed.
+  Ready means the repository-public research state has no unresolved repository-work or publicly reachable evidence blocker. User-only broker facts, broker previews, final execution instructions, and exact unexpired order details remain private execution prerequisites rather than public dashboard content. The 2026-07-08 run reconciled subagent disagreement by keeping the private conclusion conservative and withholding unexpired execution details from committed surfaces.
