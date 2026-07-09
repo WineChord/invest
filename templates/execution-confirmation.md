@@ -37,6 +37,8 @@ notes:
 
 Use streamlined trade defaulting when the user provides broker-confirmed execution evidence or a clear filled-trade statement and does not indicate a broker/account change. The goal is to finish the ledger update after one user-provided evidence packet instead of asking for repetitive administrative fields.
 
+A broker order-status screenshot is sufficient broker-confirmed execution evidence when it visibly shows the non-defaultable trade facts below. In that case, do not ask the user to separately confirm that the order really filled or to restate defaultable administrative fields. Convert the screenshot evidence into normalized, redacted repository records and leave the raw screenshot outside the repository.
+
 Non-defaultable trade facts:
 
 - the trade was actually filled or completed;

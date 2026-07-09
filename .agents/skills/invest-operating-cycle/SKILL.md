@@ -54,6 +54,7 @@ Use the relevant template under `templates/`:
 - Never execute trades.
 - Never mutate broker-confirmed account records without the required execution confirmation fields.
 - Do not infer broker cash, cost basis, positions, or trade economics from recommendations, screenshots without filled execution details, or market prices.
+- Treat a broker order-status screenshot with filled status, side, symbol, quantity, fill price, and trade date or broker timestamp as a complete trade evidence packet; do not ask for a second confirmation of defaultable fields.
 - For confirmed deposits and filled U.S.-listed stock or ETF trades, use the streamlined defaulting rules in `templates/execution-confirmation.md` for repetitive broker/account, currency, redacted confirmation alias, standard settlement, zero-fee, and timestamp fields instead of asking the user again.
 - Keep deterministic commands, durable file edits, account-state reconstruction, validation, commits, pushes, and final synthesis in the main agent.
 - Keep the repository clone-portable; do not commit secrets, local-only paths, caches, generated scratch artifacts, raw broker documents, screenshots, account numbers, full confirmation IDs, full order IDs, cookies, tokens, or private cache payloads.

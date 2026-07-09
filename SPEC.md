@@ -1086,6 +1086,8 @@ trade_date:
 
 `average_price` may be computed from broker-reported fills when the evidence provides fill quantities and prices. It must never be computed from market quotes, recommendation prices, bid/ask/last prices, or decision notes.
 
+A broker order-status screenshot counts as a complete trade confirmation evidence packet when it visibly shows `filled_or_completed`, `side`, `symbol`, `quantity`, `average_price` or broker-reported fills, and `trade_date` or a broker timestamp that clearly identifies the trade date. When those facts are visible and the user does not indicate a broker or account change, the agent must not ask for a second confirmation merely because the evidence arrived as a screenshot. The normalized repository record must still redact broker identifiers and exclude the raw screenshot.
+
 For deposits, the minimum non-defaultable confirmation fact is the confirmed amount. The normalized deposit row stores:
 
 ```yaml
@@ -1098,7 +1100,7 @@ deposit_available_date:
 created_at:
 ```
 
-Defaulting rule: when the user explicitly confirms a deposit is posted or a trade was filled and does not indicate a broker/account change, the agent should fill repetitive administrative fields from repository context rather than asking again.
+Defaulting rule: when the user explicitly confirms a deposit is posted, states that a trade was filled, or provides a broker order-status screenshot with the complete non-defaultable trade facts above, and does not indicate a broker/account change, the agent should fill repetitive administrative fields from repository context rather than asking again.
 
 For deposits, use the latest confirmed ledger `broker` and `account_alias`, a stable redacted `confirmation_id` of the form `user-confirmed-YYYY-MM-DD-AMOUNT-deposit`, `USD` unless another currency is stated, the user-stated available date or current confirmation date as `deposit_available_date`, and the current local timestamp as `created_at`. Notes must say default deposit fields were used.
 
