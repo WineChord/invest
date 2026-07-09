@@ -1,29 +1,29 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
-ALAB,382.8900,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-ASTS,74.2100,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429. Confirmed holding.
-BE,269.5700,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-CBRS,176.6100,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-CRCL,65.1500,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-CRDO,246.4000,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-CRWV,83.5300,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-ETN,395.6800,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-FLY,25.6600,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-FN,468.4800,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-GSAT,80.1100,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-IONQ,45.3600,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-IREN,39.8150,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-KTOS,50.3400,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-LEU,165.6400,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-LITE,698.9100,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-LUNR,17.8500,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-MU,938.3800,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-NBIS,195.1900,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-OKLO,47.9000,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-PWR,656.7900,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-RDW,10.2100,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-RKLB,83.4100,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429. Confirmed holding.
-SPCX,149.4700,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-VOYG,31.8900,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-VRT,305.5800,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-XNDU,11.3000,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
-YSS,22.9200,USD,2026-07-07,Alpaca delayed SIP snapshot,2026-07-08T01:29:34Z,Current-cycle fallback close from Alpaca delayed SIP after Yahoo chart returned HTTP 429.
+ALAB,393.1600,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+ASTS,74.9500,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh for confirmed holding.
+BE,254.2900,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+CBRS,181.7200,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+CRCL,64.0700,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+CRDO,258.6900,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+CRWV,90.0000,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+ETN,399.5600,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+FLY,25.8800,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+FN,480.0700,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+GSAT,79.8500,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+IONQ,45.0800,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+IREN,43.0050,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+KTOS,50.3800,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+LEU,166.4700,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+LITE,707.1000,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+LUNR,17.0200,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+MU,948.8000,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+NBIS,216.4800,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+OKLO,47.2800,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+PWR,666.3300,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+RDW,10.5800,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+RKLB,83.3500,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh for confirmed holding.
+SPCX,148.3000,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+VOYG,34.0900,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+VRT,317.8100,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+XNDU,11.2100,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
+YSS,21.0000,USD,2026-07-08,Yahoo Finance chart,2026-07-09T06:58:44.845Z,Automated daily close refresh from committed price history.
