@@ -1,3 +1,3 @@
 symbol,asset_type,exchange,quantity,average_cost,cost_basis,currency,first_trade_date,last_trade_date,notes
-ASTS,common_stock,Nasdaq,7,81.16,568.11,USD,2026-06-05,2026-06-22,Confirmed buys from 2026-06-05; 2026-06-12; and 2026-06-22 ledger events.
-RKLB,common_stock,Nasdaq,13,105.74,1374.58,USD,2026-06-05,2026-06-22,Confirmed buys from 2026-06-05; 2026-06-12; and 2026-06-22 ledger events.
+ASTS,common_stock,Nasdaq,11,78.65,865.11,USD,2026-06-05,2026-07-08,Confirmed buys from 2026-06-05; 2026-06-12; 2026-06-22; and 2026-07-08 ledger events.
+RKLB,common_stock,Nasdaq,17,100.08,1701.31,USD,2026-06-05,2026-07-08,Confirmed buys from 2026-06-05; 2026-06-12; 2026-06-22; and 2026-07-08 ledger events.

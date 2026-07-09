@@ -4,19 +4,27 @@
 request_type: monthly_decision_full_cycle
 policy_version: v1.1
 decision_date: 2026-07-08
-publication_status: local_unpublished_actionable_decision
+publication_status: public_safe_historical_record
 contains_actionable_trading_content: false
-private_actionable_conclusion: withheld_under_publication_policy_until_execution_cancellation_expiry_or_no_action
-confirmed_cash: 1609.31
-confirmed_positions: ASTS 7 shares; RKLB 13 shares
+private_actionable_conclusion: converted_to_confirmed_historical_execution_after_user_broker_screenshot_evidence
+confirmed_cash: 985.58
+confirmed_positions: ASTS 11 shares; RKLB 17 shares
 market_data_basis: Alpaca delayed SIP daily bars for 2026-07-07, retrieved 2026-07-08
+execution_confirmation_basis: redacted user-provided broker screenshots for filled ASTS and RKLB buy orders on 2026-07-08
 ```
 
-This note is the public-safe repository record for the 2026-07-08 full operating cycle. Any unexpired order-specific recommendation, timing, sizing, share count, and price constraint is intentionally withheld from the committed record under `PUBLICATION_POLICY.md`.
+This note is the public-safe repository record for the 2026-07-08 full operating cycle and the later user-confirmed historical execution update. Raw broker screenshots, full order numbers, and full confirmation identifiers are not committed. The execution details below are delayed, redacted, historical account records, not current instructions for public readers.
 
 ## Account Update
 
-The user confirmed an additional deposit available in the brokerage account. The repository recorded it as `2026-07-08-deposit-001` using the default deposit fields allowed by `templates/execution-confirmation.md`. Confirmed cash is now USD 1609.31. Confirmed positions are unchanged: 7 shares of ASTS and 13 shares of RKLB.
+The user confirmed an additional deposit available in the brokerage account. The repository recorded it as `2026-07-08-deposit-001` using the default deposit fields allowed by `templates/execution-confirmation.md`.
+
+The user later provided broker screenshot evidence showing two filled buy orders on 2026-07-08:
+
+- `2026-07-08-buy-asts-001`: ASTS buy, 4 shares filled at USD 74.25, limit USD 74.31, Day Only, filled 12:06 PM ET.
+- `2026-07-08-buy-rklb-001`: RKLB buy, 4 shares filled at USD 81.6828, limit USD 81.71, Day Only, filled 12:06 PM ET.
+
+After recording the deposit and both confirmed fills, confirmed cash is USD 985.58. Confirmed positions are 11 shares of ASTS and 17 shares of RKLB.
 
 ## Freshness And Data Coverage
 
@@ -26,16 +34,16 @@ The full-cycle scan refreshed deterministic universe discovery, public community
 
 ## Decision Result
 
-The private actionable conclusion is withheld from this committed record. The public evidence posture is that RKLB and ASTS were the only existing holdings requiring private allocation review, while exact order direction, timing, share count, price constraint, and sizing are not published. RKLB's Iridium transaction strengthens bottleneck control but also adds debt, dilution, integration, regulatory, and management-focus risk. ASTS keeps direct-to-device convexity, while commercial service, financing, and competition remain binary.
+The original private actionable conclusion has been converted into confirmed historical account records after broker-side execution evidence. RKLB and ASTS were the only holdings that received new capital. RKLB's Iridium transaction strengthened bottleneck control but also added debt, dilution, integration, regulatory, and management-focus risk, which kept the executed add small. ASTS kept direct-to-device convexity, while commercial service, financing, and competition remained binary, which kept the executed add small as well.
 
-The committed public record does not publish any sell order, SGOV order, or lower-status equity order.
+No sell order, SGOV order, or lower-status equity order was executed or recorded.
 
 ## Symbol Coverage
 
 | Symbol | Public-safe cycle record | Reason |
 | --- | --- | --- |
-| RKLB | Private action assessment withheld | The Iridium merger gives Rocket Lab a direct operating network, spectrum, subscribers, and service-revenue layer that could make it a more complete space infrastructure company. The same deal adds USD-scale financing, stock issuance, approval, and integration risk. |
-| ASTS | Private action assessment withheld | BlueBird 8-10 launch success keeps the direct-to-device thesis alive and the lower price improves convexity, but on-orbit deployment, commercial economics, financing, dilution, and Starlink/SpaceX competition remain material risks. |
+| RKLB | Confirmed historical buy | The Iridium merger gives Rocket Lab a direct operating network, spectrum, subscribers, and service-revenue layer that could make it a more complete space infrastructure company. The same deal adds USD-scale financing, stock issuance, approval, and integration risk, so the confirmed add was limited to 4 shares. |
+| ASTS | Confirmed historical buy | BlueBird 8-10 launch success keeps the direct-to-device thesis alive and the lower price improves convexity, but on-orbit deployment, commercial economics, financing, dilution, and Starlink/SpaceX competition remain material risks, so the confirmed add was limited to 4 shares. |
 | SPCX | Entry blockers remain | SpaceX remains strategically strongest in absolute business quality, but public common-stock entry is blocked by valuation, controlled-company/governance complexity, xAI/X exposure, float and lockup uncertainty, and new senior-notes leverage. |
 | CRDO | Entry blockers remain | FY2026 10-K and AI interconnect evidence remain strong, but customer concentration and valuation still leave too little margin of safety for this satellite account. |
 | ALAB | Entry blockers remain | High-quality AI connectivity platform, but current valuation and hyperscaler concentration leave little room for execution error. |
@@ -67,4 +75,4 @@ The committed public record does not publish any sell order, SGOV order, or lowe
 
 ## Publication Boundary
 
-The private actionable conclusion has an internal validity window and is not represented by this committed note. Rerun the decision if material issuer evidence, market pricing, broker cash, settlement constraints, or account restrictions change before any real order. Public release of exact order details requires execution, cancellation, expiry, or explicit no-action confirmation plus the sensitive-field review required by `PUBLICATION_POLICY.md`.
+The exact order details in this committed note are historical confirmed execution records after the publication-policy embargo and sensitive-field review cleared. They are not current order guidance. Rerun the decision before any future real order if material issuer evidence, market pricing, broker cash, settlement constraints, or account restrictions change.

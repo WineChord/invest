@@ -5,9 +5,34 @@ request_type: monthly_decision_full_cycle
 policy_version: v1.1
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 operator: codex
-validity_window: private actionable conclusion withheld; rerun before any real action if material issuer evidence, quote gap, broker cash or buying-power change, broker restriction, or any RKLB Iridium financing or approval update appears
+validity_window: historical execution has been recorded from user-confirmed broker evidence; rerun before any future real action if material issuer evidence, quote gap, broker cash or buying-power change, broker restriction, or any RKLB Iridium financing or approval update appears
 linked_decision_or_research_note: decisions/2026-07-08-monthly-decision.md
 subagent_evidence_packet_path: research/discovery/runs/2026-07-08-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_with_confirmed_execution
+  confirmation_source: redacted user-provided broker screenshots
+  confirmed_ledger_event_ids:
+    - 2026-07-08-deposit-001
+    - 2026-07-08-buy-asts-001
+    - 2026-07-08-buy-rklb-001
+  trade_date: 2026-07-08
+  settlement_date: 2026-07-09
+  confirmed_buys:
+    - symbol: ASTS
+      quantity: 4
+      average_price: 74.25
+      gross_amount: 297.00
+      fill_time: 12:06 PM ET
+    - symbol: RKLB
+      quantity: 4
+      average_price: 81.6828
+      gross_amount: 326.73
+      fill_time: 12:06 PM ET
+  resulting_confirmed_cash: 985.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  sensitive_field_review_status: passed
+  notes: Raw screenshots and full order numbers are not committed; repository records use redacted aliases only.
 
 source_coverage:
   deterministic_commands:
