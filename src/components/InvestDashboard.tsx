@@ -837,6 +837,17 @@ export default function InvestDashboard({ data }: Props) {
   const isDemo = mode === "demo";
   const accountStatus = accountStatusDisplayFor(activeData, isDemo);
   const nextMarketColorScheme = oppositeMarketColorScheme(marketColorScheme);
+  const equityValuationDate = activeData.equityCurve.at(-1)?.date ?? "pending";
+  const hasValuationLag =
+    equityValuationDate !== "pending" &&
+    activeData.accountState.asOf !== "" &&
+    equityValuationDate < activeData.accountState.asOf;
+  const equityMetricLabel = hasValuationLag
+    ? "Last valued equity"
+    : "Total equity";
+  const snapshotLabel = hasValuationLag
+    ? `Account ${activeData.accountState.asOf} · valuation ${equityValuationDate}`
+    : `Snapshot ${activeData.accountState.asOf || "pending"}`;
 
   useEffect(() => {
     setMarketColorScheme(readInitialMarketColorScheme());
@@ -934,7 +945,7 @@ export default function InvestDashboard({ data }: Props) {
             />
             <StatusPill
               icon={<Database size={16} />}
-              label={`Snapshot ${activeData.accountState.asOf || "pending"}`}
+              label={snapshotLabel}
               tone="neutral"
             />
           </div>
@@ -945,7 +956,7 @@ export default function InvestDashboard({ data }: Props) {
         <section className="metric-grid" aria-label="Portfolio summary">
           <MetricCard
             icon={<Wallet size={20} />}
-            label="Total equity"
+            label={equityMetricLabel}
             value={formatCompactCurrency(metrics.totalEquity)}
           />
           <MetricCard
@@ -1000,7 +1011,7 @@ export default function InvestDashboard({ data }: Props) {
                 value={formatCurrency(metrics.investedCapital)}
               />
               <BalanceRow
-                label="Total equity"
+                label={equityMetricLabel}
                 value={formatCurrency(metrics.totalEquity)}
               />
               <AccountStatusCard status={accountStatus} />

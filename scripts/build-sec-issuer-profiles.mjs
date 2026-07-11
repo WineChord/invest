@@ -421,30 +421,38 @@ async function loadSubmission(company, options) {
     };
   }
   const cacheFile = path.join(options.submissionsCacheDir ?? "", `CIK${cik}.json`);
+  let staleCache = false;
   if (options.submissionsCacheDir !== undefined && existsSync(cacheFile)) {
-    submissionsCacheStats.hits += 1;
     const cacheFreshness = validateCacheFreshness(cacheFile, options);
-    const content = readFileSync(cacheFile, "utf8");
-    const submissions = parseAndValidateSubmission({
-      company,
-      content,
-      sourceLabel: cacheFile,
-    });
-    return {
-      ledgerEntry: submissionLedgerEntry({
-        cacheAgeDays: cacheFreshness.cacheAgeDays,
-        cacheObservedAt: cacheFreshness.cacheObservedAt,
-        cacheStatus: "cache_hit",
-        cik,
+    if (!cacheFreshness.stale) {
+      submissionsCacheStats.hits += 1;
+      const content = readFileSync(cacheFile, "utf8");
+      const submissions = parseAndValidateSubmission({
+        company,
         content,
-        fetchedAt: "",
-        sourceUrl,
-        symbol,
-      }),
-      submissions,
-    };
+        sourceLabel: cacheFile,
+      });
+      return {
+        ledgerEntry: submissionLedgerEntry({
+          cacheAgeDays: cacheFreshness.cacheAgeDays,
+          cacheObservedAt: cacheFreshness.cacheObservedAt,
+          cacheStatus: "cache_hit",
+          cik,
+          content,
+          fetchedAt: "",
+          sourceUrl,
+          symbol,
+        }),
+        submissions,
+      };
+    }
+    if (options.cacheOnly) {
+      throw staleSubmissionsCacheError(cacheFile, cacheFreshness, options);
+    }
+    submissionsCacheStats.misses += 1;
+    staleCache = true;
   }
-  if (options.submissionsCacheDir !== undefined) {
+  if (options.submissionsCacheDir !== undefined && !existsSync(cacheFile)) {
     submissionsCacheStats.misses += 1;
   }
   if (options.cacheOnly) {
@@ -472,7 +480,11 @@ async function loadSubmission(company, options) {
     ledgerEntry: submissionLedgerEntry({
       cacheAgeDays: 0,
       cacheObservedAt: generatedAt,
-      cacheStatus: options.submissionsCacheDir === undefined ? "network_fetch" : "cache_miss_fetched",
+      cacheStatus: options.submissionsCacheDir === undefined
+        ? "network_fetch"
+        : staleCache
+          ? "stale_cache_refetched"
+          : "cache_miss_fetched",
       cik,
       content: ledgerContent,
       fetchedAt: generatedAt,
@@ -575,13 +587,15 @@ function validateCacheFreshness(file, options) {
     cacheObservedAt,
     retrievedAt,
   });
-  if (cacheAgeDays > options.maxSubmissionsCacheAgeDays) {
-    throw new Error(`Cached SEC submissions file ${file} is stale for ${retrievedAt}: age ${cacheAgeDays} days exceeds max ${options.maxSubmissionsCacheAgeDays}`);
-  }
   return {
     cacheAgeDays,
     cacheObservedAt,
+    stale: cacheAgeDays > options.maxSubmissionsCacheAgeDays,
   };
+}
+
+function staleSubmissionsCacheError(file, cacheFreshness, options) {
+  return new Error(`Cached SEC submissions file ${file} is stale for ${retrievedAt}: age ${cacheFreshness.cacheAgeDays} days exceeds max ${options.maxSubmissionsCacheAgeDays}`);
 }
 
 function cacheAgeDaysFor({

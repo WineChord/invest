@@ -454,8 +454,8 @@ async function loadFilingContent({
     };
   }
   const cacheFile = filingCacheFile(sourceUrl);
+  let staleCache = false;
   if (options.filingCacheDir !== undefined && existsSync(cacheFile)) {
-    filingCacheStats.hits += 1;
     const content = readFileSync(cacheFile, "utf8");
     const cacheMetadata = validateFilingCacheMetadata({
       cacheFile,
@@ -463,21 +463,29 @@ async function loadFilingContent({
       options,
       sourceUrl,
     });
-    return {
-      content,
-      ledgerEntry: filingLedgerEntry({
-        cacheAgeDays: cacheMetadata.cacheAgeDays,
-        cacheObservedAt: cacheMetadata.fetchedAt,
-        cacheStatus: "cache_hit",
-        cik,
+    if (!cacheMetadata.stale) {
+      filingCacheStats.hits += 1;
+      return {
         content,
-        fetchedAt: "",
-        sourceUrl,
-        symbol,
-      }),
-    };
+        ledgerEntry: filingLedgerEntry({
+          cacheAgeDays: cacheMetadata.cacheAgeDays,
+          cacheObservedAt: cacheMetadata.fetchedAt,
+          cacheStatus: "cache_hit",
+          cik,
+          content,
+          fetchedAt: "",
+          sourceUrl,
+          symbol,
+        }),
+      };
+    }
+    if (options.cacheOnly) {
+      throw staleFilingCacheError(cacheFile, cacheMetadata, options);
+    }
+    filingCacheStats.misses += 1;
+    staleCache = true;
   }
-  if (options.filingCacheDir !== undefined) {
+  if (options.filingCacheDir !== undefined && !existsSync(cacheFile)) {
     filingCacheStats.misses += 1;
   }
   if (options.cacheOnly) {
@@ -502,7 +510,11 @@ async function loadFilingContent({
     ledgerEntry: filingLedgerEntry({
       cacheAgeDays: 0,
       cacheObservedAt: generatedAt,
-      cacheStatus: options.filingCacheDir === undefined ? "network_fetch" : "cache_miss_fetched",
+      cacheStatus: options.filingCacheDir === undefined
+        ? "network_fetch"
+        : staleCache
+          ? "stale_cache_refetched"
+          : "cache_miss_fetched",
       cik,
       content,
       fetchedAt: generatedAt,
@@ -566,13 +578,15 @@ function validateFilingCacheMetadata({
     cacheObservedAt: fetchedAt,
     retrievedAt,
   });
-  if (cacheAgeDays > options.maxFilingCacheAgeDays) {
-    throw new Error(`Cached SEC filing file ${cacheFile} is stale for ${retrievedAt}: age ${cacheAgeDays} days exceeds max ${options.maxFilingCacheAgeDays}`);
-  }
   return {
     cacheAgeDays,
     fetchedAt,
+    stale: cacheAgeDays > options.maxFilingCacheAgeDays,
   };
+}
+
+function staleFilingCacheError(cacheFile, cacheMetadata, options) {
+  return new Error(`Cached SEC filing file ${cacheFile} is stale for ${retrievedAt}: age ${cacheMetadata.cacheAgeDays} days exceeds max ${options.maxFilingCacheAgeDays}`);
 }
 
 function cacheAgeDaysFor({

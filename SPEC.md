@@ -198,7 +198,7 @@ date,total_market_value,cash,total_equity,cumulative_deposits,
 total_return_pct,period_return_pct,notes
 ```
 
-The equity curve is a valuation snapshot series, not a trade ledger and not a broker statement. It can be updated from confirmed positions, confirmed cash, and timestamped market prices without changing broker-confirmed account records.
+The equity curve is a valuation snapshot series, not a trade ledger and not a broker statement. It can be updated from confirmed positions, confirmed cash, and timestamped market prices without changing broker-confirmed account records. A market-close snapshot must never combine a price date with account state from a later date; when confirmed account state is newer than the latest available close, leave the valuation gap until a same-date-or-later market close exists.
 
 Snapshot cadence policy:
 
@@ -682,7 +682,7 @@ Purpose: detect evidence changes between monthly decisions, so the system does n
 
 Monitor at minimum:
 
-- SEC filings: 10-K, 10-Q, 20-F, 6-K, 8-K, S-1, F-1, 424B, DEF 14A, 13D, 13G, Form 4 when relevant, and material amendments.
+- SEC filings: 10-K, 10-Q, 20-F, 6-K, 8-K, S-1, F-1, 424B, DEF 14A, DEFA14A, 13D, 13G, Form 3, Form 4, Form 144, Form D, S-8, and material amendments. The standard event-filing selector is supplemented during material decisions by a submissions-delta review so omitted ownership, compensation, financing, and private-offering forms cannot be mistaken for an issuer with no new events.
 - Company IR: earnings releases, shareholder letters, presentations, transcripts when available, guidance, product launches, investor days, and press releases.
 - Capital structure: share issuance, warrants, convertibles, debt, covenants, shelf registrations, ATM programs, insider selling, and stock-based compensation.
 - Operating evidence: revenue growth, gross margin, operating margin, free cash flow, backlog, RPO, bookings, customer concentration, retention, capacity, launch cadence, production milestones, regulatory approvals, and contract awards.

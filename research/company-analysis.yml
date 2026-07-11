@@ -671,3 +671,147 @@ entries:
     risk_watch: Project estimate risk, labor availability and cost, weather and seasonality, MSA backlog softness, utility capex cyclicality, DSI integration, and large-cap asymmetry limits.
     next_check: Next quarterly report, remaining performance obligation or backlog update, large-load data-center award, utility capex change, DSI integration update, or price dislocation.
     source_path: research/2026-06-08-power-industrials-triage.md
+  - id: 2026-07-11-rklb-ownership-entry-review
+    symbol: RKLB
+    analyzed_at: "2026-07-11"
+    analysis_type: full_cycle_update
+    policy_version: v1.1
+    title: Ownership and concentration update
+    stance: A-
+    summary: Rocket Lab remains the strongest execution-led public space platform, but a large CEO-trust sale, Iridium integration and financing risk, an approximately 75-times-sales valuation, and a 34% account weight make the current decision hold with no add.
+    upside_path: Compound Electron, space systems, Neutron, defense missions, and a successfully integrated Iridium network into a broader space infrastructure platform.
+    risk_watch: Iridium financing and approvals, integration, Neutron delay, low-price equity issuance, margin and backlog conversion, insider overhang, and account concentration.
+    next_check: Iridium financing or approval update, Neutron update, material equity issuance, or price dislocation.
+    source_path: research/filings/2026-07-11-MATERIAL-FILINGS-REFRESH.md
+  - id: 2026-07-11-asts-concentration-review
+    symbol: ASTS
+    analyzed_at: "2026-07-11"
+    analysis_type: full_cycle_update
+    policy_version: v1.1
+    title: Position concentration update
+    stance: A-
+    summary: ASTS retains exceptional direct-to-device upside after BlueBird launch progress, but pre-scale revenue, financing, on-orbit, regulatory, and competition risk plus a 20% account weight require hold with no add.
+    upside_path: Establish global satellite broadband to ordinary phones through MNO distribution and regulated commercial service.
+    risk_watch: On-orbit performance, continuous coverage, MNO economics, spectrum and regulatory approvals, constellation financing, dilution, and Starlink competition.
+    next_check: On-orbit performance, commercial service, financing, regulatory, or competition update.
+    source_path: decisions/2026-07-11-monthly-decision.md
+  - id: 2026-07-11-be-freeze
+    symbol: BE
+    analyzed_at: "2026-07-11"
+    analysis_type: status_review
+    policy_version: v1.1
+    title: Accounting and scandium dispute freeze
+    stance: B-
+    summary: Bloom remains relevant to onsite power scarcity, but an unquantified response to accounting, terminal-customer, backlog, and scandium-supply allegations plus an already extreme valuation require frozen status and no new capital.
+    upside_path: Reopen only if Bloom proves diversified supply, terminal-customer deployments, auditable backlog conversion, and attractive cash economics.
+    risk_watch: Project-finance affiliates, revenue quality, backlog versus RPO, scandium supply, customer concentration, service obligations, debt, and valuation.
+    next_check: Quantified scandium supply, independent accounting reconciliation, terminal-customer evidence, or Q2 2026 filing.
+    source_path: research/promotion/2026-07-11-LEU-and-BE-status-review.md
+  - id: 2026-07-11-leu-promotion
+    symbol: LEU
+    analyzed_at: "2026-07-11"
+    analysis_type: promotion_review
+    policy_version: v1.1
+    title: Active-candidate promotion
+    stance: B+
+    summary: The USD 900 million DOE contract confirms Centrus as the strongest public U.S. HALEU bottleneck candidate, but full fixed-price contract economics are not auditable until the next 10-Q, so promotion does not create a current buy zone.
+    upside_path: Convert strategic U.S. enrichment capacity into durable government and commercial HALEU economics with disciplined capital and limited dilution.
+    risk_watch: Fixed-price cost overruns, milestones, termination and appropriations, TENEX supply, Oak Ridge and Piketon capital, debt, shelf dilution, customer concentration, and contract profitability.
+    next_check: Next 10-Q full DOE contract, cost and milestone terms, TENEX update, financing plan, or price dislocation.
+    source_path: research/promotion/2026-07-11-LEU-and-BE-status-review.md
+  - id: 2026-07-11-mda-readiness
+    symbol: MDA
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: B
+    summary: MDA is the strongest new operating-quality space peer through profitable growth, scaled backlog, robotics, spacecraft, and geointelligence, but its offering, acquisition integration, bookings, and larger scale keep it research-only.
+    upside_path: Scale satellite production, robotics, geointelligence, and acquired earth-observation services into a durable space-systems platform.
+    risk_watch: Offering dilution, CLS and Blue Canyon integration, bookings, backlog conversion, margins, customer concentration, and lower extreme-upside asymmetry.
+    next_check: Next quarterly report, bookings, backlog, acquisition integration, major award, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-11-MDA-readiness.md
+  - id: 2026-07-11-gilt-readiness
+    symbol: GILT
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: B-
+    summary: Gilat offers profitable, modestly valued satellite-ground and defense communications exposure, but low margins, program timing, and Comtech integration keep it research-only.
+    upside_path: Re-rate as a scaled defense and satellite-ground communications platform after successful Comtech integration.
+    risk_watch: Low margins, project timing, acquisition integration, customer and government concentration, and limited pricing power.
+    next_check: Comtech close, integration plan, quarterly margin update, defense award, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-11-GILT-readiness.md
+  - id: 2026-07-11-iqmx-readiness
+    symbol: IQMX
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: B-
+    summary: IQM has stronger delivered-system, revenue, and backlog evidence than many public quantum peers, but its listing valuation, losses, cash burn, financing, and post-SPAC structure keep it research-only.
+    upside_path: Turn full-stack superconducting systems and deployments into a scaled European and global quantum platform.
+    risk_watch: Technical milestones, public-sector concentration, backlog conversion, cash burn, loan capacity, capitalization, controls, and valuation.
+    next_check: First public quarter, final capitalization, backlog conversion, new system delivery, or financing update.
+    source_path: research/discovery/readiness/2026-07-11-IQMX-readiness.md
+  - id: 2026-07-11-nne-readiness
+    symbol: NNE
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: NNE has liquidity and real acquired nuclear-logistics capability, but no material reactor revenue, licensing years, prototype cost, shelf capacity, and rapid share growth keep it research-only.
+    upside_path: Combine licensed logistics and successful microreactor development into a scarce nuclear deployment platform.
+    risk_watch: Licensing, technology, prototype cost, revenue timing, STS integration, share issuance, shelf use, and capital intensity.
+    next_check: Material revenue, licensing, prototype budget, STS integration, shelf use, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-11-NNE-readiness.md
+  - id: 2026-07-11-hq-readiness
+    symbol: HQ
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: Horizon adds a true compiler and multi-hardware quantum-software peer, but negligible revenue and unproved paid demand keep it research-only.
+    upside_path: Become a portable software layer that lets customers build useful applications across changing quantum hardware.
+    risk_watch: Revenue, customer adoption, hardware dependence, cash burn, resale and warrant overhang, and valuation.
+    next_check: Paid customers, software revenue, cash burn, first public quarter, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-11-HQ-readiness.md
+  - id: 2026-07-11-nucl-readiness
+    symbol: NUCL
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: NUCL provides early U.S.-listed uranium-resource optionality, but drilling, permitting, a distant PFS, and complex dilution keep it research-only.
+    upside_path: Convert Aurora resources and a nuclear platform into valuable domestic fuel-security assets if permitting and economics succeed.
+    risk_watch: Resource quality, permitting, PFS timing, commodity prices, financing, warrants, preferred conversion, resale, and S-8 dilution.
+    next_check: Drilling, permitting, PFS progress, financing, security issuance, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-11-NUCL-readiness.md
+  - id: 2026-07-11-qbts-readiness
+    symbol: QBTS
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: D-Wave has real bookings, systems, and enterprise services, but tiny revenue against a multi-billion-dollar valuation keeps it research-only.
+    upside_path: Convert annealing systems and QCaaS workloads into durable enterprise revenue before competing approaches mature.
+    risk_watch: Bookings conversion, technical limits, competition, losses, cash burn, dilution, and valuation.
+    next_check: Bookings conversion, system sale, enterprise revenue, cash burn, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-11-QBTS-readiness.md
+  - id: 2026-07-11-qubt-readiness
+    symbol: QUBT
+    analyzed_at: "2026-07-11"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Discovery readiness
+    stance: C+
+    summary: QUBT has a large cash and investment base, but negative gross profit and acquisition-driven revenue leave operating value creation unproved.
+    upside_path: Deploy capital into commercially useful photonics and quantum systems while building organic positive-gross-profit revenue.
+    risk_watch: Organic revenue, gross profit, acquisition integration, capital allocation, cash burn, dilution, and valuation.
+    next_check: Organic revenue, positive gross profit, cash deployment, integration, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-11-QUBT-readiness.md

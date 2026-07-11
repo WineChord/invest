@@ -1,14 +1,14 @@
 schema_version: 1
-as_of: 2026-07-08
+as_of: 2026-07-11
 status: funded_with_positions
 base_currency: USD
-confirmed_cash: 985.58
-settled_cash: 985.58
-buying_power: 985.58
+confirmed_cash: 1873.58
+settled_cash: 1873.58
+buying_power: 1873.58
 positions_count: 2
-last_confirmed_ledger_event_id: 2026-07-08-buy-rklb-001
-last_reconciled_with_broker_at: 2026-07-09
+last_confirmed_ledger_event_id: 2026-07-11-deposit-001
+last_reconciled_with_broker_at: 2026-07-11
 notes:
-  - User confirmed USD 888 deposits available in the brokerage account on 2026-05-30, 2026-06-12, 2026-06-18, and 2026-07-08.
+  - User confirmed USD 888 deposits available in the brokerage account on 2026-05-30, 2026-06-12, 2026-06-18, 2026-07-08, and 2026-07-11.
   - User confirmed ASTS and RKLB buy executions on 2026-06-05, 2026-06-12, 2026-06-22, and 2026-07-08 from redacted screenshot evidence.
   - Raw broker screenshots and full broker identifiers are not committed.

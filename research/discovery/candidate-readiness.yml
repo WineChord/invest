@@ -94,3 +94,185 @@ records:
     last_readiness_reviewed_at: 2026-06-12
     next_action: Run a dedicated SPCX promotion review after post-IPO trading, float, underwriter option, and lockup evidence are clearer.
     conclusion: Incubated into watchlist coverage; material opportunity-cost input but not buy-ready.
+  - symbol: MDA
+    material_to_current_allocation: true
+    affected_lanes: [space_infrastructure]
+    materiality_reason: MDA is a scaled profitable space-systems peer that materially raises the operating-quality comparison for RKLB, RDW, YSS, FLY, and VOYG.
+    blocking_scope: current_space_allocation
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-MDA-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Primary filings show strong growth, profitability, backlog, and net cash, but lower bookings, larger scale, and less extreme asymmetric upside than the best current space candidates.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor bookings, backlog conversion, margins, major awards, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: GILT
+    material_to_current_allocation: true
+    affected_lanes: [space_infrastructure]
+    materiality_reason: GILT adds a profitable small-cap ground and defense communications comparator to a space lane previously dominated by launch and spacecraft companies.
+    blocking_scope: current_space_allocation
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-GILT-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Primary evidence supports real revenue and profit plus transaction-driven scale, but low margins, project timing, and Comtech integration risk block entry.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor the Comtech close and integration, margins, defense awards, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: IQMX
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: IQMX has real delivered systems, revenue, and backlog and therefore materially changes the peer set for IONQ and XNDU.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-IQMX-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The commercial record is better than several public quantum peers, but the listing valuation, losses, loan capacity, post-SPAC capitalization, and short public record make entry unattractive.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor public-quarter reporting, final capitalization, backlog conversion, system deliveries, financing, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: NNE
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: NNE adds acquired nuclear-logistics capability and a pre-commercial microreactor peer to the nuclear lane.
+    blocking_scope: nuclear_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-NNE-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Cash and acquired logistics operations are real, but there is no material reactor revenue, the prototype budget is large, licensing is unresolved, and a USD 900 million shelf creates severe dilution capacity.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor material revenue, licensing, KRONOS spending, STS integration, shelf use, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: HQ
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: HQ is a direct quantum-software and compiler peer rather than another hardware-only candidate.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-HQ-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The technology direction and cash are real, but historical revenue was only about USD 40 thousand and paid software demand is unproved.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor public quarterly reporting, paid customers, software revenue, cash burn, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: NUCL
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: NUCL provides a newly public U.S.-listed uranium-resource and nuclear-platform comparison for fuel-security scarcity.
+    blocking_scope: nuclear_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-NUCL-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Resources and cash are real, but the company is still in drilling and permitting, its PFS is targeted for late 2027, and warrants, preferred conversions, resale registrations, and S-8 shares create substantial dilution.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor drilling, permitting, PFS progress, security issuance, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: QBTS
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: QBTS has real bookings and system/service sales and is required for a fair public quantum peer comparison.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-QBTS-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Genuine bookings and liquidity do not justify the multi-billion-dollar valuation on only USD 2.9 million of quarterly revenue.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor bookings conversion, system sales, cash burn, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: QUBT
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: QUBT's large liquidity base and early revenue make it a material quantum peer even though commercial proof is immature.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-11-QUBT-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Revenue improvement was acquisition-driven and the commercial record is too short for the current valuation despite substantial cash and investments.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Monitor organic revenue, acquisition integration, cash deployment, and price dislocations.
+    conclusion: Incubated into research-only dashboard coverage; no current buy.
+  - symbol: FNUC
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: The fuel-cycle theme is direct enough to require a documented disposition.
+    blocking_scope: nuclear_lane_completeness
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-11-FNUC-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The issuer missed an interim Form 6-K deadline and received a Nasdaq reporting deficiency notice on 2026-07-10.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Reopen only after timely financial reporting and listing compliance are restored.
+    conclusion: Rejected after review; no dashboard surface required.
+  - symbol: FJET
+    material_to_current_allocation: true
+    affected_lanes: [space_infrastructure]
+    materiality_reason: The direct launch theme required a survival-quality disposition.
+    blocking_scope: current_space_allocation
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-11-FJET-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Sub-million historical revenue, substantial going-concern doubt, weak cash, continued losses, financing dependence, and no commercial launch license make equity survival risk dominant.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Reopen only after licensing, revenue, runway, and financing quality materially improve.
+    conclusion: Rejected after review; no dashboard surface required.
+  - symbol: SDEV
+    material_to_current_allocation: false
+    affected_lanes: [programmable_money_infrastructure]
+    materiality_reason: A token-treasury keyword match needed to be separated from real programmable-money toll points.
+    blocking_scope: false_positive_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-11-SDEV-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The issuer primarily holds SKY tokens and does not control a regulated stablecoin network, reserve, compliance layer, or distribution toll point.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Do not reopen without operating toll-point economics.
+    conclusion: Rejected after review; no dashboard surface required.
+  - symbol: AGPU
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure]
+    materiality_reason: The advertised GPU contract required comparison with current AI-infrastructure candidates.
+    blocking_scope: ai_compute_lane_completeness
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-11-AGPU-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Compute revenue is negligible, token assets dominate, cash is limited, and the contract announcement does not prove funded delivery or durable utilization.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Reopen only after funded GPU delivery, recurring compute revenue, and a cleaner capital structure.
+    conclusion: Rejected after review; no dashboard surface required.
+  - symbol: TEL
+    material_to_current_allocation: false
+    affected_lanes: [direct_to_device_connectivity]
+    materiality_reason: The generic connectivity keyword produced a false-positive direct-to-device lead.
+    blocking_scope: false_positive_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-11-TEL-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: TEL is a mature diversified connector and sensor company, not an owner of satellite spectrum, constellation capacity, or mobile-network economics.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-11
+    next_action: Use only as an industry reference.
+    conclusion: Rejected as a direct-to-device candidate; no dashboard surface required.

@@ -2288,6 +2288,10 @@ td span {
   --chart-tone: var(--muted);
 }
 
+.research-page-chart > .chart-range-toolbar {
+  max-width: 100%;
+}
+
 .research-page-chart.chart-wrap-gain {
   --chart-tone: var(--gain);
 }
@@ -2333,6 +2337,66 @@ td span {
 .research-page-chart-canvas {
   height: 26.25rem;
   width: 100%;
+}
+
+.research-trade-event-rail {
+  align-items: center;
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+  min-width: 0;
+}
+
+.research-trade-event-rail > span {
+  color: var(--muted);
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.research-trade-event-rail > div {
+  display: flex;
+  gap: 0.4rem;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0.1rem 0 0.2rem;
+  scrollbar-width: thin;
+}
+
+.research-trade-event {
+  align-items: center;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 0.35rem;
+  min-height: 2rem;
+  padding: 0.28rem 0.58rem 0.28rem 0.34rem;
+}
+
+.research-trade-event strong,
+.research-trade-event small {
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.research-trade-event small {
+  color: var(--muted);
+}
+
+.research-trade-event-buy .trade-marker-label {
+  background: var(--buy);
+}
+
+.research-trade-event-sell .trade-marker-label {
+  background: var(--sell);
+}
+
+.research-trade-event-mixed .trade-marker-label {
+  background: var(--indigo);
 }
 
 .research-page-chart-empty {

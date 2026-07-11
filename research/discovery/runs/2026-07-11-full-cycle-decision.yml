@@ -1,0 +1,242 @@
+schema_version: 1
+run_id: 2026-07-11-full-cycle-decision
+run_date: 2026-07-11
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun before any future action after a material issuer event, material price move, confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-11-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-11-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_no_action
+  confirmation_source: user-confirmed deposit instruction with repository defaulting rules
+  confirmed_ledger_event_ids: [2026-07-11-deposit-001]
+  resulting_confirmed_cash: 1873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  sensitive_field_review_status: passed
+  notes: The deposit is normalized and redacted; no trade was executed or recorded.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-07-11 --no-fmp
+      dry_run: false
+      output_path: data/market/watchlist_prices.csv
+      retrieved_at: 2026-07-11
+      result_summary: Refreshed daily history and SEC metrics for all 36 tradable dashboard symbols through the 2026-07-10 close; skipped a mismatched weekend equity snapshot.
+    - command: npm run refresh:macro -- --as-of 2026-07-11
+      dry_run: false
+      output_path: research/macro/regime-snapshots.csv
+      retrieved_at: 2026-07-11
+      result_summary: Refreshed public macro series; QQQ, SMH, and IWM proxy calls returned HTTP 403, so the overlay remained macro_data_incomplete and only tightened discipline.
+    - command: npm run discover:universe -- --as-of 2026-07-11 --json --output research/discovery/runs/2026-07-11-scan.json
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-11-scan.json
+      output_sha256: a84eb5e770103670a60f333a385cf8e7cc7fd2ec8253e2d791f49ed1dff03ba9
+      retrieved_at: 2026-07-11
+      result_summary: Broad deterministic SEC-listed universe scan produced 30 candidates and 57 exploratory matches after the lane-map update and confirmed the completed material readiness work.
+    - command: npm run triage:community -- --as-of 2026-07-11 --scan research/cache/community/2026-07-11/2026-07-11-public-community-scan.json --output research/discovery/runs/2026-07-11-community-triage.json
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-07-11
+      result_summary: Sanitized public attention triage produced 230 symbol leads and 36 high-priority signals but created no eligibility by itself.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-07-11 --symbols current_watchlist --output-prefix research/discovery/runs/2026-07-11-sec-event-filing-index
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-11-sec-event-filing-index-scan.json
+      output_sha256: e9df20984735ecb13863b142ebb3712c3451d172da0a77e472fc3a9ba5df3fad
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: Current event review targeted the pre-existing dashboard universe and was supplemented with live SEC submissions and new-candidate primary filings.
+      retrieved_at: 2026-07-11
+      result_summary: Supported-form index surfaced BE and VOYG events; a supplemental submissions delta found material RKLB, IREN, FLY, YSS, CRWV, RDW, ETN, and CRDO forms.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, live submissions deltas, and regulator records
+      sources_or_queries: [research/discovery/runs/2026-07-11-sec-event-filing-index-manifest.csv, research/filings/2026-07-11-MATERIAL-FILINGS-REFRESH.md]
+      source_ids: [sec_event_filing_index_2026_07_11, rklb_ceo_form4_2026_07_08, be_8k_response_2026_07_09, leu_haleu_contract_2026_07_02]
+      retrieved_at: 2026-07-11
+      material_findings: BE freezes, RKLB becomes hold-no-add, LEU promotes but remains entry-blocked, and capital/governance events for VOYG FLY YSS IREN CRWV RDW ETN and CRDO are reviewed.
+      unavailable_or_skipped_reason: none
+    - family_id: issuer_material
+      family: Company releases and company-specific primary evidence
+      sources_or_queries: [MDA Q1, Gilat Q1 and Comtech transaction, IQM prospectus, nuclear and quantum issuer reports]
+      source_ids: [mda_q1_2026, gilt_q1_2026, gilt_comtech_2026_06_15, iqmx_424b3_2026_06_05, nne_q1_2026, hq_20f_2026, nucl_q1_2026, qbts_q1_2026, qubt_q1_2026]
+      retrieved_at: 2026-07-11
+      material_findings: Eight material new peers complete research-only readiness and five false positives receive evidence-based rejection.
+      unavailable_or_skipped_reason: none
+    - family_id: market_data
+      family: Current close, scale context, technical history, and account valuation
+      sources_or_queries: [data/market/watchlist_prices.csv, data/market/company_metrics.csv, data/account/state.yml]
+      source_ids: [yahoo_chart_close_2026_07_10]
+      retrieved_at: 2026-07-11
+      material_findings: RKLB and ASTS together are 53.83% of the account; valuations across the active and new research universe do not justify another equity purchase today.
+      unavailable_or_skipped_reason: Weekend live executable quotes are unavailable and unnecessary for a no-action decision.
+    - family_id: current_world_context
+      family: Macro, broad-market, and public-attention risk overlay
+      sources_or_queries: [research/macro/regime-snapshots.csv, research/discovery/runs/2026-07-11-community-triage.json]
+      source_ids: [macro_regime_snapshot_2026_07_11, community_triage_2026_07_11]
+      retrieved_at: 2026-07-11
+      material_findings: Macro proxy gaps and strong public attention tighten entry discipline but do not create or remove company eligibility.
+      unavailable_or_skipped_reason: QQQ SMH and IWM Yahoo proxy requests returned HTTP 403.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listing, acquisition, offering, spinoff, and transaction evidence
+      sources_or_queries: [MDA offering and CLS acquisition, IQM de-SPAC prospectus, ETN Mobility separation, FLY and YSS acquisitions]
+      source_ids: [mda_q1_2026, iqmx_424b3_2026_06_05, fjet_s1_2026]
+      retrieved_at: 2026-07-11
+      material_findings: Newly public quantum and nuclear names are real but valuation, pre-commercial risk, dilution, or reporting quality prevent allocation.
+      unavailable_or_skipped_reason: none
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, deterministic scan, community triage, and independent candidate comparison
+      sources_or_queries: [research/discovery/lanes.yml, research/discovery/runs/2026-07-11-scan.json, research/discovery/runs/2026-07-11-community-triage.json]
+      source_ids: [discovery_scan_2026_07_11, community_triage_2026_07_11]
+      retrieved_at: 2026-07-11
+      material_findings: Existing top-level lanes remain useful but gain space, nuclear, quantum, interconnect, and memory sublanes plus false-positive filters.
+      unavailable_or_skipped_reason: none
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-11
+    notes: Completed market, macro, broad SEC-listed universe, public attention, supported-form SEC index, supplemental SEC submissions, material filing, new-listing, and bottleneck-lane review.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters: [new quantum issuers and legacy pivots, nuclear fuel resources and microreactors, satellite systems and ground communications, AI compute and token-treasury hybrids]
+  sampled_symbols: [MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, FNUC, FJET, SDEV, AGPU, TEL]
+  false_positive_patterns: [generic connectivity without satellite network ownership, legacy issuer token or quantum pivots, unfunded GPU contract announcements, blank-check vehicles and ticker collisions]
+  lane_decisions: [retain stable top-level lane IDs, add machine-readable sublanes, remove BE from nuclear proxies, add negative filters for token treasuries and unfunded compute pivots]
+  disposition: Eight material peers incubated with complete dashboard readiness and five leads rejected from primary evidence; no new lead enters the buy zone.
+
+candidate_delta:
+  candidates_added: [MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, FNUC, FJET, SDEV, AGPU, TEL]
+  candidates_rejected_or_archived: [FNUC, FJET, SDEV, AGPU, TEL]
+  candidates_promoted: []
+  candidates_incubated: [MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT]
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Spacecraft production ground communications nuclear fuel logistics permits quantum system delivery power memory and interconnect capacity remain plausible structural constraints.
+    inferences: The scarce object is often qualified delivery and distribution rather than the headline technology.
+    disconfirming_evidence: Mature low-margin suppliers and token or legacy pivots can match keywords without bottleneck pricing power.
+    investment_implication: Separate economic sublanes and require direct control before adding candidates.
+    source_ids: [discovery_scan_2026_07_11, mda_q1_2026, gilt_q1_2026, leu_haleu_contract_2026_07_02]
+  who_controls_or_removes_scarcity:
+    facts: MDA and Gilat deliver systems today; LEU controls strategic enrichment capability; IQM and D-Wave deliver quantum systems; most nuclear microcaps remain pre-commercial.
+    inferences: Existing revenue and delivery quality are stronger control evidence than promotional roadmaps.
+    disconfirming_evidence: Scale and mature economics may cap asymmetry even when control is real.
+    investment_implication: MDA and GILT become operating comparators while early nuclear and quantum names remain research-only.
+    source_ids: [mda_q1_2026, gilt_q1_2026, iqmx_424b3_2026_06_05, nne_q1_2026]
+  who_can_monetize_into_shareholder_value:
+    facts: Gilat is profitable and MDA has adjusted EBITDA; LEU has a strategic contract but incomplete fixed-price economics; most quantum and advanced-nuclear peers are loss-making.
+    inferences: Contract size or technical relevance does not guarantee common-share value after cost overruns dilution debt and customer bargaining power.
+    disconfirming_evidence: LEU could still produce high returns if the full contract is profitable and commercial follow-ons emerge.
+    investment_implication: Promote LEU for monitoring but keep cash until per-share economics clear.
+    source_ids: [gilt_q1_2026, mda_q1_2026, leu_q1_2026_10q, leu_haleu_contract_2026_07_02]
+  public_security_expression:
+    facts: Thirty-six dashboard symbols are tradable U.S.-listed securities; OPENAI and ANTHROPIC remain private; rejected pivots and weak proxies do not improve direct exposure.
+    inferences: Public availability is necessary but not sufficient; security form and shareholder capture matter.
+    disconfirming_evidence: A listed instrument can still be ineligible by policy or economically indirect.
+    investment_implication: Keep private issuers not tradable and reject proxy structures that add policy capital or governance risk.
+    source_ids: [discovery_scan_2026_07_11, iqmx_424b3_2026_06_05]
+  early_small_misunderstood_or_newly_public:
+    facts: IQMX HQ NUCL MDA and several rejected leads are newly public or newly accessible; GILT may be underfollowed because of mature labeling and a transaction-driven change.
+    inferences: Newness improves discovery priority but raises capitalization reporting controls and dilution risk.
+    disconfirming_evidence: QBTS and other early quantum issuers already have multi-billion-dollar valuations.
+    investment_implication: Incubate material new issuers with comparable dashboard data but do not confuse novelty with entry value.
+    source_ids: [iqmx_424b3_2026_06_05, hq_20f_2026, nucl_q1_2026, gilt_comtech_2026_06_15]
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-11 evidence packet, deterministic scan, lane map]
+      sources_checked: [discovery_scan_2026_07_11, mda_q1_2026, gilt_q1_2026, iqmx_424b3_2026_06_05, nne_q1_2026, hq_20f_2026, nucl_q1_2026, qbts_q1_2026, qubt_q1_2026]
+      facts_verified: Eight material candidates and five evidence-based rejections plus lane submap changes.
+      stale_or_missing_evidence: No reachable readiness evidence remains for current classification.
+      confidence: high
+      key_findings: MDA is the strongest new operating peer and GILT the cheapest; no new name beats cash for current allocation.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [live SEC submissions, event index, prior filing reviews]
+      sources_checked: [sec_event_filing_index_2026_07_11, rklb_ceo_form4_2026_07_08, be_8k_response_2026_07_09, leu_haleu_contract_2026_07_02]
+      facts_verified: BE critical dispute, RKLB CEO trust sale, and material capital or governance events across the universe.
+      stale_or_missing_evidence: Full LEU contract remains issuer-unavailable until the next 10-Q.
+      confidence: high
+      key_findings: Freeze BE, tighten RKLB sizing, and allow LEU promotion review without treating the headline as profit.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [evidence packet, prices, filings, account state]
+      sources_checked: [yahoo_chart_close_2026_07_10, leu_haleu_contract_2026_07_02, rklb_iridium_merger_2026_06_29]
+      facts_verified: RKLB and ASTS theses remain intact; LEU has the strongest nonholding strategic bottleneck.
+      stale_or_missing_evidence: Full LEU contract economics unavailable.
+      confidence: medium_high
+      key_findings: LEU may justify a very small starter if the main agent accepts fixed-price uncertainty.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [evidence packet, account weights, contract and financial filings]
+      sources_checked: [yahoo_chart_close_2026_07_10, leu_haleu_contract_2026_07_02, leu_q1_2026_10q, rklb_ceo_form4_2026_07_08]
+      facts_verified: Space concentration is 53.83%; LEU fixed-price and capital risks are large enough to veto a two-share order and challenge even one share.
+      stale_or_missing_evidence: Complete contract and account-specific SGOV mechanics remain unavailable.
+      confidence: high
+      key_findings: Hold RKLB and ASTS, buy neither, and prefer cash before the LEU contract attachment.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current prices, SEC metrics, new peer filings]
+      sources_checked: [yahoo_chart_close_2026_07_10, leu_haleu_contract_2026_07_02, leu_q1_2026_10q, mda_q1_2026, gilt_q1_2026]
+      facts_verified: LEU is materially cheaper than most growth candidates but has a wide fixed-price outcome range; new quantum valuations are extreme.
+      stale_or_missing_evidence: LEU contract cost and termination detail remains externally unavailable.
+      confidence: medium
+      key_findings: One LEU share below USD 172 could be defended, but no chase and no larger starter.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, reviewer cases, prices, SGOV official data]
+      sources_checked: [yahoo_chart_close_2026_07_10, leu_haleu_contract_2026_07_02, macro_regime_snapshot_2026_07_11]
+      facts_verified: Existing holdings are already concentrated and cash preserves material optionality.
+      stale_or_missing_evidence: Account-specific SGOV eligibility fees and settlement are user-only broker facts.
+      confidence: medium
+      key_findings: Proposed one LEU and a large SGOV reserve; main-agent reconciliation instead chose zero trades because the bear and broker-mechanics objections dominate today.
+  unresolved_conflicts: 0
+  conflict_resolution: The one-share LEU and SGOV proposal was explicitly rejected by the main agent; the final no-trade decision is conservative and fully researched rather than an unresolved vote.
+
+readiness_sprints:
+  - {symbol: MDA, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-MDA-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#MDA, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: GILT, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-GILT-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#GILT, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: IQMX, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-IQMX-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#IQMX, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: NNE, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-NNE-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#NNE, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: HQ, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-HQ-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#HQ, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: NUCL, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-NUCL-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#NUCL, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: QBTS, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-QBTS-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#QBTS, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: QUBT, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-QUBT-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#QUBT, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: FNUC, material_to_current_allocation: true, readiness_status: rejected_after_review, dashboard_surface_status: not_required_rejected, readiness_path: research/discovery/readiness/2026-07-11-FNUC-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#FNUC, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: reject}
+  - {symbol: FJET, material_to_current_allocation: true, readiness_status: rejected_after_review, dashboard_surface_status: not_required_rejected, readiness_path: research/discovery/readiness/2026-07-11-FJET-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#FJET, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: reject}
+  - {symbol: SDEV, material_to_current_allocation: false, readiness_status: rejected_after_review, dashboard_surface_status: not_required_rejected, readiness_path: research/discovery/readiness/2026-07-11-SDEV-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#SDEV, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: reject}
+  - {symbol: AGPU, material_to_current_allocation: true, readiness_status: rejected_after_review, dashboard_surface_status: not_required_rejected, readiness_path: research/discovery/readiness/2026-07-11-AGPU-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#AGPU, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: reject}
+  - {symbol: TEL, material_to_current_allocation: false, readiness_status: rejected_after_review, dashboard_surface_status: not_required_rejected, readiness_path: research/discovery/readiness/2026-07-11-TEL-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#TEL, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: reject}
+
+allocation_conclusion:
+  confirmed_cash: 1873.58
+  confirmed_positions: [RKLB 17 shares, ASTS 11 shares]
+  orders: []
+  buy_quantity_all_symbols: 0
+  sell_quantity_all_symbols: 0
+  retained_cash: 1873.58
+  reason: No candidate simultaneously improves mission fit evidence entry and account-level opportunity cost enough to overcome concentration and disclosure risk.
+
+publication_release:
+  contains_actionable_trading_content: false
+  publication_status: public_safe_no_action
+  sensitive_field_review_status: passed
+  notes: The artifact contains no unexpired security order and no raw broker evidence or identifiers.

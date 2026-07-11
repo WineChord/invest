@@ -1002,9 +1002,17 @@ function buildCompanyMetricRow(symbol, latestPrice, companyFacts) {
       latestInstantValue(companyFacts, currentDebtTags),
       latestInstantValue(companyFacts, noncurrentDebtTags),
     ]);
-  const sharesOutstanding =
+  const reportedSharesOutstanding =
     latestInstantValue(companyFacts, sharesOutstandingTags, ["shares"]) ??
     latestPeriodValue(companyFacts, weightedAverageShareTags, ["shares"]);
+  // SEC companyfacts for newly listed foreign issuers occasionally exposes a
+  // nominal one-share value under a nonstandard tag. Treat values below a
+  // conservative public-company plausibility floor as unavailable instead of
+  // publishing a one-share market capitalization and meaningless multiples.
+  const sharesOutstanding =
+    reportedSharesOutstanding !== null && reportedSharesOutstanding >= 100_000
+      ? reportedSharesOutstanding
+      : null;
   const marketCap =
     sharesOutstanding === null ? null : latestPrice.close * sharesOutstanding;
   const enterpriseValue =
@@ -1033,7 +1041,9 @@ function buildCompanyMetricRow(symbol, latestPrice, companyFacts) {
       : null;
   const publishedAt = latestFiledDate(companyFacts) ?? latestPrice.date;
   const notes = sharesOutstanding === null
-    ? "SEC-derived metrics; market-cap multiples unavailable without shares outstanding."
+    ? reportedSharesOutstanding !== null
+      ? "SEC-derived metrics; market-cap multiples unavailable because reported shares outstanding failed the plausibility check."
+      : "SEC-derived metrics; market-cap multiples unavailable without shares outstanding."
     : "SEC-derived fundamentals combined with latest committed close price.";
 
   return {
@@ -1241,11 +1251,6 @@ function buildEquitySnapshot(positions, historyBySymbol) {
   }
 
   const accountState = parseYaml(readFileSync(accountStateFile, "utf8"));
-  const cash = toNumber(accountState.confirmed_cash);
-  if (cash === null) {
-    return null;
-  }
-
   const marketValues = positions.map((position) => {
     const symbol = position.symbol;
     const quantity = toNumber(position.quantity);
@@ -1263,6 +1268,18 @@ function buildEquitySnapshot(positions, historyBySymbol) {
   const valuationDate = marketValues
     .map((row) => row.closeDate)
     .sort((left, right) => right.localeCompare(left))[0];
+  if (isIsoDate(accountState.as_of) && accountState.as_of > valuationDate) {
+    console.warn(
+      `Skipped equity snapshot: confirmed account state ${accountState.as_of} is newer than latest market close ${valuationDate}.`,
+    );
+    return null;
+  }
+
+  const cash = toNumber(accountState.confirmed_cash);
+  if (cash === null) {
+    return null;
+  }
+
   const totalMarketValue = sum(marketValues.map((row) => row.marketValue));
   const totalEquity = totalMarketValue + cash;
   const cumulativeDeposits = depositsFromLedger();

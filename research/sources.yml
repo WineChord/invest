@@ -1602,3 +1602,210 @@ sources:
     first_seen_at: 2026-07-08
     related_symbols: [IREN]
     summary: IREN disclosed 9,099,328 RSUs granted to each co-CEO, adding governance and dilution scrutiny to an already financing-sensitive AI cloud and power candidate.
+  - id: yahoo_chart_close_2026_07_10
+    title: Watchlist Daily Close Refresh 2026-07-10
+    source_type: market_data
+    url: data/market/watchlist_prices.csv
+    source_published_at: 2026-07-10
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT]
+    summary: Current-cycle daily close refresh and SEC companyfacts metrics for every tradable dashboard symbol.
+  - id: rklb_ceo_form4_2026_07_08
+    title: Rocket Lab Peter Beck Trust Form 4
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000200101126000109/edgardoc.xml
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [RKLB]
+    summary: Equatorial Trust sold 3,275,779 RKLB shares under a 10b5-1 plan adopted before the Iridium announcement, creating material ownership overhang without by itself breaking the operating thesis.
+  - id: be_8k_response_2026_07_09
+    title: Bloom Energy Response to Short Report
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1664703/000162828026047734/be-20260709.htm
+    source_published_at: 2026-07-09
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [BE]
+    summary: Bloom categorically denied accounting and scandium allegations but did not provide a quantitative supply or terminal-customer reconciliation, supporting frozen status.
+  - id: leu_q1_2026_10q
+    title: Centrus Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000162828026030891/leu-20260331.htm
+    source_published_at: 2026-05-06
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-05-29
+    related_symbols: [LEU]
+    summary: Current operating, cash-flow, debt, TENEX supply, capital expansion, and dilution context used to stress-test the DOE fixed-price award.
+  - id: mda_q1_2026
+    title: MDA Q1 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926056789/tm2613608d3_ex99-1.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [MDA]
+    summary: Profitable growth, backlog, bookings, margins, and net-cash evidence supporting research-only incubation.
+  - id: gilt_q1_2026
+    title: Gilat Q1 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326002608/zk2635234.htm
+    source_published_at: 2026-05-13
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [GILT]
+    summary: Current revenue, profitability, and operating evidence for the satellite-ground communications peer.
+  - id: gilt_comtech_2026_06_15
+    title: Gilat Comtech Satellite Business Acquisition
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003179/exhibit_99-1.htm
+    source_published_at: 2026-06-15
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [GILT]
+    summary: USD 157.5 million acquisition expected to lift combined annual revenue above USD 700 million while adding integration risk.
+  - id: iqmx_424b3_2026_06_05
+    title: IQM Quantum Definitive Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2113060/000119312526259957/d900375d424b3.htm
+    source_published_at: 2026-06-05
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [IQMX]
+    summary: Delivered systems, revenue, backlog, losses, cash burn, financing, and transaction capitalization used for readiness and valuation.
+  - id: nne_q1_2026
+    title: NANO Nuclear Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1923891/000149315226023071/form10-q.htm
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [NNE]
+    summary: Liquidity, pre-revenue status, capital needs, share growth, and shelf capacity used for readiness.
+  - id: hq_20f_2026
+    title: Horizon Quantum 2025 Form 20-F
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2088256/000121390026043585/ea0285038-20f_horizon.htm
+    source_published_at: 2026-04-22
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [HQ]
+    summary: Negligible revenue, losses, business model, and risk evidence for quantum-software readiness.
+  - id: nucl_q1_2026
+    title: Eagle Nuclear Q1 2026 Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2089283/000110465926043864/tm2611759d1_ex99-1.htm
+    source_published_at: 2026-04-15
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [NUCL]
+    summary: Resource, cash, drilling, permitting, and development timeline evidence for readiness.
+  - id: qbts_q1_2026
+    title: D-Wave Q1 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000057/qbts-20260512xexx991.htm
+    source_published_at: 2026-05-12
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [QBTS]
+    summary: Bookings, revenue, liquidity, and loss evidence for quantum peer readiness.
+  - id: qubt_q1_2026
+    title: Quantum Computing Inc. Q1 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1758009/000121390026054470/ea028987801ex99-1.htm
+    source_published_at: 2026-05-11
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [QUBT]
+    summary: Revenue, gross loss, liquidity, acquisition, and capital-allocation evidence for readiness.
+  - id: fnuc_nasdaq_deficiency_2026_07_10
+    title: Frontier Nuclear Nasdaq Deficiency Notice
+    source_type: company_ir
+    url: https://frontiernuclear.com/frontier-nuclear-announces-receipt-of-nasdaq-continued-listing-deficiency-letter/
+    source_published_at: 2026-07-10
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [FNUC]
+    summary: The issuer disclosed a Nasdaq deficiency after missing its interim financial Form 6-K deadline.
+  - id: fjet_s1_2026
+    title: Starfighters Space 2026 Form S-1
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1947016/000106299326003129/forms1.htm
+    source_published_at: 2026-04-10
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [FJET]
+    summary: Revenue, cash, loss, licensing, financing, and going-concern evidence supporting rejection.
+  - id: sdev_10ka_2026
+    title: Strategy Development 2025 Form 10-K/A
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1389545/000143774926013913/nby20251231d_10ka.htm
+    source_published_at: 2026-03-30
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [SDEV]
+    summary: Token-treasury structure and lack of stablecoin operating toll-point evidence supporting rejection.
+  - id: agpu_q1_2026
+    title: AIPU Group Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1446159/000117184326003484/agpu20260331_10q.htm
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [AGPU]
+    summary: Negligible compute revenue, token-heavy assets, cash, and funding evidence supporting rejection.
+  - id: tel_q1_2026
+    title: TE Connectivity Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1385157/000138515726000018/tel-20260327.htm
+    source_published_at: 2026-04-29
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [TEL]
+    summary: Mature diversified connector and sensor operations confirm TEL is not a direct-to-device spectrum or network owner.
+  - id: discovery_scan_2026_07_11
+    title: Deterministic Universe Discovery Scan 2026-07-11
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-11-scan.json
+    source_published_at: 2026-07-11
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, FNUC, FJET, SDEV, AGPU, TEL]
+    summary: Broad deterministic lane scan with 30 candidates and 57 exploratory matches after the lane-map update, used as triage rather than buy evidence.
+  - id: community_triage_2026_07_11
+    title: Public Community Triage 2026-07-11
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-11-community-triage.json
+    source_published_at: 2026-07-11
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [NBIS, IREN, ASTS, VRT, MU, SPCX, RKLB, CRWV, CRDO]
+    summary: Public no-token attention triage raised research priority but did not create candidate, promotion, or buy eligibility.
+  - id: sec_event_filing_index_2026_07_11
+    title: SEC Event Filing Index 2026-07-11
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-11-sec-event-filing-index-index.metadata.json
+    source_published_at: 2026-07-11
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX]
+    summary: Targeted supported-form SEC filing index supplemented by a full recent-submissions delta review.
+  - id: macro_regime_snapshot_2026_07_11
+    title: Macro Regime Refresh 2026-07-11
+    source_type: repository_run
+    url: research/macro/regime-snapshots.csv
+    source_published_at: 2026-07-11
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT]
+    summary: Macro overlay marked incomplete after Yahoo proxy HTTP 403 responses and was used only to tighten entry discipline.
+  - id: full_cycle_primary_review_2026_07_11
+    title: Full Watchlist Primary-Evidence Review 2026-07-11
+    source_type: repository_run
+    url: decisions/2026-07-11-monthly-decision.md
+    source_published_at: 2026-07-11
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, OPENAI, ANTHROPIC]
+    summary: Public-safe completed full-cycle synthesis linking each symbol to current primary evidence, valuation, opportunity cost, and no-trade action.

@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-06-12
+as_of: 2026-07-11
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -45,6 +45,15 @@ lanes:
       - LUNR
       - RDW
       - KTOS
+      - MDA
+      - GILT
+    sublanes:
+      - id: space_access_and_orbital_mobility
+        proxies: [RKLB, SPCX, FLY, LUNR]
+      - id: spacecraft_manufacturing_and_space_systems
+        proxies: [MDA, YSS, RDW]
+      - id: satellite_ground_and_defense_communications
+        proxies: [GILT, KTOS]
     candidate_entry_points:
       - newly public launch or space-systems companies
       - spinoffs with defense or civil-space infrastructure exposure
@@ -67,7 +76,7 @@ lanes:
       - direct-to-device
       - spectrum
       - mobile satellite
-      - connectivity
+      - satellite spectrum mobile operator
     current_public_proxies:
       - ASTS
       - SPCX
@@ -110,6 +119,10 @@ lanes:
       - newly public neoclouds
       - power-backed compute conversions
       - public AI infrastructure spinoffs
+    negative_screen_patterns:
+      - crypto or token treasury presented as AI compute
+      - legacy issuer name pivot without funded infrastructure
+      - announced contract without financing, delivery, utilization, or customer evidence
     next_review_trigger: Customer concentration change, financing terms, utilization disclosure, GPU depreciation update, or hyperscaler capex shift.
     invalidation_or_demote_signal: Unit economics depend on circular financing, fragile counterparties, or debt that can wipe out equity in a utilization downturn.
   - id: ai_power_and_cooling
@@ -165,6 +178,13 @@ lanes:
       - CRDO
       - ALAB
       - MU
+      - LITE
+      - FN
+    sublanes:
+      - id: ai_interconnect_and_optics
+        proxies: [CRDO, ALAB, LITE, FN]
+      - id: ai_memory
+        proxies: [MU]
     candidate_entry_points:
       - newly public connectivity suppliers
       - smaller public optical or advanced packaging bottleneck companies
@@ -191,7 +211,13 @@ lanes:
     current_public_proxies:
       - OKLO
       - LEU
-      - BE
+      - NNE
+      - NUCL
+    sublanes:
+      - id: nuclear_fuel_cycle_and_logistics
+        proxies: [LEU, NNE, NUCL]
+      - id: advanced_nuclear_deployment
+        proxies: [OKLO, NNE]
     candidate_entry_points:
       - advanced nuclear developers with public reporting
       - strategic fuel-cycle companies
@@ -218,6 +244,18 @@ lanes:
     current_public_proxies:
       - IONQ
       - XNDU
+      - IQMX
+      - QBTS
+      - QUBT
+      - HQ
+    sublanes:
+      - id: quantum_compute_systems
+        proxies: [IONQ, XNDU, IQMX, QBTS, QUBT]
+      - id: quantum_software_and_enabling_infrastructure
+        proxies: [HQ]
+      - id: post_quantum_security
+        status: emerging
+        proxies: []
     candidate_entry_points:
       - newly public quantum hardware or networking companies
       - public suppliers with real quantum revenue and government validation
@@ -247,6 +285,9 @@ lanes:
       - newly public stablecoin or payments infrastructure companies
       - regulated digital-dollar network suppliers
       - public platforms with source-backed reserve and transaction economics
+    negative_screen_patterns:
+      - renamed legacy issuer whose primary asset is a token treasury
+      - token holdings without regulated reserve, compliance, distribution, or operating toll-point economics
     next_review_trigger: Reserve economics, rate sensitivity, regulation, distribution cost, USDC circulation, or transaction volume update.
     invalidation_or_demote_signal: Economics are captured by banks, exchanges, or distributors, or regulation weakens network monetization.
   - id: frontier_ai_public_platforms

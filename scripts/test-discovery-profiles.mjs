@@ -1258,6 +1258,28 @@ await withFilingRetryServer((filingUrl) => {
     "--output",
     path.join(fixtureRoot, "sec-filing-remote-stale-cache-profiles.json"),
   ], fixtureRepo, "is stale for 2026-06-01");
+  const staleRefetchOutputPath = path.join(fixtureRoot, "sec-filing-remote-stale-refetch-profiles.json");
+  run("scripts/build-sec-filing-profiles.mjs", [
+    "--as-of",
+    "2026-06-01",
+    "--manifest",
+    remoteManifestPath,
+    "--sec-input",
+    secFixturePath,
+    "--filing-cache-dir",
+    remoteCacheDir,
+    "--sec-fetch-retries",
+    "1",
+    "--sec-retry-delay-ms",
+    "1",
+    "--output",
+    staleRefetchOutputPath,
+  ], fixtureRepo);
+  const staleRefetchProfiles = JSON.parse(readFileSync(staleRefetchOutputPath, "utf8"));
+  assert(staleRefetchProfiles.filing_cache_hits === 0, "SEC filing profile builder should not count a stale cache as a hit");
+  assert(staleRefetchProfiles.filing_cache_misses === 1, "SEC filing profile builder should count a stale cache as a refetch miss");
+  assert(staleRefetchProfiles.filing_cache_writes === 1, "SEC filing profile builder should replace stale filing cache content after refetch");
+  assert(staleRefetchProfiles.filing_ledger[0].cache_status === "stale_cache_refetched", "SEC filing profile ledger should distinguish a stale-cache refetch from a first fetch");
   writeFileSync(cacheMetadataPath, `${JSON.stringify({
     ...staleMetadata,
     fetched_at: "2026-06-02T00:00:00.000Z",

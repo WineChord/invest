@@ -519,7 +519,46 @@ function StockPageChart({
           </div>
         )}
       </div>
+      <StockTradeEventRail markers={plottedTradeMarkers} />
     </section>
+  );
+}
+
+function StockTradeEventRail({
+  markers,
+}: {
+  markers: ReturnType<typeof buildSymbolTradeMarkers>;
+}) {
+  if (markers.length === 0) {
+    return null;
+  }
+
+  return (
+    <div
+      className="research-trade-event-rail"
+      aria-label="Delayed historical account activity"
+    >
+      <span>Historical account activity</span>
+      <div>
+        {markers.map((marker) => (
+          <div
+            className={`research-trade-event research-trade-event-${marker.tone}`}
+            key={marker.id}
+          >
+            <span className="trade-marker-label">{marker.label}</span>
+            <strong>{formatShortDate(marker.date)}</strong>
+            <small>
+              {marker.trades
+                .map(
+                  (trade) =>
+                    `${formatPlainNumber(trade.quantity, 4)} @ ${formatCurrency(trade.averagePrice)}`,
+                )
+                .join(" · ")}
+            </small>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
