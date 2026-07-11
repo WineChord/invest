@@ -10,6 +10,7 @@ dashboard_surface_status: complete
 readiness_index_record: research/discovery/candidate-readiness.yml
 source_ids:
   - iqmx_424b3_2026_06_05
+  - iqmx_manager_transactions_2026_07_08
 ```
 
 ## Bottleneck Fit
@@ -39,6 +40,6 @@ source_ids:
 - reachable_evidence_remaining: none for the current incubate-versus-buy classification.
 - final_classification: incubate as research-only; buy zero.
 
-IQMX is incubated as a research-only full-stack quantum-system peer. About 18 delivered systems, roughly USD 36 million 2025 revenue, and roughly USD 77 million backlog are stronger commercial proof than several public quantum peers. The initial transaction valuation, subsequent price, losses, loan capacity, and short public record block current buying. No publicly reachable readiness evidence remains missing.
+IQMX is incubated as a research-only full-stack quantum-system peer. About 18 delivered systems, roughly USD 36 million 2025 revenue, and roughly USD 77 million backlog are stronger commercial proof than several public quantum peers. July manager sales, subscription, and option activity add ownership and capitalization overhang to the initial transaction valuation, losses, loan capacity, and short public record. No publicly reachable readiness evidence remains missing.
 
 Primary source: [IQM 424B3](https://www.sec.gov/Archives/edgar/data/2113060/000119312526259957/d900375d424b3.htm), filed 2026-06-05 and retrieved 2026-07-11.

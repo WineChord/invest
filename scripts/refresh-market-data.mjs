@@ -9,6 +9,10 @@ import {
   firstFmpRecord,
 } from "./fmp-fetch-lib.mjs";
 import { fetchSecJsonWithRetry } from "./sec-fetch-lib.mjs";
+import {
+  selectPreferredInstantFact,
+  selectTrailingTwelveMonthPeriod,
+} from "./sec-ttm-lib.mjs";
 
 const accountStateFile = "data/account/state.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
@@ -990,8 +994,12 @@ function appendNote(existing, note) {
 }
 
 function buildCompanyMetricRow(symbol, latestPrice, companyFacts) {
-  const revenue = trailingTwelveMonthValue(companyFacts, revenueTags);
-  const previousRevenue = previousTrailingTwelveMonthValue(companyFacts, revenueTags);
+  const revenue = trailingTwelveMonthValue(companyFacts, revenueTags, true);
+  const previousRevenue = previousTrailingTwelveMonthValue(
+    companyFacts,
+    revenueTags,
+    true,
+  );
   const grossProfit = trailingTwelveMonthValue(companyFacts, grossProfitTags);
   const operatingIncome = trailingTwelveMonthValue(companyFacts, operatingIncomeTags);
   const netIncome = trailingTwelveMonthValue(companyFacts, netIncomeTags);
@@ -1133,10 +1141,8 @@ function factValues(companyFacts, tagCandidates, unitCandidates = ["USD"]) {
 }
 
 function latestInstantValue(companyFacts, tagCandidates, unitCandidates = ["USD"]) {
-  const facts = factValues(companyFacts, tagCandidates, unitCandidates)
-    .filter((fact) => fact.end !== "" && fact.start === "")
-    .sort(compareFactsByEndAndFiled);
-  return facts.at(-1)?.value ?? null;
+  const facts = factValues(companyFacts, tagCandidates, unitCandidates);
+  return selectPreferredInstantFact(facts, tagCandidates)?.value ?? null;
 }
 
 function latestPeriodValue(companyFacts, tagCandidates, unitCandidates = ["USD"]) {
@@ -1146,30 +1152,33 @@ function latestPeriodValue(companyFacts, tagCandidates, unitCandidates = ["USD"]
   return facts.at(-1)?.value ?? null;
 }
 
-function trailingTwelveMonthValue(companyFacts, tagCandidates) {
+function trailingTwelveMonthValue(
+  companyFacts,
+  tagCandidates,
+  preferLargest = false,
+) {
   const periodFacts = normalizedPeriodFacts(companyFacts, tagCandidates);
-  const quarterly = latestQuarterlyFacts(periodFacts, null);
-  if (quarterly.length >= 4) {
-    return sum(quarterly.slice(-4).map((fact) => fact.value));
-  }
-
-  const annual = periodFacts
-    .filter((fact) => fact.fp === "FY" || durationDays(fact) > 300)
-    .sort(compareFactsByEndAndFiled);
-  return annual.at(-1)?.value ?? quarterly.at(-1)?.value ?? null;
+  return selectTrailingTwelveMonthPeriod(periodFacts, {
+    preferLargest,
+  })?.value ?? null;
 }
 
-function previousTrailingTwelveMonthValue(companyFacts, tagCandidates) {
+function previousTrailingTwelveMonthValue(
+  companyFacts,
+  tagCandidates,
+  preferLargest = false,
+) {
   const periodFacts = normalizedPeriodFacts(companyFacts, tagCandidates);
-  const latestQuarterly = latestQuarterlyFacts(periodFacts, null);
-  if (latestQuarterly.length >= 8) {
-    return sum(latestQuarterly.slice(-8, -4).map((fact) => fact.value));
+  const latest = selectTrailingTwelveMonthPeriod(periodFacts, {
+    preferLargest,
+  });
+  if (latest === null) {
+    return null;
   }
-
-  const annual = periodFacts
-    .filter((fact) => fact.fp === "FY" || durationDays(fact) > 300)
-    .sort(compareFactsByEndAndFiled);
-  return annual.length >= 2 ? annual.at(-2).value : null;
+  return selectTrailingTwelveMonthPeriod(periodFacts, {
+    endBefore: addDays(latest.end, -300),
+    preferLargest,
+  })?.value ?? null;
 }
 
 function normalizedPeriodFacts(companyFacts, tagCandidates) {
@@ -1189,23 +1198,6 @@ function normalizedPeriodFacts(companyFacts, tagCandidates) {
       seen.add(key);
       return true;
     });
-}
-
-function latestQuarterlyFacts(periodFacts, endBefore) {
-  const quarterlyByEnd = new Map();
-
-  periodFacts
-    .filter((fact) => fact.fp !== "FY")
-    .filter((fact) => durationDays(fact) <= 115)
-    .filter((fact) => endBefore === null || fact.end < endBefore)
-    .forEach((fact) => {
-      const existing = quarterlyByEnd.get(fact.end);
-      if (existing === undefined || compareFactsByEndAndFiled(existing, fact) < 0) {
-        quarterlyByEnd.set(fact.end, fact);
-      }
-    });
-
-  return [...quarterlyByEnd.values()].sort(compareFactsByEndAndFiled);
 }
 
 function latestFiledDate(companyFacts) {

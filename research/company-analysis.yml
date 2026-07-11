@@ -714,10 +714,10 @@ entries:
     policy_version: v1.1
     title: Active-candidate promotion
     stance: B+
-    summary: The USD 900 million DOE contract confirms Centrus as the strongest public U.S. HALEU bottleneck candidate, but full fixed-price contract economics are not auditable until the next 10-Q, so promotion does not create a current buy zone.
+    summary: The USD 900 million DOE contract and ACO title to completed capacity confirm Centrus as the strongest public U.S. HALEU bottleneck candidate; exact current action is private while fixed-price contract risk keeps sizing minimal.
     upside_path: Convert strategic U.S. enrichment capacity into durable government and commercial HALEU economics with disciplined capital and limited dilution.
     risk_watch: Fixed-price cost overruns, milestones, termination and appropriations, TENEX supply, Oak Ridge and Piketon capital, debt, shelf dilution, customer concentration, and contract profitability.
-    next_check: Next 10-Q full DOE contract, cost and milestone terms, TENEX update, financing plan, or price dislocation.
+    next_check: Private action expiry, next 10-Q full DOE contract, cost and milestone terms, TENEX update, financing plan, or price dislocation.
     source_path: research/promotion/2026-07-11-LEU-and-BE-status-review.md
   - id: 2026-07-11-mda-readiness
     symbol: MDA
@@ -726,7 +726,7 @@ entries:
     policy_version: v1.1
     title: Discovery readiness
     stance: B
-    summary: MDA is the strongest new operating-quality space peer through profitable growth, scaled backlog, robotics, spacecraft, and geointelligence, but its offering, acquisition integration, bookings, and larger scale keep it research-only.
+    summary: MDA is promoted to active-candidate monitoring because profitable spacecraft, robotics, CLS geointelligence, and Blue Canyon defense exposure form a strong platform; the offering, two integrations, and account space concentration keep it trigger-only.
     upside_path: Scale satellite production, robotics, geointelligence, and acquired earth-observation services into a durable space-systems platform.
     risk_watch: Offering dilution, CLS and Blue Canyon integration, bookings, backlog conversion, margins, customer concentration, and lower extreme-upside asymmetry.
     next_check: Next quarterly report, bookings, backlog, acquisition integration, major award, or price dislocation.
@@ -738,7 +738,7 @@ entries:
     policy_version: v1.1
     title: Discovery readiness
     stance: B-
-    summary: Gilat offers profitable, modestly valued satellite-ground and defense communications exposure, but low margins, program timing, and Comtech integration keep it research-only.
+    summary: Gilat is promoted to active-candidate monitoring because improving operations, Comtech scale, and new U.S. defense orders strengthen the case; transaction execution and account space concentration keep it trigger-only.
     upside_path: Re-rate as a scaled defense and satellite-ground communications platform after successful Comtech integration.
     risk_watch: Low margins, project timing, acquisition integration, customer and government concentration, and limited pricing power.
     next_check: Comtech close, integration plan, quarterly margin update, defense award, or price dislocation.
@@ -815,3 +815,51 @@ entries:
     risk_watch: Organic revenue, gross profit, acquisition integration, capital allocation, cash burn, dilution, and valuation.
     next_check: Organic revenue, positive gross profit, cash deployment, integration, or price dislocation.
     source_path: research/discovery/readiness/2026-07-11-QUBT-readiness.md
+  - id: 2026-07-11-leu-post-cycle-capacity-title
+    symbol: LEU
+    analyzed_at: "2026-07-11"
+    analysis_type: post_cycle_evidence_audit
+    policy_version: v1.1
+    title: Deployed enrichment capacity title
+    stance: B+
+    summary: The DOE 8-K states that ACO would obtain title to the deployed enrichment capacity after completing the contract, materially strengthening long-term shareholder value capture while fixed-price execution keeps the risk budget small.
+    upside_path: Use government-funded deployment to own scarce U.S. HALEU capacity and compound through later government and commercial demand.
+    risk_watch: Contract completion, milestone and termination terms, cost overruns, appropriations, TENEX supply, expansion capital, debt, and dilution.
+    next_check: Action expiry, next 10-Q full contract, material DOE update, TENEX change, financing, or price dislocation.
+    source_path: research/process/2026-07-11-post-cycle-evidence-audit.md
+  - id: 2026-07-11-mda-post-cycle-promotion
+    symbol: MDA
+    analyzed_at: "2026-07-11"
+    analysis_type: promotion_review
+    policy_version: v1.1
+    title: Vertically integrated platform promotion
+    stance: B+
+    summary: CLS and Blue Canyon expand MDA from profitable spacecraft and robotics into recurring geointelligence, analytics, global distribution, and U.S. defense manufacturing, but the large offering and two integrations keep entry trigger-only.
+    upside_path: Combine satellite production, robotics, sovereign geointelligence, recurring data, AI analytics, and defense access into a scaled space platform.
+    risk_watch: Offering close and over-allotment, final capitalization, CLS and Blue Canyon approvals and integration, leverage, bookings, backlog conversion, and account space concentration.
+    next_check: Offering close, final prospectus, acquisition update, bookings, leverage, margin, or price dislocation.
+    source_path: research/promotion/2026-07-11-MDA-GILT-post-cycle-review.md
+  - id: 2026-07-11-gilt-post-cycle-promotion
+    symbol: GILT
+    analyzed_at: "2026-07-11"
+    analysis_type: promotion_review
+    policy_version: v1.1
+    title: Defense communications promotion
+    stance: B
+    summary: Improving operations, the Comtech transaction, and fresh U.S. defense orders make Gilat the lowest-valuation profitable operating space peer, while deal execution and existing account space concentration keep it trigger-only.
+    upside_path: Re-rate as a larger U.S.-relevant defense and satellite-ground communications platform after disciplined Comtech integration and margin expansion.
+    risk_watch: Regulatory approval, integration, adjusted-metric quality, cash conversion, order concentration, margin durability, and limited historical pricing power.
+    next_check: Comtech regulatory progress or close, combined margins, cash conversion, quarterly results, material defense order, or price dislocation.
+    source_path: research/promotion/2026-07-11-MDA-GILT-post-cycle-review.md
+  - id: 2026-07-11-crcl-economics-correction
+    symbol: CRCL
+    analyzed_at: "2026-07-11"
+    analysis_type: filing_correction
+    policy_version: v1.1
+    title: Stablecoin economics and OCC approval
+    stance: Watch
+    summary: Corrected TTM gross revenue is USD 2.862 billion and final OCC approval strengthens regulatory positioning, but distribution costs, rate sensitivity, token capture, and dilution keep current entry too uncertain.
+    upside_path: Compound USDC circulation, regulated custody, payments, network services, and future reserve management into durable programmable-money infrastructure economics.
+    risk_watch: Interest rates, Coinbase and other distribution costs, USDC circulation and share, ARC token economics, shareholder capture, equity dilution, regulation, and corporate versus customer reserve cash classification.
+    next_check: Next reserve update, USDC circulation, rate move, distribution agreement, ARC milestone, quarterly filing, or material regulatory event.
+    source_path: research/filings/2026-05-30-CRCL-10Q-000187604226000150.md

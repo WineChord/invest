@@ -10,6 +10,9 @@ dashboard_surface_status: complete
 readiness_index_record: research/discovery/candidate-readiness.yml
 source_ids:
   - mda_q1_2026
+  - mda_bct_acquisition_2026_06_19
+  - mda_cls_acquisition_2026_07_08
+  - mda_bought_deal_2026_07_09
 ```
 
 ## Bottleneck Fit
@@ -36,9 +39,9 @@ source_ids:
 - dashboard_surface_status: complete.
 - company_analysis_entry: research/company-analysis.yml.
 
-- reachable_evidence_remaining: none for the current incubate-versus-buy classification.
-- final_classification: incubate as research-only; buy zero.
+- reachable_evidence_remaining: none after the supplemental filing and promotion review.
+- final_classification: readiness incubation completed; subsequently promoted to active candidate with trigger-only entry.
 
-MDA is incubated as a research-only space-systems comparator. Its Q1 2026 evidence shows CAD 464.1 million revenue, 32.2% year-over-year growth, CAD 90.6 million adjusted EBITDA, CAD 3.69 billion backlog, and CAD 299.3 million net cash. Q1 bookings of CAD 143.9 million, backlog decline, larger scale, and lower extreme-upside convexity than RKLB or YSS block current buying. No publicly reachable readiness evidence remains missing.
+MDA's Q1 2026 evidence shows CAD 464.1 million revenue, 32.2% year-over-year growth, CAD 90.6 million adjusted EBITDA, CAD 3.69 billion backlog, and CAD 299.3 million net cash. CLS can add recurring data and analytics while Blue Canyon adds U.S. defense manufacturing, but the 23 million-share offering plus a 15% option, final capitalization, two integrations, softer Q1 bookings, and existing account space concentration block current buying. The completed post-cycle promotion review moves MDA to active candidate while keeping entry trigger-only.
 
-Primary source: [MDA Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1857047/000110465926056789/tm2613608d3_ex99-1.htm), published 2026-05-07 and retrieved 2026-07-11.
+Primary sources: [MDA Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1857047/000110465926056789/tm2613608d3_ex99-1.htm), published 2026-05-07; [Blue Canyon transaction](https://www.sec.gov/Archives/edgar/data/1857047/000110465926075950/tm2618399d1_ex99-1.htm), published 2026-06-19; [CLS transaction](https://mda.space/article/mda-space-enters-into-firm-offer-to-acquire-collecte-localisation-satellites-a-global-leader-in-ai-driven-earth-observation-data-analytics), published 2026-07-08; and [offering](https://www.sec.gov/Archives/edgar/data/1857047/000110465926082349/tm2619705d7_ex99-2.htm), published 2026-07-09; retrieved 2026-07-11.

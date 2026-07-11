@@ -1809,3 +1809,111 @@ sources:
     first_seen_at: 2026-07-11
     related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, OPENAI, ANTHROPIC]
     summary: Public-safe completed full-cycle synthesis linking each symbol to current primary evidence, valuation, opportunity cost, and no-trade action.
+  - id: mda_bct_acquisition_2026_06_19
+    title: MDA Blue Canyon Acquisition Announcement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926075950/tm2618399d1_ex99-1.htm
+    source_published_at: 2026-06-19
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [MDA]
+    summary: Profitable U.S. defense spacecraft manufacturing expands MDA's platform while adding approval and integration risk.
+  - id: mda_cls_acquisition_2026_07_08
+    title: MDA CLS Acquisition Announcement
+    source_type: company_ir
+    url: https://mda.space/article/mda-space-enters-into-firm-offer-to-acquire-collecte-localisation-satellites-a-global-leader-in-ai-driven-earth-observation-data-analytics
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [MDA]
+    summary: CLS adds recurring geointelligence data, AI analytics, global distribution, expected growth, and cash generation while creating a second major integration.
+  - id: mda_bought_deal_2026_07_09
+    title: MDA Underwritten Offering and Acquisition Financing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926082349/tm2619705d7_ex99-2.htm
+    source_published_at: 2026-07-09
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [MDA]
+    summary: The 23 million-share USD 818.8 million offering plus a 15 percent option funds CLS and Blue Canyon and materially changes dilution and capitalization.
+  - id: gilt_us_defense_orders_2026_07_07
+    title: Gilat USD 11 Million U.S. Defense SATCOM Orders
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003425/zk2635654.htm
+    source_published_at: 2026-07-07
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [GILT]
+    summary: Twelve-month defense connectivity orders strengthen direct demand evidence but do not remove Comtech integration or margin risk.
+  - id: iqmx_manager_transactions_2026_07_08
+    title: IQM Manager Share and Subscription Transactions
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2113060/000119312526298068/d110627d6k.htm
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [IQMX]
+    summary: Manager sales, subscription, and option activity add ownership-overhang and capitalization-monitoring requirements.
+  - id: nne_nrc_review_2026_06_25
+    title: NANO Nuclear NRC Formal Review Kickoff
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1923891/000149315226030124/form8-k.htm
+    source_published_at: 2026-06-25
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [NNE]
+    summary: Formal NRC review is a positive regulatory milestone, but the 2027 schedule and pre-commercial financing needs remain controlling.
+  - id: hq_peak_xv_13d_2026_07_09
+    title: Horizon Quantum Peak XV Schedule 13D
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2088256/000214171926000003/primary_doc.xml
+    source_published_at: 2026-07-09
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [HQ]
+    summary: Peak XV-related entities reported about 20.3 percent beneficial ownership, making governance concentration explicit.
+  - id: nucl_director_awards_2026_07_02
+    title: Eagle Nuclear Director Equity Awards
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2089283/000210233426000003/primary_doc.xml
+    source_published_at: 2026-07-02
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [NUCL]
+    summary: Director RSU and option awards add compensation dilution without changing pre-development risk.
+  - id: qbts_idc_update_2026_07_07
+    title: D-Wave IDC MarketScape Recognition
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000097/qbts-20260707.htm
+    source_published_at: 2026-07-07
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [QBTS]
+    summary: Vendor-assessment recognition supports accessibility narrative but adds no financial evidence sufficient for the current valuation.
+  - id: qubt_s8_2026_07_08
+    title: Quantum Computing Incentive Plan Form S-8
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1758009/000121390026076492/ea0297212-s8_quantum.htm
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [QUBT]
+    summary: Registration of 13,544,946 additional incentive-plan shares materially expands dilution overhang.
+  - id: post_cycle_evidence_audit_2026_07_11
+    title: Post-Cycle Evidence and Valuation Audit
+    source_type: repository_run
+    url: research/process/2026-07-11-post-cycle-evidence-audit.md
+    source_published_at: 2026-07-11
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [LEU, MDA, GILT, CRDO, ALAB, CRCL]
+    summary: Independent review corrected TTM and cash metrics, completed supplemental filing dispositions, promoted MDA and GILT, and kept exact current action private under publication policy.
+  - id: crcl_occ_final_approval_2026_07_10
+    title: Circle National Trust Final OCC Approval
+    source_type: company_ir
+    url: https://investor.circle.com/news/news-details/2026/Circle-Receives-Final-OCC-Approval-to-Establish-National-Trust-Bank/default.aspx
+    source_published_at: 2026-07-10
+    retrieved_at: 2026-07-11
+    first_seen_at: 2026-07-11
+    related_symbols: [CRCL]
+    summary: Final OCC approval adds federally regulated digital-asset custody and a future reserve-management path without immediately changing reported reserve or distribution economics.

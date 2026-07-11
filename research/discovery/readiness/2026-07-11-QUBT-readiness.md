@@ -10,6 +10,7 @@ dashboard_surface_status: complete
 readiness_index_record: research/discovery/candidate-readiness.yml
 source_ids:
   - qubt_q1_2026
+  - qubt_s8_2026_07_08
 ```
 
 ## Bottleneck Fit
@@ -39,6 +40,6 @@ source_ids:
 - reachable_evidence_remaining: none for the current incubate-versus-buy classification.
 - final_classification: incubate as research-only; buy zero.
 
-QUBT is incubated for research-only quantum-system peer coverage. Q1 revenue increased from USD 39 thousand to USD 3.7 million and cash plus investments were about USD 1.4 billion, but the revenue step-up is acquisition-driven and commercial history is too short for the current valuation. No publicly reachable readiness evidence remains missing.
+QUBT is incubated for research-only quantum-system peer coverage. Q1 revenue increased from USD 39 thousand to USD 3.7 million and cash plus investments were about USD 1.4 billion, but the revenue step-up is acquisition-driven and commercial history is too short for the current valuation. Registration of 13,544,946 additional incentive-plan shares materially expands dilution overhang and reinforces no-entry status.
 
 Primary source: [Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1758009/000121390026054470/ea028987801ex99-1.htm), published 2026-05-11 and retrieved 2026-07-11.

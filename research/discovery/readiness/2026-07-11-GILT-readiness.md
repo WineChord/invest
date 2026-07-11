@@ -10,6 +10,8 @@ dashboard_surface_status: complete
 readiness_index_record: research/discovery/candidate-readiness.yml
 source_ids:
   - gilt_q1_2026
+  - gilt_comtech_2026_06_15
+  - gilt_us_defense_orders_2026_07_07
 ```
 
 ## Bottleneck Fit
@@ -36,9 +38,9 @@ source_ids:
 - dashboard_surface_status: complete.
 - company_analysis_entry: research/company-analysis.yml.
 
-- reachable_evidence_remaining: none for the current incubate-versus-buy classification.
-- final_classification: incubate as research-only; buy zero.
+- reachable_evidence_remaining: none after the supplemental filing and promotion review.
+- final_classification: readiness incubation completed; subsequently promoted to active candidate with trigger-only entry.
 
-GILT is incubated as a research-only satellite-ground and defense-communications comparator. Q1 2026 revenue was USD 110.5 million with USD 4.4 million GAAP operating profit; the proposed USD 157.5 million Comtech satellite-and-space acquisition could lift combined annual revenue above USD 700 million. Low margins, program timing, and acquisition integration block current buying. No publicly reachable readiness evidence remains missing.
+GILT's Q1 2026 revenue was USD 110.5 million with USD 4.4 million GAAP operating profit; the proposed USD 157.5 million Comtech satellite-and-space acquisition could lift combined annual revenue above USD 700 million and adjusted EBITDA to about USD 80 million. Fresh USD 11 million U.S. defense orders strengthen demand evidence. Attractive relative valuation supports promotion, while regulatory approval, acquisition integration, adjusted-metric quality, cash conversion, and existing account space concentration block current buying.
 
-Primary sources: [Q1 2026 filing](https://www.sec.gov/Archives/edgar/data/897322/000117891326002608/zk2635234.htm), published 2026-05-13, and [Comtech transaction](https://www.sec.gov/Archives/edgar/data/897322/000117891326003179/exhibit_99-1.htm), published 2026-06-15; retrieved 2026-07-11.
+Primary sources: [Q1 2026 filing](https://www.sec.gov/Archives/edgar/data/897322/000117891326002608/zk2635234.htm), published 2026-05-13; [Comtech transaction](https://www.sec.gov/Archives/edgar/data/897322/000117891326003179/exhibit_99-1.htm), published 2026-06-15; and [U.S. defense orders](https://www.sec.gov/Archives/edgar/data/897322/000117891326003425/zk2635654.htm), published 2026-07-07; retrieved 2026-07-11.

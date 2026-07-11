@@ -10,6 +10,7 @@ dashboard_surface_status: complete
 readiness_index_record: research/discovery/candidate-readiness.yml
 source_ids:
   - qbts_q1_2026
+  - qbts_idc_update_2026_07_07
 ```
 
 ## Bottleneck Fit
@@ -39,6 +40,6 @@ source_ids:
 - reachable_evidence_remaining: none for the current incubate-versus-buy classification.
 - final_classification: incubate as research-only; buy zero.
 
-QBTS is incubated for research-only quantum-system peer coverage. Q1 bookings were USD 33.4 million and cash was about USD 588 million, but quarterly revenue was only USD 2.9 million against a multi-billion-dollar market value. Genuine commercial activity does not make the entry attractive. No publicly reachable readiness evidence remains missing.
+QBTS is incubated for research-only quantum-system peer coverage. Q1 bookings were USD 33.4 million and cash was about USD 588 million, but quarterly revenue was only USD 2.9 million against a multi-billion-dollar market value. IDC recognition supports commercial accessibility but adds no financial evidence sufficient to make the entry attractive.
 
 Primary source: [Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1907982/000190798226000057/qbts-20260512xexx991.htm), published 2026-05-12 and retrieved 2026-07-11.

@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: 2026-07-11T02:41:20.333Z
+generated_at: 2026-07-11T15:17:47.127Z
 current_date: 2026-07-11
 request_type: monthly_decision_full_cycle
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
@@ -538,9 +538,11 @@ active_watchlist:
     status: watch
     priority: B+
     initial_role: USDC and programmable money network
-    next_review_trigger: next reserve/USDC/token-economics/earnings update
-    notes: Infrastructure-like potential; rate sensitivity, distribution costs, and
-      token purchase economics are central.
+    next_review_trigger: next reserve, USDC, distribution, token, earnings, rate, or
+      regulatory update
+    notes: Final OCC approval strengthens the regulated-infrastructure path; rate
+      sensitivity, distribution costs, circulation, dilution, and ARC
+      shareholder capture remain central.
   - symbol: LITE
     name: Lumentum
     theme: AI optical and photonic interconnect
@@ -602,12 +604,13 @@ active_watchlist:
     status: active_candidate
     priority: B+
     initial_role: strategic nuclear fuel bottleneck
-    next_review_trigger: next 10-Q with full DOE contract, milestone and
-      cost-sharing terms, TENEX exposure update, financing plan, or price
-      dislocation
-    notes: Promoted after the USD 900 million DOE HALEU contract strengthened the
-      strategic bottleneck thesis. Entry remains blocked until the full
-      fixed-price contract and per-share economics are stress-tested.
+    next_review_trigger: private action expiry, next 10-Q with full DOE contract,
+      milestone and cost-sharing terms, TENEX exposure update, financing plan,
+      or price dislocation
+    notes: The USD 900 million DOE contract and ACO title to completed capacity
+      strengthen value capture. Exact current action is private; fixed-price
+      economics, TENEX, debt, capital needs, and dilution keep risk sizing
+      minimal.
   - symbol: GSAT
     name: Globalstar
     theme: satellite spectrum and direct-to-device connectivity
@@ -759,27 +762,29 @@ active_watchlist:
   - symbol: MDA
     name: MDA Space
     theme: spacecraft manufacturing and space systems
-    status: research_only
-    priority: B
-    initial_role: profitable scaled space systems comparator
-    next_review_trigger: next quarterly report, bookings and backlog conversion,
-      major constellation award, margin change, or price dislocation
-    notes: Incubated after primary-source review. MDA has the strongest operating
-      evidence among the new space leads, including profitable growth and a
-      multi-billion-dollar backlog, but its larger scale and softer Q1 bookings
-      reduce the extreme-upside setup relative to RKLB and YSS.
+    status: active_candidate
+    priority: B+
+    initial_role: profitable vertically integrated space systems platform
+    next_review_trigger: offering close, final capitalization, CLS or Blue Canyon
+      transaction update, bookings, leverage, margin, or price dislocation
+    notes: Promoted after post-cycle review. MDA combines profitable spacecraft and
+      robotics operations with potential recurring data and analytics from CLS
+      and U.S. defense access from Blue Canyon; offering dilution,
+      two-acquisition integration, and existing account space concentration keep
+      it trigger-only.
   - symbol: GILT
     name: Gilat Satellite Networks
     theme: satellite ground and defense communications
-    status: research_only
-    priority: B-
-    initial_role: profitable ground communications re-rating option
-    next_review_trigger: Comtech transaction close, integration plan, next quarterly
-      report, defense award, margin change, or price dislocation
-    notes: Incubated after primary-source review. Gilat is profitable and directly
-      exposed to satellite ground and defense communications; low margins,
-      program timing, and the Comtech integration keep it outside buy
-      eligibility.
+    status: active_candidate
+    priority: B
+    initial_role: profitable ground and defense communications re-rating option
+    next_review_trigger: Comtech regulatory progress or close, combined margins and
+      cash conversion, next quarterly report, material defense order, or price
+      dislocation
+    notes: Promoted after current operating, Comtech, and U.S. defense-order review.
+      Gilat is the cheapest profitable space communications peer, but
+      acquisition execution, adjusted-metric quality, and existing account space
+      concentration keep it trigger-only.
   - symbol: IQMX
     name: IQM Quantum Computers
     theme: quantum compute systems
@@ -3161,6 +3166,111 @@ fresh_sources:
     summary: Public-safe completed full-cycle synthesis linking each symbol to
       current primary evidence, valuation, opportunity cost, and no-trade
       action.
+  - id: mda_bct_acquisition_2026_06_19
+    source_type: sec_filing
+    source_published_at: 2026-06-19
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - MDA
+    summary: Profitable U.S. defense spacecraft manufacturing expands MDA's platform
+      while adding approval and integration risk.
+  - id: mda_cls_acquisition_2026_07_08
+    source_type: company_ir
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - MDA
+    summary: CLS adds recurring geointelligence data, AI analytics, global
+      distribution, expected growth, and cash generation while creating a second
+      major integration.
+  - id: mda_bought_deal_2026_07_09
+    source_type: sec_filing
+    source_published_at: 2026-07-09
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - MDA
+    summary: The 23 million-share USD 818.8 million offering plus a 15 percent
+      option funds CLS and Blue Canyon and materially changes dilution and
+      capitalization.
+  - id: gilt_us_defense_orders_2026_07_07
+    source_type: sec_filing
+    source_published_at: 2026-07-07
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - GILT
+    summary: Twelve-month defense connectivity orders strengthen direct demand
+      evidence but do not remove Comtech integration or margin risk.
+  - id: iqmx_manager_transactions_2026_07_08
+    source_type: sec_filing
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - IQMX
+    summary: Manager sales, subscription, and option activity add ownership-overhang
+      and capitalization-monitoring requirements.
+  - id: nne_nrc_review_2026_06_25
+    source_type: sec_filing
+    source_published_at: 2026-06-25
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - NNE
+    summary: Formal NRC review is a positive regulatory milestone, but the 2027
+      schedule and pre-commercial financing needs remain controlling.
+  - id: hq_peak_xv_13d_2026_07_09
+    source_type: sec_filing
+    source_published_at: 2026-07-09
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - HQ
+    summary: Peak XV-related entities reported about 20.3 percent beneficial
+      ownership, making governance concentration explicit.
+  - id: nucl_director_awards_2026_07_02
+    source_type: sec_filing
+    source_published_at: 2026-07-02
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - NUCL
+    summary: Director RSU and option awards add compensation dilution without
+      changing pre-development risk.
+  - id: qbts_idc_update_2026_07_07
+    source_type: sec_filing
+    source_published_at: 2026-07-07
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - QBTS
+    summary: Vendor-assessment recognition supports accessibility narrative but adds
+      no financial evidence sufficient for the current valuation.
+  - id: qubt_s8_2026_07_08
+    source_type: sec_filing
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - QUBT
+    summary: Registration of 13,544,946 additional incentive-plan shares materially
+      expands dilution overhang.
+  - id: post_cycle_evidence_audit_2026_07_11
+    source_type: repository_run
+    source_published_at: 2026-07-11
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - LEU
+      - MDA
+      - GILT
+      - CRDO
+      - ALAB
+      - CRCL
+    summary: Independent review corrected TTM and cash metrics, completed
+      supplemental filing dispositions, promoted MDA and GILT, and kept exact
+      current action private under publication policy.
+  - id: crcl_occ_final_approval_2026_07_10
+    source_type: company_ir
+    source_published_at: 2026-07-10
+    retrieved_at: 2026-07-11
+    related_symbols:
+      - CRCL
+    summary: Final OCC approval adds federally regulated digital-asset custody and a
+      future reserve-management path without immediately changing reported
+      reserve or distribution economics.
 deterministic_outputs:
   - command: caller-supplied deterministic discovery output
     output_path: research/discovery/runs/2026-07-11-scan.json
@@ -13510,7 +13620,7 @@ valuation_states:
     as_of: 2026-07-11
     price: "171.05"
     valuation_state: fair
-    price_attractiveness: fair
+    price_attractiveness: attractive
     thesis_state: materially_strengthened
     risk_state: fixed_price_contract_TENEX_capex_debt_and_dilution
     source_ids: yahoo_chart_close_2026_07_10;leu_haleu_contract_2026_07_02;leu_q1_2026_10q
@@ -13519,17 +13629,33 @@ valuation_states:
     price: "34.00"
     valuation_state: fair
     price_attractiveness: fair
-    thesis_state: positive
-    risk_state: offering_acquisition_integration_and_lower_asymmetry
-    source_ids: yahoo_chart_close_2026_07_10;mda_q1_2026
+    thesis_state: materially_strengthened
+    risk_state: offering_two_acquisitions_integration_and_space_concentration
+    source_ids: yahoo_chart_close_2026_07_10;mda_q1_2026;mda_bct_acquisition_2026_06_19;mda_cls_acquisition_2026_07_08;mda_bought_deal_2026_07_09
   - symbol: GILT
     as_of: 2026-07-11
     price: "12.01"
     valuation_state: fair
-    price_attractiveness: fair
-    thesis_state: positive
-    risk_state: low_margin_contracting_program_and_acquisition_integration
-    source_ids: yahoo_chart_close_2026_07_10;gilt_q1_2026;gilt_comtech_2026_06_15
+    price_attractiveness: attractive
+    thesis_state: materially_strengthened
+    risk_state: comtech_approval_integration_cash_conversion_and_space_concentration
+    source_ids: yahoo_chart_close_2026_07_10;gilt_q1_2026;gilt_comtech_2026_06_15;gilt_us_defense_orders_2026_07_07
+  - symbol: CRDO
+    as_of: 2026-07-11
+    price: "257.79"
+    valuation_state: too_expensive
+    price_attractiveness: too_expensive
+    thesis_state: strengthened_but_concentrated
+    risk_state: customer_concentration_and_valuation_risk
+    source_ids: yahoo_chart_close_2026_07_10;crdo_10k_fy2026
+  - symbol: ALAB
+    as_of: 2026-07-11
+    price: "412.97"
+    valuation_state: too_expensive
+    price_attractiveness: too_expensive
+    thesis_state: strengthened
+    risk_state: valuation_and_hyperscaler_concentration_risk
+    source_ids: yahoo_chart_close_2026_07_10;alab_q1_2026
   - symbol: IQMX
     as_of: 2026-07-11
     price: "12.44"
@@ -13626,17 +13752,24 @@ valuation_states:
     thesis_state: strategically_strengthened_entry_blocked
     risk_state: mega_cap_debt_governance_float_xai_and_valuation_risk
     source_ids: alpaca_delayed_sip_snapshot_2026_07_07;community_triage_2026_07_08;sec_event_filing_index_2026_07_08;spcx_notes_closing_2026_06_26
+  - symbol: CRCL
+    as_of: 2026-07-11
+    price: "66.14"
+    valuation_state: fair
+    price_attractiveness: too_uncertain
+    thesis_state: strengthened_but_economics_uncertain
+    risk_state: distribution_cost_rate_token_capture_and_dilution_risk
+    source_ids: yahoo_chart_close_2026_07_10;crcl_q1_2026;crcl_arc_token_second_closing_2026_07_02;crcl_occ_final_approval_2026_07_10
 quality_metrics:
   path: research/quality-metrics.yml
   decision_readiness:
     status: ready
     scope: repository_and_public_observable_information
     can_recommend_buys: true
-    reason: Repository-public research coverage is current enough to support buy
-      recommendations when gates pass; for 2026-07-11 no symbol actually passes
-      mission, evidence, entry, and account-level opportunity-cost gates
-      strongly enough for a buy. The no-trade result is a completed conclusion,
-      not a readiness gap.
+    reason: Repository-public research coverage is current enough to support a
+      decision. The post-cycle review changed the private allocation
+      reconciliation while keeping exact unexpired order details outside the
+      public repository under the publication policy.
     user_only_execution_prerequisites:
       - broker cash and buying-power confirmation still showing at least the
         recorded confirmed 1873.58 USD before any future real order
@@ -13646,8 +13779,8 @@ quality_metrics:
         settlement constraints, and final user execution instruction before any
         real order
       - do not rely on the committed public record as executable order guidance
-      - do not buy LEU before the next 10-Q exposes the full DOE fixed-price
-        contract and a fresh entry stress test passes
+      - rerun LEU after the private action expires, any material event, or the
+        next 10-Q full contract disclosure
       - do not buy SPCX without a fresh post-IPO promotion review covering
         valuation, float, lockup, governance, capital structure, notes, and
         xAI/X exposure
@@ -13661,10 +13794,10 @@ quality_metrics:
     watchlist_symbols_missing_current_cycle_review: 0
     active_discovery_lanes: 9
     emerging_discovery_lanes: 1
-    active_watchlist_symbols: 20
-    active_symbols_with_current_valuation_state: 20
+    active_watchlist_symbols: 22
+    active_symbols_with_current_valuation_state: 22
     active_symbols_missing_valuation_state: 0
-    active_symbols_with_latest_filing_review: 20
+    active_symbols_with_latest_filing_review: 22
     active_symbols_missing_latest_filing_review: 0
     raw_discovery_candidates_open: 12
   discovery_process:

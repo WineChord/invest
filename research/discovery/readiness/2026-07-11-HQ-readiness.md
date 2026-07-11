@@ -10,6 +10,7 @@ dashboard_surface_status: complete
 readiness_index_record: research/discovery/candidate-readiness.yml
 source_ids:
   - hq_20f_2026
+  - hq_peak_xv_13d_2026_07_09
 ```
 
 ## Bottleneck Fit
@@ -39,6 +40,6 @@ source_ids:
 - reachable_evidence_remaining: none for the current incubate-versus-buy classification.
 - final_classification: incubate as research-only; buy zero.
 
-HQ is incubated for research-only quantum-software coverage. The compiler and multi-hardware direction is relevant and Q1 cash was USD 96.6 million, but 2025 revenue was only about USD 40 thousand and Q1 operating loss was USD 6.5 million. Paid, scalable software demand is not proven, so the current equity is not buy-ready. No publicly reachable readiness evidence remains missing.
+HQ is incubated for research-only quantum-software coverage. The compiler and multi-hardware direction is relevant and Q1 cash was USD 96.6 million, but 2025 revenue was only about USD 40 thousand and Q1 operating loss was USD 6.5 million. Peak XV-related entities' roughly 20.3% beneficial ownership adds governance concentration. Paid, scalable software demand is not proven, so the current equity is not buy-ready.
 
 Primary sources: [Q1 2026 results](https://www.sec.gov/Archives/edgar/data/2088256/000121390026052179/ea028894101ex99-1.htm) and [2025 20-F](https://www.sec.gov/Archives/edgar/data/2088256/000121390026043585/ea0285038-20f_horizon.htm), retrieved 2026-07-11.

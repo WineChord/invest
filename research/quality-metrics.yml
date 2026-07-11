@@ -2,20 +2,20 @@ schema_version: 1
 as_of: 2026-07-11
 last_research_engine_run:
   as_of: 2026-07-11
-  scope: monthly_decision_full_cycle_completed_no_action
+  scope: monthly_decision_full_cycle_with_post_cycle_evidence_correction
   notes: >-
-    Ran the full 2026-07-11 operating cycle after a confirmed USD 888 deposit: all-symbol market refresh, macro overlay, broad universe scan, community triage, SEC event index plus full submissions delta, material filing reviews, 13 new-lead dispositions, 8 complete dashboard readiness sprints, all-symbol watchlist review, LEU promotion, BE freeze, and independent xhigh discovery, freshness, bull, bear, valuation, and allocation review. The completed conclusion is no trade.
+    Ran the full 2026-07-11 operating cycle after a confirmed USD 888 deposit, then independently audited every tradable symbol's latest filing or issuer event. The post-cycle repair corrected SEC TTM and cash selection, completed CRCL economics, promoted MDA and GILT, and strengthened LEU value-capture evidence. Exact unexpired private action remains withheld from public repository artifacts.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current enough to support buy recommendations when gates pass; for 2026-07-11 no symbol actually passes mission, evidence, entry, and account-level opportunity-cost gates strongly enough for a buy. The no-trade result is a completed conclusion, not a readiness gap.
+  reason: Repository-public research coverage is current enough to support a decision. The post-cycle review changed the private allocation reconciliation while keeping exact unexpired order details outside the public repository under the publication policy.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 1873.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - do not buy LEU before the next 10-Q exposes the full DOE fixed-price contract and a fresh entry stress test passes
+    - rerun LEU after the private action expires, any material event, or the next 10-Q full contract disclosure
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
@@ -26,10 +26,10 @@ coverage:
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
-  active_watchlist_symbols: 20
-  active_symbols_with_current_valuation_state: 20
+  active_watchlist_symbols: 22
+  active_symbols_with_current_valuation_state: 22
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 20
+  active_symbols_with_latest_filing_review: 22
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 12
 discovery_process:
@@ -112,4 +112,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved reachable-work blocker. The 2026-07-11 run reconciled the one-share LEU and SGOV proposal against the bear veto and chose a completed public-safe no-trade conclusion. Full LEU contract disclosure and account-specific SGOV mechanics are external or broker-specific future triggers, not unfinished repository research.
+  Ready means the repository-public research state has no unresolved reachable-work blocker. The public files disclose the evidence correction and status changes without publishing a still-actionable share count or price. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
