@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-06-01
+as_of: 2026-07-12
 records:
   - symbol: FLY
     material_to_current_allocation: true
@@ -99,29 +99,71 @@ records:
     affected_lanes: [space_infrastructure]
     materiality_reason: MDA is a scaled profitable space-systems peer that materially raises the operating-quality comparison for RKLB, RDW, YSS, FLY, and VOYG.
     blocking_scope: current_space_allocation
-    readiness_status: incubated_after_review
+    readiness_status: completed
     dashboard_surface_status: complete
     readiness_path: research/discovery/readiness/2026-07-11-MDA-readiness.md
-    blocker_type: evidence_based
-    blocker_reason: Primary filings show strong growth, profitability, backlog, and net cash, but lower bookings, larger scale, and less extreme asymmetric upside than the best current space candidates.
+    blocker_type: none
+    blocker_reason: The post-cycle promotion review completed repository readiness and moved MDA to active-candidate monitoring; offering dilution, two acquisitions, and account space concentration remain entry risks rather than research-readiness blockers.
     reachable_evidence_remaining: none
     last_readiness_reviewed_at: 2026-07-11
     next_action: Monitor bookings, backlog conversion, margins, major awards, and price dislocations.
-    conclusion: Incubated into research-only dashboard coverage; no current buy.
+    conclusion: Research readiness completed and MDA promoted to active-candidate trigger monitoring; no current buy.
   - symbol: GILT
     material_to_current_allocation: true
     affected_lanes: [space_infrastructure]
     materiality_reason: GILT adds a profitable small-cap ground and defense communications comparator to a space lane previously dominated by launch and spacecraft companies.
     blocking_scope: current_space_allocation
-    readiness_status: incubated_after_review
+    readiness_status: completed
     dashboard_surface_status: complete
     readiness_path: research/discovery/readiness/2026-07-11-GILT-readiness.md
-    blocker_type: evidence_based
-    blocker_reason: Primary evidence supports real revenue and profit plus transaction-driven scale, but low margins, project timing, and Comtech integration risk block entry.
+    blocker_type: none
+    blocker_reason: The post-cycle promotion review completed repository readiness and moved GILT to active-candidate monitoring; Comtech execution and account space concentration remain entry risks rather than research-readiness blockers.
     reachable_evidence_remaining: none
     last_readiness_reviewed_at: 2026-07-11
     next_action: Monitor the Comtech close and integration, margins, defense awards, and price dislocations.
-    conclusion: Incubated into research-only dashboard coverage; no current buy.
+    conclusion: Research readiness completed and GILT promoted to active-candidate trigger monitoring; no current buy.
+  - symbol: RGTI
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: Rigetti is a direct superconducting quantum-systems peer with a generally available 108-qubit system, so quantum-lane completeness cannot rely only on IONQ, IQMX, XNDU, QBTS, and QUBT.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-12-RGTI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Primary sources confirm real product availability, system sales, USD 4.4 million Q1 revenue, and USD 569.0 million liquidity with no debt, but operating losses, tiny revenue relative to valuation, technical obsolescence, commercialization, and dilution risk make the equity unattractive.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-12
+    next_action: Monitor recurring commercial revenue, fidelity and roadmap delivery, system utilization, cash burn, equity issuance, and a material valuation reset.
+    conclusion: Incubated into research-only dashboard coverage for quantum-lane completeness; no current buy or promotion.
+  - symbol: SMR
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: NuScale owns an NRC-approved US460 design and is a direct regulatory and project-development comparator for OKLO, NNE, LEU, and other nuclear-lane candidates.
+    blocking_scope: advanced_nuclear_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-12-SMR-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Primary sources confirm the US460 standard design approval and roughly USD 890 million cash plus short-term investments with no debt, but Q1 revenue was only USD 0.6 million, operating cash use was USD 314.7 million, project economics are unbound, and almost USD 1.0 billion of ATM capacity remained.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-12
+    next_action: Monitor binding funded project economics, customer commitments, deployment schedule, cost estimates, cash use, ATM issuance, and valuation dislocation.
+    conclusion: Incubated into research-only dashboard coverage for nuclear-lane completeness; no current buy or promotion.
+  - symbol: AAOI
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: AAOI is a smaller direct optical-transceiver supplier whose 800G ramp and domestic capacity build can affect opportunity cost versus CRDO, ALAB, LITE, and FN even though current entry is unattractive.
+    blocking_scope: optical_lane_secondary_peer
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-12-AAOI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Q1 revenue growth and 800G volume shipments are real, but roughly USD 9.1 billion provider market value or USD 9.6 billion on May 5 filing shares, customer concentration, negative operating cash flow, large FAB4 spending, convertible debt, ATM issuance, and customer-warrant dilution block entry.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-12
+    next_action: Reopen only after sustained 800G and 1.6T growth, positive cash conversion, manageable concentration and dilution, and a material valuation reset.
+    conclusion: Incubated into research-only dashboard coverage for optical-lane completeness; no current buy or promotion.
   - symbol: IQMX
     material_to_current_allocation: true
     affected_lanes: [quantum_computing_and_networking]

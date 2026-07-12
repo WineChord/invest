@@ -1,0 +1,227 @@
+schema_version: 1
+run_id: 2026-07-12-full-cycle-decision
+run_date: 2026-07-12
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after the next regular-session private decision expires, a material issuer event, a material price move, or a confirmed broker-state change
+linked_decision_or_research_note: decisions/2026-07-12-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-12-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_no_action
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 1873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: 2026-07-12 is Sunday, so the Friday-only automatic USD 888 deposit instruction did not trigger. No execution was confirmed and account records remain unchanged.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-07-12 --fmp-mode missing
+      dry_run: false
+      output_path: data/market/watchlist_prices.csv
+      retrieved_at: 2026-07-12
+      result_summary: Refreshed all 39 tradable symbols through the latest available 2026-07-10 close, hydrated RGTI SMR and AAOI, and correctly skipped a weekend equity snapshot because confirmed account state is newer than the latest market close.
+    - command: npm run refresh:macro -- --as-of 2026-07-12
+      dry_run: false
+      output_path: research/macro/regime-snapshots.csv
+      retrieved_at: 2026-07-12
+      result_summary: Refreshed the public macro overlay; incomplete proxy availability tightened entry discipline without creating eligibility.
+    - command: npm run discover:universe -- --as-of 2026-07-12 --json --output research/discovery/runs/2026-07-12-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-12-scan.json
+      output_sha256: 341bfcaa72b952ce30dddac52a02572152122a0dae582416a80fe863cc563109
+      retrieved_at: 2026-07-12
+      result_summary: Broad SEC-listed universe scan produced 30 candidates and 57 exploratory matches against the updated lane map; the review found no new top-level lane and no current buy-eligible new lead.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-07-12 --max-cache-age-hours 0
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-07-12
+      result_summary: Forced live submissions refresh covered all 36 pre-existing tradable research symbols without fetch failures and found no new accepted filing after the prior 2026-07-11 audit cutoff; saved component artifacts remain hash-anchored by the discovery artifact index.
+  community_attention:
+    scan_command: npm run scan:community -- --as-of 2026-07-12
+    scan_output_path: not_saved_for_original_run
+    scan_output_sha256: be70c0a2a130df243c7da8957a3309318f273a974ea600344d7eef5422a07a6d
+    triage_command: npm run triage:community -- --as-of 2026-07-12 --scan research/discovery/runs/2026-07-12-community-scan.json --output research/discovery/runs/2026-07-12-community-triage.json
+    triage_output_path: not_saved_for_original_run
+    triage_output_sha256: 3fcfb4c6c3c95ad7a2d89da621b6ed3b5eee230dff95e248d8055af8b5c57fcd
+    previous_scan_status: prior scan loaded from ignored local cache; no private message content retained
+    top_existing_priority_boosts: [ASTS, CRWV, IREN, OKLO]
+    top_new_primary_source_queue: [RGTI, SMR, AAOI]
+    identity_confirmation_queue: []
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, live submissions deltas, and regulator records
+      sources_or_queries: [2026-07-12 live SEC submissions index, RGTI 10-Q, SMR 10-Q, NRC US460 record, AAOI 10-Q and 8-K]
+      source_ids: [rgti_q1_2026_10q, smr_q1_2026_10q, smr_us460_nrc_approval_2025, aaoi_q1_2026_10q, aaoi_fab4_2026_07_01]
+      retrieved_at: 2026-07-12
+      material_findings: No new event delta changed the existing universe; direct filings completed readiness for three same-lane comparators.
+      unavailable_or_skipped_reason: none
+    - family_id: issuer_material
+      family: Company releases and company-specific primary evidence
+      sources_or_queries: [Rigetti Q1 results, NuScale Q1 results, Applied Optoelectronics Q1 results]
+      source_ids: [rgti_q1_2026_ir, smr_q1_2026_ir, aaoi_q1_2026_ir]
+      retrieved_at: 2026-07-12
+      material_findings: All three issuers have direct bottleneck exposure, but commercialization, cash conversion, capital intensity, dilution, or valuation block entry.
+      unavailable_or_skipped_reason: none
+    - family_id: market_data
+      family: Latest close, scale context, technical history, and confirmed account valuation
+      sources_or_queries: [data/market/watchlist_prices.csv, data/market/company_metrics.csv, data/account/state.yml]
+      source_ids: [yahoo_chart_close_2026_07_10]
+      retrieved_at: 2026-07-12
+      material_findings: Latest exchange session is 2026-07-10; cash remains USD 1873.58 and RKLB plus ASTS remain a concentrated 53.83 percent of confirmed account value.
+      unavailable_or_skipped_reason: Weekend executable quotes are unavailable; any private action requires a fresh broker preview during the next regular session.
+    - family_id: current_world_context
+      family: Macro and public-attention risk overlays
+      sources_or_queries: [research/macro/regime-snapshots.csv, sanitized 2026-07-12 public-attention triage summary]
+      source_ids: [yahoo_chart_close_2026_07_10, aaoi_fab4_2026_07_01]
+      retrieved_at: 2026-07-12
+      material_findings: Attention and capital-spending intensity support continued monitoring while reinforcing price and financing discipline.
+      unavailable_or_skipped_reason: Several community endpoints returned HTTP 429 and remained non-decisive by policy.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public, financing, capacity, and strategic transaction evidence
+      sources_or_queries: [AAOI FAB4 commitment, NuScale ATM capacity, current same-lane transaction set]
+      source_ids: [aaoi_fab4_2026_07_01, smr_q1_2026_10q, rgti_q1_2026_10q]
+      retrieved_at: 2026-07-12
+      material_findings: New capital and capacity paths may improve future bottleneck control but currently worsen dilution and execution risk.
+      unavailable_or_skipped_reason: none
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad universe scan, public attention, and independent same-lane comparison
+      sources_or_queries: [research/discovery/lanes.yml, 2026-07-12 universe scan, sanitized 2026-07-12 public-attention triage summary]
+      source_ids: [rgti_q1_2026_ir, smr_us460_nrc_approval_2025, aaoi_q1_2026_ir]
+      retrieved_at: 2026-07-12
+      material_findings: Existing top-level lanes remain adequate; quantum systems, advanced nuclear deployment, and optical transceiver sublanes gain missing research-only comparators.
+      unavailable_or_skipped_reason: none
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-12
+    notes: Market, macro, broad SEC universe, public attention, live submissions, issuer filings, transaction evidence, and bottleneck-lane review all completed.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters: [quantum and cryptography naming collisions, connectivity and optical infrastructure, power and data-center infrastructure, space and mobility transaction vehicles]
+  sampled_symbols: [ARQQ, QMCO, OCC, UEC, SIDU, ANET, AVNW, BIP]
+  false_positive_patterns: [generic connectivity without bottleneck ownership, name-only quantum exposure, blank-check vehicles, large diversified utilities or industrials]
+  lane_decisions: [retain the nine active top-level lanes, add RGTI to quantum systems, add SMR to advanced nuclear deployment, add AAOI to optical interconnect comparators]
+  disposition: No exploratory match changed current allocation; plausible direct peers completed readiness or remain queued for primary-source confirmation under existing lanes.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Qualified quantum systems, licensed nuclear designs and fuel, high-speed optical transceivers, launch capacity, satellite connectivity, AI compute, power, cooling, memory and interconnect remain plausible constraints.
+    inferences: Qualified delivery and funded capacity matter more than headline technology labels.
+    disconfirming_evidence: Large valuations can pre-price scarcity before durable shareholder economics exist.
+    source_ids: [rgti_q1_2026_ir, smr_us460_nrc_approval_2025, aaoi_q1_2026_ir]
+    investment_implication: Preserve the current top-level map and improve same-lane comparability without forcing a purchase.
+  who_controls_or_removes_scarcity:
+    facts: Rigetti ships a 108-qubit system, NuScale holds NRC design approval, and AAOI ships 800G products while expanding domestic capacity.
+    inferences: These are direct exposures, but directness does not prove pricing power or attractive common-share economics.
+    disconfirming_evidence: Small revenue, project uncertainty, cash burn, customer concentration and dilution can transfer value away from shareholders.
+    source_ids: [rgti_q1_2026_10q, smr_q1_2026_10q, aaoi_q1_2026_10q]
+    investment_implication: Add research-only dashboard coverage and require operating evidence plus valuation reset before promotion.
+  who_can_monetize_into_shareholder_value:
+    facts: AAOI has meaningful revenue but weak cash conversion; RGTI and SMR remain loss-making with minimal revenue relative to valuation.
+    inferences: Current enterprise values require far more successful future scale than primary evidence supports today.
+    disconfirming_evidence: Technical or funded-project milestones could accelerate demand and justify later repricing.
+    source_ids: [rgti_q1_2026_10q, smr_q1_2026_10q, aaoi_q1_2026_10q]
+    investment_implication: Buy zero across the new peer set while monitoring explicit evidence triggers.
+  public_security_expression:
+    facts: Thirty-nine research symbols are U.S.-listed and tradable under policy; OPENAI and ANTHROPIC remain private and not tradable.
+    inferences: Tradability is necessary but not sufficient; security-level dilution and value capture remain decisive.
+    disconfirming_evidence: A direct listed issuer can still be unattractive at the current capitalization.
+    source_ids: [rgti_q1_2026_10q, smr_q1_2026_10q, aaoi_q1_2026_10q]
+    investment_implication: Keep private issuers out and classify direct but unattractive public peers as research-only.
+  early_small_misunderstood_or_newly_public:
+    facts: RGTI SMR and AAOI broaden smaller direct-peer coverage, while recent listings and transactions remain visible elsewhere in the map.
+    inferences: Underfollowed or awkward structures deserve research priority but not automatic entry.
+    disconfirming_evidence: RGTI and AAOI already carry multi-billion-dollar capitalizations and SMR economics remain unbound.
+    source_ids: [rgti_q1_2026_ir, smr_q1_2026_ir, aaoi_q1_2026_ir]
+    investment_implication: Continue bottleneck-first discovery and demand both per-share economics and entry margin.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [updated lane map, universe scan, community triage, primary filings]
+      sources_checked: [rgti_q1_2026_10q, smr_q1_2026_10q, aaoi_q1_2026_10q]
+      facts_verified: RGTI SMR and AAOI are missing same-lane comparators; no new top-level lane is warranted.
+      stale_or_missing_evidence: none material to their research-only classification
+      confidence: high
+      key_findings: Add all three to research-only coverage and buy zero.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [forced live SEC submissions index, prior filing reviews, issuer filings]
+      sources_checked: [rgti_q1_2026_10q, smr_q1_2026_10q, aaoi_fab4_2026_07_01]
+      facts_verified: No new SEC acceptance after the prior cutoff; new peer primary evidence is fully reviewed.
+      stale_or_missing_evidence: Complete future issuer economics remain trigger evidence, not reachable current-work blockers.
+      confidence: high
+      key_findings: No freshness event changes current holding or candidate status.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [evidence packet, latest prices, primary filings, account state]
+      sources_checked: [yahoo_chart_close_2026_07_10, rgti_q1_2026_ir, smr_us460_nrc_approval_2025, aaoi_q1_2026_ir]
+      facts_verified: Strategic bottlenecks remain real and the leading non-holding active candidate has credible scarcity evidence.
+      stale_or_missing_evidence: Full fixed-price economics for the leading non-holding candidate remain issuer-unavailable.
+      confidence: medium_high
+      key_findings: Only a very small, strictly controlled private risk budget could be defended; no new peer qualifies.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [all-symbol evidence packet, dilution and balance-sheet evidence, account concentration]
+      sources_checked: [yahoo_chart_close_2026_07_10, rgti_q1_2026_10q, smr_q1_2026_10q, aaoi_q1_2026_10q]
+      facts_verified: Existing holdings are concentrated and every new peer has a valuation, commercialization, financing, or dilution veto.
+      stale_or_missing_evidence: none that additional current research can remove
+      confidence: high
+      key_findings: Hold both positions, sell zero, and prefer cash to all new peer purchases.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, bull and bear cases, current close, private order constraints]
+      sources_checked: [yahoo_chart_close_2026_07_10, rgti_q1_2026_10q, smr_q1_2026_10q, aaoi_q1_2026_10q]
+      facts_verified: Cash supplies substantial option value and any incremental risk must remain small relative to confirmed account value.
+      stale_or_missing_evidence: Broker order preview and next-session executable quote are user-only execution prerequisites.
+      confidence: medium_high
+      key_findings: Private action, if any, must be one-session, price-capped, and automatically expire; all other buys and all sells are zero.
+  unresolved_conflicts: 0
+  conflict_resolution: Reviewers disagreed about whether incomplete fixed-price economics permit immediate staging. The main agent reconciled the evidence with a private maximum-loss and expiry rule; current exact terms remain outside this public artifact.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: [quantum_computing_and_networking, advanced_nuclear_and_grid_constraints, semiconductor_interconnect_and_memory]
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Existing lane structure captured all material direct exposures found today.
+  no_change_reason: No evidence justified a new top-level scarcity thesis or retirement of an existing one.
+
+candidate_delta:
+  candidates_added: [RGTI, SMR, AAOI]
+  candidates_rejected_or_archived: []
+  candidates_promoted: [MDA, GILT, RGTI, SMR, AAOI]
+  candidates_incubated: [RGTI, SMR, AAOI]
+  false_positive_patterns: [keyword-only quantum exposure, generic connectivity, blank-check vehicles, diversified indirect proxies]
+
+readiness_sprints:
+  - {symbol: MDA, material_to_current_allocation: true, readiness_status: completed, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-MDA-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#MDA, blocker_type: none, reachable_evidence_remaining: none, final_classification: promote}
+  - {symbol: GILT, material_to_current_allocation: true, readiness_status: completed, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-11-GILT-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#GILT, blocker_type: none, reachable_evidence_remaining: none, final_classification: promote}
+  - {symbol: RGTI, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-12-RGTI-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#RGTI, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: SMR, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-12-SMR-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#SMR, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: AAOI, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-12-AAOI-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#AAOI, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Every material current candidate has current public evidence, valuation, readiness, and all-symbol comparison; remaining broker and exact order facts are private execution prerequisites rather than research blockers.
+
+publication_review:
+  status: public_safe_research_only
+  exact_unexpired_action_terms: withheld
+  broker_records_changed: false
+  notes: Public files contain research state and historical confirmed facts only; no current share count, limit price, order timing, or broker preview is committed.

@@ -91,6 +91,8 @@ export function parseMacroRegimeArgs(args) {
     } else if (arg === "--financing-scores") {
       parsed.financingScores = requireNextArg(args, index, arg);
       index += 1;
+    } else if (arg === "--help") {
+      parsed.help = true;
     } else if (arg === "--json") {
       parsed.json = true;
     } else if (arg === "--output") {
@@ -104,7 +106,9 @@ export function parseMacroRegimeArgs(args) {
     }
   }
 
-  parsed.asOf = strictDate(parsed.asOf ?? currentDate(), "--as-of");
+  if (!parsed.help) {
+    parsed.asOf = strictDate(parsed.asOf ?? currentDate(), "--as-of");
+  }
   return parsed;
 }
 

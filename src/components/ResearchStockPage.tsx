@@ -15,6 +15,7 @@ import {
   buildSymbolTradeMarkers,
   buildTradeSeriesMarkers,
 } from "../lib/tradeMarkers";
+import { observeChartSize } from "../lib/chartResize";
 
 interface Props {
   item: WatchlistItem;
@@ -309,8 +310,9 @@ function StockPageChart({
 
         const chartColors = readChartColors(container, chartTone);
         const chart = createChart(container, {
-          autoSize: true,
+          autoSize: false,
           height: 420,
+          width: Math.max(1, Math.floor(container.getBoundingClientRect().width)),
           layout: {
             attributionLogo: false,
             background: {
@@ -424,11 +426,17 @@ function StockPageChart({
         applyCurrentRange();
         const rangeFrame = window.requestAnimationFrame(applyCurrentRange);
         const rangeTimer = window.setTimeout(applyCurrentRange, 160);
+        const disconnectResizeObserver = observeChartSize(
+          chart,
+          container,
+          applyCurrentRange,
+        );
         setChartReady(true);
 
         cleanupChart = () => {
           window.cancelAnimationFrame(rangeFrame);
           window.clearTimeout(rangeTimer);
+          disconnectResizeObserver();
           if (chartApiRef.current === chart) {
             chartApiRef.current = null;
           }

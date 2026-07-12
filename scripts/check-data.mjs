@@ -3240,8 +3240,10 @@ function validateDiscoveryRunJsonArtifacts() {
       validateDiscoveryArtifactIndexFileName(file);
     }
     if (typeof artifact.as_of === "string" && "candidate_count" in artifact) {
+      const currentLaneMapAsOf = parsedYamlFiles.get(qualityMetricsFile)?.coverage?.discovery_lane_map_as_of;
       validateDiscoveryScanOutput(artifact, file, {
         requireBroadFreshness: false,
+        requireCurrentLaneMap: artifact.as_of === currentLaneMapAsOf,
       });
     }
     if (artifact.source === "sec_filing_discovery_index") {
@@ -3990,6 +3992,7 @@ function validateSemanticCompactRecord(record, context) {
 
 function validateDiscoveryScanOutput(output, context, {
   requireBroadFreshness,
+  requireCurrentLaneMap = true,
 }) {
   if (output.schema_version !== 1) {
     throw new Error(`${context} schema_version must be 1`);
@@ -4030,7 +4033,9 @@ function validateDiscoveryScanOutput(output, context, {
   requireStringArray(output.recall_ticker_only_expected_proxy_symbols ?? [], `${context} recall_ticker_only_expected_proxy_symbols`);
   validateDiscoveryScanSemanticCoverage(output, context);
   validateDiscoveryScanRecallMetrics(output, context);
-  validateLaneMapHashForCurrentMap(context, output.lane_map_path, output.lane_map_sha256, output.lane_map_as_of);
+  if (requireCurrentLaneMap) {
+    validateLaneMapHashForCurrentMap(context, output.lane_map_path, output.lane_map_sha256, output.lane_map_as_of);
+  }
   requirePositiveNumber(output.deterministic_limit, `${context} deterministic_limit`);
   requireNumber(output.candidate_count, `${context} candidate_count`);
   requireNumber(output.returned_candidate_count, `${context} returned_candidate_count`);

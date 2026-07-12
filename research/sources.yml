@@ -1917,3 +1917,75 @@ sources:
     first_seen_at: 2026-07-11
     related_symbols: [CRCL]
     summary: Final OCC approval adds federally regulated digital-asset custody and a future reserve-management path without immediately changing reported reserve or distribution economics.
+  - id: rgti_q1_2026_ir
+    title: Rigetti Computing Reports First Quarter 2026 Financial Results
+    source_type: company_ir
+    url: https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-first-quarter-2026-financial-results
+    source_published_at: 2026-05-11
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [RGTI]
+    summary: Rigetti reported USD 4.4 million revenue, USD 26.0 million operating loss, USD 569.0 million cash and investments, no debt, and general availability of its 108-qubit modular system.
+  - id: rgti_q1_2026_10q
+    title: Rigetti First Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1838359/000110465926058641/rgti-20260331x10q.htm
+    source_published_at: 2026-05-11
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [RGTI]
+    summary: The filing documents operating losses, cash burn, customer concentration, warrant-driven GAAP income, liquidity, share count, and technical-roadmap risk.
+  - id: smr_q1_2026_ir
+    title: NuScale Power Reports First Quarter 2026 Results
+    source_type: company_ir
+    url: https://www.nuscalepower.com/press-releases/2026/nuscale-power-reports-first-quarter-2026-results
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [SMR]
+    summary: NuScale highlighted project activity, roughly USD 1.0 billion liquidity, reduced revenue after prior project work ended, and continued commercialization spending.
+  - id: smr_q1_2026_10q
+    title: NuScale Power First Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1822966/000182296626000054/smr-20260331.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [SMR]
+    summary: The filing reports USD 0.565 million revenue, USD 57.5 million operating loss, USD 314.7 million operating cash use, ENTRA1 contributions, post-quarter ATM issuance, and no financial debt.
+  - id: smr_us460_nrc_approval_2025
+    title: NuScale US460 Standard Design Approval
+    source_type: regulator
+    url: https://www.nrc.gov/reactors/new-reactors/advanced/who-were-working-with/applicant-projects/nuscale-us460/documents
+    source_published_at: 2025-05-29
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [SMR]
+    summary: The U.S. Nuclear Regulatory Commission issued the Standard Design Approval for NuScale's US460 power-plant design.
+  - id: aaoi_q1_2026_ir
+    title: Applied Optoelectronics Reports First Quarter 2026 Results
+    source_type: company_ir
+    url: https://www.sec.gov/Archives/edgar/data/1158114/000168316826003562/aaoi_ex9901.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [AAOI]
+    summary: AAOI reported USD 151.1 million revenue, 29.1 percent gross margin, initial 800G volume shipments, and expectations for a larger capacity-supported ramp.
+  - id: aaoi_q1_2026_10q
+    title: Applied Optoelectronics First Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1158114/000143774926015620/aaoi20260331_10q.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [AAOI]
+    summary: The filing documents revenue growth, operating losses, working-capital cash use, capacity spending, ATM issuance, convertible debt, concentration, and Amazon-warrant dilution.
+  - id: aaoi_fab4_2026_07_01
+    title: Applied Optoelectronics FAB4 Design-Build Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1158114/000168316826005221/aaoi_8k.htm
+    source_published_at: 2026-07-01
+    retrieved_at: 2026-07-12
+    first_seen_at: 2026-07-12
+    related_symbols: [AAOI]
+    summary: AAOI committed approximately USD 94.1 million to the FAB4 cleanroom project, adding capacity optionality and material execution and capital-spending risk.

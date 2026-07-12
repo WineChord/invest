@@ -180,9 +180,10 @@ lanes:
       - MU
       - LITE
       - FN
+      - AAOI
     sublanes:
       - id: ai_interconnect_and_optics
-        proxies: [CRDO, ALAB, LITE, FN]
+        proxies: [CRDO, ALAB, LITE, FN, AAOI]
       - id: ai_memory
         proxies: [MU]
     candidate_entry_points:
@@ -213,11 +214,12 @@ lanes:
       - LEU
       - NNE
       - NUCL
+      - SMR
     sublanes:
       - id: nuclear_fuel_cycle_and_logistics
         proxies: [LEU, NNE, NUCL]
       - id: advanced_nuclear_deployment
-        proxies: [OKLO, NNE]
+        proxies: [OKLO, NNE, SMR]
     candidate_entry_points:
       - advanced nuclear developers with public reporting
       - strategic fuel-cycle companies
@@ -248,9 +250,10 @@ lanes:
       - QBTS
       - QUBT
       - HQ
+      - RGTI
     sublanes:
       - id: quantum_compute_systems
-        proxies: [IONQ, XNDU, IQMX, QBTS, QUBT]
+        proxies: [IONQ, XNDU, IQMX, QBTS, QUBT, RGTI]
       - id: quantum_software_and_enabling_infrastructure
         proxies: [HQ]
       - id: post_quantum_security

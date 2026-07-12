@@ -863,3 +863,39 @@ entries:
     risk_watch: Interest rates, Coinbase and other distribution costs, USDC circulation and share, ARC token economics, shareholder capture, equity dilution, regulation, and corporate versus customer reserve cash classification.
     next_check: Next reserve update, USDC circulation, rate move, distribution agreement, ARC milestone, quarterly filing, or material regulatory event.
     source_path: research/filings/2026-05-30-CRCL-10Q-000187604226000150.md
+  - id: 2026-07-12-rgti-readiness
+    symbol: RGTI
+    analyzed_at: "2026-07-12"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Modular quantum delivery comparator
+    stance: C+
+    summary: Rigetti's generally available 108-qubit system, system sales, and liquidity make it a real quantum peer, but tiny revenue, operating losses, concentration, technical obsolescence, dilution, and an extreme revenue multiple block entry.
+    upside_path: Convert chiplet-based superconducting systems, in-house fabrication, cloud access, and on-premises sales into repeatable commercial quantum infrastructure revenue.
+    risk_watch: Fidelity and scaling, recurring system demand, customer concentration, operating burn, warrant and award dilution, competing modalities, and valuation.
+    next_check: Q2 filing, recurring system revenue, RPO, fidelity or error-correction milestone, cash burn, dilution, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-12-RGTI-readiness.md
+  - id: 2026-07-12-smr-readiness
+    symbol: SMR
+    analyzed_at: "2026-07-12"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Licensed reactor design comparator
+    stance: C+
+    summary: NRC approval makes NuScale a genuine regulatory-scarcity peer, but negligible revenue, project economics, milestone contributions, cash use, construction risk, and large ATM capacity block entry.
+    upside_path: Convert the approved US460 design into funded, permitted, constructed plants and recurring module, licensing, and lifecycle service economics.
+    risk_watch: Binding customer funding, first-of-a-kind cost and schedule, ENTRA1 economics, construction licensing, supply chain, cash use, ATM issuance, and per-share dilution.
+    next_check: Q2 filing, binding funded deployment, project economics, ENTRA1 milestone, ATM issuance, regulatory event, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-12-SMR-readiness.md
+  - id: 2026-07-12-aaoi-readiness
+    symbol: AAOI
+    analyzed_at: "2026-07-12"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: High-speed optical capacity comparator
+    stance: C+
+    summary: AAOI's 800G volume shipments, data-center growth, and domestic FAB4 build make it a direct optical peer, but valuation, margin, concentration, cash burn, capex, debt, ATM issuance, and customer-warrant dilution block entry.
+    upside_path: Scale 800G and 1.6T transceivers plus domestic manufacturing capacity into durable hyperscale optical revenue and better utilization economics.
+    risk_watch: Customer concentration, 800G and 1.6T ramp, gross margin, receivables and inventory, operating cash conversion, FAB4 budget and timing, converts, ATM issuance, and warrants.
+    next_check: Next quarterly report, high-speed product ramp, cash conversion, concentration, FAB4 progress, dilution, or price dislocation.
+    source_path: research/discovery/readiness/2026-07-12-AAOI-readiness.md

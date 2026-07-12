@@ -3,9 +3,9 @@
 ```yaml
 symbol: MDA
 review_date: 2026-07-11
-readiness_status: incubated_after_review
-blocker_type: evidence_based
-classification: incubate
+readiness_status: completed
+blocker_type: none
+classification: promote
 dashboard_surface_status: complete
 readiness_index_record: research/discovery/candidate-readiness.yml
 source_ids:

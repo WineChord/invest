@@ -1,10 +1,10 @@
 schema_version: 1
-as_of: 2026-07-11
+as_of: 2026-07-12
 last_research_engine_run:
-  as_of: 2026-07-11
-  scope: monthly_decision_full_cycle_with_post_cycle_evidence_correction
+  as_of: 2026-07-12
+  scope: monthly_decision_full_cycle_with_live_freshness_and_discovery_coverage_audit
   notes: >-
-    Ran the full 2026-07-11 operating cycle after a confirmed USD 888 deposit, then independently audited every tradable symbol's latest filing or issuer event. The post-cycle repair corrected SEC TTM and cash selection, completed CRCL economics, promoted MDA and GILT, and strengthened LEU value-capture evidence. Exact unexpired private action remains withheld from public repository artifacts.
+    Ran the full 2026-07-12 operating cycle with current market, macro, public-attention, SEC submissions, all-symbol research, five independent judgment reviewers, GitHub Actions, and responsive-dashboard checks. MDA and GILT readiness now matches their active status; RGTI, SMR, and AAOI completed research-only coverage. Exact current private allocation terms remain withheld from public repository artifacts.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
@@ -19,10 +19,10 @@ decision_readiness:
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-11
-  discovery_lane_map_as_of: 2026-07-11
-  watchlist_symbols: 38
-  watchlist_symbols_with_current_cycle_review: 38
+  universe_scan_as_of: 2026-07-12
+  discovery_lane_map_as_of: 2026-07-12
+  watchlist_symbols: 41
+  watchlist_symbols_with_current_cycle_review: 41
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
@@ -31,12 +31,12 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 22
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 12
+  raw_discovery_candidates_open: 10
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-11-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-11-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-11-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-11-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-12-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-12-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-12-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-12-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -65,9 +65,9 @@ discovery_process:
     - frontier_ai_public_platforms
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 12
+  material_open_candidates: 10
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 12
+  open_candidate_readiness_completed: 10
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -112,4 +112,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved reachable-work blocker. The public files disclose the evidence correction and status changes without publishing a still-actionable share count or price. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
+  Ready means the repository-public research state has no unresolved reachable-work blocker. The public files disclose evidence, coverage, and process changes without publishing a still-actionable share count, limit price, or timing instruction. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.

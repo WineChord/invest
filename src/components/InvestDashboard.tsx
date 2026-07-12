@@ -44,6 +44,7 @@ import type {
   ResearchAnalysisEntry,
   WatchlistItem,
 } from "../lib/portfolioData";
+import { observeChartSize } from "../lib/chartResize";
 import {
   liveIntradayTradingViewCaption,
   liveIntradayTradingViewConfig,
@@ -1551,8 +1552,9 @@ function EquityChart({
 
         const chartColors = readChartColors(container, chartTone);
         const chart = createChart(container, {
-          autoSize: true,
+          autoSize: false,
           height: 360,
+          width: Math.max(1, Math.floor(container.getBoundingClientRect().width)),
           layout: {
             attributionLogo: false,
             background: {
@@ -1700,6 +1702,11 @@ function EquityChart({
         applyCurrentRange();
         const rangeFrame = window.requestAnimationFrame(applyCurrentRange);
         const rangeTimer = window.setTimeout(applyCurrentRange, 160);
+        const disconnectResizeObserver = observeChartSize(
+          chart,
+          container,
+          applyCurrentRange,
+        );
 
         chart.subscribeCrosshairMove(handleCrosshairMove);
         chart.subscribeClick(handleClick);
@@ -1708,6 +1715,7 @@ function EquityChart({
         cleanupChart = () => {
           window.cancelAnimationFrame(rangeFrame);
           window.clearTimeout(rangeTimer);
+          disconnectResizeObserver();
           chart.unsubscribeCrosshairMove(handleCrosshairMove);
           chart.unsubscribeClick(handleClick);
           if (chartApiRef.current === chart) {
@@ -3585,8 +3593,9 @@ function StockPriceChart({
 
         const chartColors = readChartColors(container, chartTone);
         const chart = createChart(container, {
-          autoSize: true,
+          autoSize: false,
           height: 250,
+          width: Math.max(1, Math.floor(container.getBoundingClientRect().width)),
           layout: {
             attributionLogo: false,
             background: {
@@ -3700,11 +3709,17 @@ function StockPriceChart({
         applyCurrentRange();
         const rangeFrame = window.requestAnimationFrame(applyCurrentRange);
         const rangeTimer = window.setTimeout(applyCurrentRange, 160);
+        const disconnectResizeObserver = observeChartSize(
+          chart,
+          container,
+          applyCurrentRange,
+        );
         setChartReady(true);
 
         cleanupChart = () => {
           window.cancelAnimationFrame(rangeFrame);
           window.clearTimeout(rangeTimer);
+          disconnectResizeObserver();
           if (chartApiRef.current === chart) {
             chartApiRef.current = null;
           }

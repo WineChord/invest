@@ -348,10 +348,11 @@ writeCsvFile(
   options.dryRun,
 );
 
-const equityUpdate = buildEquitySnapshot(positions, historyBySymbol);
-if (equityUpdate === null) {
-  console.log("Skipped equity snapshot: confirmed positions and cash are not both available.");
+const equityResult = buildEquitySnapshot(positions, historyBySymbol);
+if (equityResult.snapshot === null) {
+  console.log(`Skipped equity snapshot: ${equityResult.reason}.`);
 } else {
+  const equityUpdate = equityResult.snapshot;
   const existingCurve = readCsvFile(equityCurveFile);
   const nextCurve = upsertByDate(existingCurve, equityUpdate);
   writeCsvFile(equityCurveFile, csvHeaders.equityCurve, nextCurve, options.dryRun);
@@ -1239,7 +1240,10 @@ function durationDays(fact) {
 
 function buildEquitySnapshot(positions, historyBySymbol) {
   if (positions.length === 0) {
-    return null;
+    return {
+      reason: "no confirmed positions are available",
+      snapshot: null,
+    };
   }
 
   const accountState = parseYaml(readFileSync(accountStateFile, "utf8"));
@@ -1261,15 +1265,18 @@ function buildEquitySnapshot(positions, historyBySymbol) {
     .map((row) => row.closeDate)
     .sort((left, right) => right.localeCompare(left))[0];
   if (isIsoDate(accountState.as_of) && accountState.as_of > valuationDate) {
-    console.warn(
-      `Skipped equity snapshot: confirmed account state ${accountState.as_of} is newer than latest market close ${valuationDate}.`,
-    );
-    return null;
+    return {
+      reason: `confirmed account state ${accountState.as_of} is newer than latest market close ${valuationDate}`,
+      snapshot: null,
+    };
   }
 
   const cash = toNumber(accountState.confirmed_cash);
   if (cash === null) {
-    return null;
+    return {
+      reason: "confirmed cash is unavailable",
+      snapshot: null,
+    };
   }
 
   const totalMarketValue = sum(marketValues.map((row) => row.marketValue));
@@ -1298,17 +1305,20 @@ function buildEquitySnapshot(positions, historyBySymbol) {
       : `Automated daily close valuation from ${priceHistorySource}; stale closes ${staleSymbols.join(" ")}.`;
 
   return {
-    date: valuationDate,
-    total_market_value: formatDecimal(totalMarketValue, 2),
-    cash: formatDecimal(cash, 2),
-    total_equity: formatDecimal(totalEquity, 2),
-    cumulative_deposits:
-      cumulativeDeposits === null ? "" : formatDecimal(cumulativeDeposits, 2),
-    total_return_pct:
-      totalReturnPct === null ? "" : formatDecimal(totalReturnPct, 4),
-    period_return_pct:
-      periodReturnPct === null ? "" : formatDecimal(periodReturnPct, 4),
-    notes,
+    reason: null,
+    snapshot: {
+      date: valuationDate,
+      total_market_value: formatDecimal(totalMarketValue, 2),
+      cash: formatDecimal(cash, 2),
+      total_equity: formatDecimal(totalEquity, 2),
+      cumulative_deposits:
+        cumulativeDeposits === null ? "" : formatDecimal(cumulativeDeposits, 2),
+      total_return_pct:
+        totalReturnPct === null ? "" : formatDecimal(totalReturnPct, 4),
+      period_return_pct:
+        periodReturnPct === null ? "" : formatDecimal(periodReturnPct, 4),
+      notes,
+    },
   };
 }
 

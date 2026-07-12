@@ -1,4 +1,5 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
+AAOI,119.9200,USD,2026-07-10,Yahoo Finance chart,2026-07-12T15:06:20.035Z,Automated daily close refresh from committed price history.
 ALAB,412.9700,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh from committed price history.
 ASTS,73.3200,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh for confirmed holding.
 BE,244.6100,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh from committed price history.
@@ -29,7 +30,9 @@ PWR,658.5600,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automat
 QBTS,20.0900,USD,2026-07-10,Yahoo Finance chart,2026-07-11T02:16:32.284Z,Automated daily close refresh from committed price history.
 QUBT,8.6600,USD,2026-07-10,Yahoo Finance chart,2026-07-11T02:16:32.284Z,Automated daily close refresh from committed price history.
 RDW,10.1800,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh from committed price history.
+RGTI,16.5400,USD,2026-07-10,Yahoo Finance chart,2026-07-12T15:06:20.035Z,Automated daily close refresh from committed price history.
 RKLB,81.0400,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh for confirmed holding.
+SMR,9.0400,USD,2026-07-10,Yahoo Finance chart,2026-07-12T15:06:20.035Z,Automated daily close refresh from committed price history.
 SPCX,145.3000,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh from committed price history.
 VOYG,31.1600,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh from committed price history.
 VRT,318.8600,USD,2026-07-10,Yahoo Finance chart,2026-07-11T01:54:44.621Z,Automated daily close refresh from committed price history.
