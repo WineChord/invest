@@ -899,3 +899,15 @@ entries:
     risk_watch: Customer concentration, 800G and 1.6T ramp, gross margin, receivables and inventory, operating cash conversion, FAB4 budget and timing, converts, ATM issuance, and warrants.
     next_check: Next quarterly report, high-speed product ramp, cash conversion, concentration, FAB4 progress, dilution, or price dislocation.
     source_path: research/discovery/readiness/2026-07-12-AAOI-readiness.md
+  - id: 2026-07-13-infq-readiness
+    symbol: INFQ
+    analyzed_at: "2026-07-13"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Quantum sensing and resilient PNT comparator
+    stance: B-
+    summary: Infleqtion has real quantum-system revenue, liquidity, government deployments, and RPO, but valuation, 21% gross margin, government concentration, losses, burn, dilution, and technical risk keep it research-only.
+    upside_path: Convert neutral-atom computing, atomic clocks, RF sensing, resilient PNT, software, and government programs into repeatable higher-margin commercial quantum infrastructure revenue.
+    risk_watch: Gross-margin recovery, government concentration, RPO conversion, commercial demand, operating burn, options, warrants, equity-plan capacity, conditional CHIPS dilution, technical roadmap, and valuation.
+    next_check: Q2 filing, gross margin above 35%, commercial mix, RPO conversion, definitive CHIPS terms, share-count update, technical milestone, or material valuation reset.
+    source_path: research/discovery/readiness/2026-07-13-INFQ-readiness.md

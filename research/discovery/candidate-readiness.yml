@@ -1,6 +1,20 @@
 schema_version: 1
-as_of: 2026-07-12
+as_of: 2026-07-13
 records:
+  - symbol: INFQ
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: Infleqtion is a newly public direct neutral-atom computing, quantum sensing, resilient PNT, and RF-systems peer that materially improves the completeness of the public quantum opportunity set.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-13-INFQ-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Real revenue, liquidity, government deployments, and RPO are offset by roughly 45 times guided revenue, 21 percent gross margin, government concentration, operating losses, cash burn, options, warrants, plan capacity, and technical commercialization risk.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-13
+    next_action: Monitor Q2 revenue, gross margin, RPO conversion, commercial mix, definitive CHIPS terms, dilution, technical milestones, and a material valuation reset.
+    conclusion: Incubated into research-only dashboard coverage for quantum sensing and resilient PNT lane completeness; no current buy or promotion.
   - symbol: FLY
     material_to_current_allocation: true
     affected_lanes:

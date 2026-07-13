@@ -1,0 +1,223 @@
+schema_version: 1
+run_id: 2026-07-13-full-cycle-decision
+run_date: 2026-07-13
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, material price move, confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-13-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-13-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_no_action
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 1873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: 2026-07-13 is Monday, so the Friday-only automatic USD 888 deposit authorization did not trigger. No trade execution was confirmed and no broker record changed.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-07-13 --fmp-mode missing
+      dry_run: false
+      output_path: data/market/watchlist_prices.csv
+      retrieved_at: 2026-07-13
+      result_summary: Refreshed 40 tradable research symbols, added INFQ, retained the completed 2026-07-10 close, and repaired incomplete-session filtering plus stale-share-count handling.
+    - command: npm run refresh:macro -- --as-of 2026-07-13
+      dry_run: false
+      output_path: research/macro/regime-snapshots.csv
+      retrieved_at: 2026-07-13
+      result_summary: Refreshed the public macro risk overlay; incomplete QQQ, SMH, and IWM proxy coverage tightened discipline but did not create or remove eligibility.
+    - command: npm run discover:universe -- --as-of 2026-07-13 --json --output research/discovery/runs/2026-07-13-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-13-scan.json
+      output_sha256: afc98703d6cded45a4864b75c19186b52fd460f6748d984cc0a3146d7f507a19
+      retrieved_at: 2026-07-13
+      result_summary: Broad SEC-listed universe scan returned 30 candidates and 57 exploratory matches; judgment review surfaced INFQ as a missing direct quantum sensing and resilient-PNT comparator.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-07-13 --all --max-cache-age-hours 0
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-07-13
+      result_summary: Live submissions audit covered all 39 pre-existing tradable issuers plus INFQ with zero failures; the only post-cutoff filing was the immaterial IQMX director-remuneration 6-K.
+  community_attention:
+    scan_command: npm run scan:community -- --as-of 2026-07-13 --output research/discovery/runs/2026-07-13-community-scan.json
+    scan_output_path: research/discovery/runs/2026-07-13-community-scan.json
+    scan_output_sha256: 63bbf02e449381957b7e008080745eee4127541e92fb614e7e892f7fbdd3150b
+    triage_command: npm run triage:community -- --as-of 2026-07-13 --scan research/discovery/runs/2026-07-13-community-scan.json --output research/discovery/runs/2026-07-13-community-triage.json
+    triage_output_path: research/discovery/runs/2026-07-13-community-triage.json
+    triage_output_sha256: 03b988278658b3a390f327cf5320dd7e181741c513b0f89c9e9dfdc9e1a0ff01
+    previous_scan_status: prior public scan loaded; no private message content retained
+    top_existing_priority_boosts: [RKLB, ASTS, LEU]
+    top_new_primary_source_queue: [MRVL, INFQ]
+    identity_confirmation_queue: []
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, live submissions deltas, and regulator records
+      sources_or_queries: [2026-07-13 live SEC submissions index, IQMX 6-K, INFQ 10-Q, LEU 10-Q and contract 8-K]
+      source_ids: [iqmx_director_remuneration_6k_2026_07_13, infq_q1_2026_10q, leu_q1_2026_10q, leu_haleu_contract_2026_07_02]
+      retrieved_at: 2026-07-13
+      material_findings: IQMX's treasury-share compensation transfer is immaterial; INFQ completed readiness; LEU share count and contract risk were re-underwritten.
+      unavailable_or_skipped_reason: The complete LEU fixed-price contract is not yet public and is a genuine external trigger, not reachable unfinished research.
+    - family_id: issuer_material
+      family: Company releases and company-specific primary evidence
+      sources_or_queries: [Infleqtion Q1 results, conditional CHIPS letter of intent, quantum space initiative]
+      source_ids: [infq_q1_2026_ir, infq_chips_loi_2026_05_21, infq_quantum_space_2026_06_22]
+      retrieved_at: 2026-07-13
+      material_findings: INFQ has direct operating proof and substantial liquidity, but low margin, concentration, burn, dilution, and valuation block entry.
+      unavailable_or_skipped_reason: none
+    - family_id: market_data
+      family: Completed closes, intraday context, technical history, capitalization, and confirmed account valuation
+      sources_or_queries: [data/market/watchlist_prices.csv, data/market/company_metrics.csv, data/account/state.yml]
+      source_ids: [yahoo_chart_close_2026_07_10]
+      retrieved_at: 2026-07-13
+      material_findings: The latest completed session remains 2026-07-10; corrected LEU basic market value is about USD 3.37 billion and confirmed cash remains USD 1873.58.
+      unavailable_or_skipped_reason: Intraday prices are research context only and no broker preview was obtained.
+    - family_id: current_world_context
+      family: Macro and public-attention risk overlays
+      sources_or_queries: [research/macro/regime-snapshots.csv, sanitized 2026-07-13 public-attention triage]
+      source_ids: [yahoo_chart_close_2026_07_10, infq_quantum_space_2026_06_22]
+      retrieved_at: 2026-07-13
+      material_findings: Current attention supports quantum-sensing and nuclear-fuel monitoring but does not create a buy signal.
+      unavailable_or_skipped_reason: Four community endpoints returned HTTP 429 and remain non-decisive by policy.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public, financing, listing, and strategic transaction evidence
+      sources_or_queries: [INFQ business-combination listing, conditional CHIPS funding, IQMX post-SPAC compensation filing]
+      source_ids: [infq_listing_8k_2026_02_17, infq_chips_loi_2026_05_21, iqmx_director_remuneration_6k_2026_07_13]
+      retrieved_at: 2026-07-13
+      material_findings: INFQ is a direct eligible common-stock expression, but listing recency, conditional funding, and dilution do not clear the entry gate.
+      unavailable_or_skipped_reason: none
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad universe scan, public attention, and independent same-lane comparison
+      sources_or_queries: [research/discovery/lanes.yml, 2026-07-13 broad scan, sanitized community triage, MRVL primary-source skim]
+      source_ids: [infq_q1_2026_10q, infq_quantum_space_2026_06_22, leu_haleu_contract_2026_07_02]
+      retrieved_at: 2026-07-13
+      material_findings: The quantum lane gains a sensing and resilient-PNT subtrack; INFQ is incubated research-only, while MRVL is rejected as too large, mature, and duplicative.
+      unavailable_or_skipped_reason: none
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-13
+    notes: Market, macro, broad SEC universe, public attention, full live submissions, issuer filings, new-listing evidence, and bottleneck-lane review all completed.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters: [quantum and cryptography naming collisions, connectivity and optical infrastructure, power and data-center infrastructure, space and mobility transaction vehicles]
+  sampled_symbols: [ARQQ, QMCO, OCC, UEC, SIDU, ANET, AVNW, BIP]
+  false_positive_patterns: [generic connectivity without bottleneck ownership, name-only quantum exposure, blank-check vehicles, large mature diversified companies]
+  lane_decisions: [retain nine active top-level lanes, add quantum sensing and resilient PNT as a monitored subtrack, add INFQ as a research-only comparator]
+  disposition: INFQ completed full readiness; no exploratory match changed current allocation or qualified for a purchase.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Qualified nuclear enrichment capacity, deployable quantum sensing, resilient positioning, useful quantum compute, launch, satellite connectivity, AI compute, power, cooling, memory, and interconnect remain plausible constraints.
+    inferences: Field-qualified delivery, regulated capacity, and funded scale matter more than technology labels.
+    disconfirming_evidence: Current valuations can pre-price scarcity before durable per-share economics exist.
+    source_ids: [leu_haleu_contract_2026_07_02, infq_q1_2026_10q]
+    investment_implication: Preserve the bottleneck map but require auditable shareholder capture and entry margin.
+  who_controls_or_removes_scarcity:
+    facts: Centrus controls the only U.S. commercial HALEU production path now under a major capacity contract, while Infleqtion integrates atomic hardware and software for compute, sensing, and resilient positioning.
+    inferences: Both are direct expressions, but fixed-price execution and immature operating proof can transfer value away from shareholders.
+    disconfirming_evidence: Contract overruns, dilution, low margins, customer concentration, and technology competition may overwhelm scarcity value.
+    source_ids: [leu_haleu_contract_2026_07_02, leu_q1_2026_10q, infq_q1_2026_10q]
+    investment_implication: Keep LEU active and INFQ research-only; buy zero until the evidence and entry gates align.
+  who_can_monetize_into_shareholder_value:
+    facts: Centrus gains title to completed capacity only after performance; INFQ has revenue and RPO but only 21 percent Q1 gross margin and high government concentration.
+    inferences: Neither current entry offers enough auditable per-share capture to beat cash today.
+    disconfirming_evidence: Favorable LEU contract terms or rapid INFQ margin and commercial-mix improvement could change the ranking.
+    source_ids: [leu_haleu_contract_2026_07_02, infq_q1_2026_ir, infq_q1_2026_10q]
+    investment_implication: Retain cash and monitor explicit filing and operating triggers.
+  public_security_expression:
+    facts: Forty research symbols are U.S.-listed and tradable under policy; OPENAI and ANTHROPIC remain not tradable; INFQ common stock is eligible but its warrants are not.
+    inferences: Direct listing is necessary but cannot substitute for evidence, valuation, or security-level analysis.
+    disconfirming_evidence: A direct listed issuer can still be unattractive at the current capitalization.
+    source_ids: [infq_listing_8k_2026_02_17, infq_q1_2026_10q]
+    investment_implication: Incubate INFQ common stock only and exclude its warrants and private proxy substitutions.
+  early_small_misunderstood_or_newly_public:
+    facts: INFQ began public trading in February 2026 and offers a missing quantum-sensing comparator; its approximately USD 2.44 billion basic equity value is already demanding relative to guidance.
+    inferences: Listing recency and awkward technical exposure justify research priority, not automatic entry.
+    disconfirming_evidence: Real deployments and liquidity do not offset the current multiple, margin, concentration, and dilution profile.
+    source_ids: [infq_listing_8k_2026_02_17, infq_q1_2026_10q, infq_q1_2026_ir]
+    investment_implication: Complete dashboard coverage, assign research-only B-, and buy zero.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [updated lane map, broad scan, community triage, primary filings]
+      sources_checked: [infq_listing_8k_2026_02_17, infq_q1_2026_10q, infq_q1_2026_ir]
+      facts_verified: INFQ is a missing direct sensing and resilient-PNT comparator; MRVL is too large and duplicative for durable candidate inclusion.
+      stale_or_missing_evidence: none material to current classification
+      confidence: high
+      key_findings: Complete INFQ research-only coverage and buy zero.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [full live SEC submissions index, current freshness events, issuer filings]
+      sources_checked: [iqmx_director_remuneration_6k_2026_07_13, infq_q1_2026_10q, leu_q1_2026_10q]
+      facts_verified: The sole new filing is an immaterial IQMX compensation event; no holding or candidate has an unresolved reachable critical filing review.
+      stale_or_missing_evidence: The full LEU contract is genuinely issuer-unavailable until a future filing.
+      confidence: high
+      key_findings: Current filing coverage supports a completed decision.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [all-symbol evidence packet, account state, current market context]
+      sources_checked: [leu_haleu_contract_2026_07_02, leu_q1_2026_10q, yahoo_chart_close_2026_07_10]
+      facts_verified: LEU scarcity and capacity ownership can support a tightly bounded starter; all other adds fail.
+      stale_or_missing_evidence: Full contract economics remain unavailable.
+      confidence: medium
+      key_findings: A one-share LEU starter could be survivable, but no larger action is supportable.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [all-symbol evidence packet, capitalization correction, dilution, balance sheet, account concentration]
+      sources_checked: [leu_haleu_contract_2026_07_02, leu_q1_2026_10q, infq_q1_2026_10q]
+      facts_verified: Corrected LEU capitalization and unavailable contract economics fail the evidence and entry gates; every other symbol also has a current veto.
+      stale_or_missing_evidence: none reachable that remains unfinished
+      confidence: high
+      key_findings: Hold both positions and cash; buy and sell zero.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, current estimates, bull and bear cases, maximum-loss scenarios]
+      sources_checked: [leu_haleu_contract_2026_07_02, leu_q1_2026_10q, yahoo_chart_close_2026_07_10]
+      facts_verified: One LEU share would be survivable and retain substantial cash, but the existing RKLB and ASTS concentration remains the dominant portfolio risk.
+      stale_or_missing_evidence: Broker preview and full contract economics are unavailable.
+      confidence: medium
+      key_findings: A bounded starter could pass risk sizing, but sizing alone does not resolve the evidence conflict.
+  unresolved_conflicts: 0
+  conflict_resolution: The LEU eligibility disagreement was resolved under the repository rule that an unresolved material reviewer disagreement defaults to no trade. The corrected capitalization raises the entry hurdle, the complete contract remains external, and the final action is buy zero.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: [quantum_computing_and_networking]
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Quantum sensing and resilient positioning gain a monitored subtrack without a new top-level lane.
+  no_change_reason: Existing top-level lanes still capture all material direct exposures found today.
+
+candidate_delta:
+  candidates_added: [INFQ]
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: [INFQ]
+  false_positive_patterns: [keyword-only quantum exposure, generic connectivity, blank-check vehicles, mature mega-cap indirect proxies]
+
+readiness_sprints:
+  - {symbol: INFQ, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-13-INFQ-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#INFQ, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Every material current candidate has current public evidence, valuation, readiness, and all-symbol comparison; the no-buy conclusion follows the evidence and conflict rules rather than reachable unfinished research.
+
+publication_review:
+  status: public_safe_no_action
+  exact_unexpired_action_terms: none
+  broker_records_changed: false
+  notes: This is a completed no-action decision with no order, broker preview, or same-day execution detail. Public files contain research state and historical confirmed facts only.

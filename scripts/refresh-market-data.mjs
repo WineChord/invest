@@ -10,9 +10,11 @@ import {
 } from "./fmp-fetch-lib.mjs";
 import { fetchSecJsonWithRetry } from "./sec-fetch-lib.mjs";
 import {
+  selectFreshShareCountFact,
   selectPreferredInstantFact,
   selectTrailingTwelveMonthPeriod,
 } from "./sec-ttm-lib.mjs";
+import { filterCompletedDailyBars } from "./market-session-lib.mjs";
 
 const accountStateFile = "data/account/state.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
@@ -21,6 +23,7 @@ const ledgerFile = "data/account/ledger.csv";
 const positionsFile = "data/account/positions.csv";
 const priceHistoryFile = "data/market/price_history.csv";
 const securityMasterFile = "data/market/security_master.csv";
+const shareCountOverridesFile = "data/market/share-count-overrides.csv";
 const technicalSnapshotsFile = "data/market/technical_snapshots.csv";
 const watchlistPricesFile = "data/market/watchlist_prices.csv";
 const watchlistFile = "research/watchlist.csv";
@@ -172,8 +175,8 @@ const sharesOutstandingTags = [
   "CommonStocksIncludingAdditionalPaidInCapital",
 ];
 const weightedAverageShareTags = [
-  "WeightedAverageNumberOfDilutedSharesOutstanding",
   "WeightedAverageNumberOfSharesOutstandingBasic",
+  "WeightedAverageNumberOfDilutedSharesOutstanding",
 ];
 
 const options = parseArgs(process.argv.slice(2));
@@ -233,6 +236,9 @@ const existingCompanyMetrics = readCsvFile(companyMetricsFile);
 const existingPriceHistory = readCsvFile(priceHistoryFile);
 const existingTechnicalSnapshots = readCsvFile(technicalSnapshotsFile);
 const existingPrices = readCsvFile(watchlistPricesFile);
+const shareCountOverrides = new Map(
+  readCsvFile(shareCountOverridesFile).map((row) => [row.symbol, row]),
+);
 const positions = readCsvFile(positionsFile).filter(
   (row) => toNumber(row.quantity) > 0,
 );
@@ -337,6 +343,7 @@ const companyMetricRows = preserveRetrievedAt(
   await buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol, {
     fmpClient,
     fmpMode,
+    shareCountOverrides,
   }),
   existingCompanyMetrics,
   ["symbol"],
@@ -633,30 +640,37 @@ async function fetchPriceHistory(symbol, upperDate, days) {
   const quote = result?.indicators?.quote?.[0] ?? {};
   const adjClose = result?.indicators?.adjclose?.[0]?.adjclose ?? [];
 
-  const rows = timestamps
-    .map((timestamp, index) => {
-      const date = isoDateFromUnixSeconds(timestamp);
-      const close = finiteNumber(quote.close?.[index]);
-      return {
-        adjClose: finiteNumber(adjClose[index]),
-        close,
-        date,
-        high: finiteNumber(quote.high?.[index]),
-        low: finiteNumber(quote.low?.[index]),
-        open: finiteNumber(quote.open?.[index]),
-        volume: finiteNumber(quote.volume?.[index]),
-      };
-    })
-    .filter(
-      (row) =>
-        isIsoDate(row.date) &&
-        row.date <= upperDate &&
-        row.close !== null &&
-        row.open !== null &&
-        row.high !== null &&
-        row.low !== null,
-    )
-    .sort((left, right) => left.date.localeCompare(right.date));
+  const rows = filterCompletedDailyBars(
+    timestamps
+      .map((timestamp, index) => {
+        const date = isoDateFromUnixSeconds(timestamp);
+        const close = finiteNumber(quote.close?.[index]);
+        return {
+          adjClose: finiteNumber(adjClose[index]),
+          close,
+          date,
+          high: finiteNumber(quote.high?.[index]),
+          low: finiteNumber(quote.low?.[index]),
+          open: finiteNumber(quote.open?.[index]),
+          volume: finiteNumber(quote.volume?.[index]),
+        };
+      })
+      .filter(
+        (row) =>
+          isIsoDate(row.date) &&
+          row.date <= upperDate &&
+          row.close !== null &&
+          row.open !== null &&
+          row.high !== null &&
+          row.low !== null,
+      )
+      .sort((left, right) => left.date.localeCompare(right.date)),
+    {
+      currentTradingPeriod: result?.meta?.currentTradingPeriod,
+      marketTimeZone,
+      now: new Date(retrievedAt),
+    },
+  );
 
   if (rows.length === 0) {
     throw new Error(`No daily bars found from ${startDate} to ${upperDate}`);
@@ -819,6 +833,7 @@ function buildTechnicalSnapshotRow(symbol, history) {
 async function buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol, {
   fmpClient,
   fmpMode,
+  shareCountOverrides,
 }) {
   const rows = [];
 
@@ -831,7 +846,12 @@ async function buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol
 
     try {
       const facts = await fetchCompanyFacts(security.sec_cik);
-      const row = buildCompanyMetricRow(symbol, latest, facts);
+      const row = buildCompanyMetricRow(
+        symbol,
+        latest,
+        facts,
+        shareCountOverrides.get(symbol),
+      );
       rows.push(await maybeSupplementCompanyMetricRowWithFmp({
         fmpClient,
         fmpMode,
@@ -994,7 +1014,7 @@ function appendNote(existing, note) {
   return `${base} ${addition}`;
 }
 
-function buildCompanyMetricRow(symbol, latestPrice, companyFacts) {
+function buildCompanyMetricRow(symbol, latestPrice, companyFacts, shareCountOverride) {
   const revenue = trailingTwelveMonthValue(companyFacts, revenueTags, true);
   const previousRevenue = previousTrailingTwelveMonthValue(
     companyFacts,
@@ -1011,9 +1031,22 @@ function buildCompanyMetricRow(symbol, latestPrice, companyFacts) {
       latestInstantValue(companyFacts, currentDebtTags),
       latestInstantValue(companyFacts, noncurrentDebtTags),
     ]);
-  const reportedSharesOutstanding =
-    latestInstantValue(companyFacts, sharesOutstandingTags, ["shares"]) ??
-    latestPeriodValue(companyFacts, weightedAverageShareTags, ["shares"]);
+  const shareCountFact = selectFreshShareCountFact({
+    instantFacts: factValues(companyFacts, sharesOutstandingTags, ["shares"]),
+    instantTagCandidates: sharesOutstandingTags,
+    periodFacts: factValues(companyFacts, weightedAverageShareTags, ["shares"]),
+    periodTagCandidates: weightedAverageShareTags,
+  });
+  const overrideShares = toNumber(shareCountOverride?.shares_outstanding);
+  const overrideAsOf = String(shareCountOverride?.as_of ?? "");
+  const useShareCountOverride =
+    overrideShares !== null &&
+    overrideShares >= 100_000 &&
+    isIsoDate(overrideAsOf) &&
+    (shareCountFact === null || overrideAsOf >= shareCountFact.end);
+  const reportedSharesOutstanding = useShareCountOverride
+    ? overrideShares
+    : shareCountFact?.value ?? null;
   // SEC companyfacts for newly listed foreign issuers occasionally exposes a
   // nominal one-share value under a nonstandard tag. Treat values below a
   // conservative public-company plausibility floor as unavailable instead of
@@ -1053,7 +1086,11 @@ function buildCompanyMetricRow(symbol, latestPrice, companyFacts) {
     ? reportedSharesOutstanding !== null
       ? "SEC-derived metrics; market-cap multiples unavailable because reported shares outstanding failed the plausibility check."
       : "SEC-derived metrics; market-cap multiples unavailable without shares outstanding."
-    : "SEC-derived fundamentals combined with latest committed close price.";
+    : useShareCountOverride
+      ? `SEC-derived fundamentals combined with latest committed close price; shares outstanding use a filing-cover override dated ${overrideAsOf} because companyfacts lacks a current instant fact.`
+    : shareCountFact?.basis === "period_average_fallback"
+      ? "SEC-derived fundamentals combined with latest committed close price; newer basic weighted-average shares replace a stale instant share-count tag."
+      : "SEC-derived fundamentals combined with latest committed close price.";
 
   return {
     symbol,

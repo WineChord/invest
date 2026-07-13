@@ -1989,3 +1989,66 @@ sources:
     first_seen_at: 2026-07-12
     related_symbols: [AAOI]
     summary: AAOI committed approximately USD 94.1 million to the FAB4 cleanroom project, adding capacity optionality and material execution and capital-spending risk.
+  - id: sec_event_filing_index_2026_07_13
+    title: SEC Event Filing Index 2026-07-13
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-13-sec-event-filing-index-index.metadata.json
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-13
+    first_seen_at: 2026-07-13
+    related_symbols: [RKLB, ASTS, LEU, IQMX, INFQ]
+    summary: Full live recent-submissions audit covered all 39 pre-existing tradable research issuers plus INFQ with zero fetch failures; IQMX was the sole new filing after the prior cutoff.
+  - id: iqmx_director_remuneration_6k_2026_07_13
+    title: IQM Changes in Company Own Shares
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2113060/000119312526301565/d114918d6k.htm
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-13
+    first_seen_at: 2026-07-13
+    related_symbols: [IQMX]
+    summary: IQM transferred 43,255 treasury shares as annual director remuneration and reported retaining 73,726,998 treasury shares; the filing contains no new operating or financial results.
+  - id: infq_listing_8k_2026_02_17
+    title: Infleqtion Business Combination Closing and NYSE Listing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2007825/000119312526053097/d900344d8k.htm
+    source_published_at: 2026-02-17
+    retrieved_at: 2026-07-13
+    first_seen_at: 2026-07-13
+    related_symbols: [INFQ]
+    summary: The filing documents the completed business combination and public common-stock listing under INFQ; warrants remain outside policy eligibility.
+  - id: infq_q1_2026_10q
+    title: Infleqtion First Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2007825/000119312526227206/d131935d10q.htm
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-07-13
+    first_seen_at: 2026-07-13
+    related_symbols: [INFQ]
+    summary: The filing reports revenue, gross margin, losses, cash use, liquidity, RPO, government concentration, share count, options, warrants, and equity-plan capacity.
+  - id: infq_q1_2026_ir
+    title: Infleqtion Reports Record Q1 Revenue as Customer Demand Accelerates
+    source_type: company_ir
+    url: https://ir.infleqtion.com/news-events/press-releases/detail/186/infleqtion-reports-record-q1-revenue-as-customer-demand-accelerates
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-13
+    first_seen_at: 2026-07-13
+    related_symbols: [INFQ]
+    summary: The issuer reported USD 9.461 million Q1 revenue and guided to at least USD 40 million for 2026.
+  - id: infq_chips_loi_2026_05_21
+    title: Infleqtion Conditional CHIPS Letter of Intent
+    source_type: company_ir
+    url: https://ir.infleqtion.com/news-events/press-releases/detail/188/infleqtion-signs-letter-of-intent-with-the-u-s-department-of-commerce-for-100-million-to-accelerate-u-s-leadership-in-quantum-computing
+    source_published_at: 2026-05-21
+    retrieved_at: 2026-07-13
+    first_seen_at: 2026-07-13
+    related_symbols: [INFQ]
+    summary: The non-binding USD 100 million proposal contemplates discounted government equity and remains both funding upside and dilution risk until definitive.
+  - id: infq_quantum_space_2026_06_22
+    title: Infleqtion Americas Quantum Space Initiative
+    source_type: company_ir
+    url: https://ir.infleqtion.com/news-events/press-releases/detail/193/infleqtion-launches-americas-quantum-space-initiative-to-accelerate-the-future-of-quantum-enabled-space-infrastructure
+    source_published_at: 2026-06-22
+    retrieved_at: 2026-07-13
+    first_seen_at: 2026-07-13
+    related_symbols: [INFQ]
+    summary: The initiative expands the issuer's stated quantum sensing and resilient PNT opportunity but remains issuer-reported strategic evidence rather than financial proof.

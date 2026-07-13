@@ -1129,7 +1129,11 @@ function runCheckData(cwd) {
 
 function updateCandidateReadiness(cwd, mutate) {
   updateYaml(cwd, "research/discovery/candidate-readiness.yml", (doc) => {
-    mutate(doc.records[0]);
+    const record = doc.records.find((entry) => entry.symbol === "FLY");
+    if (record === undefined) {
+      throw new Error("Missing FLY readiness record");
+    }
+    mutate(record);
   });
 }
 

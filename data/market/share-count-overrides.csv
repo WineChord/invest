@@ -1,0 +1,2 @@
+symbol,as_of,shares_outstanding,source_published_at,retrieved_at,source_url,notes
+LEU,2026-05-01,19672794,2026-05-06,2026-07-13,https://www.sec.gov/Archives/edgar/data/1065059/000162828026030891/leu-20260331.htm,2026 Q1 Form 10-Q cover-page Class A plus Class B shares outstanding; used because SEC companyfacts exposes only a stale instant fact.

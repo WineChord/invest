@@ -112,6 +112,46 @@ export function selectPreferredInstantFact(facts, tagCandidates) {
     .at(-1) ?? null;
 }
 
+export function selectFreshShareCountFact({
+  instantFacts,
+  instantTagCandidates,
+  periodFacts,
+  periodTagCandidates,
+  maxInstantStalenessDays = 180,
+}) {
+  const instant = selectPreferredInstantFact(instantFacts, instantTagCandidates);
+  const period = selectPreferredPeriodFact(periodFacts, periodTagCandidates);
+  if (instant === null) {
+    return period === null ? null : { ...period, basis: "period_average_fallback" };
+  }
+  if (period === null) {
+    return { ...instant, basis: "instant" };
+  }
+
+  const stalenessDays = Math.round(
+    (Date.parse(`${period.end}T00:00:00Z`) - Date.parse(`${instant.end}T00:00:00Z`)) /
+      (24 * 60 * 60 * 1000),
+  );
+  return stalenessDays > maxInstantStalenessDays
+    ? { ...period, basis: "period_average_fallback" }
+    : { ...instant, basis: "instant" };
+}
+
+function selectPreferredPeriodFact(facts, tagCandidates) {
+  const tagRank = new Map(tagCandidates.map((tag, index) => [tag, index]));
+  return facts
+    .filter((fact) => fact.end !== "")
+    .sort((left, right) => {
+      const factOrder = compareFactsByEndAndFiled(left, right);
+      if (factOrder !== 0) {
+        return factOrder;
+      }
+      return (tagRank.get(right.tag) ?? tagCandidates.length) -
+        (tagRank.get(left.tag) ?? tagCandidates.length);
+    })
+    .at(-1) ?? null;
+}
+
 function latestQuarterlyFacts(periodFacts) {
   const quarterlyByEnd = new Map();
 

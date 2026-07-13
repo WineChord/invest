@@ -1,28 +1,28 @@
 schema_version: 1
-as_of: 2026-07-12
+as_of: 2026-07-13
 last_research_engine_run:
-  as_of: 2026-07-12
-  scope: monthly_decision_full_cycle_with_live_freshness_and_discovery_coverage_audit
+  as_of: 2026-07-13
+  scope: monthly_decision_full_cycle_with_live_freshness_discovery_and_valuation_integrity_repairs
   notes: >-
-    Ran the full 2026-07-12 operating cycle with current market, macro, public-attention, SEC submissions, all-symbol research, five independent judgment reviewers, GitHub Actions, and responsive-dashboard checks. MDA and GILT readiness now matches their active status; RGTI, SMR, and AAOI completed research-only coverage. Exact current private allocation terms remain withheld from public repository artifacts.
+    Ran the full 2026-07-13 operating cycle with completed-close market data, macro and public-attention overlays, live SEC submissions, all-symbol research, five independent judgment reviewers, GitHub Actions, and responsive-dashboard checks. INFQ completed research-only readiness, the quantum lane gained a sensing and resilient-PNT subtrack, and market-session plus stale-share-count valuation defects were repaired. The final decision is completed no action after the unresolved LEU eligibility disagreement defaulted to cash.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current enough to support a decision. The post-cycle review changed the private allocation reconciliation while keeping exact unexpired order details outside the public repository under the publication policy.
+  reason: Repository-public research coverage is current enough to support a decision after completing reachable INFQ research and correcting LEU capitalization. Exact unexpired order details remain outside the public repository under the publication policy.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 1873.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - rerun LEU after the private action expires, any material event, or the next 10-Q full contract disclosure
+    - rerun LEU after any material event, a material price dislocation, or the next 10-Q full contract disclosure
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-12
-  discovery_lane_map_as_of: 2026-07-12
-  watchlist_symbols: 41
-  watchlist_symbols_with_current_cycle_review: 41
+  universe_scan_as_of: 2026-07-13
+  discovery_lane_map_as_of: 2026-07-13
+  watchlist_symbols: 42
+  watchlist_symbols_with_current_cycle_review: 42
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
@@ -33,10 +33,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 10
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-12-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-12-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-12-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-12-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-13-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-13-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-13-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-13-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -112,4 +112,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved reachable-work blocker. The public files disclose evidence, coverage, and process changes without publishing a still-actionable share count, limit price, or timing instruction. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
+  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses evidence, coverage, and process changes without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.

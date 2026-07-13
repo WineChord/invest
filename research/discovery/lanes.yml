@@ -245,6 +245,7 @@ lanes:
       - post-quantum
     current_public_proxies:
       - IONQ
+      - INFQ
       - XNDU
       - IQMX
       - QBTS
@@ -253,7 +254,10 @@ lanes:
       - RGTI
     sublanes:
       - id: quantum_compute_systems
-        proxies: [IONQ, XNDU, IQMX, QBTS, QUBT, RGTI]
+        proxies: [IONQ, INFQ, XNDU, IQMX, QBTS, QUBT, RGTI]
+      - id: quantum_sensing_and_resilient_pnt
+        status: monitored
+        proxies: [INFQ]
       - id: quantum_software_and_enabling_infrastructure
         proxies: [HQ]
       - id: post_quantum_security
@@ -262,6 +266,7 @@ lanes:
     candidate_entry_points:
       - newly public quantum hardware or networking companies
       - public suppliers with real quantum revenue and government validation
+      - public suppliers of deployable quantum sensing, resilient positioning/navigation/timing, and radio-frequency detection
       - security infrastructure companies tied to post-quantum migration
     next_review_trigger: Commercial revenue quality, system delivery, government contract, technical milestone, or cash runway update.
     invalidation_or_demote_signal: Revenue remains mostly one-time or promotional while burn and dilution compound faster than technical proof.

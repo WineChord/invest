@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {
+  selectFreshShareCountFact,
   selectPreferredInstantFact,
   selectTrailingTwelveMonthPeriod,
   trailingTwelveMonthPeriod,
@@ -70,6 +71,46 @@ assert.equal(
   ).value,
   1_517_264_000,
   "same-date instant facts must preserve semantic candidate priority",
+);
+
+const staleInstantShares = [
+  { end: "2022-03-01", filed: "2022-03-11", start: "", tag: "EntityCommonStockSharesOutstanding", value: 13_673_933 },
+];
+const currentPeriodShares = [
+  { end: "2026-03-31", filed: "2026-05-06", start: "2026-01-01", tag: "WeightedAverageNumberOfDilutedSharesOutstanding", value: 22_446_000 },
+  { end: "2026-03-31", filed: "2026-05-06", start: "2026-01-01", tag: "WeightedAverageNumberOfSharesOutstandingBasic", value: 19_773_000 },
+];
+const selectedShares = selectFreshShareCountFact({
+  instantFacts: staleInstantShares,
+  instantTagCandidates: ["EntityCommonStockSharesOutstanding"],
+  periodFacts: currentPeriodShares,
+  periodTagCandidates: [
+    "WeightedAverageNumberOfSharesOutstandingBasic",
+    "WeightedAverageNumberOfDilutedSharesOutstanding",
+  ],
+});
+assert.equal(
+  selectedShares.value,
+  19_773_000,
+  "a years-stale instant share count must not override a current basic weighted-average count",
+);
+assert.equal(selectedShares.basis, "period_average_fallback");
+
+const recentInstantShares = [
+  { end: "2026-05-01", filed: "2026-05-06", start: "", tag: "EntityCommonStockSharesOutstanding", value: 19_672_794 },
+];
+assert.equal(
+  selectFreshShareCountFact({
+    instantFacts: recentInstantShares,
+    instantTagCandidates: ["EntityCommonStockSharesOutstanding"],
+    periodFacts: currentPeriodShares,
+    periodTagCandidates: [
+      "WeightedAverageNumberOfSharesOutstandingBasic",
+      "WeightedAverageNumberOfDilutedSharesOutstanding",
+    ],
+  }).value,
+  19_672_794,
+  "a current instant share count remains preferable to a period average",
 );
 
 console.log("SEC TTM calculation tests passed");
