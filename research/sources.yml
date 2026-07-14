@@ -1,5 +1,14 @@
 schema_version: 1
 sources:
+  - id: yahoo_chart_close_2026_07_13
+    title: Yahoo Finance Completed Daily Close Snapshot — 2026-07-13
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/WYFI?range=max&interval=1d
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI]
+    summary: Completed July 13 daily bars were retrieved or revalidated on July 14; the incomplete July 14 New York session was excluded.
   - id: finra_trade_confirmations_2024
     title: Are You Checking Your Trade Confirmations?
     source_type: investor_education
@@ -1998,6 +2007,15 @@ sources:
     first_seen_at: 2026-07-13
     related_symbols: [RKLB, ASTS, LEU, IQMX, INFQ]
     summary: Full live recent-submissions audit covered all 39 pre-existing tradable research issuers plus INFQ with zero fetch failures; IQMX was the sole new filing after the prior cutoff.
+  - id: sec_event_filing_index_2026_07_14
+    title: SEC Event Filing Index 2026-07-14
+    source_type: repository_run
+    url: research/discovery/runs/2026-07-14-sec-event-filing-index-index.metadata.json
+    source_published_at: 2026-07-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, LEU, MDA, GILT, WULF, IMSR, POET, WYFI]
+    summary: Fixed-snapshot targeted recent-submissions index covered all 44 tradable research symbols and explicitly retained targeted-partial rather than full-universe coverage caveats.
   - id: iqmx_director_remuneration_6k_2026_07_13
     title: IQM Changes in Company Own Shares
     source_type: sec_filing
@@ -2052,3 +2070,282 @@ sources:
     first_seen_at: 2026-07-13
     related_symbols: [INFQ]
     summary: The initiative expands the issuer's stated quantum sensing and resilient PNT opportunity but remains issuer-reported strategic evidence rather than financial proof.
+  - id: wyfi_q1_2026_10q
+    title: WhiteFiber First Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2042022/000121390026056212/ea0288695-10q_whitefiber.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [WYFI]
+    summary: The filing reports revenue growth, segment gross profit, losses, operating and investing cash flow, cash, convertible debt, deferred revenue, customer-contract uncertainty, Bit Digital control, share count, and dilution sensitivity.
+  - id: wyfi_bridge_facility_2026_05_20
+    title: WhiteFiber Delayed Draw Term Loan Facility
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2042022/000121390026061575/ea0292280-8k_white.htm
+    source_published_at: 2026-05-27
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [WYFI]
+    summary: The filing documents a USD 100 million delayed-draw bridge facility from a Bit Digital subsidiary, expandable by agreement to USD 150 million, adding related-party and financing complexity.
+  - id: mda_offering_close_2026_07_14
+    title: MDA Space Offering Closing Announcement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926083361/tm2619705d8_ex99-1.htm
+    source_published_at: 2026-07-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [MDA]
+    summary: MDA closed the 23 million-share offering at USD 35.60 for about USD 818.8 million gross proceeds; a 3.45 million-share underwriter option remains.
+  - id: mda_offering_prospectus_2026_07_09
+    title: MDA Space Offering Prospectus Supplement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926082327/tm2619705-6_suppl.htm
+    source_published_at: 2026-07-09
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [MDA]
+    summary: The capitalization table reports 138659395 shares before and 161659395 after the base offering, excluding the 3450000-share option.
+  - id: crcl_reserve_fund_10ka_2026_07_13
+    title: Circle 2025 Form 10-K Amendment and Audited Reserve Fund Statements
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1876042/000187604226000228/crcl-20251231.htm
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [CRCL]
+    summary: The amendment adds audited April 30 Circle Reserve Fund statements and related certifications without restating Circle's operating-company results.
+  - id: qbts_exchange_transfer_2026_07_14
+    title: D-Wave NYSE to Nasdaq Transfer Announcement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000099/d-waveannouncestransferofs.htm
+    source_published_at: 2026-07-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [QBTS]
+    summary: D-Wave expects the unchanged QBTS ticker to move from NYSE to Nasdaq after the July 24 close, with Nasdaq trading beginning July 27.
+  - id: crdo_cfo_form4_2026_07_13
+    title: Credo CFO Form 4 Planned Sale
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026047992/xslF345X06/wk-form4_1783972698.xml
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [CRDO]
+    summary: The CFO sold 7580 shares under a prior Rule 10b5-1 plan and retained 504708 shares.
+  - id: crwv_form144_cluster_2026_07_13
+    title: CoreWeave Form 144 Proposed-Sale Cluster
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1769628/000195004726007051/xsl144X01/primary_doc.xml
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [CRWV]
+    summary: Eight notices covered 315055 proposed shares with an indicated value near USD 28.0 million; most were associated with previously adopted plans.
+  - id: wulf_anthropic_lease_2026_07_06
+    title: TeraWulf Anthropic Lease and Abernathy Transaction Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1083301/000110465926080583/tm2619468d1_8k.htm
+    source_published_at: 2026-07-06
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [WULF]
+    summary: A subsidiary signed a 20-year Anthropic lease for approximately 401 MW with phased delivery from late 2027 through early 2028; a separate transaction would sell the Abernathy joint-venture interest for about USD 530 million.
+  - id: wulf_q1_2026_10q
+    title: TeraWulf Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1083301/000108330126000092/wulf-20260331.htm
+    source_published_at: 2026-05-08
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [WULF]
+    summary: Q1 reported USD 34.0 million revenue, USD 21.0 million HPC lease revenue, large liquidity, multi-billion-dollar debt, heavy investment cash use, stock compensation, warrants, and residual bitcoin exposure.
+  - id: imsr_q1_2026_10q
+    title: Terrestrial Energy Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2019804/000110465926061234/tmb-20260331x10q.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [IMSR]
+    summary: The precommercial reactor developer reported about USD 275.0 million of cash and short-term investments, no funded debt, Q1 operating cash use, and extensive warrants, options, awards, and plan capacity.
+  - id: imsr_q1_2026_results
+    title: Terrestrial Energy Q1 2026 Results
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/2019804/000110465926060716/tmb-20260514xex99d1.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [IMSR]
+    summary: Management summarized the Integral Molten Salt Reactor development program, quarterly results, liquidity, and commercialization milestones.
+  - id: imsr_board_2026_06_11
+    title: Terrestrial Energy June 2026 Board Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2019804/000110465926073471/tmb-20260611x8k.htm
+    source_published_at: 2026-06-11
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [IMSR]
+    summary: Current report covering the June corporate-governance update reviewed during discovery readiness.
+  - id: poet_q1_2026_financials
+    title: POET Q1 2026 Condensed Interim Financial Statements
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1437424/000149315226023471/ex99-1.htm
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [POET]
+    summary: The filing reported USD 16.5 million cash, USD 412.6 million short-term investments, Q1 losses and cash use, and the pre-offering capital structure.
+  - id: poet_q1_2026_results
+    title: POET Q1 2026 Results Release
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1437424/000117184326003487/exh_991.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [POET]
+    summary: Q1 revenue was USD 503,389, net loss was USD 12.344 million, and operating cash use was approximately USD 8.8 million.
+  - id: poet_lumilens_2026_05_14
+    title: POET and Lumilens Commercial Agreement Release
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1437424/000117184326003413/exh_991.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [POET]
+    summary: Lumilens placed an initial USD 50 million order within a development and supply framework, while qualification, manufacturing, timing, economics, customer credit, and warrant dilution remain material.
+  - id: poet_direct_offering_2026_05_18
+    title: POET USD 400 Million Direct Offering Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1437424/000149315226024090/form424b5.htm
+    source_published_at: 2026-05-18
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [POET]
+    summary: The offering covered 19,047,620 common shares and an equal number of warrants, expected about USD 399.7 million net proceeds, and implied 172,595,406 post-offering basic shares.
+  - id: krmn_q1_2026_10q
+    title: Karman Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2040127/000119312526222116/krmn-20260331.htm
+    source_published_at: 2026-05-13
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [KRMN]
+    summary: Karman reported operating growth and backlog alongside substantial debt, weak quarterly operating cash conversion, customer concentration, and acquisition-integration risk.
+  - id: qnc_q1_2026_mdna
+    title: Quantum eMotion Q1 2026 Management Discussion and Analysis
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/2106613/000110465926062457/tm2614731d1_ex99-1.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [QNC]
+    summary: Q1 evidence showed near-zero revenue, continued losses, investment liquidity, and unresolved acquisition, distribution, and commercialization economics.
+  - id: arqq_h1_2026_6k
+    title: Arqit First-Half 2026 Form 6-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1859690/000110465926064890/arqq-20260331x6k.htm
+    source_published_at: 2026-05-21
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [ARQQ]
+    summary: H1 revenue remained only USD 623,000 while six-month administrative expense was USD 33.9 million and cash was USD 28.9 million.
+  - id: rklb_victus_haze_completion_2026_07_07
+    title: Rocket Lab VICTUS HAZE Mission Completion
+    source_type: company_ir
+    url: https://rocketlabcorp.com/updates/rocket-lab-delivers-mission-success-for-space-force-completes-historic-launch-and-on-orbit-satellite-tracking-mission-in-record-time/
+    source_published_at: 2026-07-07
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [RKLB]
+    summary: Rocket Lab completed responsive launch, spacecraft commissioning, and on-orbit rendezvous and proximity operations faster than U.S. Space Force deadlines as the single mission prime.
+  - id: ktos_space_domain_award_2026_07_13
+    title: Kratos USD 100 Million Space Domain Awareness Award
+    source_type: company_ir
+    url: https://www.kratosdefense.com/newsroom/kratos-receives-approximate-100-million-sole-source-prime-space-domain-awareness-system-program-award
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [KTOS]
+    summary: Kratos reported an approximately USD 100 million sole-source production award for a ground-based modular space-domain-awareness system.
+  - id: ktos_hypersonic_funding_2026_07_14
+    title: Kratos USD 400 Million Hypersonic and National Security Funding
+    source_type: company_ir
+    url: https://www.globenewswire.com/news-release/2026/07/14/3326764/224/en/Kratos-Receives-Approximately-400-Million-in-New-Funding-for-Hypersonic-System-and-Other-Programs.html
+    source_published_at: 2026-07-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [KTOS]
+    summary: Kratos reported approximately USD 400 million of Department of War funding for hypersonic and other national-security programs.
+  - id: voyg_astrobotic_close_nasa_2026_07_13
+    title: Voyager Astrobotic Close and USD 298 Million NASA Task Order
+    source_type: company_ir
+    url: https://voyagertechnologies.com/press-releases/voyager-awarded-298m-nasa-contract-under-completed-astrobotic-acquisition/
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [VOYG]
+    summary: Voyager completed the Astrobotic acquisition and the acquired lunar business received an approximately USD 298 million NASA task order for two missions.
+  - id: aaoi_pearland_construction_2026_07_14
+    title: Applied Optoelectronics Pearland Capacity Construction Start
+    source_type: company_ir
+    url: https://www.globenewswire.com/news-release/2026/07/14/3326701/9986/en/aoi-begins-expansion-of-pearland-manufacturing-campus-to-scale-800g-and-1-6t-optical-transceiver-production.html
+    source_published_at: 2026-07-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [AAOI]
+    summary: Construction began on two adjacent Pearland properties adding nearly 400000 square feet of planned 800G and 1.6T optical-transceiver manufacturing capacity.
+  - id: wyfi_investor_presentation_2026_06_10
+    title: WhiteFiber June 2026 Investor Presentation
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/2042022/000121390026067329/ea029430601ex99-1.htm
+    source_published_at: 2026-06-10
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [WYFI]
+    summary: Management described an approximately USD 865 million NC-1 total contract value, more than USD 175 million of recent cloud contract value, and a larger development pipeline, with material forward-looking and construction assumptions.
+  - id: wyfi_cross_dc_rnd_2026_07_09
+    title: WhiteFiber Cross-Data-Center Networking R&D Announcement
+    source_type: company_ir
+    url: https://www.whitefiber.com/blog/cross-data-center-networking-solution
+    source_published_at: 2026-07-09
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [WYFI]
+    summary: R&D testing reported 111.2 Tbps across 83 kilometers at 0.9 millisecond latency; commercial availability, pricing, customer adoption, and revenue remain unproved.
+  - id: imsr_texas_am_rellis_2026_06_18
+    title: Terrestrial Energy Texas A&M RELLIS Site Agreements
+    source_type: company_ir
+    url: https://ir.terrestrialenergy.com/news-releases/news-release-details/terrestrial-energy-and-texas-am-university-system-sign
+    source_published_at: 2026-06-18
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [IMSR]
+    summary: Terrestrial Energy announced an exclusive 77-acre RELLIS site lease and research agreements supporting future NRC construction-permit work, subject to further approvals and project formation.
+  - id: poet_production_scale_2026_06_30
+    title: POET Production Ramp and Capacity Targets
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1437424/000117184326004397/exh_991.htm
+    source_published_at: 2026-06-30
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [POET]
+    summary: POET targeted a second-half 2026 production ramp and up to one million units of monthly capacity by the end of 2027; qualification, yield, revenue, margin, and cash conversion remain unproved.
+  - id: poet_faq_2026_07_14
+    title: POET Production Orders Cash Position and Revenue FAQ
+    source_type: company_ir
+    url: https://www.poet-technologies.com/blog/faq-production-orders-cash-position-and-the-path-to-greater-revenue
+    source_published_at: 2026-07-14
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [POET]
+    summary: Management described shipment, pipeline, capital-spending, liquidity, and warrant-proceeds targets; these remain unaudited or forward-looking and do not prove per-share economics.
+  - id: vrt_malaysia_capacity_2026_07_01
+    title: Vertiv Malaysia Manufacturing Capacity Opening
+    source_type: company_ir
+    url: https://www.prnewswire.com/news-releases/vertiv-increases-manufacturing-capacity-with-new-facility-in-malaysia-to-support-growing-demand-for-ai-and-digital-infrastructure-across-asia-302815814.html
+    source_published_at: 2026-07-01
+    retrieved_at: 2026-07-14
+    first_seen_at: 2026-07-14
+    related_symbols: [VRT]
+    summary: Vertiv opened a Malaysia manufacturing facility serving Asian data-center and AI infrastructure demand; capacity execution improved without changing scale or entry economics.

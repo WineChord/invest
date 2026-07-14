@@ -60,6 +60,18 @@ assert.equal(
   "revenue selection must not mix total and subset taxonomy tags",
 );
 
+const issuerRevenueTagTransition = [
+  { ...fact({ start: "2024-01-01", end: "2024-12-31", fp: "FY", value: 13_825_000 }), tag: "RevenueExcludingTax" },
+  { ...fact({ start: "2025-01-01", end: "2025-12-31", fp: "FY", value: 70_918_000 }), tag: "RevenueIncludingTax" },
+  { ...fact({ start: "2025-01-01", end: "2025-03-31", fp: "Q1", value: 718_000 }), tag: "RevenueIncludingTax" },
+  { ...fact({ start: "2026-01-01", end: "2026-03-31", fp: "Q1", value: 14_735_000 }), tag: "RevenueIncludingTax" },
+];
+assert.equal(
+  selectTrailingTwelveMonthPeriod(issuerRevenueTagTransition, { preferLargest: true }).value,
+  84_935_000,
+  "a current revenue-tag series must replace a stale annual from a superseded taxonomy tag",
+);
+
 const sameDateCashFacts = [
   { end: "2026-03-31", filed: "2026-05-11", start: "", tag: "CorporateCash", value: 1_517_264_000 },
   { end: "2026-03-31", filed: "2026-05-11", start: "", tag: "CashPlusRestricted", value: 79_206_407_000 },
@@ -71,6 +83,27 @@ assert.equal(
   ).value,
   1_517_264_000,
   "same-date instant facts must preserve semantic candidate priority",
+);
+
+const convertibleOnlyDebtFacts = [
+  { end: "2025-12-31", filed: "2026-03-26", start: "", tag: "ShortTermBorrowings", value: 20_000_000 },
+  { end: "2026-03-31", filed: "2026-05-14", start: "", tag: "ConvertibleLongTermNotesPayable", value: 222_308_429 },
+  { end: "2026-03-31", filed: "2026-05-14", start: "", tag: "ConvertibleDebt", value: 230_000_000 },
+];
+assert.equal(
+  selectPreferredInstantFact(
+    convertibleOnlyDebtFacts,
+    [
+      "DebtAndFinanceLeaseObligations",
+      "LongTermDebtAndFinanceLeaseObligations",
+      "LongTermDebt",
+      "ConvertibleLongTermNotesPayable",
+      "ConvertibleNotesPayable",
+      "ConvertibleDebt",
+    ],
+  ).value,
+  222_308_429,
+  "a current convertible-note carrying value must replace a stale short-term borrowing fact",
 );
 
 const staleInstantShares = [

@@ -138,6 +138,11 @@ const csvHeaders = {
 
 const revenueTags = [
   "RevenueFromContractWithCustomerExcludingAssessedTax",
+  // Some issuers, including AST SpaceMobile, switched from the excluding-tax
+  // taxonomy tag to the including-tax tag without changing the economic
+  // revenue line. Keep both tags available and let the per-tag TTM selector
+  // choose the newest complete series instead of publishing a stale annual.
+  "RevenueFromContractWithCustomerIncludingAssessedTax",
   "Revenues",
   "SalesRevenueNet",
 ];
@@ -169,6 +174,12 @@ const totalDebtTags = [
   "DebtAndFinanceLeaseObligations",
   "LongTermDebtAndFinanceLeaseObligations",
   "LongTermDebt",
+  // Newly public issuers may disclose their only funded debt solely under a
+  // convertible-note tag. Keep broader total-debt tags first so they retain
+  // semantic priority when both are available on the same reporting date.
+  "ConvertibleLongTermNotesPayable",
+  "ConvertibleNotesPayable",
+  "ConvertibleDebt",
 ];
 const sharesOutstandingTags = [
   "EntityCommonStockSharesOutstanding",

@@ -4717,16 +4717,22 @@ function validateStaleThesisCount(freshness, asOfTimestamp, maxAgeDays) {
 
 function validateStaleValuationCount(freshness, activeSymbols, asOfTimestamp, maxAgeDays) {
   const activeSet = new Set(activeSymbols);
-  const staleSymbols = new Set();
+  const latestValuationBySymbol = new Map();
   csvRecords(valuationStatesFile).forEach((row, index) => {
     if (!activeSet.has(row.symbol)) {
       return;
     }
     const timestamp = parseDate(row.as_of, `${valuationStatesFile} row ${index + 2} as_of`);
-    if (daysBetween(timestamp, asOfTimestamp) > maxAgeDays) {
-      staleSymbols.add(row.symbol);
+    const current = latestValuationBySymbol.get(row.symbol);
+    if (current === undefined || timestamp > current) {
+      latestValuationBySymbol.set(row.symbol, timestamp);
     }
   });
+  const staleSymbols = new Set(
+    [...latestValuationBySymbol.entries()]
+      .filter(([, timestamp]) => daysBetween(timestamp, asOfTimestamp) > maxAgeDays)
+      .map(([symbol]) => symbol),
+  );
   if (freshness.stale_valuation_states_over_45_days !== staleSymbols.size) {
     throw new Error(`${qualityMetricsFile} stale_valuation_states_over_45_days is ${freshness.stale_valuation_states_over_45_days}, expected ${staleSymbols.size}`);
   }

@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-13
+as_of: 2026-07-14
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -164,6 +164,20 @@ records:
     last_readiness_reviewed_at: 2026-07-12
     next_action: Monitor binding funded project economics, customer commitments, deployment schedule, cost estimates, cash use, ATM issuance, and valuation dislocation.
     conclusion: Incubated into research-only dashboard coverage for nuclear-lane completeness; no current buy or promotion.
+  - symbol: WYFI
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure]
+    materiality_reason: WhiteFiber is a newly public small-cap GPU cloud and owned-data-center operator that improves direct opportunity-cost comparison against CRWV, NBIS, IREN, and cash.
+    blocking_scope: ai_compute_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-14-WYFI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Primary evidence confirms direct infrastructure exposure and growth, but losses, capital intensity, convertible debt, customer-contract uncertainty, parent control, dilution, and valuation leave inadequate per-share asymmetry.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-14
+    next_action: Monitor the Q2 filing, customer-contract resolution, deferred-revenue conversion, margins, capital spending, financing, ownership, dilution, and a material price reset.
+    conclusion: Incubated into research-only dashboard coverage for AI-compute lane completeness; no current buy or promotion.
   - symbol: AAOI
     material_to_current_allocation: true
     affected_lanes: [semiconductor_interconnect_and_memory]
@@ -332,3 +346,87 @@ records:
     last_readiness_reviewed_at: 2026-07-11
     next_action: Use only as an industry reference.
     conclusion: Rejected as a direct-to-device candidate; no dashboard surface required.
+  - symbol: WULF
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
+    materiality_reason: The 401 MW Anthropic lease is issuer-specific primary evidence that materially changes WULF from a generic crypto-to-AI proxy into a plausible power-campus comparator.
+    blocking_scope: ai_compute_and_power_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-14-WULF-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Contracted headline revenue does not establish attractive per-share economics while project capex, financing, debt, warrants, stock compensation, construction, tenant concentration, and residual bitcoin exposure remain material.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-14
+    next_action: Monitor lease economics, project financing, construction delivery, tenant support, debt, warrants, bitcoin mix, and valuation.
+    conclusion: Incubated into research-only dashboard coverage; no promotion and no current buy.
+  - symbol: IMSR
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: A newly public Integral Molten Salt Reactor developer directly improves the advanced-nuclear deployment comparison.
+    blocking_scope: advanced_nuclear_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-14-IMSR-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Cash and investments plus no funded debt do not offset no significant commercial revenue, licensing, fuel, first-project, financing, technical, and dilution risk.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-14
+    next_action: Monitor licensing, first-project economics, fuel, customer funding, cash burn, warrants, equity issuance, and valuation.
+    conclusion: Incubated into research-only dashboard coverage; no promotion and no current buy.
+  - symbol: POET
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: A small optical-interposer developer with a material conditional order directly improves the AI-optics comparison.
+    blocking_scope: optical_interconnect_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-14-POET-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Qualification, manufacturing, customer, order-conversion, tiny-revenue, and layered warrant risks dominate the potential optical bottleneck exposure.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-14
+    next_action: Monitor qualification, order conversion, manufacturing ramp, revenue, cash use, warrants, share count, and valuation.
+    conclusion: Incubated into research-only dashboard coverage; no promotion and no current buy.
+  - symbol: KRMN
+    material_to_current_allocation: false
+    affected_lanes: [space_infrastructure]
+    materiality_reason: A profitable space supplier warranted a bounded comparison against the already crowded active space opportunity set.
+    blocking_scope: space_lane_opportunity_cost_hygiene
+    readiness_status: not_material_current_allocation
+    dashboard_surface_status: not_required_not_material
+    readiness_path: ""
+    blocker_type: not_material_current_allocation
+    blocker_reason: Debt, weak quarterly cash conversion, customer concentration, and acquisition integration risk offset the operating proof, while existing space coverage is stronger.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-14
+    next_action: Reopen after a material valuation reset, debt reduction, stronger free cash flow, and lower concentration or integration risk.
+    conclusion: Deferred as not material to current allocation; no dashboard surface, promotion, or buy.
+  - symbol: QNC
+    material_to_current_allocation: false
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: The newly listed quantum-safe issuer warranted a bounded commercial and balance-sheet screen for the emerging post-quantum sublane.
+    blocking_scope: post_quantum_sublane_hygiene
+    readiness_status: not_material_current_allocation
+    dashboard_surface_status: not_required_not_material
+    readiness_path: ""
+    blocker_type: not_material_current_allocation
+    blocker_reason: Near-zero revenue, losses, acquisition obligations, and unresolved distribution and valuation evidence keep the issuer outside the current allocation set.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-14
+    next_action: Reopen after meaningful recurring revenue, distribution proof, controlled burn and dilution, and reconciled valuation.
+    conclusion: Deferred as not material to current allocation; no dashboard surface, promotion, or buy.
+  - symbol: ARQQ
+    material_to_current_allocation: false
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: Direct quantum-safe technology warranted a bounded revenue, runway, and per-share-capture screen.
+    blocking_scope: post_quantum_sublane_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: ""
+    blocker_type: evidence_based
+    blocker_reason: H1 revenue remains negligible relative to administrative expense and the current public-market valuation context, so commercial and per-share value capture are not credible.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-14
+    next_action: Reopen only after orders-of-magnitude revenue growth, burn reduction, runway improvement, and a major valuation reset.
+    conclusion: Rejected as not material; no dashboard surface, promotion, or buy.

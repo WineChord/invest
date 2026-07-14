@@ -1,0 +1,271 @@
+schema_version: 1
+run_id: 2026-07-14-full-cycle-decision
+run_date: 2026-07-14
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, material price move, confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-14-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-14-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_no_action
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 1873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: 2026-07-14 is Tuesday, so the Friday-only automatic USD 888 deposit authorization did not trigger. No execution was confirmed and no broker record changed.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-07-14 --fmp-mode missing
+      dry_run: false
+      output_path: data/market/watchlist_prices.csv
+      retrieved_at: 2026-07-14
+      result_summary: Refreshed 44 tradable research symbols through the completed 2026-07-13 session, added WULF IMSR POET and WYFI, corrected ASTS revenue selection, and used source-linked share-count overrides where generic facts were stale or incomplete.
+    - command: npm run refresh:macro -- --as-of 2026-07-14
+      dry_run: false
+      output_path: research/macro/regime-snapshots.csv
+      retrieved_at: 2026-07-14
+      result_summary: Refreshed to top_formation and price_disciplined_wait_or_staged_only; macro remains a risk overlay rather than buy evidence.
+    - command: npm run discover:universe -- --dry-run --json --as-of 2026-07-14 --output research/discovery/runs/2026-07-14-scan.json --limit 50
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-14-scan.json
+      output_sha256: 07a3ac3124e5e9a75196f506bef1f40b79f6926bc72fd598af5837d8c98a4cc0
+      retrieved_at: 2026-07-14
+      result_summary: Fixed-snapshot broad SEC-listed scan reviewed 10408 input rows and 7636 eligible securities, returned 28 candidates and 131 exploratory matches, and remained name-and-ticker scaffolding without semantic profile input.
+    - command: node scripts/run-sec-filing-discovery-index.mjs --as-of 2026-07-14 --output-prefix research/discovery/runs/2026-07-14-sec-event-filing-index --sec-input research/cache/sec/company_tickers_exchange-2026-07-14.json --symbols current_44_tradable_research_symbols
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-14-sec-event-filing-index-scan.json
+      output_sha256: 0e4fdddfe08fabd07cae3b68dc077d57a57e3d6506abe0f9d3fbfd2133caad74
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CRCL, CRDO, CRWV, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OKLO, POET, PWR, QBTS, QUBT, RDW, RGTI, RKLB, SMR, SPCX, VOYG, VRT, WULF, WYFI, XNDU, YSS]
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: The event index answers the complete current tradable research universe only; it is not represented as full SEC-universe semantic coverage.
+      retrieved_at: 2026-07-14
+      result_summary: Targeted 44-symbol index completed with 44 manifest rows, 20 supported-filing profiles, 0.5762 percent SEC-universe semantic coverage, and explicit targeted-partial caveats.
+  deterministic_failures_and_resolution:
+    - failure: The complete-universe SEC event-index path stopped on a current XOM holding-company identity record whose submissions metadata lacked matching ticker and exchange fields.
+      implication: No complete-universe filing-profile claim is made.
+      resolution: Completed a targeted 44-symbol index and an independent current submissions audit for the decision universe.
+    - failure: A targeted rerun initially observed 7636 eligible SEC securities in the manifest stage and 7646 in the profile stage.
+      implication: The validator correctly refused to combine two drifting upstream snapshots.
+      resolution: Downloaded one ignored SEC ticker snapshot and supplied it to every stage of the targeted index; the completed targeted artifacts use one 7636-security snapshot. The separate broad scan uses the default live SEC universe input and records its own hash.
+  community_attention:
+    retrieved_at: 2026-07-14
+    configured_sources: 46
+    signal_count: 240
+    rate_limited_sources: 5
+    top_leads_reviewed: [WYFI, WULF, IMSR, POET, KRMN, QNC, ARQQ]
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, live submissions deltas, and regulator records
+      sources_or_queries: [targeted 44-symbol SEC event index, current SEC submissions deltas, MDA 6-K, CRCL 10-K amendment, QBTS 8-K, CRDO Form 4]
+      source_ids: [mda_offering_close_2026_07_14, crcl_reserve_fund_10ka_2026_07_13, qbts_exchange_transfer_2026_07_14, crdo_cfo_form4_2026_07_13]
+      retrieved_at: 2026-07-14
+      material_findings: MDA financing certainty improved; CRCL reserve transparency improved; QBTS exchange transfer is administrative; CRDO and CRWV ownership events reinforce entry discipline.
+      unavailable_or_skipped_reason: none for the decision universe
+    - family_id: issuer_material
+      family: Company releases and company-specific primary evidence
+      sources_or_queries: [issuer investor-relations releases, official contract and mission updates, current readiness evidence]
+      source_ids: [rklb_victus_haze_completion_2026_07_07, ktos_space_domain_award_2026_07_13, ktos_hypersonic_funding_2026_07_14, voyg_astrobotic_close_nasa_2026_07_13, aaoi_pearland_construction_2026_07_14, vrt_malaysia_capacity_2026_07_01, wyfi_investor_presentation_2026_06_10, wyfi_cross_dc_rnd_2026_07_09, imsr_texas_am_rellis_2026_06_18, poet_production_scale_2026_06_30, poet_faq_2026_07_14]
+      retrieved_at: 2026-07-14
+      material_findings: Multiple theses strengthened at the execution or project-formation layer, but entry, dilution, margin, concentration, financing, and cash-conversion gates remain closed.
+      unavailable_or_skipped_reason: none material to the completed no-action decision
+    - family_id: market_data
+      family: Completed closes, price history, capitalization, and research account valuation
+      sources_or_queries: [data/market/watchlist_prices.csv, data/market/company_metrics.csv, data/account/state.yml]
+      source_ids: [yahoo_chart_close_2026_07_13]
+      retrieved_at: 2026-07-14
+      material_findings: Confirmed holdings are worth approximately USD 2047.79 at completed closes; cash is USD 1873.58 and total research value is USD 3921.37.
+      unavailable_or_skipped_reason: No broker preview or executable quote was requested or used.
+    - family_id: current_world_context
+      family: Macro and public-attention risk overlays
+      sources_or_queries: [research/macro/regime-snapshots.csv, sanitized public community scan and triage]
+      source_ids: [yahoo_chart_close_2026_07_13]
+      retrieved_at: 2026-07-14
+      material_findings: Top-formation macro and concentrated thematic attention support price discipline, not buying.
+      unavailable_or_skipped_reason: Five public-community endpoints rate-limited and were non-decisive by policy.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public, financing, listing, and strategic transaction evidence
+      sources_or_queries: [MDA offering close, WULF Anthropic lease, IMSR quarterly filing and listing record, POET offering]
+      source_ids: [mda_offering_close_2026_07_14, wulf_anthropic_lease_2026_07_06, imsr_q1_2026_10q, poet_direct_offering_2026_05_18]
+      retrieved_at: 2026-07-14
+      material_findings: WULF IMSR and POET are eligible direct expressions but remain research-only after complete reachable readiness.
+      unavailable_or_skipped_reason: none
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad universe scan, public attention, and independent same-lane comparison
+      sources_or_queries: [research/discovery/lanes.yml, 2026-07-14 broad scan, WULF IMSR POET primary evidence, independent discovery review]
+      source_ids: [wulf_anthropic_lease_2026_07_06, imsr_texas_am_rellis_2026_06_18, poet_production_scale_2026_06_30]
+      retrieved_at: 2026-07-14
+      material_findings: Existing AI compute and power, advanced nuclear, and optical-interconnect lanes absorb three new research-only comparators; no new top-level lane is required.
+      unavailable_or_skipped_reason: Full SEC-universe semantic classification was not completed and is not represented as current coverage.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-14
+    notes: Market, macro, broad SEC universe scaffolding, public attention, targeted live submissions, issuer releases, new-listing evidence, and bottleneck-lane review all completed for every holding, active symbol, watchlist symbol, and material discovery lead.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters: [quantum and cryptography naming collisions, optical and connectivity infrastructure, advanced nuclear and grid capacity, space and mobility transaction vehicles]
+  sampled_symbols: [ARQQ, QNC, KRMN, WULF, IMSR, POET, QMCO, OCC]
+  false_positive_patterns: [keyword-only technology exposure, generic connectivity without bottleneck ownership, blank-check vehicles, mature diversified indirect proxies]
+  lane_decisions: [retain ten current lanes, add WULF to AI compute and power, add IMSR to advanced nuclear, add POET to optical interconnect]
+  disposition: WULF IMSR and POET completed full readiness; KRMN and QNC were classified not material to current allocation; ARQQ was rejected; no exploratory match qualified for a purchase.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Launch, integrated spacecraft, direct-to-device service, AI compute campuses, power, cooling, optical bandwidth, advanced nuclear licensing, fuel, and qualified production remain plausible constraints.
+    inferences: Contracts and capacity announcements matter only when financing, delivery, margin, cash collection, and diluted per-share value are auditable.
+    disconfirming_evidence: Current valuations frequently capitalize future scarcity before operating proof appears.
+    source_ids: [wulf_anthropic_lease_2026_07_06, imsr_texas_am_rellis_2026_06_18, poet_production_scale_2026_06_30]
+    investment_implication: Preserve the lane map and retain cash until evidence and entry align.
+  who_controls_or_removes_scarcity:
+    facts: RKLB ASTS WULF IMSR POET LEU MDA GILT CRDO ALAB and VRT provide direct but differently mature public expressions.
+    inferences: Directness is necessary but insufficient when counterparties, regulators, debt providers, or dilution capture most value.
+    disconfirming_evidence: Every current candidate has at least one material ownership, financing, execution, concentration, or valuation veto.
+    source_ids: [rklb_victus_haze_completion_2026_07_07, mda_offering_close_2026_07_14, wulf_q1_2026_10q]
+    investment_implication: No current new buy.
+  who_can_monetize_into_shareholder_value:
+    facts: RKLB and ASTS are confirmed holdings; MDA and GILT have operating revenue; WULF IMSR and POET remain dependent on future conversion milestones.
+    inferences: Cash currently offers better option value than paying for unverified long-duration economics.
+    disconfirming_evidence: Favorable MDA acquisition data, LEU contract economics, GILT closing, or production conversion could change the ranking.
+    source_ids: [mda_q1_2026, leu_haleu_contract_2026_07_02, gilt_q1_2026]
+    investment_implication: Review LEU MDA GILT first after explicit triggers.
+  public_security_expression:
+    facts: Forty-four research symbols are U.S.-listed and tradable under policy; OPENAI and ANTHROPIC remain not tradable.
+    inferences: Tenant or supplier exposure cannot be mislabeled as private-company equity exposure.
+    disconfirming_evidence: Direct listed status does not create entry eligibility.
+    source_ids: [wulf_q1_2026_10q, imsr_q1_2026_10q, poet_direct_offering_2026_05_18]
+    investment_implication: Keep OPENAI and ANTHROPIC monitor-only and all new public candidates research-only.
+  early_small_misunderstood_or_newly_public:
+    facts: WULF IMSR and POET provide awkward or early direct expressions with material capitalization complexity.
+    inferences: Their complexity merits full readiness and dashboard visibility rather than automatic rejection or purchase.
+    disconfirming_evidence: Corrected basic and diluted values are much less attractive than headline prices or vendor values suggest.
+    source_ids: [wulf_q1_2026_10q, imsr_q1_2026_10q, poet_direct_offering_2026_05_18]
+    investment_implication: Incubate all three at C+ and buy zero.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [updated bottleneck map, broad SEC scan, public community leads, primary candidate filings]
+      sources_checked: [wulf_anthropic_lease_2026_07_06, imsr_q1_2026_10q, poet_direct_offering_2026_05_18]
+      facts_verified: WULF IMSR and POET are material direct comparators; KRMN is not material, QNC is monitor-only, and ARQQ is rejected.
+      stale_or_missing_evidence: Full SEC-universe semantic profiles remain incomplete and are not represented as decision-universe coverage.
+      confidence: high
+      key_findings: Complete three readiness sprints and buy zero.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [targeted SEC index, current submissions metadata, freshness events, issuer news surfaces, readiness notes]
+      sources_checked: [mda_offering_close_2026_07_14, rklb_victus_haze_completion_2026_07_07, imsr_texas_am_rellis_2026_06_18, poet_faq_2026_07_14]
+      facts_verified: Current decision-universe SEC submissions and issuer evidence are classified, including IMSR POET and VRT evidence missed by the first pass.
+      stale_or_missing_evidence: Full-universe semantic coverage remains targeted partial; no reachable decision-universe filing or issuer event remains unclassified.
+      confidence: high
+      key_findings: Fresh evidence strengthens several theses but creates no buy or sell.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [completed closes, company metrics, share-count overrides, readiness notes, all-symbol opportunity-cost comparison]
+      sources_checked: [yahoo_chart_close_2026_07_13, mda_offering_prospectus_2026_07_09, imsr_q1_2026_10q, poet_direct_offering_2026_05_18]
+      facts_verified: MDA WULF IMSR POET and ASTS require corrected share-count or revenue inputs; every current entry remains unattractive or too uncertain.
+      stale_or_missing_evidence: No broker preview or executable quote was used; that is an execution prerequisite rather than a repository-readiness gap.
+      confidence: high
+      key_findings: Buy zero of every new security and hold both current positions.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, completed closes, all-symbol research, current MDA and GILT evidence]
+      sources_checked: [mda_offering_close_2026_07_14, mda_q1_2026, gilt_q1_2026]
+      facts_verified: MDA has the strongest conditional setup and GILT the best relative space valuation.
+      stale_or_missing_evidence: MDA option, acquisition closings, combined leverage, cash flow, and integration evidence remain unavailable or future.
+      confidence: medium
+      key_findings: At most one MDA share could be defended under strict controls; all other adds fail.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, capitalization corrections, dilution layers, balance sheets, concentration stress]
+      sources_checked: [yahoo_chart_close_2026_07_13, mda_offering_close_2026_07_14, wulf_q1_2026_10q, poet_direct_offering_2026_05_18]
+      facts_verified: Small sizing cannot cure MDA evidence, integration, leverage, and concentration gaps; every other symbol has a current veto.
+      stale_or_missing_evidence: No reachable evidence remains unfinished for the no-buy classification.
+      confidence: high
+      key_findings: Hold RKLB 17 and ASTS 11; buy and sell zero.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, completed-close research valuation, bull and bear cases, portfolio stress scenarios]
+      sources_checked: [yahoo_chart_close_2026_07_13, mda_offering_close_2026_07_14, rklb_victus_haze_completion_2026_07_07]
+      facts_verified: Cash is 47.78 percent and space holdings 52.22 percent; an RKLB minus 70 percent and ASTS minus 80 percent stress loses 38.45 percent of research value.
+      stale_or_missing_evidence: Broker ETF eligibility fees and settlement treatment are unavailable and prevent assuming an SGOV reserve purchase.
+      confidence: high
+      key_findings: Retain USD 1873.58 cash, buy zero SGOV, and make no trade.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: The MDA eligibility disagreement was resolved under the repository rule that a material unresolved disagreement defaults to no trade. Small sizing limits loss but cannot change an unpassed evidence gate.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: [ai_compute_infrastructure, ai_power_and_cooling, semiconductor_interconnect_and_memory, advanced_nuclear_and_grid_constraints]
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Existing top-level lanes absorb the material new direct comparators without weakening bottleneck-map discipline.
+
+candidate_delta:
+  candidates_added: [WULF, IMSR, POET, KRMN, QNC, ARQQ]
+  candidates_rejected_or_archived: [ARQQ]
+  candidates_promoted: []
+  candidates_incubated: [WULF, IMSR, POET]
+  candidates_deferred_not_material: [KRMN, QNC]
+  false_positive_patterns: [keyword-only technology exposure, mature large-cap indirect proxies, capital-structure-blind vendor valuation, unverified contract-headline economics]
+
+readiness_sprints:
+  - {symbol: WULF, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-14-WULF-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#WULF, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: IMSR, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-14-IMSR-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#IMSR, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: POET, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-14-POET-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#POET, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+
+watchlist_review:
+  non_removed_symbol_count: 46
+  current_cycle_review_count: 46
+  missing_current_cycle_review_count: 0
+  status_changes: [WULF added research_only C+, IMSR added research_only C+, POET added research_only C+]
+  buy_zone_changes: [MDA current entry reset to no_buy_until_new_evidence]
+  source_path: research/watchlist-cycle-reviews.csv
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Every material current candidate has reachable public evidence, valuation, readiness, and all-symbol comparison; the no-buy conclusion follows evidence and conflict rules rather than unfinished reachable research.
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: immediate_after_sensitive_field_review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No unexpired order, broker preview, same-day executable quantity, raw screenshot, account number, complete order identifier, credential, or private message is present.
+
+meta_self_improvement:
+  status: completed
+  lesson: Full cycles need issuer-news coverage in addition to SEC event selection, exact economic-share overrides when generic facts understate capitalization, and one fixed SEC ticker snapshot across multi-stage index generation.
+  durable_changes: [ASTS revenue-tag regression test, source-linked share-count overrides, current issuer-event classification, fixed-snapshot command recorded in this artifact]
+  repo_scoped_skill_change_required: false
+  reason: Existing invest operating-cycle skill already routes to the canonical workflows; the implementation lesson belongs in the run artifact and deterministic scripts or tests.
+
+decision_result:
+  action: no_trade
+  hold_positions: [RKLB 17 shares, ASTS 11 shares]
+  buy_quantities: all_zero
+  sell_quantities: all_zero
+  liquidity_reserve_quantity: 0
+  confirmed_cash_retained: 1873.58
+  account_records_changed: false

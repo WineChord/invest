@@ -911,3 +911,135 @@ entries:
     risk_watch: Gross-margin recovery, government concentration, RPO conversion, commercial demand, operating burn, options, warrants, equity-plan capacity, conditional CHIPS dilution, technical roadmap, and valuation.
     next_check: Q2 filing, gross margin above 35%, commercial mix, RPO conversion, definitive CHIPS terms, share-count update, technical milestone, or material valuation reset.
     source_path: research/discovery/readiness/2026-07-13-INFQ-readiness.md
+  - id: 2026-07-14-wyfi-readiness
+    symbol: WYFI
+    analyzed_at: "2026-07-14"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Vertically integrated AI infrastructure comparator
+    stance: C+
+    summary: WhiteFiber has direct GPU cloud and data-center exposure with 30.7% Q1 revenue growth, but losses, capital intensity, convertible debt, customer-contract uncertainty, Bit Digital control, dilution, and valuation keep it research-only.
+    upside_path: Convert owned and managed data-center capacity, GPU cloud services, colocation, and customer prepayments into durable utilization, recurring revenue, positive free cash flow, and disciplined per-share growth.
+    risk_watch: Customer-contract resolution, receivable collection, deferred-revenue conversion, GPU utilization and depreciation, power cost, capital spending, debt and bridge draws, Bit Digital ownership and related-party governance, convertible dilution, and valuation.
+    next_check: Q2 filing, customer-contract update, deferred-revenue conversion, margins, cash use, financing, ownership, dilution, or material valuation reset.
+    source_path: research/discovery/readiness/2026-07-14-WYFI-readiness.md
+  - id: 2026-07-14-mda-offering-close
+    symbol: MDA
+    analyzed_at: "2026-07-14"
+    analysis_type: material_filing_update
+    policy_version: v1.1
+    title: Base offering closed and capitalization verified
+    stance: B+
+    summary: MDA closed the 23 million-share offering and now has 161.659 million basic shares on the prospectus basis; funding certainty improved, while the 3.45 million-share option, two acquisition closings and integrations, final leverage, and account space concentration still block automatic entry.
+    upside_path: Use the funded CLS and Blue Canyon transactions to compound spacecraft, robotics, recurring geointelligence, analytics, and U.S. defense manufacturing into a scaled profitable platform.
+    risk_watch: Underwriter option, final acquisition terms and closing, integration, leverage, bookings, backlog conversion, margins, dilution, and account space concentration.
+    next_check: Underwriter-option expiry or exercise, CLS or Blue Canyon closing, updated pro forma leverage, quarterly report, material award, or price dislocation.
+    source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-14-crcl-reserve-fund-audit
+    symbol: CRCL
+    analyzed_at: "2026-07-14"
+    analysis_type: material_filing_update
+    policy_version: v1.1
+    title: Audited reserve-fund transparency update
+    stance: Watch
+    summary: Audited April 30 reserve-fund statements support high-quality Treasury and repurchase-agreement backing, but they do not change Circle's distribution costs, rate sensitivity, token capture, dilution, or valuation blockers.
+    upside_path: Convert trusted reserves, regulated custody, payments, network services, and growing USDC circulation into durable shareholder economics.
+    risk_watch: Rates, reserve-income distribution, USDC circulation and share, customer reserve versus corporate cash classification, ARC economics, shareholder capture, regulation, and dilution.
+    next_check: Next reserve report, USDC circulation update, quarterly filing, rate move, distribution agreement, ARC milestone, or valuation reset.
+    source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-14-wulf-readiness
+    symbol: WULF
+    analyzed_at: "2026-07-14"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Power-backed AI campus comparator
+    stance: C+
+    summary: A 401 MW Anthropic lease makes TeraWulf a material AI-campus comparator, but incomplete lease economics, project financing, debt, warrants, stock compensation, construction, concentration, and residual bitcoin exposure keep it research-only.
+    upside_path: Convert scarce interconnected power campuses and long-duration customer leases into durable infrastructure cash flow while recycling capital into wholly owned sites.
+    risk_watch: Lease economics, tenant support and termination, capex, project financing, construction delivery, debt, convertibles, warrants, stock compensation, customer concentration, bitcoin mix, and valuation.
+    next_check: Lease details, financing close, construction milestone, tenant support update, quarterly filing, dilution, or material valuation reset.
+    source_path: research/discovery/readiness/2026-07-14-WULF-readiness.md
+  - id: 2026-07-14-imsr-readiness
+    symbol: IMSR
+    analyzed_at: "2026-07-14"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Integral molten salt reactor comparator
+    stance: C+
+    summary: Terrestrial Energy is a direct, liquid, debt-free advanced-reactor comparator with a 77-acre Texas A&M project site, but no significant revenue, licensing, fuel, funded first-project, technical, and dilution risks keep it research-only.
+    upside_path: Convert proprietary reactor design and licensing progress into financed, built, operating plants and recurring deployment or lifecycle economics.
+    risk_watch: Texas A&M approvals, NRC and CNSC milestones, fuel, first-project economics, customer funding, construction and technical execution, cash burn, warrants, options, plan capacity, and valuation.
+    next_check: Regulatory milestone, funded customer project, fuel agreement, project-economics disclosure, quarterly filing, issuance, or valuation reset.
+    source_path: research/discovery/readiness/2026-07-14-IMSR-readiness.md
+  - id: 2026-07-14-poet-readiness
+    symbol: POET
+    analyzed_at: "2026-07-14"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Optical-interposer commercialization comparator
+    stance: C+
+    summary: POET's optical platform, initial USD 50 million order, production targets, and claimed liquidity are relevant, but qualification, manufacturing, recognized revenue, margin, collections, and layered warrant dilution keep it research-only.
+    upside_path: Convert wafer-level photonic integration into qualified, high-yield optical-engine and light-source production for AI clusters and hyperscale data centers.
+    risk_watch: Customer qualification and credit, order conversion, manufacturing yield and capacity, gross margin, revenue and cash conversion, warrants, options, awards, share count, and valuation.
+    next_check: Qualification, volume shipment, recognized order revenue, customer cash, manufacturing update, quarterly filing, dilution, or valuation reset.
+    source_path: research/discovery/readiness/2026-07-14-POET-readiness.md
+  - id: 2026-07-14-rklb-victus-haze-completion
+    symbol: RKLB
+    analyzed_at: "2026-07-14"
+    analysis_type: material_execution_update
+    policy_version: v1.1
+    title: Integrated responsive-space mission completion
+    stance: A
+    summary: VICTUS HAZE completed launch, commissioning, and rendezvous operations faster than U.S. Space Force deadlines, strengthening integrated execution while valuation, Neutron, Iridium, financing, and account concentration block an add.
+    upside_path: Compound responsive launch, spacecraft, mission operations, defense programs, Neutron, and potentially Iridium into a vertically integrated space platform.
+    risk_watch: Neutron, Iridium approvals and financing, ATM use, integration, valuation, mission reliability, and 33.26% account concentration.
+    next_check: Iridium financing or approval, Neutron milestone, next quarterly filing, material ATM use, launch or mission failure, or price dislocation.
+    source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-14-ktos-awards
+    symbol: KTOS
+    analyzed_at: "2026-07-14"
+    analysis_type: material_contract_update
+    policy_version: v1.1
+    title: Space-domain and hypersonic funding update
+    stance: Watch
+    summary: Approximately USD 500 million of announced awards and funding strengthens demand evidence, while margins, cash conversion, contractor economics, and current scale keep the entry gate closed.
+    upside_path: Convert low-cost defense systems, hypersonics, space-domain awareness, drones, and propulsion into higher-margin production franchises.
+    risk_watch: Award conversion, funded backlog, margins, working capital, program concentration, execution, government budgets, and valuation.
+    next_check: Quarterly backlog and revenue conversion, margins, cash flow, program update, funding change, or price dislocation.
+    source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-14-voyg-astrobotic-close
+    symbol: VOYG
+    analyzed_at: "2026-07-14"
+    analysis_type: material_transaction_update
+    policy_version: v1.1
+    title: Lunar-platform acquisition close and NASA award
+    stance: Watch
+    summary: Astrobotic closed into Voyager Lunar Systems with an approximately USD 298 million NASA task order, improving platform scope while mission, integration, financing, margin, and dilution risks keep entry closed.
+    upside_path: Combine defense, space-station, lunar delivery, power, habitats, propulsion, and mission operations into a diversified space-infrastructure platform.
+    risk_watch: Griffin and Peregrine mission outcomes, acquisition integration and consideration, contract margin and cash conversion, Starlab financing, debt, dilution, and valuation.
+    next_check: Griffin launch and mission, Peregrine-2 milestone, quarterly integration data, contract conversion, financing, or valuation reset.
+    source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-14-aaoi-pearland-start
+    symbol: AAOI
+    analyzed_at: "2026-07-14"
+    analysis_type: material_capacity_update
+    policy_version: v1.1
+    title: Pearland manufacturing construction start
+    stance: C+
+    summary: Nearly 400000 square feet of planned optical capacity entered construction, improving execution evidence while concentration, margins, capex, cash conversion, debt, warrants, and valuation keep AAOI research-only.
+    upside_path: Convert domestic 800G and 1.6T capacity plus customer demand into repeatable higher-margin optical-transceiver growth.
+    risk_watch: Build budget and schedule, utilization, customer concentration, gross margin, cash conversion, converts, ATM issuance, warrants, and valuation.
+    next_check: Construction milestone, volume ramp, customer mix, quarterly margins and cash flow, issuance, or price dislocation.
+    source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-14-wyfi-contract-technical-context
+    symbol: WYFI
+    analyzed_at: "2026-07-14"
+    analysis_type: material_freshness_update
+    policy_version: v1.1
+    title: Contract-value and distributed-network context
+    stance: C+
+    summary: Management contract-value claims and a 111.2 Tbps R&D result improve context, but recognized revenue, construction, customer credit, margin, cash conversion, debt, control, dilution, and valuation remain unresolved.
+    upside_path: Convert contracted data-center capacity, GPU cloud demand, and distributed networking into collected recurring revenue and positive free cash flow per diluted share.
+    risk_watch: NC-1 commissioning, contract conversion, customer credit, networking commercialization, capex, debt, parent control, dilution, and valuation.
+    next_check: NC-1 billing, recognized revenue and collections, commercial networking launch, Q2 filing, financing, ownership, dilution, or valuation reset.
+    source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md

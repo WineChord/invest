@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-11
+as_of: 2026-07-14
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -114,6 +114,8 @@ lanes:
       - CRWV
       - NBIS
       - IREN
+      - WYFI
+      - WULF
     private_or_future_proxies: []
     candidate_entry_points:
       - newly public neoclouds
@@ -149,6 +151,7 @@ lanes:
       - LEU
       - ETN
       - PWR
+      - WULF
     candidate_entry_points:
       - public power-equipment suppliers with AI-specific order growth
       - onsite power companies with proven data-center economics
@@ -181,9 +184,10 @@ lanes:
       - LITE
       - FN
       - AAOI
+      - POET
     sublanes:
       - id: ai_interconnect_and_optics
-        proxies: [CRDO, ALAB, LITE, FN, AAOI]
+        proxies: [CRDO, ALAB, LITE, FN, AAOI, POET]
       - id: ai_memory
         proxies: [MU]
     candidate_entry_points:
@@ -215,11 +219,12 @@ lanes:
       - NNE
       - NUCL
       - SMR
+      - IMSR
     sublanes:
       - id: nuclear_fuel_cycle_and_logistics
         proxies: [LEU, NNE, NUCL]
       - id: advanced_nuclear_deployment
-        proxies: [OKLO, NNE, SMR]
+        proxies: [OKLO, NNE, SMR, IMSR]
     candidate_entry_points:
       - advanced nuclear developers with public reporting
       - strategic fuel-cycle companies
