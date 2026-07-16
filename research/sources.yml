@@ -2349,3 +2349,138 @@ sources:
     first_seen_at: 2026-07-14
     related_symbols: [VRT]
     summary: Vertiv opened a Malaysia manufacturing facility serving Asian data-center and AI infrastructure demand; capacity execution improved without changing scale or entry economics.
+  - id: alpaca_iex_close_2026_07_15
+    title: Alpaca IEX Completed Daily Close Snapshot — 2026-07-15
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/snapshots
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET]
+    summary: Completed July 15 daily bars for all 44 tradable decision symbols were retrieved from the Alpaca IEX feed after the repository Yahoo refresh was rate-limited; after-hours trades were not substituted for completed closes.
+  - id: alpaca_iex_macro_close_2026_07_15
+    title: Alpaca IEX Macro ETF Completed Daily Close Snapshot — 2026-07-15
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/snapshots
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [QQQ, SMH, IWM, SPY]
+    summary: July 15 completed bars showed QQQ down about 0.28 percent, SMH down about 1.60 percent, IWM up about 0.43 percent, and SPY up about 0.38 percent from July 14; the fallback supplements but does not overwrite the incomplete Yahoo macro row.
+  - id: asts_convertible_proposal_2026_07_15
+    title: AST SpaceMobile Proposed USD 1 Billion Convertible Notes and Deployment Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1780312/000149315226033365/form8-k.htm
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [ASTS]
+    summary: ASTS proposed USD 1.0 billion of 2034 convertible notes plus a USD 150 million option, disclosed preliminary USD 2.723 billion June 30 liquidity, targeted approximately 45 BlueBird satellites in early 2027, and described unfinalized Rakuten subsidy discussions.
+  - id: asts_convertible_pricing_2026_07_15
+    title: AST SpaceMobile Prices USD 1 Billion 1.625 Percent Convertible Notes
+    source_type: company_ir
+    url: https://www.businesswire.com/news/home/20260715092237/en/AST-SpaceMobile-Announces-Pricing-of-Private-Offering-of-%241.0-Billion-of-Convertible-Senior-Notes-Due-2034-Effective-Conversion-Price-of-%24149.20-per-Share-with-Capped-Call
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [ASTS]
+    summary: The USD 1.0 billion notes were priced at 1.625% with a USD 79.57 initial conversion price and USD 149.20 capped-call cap; settlement is expected July 20, estimated net proceeds are USD 983.6 million before USD 96.9 million capped-call cost, and the USD 150 million option remains open.
+  - id: gilt_skyedge_orders_2026_07_15
+    title: Gilat More Than USD 20 Million SkyEdge Orders
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003492/zk2635686.htm
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [GILT]
+    summary: Gilat reported more than USD 20 million of systems, network-management, and service orders from one leading global satellite operator, with most delivery expected within 24 months.
+  - id: sec_event_filing_index_2026_07_16
+    title: Targeted SEC Event Filing Index — 2026-07-16
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, CIFR, OCC]
+    summary: Fixed-snapshot manifest coverage completed for all 46 requested tradable symbols; MDA lacked a supported issuer profile, so this remains targeted partial coverage and not a claim of complete SEC-universe semantic coverage.
+  - id: sec_submissions_audit_2026_07_16
+    title: Independent Current SEC Submissions Audit — 2026-07-16
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [ASTS, CRDO, CRWV, GILT, INFQ, KTOS, LEU]
+    summary: The independent 44-symbol audit classified every submission dated July 15, including ownership and resale forms omitted from the latest-supported operating index; no unreviewed material event remained.
+  - id: stdn_s1a_ipo_2026_07_15
+    title: Standard Nuclear Form S-1/A IPO Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000121390026078128/ea0276071-12.htm
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [STDN]
+    summary: The prospectus provided expected IPO terms, post-offering capitalization, operating history, funded and contingent backlog, first commercial TRISO delivery, preliminary liquidity, manufacturing plans, customer and fuel dependencies, governance, options, grants, and dilution risks.
+  - id: cifr_q1_2026_10q
+    title: Cipher Digital Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819989/000181998926000028/cifr-20260331.htm
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [CIFR]
+    summary: The filing disclosed bitcoin-only reported revenue, losses, unrestricted and restricted cash, project borrowings, construction commitments, hyperscaler leases and support, share count, potential dilution, and completion and customer risks.
+  - id: cifr_2025_10k
+    title: Cipher Digital 2025 Form 10-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819989/000181998926000009/cifr-20251231.htm
+    source_published_at: 2026-02-24
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [CIFR]
+    summary: The annual filing established the legacy bitcoin-mining economics, development portfolio, customer and construction dependencies, capital intensity, and financing and dilution context used in the readiness review.
+  - id: cifr_project_notes_2026_06_15
+    title: Cipher Digital USD 810 Million Project Notes Financing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819989/000095010326008994/dp248453_8k.htm
+    source_published_at: 2026-06-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [CIFR]
+    summary: Cipher added USD 810 million of 6% project notes and a parent completion guarantee, strengthening funded construction while increasing debt-service and cost-overrun exposure.
+  - id: alpaca_iex_cifr_close_2026_07_15
+    title: Cipher Digital Alpaca IEX Completed Daily Close — 2026-07-15
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/CIFR/bars
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [CIFR]
+    summary: The completed July 15 regular-session close was USD 19.86; three recent daily bars were retained as a bounded fallback because Yahoo chart history was rate-limited.
+  - id: occ_q2_2026_10q
+    title: Optical Cable Corporation Q2 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1000230/000143774926019811/occ20260430_10q.htm
+    source_published_at: 2026-06-08
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [OCC]
+    summary: The filing disclosed improving sales, backlog, gross margin and quarterly profit alongside thin cash, negative first-half operating cash flow, secured revolver dependence, term debt, customer concentration, and unquantified data-center exposure.
+  - id: occ_2025_10k
+    title: Optical Cable Corporation 2025 Form 10-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1000230/000143774925038228/ex_897382.htm
+    source_published_at: 2025-12-18
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [OCC]
+    summary: The annual filing supplied the revenue base, product and customer context, working-capital sensitivity, debt structure, and long-run risk factors used in the readiness review.
+  - id: alpaca_iex_occ_close_2026_07_15
+    title: Optical Cable Corporation Alpaca IEX Completed Daily Close — 2026-07-15
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/OCC/bars
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-16
+    first_seen_at: 2026-07-16
+    related_symbols: [OCC]
+    summary: Eight recent daily bars confirmed a July 15 regular-session close of USD 16.36; the bounded IEX history supports current research pricing without substituting a live or after-hours trade.

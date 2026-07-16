@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-14
+as_of: 2026-07-16
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -387,6 +387,48 @@ records:
     reachable_evidence_remaining: none
     last_readiness_reviewed_at: 2026-07-14
     next_action: Monitor qualification, order conversion, manufacturing ramp, revenue, cash use, warrants, share count, and valuation.
+    conclusion: Incubated into research-only dashboard coverage; no promotion and no current buy.
+  - symbol: STDN
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: Standard Nuclear directly manufactures TRISO fuel, a scarce input that can constrain multiple advanced-reactor developers and therefore improves the fuel-cycle opportunity-cost comparison.
+    blocking_scope: advanced_nuclear_fuel_cycle_lane_completeness
+    readiness_status: external_blocked
+    dashboard_surface_status: not_required_external
+    readiness_path: research/discovery/readiness/2026-07-16-STDN-readiness.md
+    blocker_type: market_closed_or_missing_quote
+    blocker_reason: Public research is decision-grade, but the expected IPO had neither a final 424B4 nor a completed regular-session close at the cutoff; the expected USD 15 offering price is not market data and cannot support an executable entry assessment.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-16
+    next_action: Monitor the final prospectus, first completed regular-session close, Q2 filing, commissioning, funded-backlog conversion, gross margin, customer concentration, and dilution.
+    conclusion: Research completed with a genuine external market-data blocker; listed as not tradable for this decision, buy zero, and rerun entry analysis after a completed close.
+  - symbol: CIFR
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
+    materiality_reason: Contracted hyperscaler campuses and scarce Texas power access make Cipher a direct AI-compute and power-infrastructure comparator rather than a community-only crypto pivot.
+    blocking_scope: ai_compute_and_power_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-16-CIFR-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Contracted demand does not yet establish attractive per-share economics because delivery, rent, free cash flow, debt service, completion guarantees, customer concentration, bitcoin exposure, and large latent dilution remain material.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-16
+    next_action: Monitor site delivery, rent commencement, Q2 economics, project costs and DSCR, third-lease terms, restricted-cash draw, dilution, bitcoin exposure, and free cash flow.
+    conclusion: Incubated into research-only dashboard coverage; no promotion and no current buy.
+  - symbol: OCC
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: Very small public scale, improving optical demand, data-center references, and a low sales multiple make OCC a credible optical-connectivity comparator that could otherwise be missed by large-cap screens.
+    blocking_scope: optical_interconnect_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-16-OCC-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Data-center revenue and bottleneck pricing are unquantified while thin cash, negative operating cash flow, secured revolver exposure, working-capital needs, customer concentration, and uncertain dilution weaken survival and per-share value capture.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-16
+    next_action: Monitor quantified data-center revenue or named wins, backlog conversion, sustained gross margin, operating cash flow, revolver availability and covenants, customer concentration, and dilution.
     conclusion: Incubated into research-only dashboard coverage; no promotion and no current buy.
   - symbol: KRMN
     material_to_current_allocation: false

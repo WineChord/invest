@@ -1,0 +1,254 @@
+schema_version: 1
+run_id: 2026-07-16-full-cycle-decision
+run_date: 2026-07-16
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, a 5 percent reviewed-symbol move, STDN first completed close, confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-16-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-16-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_no_action
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 1873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: 2026-07-16 is Thursday, so the Friday-only USD 888 deposit authorization did not trigger. No execution was confirmed and no broker record changed.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --json --as-of 2026-07-16 --output research/discovery/runs/2026-07-16-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-16-scan.json
+      output_sha256: c9359a2c5fc822cdeb39463aaafebd29177eed9a1d01406a18abef33277530fe
+      retrieved_at: 2026-07-16
+      result_summary: Reviewed 7644 eligible SEC securities; returned 27 candidates, 133 keyword matches, and 57 exploratory matches without claiming full semantic coverage.
+    - command: npm run build:community-triage -- --as-of 2026-07-16
+      dry_run: false
+      retrieved_at: 2026-07-16
+      result_summary: Sanitized 227 public signals from 46 configured sources; attention changed research priority only.
+    - command: node scripts/run-sec-filing-discovery-index.mjs --as-of 2026-07-16 --output-prefix research/discovery/runs/2026-07-16-sec-event-filing-index
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-16-sec-event-filing-index-scan.json
+      output_sha256: e58836455fb348f49f9cef7d67835462d2dbff37dea5d98d27580154dd62aad4
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial_incomplete_profiles
+      profile_requested_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QUBT, RDW, RGTI, RKLB, SMR, SPCX, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: Coverage is complete for requested manifest retrieval but MDA lacks a supported issuer profile; no complete SEC-universe semantic claim is made.
+      retrieved_at: 2026-07-16
+      result_summary: Completed a fixed-snapshot targeted filing index for all 46 current tradable symbols; MDA lacked a supported issuer profile, and the result was supplemented by its existing primary evidence plus a live submissions audit.
+    - command: Public Equity Investing Alpaca IEX completed daily snapshot for all tradable decision symbols
+      dry_run: false
+      output_path: data/market/watchlist_prices.csv
+      retrieved_at: 2026-07-16
+      result_summary: Retrieved completed July 15 daily bars for 46 tradable symbols; no live or after-hours trade replaced the completed close.
+    - command: npm run refresh:macro -- --as-of 2026-07-16
+      dry_run: false
+      output_path: research/macro/regime-snapshots.csv
+      retrieved_at: 2026-07-16
+      result_summary: Yahoo macro retrieval was rate-limited; the incomplete row is explicitly supplemented by completed Alpaca IEX QQQ, SMH, IWM, and SPY bars.
+  deterministic_failures_and_resolution:
+    - failure: Yahoo Finance returned HTTP 429 for the market and macro refresh.
+      implication: No claim is made that Yahoo refreshed the July 15 market surface.
+      resolution: Completed Alpaca IEX daily bars were used for all tradable decision symbols; the incomplete macro row remains labeled and is supplemented rather than overwritten.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, submissions deltas, and regulator evidence
+      sources_or_queries: [targeted filing index, live submissions audit, ASTS 8-K, STDN S-1/A, CIFR 10-Q, OCC 10-Q]
+      source_ids: [sec_event_filing_index_2026_07_16, sec_submissions_audit_2026_07_16, asts_convertible_proposal_2026_07_15, stdn_s1a_ipo_2026_07_15, cifr_q1_2026_10q, occ_q2_2026_10q]
+      retrieved_at: 2026-07-16
+      material_findings: ASTS financing, STDN IPO readiness, CIFR leverage and contracts, OCC liquidity and optical evidence, and every July 15 submission in the decision universe were classified.
+      unavailable_or_skipped_reason: Full SEC-universe semantic filing coverage remains partial and is not represented as complete.
+    - family_id: issuer_material
+      family: Company releases and transaction evidence
+      sources_or_queries: [ASTS financing pricing, GILT SkyEdge orders]
+      source_ids: [asts_convertible_pricing_2026_07_15, gilt_skyedge_orders_2026_07_15]
+      retrieved_at: 2026-07-16
+      material_findings: ASTS survival improved while entry weakened; GILT demand strengthened without clearing transaction, cash-conversion, and concentration gates.
+      unavailable_or_skipped_reason: None material to the completed no-action decision.
+    - family_id: market_data
+      family: Completed closes, price history, technical state, and account research valuation
+      sources_or_queries: [Alpaca IEX completed bars, committed price history, confirmed account quantities and cash]
+      source_ids: [alpaca_iex_close_2026_07_15, alpaca_iex_cifr_close_2026_07_15, alpaca_iex_occ_close_2026_07_15]
+      retrieved_at: 2026-07-16
+      material_findings: July 15 closes value confirmed holdings at USD 2023.98 and research NAV at USD 3897.56; cash is 48.07 percent.
+      unavailable_or_skipped_reason: No broker preview or executable quote was requested or used.
+    - family_id: current_world_context
+      family: Macro and public-attention risk overlays
+      sources_or_queries: [Alpaca macro ETF closes, sanitized public community triage]
+      source_ids: [alpaca_iex_macro_close_2026_07_15, alpaca_iex_close_2026_07_15]
+      retrieved_at: 2026-07-16
+      material_findings: Mixed index breadth and semiconductor weakness support price discipline; public attention created research priorities only.
+      unavailable_or_skipped_reason: Four community endpoints failed and Yahoo was rate-limited; neither surface is buy evidence.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, IPOs, and financing transactions
+      sources_or_queries: [STDN S-1/A, ASTS convertible proposal and pricing, CIFR project notes]
+      source_ids: [stdn_s1a_ipo_2026_07_15, asts_convertible_pricing_2026_07_15, cifr_project_notes_2026_06_15]
+      retrieved_at: 2026-07-16
+      material_findings: STDN is a material fuel-cycle lead but lacks a final prospectus and completed close; ASTS and CIFR financing improves funded capacity while increasing debt and per-share risk.
+      unavailable_or_skipped_reason: STDN first completed close and final 424B4 are future external events.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad universe scan, same-lane comparison, and discovery readiness
+      sources_or_queries: [bottleneck lane map, broad SEC scan, STDN readiness, CIFR readiness, OCC readiness]
+      source_ids: [stdn_s1a_ipo_2026_07_15, cifr_q1_2026_10q, occ_q2_2026_10q]
+      retrieved_at: 2026-07-16
+      material_findings: STDN deepens nuclear fuel, CIFR deepens AI compute and power, and OCC deepens optical connectivity; no new top-level lane is warranted.
+      unavailable_or_skipped_reason: Consensus expectations, short interest, options flow, and ETF flows were unavailable and non-decisive.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-16
+    notes: Market, macro, broad SEC scaffolding, public attention, targeted filings, live submissions, issuer evidence, IPO and financing evidence, and bottleneck-lane review completed for holdings, active candidates, the full watchlist, and material discovery leads.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters: [optical connectivity microcaps, advanced nuclear fuel, AI power and campus conversions, quantum naming collisions]
+  sampled_symbols: [STDN, CIFR, OCC, MRVL, SNDK, QTEX]
+  false_positive_patterns: [keyword-only exposure, mature large-cap indirect proxies, blank-check vehicles, renamed microcaps without operating proof]
+  lane_decisions: [retain all top-level lanes, add STDN to nuclear fuel, add CIFR to AI compute and power, add OCC to optical connectivity]
+  disposition: STDN CIFR and OCC completed readiness and entered durable research coverage; none qualified for purchase.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Launch, spectrum, AI compute, interconnected power, optical bandwidth, nuclear fuel, qualified manufacturing, and regulatory permissions remain plausible constraints.
+    inferences: Scarcity creates shareholder value only when delivery, margin, financing, customer economics, and diluted per-share cash generation are auditable.
+    disconfirming_evidence: Current valuations and leverage often capitalize future scarcity before operating proof.
+    source_ids: [stdn_s1a_ipo_2026_07_15, cifr_q1_2026_10q, occ_q2_2026_10q]
+    investment_implication: Preserve cash until evidence and entry align.
+  who_controls_or_removes_scarcity:
+    facts: STDN may control TRISO capacity, CIFR controls powered campuses, OCC supplies optical connectivity, and existing active companies provide more mature expressions.
+    inferences: Directness is necessary but insufficient when debt providers, customers, regulators, or dilution capture value.
+    disconfirming_evidence: Each new lead has a material financing, execution, concentration, tradability, or evidence veto.
+    source_ids: [stdn_s1a_ipo_2026_07_15, cifr_project_notes_2026_06_15, occ_q2_2026_10q]
+    investment_implication: Add research coverage but buy zero.
+  who_can_monetize_into_shareholder_value:
+    facts: Existing operating candidates have stronger proof than STDN; CIFR has contracts but no reported AI rent; OCC has improving results but unquantified data-center mix.
+    inferences: Cash offers better option value than paying for unverified long-duration economics.
+    disconfirming_evidence: Funded delivery, positive free cash flow, balance-sheet de-risking, or a thesis-preserving valuation reset could change ranking.
+    source_ids: [gilt_skyedge_orders_2026_07_15, cifr_q1_2026_10q, occ_q2_2026_10q]
+    investment_implication: Review LEU MDA and GILT first after explicit triggers.
+  public_security_expression:
+    facts: CIFR and OCC are tradable Nasdaq common stocks; STDN expected NYSE common lacked a completed close; OPENAI and ANTHROPIC remain not tradable.
+    inferences: A listed ticker does not create entry eligibility and an expected offering price is not market data.
+    disconfirming_evidence: Direct securities can still fail evidence, survival, and entry gates.
+    source_ids: [stdn_s1a_ipo_2026_07_15, alpaca_iex_cifr_close_2026_07_15, alpaca_iex_occ_close_2026_07_15]
+    investment_implication: Keep STDN not tradable and CIFR and OCC research-only.
+  early_small_misunderstood_or_newly_public:
+    facts: STDN is newly public, CIFR is a business-model transition, and OCC is a very small underfollowed optical supplier.
+    inferences: Complexity merits full readiness and dashboard visibility rather than automatic rejection or purchase.
+    disconfirming_evidence: Corrected valuation, leverage, liquidity, and dilution are materially less attractive than headline narratives.
+    source_ids: [stdn_s1a_ipo_2026_07_15, cifr_q1_2026_10q, occ_q2_2026_10q]
+    investment_implication: Incubate research and allocate zero.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [bottleneck map, broad scan, community leads, primary filings]
+      sources_checked: [stdn_s1a_ipo_2026_07_15, cifr_q1_2026_10q, occ_q2_2026_10q]
+      facts_verified: STDN CIFR and OCC are material direct comparators; each completed bounded readiness and none clears buy gates.
+      stale_or_missing_evidence: Full SEC-universe semantic profiles remain partial and are not represented as complete.
+      confidence: high
+      key_findings: Add durable research coverage and buy zero.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [targeted SEC index, live submissions, issuer evidence, readiness notes]
+      sources_checked: [asts_convertible_proposal_2026_07_15, asts_convertible_pricing_2026_07_15, gilt_skyedge_orders_2026_07_15, sec_submissions_audit_2026_07_16]
+      facts_verified: ASTS priced financing and GILT orders are classified; no reachable material filing remains unreviewed.
+      stale_or_missing_evidence: STDN final prospectus and first close are future external events.
+      confidence: high
+      key_findings: ASTS hold no add; GILT trigger-only; no new buy.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [all-symbol research, current closes, company and security theses]
+      sources_checked: [asts_convertible_pricing_2026_07_15, gilt_skyedge_orders_2026_07_15, stdn_s1a_ipo_2026_07_15]
+      facts_verified: ASTS survival, GILT demand, STDN directness, CIFR contracts, and OCC operating improvement are the strongest positive deltas.
+      stale_or_missing_evidence: None of the positive deltas proves attractive current per-share entry.
+      confidence: high
+      key_findings: Hold current positions and preserve conditional upside without adding.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [debt, dilution, concentration, survival, execution, and stress evidence]
+      sources_checked: [asts_convertible_pricing_2026_07_15, cifr_project_notes_2026_06_15, occ_q2_2026_10q]
+      facts_verified: Every candidate has a current veto and current holdings remain concentrated but thesis-intact.
+      stale_or_missing_evidence: No reachable evidence remains unfinished for the no-buy classification.
+      confidence: high
+      key_findings: Buy zero and sell zero.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [completed closes, capitalization, debt, cash, revenue, dilution, opportunity cost]
+      sources_checked: [alpaca_iex_close_2026_07_15, stdn_s1a_ipo_2026_07_15, cifr_q1_2026_10q, occ_q2_2026_10q]
+      facts_verified: No active or research-only security has enough entry margin after current risk and account concentration.
+      stale_or_missing_evidence: No executable broker quote or preview was used; those remain execution prerequisites only.
+      confidence: high
+      key_findings: Every proposed buy quantity is zero.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, close-based NAV, role findings, portfolio stress]
+      sources_checked: [alpaca_iex_close_2026_07_15, asts_convertible_pricing_2026_07_15, gilt_skyedge_orders_2026_07_15]
+      facts_verified: Cash is 48.07 percent and combined space holdings are 51.93 percent; severe two-position stress remains survivable without leverage.
+      stale_or_missing_evidence: SGOV broker mechanics are not current but no reserve order is needed.
+      confidence: high
+      key_findings: Retain USD 1873.58 cash, buy zero SGOV, and make no trade.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: Improved survival and direct bottleneck evidence do not override unpassed entry, concentration, debt, liquidity, tradability, or per-share cash-flow gates.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: [ai_compute_infrastructure, ai_power_and_cooling, semiconductor_interconnect_and_memory, advanced_nuclear_and_grid_constraints]
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Existing top-level lanes absorb all material new leads.
+
+candidate_delta:
+  candidates_added: [STDN, CIFR, OCC]
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: [STDN, CIFR, OCC]
+  candidates_deferred_not_material: []
+  false_positive_patterns: [keyword-only exposure, mature indirect proxies, blank-check vehicles, renamed microcaps without operations]
+
+readiness_sprints:
+  - {symbol: STDN, material_to_current_allocation: true, readiness_status: external_blocked, dashboard_surface_status: not_required_external, readiness_path: research/discovery/readiness/2026-07-16-STDN-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#STDN, blocker_type: market_closed_or_missing_quote, reachable_evidence_remaining: none, final_classification: external_blocked}
+  - {symbol: CIFR, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-16-CIFR-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#CIFR, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+  - {symbol: OCC, material_to_current_allocation: true, readiness_status: incubated_after_review, dashboard_surface_status: complete, readiness_path: research/discovery/readiness/2026-07-16-OCC-readiness.md, readiness_index_record: research/discovery/candidate-readiness.yml#OCC, blocker_type: evidence_based, reachable_evidence_remaining: none, final_classification: incubate}
+
+watchlist_review:
+  non_removed_symbol_count: 49
+  current_cycle_review_count: 49
+  missing_current_cycle_review_count: 0
+  status_changes: [STDN added not_tradable B-, CIFR added research_only C+, OCC added research_only C+]
+  buy_zone_changes: [ASTS add gate closed after priced convertibles]
+  source_path: research/watchlist-cycle-reviews.csv
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Every material candidate has completed reachable public research and all-symbol comparison; no-buy follows evidence rather than unfinished work.
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: immediate_after_sensitive_field_review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No unexpired order, broker preview, same-day executable quantity, raw screenshot, account number, complete order identifier, credential, or private message is present.
+
+meta_self_improvement:
+  status: completed
+  lesson: Discovery must challenge the deterministic shortlist with independent bottleneck review; completed-close fallback data must be propagated through price, technical, valuation, and equity-curve surfaces.
+  durable_changes: [STDN CIFR and OCC readiness coverage, completed IEX close fallback with explicit provenance, fixed-snapshot targeted SEC index plus live submissions audit]

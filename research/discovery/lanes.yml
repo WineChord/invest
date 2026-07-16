@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-14
+as_of: 2026-07-16
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -18,6 +18,7 @@ notes:
   - Start from the bottleneck map, not from a stock list. Stocks are outputs of the lane review, not inputs that should anchor the search.
   - A lane exists only to improve the search for rare public opportunities. If it stops helping that mission, revise, merge, demote, or retire it.
   - New lanes should start as emerging or incubating before they affect allocation. Promotion requires source-backed evidence that the bottleneck is durable and publicly investable.
+  - The 2026-07-16 full-cycle review found no source-backed new lane or lane-status change; the broad scan's mostly name-driven leads remained scaffolding and the existing ten-lane map still covers the material bottlenecks.
 lanes:
   - id: space_infrastructure
     name: Space Infrastructure
@@ -116,6 +117,7 @@ lanes:
       - IREN
       - WYFI
       - WULF
+      - CIFR
     private_or_future_proxies: []
     candidate_entry_points:
       - newly public neoclouds
@@ -152,6 +154,7 @@ lanes:
       - ETN
       - PWR
       - WULF
+      - CIFR
     candidate_entry_points:
       - public power-equipment suppliers with AI-specific order growth
       - onsite power companies with proven data-center economics
@@ -185,9 +188,10 @@ lanes:
       - FN
       - AAOI
       - POET
+      - OCC
     sublanes:
       - id: ai_interconnect_and_optics
-        proxies: [CRDO, ALAB, LITE, FN, AAOI, POET]
+        proxies: [CRDO, ALAB, LITE, FN, AAOI, POET, OCC]
       - id: ai_memory
         proxies: [MU]
     candidate_entry_points:
@@ -220,9 +224,10 @@ lanes:
       - NUCL
       - SMR
       - IMSR
+      - STDN
     sublanes:
       - id: nuclear_fuel_cycle_and_logistics
-        proxies: [LEU, NNE, NUCL]
+        proxies: [LEU, NNE, NUCL, STDN]
       - id: advanced_nuclear_deployment
         proxies: [OKLO, NNE, SMR, IMSR]
     candidate_entry_points:

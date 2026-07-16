@@ -1,28 +1,28 @@
 schema_version: 1
-as_of: 2026-07-14
+as_of: 2026-07-16
 last_research_engine_run:
-  as_of: 2026-07-14
-  scope: monthly_decision_full_cycle_with_live_freshness_new_candidate_readiness_and_capitalization_repairs
+  as_of: 2026-07-16
+  scope: monthly_decision_full_cycle_with_completed_close_fallback_live_freshness_and_three_candidate_readiness_sprints
   notes: >-
-    Ran the full 2026-07-14 operating cycle with completed-close market data, macro and public-attention overlays, a fresh broad SEC scan, a fixed-snapshot targeted 44-symbol SEC filing index, issuer-news review, all-symbol research, six independent judgment reviewers, GitHub Actions, and responsive-dashboard checks. WULF, IMSR, and POET completed research-only readiness; ASTS revenue selection and multiple economic-share counts were repaired. The final decision is completed no action after the unresolved MDA eligibility disagreement defaulted to cash.
+    Ran the full 2026-07-16 operating cycle with July 15 completed IEX closes after Yahoo rate limiting, macro and public-attention overlays, a fresh broad SEC scan, a fixed-snapshot targeted 44-symbol SEC filing index plus live submissions audit, issuer-news review, all-symbol research, and independent discovery, freshness, bull, bear, valuation, and allocation reviewers. STDN, CIFR, and OCC completed reachable readiness; ASTS priced convertible terms and GILT orders were incorporated. The final decision is completed no action.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current enough to support a decision after completing reachable WULF, IMSR, and POET research, current issuer-news classification, and capitalization repairs. The completed decision contains no unexpired order.
+  reason: Repository-public research coverage is current enough to support a decision after completing reachable STDN, CIFR, and OCC research, current issuer and SEC classification, completed-close market refresh, and all-symbol comparison. The completed decision contains no unexpired order.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 1873.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - rerun after any material issuer event, material price dislocation, confirmed broker-state change, or 2026-08-10
+    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, STDN first completed close, confirmed broker-state change, or 2026-08-10
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-14
-  discovery_lane_map_as_of: 2026-07-14
-  watchlist_symbols: 46
-  watchlist_symbols_with_current_cycle_review: 46
+  universe_scan_as_of: 2026-07-16
+  discovery_lane_map_as_of: 2026-07-16
+  watchlist_symbols: 49
+  watchlist_symbols_with_current_cycle_review: 49
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
@@ -31,12 +31,12 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 22
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 14
+  raw_discovery_candidates_open: 17
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-14-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-14-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-14-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-14-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-16-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-16-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-16-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-16-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -65,9 +65,9 @@ discovery_process:
     - frontier_ai_public_platforms
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 14
+  material_open_candidates: 17
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 14
+  open_candidate_readiness_completed: 17
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete

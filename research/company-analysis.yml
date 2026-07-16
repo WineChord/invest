@@ -1043,3 +1043,63 @@ entries:
     risk_watch: NC-1 commissioning, contract conversion, customer credit, networking commercialization, capex, debt, parent control, dilution, and valuation.
     next_check: NC-1 billing, recognized revenue and collections, commercial networking launch, Q2 filing, financing, ownership, dilution, or valuation reset.
     source_path: research/filings/2026-07-14-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-16-asts-convertible-and-deployment-update
+    symbol: ASTS
+    analyzed_at: "2026-07-16"
+    analysis_type: material_filing_update
+    policy_version: v1.1
+    title: Convertible financing and early-2027 deployment update
+    stance: Hold; no add
+    summary: Priced USD 1.0 billion 1.625% 2034 convertible notes carry a USD 79.57 initial conversion price and USD 149.20 capped-call cap; preliminary USD 2.723 billion June liquidity and the financing improve survival, while broad use of proceeds, an open USD 150 million option, early-2027 approximately 45-satellite timing, debt, dilution, and deployment economics weaken entry quality.
+    upside_path: Convert liquidity, launch access, spectrum, carrier distribution, and a possible Japan subsidy-backed venture into a scaled global direct-to-device network with recurring per-share economics.
+    risk_watch: Note settlement, option exercise, conversion and capped-call hedge mechanics, launch access, satellite cadence, commercial activation, carrier economics, Rakuten subsidy finalization, acquisitions, debt, and dilution.
+    next_check: Notes settlement or cancellation, option exercise, launch update, Rakuten agreement, quarterly filing, strategic transaction, or a new completed regular-session close after the announcement.
+    source_path: research/filings/2026-07-16-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-16-gilt-skyedge-orders
+    symbol: GILT
+    analyzed_at: "2026-07-16"
+    analysis_type: material_contract_update
+    policy_version: v1.1
+    title: Multi-orbit SkyEdge order update
+    stance: Trigger only
+    summary: More than USD 20 million of SkyEdge systems, network-management, and service orders strengthens multi-orbit demand evidence, but unnamed-customer economics, Comtech closing and integration, combined leverage, margins, cash conversion, and existing space concentration keep the entry gate closed.
+    upside_path: Compound installed ground networks, software, services, defense communications, mobility, and Comtech scale into a higher-value multi-orbit communications platform.
+    risk_watch: Customer concentration, order margin and conversion, Comtech approval and close, integration, combined leverage, free cash flow, regional risk, and account space concentration.
+    next_check: Comtech close, combined financial disclosure, order delivery and margin evidence, larger award, quarterly filing, or thesis-preserving valuation dislocation.
+    source_path: research/filings/2026-07-16-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-16-stdn-readiness
+    symbol: STDN
+    analyzed_at: "2026-07-16"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Direct TRISO fuel bottleneck comparator
+    stance: B-
+    summary: Standard Nuclear's funded backlog and first commercial TRISO delivery make it a material fuel-cycle lead, but no completed market close exists and expected valuation, negative gross economics, scale-up, customer, fuel, governance, and dilution risks block entry.
+    upside_path: Convert scarce qualified TRISO manufacturing capacity into repeat funded orders, positive gross margin, scaled production, and durable per-share cash generation across multiple advanced-reactor programs.
+    risk_watch: Final offering terms, first close, capacity commissioning, funded-backlog conversion, gross margin, customer concentration, reactor-program schedules, uranium feedstock, options, grants, dual-class control, and dilution.
+    next_check: Final 424B4, first completed regular-session close, Q2 filing, capacity or delivery milestone, funded order, margin disclosure, or capital-structure change.
+    source_path: research/discovery/readiness/2026-07-16-STDN-readiness.md
+  - id: 2026-07-16-cifr-readiness
+    symbol: CIFR
+    analyzed_at: "2026-07-16"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Leveraged power-backed AI campus comparator
+    stance: C+
+    summary: Cipher's 600 MW of contracted hyperscaler capacity and Texas power access are material, but rent and free cash flow are unproved while project debt, completion guarantees, construction, customer concentration, bitcoin exposure, and dilution keep it research-only.
+    upside_path: Deliver contracted campuses on time, convert scarce power and interconnection into durable rent and free cash flow, reduce bitcoin dependence, service project debt, and retain per-share reinvestment capacity.
+    risk_watch: Site delivery, rent, project cost, DSCR, tenant termination, completion guarantees, restricted cash, debt, convertible shares, Google warrants, stock compensation, bitcoin mix, and free cash flow.
+    next_check: Site delivery or rent start, Q2 filing, project-cost or debt update, third-lease economics, restricted-cash draw, dilution, or material price reset.
+    source_path: research/discovery/readiness/2026-07-16-CIFR-readiness.md
+  - id: 2026-07-16-occ-readiness
+    symbol: OCC
+    analyzed_at: "2026-07-16"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Small-cap optical connectivity comparator
+    stance: C+
+    summary: OCC's sales, backlog, quarterly profit, and gross margin improved at a low sales multiple, but data-center exposure and moat are unquantified while thin cash, negative operating cash flow, secured-revolver dependence, customer concentration, and working-capital risk keep it research-only.
+    upside_path: Convert growing data-center and severe-duty demand into named wins, sustained backlog conversion, positive cash flow, balance-sheet de-risking, and durable niche pricing power.
+    risk_watch: Data-center mix, named customers, backlog conversion, gross margin, operating cash flow, cash, revolver availability and covenants, working capital, customer concentration, and dilution.
+    next_check: Quantified data-center disclosure, named order, quarterly filing, cash-flow improvement, revolver update, customer-concentration change, issuance, or material price reset.
+    source_path: research/discovery/readiness/2026-07-16-OCC-readiness.md
