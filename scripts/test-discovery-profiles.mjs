@@ -357,12 +357,14 @@ writeFileSync(
     filings: {
       recent: {
         accessionNumber: [
+          "0000002001-26-000006",
           "0000002001-26-000003",
           "0000002001-26-000004",
           "0000002001-26-000002",
           "0000002001-26-000001",
         ],
         acceptanceDateTime: [
+          "2026-05-31T17:00:00.000Z",
           "2026-05-31T16:00:00.000Z",
           "2026-06-01T12:00:00.000Z",
           "2026-05-30T18:10:00.000Z",
@@ -370,23 +372,27 @@ writeFileSync(
         ],
         filingDate: [
           "2026-05-31",
+          "2026-05-31",
           "2026-06-01",
           "2026-05-30",
           "2026-05-15",
         ],
         form: [
+          "8-K/A",
           "8-K",
           "424B5",
           "S-1/A",
           "S-1",
         ],
         primaryDocument: [
+          "arcd-8ka.htm",
           "arcd-8k.htm",
           "arcd-424b5.htm",
           "arcd-s1a.htm",
           "arcd-s1.htm",
         ],
         reportDate: [
+          "2026-05-31",
           "2026-05-31",
           "",
           "2026-05-30",
@@ -756,7 +762,8 @@ assert(eventManifestRows.length === 1, "SEC filing event manifest should emit su
 assert(eventManifestRows[0].filing_type === "8-K", "SEC filing event manifest should normalize 8-K for downstream extraction");
 assert(eventManifestRows[0].filing_selection_tier === "material_event_or_periodic_filing", "SEC filing event manifest should tier 8-K as material event evidence");
 assert(eventManifestRows[0].filing_selection_family === "material_event_or_periodic_filing", "SEC filing event manifest should family-classify 8-K material event evidence");
-assert(eventManifestRows[0].selection_reason === "selected_latest_supported_filing", "SEC filing event manifest should preserve latest-supported event selection reason");
+assert(eventManifestRows[0].selection_reason === "selected_original_over_same_day_amendment", "SEC filing event manifest should preserve the material original over a same-day amendment");
+assert(eventManifestRows[0].selection_warnings.includes("selected_original_over_same_day_amendment:8-K/A"), "SEC filing event manifest should audit the displaced same-day amendment");
 assert(eventManifestRows[0].filing_path === secFilingEightKPath, "SEC filing event manifest should map local 8-K fixture path");
 
 await withRetryServer((baseUrl) => {

@@ -45,3 +45,5 @@ WULF,18.1600,USD,2026-07-17,Yahoo Finance chart,2026-07-18T05:39:44.340Z,Automat
 WYFI,25.1500,USD,2026-07-17,Yahoo Finance chart,2026-07-18T05:39:44.340Z,Automated daily close refresh from committed price history.
 XNDU,9.9900,USD,2026-07-17,Yahoo Finance chart,2026-07-18T05:39:44.340Z,Automated daily close refresh from committed price history.
 YSS,17.9300,USD,2026-07-17,Yahoo Finance chart,2026-07-18T05:39:44.340Z,Automated daily close refresh from committed price history.
+STDN,10.4000,USD,2026-07-17,Public Equity Investing market data,2026-07-18T14:25:23Z,Completed July 17 regular-session close after final prospectus; research-only first-close refresh.
+SEI,60.2800,USD,2026-07-17,Public Equity Investing market data,2026-07-18T14:25:23Z,Completed July 17 regular-session close added after discovery readiness.

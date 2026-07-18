@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-16
+as_of: 2026-07-18
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -393,15 +393,15 @@ records:
     affected_lanes: [advanced_nuclear_and_grid_constraints]
     materiality_reason: Standard Nuclear directly manufactures TRISO fuel, a scarce input that can constrain multiple advanced-reactor developers and therefore improves the fuel-cycle opportunity-cost comparison.
     blocking_scope: advanced_nuclear_fuel_cycle_lane_completeness
-    readiness_status: external_blocked
-    dashboard_surface_status: not_required_external
-    readiness_path: research/discovery/readiness/2026-07-16-STDN-readiness.md
-    blocker_type: market_closed_or_missing_quote
-    blocker_reason: Public research is decision-grade, but the expected IPO had neither a final 424B4 nor a completed regular-session close at the cutoff; the expected USD 15 offering price is not market data and cannot support an executable entry assessment.
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-18-STDN-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The final prospectus and two completed closes resolve the old external blocker, but about USD 1.67 billion of basic equity value on roughly USD 3.36 million trailing revenue, negative gross economics, scale-up, customer, fuel, governance, and layered dilution risks fail entry.
     reachable_evidence_remaining: none
-    last_readiness_reviewed_at: 2026-07-16
-    next_action: Monitor the final prospectus, first completed regular-session close, Q2 filing, commissioning, funded-backlog conversion, gross margin, customer concentration, and dilution.
-    conclusion: Research completed with a genuine external market-data blocker; listed as not tradable for this decision, buy zero, and rerun entry analysis after a completed close.
+    last_readiness_reviewed_at: 2026-07-18
+    next_action: Monitor Q2 results, commissioning, funded-backlog conversion, repeat commercial delivery, gross margin, customer concentration, and capitalization.
+    conclusion: Incubated into research-only dashboard coverage after the external tradability blocker resolved; no promotion and no current buy.
   - symbol: CIFR
     material_to_current_allocation: true
     affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
@@ -430,6 +430,20 @@ records:
     last_readiness_reviewed_at: 2026-07-16
     next_action: Monitor quantified data-center revenue or named wins, backlog conversion, sustained gross margin, operating cash flow, revolver availability and covenants, customer concentration, and dilution.
     conclusion: Incubated into research-only dashboard coverage; no promotion and no current buy.
+  - symbol: SEI
+    material_to_current_allocation: true
+    affected_lanes: [ai_power_and_cooling]
+    materiality_reason: Operating behind-the-meter power capacity, long-duration data-center contracts, and faster time-to-power make Solaris a direct bottleneck expression that was missing from durable comparison surfaces.
+    blocking_scope: ai_power_and_cooling_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-18-SEI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Customer concentration, more than USD 1.26 billion of remaining 2026 capex, USD 1.3 billion of notes, additional project obligations, equity issuance, VIE complexity, and execution risk leave insufficient entry tolerance despite real revenue and contracts.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-18
+    next_action: Monitor Q2 results, contract revenue and cash conversion, deployment milestones, capex, leverage, customer diversification, VIE economics, and valuation.
+    conclusion: Completed readiness and promoted only to watch B after a separate six-role promotion review; no active promotion and no current buy.
   - symbol: KRMN
     material_to_current_allocation: false
     affected_lanes: [space_infrastructure]

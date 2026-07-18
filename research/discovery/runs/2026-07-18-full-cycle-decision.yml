@@ -1,0 +1,273 @@
+schema_version: 1
+run_id: 2026-07-18-full-cycle-decision
+run_date: 2026-07-18
+request_type: monthly_decision_full_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, a 5 percent reviewed-symbol move, ASTS settlement or option update, confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-18-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-18-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_no_action
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 1873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: Saturday did not trigger the Friday-only USD 888 deposit authorization. No execution was confirmed and no broker record changed.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --json --as-of 2026-07-18 --output research/discovery/runs/2026-07-18-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-18-scan.json
+      output_sha256: 87db22be2f2664c86949cf6c464421a181583ad7364cf4b7c916586f192e3b48
+      retrieved_at: 2026-07-18
+      profile_coverage_scope: none
+      profile_coverage_status: not_applicable_no_profile_input
+      profile_requested_symbols: []
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: Broad ticker and issuer-name scan is deterministic scaffolding with partial organic recall and no issuer-profile semantic claim.
+      result_summary: Reviewed 7644 eligible securities, returned 27 candidates from 133 matches and 57 exploratory matches; SEI was completed through independent bottleneck review.
+    - command: node scripts/run-sec-filing-discovery-index.mjs --as-of 2026-07-18 --filing-selection-policy latest-supported --symbols current-preexisting-tradable-universe
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-18-sec-event-filing-index-scan.json
+      output_sha256: 4b9020c5f266a9319ff32faee64696c5ef244e1f36908e389926beb1c20ca867
+      retrieved_at: 2026-07-18
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, CIFR, OCC]
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: The fixed-snapshot index covers requested symbols only; STDN and SEI were reviewed directly from primary filings and are not represented as full SEC-universe semantic coverage.
+      result_summary: Targeted 46 symbols and, after a selector repair, retained the material original NBIS 6-K over its same-day amendment.
+    - command: npm run triage:community -- --as-of 2026-07-18
+      dry_run: false
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-07-18
+      result_summary: One low-signal SPX mention had no discovery or allocation effect; Reddit and Stocktwits were unavailable.
+  community_attention:
+    scan_command: npm run scan:community -- --as-of 2026-07-18
+    scan_output_path: research/discovery/runs/2026-07-18-community-triage.json
+    scan_output_sha256: 58208ab813591b44fb1212ecd541d69816c59cbfc03a6375314b77a5b0436c24
+    triage_command: npm run triage:community -- --as-of 2026-07-18
+    triage_output_path: research/discovery/runs/2026-07-18-community-triage.json
+    triage_output_sha256: 58208ab813591b44fb1212ecd541d69816c59cbfc03a6375314b77a5b0436c24
+    previous_scan_status: prior cycle available
+    top_existing_priority_boosts: []
+    top_new_primary_source_queue: []
+    identity_confirmation_queue: []
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings and regulatory evidence
+      sources_or_queries: [targeted filing index, live submissions, NBIS facility, STDN prospectus, SEI filings]
+      source_ids: [nbis_gpu_facility_2026_07_17, nbis_q1_2026_6k, stdn_424b4_2026_07_16, sei_q1_2026_10q]
+      retrieved_at: 2026-07-18
+      material_findings: NBIS funding strengthened, STDN tradability resolved, and SEI completed readiness; all remain buy zero.
+      unavailable_or_skipped_reason: Full SEC-universe semantic coverage remains partial.
+    - family_id: issuer_material
+      family: Company releases and transaction evidence
+      sources_or_queries: [NBIS facility release, SEI contract and GESA evidence]
+      source_ids: [nbis_gpu_facility_2026_07_17, sei_hatchbo_contract_2026_02_12, sei_customer_c_contract_2026_04_24, sei_gesa_acquisition_2026_07_06]
+      retrieved_at: 2026-07-18
+      material_findings: Contracted demand and turnkey capability improved, but customer, capex, leverage, dilution, and cash-conversion risks prevent a buy.
+      unavailable_or_skipped_reason: None material to the completed no-action decision.
+    - family_id: market_data
+      family: Completed closes and account research valuation
+      sources_or_queries: [committed Yahoo closes, Alpaca IEX cross-check, STDN and SEI completed bars]
+      source_ids: [completed_close_universe_2026_07_17, stdn_completed_close_2026_07_17, sei_completed_close_2026_07_17]
+      retrieved_at: 2026-07-18
+      material_findings: Research NAV is USD 3658.92, cash is 51.21 percent, and all new buy quantities are zero.
+      unavailable_or_skipped_reason: No broker preview or executable quote was requested or used.
+    - family_id: current_world_context
+      family: Macro and public-attention overlays
+      sources_or_queries: [FRED rates and spreads, Alpaca macro ETF bars, sanitized public community triage]
+      source_ids: [alpaca_iex_macro_close_2026_07_17, completed_close_universe_2026_07_17]
+      retrieved_at: 2026-07-18
+      material_findings: Macro score 19 and top formation raise entry discipline without creating a signal; community attention had no material effect.
+      unavailable_or_skipped_reason: Yahoo macro proxies returned HTTP 403 and two community endpoints were unavailable.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, IPOs, financings, and acquisitions
+      sources_or_queries: [STDN final prospectus and first closes, NBIS financing, SEI financing and GESA]
+      source_ids: [stdn_424b4_2026_07_16, stdn_completed_close_2026_07_17, nbis_gpu_facility_2026_07_17, sei_financing_close_2026_05_12, sei_gesa_acquisition_2026_07_06]
+      retrieved_at: 2026-07-18
+      material_findings: STDN entered tradable research coverage, SEI reached watch B, and financing improved survival without clearing entry.
+      unavailable_or_skipped_reason: None material to the completed no-action decision.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad scan, and same-lane comparison
+      sources_or_queries: [broad SEC scan, SEI readiness, STDN readiness, primary same-lane comparisons]
+      source_ids: [sei_q1_2026_10q, sei_financing_close_2026_05_12, stdn_424b4_2026_07_16]
+      retrieved_at: 2026-07-18
+      material_findings: No new top-level lane is needed; SEI closes a gap in AI power and STDN deepens nuclear fuel.
+      unavailable_or_skipped_reason: Consensus estimates, short interest, options flow, and ETF flows were unavailable and non-decisive.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-18
+    notes: Market, macro, broad SEC scaffolding, public attention, targeted filings, direct issuer evidence, financing, IPO, acquisition, and bottleneck-lane review completed for all holdings, active candidates, the full watchlist, and material discovery leads.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters: [AI power and campus transitions, optical connectivity microcaps, advanced nuclear fuel, quantum naming collisions]
+  sampled_symbols: [SEI, STDN, QTEX, QXL, QUCY, SIDU, UEC]
+  false_positive_patterns: [keyword-only exposure, mature indirect proxies, renamed microcaps without operating proof, old rejected name matches]
+  lane_decisions: [retain all top-level lanes, promote SEI to watch within AI power, move STDN to tradable research-only nuclear fuel coverage]
+  disposition: SEI and STDN completed reachable readiness; prior primary-source rejections and no-change samples remained valid; no exploratory match qualified for a purchase.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Rapid behind-the-meter generation, grid interconnection, AI power equipment, optical bandwidth, launch, spectrum, nuclear fuel, and qualified manufacturing remain plausible constraints.
+    inferences: Scarcity creates shareholder value only when delivery, margins, financing, and diluted per-share cash generation are auditable.
+    disconfirming_evidence: Current leverage and valuations often capitalize future scarcity before free cash flow is proved.
+    source_ids: [sei_q1_2026_10q, stdn_424b4_2026_07_16, completed_close_universe_2026_07_17]
+    investment_implication: Preserve cash until evidence and entry align.
+  who_controls_or_removes_scarcity:
+    facts: SEI operates rapid power capacity, STDN manufactures TRISO, and existing candidates control more mature power, fuel, optical, compute, and space assets.
+    inferences: Directness is necessary but insufficient when customers, lenders, regulators, partners, or dilution capture value.
+    disconfirming_evidence: SEI and STDN each retain material concentration, financing, execution, or economics vetoes.
+    source_ids: [sei_q1_2026_10q, sei_financing_close_2026_05_12, stdn_424b4_2026_07_16]
+    investment_implication: Add monitoring coverage without allocating capital.
+  who_can_monetize_into_shareholder_value:
+    facts: SEI has operating revenue and leases; NBIS has contracted GPU demand; STDN has funded backlog but negative gross economics.
+    inferences: Cash offers better option value than paying for unverified long-duration common-share economics.
+    disconfirming_evidence: Funded delivery, positive free cash flow, balance-sheet de-risking, diversification, or valuation reset could change the ranking.
+    source_ids: [sei_q1_2026_10q, nbis_gpu_facility_2026_07_17, stdn_424b4_2026_07_16]
+    investment_implication: Review LEU, GILT, NBIS, and SEI only after their named triggers.
+  public_security_expression:
+    facts: SEI and STDN are tradable U.S.-listed common stocks; OPENAI and ANTHROPIC are not directly tradable under policy.
+    inferences: A listed ticker or lower price does not create buy eligibility.
+    disconfirming_evidence: Direct securities still fail evidence, survival, entry, or opportunity-cost gates.
+    source_ids: [sei_completed_close_2026_07_17, stdn_completed_close_2026_07_17, completed_close_universe_2026_07_17]
+    investment_implication: SEI is watch B, STDN research-only B-, and both are buy zero.
+  early_small_misunderstood_or_newly_public:
+    facts: STDN is newly listed and SEI is an underfollowed oilfield-to-AI-power transition with complex project structures.
+    inferences: Complexity justifies complete readiness and durable monitoring rather than automatic rejection or purchase.
+    disconfirming_evidence: Corrected capitalization, debt, dilution, and cash-conversion risk materially weaken headline upside.
+    source_ids: [stdn_424b4_2026_07_16, sei_q1_2026_10q, sei_gesa_acquisition_2026_07_06]
+    investment_implication: Keep both visible, but allocate zero.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [bottleneck map, broad scan, community triage, primary filings]
+      sources_checked: [sei_q1_2026_10q, stdn_424b4_2026_07_16]
+      facts_verified: SEI was the only unresolved material scan gap and completed readiness; no new top-level lane is needed.
+      stale_or_missing_evidence: Full SEC-universe semantic coverage remains partial.
+      confidence: high
+      key_findings: Complete SEI readiness, correct STDN tradability, and buy zero.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [targeted SEC index, live submissions, direct filings, capitalization reconciliations]
+      sources_checked: [nbis_gpu_facility_2026_07_17, nbis_q1_2026_6k, sei_financing_close_2026_05_12, sei_gesa_acquisition_2026_07_06]
+      facts_verified: NBIS, STDN, SEI, IMSR, IQMX, GILT, and current ownership filings were classified; no critical event remains open.
+      stale_or_missing_evidence: Future issuer results and contract economics remain external triggers.
+      confidence: high
+      key_findings: No filing changes buy zero; repair same-day amendment selection.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [all-symbol evidence, completed closes, primary operating metrics]
+      sources_checked: [sei_q1_2026_10q, nbis_gpu_facility_2026_07_17, stdn_424b4_2026_07_16]
+      facts_verified: SEI is the strongest new research lead and NBIS funding improved, but no security clears all gates.
+      stale_or_missing_evidence: Positive deltas do not prove current free-cash-flow entry quality.
+      confidence: high
+      key_findings: Rank SEI for research, retain current holdings, and buy zero.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [debt, dilution, concentration, survival, execution, and portfolio stress]
+      sources_checked: [sei_financing_close_2026_05_12, nbis_q1_2026_6k, stdn_424b4_2026_07_16]
+      facts_verified: Every candidate has a current veto and current holdings remain concentrated but thesis-intact.
+      stale_or_missing_evidence: No reachable evidence remains unfinished for the no-buy conclusion.
+      confidence: high
+      key_findings: Hold 17 RKLB and 11 ASTS, buy zero, sell zero, and retain cash.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [completed closes, corrected capitalization, TTM metrics, debt, dilution, and opportunity cost]
+      sources_checked: [completed_close_universe_2026_07_17, sei_completed_close_2026_07_17, stdn_completed_close_2026_07_17, nbis_q1_2026_6k]
+      facts_verified: SEI clears watch but not active or entry; NBIS and STDN remain below promotion and entry thresholds.
+      stale_or_missing_evidence: Current pro-forma SEI and NBIS enterprise values remain intentionally unreconciled.
+      confidence: high
+      key_findings: Promote SEI only to watch B and set every current new-buy quantity to zero.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account state, closes, reviewer findings, macro, and stress tests]
+      sources_checked: [completed_close_universe_2026_07_17, alpaca_iex_macro_close_2026_07_17, sei_q1_2026_10q]
+      facts_verified: Cash is 51.21 percent and combined space is 48.79 percent; severe stress remains survivable without leverage.
+      stale_or_missing_evidence: SGOV broker mechanics are unconfirmed but no reserve order is needed.
+      confidence: high
+      key_findings: Retain USD 1873.58 cash, buy zero SGOV, and make no trade.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: SEI operating proof clears the watch threshold but not active, evidence, entry, survival, opportunity-cost, or buy-zone gates; stronger NBIS funding and STDN tradability likewise do not create a purchase.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: [ai_power_and_cooling, advanced_nuclear_and_grid_constraints, ai_compute_infrastructure]
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Existing top-level lanes absorb all material new evidence.
+  no_change_reason: Structural lane map remains sufficient after SEI and STDN were added to durable coverage.
+
+candidate_delta:
+  candidates_added: [SEI]
+  candidates_rejected_or_archived: []
+  candidates_promoted: [SEI]
+  candidates_incubated: [STDN]
+  false_positive_patterns: [keyword-only exposure, mature indirect proxies, renamed microcaps without operating proof]
+
+readiness_sprints:
+  - symbol: STDN
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-18-STDN-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#STDN
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+  - symbol: SEI
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-18-SEI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#SEI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: promote
+
+watchlist_review:
+  non_removed_symbol_count: 50
+  current_cycle_review_count: 50
+  missing_current_cycle_review_count: 0
+  status_changes: [STDN not_tradable to research_only B-, SEI research_only to watch B]
+  buy_zone_changes: [STDN tradability resolved but no buy, SEI initialized no buy]
+  source_path: research/watchlist-cycle-reviews.csv
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Every material candidate completed reachable public research and all-symbol comparison; no-buy follows current evidence rather than unfinished work.
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: immediate_after_sensitive_field_review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No unexpired order, broker preview, same-day executable quantity, raw screenshot, account number, credential, or private message is present.
+
+meta_self_improvement:
+  status: completed
+  lesson: Latest-supported filing selection must not let a same-day amendment mask the material original, and newly tradable or repeatedly exploratory symbols require explicit readiness disposition.
+  durable_changes: [same-day amendment-aware SEC selector with regression test, SEI readiness and watch promotion, STDN tradability refresh, corrected NBIS capitalization]

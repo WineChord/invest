@@ -2484,3 +2484,129 @@ sources:
     first_seen_at: 2026-07-16
     related_symbols: [OCC]
     summary: Eight recent daily bars confirmed a July 15 regular-session close of USD 16.36; the bounded IEX history supports current research pricing without substituting a live or after-hours trade.
+  - id: completed_close_universe_2026_07_17
+    title: Completed July 17 Decision-Universe Closes
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/RKLB
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, CIFR, OCC]
+    summary: Committed Yahoo completed regular-session closes were current through July 17 and were independently cross-checked against completed Alpaca IEX bars for all 46 existing tradable symbols.
+  - id: sec_event_filing_index_2026_07_18
+    title: Targeted SEC Event Filing Index — 2026-07-18
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-18
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, CIFR, OCC]
+    summary: Fixed-snapshot targeted coverage completed for 46 pre-existing tradable symbols; the amendment-aware selector retained the material original NBIS 6-K over its same-day amendment, and the output remains targeted partial rather than full SEC-universe semantic coverage.
+  - id: alpaca_iex_macro_close_2026_07_17
+    title: Completed July 17 Macro Proxy Bars
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/bars
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: []
+    summary: Completed QQQ, SMH, and IWM bars supplied 63-session momentum after Yahoo returned HTTP 403; the macro regime remained top formation with price discipline.
+  - id: stdn_424b4_2026_07_16
+    title: Standard Nuclear Final IPO Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000121390026078747/ea0276071-13.htm
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [STDN]
+    summary: The final 424B4 confirms the USD 15 offering, base post-offering shares, net proceeds, liquidity, backlog, governance, options, plan capacity, ESPP capacity, and commercial and scale-up risks.
+  - id: stdn_completed_close_2026_07_17
+    title: Standard Nuclear First Two Completed Session Closes
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/STDN/bars
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [STDN]
+    summary: Completed July 16 and July 17 closes of USD 12.30 and USD 10.40 resolved the old tradability blocker without clearing the entry gate.
+  - id: sei_q1_2026_10q
+    title: Solaris Energy Infrastructure Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000162828026029046/sei-20260331.htm
+    source_published_at: 2026-04-30
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [SEI]
+    summary: The filing supplied revenue, deployed megawatts, customer concentration, debt, capital spending, cash flow, variable-interest-entity, purchase-commitment, and dilution evidence for complete readiness.
+  - id: sei_hatchbo_contract_2026_02_12
+    title: Solaris More Than 500 MW Hatchbo Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526048667/d933504d8k.htm
+    source_published_at: 2026-02-12
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [SEI]
+    summary: The ten-year agreement plus five-year option, parent guarantee, and 50% remaining-rent termination payment support direct behind-the-meter power demand while preserving customer cancellation risk.
+  - id: sei_customer_c_contract_2026_04_24
+    title: Solaris More Than 600 MW Customer C Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526186933/d151114d8k.htm
+    source_published_at: 2026-04-28
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [SEI]
+    summary: The second ten-year investment-grade technology-company affiliate contract broadens demand evidence but does not disclose customer economics or remove concentration and deployment risk.
+  - id: sei_financing_exhibit_2026_05
+    title: Solaris Notes and Credit Facility Financing Exhibit
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526205278/d70943dex991.htm
+    source_published_at: 2026-05-05
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [SEI]
+    summary: The exhibit describes USD 1.3 billion of notes, a planned USD 650 million secured revolver, 3.9 times annualized issuer-level leverage excluding other obligations, equity issuance, contracts, and non-guidance fully deployed EBITDA illustrations.
+  - id: sei_completed_close_2026_07_17
+    title: Solaris July 17 Completed Close
+    source_type: market_data
+    url: https://finance.yahoo.com/quote/SEI/
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [SEI]
+    summary: The USD 60.28 completed close and approximately USD 4.32 billion market capitalization support the bounded current valuation review.
+  - id: sei_financing_close_2026_05_12
+    title: Solaris Notes and Revolver Closing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526219852/d112244d8k.htm
+    source_published_at: 2026-05-12
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [SEI]
+    summary: The filing confirms USD 1.3 billion of 6.375% senior notes due 2031 and a USD 650 million secured revolver closed, bridge and Stonebriar debt were repaid, and leverage, coverage, and contract-termination covenants apply.
+  - id: sei_gesa_acquisition_2026_07_06
+    title: Solaris GESA Acquisition Closing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000162828026047296/sei-20260701.htm
+    source_published_at: 2026-07-06
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [SEI]
+    summary: GESA adds installation commissioning operations maintenance and repair capabilities for cash assumed and repaid debt and 2,880,682 Class A shares; strategic fit improves while dilution and integration risk increase.
+  - id: nbis_q1_2026_6k
+    title: Nebius Q1 2026 Form 6-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331x6k.htm
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [NBIS]
+    summary: The foreign-issuer filing corrects revenue, cash, capex, outstanding Class A and B shares, treasury stock, pre-funded warrants, and convertible exposure missed by the automated companyfacts row.
+  - id: nbis_gpu_facility_2026_07_17
+    title: Nebius USD 775 Million GPU Facility
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926084452/tm2620683d1_6k.htm
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-18
+    first_seen_at: 2026-07-18
+    related_symbols: [NBIS]
+    summary: The senior secured SOFR plus 2.50% facility and contracted-cash-flow backing strengthen funded growth while adding secured leverage and covenants.

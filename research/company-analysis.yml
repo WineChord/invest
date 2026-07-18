@@ -1103,3 +1103,39 @@ entries:
     risk_watch: Data-center mix, named customers, backlog conversion, gross margin, operating cash flow, cash, revolver availability and covenants, working capital, customer concentration, and dilution.
     next_check: Quantified data-center disclosure, named order, quarterly filing, cash-flow improvement, revolver update, customer-concentration change, issuance, or material price reset.
     source_path: research/discovery/readiness/2026-07-16-OCC-readiness.md
+  - id: 2026-07-18-stdn-tradability-refresh
+    symbol: STDN
+    analyzed_at: "2026-07-18"
+    analysis_type: discovery_readiness_refresh
+    policy_version: v1.1
+    title: Tradable TRISO fuel comparator
+    stance: B-
+    summary: Final offering terms and completed closes resolve tradability, but about USD 1.67 billion basic value on roughly USD 3.36 million trailing revenue, negative gross economics, scale-up, customer, fuel, governance, and layered dilution risks keep STDN research-only.
+    upside_path: Convert scarce qualified TRISO manufacturing capacity into repeat funded orders, positive gross margin, scaled production, and durable per-share cash generation across multiple advanced-reactor programs.
+    risk_watch: Commissioning, funded-backlog conversion, repeat delivery, gross margin, customer and reactor-program concentration, feedstock, options, equity plans, dual-class control, liquidity, and dilution.
+    next_check: Q2 filing, commissioning, repeat commercial delivery, funded-backlog conversion, positive gross margin, customer diversification, or capitalization reset.
+    source_path: research/discovery/readiness/2026-07-18-STDN-readiness.md
+  - id: 2026-07-18-sei-promotion
+    symbol: SEI
+    analyzed_at: "2026-07-18"
+    analysis_type: promotion_review
+    policy_version: v1.1
+    title: Behind-the-meter AI power watch candidate
+    stance: B
+    summary: Real revenue, about 910 MW deployed, long-duration AI data-center contracts, and turnkey power capability clear the watch threshold, but customer concentration, capital spending, debt, project and Up-C structures, dilution, acquisition integration, and unproved free cash flow block active promotion or purchase.
+    upside_path: Convert scarce rapid-deployment power, balance-of-plant, commissioning, operations, and maintenance capacity into long-duration contracted cash flow, deleveraging, and durable per-share reinvestment.
+    risk_watch: Contract deployment and termination, customer concentration, capex, notes and revolver covenants, project debt, VIE and non-controlling interests, Up-C economics, GESA integration, dilution, free cash flow, and pro-forma capitalization.
+    next_check: Q2 filing, contract revenue and cash conversion, deployment milestones, capex, leverage, customer diversification, VIE economics, or valuation reset.
+    source_path: research/promotion/2026-07-18-SEI-NBIS-promotion-review.md
+  - id: 2026-07-18-nbis-facility-review
+    symbol: NBIS
+    analyzed_at: "2026-07-18"
+    analysis_type: material_financing_and_promotion_review
+    policy_version: v1.1
+    title: Contract-backed GPU facility
+    stance: B+
+    summary: The USD 775 million secured facility and Q1 growth strengthen funded deployment, but customer and utilization concentration, capex, secured leverage, pre-funded warrants, capitalization complexity, cash conversion, and roughly 85 times TTM sales keep NBIS watch-only.
+    upside_path: Convert contracted hyperscaler demand and funded GPU capacity into high utilization, recurring cloud economics, free cash flow, customer diversification, and declining capital intensity per revenue dollar.
+    risk_watch: Facility covenants, DSCR, minimum liquidity, GPU collateral, customer concentration, utilization, capex, convertibles, pre-funded warrants, acquisitions, cash conversion, and current share reconciliation.
+    next_check: Customer and utilization disclosure, free cash flow, capitalization reconciliation, facility draw and covenant update, or material valuation reset.
+    source_path: research/promotion/2026-07-18-SEI-NBIS-promotion-review.md

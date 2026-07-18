@@ -1,42 +1,42 @@
 schema_version: 1
-as_of: 2026-07-16
+as_of: 2026-07-18
 last_research_engine_run:
-  as_of: 2026-07-16
-  scope: monthly_decision_full_cycle_with_completed_close_fallback_live_freshness_and_three_candidate_readiness_sprints
+  as_of: 2026-07-18
+  scope: monthly_decision_full_cycle_with_completed_closes_live_freshness_two_readiness_refreshes_and_promotion_review
   notes: >-
-    Ran the full 2026-07-16 operating cycle with July 15 completed IEX closes after Yahoo rate limiting, macro and public-attention overlays, a fresh broad SEC scan, a fixed-snapshot targeted 44-symbol SEC filing index plus live submissions audit, issuer-news review, all-symbol research, and independent discovery, freshness, bull, bear, valuation, and allocation reviewers. STDN, CIFR, and OCC completed reachable readiness; ASTS priced convertible terms and GILT orders were incorporated. The final decision is completed no action.
+    Ran the full 2026-07-18 operating cycle with July 17 completed closes, macro and public-attention overlays, a fresh broad SEC scan, targeted SEC filing index plus direct primary-source review, all-symbol research, and independent discovery, freshness, bull, bear, valuation, and allocation reviewers. SEI completed readiness and promoted only to watch B; STDN tradability was refreshed into research-only coverage; NBIS capitalization and financing were reconciled. The final decision is completed no action.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current enough to support a decision after completing reachable STDN, CIFR, and OCC research, current issuer and SEC classification, completed-close market refresh, and all-symbol comparison. The completed decision contains no unexpired order.
+  reason: Repository-public research coverage is current enough to support a decision after completing reachable SEI and STDN research, current issuer and SEC classification, completed-close market refresh, NBIS capitalization repair, and all-symbol comparison. The completed decision contains no unexpired order.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 1873.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, STDN first completed close, confirmed broker-state change, or 2026-08-10
+    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, ASTS settlement or option update, confirmed broker-state change, or 2026-08-10
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-16
-  discovery_lane_map_as_of: 2026-07-16
-  watchlist_symbols: 49
-  watchlist_symbols_with_current_cycle_review: 49
+  universe_scan_as_of: 2026-07-18
+  discovery_lane_map_as_of: 2026-07-18
+  watchlist_symbols: 50
+  watchlist_symbols_with_current_cycle_review: 50
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
-  active_watchlist_symbols: 22
-  active_symbols_with_current_valuation_state: 22
+  active_watchlist_symbols: 23
+  active_symbols_with_current_valuation_state: 23
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 22
+  active_symbols_with_latest_filing_review: 23
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 17
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-16-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-16-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-16-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-16-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-18-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-18-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-18-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-18-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -45,12 +45,14 @@ discovery_process:
     - freshness_filing_review
     - bull_case
     - bear_case
+    - valuation_entry
     - allocation_risk
   completed_xhigh_roles:
     - discovery_lane_candidate_triage
     - freshness_filing_review
     - bull_case
     - bear_case
+    - valuation_entry
     - allocation_risk
   skipped_xhigh_roles: []
   allocation_relevant_lanes:
@@ -79,11 +81,15 @@ watchlist_process:
     - freshness_filing_review
     - valuation_entry
     - allocation_risk
+    - bull_case
+    - bear_case
   completed_xhigh_roles:
     - discovery_lane_candidate_triage
     - freshness_filing_review
     - valuation_entry
     - allocation_risk
+    - bull_case
+    - bear_case
   skipped_xhigh_roles: []
   unresolved_watchlist_review_conflicts: 0
 freshness:
@@ -112,4 +118,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses evidence, targeted-versus-broad coverage limits, and process changes without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
+  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses evidence, targeted-versus-broad coverage limits, SEI and STDN readiness, the NBIS correction, and the filing-selector repair without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.

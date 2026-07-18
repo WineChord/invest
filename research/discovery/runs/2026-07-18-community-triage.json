@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "source": "public_no_token_community_lead_triage",
+  "generated_at": "2026-07-18T14:00:38.774Z",
+  "as_of": "2026-07-18",
+  "scan_path": "research/cache/community/2026-07-18/2026-07-18-public-community-scan.json",
+  "scan_sha256": "64ee239c8f50d2be4c97211800912fd2e453fa3f4779cf6061fc1b3029ac87e1",
+  "previous_scan_path": "research/cache/community/2026-07-16/2026-07-16-public-community-scan.json",
+  "previous_scan_sha256": "fd1e38f8142090cc112fede6d4eb0376705b9113a1cd1979018c2813620849ea",
+  "previous_scan_status": "loaded",
+  "retrieval_boundary": {
+    "requires_tokens_or_cookies": false,
+    "raw_user_content_retained_in_output": false,
+    "source_use": "sentiment_and_lead_generation_only",
+    "decisive_evidence_allowed": false
+  },
+  "policy_boundary": {
+    "community_signal_use": "analysis_priority_only",
+    "creates_buy_eligibility": false,
+    "creates_promotion_eligibility": false,
+    "creates_security_metadata": false,
+    "required_before_candidate_record": "security_type_confirmation_and_primary_source_skim",
+    "required_before_active_or_buy_zone": "discovery_readiness_and_fresh_promotion_review"
+  },
+  "scoring_policy": {
+    "high_priority_score": 55,
+    "medium_priority_score": 25,
+    "components": "mention_count, source_diversity, source_quality, source_recency_decay, cross_scan_persistence, reason_keyword_fit, trend_delta, stocktwits_trending_score, novelty, and penalties for ambiguous or broad-market symbols"
+  },
+  "source_status_counts": {
+    "error": 37,
+    "ok": 9
+  },
+  "source_counts_by_type": {
+    "generic_rss": 1,
+    "hacker_news_algolia": 7,
+    "reddit_rss": 7,
+    "stocktwits_symbol_stream": 30,
+    "stocktwits_trending": 1
+  },
+  "lead_count": 1,
+  "high_priority_leads": 0,
+  "medium_priority_leads": 0,
+  "transition_summary": {
+    "existing_active_monitor": 0,
+    "existing_research_priority_boost": 0,
+    "new_symbol_primary_source_skim": 0,
+    "symbol_identity_confirmation": 0,
+    "broad_market_context_only": 0,
+    "low_signal_hold_for_persistence": 1,
+    "not_tradable_reference_only": 0
+  },
+  "top_leads": [
+    {
+      "symbol": "SPX",
+      "name": "",
+      "analysis_priority_score": 8.75,
+      "analysis_priority_bucket": "low",
+      "triage_class": "low_signal_hold_for_persistence",
+      "recommended_next_action": "ignore_unless_signal_persists_or_primary_source_event_appears",
+      "buy_eligibility_effect": "none_community_signal_only",
+      "promotion_eligibility_effect": "none_requires_fresh_promotion_review",
+      "community_signal_score": 4,
+      "mention_count": 1,
+      "source_count": 1,
+      "source_ids": [
+        "reddit_wallstreetbets_top_day"
+      ],
+      "source_types": [
+        "reddit_rss"
+      ],
+      "signal_types": [
+        "cash_tag"
+      ],
+      "reason_keywords": [],
+      "sample_urls": [
+        "https://www.reddit.com/r/wallstreetbets/comments/1uze16s/good_day_today_spx/"
+      ],
+      "latest_source_published_at": "2026-07-17T22:19:51+00:00",
+      "known_repo_symbol": false,
+      "security_metadata_status": "unverified_public_symbol",
+      "repo_status": "",
+      "repo_tradability": "",
+      "exchanges": [],
+      "instrument_classes": [],
+      "stocktwits_watchlist_count": null,
+      "stocktwits_trending_score": null,
+      "stocktwits_best_rank": null,
+      "previous_scan": {
+        "present": true,
+        "mention_count": 1,
+        "community_signal_score": 4,
+        "mention_delta": 0,
+        "community_signal_score_delta": 0,
+        "new_in_scan": false
+      },
+      "score_components": {
+        "mention_component": 0.75,
+        "source_diversity_component": 2,
+        "source_quality_component": 3,
+        "source_recency_decay_component": 8,
+        "cross_scan_persistence_component": 5,
+        "reason_keyword_component": 0,
+        "trend_delta_component": 0,
+        "stocktwits_trending_component": 0,
+        "novelty_component": 0,
+        "ambiguity_penalty": 0,
+        "broad_market_or_mega_cap_penalty": 0,
+        "no_reason_keyword_penalty": 5,
+        "unknown_security_penalty": 5,
+        "total_score": 8.75
+      }
+    }
+  ],
+  "existing_symbol_priority_boosts": [],
+  "new_symbol_primary_source_queue": [],
+  "identity_confirmation_queue": [],
+  "broad_market_context_queue": [],
+  "source_type_leaderboards": [
+    {
+      "source_type": "reddit_rss",
+      "source_count": 7,
+      "source_ids": [
+        "reddit_investing_new",
+        "reddit_securityanalysis_new",
+        "reddit_spaceinvestorsdaily_new",
+        "reddit_stocks_new",
+        "reddit_stocks_top_week",
+        "reddit_wallstreetbets_new",
+        "reddit_wallstreetbets_top_day"
+      ],
+      "symbol_count": 1,
+      "top_symbols": [
+        {
+          "symbol": "SPX",
+          "name": "",
+          "mention_count": 1,
+          "community_signal_score": 1,
+          "repo_status": "",
+          "security_metadata_status": "unverified_public_symbol",
+          "sample_urls": [
+            "https://www.reddit.com/r/wallstreetbets/comments/1uze16s/good_day_today_spx/"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_leaderboards": [
+    {
+      "source_id": "reddit_wallstreetbets_top_day",
+      "source_type": "reddit_rss",
+      "source_url": "https://www.reddit.com/r/wallstreetbets/top/.rss?t=day",
+      "source_status": "ok",
+      "symbol_count": 1,
+      "top_symbols": [
+        {
+          "symbol": "SPX",
+          "name": "",
+          "mention_count": 1,
+          "community_signal_score": 1,
+          "repo_status": "",
+          "security_metadata_status": "unverified_public_symbol",
+          "sample_urls": [
+            "https://www.reddit.com/r/wallstreetbets/comments/1uze16s/good_day_today_spx/"
+          ]
+        }
+      ]
+    }
+  ],
+  "caveats": [
+    "Community triage raises analysis priority only; it does not create buy eligibility.",
+    "Unknown symbols require ticker identity, security type, exchange, and primary-source confirmation before any durable candidate record.",
+    "Existing watchlist symbols still require current freshness, valuation, watchlist-cycle, readiness, and promotion gates before active or buy-zone changes.",
+    "Stocktwits symbol streams are seeded from current watchlist and lane proxies, so their leaderboards are useful for attention monitoring but biased toward already-known symbols."
+  ]
+}

@@ -886,7 +886,16 @@ function selectLatestSupportedFiling({
     };
   }
   candidates.sort((left, right) => compareFilingsForSelection(left, right, filingSelectionPolicy));
-  const selected = candidates[0];
+  const latestCandidate = candidates[0];
+  const sameDayOriginal = latestCandidate.secForm.endsWith("/A")
+    ? candidates.find((candidate) =>
+      candidate.filingDate === latestCandidate.filingDate &&
+      candidate.secFormBase === latestCandidate.secFormBase &&
+      !candidate.secForm.endsWith("/A"),
+    )
+    : undefined;
+  const selected = sameDayOriginal ?? latestCandidate;
+  const selectedOriginalOverSameDayAmendment = sameDayOriginal !== undefined;
   const newerSupportedFilings = candidates.filter((candidate) =>
     isNewerFiling(candidate, selected),
   );
@@ -918,6 +927,9 @@ function selectLatestSupportedFiling({
     supplement424BCandidateCount,
     unknown424BCandidateCount,
   });
+  if (selectedOriginalOverSameDayAmendment) {
+    selectionWarnings.push(`selected_original_over_same_day_amendment:${latestCandidate.secForm}`);
+  }
   return {
     ...selected,
     businessProspectus424BCandidateCount,
@@ -926,12 +938,14 @@ function selectLatestSupportedFiling({
     newerSupportedFilingDisplacedCount: newerSupportedFilings.length,
     newerSupportedFilingForms,
     supplement424BCandidateCount,
-    selectionReason: selectionReasonFor({
-      filingSelectionPolicy,
-      foundationalCandidateCount,
-      newerSupportedFilingDisplacedCount: newerSupportedFilings.length,
-      selected,
-    }),
+    selectionReason: selectedOriginalOverSameDayAmendment
+      ? "selected_original_over_same_day_amendment"
+      : selectionReasonFor({
+        filingSelectionPolicy,
+        foundationalCandidateCount,
+        newerSupportedFilingDisplacedCount: newerSupportedFilings.length,
+        selected,
+      }),
     selectionWarnings,
     unknown424BCandidateCount,
     skipped: false,
