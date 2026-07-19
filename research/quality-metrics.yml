@@ -1,15 +1,15 @@
 schema_version: 1
-as_of: 2026-07-18
+as_of: 2026-07-19
 last_research_engine_run:
-  as_of: 2026-07-18
-  scope: monthly_decision_full_cycle_with_completed_closes_live_freshness_two_readiness_refreshes_and_promotion_review
+  as_of: 2026-07-19
+  scope: sunday_monthly_decision_full_cycle_with_completed_close_revalidation_all_form_freshness_all_symbol_review_and_process_repairs
   notes: >-
-    Ran the full 2026-07-18 operating cycle with July 17 completed closes, macro and public-attention overlays, a fresh broad SEC scan, targeted SEC filing index plus direct primary-source review, all-symbol research, and independent discovery, freshness, bull, bear, valuation, and allocation reviewers. SEI completed readiness and promoted only to watch B; STDN tradability was refreshed into research-only coverage; NBIS capitalization and financing were reconciled. The final decision is completed no action.
+    Ran the full 2026-07-19 operating cycle with a fresh revalidation of July 17 completed closes, macro and public-attention overlays, a current-lane-hash broad SEC scan, targeted event index, all-form SEC submissions audit, issuer and regulator checks, all-symbol research, and independent discovery, freshness, bull, bear, valuation, allocation, and source-red-team review. No lane, candidate, readiness, promotion, status, priority, buy-zone, broker, or allocation change is supported. The final decision is completed no action.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current enough to support a decision after completing reachable SEI and STDN research, current issuer and SEC classification, completed-close market refresh, NBIS capitalization repair, and all-symbol comparison. The completed decision contains no unexpired order.
+  reason: Repository-public research coverage is current enough to support a decision after fresh completed-close revalidation, targeted and all-form SEC freshness checks, issuer and regulator review, all-symbol comparison, independent xhigh review, and repair of same-close curated metric preservation. The completed no-action decision contains no unexpired order.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 1873.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
@@ -19,8 +19,8 @@ decision_readiness:
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-18
-  discovery_lane_map_as_of: 2026-07-18
+  universe_scan_as_of: 2026-07-19
+  discovery_lane_map_as_of: 2026-07-19
   watchlist_symbols: 50
   watchlist_symbols_with_current_cycle_review: 50
   watchlist_symbols_missing_current_cycle_review: 0
@@ -33,10 +33,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 17
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-18-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-18-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-18-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-18-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-19-full-cycle-decision.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-19-full-cycle-decision.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-19-full-cycle-decision.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-19-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -118,4 +118,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses evidence, targeted-versus-broad coverage limits, SEI and STDN readiness, the NBIS correction, and the filing-selector repair without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
+  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses the Sunday no-new-close boundary, targeted-versus-all-form SEC coverage, degraded community access, partial discovery recall, current account concentration, and the same-close company-metric repair without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.

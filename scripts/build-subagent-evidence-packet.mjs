@@ -30,6 +30,7 @@ const defaultRoles = [
   "freshness_filing_review",
   "bull_case",
   "bear_case",
+  "valuation_entry",
   "allocation_risk",
 ];
 const safetyBoundaries = [
@@ -43,7 +44,7 @@ const safetyBoundaries = [
 
 const options = parseArgs(process.argv.slice(2));
 const packet = buildPacket(options);
-const output = `${stringifyYaml(packet)}\n`;
+const output = `${stringifyYaml(packet).trimEnd()}\n`;
 
 if (options.output === undefined) {
   process.stdout.write(output);

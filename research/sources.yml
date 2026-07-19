@@ -2511,6 +2511,33 @@ sources:
     first_seen_at: 2026-07-18
     related_symbols: []
     summary: Completed QQQ, SMH, and IWM bars supplied 63-session momentum after Yahoo returned HTTP 403; the macro regime remained top formation with price discipline.
+  - id: completed_close_universe_2026_07_17_refresh_2026_07_19
+    title: Completed July 17 Decision-Universe Closes Revalidated on July 19
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/RKLB
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-19
+    first_seen_at: 2026-07-19
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI]
+    summary: A fresh market refresh on Sunday revalidated all 48 tradable research symbols through the completed July 17 regular-session close; no weekend price was treated as a new market fact.
+  - id: sec_submissions_all_forms_2026_07_19
+    title: SEC Submissions All-Form Freshness Check — 2026-07-19
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-19
+    retrieved_at: 2026-07-19
+    first_seen_at: 2026-07-19
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI]
+    summary: Fresh SEC submissions payloads were checked for all 48 tradable research symbols and every form, including Forms 3, 4, 144, 13D/G, Form D, DEFA14A, and S-8; no filing dated after July 18 was present and no request failed.
+  - id: alpaca_iex_macro_close_2026_07_17_refresh_2026_07_19
+    title: Completed July 17 Macro Proxy Bars Revalidated on July 19
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/bars
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-19
+    first_seen_at: 2026-07-19
+    related_symbols: []
+    summary: Fresh Alpaca IEX retrieval revalidated completed QQQ, SMH, and IWM closes and 63-session returns after Yahoo returned HTTP 403; the macro regime remained top formation with price discipline.
   - id: stdn_424b4_2026_07_16
     title: Standard Nuclear Final IPO Prospectus
     source_type: sec_filing

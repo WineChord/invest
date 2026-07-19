@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-18
+as_of: 2026-07-19
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -19,6 +19,7 @@ notes:
   - A lane exists only to improve the search for rare public opportunities. If it stops helping that mission, revise, merge, demote, or retire it.
   - New lanes should start as emerging or incubating before they affect allocation. Promotion requires source-backed evidence that the bottleneck is durable and publicly investable.
   - The 2026-07-16 full-cycle review found no source-backed new lane or lane-status change; the broad scan's mostly name-driven leads remained scaffolding and the existing ten-lane map still covers the material bottlenecks.
+  - The 2026-07-19 Sunday full-cycle review found no new material filing, completed close, source-backed lane, or lane-status change after the July 18 cycle; the existing ten-lane map still covers the material bottlenecks and all 17 open raw candidates remain fully dispositioned.
 lanes:
   - id: space_infrastructure
     name: Space Infrastructure

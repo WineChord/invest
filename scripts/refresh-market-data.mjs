@@ -15,6 +15,7 @@ import {
   selectTrailingTwelveMonthPeriod,
 } from "./sec-ttm-lib.mjs";
 import { filterCompletedDailyBars } from "./market-session-lib.mjs";
+import { preserveSameDateCuratedCompanyMetrics } from "./company-metric-merge-lib.mjs";
 
 const accountStateFile = "data/account/state.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
@@ -350,12 +351,22 @@ writeCsvFile(
   options.dryRun,
 );
 
-const companyMetricRows = preserveRetrievedAt(
-  await buildCompanyMetricRows(symbols, securityBySymbol, historyBySymbol, {
+const generatedCompanyMetricRows = await buildCompanyMetricRows(
+  symbols,
+  securityBySymbol,
+  historyBySymbol,
+  {
     fmpClient,
     fmpMode,
     shareCountOverrides,
-  }),
+  },
+);
+const companyMetricRows = preserveRetrievedAt(
+  preserveSameDateCuratedCompanyMetrics(
+    generatedCompanyMetricRows,
+    existingCompanyMetrics,
+    [companyFactsSource, fmpCombinedSource],
+  ),
   existingCompanyMetrics,
   ["symbol"],
 );

@@ -4306,6 +4306,9 @@ function validateCompleteIssuerProfileOutput(output, context) {
 }
 
 function supportsBroadUniverseFreshness(output) {
+  if (!("candidate_count" in output) && output.profile_purpose !== "issuer_universe_discovery") {
+    return false;
+  }
   if (output.profile_purpose !== "issuer_universe_discovery") {
     validateDiscoveryScanOutput(output, "broad universe freshness output", {
       requireBroadFreshness: true,
