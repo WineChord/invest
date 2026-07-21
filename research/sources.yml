@@ -1039,11 +1039,11 @@ sources:
     title: Federal Reserve Economic Data Public Macro Series
     source_type: macro_data
     url: https://fred.stlouisfed.org/graph/fredgraph.csv
-    source_published_at: 2026-06-07
-    retrieved_at: 2026-06-07
+    source_published_at: 2026-07-17
+    retrieved_at: 2026-07-21
     first_seen_at: 2026-06-07
     related_symbols: []
-    summary: Public no-token FRED CSV series used for macro risk-overlay snapshots, including Treasury yields, TIPS real yields, credit option-adjusted spreads, and VIX when available.
+    summary: Public no-token FRED CSV series refreshed on July 21 for the macro risk overlay, including Treasury yields, TIPS real yields, credit option-adjusted spreads, and VIX when available.
   - id: yahoo_chart_macro_proxy
     title: Yahoo Chart Public Market Proxy Data
     source_type: market_data
@@ -2637,3 +2637,156 @@ sources:
     first_seen_at: 2026-07-18
     related_symbols: [NBIS]
     summary: The senior secured SOFR plus 2.50% facility and contracted-cash-flow backing strengthen funded growth while adding secured leverage and covenants.
+  - id: completed_close_universe_2026_07_20
+    title: Completed Regular-Session Close Universe — 2026-07-20
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/RKLB?range=max&interval=1d
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ETN, FLY, FN, GILT, GSAT, HQ, INFQ, IMSR, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VOYG, VRT, WULF, WYFI, XNDU, YSS]
+    summary: Completed July 20 regular-session bars were refreshed for all 48 initially covered tradable symbols; the incomplete July 21 session was excluded from the decision close set.
+  - id: qtex_completed_close_2026_07_20
+    title: QTEX July 20 Completed IEX Bar
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/QTEX/bars
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [QTEX]
+    summary: The completed July 20 IEX bar closed at USD 1.18; Alpaca corporate actions showed only the May 20 IINN-to-QTEX name and ticker change and no split in the reviewed period.
+  - id: sec_event_filing_index_2026_07_21
+    title: Targeted SEC Event Filing Index — 2026-07-21
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ETN, FLY, FN, GILT, GSAT, HQ, INFQ, IMSR, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VOYG, VRT, WULF, WYFI, XNDU, YSS]
+    summary: The targeted index covered 48 requested symbols, produced 48 manifest rows and 25 profiles, and remains explicitly partial rather than a full-universe semantic claim.
+  - id: sec_submissions_all_forms_2026_07_21
+    title: All-Form SEC Submissions Audit — 2026-07-21
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [ASTS, CRWV, IMSR, IQMX, IREN, MDA, NBIS, NUCL, QBTS, STDN]
+    summary: Live submissions checks succeeded for 48 of 48 target symbols and found exactly 21 July 20-21 filings across ten symbols; each received a material or grouped immaterial disposition.
+  - id: sec_registration_transaction_candidates_2026_07_20
+    title: SEC Registration and Transaction Candidate Index — 2026-07-20
+    source_type: sec_filing_index
+    url: https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/master.20260720.idx
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [XTND]
+    summary: The corrected exact-date scanner reviewed all 3,036 daily-index rows and produced 53 provisional registration and transaction candidates; primary triage retained XTND as not tradable and rejected weaker pre-listing leads.
+  - id: asts_notes_settlement_2026_07_20
+    title: AST SpaceMobile Convertible Notes Settlement Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1780312/000149315226033912/form8-k.htm
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [ASTS]
+    summary: The USD 1.0 billion base notes settled for approximately USD 983.6 million net proceeds, with USD 96.9 million of capped-call cost and an unresolved USD 150 million option.
+  - id: iren_contract_update_2026_07_20
+    title: IREN AI Cloud Contract Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000114036126028871/ef20078253_ex99-1.htm
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [IREN]
+    summary: IREN reported USD 2.8 billion of new multi-year contracts, an above-USD-4-billion year-end ARR target, approximately 85% contracted targeted ARR, and prepayments around 45% of associated GPU capex; ARR remains non-GAAP and delivery-dependent.
+  - id: mda_cls_financing_2026_07_20
+    title: MDA CLS Offer and Financing Material Change Report
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926084876/tm2620790d1_ex99-1.htm
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [MDA]
+    summary: MDA detailed the approximately EUR 567 million offer for about 70% of CLS, possible EUR 198 million debt repayment, arranged financing, and the closed 23 million-share offering; the acquisition is not complete.
+  - id: nucl_q2_2026_10q
+    title: Eagle Nuclear Energy Form 10-Q for the Quarter Ended May 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2089283/000110465926085069/tmb-20260531x10q.htm
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [NUCL]
+    summary: The filing confirms no operating revenue, cash burn, material control weakness, preferred and warrant obligations, and substantial development and financing risk.
+  - id: qtex_f3_2026_06_04
+    title: QTREX Quantum Form F-3
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526002343/qtrexf3060326.htm
+    source_published_at: 2026-06-04
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [QTEX]
+    summary: The registration statement reconciles approximately 49.15 million base shares, pre-funded warrants, options, warrants, financing history, acquired assets, going-concern risk, and layered dilution.
+  - id: qtex_acquired_business_financials_2026_04_06
+    title: QTREX AME and Fabrica Acquisition Form 6-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526001276/iinn6k040626.htm
+    source_published_at: 2026-04-06
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [QTEX]
+    summary: The acquisition filing and incorporated financials show a small revenue base, material operating losses, cash consideration, and contingent consideration for the acquired AME and Fabrica assets.
+  - id: qtex_financing_2026_05
+    title: QTREX May 2026 Financing Form 6-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526001910/iinn6k051926.htm
+    source_published_at: 2026-05-19
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [QTEX]
+    summary: The financing evidence adds cash but also common shares, pre-funded warrants, placement economics, and dilution to a loss-making legacy pivot.
+  - id: alp_fy2026_annual_report
+    title: Alpha Compute Fiscal 2026 Form 20-F/A
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1095435/000117184326004784/f20fa_071626.htm
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [ALP]
+    summary: The amended annual filing confirms losses, negative working capital, cash burn, going-concern risk, GPU purchase and lease obligations, unrelated activities, related-party complexity, and financing dependence.
+  - id: alp_business_update_2026_06_05
+    title: Alpha Compute Cluster and Contract Business Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1095435/000117184326003934/exh_991.htm
+    source_published_at: 2026-06-05
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [ALP]
+    summary: The issuer reported a live 504-GPU B200 cluster, a two-year USD 32.2 million contract, and a planned B300 cluster without sufficient customer, utilization, margin, termination, or cash-conversion detail.
+  - id: xtnd_s4a_2026_07_16
+    title: XTEND AI Robotics Form S-4/A
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2111860/0001193125-26-306234.txt
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [XTND]
+    summary: The amended registration statement provides revenue, gross-profit, loss, accumulated-deficit, customer-concentration, controls, ownership, earnout, minimum-cash, and fixed-price contract evidence for the proposed listing.
+  - id: xtnd_425_2026_07_20
+    title: XTEND AI Robotics Transaction Form 425
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2111860/0001493152-26-033875.txt
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: [XTND]
+    summary: The transaction communication preserves the expected XTND NYSE path, but effectiveness, closing, final capitalization, exchange confirmation, and completed price history remain external.
+  - id: alpaca_iex_macro_close_2026_07_20
+    title: Alpaca IEX Macro Proxy Completed Closes — 2026-07-20
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/bars
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-21
+    first_seen_at: 2026-07-21
+    related_symbols: []
+    summary: Completed July 20 IEX bars for QQQ, SMH, and IWM supplied trend inputs after Yahoo proxy requests returned HTTP 403; the data is a macro risk overlay, not a buy signal.

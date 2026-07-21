@@ -1238,7 +1238,7 @@ function updateCurrentUniverseScanArtifact(cwd, mutate) {
 }
 
 function updateLatestAgenticCommandHash(cwd, outputPath, nextSha) {
-  updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
+  updateYaml(cwd, latestAgenticDiscoveryPath(cwd), (doc) => {
     const command = doc.source_coverage.deterministic_commands.find((entry) => entry.output_path === outputPath);
     if (command === undefined) {
       throw new Error(`Missing agentic deterministic command for ${outputPath}`);
@@ -1248,7 +1248,7 @@ function updateLatestAgenticCommandHash(cwd, outputPath, nextSha) {
 }
 
 function updateLatestEvidencePacketHash(cwd, outputPath, nextSha) {
-  updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
+  updateYaml(cwd, latestEvidencePacketPath(cwd), (doc) => {
     const output = doc.deterministic_outputs.find((entry) => entry.output_path === outputPath);
     if (output === undefined) {
       throw new Error(`Missing evidence packet deterministic output for ${outputPath}`);

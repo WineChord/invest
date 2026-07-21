@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-07-21T15:21:00.999Z",
+  "as_of": "2026-07-21",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-07-21.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-07-21-community-triage.json",
+      "sha256": "53e6c666c46a5f7972ce438a2ca57bbfadd128d04ed496da9f1a37df6203d830",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-registration-transaction-candidates.json",
+      "sha256": "2eeb4900e6c10ef800d9009a758ffd8869a940e8fbc7f75c3bbc1e152627305d",
+      "role": "sec_registration_transaction_candidate_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-scan.json",
+      "sha256": "bc8e08b5e4891efec65784e80014cdc48307e7c0b0c9928aa1c2c7219d498a11",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-sec-event-filing-index-index.metadata.json",
+      "sha256": "51a9956d99a2281c6ba5d2d6e980075e1266515e30ef7d90704c85e9133ddb1e",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-sec-event-filing-index-manifest.csv",
+      "sha256": "2e25adc495d77dac4b7db5b6c06ad4ee37dc724473fb2fe80c1b15f51b45f5e2",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "f4110c63394eb749fff87eed725bbfbabf508a272901dfb9defd8a998fd88da3",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-sec-event-filing-index-profiles.json",
+      "sha256": "3d995ad41836b10f9cceb29f63f18697bbeeb161a8c206fc59ef7d3f8eb03ee0",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-sec-event-filing-index-scan.json",
+      "sha256": "7d9a813c73e7006418c9cba6d601dd1d3afe611537d8233b4b9a619ef47a7800",
+      "role": "deterministic_scan_artifact"
+    }
+  ]
+}

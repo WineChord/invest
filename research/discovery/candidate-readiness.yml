@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-18
+as_of: 2026-07-21
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -486,3 +486,45 @@ records:
     last_readiness_reviewed_at: 2026-07-14
     next_action: Reopen only after orders-of-magnitude revenue growth, burn reduction, runway improvement, and a major valuation reset.
     conclusion: Rejected as not material; no dashboard surface, promotion, or buy.
+  - symbol: QTEX
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: Direct cryogenic interconnect and additive-electronics exposure improves quantum-enabling hardware coverage at a scale that conventional screens can miss.
+    blocking_scope: quantum_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-21-QTEX-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Legacy-pivot losses, going-concern evidence, unproved production qualification, financing cadence, contingent consideration, pre-funded warrants, options and layered warrants prevent active promotion or entry.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-21
+    next_action: Monitor qualified production customers, quantified repeat orders, gross margin, audited acquired-business conversion, cash burn, fully diluted capitalization, and valuation.
+    conclusion: Incubated into research-only C+ dashboard coverage for quantum-lane completeness; no promotion and no current buy.
+  - symbol: ALP
+    material_to_current_allocation: false
+    affected_lanes: [ai_compute_infrastructure]
+    materiality_reason: A live B200 cluster and reported two-year contract warranted a bounded comparison against current AI-compute infrastructure candidates.
+    blocking_scope: ai_compute_lane_opportunity_cost_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-21-ALP-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Going-concern evidence, negative working capital, cash burn, purchase and lease obligations, unnamed customer economics, unrelated activities, related-party complexity and financing dependence prevent durable coverage.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-21
+    next_action: Reopen only after audited cluster economics, creditworthy customer and contract evidence, utilization and margin proof, survivable financing, activity separation, and cash conversion.
+    conclusion: Rejected after complete bounded review; no dashboard surface, promotion, or buy.
+  - symbol: XTND
+    material_to_current_allocation: true
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: Edge-autonomy robotics and defense drones could become a scarce deployment and software capability, and the registration filing surfaced the candidate before a policy-eligible listing exists.
+    blocking_scope: emerging_defense_autonomy_lane_completeness
+    readiness_status: not_tradable
+    dashboard_surface_status: not_required_not_tradable
+    readiness_path: research/discovery/readiness/2026-07-21-XTND-readiness.md
+    blocker_type: external_unavailable
+    blocker_reason: The registration statement is not effective, the transaction is not closed, and confirmed NYSE ticker metadata, final capitalization and completed regular-session prices do not yet exist.
+    reachable_evidence_remaining: external listing effectiveness, transaction close, final capitalization, exchange confirmation, and completed price history
+    last_readiness_reviewed_at: 2026-07-21
+    next_action: Reopen after effective registration, transaction closing or termination, confirmed listing metadata, final capitalization, and a completed regular-session close.
+    conclusion: Retained as a material not-tradable pre-listing candidate; no price, limit, quantity, promotion, or buy is permitted.

@@ -1139,3 +1139,63 @@ entries:
     risk_watch: Facility covenants, DSCR, minimum liquidity, GPU collateral, customer concentration, utilization, capex, convertibles, pre-funded warrants, acquisitions, cash conversion, and current share reconciliation.
     next_check: Customer and utilization disclosure, free cash flow, capitalization reconciliation, facility draw and covenant update, or material valuation reset.
     source_path: research/promotion/2026-07-18-SEI-NBIS-promotion-review.md
+  - id: 2026-07-21-asts-financing-settlement
+    symbol: ASTS
+    analyzed_at: "2026-07-21"
+    analysis_type: material_filing_refresh
+    policy_version: v1.1
+    title: Convertible settlement improves survival but raises per-share risk
+    stance: Hold existing 11; add 0
+    summary: The USD 1.0 billion base notes settled and improve deployment liquidity, but debt, conversion exposure, an open USD 150 million option, broad uses, early-2027 deployment timing, and account concentration keep the add gate closed.
+    upside_path: Convert added liquidity into timely satellite production, launch, accepted service, carrier economics, and durable recurring cash generation without excessive further dilution.
+    risk_watch: Note option, conversion and hedge mechanics, unrestricted liquidity, use of proceeds, satellite production and launch timing, service revenue, carrier economics, capital allocation, and space concentration.
+    next_check: Note option exercise or expiry, capitalization update, satellite production or launch proof, accepted service revenue, or material valuation reset.
+    source_path: research/filings/2026-07-21-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-21-iren-contract-promotion
+    symbol: IREN
+    analyzed_at: "2026-07-21"
+    analysis_type: material_filing_and_promotion_review
+    policy_version: v1.1
+    title: Contracted AI-cloud capacity raises research priority
+    stance: B+ watch; buy 0
+    summary: USD 2.8 billion of new contracts, multi-year terms, customer prepayments and higher targeted ARR strengthen demand and funding evidence, while non-GAAP ARR, commissioning, acceptance, customer economics, remaining capex, current leverage, and post-announcement entry risk block active promotion.
+    upside_path: Commission 480 MW on time, convert contracts into accepted high-utilization GAAP revenue and free cash flow, diversify customers, finance growth with prepayments, and retain per-share reinvestment capacity.
+    risk_watch: ARR-to-GAAP conversion, pricing, margins, termination and SLA terms, customer concentration, restricted cash, debt, GPU financing, construction, acceptance, utilization, bitcoin exposure, and valuation.
+    next_check: Contract economics, accepted revenue-producing GPUs, customer concentration, capex and funding reconciliation, or a thesis-preserving valuation reset.
+    source_path: research/promotion/2026-07-21-IREN-promotion-review.md
+  - id: 2026-07-21-mda-cls-financing
+    symbol: MDA
+    analyzed_at: "2026-07-21"
+    analysis_type: material_transaction_refresh
+    policy_version: v1.1
+    title: CLS platform option comes with dilution and leverage
+    stance: Active candidate; buy 0
+    summary: The equity offering closed and the CLS offer could add recurring data and European exposure, but final capitalization, over-allotment, minority economics, acquisition debt, pro-forma margins, cash conversion, regulatory close, two integrations, and existing space concentration keep entry closed.
+    upside_path: Close CLS and Blue Canyon on disciplined terms, integrate data and spacecraft capabilities, expand defense and commercial demand, preserve margins, and convert backlog and data services into free cash flow.
+    risk_watch: Over-allotment, final share count, CLS regulatory approval and minority structure, debt draw, purchase accounting, margins, cash conversion, Blue Canyon and CLS integration, and account space concentration.
+    next_check: Final over-allotment and capitalization, definitive CLS close, pro-forma financials, leverage, integration milestones, and combined cash conversion.
+    source_path: research/filings/2026-07-21-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-21-nucl-quarterly-refresh
+    symbol: NUCL
+    analyzed_at: "2026-07-21"
+    analysis_type: quarterly_filing_and_governance_review
+    policy_version: v1.1
+    title: Pre-revenue option weakened by capital and control risk
+    stance: Research-only; buy 0
+    summary: Cash supports near-term work, but no operating revenue, cash burn, material control weakness, preferred dividends and conversion, warrant and resale overhang, permits, distant resource economics, and governance anomalies make the lower price less—not more—investable.
+    upside_path: Obtain permits, produce credible drilling and resource results, accelerate a bankable PFS, clean up controls and governance, and finance development without transferring most upside through preferred securities or dilution.
+    risk_watch: Drilling permits and results, resource quality, PFS timing and economics, preferred dividends and conversion, warrant repricing, resale float, controls remediation, auditor and governance, cash burn, and financing.
+    next_check: Permit and drilling evidence, resource economics, PFS acceleration, control remediation, governance clarification, clean financing, or capitalization reset.
+    source_path: research/filings/2026-07-21-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-21-qtex-readiness
+    symbol: QTEX
+    analyzed_at: "2026-07-21"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Cryogenic quantum interconnect research comparator
+    stance: C+ research-only; buy 0
+    summary: QTEX is a direct small-cap cryogenic-interconnect and additive-electronics expression, but a legacy pivot, acquired-business losses, going-concern evidence, unproved production qualification, financing cadence, contingent consideration, pre-funded warrants, options, and layered warrants block promotion and purchase.
+    upside_path: Qualify the cryogenic platform with credible customers, convert technical orders into repeat production revenue, produce positive gross margin, reduce burn, and preserve per-share economics through a cleaner capital structure.
+    risk_watch: Customer qualification and concentration, disclosed order economics, acquired-business revenue and margin, manufacturing yields, cash burn, contingent consideration, pre-funded warrants, options, warrants, liquidity, and dilution.
+    next_check: Qualified production customer, quantified repeat order, positive product gross margin, audited post-acquisition conversion, lower burn, reconciled diluted capitalization, or valuation reset.
+    source_path: research/discovery/readiness/2026-07-21-QTEX-readiness.md

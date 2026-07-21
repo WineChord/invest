@@ -33,6 +33,7 @@ OKLO,41.5100,USD,2026-07-20,Yahoo Finance chart,2026-07-21T06:09:31.856Z,Automat
 POET,7.4700,USD,2026-07-20,Yahoo Finance chart,2026-07-21T06:09:31.856Z,Automated daily close refresh from committed price history.
 PWR,632.5600,USD,2026-07-20,Yahoo Finance chart,2026-07-21T06:09:31.856Z,Automated daily close refresh from committed price history.
 QBTS,16.7200,USD,2026-07-20,Yahoo Finance chart,2026-07-21T06:09:31.856Z,Automated daily close refresh from committed price history.
+QTEX,1.1800,USD,2026-07-20,Alpaca IEX daily bars,2026-07-21T14:49:17.484Z,"Completed regular-session close from the IEX feed; no split action was reported, and the May 20 corporate action was a ticker/name change only."
 QUBT,7.9200,USD,2026-07-20,Yahoo Finance chart,2026-07-21T06:09:31.856Z,Automated daily close refresh from committed price history.
 RDW,8.6000,USD,2026-07-20,Yahoo Finance chart,2026-07-21T06:09:31.856Z,Automated daily close refresh from committed price history.
 RGTI,14.2500,USD,2026-07-20,Yahoo Finance chart,2026-07-21T06:09:31.856Z,Automated daily close refresh from committed price history.

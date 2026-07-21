@@ -21,7 +21,7 @@ writeFileSync(
     "Comments: webmaster@sec.gov",
     "",
     "CIK|Company Name|Form Type|Date Filed|Filename",
-    "1001|Arcadia Space Systems Inc.|S-1/A|2026-05-31|edgar/data/1001/000100126000001.txt",
+    "1001|Arcadia Space Systems Inc.|S-1/A|20260531|edgar/data/1001/000100126000001.txt",
     "1002|Borealis SpinCo Inc.|10-12B|2026-05-31|edgar/data/1002/000100226000001.txt",
     "1003|Merger Target Corp.|DEF 14A|2026-05-31|edgar/data/1003/000100326000001.txt",
     "1004|Quantum Transaction Inc.|425|2026-05-31|edgar/data/1004/000100426000001.txt",
@@ -85,6 +85,7 @@ try {
   const byCompany = new Map(output.provisional_candidates.map((candidate) => [candidate.company_name, candidate]));
   assert.equal(byCompany.get("Arcadia Space Systems Inc.").filing_family, "S-1");
   assert.equal(byCompany.get("Arcadia Space Systems Inc.").filing_type, "S-1/A");
+  assert.equal(byCompany.get("Arcadia Space Systems Inc.").filing_date, "2026-05-31");
   assert.equal(byCompany.get("Borealis SpinCo Inc.").filing_family, "10-12B");
   assert.equal(byCompany.get("Merger Target Corp.").filing_family, "DEF14A");
   assert.equal(byCompany.get("Quantum Transaction Inc.").filing_family_type, "transaction");

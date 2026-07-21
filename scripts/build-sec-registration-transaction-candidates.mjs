@@ -226,7 +226,10 @@ function parseMasterIndex(content, fallbackDate) {
       continue;
     }
     const [cik, companyName, formType, dateFiled, filename] = columns;
-    const filingDate = strictDate(dateFiled || fallbackDate, `SEC master index filing date for CIK ${cik}`);
+    const filingDate = strictDate(
+      normalizeSecMasterIndexDate(dateFiled || fallbackDate),
+      `SEC master index filing date for CIK ${cik}`,
+    );
     const filingType = normalizeForm(formType);
     const family = filingFamily(filingType);
     rows.push({
@@ -246,6 +249,14 @@ function targetFilingFamilies(configuredFamilies) {
     return defaultTargetFilingFamilies;
   }
   return new Set(configuredFamilies);
+}
+
+function normalizeSecMasterIndexDate(value) {
+  const text = String(value ?? "").trim();
+  if (/^\d{8}$/.test(text)) {
+    return `${text.slice(0, 4)}-${text.slice(4, 6)}-${text.slice(6, 8)}`;
+  }
+  return text;
 }
 
 function candidateRecord(row, retrievedAt) {

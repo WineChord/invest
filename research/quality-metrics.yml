@@ -1,28 +1,28 @@
 schema_version: 1
-as_of: 2026-07-19
+as_of: 2026-07-21
 last_research_engine_run:
-  as_of: 2026-07-19
-  scope: sunday_monthly_decision_full_cycle_with_completed_close_revalidation_all_form_freshness_all_symbol_review_and_process_repairs
+  as_of: 2026-07-21
+  scope: daily_full_operating_cycle_with_completed_closes_all_form_freshness_registration_scan_candidate_readiness_promotion_and_all_symbol_review
   notes: >-
-    Ran the full 2026-07-19 operating cycle with a fresh revalidation of July 17 completed closes, macro and public-attention overlays, a current-lane-hash broad SEC scan, targeted event index, all-form SEC submissions audit, issuer and regulator checks, all-symbol research, and independent discovery, freshness, bull, bear, valuation, allocation, and source-red-team review. No lane, candidate, readiness, promotion, status, priority, buy-zone, broker, or allocation change is supported. The final decision is completed no action.
+    Ran the full 2026-07-21 operating cycle using July 20 completed closes, macro and public-attention overlays, a current-lane-hash broad SEC scan, targeted filing index, 48-of-48 all-form submissions audit, exact-date registration and transaction scan, issuer review, three complete readiness dispositions, IREN promotion review, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation, allocation, and source-red-team work. QTEX entered research-only C+ coverage, IREN rose to B+ watch priority, ALP was rejected, XTND remained not tradable, and the final decision is completed no action.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research coverage is current enough to support a decision after fresh completed-close revalidation, targeted and all-form SEC freshness checks, issuer and regulator review, all-symbol comparison, independent xhigh review, and repair of same-close curated metric preservation. The completed no-action decision contains no unexpired order.
+  reason: Repository-public research is current enough to support a decision after completed-close refresh, targeted and all-form SEC reconciliation, current material filing reviews, exact-date registration and transaction triage, candidate readiness, IREN promotion, all-symbol comparison, and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 1873.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, ASTS settlement or option update, confirmed broker-state change, or 2026-08-10
+    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, ASTS note-option update, IREN contract or commissioning evidence, confirmed broker-state change, or 2026-08-10
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-19
-  discovery_lane_map_as_of: 2026-07-19
-  watchlist_symbols: 50
-  watchlist_symbols_with_current_cycle_review: 50
+  universe_scan_as_of: 2026-07-21
+  discovery_lane_map_as_of: 2026-07-21
+  watchlist_symbols: 51
+  watchlist_symbols_with_current_cycle_review: 51
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
@@ -31,12 +31,12 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 23
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 17
+  raw_discovery_candidates_open: 19
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-19-full-cycle-decision.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-19-full-cycle-decision.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-19-full-cycle-decision.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-19-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-21-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-21-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-21-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-21-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -65,11 +65,12 @@ discovery_process:
     - programmable_money_infrastructure
     - semiconductor_interconnect_and_memory
     - frontier_ai_public_platforms
+    - unknown_future_bottlenecks
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 17
+  material_open_candidates: 19
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 17
+  open_candidate_readiness_completed: 19
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -118,4 +119,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses the Sunday no-new-close boundary, targeted-versus-all-form SEC coverage, degraded community access, partial discovery recall, current account concentration, and the same-close company-metric repair without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
+  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses the completed-close boundary, targeted-versus-all-form SEC scope, exact-date registration scan, degraded community access, failed FMP key-metrics calls, partial discovery recall, current account concentration, new candidate dispositions, and IREN priority change without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
