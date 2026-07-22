@@ -1199,3 +1199,39 @@ entries:
     risk_watch: Customer qualification and concentration, disclosed order economics, acquired-business revenue and margin, manufacturing yields, cash burn, contingent consideration, pre-funded warrants, options, warrants, liquidity, and dilution.
     next_check: Qualified production customer, quantified repeat order, positive product gross margin, audited post-acquisition conversion, lower burn, reconciled diluted capitalization, or valuation reset.
     source_path: research/discovery/readiness/2026-07-21-QTEX-readiness.md
+  - id: 2026-07-22-stdn-facility-milestones
+    symbol: STDN
+    analyzed_at: "2026-07-22"
+    analysis_type: material_facility_and_regulatory_update
+    policy_version: v1.1
+    title: Construction and preliminary safety approvals advance the TRISO scale-up
+    stance: B- research-only; buy 0
+    summary: Tennessee and Idaho construction is substantially complete and DOE has approved preliminary safety analyses, but commissioning, qualification, final readiness, full authorization, customer conversion, gross margin, and roughly USD 1.43 billion pre-event basic value at the July 21 close keep entry and promotion closed; no post-event completed close is available.
+    upside_path: Commission and authorize replicated TRISO lines, convert funded demand into repeat production and positive gross margin, diversify customers, and turn scarce fuel capacity into durable per-share cash generation.
+    risk_watch: Final readiness and DOE authorization, commissioning, achieved capacity, repeat delivery, customer and reactor-program concentration, feedstock, gross margin, options, plan capacity, dual-class control, and dilution.
+    next_check: Final readiness or authorization, production start, funded-backlog conversion, repeat commercial delivery, positive gross margin, Q2 filing, or capitalization reset.
+    source_path: research/filings/2026-07-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-22-qtex-equity-overhang
+    symbol: QTEX
+    analyzed_at: "2026-07-22"
+    analysis_type: material_capitalization_update
+    policy_version: v1.1
+    title: Equity-plan and warrant registrations deepen the dilution veto
+    stance: C+ research-only; buy 0
+    summary: The current filings reconcile 55.7 million basic shares, a 3.834 million-share plan increase, 8.638 million unvested RSUs, options, and a preliminary registration for 6.786 million USD 0.70 warrant resale shares; no EFFECT or post-event completed close exists, and going-concern, six-month cash coverage, qualification, production economics, financing and diluted per-share risk block promotion.
+    upside_path: Qualify the cryogenic platform, win repeat production orders, convert acquired AME capabilities into positive gross margin and cash generation, and fund growth without transferring most upside through new equity.
+    risk_watch: Customer qualification, repeat order economics, acquired-business revenue and margin, manufacturing yield, cash runway, equity-plan issuance, RSUs, options, warrants, resale supply, liquidity, and future financing.
+    next_check: Qualified production customer, quantified repeat orders, positive product gross margin, lower burn, clean financing, reconciled fully diluted capitalization, or valuation reset.
+    source_path: research/filings/2026-07-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-22-enrd-readiness
+    symbol: ENRD
+    analyzed_at: "2026-07-22"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Direct autonomous-freight optionality with fragile economics
+    stance: C+ research-only; buy 0
+    summary: Einride is a newly public direct autonomous and electric freight platform, but negative gross profit, severe losses, going-concern risk, customer concentration, material weaknesses, 98.3 percent SPAC redemptions, warrants, resale supply, and thin liquidity block promotion or purchase.
+    upside_path: Turn integrated freight capacity, fleet software, safety operations, and autonomous-driver licensing into repeatable higher-margin revenue while reducing asset intensity and preserving per-share value.
+    risk_watch: Post-closing unrestricted cash, diluted capitalization, gross margin, RPO conversion, customer concentration, autonomous safety and deployment, vehicle uptime, regulation, financing, resale supply, and trading liquidity.
+    next_check: Post-closing financial filing, reconciled diluted capitalization, positive gross-margin trajectory, material RPO conversion, customer diversification, repeat autonomous commercial revenue, or sustained liquidity improvement.
+    source_path: research/discovery/readiness/2026-07-22-ENRD-readiness.md

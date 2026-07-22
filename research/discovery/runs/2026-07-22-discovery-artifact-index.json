@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-07-22T16:26:24.641Z",
+  "as_of": "2026-07-22",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-07-22.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-07-22-community-triage.json",
+      "sha256": "aa82848de5e3917c019f9efd316c2c1107e9a2cdb818293156669136b23ced81",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-22-scan.json",
+      "sha256": "4004c2013140f0dfe6dbad601162e07168f6cdbb2de26e20ce8febc135645760",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-22-sec-event-filing-index-index.metadata.json",
+      "sha256": "f15d6ba6161bb39365764fa64d6176a09a342e48047cdd4c3efcf86f94937f8a",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-22-sec-event-filing-index-manifest.csv",
+      "sha256": "d734a867bf6de23c8cada0076ea69d02a4eba734892d65faee08ed312cbf31ee",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-22-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "57c83cab5e3d403618cf2fa29afa1f4219b62eaba8b701415e42fcb3f9c3f2ec",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-22-sec-event-filing-index-profiles.json",
+      "sha256": "29c9897b57a0ea9a2aa89dd5b905bb9c7cf70329460410e829bfc8e9f7c61993",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-22-sec-event-filing-index-scan.json",
+      "sha256": "199fe7d00dabdd6fb873bda98bff2b56f17016ad492654c957f277728822e0ea",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-22-sec-submissions-ledger.json",
+      "sha256": "1bde70b47d6b4d1f3ebde217a39f43f584b5965d8163f2e446e3c88c9ac6601f",
+      "role": "generated_discovery_artifact"
+    }
+  ]
+}

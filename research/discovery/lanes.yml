@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-21
+as_of: 2026-07-22
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -21,6 +21,7 @@ notes:
   - The 2026-07-16 full-cycle review found no source-backed new lane or lane-status change; the broad scan's mostly name-driven leads remained scaffolding and the existing ten-lane map still covers the material bottlenecks.
   - The 2026-07-19 Sunday full-cycle review found no new material filing, completed close, source-backed lane, or lane-status change after the July 18 cycle; the existing ten-lane map still covers the material bottlenecks and all 17 open raw candidates remain fully dispositioned.
   - The 2026-07-21 full-cycle review retained the ten-lane map. QTEX fits quantum-enabling connectivity, ALP was rejected, and pre-listing XTND remains in unknown-future monitoring until listing and capitalization evidence can justify a dedicated defense-autonomy lane.
+  - The 2026-07-22 full-cycle review retained the ten-lane map. STDN advanced within the existing fuel-cycle lane without clearing entry, QTEX dilution weakened its existing quantum-lane expression, ENRD entered C+ research-only coverage as a fragile autonomous-freight expression inside the emerging unknown-future lane, UEC and GOWell were rejected after primary-source review, and no lane-status or allocation change was justified.
 lanes:
   - id: space_infrastructure
     name: Space Infrastructure
@@ -355,7 +356,8 @@ lanes:
       - bottleneck
       - network
       - mission critical
-    current_public_proxies: []
+    current_public_proxies:
+      - ENRD
     candidate_entry_points:
       - new public categories with no current lane
       - spinoffs that create pure-play exposure to a newly scarce capability

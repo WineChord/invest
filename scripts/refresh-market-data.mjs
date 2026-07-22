@@ -16,6 +16,7 @@ import {
 } from "./sec-ttm-lib.mjs";
 import { filterCompletedDailyBars } from "./market-session-lib.mjs";
 import { preserveSameDateCuratedCompanyMetrics } from "./company-metric-merge-lib.mjs";
+import { preserveRowsForUnrefreshedSymbols } from "./market-data-merge-lib.mjs";
 
 const accountStateFile = "data/account/state.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
@@ -302,29 +303,34 @@ if (historyFailures.length > 0) {
   console.warn(`Skipped non-held symbols:\n${historyFailures.join("\n")}`);
 }
 
+const refreshedHistorySymbols = new Set(historyBySymbol.keys());
 const priceHistoryRows = preserveRetrievedAt(
-  [...historyBySymbol.entries()]
-    .flatMap(([symbol, history]) =>
-      history.map((point) => ({
-        symbol,
-        date: point.date,
-        open: formatDecimal(point.open, 4),
-        high: formatDecimal(point.high, 4),
-        low: formatDecimal(point.low, 4),
-        close: formatDecimal(point.close, 4),
-        adj_close:
-          point.adjClose === null ? "" : formatDecimal(point.adjClose, 4),
-        volume: point.volume === null ? "" : String(Math.round(point.volume)),
-        currency: defaultCurrency,
-        source: priceHistorySource,
-        retrieved_at: retrievedAt,
-      })),
-    )
-    .sort((left, right) =>
-      left.symbol === right.symbol
-        ? left.date.localeCompare(right.date)
-        : left.symbol.localeCompare(right.symbol),
-    ),
+  preserveRowsForUnrefreshedSymbols(
+    [...historyBySymbol.entries()]
+      .flatMap(([symbol, history]) =>
+        history.map((point) => ({
+          symbol,
+          date: point.date,
+          open: formatDecimal(point.open, 4),
+          high: formatDecimal(point.high, 4),
+          low: formatDecimal(point.low, 4),
+          close: formatDecimal(point.close, 4),
+          adj_close:
+            point.adjClose === null ? "" : formatDecimal(point.adjClose, 4),
+          volume: point.volume === null ? "" : String(Math.round(point.volume)),
+          currency: defaultCurrency,
+          source: priceHistorySource,
+          retrieved_at: retrievedAt,
+        })),
+      )
+      .sort((left, right) =>
+        left.symbol === right.symbol
+          ? left.date.localeCompare(right.date)
+          : left.symbol.localeCompare(right.symbol),
+      ),
+    existingPriceHistory,
+    refreshedHistorySymbols,
+  ),
   existingPriceHistory,
   ["symbol", "date"],
 );
@@ -340,7 +346,11 @@ const nextPrices = refreshPriceRows(existingPrices, historyBySymbol, heldSymbols
 writeCsvFile(watchlistPricesFile, csvHeaders.prices, nextPrices, options.dryRun);
 
 const technicalRows = preserveRetrievedAt(
-  buildTechnicalSnapshotRows(historyBySymbol),
+  preserveRowsForUnrefreshedSymbols(
+    buildTechnicalSnapshotRows(historyBySymbol),
+    existingTechnicalSnapshots,
+    refreshedHistorySymbols,
+  ),
   existingTechnicalSnapshots,
   ["symbol"],
 );
@@ -362,10 +372,14 @@ const generatedCompanyMetricRows = await buildCompanyMetricRows(
   },
 );
 const companyMetricRows = preserveRetrievedAt(
-  preserveSameDateCuratedCompanyMetrics(
-    generatedCompanyMetricRows,
+  preserveRowsForUnrefreshedSymbols(
+    preserveSameDateCuratedCompanyMetrics(
+      generatedCompanyMetricRows,
+      existingCompanyMetrics,
+      [companyFactsSource, fmpCombinedSource],
+    ),
     existingCompanyMetrics,
-    [companyFactsSource, fmpCombinedSource],
+    new Set(generatedCompanyMetricRows.map((row) => row.symbol)),
   ),
   existingCompanyMetrics,
   ["symbol"],

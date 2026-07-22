@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -795,6 +795,8 @@ const testCases = [
     name: "rejects current universe scan lane map hash mismatch",
     mutate: (cwd) => {
       updateCurrentUniverseScanArtifact(cwd, (doc) => {
+        const lanes = parseYaml(readFileSync(path.join(cwd, "research/discovery/lanes.yml"), "utf8"));
+        doc.lane_map_as_of = lanes.as_of;
         doc.lane_map_sha256 = "0".repeat(64);
       });
     },
@@ -1105,6 +1107,12 @@ function makeFixture(name) {
       filter: (source) => !isIgnoredScratchPath(source),
     });
   }
+  mkdirSync(path.join(target, "scripts"), { recursive: true });
+  cpSync(
+    path.join(repoRoot, "scripts/market-data-merge-lib.mjs"),
+    path.join(target, "scripts/market-data-merge-lib.mjs"),
+    { force: true },
+  );
   return target;
 }
 

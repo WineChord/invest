@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-21
+as_of: 2026-07-22
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -528,3 +528,31 @@ records:
     last_readiness_reviewed_at: 2026-07-21
     next_action: Reopen after effective registration, transaction closing or termination, confirmed listing metadata, final capitalization, and a completed regular-session close.
     conclusion: Retained as a material not-tradable pre-listing candidate; no price, limit, quantity, promotion, or buy is permitted.
+  - symbol: ENRD
+    material_to_current_allocation: true
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: A newly listed autonomous and electric freight platform could control a scarce deployment, safety, fleet-orchestration, and operating-data capability not represented in the current public universe.
+    blocking_scope: autonomous_freight_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-22-ENRD-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Negative gross profit, severe losses, going-concern risk, customer concentration, material weaknesses, 98.3 percent SPAC redemptions, warrants, resale supply, and thin liquidity prevent promotion or entry.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-22
+    next_action: Monitor post-closing cash and diluted capitalization, gross margin, RPO conversion, customer concentration, autonomous commercial deployments, financing, and liquidity.
+    conclusion: Incubated into C+ research-only coverage; no promotion and no current buy.
+  - symbol: UEC
+    material_to_current_allocation: false
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: Uranium production and a proposed U.S. conversion facility warranted a primary-source comparison against direct fuel-cycle candidates.
+    blocking_scope: advanced_nuclear_lane_opportunity_cost_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-22-UEC-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Tiny production and gross profit relative to approximately USD 4.73 billion basic value, operating losses, equity-funded cash, and a pre-application conversion concept do not provide mission-consistent per-share asymmetry.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-22
+    next_action: Reopen only after material production and cash conversion, binding conversion-facility economics, lower dilution, or a major valuation reset.
+    conclusion: Rejected from ongoing coverage after complete readiness; no dashboard surface, promotion, or buy.

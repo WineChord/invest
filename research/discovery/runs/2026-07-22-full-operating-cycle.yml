@@ -1,0 +1,261 @@
+schema_version: 1
+run_id: 2026-07-22-full-operating-cycle
+run_date: 2026-07-22
+request_type: daily_full_operating_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, a 5 percent reviewed-symbol completed-close move, an ASTS note-option outcome, IREN contract or commissioning evidence, STDN authorization or production evidence, QTEX financing or qualification evidence, ENRD post-closing financial evidence, a confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-22-daily-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-22-subagent-evidence-packet.yml
+
+execution_update:
+  status: completed_no_action
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 1873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: Wednesday did not trigger the Friday-only USD 888 authorization. No broker execution or deposit was confirmed and no account record changed.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --json --as-of 2026-07-22 --output research/discovery/runs/2026-07-22-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-22-scan.json
+      output_sha256: 4004c2013140f0dfe6dbad601162e07168f6cdbb2de26e20ce8febc135645760
+      retrieved_at: 2026-07-22
+      result_summary: The current ten-lane scan covered 10,412 SEC rows and 7,647 eligible issuers, returned 133 matches, 25 raw candidates, 57 exploratory matches and 51 suppressed known matches without truncation or expected-proxy recall misses.
+    - command: npm run triage:community -- --as-of 2026-07-22 --output research/discovery/runs/2026-07-22-community-triage.json
+      dry_run: false
+      retrieved_at: 2026-07-22
+      result_summary: Seven of 46 public sources succeeded, 39 failed, zero leads were created and public attention had no promotion or allocation effect.
+    - command: npm run build:sec-registration-transaction-candidates -- --as-of 2026-07-21 --output research/discovery/runs/2026-07-21-registration-transaction-candidates-refresh-2026-07-22.json
+      dry_run: true
+      retrieved_at: 2026-07-22
+      result_summary: The latest reliably completed daily index was July 21, covering 3,306 rows and 500 provisional records; GOWell and XLAB did not justify ongoing coverage.
+    - command: npm run refresh:market -- --as-of 2026-07-22 --no-fmp
+      dry_run: false
+      retrieved_at: 2026-07-22
+      result_summary: All 50 tradable research symbols received a completed July 21 close and adjusted history; ENRD entered the durable market surface and the in-progress July 22 session was excluded.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, live all-form submissions, registration statements, ownership forms, exchange evidence, and regulator evidence
+      sources_or_queries: [49 live submissions payloads, targeted event index, ENRD F-1, Nasdaq listing confirmation, current registration filings]
+      source_ids: [sec_submissions_all_forms_2026_07_22, sec_event_filing_index_2026_07_22, enrd_f1_2026_07_08, enrd_nasdaq_listing_2026_06_10]
+      retrieved_at: 2026-07-22
+      material_findings: Thirteen July 21-22 filings across seven original symbols were dispositioned, while separate primary review showed ENRD is tradable and material enough for C+ research-only coverage.
+      unavailable_or_skipped_reason: The targeted event selector is partial and does not prove full-market semantic completeness.
+    - family_id: issuer_material
+      family: Issuer operating, financing, facility, capitalization, quarterly, and candidate evidence
+      sources_or_queries: [STDN facility update, QTEX F-1 and S-8 package, ENRD post-combination F-1, UEC quarterly filing]
+      source_ids: [stdn_facility_milestones_2026_07_22, qtex_equity_overhang_2026_07_21, enrd_f1_2026_07_08, uec_q3_2026_10q]
+      retrieved_at: 2026-07-22
+      material_findings: STDN strengthened without clearing entry, QTEX dilution risk deepened, ENRD entered research-only coverage, and UEC was rejected from ongoing coverage.
+      unavailable_or_skipped_reason: STDN final authorization, QTEX commercial qualification, ENRD post-closing diluted capitalization, and binding UEC conversion economics remain unavailable.
+    - family_id: market_data
+      family: Completed regular-session closes, adjusted history, technical trends, account research valuation, and corporate-action handling
+      sources_or_queries: [50-symbol Yahoo completed-close refresh, Nasdaq cross-checks for ENRD and UEC, adjusted daily histories]
+      source_ids: [completed_close_universe_2026_07_21]
+      retrieved_at: 2026-07-22
+      material_findings: July 21 is the common completed close date; research NAV is USD 3,745.36, combined space exposure is 49.9760 percent, and ENRD has only 28 valid sessions.
+      unavailable_or_skipped_reason: Intraday July 22 bars were excluded from closing-price facts.
+    - family_id: current_world_context
+      family: Macro regime and sanitized public-attention overlays
+      sources_or_queries: [FRED public series, failed QQQ SMH and IWM proxy refresh, public community triage]
+      source_ids: [fred_public_macro_series]
+      retrieved_at: 2026-07-22
+      material_findings: Rates, spreads and VIX were available, but equity trend proxies were not; issuer-specific evidence and concentration independently support no action.
+      unavailable_or_skipped_reason: QQQ, SMH and IWM returned HTTP 403 and 39 of 46 public community endpoints failed.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: IPOs, post-SPAC listings, pre-listing registrations, financings, acquisitions, ownership changes, and transaction candidates
+      sources_or_queries: [July 21 SEC daily index, ENRD closing and listing, GOWell transaction, XLAB proposed combination, XTND pre-listing status]
+      source_ids: [sec_registration_transaction_candidates_2026_07_21_refresh_2026_07_22, enrd_nasdaq_listing_2026_06_10, enrd_f1_2026_07_08]
+      retrieved_at: 2026-07-22
+      material_findings: ENRD was a missed already-listed candidate and is now covered; GOWell and XLAB remain pre-closing weak expressions, while XTND remains the only retained material pre-listing candidate.
+      unavailable_or_skipped_reason: XTND, GOWell and XLAB final closing and capitalization facts do not yet exist.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad SEC scan, readiness, same-lane comparison, and opportunity-cost review
+      sources_or_queries: [ten-lane scan, 52-symbol watchlist, retained XTND, ENRD and UEC readiness, full opportunity-cost comparison]
+      source_ids: [completed_close_universe_2026_07_21, enrd_f1_2026_07_08, uec_q3_2026_10q, sec_registration_transaction_candidates_2026_07_21_refresh_2026_07_22]
+      retrieved_at: 2026-07-22
+      material_findings: No top-level lane changed; ENRD improves emerging autonomy coverage, UEC does not improve fuel-cycle opportunity cost, and cash outranks every current security.
+      unavailable_or_skipped_reason: Deterministic semantic recall and degraded public-attention access prevent an exhaustive positive discovery claim.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-22
+    notes: Market, macro, public attention, broad SEC scaffolding, targeted and all-form filings, issuer evidence, ownership, financing, transactions, candidate readiness, lane evolution, and opportunity cost were reviewed.
+
+unknown_future_review:
+  exploratory_match_count: 57
+  top_clusters: [autonomous freight and edge autonomy, quantum naming and cryogenic interconnect, AI compute and power pivots, advanced nuclear and materials transactions]
+  sampled_symbols: [ENRD, UEC, XTND, XLAB, GOWell, QXL, QUCY]
+  false_positive_patterns: [ticker and name collisions, blank-check vehicles, funds and preferred securities, mature indirect commodity proxies, promotional pivots without operating proof]
+  lane_decisions: [retain all ten top-level lanes, incubate ENRD inside unknown future, retain XTND as not tradable, reject UEC, reject GOWell and XLAB from ongoing coverage]
+  disposition: ENRD and UEC received complete readiness, registration leads were explicitly dispositioned, and no new top-level lane or current buy resulted.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Grid-connected power, commissioned compute, AI interconnect, launch and spacecraft production, spectrum, nuclear fuel, cryogenic connectivity, and validated autonomous-freight deployment remain plausible constraints.
+    inferences: Scarcity creates shareholder value only when delivery, pricing, margin, financing, and diluted per-share cash generation are auditable.
+    disconfirming_evidence: ENRD, STDN, QTEX and many peers capitalize future scarcity before repeatable gross profit or free cash flow exists.
+    source_ids: [completed_close_universe_2026_07_21, enrd_f1_2026_07_08, stdn_facility_milestones_2026_07_22, qtex_equity_overhang_2026_07_21]
+    investment_implication: Preserve cash until evidence and entry align.
+  who_controls_or_removes_scarcity:
+    facts: Current lane leaders own or coordinate direct power, compute, interconnect, space, spectrum, fuel-cycle, quantum, or autonomy capabilities.
+    inferences: Direct exposure is insufficient when customers, lenders, regulators, partners, warrants, or dilution capture most economics.
+    disconfirming_evidence: Every current security retains an evidence, entry, survival, promotion, concentration, or opportunity-cost veto.
+    source_ids: [sec_submissions_all_forms_2026_07_22, enrd_f1_2026_07_08, uec_q3_2026_10q]
+    investment_implication: Research priority may change without creating buy eligibility.
+  who_can_monetize_into_shareholder_value:
+    facts: IREN, LEU, CRDO, GILT and MDA remain the closest research queue, while ENRD lacks proven positive gross economics.
+    inferences: Confirmed cash has better option value than unreconciled long-duration economics or additional correlated space exposure.
+    disconfirming_evidence: Accepted revenue, contract economics, free cash flow, capitalization repair, or a thesis-preserving valuation reset could change the ranking.
+    source_ids: [completed_close_universe_2026_07_21, enrd_f1_2026_07_08, stdn_facility_milestones_2026_07_22]
+    investment_implication: Retain confirmed cash and buy zero.
+  public_security_expression:
+    facts: Fifty watchlist symbols are tradable, OPENAI and ANTHROPIC are not, and XTND is not yet a policy-eligible listed security.
+    inferences: A ticker, low nominal price, registration filing, proposed listing, or sharp decline does not create buy eligibility.
+    disconfirming_evidence: ENRD is tradable and direct yet still fails survival and entry; XTND has operating evidence but no current security.
+    source_ids: [completed_close_universe_2026_07_21, enrd_nasdaq_listing_2026_06_10, enrd_f1_2026_07_08]
+    investment_implication: All current new-buy quantities are zero.
+  early_small_misunderstood_or_newly_public:
+    facts: ENRD and XTND are newly listed or pre-listing enough to be missed by static watchlists; UEC is mature and already multi-billion-dollar scale.
+    inferences: Complexity requires complete readiness and explicit classification rather than automatic purchase or permanent dismissal.
+    disconfirming_evidence: ENRD's operating and capital fragility, XTND's listing gap, and UEC's weak per-share asymmetry overwhelm current entry cases.
+    source_ids: [enrd_f1_2026_07_08, enrd_nasdaq_listing_2026_06_10, uec_q3_2026_10q]
+    investment_implication: Incubate ENRD, reject UEC, retain XTND as not tradable, and allocate zero.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [bottleneck map, watchlist, open candidates, broad scan, registration candidates]
+      sources_checked: [sec_registration_transaction_candidates_2026_07_21_refresh_2026_07_22, enrd_f1_2026_07_08, uec_q3_2026_10q]
+      facts_verified: ENRD is a material already-listed miss, UEC requires readiness but lacks mission fit, and GOWell and XLAB do not improve the current opportunity set.
+      stale_or_missing_evidence: Full-market semantic recall remains partial.
+      confidence: high
+      key_findings: Incubate ENRD at C+, reject UEC, retain XTND, and add no top-level lane.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [49 live submissions payloads, targeted SEC index, 13 current forms, issuer exhibits, ENRD F-1]
+      sources_checked: [sec_submissions_all_forms_2026_07_22, stdn_facility_milestones_2026_07_22, qtex_equity_overhang_2026_07_21, enrd_f1_2026_07_08]
+      facts_verified: Current filings were dispositioned, STDN strengthened, QTEX weakened, and no filing creates buy eligibility.
+      stale_or_missing_evidence: Targeted profiles are partial and ENRD post-closing quarterly evidence is not yet available.
+      confidence: high
+      key_findings: Source chronology and pre-event price boundaries support no action.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [holdings, active candidates, watchlist, new discoveries, closes, filing deltas]
+      sources_checked: [completed_close_universe_2026_07_21, stdn_facility_milestones_2026_07_22, enrd_f1_2026_07_08]
+      facts_verified: IREN, LEU, CRDO, RKLB and ASTS have the strongest upside research cases; ENRD adds genuine but fragile optionality.
+      stale_or_missing_evidence: Contract economics, accepted revenue, commercialization and post-closing capitalization remain incomplete.
+      confidence: high
+      key_findings: Positive optionality raises research priority but no security beats cash after all gates.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [capital structures, dilution, survival, concentration, execution, correlated exposure, stress tests]
+      sources_checked: [completed_close_universe_2026_07_21, qtex_equity_overhang_2026_07_21, enrd_f1_2026_07_08]
+      facts_verified: Combined space exposure is 49.9760 percent of research NAV and every candidate retains a material veto.
+      stale_or_missing_evidence: No reachable public work remains for the no-action conclusion.
+      confidence: high
+      key_findings: Hold RKLB and ASTS, add zero, sell zero, and preserve cash.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [completed closes, adjusted histories, current metrics, financing changes, statuses, and buy zones]
+      sources_checked: [completed_close_universe_2026_07_21, qtex_equity_overhang_2026_07_21, uec_q3_2026_10q]
+      facts_verified: No current executable limit or target is defensible; QTEX and ENRD price declines do not repair survival or diluted economics.
+      stale_or_missing_evidence: Current diluted enterprise values remain unreliable for several recent capital events.
+      confidence: high
+      key_findings: Treat every price level as a research-rerun trigger only and set all new quantities to zero.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account facts, concentration, macro overlay, opportunity set, downside stress tests]
+      sources_checked: [completed_close_universe_2026_07_21, fred_public_macro_series]
+      facts_verified: Confirmed cash is USD 1873.58, research NAV is USD 3745.36, cash is 50.0240 percent and combined space exposure is 49.9760 percent.
+      stale_or_missing_evidence: SGOV broker mechanics remain unconfirmed, but no reserve order is needed.
+      confidence: high
+      key_findings: Cash preserves optionality and dominates all current allocations.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: Primary evidence resolved the discovery review's initial UEC and ENRD uncertainty; ENRD entered research-only coverage, UEC was rejected, and every reviewer supports no action.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: ENRD entered C+ research-only coverage inside the existing emerging lane; XTND remains pre-listing.
+  no_change_reason: One fragile public autonomy expression is insufficient for a durable named lane, while UEC, GOWell and XLAB do not improve existing lane quality.
+
+candidate_delta:
+  candidates_added: [ENRD, UEC]
+  candidates_rejected_or_archived: [UEC]
+  candidates_promoted: []
+  candidates_incubated: [ENRD]
+  false_positive_patterns: [ticker collisions, blank-check vehicles, indirect mature commodity proxies, asset-light promotional resellers]
+
+readiness_sprints:
+  - symbol: ENRD
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-22-ENRD-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#ENRD
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+  - symbol: UEC
+    material_to_current_allocation: false
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-22-UEC-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#UEC
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+
+watchlist_review:
+  non_removed_symbol_count: 52
+  current_cycle_review_count: 52
+  missing_current_cycle_review_count: 0
+  status_changes: [ENRD added as research_only C+]
+  priority_changes: []
+  buy_zone_changes: [all 52 watchlist symbols confirmed no current buy]
+  source_path: research/watchlist-cycle-reviews.csv
+
+allocation_conclusion:
+  confirmed_cash: 1873.58
+  confirmed_positions: [RKLB 17 shares, ASTS 11 shares]
+  orders: []
+  reserve_order: none
+  conclusion: Hold both positions, buy zero, sell zero, buy no SGOV, and retain confirmed cash.
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: All reachable repository-public work needed to decide was completed; readiness permits a decision, while the completed decision is no action and no security is currently buy-eligible.
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: immediate_after_validation_and_sensitive_field_review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No order, nonzero proposed quantity, broker preview, same-day trade, raw artifact, account identifier, credential, or private message is present.
+
+meta_self_improvement:
+  status: completed
+  durable_change: Market refresh now preserves prior rows when a non-held provider request fails, with a regression test and specification update.
+  skill_review: No durable trigger or execution-order change requires a repo-scoped skill update.
+  cleanup: Failed partial SEC retry artifacts and temporary helpers were removed; source downloads remain in ignored cache only.

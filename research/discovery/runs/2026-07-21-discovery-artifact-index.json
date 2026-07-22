@@ -1,13 +1,18 @@
 {
   "schema_version": 1,
   "source": "discovery_artifact_index",
-  "generated_at": "2026-07-21T15:21:00.999Z",
+  "generated_at": "2026-07-22T16:27:05.381Z",
   "as_of": "2026-07-21",
   "purpose": "Hash-anchor generated discovery artifacts from 2026-07-21.",
   "artifacts": [
     {
       "path": "research/discovery/runs/2026-07-21-community-triage.json",
       "sha256": "53e6c666c46a5f7972ce438a2ca57bbfadd128d04ed496da9f1a37df6203d830",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-21-registration-transaction-candidates-refresh-2026-07-22.json",
+      "sha256": "c57b90387ea23047c7900d169e83f3ee1b13a12bf2a49e6d8b97a7c4e68b21f9",
       "role": "generated_discovery_artifact"
     },
     {

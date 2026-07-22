@@ -1040,10 +1040,10 @@ sources:
     source_type: macro_data
     url: https://fred.stlouisfed.org/graph/fredgraph.csv
     source_published_at: 2026-07-17
-    retrieved_at: 2026-07-21
+    retrieved_at: 2026-07-22
     first_seen_at: 2026-06-07
     related_symbols: []
-    summary: Public no-token FRED CSV series refreshed on July 21 for the macro risk overlay, including Treasury yields, TIPS real yields, credit option-adjusted spreads, and VIX when available.
+    summary: Public no-token FRED CSV series refreshed on July 22 for the macro risk overlay, including Treasury yields, TIPS real yields, credit option-adjusted spreads, and VIX when available; QQQ, SMH, and IWM trend proxies were unavailable and the row is explicitly incomplete.
   - id: yahoo_chart_macro_proxy
     title: Yahoo Chart Public Market Proxy Data
     source_type: market_data
@@ -2790,3 +2790,102 @@ sources:
     first_seen_at: 2026-07-21
     related_symbols: []
     summary: Completed July 20 IEX bars for QQQ, SMH, and IWM supplied trend inputs after Yahoo proxy requests returned HTTP 403; the data is a macro risk overlay, not a buy signal.
+  - id: completed_close_universe_2026_07_21
+    title: Completed Regular-Session Close Universe — 2026-07-21
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VOYG, VRT, WULF, WYFI, XNDU, YSS]
+    summary: Completed July 21 regular-session closes and adjusted daily histories cover all 50 tradable research symbols after ENRD entered research-only coverage; the in-progress July 22 session was excluded from closing-price facts.
+  - id: sec_event_filing_index_2026_07_22
+    title: Targeted SEC Event Filing Index — 2026-07-22
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-22
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VOYG, VRT, WULF, WYFI, XNDU, YSS]
+    summary: The targeted partial index covered 49 requested tradable symbols with live SEC submissions and selected current supported event or periodic filings; it is not an exhaustive semantic claim.
+  - id: sec_submissions_all_forms_2026_07_22
+    title: All-Form SEC Submissions Audit — 2026-07-22
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-22
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [AAOI, CRWV, IMSR, NUCL, QBTS, QTEX, STDN]
+    summary: Live submissions checks succeeded for all 49 tradable research symbols and found exactly 13 July 21-22 filings across seven symbols; every new or previously reviewed filing received a current disposition.
+  - id: sec_registration_transaction_candidates_2026_07_21_refresh_2026_07_22
+    title: SEC Registration and Transaction Candidate Index — 2026-07-21
+    source_type: sec_filing_index
+    url: https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/master.20260721.idx
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [NUCL]
+    summary: The latest reliably available completed daily index contained 3,306 rows and 500 provisional registration or transaction records under the bounded scanner; GOWell Energy Technology was the only new bottleneck-keyword transaction lead and was rejected as an indirect, pre-closing oilfield-services SPAC expression.
+  - id: stdn_facility_milestones_2026_07_22
+    title: Standard Nuclear Facility Construction and Preliminary Safety Approval Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000162828026049125/stdn-20260722.htm
+    source_published_at: 2026-07-22
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [STDN]
+    summary: Tennessee and Idaho TRISO facilities are substantially complete and have DOE-approved Preliminary Documented Safety Analyses, while commissioning, final readiness, full authorization, customer conversion, margins and scale economics remain unresolved; the filing cover and exhibit are dated July 22 despite a conflicting July 17 reference in Item 8.01.
+  - id: qtex_equity_overhang_2026_07_21
+    title: QTREX Equity Plan and Warrant Resale Registration Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526003070/qtrexf1072126.htm
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [QTEX]
+    summary: The preliminary F-1, S-8 and 6-K reconcile 55,708,771 basic shares, a 3,834,244-share plan increase, 8,637,605 unvested RSUs, options, and a proposed registration of up to 6,785,715 USD 0.70 warrant resale shares; no EFFECT filing existed at the cutoff, while six-month cash coverage and additional-capital needs make dilution and survival risk more explicit.
+  - id: crwv_form144_2026_07_21
+    title: CoreWeave July 21 Planned-Sale Filings
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1769628/000195004726007250/primary_doc.xml
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [CRWV]
+    summary: Two Form 144 notices cover 307,692 proposed shares with approximately USD 22.48 million indicated value; they extend ownership-overhang evidence without changing operating fundamentals.
+  - id: nucl_proxy_2026_07_21
+    title: Eagle Nuclear Energy 2026 Annual Meeting Proxy
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2089283/000110465926085239/tm2620834-2_def14a.htm
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-21
+    related_symbols: [NUCL]
+    summary: The prior cycle's grouped all-form disposition covered this proxy and annual report. The proxy schedules an August 19 meeting for two director elections and reports 29,579,798 record-date shares; it does not resolve pre-revenue economics, controls, preferred-stock, warrants, permitting or financing risk.
+  - id: enrd_f1_2026_07_08
+    title: Einride Form F-1 Post-Combination Resale Registration
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2095096/000182912626007382/einrideab_f1.htm
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [ENRD]
+    summary: The filing reports 2025 revenue of SEK 457.8 million, cost of sales of SEK 672.5 million, a SEK 1.722 billion net loss, 43 percent top-five customer concentration, going-concern risk, material weaknesses, 98.3 percent SPAC redemptions, PIPE financing, warrants, and resale supply.
+  - id: enrd_nasdaq_listing_2026_06_10
+    title: Einride Nasdaq Trading Commencement
+    source_type: exchange_notice
+    url: https://www.nasdaq.com/press-release/einride-global-leader-autonomous-and-electric-freight-commences-trading-nasdaq-0
+    source_published_at: 2026-06-10
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [ENRD]
+    summary: Nasdaq confirms that Einride ADSs began trading under ENRD on June 10, 2026, resolving the prior listing-status gap without resolving liquidity, capitalization, survival, or operating-economics risk.
+  - id: uec_q3_2026_10q
+    title: Uranium Energy Form 10-Q for the Quarter Ended April 30, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1334933/000143774926019889/uec20260430_10q.htm
+    source_published_at: 2026-06-09
+    retrieved_at: 2026-07-22
+    first_seen_at: 2026-07-22
+    related_symbols: [UEC]
+    summary: The filing reports 146,550 pounds of nine-month uranium production, USD 20.2 million of purchased-inventory sales, a USD 76.6 million net loss, USD 90.1 million operating cash use, USD 488.1 million cash, USD 508.2 million of net share-issuance proceeds, and a proposed pre-application conversion facility.

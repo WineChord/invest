@@ -38,13 +38,14 @@
     "test:community-triage": "node scripts/test-community-triage.mjs",
     "test:macro-regime": "node scripts/test-macro-regime.mjs",
     "test:market-session": "node scripts/test-market-session.mjs",
+    "test:market-data-merge": "node scripts/test-market-data-merge.mjs",
     "test:company-metric-merge": "node scripts/test-company-metric-merge.mjs",
     "scan:community": "node scripts/scan-community-sources.mjs",
     "triage:community": "node scripts/triage-community-leads.mjs",
     "discover:universe": "node scripts/discover-universe.mjs",
     "refresh:macro": "node scripts/refresh-macro-regime.mjs",
     "refresh:market": "node scripts/refresh-market-data.mjs",
-    "verify": "npm run check:data && npm run test:discovery-artifact-index && npm run test:discovery-profiles && npm run test:discovery-scan && npm run test:semantic-discovery && npm run test:fmp-fetch && npm run test:sec-ttm && npm run test:discovery-gates && npm run test:sec-registration-transaction-candidates && npm run test:promotion-gates && npm run test:watchlist-cycle-gates && npm run test:community-scan && npm run test:community-triage && npm run test:macro-regime && npm run test:market-session && npm run test:company-metric-merge && npm run build"
+    "verify": "npm run check:data && npm run test:discovery-artifact-index && npm run test:discovery-profiles && npm run test:discovery-scan && npm run test:semantic-discovery && npm run test:fmp-fetch && npm run test:sec-ttm && npm run test:discovery-gates && npm run test:sec-registration-transaction-candidates && npm run test:promotion-gates && npm run test:watchlist-cycle-gates && npm run test:community-scan && npm run test:community-triage && npm run test:macro-regime && npm run test:market-session && npm run test:market-data-merge && npm run test:company-metric-merge && npm run build"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.5",

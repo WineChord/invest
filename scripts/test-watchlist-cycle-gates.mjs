@@ -1,4 +1,4 @@
-import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -100,6 +100,12 @@ function makeFixture(name) {
       force: true,
     });
   }
+  mkdirSync(path.join(target, "scripts"), { recursive: true });
+  cpSync(
+    path.join(repoRoot, "scripts/market-data-merge-lib.mjs"),
+    path.join(target, "scripts/market-data-merge-lib.mjs"),
+    { force: true },
+  );
   return target;
 }
 
