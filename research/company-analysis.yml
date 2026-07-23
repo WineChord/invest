@@ -1259,3 +1259,15 @@ entries:
     risk_watch: Organic revenue quality, bookings conversion, product delivery, customer concentration, acquisition integration, cash use, valuation, technical performance, and dilution.
     next_check: Organic revenue and bookings, repeat customer orders, product delivery, acquisition integration, gross margin, cash use, or a thesis-preserving valuation reset.
     source_path: research/filings/2026-07-23-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-23-qsi-readiness
+    symbol: QSI
+    analyzed_at: "2026-07-23"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Net-cash-like single-molecule measurement option
+    stance: C+ research-only; buy 0
+    summary: Quantum-Si's disclosed liquidity and planned Proteus launch create unusual small-cap platform optionality, but quarterly revenue fell to USD 0.258 million, operating cash use was USD 25.6 million, customer adoption is unproved, and equity awards, warrants, launch execution and future financing block promotion or purchase.
+    upside_path: Launch Proteus on time, demonstrate independently validated amino-acid-level measurement, create an instrument and recurring-consumables installed base, restore gross-margin revenue growth, and fund commercialization without transferring most upside through dilution.
+    risk_watch: Proteus timing and performance, customer validation, installed base, consumables pull-through, gross margin, operating cash use, cash runway, inventory, options, RSUs, warrants, related-party arrangements, financing, liquidity, and valuation.
+    next_check: Proteus launch or delay, independent customer data, instrument and consumables revenue, gross-margin recovery, quarterly cash use, share-count change, award issuance, financing, or a thesis-preserving price dislocation.
+    source_path: research/discovery/readiness/2026-07-23-QSI-readiness.md

@@ -1,0 +1,278 @@
+schema_version: 1
+run_id: 2026-07-23-evening-full-operating-cycle
+run_date: 2026-07-23
+request_type: daily_full_operating_cycle_evening_refresh
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, a 5 percent reviewed-symbol completed-close move, an ASTS note-option outcome, IREN contract or commissioning evidence, ENRD transaction close or capitalization evidence, QSI Proteus launch or material financing evidence, a confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-23-monthly-decision.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-23-subagent-evidence-packet.yml
+
+execution_update:
+  status: confirmed_account_state_reused_no_new_broker_event
+  confirmed_ledger_event_ids: [2026-07-23-deposit-001]
+  resulting_confirmed_cash: 4873.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: The already confirmed USD 3000 deposit remains the latest broker event. The evening cycle added no deposit, trade, order, fee, fill, or position change.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --json --as-of 2026-07-23 --output research/discovery/runs/2026-07-23-evening-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-23-evening-scan.json
+      output_sha256: 6f8dc9c9ac9b89be2e2c08908a92ff2cb7a161ccc94848c6c4ee19c84eb18599
+      retrieved_at: 2026-07-23
+      result_summary: The current ten-lane scan covered 10419 SEC rows and 7649 eligible issuers, returned 136 matches, 22 raw candidates, 60 exploratory matches and 54 suppressed known matches without truncation after QSI entered current coverage.
+    - command: npm run triage:community -- --as-of 2026-07-23 --output research/discovery/runs/2026-07-23-community-triage.json
+      dry_run: false
+      retrieved_at: 2026-07-23
+      result_summary: Public-source access was degraded; zero symbol leads were retained and 35 lane-keyword signals had no promotion or allocation effect.
+    - command: npm run build:sec-registration-transaction-candidates -- --as-of 2026-07-23 --retrieved-at 2026-07-23 --source-published-at 2026-07-22 --daily-index-url SEC July 22 master index --start-date 2026-07-22 --end-date 2026-07-22 --output research/discovery/runs/2026-07-23-registration-transaction-candidates-2026-07-22.json
+      dry_run: true
+      retrieved_at: 2026-07-23
+      result_summary: The completed July 22 daily index covered 3525 rows and 500 bounded provisional records; ELPW, KIDZ and Greenbacker did not justify ongoing coverage.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-07-23 --symbols current-tradable-universe --output-prefix research/discovery/runs/2026-07-23-evening-sec-event-filing-index
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-23-evening-sec-event-filing-index-scan.json
+      output_sha256: bedbf2318a9c511c260a765b547dbd873728e17b30e98d4b5a99ac12712f9f6b
+      retrieved_at: 2026-07-23
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI]
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: The event index covers the 51 requested tradable research symbols and a bounded material-form selector only; all-form submissions and direct primary reviews supplement it, and no complete SEC-universe semantic profile claim is made.
+      result_summary: Live submissions payloads and selected filing fetches validated for all 51 tradable symbols, while business-profile extraction succeeded for 29 of 51. The prior 50-symbol accession set was unchanged; QSI was added through a completed readiness review, and dynamic SEC script injection caused raw HTML hash churn without a new material event.
+      artifacts:
+        - research/discovery/runs/2026-07-23-evening-sec-submissions-ledger.json
+        - research/discovery/runs/2026-07-23-evening-sec-event-filing-index-manifest.csv
+        - research/discovery/runs/2026-07-23-evening-sec-event-filing-index-manifest.metadata.json
+        - research/discovery/runs/2026-07-23-evening-sec-filing-ledger.json
+        - research/discovery/runs/2026-07-23-evening-sec-event-filing-index-profiles.json
+        - research/discovery/runs/2026-07-23-evening-sec-event-filing-index-index.metadata.json
+    - command: npm run refresh:market -- --as-of 2026-07-23
+      dry_run: false
+      retrieved_at: 2026-07-23
+      result_summary: All 51 tradable research symbols received a completed July 22 close and adjusted history; the July 23 in-progress session was excluded.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, live all-form submissions, registration statements, ownership forms, exchange evidence, and regulator evidence
+      sources_or_queries: [51 live submissions payloads, targeted event index, ENRD transaction filings, QUBT leadership filing, QSI quarterly filing]
+      source_ids: [sec_submissions_all_forms_2026_07_23, enrd_flipturn_acquisition_2026_07_21, qubt_commercial_leadership_2026_07_22, qsi_q1_2026_10q]
+      retrieved_at: 2026-07-23
+      material_findings: ENRD added strategic platform breadth and material stock consideration; QUBT added leadership focus without operating proof; ownership forms did not change entry.
+      unavailable_or_skipped_reason: The targeted selector covered all 51 tradable research symbols but business-profile extraction succeeded for only 29; it does not prove complete issuer-profile or full-market semantic coverage.
+    - family_id: issuer_material
+      family: Issuer operating, financing, contract, acquisition, capitalization, and quarterly evidence
+      sources_or_queries: [ENRD Flipturn acquisition, QUBT leadership, IREN contracts, LEU DOE contract]
+      source_ids: [enrd_flipturn_acquisition_2026_07_21, qubt_commercial_leadership_2026_07_22, iren_contract_update_2026_07_20, leu_haleu_contract_2026_07_02]
+      retrieved_at: 2026-07-23
+      material_findings: IREN, LEU, CRDO, GILT and MDA remain the highest-priority research queue, while no issuer clears every decision gate.
+      unavailable_or_skipped_reason: Decisive contract economics, accepted revenue, transaction integration, and several fully diluted capitalizations remain unavailable.
+    - family_id: market_data
+      family: Completed regular-session closes, adjusted history, technical trends, company metrics, and account research valuation
+      sources_or_queries: [51-symbol Yahoo completed-close refresh, adjusted daily histories, SEC companyfacts, Alpaca SIP QSI cross-check]
+      source_ids: [completed_close_universe_2026_07_22]
+      retrieved_at: 2026-07-23
+      material_findings: Current research NAV is USD 6740.78 using July 22 closes and July 23 confirmed cash; cash is 72.2999 percent and combined space equity is 27.7001 percent.
+      unavailable_or_skipped_reason: No completed July 23 regular-session close exists.
+    - family_id: current_world_context
+      family: Macro regime and sanitized public-attention overlays
+      sources_or_queries: [FRED public series, equity proxy fallbacks, public community triage]
+      source_ids: [fred_public_macro_series]
+      retrieved_at: 2026-07-23
+      material_findings: Macro and public attention do not override issuer-specific evidence, valuation, capitalization, and status gates.
+      unavailable_or_skipped_reason: A valid earlier July 23 macro snapshot was retained. A later refresh attempt could not re-fetch QQQ, SMH and IWM because Yahoo returned HTTP 403; many public community endpoints were also unavailable. Issuer-specific vetoes independently supported no action.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: IPOs, post-SPAC listings, pre-listing registrations, acquisitions, ownership changes, and transaction candidates
+      sources_or_queries: [July 22 SEC daily index, ENRD Flipturn acquisition, ELPW and KIDZ registrations, XTND pre-listing status]
+      source_ids: [sec_registration_transaction_candidates_2026_07_22_refresh_2026_07_23, enrd_flipturn_acquisition_2026_07_21]
+      retrieved_at: 2026-07-23
+      material_findings: ENRD remains C+ research-only; ELPW and KIDZ were rejected; XTND remains the only retained material pre-listing candidate.
+      unavailable_or_skipped_reason: XTND final listing, capitalization and completed-close facts do not exist.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad SEC scan, same-lane comparison, registration triage, and opportunity-cost review
+      sources_or_queries: [ten-lane scan, 53-symbol watchlist, retained XTND, registration candidates, independent xhigh reviews]
+      source_ids: [completed_close_universe_2026_07_22, sec_registration_transaction_candidates_2026_07_22_refresh_2026_07_23, sec_submissions_all_forms_2026_07_23]
+      retrieved_at: 2026-07-23
+      material_findings: No top-level lane, watchlist status, priority, promotion, buy zone, or nonzero allocation changed.
+      unavailable_or_skipped_reason: Deterministic semantic recall and degraded public-attention access prevent an exhaustive positive discovery claim.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-23
+    notes: Market, macro, public attention, broad SEC scaffolding, all-form submissions, issuer evidence, ownership, financing, transactions, lane evolution, candidate disposition, and opportunity cost were reviewed.
+
+unknown_future_review:
+  exploratory_match_count: 60
+  top_clusters: [autonomous physical systems and fleet orchestration, quantum naming and cryogenic interconnect, AI compute and power pivots, advanced nuclear and materials transactions]
+  sampled_symbols: [ENRD, XTND, ELPW, KIDZ, QXL, QUCY]
+  false_positive_patterns: [ticker and name collisions, blank-check vehicles, already-listed issuers mislabeled by registration scaffolding, funds and preferred securities, promotional pivots without operating proof]
+  lane_decisions: [retain all ten top-level lanes, incubate autonomous physical systems inside the emerging lane, retain XTND as not tradable, reject ELPW and KIDZ]
+  disposition: QSI was incubated into C+ research-only coverage after primary-source readiness and GEMI was rejected; no current buy resulted, ENRD remains research-only, and XTND remains pre-listing.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Grid-connected power, commissioned AI capacity, high-speed interconnect, launch and spacecraft production, spectrum, HALEU and TRISO fuel, and safety-certified autonomous deployment remain plausible constraints.
+    inferences: Scarcity is investable only when it converts into durable margin, cash generation and diluted per-share value without excessive financing dependence.
+    disconfirming_evidence: Current small and early expressions often capitalize future scarcity before repeatable gross profit or free cash flow exists.
+    source_ids: [completed_close_universe_2026_07_22, sec_submissions_all_forms_2026_07_23]
+    investment_implication: Preserve cash until evidence and entry align.
+  who_controls_or_removes_scarcity:
+    facts: LEU, CRDO, ALAB, IREN, VRT, RKLB, ASTS, GILT, MDA, ENRD and XTND provide the most direct current or emerging expressions across the reviewed lanes.
+    inferences: Direct exposure is insufficient when lenders, customers, regulators, warrants, earnouts or new equity capture most economics.
+    disconfirming_evidence: ENRD gains a broader platform but also stock consideration and integration risk; ELPW and KIDZ are dilution-heavy weak expressions.
+    source_ids: [enrd_flipturn_acquisition_2026_07_21, sec_registration_transaction_candidates_2026_07_22_refresh_2026_07_23]
+    investment_implication: Keep the existing lane map and make no promotion.
+  who_can_monetize_into_shareholder_value:
+    facts: IREN, LEU, CRDO, GILT and MDA remain the priority-five research queue; QSI enters only C+ research coverage.
+    inferences: Accepted revenue, complete contract economics, repeat orders, cash conversion and survivable capitalization matter more than addressable-market claims.
+    disconfirming_evidence: Each priority company retains a contract, valuation, concentration, financing, transaction or correlated-exposure veto.
+    source_ids: [iren_contract_update_2026_07_20, leu_haleu_contract_2026_07_02, completed_close_universe_2026_07_22]
+    investment_implication: Retain confirmed cash and set every new quantity to zero.
+  public_security_expression:
+    facts: Fifty-one watchlist securities are tradable, OPENAI and ANTHROPIC are not, and XTND does not yet have a policy-eligible completed listing.
+    inferences: A low nominal price, registration filing, sharp decline or direct thematic label does not create buy eligibility.
+    disconfirming_evidence: ENRD is listed and direct yet still fails survival and entry; ELPW and KIDZ are listed but fail mission and per-share value capture.
+    source_ids: [completed_close_universe_2026_07_22, enrd_flipturn_acquisition_2026_07_21]
+    investment_implication: All current new-buy quantities are zero.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT, QSI, STDN, ENRD, OCC and XTND contain genuine early, small or awkward characteristics.
+    inferences: GILT is the strongest economically grounded small-cap case; QSI is a balance-sheet-backed research option; ENRD is the most unusual autonomy expression.
+    disconfirming_evidence: GILT adds space correlation and transaction risk; QSI lacks launched-product adoption and burns cash rapidly; ENRD fails survival and per-share capture; XTND is not tradable.
+    source_ids: [completed_close_universe_2026_07_22, enrd_flipturn_acquisition_2026_07_21]
+    investment_implication: Continue research without a current order.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [bottleneck map, broad scan, registration scan, watchlist, open candidates]
+      sources_checked: [sec_registration_transaction_candidates_2026_07_22_refresh_2026_07_23, enrd_flipturn_acquisition_2026_07_21]
+      facts_verified: [QSI merits C+ research-only coverage, GEMI ELPW and KIDZ fail current mission or capitalization tests, ENRD remains research-only, no top-level lane change is supported]
+      stale_or_missing_evidence: Broad-scan semantic recall remains partial.
+      confidence: high_on_dispositions_moderate_on_exhaustive_discovery
+      key_findings: Incubate a single-molecule biological-measurement sublane around QSI, reject GEMI ELPW and KIDZ, retain ENRD and XTND at current statuses, and add no top-level lane or promotion.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [51 live submissions payloads, changed payload hashes, current forms, issuer exhibits]
+      sources_checked: [sec_submissions_all_forms_2026_07_23, enrd_flipturn_acquisition_2026_07_21, qubt_commercial_leadership_2026_07_22, qsi_q1_2026_10q]
+      facts_verified: [The prior 50 accession sets remained unchanged, QSI was added with current filings, 51 selected filing fetches validated, 29 semantic profiles extracted, ENRD QUBT and QSI were dispositioned]
+      stale_or_missing_evidence: Flipturn financials, final acquisition capitalization, and Proteus customer validation are unavailable.
+      confidence: high
+      key_findings: No new material event appeared in the evening refresh and no open high or critical event remains after the ENRD and QUBT reviews.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [holdings, candidates, watchlist, issuer deltas, closes, current metrics]
+      sources_checked: [iren_contract_update_2026_07_20, leu_haleu_contract_2026_07_02, completed_close_universe_2026_07_22]
+      facts_verified: [IREN LEU CRDO GILT and MDA are the priority-five queue, the deposit reduces concentration without creating eligibility]
+      stale_or_missing_evidence: Contract economics, accepted revenue and transaction cash conversion remain incomplete.
+      confidence: high
+      key_findings: Strong optionality exists, but every bull case retains a binding veto.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [capital structures, dilution, survival, concentration, execution, correlated exposure]
+      sources_checked: [sec_submissions_all_forms_2026_07_23, enrd_flipturn_acquisition_2026_07_21, completed_close_universe_2026_07_22]
+      facts_verified: [Combined marked space equity is 27.7001 percent of current research NAV, every candidate retains a material veto]
+      stale_or_missing_evidence: No reachable public work remains for the no-action conclusion.
+      confidence: high
+      key_findings: Hold RKLB and ASTS, add zero, sell zero and preserve cash.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [July 22 closes, adjusted histories, company metrics, valuation states, buy zones]
+      sources_checked: [completed_close_universe_2026_07_22, sec_submissions_all_forms_2026_07_23]
+      facts_verified: [No active or core symbol has a valid executable buy zone, every limit remains absent]
+      stale_or_missing_evidence: Several recent transactions lack reliable fully diluted enterprise values.
+      confidence: high
+      key_findings: Price moves trigger research only and do not authorize entry.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account facts, concentration, stress tests, reserve choice, opportunity set]
+      sources_checked: [completed_close_universe_2026_07_22, fred_public_macro_series]
+      facts_verified: [Confirmed cash is USD 4873.58, current research NAV is USD 6740.78, cash is 72.2999 percent]
+      stale_or_missing_evidence: SGOV broker eligibility, fees and settlement remain unconfirmed.
+      confidence: high
+      key_findings: Buy no SGOV and retain cash because no current security or reserve order clears all executable prerequisites.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: Current primary evidence and independent reviewers agree on no action; no unresolved disagreement changes eligibility, sizing, or status.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: [unknown_future_bottlenecks added a single-molecule biological-measurement sublane around QSI]
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Autonomous physical systems remain an incubating sublane around ENRD and XTND, while single-molecule biological measurement enters an incubating sublane around QSI; neither justifies a new top-level lane.
+  no_change_reason: Each emerging category has too little public evidence for a durable top-level lane.
+
+candidate_delta:
+  candidates_added: [QSI]
+  candidates_rejected_or_archived: [GEMI]
+  candidates_promoted: []
+  candidates_incubated: [QSI]
+  false_positive_patterns: [ticker collisions, existing listed issuers mislabeled by registration scaffolding, dilution-heavy pivots, funds and blank-check vehicles]
+
+readiness_sprints:
+  - symbol: QSI
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-23-QSI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#QSI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+  - symbol: GEMI
+    material_to_current_allocation: false
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-23-GEMI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#GEMI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+
+watchlist_review:
+  non_removed_symbol_count: 53
+  current_cycle_review_count: 53
+  missing_current_cycle_review_count: 0
+  status_changes: [QSI entered research_only coverage]
+  priority_changes: [QSI entered C+]
+  buy_zone_changes: [all active and core candidates confirmed no current buy]
+  source_path: research/watchlist-cycle-reviews.csv
+
+allocation_conclusion:
+  confirmed_cash: 4873.58
+  confirmed_positions: [RKLB 17 shares, ASTS 11 shares]
+  orders: []
+  reserve_order: none
+  conclusion: Hold both positions, buy zero, sell zero, buy no SGOV, and retain confirmed cash.
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: All reachable repository-public work needed to decide was completed; readiness permits a decision, while the completed decision is no action.
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: immediate_after_validation_and_sensitive_field_review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: The normalized deposit is confirmed account history, while no order, nonzero proposed quantity, broker preview, credential, raw artifact, full identifier or private message is present.
+
+meta_self_improvement:
+  status: completed
+  durable_change: The evening cycle preserves earlier valid macro proxy facts when a later refresh fails, records dynamically injected SEC filing HTML as non-semantic hash churn, routes QSI out of a false quantum label into an emerging biological-measurement sublane, and keeps canonical decision wording aligned with current metrics.
+  skill_review: No durable trigger or execution-order change requires a repo-scoped skill update.

@@ -1066,7 +1066,9 @@ function updateFaviconForMarketColorScheme(scheme: MarketColorScheme): void {
 
   const fileName =
     scheme === "mainland" ? "favicon-cn.svg" : "favicon-western.svg";
-  icon.href = new URL(fileName, icon.href).toString();
+  const currentHref = icon.getAttribute("href") ?? "";
+  const directoryEnd = currentHref.lastIndexOf("/") + 1;
+  icon.setAttribute("href", `${currentHref.slice(0, directoryEnd)}${fileName}`);
 }
 
 function logoTrendPalette(scheme: MarketColorScheme): LogoTrendPalette {

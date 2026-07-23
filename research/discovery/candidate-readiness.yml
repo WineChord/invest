@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-22
+as_of: 2026-07-23
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -556,3 +556,31 @@ records:
     last_readiness_reviewed_at: 2026-07-22
     next_action: Reopen only after material production and cash conversion, binding conversion-facility economics, lower dilution, or a major valuation reset.
     conclusion: Rejected from ongoing coverage after complete readiness; no dashboard surface, promotion, or buy.
+  - symbol: QSI
+    material_to_current_allocation: true
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: Single-molecule protein measurement could become a scarce enabling platform, while the current public value is close to disclosed liquidity and therefore materially affects the small-cap optionality comparison.
+    blocking_scope: biological_measurement_bottleneck_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-23-QSI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: USD 190.4 million of cash and marketable securities and a pending Proteus launch create optionality, but quarterly revenue fell 69.4 percent to USD 0.258 million, operating cash use was USD 25.6 million, commercialization is unproved, and options, RSUs, warrants, platform execution, and future financing can consume the apparent balance-sheet discount.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-23
+    next_action: Monitor Proteus launch timing, independent customer validation, instrument and consumables revenue, gross margin, operating cash use, share count, awards, financing, and valuation.
+    conclusion: Incubated into C+ research-only coverage inside the unknown-future-bottlenecks lane; no promotion and no current buy.
+  - symbol: GEMI
+    material_to_current_allocation: false
+    affected_lanes: [programmable_money_infrastructure]
+    materiality_reason: A newly public exchange, custody, stablecoin, and credit-card platform warranted a bounded comparison with the existing programmable-money lane.
+    blocking_scope: programmable_money_lane_opportunity_cost_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-23-GEMI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Q1 operating expenses were 287 percent of revenue, operating cash use was USD 54.4 million, exchange revenue remains crypto-price and retail-volume dependent, transaction losses increased, related-party and collateral complexity is material, and disclosed control weaknesses remain unresolved.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-23
+    next_action: Reopen only after durable non-trading revenue, sharply lower operating loss and cash burn, cleaner related-party and collateral economics, remediated controls, and stronger per-share value capture.
+    conclusion: Rejected from ongoing coverage after bounded primary-source review; no dashboard surface, promotion, or buy.

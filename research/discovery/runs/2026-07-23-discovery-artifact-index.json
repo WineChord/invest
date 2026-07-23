@@ -1,13 +1,53 @@
 {
   "schema_version": 1,
   "source": "discovery_artifact_index",
-  "generated_at": "2026-07-23T04:42:01.424Z",
+  "generated_at": "2026-07-23T14:43:09.356Z",
   "as_of": "2026-07-23",
   "purpose": "Hash-anchor generated discovery artifacts from 2026-07-23.",
   "artifacts": [
     {
       "path": "research/discovery/runs/2026-07-23-community-triage.json",
       "sha256": "57014028b0fa80ef14f5cc0576067bfa6b92cc1625f9742b90944b49f41e7aa3",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-scan.json",
+      "sha256": "6f8dc9c9ac9b89be2e2c08908a92ff2cb7a161ccc94848c6c4ee19c84eb18599",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-sec-event-filing-index-index.metadata.json",
+      "sha256": "010ffcf9298247817502aa62bff612c1422a2608d27fdb96a4eb67ab0518d139",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-sec-event-filing-index-manifest.csv",
+      "sha256": "5d95e055da87e0a05aba718f2dc1229c47a28a85c1d52194ab468fca05e00dff",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "be62c3f2d6937773784fc4c6a9251ec876fba8260595ae2a41cd4f34f0bf8740",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-sec-event-filing-index-profiles.json",
+      "sha256": "9657992b08f7c6eda6db03272fee3b7a05aa6616a32255b72a32f3f110e085f4",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-sec-event-filing-index-scan.json",
+      "sha256": "bedbf2318a9c511c260a765b547dbd873728e17b30e98d4b5a99ac12712f9f6b",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-sec-filing-ledger.json",
+      "sha256": "a3426d48afae55425fa4b9cbc1e68e159c784187dd44c619c633926fc8ac71fa",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-23-evening-sec-submissions-ledger.json",
+      "sha256": "f346468a71fc3200f13eb2c5040d26f5b9470026e379e14eb2c20d6f4c5fe83d",
       "role": "generated_discovery_artifact"
     },
     {

@@ -358,6 +358,12 @@ lanes:
       - mission critical
     current_public_proxies:
       - ENRD
+      - QSI
+    sublanes:
+      - id: autonomous_physical_systems
+        proxies: [ENRD]
+      - id: single_molecule_biological_measurement
+        proxies: [QSI]
     candidate_entry_points:
       - new public categories with no current lane
       - spinoffs that create pure-play exposure to a newly scarce capability

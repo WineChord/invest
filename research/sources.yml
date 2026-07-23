@@ -2896,8 +2896,8 @@ sources:
     source_published_at: 2026-07-22
     retrieved_at: 2026-07-23
     first_seen_at: 2026-07-23
-    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
-    summary: Completed July 22 regular-session closes and adjusted daily histories were refreshed for all 50 tradable research securities; the current July 23 session was excluded, and no July 23 equity-curve snapshot was inferred.
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Completed July 22 regular-session closes and adjusted daily histories were refreshed for all 51 tradable research securities; the current July 23 session was excluded, and no July 23 equity-curve snapshot was inferred.
   - id: sec_submissions_all_forms_2026_07_23
     title: All-Form SEC Submissions Audit — 2026-07-23
     source_type: sec_filing_index
@@ -2905,8 +2905,8 @@ sources:
     source_published_at: 2026-07-23
     retrieved_at: 2026-07-23
     first_seen_at: 2026-07-23
-    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
-    summary: Live submissions payloads were validated for all 50 tradable research symbols. Changed payloads were reviewed, including ENRD's Flipturn acquisition, QUBT's commercial leadership change, and ownership or capitalization filings for ALAB, CBRS, CRWV, QTEX and STDN.
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Live submissions payloads and selected filing fetches were validated for all 51 tradable research symbols. The prior 50-symbol accession set remained unchanged; QSI was added through primary-source readiness, and current ENRD, QUBT and ownership or capitalization filings were dispositioned.
   - id: sec_registration_transaction_candidates_2026_07_22_refresh_2026_07_23
     title: SEC Registration and Transaction Candidate Index — 2026-07-22
     source_type: sec_filing_index
@@ -2934,3 +2934,21 @@ sources:
     first_seen_at: 2026-07-23
     related_symbols: [QUBT]
     summary: The company created a Chief Product Officer role for its former Chief Revenue Officer and appointed a new Chief Revenue Officer; the filing adds commercialization-monitoring context but no revenue, bookings, margin, customer-retention or system-performance proof.
+  - id: qsi_q1_2026_10q
+    title: Quantum-Si Form 10-Q for the Quarter Ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1816431/000181643126000034/qsi-20260331.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    related_symbols: [QSI]
+    summary: The filing reports USD 0.258 million quarterly revenue, USD 0.074 million gross profit, a USD 21.7 million net loss, USD 25.6 million operating cash use, USD 190.4 million of cash and marketable securities, 217.8 million May 4 basic shares, 44.4 million anti-dilutive options, RSUs and warrants, and a planned year-end Proteus launch.
+  - id: gemi_q1_2026_10q
+    title: Gemini Space Station Form 10-Q for the Quarter Ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2055592/000205559226000050/gemi-20260331.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    related_symbols: [GEMI]
+    summary: The filing reports USD 50.3 million quarterly revenue, USD 144.5 million operating expense, a USD 109.0 million net loss, USD 54.4 million operating cash use, rising transaction losses, crypto and related-party financing complexity, disclosed control weaknesses, and a subsequent USD 100 million related-party private placement paid in bitcoin.

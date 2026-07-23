@@ -1,7 +1,7 @@
 schema_version: 1
-generated_at: 2026-07-23T04:38:58.714Z
+generated_at: 2026-07-23T14:43:09.158Z
 current_date: 2026-07-23
-request_type: monthly_decision_full_cycle
+request_type: daily_full_operating_cycle_evening_refresh
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
 policy_version: v1.1
 freshness_window:
@@ -436,6 +436,27 @@ candidate_set:
       optionality is offset by negative gross profit, severe losses,
       going-concern risk, concentration, material weaknesses, 98.3% SPAC
       redemptions, warrants, resale supply, and thin trading.
+  - symbol: QSI
+    name: Quantum-Si Incorporated
+    exchange: Nasdaq
+    asset_type: common_stock
+    discovered_at: 2026-07-23
+    discovery_source: evening broad SEC scan plus primary-source readiness
+    source_url: https://www.sec.gov/Archives/edgar/data/1816431/000181643126000034/qsi-20260331.htm
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    theme: unknown_future_bottlenecks
+    why_it_might_matter: A sub-USD 200 million single-molecule protein-sequencing
+      platform with net-cash-like liquidity and a pending next-generation launch
+      could express an overlooked biological-measurement bottleneck.
+    status: incubating
+    next_action: monitor_proteus_launch_customer_validation_revenue_gross_margin_cash_burn_share_count_and_valuation
+    notes: Incubated into C+ research-only coverage after complete primary-source
+      readiness. The balance sheet and potential platform optionality merit
+      monitoring, but collapsing legacy revenue, USD 25.6 million quarterly
+      operating cash use, unproved Proteus demand, large equity-award overhang,
+      and commercialization risk block promotion and purchase.
 candidate_readiness:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -821,6 +842,26 @@ candidate_readiness:
     reachable_evidence_remaining: none
     conclusion: Rejected from ongoing coverage after complete readiness; no
       dashboard surface, promotion, or buy.
+  - symbol: QSI
+    material_to_current_allocation: true
+    affected_lanes:
+      - unknown_future_bottlenecks
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    conclusion: Incubated into C+ research-only coverage inside the
+      unknown-future-bottlenecks lane; no promotion and no current buy.
+  - symbol: GEMI
+    material_to_current_allocation: false
+    affected_lanes:
+      - programmable_money_infrastructure
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    conclusion: Rejected from ongoing coverage after bounded primary-source review;
+      no dashboard surface, promotion, or buy.
 active_watchlist_scope: all non-removed research/watchlist.csv rows, including
   active, watch, research_only, and not_tradable rows
 active_watchlist:
@@ -1423,6 +1464,21 @@ active_watchlist:
       going-concern risk, customer concentration, material weaknesses, 98.3%
       SPAC redemptions, warrants, resale supply, and thin liquidity block
       promotion or purchase.
+  - symbol: QSI
+    name: Quantum-Si Incorporated
+    theme: single-molecule biological measurement
+    status: research_only
+    priority: C+
+    initial_role: single-molecule protein-sequencing platform comparator
+    next_review_trigger: Proteus launch timing, independent customer validation,
+      instrument and consumables revenue, gross margin, operating cash use,
+      share count, awards, financing, or valuation reset
+    notes: Added for unknown-future-bottleneck completeness after primary-source
+      review. USD 190.4 million of cash and marketable securities and the
+      planned Proteus platform create optionality, but legacy revenue fell
+      69.4%, quarterly operating cash use was USD 25.6 million,
+      commercialization is unproved, and options, RSUs, warrants, execution and
+      financing risk block promotion or purchase.
 relevant_files:
   - CONSTITUTION.md
   - AGENTS.md
@@ -1436,7 +1492,7 @@ relevant_files:
   - research/valuation-states.csv
   - research/watchlist.csv
   - research/sources.yml
-  - research/discovery/runs/2026-07-23-scan.json
+  - research/discovery/runs/2026-07-23-evening-scan.json
 fresh_sources:
   - id: yahoo_chart_close_2026_07_13
     source_type: market_data
@@ -5395,6 +5451,7 @@ fresh_sources:
       - POET
       - PWR
       - QBTS
+      - QSI
       - QTEX
       - QUBT
       - RDW
@@ -5411,7 +5468,7 @@ fresh_sources:
       - XNDU
       - YSS
     summary: Completed July 22 regular-session closes and adjusted daily histories
-      were refreshed for all 50 tradable research securities; the current July
+      were refreshed for all 51 tradable research securities; the current July
       23 session was excluded, and no July 23 equity-curve snapshot was
       inferred.
   - id: sec_submissions_all_forms_2026_07_23
@@ -5454,6 +5511,7 @@ fresh_sources:
       - POET
       - PWR
       - QBTS
+      - QSI
       - QTEX
       - QUBT
       - RDW
@@ -5469,10 +5527,11 @@ fresh_sources:
       - WYFI
       - XNDU
       - YSS
-    summary: Live submissions payloads were validated for all 50 tradable research
-      symbols. Changed payloads were reviewed, including ENRD's Flipturn
-      acquisition, QUBT's commercial leadership change, and ownership or
-      capitalization filings for ALAB, CBRS, CRWV, QTEX and STDN.
+    summary: Live submissions payloads and selected filing fetches were validated
+      for all 51 tradable research symbols. The prior 50-symbol accession set
+      remained unchanged; QSI was added through primary-source readiness, and
+      current ENRD, QUBT and ownership or capitalization filings were
+      dispositioned.
   - id: sec_registration_transaction_candidates_2026_07_22_refresh_2026_07_23
     source_type: sec_filing_index
     source_published_at: 2026-07-22
@@ -5503,14 +5562,36 @@ fresh_sources:
       Revenue Officer and appointed a new Chief Revenue Officer; the filing adds
       commercialization-monitoring context but no revenue, bookings, margin,
       customer-retention or system-performance proof.
+  - id: qsi_q1_2026_10q
+    source_type: sec_filing
+    source_published_at: 2026-05-07
+    retrieved_at: 2026-07-23
+    related_symbols:
+      - QSI
+    summary: The filing reports USD 0.258 million quarterly revenue, USD 0.074
+      million gross profit, a USD 21.7 million net loss, USD 25.6 million
+      operating cash use, USD 190.4 million of cash and marketable securities,
+      217.8 million May 4 basic shares, 44.4 million anti-dilutive options, RSUs
+      and warrants, and a planned year-end Proteus launch.
+  - id: gemi_q1_2026_10q
+    source_type: sec_filing
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-23
+    related_symbols:
+      - GEMI
+    summary: The filing reports USD 50.3 million quarterly revenue, USD 144.5
+      million operating expense, a USD 109.0 million net loss, USD 54.4 million
+      operating cash use, rising transaction losses, crypto and related-party
+      financing complexity, disclosed control weaknesses, and a subsequent USD
+      100 million related-party private placement paid in bitcoin.
 deterministic_outputs:
   - command: caller-supplied deterministic discovery output
-    output_path: research/discovery/runs/2026-07-23-scan.json
-    output_sha256: bc4fb7abe01c347f952a3d1f50ef81c3439a662fd9562f02819033dfb2e0ec88
+    output_path: research/discovery/runs/2026-07-23-evening-scan.json
+    output_sha256: 6f8dc9c9ac9b89be2e2c08908a92ff2cb7a161ccc94848c6c4ee19c84eb18599
     schema_version: 1
     as_of: 2026-07-23
     discovery_scope: active_emerging_incubating
-    candidate_count: 24
+    candidate_count: 22
     total_match_count: 136
     profile_purpose: ""
     profile_coverage_scope: ""
@@ -5520,17 +5601,17 @@ deterministic_outputs:
     profile_coverage_ratio: 0
     scan_payload_summary:
       truncated: false
-      returned_candidate_count: 24
+      returned_candidate_count: 22
       omitted_candidate_count: 0
       total_match_count: 136
       exploratory_match_count: 60
-      suppressed_known_match_count: 52
+      suppressed_known_match_count: 54
       recall_expected_lane_miss_count: 0
       recall_expected_proxy_miss_count: 0
       recall_organic_expected_proxy_count: 16
-      recall_organic_expected_proxy_miss_count: 38
+      recall_organic_expected_proxy_miss_count: 39
       recall_organic_expected_proxy_status: partial_organic_recall_gap
-      recall_ticker_only_expected_proxy_count: 38
+      recall_ticker_only_expected_proxy_count: 39
       recall_ticker_only_expected_proxy_symbols:
         - AAOI
         - ALAB
@@ -5561,6 +5642,7 @@ deterministic_outputs:
         - OKLO
         - POET
         - PWR
+        - QSI
         - RDW
         - RGTI
         - RKLB
@@ -5571,13 +5653,13 @@ deterministic_outputs:
         - WULF
         - WYFI
       candidate_counts_by_priority:
-        high: 5
-        medium: 11
+        high: 4
+        medium: 10
         low: 8
       candidate_counts_by_lane:
-        quantum_computing_and_networking: 6
+        quantum_computing_and_networking: 5
         advanced_nuclear_and_grid_constraints: 4
-        space_infrastructure: 9
+        space_infrastructure: 8
         ai_compute_infrastructure: 2
         semiconductor_interconnect_and_memory: 1
         direct_to_device_connectivity: 1
@@ -5624,37 +5706,6 @@ deterministic_outputs:
           recheck_reason: ""
         - symbol: QNTM
           name: Quantum Biopharma Ltd.
-          exchange: Nasdaq
-          primary_lane_id: quantum_computing_and_networking
-          secondary_lane_ids: []
-          deterministic_priority: high
-          triage_score: 85
-          recommended_review_depth: readiness_triage_priority
-          keyword_signal: high_signal
-          matched_fields:
-            - issuer_name
-          matched_keyword_fields:
-            quantum:
-              - issuer_name
-          matched_keyword_variants:
-            quantum:
-              - quantum
-          matched_profile_snippets: []
-          matched_keywords:
-            - quantum
-          match_sources:
-            - sec_issuer_reference
-          false_positive_flags: []
-          profile_enriched: false
-          security_form: unconfirmed_public_equity
-          security_form_confidence: low
-          requires_security_type_confirmation: true
-          known_sources: []
-          required_next_step: primary_source_skim_and_readiness_triage
-          exploratory_reason: ""
-          recheck_reason: ""
-        - symbol: QSI
-          name: Quantum-Si Inc
           exchange: Nasdaq
           primary_lane_id: quantum_computing_and_networking
           secondary_lane_ids: []
@@ -5780,37 +5831,6 @@ deterministic_outputs:
         - symbol: EXR
           name: Extra Space Storage Inc.
           exchange: NYSE
-          primary_lane_id: space_infrastructure
-          secondary_lane_ids: []
-          deterministic_priority: medium
-          triage_score: 60
-          recommended_review_depth: primary_source_skim
-          keyword_signal: generic_signal
-          matched_fields:
-            - issuer_name
-          matched_keyword_fields:
-            space:
-              - issuer_name
-          matched_keyword_variants:
-            space:
-              - space
-          matched_profile_snippets: []
-          matched_keywords:
-            - space
-          match_sources:
-            - sec_issuer_reference
-          false_positive_flags: []
-          profile_enriched: false
-          security_form: unconfirmed_public_equity
-          security_form_confidence: low
-          requires_security_type_confirmation: true
-          known_sources: []
-          required_next_step: primary_source_skim_and_readiness_triage
-          exploratory_reason: ""
-          recheck_reason: ""
-        - symbol: GEMI
-          name: Gemini Space Station, Inc.
-          exchange: Nasdaq
           primary_lane_id: space_infrastructure
           secondary_lane_ids: []
           deterministic_priority: medium
@@ -8889,6 +8909,42 @@ deterministic_outputs:
           exploratory_reason: ""
           recheck_reason: Known repo symbol still matched current lane scan; review only
             if stale, newly stronger, or price-dislocated.
+        - symbol: QSI
+          name: Quantum-Si Inc
+          exchange: Nasdaq
+          primary_lane_id: quantum_computing_and_networking
+          secondary_lane_ids:
+            - unknown_future_bottlenecks
+          deterministic_priority: high
+          triage_score: 85
+          recommended_review_depth: readiness_triage_priority
+          keyword_signal: high_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            quantum:
+              - issuer_name
+          matched_keyword_variants:
+            quantum:
+              - quantum
+          matched_profile_snippets: []
+          matched_keywords:
+            - quantum
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - watchlist:research_only
+            - security_master:tradable
+            - discovery_candidates:incubating
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
         - symbol: QTEX
           name: QTREX Quantum Ltd.
           exchange: Nasdaq
@@ -9086,6 +9142,39 @@ deterministic_outputs:
         - symbol: FJET
           name: Starfighters Space, Inc.
           exchange: NYSE
+          primary_lane_id: space_infrastructure
+          secondary_lane_ids: []
+          deterministic_priority: medium
+          triage_score: 60
+          recommended_review_depth: primary_source_skim
+          keyword_signal: generic_signal
+          matched_fields:
+            - issuer_name
+          matched_keyword_fields:
+            space:
+              - issuer_name
+          matched_keyword_variants:
+            space:
+              - space
+          matched_profile_snippets: []
+          matched_keywords:
+            - space
+          match_sources:
+            - sec_issuer_reference
+          false_positive_flags: []
+          profile_enriched: false
+          security_form: unconfirmed_public_equity
+          security_form_confidence: low
+          requires_security_type_confirmation: true
+          known_sources:
+            - discovery_candidates:rejected
+          required_next_step: primary_source_skim_and_readiness_triage
+          exploratory_reason: ""
+          recheck_reason: Known repo symbol still matched current lane scan; review only
+            if stale, newly stronger, or price-dislocated.
+        - symbol: GEMI
+          name: Gemini Space Station, Inc.
+          exchange: Nasdaq
           primary_lane_id: space_infrastructure
           secondary_lane_ids: []
           deterministic_priority: medium
@@ -11110,6 +11199,22 @@ deterministic_outputs:
           organic_matched_expected_lane_ids: []
           ticker_only_expected_lane_recall: true
           matched_lane_ids:
+            - unknown_future_bottlenecks
+          match_sources:
+            - sec_issuer_reference
+        - symbol: QSI
+          expected_lane_id: unknown_future_bottlenecks
+          status: matched_expected_lane
+          recall_scope: sec_listed_public_proxy
+          missed_reason: ""
+          suggested_review: No recall action from deterministic scanner.
+          matched_expected_lane_ids:
+            - unknown_future_bottlenecks
+          organic_matched_any_expected_lane: false
+          organic_matched_expected_lane_ids: []
+          ticker_only_expected_lane_recall: true
+          matched_lane_ids:
+            - quantum_computing_and_networking
             - unknown_future_bottlenecks
           match_sources:
             - sec_issuer_reference
@@ -14419,6 +14524,14 @@ valuation_states:
     thesis_state: watch
     risk_state: current_evidence_entry_survival_and_opportunity_cost_risk
     source_ids: completed_close_universe_2026_07_22;sec_submissions_all_forms_2026_07_23
+  - symbol: QSI
+    as_of: 2026-07-23
+    price: "0.8000"
+    valuation_state: too_uncertain
+    price_attractiveness: too_uncertain
+    thesis_state: research_only
+    risk_state: current_evidence_entry_survival_and_opportunity_cost_risk
+    source_ids: qsi_q1_2026_10q;completed_close_universe_2026_07_22
 quality_metrics:
   path: research/quality-metrics.yml
   decision_readiness:
@@ -14426,11 +14539,12 @@ quality_metrics:
     scope: repository_and_public_observable_information
     can_recommend_buys: true
     reason: Repository-public research is current enough to support a decision after
-      completed-close refresh, 50-symbol all-form SEC reconciliation, current
-      ENRD and QUBT filing reviews, registration and transaction triage,
-      all-symbol comparison, and independent xhigh review. Ready permits a
-      decision; the completed decision is no action and no security is currently
-      buy-eligible.
+      completed-close refresh, evening 51-symbol all-form accession
+      reconciliation, 51 filing fetches, 29 business-profile extractions,
+      current ENRD, QUBT and QSI filing reviews, registration and transaction
+      triage, all-symbol comparison, and independent xhigh review. Ready permits
+      a decision; the completed decision is no action and no security is
+      currently buy-eligible.
     user_only_execution_prerequisites:
       - broker cash and buying-power confirmation still showing at least the
         recorded confirmed 4873.58 USD before any future real order
@@ -14453,8 +14567,8 @@ quality_metrics:
   coverage:
     universe_scan_as_of: 2026-07-23
     discovery_lane_map_as_of: 2026-07-23
-    watchlist_symbols: 52
-    watchlist_symbols_with_current_cycle_review: 52
+    watchlist_symbols: 53
+    watchlist_symbols_with_current_cycle_review: 53
     watchlist_symbols_missing_current_cycle_review: 0
     active_discovery_lanes: 9
     emerging_discovery_lanes: 1
@@ -14463,11 +14577,11 @@ quality_metrics:
     active_symbols_missing_valuation_state: 0
     active_symbols_with_latest_filing_review: 23
     active_symbols_missing_latest_filing_review: 0
-    raw_discovery_candidates_open: 20
+    raw_discovery_candidates_open: 21
   discovery_process:
-    latest_discovery_run_path: research/discovery/runs/2026-07-23-full-operating-cycle.yml
-    latest_bottleneck_review_path: research/discovery/runs/2026-07-23-full-operating-cycle.yml
-    latest_agentic_discovery_path: research/discovery/runs/2026-07-23-full-operating-cycle.yml
+    latest_discovery_run_path: research/discovery/runs/2026-07-23-evening-full-operating-cycle.yml
+    latest_bottleneck_review_path: research/discovery/runs/2026-07-23-evening-full-operating-cycle.yml
+    latest_agentic_discovery_path: research/discovery/runs/2026-07-23-evening-full-operating-cycle.yml
     latest_evidence_packet_path: research/discovery/runs/2026-07-23-subagent-evidence-packet.yml
     first_layer_questions_status: complete
     broad_source_search_status: complete
@@ -14500,9 +14614,9 @@ quality_metrics:
       - unknown_future_bottlenecks
     unresolved_subagent_conflicts: 0
     open_candidates_without_readiness_sprint: 0
-    material_open_candidates: 20
+    material_open_candidates: 21
     material_open_candidates_blocking_allocation: 0
-    open_candidate_readiness_completed: 20
+    open_candidate_readiness_completed: 21
   freshness:
     open_critical_events: 0
     open_high_events: 0
@@ -14632,6 +14746,7 @@ discovery_lane_summary:
       category not yet represented in the watchlist or current lane map.
     current_public_proxies:
       - ENRD
+      - QSI
 subagent_defaults:
   reasoning_level: xhigh
   independent_context: true
@@ -14652,8 +14767,10 @@ first_layer_discovery_questions:
     current policy?
   - Is the public company early, small, misunderstood, newly listed, awkward, or
     underfollowed enough to support extreme asymmetric upside?
-specific_question: Review discovery lanes, raw candidates, freshness, valuation,
-  and opportunity cost for the current repository-public decision state.
+specific_question: Independently review the full current universe after the
+  evening SEC and market revalidation; identify any new material candidate,
+  filing delta, buy eligibility, sell trigger, lane change, or allocation
+  implication.
 safety_boundaries:
   - Do not execute trades.
   - Do not mutate broker-confirmed account files.

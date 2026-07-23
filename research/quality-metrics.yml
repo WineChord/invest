@@ -2,14 +2,14 @@ schema_version: 1
 as_of: 2026-07-23
 last_research_engine_run:
   as_of: 2026-07-23
-  scope: confirmed_deposit_full_operating_cycle_with_completed_closes_all_form_freshness_registration_scan_and_all_symbol_review
+  scope: evening_full_operating_cycle_revalidation_with_completed_closes_all_form_freshness_and_all_symbol_review
   notes: >-
-    Ran the full 2026-07-23 operating cycle after a confirmed USD 3000 deposit using July 22 completed closes, macro and public-attention overlays, a current-lane-hash broad SEC scan, a 50-of-50 all-form submissions audit, registration and transaction review, ENRD and QUBT material dispositions, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation work. ELPW and KIDZ were rejected, ENRD remained research-only C+, XTND remained not tradable, and the final decision is completed no action.
+    Revalidated the full 2026-07-23 operating cycle using July 22 completed closes, the retained valid July 23 macro snapshot, degraded public-attention inputs, a fresh broad SEC scan, 51-of-51 all-form accession coverage, 51-of-51 filing fetches, 29-of-51 business-profile extractions, registration and transaction review, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation work. QSI entered C+ research-only coverage inside a new single-molecule biological-measurement sublane, GEMI was rejected, and no new material event, top-level lane, active status, promotion, buy zone, or allocation resulted; ENRD remained research-only C+, XTND remained not tradable, and the stable decision remains completed no action.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support a decision after completed-close refresh, 50-symbol all-form SEC reconciliation, current ENRD and QUBT filing reviews, registration and transaction triage, all-symbol comparison, and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
+  reason: Repository-public research is current enough to support a decision after completed-close refresh, evening 51-symbol all-form accession reconciliation, 51 filing fetches, 29 business-profile extractions, current ENRD, QUBT and QSI filing reviews, registration and transaction triage, all-symbol comparison, and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 4873.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
@@ -21,8 +21,8 @@ decision_readiness:
 coverage:
   universe_scan_as_of: 2026-07-23
   discovery_lane_map_as_of: 2026-07-23
-  watchlist_symbols: 52
-  watchlist_symbols_with_current_cycle_review: 52
+  watchlist_symbols: 53
+  watchlist_symbols_with_current_cycle_review: 53
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
@@ -31,11 +31,11 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 23
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 20
+  raw_discovery_candidates_open: 21
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-23-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-23-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-23-full-operating-cycle.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-23-evening-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-23-evening-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-23-evening-full-operating-cycle.yml
   latest_evidence_packet_path: research/discovery/runs/2026-07-23-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
@@ -68,9 +68,9 @@ discovery_process:
     - unknown_future_bottlenecks
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 20
+  material_open_candidates: 21
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 20
+  open_candidate_readiness_completed: 21
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -119,4 +119,4 @@ quality_gates:
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
 notes: >-
-  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses the completed-close boundary, all-form SEC scope, registration scan boundary, degraded community access, failed FMP key-metrics calls, partial discovery recall, current liquidity and concentration, ENRD and QUBT evidence deltas, and all candidate dispositions without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
+  Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses the completed-close boundary, 51-symbol all-form SEC accession and filing-fetch scope, 29-of-51 business-profile extraction boundary, registration scan boundary, degraded community and later macro-proxy access, failed FMP key-metrics calls, partial discovery recall, current liquidity and concentration, QSI readiness, ENRD and QUBT evidence deltas, and all candidate dispositions without an order or broker preview. Broker execution remains user-controlled and broker-confirmed records may change only after actual fill evidence.
