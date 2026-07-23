@@ -1235,3 +1235,27 @@ entries:
     risk_watch: Post-closing unrestricted cash, diluted capitalization, gross margin, RPO conversion, customer concentration, autonomous safety and deployment, vehicle uptime, regulation, financing, resale supply, and trading liquidity.
     next_check: Post-closing financial filing, reconciled diluted capitalization, positive gross-margin trajectory, material RPO conversion, customer diversification, repeat autonomous commercial revenue, or sustained liquidity improvement.
     source_path: research/discovery/readiness/2026-07-22-ENRD-readiness.md
+  - id: 2026-07-23-enrd-flipturn-acquisition
+    symbol: ENRD
+    analyzed_at: "2026-07-23"
+    analysis_type: material_transaction_refresh
+    policy_version: v1.1
+    title: Energy-management expansion adds strategic fit and equity overhang
+    stance: C+ research-only; buy 0
+    summary: Flipturn can deepen Einride's charging, fleet-energy and customer-software layer, but approximately USD 38.4 million of closing stock consideration, up to approximately USD 33.0 million of earnout consideration, assumed awards, resale registration, integration risk and existing financial fragility make current per-share entry less attractive.
+    upside_path: Retain Flipturn customers, combine charging and energy management with autonomous freight, cross-sell the integrated platform, improve gross margin and asset intensity, and convert the broader offering into repeatable per-share cash generation.
+    risk_watch: Closing and final ADS count, assumed awards, earnout dilution, resale supply, integration, customer retention, negative gross profit, going-concern risk, RPO conversion, concentration, unrestricted liquidity, and commercial autonomous deployment.
+    next_check: Transaction close, final capitalization, resale registration, Flipturn customer retention, combined gross-margin trajectory, RPO conversion, unrestricted liquidity, or repeat autonomous-freight revenue.
+    source_path: research/filings/2026-07-23-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-23-qubt-commercial-leadership
+    symbol: QUBT
+    analyzed_at: "2026-07-23"
+    analysis_type: material_filing_refresh
+    policy_version: v1.1
+    title: Commercial leadership reset raises the proof burden
+    stance: C+ research-only; buy 0
+    summary: A new Chief Revenue Officer and newly created Chief Product Officer role show greater commercialization focus, but the filing supplies no organic revenue, repeat orders, gross-margin, customer-retention or system-performance proof and does not repair the extreme valuation and execution risk.
+    upside_path: Convert the photonics and quantum portfolio into repeat enterprise orders, measurable product delivery, positive gross margin and disciplined cash deployment rather than relying on acquisitions or narrative value.
+    risk_watch: Organic revenue quality, bookings conversion, product delivery, customer concentration, acquisition integration, cash use, valuation, technical performance, and dilution.
+    next_check: Organic revenue and bookings, repeat customer orders, product delivery, acquisition integration, gross margin, cash use, or a thesis-preserving valuation reset.
+    source_path: research/filings/2026-07-23-MATERIAL-FILING-REFRESH.md

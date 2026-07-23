@@ -2889,3 +2889,48 @@ sources:
     first_seen_at: 2026-07-22
     related_symbols: [UEC]
     summary: The filing reports 146,550 pounds of nine-month uranium production, USD 20.2 million of purchased-inventory sales, a USD 76.6 million net loss, USD 90.1 million operating cash use, USD 488.1 million cash, USD 508.2 million of net share-issuance proceeds, and a proposed pre-application conversion facility.
+  - id: completed_close_universe_2026_07_22
+    title: Completed Regular-Session Close Universe — 2026-07-22
+    source_type: market_data
+    url: https://finance.yahoo.com/
+    source_published_at: 2026-07-22
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Completed July 22 regular-session closes and adjusted daily histories were refreshed for all 50 tradable research securities; the current July 23 session was excluded, and no July 23 equity-curve snapshot was inferred.
+  - id: sec_submissions_all_forms_2026_07_23
+    title: All-Form SEC Submissions Audit — 2026-07-23
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Live submissions payloads were validated for all 50 tradable research symbols. Changed payloads were reviewed, including ENRD's Flipturn acquisition, QUBT's commercial leadership change, and ownership or capitalization filings for ALAB, CBRS, CRWV, QTEX and STDN.
+  - id: sec_registration_transaction_candidates_2026_07_22_refresh_2026_07_23
+    title: SEC Registration and Transaction Candidate Index — 2026-07-22
+    source_type: sec_filing_index
+    url: https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/master.20260722.idx
+    source_published_at: 2026-07-22
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    related_symbols: []
+    summary: The latest completed daily index contained 3,525 source rows and 500 bounded provisional records. Primary skims rejected KIDZ AI or Classover, Elong Power and Greenbacker as dilution-heavy, weak-fit, indirect or non-operating expressions; no new material candidate entered coverage.
+  - id: enrd_flipturn_acquisition_2026_07_21
+    title: Einride Agreement to Acquire Flipturn
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2095096/000149315226034002/form6-k.htm
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    related_symbols: [ENRD]
+    summary: Einride agreed to acquire electric-fleet charging and energy-management software provider Flipturn for approximately USD 38.4 million of closing ADS consideration plus up to approximately USD 33.0 million of earnout ADS consideration, assumed awards and a post-closing resale registration commitment.
+  - id: qubt_commercial_leadership_2026_07_22
+    title: Quantum Computing Inc. Commercial Leadership Change
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1758009/000121390026080443/ea0298923-8k_quantum.htm
+    source_published_at: 2026-07-22
+    retrieved_at: 2026-07-23
+    first_seen_at: 2026-07-23
+    related_symbols: [QUBT]
+    summary: The company created a Chief Product Officer role for its former Chief Revenue Officer and appointed a new Chief Revenue Officer; the filing adds commercialization-monitoring context but no revenue, bookings, margin, customer-retention or system-performance proof.
