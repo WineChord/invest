@@ -745,13 +745,14 @@ function calculateMetrics(data: PortfolioData): Metrics {
     (cash === null && data.positions.length === 0
       ? null
       : (cash ?? 0) + marketValue);
+  const valuationDeposits = data.equityCurve.at(-1)?.cumulativeDeposits ?? null;
   const investedCapital =
-    data.equityCurve.at(-1)?.cumulativeDeposits ??
-    depositsFromLedger(data.ledger);
+    depositsFromLedger(data.ledger) ?? valuationDeposits;
+  const returnCapital = valuationDeposits ?? investedCapital;
   const totalReturnPct =
     data.equityCurve.at(-1)?.totalReturnPct ??
-    (totalEquity !== null && investedCapital !== null && investedCapital > 0
-      ? ((totalEquity - investedCapital) / investedCapital) * 100
+    (totalEquity !== null && returnCapital !== null && returnCapital > 0
+      ? ((totalEquity - returnCapital) / returnCapital) * 100
       : null);
 
   return {
