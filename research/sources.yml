@@ -2952,3 +2952,102 @@ sources:
     first_seen_at: 2026-07-23
     related_symbols: [GEMI]
     summary: The filing reports USD 50.3 million quarterly revenue, USD 144.5 million operating expense, a USD 109.0 million net loss, USD 54.4 million operating cash use, rising transaction losses, crypto and related-party financing complexity, disclosed control weaknesses, and a subsequent USD 100 million related-party private placement paid in bitcoin.
+  - id: completed_close_universe_2026_07_23
+    title: Completed Regular-Session Close Universe — 2026-07-23
+    source_type: market_data
+    url: https://finance.yahoo.com/
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Completed July 23 regular-session closes and adjusted daily histories were refreshed for all 51 tradable research securities; no July 24 in-progress bar was treated as a close.
+  - id: sec_submissions_all_forms_2026_07_24
+    title: All-Form SEC Submissions Audit — 2026-07-24
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Fresh submissions payloads and selected filing fetches validated all 51 tradable research symbols. The only post-cutoff focus-issuer filing was a non-operating CRDO Form 4 planned sale; no material operating, financing, contract, quarterly, or registration event changed allocation.
+  - id: crdo_cto_form4_2026_07_23
+    title: Credo CTO and Director Form 4 Planned Sale
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026049379/wk-form4_1784836822.xml
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [CRDO]
+    summary: Chi-Fung Cheng reported 27500 shares sold on 2026-07-21 under a September 2025 Rule 10b5-1 plan and retained 5827370 shares indirectly through a family trust; the filing is not new operating evidence.
+  - id: mu_form144_2026_07_23
+    title: Micron Form 144 Proposed Sale
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/723125/000195004726007269/primary_doc.xml
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [MU]
+    summary: The filing reported a proposed sale of 879 shares with an indicated aggregate market value of USD 879000 and an approximate sale date of 2026-07-23.
+  - id: aaoi_form4_cluster_2026_07_23
+    title: Applied Optoelectronics Form 4 Cluster
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1158114/000168316826005736/ownership.xml
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [AAOI]
+    summary: Five filings primarily reported shares surrendered for tax withholding after RSU vesting; one officer also sold 1285 shares under a prior Rule 10b5-1 plan.
+  - id: crwv_ceo_form4_2026_07_23
+    title: CoreWeave CEO Form 4 Planned Sales
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000327/form4.xml
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [CRWV]
+    summary: The CEO reported 307692 aggregate sales after Class B conversions under a Rule 10b5-1 plan adopted in November 2025; the filing does not add operating evidence.
+  - id: stdn_ownership_conversion_2026_07_23
+    title: Standard Nuclear Preferred Conversion and Ownership Filings
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000204162526000004/primary_doc.xml
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [STDN]
+    summary: A Form 4 confirmed conversion of 14000000 Series Seed-1 preferred shares into Class A common stock and a related Schedule 13G reported a 17.83 percent deemed beneficial ownership position.
+  - id: vrt_q2_results_date_2026_07_15
+    title: Vertiv Second-Quarter 2026 Results Date
+    source_type: issuer_release
+    url: https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx
+    source_published_at: 2026-07-15
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [VRT]
+    summary: Vertiv scheduled second-quarter 2026 results before the July 29 market open and a conference call later that day.
+  - id: alab_q2_results_date_2026_07_08
+    title: Astera Labs Second-Quarter 2026 Results Date
+    source_type: issuer_release
+    url: https://ir.asteralabs.com/events/event-details/astera-labs-second-quarter-2026-earnings-call
+    source_published_at: 2026-07-08
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [ALAB]
+    summary: Astera Labs scheduled its second-quarter 2026 earnings call for August 4 after market close.
+  - id: gilt_q2_results_date_2026_07_16
+    title: Gilat Second-Quarter 2026 Results Date
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003503/zk2635692.htm
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [GILT]
+    summary: Gilat scheduled second-quarter 2026 results and its earnings call for August 5.
+  - id: mda_q2_results_date_2026_07_16
+    title: MDA Space Second-Quarter 2026 Results Date
+    source_type: issuer_release
+    url: https://mda-en.investorroom.com/2026-07-16-MDA-SPACE-TO-HOLD-ITS-SECOND-QUARTER-2026-EARNINGS-CONFERENCE-CALL-ON-AUGUST-7%2C-2026
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-07-24
+    first_seen_at: 2026-07-24
+    related_symbols: [MDA]
+    summary: MDA Space scheduled second-quarter 2026 results before the August 7 market open and a conference call that morning.

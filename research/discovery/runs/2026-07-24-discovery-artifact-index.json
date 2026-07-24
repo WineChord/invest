@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-07-24T03:00:48.453Z",
+  "as_of": "2026-07-24",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-07-24.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-07-24-community-triage.json",
+      "sha256": "2923d9d492c2bc37b6fbc44e576037354856986927b467d4444694a39d1d3b80",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-registration-transaction-candidates-2026-07-23.json",
+      "sha256": "f18c91858f6bed77332048c355297808807d3956e8743c667031140e69366e03",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-scan.json",
+      "sha256": "e3f5eed71ca066a17a73e567b266a089b37a63e862ac909c9b95b028dc70c313",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-sec-event-filing-index-index.metadata.json",
+      "sha256": "273cbdfe224f107467acc26b2fda71d94b263bda0cf4a8f335eb4138d9446bf8",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-sec-event-filing-index-manifest.csv",
+      "sha256": "38ea2ec3c80ef20c07a59f362ed1cb25aa848b2697f32339db34a98ddc64864d",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "dca40d9378e7d1b7faf2fe62ff4d0bb467ff09a5defc104d520a58a15d7890f0",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-sec-event-filing-index-profiles.json",
+      "sha256": "00604ef7eb2f72025ee635b076924d491059c1ff143c32c879355073a3d58885",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-sec-event-filing-index-scan.json",
+      "sha256": "d8838c173c127adaf2d0eccb42e66fdd77d0b65cf45265c0433c52f1f10eb954",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-sec-filing-ledger.json",
+      "sha256": "a2edc8a2269679fce9bacb3b00c278ae7bba50c8f6a2054ce097add8ad0b9c57",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-24-sec-submissions-ledger.json",
+      "sha256": "eaec5f22fd361d23ad9970c8fa3a5fc68e6e79abd79b6b228bc90260309d5ab5",
+      "role": "generated_discovery_artifact"
+    }
+  ]
+}
