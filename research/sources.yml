@@ -1661,19 +1661,37 @@ sources:
     source_type: sec_filing
     url: https://www.sec.gov/Archives/edgar/data/897322/000117891326002608/zk2635234.htm
     source_published_at: 2026-05-13
-    retrieved_at: 2026-07-11
+    retrieved_at: 2026-07-25
     first_seen_at: 2026-07-11
     related_symbols: [GILT]
-    summary: Current revenue, profitability, and operating evidence for the satellite-ground communications peer.
+    summary: Q1 revenue, GAAP profit, adjusted EBITDA, cash, short-term deposits, debt, share count and negative operating cash flow used to re-underwrite the GILT entry gate.
   - id: gilt_comtech_2026_06_15
     title: Gilat Comtech Satellite Business Acquisition
     source_type: sec_filing
     url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003179/exhibit_99-1.htm
     source_published_at: 2026-06-15
-    retrieved_at: 2026-07-11
+    retrieved_at: 2026-07-25
     first_seen_at: 2026-07-11
     related_symbols: [GILT]
-    summary: USD 157.5 million acquisition expected to lift combined annual revenue above USD 700 million while adding integration risk.
+    summary: USD 157.5 million base purchase price, management-adjusted target metrics, combined forecast, regulatory approvals, price adjustments and integration risks used to re-underwrite the GILT entry gate.
+  - id: gilt_2025_20f_retrieved_2026_07_25
+    title: Gilat 2025 Form 20-F
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326000929/zk2634518.htm
+    source_published_at: 2026-03-16
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [GILT]
+    summary: Point-in-time shares, customer concentration, gross-margin change, shelf capacity and operating risks used in the current capitalization and downside review.
+  - id: comtech_q3_2026_retrieved_2026_07_25
+    title: Comtech Third-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/cmtl-20260430.htm
+    source_published_at: 2026-06-10
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [GILT]
+    summary: The Satellite and Space Communications segment showed declining nine-month revenue, low GAAP operating margin and prior impairment, reinforcing the need for audited carve-out economics and cash conversion.
   - id: iqmx_424b3_2026_06_05
     title: IQM Quantum Definitive Prospectus
     source_type: sec_filing
@@ -3051,3 +3069,129 @@ sources:
     first_seen_at: 2026-07-24
     related_symbols: [MDA]
     summary: MDA Space scheduled second-quarter 2026 results before the August 7 market open and a conference call that morning.
+  - id: completed_close_universe_2026_07_24
+    title: Completed Regular-Session Close Universe — 2026-07-24
+    source_type: market_data
+    url: https://alpaca.markets/data
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Alpaca IEX supplied completed July 24 regular-session daily bars for 50 tradable research securities after Yahoo chart requests returned HTTP 403. Prior verified adjusted history was retained, no split occurred during the comparison period, and ENRD retained its latest reliable July 23 close because no July 24 IEX bar was available.
+  - id: sec_submissions_all_forms_2026_07_25
+    title: All-Form SEC Submissions Audit — 2026-07-25
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-25
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Fresh submissions payloads and selected filing fetches validated all 51 tradable research symbols. Material new filings covered MDA acquisition financing, QSI listing compliance, QTEX dilution and governance proposals, and QBTS's non-operating listing transfer.
+  - id: mda_acquisition_notes_2026_07_24
+    title: MDA Space Acquisition Notes Financing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926086388/tm2621200d1_6k.htm
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [MDA]
+    summary: MDA Space priced CAD 600 million of 6.50 percent senior unsecured notes due 2033 to fund the Blue Canyon acquisition and related costs, increasing fixed obligations before integration returns and cash conversion are proved.
+  - id: qsi_minimum_bid_deficiency_2026_07_24
+    title: Quantum-Si Nasdaq Minimum-Bid Deficiency
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1816431/000181643126000049/qsi-20260723.htm
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [QSI]
+    summary: Nasdaq notified Quantum-Si that its shares had closed below USD 1.00 for 30 consecutive business days. The initial compliance period runs through 2027-01-19 and adds delisting or reverse-split risk.
+  - id: qtex_equity_authorization_2026_07_24
+    title: QTREX Equity Authorization and Governance Proposals
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526003120/qtrex6k072326.htm
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [QTEX]
+    summary: QTREX meeting proposals seek material equity awards, an increase in authorized shares from 100 million to 300 million, and governance amendments. They add dilution and shareholder-rights risk without new commercial proof.
+  - id: qbts_listing_transfer_2026_07_24
+    title: D-Wave NYSE-to-Nasdaq Listing Transfer
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000109/qbts-20260724.htm
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [QBTS]
+    summary: D-Wave plans to transfer its listing from the NYSE to the Nasdaq Global Market under the same symbols beginning 2026-07-27. The venue change does not alter operating evidence, capitalization, or valuation.
+  - id: nwpx_q1_2026_results
+    title: NWPX Infrastructure First-Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1001385/000143774926013887/ex_935306.htm
+    source_published_at: 2026-04-29
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [NWPX]
+    summary: NWPX reported USD 138.3 million of Q1 sales, USD 26.7 million of gross profit, USD 10.5 million of net income, USD 29.3 million of operating cash flow, USD 373 million of signed Water Transmission Systems backlog and USD 430 million including confirmed orders.
+  - id: epa_water_reuse_action_plan_2_2026
+    title: EPA Water Reuse Action Plan 2.0
+    source_type: regulator
+    url: https://www.epa.gov/newsreleases/epa-launches-water-reuse-action-plan-20-advance-agencys-core-mission-and-strengthen-us
+    source_published_at: 2026-04-16
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [NWPX]
+    summary: EPA identified reuse applications including semiconductor fabrication and data-center cooling as action areas; the plan is contextual evidence, not a mandate or proof of NWPX-specific demand.
+  - id: riot_q1_2026_10q
+    title: Riot Platforms First-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1167419/000110465926053120/riot-20260331x10q.htm
+    source_published_at: 2026-04-30
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [RIOT]
+    summary: Riot reported USD 33.2 million of Q1 data-center revenue primarily from initial leasing and tenant fit-out, a long-duration AMD lease with expansion potential to 200 MW, continued dominant bitcoin-mining exposure and USD 500 million of unused ATM capacity.
+  - id: gpus_q1_2026_10q
+    title: Hyperscale Data First-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/896493/000121465926006542/hd51226410q.htm
+    source_published_at: 2026-05-18
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [GPUS]
+    summary: The filing shows a USD 30.1 million Q1 net loss, extreme share-count expansion, further post-quarter issuance and substantial ongoing financing capacity.
+  - id: gpus_data_center_msa_2026_06_24
+    title: Hyperscale Data Twenty-Megawatt Data-Center Services Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/896493/000121465926007704/ex10_1.htm
+    source_published_at: 2026-06-24
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [GPUS]
+    summary: The definitive agreement provides 20 MW in two phases with a USD 5.6 million security deposit and USD 5 million upfront charge, but customer credit, delivery and recurring economics remain unresolved.
+  - id: sidu_q1_2026_10q
+    title: Sidus Space First-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1879726/000149315226023709/form10-q.htm
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [SIDU]
+    summary: Sidus reported USD 0.359 million of Q1 revenue against USD 1.41 million cost of revenue, a USD 5.21 million net loss and 87 percent revenue concentration in one customer.
+  - id: sidu_may_2026_offering
+    title: Sidus Space May 2026 Offering
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1879726/000149315226025618/form8-k.htm
+    source_published_at: 2026-05-27
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [SIDU]
+    summary: The April and May offerings added roughly 33 million shares and pre-funded warrants and imply a much larger post-offering capitalization than pre-offering market-data share counts.
+  - id: new_discovery_completed_closes_2026_07_24
+    title: NWPX and RIOT Completed Regular-Session Closes — 2026-07-24
+    source_type: market_data
+    url: https://alpaca.markets/data
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-25
+    first_seen_at: 2026-07-25
+    related_symbols: [NWPX, RIOT]
+    summary: Alpaca IEX supplied completed July 24 daily bars and 140 completed 2026 sessions for the two retained research-only discoveries; no split was reported in the comparison period.

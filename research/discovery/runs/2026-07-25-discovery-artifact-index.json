@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-07-25T03:43:58.672Z",
+  "as_of": "2026-07-25",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-07-25.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-07-25-community-triage.json",
+      "sha256": "184f0f40fcf75cc93aa7dca136a8be1f5ce4da77777e4e4f03db9d1d184bf402",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-scan.json",
+      "sha256": "e65514ce235c01788c36b1e9d7448c425d9e0bc05180419c4cca1b9d8e86ed4d",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-sec-event-filing-index-index.metadata.json",
+      "sha256": "8eb55d283732bcafae7c7f619ea530887b75a0a90bceb7f4320a2f7c8878ff3f",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-sec-event-filing-index-manifest.csv",
+      "sha256": "251ae3234678caf7608c645105d7094c105faebd7688e7e7d6b0830a61bdb0e8",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "eff691f9fa9b08b9a074aef9882ef63681b131710ab40a78f3e201009e754c57",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-sec-event-filing-index-profiles.json",
+      "sha256": "3e580cb98b139fb21023e79dda50ac93980b33bb9c195fe6bc2a91263280aace",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-sec-event-filing-index-scan.json",
+      "sha256": "8cff5eaada7cf4b6c60b2ca764990bff5e92b5563d6c46456d9ccec3c4c5c006",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-sec-filing-ledger.json",
+      "sha256": "a980faaf7a740ebd793543e0f53efc2563b98ac196bd504b79effc289c0888ea",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-07-25-sec-submissions-ledger.json",
+      "sha256": "797b6e150018a57968c4447e4fb1a9a1f09cb6ce21b6482966b5e1f087d53abd",
+      "role": "generated_discovery_artifact"
+    }
+  ]
+}

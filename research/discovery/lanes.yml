@@ -121,6 +121,7 @@ lanes:
       - WYFI
       - WULF
       - CIFR
+      - RIOT
     private_or_future_proxies: []
     candidate_entry_points:
       - newly public neoclouds
@@ -158,6 +159,7 @@ lanes:
       - PWR
       - WULF
       - CIFR
+      - RIOT
     candidate_entry_points:
       - public power-equipment suppliers with AI-specific order growth
       - onsite power companies with proven data-center economics
@@ -359,11 +361,18 @@ lanes:
     current_public_proxies:
       - ENRD
       - QSI
+      - NWPX
     sublanes:
       - id: autonomous_physical_systems
         proxies: [ENRD]
       - id: single_molecule_biological_measurement
         proxies: [QSI]
+      - id: water_transmission_and_industrial_reuse
+        status: emerging
+        proxies: [NWPX]
+        bottleneck_thesis: Large-diameter water transmission, engineered precast systems and regional manufacturing capacity may become constrained as aging municipal networks, industrial reuse, semiconductor fabrication and data-center cooling require concurrent buildout.
+        pricing_power_test: Separate durable price and mix realization from project timing, input-cost pass-through and temporary bidding conditions; require evidence that scarce capacity produces repeatable margin and cash conversion.
+        invalidation_or_demote_signal: Data-center and semiconductor demand remains immaterial, municipal funding weakens, input cycles absorb price gains, or normalized margins and returns fail to exceed ordinary construction-product economics.
     candidate_entry_points:
       - new public categories with no current lane
       - spinoffs that create pure-play exposure to a newly scarce capability

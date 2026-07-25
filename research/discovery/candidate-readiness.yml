@@ -584,3 +584,59 @@ records:
     last_readiness_reviewed_at: 2026-07-23
     next_action: Reopen only after durable non-trading revenue, sharply lower operating loss and cash burn, cleaner related-party and collateral economics, remediated controls, and stronger per-share value capture.
     conclusion: Rejected from ongoing coverage after bounded primary-source review; no dashboard surface, promotion, or buy.
+  - symbol: NWPX
+    material_to_current_allocation: true
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: Large-diameter water transmission and engineered-precast capacity could become a physical bottleneck as aging municipal systems, industrial reuse, semiconductor fabrication and data-center cooling compete for buildout.
+    blocking_scope: water_transmission_and_industrial_reuse_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-25-NWPX-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Record revenue, backlog, margins, operating cash flow and low funded debt support a real business, but data-center and semiconductor demand attribution, durable pricing power, municipal funding sensitivity, input cyclicality, current valuation and mission-consistent extreme upside remain unproved.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-25
+    next_action: Monitor backlog conversion, end-market mix, quantified industrial-reuse demand, price and mix realization, municipal funding, steel and cement costs, margins, cash conversion and valuation.
+    conclusion: Incubated into B- research-only coverage and an emerging water-transmission and industrial-reuse sublane; no promotion and no current buy.
+  - symbol: RIOT
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
+    materiality_reason: A power-ready campus with a ten-year AMD lease and expansion options materially expands the public comparison set for converting scarce grid-connected capacity into AI-infrastructure rent.
+    blocking_scope: ai_compute_lane_opportunity_cost_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-25-RIOT-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The AMD lease and potential expansion are direct evidence, but Q1 data-center revenue was primarily fit-out related, bitcoin mining remains dominant, project delivery and recurring rent economics are unproved, and USD 500 million of ATM capacity creates dilution risk.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-25
+    next_action: Monitor AMD capacity delivery, recurring rent and utilization, fit-out reimbursement mix, project capex and financing, customer concentration, bitcoin exposure, ATM issuance and cash conversion.
+    conclusion: Incubated into C+ research-only AI-compute and power-campus coverage; no promotion and no current buy.
+  - symbol: GPUS
+    material_to_current_allocation: false
+    affected_lanes: [ai_compute_infrastructure]
+    materiality_reason: A signed 20 MW data-center services agreement created direct exposure that required a bounded customer, capitalization and survival review.
+    blocking_scope: ai_compute_lane_false_negative_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-25-GPUS-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Q1 net loss was USD 30.1 million, share count expanded by orders of magnitude, another 91.1 million shares were sold after quarter-end, a new USD 300 million ATM followed, and customer credit, delivery and recurring economics remain unproved.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-25
+    next_action: Reopen only after creditworthy customer proof, completed delivery, recurring positive-margin revenue, positive cash conversion and a reconciled fully diluted capitalization.
+    conclusion: Rejected after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: SIDU
+    material_to_current_allocation: false
+    affected_lanes: [space_infrastructure]
+    materiality_reason: Direct spacecraft, hosted-payload, data and mission-services exposure required a bounded same-lane opportunity-cost comparison with the current holdings and stronger public peers.
+    blocking_scope: space_lane_opportunity_cost_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-25-SIDU-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Q1 revenue was only USD 0.359 million below USD 1.41 million cost of revenue, net loss was USD 5.21 million, one customer represented 87 percent of revenue, and April-May offerings created severe dilution.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-25
+    next_action: Reopen only after positive gross margin, repeat revenue, customer diversification, successful satellite delivery and a materially more stable diluted capitalization.
+    conclusion: Rejected after bounded primary-source readiness; no dashboard surface, promotion or buy.

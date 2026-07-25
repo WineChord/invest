@@ -1,0 +1,465 @@
+schema_version: 1
+run_id: 2026-07-25-full-operating-cycle
+run_date: 2026-07-25
+request_type: daily_full_operating_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, a 5 percent reviewed-symbol completed-close move, an ASTS note-option outcome, IREN contract or commissioning evidence, MDA acquisition or leverage evidence, QSI listing-compliance or Proteus evidence, QTEX shareholder-vote or financing evidence, a confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-25-daily-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-25-subagent-evidence-packet.yml
+execution_update:
+  status: no_new_deposit_no_trade
+  confirmed_ledger_event_ids:
+    - 2026-07-24-deposit-001
+  resulting_confirmed_cash: 5761.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: Saturday did not trigger the Friday-only contribution authorization. The prior confirmed deposit was not duplicated, and no trade, order, fee, fill, SGOV position, or inferred broker fact was added.
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-07-25
+      dry_run: false
+      retrieved_at: 2026-07-25
+      result_summary: Yahoo requests returned HTTP 403 and the held-symbol freshness gate stopped the repository refresh before FMP supplementation. Alpaca IEX fallback supplied completed July 24 bars for 50 pre-existing symbols, and separate primary-source readiness added completed NWPX and RIOT bars; ENRD retained its latest reliable July 23 close. No FMP payload is claimed.
+    - command: npm run refresh:macro -- --as-of 2026-07-25
+      dry_run: false
+      retrieved_at: 2026-07-25
+      result_summary: Current FRED rates, spreads and VIX were retained; QQQ, SMH and IWM requests returned Yahoo HTTP 403, so macro_data_incomplete cannot create buy eligibility.
+    - command: npm run discover:universe -- --as-of 2026-07-25 --json --output research/discovery/runs/2026-07-25-scan.json
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-25-scan.json
+      output_sha256: e65514ce235c01788c36b1e9d7448c425d9e0bc05180419c4cca1b9d8e86ed4d
+      retrieved_at: 2026-07-25
+      result_summary: The final post-disposition ten-lane scan returned 20 candidate matches and 57 exploratory matches after NWPX and RIOT entered research-only coverage. Primary-source triage rejected GPUS and SIDU and added an emerging water-transmission and industrial-reuse sublane.
+    - command: npm run scan:community -- --as-of 2026-07-25
+      dry_run: false
+      retrieved_at: 2026-07-25
+      result_summary: Forty-six public sources were checked with degraded access; zero symbol leads were retained and lane signals did not change allocation.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-07-25 --symbols current-tradable-universe
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-25-sec-event-filing-index-scan.json
+      output_sha256: 8cff5eaada7cf4b6c60b2ca764990bff5e92b5563d6c46456d9ccec3c4c5c006
+      retrieved_at: 2026-07-25
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols:
+        - RKLB
+        - ASTS
+        - CRDO
+        - ALAB
+        - VRT
+        - NBIS
+        - MU
+        - CRWV
+        - CRCL
+        - LITE
+        - CBRS
+        - IREN
+        - OKLO
+        - BE
+        - LEU
+        - GSAT
+        - KTOS
+        - IONQ
+        - LUNR
+        - RDW
+        - FLY
+        - YSS
+        - VOYG
+        - XNDU
+        - FN
+        - ETN
+        - PWR
+        - SPCX
+        - MDA
+        - GILT
+        - IQMX
+        - NNE
+        - HQ
+        - NUCL
+        - QBTS
+        - QUBT
+        - RGTI
+        - SMR
+        - AAOI
+        - INFQ
+        - WYFI
+        - WULF
+        - IMSR
+        - POET
+        - STDN
+        - CIFR
+        - OCC
+        - SEI
+        - QTEX
+        - ENRD
+        - QSI
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: The index covers all 51 pre-existing requested tradable research symbols and a bounded material-form selector; fresh all-form submissions comparison plus separate NWPX and RIOT primary filing reviews supplement it.
+      result_summary: All 51 pre-existing submissions and selected filings were validated. MDA financing, QSI listing compliance, QTEX dilution and governance proposals, and the QBTS listing transfer were reviewed; NWPX and RIOT then received separate current primary-source readiness reviews.
+      artifacts:
+        - research/discovery/runs/2026-07-25-sec-submissions-ledger.json
+        - research/discovery/runs/2026-07-25-sec-event-filing-index-manifest.csv
+        - research/discovery/runs/2026-07-25-sec-event-filing-index-manifest.metadata.json
+        - research/discovery/runs/2026-07-25-sec-filing-ledger.json
+        - research/discovery/runs/2026-07-25-sec-event-filing-index-profiles.json
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, live all-form submissions, listing evidence, ownership forms and regulator evidence
+      sources_or_queries:
+        - 51 live submissions payloads
+        - targeted event index
+        - MDA, QSI, QTEX and QBTS primary filings
+        - NWPX and RIOT primary filing reviews
+      source_ids:
+        - sec_submissions_all_forms_2026_07_25
+        - mda_acquisition_notes_2026_07_24
+        - qsi_minimum_bid_deficiency_2026_07_24
+        - qtex_equity_authorization_2026_07_24
+        - qbts_listing_transfer_2026_07_24
+      retrieved_at: 2026-07-25
+      material_findings: MDA, QSI and QTEX received adverse financing, listing or dilution evidence; QBTS received a non-operating venue change. None creates buy eligibility.
+      unavailable_or_skipped_reason: The targeted selector is not complete SEC-market semantic coverage, so fresh all-form submissions comparison was used.
+    - family_id: issuer_material
+      family: Issuer operating, financing, contract, acquisition, capitalization and quarterly evidence
+      sources_or_queries:
+        - holdings and next-dollar priority queue
+        - new material filings
+        - current company analyses
+        - NWPX and RIOT readiness
+      source_ids:
+        - mda_acquisition_notes_2026_07_24
+        - qsi_minimum_bid_deficiency_2026_07_24
+        - qtex_equity_authorization_2026_07_24
+      retrieved_at: 2026-07-25
+      material_findings: LEU, GILT, MDA, IREN and CRDO are the next-dollar research queue; GILT failed the evidence and entry gates after a full re-underwrite, MDA has a higher financing hurdle, and NWPX and RIOT enter only research-only coverage.
+      unavailable_or_skipped_reason: Accepted revenue, fixed-price economics, customer diversification, combined cash conversion and complete diluted capitalization remain incomplete.
+    - family_id: market_data
+      family: Completed regular-session closes, adjusted history, technical trends, company metrics and account research valuation
+      sources_or_queries:
+        - 52 Alpaca IEX July 24 bars
+        - retained Yahoo adjusted histories
+        - SEC companyfacts and reviewed filing overrides
+      source_ids:
+        - completed_close_universe_2026_07_24
+      retrieved_at: 2026-07-25
+      material_findings: Research NAV is USD 7466.41, cash is 77.1667 percent and combined space equity is 22.8333 percent. Thirty-two symbols fell at least 5 percent.
+      unavailable_or_skipped_reason: ENRD has no reliable July 24 IEX bar and retains its July 23 Yahoo close; INFQ six-month return is not used across its unit separation.
+    - family_id: current_world_context
+      family: Macro regime and sanitized public-attention overlays
+      sources_or_queries:
+        - FRED public series
+        - equity proxy requests
+        - public community triage
+      source_ids:
+        - fred_public_macro_series
+      retrieved_at: 2026-07-25
+      material_findings: Current rates, spreads and VIX do not override issuer-specific evidence, valuation, capitalization and status gates.
+      unavailable_or_skipped_reason: QQQ, SMH and IWM requests returned HTTP 403 and public community access was degraded.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: IPOs, post-SPAC listings, pre-listing registrations, acquisitions, ownership changes and transaction candidates
+      sources_or_queries:
+        - broad scan
+        - SEC event index
+        - XTND pre-listing status
+        - QBTS listing transfer
+      source_ids:
+        - sec_submissions_all_forms_2026_07_25
+        - qbts_listing_transfer_2026_07_24
+      retrieved_at: 2026-07-25
+      material_findings: NWPX and RIOT entered durable research-only coverage; GPUS and SIDU were rejected after bounded primary-source readiness; XTND remains the retained material pre-listing candidate.
+      unavailable_or_skipped_reason: XTND listing effectiveness, transaction close, final capitalization, exchange confirmation and completed close do not exist.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad scan, same-lane comparison and opportunity-cost review
+      sources_or_queries:
+        - ten-lane scan
+        - 55-symbol watchlist
+        - retained XTND
+        - independent xhigh reviews
+      source_ids:
+        - completed_close_universe_2026_07_24
+        - sec_submissions_all_forms_2026_07_25
+      retrieved_at: 2026-07-25
+      material_findings: The unknown-future lane gained an emerging water-transmission and industrial-reuse sublane and two research-only symbols entered coverage; no top-level lane, active promotion, buy zone or nonzero allocation changed.
+      unavailable_or_skipped_reason: Deterministic semantic recall and degraded public-attention access prevent an exhaustive positive discovery claim.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-25
+    notes: Market, macro, public attention, broad discovery, all-form submissions, issuer evidence, financing, listings, transactions, lane evolution, candidate disposition and opportunity cost were reviewed.
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - water transmission and industrial reuse
+    - AI compute and power conversions
+    - autonomous physical systems and fleet orchestration
+    - quantum naming and cryogenic interconnect
+  sampled_symbols:
+    - NWPX
+    - RIOT
+    - GPUS
+    - SIDU
+    - QMCO
+    - QNTM
+    - QUCY
+    - QXL
+  false_positive_patterns:
+    - ticker and name collisions
+    - blank-check vehicles and units
+    - funds and preferred securities
+    - promotional pivots without operating proof
+    - weak proxies with complex capitalization
+  lane_decisions:
+    - retain all ten top-level lanes
+    - add an emerging water-transmission and industrial-reuse sublane
+    - incubate NWPX and RIOT
+    - reject GPUS and SIDU
+    - retain XTND as not tradable
+  disposition: NWPX and RIOT entered research-only coverage after complete readiness; GPUS and SIDU were rejected, and the remaining scan matches were weak, ineligible or false-positive patterns.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Grid-connected power, commissioned AI capacity, high-speed interconnect, launch and spacecraft production, spectrum, HALEU, water transmission and industrial reuse, and safety-certified autonomous deployment remain plausible constraints.
+    inferences: Scarcity is investable only when it converts into durable margin, cash generation and diluted per-share value without excessive financing dependence.
+    disconfirming_evidence: Current small and early expressions often capitalize future scarcity before repeatable gross profit or free cash flow exists.
+    source_ids:
+      - completed_close_universe_2026_07_24
+      - sec_submissions_all_forms_2026_07_25
+    investment_implication: Preserve cash until evidence and entry align.
+  who_controls_or_removes_scarcity:
+    facts: LEU, CRDO, ALAB, IREN, VRT, RKLB, ASTS, GILT, MDA, NWPX and RIOT are direct or partially direct current expressions across reviewed lanes.
+    inferences: Direct exposure is insufficient when lenders, customers, regulators, warrants or new equity capture most economics.
+    disconfirming_evidence: Every current expression retains a valuation, concentration, execution, financing, survival or transaction veto.
+    source_ids:
+      - completed_close_universe_2026_07_24
+      - sec_submissions_all_forms_2026_07_25
+    investment_implication: Keep the lane map and make no promotion.
+  who_can_monetize_into_shareholder_value:
+    facts: LEU, GILT, MDA, IREN and CRDO are the next-dollar research queue.
+    inferences: Accepted revenue, complete contract economics, repeat orders, cash conversion and survivable capitalization matter more than addressable-market claims.
+    disconfirming_evidence: Each priority company retains a contract, valuation, concentration, financing, transaction or correlated-exposure veto.
+    source_ids:
+      - completed_close_universe_2026_07_24
+      - sec_submissions_all_forms_2026_07_25
+    investment_implication: Retain confirmed cash and set every new quantity to zero.
+  public_security_expression:
+    facts: Fifty-three watchlist securities are tradable, OPENAI and ANTHROPIC are not, and XTND does not yet have a policy-eligible completed listing.
+    inferences: A low nominal price, sharp decline, registration filing or direct thematic label does not create buy eligibility.
+    disconfirming_evidence: Thirty-two tradable securities declined at least 5 percent, but none cleared the remaining gates.
+    source_ids:
+      - completed_close_universe_2026_07_24
+      - sec_submissions_all_forms_2026_07_25
+    investment_implication: All current new-buy quantities are zero.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT, NWPX, QSI, STDN, ENRD, OCC and XTND retain genuine smaller, early or awkward characteristics; RIOT adds a new but larger power-campus transition.
+    inferences: GILT has the clearest small-cap valuation arithmetic and NWPX the strongest newly discovered operating quality, but neither currently proves mission-consistent entry.
+    disconfirming_evidence: GILT lacks audited transaction cash conversion; NWPX has mature physical-product economics and a large price rise; QSI has listing and adoption risk; STDN lacks authorization and margin proof; ENRD remains fragile; XTND is not tradable.
+    source_ids:
+      - completed_close_universe_2026_07_24
+      - sec_submissions_all_forms_2026_07_25
+    investment_implication: Continue research without a current order.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-07-25 evidence packet
+        - current account facts
+        - completed July 24 closes
+        - fresh SEC submissions
+        - current decision gates
+      sources_checked:
+        - completed_close_universe_2026_07_24
+        - sec_submissions_all_forms_2026_07_25
+      facts_verified: NWPX and RIOT merit research-only incubation, GPUS and SIDU merit rejection, and water transmission and industrial reuse merits an emerging sublane without changing allocation.
+      stale_or_missing_evidence: Several contract economics, accepted-revenue, fully diluted capitalization and combined cash-conversion facts remain unavailable.
+      confidence: high_on_no_action_moderate_on_exhaustive_discovery
+      key_findings: Incubate NWPX and RIOT, reject GPUS and SIDU, and add the emerging water-transmission and industrial-reuse sublane without changing allocation.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-07-25 evidence packet
+        - current account facts
+        - completed July 24 closes
+        - fresh SEC submissions
+        - current decision gates
+      sources_checked:
+        - completed_close_universe_2026_07_24
+        - sec_submissions_all_forms_2026_07_25
+      facts_verified: MDA, QSI and QTEX filings add constraints; QBTS listing transfer is non-operating; no unresolved material filing blocks a no-action decision.
+      stale_or_missing_evidence: Several contract economics, accepted-revenue, fully diluted capitalization and combined cash-conversion facts remain unavailable.
+      confidence: high_on_no_action_moderate_on_exhaustive_discovery
+      key_findings: MDA, QSI and QTEX filings add constraints; QBTS listing transfer is non-operating; no unresolved material filing blocks a no-action decision.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-07-25 evidence packet
+        - current account facts
+        - completed July 24 closes
+        - fresh SEC submissions
+        - current decision gates
+      sources_checked:
+        - completed_close_universe_2026_07_24
+        - sec_submissions_all_forms_2026_07_25
+      facts_verified: The bull reviewer proposed a 10 to 20 share GILT starter at or below USD 10.75 after the dislocation; this was a material dissent requiring primary-evidence reconciliation.
+      stale_or_missing_evidence: Several contract economics, accepted-revenue, fully diluted capitalization and combined cash-conversion facts remain unavailable.
+      confidence: high_on_no_action_moderate_on_exhaustive_discovery
+      key_findings: Bull proposed GILT 10 to 20 shares at or below USD 10.75; the proposal was not adopted after reconciliation.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-07-25 evidence packet
+        - current account facts
+        - completed July 24 closes
+        - fresh SEC submissions
+        - current decision gates
+      sources_checked:
+        - completed_close_universe_2026_07_24
+        - sec_submissions_all_forms_2026_07_25
+      facts_verified: GILT fails the evidence and entry gates because the transaction lacks audited carve-out, final approvals, working-capital and cash-conversion proof; financing, dilution, concentration and valuation also justify no new capital elsewhere.
+      stale_or_missing_evidence: Several contract economics, accepted-revenue, fully diluted capitalization and combined cash-conversion facts remain unavailable.
+      confidence: high_on_no_action_moderate_on_exhaustive_discovery
+      key_findings: GILT evidence and entry gates fail; financing, dilution, customer concentration, valuation, pre-scale execution and correlated space exposure justify no new capital.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-07-25 evidence packet
+        - current account facts
+        - completed July 24 closes
+        - fresh SEC submissions
+        - current decision gates
+      sources_checked:
+        - completed_close_universe_2026_07_24
+        - sec_submissions_all_forms_2026_07_25
+      facts_verified: GILT at USD 10.73 is roughly 10 times management forecast post-transaction adjusted EBITDA, not verified free cash flow, so quantity is zero and every executable limit remains absent.
+      stale_or_missing_evidence: Several contract economics, accepted-revenue, fully diluted capitalization and combined cash-conversion facts remain unavailable.
+      confidence: high_on_no_action_moderate_on_exhaustive_discovery
+      key_findings: GILT quantity zero and no executable limit; management-adjusted transaction arithmetic does not establish a margin of safety.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - 2026-07-25 evidence packet
+        - current account facts
+        - completed July 24 closes
+        - fresh SEC submissions
+        - current decision gates
+      sources_checked:
+        - completed_close_universe_2026_07_24
+        - sec_submissions_all_forms_2026_07_25
+      facts_verified: Confirmed cash is USD 5761.58 and marked space equity is 22.8333 percent; even a small GILT starter does not clear evidence or entry gates, so preserve liquidity.
+      stale_or_missing_evidence: Several contract economics, accepted-revenue, fully diluted capitalization and combined cash-conversion facts remain unavailable.
+      confidence: high_on_no_action_moderate_on_exhaustive_discovery
+      key_findings: GILT quantity zero and no executable limit; cash and non-space opportunity cost dominate before audited transaction and cash-conversion evidence.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: The bull reviewer proposed a 10 to 20 share GILT starter at or below USD 10.75. Primary evidence, valuation, bear and allocation reviews established that the price roughly capitalizes unclosed management-adjusted EBITDA without audited carve-out, approval, working-capital, integration or cash-conversion proof. The main agent resolved the conflict at GILT quantity zero and no executable limit; no unresolved disagreement remains.
+lane_delta:
+  lanes_added: []
+  lanes_revised:
+    - "unknown_future_bottlenecks: added emerging water_transmission_and_industrial_reuse sublane"
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: NWPX supports an emerging water-transmission and industrial-reuse sublane; the evidence does not yet support a new top-level lane or buy eligibility.
+  no_change_reason: No top-level lane status changed because durable scarcity pricing and direct industrial-reuse value capture remain unproved.
+candidate_delta:
+  candidates_added:
+    - NWPX
+    - RIOT
+    - GPUS
+    - SIDU
+  candidates_rejected_or_archived:
+    - GPUS
+    - SIDU
+  candidates_promoted: []
+  candidates_incubated:
+    - NWPX
+    - RIOT
+  false_positive_patterns:
+    - ticker collisions
+    - blank-check vehicles and units
+    - funds and preferred securities
+    - evidence-poor narrative pivots
+    - weak thematic proxies
+readiness_sprints:
+  - symbol: NWPX
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-25-NWPX-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#NWPX
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+  - symbol: RIOT
+    material_to_current_allocation: true
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-25-RIOT-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#RIOT
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: incubate
+  - symbol: GPUS
+    material_to_current_allocation: false
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-25-GPUS-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#GPUS
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+  - symbol: SIDU
+    material_to_current_allocation: false
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-25-SIDU-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#SIDU
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+watchlist_review:
+  non_removed_symbol_count: 55
+  current_cycle_review_count: 55
+  missing_current_cycle_review_count: 0
+  status_changes:
+    - NWPX added as research_only
+    - RIOT added as research_only
+  priority_changes:
+    - NWPX added at B-
+    - RIOT added at C+
+  buy_zone_changes:
+    - all active and core candidates confirmed no current buy
+  source_path: research/watchlist-cycle-reviews.csv
+allocation_conclusion:
+  confirmed_cash: 5761.58
+  confirmed_positions:
+    - RKLB 17 shares
+    - ASTS 11 shares
+  orders: []
+  reserve_order: none
+  conclusion: Hold both positions, buy zero, sell zero, buy no SGOV and retain confirmed cash.
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: All reachable repository-public work needed to decide was completed; readiness permits a decision, while the completed decision is no action.
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: immediate_after_validation_and_sensitive_field_review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No new deposit, order, nonzero proposed quantity, broker preview, credential, raw artifact, full identifier or private message is present.
+meta_self_improvement:
+  status: completed
+  durable_change: The cycle explicitly records provider fallback provenance, corporate-action limits, broad-dislocation re-underwriting and the difference between lower price and cleared buy gates.
+  skill_review: No durable trigger or execution-order change requires a repo-scoped skill update.

@@ -1271,3 +1271,75 @@ entries:
     risk_watch: Proteus timing and performance, customer validation, installed base, consumables pull-through, gross margin, operating cash use, cash runway, inventory, options, RSUs, warrants, related-party arrangements, financing, liquidity, and valuation.
     next_check: Proteus launch or delay, independent customer data, instrument and consumables revenue, gross-margin recovery, quarterly cash use, share-count change, award issuance, financing, or a thesis-preserving price dislocation.
     source_path: research/discovery/readiness/2026-07-23-QSI-readiness.md
+  - id: 2026-07-25-mda-acquisition-notes
+    symbol: MDA
+    analyzed_at: "2026-07-25"
+    analysis_type: material_financing_refresh
+    policy_version: v1.1
+    title: Acquisition financing improves certainty but raises the cash-conversion hurdle
+    stance: B+ active candidate; buy 0
+    summary: MDA priced CAD 600 million of 6.50 percent senior unsecured notes due 2033 to fund the Blue Canyon acquisition and related costs. The financing improves closing certainty but raises fixed obligations before Blue Canyon and CLS integration, combined margins, and free-cash-flow returns are proved.
+    upside_path: Close and integrate Blue Canyon and CLS, convert expanded spacecraft, robotics, defense and data capabilities into higher-margin recurring revenue, preserve backlog quality, and earn returns above the enlarged cost of capital.
+    risk_watch: Acquisition close, leverage, interest expense, integration, purchase accounting, fixed-price programs, margins, cash conversion, customer concentration, equity dilution, and existing account space concentration.
+    next_check: Notes close, acquisition close, final capitalization, pro-forma leverage, Q2 results, integration milestones, combined margin and cash conversion, or a thesis-preserving valuation reset.
+    source_path: research/filings/2026-07-25-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-25-qsi-listing-compliance
+    symbol: QSI
+    analyzed_at: "2026-07-25"
+    analysis_type: material_listing_compliance_refresh
+    policy_version: v1.1
+    title: Minimum-bid deficiency adds a concrete capitalization constraint
+    stance: C+ research-only; buy 0
+    summary: Nasdaq notified Quantum-Si that its Class A shares had closed below USD 1.00 for 30 consecutive business days. The initial compliance period runs through 2027-01-19, but reverse-split, delisting, liquidity and financing risk now sit alongside pre-launch adoption and cash-burn risk.
+    upside_path: Launch Proteus on time, demonstrate independent customer value, build instrument placements and recurring consumables demand, control cash use, and regain listing compliance through operating progress rather than cosmetic capitalization changes.
+    risk_watch: Minimum-bid compliance, reverse split, delisting, liquidity, Proteus launch and performance, customer adoption, gross margin, cash burn, awards, warrants, financing, and diluted per-share value.
+    next_check: Nasdaq compliance progress, Proteus launch or delay, paid placements, recurring consumables revenue, quarterly cash use, reverse-split proposal, financing, or capitalization reset.
+    source_path: research/filings/2026-07-25-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-25-qtex-authorization-proposals
+    symbol: QTEX
+    analyzed_at: "2026-07-25"
+    analysis_type: material_dilution_and_governance_refresh
+    policy_version: v1.1
+    title: Proposed share authorization and equity awards deepen the dilution veto
+    stance: C+ research-only; buy 0
+    summary: QTREX seeks approval for material executive and director equity awards, an increase in authorized shares from 100 million to 300 million, discounted equity settlement of accrued salary, and governance amendments. The proposals add potential dilution and shareholder-rights risk without customer qualification, repeat-order, margin or cash-conversion proof.
+    upside_path: Qualify the cryogenic platform with credible customers, produce repeat orders and positive gross margin, reduce burn, and finance growth with a capital structure that leaves material value for common shareholders.
+    risk_watch: Shareholder vote, authorized-share increase, equity awards, discounted salary settlement, governance rights, customer qualification, repeat orders, gross margin, cash runway, warrants, resale supply, and future financing.
+    next_check: Shareholder vote, final equity issuance, qualified production customer, repeat-order economics, positive gross margin, lower burn, clean financing, or reconciled diluted capitalization.
+    source_path: research/filings/2026-07-25-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-25-qbts-listing-transfer
+    symbol: QBTS
+    analyzed_at: "2026-07-25"
+    analysis_type: material_listing_refresh
+    policy_version: v1.1
+    title: Exchange transfer changes venue but not investment evidence
+    stance: C+ research-only; buy 0
+    summary: D-Wave plans to move its common stock and warrants from the NYSE to the Nasdaq Global Market under the same symbols. The venue change does not improve bookings conversion, revenue scale, cash generation, technical differentiation, dilution, or valuation.
+    upside_path: Convert bookings and installed systems into recurring enterprise revenue, demonstrate durable annealing advantages, improve gross margin, control burn, and grow per-share value without relying on exchange optics.
+    risk_watch: Bookings conversion, customer concentration, technical limitations, competing modalities, losses, cash burn, warrants, equity issuance, and valuation.
+    next_check: First Nasdaq trading, next quarterly report, bookings conversion, system sale, recurring services revenue, cash use, dilution, or valuation reset.
+    source_path: research/filings/2026-07-25-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-25-nwpx-readiness
+    symbol: NWPX
+    analyzed_at: "2026-07-25"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Profitable water-infrastructure capacity with unproved scarcity pricing
+    stance: B- research-only; buy 0
+    summary: NWPX has record revenue, signed and confirmed-order backlog, improving margins, positive operating cash flow and low funded debt, but quantified semiconductor and data-center demand, durable pricing power, municipal funding resilience, normalized input economics and mission-consistent valuation remain unproved.
+    upside_path: Convert regional water-transmission and engineered-precast capacity into repeat backlog, durable price and mix realization, expanding margins and cash returns as municipal replacement and industrial reuse demand grow.
+    risk_watch: Backlog conversion, nonbinding confirmed orders, data-center and semiconductor demand attribution, municipal appropriations, project timing, steel and cement costs, capacity utilization, margins, cash conversion, acquisition discipline and valuation.
+    next_check: Q2 results, backlog conversion, end-market disclosure, quantified industrial-reuse demand, durable price and mix realization, municipal funding change, input-cost shock or valuation reset.
+    source_path: research/discovery/readiness/2026-07-25-NWPX-readiness.md
+  - id: 2026-07-25-riot-readiness
+    symbol: RIOT
+    analyzed_at: "2026-07-25"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: AMD tenancy creates direct exposure but not yet recurring economics
+    stance: C+ research-only; buy 0
+    summary: Riot's ten-year AMD lease and expansion options establish direct power-backed AI-campus exposure, but Q1 data-center revenue was primarily fit-out related, bitcoin mining remains dominant, delivery and recurring rent economics are unproved and USD 500 million of ATM capacity remained available.
+    upside_path: Deliver and commission AMD capacity, convert fit-out work into long-duration recurring rent, maintain utilization and power economics, and fund expansion without transferring most upside through debt or new equity.
+    risk_watch: AMD concentration, construction and commissioning, fit-out reimbursement mix, recurring rent, utilization, power costs, project capex, financing, bitcoin prices and mining economics, ATM issuance, restricted cash and cash conversion.
+    next_check: AMD delivery or acceptance, recurring-rent disclosure, utilization and margin evidence, project-capex or financing update, ATM issuance, bitcoin exposure reduction or valuation reset.
+    source_path: research/discovery/readiness/2026-07-25-RIOT-readiness.md

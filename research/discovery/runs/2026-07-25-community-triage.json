@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "source": "public_no_token_community_lead_triage",
+  "generated_at": "2026-07-25T02:52:05.332Z",
+  "as_of": "2026-07-25",
+  "scan_path": "research/cache/community/2026-07-25/2026-07-25-public-community-scan.json",
+  "scan_sha256": "b7e819aed580216871bd51bb102ee79b8e6cc925760bd0424d2d88fdbaaf491b",
+  "previous_scan_path": "research/cache/community/2026-07-24/2026-07-24-public-community-scan.json",
+  "previous_scan_sha256": "979c16ecf9460c091180cf44c5a3cb4f8ecb7a23b9e9bc140d58917d6c862f0e",
+  "previous_scan_status": "loaded",
+  "retrieval_boundary": {
+    "requires_tokens_or_cookies": false,
+    "raw_user_content_retained_in_output": false,
+    "source_use": "sentiment_and_lead_generation_only",
+    "decisive_evidence_allowed": false
+  },
+  "policy_boundary": {
+    "community_signal_use": "analysis_priority_only",
+    "creates_buy_eligibility": false,
+    "creates_promotion_eligibility": false,
+    "creates_security_metadata": false,
+    "required_before_candidate_record": "security_type_confirmation_and_primary_source_skim",
+    "required_before_active_or_buy_zone": "discovery_readiness_and_fresh_promotion_review"
+  },
+  "scoring_policy": {
+    "high_priority_score": 55,
+    "medium_priority_score": 25,
+    "components": "mention_count, source_diversity, source_quality, source_recency_decay, cross_scan_persistence, reason_keyword_fit, trend_delta, stocktwits_trending_score, novelty, and penalties for ambiguous or broad-market symbols"
+  },
+  "source_status_counts": {
+    "error": 39,
+    "ok": 7
+  },
+  "source_counts_by_type": {
+    "generic_rss": 1,
+    "hacker_news_algolia": 7,
+    "reddit_rss": 7,
+    "stocktwits_symbol_stream": 30,
+    "stocktwits_trending": 1
+  },
+  "lead_count": 0,
+  "high_priority_leads": 0,
+  "medium_priority_leads": 0,
+  "transition_summary": {
+    "existing_active_monitor": 0,
+    "existing_research_priority_boost": 0,
+    "new_symbol_primary_source_skim": 0,
+    "symbol_identity_confirmation": 0,
+    "broad_market_context_only": 0,
+    "low_signal_hold_for_persistence": 0,
+    "not_tradable_reference_only": 0
+  },
+  "top_leads": [],
+  "existing_symbol_priority_boosts": [],
+  "new_symbol_primary_source_queue": [],
+  "identity_confirmation_queue": [],
+  "broad_market_context_queue": [],
+  "source_type_leaderboards": [],
+  "source_leaderboards": [],
+  "caveats": [
+    "Community triage raises analysis priority only; it does not create buy eligibility.",
+    "Unknown symbols require ticker identity, security type, exchange, and primary-source confirmation before any durable candidate record.",
+    "Existing watchlist symbols still require current freshness, valuation, watchlist-cycle, readiness, and promotion gates before active or buy-zone changes.",
+    "Stocktwits symbol streams are seeded from current watchlist and lane proxies, so their leaderboards are useful for attention monitoring but biased toward already-known symbols."
+  ]
+}
