@@ -16,7 +16,10 @@ import {
 } from "./sec-ttm-lib.mjs";
 import { filterCompletedDailyBars } from "./market-session-lib.mjs";
 import { preserveSameDateCuratedCompanyMetrics } from "./company-metric-merge-lib.mjs";
-import { preserveRowsForUnrefreshedSymbols } from "./market-data-merge-lib.mjs";
+import {
+  detectHistoryDateRegression,
+  preserveRowsForUnrefreshedSymbols,
+} from "./market-data-merge-lib.mjs";
 
 const accountStateFile = "data/account/state.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
@@ -281,6 +284,16 @@ const historyFailures = [];
 for (const symbol of symbols) {
   try {
     const history = await fetchPriceHistory(symbol, asOfDate, historyDays);
+    const historyDateRegression = detectHistoryDateRegression(
+      history,
+      existingPriceHistory,
+      symbol,
+    );
+    if (historyDateRegression.regressed) {
+      throw new Error(
+        `Provider history latest date ${historyDateRegression.nextLatestDate || "N/A"} predates committed ${historyDateRegression.existingLatestDate}`,
+      );
+    }
     historyBySymbol.set(symbol, history);
     const latest = history.at(-1);
     console.log(`ok history ${symbol} ${history.length} rows through ${latest.date}`);

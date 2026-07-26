@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-23
+as_of: 2026-07-26
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -640,3 +640,17 @@ records:
     last_readiness_reviewed_at: 2026-07-25
     next_action: Reopen only after positive gross margin, repeat revenue, customer diversification, successful satellite delivery and a materially more stable diluted capitalization.
     conclusion: Rejected after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: ASPI
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: Direct isotope-enrichment and potential HALEU exposure materially improves the public nuclear fuel-cycle comparison set.
+    blocking_scope: nuclear_fuel_cycle_lane_completeness
+    readiness_status: incubated_after_review
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-07-26-ASPI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Strategic fuel-cycle exposure and meaningful liquidity are real, but enriched-isotope product revenue, HALEU permits, production yield and margin, qualified deliveries, durable contract economics, internal-control remediation, financing needs and fully diluted per-share value remain unproved.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-26
+    next_action: Monitor qualified isotope shipments, customer acceptance, HALEU permits, TerraPower conditions, production yield and margin, cash use, financing, controls, diluted shares and valuation.
+    conclusion: Incubated into C+ research-only nuclear fuel-cycle coverage; no promotion, no current buy and no executable limit.

@@ -1,14 +1,14 @@
 schema_version: 1
-as_of: 2026-07-25
+as_of: 2026-07-26
 last_research_engine_run:
-  as_of: 2026-07-25
-  scope: daily_full_operating_cycle_with_completed_closes_all_form_freshness_material_filings_broad_dislocation_and_all_symbol_review
-  notes: Completed the full 2026-07-25 operating cycle using July 24 completed closes, confirmed cash and positions, a current but incomplete macro overlay, degraded public-attention inputs, a broad discovery scan, 51-of-51 pre-existing all-form SEC submissions plus separate NWPX and RIOT primary reviews, material MDA, QSI, QTEX, QBTS and GILT re-underwriting, four completed readiness sprints, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation work. NWPX and RIOT entered research-only coverage and the unknown-future lane gained an emerging water sublane; no top-level lane, active promotion, buy zone or allocation changed, and the stable decision is completed no action.
+  as_of: 2026-07-26
+  scope: daily_full_operating_cycle_with_completed_close_integrity_all_form_freshness_broad_discovery_and_all_symbol_review
+  notes: Completed the full 2026-07-26 operating cycle using revalidated July 24 completed closes, confirmed cash and positions, a current but incomplete macro overlay, degraded public-attention inputs, a complete broad discovery scan, 54-of-54 all-form SEC submissions coverage, official issuer-news checks, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation work. ASPI was found as a nuclear fuel-cycle blind spot and fully incubated at C+ research-only; no active promotion, buy zone or allocation changed, and the stable decision is completed no action. A tested fail-closed guard now prevents a stale provider response from erasing a newer committed market session.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support a decision after the July 24 completed-close fallback, 51-symbol all-form submissions reconciliation plus separate NWPX and RIOT filing reviews, material MDA, QSI, QTEX and QBTS reviews, a full GILT entry re-underwrite, four completed discovery readiness sprints, all-symbol comparison and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
+  reason: Repository-public research is current enough to support a decision after the July 24 completed-close cross-check, 54-symbol all-form submissions reconciliation, ASPI readiness sprint, official issuer-news review, complete broad discovery and community triage, all-symbol comparison and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 5761.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
@@ -18,10 +18,10 @@ decision_readiness:
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-25
-  discovery_lane_map_as_of: 2026-07-25
-  watchlist_symbols: 55
-  watchlist_symbols_with_current_cycle_review: 55
+  universe_scan_as_of: 2026-07-26
+  discovery_lane_map_as_of: 2026-07-26
+  watchlist_symbols: 56
+  watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
@@ -30,12 +30,12 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 23
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 23
+  raw_discovery_candidates_open: 24
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-25-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-25-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-25-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-25-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-26-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-26-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-26-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-26-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -67,9 +67,9 @@ discovery_process:
     - unknown_future_bottlenecks
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 23
+  material_open_candidates: 24
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 23
+  open_candidate_readiness_completed: 24
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -117,4 +117,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses the completed-close fallback, ENRD and INFQ limitations, 51-symbol pre-existing all-form SEC scope plus NWPX and RIOT primary reviews, MDA financing, QSI listing compliance, QTEX dilution and governance, QBTS venue change, the GILT bull-case conflict and resolution, NWPX and RIOT incubation, GPUS and SIDU rejection, broad discovery and current liquidity without an order or broker preview.
+notes: Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses the completed-close provenance and provider-regression repair, the INFQ corporate-action limitation, 54-symbol all-form SEC scope, ASPI research-only incubation, the GILT and LEU bull-case conflict and resolution, broad discovery, current liquidity, and the absence of an order or broker preview.

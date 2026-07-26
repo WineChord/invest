@@ -22,3 +22,39 @@ export function preserveRowsForUnrefreshedSymbols(
     return leftDate.localeCompare(rightDate);
   });
 }
+
+export function detectHistoryDateRegression(
+  nextRows,
+  existingRows,
+  symbol,
+) {
+  const normalizedSymbol = String(symbol ?? "").trim().toUpperCase();
+  const nextLatestDate = latestDate(
+    nextRows.filter(
+      (row) =>
+        String(row.symbol ?? normalizedSymbol).trim().toUpperCase() ===
+        normalizedSymbol,
+    ),
+  );
+  const existingLatestDate = latestDate(
+    existingRows.filter(
+      (row) =>
+        String(row.symbol ?? "").trim().toUpperCase() === normalizedSymbol,
+    ),
+  );
+
+  return {
+    existingLatestDate,
+    nextLatestDate,
+    regressed:
+      existingLatestDate !== "" &&
+      (nextLatestDate === "" || nextLatestDate < existingLatestDate),
+  };
+}
+
+function latestDate(rows) {
+  return rows.reduce((latest, row) => {
+    const date = String(row.date ?? row.as_of ?? "");
+    return date > latest ? date : latest;
+  }, "");
+}

@@ -3195,3 +3195,93 @@ sources:
     first_seen_at: 2026-07-25
     related_symbols: [NWPX, RIOT]
     summary: Alpaca IEX supplied completed July 24 daily bars and 140 completed 2026 sessions for the two retained research-only discoveries; no split was reported in the comparison period.
+  - id: completed_close_universe_revalidation_2026_07_26
+    title: Completed Regular-Session Close Universe Revalidation — 2026-07-26
+    source_type: market_data
+    url: https://alpaca.markets/data
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [AAOI, ALAB, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, NWPX, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RIOT, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: A fresh Alpaca completed-bar cross-check validated July 24 closes for all 53 tradable research securities. Thirteen provider responses that ended on July 23 were rejected and their newer committed July 24 IEX fallback rows were restored.
+  - id: sec_submissions_all_forms_2026_07_26
+    title: All-Form SEC Submissions Audit — 2026-07-26
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-26
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [AAOI, ALAB, ASPI, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, NWPX, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RIOT, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Live HTTP 200 or current validated cache payloads covered all 54 tradable research issuers. No previously covered issuer had an accession newer than the July 25 reviewed set; ASPI's current filing package was separately reviewed for research-only readiness.
+  - id: rklb_q2_results_date_2026_07_22
+    title: Rocket Lab Second-Quarter 2026 Results Date
+    source_type: company_ir
+    url: https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-date-second-quarter-2026-financial-results
+    source_published_at: 2026-07-22
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [RKLB]
+    summary: Rocket Lab scheduled second-quarter 2026 results for after the August 10 market close and a conference call at 5 p.m. Eastern.
+  - id: leu_q2_results_date_2026_07_23
+    title: Centrus Energy Second-Quarter 2026 Results Date
+    source_type: company_ir
+    url: https://investors.centrusenergy.com/news-releases/news-release-details/centrus-webcast-conference-call-august-6-830-am-et-0
+    source_published_at: 2026-07-23
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [LEU]
+    summary: Centrus scheduled second-quarter 2026 results for after the August 5 market close and a conference call on August 6 at 8:30 a.m. Eastern.
+  - id: mda_argonaut_patp_2026_07_21
+    title: MDA Space Argonaut Landing-Sensor Pre-Authorization Contract
+    source_type: company_ir
+    url: https://mda.space/news
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [MDA]
+    summary: MDA Space UK received a pre-authorization-to-proceed contract from OHB to supply landing sensors for ESA's Argonaut lunar lander. Contract value, margin and final scope were not disclosed, so the evidence modestly supports technical relevance but does not clear the entry gate.
+  - id: aspi_q1_2026_10q
+    title: ASP Isotopes Form 10-Q for the Quarter Ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1921865/000119312526232658/aspi-20260331.htm
+    source_published_at: 2026-05-20
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [ASPI]
+    summary: The filing reports liquidity, cash use, debt, revenue mix, no enriched-isotope product sales, planned shipment milestones, TerraPower conditions, plant and permit dependencies, and unresolved internal-control weaknesses.
+  - id: aspi_qle_exchange_and_resale_2026_07_16
+    title: ASP Isotopes QLE Note Exchange and Resale Registration
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1921865/000147793226004362/aspi_s3asr.htm
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [ASPI]
+    summary: QLE exchanged about USD 109.2 million of convertible-note principal plus accrued interest for 23,160,682 newly issued ASPI shares. The resale registration provides no proceeds to ASPI and leaves additional QLE notes outstanding.
+  - id: aspi_terrapower_haleu_agreements_2025_08_14
+    title: ASP Isotopes and TerraPower HALEU Agreement Exhibits
+    source_type: sec_filing
+    url: https://ir.aspisotopes.com/sec-filings/all-sec-filings/content/0000950170-25-108971/aspi-ex10_4.htm
+    source_published_at: 2025-08-14
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [ASPI]
+    summary: The exhibits describe potential initial-core and long-term HALEU supply and conditional financing, subject to permits, licenses, technical performance, other conditions, and termination rights.
+  - id: aspi_uf6_research_2026_07_21
+    title: ASP Isotopes and Texas A&M UF6 Research Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1921865/000119312526309573/aspi-20260721.htm
+    source_published_at: 2026-07-21
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [ASPI]
+    summary: The research agreement supports uranium-hexafluoride feedstock development but is not a production license, customer acceptance, commercial shipment, or margin evidence.
+  - id: aspi_completed_close_2026_07_24
+    title: ASP Isotopes Completed IEX Close and Corporate-Action Check
+    source_type: market_data
+    url: https://alpaca.markets/data
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-26
+    first_seen_at: 2026-07-26
+    related_symbols: [ASPI]
+    summary: Alpaca IEX daily bars report a USD 3.87 completed regular-session close on July 24 and no reported corporate action requiring an adjusted-close bridge over the retained history.

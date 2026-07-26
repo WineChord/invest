@@ -1343,3 +1343,15 @@ entries:
     risk_watch: AMD concentration, construction and commissioning, fit-out reimbursement mix, recurring rent, utilization, power costs, project capex, financing, bitcoin prices and mining economics, ATM issuance, restricted cash and cash conversion.
     next_check: AMD delivery or acceptance, recurring-rent disclosure, utilization and margin evidence, project-capex or financing update, ATM issuance, bitcoin exposure reduction or valuation reset.
     source_path: research/discovery/readiness/2026-07-25-RIOT-readiness.md
+  - id: 2026-07-26-aspi-readiness
+    symbol: ASPI
+    analyzed_at: "2026-07-26"
+    analysis_type: discovery_readiness
+    policy_version: v1.1
+    title: Direct isotope-enrichment optionality without qualified product economics
+    stance: C+ research-only; buy 0
+    summary: ASP Isotopes adds direct isotope-enrichment and potential HALEU exposure, but no enriched-isotope product revenue, unproved yield and margin, conditional customer economics, permits, remaining notes, resale supply and internal-control weaknesses block promotion.
+    upside_path: Qualify commercial isotope production, secure permits, deliver accepted product, convert TerraPower and other customer interest into durable high-margin contracts, and finance expansion without transferring most upside through new shares.
+    risk_watch: Technical yield, purity, feedstock, permits, customer acceptance, shipment timing, gross margin, cash use, capex, TerraPower conditions and termination rights, debt, note conversion, resale supply, stock compensation, internal controls and fully diluted valuation.
+    next_check: Commercial shipment and acceptance, HALEU permit, production yield or margin disclosure, TerraPower milestone, cash-use or financing update, internal-control remediation, diluted capitalization or valuation reset.
+    source_path: research/discovery/readiness/2026-07-26-ASPI-readiness.md

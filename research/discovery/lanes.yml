@@ -222,6 +222,9 @@ lanes:
       - uranium
       - reactor
       - grid
+      - isotope enrichment
+      - aerodynamic separation
+      - U-235 enrichment
     current_public_proxies:
       - OKLO
       - LEU
@@ -230,9 +233,10 @@ lanes:
       - SMR
       - IMSR
       - STDN
+      - ASPI
     sublanes:
       - id: nuclear_fuel_cycle_and_logistics
-        proxies: [LEU, NNE, NUCL, STDN]
+        proxies: [LEU, NNE, NUCL, STDN, ASPI]
       - id: advanced_nuclear_deployment
         proxies: [OKLO, NNE, SMR, IMSR]
     candidate_entry_points:

@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
-import { preserveRowsForUnrefreshedSymbols } from "./market-data-merge-lib.mjs";
+import {
+  detectHistoryDateRegression,
+  preserveRowsForUnrefreshedSymbols,
+} from "./market-data-merge-lib.mjs";
 
 const nextRows = [
   { symbol: "ASTS", date: "2026-07-21", close: "63.34" },
@@ -24,6 +27,46 @@ assert.deepEqual(
     nextRows[1],
   ],
   "provider failures must preserve committed rows for unrefreshed symbols without retaining superseded rows for refreshed symbols",
+);
+
+assert.deepEqual(
+  detectHistoryDateRegression(
+    [
+      { date: "2026-07-22", close: 61.95 },
+      { date: "2026-07-23", close: 59.18 },
+    ],
+    [
+      { symbol: "ASTS", date: "2026-07-23", close: "59.18" },
+      { symbol: "ASTS", date: "2026-07-24", close: "56.23" },
+      { symbol: "RKLB", date: "2026-07-24", close: "63.90" },
+    ],
+    "ASTS",
+  ),
+  {
+    existingLatestDate: "2026-07-24",
+    nextLatestDate: "2026-07-23",
+    regressed: true,
+  },
+  "a provider response that ends before the newest committed session must be rejected instead of erasing the newer row",
+);
+
+assert.deepEqual(
+  detectHistoryDateRegression(
+    [
+      { date: "2026-07-23", close: 59.18 },
+      { date: "2026-07-24", close: 56.20 },
+    ],
+    [
+      { symbol: "ASTS", date: "2026-07-24", close: "56.23" },
+    ],
+    "ASTS",
+  ),
+  {
+    existingLatestDate: "2026-07-24",
+    nextLatestDate: "2026-07-24",
+    regressed: false,
+  },
+  "a same-session refresh may replace a fallback row with a preferred provider row",
 );
 
 console.log("market data merge regression test passed");
