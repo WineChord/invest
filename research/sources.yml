@@ -3285,3 +3285,75 @@ sources:
     first_seen_at: 2026-07-26
     related_symbols: [ASPI]
     summary: Alpaca IEX daily bars report a USD 3.87 completed regular-session close on July 24 and no reported corporate action requiring an adjusted-close bridge over the retained history.
+  - id: completed_close_universe_revalidation_2026_07_27
+    title: Completed Regular-Session Close Universe Revalidation — 2026-07-27
+    source_type: market_data
+    url: https://alpaca.markets/data
+    source_published_at: 2026-07-24
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [AAOI, ALAB, ASPI, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, NWPX, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RIOT, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: A fresh Alpaca IEX completed-bar cross-check covered all 54 tradable research securities and confirmed that July 24 remained the latest completed regular-session date. Existing committed Yahoo completed closes and adjusted histories remain primary where valid; Alpaca supplied the current date and fallback cross-check.
+  - id: sec_submissions_all_forms_2026_07_27
+    title: All-Form SEC Submissions Audit — 2026-07-27
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [AAOI, ALAB, ASPI, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, NWPX, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RIOT, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Live HTTP 200, schema-validated SEC submissions payloads covered all 54 tradable research issuers. Every payload hash matched the corresponding July 26 payload, so no issuer had an all-form submissions-state change during the comparison window.
+  - id: qxl_q1_2026_10q
+    title: Quantum X Labs Form 10-Q for the Quarter Ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/797542/000149315226023169/form10-q.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [QXL]
+    summary: The filing identifies substantial going-concern doubt, describes the March acquisition of the newly formed Quantum Israel subsidiary, and discloses 4.45 million acquisition pre-funded warrants plus up to 12.70 million earnout securities.
+  - id: qxl_neutral_atom_claim_2026_05_28
+    title: Quantum X Labs 50-Plus Physical-Qubit Neutral-Atom System Claim
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/797542/000149315226025728/form8-k.htm
+    source_published_at: 2026-05-28
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [QXL]
+    summary: The Form 8-K furnishes the issuer's 50-plus-physical-qubit launch claim; it does not provide independent benchmarks, paying-customer validation or recognized quantum revenue.
+  - id: jagu_2025_10k
+    title: Jaguar Uranium Form 10-K for 2025
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2039273/000121390026035549/ea0283433-10k_jaguar.htm
+    source_published_at: 2026-03-27
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [JAGU]
+    summary: The filing states that Jaguar has no revenue, expects none in the foreseeable future, has no current mineral resources or reserves and depends on future financing.
+  - id: jagu_ipo_close_2026_02_12
+    title: Jaguar Uranium USD 25 Million Initial Public Offering Close
+    source_type: issuer_release
+    url: https://jaguaruranium.com/jaguar-uranium-announces-closing-of-25-million-initial-public-offering/
+    source_published_at: 2026-02-12
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [JAGU]
+    summary: The issuer reported a USD 25 million offering close at USD 4 per share; financing does not establish resources, reserves or project economics.
+  - id: qucy_q1_2026_10q
+    title: Quantum Cyber Form 10-Q for the Quarter Ended March 31, 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1874252/000121390026057738/ea0290254-10q_quantum.htm
+    source_published_at: 2026-05-26
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [QUCY]
+    summary: The filing reports USD 4.75 million cash, a USD 5.08 million quarterly net loss, authority for a reverse split and an increase to 900 million authorized ordinary shares.
+  - id: qucy_autonomy_platform_2026_06_02
+    title: Quantum Cyber Autonomy Platform Business Update
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1874252/000121390026061021/ea0292112-8k_quantum.htm
+    source_published_at: 2026-06-02
+    retrieved_at: 2026-07-27
+    first_seen_at: 2026-07-27
+    related_symbols: [QUCY]
+    summary: The filing describes autonomy software that submits optimization work to third-party quantum resources and references future deployments, without recognized recurring revenue or ownership of the underlying quantum hardware.

@@ -1,0 +1,425 @@
+schema_version: 1
+run_id: 2026-07-27-full-operating-cycle
+run_date: 2026-07-27
+request_type: daily_full_operating_cycle
+policy_version: v1.1
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun after a material issuer event, a 5 percent reviewed-symbol completed-close move, a named catalyst, a confirmed broker-state change, or 2026-08-10
+linked_decision_or_research_note: decisions/2026-07-27-daily-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-27-subagent-evidence-packet.yml
+execution_update:
+  status: no_new_deposit_no_trade
+  confirmed_ledger_event_ids:
+    - 2026-07-24-deposit-001
+  resulting_confirmed_cash: 5761.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: Monday did not trigger the Friday-only contribution authorization. The prior confirmed deposit was not duplicated, and no trade, order, fee, fill, SGOV position, or inferred broker fact was added.
+source_coverage:
+  deterministic_commands:
+    - command: npm run refresh:market -- --as-of 2026-07-27
+      dry_run: false
+      retrieved_at: 2026-07-27
+      result_summary: Yahoo requests returned HTTP 403 and the held-symbol gate stopped the repository refresh before FMP supplementation. A separate fresh Alpaca IEX batch covered all 54 tradable research symbols and confirmed July 24 as the latest completed session. No FMP cache hit or network call is claimed.
+    - command: npm run refresh:macro -- --as-of 2026-07-27
+      dry_run: false
+      retrieved_at: 2026-07-27
+      result_summary: Current FRED rates, spreads and VIX were retained; QQQ, SMH and IWM requests returned Yahoo HTTP 403, so the macro overlay remains incomplete and cannot create buy eligibility.
+    - command: npm run discover:universe -- --as-of 2026-07-27 --json --output research/discovery/runs/2026-07-27-scan.json
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-27-scan.json
+      output_sha256: e6dc7a99acd29fabfdf82049aa44a849159d112b40746a1d545ee64601b121a6
+      retrieved_at: 2026-07-27
+      result_summary: The complete ten-lane scan returned 20 deterministic candidates, 57 exploratory matches and 58 suppressed known matches. Repeated QXL, JAGU and QUCY hits received terminal primary-source readiness rather than being left unresolved.
+    - command: npm run scan:community -- --as-of 2026-07-27
+      dry_run: false
+      retrieved_at: 2026-07-27
+      result_summary: Forty-six public sources were attempted. Seven succeeded and 39 returned access errors; zero symbol leads were retained, so the result is a degraded lead overlay rather than an exhaustive attention-shift conclusion.
+    - command: npm run triage:community -- --as-of 2026-07-27 --output research/discovery/runs/2026-07-27-community-triage.json
+      dry_run: false
+      retrieved_at: 2026-07-27
+      result_summary: No high- or medium-priority symbol lead survived the seven successful public sources; the 39 source errors remain explicit.
+    - command: npm run discover:sec-event-filing-index -- --as-of 2026-07-27 --symbols current-tradable-universe
+      dry_run: false
+      output_path: research/discovery/runs/2026-07-27-sec-event-filing-index-scan.json
+      output_sha256: 026bf5eb6c93a8c81625d0de0d900c7e216e8ba1c4a0d04d3d7279dd747b2fec
+      retrieved_at: 2026-07-27
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols:
+        - AAOI
+        - ALAB
+        - ASTS
+        - ASPI
+        - BE
+        - CBRS
+        - CIFR
+        - CRCL
+        - CRDO
+        - CRWV
+        - ENRD
+        - ETN
+        - FLY
+        - FN
+        - GILT
+        - GSAT
+        - HQ
+        - IMSR
+        - INFQ
+        - IONQ
+        - IQMX
+        - IREN
+        - KTOS
+        - LEU
+        - LITE
+        - LUNR
+        - MDA
+        - MU
+        - NBIS
+        - NNE
+        - NUCL
+        - OCC
+        - OKLO
+        - POET
+        - PWR
+        - QBTS
+        - QSI
+        - QTEX
+        - QUBT
+        - RDW
+        - RGTI
+        - RKLB
+        - SEI
+        - SMR
+        - SPCX
+        - STDN
+        - VOYG
+        - VRT
+        - WULF
+        - WYFI
+        - XNDU
+        - YSS
+        - NWPX
+        - RIOT
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: All 54 tradable research symbols received fresh all-form submissions payloads; the material-form selector and extracted profiles remain bounded.
+      result_summary: Fifty-four live submissions payloads were HTTP 200 and schema-valid. Every payload hash matched July 26, establishing no new EDGAR submission or accession in the monitored set without claiming complete off-SEC issuer-event coverage.
+      artifacts:
+        - research/discovery/runs/2026-07-27-sec-submissions-ledger.json
+        - research/discovery/runs/2026-07-27-sec-event-filing-index-manifest.csv
+        - research/discovery/runs/2026-07-27-sec-event-filing-index-manifest.metadata.json
+        - research/discovery/runs/2026-07-27-sec-filing-ledger.json
+        - research/discovery/runs/2026-07-27-sec-event-filing-index-profiles.json
+    - command: node scripts/build-sec-registration-transaction-candidates.mjs --as-of 2026-07-24 --retrieved-at 2026-07-27 --source-published-at 2026-07-24 --daily-index-url SEC_JULY_24_MASTER_INDEX --output research/discovery/runs/2026-07-27-registration-transaction-candidates.json
+      dry_run: false
+      retrieved_at: 2026-07-27
+      result_summary: The latest available SEC daily master index was July 24. Its coverage fields, filing dates and source date now consistently identify July 24; the artifact is pre-ticker scaffolding and does not prove July 27 filing coverage or buy eligibility.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC all-form submissions, current filings, listing evidence and regulator records
+      sources_or_queries:
+        - 54 live submissions payloads
+        - targeted material-form event index
+        - QXL, JAGU and QUCY primary filings
+      source_ids:
+        - sec_submissions_all_forms_2026_07_27
+        - qxl_q1_2026_10q
+        - jagu_2025_10k
+        - qucy_q1_2026_10q
+      retrieved_at: 2026-07-27
+      material_findings: No monitored issuer had a new EDGAR submission or accession. Current primary evidence rejected QXL, JAGU and QUCY from ongoing coverage and did not change a holding, promotion or buy zone.
+      unavailable_or_skipped_reason: The selector is not complete semantic event coverage and ASTS and IREN dynamic issuer-news lists could not be exhaustively enumerated.
+    - family_id: issuer_material
+      family: Issuer operating, contract, financing, acquisition, capitalization and technical evidence
+      sources_or_queries:
+        - holdings and next-dollar queue
+        - current readiness candidates
+        - named near-term earnings catalysts
+      source_ids:
+        - qxl_neutral_atom_claim_2026_05_28
+        - jagu_ipo_close_2026_02_12
+        - qucy_autonomy_platform_2026_06_02
+      retrieved_at: 2026-07-27
+      material_findings: QXL has an issuer-reported neutral-atom system but no independent or customer validation; JAGU lacks resources, reserves and revenue; QUCY relies on future deployments and external quantum hardware while burn and dilution are severe.
+      unavailable_or_skipped_reason: Accepted revenue, independent technical validation, fully diluted capitalization, transaction economics and cash conversion remain incomplete across priority names.
+    - family_id: market_data
+      family: Completed regular-session closes, adjusted history, technical trends, company metrics and account research valuation
+      sources_or_queries:
+        - 54-symbol Alpaca IEX completed-bar cross-check
+        - retained Yahoo adjusted histories
+        - SEC companyfacts and reviewed filing overrides
+      source_ids:
+        - completed_close_universe_revalidation_2026_07_27
+      retrieved_at: 2026-07-27
+      material_findings: Research NAV is USD 7466.25, cash is 77.1683 percent and combined space equity is 22.8317 percent. All 54 tradable research symbols retain a reliable July 24 completed close.
+      unavailable_or_skipped_reason: INFQ six-month return is not used across its February unit separation; the Yahoo refresh failed before repository market writes.
+    - family_id: current_world_context
+      family: Macro regime, market proxies and sanitized public-attention overlays
+      sources_or_queries:
+        - FRED public series
+        - QQQ, SMH and IWM proxy requests
+        - public community triage
+      source_ids:
+        - fred_public_macro_series
+      retrieved_at: 2026-07-27
+      material_findings: Current rates, spreads and VIX do not override issuer-specific evidence, valuation, capitalization and status gates. The observed selloff is described only for reviewed symbols.
+      unavailable_or_skipped_reason: QQQ, SMH and IWM requests returned HTTP 403; 39 of 46 community sources failed.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: IPOs, pre-listing registrations, acquisition candidates, listing changes and transaction scaffolding
+      sources_or_queries:
+        - July 24 SEC daily master index
+        - repeated scan hits
+        - XTND pre-listing status
+        - JAGU IPO and QXL acquisition
+      source_ids:
+        - sec_submissions_all_forms_2026_07_27
+        - jagu_ipo_close_2026_02_12
+        - qxl_q1_2026_10q
+      retrieved_at: 2026-07-27
+      material_findings: The latest available SEC daily index is dated July 24 and remains pre-ticker scaffolding. QXL, JAGU and QUCY were terminally rejected; XTND remains the retained material not-tradable candidate.
+      unavailable_or_skipped_reason: The SEC July 27 daily master index was not yet available and no registration artifact is presented as strict July 27 coverage.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map, broad scan, repeated-hit review, same-lane comparison and opportunity cost
+      sources_or_queries:
+        - complete ten-lane scan
+        - 56-symbol watchlist
+        - retained XTND
+        - independent xhigh reviews
+      source_ids:
+        - completed_close_universe_revalidation_2026_07_27
+        - sec_submissions_all_forms_2026_07_27
+        - qxl_q1_2026_10q
+        - jagu_2025_10k
+        - qucy_q1_2026_10q
+      retrieved_at: 2026-07-27
+      material_findings: All existing lanes and current symbols were re-reviewed. QXL, JAGU and QUCY improve false-negative hygiene but do not warrant an ongoing surface, a lane change, promotion, buy zone or allocation.
+      unavailable_or_skipped_reason: Deterministic semantic recall, unavailable future issuers and degraded public-attention access prevent an exhaustive positive discovery claim.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-27
+    notes: Market, macro, public attention, broad discovery, all-form submissions, issuer evidence, listings, transactions, repeated-hit readiness, lane evolution and opportunity cost were reviewed with explicit degraded-source boundaries.
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters:
+    - water transmission and industrial reuse
+    - AI compute and power conversions
+    - autonomous physical systems and fleet orchestration
+    - neutral-atom and broader quantum systems
+    - isotope enrichment, uranium resources and nuclear logistics
+  sampled_symbols:
+    - NWPX
+    - RIOT
+    - QXL
+    - JAGU
+    - QUCY
+    - QMCO
+    - QNTM
+    - EXR
+    - GDYN
+    - NGG
+  false_positive_patterns:
+    - ticker and issuer-name collisions
+    - blank-check vehicles and units
+    - funds, preferred securities and mature regulated comparators
+    - promotional pivots without operating proof
+    - direct labels with unproved economics and complex capitalization
+  lane_decisions:
+    - retain all ten top-level lanes
+    - retain the emerging water-transmission and industrial-reuse sublane
+    - reject QXL after technical, survival and capitalization review
+    - reject JAGU after resource and economic review
+    - reject QUCY after commercial, burn and dilution review
+    - retain XTND as not tradable
+  disposition: Repeated QXL, JAGU and QUCY hits received terminal evidence-based rejection. Name collisions and mature weak proxies were dismissed without creating dashboard noise; no current lane, promotion, buy zone or allocation changed.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Grid-connected power, commissioned AI capacity, high-speed interconnect, launch and spacecraft production, spectrum, licensed isotope enrichment and HALEU, water infrastructure, and validated quantum systems remain plausible constraints.
+    inferences: Scarcity is investable only when it converts into durable margin, cash generation and diluted per-share value without excessive financing dependence.
+    disconfirming_evidence: Current small and early expressions often capitalize future scarcity before repeatable gross profit, independent validation or free cash flow exists.
+    source_ids:
+      - completed_close_universe_revalidation_2026_07_27
+      - sec_submissions_all_forms_2026_07_27
+    investment_implication: Preserve cash until evidence and entry align.
+  who_controls_or_removes_scarcity:
+    facts: LEU, ASPI, CRDO, ALAB, IREN, VRT, RKLB, ASTS, GILT, MDA, NWPX and RIOT remain direct or partially direct expressions; QXL, JAGU and QUCY do not yet prove control.
+    inferences: Direct exposure is insufficient when lenders, customers, regulators, warrants, earnouts or new equity capture most economics.
+    disconfirming_evidence: Every current expression retains a valuation, concentration, execution, financing, survival or transaction veto.
+    source_ids:
+      - qxl_q1_2026_10q
+      - jagu_2025_10k
+      - qucy_q1_2026_10q
+    investment_implication: Keep the lane map and make no promotion.
+  who_can_monetize_into_shareholder_value:
+    facts: LEU, GILT, MDA, IREN and CRDO remain the next-dollar research queue.
+    inferences: Accepted revenue, complete contract economics, repeat orders, cash conversion and survivable capitalization matter more than addressable-market or system claims.
+    disconfirming_evidence: Each priority company retains a contract, valuation, concentration, financing, transaction or correlated-exposure veto.
+    source_ids:
+      - completed_close_universe_revalidation_2026_07_27
+      - sec_submissions_all_forms_2026_07_27
+    investment_implication: Retain confirmed cash and set every new quantity to zero.
+  public_security_expression:
+    facts: Fifty-four watchlist securities are tradable, OPENAI and ANTHROPIC are not, and XTND does not yet have a policy-eligible completed listing.
+    inferences: A low nominal price, sharp decline, registration filing, IPO or direct thematic label does not create buy eligibility.
+    disconfirming_evidence: Many reviewed securities declined sharply, but none cleared the remaining mission, evidence, entry, survival and portfolio gates.
+    source_ids:
+      - completed_close_universe_revalidation_2026_07_27
+      - sec_submissions_all_forms_2026_07_27
+    investment_implication: All current new-buy quantities are zero.
+  early_small_misunderstood_or_newly_public:
+    facts: ASPI, GILT, NWPX, QSI, STDN, ENRD, OCC and XTND retain genuine smaller, early or awkward characteristics; QXL and JAGU were tested as repeated early-stage leads.
+    inferences: Early and awkward can support asymmetry only when technical or resource evidence, survival and per-share value capture are credible.
+    disconfirming_evidence: QXL lacks independent validation and clean capitalization; JAGU lacks resources and economics; QUCY lacks recurring revenue and stable capitalization; existing priority names retain their own evidence and entry vetoes.
+    source_ids:
+      - qxl_neutral_atom_claim_2026_05_28
+      - jagu_2025_10k
+      - qucy_autonomy_platform_2026_06_02
+    investment_implication: Continue the current priority queue without a current order.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-27 evidence packet, current lanes, repeated discovery hits, primary issuer and SEC evidence]
+      sources_checked: [qxl_q1_2026_10q, jagu_2025_10k, qucy_q1_2026_10q]
+      facts_verified: QXL is a direct but unvalidated neutral-atom lead, JAGU is a direct but resource-free explorer, and QUCY is a mixed autonomy and third-party-quantum pivot.
+      stale_or_missing_evidence: Independent QXL performance, JAGU resources and economics, and QUCY recurring revenue remain absent.
+      confidence: high_on_terminal_no_buy_dispositions
+      key_findings: Reject QXL, JAGU and QUCY after bounded readiness; retain all top-level lanes and current allocation.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-27 evidence packet, live submissions ledgers, extracted profiles, official issuer pages]
+      sources_checked: [sec_submissions_all_forms_2026_07_27, qxl_q1_2026_10q, jagu_2025_10k, qucy_q1_2026_10q]
+      facts_verified: All 54 monitored submissions payloads were fresh and unchanged by hash; ASTS and IREN issuer-news lists could not be exhaustively enumerated.
+      stale_or_missing_evidence: Complete off-SEC ASTS and IREN dynamic issuer-event timelines remain unavailable.
+      confidence: high_on_sec_state_moderate_on_comprehensive_off_sec_freshness
+      key_findings: No new EDGAR accession changed a decision; preserve the narrow coverage boundary.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-27 evidence packet, completed closes, current metrics, primary company evidence]
+      sources_checked: [completed_close_universe_revalidation_2026_07_27, sec_submissions_all_forms_2026_07_27]
+      facts_verified: IREN has the strongest execution-upside case, LEU the strongest structural bottleneck and GILT the clearest apparent valuation mismatch, while all lack a decisive validated valuation denominator.
+      stale_or_missing_evidence: Commissioned GAAP revenue, fixed-price contract economics and audited post-transaction cash conversion remain unavailable.
+      confidence: high_on_priority_queue_and_zero_quantity
+      key_findings: Preserve the LEU, GILT, MDA, IREN and CRDO research queue; no symbol, quantity and limit combination clears all gates.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-27 evidence packet, holdings, financing evidence, completed closes, current metrics]
+      sources_checked: [completed_close_universe_revalidation_2026_07_27, sec_submissions_all_forms_2026_07_27]
+      facts_verified: RKLB and ASTS retain major financing, execution and concentration risks; priority candidates retain contract, transaction, valuation or capitalization vetoes.
+      stale_or_missing_evidence: RKLB transaction financing, ASTS option outcome, LEU contract economics, GILT carve-out, MDA leverage and IREN accepted revenue remain incomplete.
+      confidence: high_on_no_addition
+      key_findings: Hold existing positions without adding; a lower price does not repair issuer-specific permanent-impairment risks.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-27 evidence packet, July 24 closes, company metrics, primary filings]
+      sources_checked: [completed_close_universe_revalidation_2026_07_27, sec_submissions_all_forms_2026_07_27]
+      facts_verified: RKLB and ASTS remain expensive on sales, LEU and GILT lack verified economic denominators, IREN relies on non-GAAP forward ARR, and ALAB remains about 49.9 times sales.
+      stale_or_missing_evidence: No current priority security has both a validated intrinsic-value denominator and adequate margin of safety.
+      confidence: high_on_zero_quantity_and_no_limit
+      key_findings: Every new quantity is zero and no executable limit exists.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-27 evidence packet, confirmed account facts, return correlations, near-term catalyst calendar]
+      sources_checked: [completed_close_universe_revalidation_2026_07_27, sec_submissions_all_forms_2026_07_27]
+      facts_verified: Confirmed cash is USD 5761.58, marked space equity is 22.8317 percent, and RKLB-ASTS recent return correlation is high.
+      stale_or_missing_evidence: Broker SGOV eligibility, fees and settlement treatment remain unconfirmed; near-term company catalysts carry higher information value than a short reserve interval.
+      confidence: high_on_retaining_cash
+      key_findings: Hold RKLB and ASTS, buy zero, sell zero, buy no SGOV and retain confirmed cash.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: All independent reviewers converged on zero current quantity and no executable limit after distinguishing strategic upside from unproved valuation denominators, financing, dilution, transaction and concentration risks.
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Repeated quantum and uranium scan hits were resolved without adding a lane or durable research surface.
+  no_change_reason: QXL, JAGU and QUCY did not prove bottleneck control, survival and per-share value capture.
+candidate_delta:
+  candidates_added:
+    - QXL
+    - JAGU
+    - QUCY
+  candidates_rejected_or_archived:
+    - QXL
+    - JAGU
+    - QUCY
+  candidates_promoted: []
+  candidates_incubated: []
+  false_positive_patterns:
+    - ticker and name collisions
+    - mature regulated comparators
+    - promotional pivots
+    - unproved resources or technology
+    - complex dilution
+readiness_sprints:
+  - symbol: QXL
+    material_to_current_allocation: false
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-27-QXL-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#QXL
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+  - symbol: JAGU
+    material_to_current_allocation: false
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-27-JAGU-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#JAGU
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+  - symbol: QUCY
+    material_to_current_allocation: false
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-27-QUCY-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#QUCY
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+watchlist_review:
+  non_removed_symbol_count: 56
+  current_cycle_review_count: 56
+  missing_current_cycle_review_count: 0
+  status_changes: []
+  priority_changes: []
+  buy_zone_changes:
+    - all active and core candidates confirmed no current buy
+  source_path: research/watchlist-cycle-reviews.csv
+allocation_conclusion:
+  confirmed_cash: 5761.58
+  confirmed_positions:
+    - RKLB 17 shares
+    - ASTS 11 shares
+  orders: []
+  reserve_order: none
+  conclusion: Hold both positions, buy zero, sell zero, buy no SGOV and retain confirmed cash.
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: All reachable repository-public work needed to decide was completed; readiness permits a decision, while the completed decision is no action.
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: immediate_after_validation_and_sensitive_field_review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No new deposit, order, nonzero proposed quantity, broker preview, credential, raw artifact, full identifier or private message is present.
+meta_self_improvement:
+  status: completed
+  durable_change: Repeated semantic discovery hits now received explicit terminal primary-source dispositions, and the SEC registration artifact date was corrected to match the actual source index.
+  skill_review: No durable trigger or execution-order change requires a repo-scoped skill update.

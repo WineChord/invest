@@ -1,0 +1,930 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-27T02:43:44.577Z",
+  "source": "sec_filing_business_sections",
+  "retrieved_at": "2026-07-27",
+  "max_filing_cache_age_days": 0,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 500,
+  "filing_ledger_count": 54,
+  "filing_ledger": [
+    {
+      "symbol": "AAOI",
+      "cik": "0001158114",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1158114/000168316826005221/aaoi_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "93c044c325669f1c20681a1c0a94eecde0c23803e202805d6134c8136124ca55",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "ALAB",
+      "cik": "0001736297",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1736297/000173629726000027/alab-20260604.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "f65d0d435cb1687ed817153fae9e5a0f0e6202e9d82cda2b1423e9d406214e29",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "ASPI",
+      "cik": "0001921865",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1921865/000119312526309573/aspi-20260721.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "d077337b0a8c750e1c46f9f170c69b0b5147cbbe5e149d8a2c321e8d08462335",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000149315226033912/form8-k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "509f87f65f666505459f9db1e5c66956e71f229086e92ddd9e4d0a6bbba4abbd",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "BE",
+      "cik": "0001664703",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026047734/be-20260709.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "ba0a8d36edfdb240c475ad04f0463ce7c7a51b859c8748946a6b14f60d6ab94d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "CBRS",
+      "cik": "0002021728",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026044981/cbrs-20260331.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "ffc0742b1a1b40606cc6876918cf8076edde348285a686a3177b5fda11cbc214",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "CIFR",
+      "cik": "0001819989",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000095010326008994/dp248453_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "2cc510aac50ba3f21b29c3c26687b77d3619097cecf5244fc57f398569da7493",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "CRCL",
+      "cik": "0001876042",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1876042/000187604226000205/crcl-20260629.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "a1533e87af80332a4211cb439b335f00d45fbeb445107768a63e01fd2579816d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/crdo-20260528.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "e1b07dc8c21caf5117e70e24399dc7e58e0d88b1b18accd8f31852809ff612e6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "CRWV",
+      "cik": "0001769628",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000291/crwv-20260618.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "4d833fbde636926ebaa62cae1255fc38ee5f65855ca5f60cd367652d1b6c3fee",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "ENRD",
+      "cik": "0002095096",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2095096/000149315226034002/form6-k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "f8acc37547285dc5ad0742ad0ecc817061eed4088dfb9ed04675962ddde3b8cd",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "ETN",
+      "cik": "0001551182",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1551182/000095014226001733/eh260792115_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "46519e0cb5fc042bdafad75aa42ff629f7c15d3c21190a55a4035e04939862a1",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "FLY",
+      "cik": "0001860160",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1860160/000119312526259679/fly-20260604.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "e9d19be81fa745ba9a06759196f10ab17e762b39bc00406be6b6e7211a9b70d8",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "FN",
+      "cik": "0001408710",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000016/fn-20260327.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "dd4fe007e36c45d4462bed97618605e53575c7ca93559a099b87daa71000f687",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "GILT",
+      "cik": "0000897322",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897322/000117891326003503/zk2635692.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "218e5d625b71c9af68f14c00d88579a2d5adf7947ffb2b925a64a22b55c5684d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "GSAT",
+      "cik": "0001366868",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1366868/000136686826000031/gsat-20260513.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "cb20722437582fb7e17acb10f22879ceccada6c760b9ddf8f3cf67554e4295ac",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "HQ",
+      "cik": "0002088256",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2088256/000121390026052179/ea0288941-6k_horizon.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "10dabf82fea5e2b1e4bddba21b72521252f5b6d13ad6d670b277fe92b2cd2347",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "IMSR",
+      "cik": "0002019804",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2019804/000201980426000013/tmb-20260721x8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "2ce869b5341078eae90c5cca8810c00011f0f5eeb4d3dc79a37471930e24578c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "INFQ",
+      "cik": "0002007825",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2007825/000119312526227206/d131935d10q.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "d23980c4671ce2a4879079d85345fb39e91da050eaf91aa2e45ec6f3d2cee5bc",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "IONQ",
+      "cik": "0001824920",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526276342/ionq-20260616.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "edf0c777df1356c5c6494a86c611d93050a8ebed9ab0d0561be9879906e1ea1e",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "IQMX",
+      "cik": "0002113060",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2113060/000119312526309105/d145425d6k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "1aae2a1972a73e5fbb2ae803699c74de90484ad078b7268aea333cc01dba75fd",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126028871/ef20078253_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "b187bd04120ff6da5ff48fd0aee68a08c503419240bd618171031e4468341395",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "KTOS",
+      "cik": "0001069258",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000064/ktos-20260515.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "a74ca19dce3224e7efa626e06e37ae1b38aa4ff01409035c227c3f5e2d652f14",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "LEU",
+      "cik": "0001065059",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026046801/leu-20260630.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "5655c6fc64f0303f22ce42512ed784232aa1b0d77d6a3c52fe90f408238a760f",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "LITE",
+      "cik": "0001633978",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1633978/000119312526249535/d112771d8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9e880c95fb260cbd96e0dbe678f48527cd4e724f4d637b5364c11522e255bad3",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "LUNR",
+      "cik": "0001844452",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026041526/lunr-20260608.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "c1ce033b16887db377f4d364ad10e94e86878617a078491e9743cc3fd31f188a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "MDA",
+      "cik": "0001857047",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1857047/000110465926086388/tm2621200d1_6k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "c0a662a12b5933463b71d4026eec45ec4a2503263f514b328b8cdf9033f80a47",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "MU",
+      "cik": "0000723125",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "74034255c8713d62cc1d015e373d2ba8b9b2fd207dcd1bebb981b2f8ae69a254",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "NBIS",
+      "cik": "0001513845",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926084452/tm2620683d1_6k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "856b6ce868b05ea5979817ca34c65440f195cb6e307952c1e092a67e5e408f70",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "NNE",
+      "cik": "0001923891",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1923891/000149315226030124/form8-k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "fa7d76d7c64054e0394ed135c477ec0edff4c82fd29c649e40a743adbe1f7fd4",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "NUCL",
+      "cik": "0002089283",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2089283/000110465926085239/tm2620834-2_def14a.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "e883c3cdaca0099da1b008b71ecc2ddcf1f54d6a4d75f1478762036536727672",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "NWPX",
+      "cik": "0001001385",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1001385/000143774926020293/nwpx20260415c_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "c53e6aaaa41e07234dd2213a3c22f5a50edd41fde8c2b4e1efb9a03faa6c2e01",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "OCC",
+      "cik": "0001000230",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1000230/000143774926020157/occ20260609c_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "b6442afdcac892551dd23c65a6232a44a46716b7e1457bda1273721d93a6dacc",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "OKLO",
+      "cik": "0001849056",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1849056/000184905626000037/oklo-20260331.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "ba0af458a65cee8c37527d9888fbe76932fef57b5c26296c083a66bf8eb75093",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "POET",
+      "cik": "0001437424",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1437424/000117184326004397/f6k_063026.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "26ec4228690d8e46c544711056be1d61d5c2f9481348b04bc88c68204471096c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "PWR",
+      "cik": "0001050915",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526241989/d122565d8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "e1bc4826a96dcf8839bf0079f5bc34491fe2e110c9b4b3039f7754d8995a50a1",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "QBTS",
+      "cik": "0001907982",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000109/qbts-20260724.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "3d75af06c08f8ba379e14be4f3a91a2b0f1879eab08e604f3c8623a671f324ef",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "QSI",
+      "cik": "0001816431",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1816431/000181643126000049/qsi-20260723.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "af8cdedd645c792f92be4101b50638407999f1e4bcb17b1103789f423f07d63d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "QTEX",
+      "cik": "0001837493",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1837493/000118518526003120/qtrex6k072326.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "039d89e6a6aadec89845ed036be8c00c12a6bd199bb85a4a14e381f730b21046",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "QUBT",
+      "cik": "0001758009",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1758009/000121390026080443/ea0298923-8k_quantum.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "8ef4559714bd8f0a0a54011c03b0edcee8d5885dd81271866345aeb8291d32d5",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "RDW",
+      "cik": "0001819810",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819810/000181981026000104/rdw-20260710.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "0eb0d9470521f331c647a58894860b6a60830cb9b1d880adfba699706778cfe2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "RGTI",
+      "cik": "0001838359",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1838359/000110465926072623/tm2617136d1_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "d6d9eef451d3f961ec8c612186650ffc2edddabae388da5c757b24b8f3344a8c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "RIOT",
+      "cik": "0001167419",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1167419/000110465926074070/riot-20260609x8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "d98e39e0c03c44a604eae2d0107c3a629d442049a33c509244a14faf057ac78b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "2eda82d4e31f5ef8cbc6781c67b3a6673341f68cece72f5f5618b0a094388380",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "SEI",
+      "cik": "0001697500",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1697500/000162828026047296/sei-20260701.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9c099b5a411442063f4d16d99f0a341a0d0ec770ca518b82be9777f23faf02da",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "SMR",
+      "cik": "0001822966",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1822966/000182296626000058/smr-20260529.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "3d4369773977377671e8dc9a764ccbedd97a7d37fac879d5ad0776e6b5f4ab36",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "SPCX",
+      "cik": "0001181412",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026045763/spcx-closing8xkjune2026.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9d2c0acdb5c658c10f6369929bb3a31fa2b91154ac2e593ac4db7de5653d42dc",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "STDN",
+      "cik": "0002086716",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2086716/000162828026049125/stdn-20260722.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "b7704625841ef77117ecbcca69293c821327dc60596d7a5442b1027b956fae76",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "VOYG",
+      "cik": "0001788060",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1788060/000162828026047657/voyg-20260706.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "a22f4806a84553b3f2d8b1315ae53888eb40ef9aafb22d3925d446a6b74c7ddc",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "VRT",
+      "cik": "0001674101",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026044317/vrt-20260617.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "899151f805a42857970586b6a63d63b0de3444220a9f7182ae7d168fb51653f4",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "WULF",
+      "cik": "0001083301",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000110465926080583/tm2619468d1_8k.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "dbe21e374dd1ae89847ac0f59912d080101765e561366b00c73133e500b7a5f7",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "WYFI",
+      "cik": "0002042022",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2042022/000121390026067329/ea0294306-8k_whitefiber.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9c1033d9446d86cd9b0a7a7f93f5af027af09e389b2c2fb634a6ca7e98a66b22",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "XNDU",
+      "cik": "0002097163",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2097163/000121390026059832/ea0291791-6k_xanadu.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "efc8d8d09f76b4dca252d9fa7cb4f4b31defcce025839b509594288da68ee272",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    },
+    {
+      "symbol": "YSS",
+      "cik": "0002086587",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2086587/000162828026040636/yss-20260515.htm",
+      "cache_status": "cache_miss_fetched",
+      "cache_observed_at": "2026-07-27T02:43:44.577Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9b84244ab533aa7afcc795cc761392cf710b8e98c5691c19f2c67431d4fb17d7",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-07-27",
+      "fetched_at": "2026-07-27T02:43:44.577Z"
+    }
+  ]
+}

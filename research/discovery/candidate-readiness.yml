@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-26
+as_of: 2026-07-27
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -654,3 +654,45 @@ records:
     last_readiness_reviewed_at: 2026-07-26
     next_action: Monitor qualified isotope shipments, customer acceptance, HALEU permits, TerraPower conditions, production yield and margin, cash use, financing, controls, diluted shares and valuation.
     conclusion: Incubated into C+ research-only nuclear fuel-cycle coverage; no promotion, no current buy and no executable limit.
+  - symbol: QXL
+    material_to_current_allocation: false
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: Repeated discovery hits and an issuer-reported neutral-atom system required a bounded technical, commercial, survival and capitalization review.
+    blocking_scope: quantum_lane_false_negative_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-27-QXL-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The acquired quantum subsidiary is newly formed, the 50-plus-physical-qubit claim lacks independent performance and customer validation, the filing identifies going-concern doubt, and pre-funded warrants plus up to 12.7 million earnout securities make per-share capture unproved.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-27
+    next_action: Reopen only after independent technical benchmarks, paying repeat customers, recognized quantum revenue, a survivable runway and a reconciled fully diluted capitalization.
+    conclusion: Rejected from ongoing coverage after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: JAGU
+    material_to_current_allocation: false
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: A newly listed small uranium explorer could have improved the direct fuel-cycle comparison and therefore required a bounded resource, economics and financing review.
+    blocking_scope: advanced_nuclear_lane_false_negative_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-27-JAGU-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The issuer has no revenue, no current mineral resources or reserves, no demonstrated economic extraction and depends on future equity or debt financing; exploration optionality does not yet represent control of a fuel-cycle bottleneck.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-27
+    next_action: Reopen only after compliant resource estimates, repeatable drilling evidence, credible project economics, permits, a funded work plan and a reconciled diluted capitalization.
+    conclusion: Rejected from ongoing coverage after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: QUCY
+    material_to_current_allocation: false
+    affected_lanes: [quantum_computing_and_networking, autonomous_systems_and_robotics]
+    materiality_reason: The issuer's pivot into autonomy software and third-party quantum interfaces required a bounded screen to distinguish direct bottleneck control from promotional relabeling.
+    blocking_scope: quantum_and_autonomy_lane_false_positive_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-27-QUCY-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The platform description relies on future deployments and third-party quantum hardware, while March cash of USD 4.75 million was below the USD 5.08 million quarterly net loss and shareholders authorized up to 900 million ordinary shares plus reverse-split authority.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-27
+    next_action: Reopen only after recognized recurring autonomy revenue, independent customer and product validation, controlled burn, a stable capital structure and direct evidence of scarce technology ownership.
+    conclusion: Rejected from ongoing coverage after bounded primary-source readiness; no dashboard surface, promotion or buy.
