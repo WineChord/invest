@@ -32,6 +32,10 @@ what_changed_since_last_review:
 why_existing_status_is_no_longer_enough:
 same_lane_peers_compared:
 opportunity_cost_vs_current_core:
+research_stage: R0_lead | R1_researchable | R2_comparable | R3_promotion_ready
+stage_adjusted_evidence:
+cost_of_waiting:
+false_negative_early_warning:
 ```
 
 ## Evidence Gates
@@ -57,6 +61,21 @@ survival_gate:
   runway:
   debt_and_refinancing:
   customer_or_contract_quality:
+mission_impact_gate:
+  result: pass | fail | uncertain
+  initial_weight_range_pct:
+  fully_underwritten_weight_range_pct:
+  adverse_permanent_impairment_pct:
+  max_nav_impairment_pct:
+  downside_portfolio_result:
+  base_portfolio_result:
+  upside_portfolio_result:
+  exceptional_portfolio_result:
+  contribution_dilution_check:
+uncertainty_classification:
+  decision_critical:
+  sizing:
+  process_debt:
 ```
 
 ## Required Xhigh Reviews
@@ -96,6 +115,12 @@ buy_zone_reason:
 ranking_vs_current_core:
 candidate_to_displace_or_reduce:
 cash_or_reserve_comparison:
+zero_vs_smallest_staged_exposure:
+current_stage:
+scale_milestones:
+hold_milestones:
+reduce_or_exit_milestones:
+stage_review_by:
 kill_criteria:
 next_review_trigger:
 conditions_to_promote_further:

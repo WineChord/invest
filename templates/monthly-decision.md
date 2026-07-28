@@ -27,6 +27,23 @@ current_positions:
     quantity:
     average_cost:
     market_value:
+portfolio_snapshot:
+  latest_reliable_research_nav:
+  confirmed_cash:
+  confirmed_liquidity_reserve_market_value:
+  liquidity_option_weight_pct:
+  high_liquidity_option_since:
+  latest_confirmed_return_seeking_buy_date:
+  latest_mission_relevant_deployment_date:
+  days_since_latest_mission_relevant_deployment:
+  mission_accountability_status:
+  ticker_weights:
+  theme_weights:
+readiness:
+  target_readiness:
+  opportunity_set_sufficiency:
+  repository_health:
+  bounded_discovery_debt:
 pending_orders:
 constraints_or_preferences:
 latest_ai_cycle_monitor:
@@ -67,7 +84,7 @@ Full decision operating cycle before proposing orders:
 - Use independent fresh-context xhigh discovery subagents when discovery could affect allocation. They should search broad current public sources, think from first principles about emerging bottlenecks, answer the first-layer bottleneck questions before producing ticker lists, identify candidates fixed keyword scans may miss, and challenge stale lane or watchlist assumptions. The first-layer questions are: what could become scarce, who controls or can remove the scarcity, who can monetize it into shareholder value, whether a public security directly expresses the exposure, and whether the company is early, small, misunderstood, newly listed, awkward, or underfollowed enough for extreme asymmetry.
 - Review `research/discovery/candidates.csv` for any candidate that should be promoted, rejected, or kept incubating.
 - Scan mission-relevant themes for newly public companies, major spinoffs, IPOs, direct listings, pre-ticker registration or transaction filings, and new public proxies that might deserve raw discovery status.
-- For any plausible new candidate that could affect allocation, opportunity cost, lane completeness, or watchlist priority, run a discovery readiness sprint: gather market data, security metadata, primary filings, issuer reports, source-backed industry context, material filing review, valuation and entry state, same-lane peer comparison, and dashboard-facing research coverage when available. Do not leave it not buy-ready merely because the repository has not yet done reachable work.
+- For any plausible new candidate that could affect allocation, opportunity cost, lane completeness, or watchlist priority, advance it through the R0-R3 discovery funnel using stage-adjusted evidence. R1 and R2 may remain open under a dated service-level agreement with a next source, due date, waiting cost, false-negative warning, and reopen-or-reject trigger. R3 carries the complete promotion and dashboard burden.
 - Save material discovery evidence in `research/discovery/runs/`, update `research/discovery/candidate-readiness.yml`, and link material sprint notes under `research/discovery/readiness/`. A buy recommendation cannot rely on a prose claim that discovery ran when these structured artifacts are missing for material discovery work.
 - Review `research/freshness/events.csv` for open `high` or `critical` events.
 - Review `research/valuation-states.csv` for stale or changed entry states.
@@ -81,19 +98,20 @@ Full decision operating cycle before proposing orders:
 - Apply the fast-path promotion rule when a material filing, contract, regulatory event, financing event, launch result, customer update, competitor weakening, or price dislocation could change buy-zone ranking. Do not wait for the next monthly cadence; refresh evidence and either promote, demote, incubate, reject, or record the event as immaterial.
 - Run or cite [weekly-ai-cycle-monitor.md](weekly-ai-cycle-monitor.md) when the decision depends on AI capex, AI financing, semiconductor supply chains, data-center power, credit conditions, or broad bubble risk. Refresh or cite the structured macro layer under `research/macro/`: `regime-snapshots.csv`, `watchlist-sensitivity.csv`, `financing-runway-scores.csv`, `watchlist-risk-matrix.csv`, and `event-calendar.csv`. Use macro only as an entry, sizing, financing-risk, research-priority, cash/SGOV, and event-timing overlay; do not use it to bypass promotion, buy-zone, or primary-evidence gates.
 - If a material filing exists, complete or cite a filing review using [filing-review.md](filing-review.md) before buying that symbol.
-- Treat any `decision_readiness.status` other than `ready` as a failing current repository state. Keep refreshing and analyzing reachable evidence until quality metrics are ready; do not substitute a cash recommendation for repository work the agent can still perform. Missing current watchlist-cycle reviews, stale active theses, stale active valuation states, stale active/core buy-zone rows, and open high or critical events are repository-readiness blockers.
+- Report target readiness, opportunity-set sufficiency, and repository health separately. Resolve decision-critical target and opportunity-cost gaps before proposing an order. Keep bounded R0-R2 discovery debt and unrelated repository-health debt visible and dated, but do not use them as a portfolio-wide veto.
 - If a material raw candidate has `repo_work_remaining`, complete the readiness sprint before finishing, or convert it to an evidence-based incubate/reject/not-tradable/not-material/genuinely-external conclusion. A material incubating candidate is not complete until it is visible in the research-only dashboard universe with the same supporting market, filing, valuation, and company-analysis surfaces as other research stocks.
-- Reconcile subagent findings explicitly. Do not vote or average. Treat unresolved material disagreement, unresolved critical evidence, stale source coverage, unreviewed material filings, or broker-fact uncertainty as a blocker to buy/add recommendations unless resolved from primary evidence or marked immaterial.
+- Reconcile subagent findings explicitly. Do not vote or average. Unresolved truth, tradability, survival, permanent-impairment, material valuation-bound, filing, or broker-fact uncertainty blocks the affected target. Normal probability, timing, or starting-size disagreement should be bounded through scenarios, staging, milestones, and shorter validity.
 - State when a company is good but not attractively priced, or when a price looks cheap but the thesis may be broken.
 - State when no stock passes the gates and the best action is no trade, hold cash, or park idle cash in the approved liquidity reserve.
 - State when a stock passes the gates strongly enough to justify using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, instead of limiting the order to the latest monthly contribution.
+- Run the Article 1 offensive challenge before finalizing zero exposure: compare zero, the smallest mission-consistent staged exposure, and a fully underwritten range for the strongest contender. Record why zero or nonzero wins, cash opportunity cost, and the next evidence deadline.
 - Confirm the target passes the mission gate, evidence gate, and entry gate from `AGENTS.md`.
 - Run the meta-self-improvement check: note whether the cycle exposed a durable process defect, missed-lane risk, source gap, weak template, automation opportunity, validation gap, scoring ambiguity, or dashboard/data problem.
 - Run repository cleanup before finishing: demote stale research, remove or ignore scratch/generated noise, update canonical docs or templates when behavior changes, and preserve auditability.
 - Update `research/operating-runs.csv` when the monthly decision also ran the full operating cycle. The row should summarize the analysis and decision in public-safe language, link the decision note and run artifacts, record validation and publication status, and link only broker-confirmed ledger event IDs for actual execution.
 - Run the publication release checklist before any commit, push, deployment, or external post. Delay or redact actionable trading content, raw broker identifiers, raw screenshots, local paths, private cache payloads, secrets, and compensated or personalized language.
 - Run applicable validation. Use `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
-- Do not finish the turn with `research/quality-metrics.yml` in a repository not-ready state. If repository or public-observable evidence is missing, keep iterating until the gap is resolved, classified immaterial, rejected/incubated from evidence, or proven genuinely external. User-only broker facts, broker order previews, and final execution instructions are execution prerequisites, not repository-readiness blockers.
+- Do not finish with a decision-critical target or opportunity-set gap that is publicly reachable and unbounded. Repository-health and bounded discovery debt may remain only with explicit scope, owner or next source, due date, and evidence that it cannot change the current allocation conclusion. User-only broker facts, broker order previews, and final execution instructions are execution prerequisites, not repository-readiness blockers.
 - If any applicable operating-cycle step cannot be completed, do not give a buy recommendation unless the missing item is explicitly reviewed, marked immaterial, genuinely unavailable, user-only, broker-specific, legally inaccessible, caused by market closure or missing quote, or already resolved by evidence showing the candidate fails a gate.
 
 Output discipline:
@@ -103,7 +121,44 @@ Output discipline:
 - Include a `Subagent reviews` section when subagents ran or should have run. State which reviewers ran, which were skipped and why, the major disagreements, how the main agent resolved them, and whether any unresolved conflict forced no trade, hold cash, or the approved liquidity reserve.
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.
-- Keep proposed account actions inside the current policy. Under policy `v1.1`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.
+- Keep proposed account actions inside the current policy. Under policy `v1.2`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.
 - Every action needs a trigger condition, invalidation condition, and time horizon.
 - SGOV and equivalent reserve buys and sells still require broker execution confirmation before ledger updates.
 - Sizing must disclose the total deployable-liquidity basis: confirmed cash, reserve value planned for sale, expected retained buffer, and any settlement constraint.
+
+For every proposed return-seeking position, include:
+
+```yaml
+position_construction:
+  initial_weight_range_pct:
+  fully_underwritten_weight_range_pct:
+  current_stage:
+  adverse_permanent_impairment_pct:
+  max_nav_impairment_pct:
+  downside_portfolio_result:
+  base_portfolio_result:
+  upside_portfolio_result:
+  exceptional_portfolio_result:
+  contribution_dilution_check:
+  scale_milestones:
+  hold_milestones:
+  reduce_or_exit_milestones:
+  stage_review_by:
+```
+
+For every no-action allocation with confirmed deployable liquidity, include:
+
+```yaml
+no_action_accountability:
+  strongest_counterfactual:
+  smallest_prudent_exposure_considered:
+  zero_vs_starter_result:
+  zero_exposure_reason_code:
+  decision_critical_missing_evidence:
+  why_risk_sizing_cannot_absorb_uncertainty:
+  cash_opportunity_cost:
+  conjunctive_evidence_and_price_trigger:
+  next_evidence_deadline:
+  no_action_streak:
+  article1_red_team_status:
+```

@@ -74,13 +74,17 @@ Allowed `lane_action` values:
 This section is mandatory. The `unknown_future_bottlenecks` lane exists to force search outside the current map.
 
 ```yaml
-new_lane_candidate:
-why_it_might_be_a_bottleneck:
-why_existing_lanes_do_not_cover_it:
-public_market_exposure:
-source_families_to_monitor:
-initial_status:
-why_not_add_now:
+outside_map_search_budget_pct:
+new_lane_candidates:
+  - lane_hypothesis:
+    why_it_might_be_a_bottleneck:
+    why_existing_lanes_do_not_cover_it:
+    public_market_exposure:
+    opportunity_denial_cost:
+    minimum_evidence_to_start_now:
+    source_families_to_monitor:
+    initial_status:
+    why_not_add_now:
 ```
 
 ## Output

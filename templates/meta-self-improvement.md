@@ -60,6 +60,8 @@ Before changing the process, state how this improvement could fail.
 - How could it make decisions slower without improving quality?
 - How could it create false confidence?
 - How could it overfit the last mistake?
+- How could it increase no-action inertia, create calendar-driven trading, or let a symbolic trade reset mission accountability?
+- How could scenario math create false precision, a starter create endowment bias, or unrelated process debt accumulate after being separated from allocation readiness?
 - How could it weaken freshness, auditability, source quality, or mission fit?
 - If subagents are involved, how could they duplicate work, hide stale inputs behind apparent consensus, create unresolved conflicts, or add repository noise?
 
@@ -121,6 +123,7 @@ Confirm the change did not weaken:
 - public-release safety, including no personalized public advice, no compensated promotion, delayed actionable trading content, and redacted broker records;
 - allowed-asset policy;
 - multi-decade asymmetric compounding with avoidable-ruin controls;
+- Article 1 supremacy, including equal burden of proof for zero exposure and nonzero exposure when deployable liquidity exists;
 - repository noise hygiene.
 
 ## Repo-Scoped Skill Check

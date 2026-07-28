@@ -7,7 +7,7 @@ description: Use when working in the WineChord invest repository on investment d
 
 This repo-scoped skill is a compact router for the WineChord invest repository. It should point Codex to canonical files, not duplicate the full operating manual.
 
-Root objective: multi-decade asymmetric compounding with avoidable-ruin controls. Use every workflow as a means to that objective, never as checklist ceremony.
+Root objective: multi-decade asymmetric compounding with avoidable-ruin controls. Article 1 is controlling. Use every workflow as a means to that objective, never as checklist ceremony or an inactivity optimizer.
 
 ## First Read
 
@@ -17,7 +17,7 @@ Read only the canonical files relevant to the request:
 - `PUBLICATION_POLICY.md`: required before public commits, pushes, deployments, dashboard copy, decision notes, execution records, performance displays, or external posts.
 - `AGENTS.md`: mandatory agent behavior, trigger routing, safety boundaries, self-evolution, cleanup, and Git rules.
 - `SPEC.md`: system design, data models, research engine, dashboard behavior, and audit requirements.
-- `data/policy/policy-v1.1.md`: current investment policy.
+- `data/policy/policy-v1.2.md`: current investment policy.
 - `docs/research-command-reference.md`: detailed discovery, macro-regime, community, SEC, semantic-discovery, FMP, and validation command notes.
 - `docs/subagent-protocol-reference.md`: bounded subagent evidence-packet and minimum-output schemas.
 
@@ -44,8 +44,9 @@ Use the relevant template under `templates/`:
 - Full-cycle and monthly decision runs should refresh or cite the structured macro overlay and public community triage when they can affect analysis priority, risk review, or entry discipline. These inputs do not create buy eligibility, promotion eligibility, or allocation evidence by themselves.
 - Full-cycle and monthly decision runs should update `research/operating-runs.csv` with a public-safe summary so `/runs/` and `/runs/<run_id>/` can show decision context, validation, source links, publication status, and confirmed ledger-linked execution.
 - Material discovery, promotion, valuation, allocation, or process conclusions require advisory xhigh subagents when tooling is available unless explicitly skipped with an allowed reason. The material-decision roles are discovery-lane/candidate triage, freshness/filing review, bull case, bear case, and allocation/risk.
-- Plausible material raw candidates require discovery readiness work before the cycle ends unless primary evidence rejects them, they are ineligible or not material, or the remaining blocker is genuinely external.
-- A material incubating public candidate must not remain hidden in discovery-only files; either give it research-only dashboard visibility with comparable evidence or reject, archive, mark not tradable, externally blocked, or not material with evidence.
+- Plausible material raw candidates require stage-adjusted R0-R3 discovery readiness work. R1 and R2 may remain open under a dated evidence service level; only R3 requires promotion-grade and dashboard-equivalent completeness.
+- Separate target readiness and opportunity-set sufficiency from repository health. Decision-critical debt blocks the affected target; bounded discovery or unrelated process debt remains visible but is not an allocation veto.
+- Treat liquidity-option weight and prolonged mission-irrelevant deployment as Article 1 review triggers. Before zero exposure is final, compare zero with the smallest mission-consistent staged exposure and explain why zero wins.
 - A `research_only`, `watch`, `probation`, or `frozen` symbol cannot enter `active_candidate`, `active_core_candidate`, buy-zone ranking, or proposed orders without a fresh promotion review.
 - Do not finish material investment, discovery, or process work with repository-public evidence still in `not_ready` when the missing evidence is reachable.
 
@@ -58,7 +59,7 @@ Use the relevant template under `templates/`:
 - For confirmed deposits and filled U.S.-listed stock or ETF trades, use the streamlined defaulting rules in `templates/execution-confirmation.md` for repetitive broker/account, currency, redacted confirmation alias, standard settlement, zero-fee, and timestamp fields instead of asking the user again.
 - Keep deterministic commands, durable file edits, account-state reconstruction, validation, commits, pushes, and final synthesis in the main agent.
 - Keep the repository clone-portable; do not commit secrets, local-only paths, caches, generated scratch artifacts, raw broker documents, screenshots, account numbers, full confirmation IDs, full order IDs, cookies, tokens, or private cache payloads.
-- Never publicly release actionable trading content before the embargo in `PUBLICATION_POLICY.md` expires. Same-day trades, exact order sizes, order previews, and unexpired proposed orders must remain local and unpublished or be redacted.
+- Never publicly release actionable trading content before the embargo in `PUBLICATION_POLICY.md` expires. Same-day trades, exact order sizes, live target weights, live scale ladders, order previews, and unexpired proposed orders must remain local and unpublished or be redacted.
 - Preserve audit history. Use corrections and dated notes instead of silent rewrites.
 
 ## Validation

@@ -27,6 +27,9 @@ reason:
 proposed_orders_present:
 exact_share_counts_present:
 exact_dollar_order_sizes_present:
+exact_live_target_weights_present:
+live_scale_ladders_present:
+unexpired_portfolio_allocation_present:
 reserve_sale_instruction_present:
 same_day_trade_intent_present:
 broker_order_preview_present:

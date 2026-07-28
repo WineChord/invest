@@ -18,7 +18,7 @@ Operating model: the repository stores the durable operating system. Codex or a 
 2. Read [PUBLICATION_POLICY.md](PUBLICATION_POLICY.md) before publishing decisions, trades, account records, performance, dashboard copy, or external posts.
 3. Read [AGENTS.md](AGENTS.md) for mandatory agent rules, trigger routing, safety boundaries, and repository hygiene rules.
 4. Read [SPEC.md](SPEC.md) for the full system design, data model, research engine, dashboard behavior, and audit requirements.
-5. Read [policy-v1.1.md](data/policy/policy-v1.1.md) for the current investment policy.
+5. Read [policy-v1.2.md](data/policy/policy-v1.2.md) for the current investment policy.
 6. Use the relevant template under [templates](templates) for repeated workflows instead of copying process prose into new notes.
 7. Use [docs/research-command-reference.md](docs/research-command-reference.md) for detailed discovery, SEC, semantic-discovery, FMP, and validation command notes.
 
@@ -41,7 +41,7 @@ Decision requests are full operating-cycle triggers. When the user reports new c
 - Browser-only demo data is simulated and must never mutate account files.
 - Confirmed account records are historical audit records only, not public recommendations or copy-trading signals.
 - Same-day or unexpired actionable order details must stay unpublished until the public release embargo in [PUBLICATION_POLICY.md](PUBLICATION_POLICY.md) has cleared.
-- Current policy: [policy-v1.1.md](data/policy/policy-v1.1.md), which allows SGOV or a materially equivalent short-duration U.S. Treasury reserve for cash management only.
+- Current policy: [policy-v1.2.md](data/policy/policy-v1.2.md), which makes Article 1 mission accountability explicit while retaining SGOV or a materially equivalent short-duration U.S. Treasury reserve for cash management only.
 - Initial research baseline: [research/2026-05-26-initial-baseline.md](research/2026-05-26-initial-baseline.md).
 - Initial simulated decision: [decisions/2026-05-26-initial-simulation.md](decisions/2026-05-26-initial-simulation.md).
 - Latest ready-state refresh: [research/2026-05-30-ready-state-refresh.md](research/2026-05-30-ready-state-refresh.md).

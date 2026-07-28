@@ -3,12 +3,12 @@ as_of: 2026-07-28
 last_research_engine_run:
   as_of: 2026-07-28
   scope: daily_full_operating_cycle_with_july_27_completed_closes_all_form_freshness_broad_and_registration_discovery_and_all_symbol_review
-  notes: Completed the full 2026-07-28 operating cycle using fresh July 27 completed closes for all 54 current tradable research symbols, confirmed cash and positions, macro and degraded public-attention overlays, complete broad discovery, exact-date registration scaffolding, 54-of-54 fresh all-form SEC submissions payloads, issuer-event checks, all-symbol comparison and independent discovery, freshness, bull, bear, valuation and allocation review. RKLB, NBIS, QBTS and QTEX received material evidence updates; WBI, CDNL, FIP and Ace Green received terminal readiness and rejection; no active promotion or buy zone changed and the stable decision is completed no action.
+  notes: Completed the 2026-07-28 historical v1.1 operating cycle using fresh July 27 completed closes for all 54 current tradable research symbols, confirmed cash and positions, macro and degraded public-attention overlays, complete name/ticker discovery coverage with an explicit zero issuer-profile semantic-coverage gap, exact-date registration scaffolding, 54-of-54 fresh all-form SEC submissions payloads, issuer-event checks, all-symbol comparison and independent discovery, freshness, bull, bear, valuation and allocation review. RKLB, NBIS, QBTS and QTEX received material evidence updates; WBI, CDNL, FIP and Ace Green received terminal readiness and rejection; no active promotion or buy zone changed and the historical decision was completed no action.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support a decision after the fresh July 27 completed-close cross-check, 54-symbol all-form submissions review, bounded issuer-news review, complete broad and exact-date registration discovery, degraded community triage with explicit errors, terminal readiness for WBI, CDNL, FIP and Ace Green, all-symbol comparison and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
+  reason: Repository-public research is current enough to support a target-level decision after the fresh July 27 completed-close cross-check, 54-symbol all-form submissions review, bounded issuer-news review, complete name/ticker and exact-date registration coverage, an explicit zero issuer-profile semantic-coverage gap, degraded community triage with explicit errors, terminal readiness for WBI, CDNL, FIP and Ace Green, all-symbol comparison and independent xhigh review. Repository ready does not mean discovery exhaustive and is not an allocation veto. The historical v1.1 decision was no action; the next allocation must apply the v1.2 Article 1 challenge.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 5761.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
@@ -17,6 +17,39 @@ decision_readiness:
     - rerun after any material issuer event, a 5 percent reviewed-symbol price move, ASTS note-option update, IREN contract or commissioning evidence, STDN authorization or production evidence, QTEX financing or qualification evidence, ENRD transaction close or capitalization evidence, confirmed broker-state change, or 2026-08-10
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
+mission_accountability:
+  policy_version: v1.2
+  status: high_liquidity_monitoring
+  no_action_is_default_target: false
+  repository_health_is_allocation_veto: false
+  target_readiness_controls_action: true
+  opportunity_set_sufficiency_required: true
+  latest_confirmed_return_seeking_buy_date: 2026-07-08
+  latest_research_nav: 7539.91
+  confirmed_cash: 5761.58
+  confirmed_liquidity_reserve_value: 0
+  liquidity_option_weight_pct: 76.4144
+  high_liquidity_option_threshold_pct: 60
+  high_liquidity_option_since: 2026-07-23
+  latest_mission_relevant_deployment_date: 2026-07-08
+  mission_relevant_deployment_basis: 2026-07-08-buy-asts-001;2026-07-08-buy-rklb-001
+  days_since_latest_mission_relevant_deployment: 20
+  pressure_review_after_days: 45
+  opportunity_set_reset_after_days: 90
+  strategy_review_after_days: 180
+  next_required_review_at: 2026-08-22
+  strongest_counterfactual: LEU was the highest-ranked non-space challenger in the 2026-07-28 v1.1 decision.
+  smallest_prudent_exposure_considered: Not structured under policy v1.1; no retroactive reconstruction is claimed.
+  zero_vs_starter_result: Pending the first v1.2 allocation review.
+  zero_exposure_reason_code: legacy_v1.1_completed_no_action
+  decision_critical_missing_evidence: LEU fixed-price contract economics, expansion financing, TENEX exposure, debt, and dilution remained unresolved in the latest historical decision.
+  why_risk_sizing_cannot_absorb_uncertainty: Not structured under policy v1.1; the next allocation review must test this rather than inherit zero.
+  cash_opportunity_cost: The latest historical decision accepted waiting optionality but did not quantify the zero-versus-starter cost under v1.2.
+  next_evidence_deadline: 2026-08-05
+  no_action_streak: 15
+  article1_red_team_status: completed_policy_audit_next_allocation_must_apply_v1.2
+  latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
+  current_conclusion: High liquidity-option weight requires monitoring now; the 45-day mission-pressure review is due on 2026-08-22 unless a mission-relevant deployment occurs first. This is a review trigger, not an order.
 coverage:
   universe_scan_as_of: 2026-07-28
   discovery_lane_map_as_of: 2026-07-28
@@ -38,6 +71,15 @@ discovery_process:
   latest_evidence_packet_path: research/discovery/runs/2026-07-28-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
+  name_ticker_universe_coverage_status: complete
+  issuer_profile_semantic_coverage_pct: 0
+  broad_semantic_search_status: gap_open
+  organic_recall_count: 17
+  hard_coded_proxy_only_recall_count: 42
+  exploratory_match_count: 59
+  exploratory_sample_count: 10
+  exploratory_sample_coverage_pct: 16.9492
+  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed, but zero issuer-profile semantic coverage cannot support an exhaustive broad-semantic-search claim. The gap is bounded discovery debt and must influence future search-quality review without becoming an unrelated allocation veto.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -95,6 +137,8 @@ watchlist_process:
 freshness:
   open_critical_events: 0
   open_high_events: 0
+  allocation_blocking_open_critical_events: 0
+  allocation_blocking_open_high_events: 0
   oldest_open_event_date: null
   stale_valuation_states_over_45_days: 0
   stale_theses_over_90_days: 0
@@ -117,4 +161,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses July 27 completed-close provenance, the INFQ corporate-action limitation, fresh 54-symbol all-form SEC scope, degraded community coverage, the 500-row provisional registration boundary, terminal WBI, CDNL, FIP and Ace Green dispositions, reviewer reconciliation, current liquidity, and the absence of an order or broker preview.
+notes: Repository ready means operational health is explicitly measured; target readiness and opportunity-set sufficiency control allocation. Bounded discovery debt, including zero issuer-profile semantic coverage, remains visible and time-bounded but is not a portfolio-wide veto. The historical v1.1 no-action decision discloses July 27 completed-close provenance, the INFQ corporate-action limitation, fresh 54-symbol all-form SEC scope, degraded community coverage, the 500-row provisional registration boundary, terminal WBI, CDNL, FIP and Ace Green dispositions, reviewer reconciliation, current liquidity, and the absence of an order or broker preview.

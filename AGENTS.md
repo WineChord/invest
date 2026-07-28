@@ -10,13 +10,15 @@ The mission is to support a multi-decade satellite portfolio whose goal is asymm
 
 This mission is the repository's highest objective. Every policy, template, source list, research lane, dashboard surface, self-evolution rule, meta-self-improvement change, cleanup decision, publication rule, and validation check exists to improve the odds of that outcome without weakening broker-confirmation truth, source freshness, auditability, clone portability, public-release safety, or avoidable-ruin controls.
 
+Article 1 is controlling, not one consideration among many. If a lower-level rule systematically favors inactivity, certainty, repository completeness, conventional diversification, or capital preservation beyond what is needed to prevent avoidable ruin, revise the lower-level rule. Cash, research coverage, validation, and process discipline are instruments of the mission; none is a substitute for obtaining meaningful exposure to rare qualifying opportunities.
+
 The primary discovery frame is bottleneck-map-first, not stock-list-first. Do not begin serious research by asking "which stocks look interesting?" Begin by asking which scarce resources, technical capabilities, distribution points, regulatory permissions, infrastructure constraints, or capital-formation changes could become system bottlenecks over the next decade or longer; which bottlenecks could create exceptional pricing power; which public companies are direct beneficiaries rather than weak proxies; and which candidates are small, early, awkward, or newly public enough that conventional screens may miss them.
 
 This account is not the user's main Nasdaq technology allocation. Do not dilute the satellite objective by optimizing for broad-market benchmarking, low volatility, short-term comfort, or index-like diversification.
 
 Default planned monthly contribution: USD 888. Treat this as planned cash only until the user confirms that money is available in the brokerage account.
 
-Under policy `v1.1`, monthly contributions do not need to be fully deployed. A monthly decision may recommend no trade, holding cash, or parking idle cash in SGOV or a materially equivalent approved short-duration U.S. Treasury liquidity reserve when that best supports the long-term objective.
+Under policy `v1.2`, monthly contributions do not need to be fully deployed. A monthly decision may recommend no trade, holding cash, or parking idle cash in SGOV or a materially equivalent approved short-duration U.S. Treasury liquidity reserve when that best supports the long-term objective. Repeated no-action decisions and prolonged high liquidity-option weight are mission-accountability triggers, not neutral end states.
 
 The reverse is also true: the latest USD 888 contribution is not a sizing cap. If a rare opportunity passes the mission, evidence, and entry gates strongly enough, evaluate total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale.
 
@@ -27,18 +29,18 @@ The reverse is also true: the latest USD 888 contribution is not a sizing cap. I
 3. Only update account records after the user confirms actual broker-side activity with the required fields in [templates/execution-confirmation.md](templates/execution-confirmation.md).
 4. Every monthly decision must use fresh data retrieved during that decision cycle. Historical research in this repository is evidence, not current fact.
 5. Every recommendation must cite source publication dates, retrieval dates, and a validity window.
-6. If required fresh data cannot be obtained, the default action is no trade or hold cash.
+6. If decision-critical fresh data for a proposed target or its material opportunity-cost comparison cannot be obtained or bounded, the default action for that target is no trade or hold cash. Classify ordinary uncertainty as a sizing problem and unrelated repository incompleteness as process debt rather than silently treating every unavailable datum as a portfolio-wide veto.
 7. Keep the repository clone-portable. Do not rely on hidden local state, uncommitted private files, local absolute paths in docs, or committed secrets.
 8. Every decision must reference the policy version used.
 9. Self-improvement may change templates, scoring, source lists, data providers, and research process, but must not weaken the mission, freshness rules, confirmation rules, audit trail, or no-auto-trading rule.
-10. Do not add leverage, margin, options, short selling, crypto tokens, private shares, or non-US-listed instruments unless a later explicit policy version approved by the user allows them.
+10. Do not propose leverage, margin, options, short selling, crypto tokens, private shares, OTC securities, or non-US-listed instruments as account actions unless a later explicit policy version approves them. They may be researched as bottleneck intelligence, competitors, suppliers, customers, transaction targets, or public-peer comparators without becoming account orders.
 11. When adding or changing product behavior, data records, dashboard behavior, research workflow, or automation, evaluate whether `SPEC.md` and templates need to be updated in the same change. Update them when the behavior becomes part of the durable process.
 12. Treat repository hygiene as part of the product. After meaningful decisions, research updates, dashboard work, or tooling changes, check whether the repository accumulated stale, duplicated, misleading, or low-signal material. Clean it up without weakening auditability.
 13. Treat SGOV or an equivalent short-duration U.S. Treasury reserve as cash management only, never as a return-seeking satellite allocation. SGOV is an ETF, not cash; record confirmed SGOV buys and sells like any other broker-confirmed trade.
 14. Follow [PUBLICATION_POLICY.md](PUBLICATION_POLICY.md) before any public commit, push, deployment, dashboard change, decision note, execution record, external post, or performance display.
 15. Never publish personalized investment advice for public readers, copy-trading instructions, signal-service content, compensated endorsements, referral-driven recommendations, issuer promotions, or public answers that tell another person what they should buy, sell, hold, or size.
 16. Never commit or publish raw broker documents, raw screenshots, account numbers, full broker order IDs, full confirmation numbers, tax identifiers, legal identity documents, secrets, cookies, tokens, local absolute paths, local-only cache payloads, or unlicensed raw market-data dumps.
-17. Do not commit, push, publish, deploy, or externally post actionable trading content until the public release embargo in `PUBLICATION_POLICY.md` has expired. Same-day executed trades and any decision containing exact unexpired order sizing must stay local and unpublished until broker execution, cancellation, expiry, or no-action decision is confirmed, the regular market close plus safety buffer has passed, and sensitive-field review is complete.
+17. Do not commit, push, publish, deploy, or externally post actionable trading content until the public release embargo in `PUBLICATION_POLICY.md` has expired. Same-day executed trades and any decision containing exact unexpired order sizing, live target weights, or live scale ladders must stay local and unpublished until broker execution, cancellation, expiry, or no-action decision is confirmed, the regular market close plus safety buffer has passed, and sensitive-field review is complete.
 18. Every public-facing dashboard, README, decision surface, and per-symbol research page must make clear that the repository is a personal historical research journal and not investment advice.
 
 ## Source Hierarchy
@@ -113,11 +115,14 @@ Mandatory workflow invariants:
 - Monthly decisions require fresh data retrieved during that cycle and must cite source publication dates, retrieval dates, validity windows, trigger conditions, invalidation conditions, and unavailable evidence.
 - Deterministic discovery scripts are scaffolding and first-pass lead generators. They do not create buy eligibility or replace primary-source research.
 - Macro-regime files and public community scans are risk-overlay and lead-generation inputs. They may raise analysis priority, tighten entry discipline, or trigger freshness review, but they do not create buy eligibility, promotion eligibility, raw-candidate records, security metadata, or allocation evidence by themselves.
-- Every full operating cycle and monthly decision must record a current watchlist-cycle review row for every non-removed `research/watchlist.csv` symbol, even when the result is `no_change`.
+- Every full operating cycle and monthly decision must record a current watchlist-cycle review row for every non-removed `research/watchlist.csv` symbol, even when the result is `no_change`. Coverage does not imply equal research depth: use lightweight source-backed continuity checks for low-signal names and concentrate judgment on holdings, active/core names, event-triggered symbols, and genuine challengers.
 - Plausible material raw candidates must move through discovery readiness before they can affect allocation, unless primary evidence rejects them, the instrument is ineligible, they are explicitly not material, or the remaining blocker is genuinely external.
 - Promotion is separate from discovery readiness. A lower-status symbol cannot enter `active_candidate`, `active_core_candidate`, buy-zone ranking, or proposed orders without a fresh promotion review.
 - Do not finish material investment, discovery, or process work with repository-public evidence still in `not_ready` when the missing evidence is reachable. User-only broker facts, broker order previews, and final execution instructions are execution prerequisites, not repository-readiness blockers.
 - Compare all active candidates and holdings together before allocation. Do not anchor on prior favorites when new evidence, valuation, lane changes, or opportunity cost changes the set.
+- Treat Article 1 mission accountability as a required decision surface. Record liquidity-option weight, days since the latest mission-relevant deployment, the latest confirmed return-seeking buy separately, the strongest counterfactual candidate, portfolio-impact math, the path from starter to mission-relevant size, and any 45-day, 90-day, or 180-day review trigger under policy `v1.2`. A symbolic or immaterial trade does not reset the mission-relevant deployment clock.
+- Before finalizing zero new exposure while confirmed deployable liquidity exists, compare zero with the smallest mission-consistent staged exposure to the strongest candidate. Record the concrete decision-critical blocker, why size cannot bound it, cash opportunity cost, conjunctive evidence-and-price trigger, and next evidence deadline. Volatility, concentration, youth, non-profitability, or bounded uncertainty alone are not sufficient vetoes.
+- Separate target investment readiness and opportunity-set sufficiency from whole-repository health. Material evidence debt that can change the target or ranking remains blocking; unrelated dashboard, formatting, or low-priority research debt must be completed and disclosed but cannot veto a decision-ready rare opportunity.
 - Run repository cleanup and applicable validation before finishing meaningful work. Use `npm run check:data` for data or research changes and `npm run verify` for dashboard or broad repository changes when practical.
 
 ## Subagent Protocol
@@ -158,7 +163,7 @@ Subagent boundaries:
 - Subagents should normally be read-only reviewers for investment decisions. They may edit files only when the main agent assigns a narrow, disjoint write scope and the task is not a broker-record or account-state mutation.
 - Subagents must not update `data/account/ledger.csv`, `data/account/positions.csv`, `data/account/state.yml`, cost basis, cash, or broker facts.
 - Subagents must cite source dates, retrieval dates, file paths, and uncertainty. They should separate facts, inferences, and recommendations.
-- Subagent disagreement is a signal, not a voting problem. The main agent must reconcile conflicts from primary evidence. If a disagreement affects buy eligibility, sizing, promotion, or a critical freshness event and cannot be resolved, default to no trade, no promotion, hold cash, or the approved liquidity reserve.
+- Subagent disagreement is a signal, not a voting problem. The main agent must reconcile conflicts from primary evidence. If a disagreement is decision-critical and affects buy eligibility, survival, valuation bounds, sizing, promotion, or a critical freshness event and cannot be resolved, default to no trade for that target, no promotion, hold cash, or the approved liquidity reserve. Non-critical disagreement should reduce size, tighten triggers, or shorten validity rather than automatically veto the whole opportunity set.
 - Do not save raw subagent transcripts by default. Persist the final synthesis, durable research changes, or a concise process review only when the reviews change the decision, evidence state, workflow behavior, or future interpretation.
 - For material discovery, persist a structured agentic discovery artifact under `research/discovery/runs/` using [templates/agentic-discovery-run.md](templates/agentic-discovery-run.md).
 
@@ -175,20 +180,30 @@ Every serious research or decision cycle must review:
 - priority delta: promote, demote, freeze, remove, incubate, or no change;
 - opportunity-cost delta: whether another current or new candidate now better serves the mission;
 - theme or lane delta: whether a new industry, supply bottleneck, regulatory shift, market structure change, or technology platform deserves a discovery lane, and whether existing lanes should be added, split, promoted, demoted, merged, retired, or left unchanged.
+- mission-contribution delta: whether dilution-adjusted upside at a feasible initial and scaled weight can materially change the portfolio, and whether the current path to scale remains credible.
 
 Discovery readiness is required for plausible material raw candidates. Use [templates/discovery-readiness-sprint.md](templates/discovery-readiness-sprint.md) and update `research/discovery/candidate-readiness.yml` when a candidate could affect allocation, opportunity cost, lane completeness, or watchlist priority. Do not end with "not buy-ready because data is missing" when the missing evidence can reasonably be gathered from public sources or repository tooling.
 
-Material incubating public candidates must not remain hidden in discovery-only files. If a candidate remains material enough to keep and is not rejected, archived, explicitly not material, externally blocked, or not tradable, give it research-only dashboard visibility with comparable security metadata, market data, filing or freshness review, valuation state, company analysis, and per-symbol page coverage.
+Use a stage-adjusted readiness funnel so keeping an early lead is not more expensive than rejecting it:
+
+- `R0 lead`: identity and a source-backed bottleneck hypothesis;
+- `R1 researchable`: security eligibility, one primary source, directness, survival red flags, and a rough dilution-aware capitalization basis;
+- `R2 comparable`: stage-adjusted thesis, same-lane peers, scenario valuation, waiting cost, and disconfirming evidence;
+- `R3 promotion_ready`: complete target evidence, filing and valuation work, independent review, dashboard coverage, and promotion eligibility.
+
+R1 and R2 candidates may remain open under a dated service-level agreement without blocking an otherwise ready allocation. Only R3 requires full dashboard-equivalent coverage. Material candidates may not disappear silently: every open R1 or R2 name needs a next evidence source, due date, waiting-cost statement, and reopen or rejection trigger. `research_only` names may challenge the opportunity-cost ranking, but they still cannot receive an order until a fresh promotion review moves them into buy-zone eligibility.
 
 Promotion is the process that moves a researched symbol toward `active_candidate`, `active_core_candidate`, and buy-zone consideration. Use [templates/promotion-review.md](templates/promotion-review.md) whenever a status or priority change would affect active/core standing, allocation ranking, or buy-zone eligibility.
 
 Before recommending a buy, confirm three gates:
 
-- Mission gate: the company still has a plausible multi-decade asymmetric upside path and does not merely duplicate the user's large Nasdaq technology core.
+- Mission gate: the company still has a plausible dilution-adjusted multi-decade asymmetric upside path, the feasible position can materially affect the portfolio if successful, a source-backed path to scale exists, and the company does not merely duplicate the user's large Nasdaq technology core.
 - Evidence gate: current primary evidence supports the thesis, material filings are reviewed, and no critical freshness event is unresolved.
 - Entry gate: current price, valuation, dilution, balance-sheet survival, and opportunity cost still leave enough expected upside for the satellite objective.
 
-Rows marked `research_only`, `watch`, `not_tradable`, `probation`, `frozen`, or `removed` cannot receive new buy recommendations unless the decision first runs a fresh promotion review, updates durable transition records, and moves the symbol into buy-zone eligibility. Sells should be rare; prefer directing new contributions away from downgraded companies before selling existing long-term positions. Liquidity reserve sales are cash-management steps, not thesis-driven exits.
+Before converting a gate result into zero quantity, classify the unresolved item as `decision_critical`, `sizing`, or `process_debt` under policy `v1.2`. Only decision-critical uncertainty is an automatic target veto. Normal uncertainty must be tested against staging, position size, evidence milestones, invalidation, and a shorter validity window. Zero remains valid when the smallest feasible trade cannot be mission-relevant or loses on evidence, entry, survival, portfolio impact, or opportunity cost.
+
+Rows marked `research_only`, `watch`, `not_tradable`, `probation`, `frozen`, or `removed` cannot receive new buy recommendations unless the decision first runs a fresh promotion review, updates durable transition records, and moves the symbol into buy-zone eligibility. When fresh evidence supports a rare opportunity, complete this fast-path process in the same powered-on session; the status machinery must not impose an artificial waiting period. Sells should be rare; prefer directing new contributions away from downgraded companies before selling existing long-term positions. Liquidity reserve sales are cash-management steps, not thesis-driven exits.
 
 ## Execution Update Workflow
 
@@ -234,7 +249,7 @@ This repository should become more useful, more reliable, and easier to operate 
 
 ## Research Discipline
 
-Each active company thesis must include a one-sentence thesis, why it can plausibly produce extreme multi-decade upside, key evidence needed next, disconfirming evidence and kill criteria, balance sheet and dilution risk, customer concentration and dependency risk, regulatory, technical, execution, and valuation risk, and next review date.
+Each active company thesis must include a one-sentence thesis, why it can plausibly produce extreme multi-decade upside, dilution-adjusted downside/base/upside/exceptional paths when supportable, portfolio impact at a feasible initial and scaled position, the evidence path to scale or exit, key evidence needed next, disconfirming evidence and kill criteria, balance sheet and dilution risk, customer concentration and dependency risk, regulatory, technical, execution, and valuation risk, and next review date.
 
 Research is organized as a pipeline:
 
@@ -253,9 +268,10 @@ Research is organized as a pipeline:
 13. `research/watchlist-cycle-reviews.csv` for the per-cycle review row that every non-removed watchlist symbol must receive during full-cycle and monthly-decision runs.
 14. `research/watchlist-transitions.csv` for machine-checkable status and priority changes.
 15. `research/buy-zones.csv` for symbol-level current buy-zone state.
-16. `research/company-analysis.yml` for dashboard-visible historical analysis.
-17. `research/process/decision-retrospectives.csv` for post-decision and post-discovery process review loops.
-18. `research/sources.yml` for durable source metadata.
+16. `research/position-construction.yml` for portfolio-impact, permanent-impairment, stage, and path-to-scale analysis without unexpired public execution sizing.
+17. `research/company-analysis.yml` for dashboard-visible historical analysis.
+18. `research/process/decision-retrospectives.csv` for post-decision and post-discovery process review loops.
+19. `research/sources.yml` for durable source metadata.
 
 When adding a durable company analysis that should appear on the public dashboard, add or append a structured entry in [research/company-analysis.yml](research/company-analysis.yml) and link it to the dated source note. Do not parse long-form Markdown as the dashboard database when a structured index can carry the needed summary and provenance.
 

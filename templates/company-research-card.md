@@ -18,6 +18,14 @@ Direct bottleneck exposure:
 
 ## Why It Could Be a Multi-Decade Outlier
 
+Show dilution-adjusted downside, base, upside, and exceptional paths when evidence supports them. Connect the company outcome to portfolio impact at a feasible initial and fully underwritten weight rather than relying on a headline company multiple.
+
+## Capital Expression and Path to Scale
+
+Record the current research stage, the smallest mission-consistent exposure, a non-actionable fully underwritten weight range, maximum NAV impairment under permanent loss, contribution-dilution sensitivity, evidence milestones for scaling or holding, reduce-or-exit milestones, and the next stage-review date. Ownership itself is not evidence.
+
+Keep unexpired exact target weights, exact share counts, and live scale ladders out of public research cards under `PUBLICATION_POLICY.md`.
+
 ## Current Evidence
 
 Record only source-backed facts. Include source publication date and retrieval date.

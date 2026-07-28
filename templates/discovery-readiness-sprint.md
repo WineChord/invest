@@ -12,17 +12,24 @@ material_to_current_allocation:
 affected_lanes:
 materiality_reason:
 blocking_scope:
-readiness_status: completed | incubated_after_review | rejected_after_review | archived_after_review | not_material_current_allocation | external_blocked | not_tradable
+research_stage: R0_lead | R1_researchable | R2_comparable | R3_promotion_ready
+company_stage:
+readiness_status: lead_open | researchable_open | comparable_open | promotion_ready | completed | incubated_after_review | rejected_after_review | archived_after_review | not_material_current_allocation | external_blocked | not_tradable
 blocker_type: none | evidence_based | not_material_current_allocation | external_unavailable | user_only_broker_fact | market_closed_or_missing_quote | legal_access_limit | policy_blocker | repo_work_remaining
 classification: promote | incubate | reject | archive | not_material | not_tradable | external_blocked
-dashboard_surface_status: complete | not_required_rejected | not_required_archived | not_required_not_material | not_required_external | not_required_not_tradable
+dashboard_surface_status: complete | not_required_pre_promotion | not_required_rejected | not_required_archived | not_required_not_material | not_required_external | not_required_not_tradable
+next_evidence_source:
+next_evidence_due:
+cost_of_waiting:
+false_negative_early_warning:
+reopen_or_reject_trigger:
 source_ids:
 readiness_index_record:
 ```
 
-`not_started`, `in_progress`, and `continue_sprint` are scratch-only transient states or labels. A committed or final repository state must use one of the terminal statuses above; validation fails if current candidate readiness remains transient.
+`not_started`, unbounded `in_progress`, and `continue_sprint` are scratch-only transient states or labels. A committed R0-R2 candidate may remain open only when the next source, due date, waiting cost, false-negative warning, and reopen-or-reject trigger are complete.
 
-`dashboard_surface_status` is mandatory in both the sprint note and `research/discovery/candidate-readiness.yml`. Use `complete` for material `completed` or `incubated_after_review` public-stock candidates. Use `not_required_rejected`, `not_required_archived`, `not_required_not_material`, `not_required_external`, or `not_required_not_tradable` only when the candidate has been terminally classified into that matching bucket. Do not use a not-required dashboard status as a shortcut for unfinished research.
+`dashboard_surface_status` is mandatory in both the sprint note and `research/discovery/candidate-readiness.yml`. Use `not_required_pre_promotion` for bounded R0-R2 records, and `complete` for R3, promoted, or completed material public-stock candidates. Do not use a not-required dashboard status as a shortcut for missing R3 work.
 
 ## Bottleneck Fit
 
@@ -86,6 +93,12 @@ valuation_and_entry_state:
 peer_comparison:
 policy_or_safety_blockers:
 reachable_evidence_remaining:
+stage_adjusted_minimum_evidence:
+irreducible_uncertainty:
+next_evidence_source:
+next_evidence_due:
+cost_of_waiting:
+false_negative_early_warning:
 ```
 
 ## Decision
@@ -109,11 +122,11 @@ next_action:
 conditions_to_change_view:
 ```
 
-Do not leave `repo_work_remaining` as the final blocker for a ready allocation decision. If public evidence is reachable, gather it; otherwise validation should fail until the sprint is completed or converted into an evidence-based, genuinely external, not-tradable, or not-material conclusion.
+Do not leave `repo_work_remaining` as an unbounded blocker. Decision-critical evidence for the current allocation must be gathered or bounded. Other R0-R2 work may remain under a dated service level and must not be misrepresented as promotion ready.
 
-Do not leave a material incubating public candidate hidden in discovery-only files. If it remains material and incubating, the durable update list should show that the candidate has the same research-only dashboard surface as other public stocks. If it should not receive that treatment, reject it, archive it, mark it not material, or record the genuine external blocker.
+Do not hide a material R1 or R2 candidate. It must remain visible in the discovery bench with its due date, waiting cost, and false-negative trigger. Full research-only dashboard coverage is required at R3, not as an admission price for retaining an early lead.
 
-Minimum ready surface for a material completed or incubated public stock:
+Minimum promotion-ready surface for an R3, completed, or promoted material public stock:
 
 - raw discovery candidate record;
 - candidate-readiness record with terminal readiness and `dashboard_surface_status: complete`;

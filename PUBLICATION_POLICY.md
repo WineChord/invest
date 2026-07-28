@@ -18,7 +18,7 @@ No disclaimer removes every legal, privacy, security, or relationship risk. The 
 
 ## Public Release Embargo
 
-Actionable trading content is any unexpired or same-day content that includes a proposed order, exact share count, exact dollar order, buy or sell instruction, reserve sale instruction, target execution timing, time-sensitive price trigger, order preview, or broker execution detail.
+Actionable trading content is any unexpired or same-day content that includes a proposed order, exact share count, exact dollar order, exact live target weight, live scale ladder, unexpired portfolio-allocation plan, buy or sell instruction, reserve sale instruction, target execution timing, time-sensitive price trigger, order preview, or broker execution detail.
 
 Actionable trading content must not be committed, pushed, published, deployed, posted, or otherwise made public until all of the following are true:
 

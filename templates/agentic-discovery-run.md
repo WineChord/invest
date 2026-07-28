@@ -60,8 +60,20 @@ source_coverage:
     status: complete | not_required | blocked
     retrieval_window:
     notes:
+  search_quality:
+    name_ticker_coverage_pct:
+    issuer_profile_semantic_coverage_pct:
+    organic_recall_count:
+    hard_coded_proxy_only_recall_count:
+    outside_watchlist_effort_pct:
+    new_listing_to_r1_latency_days:
   unknown_future_review:
     exploratory_match_count:
+    exploratory_denominator:
+    stratified_sample_count:
+    stratified_sample_pct:
+    unsampled_reason:
+    repeated_hit_max_age_days:
     top_clusters:
     sampled_symbols:
     false_positive_patterns:
@@ -128,6 +140,11 @@ candidate_delta:
   candidates_added:
   candidates_rejected_or_archived:
   candidates_promoted:
+  r0_leads:
+  r1_researchable:
+  r2_comparable:
+  r3_promotion_ready:
+  no_action_challenger:
   candidates_incubated:
   false_positive_patterns:
 

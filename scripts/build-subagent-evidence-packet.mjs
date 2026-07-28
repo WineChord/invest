@@ -9,13 +9,15 @@ const candidatesFile = "research/discovery/candidates.csv";
 const candidateReadinessFile = "research/discovery/candidate-readiness.yml";
 const discoveryLanesFile = "research/discovery/lanes.yml";
 const freshnessFile = "research/freshness/events.csv";
-const policyFile = "data/policy/policy-v1.1.md";
+const policyFile = "data/policy/policy-v1.2.md";
 const positionsFile = "data/account/positions.csv";
+const positionConstructionFile = "research/position-construction.yml";
 const qualityMetricsFile = "research/quality-metrics.yml";
 const sourcesFile = "research/sources.yml";
 const universeScanFile = "research/discovery/runs/2026-05-31-universe-scan.json";
 const valuationStatesFile = "research/valuation-states.csv";
 const watchlistFile = "research/watchlist.csv";
+const watchlistPricesFile = "data/market/watchlist_prices.csv";
 
 const defaultQuestion = "Review discovery lanes, raw candidates, freshness, valuation, and opportunity cost for the current repository-public decision state.";
 const firstLayerDiscoveryQuestions = [
@@ -38,8 +40,9 @@ const safetyBoundaries = [
   "Do not mutate broker-confirmed account files.",
   "Use repository files and fresh public sources as evidence; separate facts from inferences.",
   "Treat deterministic discovery as scaffolding, not buy eligibility.",
-  "Classify reachable evidence gaps before returning; do not leave repository-public readiness incomplete.",
-  "Material completed or incubated candidates need the full research-only dashboard surface before the repository is ready.",
+  "Classify gaps as target-critical, opportunity-set-critical, bounded discovery debt, or repository-health debt.",
+  "Compare zero with the smallest mission-consistent staged exposure before finalizing no action with deployable liquidity.",
+  "R1 and R2 candidates may remain open under dated service levels; R3 carries promotion-grade and dashboard-equivalent requirements.",
 ];
 
 const options = parseArgs(process.argv.slice(2));
@@ -118,6 +121,7 @@ function buildPacket({
   const sources = readYaml(sourcesFile);
   const readiness = readYaml(candidateReadinessFile);
   const discoveryLanes = readYaml(discoveryLanesFile);
+  const positionConstruction = readYaml(positionConstructionFile);
   const effectiveDeterministicOutputPaths = deterministicOutputPaths.length === 0
     ? deterministicOutputPathsFromQualityMetrics(qualityMetrics)
     : deterministicOutputPaths;
@@ -127,7 +131,27 @@ function buildPacket({
   const candidateRows = csvRecords(candidatesFile);
   const freshnessRows = csvRecords(freshnessFile);
   const positionRows = csvRecords(positionsFile);
+  const watchlistPriceRows = csvRecords(watchlistPricesFile);
   const policyVersion = readPolicyVersion(policyFile);
+  const pricesBySymbol = new Map(watchlistPriceRows.map((row) => [row.symbol, row]));
+  const researchNav = Number(qualityMetrics.mission_accountability?.latest_research_nav);
+  const currentPositions = positionRows.map((row) => {
+    const priceRecord = pricesBySymbol.get(row.symbol);
+    const quantity = Number(row.quantity);
+    const price = Number(priceRecord?.price);
+    const marketValue = Number.isFinite(quantity) && Number.isFinite(price)
+      ? quantity * price
+      : null;
+    return {
+      ...row,
+      latest_completed_close: Number.isFinite(price) ? price : null,
+      price_as_of: priceRecord?.price_as_of ?? null,
+      market_value: marketValue,
+      nav_weight_pct: marketValue !== null && Number.isFinite(researchNav) && researchNav > 0
+        ? (marketValue / researchNav) * 100
+        : null,
+    };
+  });
 
   const activeWatchlist = watchlistRows
     .filter((row) => row.status !== "removed")
@@ -202,12 +226,17 @@ function buildPacket({
       last_confirmed_ledger_event_id: accountState.last_confirmed_ledger_event_id,
     },
     planned_but_unconfirmed_cash: accountPlan.monthly_contribution ?? null,
-    current_positions: positionRows,
+    current_positions: currentPositions,
+    portfolio_snapshot: {
+      research_nav: Number.isFinite(researchNav) ? researchNav : null,
+      mission_accountability: qualityMetrics.mission_accountability ?? null,
+      position_construction: positionConstruction,
+    },
     liquidity_reserve_status: "No confirmed liquidity reserve position is recorded.",
     allowed_assets_and_exclusions: {
       policy_file: policyFile,
       allowed_return_seeking_assets: "U.S.-listed common stocks and ADRs with public disclosures and normal retail liquidity.",
-      exclusions: "No leverage, margin, options, shorts, crypto tokens, private shares, OTC securities, or non-US-listed instruments under policy v1.1.",
+      exclusions: "No leverage, margin, options, shorts, crypto tokens, private-share orders, OTC orders, or non-US-listed account actions under policy v1.2.",
     },
     candidate_set: candidateSet,
     candidate_readiness: readinessRecords,
@@ -221,6 +250,7 @@ function buildPacket({
       discoveryLanesFile,
       candidatesFile,
       candidateReadinessFile,
+      positionConstructionFile,
       qualityMetricsFile,
       freshnessFile,
       valuationStatesFile,
@@ -250,6 +280,7 @@ function buildPacket({
     quality_metrics: {
       path: qualityMetricsFile,
       decision_readiness: qualityMetrics.decision_readiness,
+      mission_accountability: qualityMetrics.mission_accountability,
       coverage: qualityMetrics.coverage,
       discovery_process: qualityMetrics.discovery_process,
       freshness: qualityMetrics.freshness,
@@ -283,6 +314,20 @@ function buildPacket({
       thesis_delta: "",
       entry_delta: "",
       priority_or_lane_delta: "",
+      mission_contribution: "",
+      uncertainty_classification: {
+        decision_critical: [],
+        sizing: [],
+        process_debt: [],
+      },
+      portfolio_impact: {
+        zero_exposure: "",
+        smallest_mission_consistent_exposure: "",
+        fully_underwritten_range: "",
+        maximum_nav_permanent_impairment: "",
+        downside_base_upside_exceptional_results: [],
+      },
+      path_to_scale_or_exit: [],
       policy_or_safety_blockers: [],
       buy_or_no_buy_implication: "",
       confidence: "",

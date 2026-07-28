@@ -2,6 +2,14 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { parse as parseYaml } from "yaml";
+import {
+  calculateLiquidityOptionWeight,
+  calendarDayDifference,
+  containsEmbargoedPositionField,
+  missionAccountabilityStatus,
+  validateMissionReviewParameters,
+  validateNoActionAccountability,
+} from "./article-one-mission-lib.mjs";
 
 const csvFiles = [
   "data/account/ledger.csv",
@@ -34,6 +42,7 @@ const yamlFiles = [
   "research/company-analysis.yml",
   "research/discovery/candidate-readiness.yml",
   "research/discovery/lanes.yml",
+  "research/position-construction.yml",
   "research/quality-metrics.yml",
   "research/sources.yml",
 ];
@@ -46,6 +55,9 @@ const markdownFiles = [
 const companyAnalysisFile = "research/company-analysis.yml";
 const companyMetricsFile = "data/market/company_metrics.csv";
 const constitutionFile = "CONSTITUTION.md";
+const accountPlanFile = "data/account/plan.yml";
+const equityCurveFile = "data/account/equity_curve.csv";
+const ledgerFile = "data/account/ledger.csv";
 const discoveryFile = "research/discovery/candidates.csv";
 const candidateReadinessFile = "research/discovery/candidate-readiness.yml";
 const discoveryLanesFile = "research/discovery/lanes.yml";
@@ -57,6 +69,7 @@ const macroRegimeSnapshotsFile = "research/macro/regime-snapshots.csv";
 const macroRiskMatrixFile = "research/macro/watchlist-risk-matrix.csv";
 const macroWatchlistSensitivityFile = "research/macro/watchlist-sensitivity.csv";
 const operatingRunsFile = "research/operating-runs.csv";
+const positionConstructionFile = "research/position-construction.yml";
 const priceHistoryFile = "data/market/price_history.csv";
 const decisionRetrospectivesFile = "research/process/decision-retrospectives.csv";
 const qualityMetricsFile = "research/quality-metrics.yml";
@@ -487,6 +500,10 @@ const allowedDiscoveryStatuses = new Set([
 const allowedCandidateReadinessStatuses = new Set([
   "not_started",
   "in_progress",
+  "lead_open",
+  "researchable_open",
+  "comparable_open",
+  "promotion_ready",
   "completed",
   "incubated_after_review",
   "rejected_after_review",
@@ -496,6 +513,10 @@ const allowedCandidateReadinessStatuses = new Set([
   "not_tradable",
 ]);
 const allocationReadyCandidateReadinessStatuses = new Set([
+  "lead_open",
+  "researchable_open",
+  "comparable_open",
+  "promotion_ready",
   "completed",
   "incubated_after_review",
   "rejected_after_review",
@@ -504,8 +525,14 @@ const allocationReadyCandidateReadinessStatuses = new Set([
   "external_blocked",
   "not_tradable",
 ]);
+const boundedOpenCandidateReadinessStatuses = new Set([
+  "lead_open",
+  "researchable_open",
+  "comparable_open",
+]);
 const allowedDashboardSurfaceStatuses = new Set([
   "complete",
+  "not_required_pre_promotion",
   "not_required_rejected",
   "not_required_archived",
   "not_required_not_material",
@@ -789,6 +816,7 @@ validateFreshnessEvents();
 validateMacroRiskOverlay();
 validateValuationStates();
 validateCompanyAnalysis();
+validatePositionConstruction();
 validateWatchlistCycleReviews();
 validatePromotionData();
 validateOperatingRuns();
@@ -1094,6 +1122,9 @@ function candidateReadinessBlocksAllocation(record) {
   if (!record.material_to_current_allocation) {
     return false;
   }
+  if (boundedOpenCandidateReadinessStatuses.has(record.readiness_status)) {
+    return false;
+  }
   if (!allocationReadyCandidateReadinessStatuses.has(record.readiness_status)) {
     return true;
   }
@@ -1105,6 +1136,8 @@ function candidateReadinessBlocksAllocation(record) {
 
 function candidateReadinessNeedsDashboardSurface(record) {
   return (
+    record.readiness_status === "promotion_ready"
+    ||
     record.readiness_status === "completed"
     || record.readiness_status === "incubated_after_review"
   );
@@ -1113,6 +1146,12 @@ function candidateReadinessNeedsDashboardSurface(record) {
 function validateDashboardSurfaceForReadiness(record, context) {
   if (candidateReadinessNeedsDashboardSurface(record) && record.dashboard_surface_status !== "complete") {
     throw new Error(`${context} ${record.readiness_status} readiness must use dashboard_surface_status complete`);
+  }
+  if (
+    boundedOpenCandidateReadinessStatuses.has(record.readiness_status)
+    && record.dashboard_surface_status !== "not_required_pre_promotion"
+  ) {
+    throw new Error(`${context} bounded open readiness must use dashboard_surface_status not_required_pre_promotion`);
   }
   if (record.readiness_status === "rejected_after_review" && record.dashboard_surface_status !== "not_required_rejected") {
     throw new Error(`${context} rejected_after_review readiness must use dashboard_surface_status not_required_rejected`);
@@ -1614,6 +1653,25 @@ function validateCandidateReadiness() {
     if (!allocationReadyCandidateReadinessStatuses.has(row.readiness_status)) {
       throw new Error(`${context} has transient readiness_status ${row.readiness_status}; current repository state must resolve readiness before validation passes`);
     }
+    if (boundedOpenCandidateReadinessStatuses.has(row.readiness_status) || row.readiness_status === "promotion_ready") {
+      requireAllowed(
+        row.research_stage,
+        new Set(["R0_lead", "R1_researchable", "R2_comparable", "R3_promotion_ready"]),
+        `${context} research_stage`,
+      );
+    }
+    if (boundedOpenCandidateReadinessStatuses.has(row.readiness_status)) {
+      [
+        "next_evidence_source",
+        "cost_of_waiting",
+        "false_negative_early_warning",
+        "reopen_or_reject_trigger",
+      ].forEach((field) => requireString(row[field], `${context} ${field}`));
+      parseDate(row.next_evidence_due, `${context} next_evidence_due`);
+      if (row.blocker_type !== "repo_work_remaining" && row.blocker_type !== "evidence_based") {
+        throw new Error(`${context} bounded open readiness needs repo_work_remaining or evidence_based blocker_type`);
+      }
+    }
     parseDate(row.last_readiness_reviewed_at, `${context} last_readiness_reviewed_at`);
     if (seen.has(row.symbol)) {
       throw new Error(`${candidateReadinessFile} has duplicate symbol ${row.symbol}`);
@@ -1639,11 +1697,18 @@ function validateCandidateReadiness() {
         }
       });
     }
-    if (row.blocker_type === "none" && row.readiness_status !== "completed") {
-      throw new Error(`${context} blocker_type none is only valid with completed readiness`);
+    if (
+      row.blocker_type === "none"
+      && row.readiness_status !== "completed"
+      && row.readiness_status !== "promotion_ready"
+    ) {
+      throw new Error(`${context} blocker_type none is only valid with completed or promotion_ready readiness`);
     }
-    if (row.readiness_status === "completed" && row.blocker_type !== "none") {
-      throw new Error(`${context} completed readiness must use blocker_type none`);
+    if (
+      (row.readiness_status === "completed" || row.readiness_status === "promotion_ready")
+      && row.blocker_type !== "none"
+    ) {
+      throw new Error(`${context} ${row.readiness_status} readiness must use blocker_type none`);
     }
     if (
       (
@@ -1667,12 +1732,14 @@ function validateCandidateReadiness() {
     validateDashboardSurfaceForReadiness(row, context);
     if (
       allocationReadyCandidateReadinessStatuses.has(row.readiness_status)
+      && !boundedOpenCandidateReadinessStatuses.has(row.readiness_status)
       && row.blocker_type === "repo_work_remaining"
     ) {
       throw new Error(`${context} terminal readiness must not use repo_work_remaining`);
     }
     if (
       allocationReadyCandidateReadinessStatuses.has(row.readiness_status)
+      && !boundedOpenCandidateReadinessStatuses.has(row.readiness_status)
       && hasReachableEvidenceRemaining(row.reachable_evidence_remaining)
       && !externalCandidateBlockerTypes.has(row.blocker_type)
     ) {
@@ -1718,6 +1785,17 @@ function validateReadinessSprintNote(file, symbol, readinessRecord) {
   }
   if (metadata.dashboard_surface_status !== readinessRecord.dashboard_surface_status) {
     throw new Error(`${file} readiness metadata.dashboard_surface_status must match ${candidateReadinessFile}`);
+  }
+  if (boundedOpenCandidateReadinessStatuses.has(readinessRecord.readiness_status)) {
+    [
+      "research_stage",
+      "next_evidence_source",
+      "next_evidence_due",
+      "cost_of_waiting",
+      "false_negative_early_warning",
+      "reopen_or_reject_trigger",
+    ].forEach((field) => requireString(metadata?.[field], `${file} readiness metadata.${field}`));
+    parseDate(metadata.next_evidence_due, `${file} readiness metadata.next_evidence_due`);
   }
   if (metadata.readiness_index_record !== candidateReadinessFile) {
     throw new Error(`${file} readiness metadata.readiness_index_record must be ${candidateReadinessFile}`);
@@ -1998,6 +2076,83 @@ function validateCompanyAnalysis() {
     }
   });
   console.log(`ok ${companyAnalysisFile} semantic checks`);
+}
+
+function validatePositionConstruction() {
+  const parsed = parsedYamlFiles.get(positionConstructionFile);
+  if (parsed?.schema_version !== 1) {
+    throw new Error(`${positionConstructionFile} schema_version must be 1`);
+  }
+  if (parsed.policy_version !== "v1.2") {
+    throw new Error(`${positionConstructionFile} policy_version must be v1.2`);
+  }
+  parseDate(parsed.as_of, `${positionConstructionFile} as_of`);
+  if (!Array.isArray(parsed.records)) {
+    throw new Error(`${positionConstructionFile} records must be an array`);
+  }
+  const watchlistSymbols = new Set(csvRecords(watchlistFile).map((row) => row.symbol));
+  const seen = new Set();
+  parsed.records.forEach((record, index) => {
+    const context = `${positionConstructionFile} record ${index + 1}`;
+    if (containsEmbargoedPositionField(record)) {
+      throw new Error(`${context} contains an embargoed exact sizing or live-allocation field`);
+    }
+    [
+      "symbol",
+      "as_of",
+      "policy_version",
+      "research_stage",
+      "current_stage",
+      "contribution_dilution_check",
+      "stage_review_by",
+      "source_path",
+    ].forEach((field) => requireString(record?.[field], `${context} ${field}`));
+    if (record.policy_version !== "v1.2") {
+      throw new Error(`${context} policy_version must be v1.2`);
+    }
+    if (!watchlistSymbols.has(record.symbol)) {
+      throw new Error(`${context} references unknown watchlist symbol ${record.symbol}`);
+    }
+    if (seen.has(record.symbol)) {
+      throw new Error(`${context} duplicates ${record.symbol}`);
+    }
+    seen.add(record.symbol);
+    parseDate(record.as_of, `${context} as_of`);
+    parseDate(record.stage_review_by, `${context} stage_review_by`);
+    if (!existsSync(record.source_path)) {
+      throw new Error(`${context} source_path does not exist: ${record.source_path}`);
+    }
+    ["initial_weight_range_pct", "fully_underwritten_weight_range_pct"].forEach((field) => {
+      const range = record[field];
+      if (
+        !Array.isArray(range)
+        || range.length !== 2
+        || !range.every((value) => Number.isFinite(value))
+        || range[0] < 0
+        || range[1] < range[0]
+        || range[1] > 100
+      ) {
+        throw new Error(`${context} ${field} must be an ascending two-number percentage range`);
+      }
+    });
+    [
+      "adverse_permanent_impairment_pct",
+      "max_nav_impairment_pct",
+    ].forEach((field) => requireNumber(record[field], `${context} ${field}`));
+    [
+      "downside_portfolio_result",
+      "base_portfolio_result",
+      "upside_portfolio_result",
+      "exceptional_portfolio_result",
+    ].forEach((field) => requireString(record[field], `${context} ${field}`));
+    [
+      "scale_milestones",
+      "hold_milestones",
+      "reduce_or_exit_milestones",
+      "source_ids",
+    ].forEach((field) => requireStringArray(record[field], `${context} ${field}`));
+  });
+  console.log(`ok ${positionConstructionFile} semantic checks`);
 }
 
 function validateWatchlistCycleReviews() {
@@ -2313,6 +2468,7 @@ function validateQualityMetrics() {
     throw new Error(`${qualityMetricsFile} ready repository-public state must set can_recommend_buys true`);
   }
   requireString(readiness.reason, `${qualityMetricsFile} decision_readiness.reason`);
+  validateMissionAccountability(parsed);
 
   const coverage = parsed.coverage ?? {};
   const discoveryProcess = parsed.discovery_process ?? {};
@@ -2335,6 +2491,8 @@ function validateQualityMetrics() {
   [
     "open_critical_events",
     "open_high_events",
+    "allocation_blocking_open_critical_events",
+    "allocation_blocking_open_high_events",
     "stale_valuation_states_over_45_days",
     "stale_theses_over_90_days",
   ].forEach((field) => requireNumber(freshness[field], `${qualityMetricsFile} freshness.${field}`));
@@ -2390,6 +2548,9 @@ function validateQualityMetrics() {
     "first_layer_questions_status",
     "broad_source_search_status",
     "independent_xhigh_subagents_status",
+    "name_ticker_universe_coverage_status",
+    "broad_semantic_search_status",
+    "search_quality_conclusion",
   ].forEach((field) => requireString(discoveryProcess[field], `${qualityMetricsFile} discovery_process.${field}`));
   [
     "open_candidates_without_readiness_sprint",
@@ -2397,6 +2558,12 @@ function validateQualityMetrics() {
     "material_open_candidates_blocking_allocation",
     "open_candidate_readiness_completed",
     "unresolved_subagent_conflicts",
+    "issuer_profile_semantic_coverage_pct",
+    "organic_recall_count",
+    "hard_coded_proxy_only_recall_count",
+    "exploratory_match_count",
+    "exploratory_sample_count",
+    "exploratory_sample_coverage_pct",
   ].forEach((field) => requireNumber(discoveryProcess[field], `${qualityMetricsFile} discovery_process.${field}`));
   [
     "required_xhigh_roles",
@@ -2413,6 +2580,23 @@ function validateQualityMetrics() {
       throw new Error(`${qualityMetricsFile} discovery_process.${field} must be complete`);
     }
   });
+  if (discoveryProcess.name_ticker_universe_coverage_status !== "complete") {
+    throw new Error(`${qualityMetricsFile} discovery_process.name_ticker_universe_coverage_status must be complete`);
+  }
+  if (
+    discoveryProcess.issuer_profile_semantic_coverage_pct === 0
+    && discoveryProcess.broad_semantic_search_status === "complete"
+  ) {
+    throw new Error(`${qualityMetricsFile} zero issuer-profile semantic coverage cannot support complete broad semantic search`);
+  }
+  const expectedExploratoryCoverage = discoveryProcess.exploratory_match_count === 0
+    ? 100
+    : (discoveryProcess.exploratory_sample_count / discoveryProcess.exploratory_match_count) * 100;
+  if (Math.abs(expectedExploratoryCoverage - discoveryProcess.exploratory_sample_coverage_pct) > 0.0001) {
+    throw new Error(
+      `${qualityMetricsFile} exploratory_sample_coverage_pct is ${discoveryProcess.exploratory_sample_coverage_pct}, expected ${expectedExploratoryCoverage.toFixed(4)}`,
+    );
+  }
   const completedDiscoveryRoles = new Set(discoveryProcess.completed_xhigh_roles);
   const skippedDiscoveryRoles = new Set(discoveryProcess.skipped_xhigh_roles);
   completedDiscoveryRoles.forEach((role) => {
@@ -2562,11 +2746,28 @@ function validateQualityMetrics() {
   const openEvents = csvRecords(freshnessFile).filter((row) => openEventStatuses.has(row.status));
   const openCriticalEvents = openEvents.filter((row) => row.severity === "critical").length;
   const openHighEvents = openEvents.filter((row) => row.severity === "high").length;
+  const activeSymbolSet = new Set(activeSymbols);
+  const allocationBlockingOpenCriticalEvents = openEvents
+    .filter((row) => row.severity === "critical" && activeSymbolSet.has(row.symbol))
+    .length;
+  const allocationBlockingOpenHighEvents = openEvents
+    .filter((row) => row.severity === "high" && activeSymbolSet.has(row.symbol))
+    .length;
   if (freshness.open_critical_events !== openCriticalEvents) {
     throw new Error(`${qualityMetricsFile} open_critical_events is ${freshness.open_critical_events}, expected ${openCriticalEvents}`);
   }
   if (freshness.open_high_events !== openHighEvents) {
     throw new Error(`${qualityMetricsFile} open_high_events is ${freshness.open_high_events}, expected ${openHighEvents}`);
+  }
+  if (freshness.allocation_blocking_open_critical_events !== allocationBlockingOpenCriticalEvents) {
+    throw new Error(
+      `${qualityMetricsFile} allocation_blocking_open_critical_events is ${freshness.allocation_blocking_open_critical_events}, expected ${allocationBlockingOpenCriticalEvents}`,
+    );
+  }
+  if (freshness.allocation_blocking_open_high_events !== allocationBlockingOpenHighEvents) {
+    throw new Error(
+      `${qualityMetricsFile} allocation_blocking_open_high_events is ${freshness.allocation_blocking_open_high_events}, expected ${allocationBlockingOpenHighEvents}`,
+    );
   }
   validateOldestOpenEventDate(freshness, openEvents);
   validateStaleThesisCount(freshness, asOfTimestamp, gates.thesis_review_max_age_days);
@@ -2574,8 +2775,8 @@ function validateQualityMetrics() {
 
   if (readiness.status === "ready") {
     if (
-      openCriticalEvents > 0
-      || openHighEvents > 0
+      allocationBlockingOpenCriticalEvents > 0
+      || allocationBlockingOpenHighEvents > 0
       || missingValuations > 0
       || missingFilingReviews > 0
       || missingCycleReviews > 0
@@ -2586,10 +2787,176 @@ function validateQualityMetrics() {
       || discoveryProcess.open_candidates_without_readiness_sprint > 0
       || discoveryProcess.material_open_candidates_blocking_allocation > 0
     ) {
-      throw new Error(`${qualityMetricsFile} cannot be ready with open high or critical events, missing active-symbol coverage, missing current watchlist-cycle reviews, stale active theses or valuations, unresolved subagent conflicts, or material candidate readiness blockers`);
+      throw new Error(`${qualityMetricsFile} cannot be ready with allocation-blocking high or critical events, missing active-symbol coverage, missing current watchlist-cycle reviews, stale active theses or valuations, unresolved subagent conflicts, or material candidate readiness blockers`);
     }
   }
   console.log(`ok ${qualityMetricsFile} semantic checks`);
+}
+
+function validateMissionAccountability(qualityMetrics) {
+  const context = `${qualityMetricsFile} mission_accountability`;
+  const mission = qualityMetrics.mission_accountability ?? {};
+  if (mission.policy_version !== "v1.2") {
+    throw new Error(`${context}.policy_version must be v1.2`);
+  }
+  [
+    "status",
+    "latest_confirmed_return_seeking_buy_date",
+    "high_liquidity_option_since",
+    "latest_mission_relevant_deployment_date",
+    "mission_relevant_deployment_basis",
+    "next_required_review_at",
+    "latest_constitutional_audit_path",
+    "current_conclusion",
+  ].forEach((field) => requireString(mission[field], `${context}.${field}`));
+  if (!existsSync(mission.latest_constitutional_audit_path)) {
+    throw new Error(`${context}.latest_constitutional_audit_path does not exist: ${mission.latest_constitutional_audit_path}`);
+  }
+  [
+    "no_action_is_default_target",
+    "repository_health_is_allocation_veto",
+    "target_readiness_controls_action",
+    "opportunity_set_sufficiency_required",
+  ].forEach((field) => requireBoolean(mission[field], `${context}.${field}`));
+  if (mission.no_action_is_default_target !== false) {
+    throw new Error(`${context}.no_action_is_default_target must be false`);
+  }
+  if (mission.repository_health_is_allocation_veto !== false) {
+    throw new Error(`${context}.repository_health_is_allocation_veto must be false`);
+  }
+  if (
+    mission.target_readiness_controls_action !== true
+    || mission.opportunity_set_sufficiency_required !== true
+  ) {
+    throw new Error(`${context} must make target readiness and opportunity-set sufficiency controlling`);
+  }
+  [
+    "latest_research_nav",
+    "confirmed_cash",
+    "confirmed_liquidity_reserve_value",
+    "liquidity_option_weight_pct",
+    "high_liquidity_option_threshold_pct",
+    "days_since_latest_mission_relevant_deployment",
+    "pressure_review_after_days",
+    "opportunity_set_reset_after_days",
+    "strategy_review_after_days",
+    "no_action_streak",
+  ].forEach((field) => requireNumber(mission[field], `${context}.${field}`));
+  [
+    "latest_confirmed_return_seeking_buy_date",
+    "high_liquidity_option_since",
+    "latest_mission_relevant_deployment_date",
+    "next_required_review_at",
+    "next_evidence_deadline",
+  ].forEach((field) => parseDate(mission[field], `${context}.${field}`));
+
+  const parameterErrors = validateMissionReviewParameters({
+    status: mission.status,
+    highLiquidityOptionThresholdPct: mission.high_liquidity_option_threshold_pct,
+    pressureReviewAfterDays: mission.pressure_review_after_days,
+    opportunitySetResetAfterDays: mission.opportunity_set_reset_after_days,
+    strategyReviewAfterDays: mission.strategy_review_after_days,
+  });
+  if (parameterErrors.length > 0) {
+    throw new Error(`${context} ${parameterErrors.join("; ")}`);
+  }
+
+  const calculatedWeight = calculateLiquidityOptionWeight({
+    confirmedCash: mission.confirmed_cash,
+    confirmedLiquidityReserveValue: mission.confirmed_liquidity_reserve_value,
+    researchNav: mission.latest_research_nav,
+  });
+  if (Math.abs(calculatedWeight - mission.liquidity_option_weight_pct) > 0.0001) {
+    throw new Error(
+      `${context}.liquidity_option_weight_pct is ${mission.liquidity_option_weight_pct}, expected ${calculatedWeight.toFixed(4)}`,
+    );
+  }
+  const asOf = qualityMetrics.as_of;
+  const calculatedDays = calendarDayDifference(mission.latest_mission_relevant_deployment_date, asOf);
+  if (mission.days_since_latest_mission_relevant_deployment !== calculatedDays) {
+    throw new Error(
+      `${context}.days_since_latest_mission_relevant_deployment is ${mission.days_since_latest_mission_relevant_deployment}, expected ${calculatedDays}`,
+    );
+  }
+  const expectedStatus = missionAccountabilityStatus({
+    liquidityOptionWeightPct: mission.liquidity_option_weight_pct,
+    highLiquidityOptionThresholdPct: mission.high_liquidity_option_threshold_pct,
+    daysSinceMissionRelevantDeployment: mission.days_since_latest_mission_relevant_deployment,
+    pressureReviewAfterDays: mission.pressure_review_after_days,
+    opportunitySetResetAfterDays: mission.opportunity_set_reset_after_days,
+    strategyReviewAfterDays: mission.strategy_review_after_days,
+  });
+  if (mission.status !== expectedStatus) {
+    throw new Error(`${context}.status is ${mission.status}, expected ${expectedStatus}`);
+  }
+
+  const accountPlan = parsedYamlFiles.get(accountPlanFile);
+  const reserveSymbol = accountPlan?.liquidity_reserve?.default_symbol;
+  const confirmedReturnSeekingBuys = csvRecords(ledgerFile)
+    .filter((row) =>
+      row.event_type === "trade"
+      && row.status === "confirmed"
+      && row.side === "buy"
+      && row.symbol !== ""
+      && row.symbol !== reserveSymbol);
+  const latestConfirmedBuyDate = confirmedReturnSeekingBuys
+    .map((row) => row.trade_date)
+    .sort()
+    .at(-1);
+  if (mission.latest_confirmed_return_seeking_buy_date !== latestConfirmedBuyDate) {
+    throw new Error(
+      `${context}.latest_confirmed_return_seeking_buy_date is ${mission.latest_confirmed_return_seeking_buy_date}, expected ${latestConfirmedBuyDate}`,
+    );
+  }
+  const ledgerById = new Map(csvRecords(ledgerFile).map((row) => [row.event_id, row]));
+  const deploymentEventIds = mission.mission_relevant_deployment_basis
+    .split(";")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  if (deploymentEventIds.length === 0) {
+    throw new Error(`${context}.mission_relevant_deployment_basis must identify confirmed ledger events`);
+  }
+  deploymentEventIds.forEach((eventId) => {
+    const event = ledgerById.get(eventId);
+    if (
+      event === undefined
+      || event.event_type !== "trade"
+      || event.status !== "confirmed"
+      || event.side !== "buy"
+      || event.trade_date !== mission.latest_mission_relevant_deployment_date
+      || event.symbol === reserveSymbol
+    ) {
+      throw new Error(`${context}.mission_relevant_deployment_basis references invalid event ${eventId}`);
+    }
+  });
+
+  const latestCurve = csvRecords(equityCurveFile)
+    .filter((row) => row.date <= asOf)
+    .sort((left, right) => left.date.localeCompare(right.date))
+    .at(-1);
+  if (latestCurve === undefined) {
+    throw new Error(`${context} cannot find a research NAV snapshot on or before ${asOf}`);
+  }
+  if (
+    Math.abs(Number(latestCurve.total_value) - mission.latest_research_nav) > 0.005
+    || Math.abs(Number(latestCurve.cash_value) - mission.confirmed_cash) > 0.005
+  ) {
+    throw new Error(`${context} NAV or cash does not match the latest equity-curve snapshot`);
+  }
+
+  const indexedNoActionRuns = csvRecords(operatingRunsFile)
+    .filter((row) =>
+      row.run_date > mission.latest_mission_relevant_deployment_date
+      && row.run_date <= asOf
+      && row.status === "completed_no_action")
+    .length;
+  if (mission.no_action_streak !== indexedNoActionRuns) {
+    throw new Error(`${context}.no_action_streak is ${mission.no_action_streak}, expected ${indexedNoActionRuns}`);
+  }
+  const noActionErrors = validateNoActionAccountability(mission);
+  if (noActionErrors.length > 0) {
+    throw new Error(`${context} ${noActionErrors.join("; ")}`);
+  }
 }
 
 function validateAllocationRelevantCandidateMateriality(allocationRelevantLanes) {
@@ -2876,7 +3243,6 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
   ].forEach((field) => {
     requireScalar(parsed.freshness_window?.[field], `${file} freshness_window.${field}`);
   });
-  validateEvidencePacketQualityMetrics(file, parsed);
   [
     "account_state_path",
     "status",
@@ -3006,6 +3372,7 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
   });
   validateEvidencePacketCandidateSetScope(file, parsed);
   validateEvidencePacketWatchlistScope(file, parsed);
+  validateEvidencePacketQualityMetrics(file, parsed);
 }
 
 function validateEvidencePacketChronology(file, parsed) {
@@ -3014,7 +3381,7 @@ function validateEvidencePacketChronology(file, parsed) {
   if (parsed.current_date !== qualityMetricsAsOf) {
     throw new Error(`${file} current_date must match ${qualityMetricsFile} as_of`);
   }
-  const match = file.match(/(?:^|\/)(\d{4}-\d{2}-\d{2})-subagent-evidence-packet\.ya?ml$/);
+  const match = file.match(/(?:^|\/)(\d{4}-\d{2}-\d{2})(?:-[a-z0-9-]+)?-subagent-evidence-packet\.ya?ml$/);
   if (match === null) {
     throw new Error(`${file} filename must include the evidence packet date`);
   }
@@ -3091,6 +3458,7 @@ function yamlDateString(value) {
 
 function validateEvidencePacketQualityMetrics(file, parsed) {
   const qualityMetrics = parsedYamlFiles.get(qualityMetricsFile);
+  const currentPolicyVersion = qualityMetrics.mission_accountability?.policy_version;
   const expectedFreshnessWindow = {
     quality_metrics_as_of: qualityMetrics.as_of,
     universe_scan_as_of: qualityMetrics.coverage?.universe_scan_as_of,
@@ -3102,13 +3470,27 @@ function validateEvidencePacketQualityMetrics(file, parsed) {
       throw new Error(`${file} freshness_window.${field} does not match ${qualityMetricsFile}`);
     }
   });
-  [
+  const qualityMetricFields = [
     "coverage",
     "decision_readiness",
     "discovery_process",
     "freshness",
-  ].forEach((field) => {
-    requireMatchingJson(parsed.quality_metrics?.[field] ?? {}, qualityMetrics[field] ?? {}, `${file} quality_metrics.${field}`);
+  ];
+  if (parsed.policy_version === currentPolicyVersion) {
+    qualityMetricFields.forEach((field) => {
+      requireMatchingJson(parsed.quality_metrics?.[field] ?? {}, qualityMetrics[field] ?? {}, `${file} quality_metrics.${field}`);
+    });
+    return;
+  }
+  qualityMetricFields.forEach((field) => {
+    const ignoredKeys = field === "decision_readiness" ? new Set(["reason"]) : new Set();
+    const packetMetrics = Object.fromEntries(
+      Object.entries(parsed.quality_metrics?.[field] ?? {}).filter(([key]) => !ignoredKeys.has(key)),
+    );
+    const currentMetrics = Object.fromEntries(
+      Object.keys(packetMetrics).map((key) => [key, qualityMetrics[field]?.[key]]),
+    );
+    requireMatchingJson(packetMetrics, currentMetrics, `${file} quality_metrics.${field}`);
   });
 }
 

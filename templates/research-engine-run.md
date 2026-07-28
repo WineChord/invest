@@ -38,6 +38,13 @@ news_and_industry_window:
 cache_inputs_reused:
 cache_inputs_invalidated:
 semantic_profile_coverage:
+name_ticker_universe_coverage:
+organic_recall:
+hard_coded_proxy_only_recall:
+outside_watchlist_effort_pct:
+exploratory_sample_coverage_pct:
+repeated_hit_max_age_days:
+new_listing_to_r1_latency_days:
 unavailable_sources:
 ```
 
@@ -96,6 +103,11 @@ open_candidate_count:
 deep_dive_queue:
 readiness_sprints:
 candidate_readiness_index:
+r0_lead_count:
+r1_researchable_count:
+r2_comparable_count:
+r3_promotion_ready_count:
+bounded_discovery_debt:
 ```
 
 Do not deep-research every symbol found in the scan. Explain which theme filters and quick rejection criteria were used before any company entered the deep-dive queue. Serious discovery must answer the first-layer bottleneck questions before ticker lists become important. For candidates that could affect allocation, opportunity cost, lane completeness, or watchlist priority, do not stop at a shallow raw-candidate label. Run a readiness sprint and gather public market data, security metadata, primary filings, issuer reports, industry context, material filing review, valuation state, same-lane peer comparison, and dashboard-facing research coverage when available before concluding that the candidate is not buy-ready.
@@ -200,6 +212,10 @@ decision_readiness_status:
 decision_readiness_scope: repository_and_public_observable_information
 can_recommend_buys:
 decision_readiness_reason:
+target_readiness:
+opportunity_set_sufficiency:
+repository_health:
+bounded_discovery_debt:
 user_only_execution_prerequisites:
 active_symbols_with_current_valuation_state:
 active_symbols_missing_valuation_state:
@@ -220,6 +236,19 @@ open_candidates_without_readiness_sprint:
 material_open_candidates_blocking_allocation:
 unresolved_subagent_conflicts:
 unresolved_watchlist_review_conflicts:
+mission_accountability:
+  liquidity_option_weight_pct:
+  high_liquidity_option_since:
+  latest_confirmed_return_seeking_buy_date:
+  latest_mission_relevant_deployment_date:
+  days_since_latest_mission_relevant_deployment:
+  status:
+  strongest_counterfactual:
+  smallest_prudent_exposure_considered:
+  zero_vs_starter_result:
+  cash_opportunity_cost:
+  next_evidence_deadline:
+  article1_red_team_status:
 ```
 
 ## Meta-Self-Improvement
@@ -243,11 +272,11 @@ Use [meta-self-improvement.md](meta-self-improvement.md) for substantial methodo
 
 ## Allocation Readiness
 
-State whether the next monthly decision can proceed from repository and public-observable evidence. The current durable state should be `ready`; if it is not, continue the research run rather than ending with a missing-evidence list.
+Report target readiness, opportunity-set sufficiency, bounded discovery debt, and repository health separately.
 
-Do not call a candidate or decision not ready merely because the repository has not yet gathered data that is publicly reachable during the run. Either gather it, mark it genuinely unavailable or user-only, or reject/incubate the candidate based on analyzed evidence.
+Do not call a target unready merely because unrelated repository work remains. Gather or bound every publicly reachable gap that can change the target or opportunity-cost ranking. R0-R2 candidates may remain open under a dated service-level agreement with stage-adjusted evidence, next source, due date, waiting cost, false-negative warning, and reopen-or-reject trigger. Only R3 requires promotion-grade and dashboard-equivalent completeness.
 
-Do not leave the decision not ready when a material open candidate still has reachable repository work outstanding. That state should fail validation until `research/discovery/candidate-readiness.yml` and `research/quality-metrics.yml` are updated to a ready, evidence-based conclusion. If the conclusion is incubate rather than reject or not-material, the candidate also needs research-only dashboard visibility and the same supporting market, filing, valuation, and company-analysis surfaces as other public stocks.
+Repository health must still be reported and improved, but process debt is not a no-action reason. When confirmed deployable liquidity exists, complete the Article 1 offensive challenge before finalizing zero exposure.
 
 ## Repository Updates
 

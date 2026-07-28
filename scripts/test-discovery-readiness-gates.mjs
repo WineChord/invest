@@ -32,6 +32,12 @@ const positiveTestCases = [
       });
     },
   },
+  {
+    name: "accepts bounded R1 candidate readiness",
+    mutate: (cwd) => {
+      setFlyBoundedReadiness(cwd);
+    },
+  },
 ];
 
 const testCases = [
@@ -63,6 +69,13 @@ const testCases = [
       });
     },
     expected: "has transient readiness_status in_progress",
+  },
+  {
+    name: "rejects bounded readiness without a due date",
+    mutate: (cwd) => {
+      setFlyBoundedReadiness(cwd, { nextEvidenceDue: "" });
+    },
+    expected: "next_evidence_due is required",
   },
   {
     name: "rejects repo work remaining in terminal candidate readiness",
@@ -955,7 +968,7 @@ const testCases = [
         doc.quality_metrics.decision_readiness.scope = "repository_and_broker_information";
       });
     },
-    expected: "quality_metrics.decision_readiness must match deterministic output",
+    expected: "quality_metrics.decision_readiness.scope must be repository_and_public_observable_information",
   },
   {
     name: "rejects evidence packet stale freshness window",
@@ -1143,6 +1156,45 @@ function updateCandidateReadiness(cwd, mutate) {
     }
     mutate(record);
   });
+}
+
+function setFlyBoundedReadiness(cwd, { nextEvidenceDue = "2026-08-31" } = {}) {
+  const boundedFields = {
+    readiness_status: "researchable_open",
+    dashboard_surface_status: "not_required_pre_promotion",
+    research_stage: "R1_researchable",
+    blocker_type: "repo_work_remaining",
+    blocker_reason: "The first-pass thesis is researchable, but the next filing and offering update remain scheduled evidence rather than a current-allocation veto.",
+    reachable_evidence_remaining: "next quarterly filing and offering update",
+    next_evidence_source: "next quarterly filing and offering update",
+    next_evidence_due: nextEvidenceDue,
+    cost_of_waiting: "A rapid contract or launch inflection could improve the evidence before the scheduled review.",
+    false_negative_early_warning: "Material backlog conversion, margin improvement, or dilution relief before the due date.",
+    reopen_or_reject_trigger: "Advance to R2 on stronger economics or reject if survival and dilution worsen.",
+    next_action: "Review the next quarterly filing and offering update by the due date.",
+    conclusion: "Bounded R1 research remains open without blocking the current allocation decision.",
+  };
+  updateCandidateReadiness(cwd, (record) => {
+    Object.assign(record, boundedFields);
+  });
+  updateMarkdownYamlBlock(cwd, "research/discovery/readiness/2026-05-31-FLY-readiness.md", (metadata) => {
+    Object.assign(metadata, boundedFields);
+  });
+  syncFlyReadinessArtifacts(cwd);
+}
+
+function updateMarkdownYamlBlock(cwd, relativePath, mutate) {
+  const filePath = path.join(cwd, relativePath);
+  const content = readFileSync(filePath, "utf8");
+  const match = content.match(/```yaml\n([\s\S]*?)\n```/);
+  if (match === null || match.index === undefined) {
+    throw new Error(`Missing YAML metadata block in ${relativePath}`);
+  }
+  const metadata = parseYaml(match[1]);
+  mutate(metadata);
+  const replacement = `\`\`\`yaml\n${stringifyYaml(metadata).trimEnd()}\n\`\`\``;
+  const updated = `${content.slice(0, match.index)}${replacement}${content.slice(match.index + match[0].length)}`;
+  writeFileSync(filePath, updated);
 }
 
 function readQualityMetrics(cwd) {
