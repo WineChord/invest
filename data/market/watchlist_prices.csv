@@ -1,55 +1,55 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
-AAOI,97.8900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-ALAB,282.4350,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-ASTS,58.2600,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-ASPI,4.0450,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-BE,188.1400,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-CBRS,188.7900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-CIFR,21.6400,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-CRCL,65.6500,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-CRDO,207.8700,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
+AAOI,97.8200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+ALAB,282.5200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+ASPI,4.0500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+ASTS,58.2900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh for confirmed holding.
+BE,188.1800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+CBRS,188.6100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+CIFR,21.6500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+CRCL,65.6700,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+CRDO,208.1400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
 CRWV,70.7900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-ENRD,5.1650,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-ETN,398.5300,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
+ENRD,5.1300,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+ETN,398.6400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
 FLY,19.8800,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-FN,471.3750,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-GILT,11.0050,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-GSAT,79.0350,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-HQ,12.3600,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
+FN,470.8200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+GILT,11.0100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+GSAT,79.0300,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+HQ,12.4200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
 IMSR,5.1100,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-INFQ,9.7800,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-IONQ,35.9000,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-IQMX,10.7450,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-IREN,36.3000,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-KTOS,49.4300,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-LEU,176.1400,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-LITE,711.8650,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-LUNR,13.3050,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-MDA,29.9650,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-MU,899.9200,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-NBIS,187.8600,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
+INFQ,9.7600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+IONQ,35.9200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+IQMX,10.8000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+IREN,36.2900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+KTOS,49.4500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+LEU,175.9800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+LITE,711.9600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+LUNR,13.3100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+MDA,29.9700,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+MU,900.2000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+NBIS,187.8800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
 NNE,16.7900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-NUCL,5.4900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-NWPX,127.2650,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-OCC,14.7000,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-OKLO,41.8300,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-POET,7.1000,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-PWR,620.0800,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-QBTS,19.5000,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-QSI,0.7838,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-QTEX,0.9448,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-QUBT,7.9500,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-RDW,8.8100,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-RGTI,15.6150,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
+NUCL,5.5100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+NWPX,128.2600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+OCC,14.7800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+OKLO,41.8100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+POET,7.0900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+PWR,620.2800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+QBTS,19.5100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+QSI,0.7830,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+QTEX,0.9500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+QUBT,7.9600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+RDW,8.8300,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+RGTI,15.6400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
 RIOT,21.9700,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-RKLB,66.9100,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-SEI,52.6000,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-SMR,8.5300,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-SPCX,113.4900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-STDN,7.7200,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-VOYG,26.2400,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-VRT,287.1800,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
+RKLB,66.9400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh for confirmed holding.
+SEI,52.5900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+SMR,8.5400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+SPCX,113.5000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+STDN,7.7000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+VOYG,26.2500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+VRT,287.6000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
 WULF,17.9800,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-WYFI,23.1550,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-XNDU,10.1900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-YSS,18.8300,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
+WYFI,23.1500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+XNDU,10.2000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+YSS,18.8700,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
