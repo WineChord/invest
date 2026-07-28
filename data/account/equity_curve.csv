@@ -28,3 +28,4 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-07-22,1867.20,1873.58,3740.78,4440.00,-15.7482,-0.1223,Historical completed-close valuation uses the exact pre-deposit account state; the confirmed USD 3000 deposit occurred on 2026-07-23 and no 2026-07-23 completed close was inferred.
 2026-07-23,1840.81,4873.58,6714.39,7440.00,-9.7528,-0.7055,Historical completed-close valuation uses the exact pre-deposit account state; the confirmed USD 888 deposit occurred on 2026-07-24 and no 2026-07-24 completed close was inferred.
 2026-07-24,1704.67,5761.58,7466.25,8328.00,-10.3476,11.1977,Automated daily close valuation from Yahoo Finance chart.
+2026-07-27,1778.33,5761.58,7539.91,8328.00,-9.4631,0.9866,Completed-close valuation uses Alpaca IEX daily bars after Yahoo HTTP 403; no confirmed contribution occurred since the prior completed close.

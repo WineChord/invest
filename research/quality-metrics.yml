@@ -1,14 +1,14 @@
 schema_version: 1
-as_of: 2026-07-27
+as_of: 2026-07-28
 last_research_engine_run:
-  as_of: 2026-07-27
-  scope: daily_full_operating_cycle_with_completed_close_integrity_all_form_freshness_broad_discovery_and_all_symbol_review
-  notes: Completed the full 2026-07-27 operating cycle using a fresh 54-symbol revalidation of July 24 completed closes, confirmed cash and positions, a current but incomplete macro overlay, degraded public-attention inputs, a complete broad discovery scan, 54-of-54 fresh all-form SEC submissions payloads, bounded issuer-news checks, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation work. Every SEC payload matched July 26; repeated QXL, JAGU and QUCY hits received terminal evidence-based rejection, no active promotion or buy zone changed, and the stable decision is completed no action.
+  as_of: 2026-07-28
+  scope: daily_full_operating_cycle_with_july_27_completed_closes_all_form_freshness_broad_and_registration_discovery_and_all_symbol_review
+  notes: Completed the full 2026-07-28 operating cycle using fresh July 27 completed closes for all 54 current tradable research symbols, confirmed cash and positions, macro and degraded public-attention overlays, complete broad discovery, exact-date registration scaffolding, 54-of-54 fresh all-form SEC submissions payloads, issuer-event checks, all-symbol comparison and independent discovery, freshness, bull, bear, valuation and allocation review. RKLB, NBIS, QBTS and QTEX received material evidence updates; WBI, CDNL, FIP and Ace Green received terminal readiness and rejection; no active promotion or buy zone changed and the stable decision is completed no action.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support a decision after the fresh July 24 completed-close cross-check, 54-symbol all-form submissions hash reconciliation, bounded issuer-news review, complete broad discovery, degraded community triage with explicit errors, terminal readiness for repeated QXL, JAGU and QUCY hits, all-symbol comparison and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
+  reason: Repository-public research is current enough to support a decision after the fresh July 27 completed-close cross-check, 54-symbol all-form submissions review, bounded issuer-news review, complete broad and exact-date registration discovery, degraded community triage with explicit errors, terminal readiness for WBI, CDNL, FIP and Ace Green, all-symbol comparison and independent xhigh review. Ready permits a decision; the completed decision is no action and no security is currently buy-eligible.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 5761.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
@@ -18,8 +18,8 @@ decision_readiness:
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 coverage:
-  universe_scan_as_of: 2026-07-27
-  discovery_lane_map_as_of: 2026-07-26
+  universe_scan_as_of: 2026-07-28
+  discovery_lane_map_as_of: 2026-07-28
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
@@ -32,10 +32,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 24
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-27-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-27-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-27-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-27-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-28-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-28-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-28-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-28-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   independent_xhigh_subagents_status: complete
@@ -117,4 +117,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses completed-close provenance, the INFQ corporate-action limitation, fresh 54-symbol all-form SEC scope, the ASTS and IREN dynamic-page gaps, degraded community coverage, corrected July 24 registration scope, terminal QXL, JAGU and QUCY dispositions, reviewer reconciliation, current liquidity, and the absence of an order or broker preview.
+notes: Ready means the repository-public research state has no unresolved reachable-work blocker. The completed no-action decision discloses July 27 completed-close provenance, the INFQ corporate-action limitation, fresh 54-symbol all-form SEC scope, degraded community coverage, the 500-row provisional registration boundary, terminal WBI, CDNL, FIP and Ace Green dispositions, reviewer reconciliation, current liquidity, and the absence of an order or broker preview.

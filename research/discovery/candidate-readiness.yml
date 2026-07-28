@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-27
+as_of: 2026-07-28
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -696,3 +696,59 @@ records:
     last_readiness_reviewed_at: 2026-07-27
     next_action: Reopen only after recognized recurring autonomy revenue, independent customer and product validation, controlled burn, a stable capital structure and direct evidence of scarce technology ownership.
     conclusion: Rejected from ongoing coverage after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: WBI
+    material_to_current_allocation: false
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: A newly public Permian produced-water network is a direct physical water-handling expression and required comparison with NWPX.
+    blocking_scope: water_network_lane_false_negative_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-28-WBI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: USD 1.49 billion debt, oil-cycle and customer dependence, environmental liabilities, related-party and complex economic interests, capital intensity and a roughly USD 4.1 billion basic value do not improve the extreme-upside opportunity set.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-28
+    next_action: Reopen only after lower leverage, simpler per-share economics, durable demand beyond oil activity and a mission-consistent valuation.
+    conclusion: Rejected from ongoing coverage after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: CDNL
+    material_to_current_allocation: false
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: A newly listed wet-utility and site-infrastructure contractor with growing backlog required a directness, moat and capitalization review.
+    blocking_scope: wet_utility_contractor_false_negative_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-28-CDNL-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Cancellable backlog, regional contractor economics, acquisition dependence, project concentration, Up-C complexity and a sharp price re-rating do not establish scarce-network ownership or extreme per-share upside.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-28
+    next_action: Reopen only after durable bottleneck pricing, quantified structural end-market mix, cleaner capitalization and a mission-consistent valuation.
+    conclusion: Rejected from ongoing coverage after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: FIP
+    material_to_current_allocation: false
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: Railroad, port, terminal and transloading assets could control scarce industrial-logistics nodes and required a leverage, governance and per-share-capture review.
+    blocking_scope: industrial_logistics_node_false_negative_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-28-FIP-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: USD 3.84 billion debt, external management and incentive fees, customer concentration, preferred claims, asset-rotation complexity and common losses prevent clean per-share value capture.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-28
+    next_action: Reopen only after material deleveraging, positive common-equity cash conversion, lower concentration and better management alignment.
+    conclusion: Rejected from ongoing coverage after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: AGXI
+    material_to_current_allocation: false
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: Battery and critical-material recycling could become a strategic bottleneck, and the exact-date S-4/A surfaced a proposed public expression.
+    blocking_scope: critical_material_recycling_transaction_false_negative_hygiene
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-07-28-AGXI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The transaction is unclosed and AGXI is not an eligible listed security; 12 percent cumulative convertible preferred stock, warrants and commitment shares precede scaled production and customer economics.
+    reachable_evidence_remaining: none
+    last_readiness_reviewed_at: 2026-07-28
+    next_action: Reopen only after a completed eligible listing, scaled production and customer proof, cleaner financing and reconciled fully diluted capitalization.
+    conclusion: Rejected the current transaction expression after bounded primary-source readiness; no dashboard surface, promotion or buy.

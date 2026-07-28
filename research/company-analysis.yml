@@ -1355,3 +1355,51 @@ entries:
     risk_watch: Technical yield, purity, feedstock, permits, customer acceptance, shipment timing, gross margin, cash use, capex, TerraPower conditions and termination rights, debt, note conversion, resale supply, stock compensation, internal controls and fully diluted valuation.
     next_check: Commercial shipment and acceptance, HALEU permit, production yield or margin disclosure, TerraPower milestone, cash-use or financing update, internal-control remediation, diluted capitalization or valuation reset.
     source_path: research/discovery/readiness/2026-07-26-ASPI-readiness.md
+  - id: 2026-07-28-rklb-rslp-contract
+    symbol: RKLB
+    analyzed_at: "2026-07-28"
+    analysis_type: material_contract_refresh
+    policy_version: v1.1
+    title: Record HASTE contract strengthens repeatable defense-launch evidence
+    stance: Hold 17; add 0
+    summary: The issuer describes a USD 266 million U.S. Space Force contract and separately states 12 HASTE launches plus up to six additional opportunities without clarifying option inclusion. The award improves backlog quality, cadence and national-security-customer evidence, but undisclosed margin, Neutron execution, Iridium approvals and financing, ATM dilution, valuation and correlated space exposure keep the add gate closed.
+    upside_path: Execute the multi-launch program with attractive margins, scale HASTE and Electron cadence, deliver Neutron, integrate Iridium without impairing the balance sheet, and convert national-security demand into durable per-share cash generation.
+    risk_watch: Program margin and cash timing, launch reliability, Neutron, Iridium approvals and financing, integration, ATM usage, dilution, valuation, customer concentration and account space concentration.
+    next_check: Contract task-order economics, first mission, August 10 results, Neutron milestone, Iridium financing or approval, ATM usage, cash conversion or valuation reset.
+    source_path: research/filings/2026-07-28-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-28-nbis-equity-authority
+    symbol: NBIS
+    analyzed_at: "2026-07-28"
+    analysis_type: material_dilution_and_governance_refresh
+    policy_version: v1.1
+    title: Proposed equity-authority renewal preserves per-share overhang
+    stance: B+ watch; buy 0
+    summary: The proposed renewal of five-year authority to issue up to 20 percent of current issued capital with excluded pre-emption rights preserves financing flexibility and a material dilution and governance overhang without new customer, utilization, margin or cash-conversion evidence. Comparable authority was approved previously, so the notice is not treated as a new deterioration.
+    upside_path: Use funded capacity to build high-utilization recurring AI-cloud economics, diversify customers, convert growth into free cash flow, and avoid using broad equity authority at value-destructive prices.
+    risk_watch: Shareholder vote, issuance and repurchase activity, pre-emption rights, diluted capitalization, facility covenants, GPU collateral, customer concentration, utilization, capex, acquisitions and cash conversion.
+    next_check: Meeting outcome, actual issuance or repurchase, reconciled diluted capitalization, customer and utilization disclosure, cash conversion or material valuation reset.
+    source_path: research/filings/2026-07-28-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-28-qbts-att-agreement
+    symbol: QBTS
+    analyzed_at: "2026-07-28"
+    analysis_type: material_customer_evidence_refresh
+    policy_version: v1.1
+    title: AT&T use case improves relevance but not yet commercial economics
+    stance: C+ research-only; buy 0
+    summary: AT&T's expanded use and reported optimization-time reduction improve real-workflow evidence, but no contract value, duration, revenue, margin, minimum commitment or concentration data was disclosed and the share price rose sharply on the announcement.
+    upside_path: Convert the AT&T workload into a material paid deployment, win repeat production customers, demonstrate durable annealing advantages, improve gross margin and cash generation, and preserve per-share value.
+    risk_watch: Contract economics, bookings conversion, customer concentration, system utilization, technical limits, competing modalities, cash burn, dilution and valuation.
+    next_check: Contract value or revenue, repeat deployments, recognized revenue, gross margin, system utilization, quarterly cash use, dilution or valuation reset.
+    source_path: research/filings/2026-07-28-MATERIAL-FILING-REFRESH.md
+  - id: 2026-07-28-qtex-northeastern-collaboration
+    symbol: QTEX
+    analyzed_at: "2026-07-28"
+    analysis_type: material_research_collaboration_refresh
+    policy_version: v1.1
+    title: Cryogenic collaboration supports relevance without commercial proof
+    stance: C+ research-only; buy 0
+    summary: The Northeastern collaboration supports QTREX's cryogenic-interconnect research relevance, but a first option to negotiate a future license is not a binding license, customer qualification, order, revenue or margin and does not offset dilution, governance, going-concern and financing risk.
+    upside_path: Convert research into protectable licensed intellectual property, qualify products with credible customers, win repeat production orders, achieve positive gross margin, reduce burn and clean up diluted capitalization.
+    risk_watch: License rights, customer qualification, repeat orders, manufacturing yield, gross margin, cash runway, authorized shares, equity awards, warrants, governance and financing.
+    next_check: Binding license, qualified customer, repeat production order, positive gross margin, vote outcome, clean financing, diluted capitalization or valuation reset.
+    source_path: research/filings/2026-07-28-MATERIAL-FILING-REFRESH.md

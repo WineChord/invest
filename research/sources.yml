@@ -3357,3 +3357,111 @@ sources:
     first_seen_at: 2026-07-27
     related_symbols: [QUCY]
     summary: The filing describes autonomy software that submits optimization work to third-party quantum resources and references future deployments, without recognized recurring revenue or ownership of the underlying quantum hardware.
+  - id: completed_close_universe_2026_07_27
+    title: Completed Regular-Session Close Universe — 2026-07-27
+    source_type: market_data
+    url: https://alpaca.markets/data
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [AAOI, ALAB, ASPI, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, NWPX, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RIOT, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Alpaca IEX daily bars supplied a completed July 27 regular-session close for all 54 tradable research securities; the same-symbol corporate-action check found no split or stock-distribution event requiring a return-series bridge for that session.
+  - id: sec_submissions_all_forms_2026_07_28
+    title: All-Form SEC Submissions Audit — 2026-07-28
+    source_type: sec_filing_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-28
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [AAOI, ALAB, ASPI, ASTS, BE, CBRS, CIFR, CRCL, CRDO, CRWV, ENRD, ETN, FLY, FN, GILT, GSAT, HQ, IMSR, INFQ, IONQ, IQMX, IREN, KTOS, LEU, LITE, LUNR, MDA, MU, NBIS, NNE, NUCL, NWPX, OCC, OKLO, POET, PWR, QBTS, QSI, QTEX, QUBT, RDW, RGTI, RIOT, RKLB, SEI, SMR, SPCX, STDN, VRT, VOYG, WULF, WYFI, XNDU, YSS]
+    summary: Fresh HTTP 200 and schema-validated SEC submissions payloads covered all 54 tradable research issuers and identified twelve issuers with new July 27 filing sets for primary-source classification.
+  - id: rklb_rslp_haste_contract_2026_07_27
+    title: Rocket Lab USD 266 Million RSLP HASTE Multi-Launch Contract
+    source_type: issuer_release
+    url: https://rocketlabcorp.com/updates/record-contract-rslp-kodiak/
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [RKLB]
+    summary: Rocket Lab described a USD 266 million U.S. Space Force multi-launch contract and separately stated 12 HASTE launches plus opportunities for up to six additional launches; the release does not clarify whether the stated value includes those additional-launch opportunities.
+  - id: nbis_agm_equity_authority_2026_07_27
+    title: Nebius 2026 Annual Meeting Equity and Repurchase Authorizations
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926087080/tm2621374d1_ex99-1.htm
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [NBIS]
+    summary: The meeting materials seek five-year authority to issue up to 20 percent of issued capital with excluded pre-emption rights, an 18-month authorization to repurchase up to 20 percent, and cancellation of 2,243,621 Class C shares.
+  - id: qbts_att_agreement_2026_07_27
+    title: D-Wave and AT&T Network Optimization Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000117/attsignsagreementtoexpandu.htm
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [QBTS]
+    summary: AT&T agreed to expand D-Wave use across network operations after an early optimization workload reportedly fell from about one hour to under 15 seconds; no contract value, revenue, margin, or minimum commitment was disclosed.
+  - id: qtex_northeastern_interconnect_2026_07_27
+    title: QTREX and Northeastern Cryogenic Quantum Interconnect Collaboration
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526003137/qtrexex99-1.htm
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [QTEX]
+    summary: The collaboration targets cryogenic quantum interconnect research and gives QTREX a first option to negotiate a commercial license to resulting intellectual property; it discloses no customer, binding license, order, revenue, margin, or production qualification.
+  - id: wbi_q1_2026_10q
+    title: WaterBridge Infrastructure Form 10-Q for the Quarter Ended March 31 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2064947/000119312526209490/wbi-20260331.htm
+    source_published_at: 2026-05-08
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [WBI]
+    summary: WaterBridge reported USD 201.0 million quarterly revenue, USD 102.9 million adjusted EBITDA and USD 1.49 billion total debt; produced-water network growth is offset by oil-cycle, environmental, capital-structure and leverage risk.
+  - id: cdnl_q1_2026_10q
+    title: Cardinal Infrastructure Group Form 10-Q for the Quarter Ended March 31 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2079999/000119312526221771/cdnl-20260331.htm
+    source_published_at: 2026-05-14
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [CDNL]
+    summary: Cardinal reported USD 854 million backlog and USD 524 million remaining performance obligations, but substantially all backlog contracts may be canceled and the regional contractor retains acquisition, project, Up-C and valuation risk.
+  - id: fip_q1_2026_10q
+    title: FTAI Infrastructure Form 10-Q for the Quarter Ended March 31 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1899883/000189988326000025/fip-20260331.htm
+    source_published_at: 2026-05-09
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [FIP]
+    summary: FIP disclosed USD 3.84 billion total debt, external management, customer concentration and a USD 154.5 million quarterly loss attributable to common holders.
+  - id: fip_tidewater_acquisition_2026_06_29
+    title: FTAI Infrastructure Tidewater Logistics Acquisition
+    source_type: issuer_release
+    url: https://ir.fipinc.com/news-releases/news-release-details/ftai-infrastructure-announces-acquisition-tidewater-logistics
+    source_published_at: 2026-06-29
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [FIP]
+    summary: FIP paid approximately USD 45 million for Tidewater Logistics using an upsized term loan and projects USD 9 million of next-twelve-month adjusted EBITDA, an issuer estimate that does not repair consolidated leverage or common-equity cash conversion.
+  - id: ace_green_s4a_2026_07_27
+    title: Ace Green Recycling and Athena Technology Acquisition Corp II Form S-4/A
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2065462/000121390026081541.txt
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [AGXI]
+    summary: The proposed business combination seeks a future Nasdaq AGXI listing and includes 12 percent cumulative convertible preferred stock, warrants and commitment shares; the transaction is not closed and no eligible completed-price history exists.
+  - id: exploratory_completed_closes_2026_07_27
+    title: Alpaca IEX Completed Daily Bars for WBI CDNL and FIP
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/bars
+    source_published_at: 2026-07-27
+    retrieved_at: 2026-07-28
+    first_seen_at: 2026-07-28
+    related_symbols: [WBI, CDNL, FIP]
+    summary: Alpaca IEX daily bars supplied completed July 27 closes of USD 33.34 for WBI, USD 63.51 for CDNL and USD 4.155 for FIP for bounded readiness; price did not repair their mission, structure or per-share-capture vetoes.
