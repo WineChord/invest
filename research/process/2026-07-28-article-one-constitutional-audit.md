@@ -98,6 +98,16 @@ The constitution carries the supremacy and lower-level-yield contract. The propo
 
 This enforcement remains proportional. It does not turn narrow maintenance into a full decision cycle, and a passing repository check does not make any security buy-eligible.
 
+## Cadence Adjustment
+
+Sixteen indexed full decision runs from 2026-07-11 through 2026-07-28 produced fifteen completed no-action conclusions and one local actionable conclusion. The runs still found research leads and process defects, but repeating the entire universe, full validation, deployment, and full email every calendar day imposed high cost without sixteen independent allocation opportunities. Daily deterministic market-data automation already preserves completed-close awareness.
+
+The reference cadence is therefore a Monday-through-Saturday 15:00 Asia/Shanghai agent review after the deterministic market workflow. Monday checks weekend evidence, Tuesday through Friday check each completed U.S. session, and Saturday is the standing full operating cycle using the completed Friday session and the week's accumulated evidence. Quiet sentinels do not send investment email; Saturday and event-driven full decisions do.
+
+This is a hybrid frequency, not a retreat to passive monthly review. Its objective is lower latency for material filings, financing, contracts, regulatory events, broker-state changes, severe price dislocations, and mission-accountability deadlines, while removing daily full-cycle ceremony. Fallback price thresholds are triage-only and cannot create buy eligibility. Review after four completed Saturday cycles using detection latency, full-cycle count, decision changes, missed events, duplicate or late contribution handling, email noise, compute cost, and mission-relevant deployment quality. The first Saturday of each month performs a cadence meta-review, and high-event periods may temporarily increase full-cycle frequency within bounded review windows.
+
+The review also found that a weekday-based standing instruction must not convert the policy's planned monthly USD 888 contribution into a broker-confirmed weekly deposit. Future liquidity is not a scheduling fact. The revised cadence processes a deposit only from current confirmation evidence and uses the execution-confirmation workflow to prevent duplicate account events.
+
 ## Next Review
 
 Apply policy `v1.2` to the next allocation decision and evaluate whether it changes:
