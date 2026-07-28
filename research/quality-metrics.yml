@@ -45,6 +45,7 @@ mission_accountability:
   decision_critical_missing_evidence: LEU fixed-price contract economics, expansion financing, TENEX exposure, debt, and dilution remained unresolved in the latest historical decision.
   why_risk_sizing_cannot_absorb_uncertainty: Not structured under policy v1.1; the next allocation review must test this rather than inherit zero.
   cash_opportunity_cost: The latest historical decision accepted waiting optionality but did not quantify the zero-versus-starter cost under v1.2.
+  conjunctive_evidence_and_price_trigger: Not structured under policy v1.1; no standing price-only trigger is inferred, and the next v1.2 allocation review must record evidence and price conjunctively.
   next_evidence_deadline: 2026-08-05
   no_action_streak: 15
   article1_red_team_status: completed_policy_audit_next_allocation_must_apply_v1.2

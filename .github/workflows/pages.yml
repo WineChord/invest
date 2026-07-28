@@ -25,6 +25,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run check:article-one
       - run: npm run verify
       - uses: actions/configure-pages@v6
         if: github.event_name != 'pull_request'

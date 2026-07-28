@@ -94,18 +94,20 @@ try {
 
 function makeFixture(name) {
   const target = path.join(fixtureRoot, name);
-  for (const entry of [".agents", "AGENTS.md", "CONSTITUTION.md", "PUBLICATION_POLICY.md", "SPEC.md", "data", "decisions", "research", "templates"]) {
+  for (const entry of [".agents", ".github", "AGENTS.md", "CONSTITUTION.md", "PUBLICATION_POLICY.md", "SPEC.md", "package.json", "data", "decisions", "research", "templates"]) {
     cpSync(path.join(repoRoot, entry), path.join(target, entry), {
       recursive: true,
       force: true,
     });
   }
   mkdirSync(path.join(target, "scripts"), { recursive: true });
-  cpSync(
-    path.join(repoRoot, "scripts/market-data-merge-lib.mjs"),
-    path.join(target, "scripts/market-data-merge-lib.mjs"),
-    { force: true },
-  );
+  for (const script of ["check-article-one.mjs", "market-data-merge-lib.mjs"]) {
+    cpSync(
+      path.join(repoRoot, "scripts", script),
+      path.join(target, "scripts", script),
+      { force: true },
+    );
+  }
   return target;
 }
 

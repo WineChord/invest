@@ -40,6 +40,7 @@ jobs:
             fmp-cache-${{ github.ref_name }}-
             fmp-cache-
       - run: npm ci
+      - run: npm run check:article-one
       - name: Refresh close prices
         run: node scripts/refresh-market-data.mjs
         env:

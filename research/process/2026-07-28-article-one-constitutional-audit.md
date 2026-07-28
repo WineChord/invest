@@ -108,6 +108,14 @@ This is a hybrid frequency, not a retreat to passive monthly review. Its objecti
 
 The review also found that a weekday-based standing instruction must not convert the policy's planned monthly USD 888 contribution into a broker-confirmed weekly deposit. Future liquidity is not a scheduling fact. The revised cadence processes a deposit only from current confirmation evidence and uses the execution-confirmation workflow to prevent duplicate account events.
 
+## Continuous Enforcement
+
+The initial invariant test prevented explicit Article 1 anchors from disappearing, but red-team fixtures showed that anchor presence alone was not sufficient. Directly contradictory language could coexist with valid anchors, policy `v1.2` accountability parameters could be changed to values that effectively disabled review, placeholder-only no-action explanations could pass, and the guard's package or workflow wiring was not itself protected.
+
+The continuous guard now has `ci`, `sentinel`, and `decision` modes. It protects the canonical mission surfaces, its quick runner, package wiring, and both public build workflows; rejects direct reversals of the mission; locks the policy `v1.2` 60% and 45/90/180-day parameters; validates no-action reason codes and conjunctive evidence-and-price accountability; and emits stable reason codes when a mission review or evidence deadline becomes due. It runs before broad verification and is required at automated preflight and postflight.
+
+This mechanism does not purge repository material. `WARN` permits a dated, narrow lower-level repair. `BLOCK` prevents automated publication, account mutation, and decision completion while preserving evidence for review. Protected truth, survival, human-control, audit, public-safety, validator, and automation surfaces cannot be rewritten by the failing automated run to make itself pass. Governance debt that is unrelated to target or opportunity-cost evidence remains process debt rather than becoming a portfolio-wide no-buy veto.
+
 ## Next Review
 
 Apply policy `v1.2` to the next allocation decision and evaluate whether it changes:

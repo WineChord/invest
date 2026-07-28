@@ -12,10 +12,22 @@ npm run dev
 Build and verify:
 
 ```bash
+npm run check:article-one
 npm run verify
 ```
 
-`npm run verify` includes data validation, deterministic discovery-scan regression tests, discovery-readiness negative gate tests, promotion/watchlist-cycle gate tests, and the static dashboard build.
+`npm run check:article-one` is the lightweight constitutional drift guard. Its default `ci` mode checks protected mission, policy, validation, workflow, and self-protection surfaces before the broader suite runs. `PASS` permits ordinary work to continue, `WARN` creates a dated review trigger without authorizing a trade, and `BLOCK` stops automated commit, push, deployment, account mutation, and decision completion until the conflict is resolved.
+
+Scheduled triage and allocation decisions use the stricter time-aware modes:
+
+```bash
+npm run check:article-one -- --mode sentinel --as-of YYYY-MM-DD --json
+npm run check:article-one -- --mode decision --as-of YYYY-MM-DD --json
+```
+
+`sentinel` reports due mission, evidence, and review deadlines as stable warning reason codes while exiting successfully so the automation can route the review. `decision` treats the same unresolved due items as blockers before a full allocation conclusion is completed. Neither mode deletes records, edits protected surfaces, updates account facts, or authorizes a trade.
+
+`npm run verify` begins with the Article 1 guard and then includes data validation, deterministic discovery-scan regression tests, discovery-readiness negative gate tests, promotion/watchlist-cycle gate tests, and the static dashboard build.
 
 The public dashboard includes `/runs/` and `/runs/<run_id>/` pages backed by `research/operating-runs.csv`. Update that file after full operating-cycle or monthly-decision full-cycle runs so the site can show the run summary, decision note link, structured artifact link, validation result, publication boundary, and any actual execution that is already confirmed in `data/account/ledger.csv`.
 
@@ -147,7 +159,9 @@ Research expansion starts with `research/discovery/lanes.yml`, then raw candidat
 ## Focused Validation Commands
 
 ```bash
+npm run check:article-one
 npm run check:data
+npm run test:article-one-gates
 npm run test:discovery-artifact-index
 npm run test:discovery-profiles
 npm run test:discovery-scan
@@ -163,4 +177,4 @@ npm run test:macro-regime
 npm run verify
 ```
 
-Use `npm run check:data` for data and research changes. Use `npm run test:discovery-artifact-index` when changing artifact index generation or hash anchoring. Use `npm run test:discovery-profiles` when changing SEC or issuer profile generation. Use `npm run test:discovery-scan` when changing deterministic universe scan matching or scan output behavior. Use `npm run test:semantic-discovery` when changing semantic packet, batch, cache, import, or run-summary behavior. Use `npm run test:fmp-fetch` when changing optional FMP provider, cache, budget, or fallback behavior. Use `npm run test:discovery-gates` when changing discovery readiness rules or validation. Use `npm run test:sec-registration-transaction-candidates` when changing pre-ticker registration or transaction discovery. Use `npm run test:promotion-gates` when changing promotion-review or active/core/buy-zone gate validation. Use `npm run test:watchlist-cycle-gates` when changing stale-prevention, priority/status refresh, or buy-zone currentness rules. Use `npm run test:community-scan` when changing public no-token community source parsing, scoring, or privacy boundaries. Use `npm run test:macro-regime` when changing macro regime inputs, scoring, or snapshot formatting. Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
+Use `npm run check:article-one` before and after powered-on automation and before commit or push. Use `npm run test:article-one-gates` when changing constitutional anchors, policy thresholds, the guard, its workflow wiring, or mission-accountability validation. Use `npm run check:data` for data and research changes. Use `npm run test:discovery-artifact-index` when changing artifact index generation or hash anchoring. Use `npm run test:discovery-profiles` when changing SEC or issuer profile generation. Use `npm run test:discovery-scan` when changing deterministic universe scan matching or scan output behavior. Use `npm run test:semantic-discovery` when changing semantic packet, batch, cache, import, or run-summary behavior. Use `npm run test:fmp-fetch` when changing optional FMP provider, cache, budget, or fallback behavior. Use `npm run test:discovery-gates` when changing discovery readiness rules or validation. Use `npm run test:sec-registration-transaction-candidates` when changing pre-ticker registration or transaction discovery. Use `npm run test:promotion-gates` when changing promotion-review or active/core/buy-zone gate validation. Use `npm run test:watchlist-cycle-gates` when changing stale-prevention, priority/status refresh, or buy-zone currentness rules. Use `npm run test:community-scan` when changing public no-token community source parsing, scoring, or privacy boundaries. Use `npm run test:macro-regime` when changing macro regime inputs, scoring, or snapshot formatting. Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.

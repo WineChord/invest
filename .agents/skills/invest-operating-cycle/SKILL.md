@@ -71,6 +71,8 @@ Use the relevant template under `templates/`:
 
 ## Validation
 
+- Run `npm run check:article-one` before and after powered-on automated work and before commit or push. Use sentinel mode for scheduled triage and decision mode before completing a full allocation decision.
+- `WARN` triggers a dated review and the narrowest safe lower-level repair. `BLOCK` stops automated commit, push, deployment, account mutation, and decision completion; it never authorizes silent deletion, weakening protected truth or human-control boundaries, validator self-editing, or automatic trading.
 - Use `npm run check:data` for data or research changes.
 - Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
 - Use the focused validation commands in `docs/research-command-reference.md` when changing discovery, SEC, semantic-discovery, readiness, promotion, watchlist-cycle, or market-refresh behavior.

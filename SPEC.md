@@ -32,6 +32,12 @@ A lower-level artifact that conflicts with Article 1 must be revised. This prece
 
 Deterministic validation must verify that the active constitutional, agent, specification, skill, policy, and core workflow surfaces retain explicit Article 1 precedence, preflight, postflight, and lower-level-yield anchors. Passing that check proves only that the repository preserved its objective function; it does not prove that a company passes the mission, evidence, entry, survival, or opportunity-cost gates.
 
+The lightweight `npm run check:article-one` guard is the continuous entry point. It runs before the broader `verify` suite, directly in push and scheduled workflows, and at the beginning and end of powered-on agent automation. `ci` mode blocks structural drift and policy-parameter changes; `sentinel` mode also emits stable review-due reason codes without turning a due review into a trade; `decision` mode blocks completion while a required Article 1 or evidence review remains due.
+
+Guard results are `PASS`, `WARN`, or `BLOCK`. `WARN` requires a dated, evidence-backed review and permits only the narrowest safe lower-level repair. `BLOCK` prevents automated commit, push, deployment, account mutation, and decision completion. It does not authorize silent deletion, automatic trading, or treating unrelated governance debt as a portfolio-wide investment veto. Automated runs must not self-repair the constitution, immutable truth and human-control boundaries, the active policy, public-release safety, the guard implementation or tests, or their own automation configuration; ambiguity requires preserved evidence and human-visible review.
+
+The guard is self-protecting across `package.json`, the quick runner, and the Pages and daily-market workflows. Policy `v1.2` locks the 60% liquidity-option threshold and the 45/90/180-day accountability periods. Reversed constitutional statements, removal of the quick guard, placeholder-only no-action accountability, and unsupported zero-exposure reason codes must fail deterministic checks.
+
 ## Non-Goals
 
 - Do not manage the user's large Nasdaq technology core allocation.
@@ -323,9 +329,11 @@ zero_exposure_reason_code:
 decision_critical_missing_evidence:
 why_risk_sizing_cannot_absorb_uncertainty:
 cash_opportunity_cost:
+conjunctive_evidence_and_price_trigger:
 next_evidence_deadline:
 no_action_streak:
 article1_red_team_status:
+latest_constitutional_audit_path:
 current_conclusion:
 ```
 

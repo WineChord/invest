@@ -6,6 +6,27 @@ const reviewStatuses = new Set([
   "strategy_review_due",
 ]);
 
+const zeroExposureReasonCodes = new Set([
+  "legacy_v1.1_completed_no_action",
+  "mission_gate_failed",
+  "evidence_gate_failed",
+  "entry_gate_failed",
+  "survival_gate_failed",
+  "portfolio_impact_failed",
+  "opportunity_cost_failed",
+  "policy_ineligible",
+  "decision_critical_economics_gap",
+  "no_qualified_candidate",
+  "other_documented",
+]);
+
+export const articleOneV12MissionAccountabilityPolicy = Object.freeze({
+  highLiquidityOptionThresholdPct: 60,
+  pressureReviewAfterDays: 45,
+  opportunitySetResetAfterDays: 90,
+  strategyReviewAfterDays: 180,
+});
+
 export const articleOneRepositoryInvariantContracts = Object.freeze({
   "CONSTITUTION.md": Object.freeze([
     Object.freeze({
@@ -120,6 +141,58 @@ export const articleOneRepositoryInvariantContracts = Object.freeze({
     Object.freeze({ id: "lower_level_revision_field", any: Object.freeze([/\blower_level_artifacts_revised:/]) }),
     Object.freeze({ id: "postflight_field", any: Object.freeze([/\barticle1_postflight:/]) }),
   ]),
+  "package.json": Object.freeze([
+    Object.freeze({
+      id: "quick_guard_command",
+      any: Object.freeze([/"check:article-one"\s*:\s*"node scripts\/check-article-one\.mjs"/]),
+    }),
+    Object.freeze({
+      id: "guard_runs_before_verify",
+      any: Object.freeze([/"verify"\s*:\s*"npm run check:article-one && npm run check:data/]),
+    }),
+    Object.freeze({
+      id: "guard_regression_tests",
+      any: Object.freeze([/"test:article-one-gates"\s*:\s*"node scripts\/test-article-one-gates\.mjs"/]),
+    }),
+  ]),
+  "scripts/check-article-one.mjs": Object.freeze([
+    Object.freeze({
+      id: "canonical_surface_validation",
+      any: Object.freeze([/\bvalidatearticleonerepositoryinvariant\b/]),
+    }),
+    Object.freeze({
+      id: "blocking_exit",
+      any: Object.freeze([/\bprocess\.exitcode\s*=\s*1\b/]),
+    }),
+    Object.freeze({
+      id: "sentinel_mode",
+      any: Object.freeze([/\bmode\s*===\s*"sentinel"/]),
+    }),
+    Object.freeze({
+      id: "decision_mode",
+      any: Object.freeze([/\bmode\s*===\s*"decision"/]),
+    }),
+  ]),
+  ".github/workflows/pages.yml": Object.freeze([
+    Object.freeze({
+      id: "direct_article_one_guard",
+      any: Object.freeze([/\brun:\s*npm run check:article-one\b/]),
+    }),
+    Object.freeze({
+      id: "full_verify",
+      any: Object.freeze([/\brun:\s*npm run verify\b/]),
+    }),
+  ]),
+  ".github/workflows/daily-market-data.yml": Object.freeze([
+    Object.freeze({
+      id: "direct_article_one_guard",
+      any: Object.freeze([/\brun:\s*npm run check:article-one\b/]),
+    }),
+    Object.freeze({
+      id: "full_verify",
+      any: Object.freeze([/\brun:\s*npm run verify\b/]),
+    }),
+  ]),
 });
 
 export const articleOneRepositoryInvariantPaths = Object.freeze(
@@ -136,6 +209,37 @@ function normalizeArticleOneSurface(content) {
     .toLowerCase();
 }
 
+const protectedNarrativePaths = new Set([
+  "CONSTITUTION.md",
+  "AGENTS.md",
+  ".agents/skills/invest-operating-cycle/SKILL.md",
+  "SPEC.md",
+  "data/policy/policy-v1.2.md",
+]);
+
+const contradictionPatterns = Object.freeze([
+  Object.freeze({
+    id: "article_one_subordinated",
+    pattern: /\barticle\s+1\s+(?:is|should\s+be|must\s+be)\s+(?:secondary|optional|subordinate)\b/,
+  }),
+  Object.freeze({
+    id: "forced_no_action",
+    pattern: /\bno[- ]action\s+(?:is|must\s+be)\s+(?:always\s+)?(?:mandatory|required|the\s+default)\b/,
+  }),
+  Object.freeze({
+    id: "repository_health_allocation_veto",
+    pattern: /\brepository\s+(?:health|completeness)\s+(?:is|must\s+be)\s+(?:an?\s+)?(?:allocation|portfolio-wide)\s+veto\b/,
+  }),
+  Object.freeze({
+    id: "capital_preservation_supreme",
+    pattern: /\bcapital\s+preservation\s+(?:is|must\s+be)\s+the\s+(?:highest|supreme)\s+(?:objective|priority)\b/,
+  }),
+  Object.freeze({
+    id: "automatic_trading_allowed",
+    pattern: /\bautomatic\s+trade\s+execution\s+(?:is|must\s+be)\s+(?:allowed|required)\b/,
+  }),
+]);
+
 export function validateArticleOneRepositoryInvariant(surfaces) {
   const errors = [];
   articleOneRepositoryInvariantPaths.forEach((path) => {
@@ -150,6 +254,13 @@ export function validateArticleOneRepositoryInvariant(surfaces) {
         errors.push(`${path} is missing Article 1 invariant contract: ${contract.id}`);
       }
     });
+    if (protectedNarrativePaths.has(path)) {
+      contradictionPatterns.forEach(({ id, pattern }) => {
+        if (pattern.test(normalized)) {
+          errors.push(`${path} contains Article 1 contradiction: ${id}`);
+        }
+      });
+    }
   });
   return errors;
 }
@@ -201,6 +312,7 @@ export function missionAccountabilityStatus({
 }
 
 export function validateMissionReviewParameters({
+  policyVersion,
   status,
   highLiquidityOptionThresholdPct,
   pressureReviewAfterDays,
@@ -221,6 +333,21 @@ export function validateMissionReviewParameters({
   ) {
     errors.push("mission-review periods must be positive and strictly increasing");
   }
+  if (policyVersion === "v1.2") {
+    const expected = articleOneV12MissionAccountabilityPolicy;
+    if (highLiquidityOptionThresholdPct !== expected.highLiquidityOptionThresholdPct) {
+      errors.push(`policy v1.2 high-liquidity threshold must be ${expected.highLiquidityOptionThresholdPct}`);
+    }
+    if (pressureReviewAfterDays !== expected.pressureReviewAfterDays) {
+      errors.push(`policy v1.2 pressure review must be ${expected.pressureReviewAfterDays} days`);
+    }
+    if (opportunitySetResetAfterDays !== expected.opportunitySetResetAfterDays) {
+      errors.push(`policy v1.2 opportunity-set reset must be ${expected.opportunitySetResetAfterDays} days`);
+    }
+    if (strategyReviewAfterDays !== expected.strategyReviewAfterDays) {
+      errors.push(`policy v1.2 strategy review must be ${expected.strategyReviewAfterDays} days`);
+    }
+  }
   return errors;
 }
 
@@ -233,6 +360,7 @@ export function validateNoActionAccountability(record) {
     "decision_critical_missing_evidence",
     "why_risk_sizing_cannot_absorb_uncertainty",
     "cash_opportunity_cost",
+    "conjunctive_evidence_and_price_trigger",
     "next_evidence_deadline",
     "article1_red_team_status",
   ];
@@ -242,6 +370,24 @@ export function validateNoActionAccountability(record) {
   if (!Number.isInteger(record?.no_action_streak) || record.no_action_streak < 0) {
     errors.push("no_action_streak must be a non-negative integer");
   }
+  if (
+    typeof record?.zero_exposure_reason_code === "string"
+    && !zeroExposureReasonCodes.has(record.zero_exposure_reason_code)
+  ) {
+    errors.push(`unsupported zero_exposure_reason_code ${record.zero_exposure_reason_code}`);
+  }
+  if (
+    typeof record?.next_evidence_deadline === "string"
+    && !Number.isFinite(Date.parse(`${record.next_evidence_deadline}T00:00:00Z`))
+  ) {
+    errors.push("next_evidence_deadline must be a valid YYYY-MM-DD date");
+  }
+  required.forEach((field) => {
+    const value = record?.[field];
+    if (typeof value === "string" && /^(?:n\/?a|none|unknown|tbd|pending)$/i.test(value.trim())) {
+      errors.push(`${field} must not be a placeholder`);
+    }
+  });
   return errors;
 }
 

@@ -2868,6 +2868,7 @@ function validateMissionAccountability(qualityMetrics) {
   ].forEach((field) => parseDate(mission[field], `${context}.${field}`));
 
   const parameterErrors = validateMissionReviewParameters({
+    policyVersion: mission.policy_version,
     status: mission.status,
     highLiquidityOptionThresholdPct: mission.high_liquidity_option_threshold_pct,
     pressureReviewAfterDays: mission.pressure_review_after_days,
