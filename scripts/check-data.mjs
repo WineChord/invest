@@ -3,10 +3,12 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { parse as parseYaml } from "yaml";
 import {
+  articleOneRepositoryInvariantPaths,
   calculateLiquidityOptionWeight,
   calendarDayDifference,
   containsEmbargoedPositionField,
   missionAccountabilityStatus,
+  validateArticleOneRepositoryInvariant,
   validateMissionReviewParameters,
   validateNoActionAccountability,
 } from "./article-one-mission-lib.mjs";
@@ -805,6 +807,7 @@ for (const file of yamlFiles) {
 
 validateSources();
 validateConstitution();
+validateArticleOneRepositoryInvariantSurfaces();
 validatePublicationPolicy();
 validatePublicDisclaimerSurfaces();
 validateWatchlist();
@@ -1331,6 +1334,20 @@ function validateConstitution() {
     }
   });
   console.log(`ok ${constitutionFile} semantic checks`);
+}
+
+function validateArticleOneRepositoryInvariantSurfaces() {
+  const surfaces = Object.fromEntries(
+    articleOneRepositoryInvariantPaths.map((path) => [
+      path,
+      existsSync(path) ? readFileSync(path, "utf8") : undefined,
+    ]),
+  );
+  const errors = validateArticleOneRepositoryInvariant(surfaces);
+  if (errors.length > 0) {
+    throw new Error(`Article 1 repository invariant failed:\n- ${errors.join("\n- ")}`);
+  }
+  console.log("ok Article 1 repository invariant surfaces");
 }
 
 function validatePublicationPolicy() {

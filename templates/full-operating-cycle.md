@@ -8,6 +8,10 @@ date:
 policy_version:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 constitutional_alignment:
+article1_preflight:
+lower_level_conflicts_found:
+lower_level_artifacts_revised:
+article1_postflight:
 cycle_scope:
 user_goal:
 decision_requested:
@@ -38,7 +42,7 @@ If the user asked for a decision, this template must be used together with [mont
 
 Run every applicable item in this order. If an item is not applicable, say why.
 
-1. Load rules and state: `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, `PUBLICATION_POLICY.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state.
+1. Run the Article 1 preflight, then load rules and state: `CONSTITUTION.md`, `AGENTS.md`, `SPEC.md`, `PUBLICATION_POLICY.md`, current policy, relevant templates, account files, market files, research files, package scripts, prior decisions, and current git state. Identify any lower-level artifact that conflicts with the mission and revise it during the same authorized work when practical.
 2. Protect confirmed broker truth: separate confirmed account facts from market data, research, analysis, user estimates, screenshots, and proposed orders.
 3. Refresh deterministic data: run market-data refresh, data checks, and build/dashboard checks when the request touches those surfaces and tooling is available.
 4. Run bottleneck-lane review: read `research/discovery/lanes.yml`, use [bottleneck-lane-review.md](bottleneck-lane-review.md) when the review is material, ask which future bottlenecks can become unavoidable, valuable, and publicly investable, ask whether a new lane appeared, decide whether existing lanes should be promoted, split, merged, demoted, retired, or left unchanged, and record the lane delta.
@@ -56,7 +60,7 @@ Run every applicable item in this order. If an item is not applicable, say why.
 16. Update durable records: research notes, source register, discovery lanes, discovery candidates, freshness events, valuation states, watchlist-cycle reviews, watchlist priority/status, watchlist transitions, buy-zone rows, position-construction records, company-analysis entries, decision notes, market snapshots, equity curve, dashboard-facing data, docs, templates, and process reviews when the run creates durable facts or behavior. For every full operating-cycle or monthly-decision full-cycle run, append or refresh a public-safe row in `research/operating-runs.csv` linking the decision note, structured run artifact when available, evidence packet, validation summary, publication status, primary symbols, and confirmed ledger event IDs when execution was later broker-confirmed. The SEC step must supplement the standard event index with a submissions-delta review of ownership, compensation, financing, and private-offering forms such as Form 3/4/144, Schedule 13D/13G amendments, Form D, DEFA14A, and S-8.
 17. Run the publication release checklist from `PUBLICATION_POLICY.md`: identify actionable trading content, public release earliest time, embargo status, redaction status, sensitive-field review result, compensation or material-connection issues, and whether commit, push, deployment, or external posting must wait.
 18. Clean up repository noise: remove or demote stale, duplicated, misleading, generated, or low-signal material without weakening auditability.
-19. Validate: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical. Report target readiness, opportunity-set sufficiency, bounded discovery debt, and repository health separately. A material run cannot propose an order with an unresolved decision-critical target or opportunity-cost gap; unrelated process debt does not become a portfolio-wide veto. Missing user-only broker facts are execution prerequisites, not repository not-readiness.
+19. Validate and run the Article 1 postflight: run `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical. Report target readiness, opportunity-set sufficiency, bounded discovery debt, and repository health separately. A material run cannot propose an order with an unresolved decision-critical target or opportunity-cost gap; unrelated process debt does not become a portfolio-wide veto. Missing user-only broker facts are execution prerequisites, not repository not-readiness. Confirm that the result advanced the mission or preserved a necessary mission boundary rather than adding ceremony or inactivity.
 20. Commit and push coherent durable changes only when the repository's Git Rules and the public release embargo allow it.
 
 ## Completion Report
@@ -78,6 +82,8 @@ bounded_discovery_debt:
 repository_health:
 mission_accountability:
 article1_offensive_challenge:
+article1_preflight:
+article1_postflight:
 constitutional_alignment:
 subagents_run:
 subagents_skipped_with_reasons:

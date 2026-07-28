@@ -1,9 +1,13 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
+  articleOneRepositoryInvariantPaths,
+  articleOneRepositoryInvariantContracts,
   calculateLiquidityOptionWeight,
   calendarDayDifference,
   containsEmbargoedPositionField,
   missionAccountabilityStatus,
+  validateArticleOneRepositoryInvariant,
   validateMissionReviewParameters,
   validateNoActionAccountability,
 } from "./article-one-mission-lib.mjs";
@@ -55,5 +59,70 @@ assert.deepEqual(validateNoActionAccountability(completeNoAction), []);
 assert.ok(validateNoActionAccountability({}).length >= 10);
 assert.equal(containsEmbargoedPositionField({ initial_weight_range_pct: [1, 2] }), false);
 assert.equal(containsEmbargoedPositionField({ exact_target_weight_pct: 2.25 }), true);
+
+const canonicalSurfaces = Object.fromEntries(
+  articleOneRepositoryInvariantPaths.map((path) => [path, readFileSync(path, "utf8")]),
+);
+assert.deepEqual(validateArticleOneRepositoryInvariant(canonicalSurfaces), []);
+articleOneRepositoryInvariantPaths.forEach((path) => {
+  const placeholderSurfaces = {
+    ...canonicalSurfaces,
+    [path]: "# Placeholder\n",
+  };
+  articleOneRepositoryInvariantContracts[path].forEach((contract) => {
+    assert.ok(
+      validateArticleOneRepositoryInvariant(placeholderSurfaces).some(
+        (error) => error === `${path} is missing Article 1 invariant contract: ${contract.id}`,
+      ),
+      `${path} placeholder must fail the ${contract.id} contract`,
+    );
+  });
+});
+const missingSurface = { ...canonicalSurfaces };
+delete missingSurface["CONSTITUTION.md"];
+assert.ok(
+  validateArticleOneRepositoryInvariant(missingSurface).some(
+    (error) => error === "missing Article 1 canonical surface CONSTITUTION.md",
+  ),
+);
+
+[
+  {
+    path: "AGENTS.md",
+    remove: "Article 1 is controlling, not one consideration among many.",
+    contract: "article_one_controls",
+  },
+  {
+    path: ".agents/skills/invest-operating-cycle/SKILL.md",
+    remove: "Run an Article 1 preflight at the start of every repository interaction",
+    contract: "preflight_router",
+  },
+  {
+    path: "SPEC.md",
+    remove: "Every activated workflow must run an Article 1 preflight",
+    contract: "preflight_and_postflight",
+  },
+  {
+    path: "data/policy/policy-v1.2.md",
+    remove: "Every application of this policy begins with an Article 1 preflight",
+    contract: "preflight_and_postflight",
+  },
+  {
+    path: "templates/monthly-decision.md",
+    remove: "article1_preflight:",
+    contract: "preflight_field",
+  },
+].forEach(({ path, remove, contract }) => {
+  const driftedSurfaces = {
+    ...canonicalSurfaces,
+    [path]: canonicalSurfaces[path].replaceAll(remove, ""),
+  };
+  assert.ok(
+    validateArticleOneRepositoryInvariant(driftedSurfaces).includes(
+      `${path} is missing Article 1 invariant contract: ${contract}`,
+    ),
+    `${path} must reject targeted drift of ${contract}`,
+  );
+});
 
 console.log("article-one mission regression checks passed");

@@ -24,6 +24,14 @@ Article 1 is the controlling design constraint. Cash, whole-repository readiness
 
 The system therefore distinguishes target investment readiness, opportunity-set sufficiency, and repository health. Decision-critical target and opportunity-cost evidence controls allocation. Unrelated dashboard, formatting, and low-priority research debt remains required operational work, but it is not an investment veto.
 
+## Article 1 Invariant and Drift Control
+
+Every activated workflow must run an Article 1 preflight before substantive work and an Article 1 postflight before its final conclusion. The preflight identifies the mission contribution or the necessary truth, survival, human-control, audit, clone-portability, or public-safety boundary being preserved. The postflight asks whether the result improved the probability of finding, funding, sizing, or holding rare qualifying outcomes, rather than optimizing ceremony, certainty, conventional comfort, or inactivity.
+
+A lower-level artifact that conflicts with Article 1 must be revised. This precedence applies to policy, agent rules, specifications, skills, templates, data schemas, scoring, validation, dashboards, research lanes, and process records. For narrow maintenance the check is proportional; it does not expand the request into a full investment cycle.
+
+Deterministic validation must verify that the active constitutional, agent, specification, skill, policy, and core workflow surfaces retain explicit Article 1 precedence, preflight, postflight, and lower-level-yield anchors. Passing that check proves only that the repository preserved its objective function; it does not prove that a company passes the mission, evidence, entry, survival, or opportunity-cost gates.
+
 ## Non-Goals
 
 - Do not manage the user's large Nasdaq technology core allocation.
@@ -1522,6 +1530,7 @@ Model drift:
 
 - Keep immutable rules in `AGENTS.md`.
 - Cite policy version in every decision.
+- Keep Article 1 precedence, proportional preflight and postflight, and lower-level-yield contracts on the canonical repository surfaces, and enforce them through deterministic validation.
 
 Clone failure:
 

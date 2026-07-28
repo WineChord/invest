@@ -8,6 +8,10 @@ operator:
 policy_version:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 constitutional_alignment:
+article1_preflight:
+lower_level_conflicts_found:
+lower_level_artifacts_revised:
+article1_postflight:
 trigger:
 related_cycle:
 related_files:

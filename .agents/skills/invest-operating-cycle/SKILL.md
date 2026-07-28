@@ -35,6 +35,13 @@ Use the relevant template under `templates/`:
 - `decision-retrospective.md`: post-decision and post-discovery review of missed candidates, source gaps, and process lessons.
 - `meta-self-improvement.md`: process upgrades and methodology reviews.
 
+## Article 1 Preflight and Postflight
+
+- Run an Article 1 preflight at the start of every repository interaction: identify how the requested work can improve the probability of finding, funding, sizing, or holding rare qualifying outcomes, or which necessary truth, survival, human-control, audit, clone-portability, or public-safety boundary it preserves.
+- Treat every policy, gate, template, score, validation, dashboard requirement, and process step as subordinate to Article 1. If a lower-level artifact conflicts with the mission, follow the constitution and revise that artifact during the same authorized work when practical.
+- Run an Article 1 postflight before finishing: check whether the result advanced the mission or a necessary mission boundary rather than adding ceremony, conventional comfort, false certainty, or inactivity.
+- Keep the check proportional. Narrow maintenance does not require a full investment operating cycle unless the request also triggers one.
+
 ## Trigger Routing
 
 - Questions about deposits, cash deployment, buying, selling, SGOV, allocation, or "what should I do" are full decision operating-cycle requests.
@@ -48,7 +55,7 @@ Use the relevant template under `templates/`:
 - Separate target readiness and opportunity-set sufficiency from repository health. Decision-critical debt blocks the affected target; bounded discovery or unrelated process debt remains visible but is not an allocation veto.
 - Treat liquidity-option weight and prolonged mission-irrelevant deployment as Article 1 review triggers. Before zero exposure is final, compare zero with the smallest mission-consistent staged exposure and explain why zero wins.
 - A `research_only`, `watch`, `probation`, or `frozen` symbol cannot enter `active_candidate`, `active_core_candidate`, buy-zone ranking, or proposed orders without a fresh promotion review.
-- Do not finish material investment, discovery, or process work with repository-public evidence still in `not_ready` when the missing evidence is reachable.
+- Do not finish material investment or discovery work with decision-critical target or opportunity-cost evidence still in `not_ready` when the missing evidence is publicly reachable. Keep bounded discovery and unrelated process debt visible and dated without turning it into an allocation veto.
 
 ## Safety Boundaries
 

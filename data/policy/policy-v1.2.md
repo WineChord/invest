@@ -12,6 +12,8 @@ Build and maintain a long-term satellite portfolio that pursues asymmetric multi
 
 Article 1 of [CONSTITUTION.md](../../CONSTITUTION.md) controls every lower-level rule. Cash discipline, evidence gates, position sizing, discovery breadth, workflow completeness, validation, and public release exist to improve the probability of achieving the mission. They are not independent objectives.
 
+Every application of this policy begins with an Article 1 preflight and ends with an Article 1 postflight. The preflight identifies how the decision or maintenance work serves asymmetric compounding or preserves a necessary mission boundary. The postflight checks that the result did not turn a lower-level rule into an independent objective. A conflicting lower-level artifact must yield and be revised; narrow maintenance remains proportional and does not trigger a full decision cycle by itself.
+
 Truth, broker-confirmation-only account records, source freshness, auditability, clone portability, human execution control, public-release safety, and protection against avoidable permanent impairment remain binding because they protect the mission.
 
 ## Contribution and Capital Deployment

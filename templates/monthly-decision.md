@@ -8,6 +8,10 @@ full_decision_operating_cycle_required: true
 date:
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 constitutional_alignment:
+article1_preflight:
+lower_level_conflicts_found:
+lower_level_artifacts_revised:
+article1_postflight:
 deposit_confirmed:
 deposit_amount:
 currency: USD
@@ -112,7 +116,7 @@ Full decision operating cycle before proposing orders:
 - Run the publication release checklist before any commit, push, deployment, or external post. Delay or redact actionable trading content, raw broker identifiers, raw screenshots, local paths, private cache payloads, secrets, and compensated or personalized language.
 - Run applicable validation. Use `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
 - Do not finish with a decision-critical target or opportunity-set gap that is publicly reachable and unbounded. Repository-health and bounded discovery debt may remain only with explicit scope, owner or next source, due date, and evidence that it cannot change the current allocation conclusion. User-only broker facts, broker order previews, and final execution instructions are execution prerequisites, not repository-readiness blockers.
-- If any applicable operating-cycle step cannot be completed, do not give a buy recommendation unless the missing item is explicitly reviewed, marked immaterial, genuinely unavailable, user-only, broker-specific, legally inaccessible, caused by market closure or missing quote, or already resolved by evidence showing the candidate fails a gate.
+- If a decision-critical target or opportunity-cost step cannot be completed, do not give a buy recommendation for the affected target unless the missing item is explicitly reviewed, bounded by evidence and sizing, marked immaterial, genuinely unavailable, user-only, broker-specific, legally inaccessible, caused by market closure or missing quote, or already resolved by evidence showing the candidate fails a gate. Unrelated dashboard, formatting, low-priority research, or other process debt must remain visible and dated but cannot veto a decision-ready rare opportunity.
 
 Output discipline:
 

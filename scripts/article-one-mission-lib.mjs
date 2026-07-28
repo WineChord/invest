@@ -6,6 +6,154 @@ const reviewStatuses = new Set([
   "strategy_review_due",
 ]);
 
+export const articleOneRepositoryInvariantContracts = Object.freeze({
+  "CONSTITUTION.md": Object.freeze([
+    Object.freeze({
+      id: "supreme_mission",
+      any: Object.freeze([/\barticle\s+1\s*-\s*supreme\s+mission\b/]),
+    }),
+    Object.freeze({
+      id: "lower_levels_are_instruments",
+      any: Object.freeze([/\bevery\s+later\s+article\b.{0,200}\bevery\s+lower-level\b.{0,200}\binstrument\s+of\s+this\s+mission\b/]),
+    }),
+    Object.freeze({
+      id: "lower_levels_must_yield",
+      any: Object.freeze([/\bconflicts\s+with\s+this\s+article\s+and\s+must\s+be\s+revised\b/]),
+    }),
+    Object.freeze({
+      id: "anti_inactivity",
+      any: Object.freeze([/\boptimizes?\s+for\s+inactivity\b/]),
+    }),
+    Object.freeze({
+      id: "zero_exposure_burden",
+      any: Object.freeze([/\bzero-exposure\s+decision\b.{0,180}\bsmallest\s+mission-consistent\s+staged\s+exposure\b/]),
+    }),
+    Object.freeze({
+      id: "no_forced_investment",
+      any: Object.freeze([/\bnothing\s+in\s+this\s+rule\s+compels\s+investment\b/]),
+    }),
+  ]),
+  "AGENTS.md": Object.freeze([
+    Object.freeze({
+      id: "article_one_controls",
+      any: Object.freeze([/\barticle\s+1\s+is\s+controlling\b/]),
+    }),
+    Object.freeze({
+      id: "every_interaction_preflight",
+      any: Object.freeze([/\brun\s+the\s+article\s+1\s+preflight\s+for\s+every\s+repository\s+interaction\b/]),
+    }),
+    Object.freeze({
+      id: "every_interaction_postflight",
+      any: Object.freeze([/\brun\s+the\s+article\s+1\s+postflight\s+before\s+every\s+final\s+conclusion\b/]),
+    }),
+    Object.freeze({
+      id: "lower_level_yields",
+      any: Object.freeze([/\brevise\s+the\s+conflicting\s+lower-level\s+artifact\b/]),
+    }),
+  ]),
+  ".agents/skills/invest-operating-cycle/SKILL.md": Object.freeze([
+    Object.freeze({
+      id: "article_one_controls",
+      any: Object.freeze([/\broot\s+objective\b.{0,160}\barticle\s+1\s+is\s+controlling\b/]),
+    }),
+    Object.freeze({
+      id: "preflight_router",
+      any: Object.freeze([/\brun\s+an\s+article\s+1\s+preflight\s+at\s+the\s+start\s+of\s+every\s+repository\s+interaction\b/]),
+    }),
+    Object.freeze({
+      id: "postflight_router",
+      any: Object.freeze([/\brun\s+an\s+article\s+1\s+postflight\s+before\s+finishing\b/]),
+    }),
+    Object.freeze({
+      id: "lower_level_yields",
+      any: Object.freeze([/\blower-level\s+artifact\s+conflicts\b.{0,100}\brevise\s+that\s+artifact\b/]),
+    }),
+  ]),
+  "SPEC.md": Object.freeze([
+    Object.freeze({
+      id: "controlling_design_constraint",
+      any: Object.freeze([/\barticle\s+1\s+is\s+the\s+controlling\s+design\s+constraint\b/]),
+    }),
+    Object.freeze({
+      id: "preflight_and_postflight",
+      any: Object.freeze([/\bevery\s+activated\s+workflow\b.{0,160}\barticle\s+1\s+preflight\b.{0,160}\barticle\s+1\s+postflight\b/]),
+    }),
+    Object.freeze({
+      id: "lower_level_yields",
+      any: Object.freeze([/\blower-level\s+artifact\s+that\s+conflicts\s+with\s+article\s+1\s+must\s+be\s+revised\b/]),
+    }),
+    Object.freeze({
+      id: "deterministic_drift_control",
+      any: Object.freeze([/\bdeterministic\s+validation\b.{0,240}\barticle\s+1\s+precedence\b/]),
+    }),
+  ]),
+  "data/policy/policy-v1.2.md": Object.freeze([
+    Object.freeze({
+      id: "policy_subordination",
+      any: Object.freeze([/\barticle\s+1\s+of\s+constitution\.md\s+controls\s+every\s+lower-level\s+rule\b/]),
+    }),
+    Object.freeze({
+      id: "tools_not_objectives",
+      any: Object.freeze([/\bthey\s+are\s+not\s+independent\s+objectives\b/]),
+    }),
+    Object.freeze({
+      id: "preflight_and_postflight",
+      any: Object.freeze([/\bevery\s+application\s+of\s+this\s+policy\b.{0,120}\barticle\s+1\s+preflight\b.{0,120}\barticle\s+1\s+postflight\b/]),
+    }),
+    Object.freeze({
+      id: "lower_level_yields",
+      any: Object.freeze([/\bconflicting\s+lower-level\s+artifact\s+must\s+yield\s+and\s+be\s+revised\b/]),
+    }),
+  ]),
+  "templates/full-operating-cycle.md": Object.freeze([
+    Object.freeze({ id: "preflight_field", any: Object.freeze([/\barticle1_preflight:/]) }),
+    Object.freeze({ id: "lower_level_revision_field", any: Object.freeze([/\blower_level_artifacts_revised:/]) }),
+    Object.freeze({ id: "postflight_field", any: Object.freeze([/\barticle1_postflight:/]) }),
+  ]),
+  "templates/monthly-decision.md": Object.freeze([
+    Object.freeze({ id: "preflight_field", any: Object.freeze([/\barticle1_preflight:/]) }),
+    Object.freeze({ id: "lower_level_revision_field", any: Object.freeze([/\blower_level_artifacts_revised:/]) }),
+    Object.freeze({ id: "postflight_field", any: Object.freeze([/\barticle1_postflight:/]) }),
+  ]),
+  "templates/meta-self-improvement.md": Object.freeze([
+    Object.freeze({ id: "preflight_field", any: Object.freeze([/\barticle1_preflight:/]) }),
+    Object.freeze({ id: "lower_level_revision_field", any: Object.freeze([/\blower_level_artifacts_revised:/]) }),
+    Object.freeze({ id: "postflight_field", any: Object.freeze([/\barticle1_postflight:/]) }),
+  ]),
+});
+
+export const articleOneRepositoryInvariantPaths = Object.freeze(
+  Object.keys(articleOneRepositoryInvariantContracts),
+);
+
+function normalizeArticleOneSurface(content) {
+  return content
+    .normalize("NFKC")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[`*~]/g, "")
+    .replace(/[—–]/g, "-")
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+}
+
+export function validateArticleOneRepositoryInvariant(surfaces) {
+  const errors = [];
+  articleOneRepositoryInvariantPaths.forEach((path) => {
+    const content = surfaces?.[path];
+    if (typeof content !== "string") {
+      errors.push(`missing Article 1 canonical surface ${path}`);
+      return;
+    }
+    const normalized = normalizeArticleOneSurface(content);
+    articleOneRepositoryInvariantContracts[path].forEach((contract) => {
+      if (!contract.any.some((pattern) => pattern.test(normalized))) {
+        errors.push(`${path} is missing Article 1 invariant contract: ${contract.id}`);
+      }
+    });
+  });
+  return errors;
+}
+
 export function calendarDayDifference(startDate, endDate) {
   const start = Date.parse(`${startDate}T00:00:00Z`);
   const end = Date.parse(`${endDate}T00:00:00Z`);

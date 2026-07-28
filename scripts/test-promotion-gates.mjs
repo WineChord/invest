@@ -115,7 +115,7 @@ try {
 
 function makeFixture(name) {
   const target = path.join(fixtureRoot, name);
-  for (const entry of ["AGENTS.md", "CONSTITUTION.md", "PUBLICATION_POLICY.md", "SPEC.md", "data", "decisions", "research"]) {
+  for (const entry of [".agents", "AGENTS.md", "CONSTITUTION.md", "PUBLICATION_POLICY.md", "SPEC.md", "data", "decisions", "research", "templates"]) {
     cpSync(path.join(repoRoot, entry), path.join(target, entry), {
       recursive: true,
       force: true,

@@ -90,6 +90,14 @@ The parameters should be revised if they create calendar-driven trading, symboli
 - Do not treat zero business-semantic coverage or hard-coded proxy recall as complete broad discovery.
 - Keep exact unexpired share counts, target weights, and live scale ladders private until the publication embargo expires.
 
+## Persistent Enforcement
+
+Every powered-on repository interaction now starts with a proportional Article 1 preflight and ends with an Article 1 postflight. The preflight identifies the mission contribution or the necessary truth, survival, human-control, audit, clone-portability, or public-safety boundary being preserved. The postflight checks that the result improved the probability of finding, funding, sizing, or holding rare qualifying outcomes instead of adding ceremony or inactivity.
+
+The constitution carries the supremacy and lower-level-yield contract. The proportional preflight and postflight are repeated only at active routing surfaces: the agent router, repository skill, system specification, current policy, and core operating templates. Deterministic validation checks these canonical surfaces for their applicable supremacy, preflight, postflight, and lower-level-yield anchors. Removing an anchor requires an intentional validator and test change rather than allowing silent drift.
+
+This enforcement remains proportional. It does not turn narrow maintenance into a full decision cycle, and a passing repository check does not make any security buy-eligible.
+
 ## Next Review
 
 Apply policy `v1.2` to the next allocation decision and evaluate whether it changes:
