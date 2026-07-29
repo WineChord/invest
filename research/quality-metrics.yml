@@ -1,20 +1,20 @@
 schema_version: 1
-as_of: 2026-07-28
+as_of: 2026-07-29
 last_research_engine_run:
-  as_of: 2026-07-28
-  scope: daily_full_operating_cycle_with_july_27_completed_closes_all_form_freshness_broad_and_registration_discovery_and_all_symbol_review
-  notes: Completed the 2026-07-28 historical v1.1 operating cycle using fresh July 27 completed closes for all 54 current tradable research symbols, confirmed cash and positions, macro and degraded public-attention overlays, complete name/ticker discovery coverage with an explicit zero issuer-profile semantic-coverage gap, exact-date registration scaffolding, 54-of-54 fresh all-form SEC submissions payloads, issuer-event checks, all-symbol comparison and independent discovery, freshness, bull, bear, valuation and allocation review. RKLB, NBIS, QBTS and QTEX received material evidence updates; WBI, CDNL, FIP and Ace Green received terminal readiness and rejection; no active promotion or buy zone changed and the historical decision was completed no action.
+  as_of: 2026-07-29
+  scope: daily_full_operating_cycle_with_july_28_completed_closes_material_filing_refresh_all_symbol_review_and_article_one_starter_challenge
+  notes: Completed the 2026-07-29 v1.2 operating cycle using fresh July 28 completed closes for all 54 established tradable research symbols, confirmed cash and positions, current all-form SEC coverage, material BE IONQ and NNE review, all-symbol comparison, a new R1 VIP powered-land lead, and independent discovery, freshness, bull, bear, valuation and allocation review. A small LEU or GILT starter was explicitly tested against zero; no active promotion or buy zone changed, and the no-action conclusion expires at the August 5–6 hard adjudication rather than rolling forward by default.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support a target-level decision after the fresh July 27 completed-close cross-check, 54-symbol all-form submissions review, bounded issuer-news review, complete name/ticker and exact-date registration coverage, an explicit zero issuer-profile semantic-coverage gap, degraded community triage with explicit errors, terminal readiness for WBI, CDNL, FIP and Ace Green, all-symbol comparison and independent xhigh review. Repository ready does not mean discovery exhaustive and is not an allocation veto. The historical v1.1 decision was no action; the next allocation must apply the v1.2 Article 1 challenge.
+  reason: Repository-public research is current enough to support a target-level decision after the fresh July 28 completed-close cross-check, 54-symbol all-form submissions review, material BE IONQ and NNE filing work, bounded current-world discovery, VIP R1 readiness, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto. Under v1.2, the smallest practical LEU and GILT starter scenarios were explicitly compared with zero; waiting won only through the near-dated August 5–6 evidence window, and exact unexpired sizing is withheld from the public record.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 5761.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, ASTS note-option update, IREN contract or commissioning evidence, STDN authorization or production evidence, QTEX financing or qualification evidence, ENRD transaction close or capitalization evidence, confirmed broker-state change, or 2026-08-10
+    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, the first reliable post-event BE close or disclosure reconciliation, ASTS note-option update, GILT or LEU August 5 evidence, IONQ closing or August 5 results, MDA August 7 evidence, IREN contract or commissioning evidence, confirmed broker-state change, or 2026-08-12
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 mission_accountability:
@@ -25,35 +25,35 @@ mission_accountability:
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
   latest_confirmed_return_seeking_buy_date: 2026-07-08
-  latest_research_nav: 7539.91
+  latest_research_nav: 7469.78
   confirmed_cash: 5761.58
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 76.4144
+  liquidity_option_weight_pct: 77.1319
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
   latest_mission_relevant_deployment_date: 2026-07-08
   mission_relevant_deployment_basis: 2026-07-08-buy-asts-001;2026-07-08-buy-rklb-001
-  days_since_latest_mission_relevant_deployment: 20
+  days_since_latest_mission_relevant_deployment: 21
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
   next_required_review_at: 2026-08-22
-  strongest_counterfactual: LEU was the highest-ranked non-space challenger in the 2026-07-28 v1.1 decision.
-  smallest_prudent_exposure_considered: Not structured under policy v1.1; no retroactive reconstruction is claimed.
-  zero_vs_starter_result: Pending the first v1.2 allocation review.
-  zero_exposure_reason_code: legacy_v1.1_completed_no_action
-  decision_critical_missing_evidence: LEU fixed-price contract economics, expansion financing, TENEX exposure, debt, and dilution remained unresolved in the latest historical decision.
-  why_risk_sizing_cannot_absorb_uncertainty: Not structured under policy v1.1; the next allocation review must test this rather than inherit zero.
-  cash_opportunity_cost: The latest historical decision accepted waiting optionality but did not quantify the zero-versus-starter cost under v1.2.
-  conjunctive_evidence_and_price_trigger: Not structured under policy v1.1; no standing price-only trigger is inferred, and the next v1.2 allocation review must record evidence and price conjunctively.
+  strongest_counterfactual: GILT is the closest low-denominator staged-entry counterfactual, while LEU remains the strongest structural bottleneck expression.
+  smallest_prudent_exposure_considered: The smallest practical whole-share scenarios for LEU and GILT were tested and were mission-relevant rather than symbolic; exact unexpired share counts and live weights are withheld from the public record.
+  zero_vs_starter_result: Zero narrowly wins only through the August 5–6 evidence window because the near-dated filings can change the sign of LEU contract economics or GILT post-transaction shareholder value; the same zero may not roll forward without a fresh adjudication.
+  zero_exposure_reason_code: decision_critical_economics_gap
+  decision_critical_missing_evidence: LEU fixed-price contract milestones, cost-sharing, termination protection, TENEX substitution and expansion funding; GILT audited Q2 cash conversion, transaction status, final purchase-price and working-capital adjustments, and post-close liquidity.
+  why_risk_sizing_cannot_absorb_uncertainty: A smaller position bounds dollars lost but cannot repair an unknown contract value sign or an unproved post-transaction per-share denominator; both inputs are due within one week.
+  cash_opportunity_cost: A material event move would create a bounded but real missed-upside cost on the contemplated starter scenarios; that short waiting cost is lower than the value of the near-dated decision-critical evidence. Exact unexpired sizing math is withheld from the public record.
+  conjunctive_evidence_and_price_trigger: Reassess LEU after the August 5 filing only if contract protection, funding and TENEX replacement preserve per-share value; reassess GILT only if Q2 cash conversion, transaction terms and post-close liquidity meet the recorded gates. Price alone never authorizes a buy.
   next_evidence_deadline: 2026-08-05
-  no_action_streak: 15
-  article1_red_team_status: completed_policy_audit_next_allocation_must_apply_v1.2
+  no_action_streak: 16
+  article1_red_team_status: completed_current_v1.2_starter_challenge
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: High liquidity-option weight requires monitoring now; the 45-day mission-pressure review is due on 2026-08-22 unless a mission-relevant deployment occurs first. This is a review trigger, not an order.
+  current_conclusion: Retain cash only through the August 5–6 LEU and GILT hard adjudication; the separate 45-day mission-pressure review remains due on 2026-08-22 unless a mission-relevant deployment occurs first. Neither date is an automatic order.
 coverage:
-  universe_scan_as_of: 2026-07-28
-  discovery_lane_map_as_of: 2026-07-28
+  universe_scan_as_of: 2026-07-29
+  discovery_lane_map_as_of: 2026-07-29
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
@@ -64,23 +64,23 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 23
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 24
+  raw_discovery_candidates_open: 25
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-28-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-28-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-28-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-28-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-07-29-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-07-29-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-07-29-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-07-29-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
   issuer_profile_semantic_coverage_pct: 0
   broad_semantic_search_status: gap_open
-  organic_recall_count: 17
+  organic_recall_count: 18
   hard_coded_proxy_only_recall_count: 42
-  exploratory_match_count: 59
-  exploratory_sample_count: 10
-  exploratory_sample_coverage_pct: 16.9492
-  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed, but zero issuer-profile semantic coverage cannot support an exhaustive broad-semantic-search claim. The gap is bounded discovery debt and must influence future search-quality review without becoming an unrelated allocation veto.
+  exploratory_match_count: 60
+  exploratory_sample_count: 2
+  exploratory_sample_coverage_pct: 3.3333
+  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed. FTRA was rejected as a blank-check company and VIP was identity-resolved into a bounded R1 powered-land lead. Zero issuer-profile semantic coverage remains bounded discovery debt rather than an allocation veto.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -110,9 +110,9 @@ discovery_process:
     - unknown_future_bottlenecks
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 24
+  material_open_candidates: 25
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 24
+  open_candidate_readiness_completed: 25
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -162,4 +162,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Repository ready means operational health is explicitly measured; target readiness and opportunity-set sufficiency control allocation. Bounded discovery debt, including zero issuer-profile semantic coverage, remains visible and time-bounded but is not a portfolio-wide veto. The historical v1.1 no-action decision discloses July 27 completed-close provenance, the INFQ corporate-action limitation, fresh 54-symbol all-form SEC scope, degraded community coverage, the 500-row provisional registration boundary, terminal WBI, CDNL, FIP and Ace Green dispositions, reviewer reconciliation, current liquidity, and the absence of an order or broker preview.
+notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.2 no-action decision uses July 28 completed-close provenance, fresh 54-symbol all-form SEC scope, material BE IONQ and NNE review, VIP R1 readiness, independent starter-versus-zero review, current liquidity and a hard August 5–6 expiration on the waiting decision. Bounded semantic-discovery debt remains visible but is not a portfolio-wide veto. No order, broker preview or account mutation exists.

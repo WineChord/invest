@@ -1,0 +1,303 @@
+schema_version: 1
+run_id: 2026-07-29-full-operating-cycle
+run_date: 2026-07-29
+request_type: daily_full_operating_cycle
+policy_version: v1.2
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun on the first post-event BE completed close, a material issuer event, a 5 percent reviewed-symbol move, GILT or LEU August 5 evidence, MDA August 7 evidence, a confirmed broker-state change, or 2026-08-12
+linked_decision_or_research_note: decisions/2026-07-29-daily-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-29-subagent-evidence-packet.yml
+
+execution_update:
+  status: no_new_deposit_no_trade
+  confirmed_ledger_event_ids: [2026-07-24-deposit-001]
+  resulting_confirmed_cash: 5761.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: No new broker fact was supplied. No deposit, trade, order, fee, fill, reserve position or inferred account fact was added.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run check:article-one -- --mode sentinel --as-of 2026-07-29 --json
+      dry_run: true
+      retrieved_at: 2026-07-29
+      result_summary: PASS with no reason codes.
+    - command: npm run refresh:market -- --as-of 2026-07-28
+      dry_run: false
+      retrieved_at: 2026-07-29
+      result_summary: The default provider returned HTTP 403 for held symbols and stopped before FMP supplementation. A separate Alpaca IEX fallback covered all 54 established tradable research securities through the July 28 completed close; no July 28 corporate action required a bridge.
+    - command: npm run discover:universe -- --dry-run --as-of 2026-07-29 --json --output research/discovery/runs/2026-07-29-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-29-scan.json
+      output_sha256: 22fe496ac147783b328c8a81a3e490e2c00cfdf34fb9a6f3d04a711918774f5b
+      retrieved_at: 2026-07-29
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 60
+        suppressed_known_matches: 61
+        recall_diagnostics: The prior 17 deterministic and 59 exploratory identities remained stable; FTRA and VIP were the only additions.
+        miss_counts: 0 known public proxy misses
+      result_summary: FTRA was terminally rejected as a blank-check company. VIP was identity-deduplicated from GREE and GREEL and retained as a bounded R1 powered-land lead without changing the first-five opportunity-cost order.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC all-form submissions and primary filing bodies
+      sources_or_queries:
+        - current submissions payloads for all 54 established tradable research issuers
+        - primary bodies for every new July 28 filing
+      source_ids: [sec_submissions_all_forms_2026_07_29]
+      retrieved_at: 2026-07-29
+      material_findings: BE Q2, IONQ SkyWater approval and NNE proxy changed current thesis or review priority; all ownership, compensation, calendar and organization events were classified separately.
+      unavailable_or_skipped_reason: SEC issuer coverage is complete for the established universe but does not claim exhaustive off-SEC current-world coverage.
+    - family_id: issuer_material
+      family: Issuer operations, contracts, transactions, governance and capitalization
+      sources_or_queries:
+        - Bloom Energy Q2 10-Q and earnings 8-K
+        - IonQ SkyWater approval 8-K
+        - NNE annual-meeting proxy
+        - LEU DOE contract and GILT Comtech transaction evidence
+      source_ids: [be_q2_2026_10q, ionq_skywater_approval_2026_07_28, leu_haleu_contract_2026_07_02, gilt_comtech_2026_06_15]
+      retrieved_at: 2026-07-29
+      material_findings: BE operations strengthened but an internal related-party disclosure conflict remains; IONQ approval is not closing; LEU and GILT remain the nearest dated entry adjudications.
+      unavailable_or_skipped_reason: BE post-event close, LEU complete contract economics and GILT post-transaction audited cash conversion remain unavailable.
+    - family_id: market_data
+      family: Completed regular-session prices, adjusted history and portfolio valuation
+      sources_or_queries:
+        - Alpaca IEX July 28 daily bars for all 54 established tradable symbols
+        - current-symbol bounded VIP bars
+        - corporate actions for the established universe
+      source_ids: [completed_close_universe_2026_07_28, vip_completed_bars_2026_07_28]
+      retrieved_at: 2026-07-29
+      material_findings: Research NAV is USD 7469.78, cash is 77.1319 percent and combined RKLB-ASTS equity is 22.8682 percent. SMH and multiple higher-priority names crossed full-review thresholds.
+      unavailable_or_skipped_reason: INFQ six-month comparison remains unreconciled across its unit separation; VIP has only seven verified current-symbol bars.
+    - family_id: current_world_context
+      family: Macro regime, market proxies and sanitized public-attention overlays
+      sources_or_queries:
+        - Current macro-regime repository snapshot
+        - Broad-index and semiconductor completed-close dislocation review
+      source_ids: [fred_public_macro_series, completed_close_universe_2026_07_28]
+      retrieved_at: 2026-07-29
+      material_findings: The semiconductor proxy and several higher-priority candidates crossed the full-review thresholds, but issuer-specific evidence and per-share economics remained controlling.
+      unavailable_or_skipped_reason: Macro and attention data are risk and discovery overlays, not standalone buy or promotion evidence.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: IPOs, ticker changes, pre-listing registrations, acquisitions and transaction scaffolding
+      sources_or_queries:
+        - Complete current deterministic discovery delta
+        - Primary filing identity resolution for FTRA, VIP, GREE and GREEL
+        - Current retained XTND pre-listing state
+      source_ids: [sec_submissions_all_forms_2026_07_29, vip_q1_2026_10q, vip_ai_hpc_pivot_2026_07_20]
+      retrieved_at: 2026-07-29
+      material_findings: FTRA was rejected as a blank-check company; VIP was resolved as the renamed Greenidge registrant and retained at R1; XTND remains pre-listing and not tradable.
+      unavailable_or_skipped_reason: Registration and ticker-change evidence do not establish business quality, transaction completion, per-share value or buy eligibility.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lanes, discovery delta and all-symbol opportunity cost
+      sources_or_queries:
+        - complete ten-lane name and ticker refresh
+        - independent primary-source delta review of FTRA and VIP
+        - holdings, candidates, watchlist, research-only and not-tradable comparisons
+      source_ids: [vip_q1_2026_10q, vip_ai_hpc_pivot_2026_07_20]
+      retrieved_at: 2026-07-29
+      material_findings: VIP is a real but distressed direct powered-land lead at R1; no lane, promotion, buy zone or first-five order changes.
+      unavailable_or_skipped_reason: Issuer-profile semantic coverage remains bounded discovery debt and is not an allocation veto.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-29
+    notes: Volatile prices, filings, financing, transactions and issuer events were refreshed; stable prior identity and rejection work was reused only after hash and CIK delta review.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 0
+    organic_recall_count: 18
+    hard_coded_proxy_only_recall_count: 42
+    outside_watchlist_effort_pct: 100
+    new_listing_to_r1_latency_days: 0
+unknown_future_review:
+  exploratory_match_count: 60
+  exploratory_denominator: 60
+  stratified_sample_count: 2
+  stratified_sample_pct: 3.3333
+  unsampled_reason: Fifty-nine prior identities and dispositions were unchanged; only FTRA and VIP were new delta identities.
+  repeated_hit_max_age_days: 1
+  top_clusters:
+    - powered land and AI infrastructure
+    - blank-check and security-identity false positives
+  sampled_symbols: [FTRA, VIP]
+  false_positive_patterns:
+    - blank-check vehicles
+    - ticker and issuer-name changes without CIK deduplication
+    - funds, preferred securities, units and mature weak proxies
+  lane_decisions:
+    - retain all ten top-level lanes
+    - retain VIP at bounded R1 in ai_power_and_cooling
+    - add no lane, promotion or buy zone
+  disposition: Reject FTRA; retain VIP as R1 researchable with an August 15 SLA; reuse stable prior dispositions.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: HALEU, energized AI-ready power, high-speed interconnect, launch and spacecraft production, spectrum and verified quantum systems remain plausible bottlenecks.
+    inferences: Scarcity matters only when common shareholders capture durable pricing and reinvestment economics.
+    disconfirming_evidence: Current public expressions often capitalize future scarcity before contracts, cash conversion or diluted per-share value is proved.
+    source_ids: [completed_close_universe_2026_07_28, sec_submissions_all_forms_2026_07_29]
+    investment_implication: Keep LEU, GILT, MDA, IREN and CRDO as the dated next-dollar queue.
+  who_controls_or_removes_scarcity:
+    facts: LEU controls the strongest current listed HALEU path; VIP may control powered land but has no funded AI customer.
+    inferences: Direct assets do not help if customers, lenders, secured notes, warrants or repeated equity issuance capture the economics.
+    disconfirming_evidence: VIP's proposed recapitalization and going-concern risk show why nominal asset control is insufficient.
+    source_ids: [leu_haleu_contract_2026_07_02, vip_ai_hpc_pivot_2026_07_20]
+    investment_implication: LEU remains first; VIP remains R1 only.
+  who_can_monetize_into_shareholder_value:
+    facts: LEU has the strongest mission fit, GILT the nearest low-denominator cash-generating counterfactual and CRDO the strongest operating quality.
+    inferences: LEU contract economics and GILT cash conversion can change the sign of per-share value; CRDO's current denominator reduces extreme-upside odds.
+    disconfirming_evidence: None of the three clears all gates at the July 28 price with current evidence.
+    source_ids: [leu_haleu_contract_2026_07_02, gilt_q1_2026, completed_close_universe_2026_07_28]
+    investment_implication: Wait only through the hard August 5–6 adjudication; do not roll the same zero.
+  public_security_expression:
+    facts: Fifty-four established watchlist securities are tradable; OPENAI and ANTHROPIC are not; XTND is pre-listing; VIP is a policy-eligible common stock retained at R1.
+    inferences: Tradability and a low nominal price do not create buy eligibility.
+    disconfirming_evidence: VIP's thin current-symbol history and unresolved recapitalization prevent a reliable entry denominator.
+    source_ids: [completed_close_universe_2026_07_28, vip_q1_2026_10q]
+    investment_implication: No current new order or executable limit.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT, ASPI, OCC, QSI, STDN, ENRD, VIP and XTND remain early, small or awkward expressions.
+    inferences: These characteristics can improve asymmetry only after survival and per-share value capture are credible.
+    disconfirming_evidence: VIP is the smallest new lead but also has the weakest current survival and dilution structure.
+    source_ids: [gilt_q1_2026, vip_q1_2026_10q]
+    investment_implication: Keep GILT nearest to entry and VIP at R1.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [2026-07-29 scan, prior stable discovery artifact, SEC primary filings]
+      sources_checked: [vip_q1_2026_10q, vip_ai_hpc_pivot_2026_07_20]
+      facts_verified: FTRA is a blank-check company; VIP is the renamed GREE registrant and GREEL is a debt security.
+      stale_or_missing_evidence: VIP financing close, customer contract, site economics and pro-forma capitalization remain open under a dated SLA.
+      confidence: high
+      key_findings: Reject FTRA and retain VIP as R1 without changing the first-five opportunity-cost order.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [54 live SEC submissions payloads, primary filing bodies, completed-close boundary]
+      sources_checked: [be_q2_2026_10q, ionq_skywater_approval_2026_07_28, sec_submissions_all_forms_2026_07_29]
+      facts_verified: BE improved sharply but has an internal disclosure conflict; IONQ approval is not closing; NNE added negative leadership and dilution evidence.
+      stale_or_missing_evidence: BE post-event price and issuer reconciliation remain unavailable.
+      confidence: high
+      key_findings: Reopen BE promotion and post-event entry review without buying; raise IONQ close review; weaken NNE.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current prices, filings, NAV and first-five opportunity set]
+      sources_checked: [leu_haleu_contract_2026_07_02, gilt_q1_2026, completed_close_universe_2026_07_28]
+      facts_verified: The smallest practical whole-share scenarios for LEU, CRDO and GILT are mission-relevant starters rather than symbolic trades; exact unexpired sizing is withheld from the public record.
+      stale_or_missing_evidence: LEU contract economics, GILT combined cash conversion and CRDO customer diversification remain incomplete.
+      confidence: medium_high
+      key_findings: LEU is the strongest Article 1 fit; zero is defensible only as a short, dated wait.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current prices, contract terms, capitalization and tenfold outcome denominators]
+      sources_checked: [leu_haleu_contract_2026_07_02, gilt_comtech_2026_06_15, completed_close_universe_2026_07_28]
+      facts_verified: LEU fixed-price economics can change sign; GILT post-deal EV is about ten times management adjusted EBITDA; CRDO starts near USD 35.7 billion equity value.
+      stale_or_missing_evidence: August 5 filings are the closest decision-changing evidence.
+      confidence: high
+      key_findings: Quantity zero narrowly wins through August 5; repeating the same zero after the evidence would violate Article 1.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current prices, company metrics, primary contract and transaction evidence]
+      sources_checked: [completed_close_universe_2026_07_28, leu_q1_2026_10q, gilt_q1_2026]
+      facts_verified: LEU EV is about USD 2.65 billion, GILT standalone EV about USD 643 million and CRDO EV-to-sales about 25.9 times.
+      stale_or_missing_evidence: LEU, GILT, MDA and IREN still lack decisive current per-share bridges.
+      confidence: high
+      key_findings: Keep LEU, GILT, MDA, IREN and CRDO order; every current executable limit is absent.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account facts, smallest practical starter scenarios, correlations, realized volatility and event dates]
+      sources_checked: [completed_close_universe_2026_07_28, leu_q2_results_date_2026_07_23, gilt_q2_results_date_2026_07_16]
+      facts_verified: The contemplated LEU and GILT starter scenarios are mission-relevant, and the short waiting period has a bounded but real opportunity cost; exact unexpired share counts, live weights and sizing math are withheld from the public record.
+      stale_or_missing_evidence: August 5–6 contract and cash-conversion evidence remains unavailable.
+      confidence: high
+      key_findings: Wait through August 5–6 only; GILT must then clear staged-entry eligibility, receive a new named blocker or leave the near queue, and LEU must receive the same staged-entry adjudication.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: Bull reviewers conditionally supported starters; bear and allocation reviewers showed that the one-week information value exceeds the measured waiting cost. The zero decision expires at the hard August 5–6 review and cannot roll forward unchanged.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: VIP entered R1 within the existing ai_power_and_cooling lane.
+  no_change_reason: The ten-lane map already contains the new lead and no current evidence supports a new top-level lane.
+
+candidate_delta:
+  candidates_added: [VIP]
+  candidates_rejected_or_archived: [FTRA]
+  candidates_promoted: []
+  r0_leads: []
+  r1_researchable: [VIP]
+  r2_comparable: []
+  r3_promotion_ready: []
+  no_action_challenger: GILT staged-entry eligibility after the August 5 evidence gate; exact unexpired sizing is withheld from the public record
+  candidates_incubated: [VIP]
+  false_positive_patterns: [blank-check companies, CIK-duplicate ticker changes, funds, preferred securities, units, mature weak proxies]
+
+readiness_sprints:
+  - symbol: VIP
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-07-29-VIP-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#VIP
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Financing close, pro-forma capitalization, site-level power and capex, a binding customer and survival runway are reachable through near-term issuer filings.
+    final_classification: incubate
+
+watchlist_review:
+  non_removed_symbol_count: 56
+  current_cycle_review_count: 56
+  missing_current_cycle_review_count: 0
+  status_changes: []
+  priority_changes: []
+  buy_zone_changes: [all active and core candidates retain no current executable buy]
+  source_path: research/watchlist-cycle-reviews.csv
+
+decision_coverage:
+  current_research_symbols: 58
+  symbols_with_main_decision_entry: 58
+  missing_symbols: []
+  duplicate_symbols: []
+  every_new_quantity_zero: true
+  every_executable_limit_absent: true
+
+allocation_conclusion:
+  confirmed_cash: 5761.58
+  confirmed_positions: [RKLB 17 shares, ASTS 11 shares]
+  orders: []
+  reserve_order: none
+  conclusion: Hold both positions; buy zero, sell zero, buy no SGOV and retain cash only through the hard August 5–6 adjudication.
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Reachable current public work is complete enough to decide. Readiness permits buys; the current zero is a short event-driven allocation decision rather than a repository-health veto.
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: after completed validation and sensitive-field review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No new deposit, order, nonzero proposed quantity, broker preview, credential, raw artifact, full identifier or private message is present.
+
+meta_self_improvement:
+  status: bounded_follow_up
+  durable_change: The cycle retained a renamed powered-land lead by CIK and set a hard Article 1 adjudication for LEU and GILT after the August 5 evidence.
+  skill_review: No further repo-scoped skill change is required; the adaptive cadence and Article 1 guard already route the hard review.

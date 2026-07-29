@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-28
+as_of: 2026-07-29
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -752,3 +752,23 @@ records:
     last_readiness_reviewed_at: 2026-07-28
     next_action: Reopen only after a completed eligible listing, scaled production and customer proof, cleaner financing and reconciled fully diluted capitalization.
     conclusion: Rejected the current transaction expression after bounded primary-source readiness; no dashboard surface, promotion or buy.
+  - symbol: VIP
+    material_to_current_allocation: true
+    affected_lanes: [ai_power_and_cooling, ai_compute_infrastructure]
+    materiality_reason: A renamed micro-cap power producer is attempting to convert already energized generation and owned land into AI and HPC infrastructure, a direct but highly fragile expression that static industry labels could miss.
+    blocking_scope: ai_power_lane_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-07-29-VIP-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Going-concern doubt, an unclosed expensive recapitalization, potential shares approaching 2.4 times the pre-financing count, no binding AI/HPC customer and unverified site economics prevent R2 comparison or entry.
+    reachable_evidence_remaining: Financing close, pro-forma capitalization, site-level power and capex, a binding customer and survival runway are reachable through near-term issuer filings.
+    last_readiness_reviewed_at: 2026-07-29
+    next_evidence_source: Financing closing 8-K, the next Form 10-Q, or a binding AI/HPC customer agreement, whichever arrives first.
+    next_evidence_due: 2026-08-15
+    cost_of_waiting: A binding customer or completed recapitalization could rerate the small equity before R2 work is complete; the bounded two-week review window limits that false-negative cost.
+    false_negative_early_warning: Confirmed financing close, old-debt redemption, a binding customer contract, or independently verified powered-site capacity before the due date.
+    reopen_or_reject_trigger: Advance only after financing close, a reconciled fully diluted denominator, verified site power and capex, a binding customer and credible survival runway; reject if financing fails or going-concern risk persists without a funded customer.
+    next_action: Complete a bounded R2 decision by 2026-08-15 or earlier on a financing, customer, or quarterly filing.
+    conclusion: Retained as an R1 researchable lead; quantity zero, no executable limit, no watchlist promotion and no change to the current first-five opportunity-cost order.

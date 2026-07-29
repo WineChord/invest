@@ -3465,3 +3465,84 @@ sources:
     first_seen_at: 2026-07-28
     related_symbols: [WBI, CDNL, FIP]
     summary: Alpaca IEX daily bars supplied completed July 27 closes of USD 33.34 for WBI, USD 63.51 for CDNL and USD 4.155 for FIP for bounded readiness; price did not repair their mission, structure or per-share-capture vetoes.
+  - id: vip_q1_2026_10q
+    title: Greenidge Generation Form 10-Q for the Quarter Ended March 31 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1844971/000162828026035547/gree-20260331.htm
+    source_published_at: 2026-05-15
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [VIP]
+    summary: The predecessor issuer reported USD 7.1 million cash, USD 39.2 million current debt, negative USD 11.4 million first-quarter operating cash flow, negative equity and substantial doubt about continuing as a going concern.
+  - id: vip_ai_hpc_pivot_2026_07_20
+    title: Vulcan Infrastructure and Power Recapitalization and AI-HPC Pivot
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1844971/000119380526000990/e665662_8k-vulcan.htm
+    source_published_at: 2026-07-20
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [VIP]
+    summary: The issuer described a proposed USD 39.4 million recapitalization, expensive secured convertible financing, substantial common and warrant issuance, a July 24 VIP ticker change, and issuer-claimed 104 MW energized capacity plus a 654 MW owned-site development pipeline without a binding AI-HPC customer contract.
+  - id: vip_completed_bars_2026_07_28
+    title: Alpaca IEX Current-Symbol Daily Bars for Vulcan Infrastructure and Power
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/bars
+    source_published_at: 2026-07-28
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [VIP]
+    summary: Seven current-symbol Alpaca IEX daily bars through July 28 supplied a USD 2.10 completed close, negative 6.25 percent one-day return and approximately negative 28.08 percent five-session return; longer periods remain unavailable.
+  - id: ionq_skywater_approval_2026_07_28
+    title: IonQ SkyWater Final Regulatory Approval
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1824920/000119312526321221/ionq-20260728.htm
+    source_published_at: 2026-07-28
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [IONQ]
+    summary: IonQ obtained final regulatory approval for the SkyWater transaction, but the 8-K still conditions completion on remaining closing conditions and provides no final capitalization or pro-forma economics.
+  - id: imsr_director_appointment_2026_07_28
+    title: Terrestrial Energy Director Appointment and Q2 Schedule
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2019804/000201980426000018/tmb-20260723x8k.htm
+    source_published_at: 2026-07-28
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [IMSR]
+    summary: The issuer appointed a director with senior nuclear-laboratory experience and scheduled August 11 results; the event adds governance context but no licensing, funding, economics or revenue evidence.
+  - id: aspi_capital_markets_day_2026_07_28
+    title: ASP Isotopes 2026 Capital Markets Day Notice
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1921865/000119312526318936/aspi-20260728.htm
+    source_published_at: 2026-07-28
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [ASPI]
+    summary: The issuer scheduled a September 8 Capital Markets Day without adding orders, accepted shipments, permits, production economics, cash, or financing evidence.
+  - id: completed_close_universe_2026_07_28
+    title: Alpaca IEX Completed Daily Bars for the Current Tradable Research Universe
+    source_type: market_data
+    url: https://data.alpaca.markets/v2/stocks/bars
+    source_published_at: 2026-07-28
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Alpaca IEX supplied complete July 28 regular-session bars for all 54 established tradable research securities; a same-symbol corporate-action check found no July 28 action requiring a return-series bridge.
+  - id: sec_submissions_all_forms_2026_07_29
+    title: SEC All-Form Submissions Audit for the Current Tradable Research Universe
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-29
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Current SEC submissions payloads for all 54 established tradable research issuers were fetched and schema-validated; new July 28 filings were classified through primary-source review.
+  - id: be_q2_2026_10q
+    title: Bloom Energy Form 10-Q for the Quarter Ended June 30 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1664703/000162828026050247/be-20260630.htm
+    source_published_at: 2026-07-28
+    retrieved_at: 2026-07-29
+    first_seen_at: 2026-07-29
+    related_symbols: [BE]
+    summary: Q2 revenue, margins, operating income, cash flow and guidance materially strengthened, but the filing contains an unreconciled apparent conflict between a 21 percent related-party customer concentration statement and USD 2.818 million of reported Q2 related-party revenue.

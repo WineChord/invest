@@ -1,55 +1,55 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
-AAOI,97.8200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-ALAB,282.5200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-ASPI,4.0500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-ASTS,58.2900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh for confirmed holding.
-BE,188.1800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-CBRS,188.6100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-CIFR,21.6500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-CRCL,65.6700,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-CRDO,208.1400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-CRWV,70.7900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-ENRD,5.1300,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-ETN,398.6400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-FLY,19.8800,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-FN,470.8200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-GILT,11.0100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-GSAT,79.0300,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-HQ,12.4200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-IMSR,5.1100,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-INFQ,9.7600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-IONQ,35.9200,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-IQMX,10.8000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-IREN,36.2900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-KTOS,49.4500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-LEU,175.9800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-LITE,711.9600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-LUNR,13.3100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-MDA,29.9700,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-MU,900.2000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-NBIS,187.8800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-NNE,16.7900,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-NUCL,5.5100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-NWPX,128.2600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-OCC,14.7800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-OKLO,41.8100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-POET,7.0900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-PWR,620.2800,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-QBTS,19.5100,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-QSI,0.7830,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-QTEX,0.9500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-QUBT,7.9600,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-RDW,8.8300,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-RGTI,15.6400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-RIOT,21.9700,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-RKLB,66.9400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh for confirmed holding.
-SEI,52.5900,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-SMR,8.5400,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-SPCX,113.5000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-STDN,7.7000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-VOYG,26.2500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-VRT,287.6000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-WULF,17.9800,USD,2026-07-27,Alpaca IEX daily bar,2026-07-28T02:39:47.061Z,Completed regular-session IEX daily bar used after Yahoo chart HTTP 403; prior adjusted history retained.
-WYFI,23.1500,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-XNDU,10.2000,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
-YSS,18.8700,USD,2026-07-27,Yahoo Finance chart,2026-07-28T06:06:31.918Z,Automated daily close refresh from committed price history.
+AAOI,88.1200,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+ALAB,260.3250,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+ASPI,3.7800,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+ASTS,56.5600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback for confirmed holding after the default provider failed.
+BE,167.0350,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+CBRS,192.6900,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+CIFR,20.4100,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+CRCL,64.3100,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+CRDO,191.6300,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+CRWV,67.2950,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+ENRD,5.1650,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+ETN,386.4000,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+FLY,19.3250,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+FN,449.8150,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+GILT,10.7600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+GSAT,79.0100,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+HQ,11.6600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+IMSR,5.0000,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+INFQ,9.5750,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+IONQ,33.8750,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+IQMX,10.6350,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+IREN,33.9200,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+KTOS,48.6350,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+LEU,169.9000,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+LITE,651.5600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+LUNR,12.3550,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+MDA,29.9500,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+MU,820.5100,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+NBIS,169.7200,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+NNE,16.0600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+NUCL,5.4600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+NWPX,126.1700,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+OCC,13.6450,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+OKLO,39.6000,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+POET,6.7600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+PWR,588.2000,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+QBTS,17.6350,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+QSI,0.7698,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+QTEX,0.8715,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+QUBT,7.7200,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+RDW,8.5500,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+RGTI,14.5150,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+RIOT,21.2200,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+RKLB,63.8850,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback for confirmed holding after the default provider failed.
+SEI,47.2950,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+SMR,8.2100,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+SPCX,116.4900,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+STDN,7.5300,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+VOYG,25.6700,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+VRT,269.4400,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+WULF,17.0800,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+WYFI,23.5600,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+XNDU,10.0200,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
+YSS,17.8150,USD,2026-07-28,Alpaca IEX daily bar,2026-07-29T07:24:57.520Z,Completed regular-session close fallback after the default provider failed.
