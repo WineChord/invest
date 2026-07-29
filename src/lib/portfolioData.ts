@@ -319,7 +319,7 @@ export interface PortfolioData {
 }
 
 const repositoryRoot = process.cwd();
-const policyVersion = "v1.2";
+const policyVersion = "v1.3";
 const repositoryUrl = "https://github.com/WineChord/invest";
 const publicUrl = "https://www.wineandchord.com/invest/";
 

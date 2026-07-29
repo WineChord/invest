@@ -49,8 +49,8 @@ assert.equal(regimeLabelForSnapshot({
 const csv = formatCsv(macroSnapshotHeader.slice(0, 3), [{
   as_of: "2026-06-07",
   retrieved_at: "2026-06-07T00:00:00.000Z",
-  policy_version: "v1.2",
+  policy_version: "v1.3",
 }]);
-assert.equal(csv, "as_of,retrieved_at,policy_version\n2026-06-07,2026-06-07T00:00:00.000Z,v1.2\n");
+assert.equal(csv, "as_of,retrieved_at,policy_version\n2026-06-07,2026-06-07T00:00:00.000Z,v1.3\n");
 
 console.log("macro regime tests passed");

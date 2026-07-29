@@ -1,5 +1,5 @@
 schema_version: 1
-policy_version: v1.2
-as_of: 2026-07-28
+policy_version: v1.3
+as_of: 2026-07-29
 records: []
-notes: Position-construction records begin with the next v1.2 allocation or promotion review. Historical v1.1 decisions remain governed by their original records; this public file must not contain unexpired exact target weights, exact share counts, or live scale ladders.
+notes: Position-construction records begin with the next v1.3 allocation or promotion review. Historical decisions remain governed by their original policy records; this public file must not contain unexpired exact target weights, exact share counts, or live scale ladders.

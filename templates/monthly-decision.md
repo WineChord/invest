@@ -1,6 +1,6 @@
-# Monthly Decision Request Template
+# Periodic Allocation Decision Template
 
-Use this when asking: "I deposited money today. What should I buy or sell?"
+Use this when asking: "New cash is available. What should I buy or sell?" The filename remains stable for existing workflow links; the decision cadence is not tied to the contribution cadence.
 
 ```yaml
 request_type: monthly_decision
@@ -13,6 +13,8 @@ lower_level_conflicts_found:
 lower_level_artifacts_revised:
 article1_postflight:
 deposit_confirmed:
+deposit_confirmation_basis:
+standing_contribution_due_date:
 deposit_amount:
 currency: USD
 broker:
@@ -107,12 +109,12 @@ Full decision operating cycle before proposing orders:
 - Reconcile subagent findings explicitly. Do not vote or average. Unresolved truth, tradability, survival, permanent-impairment, material valuation-bound, filing, or broker-fact uncertainty blocks the affected target. Normal probability, timing, or starting-size disagreement should be bounded through scenarios, staging, milestones, and shorter validity.
 - State when a company is good but not attractively priced, or when a price looks cheap but the thesis may be broken.
 - State when no stock passes the gates and the best action is no trade, hold cash, or park idle cash in the approved liquidity reserve.
-- State when a stock passes the gates strongly enough to justify using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, instead of limiting the order to the latest monthly contribution.
+- State when a stock passes the gates strongly enough to justify using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, instead of limiting the order to the latest weekly contribution.
 - Run the Article 1 offensive challenge before finalizing zero exposure: compare zero, the smallest mission-consistent staged exposure, and a fully underwritten range for the strongest contender. Record why zero or nonzero wins, cash opportunity cost, and the next evidence deadline.
 - Confirm the target passes the mission gate, evidence gate, and entry gate from `AGENTS.md`.
 - Run the meta-self-improvement check: note whether the cycle exposed a durable process defect, missed-lane risk, source gap, weak template, automation opportunity, validation gap, scoring ambiguity, or dashboard/data problem.
 - Run repository cleanup before finishing: demote stale research, remove or ignore scratch/generated noise, update canonical docs or templates when behavior changes, and preserve auditability.
-- Update `research/operating-runs.csv` when the monthly decision also ran the full operating cycle. The row should summarize the analysis and decision in public-safe language, link the decision note and run artifacts, record validation and publication status, and link only broker-confirmed ledger event IDs for actual execution.
+- Update `research/operating-runs.csv` when the allocation decision also ran the full operating cycle. The row should summarize the analysis and decision in public-safe language, link the decision note and run artifacts, record validation and publication status, and link only confirmed ledger event IDs with their recorded confirmation source.
 - Run the publication release checklist before any commit, push, deployment, or external post. Delay or redact actionable trading content, raw broker identifiers, raw screenshots, local paths, private cache payloads, secrets, and compensated or personalized language.
 - Run applicable validation. Use `npm run check:data` for data/research changes and `npm run verify` for dashboard or broad repository changes when practical.
 - Do not finish with a decision-critical target or opportunity-set gap that is publicly reachable and unbounded. Repository-health and bounded discovery debt may remain only with explicit scope, owner or next source, due date, and evidence that it cannot change the current allocation conclusion. User-only broker facts, broker order previews, and final execution instructions are execution prerequisites, not repository-readiness blockers.
@@ -125,7 +127,7 @@ Output discipline:
 - Include a `Subagent reviews` section when subagents ran or should have run. State which reviewers ran, which were skipped and why, the major disagreements, how the main agent resolved them, and whether any unresolved conflict forced no trade, hold cash, or the approved liquidity reserve.
 - Separate facts, inferences, probability scenarios, and proposed account actions.
 - Mark unavailable or unverifiable data explicitly.
-- Keep proposed account actions inside the current policy. Under policy `v1.2`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.
+- Keep proposed account actions inside the current policy. Under policy `v1.3`, SGOV or a materially equivalent short-duration U.S. Treasury reserve can be used only for cash management. Do not convert puts, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments into account orders.
 - Every action needs a trigger condition, invalidation condition, and time horizon.
 - SGOV and equivalent reserve buys and sells still require broker execution confirmation before ledger updates.
 - Sizing must disclose the total deployable-liquidity basis: confirmed cash, reserve value planned for sale, expected retained buffer, and any settlement constraint.

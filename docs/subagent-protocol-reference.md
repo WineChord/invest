@@ -11,7 +11,7 @@ request_type:
 current_date:
 freshness_window:
 confirmed_account_facts:
-planned_but_unconfirmed_cash:
+recurring_contribution:
 current_positions:
 liquidity_reserve_status:
 allowed_assets_and_exclusions:

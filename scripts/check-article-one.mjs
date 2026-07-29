@@ -42,8 +42,8 @@ let mission;
 try {
   const qualityMetrics = parseYaml(readFileSync("research/quality-metrics.yml", "utf8"));
   mission = qualityMetrics?.mission_accountability ?? {};
-  if (mission.policy_version !== "v1.2") {
-    blockingErrors.push("mission_accountability.policy_version must be v1.2");
+  if (mission.policy_version !== "v1.3") {
+    blockingErrors.push("mission_accountability.policy_version must be v1.3");
   }
   [
     "latest_confirmed_return_seeking_buy_date",

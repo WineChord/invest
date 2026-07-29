@@ -120,7 +120,7 @@ follow_up:
 Confirm the change did not weaken:
 
 - no automatic trading;
-- broker-confirmation-only account records;
+- account-fact confirmation and broker-evidence priority, including the narrow scope, idempotency, revocability, and correction path of any standing deposit authorization;
 - source freshness and hierarchy;
 - auditability;
 - clone portability;

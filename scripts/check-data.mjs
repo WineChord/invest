@@ -12,6 +12,10 @@ import {
   validateMissionReviewParameters,
   validateNoActionAccountability,
 } from "./article-one-mission-lib.mjs";
+import {
+  recurringContributionRegistry,
+  standingAuthorizationForLedgerRow,
+} from "./standing-contribution-lib.mjs";
 
 const csvFiles = [
   "data/account/ledger.csv",
@@ -810,6 +814,7 @@ validateConstitution();
 validateArticleOneRepositoryInvariantSurfaces();
 validatePublicationPolicy();
 validatePublicDisclaimerSurfaces();
+validateAccountRecords();
 validateWatchlist();
 validateMarketDataFiles();
 validateDiscoveryLanes();
@@ -847,6 +852,266 @@ function csvRecords(file) {
   return rows.slice(1).map((row) =>
     Object.fromEntries(header.map((key, index) => [key, row[index] ?? ""])),
   );
+}
+
+function validateAccountRecords() {
+  const plan = parsedYamlFiles.get(accountPlanFile);
+  const contributionRegistry = recurringContributionRegistry(plan);
+  const state = parsedYamlFiles.get("data/account/state.yml");
+  const ledger = csvRecords(ledgerFile);
+  const positions = csvRecords("data/account/positions.csv");
+
+  const seenEventIds = new Set();
+  ledger.forEach((row, index) => {
+    const context = `${ledgerFile} row ${index + 2}`;
+    requireString(row.event_id, `${context} event_id`);
+    if (seenEventIds.has(row.event_id)) {
+      throw new Error(`${context} duplicates event_id ${row.event_id}`);
+    }
+    seenEventIds.add(row.event_id);
+    requireString(row.event_type, `${context} event_type`);
+    requireString(row.status, `${context} status`);
+    requireString(row.currency, `${context} currency`);
+    requireIsoTimestamp(row.created_at, `${context} created_at`);
+    parseDate(row.trade_date, `${context} trade_date`);
+    if (row.settlement_date !== "") {
+      parseDate(row.settlement_date, `${context} settlement_date`);
+    }
+    const netCashEffect = Number(row.net_cash_effect);
+    if (!Number.isFinite(netCashEffect)) {
+      throw new Error(`${context} net_cash_effect must be numeric`);
+    }
+    if (row.status === "confirmed" && row.trade_date > state.as_of) {
+      throw new Error(`${context} is later than account state as_of ${state.as_of}`);
+    }
+    validateLedgerEventEconomics(row, context);
+  });
+
+  const confirmedRows = ledger.filter((row) => row.status === "confirmed");
+  const baseCurrencyRows = confirmedRows.filter((row) => row.currency === state.base_currency);
+  const confirmedUsdCash = roundAccountCurrency(
+    baseCurrencyRows.reduce((total, row) => total + Number(row.net_cash_effect), 0),
+  );
+  if (Math.abs(confirmedUsdCash - state.confirmed_cash) > 0.005) {
+    throw new Error(
+      `${accountPlanFile} and ${ledgerFile} derive confirmed cash ${confirmedUsdCash.toFixed(2)}, but state records ${state.confirmed_cash}`,
+    );
+  }
+  const settledUsdCash = roundAccountCurrency(
+    baseCurrencyRows
+      .filter((row) => (row.settlement_date || row.trade_date) <= state.as_of)
+      .reduce((total, row) => total + Number(row.net_cash_effect), 0),
+  );
+  if (Math.abs(settledUsdCash - state.settled_cash) > 0.005) {
+    throw new Error(
+      `${ledgerFile} derives settled cash ${settledUsdCash.toFixed(2)}, but state records ${state.settled_cash}`,
+    );
+  }
+  requireNumber(state.buying_power, "data/account/state.yml buying_power");
+  parseDate(state.as_of, "data/account/state.yml as_of");
+  const lastConfirmedEvent = confirmedRows.at(-1);
+  if (lastConfirmedEvent?.event_id !== state.last_confirmed_ledger_event_id) {
+    throw new Error("data/account/state.yml last_confirmed_ledger_event_id does not match the append-only ledger");
+  }
+  const rebuiltPositions = rebuildConfirmedPositions(confirmedRows);
+  if (state.positions_count !== rebuiltPositions.size || positions.length !== rebuiltPositions.size) {
+    throw new Error(
+      `account position count is inconsistent with the confirmed ledger (${rebuiltPositions.size})`,
+    );
+  }
+  const seenPositionSymbols = new Set();
+  positions.forEach((position) => {
+    if (seenPositionSymbols.has(position.symbol)) {
+      throw new Error(`data/account/positions.csv duplicates ${position.symbol}`);
+    }
+    seenPositionSymbols.add(position.symbol);
+    const rebuilt = rebuiltPositions.get(position.symbol);
+    if (rebuilt === undefined) {
+      throw new Error(`data/account/positions.csv contains ${position.symbol} without a confirmed open position`);
+    }
+    if (
+      Math.abs(Number(position.quantity) - rebuilt.quantity) > 0.0000005
+      || Math.abs(Number(position.cost_basis) - rebuilt.costBasis) > 0.005
+      || Math.abs(Number(position.average_cost) - rebuilt.averageCost) > 0.005
+      || position.currency !== rebuilt.currency
+      || position.first_trade_date !== rebuilt.firstTradeDate
+      || position.last_trade_date !== rebuilt.lastTradeDate
+    ) {
+      throw new Error(`data/account/positions.csv ${position.symbol} does not match confirmed ledger economics`);
+    }
+  });
+
+  const standingRows = confirmedRows.filter((row) => row.source === "owner_standing_contribution");
+  const seenStandingOccurrences = new Set();
+  standingRows.forEach((row) => {
+    const authorization = standingAuthorizationForLedgerRow(plan, row);
+    const occurrenceKey = `${authorization.authorization_id}\u0000${row.trade_date}`;
+    if (seenStandingOccurrences.has(occurrenceKey)) {
+      throw new Error(`${ledgerFile} standing event ${row.event_id} duplicates ${occurrenceKey}`);
+    }
+    seenStandingOccurrences.add(occurrenceKey);
+  });
+  validateStandingCorrections(confirmedRows, contributionRegistry);
+
+  if (standingRows.length > 0) {
+    const latestStandingDate = standingRows.map((row) => row.trade_date).sort().at(-1);
+    if (state.last_standing_contribution_date !== latestStandingDate) {
+      throw new Error(
+        `data/account/state.yml last_standing_contribution_date must be ${latestStandingDate}`,
+      );
+    }
+  } else if (state.last_standing_contribution_date !== undefined) {
+    throw new Error("data/account/state.yml must not claim a standing contribution before its first ledger event");
+  }
+  console.log("ok account ledger, state, positions, and standing contribution semantic checks");
+}
+
+function validateLedgerEventEconomics(row, context) {
+  const emptySecurityFields = ["symbol", "side", "quantity", "average_price"];
+  if (row.event_type === "deposit") {
+    if (
+      Number(row.net_cash_effect) <= 0
+      || Math.abs(Number(row.gross_amount) - Number(row.net_cash_effect)) > 0.005
+      || Math.abs(Number(row.fees)) > 0.005
+      || emptySecurityFields.some((field) => row[field] !== "")
+    ) {
+      throw new Error(`${context} has invalid deposit economics`);
+    }
+    return;
+  }
+  if (row.event_type === "trade") {
+    if (!new Set(["buy", "sell"]).has(row.side)) {
+      throw new Error(`${context} trade side must be buy or sell`);
+    }
+    const quantity = Number(row.quantity);
+    const averagePrice = Number(row.average_price);
+    const grossAmount = Number(row.gross_amount);
+    const fees = Number(row.fees);
+    if (
+      row.symbol === ""
+      || !Number.isFinite(quantity)
+      || quantity <= 0
+      || !Number.isFinite(averagePrice)
+      || averagePrice <= 0
+      || !Number.isFinite(grossAmount)
+      || !Number.isFinite(fees)
+      || fees < 0
+      || Math.abs(grossAmount - quantity * averagePrice) > 0.01
+    ) {
+      throw new Error(`${context} has invalid trade economics`);
+    }
+    const expectedCash = row.side === "buy" ? -(grossAmount + fees) : grossAmount - fees;
+    if (Math.abs(Number(row.net_cash_effect) - expectedCash) > 0.005) {
+      throw new Error(`${context} net cash effect does not match trade economics`);
+    }
+    return;
+  }
+  if (row.event_type === "correction") {
+    if (
+      (!row.source.startsWith("broker_confirmed_") && !row.source.startsWith("user_confirmed_"))
+      || row.confirmation_id === ""
+    ) {
+      throw new Error(`${context} correction must identify redacted confirmation evidence`);
+    }
+    return;
+  }
+  if (!new Set(["dividend", "fee", "split"]).has(row.event_type)) {
+    throw new Error(`${context} has unsupported event_type ${row.event_type}`);
+  }
+}
+
+function rebuildConfirmedPositions(confirmedRows) {
+  const rebuilt = new Map();
+  confirmedRows.filter((row) => row.event_type === "trade").forEach((row) => {
+    const quantity = Number(row.quantity);
+    const grossAmount = Number(row.gross_amount);
+    const fees = Number(row.fees);
+    const existing = rebuilt.get(row.symbol) ?? {
+      quantity: 0,
+      costBasis: 0,
+      currency: row.currency,
+      firstTradeDate: row.trade_date,
+      lastTradeDate: row.trade_date,
+    };
+    if (existing.currency !== row.currency) {
+      throw new Error(`confirmed trades for ${row.symbol} mix currencies`);
+    }
+    if (row.side === "buy") {
+      existing.quantity += quantity;
+      existing.costBasis += grossAmount + fees;
+    } else {
+      if (quantity > existing.quantity + 0.0000005) {
+        throw new Error(`confirmed sell for ${row.symbol} exceeds the open quantity`);
+      }
+      const averageCost = existing.quantity === 0 ? 0 : existing.costBasis / existing.quantity;
+      existing.quantity -= quantity;
+      existing.costBasis -= averageCost * quantity;
+    }
+    existing.lastTradeDate = row.trade_date;
+    if (Math.abs(existing.quantity) < 0.0000005) {
+      rebuilt.delete(row.symbol);
+    } else {
+      rebuilt.set(row.symbol, existing);
+    }
+  });
+  for (const position of rebuilt.values()) {
+    position.costBasis = roundAccountCurrency(position.costBasis);
+    position.averageCost = roundAccountCurrency(position.costBasis / position.quantity);
+  }
+  return rebuilt;
+}
+
+function validateStandingCorrections(confirmedRows, contributionRegistry) {
+  const ledgerById = new Map(confirmedRows.map((row) => [row.event_id, row]));
+  const correctedStandingIds = new Set();
+  confirmedRows
+    .filter((row) => row.source === "broker_confirmed_standing_correction")
+    .forEach((row) => {
+      const match = row.notes.match(/(?:^|;\s*)corrects_event_id=([^;]+)(?:;|$)/);
+      if (match === null) {
+        throw new Error(`${ledgerFile} correction ${row.event_id} lacks a machine-readable corrects_event_id`);
+      }
+      const corrected = ledgerById.get(match[1]);
+      if (
+        corrected === undefined
+        || corrected.source !== "owner_standing_contribution"
+        || corrected.event_type !== "deposit"
+        || correctedStandingIds.has(corrected.event_id)
+        || row.broker !== corrected.broker
+        || row.account_alias !== corrected.account_alias
+        || row.currency !== corrected.currency
+        || row.trade_date < corrected.trade_date
+        || Math.abs(Number(row.net_cash_effect) + Number(corrected.net_cash_effect)) > 0.005
+      ) {
+        throw new Error(`${ledgerFile} correction ${row.event_id} does not validly reverse one standing event`);
+      }
+      const authorization = standingAuthorizationForLedgerRow(
+        parsedYamlFiles.get(accountPlanFile),
+        corrected,
+      );
+      if (
+        authorization.status !== "paused_broker_conflict"
+        || authorization.broker_conflict_correction_event_id !== row.event_id
+      ) {
+        throw new Error(`${ledgerFile} correction ${row.event_id} is not linked to a paused authorization`);
+      }
+      correctedStandingIds.add(corrected.event_id);
+    });
+  contributionRegistry.authorizations
+    .filter((authorization) => authorization.status === "paused_broker_conflict")
+    .forEach((authorization) => {
+      requireString(
+        authorization.broker_conflict_correction_event_id,
+        `paused authorization ${authorization.authorization_id} broker_conflict_correction_event_id`,
+      );
+      if (!ledgerById.has(authorization.broker_conflict_correction_event_id)) {
+        throw new Error(`paused authorization ${authorization.authorization_id} references a missing correction`);
+      }
+    });
+}
+
+function roundAccountCurrency(value) {
+  return Math.round((value + Number.EPSILON) * 100) / 100;
 }
 
 function requireString(value, context) {
@@ -2100,8 +2365,8 @@ function validatePositionConstruction() {
   if (parsed?.schema_version !== 1) {
     throw new Error(`${positionConstructionFile} schema_version must be 1`);
   }
-  if (parsed.policy_version !== "v1.2") {
-    throw new Error(`${positionConstructionFile} policy_version must be v1.2`);
+  if (parsed.policy_version !== "v1.3") {
+    throw new Error(`${positionConstructionFile} policy_version must be v1.3`);
   }
   parseDate(parsed.as_of, `${positionConstructionFile} as_of`);
   if (!Array.isArray(parsed.records)) {
@@ -2124,8 +2389,8 @@ function validatePositionConstruction() {
       "stage_review_by",
       "source_path",
     ].forEach((field) => requireString(record?.[field], `${context} ${field}`));
-    if (record.policy_version !== "v1.2") {
-      throw new Error(`${context} policy_version must be v1.2`);
+    if (record.policy_version !== "v1.3") {
+      throw new Error(`${context} policy_version must be v1.3`);
     }
     if (!watchlistSymbols.has(record.symbol)) {
       throw new Error(`${context} references unknown watchlist symbol ${record.symbol}`);
@@ -2813,8 +3078,8 @@ function validateQualityMetrics() {
 function validateMissionAccountability(qualityMetrics) {
   const context = `${qualityMetricsFile} mission_accountability`;
   const mission = qualityMetrics.mission_accountability ?? {};
-  if (mission.policy_version !== "v1.2") {
-    throw new Error(`${context}.policy_version must be v1.2`);
+  if (mission.policy_version !== "v1.3") {
+    throw new Error(`${context}.policy_version must be v1.3`);
   }
   [
     "status",

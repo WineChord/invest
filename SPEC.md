@@ -6,19 +6,19 @@ This repository is the durable memory and operating manual for a long-term satel
 
 The highest-order principles are stated in [CONSTITUTION.md](CONSTITUTION.md). This specification implements those principles as system design; it should evolve when doing so improves the constitutional mission without weakening truth, freshness, auditability, clone portability, or avoidable-ruin controls.
 
-The account starts with no confirmed holdings and no confirmed cash balance. The default planned contribution is USD 888 per month, but future contributions may be higher. Actual account state changes only after the user confirms broker-side activity.
+The account initially started with no confirmed holdings and no confirmed cash balance. The current default contribution is USD 888 every Friday in `Asia/Shanghai`. Account state changes only from broker-confirmed activity or the exact due deposit covered by the active versioned account-owner standing authorization.
 
 The portfolio's ultimate objective is not to look stable or diversified in a conventional sense. The objective is multi-decade asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin.
 
-That objective is the system's root constraint. The repository should evolve its watchlist, discovery lanes, templates, validation, dashboard, source lists, and process rules only when the change improves the odds of finding and holding those rare outcomes without weakening broker-confirmation truth, freshness, auditability, clone portability, or survival controls.
+That objective is the system's root constraint. The repository should evolve its watchlist, discovery lanes, templates, validation, dashboard, source lists, and process rules only when the change improves the odds of finding and holding those rare outcomes without weakening account-fact truth, broker-evidence priority, freshness, auditability, clone portability, or survival controls.
 
 The practical search starts with public companies that can plausibly become much larger over decades because they sit on structural bottlenecks: space infrastructure, direct-to-device connectivity, AI infrastructure, power, cooling, semiconductor interconnect, quantum technology, programmable money, and future categories that do not yet exist.
 
 The core research frame is bottleneck-map-first. The system should not start with a stock list and ask what looks attractive. It should start with a map of future bottlenecks, ask which bottlenecks can create durable pricing power and extreme upside, identify direct public beneficiaries, reject weak proxies, and only then decide which companies deserve primary-source research.
 
-The account is not required to stay fully invested. Monthly contributions can remain unspent when no candidate passes the mission, evidence, and entry gates. Under policy `v1.2`, idle liquidity may be parked in SGOV or a materially equivalent short-duration U.S. Treasury reserve instrument for cash management only.
+The account is not required to stay fully invested. Weekly contributions can remain unspent when no candidate passes the mission, evidence, and entry gates. Under policy `v1.3`, idle liquidity may be parked in SGOV or a materially equivalent short-duration U.S. Treasury reserve instrument for cash management only.
 
-Monthly contributions are cash-flow inputs, not sizing limits. When a rare high-conviction opportunity appears, the allocation decision should consider total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale, subject to broker settlement rules and avoidable-ruin controls.
+Weekly contributions are cash-flow inputs, not sizing limits. When a rare high-conviction opportunity appears, the allocation decision should consider total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale, subject to broker settlement rules and avoidable-ruin controls.
 
 Article 1 is the controlling design constraint. Cash, whole-repository readiness, validation, conservative evidence handling, and staged sizing serve the mission only when they increase the probability of finding, funding, and holding rare extreme outcomes without avoidable ruin. They must not turn inactivity, certainty, or procedural completeness into hidden objectives.
 
@@ -36,14 +36,14 @@ The lightweight `npm run check:article-one` guard is the continuous entry point.
 
 Guard results are `PASS`, `WARN`, or `BLOCK`. `WARN` requires a dated, evidence-backed review and permits only the narrowest safe lower-level repair. `BLOCK` prevents automated commit, push, deployment, account mutation, and decision completion. It does not authorize silent deletion, automatic trading, or treating unrelated governance debt as a portfolio-wide investment veto. Automated runs must not self-repair the constitution, immutable truth and human-control boundaries, the active policy, public-release safety, the guard implementation or tests, or their own automation configuration; ambiguity requires preserved evidence and human-visible review.
 
-The guard is self-protecting across `package.json`, the quick runner, and the Pages and daily-market workflows. Policy `v1.2` locks the 60% liquidity-option threshold and the 45/90/180-day accountability periods. Reversed constitutional statements, removal of the quick guard, placeholder-only no-action accountability, and unsupported zero-exposure reason codes must fail deterministic checks.
+The guard is self-protecting across `package.json`, the quick runner, and the Pages and daily-market workflows. Policy `v1.3` carries forward the 60% liquidity-option threshold and the 45/90/180-day accountability periods. Reversed constitutional statements, removal of the quick guard, placeholder-only no-action accountability, and unsupported zero-exposure reason codes must fail deterministic checks.
 
 ## Non-Goals
 
 - Do not manage the user's large Nasdaq technology core allocation.
 - Do not optimize for short-term gains, quarterly trading, or benchmark tracking.
 - Do not create automatic trades.
-- Do not treat monthly contribution planning as confirmed cash.
+- Do not treat an ordinary contribution plan as confirmed cash. Only a due occurrence under the active versioned standing authorization is confirmed by that authorization.
 - Do not use options, margin, leverage, shorts, crypto tokens, OTC shares, or private-company proxies without a later user-approved policy.
 - Do not treat SGOV or an equivalent Treasury reserve instrument as a return-seeking allocation. It is an ETF or money-market vehicle used for liquidity management, not cash itself and not a satellite thesis.
 
@@ -106,7 +106,7 @@ Astro and React source for the public dashboard.
 
 This repository is the durable operating system for the satellite account. The files store policy, account state, research memory, workflow definitions, scripts, dashboard behavior, and audit history.
 
-An agent conversation supplies active compute. When the user opens Codex in this repository and asks for work, the system is powered on and should execute every applicable workflow in a reasonable order. When no agent is active, the repository is mostly idle. Scheduled deterministic automation may refresh allowed market-data surfaces, validate, build, or deploy, but it must not perform qualitative research judgment, recommend orders, mutate broker-confirmed records, or trade.
+An agent conversation supplies active compute. When the user opens Codex in this repository and asks for work, the system is powered on and should execute every applicable workflow in a reasonable order. When no agent is active, the repository is mostly idle. Scheduled deterministic automation may refresh allowed market-data surfaces, validate, build, deploy, or apply the exact fixed due deposit covered by the active standing authorization. It must not perform qualitative research judgment, recommend orders, mutate any other account fact, or trade.
 
 The operating system model has two boundaries:
 
@@ -115,14 +115,15 @@ The operating system model has two boundaries:
 
 ## Truth Model
 
-There are four levels of truth:
+There are five levels of truth:
 
 1. Confirmed broker facts: trade confirmations, account statements, settled cash, share quantity, fees, dividends, splits, and corrections.
-2. Current market facts: prices, volume, market cap, and other data with a timestamp.
-3. Company and regulatory facts: SEC filings, company IR releases, regulator decisions, government contract awards, and official presentations.
-4. Analysis: interpretations, rankings, forecasts, and agent reasoning.
+2. Standing account-owner confirmation: only the exact fixed recurring deposit defined by the active versioned plan, after its due date and before any broker conflict.
+3. Current market facts: prices, volume, market cap, and other data with a timestamp.
+4. Company and regulatory facts: SEC filings, company IR releases, regulator decisions, government contract awards, and official presentations.
+5. Analysis: interpretations, rankings, forecasts, and agent reasoning.
 
-Only level 1 can mutate account records. Levels 2 to 4 can inform a proposed decision but cannot change the ledger.
+Levels 1 and 2 can mutate account records within their scopes. Broker facts control every account field. Standing confirmation can create only its exact due deposit and must yield to later broker evidence through an append-only correction and pause. Levels 3 to 5 can inform a proposed decision but cannot change the ledger.
 
 ## Publication Safety Model
 
@@ -165,6 +166,34 @@ last_confirmed_ledger_event_id:
 last_reconciled_with_broker_at:
 notes:
 ```
+
+The recurring contribution contract is stored in [data/account/plan.yml](data/account/plan.yml). Its canonical record includes:
+
+```yaml
+schema_version: 2
+recurring_contribution:
+  current_authorization_id:
+  authorizations:
+    - authorization_id:
+      amount: 888
+      currency: USD
+      cadence: weekly
+      weekday: friday
+      timezone: Asia/Shanghai
+      authorized_on: 2026-07-29
+      effective_from: 2026-07-31
+      effective_until:
+      status: active_owner_standing_authorization
+      broker:
+      account_alias:
+      occurrence_confirmation_required: false
+      availability_semantics: deposited_settled_and_available_for_trading
+      catch_up_missed_occurrences: true
+      max_catch_up_events_per_run: 8
+      backfill_before_effective_from: false
+```
+
+Authorization versions remain in the array so historical ledger events are always checked against the terms that created them. The current authorization is revocable and narrowly scoped. It confirms only that the exact due deposit is deposited, settled, and available for trading; it does not claim live broker API observation and does not advance `last_reconciled_with_broker_at`. If broker evidence contradicts an occurrence, keep the original row, use `npm run account:record-standing-conflict` to append a machine-linked correction and pause the current authorization in one crash-recoverable account transaction, and do not apply another occurrence until the conflict is resolved.
 
 Confirmed transactions are append-only rows in [data/account/ledger.csv](data/account/ledger.csv).
 
@@ -251,11 +280,14 @@ Scheduled agent-review cadence:
 
 - Deterministic completed-close, macro, validation, and Pages work remains on the existing market-day schedule. Qualitative agent work should consume those committed results after the deterministic workflow has had time to finish rather than repeat the same refresh first.
 - The reference local review window is Monday through Saturday at 15:00 Asia/Shanghai. The window follows the observed completion time of scheduled GitHub workflows while remaining well before the next U.S. regular session. Monday is a weekend-evidence sentinel, Tuesday through Friday follow each completed U.S. regular session, and Saturday is the standing full operating cycle using the completed Friday session and the week's accumulated evidence.
-- A sentinel checks repository sync and safety, the latest deterministic workflow result, completed-close dislocations, new SEC or issuer evidence, open high or critical freshness events, broker-confirmed state changes, due evidence deadlines, and Article 1 mission-accountability thresholds. With no material trigger it produces no full-universe decision, no investment email, no research churn, and no repository commit.
+- A sentinel checks repository sync and safety, the latest deterministic workflow result, completed-close dislocations, new SEC or issuer evidence, open high or critical freshness events, confirmed account-state changes, due evidence deadlines, and Article 1 mission-accountability thresholds. With no material trigger it produces no full-universe decision, no investment email, no research churn, and no repository commit.
+- Before sentinel routing, apply the canonical standing contribution with `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json`. The automation must pass the current `Asia/Shanghai` date. A due contribution is an account-state change and therefore receives targeted account validation even when investment evidence remains quiet.
 - A sentinel escalates in the same powered-on session when a new filing, financing, dilution, contract, regulatory, technical, customer, management, market-regime, broker-state, or price event could change thesis validity, survival, entry attractiveness, buy-zone status, portfolio action, or opportunity-cost ranking. Target-specific recorded triggers control. As fallback triage thresholds, review a holding or A/A-/B+ priority symbol after an absolute completed-close move of at least 8% in one session or 15% over five sessions, another researched symbol after at least 12% in one session or 20% over five sessions, and a relevant broad index after at least 4% in one session or 8% over five sessions. These thresholds only start research; they never create buy eligibility or an order.
 - A targeted review becomes a full allocation decision when the evidence could change a proposed buy, add, hold, reduce, or sell action; promotion or buy-zone eligibility; the top-five opportunity-cost ranking; or the mission-accountability conclusion. An allocation-relevant escalation must complete the applicable decision cycle before proposing action.
 - The Saturday full cycle performs the complete bottleneck, discovery, freshness, filing, valuation, watchlist, opportunity-cost, allocation, mission-accountability, validation, publication, dashboard, and email workflow.
-- Scheduled review is not broker confirmation. It must not convert a planned monthly contribution, a weekday, or a prior standing reminder into confirmed future liquidity. A deposit enters account records only when the current evidence satisfies the execution-confirmation workflow, and deposit deduplication must use the normalized broker/account, effective date, amount, and redacted confirmation identity when available.
+- Scheduled review is not broker confirmation. The active versioned standing authorization is nevertheless occurrence confirmation for its exact USD 888 Friday deposit after the due date. It cannot confirm any other amount or account fact. Each due Friday receives one separate event; missed occurrences are caught up separately; dates before 2026-07-31 are not backfilled. Deduplicate only through the canonical authorization identity and full event economics. A separate same-day USD 888 deposit must use the explicit `user_confirmed_additional_deposit` source; any other same-day collision is ambiguous and blocks automatic application.
+- The standing-contribution application must fail closed on an inactive or malformed plan, duplicate ambiguity, account-state drift, identity collision, or broker conflict. One run applies at most the earliest eight missing occurrences and returns every remaining due date so later runs can continue without skipping or combining history. Its crash-recovery journal completes an interrupted multi-file update before new work. It must not change positions, equity-curve valuations, or `last_reconciled_with_broker_at`. Later contradictory broker evidence requires a machine-linked append-only correction and `paused_broker_conflict`.
+- A Friday contribution alone does not create a full investment decision, mandatory purchase, or shortened email. Run targeted account validation and let the Saturday full cycle consume the updated liquidity unless another existing L2 trigger is present.
 - A complete Chinese full-universe investment email is sent after the Saturday full cycle and after any event-driven escalation that reaches a new full decision. Quiet sentinels and targeted reviews that do not change a full decision do not send investment email. This preserves fast reaction to material evidence without converting unchanged daily closes into repeated full reports.
 - The first Saturday full cycle of each month includes a cadence and research-process meta-review. The first Saturday full cycle of each quarter includes a deeper bottleneck-lane and strategy-feasibility review. A high-event or high-volatility period may temporarily treat Tuesday and Saturday as full cycles for up to two weeks; a verified crisis or rare-opportunity period may use each scheduled market-day review as a full cycle for at most five consecutive sessions before mandatory recalibration.
 - Review the normal cadence after four completed Saturday cycles, or sooner after a missed material event, stale decision, duplicate contribution, repeated unnecessary escalation, or materially changed portfolio. Compare detection latency, full-cycle count, decision changes, missed triggers, email noise, compute cost, and whether the cadence improved the probability of establishing and scaling mission-relevant exposure. Do not optimize this review for trade count.
@@ -337,7 +369,7 @@ latest_constitutional_audit_path:
 current_conclusion:
 ```
 
-`liquidity_option_weight_pct` is confirmed cash plus the latest reliable confirmed liquidity-reserve market value divided by the latest reliable research NAV. A mission-relevant deployment must materially reduce that weight or establish a source-backed mission-relevant position with a credible path to scale; a symbolic trade does not reset the clock. Allowed `status` values are `aligned`, `high_liquidity_monitoring`, `pressure_review_due`, `opportunity_set_reset_due`, and `strategy_review_due`. The 60% weight and 45-day, 90-day, and 180-day periods are review parameters under policy `v1.2`; they never create an order.
+`liquidity_option_weight_pct` is confirmed cash plus the latest reliable confirmed liquidity-reserve market value divided by the latest reliable research NAV. A mission-relevant deployment must materially reduce that weight or establish a source-backed mission-relevant position with a credible path to scale; a symbolic trade does not reset the clock. Allowed `status` values are `aligned`, `high_liquidity_monitoring`, `pressure_review_due`, `opportunity_set_reset_due`, and `strategy_review_due`. The 60% weight and 45-day, 90-day, and 180-day periods are review parameters under policy `v1.3`; they never create an order.
 
 `research/discovery/lanes.yml` records the structural bottleneck lanes that guide universe discovery beyond the current watchlist. A lane is a search hypothesis, not a sector allocation target or proof that any company is buyable. The lane map is the first-class discovery interface.
 
@@ -592,7 +624,7 @@ Readiness semantics:
 
 Operating-cycle trigger model:
 
-- A user request about a new deposit, monthly contribution, what to buy, what to sell, whether to deploy cash, whether to use SGOV, or how to allocate the account is a decision trigger. It must start the full decision operating cycle before any proposed order is produced.
+- A user request about a new deposit, contribution, what to buy, what to sell, whether to deploy cash, whether to use SGOV, or how to allocate the account is a decision trigger. It must start the full decision operating cycle before any proposed order is produced.
 - A user request to "run everything", "execute the full workflow", "refresh the whole repo", "full monthly cycle", "全量执行", or equivalent language is a full-cycle trigger. It must execute every applicable repository workflow in the safest useful order, including research, data refresh, validation, dashboard checks when relevant, cleanup, and durable commits when state changes.
 - The operating cycle is the bridge between this specification and agent behavior. It prevents the system from answering from stale watchlist memory when the real objective is to keep finding the best current public opportunities for the mission.
 - The operating cycle must run even when `research/quality-metrics.yml` was previously `ready`; previous readiness is historical evidence, not current-cycle readiness.
@@ -931,7 +963,7 @@ Process quality indicators:
 - liquidity-option weight, its continuous high-weight start date, and elapsed days since the latest mission-relevant deployment;
 - percentage of no-action decisions with a concrete decision-critical blocker, strongest counterfactual, zero-versus-smallest-position comparison, cash opportunity cost, and conjunctive evidence-and-price trigger;
 - percentage of active candidates with portfolio-impact scenarios and a path from starter to mission-relevant size;
-- mission-pressure, opportunity-set-reset, and strategy-feasibility reviews completed when policy `v1.2` thresholds are reached.
+- mission-pressure, opportunity-set-reset, and strategy-feasibility reviews completed when policy `v1.3` thresholds are reached.
 - outside-watchlist research effort, new-listing-to-R1 latency, exploratory sample coverage, repeated-hit age, R1-to-R2-to-R3 conversion, later-reopened rejects, and false-negative count;
 - the share of discovery matches found organically rather than only by hard-coded known-proxy recall;
 
@@ -992,7 +1024,7 @@ If a critical freshness check fails, the decision must default to no trade or ho
 
 ## AI Cycle and Market Regime Monitor
 
-The AI cycle monitor is a risk overlay for monthly allocation and major-event reviews. It is not a standalone trading system, and it does not override the allowed-asset policy. Under policy `v1.2`, the monitor may recommend buying eligible common stocks, holding cash, parking idle liquidity in an approved short-duration U.S. Treasury reserve, reducing or exiting confirmed return-seeking positions, or waiting. It must not recommend options, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments as account actions unless a later approved policy allows them. If a market-regime review discusses puts, hedges, shorts, private firms, or foreign listings as market context or bottleneck intelligence, the output must label them as outside the account policy rather than converting them into proposed orders.
+The AI cycle monitor is a risk overlay for periodic allocation and major-event reviews. It is not a standalone trading system, and it does not override the allowed-asset policy. Under policy `v1.3`, the monitor may recommend buying eligible common stocks, holding cash, parking idle liquidity in an approved short-duration U.S. Treasury reserve, reducing or exiting confirmed return-seeking positions, or waiting. It must not recommend options, shorts, leverage, margin, crypto tokens, private shares, or non-US-listed instruments as account actions unless a later approved policy allows them. If a market-regime review discusses puts, hedges, shorts, private firms, or foreign listings as market context or bottleneck intelligence, the output must label them as outside the account policy rather than converting them into proposed orders.
 
 Purpose:
 
@@ -1061,9 +1093,9 @@ Bubble risk dimensions:
 
 1. Identify the policy version.
 2. Load confirmed ledger, positions, contribution plan, and prior decisions.
-3. Ask whether the user has confirmed a new deposit if the prompt is ambiguous.
+3. Apply any due standing contribution deterministically. Ask whether the account owner has confirmed a different deposit if the request is ambiguous.
 4. Run the full decision operating cycle through discovery-lane review, universe discovery, freshness, filing, valuation, risk, allocation, cleanup, and validation stages. This is mandatory and must not be skipped because the user phrased the request casually.
-5. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest monthly contribution when a stronger opportunity justifies broader deployment.
+5. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest weekly contribution when a stronger opportunity justifies broader deployment.
 6. Retrieve fresh prices for current holdings, active candidates, and any newly promoted or decision-relevant discovery candidate.
 7. Retrieve fresh primary evidence for each active candidate and any newly decision-relevant candidate.
 8. Run discovery readiness sprints for plausible new candidates that could affect allocation, opportunity cost, lane completeness, or watchlist priority. Do the reachable public research before declaring the candidate not buy-ready because of missing repository data.
@@ -1092,7 +1124,7 @@ Default sizing principles:
 - Start new names in stages when bounded uncertainty makes optionality valuable; ownership itself is not evidence, and an initial position must not create an endowment-bias shortcut around fresh issuer evidence.
 - Prefer adding to existing high-conviction names when fresh evidence confirms the thesis and valuation remains tolerable.
 - Prefer holding cash or liquidity reserve over forcing deployment when evidence or valuation is not strong enough.
-- When evidence and entry quality are unusually strong, consider using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, rather than only the latest monthly contribution.
+- When evidence and entry quality are unusually strong, consider using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, rather than only the latest weekly contribution.
 - Prefer withholding new cash from downgraded names before selling existing positions.
 - Do not make forced rebalancing trades just because a position outperformed.
 - Do not sell winners solely because they became large; sell only if the thesis breaks, risk becomes unacceptable, or opportunity cost becomes overwhelming.
@@ -1104,7 +1136,7 @@ Suggested guardrails for normal decisions:
 
 - Keep a small cash buffer for price slippage and fees.
 - Size unprofitable or pre-commercial exposure from portfolio NAV, dilution-adjusted survival, correlated risk, and maximum acceptable permanent impairment, not from the amount of the latest contribution.
-- Do not deploy the full monthly contribution merely to avoid idle cash. Cash and the liquidity reserve preserve option value.
+- Do not deploy the full weekly contribution merely to avoid idle cash. Cash and the liquidity reserve preserve option value.
 - Do not preserve the liquidity reserve mechanically when a rare opportunity passes all gates strongly enough to justify deployment. Explain why the opportunity deserves reserve capital and what buffer remains.
 - Track theme concentration, especially AI infrastructure and space infrastructure, because multiple tickers can depend on the same capital spending cycle.
 
@@ -1117,7 +1149,7 @@ Default allowed assets:
 - common stocks or ADRs listed on major US exchanges;
 - companies with sufficient liquidity for normal retail execution;
 - companies whose thesis can be researched from public sources.
-- SGOV or a materially equivalent short-duration U.S. Treasury ETF or Treasury money-market vehicle, for liquidity reserve use only under policy `v1.2`.
+- SGOV or a materially equivalent short-duration U.S. Treasury ETF or Treasury money-market vehicle, for liquidity reserve use only under policy `v1.3`.
 
 Default excluded assets:
 

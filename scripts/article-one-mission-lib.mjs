@@ -20,7 +20,7 @@ const zeroExposureReasonCodes = new Set([
   "other_documented",
 ]);
 
-export const articleOneV12MissionAccountabilityPolicy = Object.freeze({
+export const articleOneV13MissionAccountabilityPolicy = Object.freeze({
   highLiquidityOptionThresholdPct: 60,
   pressureReviewAfterDays: 45,
   opportunitySetResetAfterDays: 90,
@@ -108,7 +108,7 @@ export const articleOneRepositoryInvariantContracts = Object.freeze({
       any: Object.freeze([/\bdeterministic\s+validation\b.{0,240}\barticle\s+1\s+precedence\b/]),
     }),
   ]),
-  "data/policy/policy-v1.2.md": Object.freeze([
+  "data/policy/policy-v1.3.md": Object.freeze([
     Object.freeze({
       id: "policy_subordination",
       any: Object.freeze([/\barticle\s+1\s+of\s+constitution\.md\s+controls\s+every\s+lower-level\s+rule\b/]),
@@ -214,7 +214,7 @@ const protectedNarrativePaths = new Set([
   "AGENTS.md",
   ".agents/skills/invest-operating-cycle/SKILL.md",
   "SPEC.md",
-  "data/policy/policy-v1.2.md",
+  "data/policy/policy-v1.3.md",
 ]);
 
 const contradictionPatterns = Object.freeze([
@@ -333,19 +333,19 @@ export function validateMissionReviewParameters({
   ) {
     errors.push("mission-review periods must be positive and strictly increasing");
   }
-  if (policyVersion === "v1.2") {
-    const expected = articleOneV12MissionAccountabilityPolicy;
+  if (policyVersion === "v1.2" || policyVersion === "v1.3") {
+    const expected = articleOneV13MissionAccountabilityPolicy;
     if (highLiquidityOptionThresholdPct !== expected.highLiquidityOptionThresholdPct) {
-      errors.push(`policy v1.2 high-liquidity threshold must be ${expected.highLiquidityOptionThresholdPct}`);
+      errors.push(`policy ${policyVersion} high-liquidity threshold must be ${expected.highLiquidityOptionThresholdPct}`);
     }
     if (pressureReviewAfterDays !== expected.pressureReviewAfterDays) {
-      errors.push(`policy v1.2 pressure review must be ${expected.pressureReviewAfterDays} days`);
+      errors.push(`policy ${policyVersion} pressure review must be ${expected.pressureReviewAfterDays} days`);
     }
     if (opportunitySetResetAfterDays !== expected.opportunitySetResetAfterDays) {
-      errors.push(`policy v1.2 opportunity-set reset must be ${expected.opportunitySetResetAfterDays} days`);
+      errors.push(`policy ${policyVersion} opportunity-set reset must be ${expected.opportunitySetResetAfterDays} days`);
     }
     if (strategyReviewAfterDays !== expected.strategyReviewAfterDays) {
-      errors.push(`policy v1.2 strategy review must be ${expected.strategyReviewAfterDays} days`);
+      errors.push(`policy ${policyVersion} strategy review must be ${expected.strategyReviewAfterDays} days`);
     }
   }
   return errors;

@@ -12,7 +12,7 @@ export const defaultCompanyMetricsFile = "data/market/company_metrics.csv";
 export const defaultWatchlistFile = "research/watchlist.csv";
 export const fredSourceId = "fred_public_macro_series";
 export const yahooMacroSourceId = "yahoo_chart_macro_proxy";
-export const macroRegimePolicyVersion = "v1.2";
+export const macroRegimePolicyVersion = "v1.3";
 
 const macroFetchTimeoutMs = 10_000;
 

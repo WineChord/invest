@@ -9,7 +9,7 @@ const candidatesFile = "research/discovery/candidates.csv";
 const candidateReadinessFile = "research/discovery/candidate-readiness.yml";
 const discoveryLanesFile = "research/discovery/lanes.yml";
 const freshnessFile = "research/freshness/events.csv";
-const policyFile = "data/policy/policy-v1.2.md";
+const policyFile = "data/policy/policy-v1.3.md";
 const positionsFile = "data/account/positions.csv";
 const positionConstructionFile = "research/position-construction.yml";
 const qualityMetricsFile = "research/quality-metrics.yml";
@@ -37,7 +37,7 @@ const defaultRoles = [
 ];
 const safetyBoundaries = [
   "Do not execute trades.",
-  "Do not mutate broker-confirmed account files.",
+  "Do not mutate confirmed account files.",
   "Use repository files and fresh public sources as evidence; separate facts from inferences.",
   "Treat deterministic discovery as scaffolding, not buy eligibility.",
   "Classify gaps as target-critical, opportunity-set-critical, bounded discovery debt, or repository-health debt.",
@@ -225,7 +225,7 @@ function buildPacket({
       positions_count: accountState.positions_count,
       last_confirmed_ledger_event_id: accountState.last_confirmed_ledger_event_id,
     },
-    planned_but_unconfirmed_cash: accountPlan.monthly_contribution ?? null,
+    recurring_contribution: accountPlan.recurring_contribution ?? null,
     current_positions: currentPositions,
     portfolio_snapshot: {
       research_nav: Number.isFinite(researchNav) ? researchNav : null,
@@ -236,7 +236,7 @@ function buildPacket({
     allowed_assets_and_exclusions: {
       policy_file: policyFile,
       allowed_return_seeking_assets: "U.S.-listed common stocks and ADRs with public disclosures and normal retail liquidity.",
-      exclusions: "No leverage, margin, options, shorts, crypto tokens, private-share orders, OTC orders, or non-US-listed account actions under policy v1.2.",
+      exclusions: "No leverage, margin, options, shorts, crypto tokens, private-share orders, OTC orders, or non-US-listed account actions under policy v1.3.",
     },
     candidate_set: candidateSet,
     candidate_readiness: readinessRecords,

@@ -18,7 +18,8 @@ decision_readiness:
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 mission_accountability:
-  policy_version: v1.2
+  policy_version: v1.3
+  latest_full_decision_policy_version: v1.2
   status: high_liquidity_monitoring
   no_action_is_default_target: false
   repository_health_is_allocation_veto: false

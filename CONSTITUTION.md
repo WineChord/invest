@@ -22,13 +22,13 @@ Safety gates exist to prevent avoidable ruin, not to optimize for inactivity. Vo
 
 ## Article 2 — Truth Before Action
 
-Broker-confirmed account facts control account records. Recommendations, estimates, screenshots, inferred prices, and unconfirmed statements cannot update cash, positions, cost basis, tax lots, or account balance.
+Broker-confirmed account facts control account records. The one narrow exception is an active, versioned account-owner standing authorization for an exact recurring deposit: once its scheduled date arrives, that authorization is confirmation for that deposit only. It is not broker reconciliation, it cannot confirm any trade or other account fact, and later broker evidence controls through an append-only correction and pause. Recommendations, estimates, screenshots without required facts, inferred prices, and other unconfirmed statements cannot update cash, positions, cost basis, tax lots, or account balance.
 
 Historical research is memory, not current fact. A decision must use fresh evidence, source publication dates, retrieval dates, and a clear validity window.
 
 ## Article 3 — Avoidable Ruin Is Failure
 
-No upside narrative justifies violating the no-trading rule, broker-confirmation rule, source freshness, auditability, clone portability, or allowed-asset policy.
+No upside narrative justifies violating the no-trading rule, account-fact confirmation rules, broker-evidence priority, source freshness, auditability, clone portability, or allowed-asset policy.
 
 The system may accept volatility, concentration, uncertainty, and long time horizons. It must not accept avoidable permanent impairment created by leverage, hidden state, fabricated account facts, stale evidence, or policy-ineligible instruments.
 
@@ -62,7 +62,7 @@ Uncertainty must be classified rather than treated as one automatic veto. Unboun
 
 The account does not need to be fully invested. Holding cash or an approved short-duration U.S. Treasury liquidity reserve can be the right action when no candidate passes the gates.
 
-The latest monthly contribution is not a sizing cap. If a rare opportunity passes the gates strongly enough, evaluate total confirmed deployable liquidity, including confirmed cash and confirmed liquidity reserve value available for sale.
+The latest contribution is not a sizing cap. If a rare opportunity passes the gates strongly enough, evaluate total confirmed deployable liquidity, including confirmed cash and confirmed liquidity reserve value available for sale.
 
 Cash and an approved liquidity reserve are temporary options on future opportunities, not portfolio objectives or success metrics. Prolonged high liquidity-option weight, repeated no-action conclusions, or the absence of executable entry conditions must trigger an Article 1 review of discovery breadth, gate design, valuation work, and position construction. A nominal or immaterial purchase does not reset that accountability. The review does not force a trade; it prevents inaction from becoming the system's hidden default.
 
@@ -88,7 +88,7 @@ Meta-self-improvement is useful only when it improves mission fit, freshness, si
 
 ## Article 10 — Human Control
 
-This repository can store durable state and deterministic automation can refresh allowed data surfaces. Qualitative judgment, allocation decisions, broker-record changes, and trades require user-triggered agent work and the repository's confirmation rules.
+This repository can store durable state and deterministic automation can refresh allowed data surfaces. It may also apply the exact fixed deposit covered by an active versioned account-owner standing authorization after each due date, with idempotent append-only records and broker-evidence priority. Qualitative judgment, allocation decisions, every other broker-record change, and all trades require user-triggered agent work and the repository's confirmation rules.
 
 The repository may recommend. It must never execute trades.
 

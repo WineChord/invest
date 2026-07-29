@@ -1,10 +1,43 @@
 # Execution Confirmation Template
 
-Use this only after the broker actually confirms a deposit, buy, sell, dividend, fee, split, or correction.
+Use this after the broker actually confirms a deposit, buy, sell, dividend, fee, split, or correction. It also defines the separate standing-contribution branch for the exact recurring deposit authorized in `data/account/plan.yml`.
 
 Do not paste raw broker screenshots, statements, account numbers, full order IDs, full confirmation numbers, tax identifiers, legal identity documents, or broker message-center content into the repository. Convert broker evidence into normalized redacted fields. `confirmation_id` should be a stable redacted alias or non-reversible hash that lets the account owner reconcile records later without exposing the raw broker identifier.
 
 If the event is a same-day trade or includes actionable trading content, do not commit, push, publish, or deploy the record until the [public release policy](../PUBLICATION_POLICY.md) embargo has expired.
+
+## Standing Recurring Deposit
+
+The active versioned account-owner authorization in `data/account/plan.yml` is occurrence confirmation only for the fixed USD 888 Friday deposit once its `Asia/Shanghai` due date arrives. Do not request a second confirmation for a valid due occurrence.
+
+Before applying it:
+
+- resolve `current_authorization_id` against the immutable authorization-version array and verify that its status is `active_owner_standing_authorization`;
+- verify that the due date is on or after `effective_from` and not after `effective_until` when one is present;
+- verify the exact amount, currency, broker, account alias, cadence, timezone, and authorization identity;
+- reject dates before the due date and never backfill before `effective_from`;
+- deduplicate by broker, account alias, authorization identity, due date, amount, and currency;
+- accept only the canonical authorization identity and complete event economics as the recurring occurrence;
+- record a distinct same-day deposit with source `user_confirmed_additional_deposit`; otherwise treat the collision as ambiguous and stop;
+- fail closed on an ambiguous duplicate, identity collision, account-state drift, inactive plan, or broker conflict.
+
+Use `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json`. The command appends one row per missing due Friday, applies at most the earliest eight missing occurrences in one run, reports any remainder for the next run, and updates confirmed, settled, and available cash without changing positions, equity-curve values, or `last_reconciled_with_broker_at`. A private crash-recovery journal prevents an interrupted ledger/state write from becoming silent drift.
+
+Standing deposit events use:
+
+```yaml
+event_type: deposit
+status: confirmed
+confirmation_id: AUTHORIZATION_ID-YYYY-MM-DD
+amount: 888
+currency: USD
+deposit_available_date: YYYY-MM-DD
+source: owner_standing_contribution
+created_at: ACTUAL_WRITE_TIME
+notes: Weekly USD 888 contribution recorded under the active account-owner standing authorization.
+```
+
+This source records account-owner confirmation that the due amount is deposited, settled, and available, not live broker API verification. If later broker evidence contradicts an occurrence, preserve the original event and run `npm run account:record-standing-conflict -- --corrects-event-id EVENT_ID --confirmation-id REDACTED_BROKER_ALIAS --reason "REDACTED_REASON" --as-of YYYY-MM-DD --json`. The reason must summarize the conflict without raw broker text, account identifiers, or private reference numbers. The command appends a machine-linked correction and pauses the current authorization in one recoverable account transaction. Do not apply later occurrences until the conflict is resolved.
 
 ## Deposit
 
@@ -18,6 +51,8 @@ Deposit confirmations may use repository defaults when the user explicitly confi
 - mark notes to say default deposit fields were used.
 
 Do not use these deposit defaults for dividends, corrections, broker/account changes, or missing trade economics.
+
+When an explicitly confirmed deposit is additional to the standing Friday occurrence, use `source: user_confirmed_additional_deposit`. This machine-readable distinction is required when the amount, account, currency, and date would otherwise collide with the standing event.
 
 ```yaml
 event_type: deposit

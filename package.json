@@ -25,6 +25,8 @@
     "discover:sec-event-filing-index": "node scripts/run-sec-filing-discovery-index.mjs --filing-types 8-K,6-K,10-Q,S-4,F-4,DEF14A --filing-selection-policy latest-supported",
     "check:article-one": "node scripts/check-article-one.mjs",
     "check:data": "node scripts/check-data.mjs",
+    "account:apply-standing-contribution": "node scripts/apply-standing-contribution.mjs",
+    "account:record-standing-conflict": "node scripts/record-standing-contribution-conflict.mjs",
     "test:discovery-artifact-index": "node scripts/test-discovery-artifact-index.mjs",
     "test:discovery-profiles": "node scripts/test-discovery-profiles.mjs",
     "test:discovery-scan": "node scripts/test-discovery-scan.mjs",
@@ -39,6 +41,7 @@
     "test:community-scan": "node scripts/test-community-scan.mjs",
     "test:community-triage": "node scripts/test-community-triage.mjs",
     "test:macro-regime": "node scripts/test-macro-regime.mjs",
+    "test:standing-contribution": "node scripts/test-standing-contribution.mjs",
     "test:market-session": "node scripts/test-market-session.mjs",
     "test:market-data-merge": "node scripts/test-market-data-merge.mjs",
     "test:company-metric-merge": "node scripts/test-company-metric-merge.mjs",
@@ -47,7 +50,7 @@
     "discover:universe": "node scripts/discover-universe.mjs",
     "refresh:macro": "node scripts/refresh-macro-regime.mjs",
     "refresh:market": "node scripts/refresh-market-data.mjs",
-    "verify": "npm run check:article-one && npm run check:data && npm run test:discovery-artifact-index && npm run test:discovery-profiles && npm run test:discovery-scan && npm run test:semantic-discovery && npm run test:fmp-fetch && npm run test:sec-ttm && npm run test:discovery-gates && npm run test:sec-registration-transaction-candidates && npm run test:promotion-gates && npm run test:article-one-gates && npm run test:watchlist-cycle-gates && npm run test:community-scan && npm run test:community-triage && npm run test:macro-regime && npm run test:market-session && npm run test:market-data-merge && npm run test:company-metric-merge && npm run build"
+    "verify": "npm run check:article-one && npm run check:data && npm run test:standing-contribution && npm run test:discovery-artifact-index && npm run test:discovery-profiles && npm run test:discovery-scan && npm run test:semantic-discovery && npm run test:fmp-fetch && npm run test:sec-ttm && npm run test:discovery-gates && npm run test:sec-registration-transaction-candidates && npm run test:promotion-gates && npm run test:article-one-gates && npm run test:watchlist-cycle-gates && npm run test:community-scan && npm run test:community-triage && npm run test:macro-regime && npm run test:market-session && npm run test:market-data-merge && npm run test:company-metric-merge && npm run build"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.5",

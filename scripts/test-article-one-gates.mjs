@@ -24,7 +24,7 @@ assert.equal(
 );
 
 const base = {
-  policyVersion: "v1.2",
+  policyVersion: "v1.3",
   liquidityOptionWeightPct: 76.4144,
   highLiquidityOptionThresholdPct: 60,
   pressureReviewAfterDays: 45,
@@ -139,7 +139,7 @@ assert.ok(
     contract: "preflight_and_postflight",
   },
   {
-    path: "data/policy/policy-v1.2.md",
+    path: "data/policy/policy-v1.3.md",
     remove: "Every application of this policy begins with an Article 1 preflight",
     contract: "preflight_and_postflight",
   },

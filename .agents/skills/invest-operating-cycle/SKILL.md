@@ -17,7 +17,7 @@ Read only the canonical files relevant to the request:
 - `PUBLICATION_POLICY.md`: required before public commits, pushes, deployments, dashboard copy, decision notes, execution records, performance displays, or external posts.
 - `AGENTS.md`: mandatory agent behavior, trigger routing, safety boundaries, self-evolution, cleanup, and Git rules.
 - `SPEC.md`: system design, data models, research engine, dashboard behavior, and audit requirements.
-- `data/policy/policy-v1.2.md`: current investment policy.
+- `data/policy/policy-v1.3.md`: current investment policy.
 - `docs/research-command-reference.md`: detailed discovery, macro-regime, community, SEC, semantic-discovery, FMP, and validation command notes.
 - `docs/subagent-protocol-reference.md`: bounded subagent evidence-packet and minimum-output schemas.
 
@@ -25,7 +25,7 @@ Use the relevant template under `templates/`:
 
 - `monthly-decision.md`: buy, sell, hold-cash, SGOV, or allocation requests.
 - `full-operating-cycle.md`: full-cycle repository requests.
-- `execution-confirmation.md`: broker-confirmed trades or deposits.
+- `execution-confirmation.md`: broker-confirmed activity and the narrowly scoped standing recurring deposit.
 - `publication-release-review.md`: public release of decision, trade, account, performance, or dashboard content.
 - `research-engine-run.md`: discovery, freshness, valuation, priority, and cleanup runs.
 - `bottleneck-lane-review.md`: bottleneck-map-first discovery review.
@@ -45,6 +45,7 @@ Use the relevant template under `templates/`:
 ## Trigger Routing
 
 - Questions about deposits, cash deployment, buying, selling, SGOV, allocation, or "what should I do" are full decision operating-cycle requests.
+- Before sentinel or full-cycle routing, apply any due fixed weekly contribution through the deterministic account command. The active versioned standing authorization covers only that deposit, requires no second occurrence confirmation, and never authorizes a trade or another account mutation.
 - "Run everything", "full refresh", "full monthly cycle", "全量执行", or equivalent language is a full-cycle repository request.
 - Serious research or decision work must run self-evolution and meta-self-improvement checks before finishing.
 - Full-cycle and monthly decision runs must start from the bottleneck map, ask whether a new lane appeared, run current discovery/freshness/valuation/watchlist review, and avoid answering from the old watchlist alone.
@@ -60,10 +61,10 @@ Use the relevant template under `templates/`:
 ## Safety Boundaries
 
 - Never execute trades.
-- Never mutate broker-confirmed account records without the required execution confirmation fields.
+- Never mutate account records without the required confirmation. The only recurring exception is the exact due deposit covered by the active versioned standing authorization; broker evidence remains superior.
 - Do not infer broker cash, cost basis, positions, or trade economics from recommendations, screenshots without filled execution details, or market prices.
 - Treat a broker order-status screenshot with filled status, side, symbol, quantity, fill price, and trade date or broker timestamp as a complete trade evidence packet; do not ask for a second confirmation of defaultable fields.
-- For confirmed deposits and filled U.S.-listed stock or ETF trades, use the streamlined defaulting rules in `templates/execution-confirmation.md` for repetitive broker/account, currency, redacted confirmation alias, standard settlement, zero-fee, and timestamp fields instead of asking the user again.
+- For standing deposits, other confirmed deposits, and filled U.S.-listed stock or ETF trades, use the applicable branch and streamlined defaults in `templates/execution-confirmation.md`. Do not request a second confirmation for a valid due standing occurrence.
 - Keep deterministic commands, durable file edits, account-state reconstruction, validation, commits, pushes, and final synthesis in the main agent.
 - Keep the repository clone-portable; do not commit secrets, local-only paths, caches, generated scratch artifacts, raw broker documents, screenshots, account numbers, full confirmation IDs, full order IDs, cookies, tokens, or private cache payloads.
 - Never publicly release actionable trading content before the embargo in `PUBLICATION_POLICY.md` expires. Same-day trades, exact order sizes, live target weights, live scale ladders, order previews, and unexpired proposed orders must remain local and unpublished or be redacted.
@@ -74,6 +75,7 @@ Use the relevant template under `templates/`:
 - Run `npm run check:article-one` before and after powered-on automated work and before commit or push. Use sentinel mode for scheduled triage and decision mode before completing a full allocation decision.
 - `WARN` triggers a dated review and the narrowest safe lower-level repair. `BLOCK` stops automated commit, push, deployment, account mutation, and decision completion; it never authorizes silent deletion, weakening protected truth or human-control boundaries, validator self-editing, or automatic trading.
 - Use `npm run check:data` for data or research changes.
+- Use `npm run test:standing-contribution` when changing the recurring contribution plan, application, account-state reconciliation, or automation route.
 - Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
 - Use the focused validation commands in `docs/research-command-reference.md` when changing discovery, SEC, semantic-discovery, readiness, promotion, watchlist-cycle, or market-refresh behavior.
 
