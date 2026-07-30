@@ -3546,3 +3546,57 @@ sources:
     first_seen_at: 2026-07-29
     related_symbols: [BE]
     summary: Q2 revenue, margins, operating income, cash flow and guidance materially strengthened, but the filing contains an unreconciled apparent conflict between a 21 percent related-party customer concentration statement and USD 2.818 million of reported Q2 related-party revenue.
+  - id: completed_close_universe_2026_07_29
+    title: Yahoo Finance Completed Daily Bars for the Current Tradable Research Universe
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-07-29
+    retrieved_at: 2026-07-30
+    first_seen_at: 2026-07-30
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Completed July 29 regular-session closes and adjusted-close history covered all 54 tradable research securities; the current rows were retrieved at 2026-07-30T06:03:44.243Z.
+  - id: sec_submissions_all_forms_2026_07_30
+    title: SEC All-Form Submissions Audit for the Current Tradable Research Universe
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-30
+    first_seen_at: 2026-07-30
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Current SEC submissions payloads for all 54 established tradable research issuers were fetched and schema-validated; new July 29 periodic and event filings were classified through primary-source review.
+  - id: be_q2_2026_10qa
+    title: Bloom Energy Form 10-Q Amendment for the Quarter Ended June 30 2026
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1664703/000162828026050325/be-20260630.htm
+    source_published_at: 2026-07-29
+    retrieved_at: 2026-07-30
+    first_seen_at: 2026-07-30
+    related_symbols: [BE]
+    summary: "The amendment corrected transposed period labels in the customer-concentration note: two customers represented 44 percent and 21 percent of six-month revenue, with the second a related party, while one non-related customer represented 73 percent of second-quarter revenue."
+  - id: vrt_q2_2026_10q
+    title: Vertiv Form 10-Q and Second-Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm
+    source_published_at: 2026-07-29
+    retrieved_at: 2026-07-30
+    first_seen_at: 2026-07-30
+    related_symbols: [VRT]
+    summary: Vertiv reported USD 3.274 billion of second-quarter sales, 18 percent organic growth, 22.6 percent adjusted operating margin, USD 1.1 billion of operating cash flow, and raised full-year revenue and free-cash-flow guidance.
+  - id: nwpx_q2_2026_8k
+    title: NWPX Infrastructure Second-Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1001385/000143774926024881/ex_954632.htm
+    source_published_at: 2026-07-29
+    retrieved_at: 2026-07-30
+    first_seen_at: 2026-07-30
+    related_symbols: [NWPX]
+    summary: NWPX reported USD 159.5 million of quarterly sales, 21.5 percent gross margin, USD 1.62 diluted EPS, USD 423 million of Water Transmission backlog plus confirmed orders, no revolver borrowings, and USD 14.1 million of quarterly operating cash flow.
+  - id: lunr_advent_block_sale_2026_07_29
+    title: Intuitive Machines Large-Holder Block Sale
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1844452/000114036126030049/form4.xml
+    source_published_at: 2026-07-29
+    retrieved_at: 2026-07-30
+    first_seen_at: 2026-07-30
+    related_symbols: [LUNR]
+    summary: An Advent and Galileo affiliated holder sold 11,495,514 shares at USD 12.84 and retained the same number, reducing the disclosed direct block by about half; the event creates a material float and technical-overhang review without changing operating evidence.

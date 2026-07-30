@@ -1,0 +1,302 @@
+schema_version: 1
+run_id: 2026-07-30-full-operating-cycle
+run_date: 2026-07-30
+request_type: daily_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun on a material issuer event, a 5 percent reviewed-symbol move, LEU or GILT August 5 evidence, MDA August 7 evidence, RKLB August 10 evidence, a confirmed broker-state change, or 2026-08-06
+linked_decision_or_research_note: decisions/2026-07-30-daily-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-07-30-subagent-evidence-packet.yml
+
+execution_update:
+  status: standing_contribution_not_due_no_trade
+  confirmed_ledger_event_ids: [2026-07-24-deposit-001]
+  resulting_confirmed_cash: 5761.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: The first standing-authorized weekly contribution is due on 2026-07-31, so the canonical command returned not_due. No broker fact, trade, order, fee, fill, reserve position, or inferred account fact was added.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run check:article-one -- --mode sentinel --as-of 2026-07-30 --json
+      dry_run: true
+      retrieved_at: 2026-07-30
+      result_summary: PASS with no reason codes.
+    - command: npm run account:apply-standing-contribution -- --as-of 2026-07-30 --json
+      dry_run: false
+      retrieved_at: 2026-07-30
+      result_summary: not_due; confirmed cash and ledger were unchanged.
+    - command: npm run discover:universe -- --dry-run --as-of 2026-07-30 --json --output research/discovery/runs/2026-07-30-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-07-30-scan.json
+      output_sha256: 884cba5f00c74b916de0353efa8f4e4d494d7e7e20d9f6a289219ad1c6802b7b
+      retrieved_at: 2026-07-30
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 60
+        suppressed_known_matches: 61
+        recall_diagnostics: The deterministic identities remained stable and no new direct bottleneck candidate displaced the current opportunity set.
+        miss_counts: 0 known public proxy misses
+      result_summary: The scan returned the stable raw lead set; no new lane, promotion, buy zone, or material readiness sprint was supported.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC all-form submissions and primary filing bodies
+      sources_or_queries:
+        - current submissions payloads for all 54 established tradable research issuers
+        - primary bodies and exhibits for new July 29 periodic and event filings
+      source_ids: [sec_submissions_all_forms_2026_07_30]
+      retrieved_at: 2026-07-30
+      material_findings: BE VRT NWPX and LUNR added decision-relevant evidence; routine ownership forms did not.
+      unavailable_or_skipped_reason: SEC issuer coverage does not claim exhaustive off-SEC current-world coverage.
+    - family_id: issuer_material
+      family: Issuer operations, transactions, capitalization, and large-holder evidence
+      sources_or_queries:
+        - Bloom Energy amended customer-concentration disclosure
+        - Vertiv second-quarter results and 10-Q
+        - NWPX second-quarter results
+        - Intuitive Machines large-holder sale
+      source_ids: [be_q2_2026_10qa, vrt_q2_2026_10q, nwpx_q2_2026_8k, lunr_advent_block_sale_2026_07_29]
+      retrieved_at: 2026-07-30
+      material_findings: BE's conflict resolved, VRT and NWPX operating evidence strengthened, and LUNR gained a technical overhang; none cleared a current buy.
+      unavailable_or_skipped_reason: GILT and LEU sign-changing August 5 evidence remains unavailable.
+    - family_id: market_data
+      family: Completed regular-session prices and adjusted history
+      sources_or_queries:
+        - July 29 completed closes for all 54 tradable research symbols
+        - one five twenty-one sixty-three and one-hundred-twenty-six session returns
+      source_ids: [completed_close_universe_2026_07_29]
+      retrieved_at: 2026-07-30
+      material_findings: Multiple higher-priority securities crossed dislocation thresholds; research NAV fell to USD 7341.11 and cash rose to 78.4838 percent of NAV.
+      unavailable_or_skipped_reason: INFQ six-month history remains unreconciled across the February unit separation.
+    - family_id: current_world_context
+      family: Broad-market and single-name dislocation context
+      sources_or_queries:
+        - current macro-regime repository snapshot
+        - broad-index comparison with the July 29 single-name declines
+      source_ids: [completed_close_universe_2026_07_29]
+      retrieved_at: 2026-07-30
+      material_findings: The event was a severe single-name growth and expectations reset rather than a broad-market crash.
+      unavailable_or_skipped_reason: Macro and price context are risk and entry overlays, not standalone buy evidence.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, pre-listing securities, acquisitions, and security identity
+      sources_or_queries:
+        - stable deterministic discovery delta
+        - current XTND pre-listing and VIP R1 states
+        - GILT and MDA transaction evidence
+      source_ids: [sec_submissions_all_forms_2026_07_30]
+      retrieved_at: 2026-07-30
+      material_findings: No new eligible operating security displaced the current set; XTND remains pre-listing and VIP remains R1.
+      unavailable_or_skipped_reason: Transaction scaffolding does not establish completion, capitalization, or buy eligibility.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lanes, deterministic discovery, and full opportunity-cost comparison
+      sources_or_queries:
+        - ten-lane deterministic refresh
+        - holdings candidates watchlist research-only and not-tradable comparison
+        - LEU GILT IREN MDA and CRDO next-dollar comparison
+      source_ids: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+      retrieved_at: 2026-07-30
+      material_findings: No top-level lane changed; IREN moved ahead of MDA in research urgency without becoming buy eligible.
+      unavailable_or_skipped_reason: Issuer-profile semantic discovery coverage remains bounded process debt and is not an allocation veto.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-07-30
+    notes: Volatile prices, filings, issuer results, ownership events, transactions, macro context, and the current opportunity set were refreshed or revalidated.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 0
+    organic_recall_count: 18
+    hard_coded_proxy_only_recall_count: 42
+    outside_watchlist_effort_pct: 100
+    new_listing_to_r1_latency_days: 0
+
+unknown_future_review:
+  exploratory_match_count: 60
+  exploratory_denominator: 60
+  stratified_sample_count: 2
+  stratified_sample_pct: 3.3333
+  unsampled_reason: The identities and evidence-backed dispositions were unchanged; price moves do not turn keyword matches into operating candidates.
+  repeated_hit_max_age_days: 1
+  top_clusters:
+    - powered land and AI infrastructure
+    - funds blank-check vehicles units and mature weak proxies
+  sampled_symbols: [UROY, AD]
+  false_positive_patterns:
+    - blank-check vehicles and units
+    - funds preferred securities and mature weak proxies
+  lane_decisions:
+    - retain all ten top-level lanes
+    - retain VIP at bounded R1 within AI power and cooling
+    - add no lane promotion or buy zone
+  disposition: No new candidate displaces LEU GILT IREN MDA or CRDO; keep UROY and AD as bounded future R0 skims only.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: HALEU, energized AI-ready power, high-speed interconnect, launch capacity, spacecraft production, spectrum, and water-transmission capacity remain plausible bottlenecks.
+    inferences: Scarcity matters only when the listed common equity can retain pricing and reinvestment economics after funding and dilution.
+    disconfirming_evidence: Current public proxies often capitalize the scarcity before contracts, cash conversion, and per-share capture are proved.
+    source_ids: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+    investment_implication: Keep LEU GILT IREN MDA and CRDO as the dated next-dollar queue.
+  who_controls_or_removes_scarcity:
+    facts: LEU controls the strongest listed U.S. enrichment path, GILT owns satellite-ground capabilities, and IREN controls power sites with AI-compute optionality.
+    inferences: Asset control is insufficient when customers lenders counterparties warrants or repeated issuance capture the economics.
+    disconfirming_evidence: LEU fixed-price terms, GILT transaction economics, and IREN accepted revenue remain incomplete.
+    source_ids: [sec_submissions_all_forms_2026_07_30]
+    investment_implication: Require the sign-changing evidence before scaling or initiating.
+  who_can_monetize_into_shareholder_value:
+    facts: GILT has the smallest current denominator, LEU the strongest mission fit, IREN the largest price reset, and CRDO the strongest operating quality.
+    inferences: The best business is not automatically the best per-share asymmetry.
+    disconfirming_evidence: Each leader still has a target-specific mission evidence entry or value-capture blocker.
+    source_ids: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+    investment_implication: Compare zero with a mission-relevant GILT starter and expire the wait at August 5–6.
+  public_security_expression:
+    facts: Fifty-four current research securities have eligible completed closes; OPENAI and ANTHROPIC are not listed and XTND is pre-listing.
+    inferences: Tradability and a lower nominal price do not establish buy eligibility.
+    disconfirming_evidence: VIP remains R1 with insufficient financing customer and survival evidence.
+    source_ids: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+    investment_implication: No new security enters a current buy zone.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT NWPX OCC QSI ASPI STDN ENRD VIP and XTND remain small early awkward or newly public expressions.
+    inferences: A small denominator helps only when survival directness and shareholder value capture are credible.
+    disconfirming_evidence: NWPX lacks proved extreme reinvestment economics and VIP lacks a binding AI customer and stable capitalization.
+    source_ids: [nwpx_q2_2026_8k, sec_submissions_all_forms_2026_07_30]
+    investment_implication: Keep GILT nearest to entry and NWPX as a stronger research comparator.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current deterministic scan, evidence packet, lane map, watchlist]
+      sources_checked: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+      facts_verified: No new raw lead displaced the current opportunity set and IREN moved ahead of MDA in research urgency.
+      stale_or_missing_evidence: Issuer-profile semantic coverage remains bounded discovery debt.
+      confidence: high
+      key_findings: Retain the lanes and current statuses; no new readiness sprint promotion or buy zone.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [54 SEC submissions payloads, primary filing bodies, completed-close boundary]
+      sources_checked: [be_q2_2026_10qa, vrt_q2_2026_10q, nwpx_q2_2026_8k, lunr_advent_block_sale_2026_07_29]
+      facts_verified: BE's period conflict resolved, VRT and NWPX strengthened, and LUNR added a technical overhang.
+      stale_or_missing_evidence: NWPX lacks a post-event close and GILT and LEU August 5 evidence is unavailable.
+      confidence: high
+      key_findings: No filing cleared a new-buy gate; VRT's decline is an expectations reset rather than a thesis break.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current prices, issuer evidence, confirmed NAV, full opportunity set]
+      sources_checked: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+      facts_verified: A 22 to 28 share GILT starter would be mission-relevant and cap total-loss impairment near 3.13 to 3.99 percent of NAV.
+      stale_or_missing_evidence: GILT Q2 cash conversion transaction adjustments and post-close liquidity remain unavailable until August 5.
+      confidence: high
+      key_findings: Bull review supports a staged GILT starter and treats the remaining transaction uncertainty as size-bounded.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [GILT standalone and pro-forma arithmetic, transaction evidence, current opportunity set]
+      sources_checked: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+      facts_verified: The apparent USD 663 million standalone enterprise value rises after the cash-funded transaction and management adjusted EBITDA is not audited cash flow.
+      stale_or_missing_evidence: Final purchase-price working-capital close and post-close liquidity evidence remains due August 5.
+      confidence: high
+      key_findings: Wait six days because the missing evidence can change the per-share denominator and scaling path, not merely volatility.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current completed closes, company metrics, primary transaction and filing evidence]
+      sources_checked: [completed_close_universe_2026_07_29, be_q2_2026_10qa, vrt_q2_2026_10q, nwpx_q2_2026_8k]
+      facts_verified: GILT has the smallest denominator, LEU the strongest mission fit, and IREN the largest entry reset; none clears all gates.
+      stale_or_missing_evidence: GILT LEU IREN and MDA retain target-specific decision-critical gaps.
+      confidence: high
+      key_findings: Rank GILT LEU IREN MDA CRDO for valuation and entry; every executable limit remains absent.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed account facts, GILT starter scenario, holdings correlation, event timing]
+      sources_checked: [completed_close_universe_2026_07_29, sec_submissions_all_forms_2026_07_30]
+      facts_verified: Cash is 78.4838 percent of NAV and a GILT starter would be mission-relevant rather than symbolic.
+      stale_or_missing_evidence: August 5 transaction and cash-conversion evidence remains unavailable.
+      confidence: high
+      key_findings: Zero narrowly wins only through August 5–6; adding RKLB ASTS LEU or IREN does not currently clear allocation gates.
+  skipped_required_roles: []
+  unresolved_conflicts: 0
+  conflict_resolution: Bull review supported a staged GILT starter while valuation bear and allocation review treated the transaction-adjusted denominator and scaling path as decision-critical. The six-day information value narrowly wins, and the same zero cannot roll forward after August 5–6 without fresh adjudication.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: No new candidate displaced the current set.
+  no_change_reason: The ten-lane map already covers the relevant scarcity patterns and no new evidence supports a top-level change.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  r0_leads: []
+  r1_researchable: [VIP]
+  r2_comparable: []
+  r3_promotion_ready: []
+  no_action_challenger: GILT staged-entry eligibility after the August 5 evidence gate
+  candidates_incubated: [VIP]
+  false_positive_patterns: [blank-check companies, funds, preferred securities, units, mature weak proxies]
+
+readiness_sprints:
+  - symbol: VIP
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-07-29-VIP-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#VIP
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Financing close, pro-forma capitalization, site-level power and capex, a binding customer and survival runway are reachable through near-term issuer filings.
+    final_classification: incubate
+
+watchlist_review:
+  non_removed_symbol_count: 56
+  current_cycle_review_count: 56
+  missing_current_cycle_review_count: 0
+  status_changes: []
+  priority_changes: []
+  buy_zone_changes: [all active and core candidates retain no current executable buy]
+  source_path: research/watchlist-cycle-reviews.csv
+
+decision_coverage:
+  current_research_symbols: 58
+  symbols_with_main_decision_entry: 58
+  missing_symbols: []
+  duplicate_symbols: []
+  every_new_quantity_zero: true
+  every_executable_limit_absent: true
+
+allocation_conclusion:
+  confirmed_cash: 5761.58
+  confirmed_positions: [RKLB 17 shares, ASTS 11 shares]
+  orders: []
+  reserve_order: none
+  conclusion: Hold both positions; buy zero, sell zero, buy no SGOV, and retain cash only through the hard August 5–6 adjudication.
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Publicly reachable current work is complete enough to decide; the current zero is a short target-specific allocation decision rather than a repository-health veto.
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: after completed validation and sensitive-field review
+  embargo_status: clear_for_completed_no_action
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: No deposit, order, nonzero proposed quantity, broker preview, credential, raw artifact, full identifier, or private message is present.
+
+meta_self_improvement:
+  status: no_durable_change
+  durable_change: The adaptive cadence correctly escalated a single-name dislocation into a full review and preserved the hard August 5–6 decision deadline.
+  skill_review: The current repo-scoped skill and Article 1 guard already route the event correctly.
