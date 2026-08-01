@@ -66,6 +66,30 @@ const testCases = [
     },
     expected: "research/quality-metrics.yml stale_theses_over_90_days is 0, expected 1",
   },
+  {
+    name: "rejects unknown linked run ledger event",
+    mutate: (cwd) => {
+      replaceText(
+        cwd,
+        "research/discovery/runs/2026-07-31-event-driven-full-operating-cycle.yml",
+        "2026-07-31-deposit-weekly-888-001",
+        "2026-07-31-deposit-unknown",
+      );
+    },
+    expected: "linked run artifact references unknown ledger event 2026-07-31-deposit-unknown",
+  },
+  {
+    name: "rejects linked run ledger mismatch",
+    mutate: (cwd) => {
+      replaceText(
+        cwd,
+        "research/discovery/runs/2026-07-31-event-driven-full-operating-cycle.yml",
+        "2026-07-31-deposit-weekly-888-001",
+        "2026-07-24-deposit-001",
+      );
+    },
+    expected: "linked run artifact confirmed_ledger_event_ids must exactly match the operating-runs row",
+  },
 ];
 
 try {
@@ -132,6 +156,15 @@ function updateCsvSymbolRow(cwd, relativePath, symbol, mutate) {
   const records = readCsvFile(cwd, relativePath);
   records.rows = records.rows.map((row) => (row.symbol === symbol ? mutate(row) : row));
   writeCsvFile(cwd, relativePath, records);
+}
+
+function replaceText(cwd, relativePath, from, to) {
+  const file = path.join(cwd, relativePath);
+  const content = readFileSync(file, "utf8");
+  if (!content.includes(from)) {
+    throw new Error(`${relativePath} does not include expected text ${from}`);
+  }
+  writeFileSync(file, content.replace(from, to));
 }
 
 function readCsvFile(cwd, relativePath) {

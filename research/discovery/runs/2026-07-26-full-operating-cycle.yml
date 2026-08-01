@@ -10,8 +10,7 @@ linked_decision_or_research_note: decisions/2026-07-26-daily-operating-cycle.md
 subagent_evidence_packet_path: research/discovery/runs/2026-07-26-subagent-evidence-packet.yml
 execution_update:
   status: no_new_deposit_no_trade
-  confirmed_ledger_event_ids:
-    - 2026-07-24-deposit-001
+  confirmed_ledger_event_ids: []
   resulting_confirmed_cash: 5761.58
   resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
   notes: Sunday did not trigger the Friday-only contribution authorization. The prior confirmed deposit was not duplicated, and no trade, order, fee, fill, SGOV position, or inferred broker fact was added.

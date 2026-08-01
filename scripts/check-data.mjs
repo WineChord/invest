@@ -2725,6 +2725,31 @@ function validateOperatingRuns() {
         throw new Error(`${context} ${field} does not exist: ${row[field]}`);
       }
     });
+
+    if (row.linked_run_artifact_path.endsWith(".yml") || row.linked_run_artifact_path.endsWith(".yaml")) {
+      const runArtifact = parseYaml(readFileSync(row.linked_run_artifact_path, "utf8"));
+      const executionUpdate = runArtifact?.execution_update;
+      if (executionUpdate && Object.hasOwn(executionUpdate, "confirmed_ledger_event_ids")) {
+        if (!Array.isArray(executionUpdate.confirmed_ledger_event_ids)) {
+          throw new Error(`${context} linked run artifact execution_update.confirmed_ledger_event_ids must be an array`);
+        }
+
+        const artifactEventIds = executionUpdate.confirmed_ledger_event_ids.map((eventId, artifactIndex) => {
+          requireString(eventId, `${context} linked run artifact confirmed_ledger_event_ids[${artifactIndex}]`);
+          return eventId;
+        });
+        artifactEventIds.forEach((eventId) => {
+          if (!ledgerEventIds.has(eventId)) {
+            throw new Error(`${context} linked run artifact references unknown ledger event ${eventId}`);
+          }
+        });
+
+        const csvEventIds = splitSemicolonList(row.confirmed_ledger_event_ids);
+        if (JSON.stringify([...artifactEventIds].sort()) !== JSON.stringify([...csvEventIds].sort())) {
+          throw new Error(`${context} linked run artifact confirmed_ledger_event_ids must exactly match the operating-runs row`);
+        }
+      }
+    }
   });
 
   console.log(`ok ${operatingRunsFile} semantic checks`);

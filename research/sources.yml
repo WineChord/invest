@@ -3690,3 +3690,66 @@ sources:
     first_seen_at: 2026-07-31
     related_symbols: [NBIS]
     summary: The report adds power- and water-efficiency context but not utilization, customer concentration, profitability, free-cash-flow, or capitalization evidence needed to change entry.
+  - id: completed_close_universe_2026_07_31
+    title: Yahoo Finance Completed Daily Bars for the Current Tradable Research Universe
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-07-31
+    retrieved_at: 2026-08-01
+    first_seen_at: 2026-08-01
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Completed July 31 regular-session closes and adjusted-close history covered all 54 tradable research securities; current rows were retrieved at 2026-08-01T06:12:41.102Z.
+  - id: sec_submissions_all_forms_2026_08_01
+    title: SEC All-Form Submissions Delta for the Current Tradable Research Universe
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-31
+    retrieved_at: 2026-08-01
+    first_seen_at: 2026-08-01
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Current submissions payloads were reconciled for 53 issuers plus a separate QBTS identity review. Twelve filings accepted after the prior decision cutoff were classified, including IONQ transaction completion, ETN results and 10-Q, IMSR governance and ownership forms, ENRD S-8 registration, passive ownership updates, and a YSS ownership form.
+  - id: ionq_skywater_close_2026_07_31
+    title: IonQ Completion of SkyWater Technology Acquisition
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1824920/000119312526327127/ionq-20260731.htm
+    source_published_at: 2026-07-31
+    retrieved_at: 2026-08-01
+    first_seen_at: 2026-08-01
+    related_symbols: [IONQ]
+    summary: IonQ completed the SkyWater acquisition. Each SkyWater share received USD 15 cash and 0.4883 IonQ shares; closing risk fell, while cash use, new shares, foundry margins, integration capital needs, customer retention, and the pro-forma valuation denominator became current decision risks.
+  - id: etn_q2_2026_10q
+    title: Eaton Second-Quarter 2026 Results and Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm
+    source_published_at: 2026-07-31
+    retrieved_at: 2026-08-01
+    first_seen_at: 2026-08-01
+    related_symbols: [ETN]
+    summary: Eaton reported USD 8.531 billion of quarterly sales, 14 percent organic growth, Electrical Americas orders up 41 percent with backlog up 33 percent, Electrical Global orders up 33 percent with backlog up 103 percent, and higher guidance. Operating quality strengthened, but the mature roughly USD 161 billion equity denominator remains incompatible with extreme satellite-account asymmetry.
+  - id: imsr_director_departure_2026_07_31
+    title: Terrestrial Energy Director Departure and Equity Award Disclosure
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2019804/000201980426000021/tmb-20260727x8k.htm
+    source_published_at: 2026-07-31
+    retrieved_at: 2026-08-01
+    first_seen_at: 2026-08-01
+    related_symbols: [IMSR]
+    summary: Director Shawn Matthews resigned without a disclosed disagreement, and a new engineering executive received a 299,401-option award at USD 5.01. The filing adds governance and dilution context but no licensing, project, financing, or commercialization evidence.
+  - id: enrd_s8_2026_07_31
+    title: Einride Form S-8 Registration Statement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2095096/000149315226035637/forms-8.htm
+    source_published_at: 2026-07-31
+    retrieved_at: 2026-08-01
+    first_seen_at: 2026-08-01
+    related_symbols: [ENRD]
+    summary: Einride registered 21,284,331 shares across existing options, warrants, and 2026 incentive plans. Registration is not issuance, but it makes the already material dilution and capitalization uncertainty more concrete.
+  - id: rklb_iqps_multi_launch_2026_07_30
+    title: Rocket Lab Three-Mission iQPS Electron Agreement
+    source_type: company_ir
+    url: https://rocketlabcorp.com/updates/rocket-lab-secures-multi-launch-deal-with-iqps-for-three-dedicated-missions/
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-08-01
+    first_seen_at: 2026-08-01
+    related_symbols: [RKLB]
+    summary: Rocket Lab announced three dedicated Electron missions for iQPS. The agreement supports repeat-launch demand, but no contract value or margin economics were disclosed and the holding or add decision does not change.

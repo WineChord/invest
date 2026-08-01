@@ -32,4 +32,4 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-07-28,1708.21,5761.58,7469.78,8328.00,-10.3052,-0.9411,Automated daily close valuation from Alpaca IEX daily bar fallback.
 2026-07-29,1579.53,5761.58,7341.11,8328.00,-11.8503,-1.7225,Automated daily close valuation from Yahoo Finance chart.
 2026-07-30,1742.40,5761.58,7503.98,8328.00,-9.8946,2.2186,Automated daily close valuation from Yahoo Finance chart.
-2026-07-31,1752.93,5761.58,7514.51,8328.00,-9.7681,0.1403,Automated daily close valuation from Yahoo Finance chart.
+2026-07-31,1752.93,6649.58,8402.51,9216.00,-8.8269,0.1403,Automated daily close valuation from Yahoo Finance chart using confirmed cash including the 2026-07-31 standing contribution.

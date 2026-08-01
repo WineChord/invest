@@ -11,7 +11,7 @@ subagent_evidence_packet_path: research/discovery/runs/2026-07-31-subagent-evide
 
 execution_update:
   status: standing_contribution_applied_no_trade
-  confirmed_ledger_event_ids: [2026-07-31-deposit-001]
+  confirmed_ledger_event_ids: [2026-07-31-deposit-weekly-888-001]
   resulting_confirmed_cash: 6649.58
   resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
   notes: The due USD 888 standing contribution was applied once under the active authorization. No trade, order, fee, fill, reserve position, or other inferred broker fact was added.

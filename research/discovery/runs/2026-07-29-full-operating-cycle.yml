@@ -11,7 +11,7 @@ subagent_evidence_packet_path: research/discovery/runs/2026-07-29-subagent-evide
 
 execution_update:
   status: no_new_deposit_no_trade
-  confirmed_ledger_event_ids: [2026-07-24-deposit-001]
+  confirmed_ledger_event_ids: []
   resulting_confirmed_cash: 5761.58
   resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
   notes: No new broker fact was supplied. No deposit, trade, order, fee, fill, reserve position or inferred account fact was added.

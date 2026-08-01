@@ -1,0 +1,270 @@
+schema_version: 1
+run_id: 2026-08-01-weekly-full-operating-cycle
+run_date: 2026-08-01
+request_type: weekly_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: rerun on a material issuer event, a 5 percent reviewed-symbol move, GILT LEU or IONQ August 5 evidence, MDA August 7 evidence, RKLB August 10 evidence, a confirmed broker-state change, or 2026-08-05
+linked_decision_or_research_note: decisions/2026-08-01-weekly-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-01-subagent-evidence-packet.yml
+
+execution_update:
+  status: standing_contribution_already_recorded_no_new_event
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 6649.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: The canonical contribution command found the due 2026-07-31 event already recorded. This run created no account event and added no trade, order, fee, fill, reserve position or inferred broker fact.
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run check:article-one -- --mode sentinel --as-of 2026-08-01 --json
+      dry_run: true
+      retrieved_at: 2026-08-01
+      result_summary: PASS with no reason codes.
+    - command: npm run account:apply-standing-contribution -- --as-of 2026-08-01 --json
+      dry_run: false
+      retrieved_at: 2026-08-01
+      result_summary: already_recorded for the 2026-07-31 occurrence; no duplicate event or cash mutation.
+    - command: npm run discover:universe -- --dry-run --as-of 2026-08-01 --json --output research/discovery/runs/2026-08-01-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-01-scan.json
+      output_sha256: ce07bf71eaf09213b2912e248a868638a9ec1137f56333e824b9e2b7d8104cdf
+      retrieved_at: 2026-08-01
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 60
+        suppressed_known_matches: 61
+        recall_diagnostics: No known public proxy miss and no new direct bottleneck lead passed R1.
+        miss_counts: 0
+      result_summary: All eighteen returned names were dispositioned; no lane, status, promotion or buy zone changed.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC all-form submissions delta and primary filing bodies
+      sources_or_queries:
+        - current submissions payloads for 53 established tradable issuers
+        - separate QBTS security-identity review
+        - twelve filings accepted after the prior decision cutoff
+      source_ids: [sec_submissions_all_forms_2026_08_01]
+      retrieved_at: 2026-08-01
+      material_findings: IONQ closed SkyWater, ETN reported strong Q2, ENRD registered plan and derivative shares, IMSR disclosed a director departure without disagreement, and ownership forms did not change actions.
+      unavailable_or_skipped_reason: The SEC company-ticker feed still carries stale QBTS exchange metadata; current Nasdaq and issuer evidence preserves identity.
+    - family_id: issuer_material
+      family: Issuer operations, transactions, capital structure and governance evidence
+      sources_or_queries:
+        - IONQ SkyWater closing filing
+        - Eaton Q2 filing and results
+        - Rocket Lab iQPS multi-launch release
+        - New Era S-8
+        - Terrestrial Energy director and option disclosures
+      source_ids: [ionq_skywater_close_2026_07_31, etn_q2_2026_10q, rklb_iqps_multi_launch_2026_07_30, enrd_s8_2026_07_31, imsr_director_departure_2026_07_31]
+      retrieved_at: 2026-08-01
+      material_findings: IONQ moved into the top-five adjudication queue and ETN strengthened as a mature comparator; no current security cleared all three buy gates.
+      unavailable_or_skipped_reason: GILT LEU and IONQ sign-changing August 5 disclosures remain unavailable.
+    - family_id: market_data
+      family: Completed regular-session prices and adjusted history
+      sources_or_queries:
+        - July 31 completed closes for all 54 tradable research securities
+        - one five twenty-one sixty-three and one-hundred-twenty-six session returns
+      source_ids: [completed_close_universe_2026_07_31]
+      retrieved_at: 2026-08-01
+      material_findings: VRT crossed the high-priority five-day threshold and ENRD crossed the other-symbol one-day threshold; price alone created no buy eligibility.
+      unavailable_or_skipped_reason: INFQ six-month history remains unreconciled across its February unit separation.
+    - family_id: current_world_context
+      family: Market breadth, financing environment and current macro regime
+      sources_or_queries:
+        - current completed-close universe
+        - latest committed macro regime snapshot
+        - current high-liquidity account pressure
+      source_ids: [completed_close_universe_2026_07_31]
+      retrieved_at: 2026-08-01
+      material_findings: Current evidence supports price-disciplined waiting or staging rather than contribution-driven deployment.
+      unavailable_or_skipped_reason: Macro and price context are risk and entry overlays, not standalone buy evidence.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, acquisitions, pre-listing securities and security identity
+      sources_or_queries:
+        - deterministic discovery delta
+        - IONQ acquisition closing
+        - current VIP R1 and XTND pre-listing states
+      source_ids: [sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31]
+      retrieved_at: 2026-08-01
+      material_findings: IONQ transaction completion strengthened its strategic path; no new eligible operating security entered R1 or the watchlist.
+      unavailable_or_skipped_reason: VIP lacks financing, customer and capitalization evidence; XTND remains pre-listing.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lanes, deterministic discovery and full opportunity-cost comparison
+      sources_or_queries:
+        - ten-lane deterministic refresh
+        - holdings candidates watchlist research-only and not-tradable comparison
+        - GILT LEU MDA IREN IONQ and CRDO next-dollar comparison
+      source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31]
+      retrieved_at: 2026-08-01
+      material_findings: No top-level lane changed; the immediate queue is GILT LEU MDA IREN IONQ with CRDO sixth.
+      unavailable_or_skipped_reason: Zero issuer-profile semantic discovery coverage remains bounded process debt and is not an allocation veto.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-01
+    notes: Volatile prices, current SEC submissions, issuer events, acquisitions, dilution, governance, macro context, new listings and the full opportunity set were refreshed or revalidated.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 0
+    organic_recall_count: 18
+    hard_coded_proxy_only_recall_count: 42
+    outside_watchlist_effort_pct: 100
+    new_listing_to_r1_latency_days: 0
+
+unknown_future_review:
+  exploratory_match_count: 60
+  exploratory_denominator: 60
+  stratified_sample_count: 18
+  stratified_sample_pct: 30
+  unsampled_reason: All returned candidates were dispositioned; the remaining exploratory matches were known false-positive families or weak proxies under the bounded scan.
+  repeated_hit_max_age_days: 1
+  top_clusters: [blank-check vehicles and units, mature regulated infrastructure, weak commodity and preferred-security proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, GDYN, HBM, SPB, FTRA, QLEP, LPAA, LPAAU, LPBB, LPBBU, SAAQ, SAAQU, GPUS-PD, AIO, UROY, NGG]
+  false_positive_patterns: [name collisions, blank-check vehicles and units, funds and preferred securities, mature weak proxies]
+  lane_decisions: [retain all ten top-level lanes, retain VIP at bounded R1, add no lane promotion or buy zone]
+  disposition: No new candidate displaces GILT LEU MDA IREN IONQ or CRDO.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: HALEU, energized AI-ready power, high-speed interconnect, launch capacity, spacecraft production, spectrum, quantum fabrication and water-transmission capacity remain plausible bottlenecks.
+    inferences: Scarcity matters only when listed common equity can retain pricing and reinvestment economics after funding and dilution.
+    disconfirming_evidence: Many public proxies capitalize scarcity before contracts, cash conversion and per-share capture are proved.
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+    investment_implication: Keep GILT LEU MDA IREN and IONQ as the dated next-dollar queue.
+  who_controls_or_removes_scarcity:
+    facts: LEU controls the strongest listed U.S. enrichment path, GILT owns satellite-ground capabilities, IREN controls powered sites, and IONQ now owns SkyWater.
+    inferences: Asset control is insufficient when counterparties, lenders, integration costs, warrants or repeated issuance capture the economics.
+    disconfirming_evidence: LEU fixed-price terms, GILT transaction economics, IREN accepted revenue and IONQ post-close capitalization remain incomplete.
+    source_ids: [sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31]
+    investment_implication: Require the August 5 sign-changing evidence before initiating.
+  who_can_monetize_into_shareholder_value:
+    facts: GILT has the smallest near-buyable denominator, LEU the strongest mission fit, MDA the most balanced platform, IREN the greatest powered-site option and IONQ the newest integrated strategic path.
+    inferences: The best business is not automatically the best dilution-adjusted per-share asymmetry.
+    disconfirming_evidence: Each leader retains a target-specific evidence, entry or value-capture blocker.
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31]
+    investment_implication: Compare zero with public-safe mission-relevant starter ranges and expire the wait on August 5.
+  public_security_expression:
+    facts: Fifty-four current research securities have eligible completed closes; OPENAI and ANTHROPIC are unlisted and XTND is pre-listing.
+    inferences: Tradability and nominal price do not establish buy eligibility.
+    disconfirming_evidence: VIP remains R1 with insufficient financing, customer and survival evidence.
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+    investment_implication: No new security enters a current buy zone.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT NWPX OCC QSI ASPI STDN ENRD VIP and XTND remain small, early, awkward or newly public expressions.
+    inferences: A small denominator helps only when survival, directness and shareholder value capture are credible.
+    disconfirming_evidence: NWPX lacks proved extreme reinvestment economics and VIP lacks a binding AI customer and stable capitalization.
+    source_ids: [sec_submissions_all_forms_2026_08_01]
+    investment_implication: Keep GILT nearest to entry and VIP bounded at R1.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current deterministic scan, evidence packet, lane map, watchlist]
+      sources_checked: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+      facts_verified: All returned candidates were dispositioned and no new R1 lead or lane change was supported.
+      stale_or_missing_evidence: Issuer-profile semantic coverage remains bounded discovery debt.
+      confidence: high
+      key_findings: Retain all current lanes, statuses and buy-zone boundaries.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current submissions delta, primary filing bodies, completed-close boundary]
+      sources_checked: [sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31, etn_q2_2026_10q, enrd_s8_2026_07_31, imsr_director_departure_2026_07_31]
+      facts_verified: IONQ and ETN strengthened; ENRD dilution context increased; IMSR governance evidence did not change action.
+      stale_or_missing_evidence: GILT LEU and IONQ August 5 disclosures remain unavailable.
+      confidence: high
+      key_findings: No current filing clears all three buy gates; IONQ merits a top-five review.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current prices, issuer evidence, confirmed NAV, full opportunity set]
+      sources_checked: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31]
+      facts_verified: Mission-relevant starter ranges exist for GILT LEU MDA IREN and IONQ without being symbolic.
+      stale_or_missing_evidence: Near-dated transaction and contract economics remain sign-changing.
+      confidence: high
+      key_findings: GILT is nearest to entry; IONQ moves ahead of CRDO after transaction completion.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current account weights, transaction economics, survival and dilution evidence]
+      sources_checked: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31]
+      facts_verified: A total loss in both current positions would reduce NAV by 20.8620 percent; prolonged 79.1380 percent liquidity is the larger long-run Article 1 risk.
+      stale_or_missing_evidence: GILT post-close liquidity, LEU contract protection and IONQ pro-forma economics remain unavailable.
+      confidence: high
+      key_findings: Wait only through August 5 and do not use ordinary volatility or process debt as a continuing veto.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [completed closes, company metrics, current filings, analytical position ranges]
+      sources_checked: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+      facts_verified: GILT LEU MDA IREN and IONQ are the immediate entry-adjudication queue.
+      stale_or_missing_evidence: Each retains a specific evidence or denominator blocker; no executable limit is justified.
+      confidence: high
+      key_findings: Every current new-buy quantity remains zero and every executable limit remains absent.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed cash, holdings, starter ranges, correlation, event timing]
+      sources_checked: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+      facts_verified: Cash is 79.1380 percent of NAV and a 2 to 4 percent starter range would be mission-relevant rather than symbolic.
+      stale_or_missing_evidence: The August 5 event cluster can change per-share value and scaling paths.
+      confidence: high
+      key_findings: Zero narrowly wins only through August 5; the same zero cannot roll forward without fresh adjudication.
+  unresolved_conflicts: 0
+  conflict_resolution: The starter-versus-zero disagreement was resolved in favor of a short information wait because missing evidence can change the denominator and scaling path. IONQ ranks fifth after the verified SkyWater close and CRDO ranks sixth.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: No new direct operating candidate displaced the current opportunity set.
+  no_change_reason: Current evidence reinforced existing lanes without proving a superior shareholder-value expression.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  r0_leads: []
+  r1_researchable: [VIP]
+  r2_comparable: []
+  r3_promotion_ready: []
+  candidates_incubated: [VIP]
+  no_action_challenger: GILT and LEU public-safe starter ranges were tested and rejected only through the August 5 hard evidence window.
+  false_positive_patterns: [name collisions, blank-check vehicles and units, funds and preferred securities, mature weak proxies]
+
+readiness_sprints:
+  - symbol: VIP
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-07-29-VIP-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#VIP
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Financing close, pro-forma capitalization, site-level power and capex, a binding customer and survival runway are reachable through near-term issuer filings.
+    final_classification: incubate
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Current completed closes, SEC delta coverage, primary issuer evidence, full-universe comparison and independent review support a target-level decision. Repository process debt is not an allocation veto.
+
+decision_summary:
+  action: Hold RKLB 17 and ASTS 11; add zero; initiate zero; sell zero; buy no SGOV.
+  confirmed_cash: 6649.58
+  research_nav: 8402.51
+  liquidity_option_weight_pct: 79.1380
+  strongest_counterfactual: GILT public-safe analytical starter range
+  current_executable_limit: none
+  immediate_queue: [GILT, LEU, MDA, IREN, IONQ]
+  hard_next_adjudication: 2026-08-05
+  publication_status: public_safe_no_action_after_validation

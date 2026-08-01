@@ -1,14 +1,14 @@
 schema_version: 1
-as_of: 2026-07-31
+as_of: 2026-08-01
 last_research_engine_run:
-  as_of: 2026-07-31
-  scope: event_driven_full_operating_cycle_with_july_30_broad_rebound_standing_contribution_material_filing_refresh_all_symbol_review_and_article_one_starter_challenge
-  notes: Completed the 2026-07-31 v1.3 event-driven operating cycle using fresh July 30 completed closes for all 54 tradable research symbols, the due USD 888 contribution, current all-form SEC coverage, incremental GILT ASPI MDA CRWV LITE NWPX PWR and NBIS evidence, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation review. A 24-share GILT starter was explicitly tested against zero; no status, promotion, or buy zone changed, and the no-action conclusion expires at the August 5 hard adjudication rather than rolling forward by default.
+  as_of: 2026-08-01
+  scope: weekly_full_operating_cycle_with_july_31_completed_closes_sec_delta_ionq_transaction_etn_results_all_symbol_review_first_saturday_meta_review_and_article_one_starter_challenge
+  notes: Completed the 2026-08-01 v1.3 weekly full operating cycle using fresh July 31 completed closes for all 54 tradable research symbols, current SEC submissions-delta coverage, IONQ transaction completion, ETN results, RKLB demand evidence, ENRD dilution context, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation review. Public-safe mission-relevant starter ranges were explicitly tested against zero; no status, promotion or buy zone changed, IONQ moved into the top-five adjudication queue, and the no-action conclusion expires at the August 5 hard review.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support a target-level decision after the fresh July 30 completed-close cross-check, current all-form submissions review, incremental issuer work, bounded current-world discovery, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto. Under v1.3, a mission-relevant 24-share GILT starter was explicitly compared with zero; waiting wins only through the near-dated August 5 evidence window.
+  reason: Repository-public research is current enough to support a target-level decision after the fresh July 31 completed-close cross-check, current SEC submissions delta, primary IONQ ETN RKLB ENRD and IMSR review, bounded current-world discovery, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto. Under v1.3, mission-relevant public-safe starter ranges were compared with zero; waiting wins only through the near-dated August 5 evidence window.
   user_only_execution_prerequisites:
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 6649.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
@@ -26,35 +26,35 @@ mission_accountability:
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
   latest_confirmed_return_seeking_buy_date: 2026-07-08
-  latest_research_nav: 8391.98
+  latest_research_nav: 8402.51
   confirmed_cash: 6649.58
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 79.2373
+  liquidity_option_weight_pct: 79.1380
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
   latest_mission_relevant_deployment_date: 2026-07-08
   mission_relevant_deployment_basis: 2026-07-08-buy-asts-001;2026-07-08-buy-rklb-001
-  days_since_latest_mission_relevant_deployment: 23
+  days_since_latest_mission_relevant_deployment: 24
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
   next_required_review_at: 2026-08-22
-  strongest_counterfactual: GILT is the closest low-denominator staged-entry counterfactual, LEU remains the strongest structural bottleneck expression, and MDA now has a marginally better evidence-price balance than IREN after IREN's broad rebound.
-  smallest_prudent_exposure_considered: A 24 share GILT starter at no more than USD 11.00 equal to 3.1469 percent of current research NAV was tested and would be mission-relevant rather than symbolic.
-  zero_vs_starter_result: Zero narrowly wins only through the August 5 evidence window because the near-dated filing can resolve GILT transaction status, Q2 cash conversion, working-capital adjustments and post-close liquidity; the same zero may not roll forward without a fresh adjudication.
+  strongest_counterfactual: GILT remains the closest low-denominator staged-entry counterfactual, LEU the strongest structural bottleneck expression, MDA the most balanced direct platform, IREN the strongest newly dislocated powered-site option, and IONQ the strengthened post-acquisition fifth-ranked challenger.
+  smallest_prudent_exposure_considered: A public-safe 2 to 4 percent analytical starter range for GILT was tested and would be mission-relevant rather than symbolic; LEU MDA IREN and IONQ also received explicit staged-path reviews.
+  zero_vs_starter_result: Zero narrowly wins only through the August 5 evidence window because near-dated filings can resolve GILT transaction economics, LEU contract protection and IONQ post-close capitalization; the same zero may not roll forward without a fresh adjudication.
   zero_exposure_reason_code: decision_critical_economics_gap
-  decision_critical_missing_evidence: LEU fixed-price contract milestones, cost-sharing, termination protection, TENEX substitution and expansion funding; GILT audited Q2 cash conversion, transaction status, final purchase-price and working-capital adjustments, and post-close liquidity.
-  why_risk_sizing_cannot_absorb_uncertainty: A smaller position bounds dollars lost, but it cannot establish whether GILT's apparent standalone denominator survives the transaction or whether LEU's fixed-price contract creates or destroys per-share value; both inputs are due within five days.
-  cash_opportunity_cost: A 24 share GILT starter would expose 3.1469 percent of NAV; a favorable 20 to 30 percent event gap would cost about 0.63 to 0.94 percent of NAV in missed upside. The five-day information value is judged higher because the evidence can change the post-transaction denominator and scaling path.
-  conjunctive_evidence_and_price_trigger: Reassess LEU after the August 5 filing only if contract protection, funding and TENEX replacement preserve per-share value; reassess GILT only if Q2 cash conversion, transaction terms and post-close liquidity meet the recorded gates. Price alone never authorizes a buy.
+  decision_critical_missing_evidence: LEU fixed-price contract milestones, cost-sharing, termination protection, TENEX substitution and expansion funding; GILT audited Q2 cash conversion, transaction status, final consideration and post-close liquidity; IONQ post-close shares, cash use, foundry margins, integration capex and recurring value capture.
+  why_risk_sizing_cannot_absorb_uncertainty: A smaller position bounds dollars lost, but it cannot establish whether GILT's apparent denominator survives the transaction, whether LEU's fixed-price contract creates or destroys per-share value, or whether IONQ's acquisition improves rather than dilutes shareholder economics; the key inputs are due within four days.
+  cash_opportunity_cost: A GILT starter near the middle of the 2 to 4 percent analytical range would expose about 3.16 percent of NAV; a favorable 20 to 30 percent event gap would cost about 0.63 to 0.95 percent of NAV in missed upside. The four-day information value is judged higher because the evidence can change the post-transaction denominator and scaling path.
+  conjunctive_evidence_and_price_trigger: Reassess LEU only if August 5 contract protection, funding and TENEX replacement preserve per-share value; reassess GILT only if cash conversion, transaction terms and post-close liquidity meet the recorded gates; reassess IONQ only if post-close capitalization and foundry economics preserve the integrated-platform thesis. Price alone never authorizes a buy.
   next_evidence_deadline: 2026-08-05
-  no_action_streak: 18
-  article1_red_team_status: completed_current_v1.3_gilt_starter_challenge
+  no_action_streak: 19
+  article1_red_team_status: completed_current_v1.3_multi_candidate_starter_challenge
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: Retain cash only through the August 5 LEU and GILT hard adjudication; the separate 45-day mission-pressure review remains due on 2026-08-22 unless a mission-relevant deployment occurs first. Neither date is an automatic order.
+  current_conclusion: Retain cash only through the August 5 GILT LEU and IONQ hard adjudication; the separate 45-day mission-pressure review remains due on 2026-08-22 unless a mission-relevant deployment occurs first. Neither date is an automatic order.
 coverage:
-  universe_scan_as_of: 2026-07-31
-  discovery_lane_map_as_of: 2026-07-31
+  universe_scan_as_of: 2026-08-01
+  discovery_lane_map_as_of: 2026-08-01
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
@@ -67,21 +67,21 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 25
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-07-31-event-driven-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-07-31-event-driven-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-07-31-event-driven-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-07-31-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-08-01-weekly-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-08-01-weekly-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-08-01-weekly-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-08-01-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
   issuer_profile_semantic_coverage_pct: 0
   broad_semantic_search_status: gap_open
-  organic_recall_count: 17
+  organic_recall_count: 18
   hard_coded_proxy_only_recall_count: 42
-  exploratory_match_count: 59
-  exploratory_sample_count: 2
-  exploratory_sample_coverage_pct: 3.3898
-  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed. No new raw lead displaced the current opportunity set; VIP remains a bounded R1 powered-land lead. Zero issuer-profile semantic coverage remains bounded discovery debt rather than an allocation veto.
+  exploratory_match_count: 60
+  exploratory_sample_count: 18
+  exploratory_sample_coverage_pct: 30
+  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed, and every returned candidate received a disposition. No new R1 lead displaced the current opportunity set; VIP remains a bounded R1 powered-land lead. Zero issuer-profile semantic coverage remains bounded discovery debt rather than an allocation veto.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -163,4 +163,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.3 no-action decision uses July 30 completed-close provenance, current all-form SEC scope, incremental issuer review, independent 24-share GILT-starter-versus-zero review, current liquidity and a hard August 5 expiration on the waiting decision. Bounded semantic-discovery debt remains visible but is not a portfolio-wide veto. The due standing contribution was applied; no order, broker preview or trade mutation exists.
+notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.3 no-action decision uses July 31 completed-close provenance, current SEC submissions-delta scope, primary IONQ ETN RKLB ENRD and IMSR review, independent multi-candidate starter-versus-zero review, current liquidity and a hard August 5 expiration on the waiting decision. Bounded semantic-discovery and accession-disposition automation debt remain visible but are not portfolio-wide vetoes. The prior standing contribution was not duplicated; no order, broker preview or trade mutation exists.

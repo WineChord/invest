@@ -1,5 +1,145 @@
 schema_version: 1
 policy_version: v1.3
-as_of: 2026-07-29
-records: []
-notes: Position-construction records begin with the next v1.3 allocation or promotion review. Historical decisions remain governed by their original policy records; this public file must not contain unexpired exact target weights, exact share counts, or live scale ladders.
+as_of: 2026-08-01
+records:
+  - symbol: GILT
+    as_of: 2026-08-01
+    policy_version: v1.3
+    research_stage: active_candidate_entry_reunderwritten
+    initial_weight_range_pct: [2, 4]
+    fully_underwritten_weight_range_pct: [6, 12]
+    current_stage: hard_event_review_only_not_buy_eligible
+    adverse_permanent_impairment_pct: 100
+    max_nav_impairment_pct: 4
+    downside_portfolio_result: A failed transaction integration or persistent cash-conversion deficit could impair the full starter range while leaving the rest of NAV intact.
+    base_portfolio_result: Profitable standalone operations and a small denominator could support moderate compounding, but would not justify scaling without audited combined cash conversion.
+    upside_portfolio_result: Successful Comtech integration and durable satellite-network demand could make a 6 to 12 percent fully underwritten position material to portfolio returns.
+    exceptional_portfolio_result: A scaled defense and mobility satellite-network platform with reinvestment runway could become a rare small-denominator compounder.
+    contribution_dilution_check: Weekly contributions do not cap sizing; future scaling must use total confirmed liquidity and a dilution-adjusted post-transaction denominator.
+    scale_milestones:
+      - audited combined cash conversion and post-close liquidity preserve the small-denominator thesis
+      - final purchase price and working-capital adjustments do not transfer disproportionate value from common shareholders
+      - recurring defense mobility and broadband demand converts into durable margins and reinvestment capacity
+    hold_milestones:
+      - standalone profitability and balance-sheet survival remain intact
+      - transaction closing and integration remain within a bounded capital plan
+    reduce_or_exit_milestones:
+      - persistent negative cash conversion without a credible self-funded path
+      - transaction economics materially enlarge the denominator without proportional shareholder value
+      - thesis-breaking customer or technology displacement
+    stage_review_by: 2026-08-05
+    source_path: decisions/2026-08-01-weekly-operating-cycle.md
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01, gilt_investor_conferences_2026_07_30]
+  - symbol: LEU
+    as_of: 2026-08-01
+    policy_version: v1.3
+    research_stage: active_candidate_contract_reunderwriting
+    initial_weight_range_pct: [2, 3.5]
+    fully_underwritten_weight_range_pct: [6, 12]
+    current_stage: hard_event_review_only_not_buy_eligible
+    adverse_permanent_impairment_pct: 100
+    max_nav_impairment_pct: 3.5
+    downside_portfolio_result: Fixed-price cost overruns, TENEX disruption or expansion funding could permanently impair the full starter range.
+    base_portfolio_result: A protected but capital-intensive HALEU contract could support meaningful compounding without yet reaching exceptional portfolio impact.
+    upside_portfolio_result: Successful domestic enrichment expansion with protected economics could justify a 6 to 12 percent fully underwritten position.
+    exceptional_portfolio_result: Control of a strategic U.S. nuclear-fuel bottleneck with durable pricing and reinvestment could produce rare multi-decade asymmetry.
+    contribution_dilution_check: The smallest whole-share exposure is already mission-relevant; future sizing must not be artificially capped by the latest weekly contribution.
+    scale_milestones:
+      - contract milestones and cost allocation protect common-equity economics
+      - TENEX substitution and expansion capital are funded without destructive dilution
+      - production and customer commitments support a durable pricing and reinvestment path
+    hold_milestones:
+      - HALEU production and contractual demand remain intact
+      - liquidity and expansion funding remain survivable
+    reduce_or_exit_milestones:
+      - fixed-price losses or termination terms destroy per-share value
+      - import replacement or financing failure breaks the domestic-enrichment path
+      - dilution-adjusted upside falls below the satellite hurdle
+    stage_review_by: 2026-08-05
+    source_path: decisions/2026-08-01-weekly-operating-cycle.md
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+  - symbol: MDA
+    as_of: 2026-08-01
+    policy_version: v1.3
+    research_stage: active_candidate_integration_reunderwriting
+    initial_weight_range_pct: [2, 4]
+    fully_underwritten_weight_range_pct: [6, 12]
+    current_stage: evidence_and_correlation_review_not_buy_eligible
+    adverse_permanent_impairment_pct: 100
+    max_nav_impairment_pct: 4
+    downside_portfolio_result: Acquisition leverage, integration failure or space-cycle concentration could impair the full starter range and compound existing account correlation.
+    base_portfolio_result: A capable space platform could compound steadily, but leverage and portfolio overlap would limit scaling.
+    upside_portfolio_result: Successful Blue Canyon and CLS integration with strong cash conversion could justify a material platform position after correlation review.
+    exceptional_portfolio_result: A vertically integrated global space-infrastructure platform could create durable mission-relevant upside if per-share economics survive the acquisitions.
+    contribution_dilution_check: Any future position must be tested against existing RKLB and ASTS exposure rather than sized mechanically from the latest contribution.
+    scale_milestones:
+      - acquisitions close within the disclosed capital plan
+      - pro-forma leverage declines through operating cash flow rather than equity issuance
+      - combined margins and backlog convert into durable free cash flow
+    hold_milestones:
+      - customer and technical execution remain intact
+      - integration and debt service remain within plan
+    reduce_or_exit_milestones:
+      - leverage or integration creates avoidable ruin risk
+      - dilution-adjusted cash conversion persistently misses the underwriting case
+      - account space concentration makes the next dollar superior elsewhere
+    stage_review_by: 2026-08-07
+    source_path: decisions/2026-08-01-weekly-operating-cycle.md
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+  - symbol: IREN
+    as_of: 2026-08-01
+    policy_version: v1.3
+    research_stage: watch_value_capture_reunderwriting
+    initial_weight_range_pct: [2, 4]
+    fully_underwritten_weight_range_pct: [6, 10]
+    current_stage: research_only_not_buy_eligible
+    adverse_permanent_impairment_pct: 100
+    max_nav_impairment_pct: 4
+    downside_portfolio_result: Unproved AI revenue, heavy capex, funding stress or bitcoin cyclicality could impair the full starter range.
+    base_portfolio_result: Powered-site optionality could create moderate value, but customer economics and capital intensity may limit shareholder capture.
+    upside_portfolio_result: Accepted GPU revenue and self-funded commissioning could justify a material AI-power infrastructure position.
+    exceptional_portfolio_result: Scarce energized sites converted into a scalable AI cloud with disciplined financing could become an unusually asymmetric public platform.
+    contribution_dilution_check: A smaller share price is not enough; sizing must be based on accepted revenue, total funding needs and dilution-adjusted capitalization.
+    scale_milestones:
+      - accepted GPU revenue and customer economics are disclosed and repeatable
+      - commissioning utilization and remaining capex reconcile to a survivable funding plan
+      - dilution and bitcoin exposure do not dominate per-share value
+    hold_milestones:
+      - energized-site control and commissioning progress remain intact
+      - liquidity stays adequate through the next capacity milestone
+    reduce_or_exit_milestones:
+      - AI value capture fails to emerge before capital needs accelerate
+      - financing or dilution destroys per-share asymmetry
+      - bitcoin exposure overwhelms the infrastructure thesis
+    stage_review_by: 2026-08-12
+    source_path: decisions/2026-08-01-weekly-operating-cycle.md
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01]
+  - symbol: IONQ
+    as_of: 2026-08-01
+    policy_version: v1.3
+    research_stage: watch_post_acquisition_reunderwriting
+    initial_weight_range_pct: [2, 4]
+    fully_underwritten_weight_range_pct: [5, 10]
+    current_stage: post_close_review_not_buy_eligible
+    adverse_permanent_impairment_pct: 100
+    max_nav_impairment_pct: 4
+    downside_portfolio_result: Integration failure, foundry losses, capital intensity or weak recurring quantum demand could impair the full starter range.
+    base_portfolio_result: Vertical integration may improve strategic control while still producing only modest per-share value at the current denominator.
+    upside_portfolio_result: Successful foundry integration and recurring quantum demand could justify a 5 to 10 percent fully underwritten position.
+    exceptional_portfolio_result: A vertically integrated quantum platform with defensible hardware, manufacturing and recurring applications could create rare long-duration asymmetry.
+    contribution_dilution_check: Post-close shares, cash use and capital needs must be reconciled before any weekly contribution or existing liquidity is allocated.
+    scale_milestones:
+      - post-close capitalization and cash use preserve a credible per-share denominator
+      - SkyWater margins, capex and customer retention support rather than dilute the quantum platform
+      - recurring quantum revenue and bookings convert into cash economics
+    hold_milestones:
+      - strategic integration and technical roadmap remain intact
+      - liquidity supports both foundry and quantum development
+    reduce_or_exit_milestones:
+      - foundry integration becomes a sustained capital sink without strategic return
+      - dilution-adjusted quantum value capture fails to emerge
+      - technical or commercial evidence breaks the integrated-platform thesis
+    stage_review_by: 2026-08-05
+    source_path: decisions/2026-08-01-weekly-operating-cycle.md
+    source_ids: [completed_close_universe_2026_07_31, sec_submissions_all_forms_2026_08_01, ionq_skywater_close_2026_07_31]
+notes: These are public-safe analytical ranges and milestone paths, not orders, exact target weights, share counts, or live scale ladders. Current buy quantities and executable limits remain zero and absent.

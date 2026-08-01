@@ -11,7 +11,7 @@ subagent_evidence_packet_path: research/discovery/runs/2026-07-30-subagent-evide
 
 execution_update:
   status: standing_contribution_not_due_no_trade
-  confirmed_ledger_event_ids: [2026-07-24-deposit-001]
+  confirmed_ledger_event_ids: []
   resulting_confirmed_cash: 5761.58
   resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
   notes: The first standing-authorized weekly contribution is due on 2026-07-31, so the canonical command returned not_due. No broker fact, trade, order, fee, fill, reserve position, or inferred account fact was added.

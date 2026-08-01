@@ -11,7 +11,7 @@ subagent_evidence_packet_path: research/discovery/runs/2026-07-23-subagent-evide
 
 execution_update:
   status: confirmed_account_state_reused_no_new_broker_event
-  confirmed_ledger_event_ids: [2026-07-23-deposit-001]
+  confirmed_ledger_event_ids: []
   resulting_confirmed_cash: 4873.58
   resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
   notes: The already confirmed USD 3000 deposit remains the latest broker event. The evening cycle added no deposit, trade, order, fee, fill, or position change.
