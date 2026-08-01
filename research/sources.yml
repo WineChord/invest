@@ -3600,3 +3600,93 @@ sources:
     first_seen_at: 2026-07-30
     related_symbols: [LUNR]
     summary: An Advent and Galileo affiliated holder sold 11,495,514 shares at USD 12.84 and retained the same number, reducing the disclosed direct block by about half; the event creates a material float and technical-overhang review without changing operating evidence.
+  - id: completed_close_universe_2026_07_30
+    title: Yahoo Finance Completed Daily Bars for the Current Tradable Research Universe
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Completed July 30 regular-session closes and adjusted-close history covered all 54 tradable research securities; current rows were retrieved at 2026-07-31T06:27:16.752Z.
+  - id: sec_submissions_all_forms_2026_07_31
+    title: SEC All-Form Submissions Audit for the Current Tradable Research Universe
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-07-31
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Current SEC submissions payloads for 53 established tradable issuers were fetched and schema-validated. QBTS was reviewed separately because the SEC ticker reference feed still reports its prior exchange after the July 27 Nasdaq transfer.
+  - id: gilt_investor_conferences_2026_07_30
+    title: Gilat Investor Conference Calendar
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003694/zk2635798.htm
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [GILT]
+    summary: Gilat announced investor-conference participation without new operating, transaction, financing, customer, or capitalization evidence.
+  - id: aspi_investor_conference_2026_07_30
+    title: ASP Isotopes Investor Conference Calendar
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1921865/000119312526324987/aspi-20260730.htm
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [ASPI]
+    summary: ASP Isotopes announced August 12 investor-conference participation without new production, customer, financing, or capitalization evidence.
+  - id: mda_passive_ownership_amendment_2026_07_30
+    title: MDA Space Passive Ownership Amendment
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000159680026000009/xslSCHEDULE_13G_X02/primary_doc.xml
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [MDA]
+    summary: A passive holder reported 5.6 percent ownership; the amendment adds ownership metadata but no operating or transaction evidence.
+  - id: crwv_ownership_forms_2026_07_30
+    title: CoreWeave Ownership Forms
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000338/xslF345X06/form4.xml
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [CRWV]
+    summary: New ownership forms continued planned or tax-related sales and did not change CoreWeave operating evidence.
+  - id: lite_quality_executive_retirement_2026_07_30
+    title: Lumentum Reliability and Quality Executive Retirement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026051078/lite-20260727.htm
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [LITE]
+    summary: Lumentum disclosed the planned October retirement and two-year consulting transition of its global reliability and quality executive, without evidence of operating disruption.
+  - id: nwpx_q2_2026_10q
+    title: NWPX Infrastructure Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1001385/000143774926025050/nwpx20260630_10q.htm
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [NWPX]
+    summary: The Form 10-Q confirms the already reviewed record second-quarter results without changing NWPX research-only status or entry.
+  - id: pwr_q2_2026_10q
+    title: Quanta Services Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [PWR]
+    summary: Remaining performance obligations and backlog increased materially and six-month operating cash flow strengthened, supporting grid and data-center demand while mature scale still limits Article 1 asymmetry.
+  - id: nbis_sustainability_report_2025
+    title: Nebius 2025 Sustainability Report
+    source_type: company_ir
+    url: https://nebius.com/newsroom/nebius-publishes-2025-sustainability-report-outlining-blueprint-for-scaling-responsibly
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-07-31
+    first_seen_at: 2026-07-31
+    related_symbols: [NBIS]
+    summary: The report adds power- and water-efficiency context but not utilization, customer concentration, profitability, free-cash-flow, or capitalization evidence needed to change entry.

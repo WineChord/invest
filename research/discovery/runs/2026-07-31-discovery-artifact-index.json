@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-07-31T07:32:26.487Z",
+  "as_of": "2026-07-31",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-07-31.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-07-31-scan.json",
+      "sha256": "b71ecafac06aa09674a280d8c41de9b349a9a577d4678ea52361041eb36a266c",
+      "role": "deterministic_scan_artifact"
+    }
+  ]
+}

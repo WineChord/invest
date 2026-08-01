@@ -134,7 +134,7 @@ function buildPacket({
   const watchlistPriceRows = csvRecords(watchlistPricesFile);
   const policyVersion = readPolicyVersion(policyFile);
   const pricesBySymbol = new Map(watchlistPriceRows.map((row) => [row.symbol, row]));
-  const researchNav = Number(qualityMetrics.mission_accountability?.latest_research_nav);
+  const confirmedCash = Number(accountState.confirmed_cash);
   const currentPositions = positionRows.map((row) => {
     const priceRecord = pricesBySymbol.get(row.symbol);
     const quantity = Number(row.quantity);
@@ -146,12 +146,35 @@ function buildPacket({
       ...row,
       latest_completed_close: Number.isFinite(price) ? price : null,
       price_as_of: priceRecord?.price_as_of ?? null,
+      price_source: priceRecord?.source ?? null,
+      price_retrieved_at: priceRecord?.retrieved_at ?? null,
       market_value: marketValue,
-      nav_weight_pct: marketValue !== null && Number.isFinite(researchNav) && researchNav > 0
-        ? (marketValue / researchNav) * 100
-        : null,
     };
   });
+  const currentPositionValue = currentPositions.reduce(
+    (sum, position) => sum + (Number.isFinite(position.market_value) ? position.market_value : 0),
+    0,
+  );
+  const researchNav = Number.isFinite(confirmedCash)
+    ? confirmedCash + currentPositionValue
+    : null;
+  for (const position of currentPositions) {
+    position.nav_weight_pct = Number.isFinite(position.market_value)
+      && Number.isFinite(researchNav)
+      && researchNav > 0
+      ? (position.market_value / researchNav) * 100
+      : null;
+  }
+  const completedCloseDates = [...new Set(
+    currentPositions
+      .map((position) => position.price_as_of)
+      .filter((value) => typeof value === "string" && value !== ""),
+  )].sort();
+  const completedCloseRetrievedAt = [...new Set(
+    currentPositions
+      .map((position) => position.price_retrieved_at)
+      .filter((value) => typeof value === "string" && value !== ""),
+  )].sort();
 
   const activeWatchlist = watchlistRows
     .filter((row) => row.status !== "removed")
@@ -229,7 +252,19 @@ function buildPacket({
     current_positions: currentPositions,
     portfolio_snapshot: {
       research_nav: Number.isFinite(researchNav) ? researchNav : null,
-      mission_accountability: qualityMetrics.mission_accountability ?? null,
+      confirmed_cash: Number.isFinite(confirmedCash) ? confirmedCash : null,
+      current_position_value: currentPositionValue,
+      cash_weight_pct: Number.isFinite(confirmedCash)
+        && Number.isFinite(researchNav)
+        && researchNav > 0
+        ? (confirmedCash / researchNav) * 100
+        : null,
+      account_state_as_of: accountState.as_of ?? null,
+      completed_close_dates: completedCloseDates,
+      completed_close_retrieved_at: completedCloseRetrievedAt,
+      basis_note: "Decision snapshot combining current confirmed cash with the latest completed regular-session close for each confirmed position; it is not a same-timestamp broker valuation or an equity-curve row.",
+      prior_mission_accountability_as_of: qualityMetrics.as_of ?? null,
+      prior_mission_accountability: qualityMetrics.mission_accountability ?? null,
       position_construction: positionConstruction,
     },
     liquidity_reserve_status: "No confirmed liquidity reserve position is recorded.",
