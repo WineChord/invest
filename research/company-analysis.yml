@@ -1403,3 +1403,63 @@ entries:
     risk_watch: License rights, customer qualification, repeat orders, manufacturing yield, gross margin, cash runway, authorized shares, equity awards, warrants, governance and financing.
     next_check: Binding license, qualified customer, repeat production order, positive gross margin, vote outcome, clean financing, diluted capitalization or valuation reset.
     source_path: research/filings/2026-07-28-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-05-alab-q2-refresh
+    symbol: ALAB
+    analyzed_at: "2026-08-05"
+    analysis_type: material_results_and_entry_refresh
+    policy_version: v1.3
+    title: Operating evidence strengthens while the post-event entry remains unpriced
+    stance: A- active candidate; no current public buy zone
+    summary: Astera Labs reported 104 percent year-over-year revenue growth, a 73.3 percent GAAP gross margin, positive GAAP operating leverage, and strong third-quarter guidance, making it one of the highest-quality AI interconnect businesses in the universe; the pre-event completed close and roughly USD 62 billion basic equity denominator still prevent an entry conclusion.
+    upside_path: Scale a broad rack-connectivity platform across PCIe, CXL, Ethernet, UALink and fabric switching while preserving high margins, pricing power, cash conversion and per-share value.
+    risk_watch: Post-event valuation, hyperscaler concentration, Scorpio demand durability, inventory and receivables, stock compensation, gross-margin normalization, platform competition, and overlap with the owner's large Nasdaq core.
+    next_check: First complete post-event close, second-quarter Form 10-Q, customer concentration, Scorpio orders, inventory, receivables, stock compensation, cash conversion, or valuation reset.
+    source_path: research/filings/2026-08-05-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-05-mda-telesat-expansion
+    symbol: MDA
+    analyzed_at: "2026-08-05"
+    analysis_type: material_contract_and_allocation_refresh
+    policy_version: v1.3
+    title: Lightspeed expansion strengthens a mission-relevant configuration challenger
+    stance: B+ active candidate; exact unexpired owner action withheld
+    summary: MDA's 27-satellite Telesat scope increase and 474 million contract expansion materially strengthen backlog visibility, defense relevance and shareholder-value capture at an equity denominator still capable of affecting the satellite account; margin, cash conversion, two integrations and acquisition debt remain the central risks.
+    upside_path: Compound spacecraft production, robotics, sensors, U.S. defense access and recurring geospatial data into a vertically integrated space-systems platform while converting backlog into cash and preserving per-share economics.
+    risk_watch: Telesat concentration, contract margin and timing, Blue Canyon and Capella integration, CAD 600 million of notes, free cash flow, working capital, capital intensity, customer concentration, and existing account space exposure.
+    next_check: August 7 results, backlog recognition, combined margin, free cash flow, acquisition close or integration evidence, leverage, liquidity, or a material completed-close move.
+    source_path: research/filings/2026-08-05-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-05-iren-mirantis-close
+    symbol: IREN
+    analyzed_at: "2026-08-05"
+    analysis_type: material_acquisition_and_dilution_refresh
+    policy_version: v1.3
+    title: Mirantis improves the software layer before proving per-share economics
+    stance: B+ watch; buy 0
+    summary: Mirantis adds Kubernetes, cloud-orchestration and enterprise-sales capability to IREN's powered AI infrastructure, but 12.6 million consideration shares, unknown acquired economics, integration cost, GPU capital intensity and remaining financing needs prevent promotion or purchase.
+    upside_path: Convert scarce powered sites and GPU capacity into a differentiated full-stack AI cloud with durable enterprise software, repeat accepted revenue, high utilization, disciplined funding and per-share cash generation.
+    risk_watch: Mirantis revenue and profitability, integration, customer retention, accepted AI revenue, GPU returns, commissioning, leverage, convertibles, warrants, equity issuance, bitcoin exposure and valuation.
+    next_check: Acquired-business financials, integration milestones, repeat accepted AI revenue, customer economics, commissioning, capex and funding bridge, diluted capitalization, or valuation reset.
+    source_path: research/filings/2026-08-05-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-05-spcx-q2-capitalization
+    symbol: SPCX
+    analyzed_at: "2026-08-05"
+    analysis_type: material_results_and_capitalization_correction
+    policy_version: v1.3
+    title: Exceptional operations cannot overcome the corrected mega-cap denominator
+    stance: B+ watch; buy 0
+    summary: SpaceX's second-quarter revenue, Connectivity scale, AI revenue and liquidity confirm an exceptional operating platform, but the corrected 13.1818 billion basic-share count implies roughly USD 1.65 trillion of market value at the August 4 close and makes multi-decade per-share asymmetry unsuitable for this account.
+    upside_path: Compound launch, Starlink connectivity, direct-to-device service and AI infrastructure into a uniquely integrated platform with durable free cash flow and disciplined capital allocation.
+    risk_watch: Starting valuation, AI capital expenditure and losses, acquisition discipline, controlled-company governance, debt and lease complexity, dilution, Starship execution, regulation, and current portfolio space concentration.
+    next_check: Capital-spending and AI margin normalization, governance or acquisition change, fully diluted capitalization, sustained free cash flow, or a structural valuation reset.
+    source_path: research/filings/2026-08-05-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-05-gilt-agm-refresh
+    symbol: GILT
+    analyzed_at: "2026-08-05"
+    analysis_type: material_governance_and_pending_results_refresh
+    policy_version: v1.3
+    title: Attractive denominator awaits transaction and cash-conversion proof
+    stance: B active candidate; buy 0 pending scheduled results
+    summary: Gilat remains the smallest profitable current candidate and a potentially valuable satellite-ground and defense communications consolidator, while the proposed 150 million authorized-share capacity, Comtech consideration, combined liquidity and GAAP cash conversion remain decision-critical until the scheduled operating results are available.
+    upside_path: Integrate Comtech's satellite and space business, grow defense and in-flight or mobility communications, convert backlog into recurring cash, and compound from a small enterprise-value denominator without excessive dilution.
+    risk_watch: Transaction closing and final consideration, working-capital adjustments, combined margins and liquidity, authorized-share use, customer concentration, free cash flow, integration, defense order timing, dilution, and existing account space concentration.
+    next_check: August 5 results, Comtech closing and final consideration, combined liquidity, GAAP cash conversion, proxy detail, actual issuance, or a material valuation change.
+    source_path: research/filings/2026-08-05-MATERIAL-FILING-REFRESH.md

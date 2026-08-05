@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-08-05T08:46:29.592Z",
+  "as_of": "2026-08-05",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-08-05.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-08-05-scan.json",
+      "sha256": "6505c698db2746adab373aa8592804e44efc794b329be4e5118539fd42d7c0dc",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-05-sec-event-filing-index-filings-ledger.json",
+      "sha256": "14a48fa3d762d740f780501980406a8af01abcdc05aa004600d85b4df45c002e",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-05-sec-event-filing-index-index.metadata.json",
+      "sha256": "5052eb29bc7a5fd728a34ebc6fe1aad61560a345d7f3de5ab7b4b36239942c84",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-05-sec-event-filing-index-manifest.csv",
+      "sha256": "288768bda513ec6f8e978ca5c2b4661b2b4288eab4ed8a1651b098c4ed5b1cb0",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-05-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "c1a0e0f67bc4ef23c877bbee843389d317bbefe6bbbd36ad88775c87343bd06c",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-05-sec-event-filing-index-profiles.json",
+      "sha256": "9bd02db2bbd2d1cf6e2213a3863049baf7b3312dd72714cbea9ac01803b30c2a",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-05-sec-event-filing-index-scan.json",
+      "sha256": "aca373629348616d8e985aea811c38f6674e7b8079d633b01c0f861609f26132",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-05-sec-event-filing-index-submissions-ledger.json",
+      "sha256": "cc9048b9c4c305d2436092d6c61bc668398103ebc113e16d1cf03b7821dcddb6",
+      "role": "generated_discovery_artifact"
+    }
+  ]
+}

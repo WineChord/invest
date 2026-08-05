@@ -1,0 +1,296 @@
+schema_version: 1
+run_id: 2026-08-05-event-driven-full-operating-cycle
+run_date: 2026-08-05
+request_type: event_driven_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: the private owner action expires at its private deadline; otherwise rerun after GILT LEU or IONQ results, MDA August 7 results, RKLB August 10 results, a material issuer event, a material completed-close move, or a confirmed broker-state change
+linked_decision_or_research_note: decisions/2026-08-05-event-driven-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-05-subagent-evidence-packet.yml
+
+execution_update:
+  status: standing_contribution_already_recorded_no_new_event_no_trade_execution
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 6649.58
+  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
+  notes: The canonical contribution workflow found the 2026-07-31 event already recorded. No account event, order, fill, fee, reserve position, trade execution, or inferred broker fact was created.
+
+article_one_preflight:
+  sentinel_level: WARN
+  reason_codes: [evidence_deadline_due]
+  disposition: The August 5 deadline was treated as a forced adjudication rather than rolled forward. Material ALAB MDA IREN SPCX and GILT evidence triggered a full cycle.
+  protected_surfaces_changed: []
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run check:article-one -- --mode sentinel --as-of 2026-08-05 --json
+      dry_run: true
+      retrieved_at: 2026-08-05
+      result_summary: WARN with evidence_deadline_due; the due review was completed rather than deferred.
+    - command: npm run account:apply-standing-contribution -- --as-of 2026-08-05 --json
+      dry_run: false
+      retrieved_at: 2026-08-05
+      result_summary: already_recorded for the 2026-07-31 occurrence; no duplicate event or cash mutation.
+    - command: npm run discover:universe -- --dry-run --as-of 2026-08-05 --json --output research/discovery/runs/2026-08-05-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-05-scan.json
+      output_sha256: 6505c698db2746adab373aa8592804e44efc794b329be4e5118539fd42d7c0dc
+      retrieved_at: 2026-08-05
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 60
+        suppressed_known_matches: 61
+        recall_diagnostics: No known public proxy miss and no new direct bottleneck lead passed R1.
+        miss_counts: 0
+      result_summary: All eighteen returned names were dispositioned as collisions, weak mature proxies, funds, preferred securities, blank-check vehicles or units; no new R1 lead, lane, promotion or buy zone changed.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC all-form submissions, filing bodies and issuer regulatory disclosures
+      sources_or_queries:
+        - targeted event-filing index for 53 current issuers
+        - separate QBTS security-identity review
+        - material August 4 filing bodies and current submissions delta
+      source_ids: [sec_submissions_all_forms_2026_08_05]
+      retrieved_at: 2026-08-05
+      material_findings: ALAB results, MDA contract expansion, IREN acquisition and resale registration, SPCX results and capitalization, and GILT meeting materials changed the evidence set; CRDO Form 4 and CRWV Form 144 activity did not change actions.
+      unavailable_or_skipped_reason: The SEC company-list cache still carries stale QBTS exchange metadata; current issuer and Nasdaq evidence preserves the security identity.
+    - family_id: issuer_material
+      family: Issuer operations, contracts, transactions, capital structure and governance
+      sources_or_queries:
+        - ALAB Q2 2026 results
+        - MDA Telesat scope expansion
+        - IREN Mirantis close and resale registration
+        - SPCX Q2 2026 Form 10-Q
+        - GILT August 4 meeting materials
+      source_ids: [alab_q2_2026_results, mda_telesat_expansion_2026_08_04, iren_mirantis_close_2026_08_04, iren_mirantis_resale_2026_08_04, spcx_q2_2026_10q, gilt_agm_2026_08_04]
+      retrieved_at: 2026-08-05
+      material_findings: MDA moved first in the configuration queue; ALAB operating quality strengthened; IREN capability and dilution both increased; SPCX fit weakened after the corrected denominator; GILT remained pending results.
+      unavailable_or_skipped_reason: GILT LEU and IONQ scheduled August 5 results, MDA August 7 results and RKLB August 10 results were not yet published at the evidence cutoff.
+    - family_id: market_data
+      family: Completed regular-session prices and adjusted-close history
+      sources_or_queries:
+        - August 4 completed closes for all 54 tradable current research securities
+        - one five twenty-one sixty-three and one-hundred-twenty-six session returns
+      source_ids: [completed_close_universe_2026_08_04]
+      retrieved_at: 2026-08-05
+      material_findings: RKLB ASTS CRDO ALAB MDA GILT LEU IREN IONQ and SPCX received current completed-close entry and opportunity-cost review; price alone created no buy eligibility.
+      unavailable_or_skipped_reason: VIP lacks a current continuous verified price series; OPENAI and ANTHROPIC are unlisted and XTND remains pre-listing.
+    - family_id: current_world_context
+      family: Market breadth, financing conditions, current macro regime and liquidity pressure
+      sources_or_queries:
+        - current completed-close universe
+        - latest committed macro regime snapshot
+        - current 76.53 percent confirmed cash weight
+      source_ids: [completed_close_universe_2026_08_04]
+      retrieved_at: 2026-08-05
+      material_findings: Broad indices did not meet crisis thresholds; the rebound increases price discipline but does not veto a position-sizeable issuer-specific opportunity.
+      unavailable_or_skipped_reason: Macro and price context remain overlays rather than standalone buy evidence.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, acquisitions, pre-listing securities and security identity
+      sources_or_queries:
+        - deterministic discovery delta
+        - IREN acquisition close and share consideration
+        - current VIP R1 and XTND pre-listing states
+      source_ids: [sec_submissions_all_forms_2026_08_05, iren_mirantis_close_2026_08_04, iren_mirantis_resale_2026_08_04]
+      retrieved_at: 2026-08-05
+      material_findings: IREN gained an enterprise-software layer with measurable consideration-share dilution; no new eligible operating security entered R1 or the watchlist.
+      unavailable_or_skipped_reason: VIP lacks financing, customer and capitalization evidence; XTND remains pre-listing.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lanes, deterministic discovery and full opportunity-cost comparison
+      sources_or_queries:
+        - ten-lane deterministic refresh
+        - holdings candidates watchlist research-only and not-tradable comparison
+        - MDA GILT LEU IREN IONQ and operating-quality comparator review
+      source_ids: [completed_close_universe_2026_08_04, sec_submissions_all_forms_2026_08_05, mda_telesat_expansion_2026_08_04]
+      retrieved_at: 2026-08-05
+      material_findings: No top-level lane changed; the Article 1 configuration queue is MDA GILT LEU IREN and IONQ, with ALAB CRDO and VRT as higher-quality but less asymmetric comparators.
+      unavailable_or_skipped_reason: Zero issuer-profile semantic coverage remains bounded process debt and is not an allocation veto.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-05
+    notes: Volatile prices, current SEC submissions, issuer results and contracts, acquisitions, dilution, governance, capitalization, macro context, new listings and the complete opportunity set were refreshed or revalidated.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 0
+    organic_recall_count: 18
+    hard_coded_proxy_only_recall_count: 42
+    outside_watchlist_effort_pct: 100
+    new_listing_to_r1_latency_days: 0
+
+unknown_future_review:
+  exploratory_match_count: 60
+  exploratory_denominator: 60
+  stratified_sample_count: 18
+  stratified_sample_pct: 30
+  unsampled_reason: All returned candidates were dispositioned; the remaining exploratory matches were known false-positive families or weak proxies under the bounded scan.
+  repeated_hit_max_age_days: 1
+  top_clusters: [blank-check vehicles and units, mature regulated infrastructure, weak commodity funds and preferred-security proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, FTRA, GDYN, NGG, QLEP, LPAA, LPAAU, LPBB, LPBBU, GPUS-PD, HBM, UROY, SAAQ, SAAQU, AIO, SPB]
+  false_positive_patterns: [name collisions, blank-check vehicles and units, funds and preferred securities, mature weak proxies]
+  lane_decisions: [retain all ten top-level lanes, retain VIP at bounded R1, add no lane promotion or buy zone]
+  disposition: No new candidate displaced MDA GILT LEU IREN IONQ or the higher-quality comparators.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: HALEU, spacecraft manufacturing and payload capacity, satellite-ground defense communications, energized AI-ready sites, high-speed interconnect, quantum fabrication and water-transmission capacity remain plausible bottlenecks.
+    inferences: Scarcity matters only when listed common equity can retain pricing and reinvestment economics after funding, fixed-price obligations, acquisition costs and dilution.
+    disconfirming_evidence: Many public proxies capitalize scarcity before contracts, cash conversion and per-share capture are proved.
+    source_ids: [completed_close_universe_2026_08_04, sec_submissions_all_forms_2026_08_05]
+    investment_implication: Keep MDA GILT LEU IREN and IONQ as the configuration queue, with exact action terms private while unexpired.
+  who_controls_or_removes_scarcity:
+    facts: MDA manufactures spacecraft and payloads, LEU controls the strongest listed U.S. enrichment path, GILT owns satellite-ground capabilities, IREN controls powered sites and enterprise orchestration, and IONQ now owns SkyWater.
+    inferences: Asset control is insufficient when counterparties, lenders, integration costs, warrants or repeated issuance capture the economics.
+    disconfirming_evidence: GILT transaction economics, LEU contract protection, IREN acquired economics and IONQ pro-forma economics remain incomplete.
+    source_ids: [sec_submissions_all_forms_2026_08_05, mda_telesat_expansion_2026_08_04, iren_mirantis_close_2026_08_04]
+    investment_implication: Treat MDA ordinary uncertainty as position-sizeable; retain target-specific zero for GILT LEU IREN and IONQ until their evidence gates clear.
+  who_can_monetize_into_shareholder_value:
+    facts: MDA has the most balanced platform and materially expanded contract, GILT the smallest profitable denominator, LEU the strongest mission fit, IREN the strongest powered-site option and IONQ the newest integrated strategic path.
+    inferences: The best business is not automatically the best dilution-adjusted per-share asymmetry.
+    disconfirming_evidence: Each leader retains contract-margin, cash-conversion, integration, capitalization, concentration or financing risk.
+    source_ids: [completed_close_universe_2026_08_04, sec_submissions_all_forms_2026_08_05, mda_telesat_expansion_2026_08_04]
+    investment_implication: A bounded private MDA starter assessment now beats zero; the other candidates remain dated follow-ups rather than permanent waits.
+  public_security_expression:
+    facts: Fifty-four current research securities have eligible completed closes; OPENAI and ANTHROPIC are unlisted, XTND is pre-listing, and VIP is an R1 listed lead without current reliable continuous price coverage.
+    inferences: Tradability and nominal price do not establish buy eligibility.
+    disconfirming_evidence: VIP lacks survivable financing, customer and capitalization evidence; XTND lacks a completed eligible listing.
+    source_ids: [completed_close_universe_2026_08_04, sec_submissions_all_forms_2026_08_05]
+    investment_implication: No new security enters the current configuration queue.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT MDA NWPX OCC QSI ASPI STDN ENRD VIP and XTND remain small, early, awkward or newly public expressions.
+    inferences: A small denominator helps only when survival, directness and shareholder-value capture are credible.
+    disconfirming_evidence: GILT awaits transaction and cash-conversion evidence, NWPX lacks proved extreme reinvestment economics, VIP lacks a binding customer and XTND remains pre-listing.
+    source_ids: [sec_submissions_all_forms_2026_08_05, mda_telesat_expansion_2026_08_04]
+    investment_implication: MDA moves first on current evidence; retain GILT as the closest low-denominator challenger and VIP as bounded R1 only.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current deterministic scan, evidence packet, lane map, watchlist]
+      sources_checked: [completed_close_universe_2026_08_04, sec_submissions_all_forms_2026_08_05]
+      facts_verified: All returned candidates were dispositioned and no new R1 lead or lane change was supported.
+      stale_or_missing_evidence: Issuer-profile semantic coverage remains bounded discovery debt.
+      confidence: high
+      key_findings: Retain all lanes and put MDA first in the Article 1 configuration queue.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current submissions delta, primary filing bodies, completed-close boundary]
+      sources_checked: [sec_submissions_all_forms_2026_08_05, alab_q2_2026_results, mda_telesat_expansion_2026_08_04, iren_mirantis_close_2026_08_04, iren_mirantis_resale_2026_08_04, spcx_q2_2026_10q, gilt_agm_2026_08_04]
+      facts_verified: ALAB and MDA strengthened, IREN capability and dilution increased, SPCX denominator was corrected, and GILT meeting materials did not substitute for results.
+      stale_or_missing_evidence: GILT LEU and IONQ August 5 results, MDA August 7 results and RKLB August 10 results were not yet available.
+      confidence: high
+      key_findings: The event cluster changes the configuration ranking and requires a full decision.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current MDA evidence, completed close, confirmed NAV, full opportunity set]
+      sources_checked: [completed_close_universe_2026_08_04, mda_telesat_expansion_2026_08_04]
+      facts_verified: The Telesat expansion is material relative to backlog and the current equity denominator remains mission-relevant.
+      stale_or_missing_evidence: August 7 margins, cash conversion, leverage and acquisition integration remain unknown.
+      confidence: high
+      key_findings: A small time-bounded MDA starter is the only immediate action that clears all three gates.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current account weights, MDA contract and acquisition risks, event timing]
+      sources_checked: [completed_close_universe_2026_08_04, mda_telesat_expansion_2026_08_04, sec_submissions_all_forms_2026_08_05]
+      facts_verified: Cash is 76.53 percent and confirmed return-seeking exposure is entirely space; MDA retains contract-margin, cash-conversion, debt, integration and concentration risks.
+      stale_or_missing_evidence: August 7 results can change margins, leverage and free-cash-flow confidence.
+      confidence: high
+      key_findings: Waiting through August 7 narrowly beats immediate exposure unless size and validity are tightly bounded.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [completed closes, company metrics, current filings, private staged-action assessment]
+      sources_checked: [completed_close_universe_2026_08_04, sec_submissions_all_forms_2026_08_05, mda_telesat_expansion_2026_08_04]
+      facts_verified: MDA is the only current candidate whose mission, evidence and entry uncertainty can be bounded by a small whole-share starter.
+      stale_or_missing_evidence: Exact unexpired owner terms remain private; all other current candidates lack an executable entry conclusion.
+      confidence: high
+      key_findings: Keep public artifacts non-executable while delivering the current owner assessment privately.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed cash, holdings, private starter assessment, theme correlation, event timing]
+      sources_checked: [completed_close_universe_2026_08_04, sec_submissions_all_forms_2026_08_05]
+      facts_verified: A small MDA starter would be mission-relevant while retaining more than 74 percent cash before any unconfirmed action.
+      stale_or_missing_evidence: The actual broker state, any order and any fill remain unconfirmed and cannot mutate account records.
+      confidence: high
+      key_findings: Bounded MDA exposure can address inactivity bias without exhausting liquidity or implying execution.
+  unresolved_conflicts: 0
+  conflict_resolution: Bull favored a bounded MDA starter and bear preferred waiting through August 7. The main agent resolved the disagreement toward a private, small, time-bounded owner assessment because the new primary evidence is material and ordinary uncertainty is position-sizeable; exact terms remain withheld from public artifacts.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: No new direct operating candidate displaced the current opportunity set.
+  no_change_reason: Current evidence reinforced existing lanes without proving a superior new shareholder-value expression.
+
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  r0_leads: []
+  r1_researchable: [VIP]
+  r2_comparable: []
+  r3_promotion_ready: []
+  candidates_incubated: [VIP]
+  no_action_challenger: MDA displaced zero in the private owner assessment; GILT LEU and IONQ remain target-specific dated waits.
+  false_positive_patterns: [name collisions, blank-check vehicles and units, funds and preferred securities, mature weak proxies]
+
+readiness_sprints:
+  - symbol: VIP
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-07-29-VIP-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#VIP
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Financing close, pro-forma capitalization, site-level power and capex, a binding customer and survival runway are reachable through near-term issuer filings.
+    final_classification: incubate
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Current completed closes, SEC coverage, primary issuer evidence, full-universe comparison and independent review support a target-level decision. Repository process debt is not an allocation veto.
+
+opportunity_cost_and_allocation:
+  confirmed_research_nav: 8689.15
+  confirmed_cash: 6649.58
+  cash_weight_pct: 76.53
+  confirmed_return_seeking_weight_pct: 23.47
+  confirmed_space_weight_pct: 23.47
+  strongest_current_challenger: MDA
+  next_dollar_queue: [MDA, GILT, LEU, IREN, IONQ]
+  high_quality_expensive_comparators: [ALAB, CRDO, VRT]
+  public_action_state: Exact unexpired owner-only action terms are withheld under PUBLICATION_POLICY.md.
+  holdings: Hold RKLB 17 and ASTS 11; add zero and sell zero.
+  no_trade_execution: true
+
+full_coverage:
+  watchlist_symbol_count: 56
+  additional_current_research_symbols: [VIP, XTND]
+  total_current_research_symbols: 58
+  symbols: [RKLB, ASTS, MDA, GILT, LEU, ALAB, CRDO, IREN, IONQ, VRT, SPCX, NBIS, MU, CRWV, CRCL, LITE, CBRS, SEI, NWPX, OKLO, STDN, INFQ, IQMX, ETN, PWR, GSAT, KTOS, YSS, LUNR, BE, AAOI, FN, OCC, POET, RIOT, CIFR, ENRD, WULF, WYFI, FLY, RDW, VOYG, XNDU, NNE, IMSR, SMR, HQ, QBTS, QUBT, RGTI, NUCL, QSI, QTEX, ASPI, VIP, OPENAI, ANTHROPIC, XTND]
+  watchlist_cycle_rows_written: 56
+  valuation_rows_written: 24
+  public_buy_zone_rows_written: 8
+  symbol_decision_path: decisions/2026-08-05-event-driven-operating-cycle.md
+
+publication_review:
+  status: public_safe_exact_action_withheld
+  notes: Public artifacts omit every unexpired share count, dollar amount, limit price, target weight, timing instruction, broker preview and execution detail. The private owner report may contain current action terms and is not committed.
+
+validation:
+  status: complete_local_release_candidate
+  notes: Article 1 decision and data checks passed; npm run verify passed and generated 89 static pages. The latest deterministic market-data workflow succeeded. The pre-release production baseline rendered without horizontal overflow at 390-pixel mobile and 1280-pixel desktop widths and still showed the delayed July 31 snapshot; post-push deployment verification remains an external closeout check.

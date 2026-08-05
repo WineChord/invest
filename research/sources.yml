@@ -3753,3 +3753,75 @@ sources:
     first_seen_at: 2026-08-01
     related_symbols: [RKLB]
     summary: Rocket Lab announced three dedicated Electron missions for iQPS. The agreement supports repeat-launch demand, but no contract value or margin economics were disclosed and the holding or add decision does not change.
+  - id: completed_close_universe_2026_08_04
+    title: Yahoo Finance Completed Daily Bars for the Current Tradable Research Universe
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Completed August 4 regular-session closes and adjusted-close history cover all 54 tradable research securities; the committed rows were retrieved at 2026-08-05T06:04:37.317Z. The later local rerun corrected the SPCX basic share-count denominator and did not create a newer completed close.
+  - id: sec_submissions_all_forms_2026_08_05
+    title: SEC All-Form Submissions Delta for the Current Tradable Research Universe
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Current submissions payloads were reconciled for 53 issuers, with QBTS reviewed separately because the SEC reference feed still carries its prior exchange. Material post-cutoff filings include ALAB results, the MDA Telesat expansion, IREN's Mirantis closing and resale registration, SPCX results and quarterly filing, and GILT governance materials.
+  - id: alab_q2_2026_results
+    title: Astera Labs Second-Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000033/q226exhibit991.htm
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [ALAB]
+    summary: Astera Labs reported USD 392.4 million of quarterly revenue, 104 percent year-over-year growth, a 73.3 percent GAAP gross margin and USD 540 million to USD 560 million of third-quarter revenue guidance. Operating evidence strengthened materially, but the August 4 completed close predates the release and the valuation denominator remains demanding.
+  - id: mda_telesat_expansion_2026_08_04
+    title: MDA Space Telesat Lightspeed Contract Expansion
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926090093/tm2621766d3_ex99-1.htm
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [MDA]
+    summary: Telesat expanded the Lightspeed constellation and MDA's scope by 27 satellites, military Ka-band capability and long-lead items, increasing the disclosed contract value by 474 million in an unspecified currency. Most of the increase is expected to enter backlog in the third quarter; margin and cash-conversion economics were not disclosed.
+  - id: iren_mirantis_close_2026_08_04
+    title: IREN Completion of Mirantis Acquisition
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000114036126031053/ny20079234x2_8k.htm
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [IREN]
+    summary: IREN completed the Mirantis acquisition using 12,632,234 shares plus cash, RSUs and other consideration. Enterprise cloud-orchestration capability improved, while acquired revenue, profitability, integration cost and post-transaction per-share economics remain unresolved.
+  - id: iren_mirantis_resale_2026_08_04
+    title: IREN Mirantis Selling-Holder Prospectus Supplement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000114036126031055/ny20079234x1_424b7.htm
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [IREN]
+    summary: The prospectus permits resale of up to 11,981,668 existing acquisition shares. IREN does not receive the resale proceeds; the filing creates potential secondary supply rather than a new company financing.
+  - id: spcx_q2_2026_10q
+    title: SpaceX Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [SPCX]
+    summary: SpaceX reported USD 7.814 billion of quarterly revenue and USD 3.538 billion of adjusted EBITDA, alongside USD 18.369 billion of quarterly capital spending. The cover page reports 13.1818 billion Class A and Class B shares outstanding, correcting the repository's prior weighted-average-share market-cap denominator to roughly USD 1.65 trillion at the August 4 close.
+  - id: gilt_agm_2026_08_04
+    title: Gilat 2026 Annual General Meeting Notice
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003785/zk2635831.htm
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-05
+    first_seen_at: 2026-08-05
+    related_symbols: [GILT]
+    summary: The filing is a shareholder-meeting notice, not quarterly results. It proposes 150 million authorized ordinary shares and governance or compensation items; authorization is not issuance, but the purpose and potential dilution capacity require review alongside the still-pending results and transaction economics.
