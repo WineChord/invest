@@ -1,20 +1,21 @@
 schema_version: 1
-as_of: 2026-08-05
+as_of: 2026-08-06
 last_research_engine_run:
-  as_of: 2026-08-05
-  scope: event_driven_full_operating_cycle_with_august_4_completed_closes_material_alab_mda_iren_spcx_gilt_evidence_all_symbol_review_and_article_one_action_adjudication
-  notes: Completed the 2026-08-05 v1.3 event-driven full operating cycle using fresh August 4 completed closes for all 54 tradable research symbols, current SEC submissions coverage, material ALAB results, MDA contract expansion, IREN acquisition and resale-registration evidence, corrected SPCX capitalization, GILT meeting materials, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation review. A bounded owner-only MDA starter assessment displaced zero after the August 5 deadline; exact unexpired terms remain private under the publication policy and no trade was executed.
+  as_of: 2026-08-06
+  scope: event_driven_full_operating_cycle_with_august_5_completed_closes_gilt_leu_ionq_results_mda_financing_asts_launch_alab_post_results_close_and_broker_state_adjudication
+  notes: Completed the 2026-08-06 v1.3 event-driven full operating cycle using fresh August 5 completed closes for all 55 tradable research securities, targeted current SEC coverage, material GILT LEU IONQ MDA ASTS and ALAB evidence, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation review. MDA remains the strongest candidate, but a new quantity is blocked until the owner resolves whether the prior MDA order was absent, unfilled, cancelled, or filled; no broker outcome was inferred and no account record changed.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support a target-level decision after the fresh August 4 completed-close cross-check, current SEC submissions review, material ALAB MDA IREN SPCX and GILT evidence, bounded current-world discovery, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto. Under v1.3, a bounded owner-only MDA starter assessment now beats zero because the remaining uncertainty can be bounded by size; exact unexpired terms remain private and no trade was executed.
+  reason: Repository-public research is current enough to support target-level decisions after the fresh August 5 completed-close cross-check, targeted SEC review, material GILT LEU IONQ MDA ASTS and ALAB evidence, bounded current-world discovery, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto. MDA remains economically strongest, but the owner-only prior order state is a target-specific truth and sizing prerequisite, so current new quantity is zero without treating ordinary research debt as a portfolio veto.
   user_only_execution_prerequisites:
+    - owner report of whether the prior MDA order was not placed, unfilled or cancelled, or filled with complete execution evidence before any new MDA action
     - broker cash and buying-power confirmation still showing at least the recorded confirmed 6649.58 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, ASTS note-option update, GILT LEU or IONQ August 5 results, MDA August 7 results, RKLB August 10 results, IREN contract or commissioning evidence, a confirmed broker-state change, or 2026-08-07
+    - rerun after the owner reports the prior MDA order state, any material issuer event, a 5 percent reviewed-symbol price move, MDA August 7 results, RKLB August 10 results, IREN contract or commissioning evidence, or 2026-08-07
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 mission_accountability:
@@ -26,35 +27,35 @@ mission_accountability:
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
   latest_confirmed_return_seeking_buy_date: 2026-07-08
-  latest_research_nav: 8689.15
+  latest_research_nav: 8673.70
   confirmed_cash: 6649.58
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 76.5274
+  liquidity_option_weight_pct: 76.6637
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
   latest_mission_relevant_deployment_date: 2026-07-08
   mission_relevant_deployment_basis: 2026-07-08-buy-asts-001;2026-07-08-buy-rklb-001
-  days_since_latest_mission_relevant_deployment: 28
+  days_since_latest_mission_relevant_deployment: 29
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
   next_required_review_at: 2026-08-22
-  strongest_counterfactual: MDA is the strongest current configuration candidate after the material Telesat scope expansion; GILT remains the closest low-denominator challenger, LEU the strongest structural bottleneck expression, IREN the strongest powered-site challenger, and IONQ the post-acquisition quantum-platform challenger.
-  smallest_prudent_exposure_considered: A private owner-only MDA starter assessment at about 2.35 percent of current research NAV was tested against zero and is mission-relevant rather than symbolic. Exact unexpired quantity, price and timing remain withheld from public artifacts.
-  zero_vs_starter_result: The bounded private MDA starter assessment beats zero because mission fit and current primary evidence are strong enough, the position can matter if scaled, and integration, cash-conversion and concentration uncertainty can be bounded by initial size and a short validity window. Zero still wins for GILT, LEU and IONQ only until their scheduled August 5 evidence is reviewed.
+  strongest_counterfactual: MDA remains the strongest current configuration candidate after the Telesat expansion and financing close; GILT remains the closest low-denominator challenger, LEU the strongest structural bottleneck expression, IREN the strongest powered-site challenger, and IONQ the post-acquisition quantum-platform challenger.
+  smallest_prudent_exposure_considered: A bounded private MDA starter was tested against zero and would be mission-relevant rather than symbolic if the prior order did not fill; exact owner-only terms remain withheld until broker state is resolved.
+  zero_vs_starter_result: The bounded MDA starter remains economically superior to zero if no prior order exists, but zero new quantity wins until the owner resolves the prior broker state because the August 5 market traded through the prior limit condition and a renewed recommendation could duplicate intended exposure. GILT LEU and IONQ remain target-specific non-buys after current results.
   zero_exposure_reason_code: other_documented
-  decision_critical_missing_evidence: GILT audited Q2 cash conversion and transaction economics; LEU fixed-price contract protection, funding and TENEX substitution; IONQ post-close capitalization, cash use, foundry margins and integration capex. These gaps block those targets, not the current MDA assessment or the whole opportunity set.
-  why_risk_sizing_cannot_absorb_uncertainty: For MDA, ordinary execution, integration and cash-conversion uncertainty can be bounded by a starter size, explicit invalidation and a short validity window. Sizing cannot resolve GILT transaction-denominator risk, LEU contract-sign risk or IONQ post-close unit economics, so those targets remain at zero pending primary evidence.
-  cash_opportunity_cost: Remaining entirely in cash would preserve optionality but miss the first bounded exposure to MDA's expanded LEO program and manufacturing platform. The private starter assessment uses only about 2.35 percent of current NAV, leaving more than 74 percent in cash before any unconfirmed owner action and preserving capacity for stronger post-results opportunities.
-  conjunctive_evidence_and_price_trigger: The private MDA assessment requires both current mission and evidence gates and its private entry condition during the stated validity window; price alone never authorizes a buy. Reassess GILT, LEU and IONQ only after their scheduled evidence preserves per-share economics, and rerun MDA after August 7 results if the private action expires or remains unfilled.
+  decision_critical_missing_evidence: The owner-only state of the prior MDA order is the immediate target-specific blocker. GILT normalized cash conversion and final transaction economics, LEU funded fixed-price contract protection and TENEX substitution, and IONQ post-close unit economics and dilution block those targets, not the whole opportunity set.
+  why_risk_sizing_cannot_absorb_uncertainty: MDA operating uncertainty can be bounded by a starter size, but position sizing cannot prevent accidental duplication when a prior order may already have filled. GILT transaction-denominator risk, LEU contract and funding risk, and IONQ post-close unit economics likewise remain target-specific blockers.
+  cash_opportunity_cost: Remaining in cash for one day preserves optionality and may miss a short MDA move, but the bounded waiting cost is smaller than the risk of duplicating the intended starter immediately before August 7 results. Confirmed cash remains available once the broker state and new evidence are known.
+  conjunctive_evidence_and_price_trigger: A new MDA decision requires both owner confirmation of the prior order state and current mission, evidence and entry gates after August 7 results; price alone never authorizes a buy. GILT LEU and IONQ require their company-specific economics to improve, not merely lower prices.
   next_evidence_deadline: 2026-08-07
-  no_action_streak: 19
+  no_action_streak: 20
   article1_red_team_status: completed_current_v1.3_multi_candidate_starter_challenge
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: A bounded private owner-only MDA action assessment is active through its private validity window; exact terms remain withheld from public artifacts and no trade was executed. GILT LEU and IONQ remain at zero pending scheduled evidence. The separate 45-day mission-pressure review remains due on 2026-08-22 unless a mission-relevant deployment is broker-confirmed first.
+  current_conclusion: No new action is active. MDA remains the strongest candidate, but its prior owner order state must be resolved before any new quantity is considered; no trade or fill is inferred. GILT LEU and IONQ remain at zero after current evidence. The separate 45-day mission-pressure review remains due on 2026-08-22 unless a mission-relevant deployment is broker-confirmed first.
 coverage:
-  universe_scan_as_of: 2026-08-05
-  discovery_lane_map_as_of: 2026-08-05
+  universe_scan_as_of: 2026-08-06
+  discovery_lane_map_as_of: 2026-08-06
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
@@ -67,10 +68,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 25
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-08-05-event-driven-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-08-05-event-driven-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-08-05-event-driven-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-08-05-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-08-06-event-driven-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-08-06-event-driven-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-08-06-event-driven-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-08-06-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
@@ -163,4 +164,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.3 owner-only action assessment uses August 4 completed-close provenance, current SEC submissions coverage, material ALAB MDA IREN SPCX and GILT review, independent starter-versus-zero adjudication, current liquidity and a short private validity window. Bounded semantic-discovery and accession-disposition automation debt remain visible but are not portfolio-wide vetoes. The prior standing contribution was not duplicated; no order, broker preview, fill or account mutation exists.
+notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.3 decision uses August 5 completed-close provenance, targeted SEC coverage, material GILT LEU IONQ MDA ASTS and ALAB review, independent starter-versus-zero adjudication and current liquidity. The prior MDA order state is an owner-only target prerequisite; bounded semantic-discovery and CAE security-master debt are not portfolio-wide vetoes. The prior standing contribution was not duplicated; no order, fill or account mutation was inferred.

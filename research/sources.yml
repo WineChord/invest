@@ -3825,3 +3825,66 @@ sources:
     first_seen_at: 2026-08-05
     related_symbols: [GILT]
     summary: The filing is a shareholder-meeting notice, not quarterly results. It proposes 150 million authorized ordinary shares and governance or compensation items; authorization is not issuance, but the purpose and potential dilution capacity require review alongside the still-pending results and transaction economics.
+  - id: completed_close_universe_2026_08_05
+    title: Yahoo Finance Completed Daily Bars for the Current Tradable Research Universe
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-08-06
+    first_seen_at: 2026-08-06
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Completed August 5 regular-session closes and adjusted-close history cover all 55 tradable research securities and were retrieved at 2026-08-06T07:08:58.177Z. MDA traded through the prior private limit condition, but price contact is not evidence that an order was entered or filled.
+  - id: sec_event_index_targeted_2026_08_06
+    title: SEC Event-Filing Index for the Current Priority Set
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-08-06
+    first_seen_at: 2026-08-06
+    related_symbols: [RKLB, ASTS, MDA, GILT, LEU, IONQ, ALAB, CRDO, IREN]
+    summary: The targeted nine-symbol index retrieved current SEC filing state and selected the August 5 GILT, LEU, IONQ, and MDA event filings. The broader all-symbol run stopped on a CAE exchange-reference mismatch, so coverage claims remain limited to the targeted set plus the prior August 5 full all-form reconciliation.
+  - id: gilt_q2_2026_results
+    title: Gilat Second-Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003830/zk2635803.htm
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-08-06
+    first_seen_at: 2026-08-06
+    related_symbols: [GILT]
+    summary: Gilat reported USD 122.7 million of revenue and USD 15.4 million of adjusted EBITDA, while GAAP earnings declined, first-half operating cash flow remained negative, diluted shares increased materially, and the Comtech transaction remained pending. Guidance was reiterated rather than raised.
+  - id: leu_q2_2026_results
+    title: Centrus Energy Second-Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000162828026053433/ex991-10q2026_08x05.htm
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-08-06
+    first_seen_at: 2026-08-06
+    related_symbols: [LEU]
+    summary: Centrus reported higher revenue but lower gross profit, operating income, and net income. The HALEU opportunity and new USD 900 million contract remain strategically important, while DOE funding, contingent backlog, capital deployment, debt, and dilution prevent a current entry conclusion.
+  - id: ionq_q2_2026_results
+    title: IonQ Second-Quarter 2026 Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1824920/000119312526335040/ionq-ex99_1.htm
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-08-06
+    first_seen_at: 2026-08-06
+    related_symbols: [IONQ]
+    summary: IonQ reported USD 80.1 million of revenue and raised its full-year revenue outlook, but low gross margin, a USD 120.3 million adjusted EBITDA loss, stock compensation above revenue, heavy cash use, SkyWater integration, and substantial share-count growth keep the per-share entry gate closed.
+  - id: mda_notes_close_2026_08_05
+    title: MDA Space Senior Notes Offering Close
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926090812/tm2622185d1_ex99-1.htm
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-08-06
+    first_seen_at: 2026-08-06
+    related_symbols: [MDA]
+    summary: MDA completed a CAD 600 million 6.50 percent senior-unsecured notes offering due 2033 to support the USD 620 million Blue Canyon acquisition. Funding certainty improved, while leverage, interest expense, integration, margin, and cash-conversion risk became more concrete before August 7 results.
+  - id: asts_bluebird_11_13_launch_2026_08_05
+    title: AST SpaceMobile BlueBird 11 Through 13 Orbital Launch
+    source_type: company_ir
+    url: https://www.businesswire.com/news/home/20260805761351/en/AST-SpaceMobile-Announces-Successful-Orbital-Launch-of-BlueBirds-11-12-and-13
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-08-06
+    first_seen_at: 2026-08-06
+    related_symbols: [ASTS]
+    summary: AST SpaceMobile reported the successful orbital launch of BlueBirds 11, 12, and 13, preparation of satellites 14 through 16, production through satellite 42, and a continuing target for beta service later in 2026. The event strengthens deployment evidence without proving commercial economics or removing financing and dilution risk.

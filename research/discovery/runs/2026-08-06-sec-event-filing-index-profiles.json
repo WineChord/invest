@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-06T07:22:37.492Z",
+  "source": "sec_filing_business_sections",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "business_description"
+  ],
+  "source_files": [
+    "research/discovery/runs/2026-08-06-sec-event-filing-index-manifest.csv",
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "research/discovery/runs/2026-08-06-sec-event-filing-index-manifest.metadata.json"
+  ],
+  "filing_cache_dir": "",
+  "filing_cache_hits": 0,
+  "filing_cache_misses": 0,
+  "filing_cache_writes": 0,
+  "filing_cache_only": false,
+  "filing_ledger_output": "",
+  "filing_ledger_count": 9,
+  "filing_ledger": [
+    {
+      "symbol": "ALAB",
+      "cik": "0001736297",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1736297/000173629726000035/alab-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "d18a9345be9b6d457df8c7c7e6dd10167c2403971248996ce815b7d6f5bef067",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000149315226033912/form8-k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "1a0c41c3c963fa416b3fc86546f0cd2f1342f602e3497bef7d0ac93d30e39472",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/crdo-20260528.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "59c0b1c2f8e31c226288828ae328cf18b70cced484b3e7d594b9d2a418eec153",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "GILT",
+      "cik": "0000897322",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897322/000117891326003830/zk2635803.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "426ea303e2db5c227375887ef890ff6ddfb1a4efc6b41853d6bf07c8f211e65c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "IONQ",
+      "cik": "0001824920",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526335040/ionq-20260805.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "874f89656e99efa6a696b7134e2c0b1cf5b70258a104f7fa274a629cae409092",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126031053/ny20079234x2_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "996f1c4c220fa7fb967ec5fb2a3a03af4512a783cf10213fd00a6ae9910a2ce2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "LEU",
+      "cik": "0001065059",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026053433/leu-20260805.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "eb0b7eecebbadded53c280c67abfb346343324c6b8e92aa5138a709ffb5b389a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "MDA",
+      "cik": "0001857047",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1857047/000110465926090812/tm2622185d1_6k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "4d78420ffcf6e6056ee0e77cb7b77ec939cb70b57a32a758d4993d3b83dccc5b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-06T07:22:37.492Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "f17ebfcb3622524c4bf600201739c806c7d7e1934d46a7f4fa786fa8194e6106",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-06",
+      "fetched_at": "2026-08-06T07:22:37.492Z"
+    }
+  ],
+  "max_filing_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_request_delay_ms": 100,
+  "selection_strategy": "manifest_filing_sections",
+  "manifest_selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "RKLB",
+    "ASTS",
+    "MDA",
+    "GILT",
+    "LEU",
+    "IONQ",
+    "ALAB",
+    "CRDO",
+    "IREN"
+  ],
+  "selected_symbol_count": 9,
+  "eligible_universe_count": 7653,
+  "coverage_limit": 9,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "manifest_metadata_path": "research/discovery/runs/2026-08-06-sec-event-filing-index-manifest.metadata.json",
+  "manifest_row_count": 9,
+  "profile_count": 4,
+  "skipped_symbols": [
+    {
+      "symbol": "ALAB",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "CRDO",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "IONQ",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "LEU",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "MDA",
+      "reason": "business_section_too_short"
+    }
+  ],
+  "profiles": [
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000149315226033912/form8-k.htm",
+      "source_published_at": "2026-07-20",
+      "retrieved_at": "2026-08-06",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement. Indenture and Notes On July 20, 2026, AST SpaceMobile, Inc. (the “ Company ”) completed its previously announced private offering (the “ Offering ”) of $1.0 billion aggregate principal amount of 1.625% Convertible Senior Notes due 2034 (the “ Notes ”). Pursuant to the purchase agreement between the Company and the initial purchasers of the Notes, the Company granted the initial purchasers an option to purchase, for settlement within the 13-day period beginning on, and including, July 20, 2026, up to an additional $150 million principal amount of Notes (the “ Notes Option ”). The Notes issued on July 20, 2026 do not include any Notes that may be purchased pursuant to the Notes Option. The Notes were issued pursuant to an indenture, dated July 20, 2026 (the “ Indenture ”), between the Company and U.S. Bank Trust Company, National Association, as trustee. The Notes are general unsecured obligations of the Company and will mature on February 1, 2034, unless earlier converted or repurchased. Interest on the Notes will accrue at a rate of 1.625% per year from July 20, 2026 and will be payable semiannually in arrears on February 1 and August 1 of each year, beginning on February 1, 2027. The Notes are convertible at the option of the holders at any time prior to the close of business on the business day immediately preceding November 1, 2033 only under the following conditions: (1) during any calendar quarter commencing after the calendar quarter ending on December 31, 2026 (and only during such calendar quarter), if the last reported sale price of the Company’s Class A common stock, par value $0.0001 per share (the “ Class A Common Stock ”), for at least 20 trading days (whether or not consecutive) during a period of 30 consecutive trading days ending on, and including, the last trading day of the immediately preceding calendar quarter is greater than or equal to 130% of the conversion price on each applicable trading day; (2) during the five business day period after any ten consecutive trading day period (the “ Measurement Period ”) in which the “trading price” (as defined in the Indenture) per $1,000 principal amount of the Notes for each trading day of the Measurement Period was less than 98% of the product of the last reported sale price of the Class A Common Stock and the conversion rate on each such trading day; or (3) upon the occurrence of specified corporate events as set forth in the Indenture. On or after November 1, 2033 until the close of business on the second scheduled trading day immediately preceding the maturity date, holders of the Notes may convert all or any portion of their Notes, at any time, in integral multiples of $1,000 principal amount, at the option of the holder regardless of the foregoing conditions. Upon conversion, the Company may satisfy its conversion obligation by paying or delivering, as the case may be, cash, shares of Class A Common Stock or a combination of cash and shares of Class A Common Stock, at the Company’s election, in the manner and subject to the terms and conditions provided in the Indenture. The conversion rate for the Notes will initially be 12.5672 shares of Class A Common Stock per $1,000 principal amount of Notes, which is equivalent to an initial conversion price of approximately $79.57 per share of Class A Common Stock. The initial conversion price of the Notes represents a premium of approximately 20% above the last reported sale price of the Class A Common Stock on the Nasdaq Global Select Market on July 15, 2026. The conversion rate for the Notes is subject to adjustment in some events in accordance with the terms of the Indenture but will not be adjusted for any accrued and unpaid interest. In addition, following certain corporate events that occur prior to the maturity date of the Notes, the Company will, under certain circumstances, increase the conversion rate of the Notes for a holder who elects to convert its Not",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement. Indenture and Notes On July 20, 2026, AST SpaceMobile, Inc. (the “ Company ”) completed its previously announced private offering (the “ Offering ”) of $1.0 billion aggregate principal amount of 1.625% Convertible Senior Notes due 2034 (the “ Notes ”). Pursuant to the purchase agreement between the Company and the initial purchasers of the Notes, the Company granted the initial purchasers an option to purchase, for settlement within the 13-day period beginning on, and including, July 20, 2026, up to an additional $150 million principal amount of Notes (the “ Notes Option ”). The Notes issued on July 20, 2026 do not include any Notes that may be purchased pursuant to the Notes Option. The Notes were issued pursuant to an indenture, dated July 20, 2026 (the “ Indenture ”), between the Company and U.S. Bank Trust Company, National Association, as trustee. The Notes are general unsecured obligations of the Company and will mature on February 1, 2034, unless earlier converted or repurchased. Interest on the Notes will accrue at a rate of 1.625% per year from July 20, 2026 and will be payable semiannually in arrears on February 1 and August 1 of each year, beginning on February 1, 2027. The Notes are convertible at the option of the holders at any time prior to the close of business on the business day immediately preceding November 1, 2033 only under the following conditions: (1) during any calendar quarter commencing after the calendar quarter ending on December 31, 2026 (and only during such calendar quarter), if the last reported sale price of the Company’s Class A common stock, par value $0.0001 per share (the “ Class A Common Stock ”), for at least 20 trading days (whether or not consecutive) during a period of 30 consecutive trading days ending on, and including, the last trading day of the immediately preceding calendar quarter is greater than or equal to 130% of the conversion price on each applicable trading day; (2) during the five business day period after any ten consecutive trading day period (the “ Measurement Period ”) in which the “trading price” (as defined in the Indenture) per $1,000 principal amount of the Notes for each trading day of the Measurement Period was less than 98% of the product of the last reported sale price of the Class A Common Stock and the conversion rate on each such trading day; or (3) upon the occurrence of specified corporate events as set forth in the Indenture. On or after November 1, 2033 until the close of business on the second scheduled trading day immediately preceding the maturity date, holders of the Notes may convert all or any portion of their Notes, at any time, in integral multiples of $1,000 principal amount, at the option of the holder regardless of the foregoing conditions. Upon conversion, the Company may satisfy its conversion obligation by paying or delivering, as the case may be, cash, shares of Class A Common Stock or a combination of cash and shares of Class A Common Stock, at the Company’s election, in the manner and subject to the terms and conditions provided in the Indenture. The conversion rate for the Notes will initially be 12.5672 shares of Class A Common Stock per $1,000 principal amount of Notes, which is equivalent to an initial conversion price of approximately $79.57 per share of Class A Common Stock. The initial conversion price of the Notes represents a premium of approximately 20% above the last reported sale price of the Class A Common Stock on the Nasdaq Global Select Market on July 15, 2026. The conversion rate for the Notes is subject to adjustment in some events in accordance with the terms of the Indenture but will not be adjusted for any accrued and unpaid interest. In addition, following certain corporate events that occur prior to the maturity date of the Notes, the Company will, under certain circumstances, increase the conversion rate of the Notes for a holder who elects to convert its Not"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001493152-26-033912/form8-k.htm",
+      "filing_accession_number": "0001493152-26-033912",
+      "filing_acceptance_datetime": "2026-07-20T20:15:31.000Z",
+      "filing_content_sha256": "1a0c41c3c963fa416b3fc86546f0cd2f1342f602e3497bef7d0ac93d30e39472",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "form8-k.htm",
+      "filing_report_date": "2026-07-15",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001780312.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2112,
+      "extraction_end_offset": 18733,
+      "extraction_section_length": 16620,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "GILT",
+      "cik": "0000897322",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897322/000117891326003830/zk2635803.htm",
+      "source_published_at": "2026-08-05",
+      "retrieved_at": "2026-08-06",
+      "text": "press release announcing its unaudited second-quarter 2026 results. A copy of this press release is furnished herewith. The attached press release is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934 (the “Exchange Act”) or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference in any filing under the Securities Act of 1933 or the Exchange Act, regardless of any general incorporation language in such filing.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "press release announcing its unaudited second-quarter 2026 results. A copy of this press release is furnished herewith. The attached press release is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934 (the “Exchange Act”) or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference in any filing under the Securities Act of 1933 or the Exchange Act, regardless of any general incorporation language in such filing."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001178913-26-003830/zk2635803.htm",
+      "filing_accession_number": "0001178913-26-003830",
+      "filing_acceptance_datetime": "2026-08-05T11:00:04.000Z",
+      "filing_content_sha256": "426ea303e2db5c227375887ef890ff6ddfb1a4efc6b41853d6bf07c8f211e65c",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "zk2635803.htm",
+      "filing_report_date": "2026-08-05",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0000897322.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 975,
+      "extraction_end_offset": 1499,
+      "extraction_section_length": 523,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126031053/ny20079234x2_8k.htm",
+      "source_published_at": "2026-08-04",
+      "retrieved_at": "2026-08-06",
+      "text": "Item 7.01 Regulation FD Disclosure. On August 4, 2026, IREN Limited (the “Company”) issued a press release announcing the closing of its previously announced Acquisition (defined below). A copy of the press release is attached as Exhibit 99.1 hereto and incorporated by reference herein. The information contained in this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Item 8.01 Other Events. On August 4, 2026, the Company filed with the Securities and Exchange Commission (the “SEC”) a prospectus supplement to the prospectus included in the Company’s registration statement on Form S-3 POSASR originally filed with the SEC on Form F-3 (Reg. No. 333-284369) on January 21, 2025 and as amended by post-effective amendment on Form S-3 on August 25, 2025 (as so amended, the “Registration Statement”), covering the resale from time to time by certain selling shareholders of up to an aggregate of 11,981,668 of the Company’s ordinary shares, with no par value (the “Shares”), to satisfy registration rights the Company granted pursuant to an Agreement and Plan of Merger dated as of May 4, 2026 by and among the Company, Kube Merger Sub Inc. and Mirantis, Inc., which closed on August 3, 2026 (the “Acquisition”). A copy of the legal opinion of Allens relating to the validity of the Shares is filed herewith as Exhibit 5.1 and is incorporated herein by reference, and is filed with reference to, and is hereby incorporated by reference into, the Registration Statement.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01 Regulation FD Disclosure. On August 4, 2026, IREN Limited (the “Company”) issued a press release announcing the closing of its previously announced Acquisition (defined below). A copy of the press release is attached as Exhibit 99.1 hereto and incorporated by reference herein. The information contained in this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Item 8.01 Other Events. On August 4, 2026, the Company filed with the Securities and Exchange Commission (the “SEC”) a prospectus supplement to the prospectus included in the Company’s registration statement on Form S-3 POSASR originally filed with the SEC on Form F-3 (Reg. No. 333-284369) on January 21, 2025 and as amended by post-effective amendment on Form S-3 on August 25, 2025 (as so amended, the “Registration Statement”), covering the resale from time to time by certain selling shareholders of up to an aggregate of 11,981,668 of the Company’s ordinary shares, with no par value (the “Shares”), to satisfy registration rights the Company granted pursuant to an Agreement and Plan of Merger dated as of May 4, 2026 by and among the Company, Kube Merger Sub Inc. and Mirantis, Inc., which closed on August 3, 2026 (the “Acquisition”). A copy of the legal opinion of Allens relating to the validity of the Shares is filed herewith as Exhibit 5.1 and is incorporated herein by reference, and is filed with reference to, and is hereby incorporated by reference into, the Registration Statement."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001140361-26-031053/ny20079234x2_8k.htm",
+      "filing_accession_number": "0001140361-26-031053",
+      "filing_acceptance_datetime": "2026-08-04T11:14:19.000Z",
+      "filing_content_sha256": "996f1c4c220fa7fb967ec5fb2a3a03af4512a783cf10213fd00a6ae9910a2ce2",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ny20079234x2_8k.htm",
+      "filing_report_date": "2026-08-04",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001878848.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2032,
+      "extraction_end_offset": 3898,
+      "extraction_section_length": 1865,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+      "source_published_at": "2026-06-29",
+      "retrieved_at": "2026-08-06",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement Agreement and Plan of Merger On June 28, 2026, Rocket Lab Corporation, a Delaware corporation (“Rocket Lab”), entered into an Agreement and Plan of Merger (the “Merger Agreement”) with Iridium Communications Inc., a Delaware corporation (“Iridium”), Ion Merger Sub I, Inc., a Delaware corporation and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub I”) and Ion Merger Sub II, LLC, a Delaware limited liability company and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub II”). Pursuant to the Merger Agreement, and subject to the satisfaction or waiver of the conditions set forth therein, Merger Sub I will merge with and into Iridium (the “First Merger”) with Iridium continuing as the surviving corporation and an indirect wholly owned subsidiary of Rocket Lab, and immediately following the First Merger, the surviving corporation in the First Merger will merge with and into Merger Sub II, with Merger Sub II continuing as the surviving entity (the “Subsequent Merger” and together with the First Merger, the “Transaction”). The Transaction is generally intended to qualify as a tax-free reorganization for U.S. federal income tax purposes so long as the value of the Stock Consideration relative to the Cash Consideration (each as defined below) received by the holders of Iridium Common Stock (as defined below) (which could vary depending on the price per share of Rocket Lab Common Stock (as defined below) at the First Effective Time (as defined below)) meets the conditions for tax-free treatment. Should those conditions not be met, the Subsequent Merger will not occur and the Transaction will not qualify as a tax-free reorganization for U.S. federal income tax purposes. Merger Consideration As a result of the Transaction, at the effective time of the First Merger (the “First Effective Time”) each issued and outstanding share of common stock of Iridium, par value $0.001 per share (“Iridium Common Stock”), other than as specified in the Merger Agreement, will be converted into the right to receive (i) $27.00 in cash (the “Cash Consideration”) and (ii) a number of shares (the “Stock Consideration” and, together with the Cash Consideration, the “Merger Consideration”) of Rocket Lab’s common stock, par value $0.0001 per share (“Rocket Lab Common Stock”), equal to the Exchange Ratio (as defined below), in each case without interest. The “Exchange Ratio” will be the following: (i) if the Rocket Lab Common Stock Price (as defined below) is equal to or less than $67.50, then the Exchange Ratio will be 0.4000; (ii) if the Rocket Lab Common Stock Price is greater than $67.50 but less than $112.50, then the Exchange Ratio will be the quotient obtained by dividing $27.00 by the Rocket Lab Common Stock Price, rounded to four decimal places; and (iii) if the Rocket Lab Common Stock Price is equal to or greater than $112.50, then the Exchange Ratio will be 0.2400. “Rocket Lab Common Stock Price” is defined as the volume weighted average price per share of Rocket Lab Common Stock on the Nasdaq Global Select Market for the period of the ten consecutive trading days ending on and including the second full trading day prior to the First Effective Time. If the First Merger is consummated, Iridium Common Stock will be delisted from the Nasdaq Global Select Market and deregistered under the Exchange Act, as promptly as practicable after the consummation of the First Merger. Treatment of Iridium Equity Awards The Merger Agreement provides that at the First Effective Time (i) each outstanding restricted stock unit covering Iridium Common Stock (the “Iridium RSUs”), including any Iridium RSU that includes performance-based vesting conditions (the “Iridium PSUs”), will be assumed by Rocket Lab and converted into a restricted stock unit award with respect to shares of Rocket Lab Common Stock (each, an “Assumed RSU”) subject to the same terms and conditions as applied to such Iridium RSU",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement Agreement and Plan of Merger On June 28, 2026, Rocket Lab Corporation, a Delaware corporation (“Rocket Lab”), entered into an Agreement and Plan of Merger (the “Merger Agreement”) with Iridium Communications Inc., a Delaware corporation (“Iridium”), Ion Merger Sub I, Inc., a Delaware corporation and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub I”) and Ion Merger Sub II, LLC, a Delaware limited liability company and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub II”). Pursuant to the Merger Agreement, and subject to the satisfaction or waiver of the conditions set forth therein, Merger Sub I will merge with and into Iridium (the “First Merger”) with Iridium continuing as the surviving corporation and an indirect wholly owned subsidiary of Rocket Lab, and immediately following the First Merger, the surviving corporation in the First Merger will merge with and into Merger Sub II, with Merger Sub II continuing as the surviving entity (the “Subsequent Merger” and together with the First Merger, the “Transaction”). The Transaction is generally intended to qualify as a tax-free reorganization for U.S. federal income tax purposes so long as the value of the Stock Consideration relative to the Cash Consideration (each as defined below) received by the holders of Iridium Common Stock (as defined below) (which could vary depending on the price per share of Rocket Lab Common Stock (as defined below) at the First Effective Time (as defined below)) meets the conditions for tax-free treatment. Should those conditions not be met, the Subsequent Merger will not occur and the Transaction will not qualify as a tax-free reorganization for U.S. federal income tax purposes. Merger Consideration As a result of the Transaction, at the effective time of the First Merger (the “First Effective Time”) each issued and outstanding share of common stock of Iridium, par value $0.001 per share (“Iridium Common Stock”), other than as specified in the Merger Agreement, will be converted into the right to receive (i) $27.00 in cash (the “Cash Consideration”) and (ii) a number of shares (the “Stock Consideration” and, together with the Cash Consideration, the “Merger Consideration”) of Rocket Lab’s common stock, par value $0.0001 per share (“Rocket Lab Common Stock”), equal to the Exchange Ratio (as defined below), in each case without interest. The “Exchange Ratio” will be the following: (i) if the Rocket Lab Common Stock Price (as defined below) is equal to or less than $67.50, then the Exchange Ratio will be 0.4000; (ii) if the Rocket Lab Common Stock Price is greater than $67.50 but less than $112.50, then the Exchange Ratio will be the quotient obtained by dividing $27.00 by the Rocket Lab Common Stock Price, rounded to four decimal places; and (iii) if the Rocket Lab Common Stock Price is equal to or greater than $112.50, then the Exchange Ratio will be 0.2400. “Rocket Lab Common Stock Price” is defined as the volume weighted average price per share of Rocket Lab Common Stock on the Nasdaq Global Select Market for the period of the ten consecutive trading days ending on and including the second full trading day prior to the First Effective Time. If the First Merger is consummated, Iridium Common Stock will be delisted from the Nasdaq Global Select Market and deregistered under the Exchange Act, as promptly as practicable after the consummation of the First Merger. Treatment of Iridium Equity Awards The Merger Agreement provides that at the First Effective Time (i) each outstanding restricted stock unit covering Iridium Common Stock (the “Iridium RSUs”), including any Iridium RSU that includes performance-based vesting conditions (the “Iridium PSUs”), will be assumed by Rocket Lab and converted into a restricted stock unit award with respect to shares of Rocket Lab Common Stock (each, an “Assumed RSU”) subject to the same terms and conditions as applied to such Iridium RSU"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001753926-26-001085/g085783_8k.htm",
+      "filing_accession_number": "0001753926-26-001085",
+      "filing_acceptance_datetime": "2026-06-29T12:11:57.000Z",
+      "filing_content_sha256": "f17ebfcb3622524c4bf600201739c806c7d7e1934d46a7f4fa786fa8194e6106",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "g085783_8k.htm",
+      "filing_report_date": "2026-06-28",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001819994.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2121,
+      "extraction_end_offset": 29955,
+      "extraction_section_length": 27833,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    }
+  ]
+}

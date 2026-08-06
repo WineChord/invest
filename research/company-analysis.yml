@@ -1463,3 +1463,63 @@ entries:
     risk_watch: Transaction closing and final consideration, working-capital adjustments, combined margins and liquidity, authorized-share use, customer concentration, free cash flow, integration, defense order timing, dilution, and existing account space concentration.
     next_check: August 5 results, Comtech closing and final consideration, combined liquidity, GAAP cash conversion, proxy detail, actual issuance, or a material valuation change.
     source_path: research/filings/2026-08-05-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-06-gilt-q2-refresh
+    symbol: GILT
+    analyzed_at: "2026-08-06"
+    analysis_type: material_results_and_entry_refresh
+    policy_version: v1.3
+    title: Growth and a small denominator remain offset by dilution and cash conversion
+    stance: B active candidate; buy 0
+    summary: Gilat grew second-quarter revenue and adjusted EBITDA and reiterated full-year guidance, but GAAP earnings declined, first-half operating cash flow remained negative, diluted shares increased materially, and the Comtech transaction remained pending. The USD 11.62 completed close is interesting but does not clear the evidence or entry gate.
+    upside_path: Integrate Comtech successfully, deepen defense and mobility communications, convert backlog into recurring cash, and compound from a small denominator without transferring most value through dilution.
+    risk_watch: Transaction close and consideration, combined margins and liquidity, operating cash conversion, working capital, customer concentration, authorized-share use, dilution, and existing account space concentration.
+    next_check: Comtech closing, final consideration and capitalization, first combined financials, sustained positive operating cash flow, customer diversification, or a thesis-preserving valuation reset.
+    source_path: research/filings/2026-08-06-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-06-leu-q2-refresh
+    symbol: LEU
+    analyzed_at: "2026-08-06"
+    analysis_type: material_results_contract_and_entry_refresh
+    policy_version: v1.3
+    title: The enrichment bottleneck survives while funding and per-share capture remain unsettled
+    stance: B+ active candidate; buy 0
+    summary: Centrus retains the strongest listed U.S. enrichment and HALEU bottleneck fit and reported higher revenue, a new USD 900 million contract, and a USD 4.5 billion backlog. Lower profit, DOE funding uncertainty, contingent backlog, large capital deployment, debt, dilution, and a pre-results close keep the current entry gate closed.
+    upside_path: Scale domestic LEU and HALEU capacity, convert government and commercial contracts into durable cash economics, and retain enough pricing and reinvestment value for common shareholders.
+    risk_watch: DOE appropriations and options, fixed-price and milestone economics, TENEX exposure, centrifuge execution, capital spending, operating cash flow, debt, dilution, and starting valuation.
+    next_check: August 6 call, first complete post-event close, DOE funding or option change, centrifuge milestone, contract economics, capital plan, diluted capitalization, or valuation reset.
+    source_path: research/filings/2026-08-06-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-06-ionq-q2-refresh
+    symbol: IONQ
+    analyzed_at: "2026-08-06"
+    analysis_type: material_results_and_post_transaction_refresh
+    policy_version: v1.3
+    title: Revenue acceleration does not yet overcome margin burn and dilution
+    stance: B- watch; buy 0
+    summary: IonQ reported USD 80.1 million of quarterly revenue and raised guidance, while customer mix and RPO growth support real commercial progress. Low gross margin, a USD 120.3 million adjusted EBITDA loss, stock compensation above revenue, heavy cash use, large share-count growth, and SkyWater integration leave per-share value capture too uncertain.
+    upside_path: Turn quantum systems, networking, sensing, and SkyWater manufacturing into a differentiated platform with recurring commercial demand, improving gross margin, and disciplined capital use.
+    risk_watch: Gross margin, funded RPO conversion, customer concentration, recurring demand, SkyWater integration and capex, stock compensation, warrants, cash use, dilution, and valuation.
+    next_check: First complete post-event close, Q2 Form 10-Q, funded RPO detail, gross-margin recovery, recurring revenue, SkyWater integration, cash use, diluted capitalization, or valuation reset.
+    source_path: research/filings/2026-08-06-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-06-mda-broker-state-refresh
+    symbol: MDA
+    analyzed_at: "2026-08-06"
+    analysis_type: material_financing_and_execution_prerequisite_refresh
+    policy_version: v1.3
+    title: Funding closed and the prior price condition touched without proving a fill
+    stance: B+ active candidate; no new action until prior broker state is known
+    summary: MDA completed CAD 600 million of notes and remains the strongest current configuration challenger after the Telesat expansion. The August 5 market traded through the prior private limit condition, but price contact cannot prove whether the owner submitted or filled the order, and a duplicate recommendation could create unintended exposure.
+    upside_path: Convert spacecraft, robotics, U.S. defense manufacturing, and geointelligence into a vertically integrated platform while growing backlog, margins, cash flow, and per-share value.
+    risk_watch: Prior order or fill state, August 7 results, Telesat margin and concentration, Blue Canyon and Capella or CLS integration, leverage, interest expense, working capital, free cash flow, and correlated space exposure.
+    next_check: Owner reports prior order status or broker-confirmed fill economics, then August 7 results, leverage, combined margins, free cash flow, integration milestones, or a material completed-close move.
+    source_path: research/filings/2026-08-06-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-06-asts-launch-refresh
+    symbol: ASTS
+    analyzed_at: "2026-08-06"
+    analysis_type: material_launch_and_holding_refresh
+    policy_version: v1.3
+    title: Repeat launch execution strengthens the holding without opening an add gate
+    stance: A core holding; hold 11 and add 0
+    summary: The successful launch of BlueBirds 11 through 13, preparation of satellites 14 through 16, and production through satellite 42 strengthen deployment and manufacturing evidence. Commercial-service economics, financing, dilution, regulatory coverage, on-orbit performance, and existing space concentration still make the next share less attractive than holding the confirmed position.
+    upside_path: Deploy a large low-earth-orbit constellation, monetize direct-to-device broadband through carrier partners, and scale commercial and government service without transferring most value through financing.
+    risk_watch: On-orbit commissioning, launch cadence, beta and commercial service, carrier economics, spectrum and regulation, capital spending, debt, dilution, and correlated space exposure.
+    next_check: BlueBird 11 through 13 commissioning, launch 14 through 16, beta-service evidence, carrier economics, regulatory milestones, financing, dilution, or valuation reset.
+    source_path: research/filings/2026-08-06-MATERIAL-FILING-REFRESH.md
