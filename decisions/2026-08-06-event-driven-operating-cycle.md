@@ -2,17 +2,21 @@
 
 Policy version: `v1.3`
 
-Decision status: completed with no new action; MDA broker-state reconciliation required before another order assessment
+Decision status: completed with no new action; later broker-state reconciliation confirmed the prior MDA execution
 
-Validity window: rerun immediately after the owner reports the prior MDA order state; otherwise rerun after MDA results on August 7, RKLB results on August 10, a material issuer event, a material completed-close move, or a confirmed account change.
+Validity window: the prior MDA order state is now resolved; rerun after MDA results on August 7, RKLB results on August 10, a material issuer event, a material completed-close move, or another confirmed account change.
 
-This is a personal historical research-journal record and not investment advice. No trade, order, fill, fee, or broker state is inferred.
+This is a personal historical research-journal record and not investment advice. No trade, order, fill, fee, or broker state was inferred at the decision cutoff.
 
 ## Confirmed account facts
 
 - Confirmed cash, settled cash, and buying power remain USD 6,649.58. The July 31 standing contribution was already recorded and no contribution is due on August 6.
 - Confirmed positions remain RKLB 17 shares at recorded average cost USD 100.08 and ASTS 11 shares at recorded average cost USD 78.65. There is no confirmed MDA position.
 - At the August 5 completed closes, research NAV is USD 8,673.70. Cash is 76.66%, RKLB is 14.66%, ASTS is 8.67%, and combined confirmed return-seeking equity is 23.34%.
+
+## Historical execution follow-up
+
+The owner-only broker-state prerequisite was later resolved by redacted broker evidence: the bounded MDA action from the August 5 cycle filled 6 shares at an average price of USD 33.8555 on August 6. It is linked to the August 5 decision rather than this no-new-action cycle. The normalized account state now records USD 6,446.45 of confirmed cash, USD 6,649.58 of settled cash on the trade date pending T+1 settlement, and confirmed positions of 17 RKLB, 11 ASTS, and 6 MDA shares. No further MDA purchase is implied.
 
 ## Decision conclusion
 
@@ -102,7 +106,7 @@ Prices are completed regular-session closes, not executable quotes. Every curren
 
 ## Unavailable evidence and bounded process debt
 
-- The prior MDA order or fill state is available only from the owner or broker and cannot be inferred from price history.
+- At the decision cutoff, the prior MDA order or fill state was available only from the owner or broker and could not be inferred from price history. Later redacted broker evidence resolved it as a filled trade linked to the August 5 cycle.
 - LEU's first complete post-results close and August 6 earnings call were not available at the evidence cutoff.
 - The all-symbol SEC event-index run stopped on a CAE exchange-reference mismatch; the targeted priority-set index and prior August 5 all-form audit provide current decision coverage. The mismatch is process debt, not an allocation veto.
 - The August 6 macro refresh lacked QQQ, SMH, and IWM proxy values after Yahoo HTTP 403 responses; the valid August 5 macro snapshot remains the controlling overlay.
@@ -110,4 +114,4 @@ Prices are completed regular-session closes, not executable quotes. Every curren
 
 ## Publication release
 
-This public-safe record contains no current exact order, share count, limit price, target weight, broker preview, or execution claim. It may be committed only after the Article 1, data, publication, and repository validation gates pass.
+This historical record contains no current order, limit price, target weight, broker preview, or execution instruction. The delayed execution follow-up was released only after the same-day embargo cleared and the sensitive-field, Article 1, data, publication, and repository validation gates passed. It does not authorize any further MDA purchase.

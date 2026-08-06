@@ -5,16 +5,30 @@ request_type: event_driven_full_operating_cycle
 policy_version: v1.3
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 operator: codex
-validity_window: the private owner action expires at its private deadline; otherwise rerun after GILT LEU or IONQ results, MDA August 7 results, RKLB August 10 results, a material issuer event, a material completed-close move, or a confirmed broker-state change
+validity_window: the August 6 MDA execution is historical only; rerun before any future action after MDA August 7 results, RKLB August 10 results, a material issuer event, a material completed-close move, or another confirmed broker-state change
 linked_decision_or_research_note: decisions/2026-08-05-event-driven-operating-cycle.md
 subagent_evidence_packet_path: research/discovery/runs/2026-08-05-subagent-evidence-packet.yml
 
 execution_update:
-  status: standing_contribution_already_recorded_no_new_event_no_trade_execution
-  confirmed_ledger_event_ids: []
-  resulting_confirmed_cash: 6649.58
-  resulting_confirmed_positions: ASTS 11 shares; RKLB 17 shares
-  notes: The canonical contribution workflow found the 2026-07-31 event already recorded. No account event, order, fill, fee, reserve position, trade execution, or inferred broker fact was created.
+  status: completed_with_confirmed_execution
+  confirmation_source: redacted user-provided broker screenshot
+  confirmed_ledger_event_ids:
+    - 2026-08-06-buy-mda-001
+  trade_date: 2026-08-06
+  settlement_date: 2026-08-07
+  confirmed_buys:
+    - symbol: MDA
+      quantity: 6
+      average_price: 33.8555
+      gross_amount: 203.13
+      fill_time: 7:00 AM ET
+  resulting_confirmed_cash: 6446.45
+  resulting_settled_cash_on_trade_date: 6649.58
+  resulting_buying_power: 6446.45
+  resulting_confirmed_positions: ASTS 11 shares; MDA 6 shares; RKLB 17 shares
+  publication_release_earliest_at: 2026-08-07T04:30:00+08:00
+  sensitive_field_review_status: passed
+  notes: The July 31 standing contribution remained already recorded. Later redacted broker evidence confirmed the bounded MDA starter as executed. The delayed historical account update was released only after the same-day execution embargo cleared; raw screenshots and full broker identifiers are not committed, and no further purchase is authorized.
 
 article_one_preflight:
   sentinel_level: WARN
@@ -273,7 +287,7 @@ opportunity_cost_and_allocation:
   strongest_current_challenger: MDA
   next_dollar_queue: [MDA, GILT, LEU, IREN, IONQ]
   high_quality_expensive_comparators: [ALAB, CRDO, VRT]
-  public_action_state: Exact unexpired owner-only action terms are withheld under PUBLICATION_POLICY.md.
+  public_action_state: Exact owner-only action terms were withheld while unexpired; only the later broker-confirmed historical execution is now public, with no further-action permission.
   holdings: Hold RKLB 17 and ASTS 11; add zero and sell zero.
   no_trade_execution: true
 
@@ -288,9 +302,10 @@ full_coverage:
   symbol_decision_path: decisions/2026-08-05-event-driven-operating-cycle.md
 
 publication_review:
-  status: public_safe_exact_action_withheld
-  notes: Public artifacts omit every unexpired share count, dollar amount, limit price, target weight, timing instruction, broker preview and execution detail. The private owner report may contain current action terms and is not committed.
+  status: public_safe_historical_record
+  public_release_earliest_at: 2026-08-07T04:30:00+08:00
+  notes: The confirmed execution was normalized and released only after the regular close plus safety buffer passed. It remains a delayed historical record with no raw screenshot, full broker identifier, current order, limit, target weight, or further-action instruction.
 
 validation:
-  status: complete_local_release_candidate
-  notes: Article 1 decision and data checks passed; npm run verify passed and generated 89 static pages. The latest deterministic market-data workflow succeeded. The pre-release production baseline rendered without horizontal overflow at 390-pixel mobile and 1280-pixel desktop widths and still showed the delayed July 31 snapshot; post-push deployment verification remains an external closeout check.
+  status: complete_public_safe_historical_record
+  notes: Article 1 and data checks passed; npm run verify passed after the execution update and generated 90 static pages. The sensitive-field review found no raw broker artifact or full identifier, and the publication embargo cleared before release.

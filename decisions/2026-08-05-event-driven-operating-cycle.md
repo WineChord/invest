@@ -2,9 +2,9 @@
 
 Policy version: `v1.3`
 
-Decision status: completed; exact unexpired owner-only action terms withheld under `PUBLICATION_POLICY.md`
+Decision status: completed with later broker-confirmed historical execution
 
-Validity window: the private action expires at the stated owner-only deadline; otherwise rerun after GILT, LEU or IONQ results, MDA results on August 7, RKLB results on August 10, a material issuer event, a material completed-close move, or a confirmed broker-state change.
+Validity window: the August 6 MDA execution is historical only; rerun before any future action after MDA results on August 7, RKLB results on August 10, a material issuer event, a material completed-close move, or another confirmed broker-state change.
 
 This is a personal historical research-journal record and not investment advice. It contains no public order, broker preview, or execution authorization.
 
@@ -14,9 +14,13 @@ This is a personal historical research-journal record and not investment advice.
 - Confirmed positions remain RKLB 17 shares at recorded average cost USD 100.08 and ASTS 11 shares at recorded average cost USD 78.65. No trade, fill, fee, order, or reserve position was inferred.
 - At the August 4 completed closes, research NAV is USD 8,689.15. Cash is 76.53%, RKLB is 14.57%, ASTS is 8.90%, and combined return-seeking equity is 23.47% before any unconfirmed owner action.
 
+## Historical execution update
+
+Later redacted broker evidence confirmed that the bounded MDA starter from this decision was filled on August 6: 6 shares at an average price of USD 33.8555. The normalized ledger records USD 203.13 of gross cost, USD 6,446.45 of confirmed cash after the trade, USD 6,649.58 of settled cash on the trade date pending T+1 settlement, and confirmed positions of 17 RKLB, 11 ASTS, and 6 MDA shares. The raw screenshot and full broker identifiers remain outside the repository. This is a delayed historical account record, not a current order instruction.
+
 ## Public-safe decision conclusion
 
-Hold the confirmed RKLB and ASTS positions and make no sale. Fresh MDA contract evidence changes the prior August 1 all-zero configuration conclusion enough to require a private owner action assessment. While that assessment is unexpired, this public file does not reveal whether a current order exists or disclose any share count, dollar amount, limit, target weight, or timing term.
+Hold the confirmed RKLB and ASTS positions and make no sale. Fresh MDA contract evidence changed the prior August 1 all-zero configuration conclusion enough to require a private owner action assessment. While that assessment was unexpired, the public file withheld whether a current order existed and omitted every share-count, dollar, limit, target-weight, and timing term. The later broker-confirmed result is recorded above only as a delayed historical execution and does not authorize another purchase.
 
 The main-agent reconciliation treats ordinary MDA execution uncertainty as a sizing problem rather than an automatic veto. The new contract is material, the company is already profitable on an adjusted basis, and the equity denominator remains capable of affecting the portfolio. Telesat concentration, contract margin, cash conversion, two acquisitions, CAD 600 million of notes, and existing space exposure constrain rather than erase the case.
 
@@ -26,7 +30,7 @@ GILT, LEU, and IONQ each have scheduled evidence within hours, so their public q
 
 The current Article 1 configuration queue is MDA, GILT, LEU, IREN, and IONQ. ALAB and CRDO are the highest-quality operating comparators but have less attractive current denominators. The immediate event-review order is GILT, LEU, IONQ, MDA, and RKLB.
 
-Bull review favored a small MDA starter because the new order and existing operating proof make the uncertainty position-sizeable. Bear/allocation review preferred waiting two days for MDA results. The main agent resolved the disagreement toward a bounded private action assessment because cash is 76.53%, the smallest mission-relevant exposure has limited portfolio loss, and requiring every integration and quarterly uncertainty to disappear would re-create a systematic inactivity bias. The exact reconciliation remains private while actionable.
+Bull review favored a small MDA starter because the new order and existing operating proof made the uncertainty position-sizeable. Bear/allocation review preferred waiting two days for MDA results. The main agent resolved the disagreement toward a bounded private action assessment because cash was 76.53%, the smallest mission-relevant exposure had limited portfolio loss, and requiring every integration and quarterly uncertainty to disappear would re-create a systematic inactivity bias. The exact reconciliation was withheld while actionable; the public record now contains only the delayed broker-confirmed historical execution.
 
 ## Full symbol-by-symbol public record
 
@@ -36,7 +40,7 @@ Prices are completed regular-session closes, not executable quotes. All unexpire
 |---|---|---|---:|---|---|
 | RKLB | Rocket Lab | A / active_core_candidate | USD 74.4800 | Hold; add 0; sell 0 | Rocket Lab remains the strongest execution-led public space platform. Hold 17 and add zero because the existing position is already mission-relevant, the five-day rebound increased entry risk, and Neutron, Iridium financing, cash conversion, dilution, and correlated space exposure remain material. |
 | ASTS | AST SpaceMobile | A / active_core_candidate | USD 70.3100 | Hold; add 0; sell 0 | AST SpaceMobile retains extreme direct-to-device optionality. Hold 11 and add zero because the existing position already captures substantial upside while deployment, commercial revenue, financing, dilution, and theme concentration remain unresolved. |
-| MDA | MDA Space | B+ / active_candidate | USD 34.2700 | Private owner action state withheld | The 27-satellite Telesat expansion materially strengthens backlog visibility, defense relevance, and shareholder-value capture at a still-relevant denominator. Exact unexpired owner action terms are delivered privately and withheld here until the publication embargo clears. |
+| MDA | MDA Space | B+ / active_candidate | USD 34.2700 | Historical confirmed buy: 6 shares | The 27-satellite Telesat expansion materially strengthened backlog visibility, defense relevance, and shareholder-value capture at a still-relevant denominator. A bounded starter was later confirmed filled at an average price of USD 33.8555; this does not authorize any further purchase. |
 | GILT | Gilat Satellite Networks | B / active_candidate | USD 11.9100 | Buy 0 | Gilat remains the smallest profitable active candidate. The new filing is a meeting notice rather than results; Comtech economics, cash conversion, liquidity, and authorized-share purpose remain pending. |
 | LEU | Centrus Energy | B+ / active_candidate | USD 189.2400 | Buy 0 | Centrus remains the strongest non-space bottleneck challenger through U.S. enrichment and HALEU. The scheduled results can change fixed-price contract economics, TENEX exposure, expansion funding, dilution, and per-share value. |
 | ALAB | Astera Labs | A- / active_candidate | USD 361.6700 | Buy 0 | Astera's Q2 growth, margins, operating leverage, and guidance materially strengthen business quality. The completed August 4 close predates the release and the roughly USD 62 billion denominator still makes entry unpriced and demanding. |
@@ -99,6 +103,6 @@ The deterministic scan returned 18 issuer-name candidates. QMCO and QNTM are nam
 
 ## Article 1 accountability
 
-Cash remains 76.53% before any unconfirmed owner action, and the confirmed return-seeking positions remain entirely in space. The latest confirmed return-seeking buys are the July 8 RKLB and ASTS events, so the separate 45-day pressure review remains August 22. Cash is still an option, not a permanent allocation target; every zero decision must continue to beat the smallest mission-relevant exposure to the strongest qualifying candidate.
+After the broker-confirmed August 6 MDA execution, confirmed cash is USD 6,446.45 and the return-seeking positions remain entirely in space. The 6-share starter was the decision's smallest mission-consistent exposure, so the latest confirmed return-seeking deployment date is August 6 and the next 45-day pressure review is September 20 if no later mission-relevant deployment occurs. Cash remains an option, not a permanent allocation target; every zero decision must continue to beat the smallest mission-relevant exposure to the strongest qualifying candidate.
 
-No order was placed or executed, and no broker record changed.
+No trade was inferred when this decision was produced. Later broker evidence confirmed the August 6 MDA execution and the normalized account records were updated from that evidence only.

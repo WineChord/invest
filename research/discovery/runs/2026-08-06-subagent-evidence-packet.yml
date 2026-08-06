@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: 2026-08-06T08:09:02.729Z
+generated_at: 2026-08-06T15:06:45.196Z
 current_date: 2026-08-06
 request_type: event_driven_full_operating_cycle
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
@@ -12,11 +12,11 @@ freshness_window:
 confirmed_account_facts:
   account_state_path: data/account/state.yml
   status: funded_with_positions
-  confirmed_cash: 6649.58
+  confirmed_cash: 6446.45
   settled_cash: 6649.58
-  buying_power: 6649.58
-  positions_count: 2
-  last_confirmed_ledger_event_id: 2026-07-31-deposit-weekly-888-001
+  buying_power: 6446.45
+  positions_count: 3
+  last_confirmed_ledger_event_id: 2026-08-06-buy-mda-001
 recurring_contribution:
   current_authorization_id: owner-standing-weekly-888-2026-07-29-v1
   authorizations:
@@ -54,7 +54,23 @@ current_positions:
     price_source: Yahoo Finance chart
     price_retrieved_at: 2026-08-06T07:08:58.177Z
     market_value: 752.18
-    nav_weight_pct: 8.671962369000541
+    nav_weight_pct: 8.671452501149961
+  - symbol: MDA
+    asset_type: common_stock
+    exchange: NYSE
+    quantity: "6"
+    average_cost: "33.85"
+    cost_basis: "203.13"
+    currency: USD
+    first_trade_date: 2026-08-06
+    last_trade_date: 2026-08-06
+    notes: Confirmed buy from the 2026-08-06 ledger event.
+    latest_completed_close: 33.94
+    price_as_of: 2026-08-05
+    price_source: Yahoo Finance chart
+    price_retrieved_at: 2026-08-06T07:08:58.177Z
+    market_value: 203.64
+    nav_weight_pct: 2.3476489501637614
   - symbol: RKLB
     asset_type: common_stock
     exchange: Nasdaq
@@ -71,13 +87,13 @@ current_positions:
     price_source: Yahoo Finance chart
     price_retrieved_at: 2026-08-06T07:08:58.177Z
     market_value: 1271.9399999999998
-    nav_weight_pct: 14.66433010134083
+    nav_weight_pct: 14.663467912351672
 portfolio_snapshot:
-  research_nav: 8673.7
-  confirmed_cash: 6649.58
-  current_position_value: 2024.12
-  cash_weight_pct: 76.66370752965862
-  account_state_as_of: 2026-07-31
+  research_nav: 8674.21
+  confirmed_cash: 6446.45
+  current_position_value: 2227.7599999999998
+  cash_weight_pct: 74.31743063633462
+  account_state_as_of: 2026-08-06
   completed_close_dates:
     - 2026-08-05
   completed_close_retrieved_at:
@@ -94,66 +110,68 @@ portfolio_snapshot:
     repository_health_is_allocation_veto: false
     target_readiness_controls_action: true
     opportunity_set_sufficiency_required: true
-    latest_confirmed_return_seeking_buy_date: 2026-07-08
+    latest_confirmed_return_seeking_buy_date: 2026-08-06
     latest_research_nav: 8673.7
     confirmed_cash: 6649.58
+    latest_research_nav_basis: August 5 completed-close snapshot before the August 6
+      MDA execution; current confirmed cash is USD 6446.45 and the next
+      completed-close refresh will update this valuation block
     confirmed_liquidity_reserve_value: 0
     liquidity_option_weight_pct: 76.6637
     high_liquidity_option_threshold_pct: 60
     high_liquidity_option_since: 2026-07-23
-    latest_mission_relevant_deployment_date: 2026-07-08
-    mission_relevant_deployment_basis: 2026-07-08-buy-asts-001;2026-07-08-buy-rklb-001
-    days_since_latest_mission_relevant_deployment: 29
+    latest_mission_relevant_deployment_date: 2026-08-06
+    mission_relevant_deployment_basis: 2026-08-06-buy-mda-001
+    days_since_latest_mission_relevant_deployment: 0
     pressure_review_after_days: 45
     opportunity_set_reset_after_days: 90
     strategy_review_after_days: 180
-    next_required_review_at: 2026-08-22
+    next_required_review_at: 2026-09-20
     strongest_counterfactual: MDA remains the strongest current configuration
       candidate after the Telesat expansion and financing close; GILT remains
       the closest low-denominator challenger, LEU the strongest structural
       bottleneck expression, IREN the strongest powered-site challenger, and
       IONQ the post-acquisition quantum-platform challenger.
-    smallest_prudent_exposure_considered: A bounded private MDA starter was tested
-      against zero and would be mission-relevant rather than symbolic if the
-      prior order did not fill; exact owner-only terms remain withheld until
-      broker state is resolved.
-    zero_vs_starter_result: The bounded MDA starter remains economically superior to
-      zero if no prior order exists, but zero new quantity wins until the owner
-      resolves the prior broker state because the August 5 market traded through
-      the prior limit condition and a renewed recommendation could duplicate
-      intended exposure. GILT LEU and IONQ remain target-specific non-buys after
-      current results.
+    smallest_prudent_exposure_considered: The bounded 6-share MDA starter was
+      confirmed executed on August 6 and is treated as the smallest
+      mission-relevant rather than symbolic exposure; it does not authorize a
+      further add.
+    zero_vs_starter_result: The bounded MDA starter displaced zero and is now
+      confirmed in the account. Zero additional quantity remains appropriate
+      until the August 7 results refresh contract margins, cash conversion,
+      leverage, integration, valuation, concentration, and opportunity cost.
+      GILT LEU and IONQ remain target-specific non-buys after current results.
     zero_exposure_reason_code: other_documented
-    decision_critical_missing_evidence: The owner-only state of the prior MDA order
-      is the immediate target-specific blocker. GILT normalized cash conversion
-      and final transaction economics, LEU funded fixed-price contract
-      protection and TENEX substitution, and IONQ post-close unit economics and
-      dilution block those targets, not the whole opportunity set.
-    why_risk_sizing_cannot_absorb_uncertainty: MDA operating uncertainty can be
-      bounded by a starter size, but position sizing cannot prevent accidental
-      duplication when a prior order may already have filled. GILT
+    decision_critical_missing_evidence: MDA's August 7 results now control any
+      further action through contract margins, cash conversion, leverage,
+      integration, and post-execution opportunity cost. GILT normalized cash
+      conversion and final transaction economics, LEU funded fixed-price
+      contract protection and TENEX substitution, and IONQ post-close unit
+      economics and dilution block those targets, not the whole opportunity set.
+    why_risk_sizing_cannot_absorb_uncertainty: The existing MDA starter bounds
+      pre-results uncertainty, but a further add before August 7 evidence would
+      increase correlated space exposure without resolving contract margin,
+      leverage, integration, or cash-conversion risk. GILT
       transaction-denominator risk, LEU contract and funding risk, and IONQ
-      post-close unit economics likewise remain target-specific blockers.
-    cash_opportunity_cost: Remaining in cash for one day preserves optionality and
-      may miss a short MDA move, but the bounded waiting cost is smaller than
-      the risk of duplicating the intended starter immediately before August 7
-      results. Confirmed cash remains available once the broker state and new
-      evidence are known.
-    conjunctive_evidence_and_price_trigger: A new MDA decision requires both owner
-      confirmation of the prior order state and current mission, evidence and
-      entry gates after August 7 results; price alone never authorizes a buy.
-      GILT LEU and IONQ require their company-specific economics to improve, not
+      post-close unit economics remain target-specific blockers.
+    cash_opportunity_cost: The confirmed MDA starter creates current exposure while
+      USD 6446.45 of confirmed cash preserves capacity for stronger post-results
+      evidence or a superior cross-lane opportunity. The remaining cash still
+      carries waiting cost and must not become a permanent default.
+    conjunctive_evidence_and_price_trigger: Any further MDA decision requires
+      current mission, evidence, entry, concentration, and opportunity-cost
+      gates after August 7 results; price alone never authorizes an add. GILT
+      LEU and IONQ require their company-specific economics to improve, not
       merely lower prices.
     next_evidence_deadline: 2026-08-07
-    no_action_streak: 20
+    no_action_streak: 0
     article1_red_team_status: completed_current_v1.3_multi_candidate_starter_challenge
     latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-    current_conclusion: No new action is active. MDA remains the strongest
-      candidate, but its prior owner order state must be resolved before any new
-      quantity is considered; no trade or fill is inferred. GILT LEU and IONQ
-      remain at zero after current evidence. The separate 45-day
-      mission-pressure review remains due on 2026-08-22 unless a
-      mission-relevant deployment is broker-confirmed first.
+    current_conclusion: The August 6 MDA buy is now confirmed as a 6-share
+      mission-relevant starter. No further action is active before the August 7
+      results and a fresh all-gate review; GILT LEU and IONQ remain at zero
+      after current evidence. The next 45-day mission-pressure review is due on
+      2026-09-20 if no later mission-relevant deployment occurs.
   position_construction:
     schema_version: 1
     policy_version: v1.3
@@ -1758,12 +1776,11 @@ active_watchlist:
     status: active_candidate
     priority: B+
     initial_role: profitable vertically integrated space systems platform
-    next_review_trigger: owner report of prior MDA order state; August 7 results
-      with margins, cash conversion, leverage, Blue Canyon integration, backlog
-      quality, or material valuation change
-    notes: MDA remains the strongest current candidate after the Telesat expansion
-      and financing close. A new quantity is blocked until the owner resolves
-      the prior order state; August 7 results then control entry.
+    next_review_trigger: August 7 results with margins, cash conversion, leverage,
+      Blue Canyon integration, backlog quality, or material valuation change
+    notes: MDA is now a confirmed 6-share position after the August 6 broker
+      execution. The Telesat expansion and financing close preserve the thesis;
+      no further add is implied and August 7 results control the next review.
   - symbol: GILT
     name: Gilat Satellite Networks
     theme: satellite ground and defense communications
@@ -25185,26 +25202,22 @@ quality_metrics:
       decisions after the fresh August 5 completed-close cross-check, targeted
       SEC review, material GILT LEU IONQ MDA ASTS and ALAB evidence, bounded
       current-world discovery, all-symbol comparison and independent xhigh
-      review. Repository readiness is not an allocation veto. MDA remains
-      economically strongest, but the owner-only prior order state is a
-      target-specific truth and sizing prerequisite, so current new quantity is
-      zero without treating ordinary research debt as a portfolio veto.
+      review. Repository readiness is not an allocation veto. The prior MDA
+      order state is now resolved as a confirmed 6-share position; any further
+      action requires the August 7 results and a fresh mission, evidence, entry,
+      and opportunity-cost review.
     user_only_execution_prerequisites:
-      - owner report of whether the prior MDA order was not placed, unfilled or
-        cancelled, or filled with complete execution evidence before any new MDA
-        action
       - broker cash and buying-power confirmation still showing at least the
-        recorded confirmed 6649.58 USD before any future real order
+        recorded confirmed 6446.45 USD before any future real order
       - complete broker execution confirmation fields before mutating repository
         account records
       - broker order preview for commissions, fees, fractional-share support,
         settlement constraints, and final user execution instruction before any
         real order
       - do not rely on the committed public record as executable order guidance
-      - rerun after the owner reports the prior MDA order state, any material
-        issuer event, a 5 percent reviewed-symbol price move, MDA August 7
-        results, RKLB August 10 results, IREN contract or commissioning
-        evidence, or 2026-08-07
+      - rerun after any material issuer event, a 5 percent reviewed-symbol price
+        move, MDA August 7 results, RKLB August 10 results, IREN contract or
+        commissioning evidence, or 2026-08-07
       - do not buy SPCX without a fresh post-IPO promotion review covering
         valuation, float, lockup, governance, capital structure, notes, and
         xAI/X exposure
@@ -25433,9 +25446,10 @@ first_layer_discovery_questions:
     current policy?
   - Is the public company early, small, misunderstood, newly listed, awkward, or
     underfollowed enough to support extreme asymmetric upside?
-specific_question: Reassess all current holdings and research symbols after
-  August 5 closes and material filings, with special focus on whether MDA
-  remains actionable when the prior owner order state is unconfirmed.
+specific_question: Reconcile the confirmed August 6 MDA execution with the
+  current account and research state, preserve the original no-duplicate-action
+  decision at its cutoff, and focus any future MDA action on the August 7
+  results and a fresh all-gate review.
 safety_boundaries:
   - Do not execute trades.
   - Do not mutate confirmed account files.

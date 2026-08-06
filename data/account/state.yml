@@ -1,18 +1,20 @@
 schema_version: 1
-as_of: 2026-07-31
+as_of: 2026-08-06
 status: funded_with_positions
 base_currency: USD
-confirmed_cash: 6649.58
+confirmed_cash: 6446.45
 settled_cash: 6649.58
-buying_power: 6649.58
-positions_count: 2
-last_confirmed_ledger_event_id: 2026-07-31-deposit-weekly-888-001
-last_reconciled_with_broker_at: 2026-07-24
+buying_power: 6446.45
+positions_count: 3
+last_confirmed_ledger_event_id: 2026-08-06-buy-mda-001
+last_reconciled_with_broker_at: 2026-08-06
 notes:
   - User confirmed USD 888 deposits available in the brokerage account on
     2026-05-30, 2026-06-12, 2026-06-18, 2026-07-08, 2026-07-11, and 2026-07-24,
     plus an additional USD 3000 deposit on 2026-07-23.
   - User confirmed ASTS and RKLB buy executions on 2026-06-05, 2026-06-12,
     2026-06-22, and 2026-07-08 from redacted screenshot evidence.
+  - User confirmed an MDA buy execution on 2026-08-06 from redacted screenshot
+    evidence; cash settlement is due on 2026-08-07.
   - Raw broker screenshots and full broker identifiers are not committed.
 last_standing_contribution_date: 2026-07-31
