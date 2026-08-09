@@ -359,6 +359,17 @@ function confirmedLedgerCash(records, currency) {
     }, 0);
 }
 
+function settledLedgerCash(records, currency, asOf) {
+  return roundCurrency(
+    records
+      .filter((row) =>
+        row.status === "confirmed"
+        && row.currency === currency
+        && (row.settlement_date || row.trade_date) <= asOf)
+      .reduce((total, row) => total + Number(row.net_cash_effect), 0),
+  );
+}
+
 function roundCurrency(value) {
   return Math.round((value + Number.EPSILON) * 100) / 100;
 }
@@ -458,15 +469,20 @@ export function applyStandingContribution({
       `account state and ledger differ by ${originalGap.toFixed(2)} outside a recoverable standing-contribution update`,
     );
   }
-  const settledLedgerCashAtStateDate = roundCurrency(
-    originalRecords
-      .filter((row) =>
-        row.status === "confirmed"
-        && row.currency === contribution.currency
-        && (row.settlement_date || row.trade_date) <= state.as_of)
-      .reduce((total, row) => total + Number(row.net_cash_effect), 0),
+  const settledLedgerCashAtStateDate = settledLedgerCash(
+    originalRecords,
+    contribution.currency,
+    state.as_of,
   );
-  if (Math.abs(settledLedgerCashAtStateDate - stateSettledCash) >= 0.005) {
+  const lastConfirmedRecord = originalRecords.filter((row) => row.status === "confirmed").at(-1);
+  const recoverableDerivedState = lastConfirmedRecord?.event_id === state.last_confirmed_ledger_event_id
+    && lastConfirmedRecord?.source === "owner_standing_contribution"
+    && state.last_standing_contribution_date === lastConfirmedRecord?.trade_date
+    && Math.abs(originalGap) < 0.005;
+  if (
+    Math.abs(settledLedgerCashAtStateDate - stateSettledCash) >= 0.005
+    && !recoverableDerivedState
+  ) {
     throw new Error("account settled cash and ledger differ before standing-contribution application");
   }
   const lastConfirmedEventId = originalRecords.filter((row) => row.status === "confirmed").at(-1)?.event_id;
@@ -502,15 +518,22 @@ export function applyStandingContribution({
   const ledgerCash = roundCurrency(confirmedLedgerCash(records, contribution.currency));
   const stateDelta = roundCurrency(ledgerCash - stateCash);
   const latestStandingDate = [...existingDates, ...appliedDates].sort().at(-1);
-  const shouldReconcileState = Math.abs(stateDelta) >= 0.005;
+  const nextStateAsOf = [state.as_of, latestStandingDate].filter(Boolean).sort().at(-1);
+  const nextSettledCash = settledLedgerCash(records, contribution.currency, nextStateAsOf);
+  const nextLastConfirmedEventId = records.filter((row) => row.status === "confirmed").at(-1)?.event_id;
+  const shouldReconcileState = Math.abs(stateDelta) >= 0.005
+    || Math.abs(nextSettledCash - stateSettledCash) >= 0.005
+    || nextStateAsOf !== state.as_of
+    || nextLastConfirmedEventId !== state.last_confirmed_ledger_event_id
+    || latestStandingDate !== state.last_standing_contribution_date;
   const nextState = shouldReconcileState
     ? {
         ...state,
-        as_of: [state.as_of, latestStandingDate].filter(Boolean).sort().at(-1),
+        as_of: nextStateAsOf,
         confirmed_cash: ledgerCash,
-        settled_cash: roundCurrency(stateSettledCash + stateDelta),
+        settled_cash: nextSettledCash,
         buying_power: roundCurrency(stateBuyingPower + stateDelta),
-        last_confirmed_ledger_event_id: records.filter((row) => row.status === "confirmed").at(-1)?.event_id,
+        last_confirmed_ledger_event_id: nextLastConfirmedEventId,
         last_standing_contribution_date: latestStandingDate,
       }
     : state;

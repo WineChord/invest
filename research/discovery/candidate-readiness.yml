@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-07-29
+as_of: 2026-08-09
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -772,3 +772,123 @@ records:
     reopen_or_reject_trigger: Advance only after financing close, a reconciled fully diluted denominator, verified site power and capex, a binding customer and credible survival runway; reject if financing fails or going-concern risk persists without a funded customer.
     next_action: Complete a bounded R2 decision by 2026-08-15 or earlier on a financing, customer, or quarterly filing.
     conclusion: Retained as an R1 researchable lead; quantity zero, no executable limit, no watchlist promotion and no change to the current first-five opportunity-cost order.
+  - symbol: APLD
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
+    materiality_reason: Contracted AI-factory capacity and live megawatts make APLD the first new powered-site lead in this cycle that can materially challenge IREN in the next-dollar queue.
+    blocking_scope: ai_compute_and_power_opportunity_cost_completeness
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-APLD-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Heavy project debt, construction capital, hyperscaler concentration, stock compensation and unresolved parent-level recourse and dilution prevent R2 comparison or entry.
+    reachable_evidence_remaining: The Form 10-K, project financing documents, lease credit support, construction budgets and ChronoScale ownership can bound project and common-equity economics.
+    last_readiness_reviewed_at: 2026-08-09
+    next_evidence_source: Fiscal 2026 Form 10-K and current project-financing and lease disclosures.
+    next_evidence_due: 2026-08-16
+    cost_of_waiting: Contracted capacity can rerate before project economics are fully reconciled, but the current debt and concentration risks make premature promotion more costly than a one-week R2 sprint.
+    false_negative_early_warning: New project financing with limited parent recourse, an additional investment-grade tenant, or materially better construction completion and rent commencement.
+    reopen_or_reject_trigger: Advance only after project-level returns, customer support, remaining capex, parent recourse, leverage and fully diluted per-share value are reconciled; reject if funding or concentration leaves common equity as the residual loss absorber.
+    next_action: Complete a bounded R2 comparison against IREN by 2026-08-16.
+    conclusion: Retained as the cycle's highest-priority new R1; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+  - symbol: ONDS
+    material_to_current_allocation: true
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: Autonomous aerial and ground systems, counter-UAS and defense robotics create a direct candidate for an emerging autonomous-defense bottleneck.
+    blocking_scope: autonomous_defense_lane_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-ONDS-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Reported revenue and backlog depend heavily on acquisitions, while cash use, warrants, options, RSUs and the fully diluted denominator are extreme.
+    reachable_evidence_remaining: The Q2 Form 10-Q can separate organic and acquired revenue, reconcile backlog, cash use, acquisition consideration and diluted securities.
+    last_readiness_reviewed_at: 2026-08-09
+    next_evidence_source: Second-quarter 2026 results and Form 10-Q.
+    next_evidence_due: 2026-08-14
+    cost_of_waiting: Defense demand can accelerate quickly, but the near-term filing provides a much better bound on whether growth reaches common shareholders.
+    false_negative_early_warning: Large funded government awards, recurring autonomous-deployment revenue or a materially cleaner diluted capitalization.
+    reopen_or_reject_trigger: Advance only after organic revenue, backlog quality, cash runway and dilution are reconciled; reject if acquisition accounting and securities issuance continue to dominate per-share value.
+    next_action: Complete the Q2 R1 gate by 2026-08-14.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no formal lane promotion and no buy-zone eligibility.
+  - symbol: AXTI
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: Indium phosphide substrates are a direct upstream input to high-speed optical connectivity and therefore materially improve photonics-lane completeness.
+    blocking_scope: compound_semiconductor_substrate_opportunity_cost
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-AXTI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The operating inflection follows material share growth and a sharp price rerating, while customer concentration, China manufacturing, export permissions and Tongmei economics remain unbounded.
+    reachable_evidence_remaining: The Q2 Form 10-Q can provide cash flow, capex, customers, export and diluted-capitalization detail.
+    last_readiness_reviewed_at: 2026-08-09
+    next_evidence_source: Second-quarter 2026 Form 10-Q.
+    next_evidence_due: 2026-08-14
+    cost_of_waiting: A durable InP upcycle can rerate further, but current price and geopolitical risks make entry without the filing unattractive.
+    false_negative_early_warning: Repeat InP orders, higher utilization and margins, cleaner cash conversion or reduced China and customer concentration.
+    reopen_or_reject_trigger: Advance only after cash conversion, customer durability, export access, ownership structure and fully diluted value are reconciled; reject if the current rerating already capitalizes the plausible upside.
+    next_action: Complete the Q2 filing and valuation review by 2026-08-14.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+  - symbol: ALMU
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: A 300 millimeter compound-semiconductor platform could become a low-cost wafer-scale photonics bottleneck that conventional optical-component screens miss.
+    blocking_scope: early_photonics_platform_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-ALMU-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Revenue remains dominated by government research contracts, customer concentration is high, an ATM remains available and no scaled commercial order is verified.
+    reachable_evidence_remaining: Commercial design wins, production qualification, full-year results and subsequent financing disclosures can establish or reject a scalable revenue path.
+    last_readiness_reviewed_at: 2026-08-09
+    next_evidence_source: Commercial qualification or order disclosure, fiscal results, or the next financing filing.
+    next_evidence_due: 2026-08-21
+    cost_of_waiting: A small denominator can rerate on a commercial qualification, but buying research ahead of customer proof would mistake technical potential for value capture.
+    false_negative_early_warning: A binding high-volume design win, production qualification or a strategic manufacturing partnership with disclosed economics.
+    reopen_or_reject_trigger: Advance only after commercial scale, gross margin, customer concentration, runway and dilution are bounded; reject if government research remains the principal revenue source without a manufacturing transition.
+    next_action: Seek a commercial qualification or fiscal-results bridge by 2026-08-21.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+  - symbol: SATL
+    material_to_current_allocation: true
+    affected_lanes: [space_infrastructure]
+    materiality_reason: A lower-denominator earth-observation constellation with improving operating evidence could challenge larger geospatial-data and satellite-platform expressions.
+    blocking_scope: space_geospatial_opportunity_cost_completeness
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-SATL-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Revenue repeatability, customer concentration, notes, warrants, earnouts, constellation capital and Merlin launch dependence remain unresolved inside an already concentrated space portfolio.
+    reachable_evidence_remaining: The Q2 filing and launch-capital plan can reconcile revenue quality, debt conversion, warrants and ongoing constellation funding.
+    last_readiness_reviewed_at: 2026-08-09
+    next_evidence_source: Second-quarter 2026 Form 10-Q and Merlin launch or capital update.
+    next_evidence_due: 2026-08-16
+    cost_of_waiting: A small denominator and first quarterly operating profit can rerate, but current space concentration and capitalization uncertainty reduce the cost of a short evidence wait.
+    false_negative_early_warning: Repeat high-margin data revenue, a funded multi-year sovereign contract, successful Merlin launch or cleaner capitalization.
+    reopen_or_reject_trigger: Advance only after recurring revenue, customer mix, constellation funding and fully diluted shares are reconciled; reject if one-off satellite deliveries or financing dominate the improvement.
+    next_action: Complete the Q2 capitalization and revenue-quality review by 2026-08-16.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+  - symbol: EOSE
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: Domestic long-duration storage is a direct grid-duration bottleneck expression that broad generation and transmission proxies do not capture.
+    blocking_scope: long_duration_storage_lane_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-EOSE-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Most quarterly revenue was related-party, gross loss remains severe and preferred securities, convertibles, warrants, rights offerings and cash consumption make the common-equity denominator opaque.
+    reachable_evidence_remaining: The Q2 filing, DOE facility terms, Frontier Power USA relationship and fully diluted security schedule can bound gross-margin and financing economics.
+    last_readiness_reviewed_at: 2026-08-09
+    next_evidence_source: Q2 Form 10-Q follow-up, financing documents and related-party contract evidence.
+    next_evidence_due: 2026-08-16
+    cost_of_waiting: Grid-storage demand can grow quickly, but related-party revenue and financing complexity make premature promotion more likely to destroy than preserve optionality.
+    false_negative_early_warning: Sustained third-party revenue, positive gross margin, DOE-backed production milestones or simplified financing.
+    reopen_or_reject_trigger: Advance only after third-party demand, gross-margin bridge, runway and fully diluted capitalization are reconciled; reject if related-party and financing support remain the main economics.
+    next_action: Complete the R2 rejection test by 2026-08-16.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.

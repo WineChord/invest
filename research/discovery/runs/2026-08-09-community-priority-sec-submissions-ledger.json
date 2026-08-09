@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T01:16:14.511Z",
+  "source": "sec_submissions_recent_filings",
+  "retrieved_at": "2026-08-09",
+  "max_submissions_cache_age_days": 0,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "submissions_ledger_count": 4,
+  "submissions_ledger": [
+    {
+      "symbol": "COHR",
+      "cik": "0000820318",
+      "source_url": "https://data.sec.gov/submissions/CIK0000820318.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:14.511Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "d7a41f80be97ee36c4d3d8914a5ceb5863163c8825dde698e0ca0cbe540f8d0b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:14.511Z"
+    },
+    {
+      "symbol": "AXTI",
+      "cik": "0001051627",
+      "source_url": "https://data.sec.gov/submissions/CIK0001051627.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:14.511Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "702e63a5874fcd92c7e50ce053e7593730451f4ff067bde90750155dfd028655",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:14.511Z"
+    },
+    {
+      "symbol": "MRVL",
+      "cik": "0001835632",
+      "source_url": "https://data.sec.gov/submissions/CIK0001835632.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:14.511Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "bd65069d83e1bbd7c5af2abc8821c6d622718e53c4f9b16a8bfa72bfd9b25a7d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:14.511Z"
+    },
+    {
+      "symbol": "ONDS",
+      "cik": "0001646188",
+      "source_url": "https://data.sec.gov/submissions/CIK0001646188.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:14.511Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "835a00f7841ed04877ec0bfe8c368e3f79792de767ff6c28f5bac211aa6a90e7",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:14.511Z"
+    }
+  ]
+}

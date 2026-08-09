@@ -1,0 +1,2345 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T01:04:51.652Z",
+  "source": "sec_filing_business_sections",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "business_description"
+  ],
+  "source_files": [
+    "research/discovery/runs/2026-08-09-sec-event-filing-index-manifest.csv",
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "research/discovery/runs/2026-08-09-sec-event-filing-index-manifest.metadata.json"
+  ],
+  "filing_cache_dir": "",
+  "filing_cache_hits": 0,
+  "filing_cache_misses": 0,
+  "filing_cache_writes": 0,
+  "filing_cache_only": false,
+  "filing_ledger_output": "research/discovery/runs/2026-08-09-sec-event-filing-index-filings-ledger.json",
+  "filing_ledger_count": 54,
+  "filing_ledger": [
+    {
+      "symbol": "AAOI",
+      "cik": "0001158114",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1158114/000143774926026278/aaoi20260630_10q.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "d2bc2e90378a8c80769d985c77806638b17bfedd1034b5a80188c0b4111fd758",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "ALAB",
+      "cik": "0001736297",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1736297/000173629726000035/alab-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "ec375fd82edbe1eb814a23bb6bce8a4d9a87eaa05f393f1125ac5fcbaa6c32c2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "ASPI",
+      "cik": "0001921865",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1921865/000119312526336859/aspi-20260806.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "f09c8878002d3b0957eedc6833219475c461e07e15a25af5a4dc0391f6f66e0e",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000149315226033912/form8-k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "1cb37094ceb9e5b00baef2e09be9d5118c77c846d0aca65625233e0341211295",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "BE",
+      "cik": "0001664703",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026050325/be-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9c1031ce51de6c0d9ec56786f2eda59110fc63f6cc3b82de22bfa23e43e5fc78",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "CBRS",
+      "cik": "0002021728",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026044981/cbrs-20260331.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "6e911886784449b4ad2d9b14998d476f3c9461e735fb3a17c5b61401214588e1",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "CIFR",
+      "cik": "0001819989",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819989/000181998926000041/cifr-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "20b65ccecfbfa1ab8509c80e72d1cdb693df657b2c030fa1e58c83f86e14903e",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "CRCL",
+      "cik": "0001876042",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1876042/000187604226000248/crcl-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "39a87eb91d052b8c0e069b2c85dace2648e35785de965455e8addab91b349279",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/crdo-20260528.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "40376524c5c61153d6895397c5f78fafe20e654df9fc5ab35351abadde2d7496",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "CRWV",
+      "cik": "0001769628",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000291/crwv-20260618.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "cb3597b6b9e054b5d3843479b6b907318d5a03d453f278b1350e2d3a8d688d82",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "ENRD",
+      "cik": "0002095096",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2095096/000149315226034002/form6-k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "e3a64b782d920f337fa9a36a156944148ed83213bd6db12670cf3ed776a1b27f",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "ETN",
+      "cik": "0001551182",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "7fae751fa780d976928b7b1a580672ae25101a075ae9baa2618c22024ffeaa97",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "FLY",
+      "cik": "0001860160",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1860160/000119312526259679/fly-20260604.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "68f238a82d16c239a70e3a2e0ea9234d843241e6eb48f61ddeecddfc16929b5d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "FN",
+      "cik": "0001408710",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000016/fn-20260327.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "328be9a4e3c7ce4c2ffe81e29f81812c515d4b3bdcef57529ca2149d9f66dfc5",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "GILT",
+      "cik": "0000897322",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897322/000117891326003830/zk2635803.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "988298b2361ccff4a6eabcdf79e5e19b36389a3110b3c52db14560b885babd3e",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "GSAT",
+      "cik": "0001366868",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1366868/000136686826000039/gsat-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "7938f2608bcdab6f4327d6a3f7f425c76bd5c1dcef4dcd6cacf7515d07e47bbd",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "HQ",
+      "cik": "0002088256",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2088256/000121390026085209/ea0299862-6k_horizon.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "053b88ed40fec27c773afe3b9b7334c7069bd3728b6258e9942830a3198fc4d7",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "IMSR",
+      "cik": "0002019804",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2019804/000201980426000021/tmb-20260727x8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "7178d4c9eb7e459df8a3e6bfcfb3aaa91a61c6b9e5db3f58539a28ae343da8ab",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "INFQ",
+      "cik": "0002007825",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2007825/000119312526227206/d131935d10q.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "a28b7366178e3289d54214b27459513b705a95620c721210950982ce22ef622b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "IONQ",
+      "cik": "0001824920",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526338998/ionq-20260807.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9fbccabab587d049e5a32047d4a3e6c6f8b3f660d30ed8d2d81bf99d5f140d94",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "IQMX",
+      "cik": "0002113060",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2113060/000119312526331538/iqmx_6-k_q2_aug_2026_new.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "04291508098ff3fdd1161308b500c634ed39db6a7c589d5c32236ef25536306d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126031053/ny20079234x2_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "e62cc8bc7f0d983758e31e1d5e7ad3c0419d8de8678a3c4ee3c0f9d524aec50a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "KTOS",
+      "cik": "0001069258",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000077/ktos-20260628.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "67830bbb1636fe5f4774a3ec0b800a7fe65d401a5fd6638d2394d3b4b190bc03",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "LEU",
+      "cik": "0001065059",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026053897/leu-20260806.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "f0525bc5f893c329e71ed7b93add605aa56a94e114e924fd6d6fbf7de942f8ee",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "LITE",
+      "cik": "0001633978",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1633978/000162828026051078/lite-20260727.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "ea1612949c5b8ecc288f12bdabfe7bcad4f107115105cd94e090429978144746",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "LUNR",
+      "cik": "0001844452",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "0b463580b50360cd862bcd43e5be5d35e93ae18b9be4e8e771aef34b399e47e5",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "MDA",
+      "cik": "0001857047",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1857047/000110465926092384/tm2621766d2_6k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "1b4031896abc52e22305020de382c8238320609c254ac6f48e48e63a64bb230b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "MU",
+      "cik": "0000723125",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "61c64ac72de81b57314e4b2c045e40f2a05eee6116bfa54a2f3f5bb3e6218727",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "NBIS",
+      "cik": "0001513845",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926087080/tm2621374d1_6k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "e54cd2eb46034aacc4c4365dd4eede6288e069fb250838daa84f308efb52f506",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "NNE",
+      "cik": "0001923891",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1923891/000149315226034874/formdef14a.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "04663a30db201c28b667f013bb3e570506715718e83b6e32bb1f0347c39fd5d6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "NUCL",
+      "cik": "0002089283",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2089283/000110465926091278/tm2622345d1_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "2fbafa2bde980dd2d1e8b5bd5d20ef013152d4a991c692235a85096e88c633f2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "NWPX",
+      "cik": "0001001385",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1001385/000143774926025050/nwpx20260630_10q.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "98fb03296c466c481ef9bd704a8851462bbc75e4d83eff67cba2df942645408b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "OCC",
+      "cik": "0001000230",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1000230/000143774926020157/occ20260609c_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "7fc51a50d06606b534020c44164a56965ebd01a51edac11131c7060e92126000",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "OKLO",
+      "cik": "0001849056",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1849056/000162828026054571/oklo-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "870cdeb931fc65a60b9d96f088d84f050ddc001d3bf119744fe86a59a46b2708",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "POET",
+      "cik": "0001437424",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1437424/000117184326005153/f6k_080326.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "5f8f4906f83cb2d7f503a0eb019fd6af5c5ea0468fbbfb5cc8abb498a06c4753",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "PWR",
+      "cik": "0001050915",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526337945/d164254d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "fc32f6b6321e9d5ffbdb18987eed7bfcc00433cb446e28cc8c7c7816c2c5988a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "QBTS",
+      "cik": "0001907982",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000129/qbts-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "89c71456cd42eaa3f5fb337bb36a8d9f9e9ec18de661a4a6c61090a473a0dee6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "QSI",
+      "cik": "0001816431",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1816431/000181643126000049/qsi-20260723.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "015041208097d61f2e70e270513d4b85af18b9f8f2c620511f085d2ad936df69",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "QTEX",
+      "cik": "0001837493",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1837493/000118518526003219/qtrex6k073126.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "3e1323ce4bbd1c304ac005c40a72392a9c32bea3eac161317157895170a5164e",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "QUBT",
+      "cik": "0001758009",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1758009/000121390026080443/ea0298923-8k_quantum.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "1e7ec6c0625567a546814d69ef28a91be4d0a319819d51bc7ed2ae0dbc3999f4",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "RDW",
+      "cik": "0001819810",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819810/000181981026000124/rdw-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "a2150331485e13f4707fe4b13c1887bcd245bbef5531535627c85e0d3c82e139",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "RGTI",
+      "cik": "0001838359",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1838359/000110465926091993/rgti-20260630x10q.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "975fb72c3bd7ab0227c678f42c409d50c852b9827e7f6e664dbf6442855a4a88",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "RIOT",
+      "cik": "0001167419",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1167419/000110465926074070/riot-20260609x8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "def05fe3ab8df027d26436341be0f2b556726da949a8eb28c1e82f25e88f8f4c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "813ebf19c888254b67df70606839e5dd056138f9d5b7992a545e139f638b709c",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "SEI",
+      "cik": "0001697500",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1697500/000162828026054349/sei-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "dea8aaa980fdb0125b3625559c7d9f9f5ef86d4d5bec8dbf4bdcce45f9d7025b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "SMR",
+      "cik": "0001822966",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1822966/000182296626000086/smr-20260805.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "25e3fc44d4c27388db1f1bfbbee410cf8b0d0ac3797823a61aa9dd232f1a20d2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "SPCX",
+      "cik": "0001181412",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "58ce14e7e883c066738f5a8fdcbe47a87f5cde4e6252deff53d29936df09d6a7",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "STDN",
+      "cik": "0002086716",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2086716/000162828026049125/stdn-20260722.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9b9da13fb21273b7f1966b6f04e2c4d47d63579a8f4ddf22934be43929fb7bd6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "VOYG",
+      "cik": "0001788060",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1788060/000162828026052292/voyg-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "6338f013439cbd3d3adce401668ee98cefff06f24d2841b6158671abd4fdc39b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "VRT",
+      "cik": "0001674101",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "675254e9be249e53eb42775345e959058540e21cc8227718db5bd1ea683800d6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "WULF",
+      "cik": "0001083301",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000166/wulf-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "99b5871794f107352b8a737f1e52a48fb2ba3990ff7729ca252772e05f5b318d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "WYFI",
+      "cik": "0002042022",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2042022/000121390026084223/ea0299775-8k_whitefiber.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "a14362a128966880e76e16b0306b793165ebd5689cba008950ef84ca761f9ff9",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "XNDU",
+      "cik": "0002097163",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2097163/000209716326000020/xndu-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "7ccddb14a857856411a4bfff2cee035d7223a3cfb571d1b744c326756d77af6a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    },
+    {
+      "symbol": "YSS",
+      "cik": "0002086587",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2086587/000162828026053314/yss-20260730.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:04:51.652Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "30155a50b6fa6a75227416e4014c707250d398588443114b64205d15e9cb897d",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:04:51.652Z"
+    }
+  ],
+  "max_filing_cache_age_days": 0,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_request_delay_ms": 150,
+  "selection_strategy": "manifest_filing_sections",
+  "manifest_selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "RKLB",
+    "ASTS",
+    "CRDO",
+    "ALAB",
+    "VRT",
+    "NBIS",
+    "MU",
+    "CRWV",
+    "CRCL",
+    "LITE",
+    "CBRS",
+    "IREN",
+    "OKLO",
+    "BE",
+    "LEU",
+    "GSAT",
+    "KTOS",
+    "IONQ",
+    "LUNR",
+    "RDW",
+    "FLY",
+    "YSS",
+    "VOYG",
+    "XNDU",
+    "FN",
+    "ETN",
+    "PWR",
+    "SPCX",
+    "MDA",
+    "GILT",
+    "IQMX",
+    "NNE",
+    "HQ",
+    "NUCL",
+    "QBTS",
+    "QUBT",
+    "RGTI",
+    "SMR",
+    "AAOI",
+    "INFQ",
+    "WYFI",
+    "WULF",
+    "IMSR",
+    "POET",
+    "STDN",
+    "CIFR",
+    "OCC",
+    "SEI",
+    "QTEX",
+    "ENRD",
+    "QSI",
+    "NWPX",
+    "RIOT",
+    "ASPI"
+  ],
+  "selected_symbol_count": 54,
+  "eligible_universe_count": 7653,
+  "coverage_limit": 54,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "manifest_metadata_path": "research/discovery/runs/2026-08-09-sec-event-filing-index-manifest.metadata.json",
+  "manifest_row_count": 54,
+  "profile_count": 23,
+  "skipped_symbols": [
+    {
+      "symbol": "AAOI",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "ALAB",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "BE",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "CBRS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "CIFR",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "CRDO",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "ETN",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "FLY",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "FN",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "HQ",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "IMSR",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "INFQ",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "IONQ",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "KTOS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "LITE",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "MDA",
+      "reason": "business_section_too_short"
+    },
+    {
+      "symbol": "MU",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "NBIS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "NWPX",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "OCC",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "QSI",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "RDW",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "RGTI",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "RIOT",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "SEI",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "SMR",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "SPCX",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "VOYG",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "VRT",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "WULF",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "YSS",
+      "reason": "missing_business_section_start"
+    }
+  ],
+  "profiles": [
+    {
+      "symbol": "ASPI",
+      "cik": "0001921865",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1921865/000119312526336859/aspi-20260806.htm",
+      "source_published_at": "2026-08-06",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 7.01 Regulation FD Disclosure. On August 6, 2026, ASP Isotopes Inc. (the “Company”) issued a press release announcing that Tetra4 Proprietary Limited, a subsidiary of Renergen Limited (“Renergen”) and the developer of the Virginia Gas Project, has entered into a new contract for the sale of liquified natural gas (LNG) to be produced at the Virginia Gas Project in the Free State, South Africa, which is attached hereto as Exhibit 99.1 and is incorporated by reference herein (the “Press Release”). The information in this Item 7.01 and in the Press Release shall not be deemed to be “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended, or otherwise subject to the liabilities of that section or Sections 11 and 12(a)(2) of the Securities Act of 1933, as amended, and shall not be incorporated by reference into any filing with the U.S. Securities and Exchange Commission, whether made by the Company before or after the date hereof, regardless of any general incorporation language in such filing. The Press Release includes “safe harbor” language pursuant to the Private Securities Litigation Reform Act of 1995, as amended, indicating that certain statements contained therein are “forward-looking” rather than historical.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01 Regulation FD Disclosure. On August 6, 2026, ASP Isotopes Inc. (the “Company”) issued a press release announcing that Tetra4 Proprietary Limited, a subsidiary of Renergen Limited (“Renergen”) and the developer of the Virginia Gas Project, has entered into a new contract for the sale of liquified natural gas (LNG) to be produced at the Virginia Gas Project in the Free State, South Africa, which is attached hereto as Exhibit 99.1 and is incorporated by reference herein (the “Press Release”). The information in this Item 7.01 and in the Press Release shall not be deemed to be “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended, or otherwise subject to the liabilities of that section or Sections 11 and 12(a)(2) of the Securities Act of 1933, as amended, and shall not be incorporated by reference into any filing with the U.S. Securities and Exchange Commission, whether made by the Company before or after the date hereof, regardless of any general incorporation language in such filing. The Press Release includes “safe harbor” language pursuant to the Private Securities Litigation Reform Act of 1995, as amended, indicating that certain statements contained therein are “forward-looking” rather than historical."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-336859/aspi-20260806.htm",
+      "filing_accession_number": "0001193125-26-336859",
+      "filing_acceptance_datetime": "2026-08-06T12:12:27.000Z",
+      "filing_content_sha256": "f09c8878002d3b0957eedc6833219475c461e07e15a25af5a4dc0391f6f66e0e",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "aspi-20260806.htm",
+      "filing_report_date": "2026-08-06",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001921865.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2024,
+      "extraction_end_offset": 3290,
+      "extraction_section_length": 1265,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000149315226033912/form8-k.htm",
+      "source_published_at": "2026-07-20",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement. Indenture and Notes On July 20, 2026, AST SpaceMobile, Inc. (the “ Company ”) completed its previously announced private offering (the “ Offering ”) of $1.0 billion aggregate principal amount of 1.625% Convertible Senior Notes due 2034 (the “ Notes ”). Pursuant to the purchase agreement between the Company and the initial purchasers of the Notes, the Company granted the initial purchasers an option to purchase, for settlement within the 13-day period beginning on, and including, July 20, 2026, up to an additional $150 million principal amount of Notes (the “ Notes Option ”). The Notes issued on July 20, 2026 do not include any Notes that may be purchased pursuant to the Notes Option. The Notes were issued pursuant to an indenture, dated July 20, 2026 (the “ Indenture ”), between the Company and U.S. Bank Trust Company, National Association, as trustee. The Notes are general unsecured obligations of the Company and will mature on February 1, 2034, unless earlier converted or repurchased. Interest on the Notes will accrue at a rate of 1.625% per year from July 20, 2026 and will be payable semiannually in arrears on February 1 and August 1 of each year, beginning on February 1, 2027. The Notes are convertible at the option of the holders at any time prior to the close of business on the business day immediately preceding November 1, 2033 only under the following conditions: (1) during any calendar quarter commencing after the calendar quarter ending on December 31, 2026 (and only during such calendar quarter), if the last reported sale price of the Company’s Class A common stock, par value $0.0001 per share (the “ Class A Common Stock ”), for at least 20 trading days (whether or not consecutive) during a period of 30 consecutive trading days ending on, and including, the last trading day of the immediately preceding calendar quarter is greater than or equal to 130% of the conversion price on each applicable trading day; (2) during the five business day period after any ten consecutive trading day period (the “ Measurement Period ”) in which the “trading price” (as defined in the Indenture) per $1,000 principal amount of the Notes for each trading day of the Measurement Period was less than 98% of the product of the last reported sale price of the Class A Common Stock and the conversion rate on each such trading day; or (3) upon the occurrence of specified corporate events as set forth in the Indenture. On or after November 1, 2033 until the close of business on the second scheduled trading day immediately preceding the maturity date, holders of the Notes may convert all or any portion of their Notes, at any time, in integral multiples of $1,000 principal amount, at the option of the holder regardless of the foregoing conditions. Upon conversion, the Company may satisfy its conversion obligation by paying or delivering, as the case may be, cash, shares of Class A Common Stock or a combination of cash and shares of Class A Common Stock, at the Company’s election, in the manner and subject to the terms and conditions provided in the Indenture. The conversion rate for the Notes will initially be 12.5672 shares of Class A Common Stock per $1,000 principal amount of Notes, which is equivalent to an initial conversion price of approximately $79.57 per share of Class A Common Stock. The initial conversion price of the Notes represents a premium of approximately 20% above the last reported sale price of the Class A Common Stock on the Nasdaq Global Select Market on July 15, 2026. The conversion rate for the Notes is subject to adjustment in some events in accordance with the terms of the Indenture but will not be adjusted for any accrued and unpaid interest. In addition, following certain corporate events that occur prior to the maturity date of the Notes, the Company will, under certain circumstances, increase the conversion rate of the Notes for a holder who elects to convert its Not",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement. Indenture and Notes On July 20, 2026, AST SpaceMobile, Inc. (the “ Company ”) completed its previously announced private offering (the “ Offering ”) of $1.0 billion aggregate principal amount of 1.625% Convertible Senior Notes due 2034 (the “ Notes ”). Pursuant to the purchase agreement between the Company and the initial purchasers of the Notes, the Company granted the initial purchasers an option to purchase, for settlement within the 13-day period beginning on, and including, July 20, 2026, up to an additional $150 million principal amount of Notes (the “ Notes Option ”). The Notes issued on July 20, 2026 do not include any Notes that may be purchased pursuant to the Notes Option. The Notes were issued pursuant to an indenture, dated July 20, 2026 (the “ Indenture ”), between the Company and U.S. Bank Trust Company, National Association, as trustee. The Notes are general unsecured obligations of the Company and will mature on February 1, 2034, unless earlier converted or repurchased. Interest on the Notes will accrue at a rate of 1.625% per year from July 20, 2026 and will be payable semiannually in arrears on February 1 and August 1 of each year, beginning on February 1, 2027. The Notes are convertible at the option of the holders at any time prior to the close of business on the business day immediately preceding November 1, 2033 only under the following conditions: (1) during any calendar quarter commencing after the calendar quarter ending on December 31, 2026 (and only during such calendar quarter), if the last reported sale price of the Company’s Class A common stock, par value $0.0001 per share (the “ Class A Common Stock ”), for at least 20 trading days (whether or not consecutive) during a period of 30 consecutive trading days ending on, and including, the last trading day of the immediately preceding calendar quarter is greater than or equal to 130% of the conversion price on each applicable trading day; (2) during the five business day period after any ten consecutive trading day period (the “ Measurement Period ”) in which the “trading price” (as defined in the Indenture) per $1,000 principal amount of the Notes for each trading day of the Measurement Period was less than 98% of the product of the last reported sale price of the Class A Common Stock and the conversion rate on each such trading day; or (3) upon the occurrence of specified corporate events as set forth in the Indenture. On or after November 1, 2033 until the close of business on the second scheduled trading day immediately preceding the maturity date, holders of the Notes may convert all or any portion of their Notes, at any time, in integral multiples of $1,000 principal amount, at the option of the holder regardless of the foregoing conditions. Upon conversion, the Company may satisfy its conversion obligation by paying or delivering, as the case may be, cash, shares of Class A Common Stock or a combination of cash and shares of Class A Common Stock, at the Company’s election, in the manner and subject to the terms and conditions provided in the Indenture. The conversion rate for the Notes will initially be 12.5672 shares of Class A Common Stock per $1,000 principal amount of Notes, which is equivalent to an initial conversion price of approximately $79.57 per share of Class A Common Stock. The initial conversion price of the Notes represents a premium of approximately 20% above the last reported sale price of the Class A Common Stock on the Nasdaq Global Select Market on July 15, 2026. The conversion rate for the Notes is subject to adjustment in some events in accordance with the terms of the Indenture but will not be adjusted for any accrued and unpaid interest. In addition, following certain corporate events that occur prior to the maturity date of the Notes, the Company will, under certain circumstances, increase the conversion rate of the Notes for a holder who elects to convert its Not"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001493152-26-033912/form8-k.htm",
+      "filing_accession_number": "0001493152-26-033912",
+      "filing_acceptance_datetime": "2026-07-20T20:15:31.000Z",
+      "filing_content_sha256": "1cb37094ceb9e5b00baef2e09be9d5118c77c846d0aca65625233e0341211295",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "form8-k.htm",
+      "filing_report_date": "2026-07-15",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001780312.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2112,
+      "extraction_end_offset": 18733,
+      "extraction_section_length": 16620,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "CRCL",
+      "cik": "0001876042",
+      "filing_type": "10-Q",
+      "source_name": "sec_filing_business_sections:10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1876042/000187604226000248/crcl-20260630.htm",
+      "source_published_at": "2026-08-05",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 39",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 39"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001876042-26-000248/crcl-20260630.htm",
+      "filing_accession_number": "0001876042-26-000248",
+      "filing_acceptance_datetime": "2026-08-05T13:02:57.000Z",
+      "filing_content_sha256": "39a87eb91d052b8c0e069b2c85dace2648e35785de965455e8addab91b349279",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "crcl-20260630.htm",
+      "filing_report_date": "2026-06-30",
+      "filing_sec_form_original": "10-Q",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-Q",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001876042.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-q_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 24964,
+      "extraction_end_offset": 25061,
+      "extraction_section_length": 96,
+      "extraction_start_pattern": "item_2_mdna",
+      "extraction_start_pattern_label": "Item 2 management discussion",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "CRWV",
+      "cik": "0001769628",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000291/crwv-20260618.htm",
+      "source_published_at": "2026-06-18",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement. Senior Notes Indentures and Senior Notes On June 18, 2026, CoreWeave, Inc. (“CoreWeave”) completed its previously announced private offering of $1,250 million in aggregate principal amount of its dollar-denominated 9.625% Senior Notes due 2032 (the “USD Notes”) and €2,000 million in aggregate principal amount of its euro-denominated 8.500% Senior Notes due 2032 (the “EUR Notes” and, together with the USD Notes, the “Senior Notes”) to persons reasonably believed to be qualified institutional buyers pursuant to Rule 144A under the Securities Act of 1933, as amended (the “Securities Act”). The USD Notes were issued pursuant to an indenture, dated as of June 18, 2026 (the “USD Notes Indenture”), by and among CoreWeave, the guarantors party thereto and U.S. Bank Trust Company, National Association, as trustee. The EUR Notes were issued pursuant to an indenture, dated as of June 18, 2026 (the “EUR Notes Indenture” and, together with the USD Notes Indenture, the “Senior Notes Indentures”), by and among CoreWeave, the guarantors party thereto, U.S. Bank Trust Company, National Association, as trustee, U.S. Bank Europe DAC, as registrar and transfer agent and U.S. Bank Europe DAC, UK Branch, as paying agent. CoreWeave intends to use the proceeds from the offering of the Senior Notes for general corporate purposes, including, without limitation, repayment of outstanding indebtedness, and to pay fees, costs and expenses in connection with the offering of the Senior Notes. The Senior Notes will mature on July 15, 2032. The USD Notes will bear interest at a rate of 9.625% per annum, and the EUR Notes will bear interest at a rate of 8.500% per annum, in each case, payable semi-annually in cash in arrears on January 15 and July 15 of each year, beginning on January 15, 2027. Interest on the Senior Notes will accrue from June 18, 2026. The Senior Notes are guaranteed on a senior unsecured basis by certain wholly-owned subsidiaries of CoreWeave and certain of CoreWeave’s future direct and indirect wholly owned domestic restricted subsidiaries that guarantee CoreWeave’s existing revolving credit facility. CoreWeave may redeem all or a portion of the Senior Notes at any time prior to July 15, 2029 at a redemption price equal to 100% of the aggregate principal amount thereof, plus a make-whole premium, together with accrued and unpaid interest, if any, to, but excluding, the redemption date. CoreWeave may redeem all or a portion of the Senior Notes at any time on or after July 15, 2029 at the redemption prices set forth in the applicable Senior Notes Indenture. At any time prior to July 15, 2029, up to 40% of the aggregate principal amount of the applicable series of Senior Notes may be redeemed with the net cash proceeds from certain equity offerings, at the redemption price specified in the applicable Senior Notes Indenture. Upon the occurrence of specified kinds of change of control triggering events, holders of the Senior Notes will have the right to require CoreWeave to repurchase the Senior Notes at a purchase price equal to 101% of the principal amount plus accrued and unpaid interest, if any, to, but excluding, the repurchase date. The Senior Notes Indentures limit, among other things, the ability of CoreWeave and its restricted subsidiaries to (i) incur or guarantee additional indebtedness or issue disqualified stock or certain preferred stock; (ii) pay dividends on or make other distributions in respect of equity interests or make other restricted payments; (iii) create liens on certain assets to secure indebtedness; (iv) make certain investments; (v) sell certain assets; (vi) enter into certain transactions with CoreWeave’s affiliates; (vii) merge or consolidate with other persons or sell or otherwise dispose of all or substantially all of CoreWeave’s assets; and (viii) designate CoreWeave’s restricted subsidiaries as unrestricted subsidiaries. These covenants are subject to a numbe",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement. Senior Notes Indentures and Senior Notes On June 18, 2026, CoreWeave, Inc. (“CoreWeave”) completed its previously announced private offering of $1,250 million in aggregate principal amount of its dollar-denominated 9.625% Senior Notes due 2032 (the “USD Notes”) and €2,000 million in aggregate principal amount of its euro-denominated 8.500% Senior Notes due 2032 (the “EUR Notes” and, together with the USD Notes, the “Senior Notes”) to persons reasonably believed to be qualified institutional buyers pursuant to Rule 144A under the Securities Act of 1933, as amended (the “Securities Act”). The USD Notes were issued pursuant to an indenture, dated as of June 18, 2026 (the “USD Notes Indenture”), by and among CoreWeave, the guarantors party thereto and U.S. Bank Trust Company, National Association, as trustee. The EUR Notes were issued pursuant to an indenture, dated as of June 18, 2026 (the “EUR Notes Indenture” and, together with the USD Notes Indenture, the “Senior Notes Indentures”), by and among CoreWeave, the guarantors party thereto, U.S. Bank Trust Company, National Association, as trustee, U.S. Bank Europe DAC, as registrar and transfer agent and U.S. Bank Europe DAC, UK Branch, as paying agent. CoreWeave intends to use the proceeds from the offering of the Senior Notes for general corporate purposes, including, without limitation, repayment of outstanding indebtedness, and to pay fees, costs and expenses in connection with the offering of the Senior Notes. The Senior Notes will mature on July 15, 2032. The USD Notes will bear interest at a rate of 9.625% per annum, and the EUR Notes will bear interest at a rate of 8.500% per annum, in each case, payable semi-annually in cash in arrears on January 15 and July 15 of each year, beginning on January 15, 2027. Interest on the Senior Notes will accrue from June 18, 2026. The Senior Notes are guaranteed on a senior unsecured basis by certain wholly-owned subsidiaries of CoreWeave and certain of CoreWeave’s future direct and indirect wholly owned domestic restricted subsidiaries that guarantee CoreWeave’s existing revolving credit facility. CoreWeave may redeem all or a portion of the Senior Notes at any time prior to July 15, 2029 at a redemption price equal to 100% of the aggregate principal amount thereof, plus a make-whole premium, together with accrued and unpaid interest, if any, to, but excluding, the redemption date. CoreWeave may redeem all or a portion of the Senior Notes at any time on or after July 15, 2029 at the redemption prices set forth in the applicable Senior Notes Indenture. At any time prior to July 15, 2029, up to 40% of the aggregate principal amount of the applicable series of Senior Notes may be redeemed with the net cash proceeds from certain equity offerings, at the redemption price specified in the applicable Senior Notes Indenture. Upon the occurrence of specified kinds of change of control triggering events, holders of the Senior Notes will have the right to require CoreWeave to repurchase the Senior Notes at a purchase price equal to 101% of the principal amount plus accrued and unpaid interest, if any, to, but excluding, the repurchase date. The Senior Notes Indentures limit, among other things, the ability of CoreWeave and its restricted subsidiaries to (i) incur or guarantee additional indebtedness or issue disqualified stock or certain preferred stock; (ii) pay dividends on or make other distributions in respect of equity interests or make other restricted payments; (iii) create liens on certain assets to secure indebtedness; (iv) make certain investments; (v) sell certain assets; (vi) enter into certain transactions with CoreWeave’s affiliates; (vii) merge or consolidate with other persons or sell or otherwise dispose of all or substantially all of CoreWeave’s assets; and (viii) designate CoreWeave’s restricted subsidiaries as unrestricted subsidiaries. These covenants are subject to a numbe"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001769628-26-000291/crwv-20260618.htm",
+      "filing_accession_number": "0001769628-26-000291",
+      "filing_acceptance_datetime": "2026-06-18T20:09:19.000Z",
+      "filing_content_sha256": "cb3597b6b9e054b5d3843479b6b907318d5a03d453f278b1350e2d3a8d688d82",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "crwv-20260618.htm",
+      "filing_report_date": "2026-06-18",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001769628.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2343,
+      "extraction_end_offset": 7219,
+      "extraction_section_length": 4875,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "ENRD",
+      "cik": "0002095096",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2095096/000149315226034002/form6-k.htm",
+      "source_published_at": "2026-07-21",
+      "retrieved_at": "2026-08-09",
+      "text": "Press Release On July 21, 2026, the Company issued a press release announcing the execution of the Merger Agreement. A copy of the press release is furnished as Exhibit 99.1 to this Report on Form 6-K. Forward-Looking Statements This Report on Form 6-K contains certain &ldquo;forward-looking statements&rdquo; within the meaning of the federal securities laws. Forward-looking statements include, but are not limited to, statements regarding the anticipated consummation of the Merger, the expected timing and benefits of the Merger, the issuance and registration of Company ADSs, the potential payment of the Earnout Consideration, the operation of Flipturn following the Closing Date and other statements that are not historical facts. These statements are based on current expectations, estimates, forecasts and projections and involve risks and uncertainties that could cause actual results to differ materially from those expressed or implied by such forward-looking statements. Many factors could cause actual future events to differ materially from the forward-looking statements in this Report on Form 6-K, including but not limited to: (1) risks related to the scaling of the Company&rsquo;s business and the timing of expected business milestones; (2) the ability to meet stock exchange continuing listing standards; (3) risks associated with changes in laws or regulations applicable to the Company&rsquo;s solutions and services and the Company&rsquo;s international operations; (4) the possibility that the Company may be adversely affected by other economic, geopolitical, business, and/or competitive factors; (5) supply shortages in the materials necessary for the production of the Company&rsquo;s solutions; (6) negative perceptions or publicity of the Company; (7) risks related to working with third-party manufacturers for key components of the Company&rsquo;s solutions; (8) the termination or suspension of any of the Company&rsquo;s contracts or the reduction in counterparty spending; (9) the ability of the Company to issue securities in the future; (10) the possibility that the Merger may not be completed on the anticipated timeline or at all; (11) the ability to recognize the anticipated benefits of the Merger; (12) costs related to the Merger; (13) the risk that Flipturn, following the Closing, will not be integrated successfully; (14) the possibility that the proposed Merger may not be completed on the anticipated timeline or at all, including as a result of the failure to satisfy closing conditions or to obtain required regulatory approvals; (15) the risk of litigation and/or regulatory actions related to the proposed Merger; (16) the ability to retain key employees and customers of Flipturn; and (17) negative effects of the announcement or the consummation of the proposed Merger on the market price of the Company&rsquo;s securities or operating results or on relationships with customers, suppliers and other counterparties. Forward-looking statements are not guarantees of future performance. You should carefully consider the foregoing factors and the other risks and uncertainties that are described in the Company&rsquo;s filings with SEC including under the heading &ldquo;Risk Factors.&rdquo; These filings identify and address other important risks and uncertainties that could cause actual events and results to differ materially from those contained in the forward-looking statements. Forward-looking statements speak only as of the date they are made. Readers are cautioned not to put undue reliance on forward-looking statements, and all forward-looking statements in this Report on Form 6-K are qualified by these cautionary statements. The Company assumes no obligation and does not intend to update or revise these forward-looking statements, whether as a result of new information, future events, or otherwise, except to the extent required by applicable law.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Press Release On July 21, 2026, the Company issued a press release announcing the execution of the Merger Agreement. A copy of the press release is furnished as Exhibit 99.1 to this Report on Form 6-K. Forward-Looking Statements This Report on Form 6-K contains certain &ldquo;forward-looking statements&rdquo; within the meaning of the federal securities laws. Forward-looking statements include, but are not limited to, statements regarding the anticipated consummation of the Merger, the expected timing and benefits of the Merger, the issuance and registration of Company ADSs, the potential payment of the Earnout Consideration, the operation of Flipturn following the Closing Date and other statements that are not historical facts. These statements are based on current expectations, estimates, forecasts and projections and involve risks and uncertainties that could cause actual results to differ materially from those expressed or implied by such forward-looking statements. Many factors could cause actual future events to differ materially from the forward-looking statements in this Report on Form 6-K, including but not limited to: (1) risks related to the scaling of the Company&rsquo;s business and the timing of expected business milestones; (2) the ability to meet stock exchange continuing listing standards; (3) risks associated with changes in laws or regulations applicable to the Company&rsquo;s solutions and services and the Company&rsquo;s international operations; (4) the possibility that the Company may be adversely affected by other economic, geopolitical, business, and/or competitive factors; (5) supply shortages in the materials necessary for the production of the Company&rsquo;s solutions; (6) negative perceptions or publicity of the Company; (7) risks related to working with third-party manufacturers for key components of the Company&rsquo;s solutions; (8) the termination or suspension of any of the Company&rsquo;s contracts or the reduction in counterparty spending; (9) the ability of the Company to issue securities in the future; (10) the possibility that the Merger may not be completed on the anticipated timeline or at all; (11) the ability to recognize the anticipated benefits of the Merger; (12) costs related to the Merger; (13) the risk that Flipturn, following the Closing, will not be integrated successfully; (14) the possibility that the proposed Merger may not be completed on the anticipated timeline or at all, including as a result of the failure to satisfy closing conditions or to obtain required regulatory approvals; (15) the risk of litigation and/or regulatory actions related to the proposed Merger; (16) the ability to retain key employees and customers of Flipturn; and (17) negative effects of the announcement or the consummation of the proposed Merger on the market price of the Company&rsquo;s securities or operating results or on relationships with customers, suppliers and other counterparties. Forward-looking statements are not guarantees of future performance. You should carefully consider the foregoing factors and the other risks and uncertainties that are described in the Company&rsquo;s filings with SEC including under the heading &ldquo;Risk Factors.&rdquo; These filings identify and address other important risks and uncertainties that could cause actual events and results to differ materially from those contained in the forward-looking statements. Forward-looking statements speak only as of the date they are made. Readers are cautioned not to put undue reliance on forward-looking statements, and all forward-looking statements in this Report on Form 6-K are qualified by these cautionary statements. The Company assumes no obligation and does not intend to update or revise these forward-looking statements, whether as a result of new information, future events, or otherwise, except to the extent required by applicable law."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001493152-26-034002/form6-k.htm",
+      "filing_accession_number": "0001493152-26-034002",
+      "filing_acceptance_datetime": "2026-07-21T11:58:06.000Z",
+      "filing_content_sha256": "e3a64b782d920f337fa9a36a156944148ed83213bd6db12670cf3ed776a1b27f",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "form6-k.htm",
+      "filing_report_date": "2026-07-21",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002095096.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 7066,
+      "extraction_end_offset": 10990,
+      "extraction_section_length": 3923,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "GILT",
+      "cik": "0000897322",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897322/000117891326003830/zk2635803.htm",
+      "source_published_at": "2026-08-05",
+      "retrieved_at": "2026-08-09",
+      "text": "press release announcing its unaudited second-quarter 2026 results. A copy of this press release is furnished herewith. The attached press release is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934 (the “Exchange Act”) or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference in any filing under the Securities Act of 1933 or the Exchange Act, regardless of any general incorporation language in such filing.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "press release announcing its unaudited second-quarter 2026 results. A copy of this press release is furnished herewith. The attached press release is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934 (the “Exchange Act”) or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference in any filing under the Securities Act of 1933 or the Exchange Act, regardless of any general incorporation language in such filing."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001178913-26-003830/zk2635803.htm",
+      "filing_accession_number": "0001178913-26-003830",
+      "filing_acceptance_datetime": "2026-08-05T11:00:04.000Z",
+      "filing_content_sha256": "988298b2361ccff4a6eabcdf79e5e19b36389a3110b3c52db14560b885babd3e",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "zk2635803.htm",
+      "filing_report_date": "2026-08-05",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0000897322.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 975,
+      "extraction_end_offset": 1499,
+      "extraction_section_length": 523,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "GSAT",
+      "cik": "0001366868",
+      "filing_type": "10-Q",
+      "source_name": "sec_filing_business_sections:10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1366868/000136686826000039/gsat-20260630.htm",
+      "source_published_at": "2026-08-06",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations. The following discussion and analysis should be read in conjunction with the accompanying unaudited consolidated financial statements and applicable notes thereto included in Part I, Item 1 of this Report, together with \"Management's Discussion and Analysis of Financial Condition and Results of Operation\" included in our 2025 Annual Report. The following information contains forward-looking statements, which are not guarantees of future performance, are not necessarily indicative of future results and are subject to risks and uncertainties, including the risk factors set forth in Part I, Item 1A of our 2025 Annual Report, as updated under \"Risk Factors\" in",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations. The following discussion and analysis should be read in conjunction with the accompanying unaudited consolidated financial statements and applicable notes thereto included in Part I, Item 1 of this Report, together with \"Management's Discussion and Analysis of Financial Condition and Results of Operation\" included in our 2025 Annual Report. The following information contains forward-looking statements, which are not guarantees of future performance, are not necessarily indicative of future results and are subject to risks and uncertainties, including the risk factors set forth in Part I, Item 1A of our 2025 Annual Report, as updated under \"Risk Factors\" in"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001366868-26-000039/gsat-20260630.htm",
+      "filing_accession_number": "0001366868-26-000039",
+      "filing_acceptance_datetime": "2026-08-06T12:08:57.000Z",
+      "filing_content_sha256": "7938f2608bcdab6f4327d6a3f7f425c76bd5c1dcef4dcd6cacf7515d07e47bbd",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "gsat-20260630.htm",
+      "filing_report_date": "2026-06-30",
+      "filing_sec_form_original": "10-Q",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-Q",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001366868.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-q_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 113389,
+      "extraction_end_offset": 114149,
+      "extraction_section_length": 759,
+      "extraction_start_pattern": "item_2_mdna",
+      "extraction_start_pattern_label": "Item 2 management discussion",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "IQMX",
+      "cik": "0002113060",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2113060/000119312526331538/iqmx_6-k_q2_aug_2026_new.htm",
+      "source_published_at": "2026-08-04",
+      "retrieved_at": "2026-08-09",
+      "text": "press release to provide a business and financial update for the first half and second quarter of 2026. The full text of the press release is attached as Exhibit 99.1 to this Report on Form 6-K. Also on August 4, 2026, the Company issued a report announcing its financial results for the first half and second quarter of 2026. The Company&#x2019;s half-year financial report, including its condensed consolidated financial statements as of June 30, 2026, is attached as Exhibit 99.2 to this Report on Form 6-K. In addition, the Company announced its outlook for full-year 2026 as part of its financial report issued in Finland. A copy of such guidance is attached as Exhibit 99.3 to this Report on Form 6-K. Forward-Looking Statements This Report on Form 6-K, including the exhibits attached hereto, includes certain statements that may constitute &#x201c;forward-looking statements&#x201d; for purposes of the U.S. federal securities laws. Forward-looking statements include, but are not limited to, statements that refer to projections, forecasts, or other characterizations of future events or circumstances, including any underlying assumptions. The words &#x201c;anticipate,&#x201d; &#x201c;believe,&#x201d; &#x201c;continue,&#x201d; &#x201c;could,&#x201d; &#x201c;estimate,&#x201d; &#x201c;expect,&#x201d; &#x201c;intends,&#x201d; &#x201c;may,&#x201d; &#x201c;might,&#x201d; &#x201c;plan,&#x201d; &#x201c;possible,&#x201d; &#x201c;potential,&#x201d; &#x201c;predict,&#x201d; &#x201c;project,&#x201d; &#x201c;should,&#x201d; &#x201c;would&#x201d; and similar expressions may identify forward-looking statements, but the absence of these words does not mean that a statement is not forward-looking. Forward-looking statements may include, for example, statements regarding IQM&#x2019;s strategies, future or anticipated market or competitive position, business plans and future performance, including IQM&#x2019;s cash runway and outlook for full-year 2026. These statements are based on IQM&#x2019;s management&#x2019;s current expectations or beliefs and are subject to risk, uncertainty, and changes in circumstances. Actual results may vary materially from those expressed or implied by the statements herein due to changes in economic, business, competitive, and/or regulatory factors, and other risks and uncertainties affecting the operation of IQM&#x2019;s business. These risks, uncertainties, and contingencies include changes in business conditions, fluctuations in customer demand, changes in accounting interpretations, management of rapid growth, intensity of competition from other providers of products and services, changes in general economic conditions, geopolitical events, and regulatory changes, and other factors set forth in IQM&#x2019;s filings with the United States Securities and Exchange Commission and Finish regulatory bodies. The information set forth herein should be read in light of such risks. IQM is under no obligation to, and expressly disclaims any obligation to, update or alter its forward-looking statements, whether as a result of new information, future events, changes in assumptions, or otherwise. Exhibit No. Description 99.1 Press Release, dated August 4, 2026. 99.2 First Half and Second Quarter 2026 Financial Report. 99.3 Fiscal Year 2026 Guidance Included in Finnish Half-Year Report. SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized. IQM QUANTUM COMPUTERS OYJ Date: August 4, 2026 By: /s/ Jan Goetz Name: Jan Goetz Title Chief Executive Officer",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "press release to provide a business and financial update for the first half and second quarter of 2026. The full text of the press release is attached as Exhibit 99.1 to this Report on Form 6-K. Also on August 4, 2026, the Company issued a report announcing its financial results for the first half and second quarter of 2026. The Company&#x2019;s half-year financial report, including its condensed consolidated financial statements as of June 30, 2026, is attached as Exhibit 99.2 to this Report on Form 6-K. In addition, the Company announced its outlook for full-year 2026 as part of its financial report issued in Finland. A copy of such guidance is attached as Exhibit 99.3 to this Report on Form 6-K. Forward-Looking Statements This Report on Form 6-K, including the exhibits attached hereto, includes certain statements that may constitute &#x201c;forward-looking statements&#x201d; for purposes of the U.S. federal securities laws. Forward-looking statements include, but are not limited to, statements that refer to projections, forecasts, or other characterizations of future events or circumstances, including any underlying assumptions. The words &#x201c;anticipate,&#x201d; &#x201c;believe,&#x201d; &#x201c;continue,&#x201d; &#x201c;could,&#x201d; &#x201c;estimate,&#x201d; &#x201c;expect,&#x201d; &#x201c;intends,&#x201d; &#x201c;may,&#x201d; &#x201c;might,&#x201d; &#x201c;plan,&#x201d; &#x201c;possible,&#x201d; &#x201c;potential,&#x201d; &#x201c;predict,&#x201d; &#x201c;project,&#x201d; &#x201c;should,&#x201d; &#x201c;would&#x201d; and similar expressions may identify forward-looking statements, but the absence of these words does not mean that a statement is not forward-looking. Forward-looking statements may include, for example, statements regarding IQM&#x2019;s strategies, future or anticipated market or competitive position, business plans and future performance, including IQM&#x2019;s cash runway and outlook for full-year 2026. These statements are based on IQM&#x2019;s management&#x2019;s current expectations or beliefs and are subject to risk, uncertainty, and changes in circumstances. Actual results may vary materially from those expressed or implied by the statements herein due to changes in economic, business, competitive, and/or regulatory factors, and other risks and uncertainties affecting the operation of IQM&#x2019;s business. These risks, uncertainties, and contingencies include changes in business conditions, fluctuations in customer demand, changes in accounting interpretations, management of rapid growth, intensity of competition from other providers of products and services, changes in general economic conditions, geopolitical events, and regulatory changes, and other factors set forth in IQM&#x2019;s filings with the United States Securities and Exchange Commission and Finish regulatory bodies. The information set forth herein should be read in light of such risks. IQM is under no obligation to, and expressly disclaims any obligation to, update or alter its forward-looking statements, whether as a result of new information, future events, changes in assumptions, or otherwise. Exhibit No. Description 99.1 Press Release, dated August 4, 2026. 99.2 First Half and Second Quarter 2026 Financial Report. 99.3 Fiscal Year 2026 Guidance Included in Finnish Half-Year Report. SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized. IQM QUANTUM COMPUTERS OYJ Date: August 4, 2026 By: /s/ Jan Goetz Name: Jan Goetz Title Chief Executive Officer"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-331538/iqmx_6-k_q2_aug_2026_new.htm",
+      "filing_accession_number": "0001193125-26-331538",
+      "filing_acceptance_datetime": "2026-08-04T11:12:58.000Z",
+      "filing_content_sha256": "04291508098ff3fdd1161308b500c634ed39db6a7c589d5c32236ef25536306d",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "iqmx_6-k_q2_aug_2026_new.htm",
+      "filing_report_date": "2026-08-04",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002113060.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 754,
+      "extraction_end_offset": 4403,
+      "extraction_section_length": 3649,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": [
+        "missing_auto_end_marker"
+      ]
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126031053/ny20079234x2_8k.htm",
+      "source_published_at": "2026-08-04",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 7.01 Regulation FD Disclosure. On August 4, 2026, IREN Limited (the “Company”) issued a press release announcing the closing of its previously announced Acquisition (defined below). A copy of the press release is attached as Exhibit 99.1 hereto and incorporated by reference herein. The information contained in this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Item 8.01 Other Events. On August 4, 2026, the Company filed with the Securities and Exchange Commission (the “SEC”) a prospectus supplement to the prospectus included in the Company’s registration statement on Form S-3 POSASR originally filed with the SEC on Form F-3 (Reg. No. 333-284369) on January 21, 2025 and as amended by post-effective amendment on Form S-3 on August 25, 2025 (as so amended, the “Registration Statement”), covering the resale from time to time by certain selling shareholders of up to an aggregate of 11,981,668 of the Company’s ordinary shares, with no par value (the “Shares”), to satisfy registration rights the Company granted pursuant to an Agreement and Plan of Merger dated as of May 4, 2026 by and among the Company, Kube Merger Sub Inc. and Mirantis, Inc., which closed on August 3, 2026 (the “Acquisition”). A copy of the legal opinion of Allens relating to the validity of the Shares is filed herewith as Exhibit 5.1 and is incorporated herein by reference, and is filed with reference to, and is hereby incorporated by reference into, the Registration Statement.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01 Regulation FD Disclosure. On August 4, 2026, IREN Limited (the “Company”) issued a press release announcing the closing of its previously announced Acquisition (defined below). A copy of the press release is attached as Exhibit 99.1 hereto and incorporated by reference herein. The information contained in this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Item 8.01 Other Events. On August 4, 2026, the Company filed with the Securities and Exchange Commission (the “SEC”) a prospectus supplement to the prospectus included in the Company’s registration statement on Form S-3 POSASR originally filed with the SEC on Form F-3 (Reg. No. 333-284369) on January 21, 2025 and as amended by post-effective amendment on Form S-3 on August 25, 2025 (as so amended, the “Registration Statement”), covering the resale from time to time by certain selling shareholders of up to an aggregate of 11,981,668 of the Company’s ordinary shares, with no par value (the “Shares”), to satisfy registration rights the Company granted pursuant to an Agreement and Plan of Merger dated as of May 4, 2026 by and among the Company, Kube Merger Sub Inc. and Mirantis, Inc., which closed on August 3, 2026 (the “Acquisition”). A copy of the legal opinion of Allens relating to the validity of the Shares is filed herewith as Exhibit 5.1 and is incorporated herein by reference, and is filed with reference to, and is hereby incorporated by reference into, the Registration Statement."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001140361-26-031053/ny20079234x2_8k.htm",
+      "filing_accession_number": "0001140361-26-031053",
+      "filing_acceptance_datetime": "2026-08-04T11:14:19.000Z",
+      "filing_content_sha256": "e62cc8bc7f0d983758e31e1d5e7ad3c0419d8de8678a3c4ee3c0f9d524aec50a",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ny20079234x2_8k.htm",
+      "filing_report_date": "2026-08-04",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001878848.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2032,
+      "extraction_end_offset": 3898,
+      "extraction_section_length": 1865,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "LEU",
+      "cik": "0001065059",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026053897/leu-20260806.htm",
+      "source_published_at": "2026-08-06",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 8.01 Other Events On August 6, 2026, Centrus Energy Corp. (the “Company”) issued a press release announcing that it had signed a contract (“Contract”) with X-energy, LLC (“X-energy”) to supply low enriched uranium and high-assay low-enriched uranium to power advanced reactors. Some or all of the enriched uranium being supplied under the Contract is expected to be produced from Centrus’ American Centrifuge Plant in Pike County, Ohio, with deliveries scheduled to begin in 2030. A copy of the press release is attached hereto as Exhibit 99.1 and is incorporated herein by reference.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 8.01 Other Events On August 6, 2026, Centrus Energy Corp. (the “Company”) issued a press release announcing that it had signed a contract (“Contract”) with X-energy, LLC (“X-energy”) to supply low enriched uranium and high-assay low-enriched uranium to power advanced reactors. Some or all of the enriched uranium being supplied under the Contract is expected to be produced from Centrus’ American Centrifuge Plant in Pike County, Ohio, with deliveries scheduled to begin in 2030. A copy of the press release is attached hereto as Exhibit 99.1 and is incorporated herein by reference."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001628280-26-053897/leu-20260806.htm",
+      "filing_accession_number": "0001628280-26-053897",
+      "filing_acceptance_datetime": "2026-08-06T12:07:37.000Z",
+      "filing_content_sha256": "f0525bc5f893c329e71ed7b93add605aa56a94e114e924fd6d6fbf7de942f8ee",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "leu-20260806.htm",
+      "filing_report_date": "2026-08-06",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001065059.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1960,
+      "extraction_end_offset": 2550,
+      "extraction_section_length": 589,
+      "extraction_start_pattern": "item_8_01_other_events",
+      "extraction_start_pattern_label": "Item 8.01 other events",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "LUNR",
+      "cik": "0001844452",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm",
+      "source_published_at": "2026-08-03",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement. On August 3, 2026, Intuitive Machines, LLC (“Buyer”), a wholly owned subsidiary of Intuitive Machines, Inc. (the “Company”), entered into a Membership Interest Purchase Agreement (the “MIPA”) with Goonhilly Holdings USA Inc., pursuant to which Buyer acquired all of the issued and outstanding membership interests of COMSAT LLC (formerly Goonhilly Inc.) (“COMSAT”) for a base cash purchase price of $10 million and reimbursement of expenses, which amount is subject to adjustments for cash, debt, working capital and specified capital expenditures, including a post-closing true-up. The MIPA is part of the acquisition of the Goonhilly group’s UK and U.S. operations pursuant to the Share Purchase Agreement, dated May 14, 2026, by and among the Company, Buyer and Goonhilly Holdings Limited (the “SPA”), (the transactions collectively, the “Goonhilly Acquisition”), as previously disclosed in the Company’s Current Report on Form 8-K filed with the Securities and Exchange Commission on May 14, 2026 (the “Goonhilly Signing 8-K”). The foregoing description does not purport to be complete and is qualified in its entirety by the full text of the MIPA, which will be filed as an exhibit to a subsequent filing, which may include a periodic report. Item 7.01 Regulation FD Disclosure. On August 3, 2026, the Company issued a press release announcing the consummation of the Goonhilly Acquisition. A copy of the press release, dated August 3, 2026, is furnished as Exhibit 99.1 to this Current Report on Form 8-K and is incorporated herein by reference. The information furnished in this Current Report on Form 8-K pursuant to this Item 7.01 (including Exhibit 99.1) shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “ Exchange Act ”), or otherwise subject to the liabilities of that Section, nor shall it be deemed to be incorporated by reference into any filing of the Company under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Item 8.01 Other Events. On August 3, 2026, the Company consummated the Goonhilly Acquisition. Pursuant to the SPA, Buyer acquired all of the issued and outstanding shares of Goonhilly Earth Station Limited, a ground station and satellite communications company incorporated in England and Wales (the “UK Acquisition”). The aggregate consideration for the UK Acquisition (the “UK Consideration”) was £37.0 million, split equally between cash and stock, as previously disclosed in the Goonhilly Signing 8-K. The stock portion consisted of 960,649 shares of the Company’s Class A common stock, par value $0.0001 per share. The UK Consideration is subject to post-closing adjustments. As described in Item 1.01 above, Buyer also acquired all of the issued and outstanding membership interests of COMSAT pursuant to the MIPA.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement. On August 3, 2026, Intuitive Machines, LLC (“Buyer”), a wholly owned subsidiary of Intuitive Machines, Inc. (the “Company”), entered into a Membership Interest Purchase Agreement (the “MIPA”) with Goonhilly Holdings USA Inc., pursuant to which Buyer acquired all of the issued and outstanding membership interests of COMSAT LLC (formerly Goonhilly Inc.) (“COMSAT”) for a base cash purchase price of $10 million and reimbursement of expenses, which amount is subject to adjustments for cash, debt, working capital and specified capital expenditures, including a post-closing true-up. The MIPA is part of the acquisition of the Goonhilly group’s UK and U.S. operations pursuant to the Share Purchase Agreement, dated May 14, 2026, by and among the Company, Buyer and Goonhilly Holdings Limited (the “SPA”), (the transactions collectively, the “Goonhilly Acquisition”), as previously disclosed in the Company’s Current Report on Form 8-K filed with the Securities and Exchange Commission on May 14, 2026 (the “Goonhilly Signing 8-K”). The foregoing description does not purport to be complete and is qualified in its entirety by the full text of the MIPA, which will be filed as an exhibit to a subsequent filing, which may include a periodic report. Item 7.01 Regulation FD Disclosure. On August 3, 2026, the Company issued a press release announcing the consummation of the Goonhilly Acquisition. A copy of the press release, dated August 3, 2026, is furnished as Exhibit 99.1 to this Current Report on Form 8-K and is incorporated herein by reference. The information furnished in this Current Report on Form 8-K pursuant to this Item 7.01 (including Exhibit 99.1) shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “ Exchange Act ”), or otherwise subject to the liabilities of that Section, nor shall it be deemed to be incorporated by reference into any filing of the Company under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Item 8.01 Other Events. On August 3, 2026, the Company consummated the Goonhilly Acquisition. Pursuant to the SPA, Buyer acquired all of the issued and outstanding shares of Goonhilly Earth Station Limited, a ground station and satellite communications company incorporated in England and Wales (the “UK Acquisition”). The aggregate consideration for the UK Acquisition (the “UK Consideration”) was £37.0 million, split equally between cash and stock, as previously disclosed in the Goonhilly Signing 8-K. The stock portion consisted of 960,649 shares of the Company’s Class A common stock, par value $0.0001 per share. The UK Consideration is subject to post-closing adjustments. As described in Item 1.01 above, Buyer also acquired all of the issued and outstanding membership interests of COMSAT pursuant to the MIPA."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-330778/d323986d8k.htm",
+      "filing_accession_number": "0001193125-26-330778",
+      "filing_acceptance_datetime": "2026-08-03T20:59:59.000Z",
+      "filing_content_sha256": "0b463580b50360cd862bcd43e5be5d35e93ae18b9be4e8e771aef34b399e47e5",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "d323986d8k.htm",
+      "filing_report_date": "2026-08-03",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001844452.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1979,
+      "extraction_end_offset": 4927,
+      "extraction_section_length": 2947,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "NNE",
+      "cik": "0001923891",
+      "filing_type": "DEF14A",
+      "source_name": "sec_filing_business_sections:DEF14A",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1923891/000149315226034874/formdef14a.htm",
+      "source_published_at": "2026-07-28",
+      "retrieved_at": "2026-08-09",
+      "text": "our business will be answered during the webcast, subject to time constraints. ● Questions may be omitted if they are, among other things, irrelevant to our business, related to pending or threatened litigation, disorderly, repetitious of statements already made, or in furtherance of the speaker’s own personal, political or business interests. ● No audio or video recordings of the Annual Meeting are permitted. How does the Board of Directors recommend that I vote? The Board of Directors recommends that you vote your shares of Common Stock FOR each director nominee in Proposal No. 1 and FOR Proposal No. 2. In addition, at their discretion, the proxies if designated as such are authorized to vote upon such other business as may properly come before the Annual Meeting or any continuation, postponement or adjournment thereof. How many votes are required to approve each proposal? The table below summarizes the proposals that will be voted on, the votes required to approve each item, and how votes are counted: Proposal Votes Required Voting Options Impact of “Withhold” or “ Abstain” Votes Broker Discretionary Voting Allowed Proposal No. 1: The Director Election Proposal A plurality of the votes cast at the Annual Meeting by the holders of stock entitled to vote in the election of directors. “FOR” “AGAINST” “ABSTAIN” None(1) No(2) Proposal No. 2: The Auditor Ratification Proposal The affirmative vote of the holders of a majority of the votes cast affirmatively or negatively (excluding abstentions) at the Annual Meeting by the holders entitled to vote thereon. “FOR” “AGAINST” “ABSTAIN” None(1) Yes(3) (1) A vote marked as “withhold” or “abstain” is not considered a vote cast and will, therefore, not affect the outcome of this proposal. (2) As this proposal is not considered a discretionary matter, brokers lack authority to exercise their discretion to vote uninstructed shares on this proposal. (3) As this proposal is considered a discretionary matter, brokers are permitted to exercise their discretion to vote uninstructed shares on this proposal. 3 What if I do not specify how my shares are to be voted? If you submit a proxy but do not indicate any voting instructions, the persons named as proxies will vote in accordance with the recommendations of the Board. The Board’s recommendations are set forth above, as well as with the description of each proposal in this Proxy Statement. Who will count the votes? The appointed inspector of election for the meeting will count the votes present in person or by proxy. Can I revoke or change my vote after I submit my proxy? Yes. Whether you have voted by the Internet or mail if you are a stockholder of record, you may change your vote and revoke your proxy by: ● voting again by Internet at a later time before the closing of those voting facilities at 11:59 p.m., Eastern Time, on September 14, 2026; ● attending the Annual Meeting, virtually, and voting at the Annual Meeting on September 15, 2026 (See instructions as set forth in “VOTING AND RELATED MATTERS - Methods of Voting - Voting at the Annual Meeting” on page 5; ● submitting a properly signed proxy card with a later date that is received no later than September 14, 2026 at 11:59 p.m. Eastern Time; or ● if you hold shares in street name, you may submit new voting instructions by contacting your bank, broker or other nominee. Your most recent proxy card or Internet proxy is the one that is counted. Your virtual attendance at the Annual Meeting by itself will not revoke your proxy unless you give written notice of revocation to the Company before your proxy is voted or you vote at the Annual Meeting. Who will pay for the cost of this proxy solicitation? We will pay the cost of soliciting proxies. Proxies may be solicited on our behalf by directors, officers or employees (for no additional compensation) in person or by telephone, electronic transmission and facsimile transmission. Brokers and other nominees will be requested to solicit proxies or",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "our business will be answered during the webcast, subject to time constraints. ● Questions may be omitted if they are, among other things, irrelevant to our business, related to pending or threatened litigation, disorderly, repetitious of statements already made, or in furtherance of the speaker’s own personal, political or business interests. ● No audio or video recordings of the Annual Meeting are permitted. How does the Board of Directors recommend that I vote? The Board of Directors recommends that you vote your shares of Common Stock FOR each director nominee in Proposal No. 1 and FOR Proposal No. 2. In addition, at their discretion, the proxies if designated as such are authorized to vote upon such other business as may properly come before the Annual Meeting or any continuation, postponement or adjournment thereof. How many votes are required to approve each proposal? The table below summarizes the proposals that will be voted on, the votes required to approve each item, and how votes are counted: Proposal Votes Required Voting Options Impact of “Withhold” or “ Abstain” Votes Broker Discretionary Voting Allowed Proposal No. 1: The Director Election Proposal A plurality of the votes cast at the Annual Meeting by the holders of stock entitled to vote in the election of directors. “FOR” “AGAINST” “ABSTAIN” None(1) No(2) Proposal No. 2: The Auditor Ratification Proposal The affirmative vote of the holders of a majority of the votes cast affirmatively or negatively (excluding abstentions) at the Annual Meeting by the holders entitled to vote thereon. “FOR” “AGAINST” “ABSTAIN” None(1) Yes(3) (1) A vote marked as “withhold” or “abstain” is not considered a vote cast and will, therefore, not affect the outcome of this proposal. (2) As this proposal is not considered a discretionary matter, brokers lack authority to exercise their discretion to vote uninstructed shares on this proposal. (3) As this proposal is considered a discretionary matter, brokers are permitted to exercise their discretion to vote uninstructed shares on this proposal. 3 What if I do not specify how my shares are to be voted? If you submit a proxy but do not indicate any voting instructions, the persons named as proxies will vote in accordance with the recommendations of the Board. The Board’s recommendations are set forth above, as well as with the description of each proposal in this Proxy Statement. Who will count the votes? The appointed inspector of election for the meeting will count the votes present in person or by proxy. Can I revoke or change my vote after I submit my proxy? Yes. Whether you have voted by the Internet or mail if you are a stockholder of record, you may change your vote and revoke your proxy by: ● voting again by Internet at a later time before the closing of those voting facilities at 11:59 p.m., Eastern Time, on September 14, 2026; ● attending the Annual Meeting, virtually, and voting at the Annual Meeting on September 15, 2026 (See instructions as set forth in “VOTING AND RELATED MATTERS - Methods of Voting - Voting at the Annual Meeting” on page 5; ● submitting a properly signed proxy card with a later date that is received no later than September 14, 2026 at 11:59 p.m. Eastern Time; or ● if you hold shares in street name, you may submit new voting instructions by contacting your bank, broker or other nominee. Your most recent proxy card or Internet proxy is the one that is counted. Your virtual attendance at the Annual Meeting by itself will not revoke your proxy unless you give written notice of revocation to the Company before your proxy is voted or you vote at the Annual Meeting. Who will pay for the cost of this proxy solicitation? We will pay the cost of soliciting proxies. Proxies may be solicited on our behalf by directors, officers or employees (for no additional compensation) in person or by telephone, electronic transmission and facsimile transmission. Brokers and other nominees will be requested to solicit proxies or"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001493152-26-034874/formdef14a.htm",
+      "filing_accession_number": "0001493152-26-034874",
+      "filing_acceptance_datetime": "2026-07-27T18:13:39.000Z",
+      "filing_content_sha256": "04663a30db201c28b667f013bb3e570506715718e83b6e32bb1f0347c39fd5d6",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "formdef14a.htm",
+      "filing_report_date": "2026-07-27",
+      "filing_sec_form_original": "DEF14A",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "DEF14A",
+      "filing_selection_family": "transaction_or_proxy_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "transaction_or_proxy_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001923891.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_def14a_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 23959,
+      "extraction_end_offset": 192780,
+      "extraction_section_length": 168821,
+      "extraction_start_pattern": "our_business",
+      "extraction_start_pattern_label": "Our Business",
+      "extraction_warnings": [
+        "missing_auto_end_marker"
+      ]
+    },
+    {
+      "symbol": "NUCL",
+      "cik": "0002089283",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2089283/000110465926091278/tm2622345d1_8k.htm",
+      "source_published_at": "2026-08-05",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 7.01 Regulation FD Disclosure. On August 5, 2026, the Company issued a press release announcing the engagement of CBIZ CPAs (the “Press Release”). A copy of the Press Release is furnished as Exhibit 99.1 to this Current Report on Form 8-K. The information in Item 7.01 of this Current Report on Form 8-K, including the Press Release furnished as Exhibit 99.1 hereto shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference in any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such a filing.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01 Regulation FD Disclosure. On August 5, 2026, the Company issued a press release announcing the engagement of CBIZ CPAs (the “Press Release”). A copy of the Press Release is furnished as Exhibit 99.1 to this Current Report on Form 8-K. The information in Item 7.01 of this Current Report on Form 8-K, including the Press Release furnished as Exhibit 99.1 hereto shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference in any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such a filing."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001104659-26-091278/tm2622345d1_8k.htm",
+      "filing_accession_number": "0001104659-26-091278",
+      "filing_acceptance_datetime": "2026-08-05T21:24:25.000Z",
+      "filing_content_sha256": "2fbafa2bde980dd2d1e8b5bd5d20ef013152d4a991c692235a85096e88c633f2",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "tm2622345d1_8k.htm",
+      "filing_report_date": "2026-08-05",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002089283.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 4099,
+      "extraction_end_offset": 4855,
+      "extraction_section_length": 755,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "OKLO",
+      "cik": "0001849056",
+      "filing_type": "10-Q",
+      "source_name": "sec_filing_business_sections:10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1849056/000162828026054571/oklo-20260630.htm",
+      "source_published_at": "2026-08-07",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 25",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 25"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001628280-26-054571/oklo-20260630.htm",
+      "filing_accession_number": "0001628280-26-054571",
+      "filing_acceptance_datetime": "2026-08-07T11:19:12.000Z",
+      "filing_content_sha256": "870cdeb931fc65a60b9d96f088d84f050ddc001d3bf119744fe86a59a46b2708",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "oklo-20260630.htm",
+      "filing_report_date": "2026-06-30",
+      "filing_sec_form_original": "10-Q",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-Q",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001849056.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-q_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 15573,
+      "extraction_end_offset": 15670,
+      "extraction_section_length": 96,
+      "extraction_start_pattern": "item_2_mdna",
+      "extraction_start_pattern_label": "Item 2 management discussion",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "POET",
+      "cik": "0001437424",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1437424/000117184326005153/f6k_080326.htm",
+      "source_published_at": "2026-08-03",
+      "retrieved_at": "2026-08-09",
+      "text": "press release, is not required to be and has not been distributed to the registrant's security holders, and, if discussing a material event, has already been the subject of a Form 6-K submission or other Commission filing on EDGAR. --> On August 3, 2026, the Registrant issued a press release, a copy of which is attached hereto as Exhibit 99.1 and is incorporated herein by reference. (c) Exhibit 99.1. Press release dated August 3, 2026 SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized. POET TECHNOLOGIES INC. (Registrant) Date: August 3, 2026 /s/ THOMAS MIKA Thomas Mika Executive Vice President and Chief Financial Officer",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "press release, is not required to be and has not been distributed to the registrant's security holders, and, if discussing a material event, has already been the subject of a Form 6-K submission or other Commission filing on EDGAR. --> On August 3, 2026, the Registrant issued a press release, a copy of which is attached hereto as Exhibit 99.1 and is incorporated herein by reference. (c) Exhibit 99.1. Press release dated August 3, 2026 SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized. POET TECHNOLOGIES INC. (Registrant) Date: August 3, 2026 /s/ THOMAS MIKA Thomas Mika Executive Vice President and Chief Financial Officer"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001171843-26-005153/f6k_080326.htm",
+      "filing_accession_number": "0001171843-26-005153",
+      "filing_acceptance_datetime": "2026-08-03T17:12:42.000Z",
+      "filing_content_sha256": "5f8f4906f83cb2d7f503a0eb019fd6af5c5ea0468fbbfb5cc8abb498a06c4753",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "f6k_080326.htm",
+      "filing_report_date": "2026-08-03",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001437424.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1523,
+      "extraction_end_offset": 2296,
+      "extraction_section_length": 773,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": [
+        "missing_auto_end_marker"
+      ]
+    },
+    {
+      "symbol": "PWR",
+      "cik": "0001050915",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526337945/d164254d8k.htm",
+      "source_published_at": "2026-08-06",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement. On August 6, 2026 (the “Closing Date”), Quanta Services, Inc. (the “Company”) issued (i) $500,000,000 aggregate principal amount of its 4.850% Senior Notes due 2029 (the “2029 Notes”), (ii) $750,000,000 aggregate principal amount of its 5.300% Senior Notes due 2033 (the “2033 Notes”) and (iii) $750,000,000 aggregate principal amount of its 5.550% Senior Notes due 2036 (the “2036 Notes,” and together with the 2029 Notes and the 2033 Notes, the “Notes”). The Notes were sold pursuant to an underwriting agreement, dated as of August 3, 2026 (the “Underwriting Agreement”), by and among the Company and BofA Securities, Inc., Wells Fargo Securities, LLC, J.P. Morgan Securities LLC, PNC Capital Markets LLC and Truist Securities, Inc., as representatives of the several underwriters named in Schedule A to the Underwriting Agreement, as previously reported on the Company’s Current Report on Form 8-K filed on August 4, 2026. The 2029 Notes were issued under the indenture, dated as of September 22, 2020, between the Company, as issuer, and U.S. Bank Trust Company, National Association (as successor in interest to U.S. Bank National Association), as trustee (the “Trustee”) (the “Base Indenture”), as supplemented and amended by the tenth supplemental indenture, dated as of August 6, 2026, between the Company and the Trustee (the “Tenth Supplemental Indenture”). Interest on the 2029 Notes will accrue at a rate of 4.850% per annum and is payable semi-annually, in arrears, on February 9 and August 9 of each year, commencing February 9, 2027. The 2029 Notes will mature on August 9, 2029, unless earlier redeemed. The 2033 Notes were issued under the Base Indenture, as supplemented and amended by the eleventh supplemental indenture, dated as of August 6, 2026, between the Company and the Trustee (the “Eleventh Supplemental Indenture”). Interest on the 2033 Notes will accrue at a rate of 5.300% per annum and is payable semi-annually, in arrears, on February 9 and August 9 of each year, commencing February 9, 2027. The 2033 Notes will mature on August 9, 2033, unless earlier redeemed. The 2036 Notes were issued under the Base Indenture, as supplemented and amended by the twelfth supplemental indenture, dated as of August 6, 2026, between the Company and the Trustee (the “Twelfth Supplemental Indenture,” and together with the Base Indenture, the Tenth Supplemental Indenture and the Eleventh Supplemental Indenture, the “Indenture”). Interest on the 2036 Notes will accrue at a rate of 5.550% per annum and is payable semi-annually, in arrears, on February 9 and August 9 of each year, commencing February 9, 2027. The 2036 Notes will mature on August 9, 2036, unless earlier redeemed. The Notes are the Company’s senior unsecured obligations and rank equally in right of payment with the Company’s existing and future senior unsecured indebtedness. The Notes are effectively junior to the Company’s existing and future secured indebtedness to the extent of the value of the assets securing such indebtedness. The Notes are not guaranteed by any of the Company’s subsidiaries and are therefore structurally subordinated to all of the existing and future indebtedness and other liabilities of the Company’s subsidiaries, including trade payables. Prior to July 9, 2029 (one month prior to their maturity date), the 2029 Notes will be redeemable, at the Company’s option, in whole or in part, at any time and from time to time, at a price equal to the greater of (a) (i) the sum of the present values of the remaining scheduled payments of principal and interest thereon discounted to the redemption date (assuming the 2029 Notes matured on the Par Call Date (as defined in the Tenth Supplemental Indenture)) on a semi-annual basis (assuming a 360-day year consisting of twelve 30-day months) at the Treasury Rate (as defined in the Tenth Supplemental Indenture) plus 10 basis points less (ii) interest accrued to the date of rede",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement. On August 6, 2026 (the “Closing Date”), Quanta Services, Inc. (the “Company”) issued (i) $500,000,000 aggregate principal amount of its 4.850% Senior Notes due 2029 (the “2029 Notes”), (ii) $750,000,000 aggregate principal amount of its 5.300% Senior Notes due 2033 (the “2033 Notes”) and (iii) $750,000,000 aggregate principal amount of its 5.550% Senior Notes due 2036 (the “2036 Notes,” and together with the 2029 Notes and the 2033 Notes, the “Notes”). The Notes were sold pursuant to an underwriting agreement, dated as of August 3, 2026 (the “Underwriting Agreement”), by and among the Company and BofA Securities, Inc., Wells Fargo Securities, LLC, J.P. Morgan Securities LLC, PNC Capital Markets LLC and Truist Securities, Inc., as representatives of the several underwriters named in Schedule A to the Underwriting Agreement, as previously reported on the Company’s Current Report on Form 8-K filed on August 4, 2026. The 2029 Notes were issued under the indenture, dated as of September 22, 2020, between the Company, as issuer, and U.S. Bank Trust Company, National Association (as successor in interest to U.S. Bank National Association), as trustee (the “Trustee”) (the “Base Indenture”), as supplemented and amended by the tenth supplemental indenture, dated as of August 6, 2026, between the Company and the Trustee (the “Tenth Supplemental Indenture”). Interest on the 2029 Notes will accrue at a rate of 4.850% per annum and is payable semi-annually, in arrears, on February 9 and August 9 of each year, commencing February 9, 2027. The 2029 Notes will mature on August 9, 2029, unless earlier redeemed. The 2033 Notes were issued under the Base Indenture, as supplemented and amended by the eleventh supplemental indenture, dated as of August 6, 2026, between the Company and the Trustee (the “Eleventh Supplemental Indenture”). Interest on the 2033 Notes will accrue at a rate of 5.300% per annum and is payable semi-annually, in arrears, on February 9 and August 9 of each year, commencing February 9, 2027. The 2033 Notes will mature on August 9, 2033, unless earlier redeemed. The 2036 Notes were issued under the Base Indenture, as supplemented and amended by the twelfth supplemental indenture, dated as of August 6, 2026, between the Company and the Trustee (the “Twelfth Supplemental Indenture,” and together with the Base Indenture, the Tenth Supplemental Indenture and the Eleventh Supplemental Indenture, the “Indenture”). Interest on the 2036 Notes will accrue at a rate of 5.550% per annum and is payable semi-annually, in arrears, on February 9 and August 9 of each year, commencing February 9, 2027. The 2036 Notes will mature on August 9, 2036, unless earlier redeemed. The Notes are the Company’s senior unsecured obligations and rank equally in right of payment with the Company’s existing and future senior unsecured indebtedness. The Notes are effectively junior to the Company’s existing and future secured indebtedness to the extent of the value of the assets securing such indebtedness. The Notes are not guaranteed by any of the Company’s subsidiaries and are therefore structurally subordinated to all of the existing and future indebtedness and other liabilities of the Company’s subsidiaries, including trade payables. Prior to July 9, 2029 (one month prior to their maturity date), the 2029 Notes will be redeemable, at the Company’s option, in whole or in part, at any time and from time to time, at a price equal to the greater of (a) (i) the sum of the present values of the remaining scheduled payments of principal and interest thereon discounted to the redemption date (assuming the 2029 Notes matured on the Par Call Date (as defined in the Tenth Supplemental Indenture)) on a semi-annual basis (assuming a 360-day year consisting of twelve 30-day months) at the Treasury Rate (as defined in the Tenth Supplemental Indenture) plus 10 basis points less (ii) interest accrued to the date of rede"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001193125-26-337945/d164254d8k.htm",
+      "filing_accession_number": "0001193125-26-337945",
+      "filing_acceptance_datetime": "2026-08-06T20:05:07.000Z",
+      "filing_content_sha256": "fc32f6b6321e9d5ffbdb18987eed7bfcc00433cb446e28cc8c7c7816c2c5988a",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "d164254d8k.htm",
+      "filing_report_date": "2026-08-06",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001050915.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2037,
+      "extraction_end_offset": 10690,
+      "extraction_section_length": 8652,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "QBTS",
+      "cik": "0001907982",
+      "filing_type": "10-Q",
+      "source_name": "sec_filing_business_sections:10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000129/qbts-20260630.htm",
+      "source_published_at": "2026-08-06",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 28",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 28"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001907982-26-000129/qbts-20260630.htm",
+      "filing_accession_number": "0001907982-26-000129",
+      "filing_acceptance_datetime": "2026-08-06T20:19:58.000Z",
+      "filing_content_sha256": "89c71456cd42eaa3f5fb337bb36a8d9f9e9ec18de661a4a6c61090a473a0dee6",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "qbts-20260630.htm",
+      "filing_report_date": "2026-06-30",
+      "filing_sec_form_original": "10-Q",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-Q",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001907982.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-q_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 19517,
+      "extraction_end_offset": 19614,
+      "extraction_section_length": 96,
+      "extraction_start_pattern": "item_2_mdna",
+      "extraction_start_pattern_label": "Item 2 management discussion",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "QTEX",
+      "cik": "0001837493",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1837493/000118518526003219/qtrex6k073126.htm",
+      "source_published_at": "2026-08-03",
+      "retrieved_at": "2026-08-09",
+      "text": "press release titled &ldquo;QTREX Proprietary Quantum Interconnect Platform Exceeds Performance Requirements Established by Strategic Partners,&rdquo; a copy of which is furnished as Exhibit 99.1 with this Report of Foreign Private Issuer on Form 6-K (this &ldquo;Report&rdquo;). The first four paragraphs, the sixth paragraph and the section titled &ldquo;Forward-Looking Statement Disclaimer,&rdquo; of the press release are incorporated by reference into the Company&rsquo;s Registration Statements on Form F-3 (Registration Nos. 333-284308 , 333-289324 and 333-296482 ) and Form S-8 (Registration Nos. 333-297590 , 333-259057 , 333-277980 , 333-285565 , 333-290162 and 333-292592 ), filed with the Securities and Exchange Commission, to be a part thereof from the date on which this Report is submitted, to the extent not superseded by documents or reports subsequently filed or furnished.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "press release titled &ldquo;QTREX Proprietary Quantum Interconnect Platform Exceeds Performance Requirements Established by Strategic Partners,&rdquo; a copy of which is furnished as Exhibit 99.1 with this Report of Foreign Private Issuer on Form 6-K (this &ldquo;Report&rdquo;). The first four paragraphs, the sixth paragraph and the section titled &ldquo;Forward-Looking Statement Disclaimer,&rdquo; of the press release are incorporated by reference into the Company&rsquo;s Registration Statements on Form F-3 (Registration Nos. 333-284308 , 333-289324 and 333-296482 ) and Form S-8 (Registration Nos. 333-297590 , 333-259057 , 333-277980 , 333-285565 , 333-290162 and 333-292592 ), filed with the Securities and Exchange Commission, to be a part thereof from the date on which this Report is submitted, to the extent not superseded by documents or reports subsequently filed or furnished."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001185185-26-003219/qtrex6k073126.htm",
+      "filing_accession_number": "0001185185-26-003219",
+      "filing_acceptance_datetime": "2026-08-03T12:00:31.000Z",
+      "filing_content_sha256": "3e1323ce4bbd1c304ac005c40a72392a9c32bea3eac161317157895170a5164e",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "qtrex6k073126.htm",
+      "filing_report_date": "2026-08-03",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001837493.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 669,
+      "extraction_end_offset": 1563,
+      "extraction_section_length": 893,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "QUBT",
+      "cik": "0001758009",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1758009/000121390026080443/ea0298923-8k_quantum.htm",
+      "source_published_at": "2026-07-22",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 8.01 Other Events. On July 17, 2026, the Board appointed Susan G. Hunt to the position of the Company’s Chief Revenue Officer, effective immediately, succeeding Dr. Pouya Dianat, who transitioned to the role of Chief Product Officer as described under Item 5.02 above. Susan G. Hunt, age 64, is the Company’s Chief Revenue Officer. Susan brings more than 30 years of executive leadership experience, including senior leadership roles at Salesforce, Nuance Communications, LivePerson, and Sprint PCS. Throughout her career, she has built high-performing revenue organizations, negotiated more than $2 billion in enterprise agreements, and earned a reputation for helping category-defining technologies become successful enterprise businesses. Since January 2023, she served as Founder and CEO of Surge Growth Consulting (“Surge”), advising executive teams, boards, and investors on go-to-market strategy, revenue growth, organizational design, and commercialization. Under her leadership, Surge partnered with AI, data, cybersecurity, and quantum technology companies to help them successfully transition from early innovation to enterprise scale. Prior to founding Surge, Susan served as Chief Revenue Officer of Orbital Insight, where she led the Company’s global revenue organization and commercial strategy from May 2022 to January 2023. From January 2019 to October 2022, Susan served as Senior Vice President of North American Sales at LivePerson, where she led the sales and business development functions across various verticals in North America. In November 2025, she launched Stare Down the Bull, a leadership podcast featuring candid conversations with CEOs, founders, investors, and technology executives on leadership, artificial intelligence, enterprise sales, and innovation. As the Company’s Chief Revenue Officer, Susan will lead the Company’s global revenue strategy, sales execution, strategic partnerships, and customer growth initiatives as the Company continues to accelerate the commercialization of quantum computing solutions. The Company’s press release announcing the appointment of Susan G. Hunt as Chief Revenue Officer is filed as Exhibit 99.1 hereto.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 8.01 Other Events. On July 17, 2026, the Board appointed Susan G. Hunt to the position of the Company’s Chief Revenue Officer, effective immediately, succeeding Dr. Pouya Dianat, who transitioned to the role of Chief Product Officer as described under Item 5.02 above. Susan G. Hunt, age 64, is the Company’s Chief Revenue Officer. Susan brings more than 30 years of executive leadership experience, including senior leadership roles at Salesforce, Nuance Communications, LivePerson, and Sprint PCS. Throughout her career, she has built high-performing revenue organizations, negotiated more than $2 billion in enterprise agreements, and earned a reputation for helping category-defining technologies become successful enterprise businesses. Since January 2023, she served as Founder and CEO of Surge Growth Consulting (“Surge”), advising executive teams, boards, and investors on go-to-market strategy, revenue growth, organizational design, and commercialization. Under her leadership, Surge partnered with AI, data, cybersecurity, and quantum technology companies to help them successfully transition from early innovation to enterprise scale. Prior to founding Surge, Susan served as Chief Revenue Officer of Orbital Insight, where she led the Company’s global revenue organization and commercial strategy from May 2022 to January 2023. From January 2019 to October 2022, Susan served as Senior Vice President of North American Sales at LivePerson, where she led the sales and business development functions across various verticals in North America. In November 2025, she launched Stare Down the Bull, a leadership podcast featuring candid conversations with CEOs, founders, investors, and technology executives on leadership, artificial intelligence, enterprise sales, and innovation. As the Company’s Chief Revenue Officer, Susan will lead the Company’s global revenue strategy, sales execution, strategic partnerships, and customer growth initiatives as the Company continues to accelerate the commercialization of quantum computing solutions. The Company’s press release announcing the appointment of Susan G. Hunt as Chief Revenue Officer is filed as Exhibit 99.1 hereto."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001213900-26-080443/ea0298923-8k_quantum.htm",
+      "filing_accession_number": "0001213900-26-080443",
+      "filing_acceptance_datetime": "2026-07-22T17:00:36.000Z",
+      "filing_content_sha256": "1e7ec6c0625567a546814d69ef28a91be4d0a319819d51bc7ed2ae0dbc3999f4",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ea0298923-8k_quantum.htm",
+      "filing_report_date": "2026-07-17",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001758009.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2555,
+      "extraction_end_offset": 4742,
+      "extraction_section_length": 2186,
+      "extraction_start_pattern": "item_8_01_other_events",
+      "extraction_start_pattern_label": "Item 8.01 other events",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+      "source_published_at": "2026-06-29",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 1.01 Entry into a Material Definitive Agreement Agreement and Plan of Merger On June 28, 2026, Rocket Lab Corporation, a Delaware corporation (“Rocket Lab”), entered into an Agreement and Plan of Merger (the “Merger Agreement”) with Iridium Communications Inc., a Delaware corporation (“Iridium”), Ion Merger Sub I, Inc., a Delaware corporation and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub I”) and Ion Merger Sub II, LLC, a Delaware limited liability company and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub II”). Pursuant to the Merger Agreement, and subject to the satisfaction or waiver of the conditions set forth therein, Merger Sub I will merge with and into Iridium (the “First Merger”) with Iridium continuing as the surviving corporation and an indirect wholly owned subsidiary of Rocket Lab, and immediately following the First Merger, the surviving corporation in the First Merger will merge with and into Merger Sub II, with Merger Sub II continuing as the surviving entity (the “Subsequent Merger” and together with the First Merger, the “Transaction”). The Transaction is generally intended to qualify as a tax-free reorganization for U.S. federal income tax purposes so long as the value of the Stock Consideration relative to the Cash Consideration (each as defined below) received by the holders of Iridium Common Stock (as defined below) (which could vary depending on the price per share of Rocket Lab Common Stock (as defined below) at the First Effective Time (as defined below)) meets the conditions for tax-free treatment. Should those conditions not be met, the Subsequent Merger will not occur and the Transaction will not qualify as a tax-free reorganization for U.S. federal income tax purposes. Merger Consideration As a result of the Transaction, at the effective time of the First Merger (the “First Effective Time”) each issued and outstanding share of common stock of Iridium, par value $0.001 per share (“Iridium Common Stock”), other than as specified in the Merger Agreement, will be converted into the right to receive (i) $27.00 in cash (the “Cash Consideration”) and (ii) a number of shares (the “Stock Consideration” and, together with the Cash Consideration, the “Merger Consideration”) of Rocket Lab’s common stock, par value $0.0001 per share (“Rocket Lab Common Stock”), equal to the Exchange Ratio (as defined below), in each case without interest. The “Exchange Ratio” will be the following: (i) if the Rocket Lab Common Stock Price (as defined below) is equal to or less than $67.50, then the Exchange Ratio will be 0.4000; (ii) if the Rocket Lab Common Stock Price is greater than $67.50 but less than $112.50, then the Exchange Ratio will be the quotient obtained by dividing $27.00 by the Rocket Lab Common Stock Price, rounded to four decimal places; and (iii) if the Rocket Lab Common Stock Price is equal to or greater than $112.50, then the Exchange Ratio will be 0.2400. “Rocket Lab Common Stock Price” is defined as the volume weighted average price per share of Rocket Lab Common Stock on the Nasdaq Global Select Market for the period of the ten consecutive trading days ending on and including the second full trading day prior to the First Effective Time. If the First Merger is consummated, Iridium Common Stock will be delisted from the Nasdaq Global Select Market and deregistered under the Exchange Act, as promptly as practicable after the consummation of the First Merger. Treatment of Iridium Equity Awards The Merger Agreement provides that at the First Effective Time (i) each outstanding restricted stock unit covering Iridium Common Stock (the “Iridium RSUs”), including any Iridium RSU that includes performance-based vesting conditions (the “Iridium PSUs”), will be assumed by Rocket Lab and converted into a restricted stock unit award with respect to shares of Rocket Lab Common Stock (each, an “Assumed RSU”) subject to the same terms and conditions as applied to such Iridium RSU",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry into a Material Definitive Agreement Agreement and Plan of Merger On June 28, 2026, Rocket Lab Corporation, a Delaware corporation (“Rocket Lab”), entered into an Agreement and Plan of Merger (the “Merger Agreement”) with Iridium Communications Inc., a Delaware corporation (“Iridium”), Ion Merger Sub I, Inc., a Delaware corporation and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub I”) and Ion Merger Sub II, LLC, a Delaware limited liability company and an indirect wholly owned subsidiary of Rocket Lab (“Merger Sub II”). Pursuant to the Merger Agreement, and subject to the satisfaction or waiver of the conditions set forth therein, Merger Sub I will merge with and into Iridium (the “First Merger”) with Iridium continuing as the surviving corporation and an indirect wholly owned subsidiary of Rocket Lab, and immediately following the First Merger, the surviving corporation in the First Merger will merge with and into Merger Sub II, with Merger Sub II continuing as the surviving entity (the “Subsequent Merger” and together with the First Merger, the “Transaction”). The Transaction is generally intended to qualify as a tax-free reorganization for U.S. federal income tax purposes so long as the value of the Stock Consideration relative to the Cash Consideration (each as defined below) received by the holders of Iridium Common Stock (as defined below) (which could vary depending on the price per share of Rocket Lab Common Stock (as defined below) at the First Effective Time (as defined below)) meets the conditions for tax-free treatment. Should those conditions not be met, the Subsequent Merger will not occur and the Transaction will not qualify as a tax-free reorganization for U.S. federal income tax purposes. Merger Consideration As a result of the Transaction, at the effective time of the First Merger (the “First Effective Time”) each issued and outstanding share of common stock of Iridium, par value $0.001 per share (“Iridium Common Stock”), other than as specified in the Merger Agreement, will be converted into the right to receive (i) $27.00 in cash (the “Cash Consideration”) and (ii) a number of shares (the “Stock Consideration” and, together with the Cash Consideration, the “Merger Consideration”) of Rocket Lab’s common stock, par value $0.0001 per share (“Rocket Lab Common Stock”), equal to the Exchange Ratio (as defined below), in each case without interest. The “Exchange Ratio” will be the following: (i) if the Rocket Lab Common Stock Price (as defined below) is equal to or less than $67.50, then the Exchange Ratio will be 0.4000; (ii) if the Rocket Lab Common Stock Price is greater than $67.50 but less than $112.50, then the Exchange Ratio will be the quotient obtained by dividing $27.00 by the Rocket Lab Common Stock Price, rounded to four decimal places; and (iii) if the Rocket Lab Common Stock Price is equal to or greater than $112.50, then the Exchange Ratio will be 0.2400. “Rocket Lab Common Stock Price” is defined as the volume weighted average price per share of Rocket Lab Common Stock on the Nasdaq Global Select Market for the period of the ten consecutive trading days ending on and including the second full trading day prior to the First Effective Time. If the First Merger is consummated, Iridium Common Stock will be delisted from the Nasdaq Global Select Market and deregistered under the Exchange Act, as promptly as practicable after the consummation of the First Merger. Treatment of Iridium Equity Awards The Merger Agreement provides that at the First Effective Time (i) each outstanding restricted stock unit covering Iridium Common Stock (the “Iridium RSUs”), including any Iridium RSU that includes performance-based vesting conditions (the “Iridium PSUs”), will be assumed by Rocket Lab and converted into a restricted stock unit award with respect to shares of Rocket Lab Common Stock (each, an “Assumed RSU”) subject to the same terms and conditions as applied to such Iridium RSU"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001753926-26-001085/g085783_8k.htm",
+      "filing_accession_number": "0001753926-26-001085",
+      "filing_acceptance_datetime": "2026-06-29T12:11:57.000Z",
+      "filing_content_sha256": "813ebf19c888254b67df70606839e5dd056138f9d5b7992a545e139f638b709c",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "g085783_8k.htm",
+      "filing_report_date": "2026-06-28",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001819994.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2121,
+      "extraction_end_offset": 29955,
+      "extraction_section_length": 27833,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "STDN",
+      "cik": "0002086716",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2086716/000162828026049125/stdn-20260722.htm",
+      "source_published_at": "2026-07-22",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 8.01 Other Events. On July 17, 2026, Standard Nuclear, Inc. (the “Company”) issued a press release announcing that construction is substantially complete at the Company's new advanced nuclear fuel production facilities in Tennessee and Idaho. The Company has also received approval of Preliminary Documented Safety Analyses for both facilities. The facilities remain subject to qualification activities and final readiness reviews before commencing production. A copy of the press release is attached hereto as Exhibit 99.1 and is incorporated herein by reference.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 8.01 Other Events. On July 17, 2026, Standard Nuclear, Inc. (the “Company”) issued a press release announcing that construction is substantially complete at the Company's new advanced nuclear fuel production facilities in Tennessee and Idaho. The Company has also received approval of Preliminary Documented Safety Analyses for both facilities. The facilities remain subject to qualification activities and final readiness reviews before commencing production. A copy of the press release is attached hereto as Exhibit 99.1 and is incorporated herein by reference."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001628280-26-049125/stdn-20260722.htm",
+      "filing_accession_number": "0001628280-26-049125",
+      "filing_acceptance_datetime": "2026-07-22T13:40:34.000Z",
+      "filing_content_sha256": "9b9da13fb21273b7f1966b6f04e2c4d47d63579a8f4ddf22934be43929fb7bd6",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "stdn-20260722.htm",
+      "filing_report_date": "2026-07-22",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002086716.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1925,
+      "extraction_end_offset": 2495,
+      "extraction_section_length": 569,
+      "extraction_start_pattern": "item_8_01_other_events",
+      "extraction_start_pattern_label": "Item 8.01 other events",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "WYFI",
+      "cik": "0002042022",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2042022/000121390026084223/ea0299775-8k_whitefiber.htm",
+      "source_published_at": "2026-08-03",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 7.01 Regulation FD Disclosure. The information contained in this Item 7.01 of this Current Report shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Forward-Looking Statements This Current Report and the exhibits hereto contain “forward-looking” statements within the meaning of the federal securities laws that are based on management’s beliefs and assumptions and on information currently available to management. Forward-looking statements involve known and unknown risks, uncertainties and other factors that may cause actual events to differ, including those described under “Risk Factors” in the Company’s Annual Report on Form 10-K for the year ended December 31, 2025 filed with the SEC on March 26, 2026, and in the Company’s subsequent filings. The Company assumes no obligation to update these statements except as required by law. 4",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01 Regulation FD Disclosure. The information contained in this Item 7.01 of this Current Report shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing. Forward-Looking Statements This Current Report and the exhibits hereto contain “forward-looking” statements within the meaning of the federal securities laws that are based on management’s beliefs and assumptions and on information currently available to management. Forward-looking statements involve known and unknown risks, uncertainties and other factors that may cause actual events to differ, including those described under “Risk Factors” in the Company’s Annual Report on Form 10-K for the year ended December 31, 2025 filed with the SEC on March 26, 2026, and in the Company’s subsequent filings. The Company assumes no obligation to update these statements except as required by law. 4"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001213900-26-084223/ea0299775-8k_whitefiber.htm",
+      "filing_accession_number": "0001213900-26-084223",
+      "filing_acceptance_datetime": "2026-08-03T10:13:05.000Z",
+      "filing_content_sha256": "a14362a128966880e76e16b0306b793165ebd5689cba008950ef84ca761f9ff9",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ea0299775-8k_whitefiber.htm",
+      "filing_report_date": "2026-07-30",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002042022.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 19926,
+      "extraction_end_offset": 21103,
+      "extraction_section_length": 1176,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "XNDU",
+      "cik": "0002097163",
+      "filing_type": "6-K",
+      "source_name": "sec_filing_business_sections:6-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2097163/000209716326000020/xndu-20260630.htm",
+      "source_published_at": "2026-08-05",
+      "retrieved_at": "2026-08-09",
+      "text": "Press Release 99.2 Q 2 2026 Quarterly Report",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Press Release 99.2 Q 2 2026 Quarterly Report"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0002097163-26-000020/xndu-20260630.htm",
+      "filing_accession_number": "0002097163-26-000020",
+      "filing_acceptance_datetime": "2026-08-05T20:07:31.000Z",
+      "filing_content_sha256": "7ccddb14a857856411a4bfff2cee035d7223a3cfb571d1b744c326756d77af6a",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "xndu-20260630.htm",
+      "filing_report_date": "2026-06-30",
+      "filing_sec_form_original": "6-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "6-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0002097163.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_6-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 24982,
+      "extraction_end_offset": 25026,
+      "extraction_section_length": 44,
+      "extraction_start_pattern": "press_release",
+      "extraction_start_pattern_label": "Press Release",
+      "extraction_warnings": [
+        "missing_auto_end_marker"
+      ]
+    }
+  ]
+}

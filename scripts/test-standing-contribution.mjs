@@ -211,6 +211,42 @@ assert.deepEqual(catchUp.applied_dates, ["2026-08-07", "2026-08-14"]);
 assert.equal(catchUp.cash_after, 8425.58);
 assert.equal(csvRecords(catchUp.ledger_content).length, 4);
 
+const unsettledTrade = "2026-08-06-buy-mda-001,trade,confirmed,Charles Schwab International,satellite,screenshot-2026-08-06-mda-001,2026-08-06,2026-08-07,MDA,buy,6,33.8555,0.00,203.13,-203.13,USD,user_confirmed_screenshot,2026-08-06T22:59:56+08:00,Historical fixture.\n";
+const preSettlementState = {
+  ...firstFriday.state,
+  as_of: "2026-08-06",
+  confirmed_cash: 6446.45,
+  settled_cash: 6649.58,
+  buying_power: 6446.45,
+  last_confirmed_ledger_event_id: "2026-08-06-buy-mda-001",
+};
+const afterSettlementFriday = applyStandingContribution({
+  plan,
+  ledgerContent: firstFriday.ledger_content + unsettledTrade,
+  state: preSettlementState,
+  asOf: "2026-08-09",
+  createdAt: "2026-08-09T09:00:00+08:00",
+});
+assert.deepEqual(afterSettlementFriday.applied_dates, ["2026-08-07"]);
+assert.equal(afterSettlementFriday.state.confirmed_cash, 7334.45);
+assert.equal(afterSettlementFriday.state.settled_cash, 7334.45);
+assert.equal(afterSettlementFriday.state.buying_power, 7334.45);
+
+const staleDerivedState = {
+  ...afterSettlementFriday.state,
+  settled_cash: 7537.58,
+};
+const recoveredDerivedState = applyStandingContribution({
+  plan,
+  ledgerContent: afterSettlementFriday.ledger_content,
+  state: staleDerivedState,
+  asOf: "2026-08-09",
+  createdAt: "2026-08-09T09:01:00+08:00",
+});
+assert.equal(recoveredDerivedState.status, "already_recorded");
+assert.equal(recoveredDerivedState.state_reconciled, true);
+assert.equal(recoveredDerivedState.state.settled_cash, 7334.45);
+
 const manualSameDay = `${header}${baseline}2026-07-31-deposit-001,deposit,confirmed,Charles Schwab International,satellite,user-confirmed-2026-07-31-888-deposit,2026-07-31,2026-07-31,,,,,0.00,888.00,888.00,USD,user_confirmed_default_deposit,2026-07-31T09:00:00+08:00,Manual same-day confirmation.\n`;
 const manualState = { ...state, confirmed_cash: 6649.58, settled_cash: 6649.58, buying_power: 6649.58, as_of: "2026-07-31", last_confirmed_ledger_event_id: "2026-07-31-deposit-001" };
 assert.throws(() => applyStandingContribution({

@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T01:26:56.466Z",
+  "source": "sec_filing_business_sections",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "business_description"
+  ],
+  "source_files": [
+    "research/discovery/runs/2026-08-09-new-r1-sec-index-manifest.csv",
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "research/discovery/runs/2026-08-09-new-r1-sec-index-manifest.metadata.json"
+  ],
+  "filing_cache_dir": "",
+  "filing_cache_hits": 0,
+  "filing_cache_misses": 0,
+  "filing_cache_writes": 0,
+  "filing_cache_only": false,
+  "filing_ledger_output": "",
+  "filing_ledger_count": 6,
+  "filing_ledger": [
+    {
+      "symbol": "ALMU",
+      "cik": "0001828805",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1828805/000121390026083005/ea0299786-8k_aeluma.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:56.466Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "a3775bc62d9bf5fd8e15a092da4abf0d061ea9d424d38dc2568c5c2aaaedcaf9",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:56.466Z"
+    },
+    {
+      "symbol": "APLD",
+      "cik": "0001144879",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1144879/000114487926000044/apld-20260727.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:56.466Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "a076566c241c5b5a3533f11c298719f6b24bc56f8c4fbe335f21712c49e43b55",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:56.466Z"
+    },
+    {
+      "symbol": "AXTI",
+      "cik": "0001051627",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926025061/axti20260609_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:56.466Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "989a784bd950fe11a2a1a4b6a79ed0c611f1828c3723900f440951826a3c743b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:56.466Z"
+    },
+    {
+      "symbol": "EOSE",
+      "cik": "0001805077",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326012019/dp251424_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:56.466Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "cbd5017755a2fededefc33d882cd5895aeb98d72ad8f2b7d760750b6e733d399",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:56.466Z"
+    },
+    {
+      "symbol": "ONDS",
+      "cik": "0001646188",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1646188/000119312526340352/onds-20260803.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:56.466Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "e66e9a033e6ab29ba49c36813f1957a2ac717331d4d6608fb3322abc6bb04e69",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:56.466Z"
+    },
+    {
+      "symbol": "SATL",
+      "cik": "0001874315",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1874315/000187431526000032/satl-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:56.466Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "5def355b3eb1a753a97e9fe2ebcdea6e43b5ea3f55467a90b69e7eeda84bb58f",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:56.466Z"
+    }
+  ],
+  "max_filing_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_request_delay_ms": 0,
+  "selection_strategy": "manifest_filing_sections",
+  "manifest_selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "APLD",
+    "ONDS",
+    "AXTI",
+    "ALMU",
+    "SATL",
+    "EOSE"
+  ],
+  "selected_symbol_count": 6,
+  "eligible_universe_count": 7653,
+  "coverage_limit": 6,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "manifest_metadata_path": "research/discovery/runs/2026-08-09-new-r1-sec-index-manifest.metadata.json",
+  "manifest_row_count": 6,
+  "profile_count": 2,
+  "skipped_symbols": [
+    {
+      "symbol": "APLD",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "AXTI",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "ONDS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "SATL",
+      "reason": "missing_business_section_start"
+    }
+  ],
+  "profiles": [
+    {
+      "symbol": "ALMU",
+      "cik": "0001828805",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1828805/000121390026083005/ea0299786-8k_aeluma.htm",
+      "source_published_at": "2026-07-30",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 7.01 Regulation FD Disclosure. On July 29, 2026, Aeluma, Inc. (the “Company”) issued a press release announcing its entry into a CHIPS and Science Act Letter of Intent with the U.S. Department of Commerce. The text of the press release is furnished as Exhibit 99.1 to this Current Report on Form 8-K and incorporated herein by reference. The information reported under this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed to be “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of such section, nor shall such information be deemed incorporated by reference in any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as shall be expressly set forth by specific reference in such filing.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01 Regulation FD Disclosure. On July 29, 2026, Aeluma, Inc. (the “Company”) issued a press release announcing its entry into a CHIPS and Science Act Letter of Intent with the U.S. Department of Commerce. The text of the press release is furnished as Exhibit 99.1 to this Current Report on Form 8-K and incorporated herein by reference. The information reported under this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed to be “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of such section, nor shall such information be deemed incorporated by reference in any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as shall be expressly set forth by specific reference in such filing."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001213900-26-083005/ea0299786-8k_aeluma.htm",
+      "filing_accession_number": "0001213900-26-083005",
+      "filing_acceptance_datetime": "2026-07-30T01:37:45.000Z",
+      "filing_content_sha256": "a3775bc62d9bf5fd8e15a092da4abf0d061ea9d424d38dc2568c5c2aaaedcaf9",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ea0299786-8k_aeluma.htm",
+      "filing_report_date": "2026-07-29",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001828805.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1992,
+      "extraction_end_offset": 2845,
+      "extraction_section_length": 852,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "EOSE",
+      "cik": "0001805077",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326012019/dp251424_8k.htm",
+      "source_published_at": "2026-08-06",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 1.01 Entry Into A Material Definitive Agreement. Amended and Restated Limited Liability Company Agreement for Frontier On August 4, 2026, Eos Energy Enterprises, Inc. (the “ Company ”), CCM Frontier JV Holdco, LLC, an affiliate of Cerberus Capital Management, L.P. (“ CCM Frontier ”) and HBC MSF Capital Solutions Blocker II LLC, an affiliate of Hudson Bay Capital Management LP (“ HBC ”) entered into an Amended and Restated Limited Liability Company Agreement (the “ A&R LLCA ”) for Frontier Power USA Parent, LLC, a Delaware limited liability company (the “ JV Company ”). The A&R LLCA was entered into pursuant to that certain binding amended and restated term sheet (the “ A&R Term Sheet ”) dated June 30 ,2026 by and among the Company, CCM Frontier and HBC, as previously disclosed in a Current Report on Form 8-K, filed on June 30, 2026. Equity Ownership The Company contributed $112,637,878.86 (the “ Initial Class B Contribution ”) to the JV Company in exchange for 112,637,879 Class B Units of the JV Company (“ Class B Units ”) at a price of $1.00 per Class B Unit. CCM Frontier (or its applicable designated affiliate) (a) received 50,000,001 Class A-1 Units of the JV Company (“ Class A-1 Units ”) as founder’s equity in consideration for the contracts, contacts, investment opportunities, subject matter expertise and other going concern value with respect to the frontier power platform developed by affiliates of CCM Frontier (the “ Pre-Closing Contribution ”), (b) contributed $100 million (the “ Initial Class A-2 Contribution ”) to the JV Company (a portion of which may be contributed and utilized prior to the closing, including for purposes of the payment of the deposit under a capacity reservation agreement between the Company and the JV Company) in exchange for 100,000,000 Class A-2 Units of the JV Company (“ Class A-2 Units ” and, together with the Class A-1 Units, the “ Class A Units ”), at a price of $1.00 per Class A-2 Unit, and (c) received the CCM Warrants (as defined below). HBC (or investment funds managed by HBC or its affiliates) (a) contributed $50 million (the “ Initial Class C Contribution ”) to the JV Company in exchange for 50,000,000 Class C Units (“ Class C Units ” and, together with the Class A Units and the Class B Units, the “ Preferred Units ”), at a price of $1.00 per Class C Unit, and (b) received the HBC Warrants (as defined below). Governance The JV Company will be managed by a board of managers that will initially include seven members, four of which will be appointed by CCM Frontier and up to three of which will be appointed by the Company (subject to the Company maintaining certain ownership thresholds in the JV Company). The board of managers will have full and exclusive power to conduct and exercise control over the activities of the Company, subject to certain reserved and fundamental matters that will require the consent of a manager appointed by the Company or the Company, as applicable (so long as the Company maintains certain ownership thresholds in the JV Company). Day to day oversight of the JV Company’s development projects will be delegated to and performed by an appointee of CCM Frontier, which is initially an affiliate of CCM Frontier, pursuant to a management services agreement on customary terms and conditions agreed to by CCM Frontier and the Company. Distributions In the event of a liquidation of the JV Company, distributions will be made as follows: (a) first to CCM Frontier and HBC until they have received a return of their invested capital (excluding, with respect to CCM Frontier, the Pre-Closing Contribution), (b) second to the Company until it has received a return of its invested capital, (c) third to CCM Frontier until it has received a return of the Pre-Closing Contribution, (d) fourth, to CCM Frontier, the Company and HBC pro rata until they have received a pre-tax IRR of 10% compounded quarterly on invested capital (which shall include, for the avoidance of doubt, in resp",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 1.01 Entry Into A Material Definitive Agreement. Amended and Restated Limited Liability Company Agreement for Frontier On August 4, 2026, Eos Energy Enterprises, Inc. (the “ Company ”), CCM Frontier JV Holdco, LLC, an affiliate of Cerberus Capital Management, L.P. (“ CCM Frontier ”) and HBC MSF Capital Solutions Blocker II LLC, an affiliate of Hudson Bay Capital Management LP (“ HBC ”) entered into an Amended and Restated Limited Liability Company Agreement (the “ A&R LLCA ”) for Frontier Power USA Parent, LLC, a Delaware limited liability company (the “ JV Company ”). The A&R LLCA was entered into pursuant to that certain binding amended and restated term sheet (the “ A&R Term Sheet ”) dated June 30 ,2026 by and among the Company, CCM Frontier and HBC, as previously disclosed in a Current Report on Form 8-K, filed on June 30, 2026. Equity Ownership The Company contributed $112,637,878.86 (the “ Initial Class B Contribution ”) to the JV Company in exchange for 112,637,879 Class B Units of the JV Company (“ Class B Units ”) at a price of $1.00 per Class B Unit. CCM Frontier (or its applicable designated affiliate) (a) received 50,000,001 Class A-1 Units of the JV Company (“ Class A-1 Units ”) as founder’s equity in consideration for the contracts, contacts, investment opportunities, subject matter expertise and other going concern value with respect to the frontier power platform developed by affiliates of CCM Frontier (the “ Pre-Closing Contribution ”), (b) contributed $100 million (the “ Initial Class A-2 Contribution ”) to the JV Company (a portion of which may be contributed and utilized prior to the closing, including for purposes of the payment of the deposit under a capacity reservation agreement between the Company and the JV Company) in exchange for 100,000,000 Class A-2 Units of the JV Company (“ Class A-2 Units ” and, together with the Class A-1 Units, the “ Class A Units ”), at a price of $1.00 per Class A-2 Unit, and (c) received the CCM Warrants (as defined below). HBC (or investment funds managed by HBC or its affiliates) (a) contributed $50 million (the “ Initial Class C Contribution ”) to the JV Company in exchange for 50,000,000 Class C Units (“ Class C Units ” and, together with the Class A Units and the Class B Units, the “ Preferred Units ”), at a price of $1.00 per Class C Unit, and (b) received the HBC Warrants (as defined below). Governance The JV Company will be managed by a board of managers that will initially include seven members, four of which will be appointed by CCM Frontier and up to three of which will be appointed by the Company (subject to the Company maintaining certain ownership thresholds in the JV Company). The board of managers will have full and exclusive power to conduct and exercise control over the activities of the Company, subject to certain reserved and fundamental matters that will require the consent of a manager appointed by the Company or the Company, as applicable (so long as the Company maintains certain ownership thresholds in the JV Company). Day to day oversight of the JV Company’s development projects will be delegated to and performed by an appointee of CCM Frontier, which is initially an affiliate of CCM Frontier, pursuant to a management services agreement on customary terms and conditions agreed to by CCM Frontier and the Company. Distributions In the event of a liquidation of the JV Company, distributions will be made as follows: (a) first to CCM Frontier and HBC until they have received a return of their invested capital (excluding, with respect to CCM Frontier, the Pre-Closing Contribution), (b) second to the Company until it has received a return of its invested capital, (c) third to CCM Frontier until it has received a return of the Pre-Closing Contribution, (d) fourth, to CCM Frontier, the Company and HBC pro rata until they have received a pre-tax IRR of 10% compounded quarterly on invested capital (which shall include, for the avoidance of doubt, in resp"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0000950103-26-012019/dp251424_8k.htm",
+      "filing_accession_number": "0000950103-26-012019",
+      "filing_acceptance_datetime": "2026-08-06T20:30:44.000Z",
+      "filing_content_sha256": "cbd5017755a2fededefc33d882cd5895aeb98d72ad8f2b7d760750b6e733d399",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "dp251424_8k.htm",
+      "filing_report_date": "2026-08-03",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001805077.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2461,
+      "extraction_end_offset": 26792,
+      "extraction_section_length": 24330,
+      "extraction_start_pattern": "item_1_01_material_agreement",
+      "extraction_start_pattern_label": "Item 1.01 material definitive agreement",
+      "extraction_warnings": []
+    }
+  ]
+}

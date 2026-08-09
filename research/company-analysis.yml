@@ -1523,3 +1523,39 @@ entries:
     risk_watch: On-orbit commissioning, launch cadence, beta and commercial service, carrier economics, spectrum and regulation, capital spending, debt, dilution, and correlated space exposure.
     next_check: BlueBird 11 through 13 commissioning, launch 14 through 16, beta-service evidence, carrier economics, regulatory milestones, financing, dilution, or valuation reset.
     source_path: research/filings/2026-08-06-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-09-mda-q2-refresh
+    symbol: MDA
+    analyzed_at: "2026-08-09"
+    analysis_type: material_results_cash_conversion_and_scaling_refresh
+    policy_version: v1.3
+    title: Operating scale strengthened while cash conversion and acquisition economics constrain scaling
+    stance: B+ active candidate and confirmed starter holding
+    summary: Second-quarter revenue, bookings, sequential backlog growth and narrowed guidance strengthen MDA's platform evidence, while negative operating and free cash flow, share growth, pending acquisitions and an incomplete pro-forma capital structure keep the confirmed starter below fully underwritten scale.
+    upside_path: Combine satellite manufacturing, robotics, U.S. defense platforms and geointelligence into a vertically integrated space-infrastructure company with recurring data, durable margins and disciplined per-share reinvestment.
+    risk_watch: Working-capital recovery, Telesat concentration, fixed-price execution, fully diluted shares, Blue Canyon and CLS closing and integration, pro-forma leverage, interest, free cash flow and portfolio space correlation.
+    next_check: Post-quarter working-capital release, acquisition closing and pro-forma leverage, combined margins and cash flow, diluted capitalization, backlog quality or a material valuation change.
+    source_path: research/filings/2026-08-09-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-09-gsat-amazon-transaction
+    symbol: GSAT
+    analyzed_at: "2026-08-09"
+    analysis_type: pending_acquisition_and_mission_fit_refresh
+    policy_version: v1.3
+    title: Pending Amazon acquisition caps the independent-company right tail
+    stance: B- frozen; excluded from new-buy ranking
+    summary: The pending cash-or-Amazon-stock consideration converts Globalstar from a long-duration satellite-network option into merger-event exposure with capped upside, which no longer fits this account's asymmetric-compounding mission.
+    upside_path: Historical standalone upside depended on monetizing spectrum and satellite capacity beyond Apple; the pending transaction now transfers most of that future path into fixed or Amazon-linked consideration.
+    risk_watch: Regulatory approval, S-4 effectiveness, satellite milestones, consideration adjustment, election proration, exchange ratio, transaction termination and Apple concentration.
+    next_check: Transaction close, termination, material terms change or a new public satellite-network expression with uncapped long-duration upside.
+    source_path: research/filings/2026-08-09-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-09-sei-q2-refresh
+    symbol: SEI
+    analyzed_at: "2026-08-09"
+    analysis_type: material_results_contract_and_promotion_readiness_refresh
+    policy_version: v1.3
+    title: Contract and cash-flow evidence strengthened while leverage keeps promotion incomplete
+    stance: B watch; priority promotion review, buy 0
+    summary: Quarterly revenue, operating cash flow and the amended 660 MW long-duration power arrangement strengthen SEI as a behind-the-meter AI-power challenger. Debt, convertible notes, equipment commitments, project returns, customer credit and fully diluted enterprise value still block promotion and entry.
+    upside_path: Convert rapid-deployment generation and energy management into long-duration AI-campus infrastructure with repeatable contract returns and self-funded expansion.
+    risk_watch: Customer credit and concentration, contract cancellation and return protection, project delivery, equipment commitments, debt and converts, project-level financing, guarantees, dilution and capital intensity.
+    next_check: Customer and contract economics, deployment and rent commencement, project financing, guarantees, debt and fully diluted capitalization or a material valuation reset.
+    source_path: research/filings/2026-08-09-MATERIAL-FILING-REFRESH.md

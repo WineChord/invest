@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T01:26:50.707Z",
+  "source": "sec_submissions_recent_filings",
+  "source_files": [
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "https://data.sec.gov/submissions"
+  ],
+  "sec_company_input_row_count": 10398,
+  "sec_company_input_sha256": "5399edec5fd0371d31c92a906b24e5144a2df224821c3961c5adab1b4f38f7c5",
+  "submissions_source": "https://data.sec.gov/submissions",
+  "submissions_fetched_count": 6,
+  "submissions_cache_dir": "",
+  "submissions_cache_hits": 0,
+  "submissions_cache_misses": 0,
+  "submissions_cache_writes": 0,
+  "submissions_cache_only": false,
+  "submissions_ledger_output": "",
+  "submissions_ledger_count": 6,
+  "submissions_ledger": [
+    {
+      "symbol": "APLD",
+      "cik": "0001144879",
+      "source_url": "https://data.sec.gov/submissions/CIK0001144879.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:50.707Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "e97b565d157b885eb2e3fc03c7ce0d6d51f68dc5ecd3dd79fdb977caba439a96",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:50.707Z"
+    },
+    {
+      "symbol": "ONDS",
+      "cik": "0001646188",
+      "source_url": "https://data.sec.gov/submissions/CIK0001646188.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:50.707Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "835a00f7841ed04877ec0bfe8c368e3f79792de767ff6c28f5bac211aa6a90e7",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:50.707Z"
+    },
+    {
+      "symbol": "AXTI",
+      "cik": "0001051627",
+      "source_url": "https://data.sec.gov/submissions/CIK0001051627.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:50.707Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "702e63a5874fcd92c7e50ce053e7593730451f4ff067bde90750155dfd028655",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:50.707Z"
+    },
+    {
+      "symbol": "ALMU",
+      "cik": "0001828805",
+      "source_url": "https://data.sec.gov/submissions/CIK0001828805.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:50.707Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "948531884a30e153a00c83d33a9c163dc86114740e37de4ede599fecd75a0863",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:50.707Z"
+    },
+    {
+      "symbol": "SATL",
+      "cik": "0001874315",
+      "source_url": "https://data.sec.gov/submissions/CIK0001874315.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:50.707Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "16877b0d939d0faf7ef055c3b49cfdbea8f15c0d991e18b86a3d72cb2aaa9eb4",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:50.707Z"
+    },
+    {
+      "symbol": "EOSE",
+      "cik": "0001805077",
+      "source_url": "https://data.sec.gov/submissions/CIK0001805077.json",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:26:50.707Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "aba4d41a6ffa214878641a7c0c16898a4614cda602337a789ca7cf4f99c59ee6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:26:50.707Z"
+    }
+  ],
+  "max_submissions_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_min_complete_universe_request_delay_ms": 100,
+  "sec_request_delay_ms": 0,
+  "selection_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "APLD",
+    "ONDS",
+    "AXTI",
+    "ALMU",
+    "SATL",
+    "EOSE"
+  ],
+  "selected_symbol_count": 6,
+  "eligible_universe_count": 7653,
+  "coverage_limit": 6,
+  "filing_types": [
+    "8-K",
+    "6-K",
+    "10-Q",
+    "S-4",
+    "F-4",
+    "DEF14A"
+  ],
+  "filing_selection_policy": "latest-supported",
+  "manifest_selection_fields": [
+    "filing_selection_policy",
+    "filing_selection_tier",
+    "filing_selection_family",
+    "selection_reason",
+    "selected_sec_form_base",
+    "newer_supported_filing_displaced_count",
+    "newer_supported_filing_forms",
+    "lower_tier_newer_filing_forms",
+    "foundational_candidate_count",
+    "business_prospectus_424b_candidate_count",
+    "supplement_424b_candidate_count",
+    "unknown_424b_candidate_count",
+    "selection_warnings"
+  ],
+  "retrieved_at": "2026-08-09",
+  "manifest_row_count": 6,
+  "skipped_symbols": [],
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols."
+}

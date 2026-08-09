@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
+import { parse as parseYaml } from "yaml";
 import {
   articleOneRepositoryInvariantPaths,
   articleOneRepositoryInvariantContracts,
@@ -189,6 +190,10 @@ const ciGuard = spawnSync(
 assert.equal(ciGuard.status, 0, ciGuard.stderr);
 assert.equal(JSON.parse(ciGuard.stdout).level, "PASS");
 
+const currentMission = parseYaml(readFileSync("research/quality-metrics.yml", "utf8"))
+  .mission_accountability;
+const dueEvidenceDate = currentMission.next_evidence_deadline;
+
 const sentinelGuard = spawnSync(
   process.execPath,
   [
@@ -196,7 +201,7 @@ const sentinelGuard = spawnSync(
     "--mode",
     "sentinel",
     "--as-of",
-    "2026-08-07",
+    dueEvidenceDate,
     "--json",
   ],
   { encoding: "utf8" },
@@ -212,7 +217,7 @@ const decisionGuard = spawnSync(
     "--mode",
     "decision",
     "--as-of",
-    "2026-08-07",
+    dueEvidenceDate,
     "--json",
   ],
   { encoding: "utf8" },

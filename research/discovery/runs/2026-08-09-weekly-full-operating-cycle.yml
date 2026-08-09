@@ -1,0 +1,339 @@
+schema_version: 1
+run_id: 2026-08-09-weekly-full-operating-cycle
+run_date: 2026-08-09
+request_type: missed_saturday_weekly_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: through the 2026-08-10 regular session and no later than the Rocket Lab second-quarter release after that close
+linked_decision_or_research_note: decisions/2026-08-09-weekly-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-09-subagent-evidence-packet.yml
+
+execution_update:
+  status: standing_contribution_applied_once_no_trade_execution
+  confirmed_ledger_event_ids: [2026-08-07-deposit-weekly-888-001]
+  resulting_confirmed_cash: 7334.45
+  resulting_confirmed_positions: RKLB 17 shares; ASTS 11 shares; MDA 6 shares
+  notes: The canonical standing-contribution workflow applied the due 2026-08-07 USD 888 occurrence once. No order, fill, fee, reserve position or other broker fact was created or inferred.
+
+article_one_preflight:
+  sentinel_level: WARN
+  reason_codes: [evidence_deadline_due]
+  disposition: The overdue MDA August 7 evidence deadline was handled as a mandatory full review rather than an inactivity excuse. Fresh results, current prices, all-symbol opportunity cost and the six independent review lanes were completed.
+  protected_surfaces_changed: []
+
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --as-of 2026-08-09 --json --output research/discovery/runs/2026-08-09-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-09-scan.json
+      output_sha256: 65d0a98fb8cf74575124cf021320bc905c03bcbac6edb1afded6a9914d28a1aa
+      retrieved_at: 2026-08-09
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 60
+        suppressed_known_matches: 121
+        recall_diagnostics: All expected proxies were recovered by the combined deterministic regression layer; organic issuer-name recall remained partial and semantic profile coverage remained zero.
+        miss_counts: 0
+      result_summary: All eighteen returned symbols were reviewed as collisions, blank-check vehicles, funds, preferred securities, mature weak proxies or otherwise non-material leads; primary-source discovery separately retained six new R1 candidates.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings, current issuer submissions and regulatory disclosures
+      sources_or_queries:
+        - full current 54-symbol SEC event and filing index
+        - material August 6 and August 7 filing bodies
+        - current new-candidate filing and identity checks
+      source_ids: [sec_event_index_full_universe_2026_08_09]
+      retrieved_at: 2026-08-09
+      material_findings: MDA, GSAT, OKLO, AAOI, SEI, QBTS, RDW, RGTI, PWR and ASPI received current filing review; no unresolved active-symbol high or critical filing event remains.
+      unavailable_or_skipped_reason: The SEC issuer-profile semantic index covered only the requested current universe rather than all 7,653 eligible issuers; broad name and ticker coverage plus primary-source lead triage bounded the gap.
+    - family_id: issuer_material
+      family: Issuer operations, contracts, financing, acquisitions and capitalization
+      sources_or_queries:
+        - MDA second-quarter results and acquisition financing
+        - GSAT pending Amazon transaction
+        - current operating evidence for SEI, OKLO and AAOI
+        - primary-source packets for APLD, ONDS, AXTI, ALMU, SATL and EOSE
+      source_ids: [mda_q2_2026_results, gsat_q2_2026_amazon_transaction, oklo_q2_2026_10q, aaoi_q2_2026_10q, sei_q2_2026_10q, new_r1_primary_evidence_2026_08_09]
+      retrieved_at: 2026-08-09
+      material_findings: MDA operating evidence strengthened but cash conversion and pro-forma acquisition economics remain mixed; GSAT's standalone right tail is transaction-capped; APLD became the strongest new R1 and five additional R1 leads were retained without promotion.
+      unavailable_or_skipped_reason: Rocket Lab August 10 results were not yet published and therefore define the next hard evidence cutoff.
+    - family_id: market_data
+      family: Completed regular-session prices and adjusted-close history
+      sources_or_queries:
+        - August 7 completed closes for all 54 tradable watchlist securities
+        - adjusted-close returns over 1, 5, 21, 63 and 126 sessions
+        - August 7 research prices for six new R1 leads and VIP
+      source_ids: [completed_close_universe_2026_08_07, new_r1_primary_evidence_2026_08_09]
+      retrieved_at: 2026-08-09
+      material_findings: MDA closed at USD 34.59, effectively at the USD 34.60 research ceiling; price alone created no order or promotion eligibility.
+      unavailable_or_skipped_reason: OPENAI and ANTHROPIC remain unlisted and XTND remains pre-listing, so price and returns are not applicable.
+    - family_id: current_world_context
+      family: Market breadth, financing conditions, current liquidity and event timing
+      sources_or_queries:
+        - August 7 completed-close universe
+        - current issuer financing and acquisition evidence
+        - confirmed 75.29 percent liquidity-option weight
+        - Rocket Lab August 10 event boundary
+      source_ids: [completed_close_universe_2026_08_07, mda_q2_2026_results]
+      retrieved_at: 2026-08-09
+      material_findings: Issuer-specific volatility was high but broad conditions did not establish a market-wide crisis; the account has ample capacity while the next large portfolio event is less than one session away.
+      unavailable_or_skipped_reason: Current-world context is a risk and timing overlay, not independent buy evidence.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, acquisitions, transaction targets and pre-listing securities
+      sources_or_queries:
+        - current public candidate triage
+        - APLD, ONDS, AXTI, ALMU, SATL and EOSE primary-source readiness
+        - GSAT pending acquisition and XTND pre-listing status
+      source_ids: [new_r1_primary_evidence_2026_08_09, gsat_q2_2026_amazon_transaction]
+      retrieved_at: 2026-08-09
+      material_findings: Six eligible common stocks entered R1 without promotion; GSAT moved to frozen because pending consideration caps independent upside; XTND remains not tradable.
+      unavailable_or_skipped_reason: No new candidate reached R2 or R3 during this cycle.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck lanes, independent discovery and full opportunity-cost comparison
+      sources_or_queries:
+        - ten-lane deterministic refresh
+        - public community leads used only for triage
+        - all holdings, active candidates, watch, research-only, frozen and not-tradable names
+        - new powered-site, autonomous-defense, compound-semiconductor, earth-observation and long-duration-storage leads
+      source_ids: [sec_event_index_full_universe_2026_08_09, new_r1_primary_evidence_2026_08_09, completed_close_universe_2026_08_07]
+      retrieved_at: 2026-08-09
+      material_findings: APLD displaced IONQ from the top-five research queue; ONDS opened an autonomous-defense hypothesis; AXTI and ALMU improved the photonics upstream map; SATL and EOSE remained lower-priority R1 leads.
+      unavailable_or_skipped_reason: Zero whole-universe issuer-profile semantic coverage remains bounded discovery debt, with no evidence that it blocks the current MDA or cross-lane decision.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-09
+    notes: Completed-close prices, current filings, operating results, transactions, financing, dilution, new listings, broad name and ticker discovery, community leads and the complete current research set were refreshed or revalidated.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 0
+    organic_recall_count: 17
+    hard_coded_proxy_only_recall_count: 42
+    outside_watchlist_effort_pct: 100
+    new_listing_to_r1_latency_days: 0
+
+unknown_future_review:
+  exploratory_match_count: 60
+  exploratory_denominator: 60
+  stratified_sample_count: 18
+  stratified_sample_pct: 30
+  unsampled_reason: The returned set was fully dispositioned; remaining exploratory hits were bounded by known false-positive families and current primary-source searches.
+  repeated_hit_max_age_days: 1
+  top_clusters: [blank-check vehicles and units, mature regulated infrastructure, funds preferred securities and weak commodity proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, FTRA, GDYN, NGG, QLEP, LPAA, LPAAU, LPBB, LPBBU, GPUS-PD, HBM, UROY, SAAQ, SAAQU, AIO, SPB]
+  false_positive_patterns: [issuer-name collisions, blank-check vehicles and units, funds and preferred securities, mature weak proxies]
+  lane_decisions: [retain all ten top-level lanes, incubate autonomous defense as a hypothesis, deepen powered-site and compound-semiconductor sublane work, promote no lane or security]
+  disposition: No deterministic false positive entered the portfolio queue; six separately verified R1 names remain under dated evidence service levels.
+
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Spacecraft and payload capacity, HALEU, energized AI-ready land, autonomous defense systems, high-speed compound-semiconductor substrates and long-duration grid storage remain plausible long-horizon bottlenecks.
+    inferences: A bottleneck creates shareholder asymmetry only if common equity captures pricing, reinvestment and per-share economics after funding, acquisition and dilution.
+    disconfirming_evidence: Many newly surfaced issuers depend on construction debt, related-party demand, government research, acquisitions or repeated securities issuance.
+    source_ids: [sec_event_index_full_universe_2026_08_09, new_r1_primary_evidence_2026_08_09]
+    investment_implication: Keep MDA first for near-term scale review and advance APLD to the highest-priority new R1, while all six new leads remain quantity zero.
+  who_controls_or_removes_scarcity:
+    facts: MDA builds spacecraft and payload systems; APLD controls powered campuses; ONDS integrates autonomous defense systems; AXTI and ALMU address compound-semiconductor inputs; SATL owns an earth-observation constellation; EOSE manufactures zinc storage systems.
+    inferences: Asset or technology control is insufficient where customers, lenders, acquisition counterparties or security holders capture most economics.
+    disconfirming_evidence: Cash conversion, financing, concentration, commercial scale and fully diluted capitalization remain unresolved for the new R1 set and for MDA scaling.
+    source_ids: [mda_q2_2026_results, new_r1_primary_evidence_2026_08_09]
+    investment_implication: Retain current positions and complete bounded R2 work before any new candidate promotion or MDA scale-up.
+  who_can_monetize_into_shareholder_value:
+    facts: MDA produced the strongest current revenue, booking and backlog evidence; APLD has the largest new contracted powered-site base; GILT has the smallest established operating denominator; LEU controls the strongest strategic fuel-cycle bottleneck.
+    inferences: Current business quality and bottleneck fit do not automatically produce attractive dilution-adjusted entry economics.
+    disconfirming_evidence: MDA free cash flow was negative, APLD funding and concentration are heavy, GILT cash conversion is weak and LEU's valuation and conditional backlog remain demanding.
+    source_ids: [mda_q2_2026_results, new_r1_primary_evidence_2026_08_09, completed_close_universe_2026_08_07]
+    investment_implication: The next-dollar queue is MDA, GILT, LEU, APLD and IREN, with SEI immediately behind; none has a current executable limit.
+  public_security_expression:
+    facts: Fifty-four watchlist securities and seven additional listed research leads have completed prices; OPENAI and ANTHROPIC are unlisted and XTND remains pre-listing.
+    inferences: Listing and price availability establish observability, not mission, evidence, promotion or entry eligibility.
+    disconfirming_evidence: Six new listed leads remain at R1 and VIP remains R1; none has complete R2 comparison or promotion evidence.
+    source_ids: [completed_close_universe_2026_08_07, new_r1_primary_evidence_2026_08_09]
+    investment_implication: Keep all new candidates at quantity zero and preserve direct not-tradable labels for unavailable securities.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT, MDA, APLD, ONDS, AXTI, ALMU, SATL, EOSE, VIP and XTND remain small, early, awkward, recently re-rated or incompletely covered expressions.
+    inferences: Small denominators improve right-tail potential only when survival, directness and per-share value capture are credible.
+    disconfirming_evidence: The new R1 names retain leverage, dilution, concentration, commercialization, customer or related-party blockers; MDA is already at the research ceiling.
+    source_ids: [completed_close_universe_2026_08_07, new_r1_primary_evidence_2026_08_09, mda_q2_2026_results]
+    investment_implication: Complete APLD R2 first, then ONDS and the compound-semiconductor leads; keep SATL and EOSE lower in the evidence queue.
+
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current scan, evidence packet, bottleneck map, candidates, watchlist]
+      sources_checked: [sec_event_index_full_universe_2026_08_09, new_r1_primary_evidence_2026_08_09]
+      facts_verified: Six new R1 leads were independently verified; APLD changes the top-five research queue and no new lead reached R2 or promotion.
+      stale_or_missing_evidence: Whole-universe semantic issuer-profile coverage remains zero; each new R1 has a dated next evidence source.
+      confidence: high
+      key_findings: Retain APLD, ONDS, AXTI, ALMU, SATL and EOSE at R1; promote none and reject no plausible material lead.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [current full-universe filing index, material filing bodies, completed-close cutoff]
+      sources_checked: [sec_event_index_full_universe_2026_08_09, mda_q2_2026_results, gsat_q2_2026_amazon_transaction, oklo_q2_2026_10q, aaoi_q2_2026_10q, sei_q2_2026_10q]
+      facts_verified: MDA operations strengthened but cash quality remained mixed; GSAT's pending transaction caps independent upside; current material active-symbol events were reviewed.
+      stale_or_missing_evidence: Rocket Lab August 10 results were not yet available and immediately expire this decision.
+      confidence: high
+      key_findings: Hold MDA 6 and add zero; freeze GSAT; prioritize SEI without promotion.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [MDA Q2 evidence, current price, confirmed NAV, opportunity set]
+      sources_checked: [mda_q2_2026_results, completed_close_universe_2026_08_07]
+      facts_verified: MDA revenue, bookings, backlog and guidance support a credible second-stage scale-up case inside the current risk budget.
+      stale_or_missing_evidence: The weekend has no executable quote and post-acquisition cash flow and leverage remain unproved.
+      confidence: medium_high
+      key_findings: Bull preferred a three-share MDA add only if fresh tradable price and space opportunity cost remain acceptable.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [MDA cash flow, acquisitions, dilution, current holdings and competing candidates]
+      sources_checked: [mda_q2_2026_results, completed_close_universe_2026_08_07, new_r1_primary_evidence_2026_08_09]
+      facts_verified: Q2 free cash flow was negative CAD 150.2 million, post-quarter shares increased materially and acquisition economics remain incomplete.
+      stale_or_missing_evidence: Working-capital reversal and final pro-forma leverage require later primary evidence.
+      confidence: high
+      key_findings: Hold six and add zero because the research ceiling offers no entry margin and scale evidence is incomplete.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [completed close, adjusted-close history, diluted capitalization, acquisition funding and cross-lane comparison]
+      sources_checked: [mda_q2_2026_results, completed_close_universe_2026_08_07, new_r1_primary_evidence_2026_08_09]
+      facts_verified: MDA at USD 34.59 is one cent below the research ceiling and has no current executable limit; GILT is cheaper but does not clear cash-conversion and transaction gates.
+      stale_or_missing_evidence: A fresh post-event quote and acquisition pro-forma economics are required before any MDA add.
+      confidence: high
+      key_findings: Hold MDA 6 and add zero; review-only prices are USD 32.85 and USD 36.32, not orders.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used: [confirmed cash, NAV, holdings, hypothetical three-share add and Rocket Lab event timing]
+      sources_checked: [completed_close_universe_2026_08_07, mda_q2_2026_results]
+      facts_verified: A three-share add is loss-budget feasible but would raise MDA to about 3.20 percent and total space exposure to about 25.77 percent before the 14.45 percent RKLB holding reports.
+      stale_or_missing_evidence: Rocket Lab August 10 results can materially change the largest holding and the space opportunity-cost ordering.
+      confidence: high
+      key_findings: Zero new MDA wins only through the event because the existing starter bounds waiting cost and the event's information value exceeds the incremental exposure benefit.
+  unresolved_conflicts: 0
+  conflict_resolution: Bull favored a modest MDA scale-up; the other decision reviewers favored holding the starter. The main synthesis selected zero new quantity because current price lacks entry margin and one event day has limited waiting cost, not because volatility or high cash is the objective.
+
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: ONDS created an autonomous-defense hypothesis and APLD, AXTI, ALMU and EOSE deepened existing powered-site, optical-input and grid-duration lanes without proving a new top-level lane.
+  no_change_reason: The ten-lane map remains useful; newly found expressions require R2 evidence before a formal lane split or promotion.
+
+candidate_delta:
+  candidates_added: [APLD, ONDS, AXTI, ALMU, SATL, EOSE]
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: [APLD, ONDS, AXTI, ALMU, SATL, EOSE]
+  r0_leads: []
+  r1_researchable: [APLD, ONDS, AXTI, ALMU, SATL, EOSE]
+  r2_comparable: []
+  r3_promotion_ready: []
+  no_action_challenger: APLD is the strongest new research challenger and MDA the strongest current scale-up candidate; neither has a current executable entry.
+  false_positive_patterns: [issuer-name collisions, blank-check vehicles and units, funds and preferred securities, mature weak proxies]
+
+readiness_sprints:
+  - symbol: APLD
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-APLD-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#APLD
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Form 10-K, project financing documents, lease credit support, construction budgets and ChronoScale ownership can bound project and common-equity economics.
+    final_classification: incubate
+  - symbol: ONDS
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-ONDS-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#ONDS
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 Form 10-Q can separate organic and acquired revenue, reconcile backlog, cash use, acquisition consideration and diluted securities.
+    final_classification: incubate
+  - symbol: AXTI
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-AXTI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#AXTI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 Form 10-Q can provide cash flow, capex, customers, export and diluted-capitalization detail.
+    final_classification: incubate
+  - symbol: ALMU
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-ALMU-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#ALMU
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Commercial design wins, production qualification, full-year results and subsequent financing disclosures can establish or reject a scalable revenue path.
+    final_classification: incubate
+  - symbol: SATL
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-SATL-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#SATL
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 filing and launch-capital plan can reconcile revenue quality, debt conversion, warrants and ongoing constellation funding.
+    final_classification: incubate
+  - symbol: EOSE
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-EOSE-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#EOSE
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 filing, DOE facility terms, Frontier Power USA relationship and fully diluted security schedule can bound gross-margin and financing economics.
+    final_classification: incubate
+
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Current completed closes, primary issuer evidence, full-universe comparison, six bounded readiness sprints and independent xhigh review support a target-level decision. The resulting quantity is zero because target evidence and entry fail, not because repository debt is an allocation veto.
+
+opportunity_cost_and_allocation:
+  confirmed_research_nav: 9741.44
+  confirmed_cash: 7334.45
+  cash_weight_pct: 75.29
+  confirmed_return_seeking_weight_pct: 24.71
+  confirmed_space_weight_pct: 24.71
+  strongest_current_challenger: MDA
+  next_dollar_queue: [MDA, GILT, LEU, APLD, IREN, SEI]
+  high_quality_expensive_comparators: [CRDO, ALAB, VRT]
+  public_action_state: No current action; the conclusion expires at Rocket Lab's August 10 results.
+  holdings: Hold RKLB 17, ASTS 11 and MDA 6; add zero and sell zero.
+  no_trade_execution: true
+
+full_coverage:
+  watchlist_symbol_count: 56
+  additional_current_research_symbols: [APLD, ONDS, AXTI, ALMU, SATL, EOSE, VIP, XTND]
+  total_current_research_symbols: 64
+  symbols: [MDA, RKLB, ASTS, GILT, LEU, APLD, IREN, SEI, CRDO, ALAB, VRT, OKLO, NBIS, CRCL, LITE, SPCX, IONQ, MU, CRWV, CBRS, AXTI, ONDS, ALMU, NWPX, STDN, INFQ, IQMX, ETN, PWR, GSAT, KTOS, YSS, LUNR, BE, AAOI, FN, OCC, POET, RIOT, CIFR, WULF, WYFI, SATL, FLY, RDW, VOYG, XNDU, NNE, IMSR, SMR, HQ, QBTS, QUBT, RGTI, EOSE, NUCL, QSI, QTEX, ENRD, ASPI, VIP, OPENAI, ANTHROPIC, XTND]
+  watchlist_cycle_rows_written: 56
+  public_buy_zone_rows_written: 8
+  symbol_decision_path: decisions/2026-08-09-weekly-operating-cycle.md
+
+publication_review:
+  status: public_safe_no_action
+  contains_actionable_trading_content: false
+  public_release_earliest_at: after completed validation and sensitive-field review
+  embargo_status: clear_for_completed_no_action_after_redaction
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed
+  notes: Public artifacts contain no current executable order, broker preview, raw broker artifact, full identifier, credential or private account evidence.
+
+validation:
+  status: passed
+  notes: Article 1 decision and data checks passed; npm run verify passed and generated 91 static pages. The local release candidate and the pre-release production baseline returned HTTP 200 on the dashboard, run index, MDA research page and the current run page where applicable, with no document-level horizontal overflow at 390-pixel mobile or 1280-pixel desktop widths. Sensitive-field and public-release review passed.

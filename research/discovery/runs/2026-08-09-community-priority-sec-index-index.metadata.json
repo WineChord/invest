@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T01:16:14.473Z",
+  "as_of": "2026-08-09",
+  "source": "sec_filing_discovery_index",
+  "index_scope": "targeted_symbols",
+  "requested_symbols": [
+    "COHR",
+    "AXTI",
+    "MRVL",
+    "ONDS"
+  ],
+  "output_prefix": "research/discovery/runs/2026-08-09-community-priority-sec-index",
+  "manifest_path": "research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.csv",
+  "manifest_metadata_path": "research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.metadata.json",
+  "profile_path": "research/discovery/runs/2026-08-09-community-priority-sec-index-profiles.json",
+  "scan_path": "research/discovery/runs/2026-08-09-community-priority-sec-index-scan.json",
+  "manifest_sha256": "69eae21ba022dafca0129b7752a993f0a75d07c506112d9254b916e6e8224fc7",
+  "manifest_metadata_sha256": "3deeb4610056d5d697c1f63c5c6a63924d193ec37cc6eea51dc97ad7c938bf66",
+  "profile_sha256": "e3f75b3ba6768ebb6c42ec3eac29c264eae205d4ac0a99e1cd4dad5dc8d11c61",
+  "scan_sha256": "573a607d1247100832f6566ec855e68237c93c553806b5fa0c2d08cf02f38e94",
+  "commands": [
+    {
+      "command": "node scripts/build-sec-filing-manifest.mjs --as-of 2026-08-09 --output research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.csv --metadata-output research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.metadata.json --symbols COHR,AXTI,MRVL,ONDS --max-submissions-cache-age-days 0 --request-delay-ms 150 --submissions-ledger-output research/discovery/runs/2026-08-09-community-priority-sec-submissions-ledger.json --filing-selection-policy latest-supported --filing-types 8-K,6-K,10-Q,S-4,F-4,DEF14A",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/build-sec-filing-profiles.mjs --as-of 2026-08-09 --manifest research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.csv --manifest-metadata research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.metadata.json --output research/discovery/runs/2026-08-09-community-priority-sec-index-profiles.json --max-filing-cache-age-days 0 --request-delay-ms 150 --filing-ledger-output research/discovery/runs/2026-08-09-community-priority-sec-filings-ledger.json",
+      "output_checked": true
+    },
+    {
+      "command": "node scripts/discover-universe.mjs --dry-run --json --as-of 2026-08-09 --profile-input research/discovery/runs/2026-08-09-community-priority-sec-index-profiles.json --output research/discovery/runs/2026-08-09-community-priority-sec-index-scan.json --limit 50",
+      "output_checked": true
+    }
+  ],
+  "coverage": {
+    "selection_strategy": "requested_symbols",
+    "coverage_scope": "partial_requested_symbols",
+    "selected_symbol_count": 4,
+    "eligible_universe_count": 7653,
+    "manifest_row_count": 4,
+    "profile_count": 2,
+    "profile_coverage_status": "targeted_partial",
+    "profile_coverage_gap_count": 7649,
+    "profile_coverage_ratio": 0.000523,
+    "candidate_count": 18,
+    "total_match_count": 139
+  },
+  "caveats": [
+    "This index is deterministic discovery scaffolding, not buy eligibility.",
+    "Targeted-symbol indexes answer only the requested scope and must not be cited as complete SEC universe coverage.",
+    "Complete SEC universe indexes require --all and the upstream SEC submissions guardrails."
+  ]
+}

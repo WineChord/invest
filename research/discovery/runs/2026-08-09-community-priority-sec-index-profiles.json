@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T01:16:19.695Z",
+  "source": "sec_filing_business_sections",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "business_description"
+  ],
+  "source_files": [
+    "research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.csv",
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.metadata.json"
+  ],
+  "filing_cache_dir": "",
+  "filing_cache_hits": 0,
+  "filing_cache_misses": 0,
+  "filing_cache_writes": 0,
+  "filing_cache_only": false,
+  "filing_ledger_output": "research/discovery/runs/2026-08-09-community-priority-sec-filings-ledger.json",
+  "filing_ledger_count": 4,
+  "filing_ledger": [
+    {
+      "symbol": "AXTI",
+      "cik": "0001051627",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926025061/axti20260609_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:19.695Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "0e206032da502878b8a6cb963e45cdd5c0d65eea8d9f359f355aab528b5db683",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:19.695Z"
+    },
+    {
+      "symbol": "COHR",
+      "cik": "0000820318",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/820318/000119312526208972/d57080d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:19.695Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "815b84a187a97470473b4c9641655324f2d669319224f2fa2576f4238530b95b",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:19.695Z"
+    },
+    {
+      "symbol": "MRVL",
+      "cik": "0001835632",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526299843/d82462d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:19.695Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "9b4fc9d15b6f6a14f2a36d15cc91e844dd22d9f8c5408b8b6efefb6cbbeb20b3",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:19.695Z"
+    },
+    {
+      "symbol": "ONDS",
+      "cik": "0001646188",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1646188/000119312526340352/onds-20260803.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-09T01:16:19.695Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 0,
+      "payload_sha256": "27ae1742f0c66f9cb2aee3cd843d0ceecdf42bd6ef77caee23c36d0a891c4eb3",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-09",
+      "fetched_at": "2026-08-09T01:16:19.695Z"
+    }
+  ],
+  "max_filing_cache_age_days": 0,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_request_delay_ms": 150,
+  "selection_strategy": "manifest_filing_sections",
+  "manifest_selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "COHR",
+    "AXTI",
+    "MRVL",
+    "ONDS"
+  ],
+  "selected_symbol_count": 4,
+  "eligible_universe_count": 7653,
+  "coverage_limit": 4,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "manifest_metadata_path": "research/discovery/runs/2026-08-09-community-priority-sec-index-manifest.metadata.json",
+  "manifest_row_count": 4,
+  "profile_count": 2,
+  "skipped_symbols": [
+    {
+      "symbol": "AXTI",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "ONDS",
+      "reason": "missing_business_section_start"
+    }
+  ],
+  "profiles": [
+    {
+      "symbol": "COHR",
+      "cik": "0000820318",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/820318/000119312526208972/d57080d8k.htm",
+      "source_published_at": "2026-05-06",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 7.01. Regulation FD Disclosure. A slide presentation to be used by senior management of the Company in connection with its discussions with investors and others regarding the financial results is furnished as Exhibit 99.2. The information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934 or otherwise subject to the liabilities under that Section. Furthermore, the information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed to be incorporated by reference into the filings of the Company under the Securities Act of 1933.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01. Regulation FD Disclosure. A slide presentation to be used by senior management of the Company in connection with its discussions with investors and others regarding the financial results is furnished as Exhibit 99.2. The information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934 or otherwise subject to the liabilities under that Section. Furthermore, the information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed to be incorporated by reference into the filings of the Company under the Securities Act of 1933."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-208972/d57080d8k.htm",
+      "filing_accession_number": "0001193125-26-208972",
+      "filing_acceptance_datetime": "2026-05-06T20:10:58.000Z",
+      "filing_content_sha256": "815b84a187a97470473b4c9641655324f2d669319224f2fa2576f4238530b95b",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "d57080d8k.htm",
+      "filing_report_date": "2026-05-06",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0000820318.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2873,
+      "extraction_end_offset": 3642,
+      "extraction_section_length": 768,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "MRVL",
+      "cik": "0001835632",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526299843/d82462d8k.htm",
+      "source_published_at": "2026-07-09",
+      "retrieved_at": "2026-08-09",
+      "text": "Item 8.01 Other Events. On July 9, 2026, Marvell Technology, Inc. filed a prospectus supplement to its automatic shelf registration statement on Form S-3 (Registration No. 333-285742) with the Securities and Exchange Commission. This Current Report is being filed solely for the purpose of filing the opinion of Wilson Sonsini Goodrich & Rosati, Professional Corporation relating to the legality of the issuance and sale of the securities set forth in the prospectus supplement, which opinion is attached as Exhibit 5.1 hereto.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 8.01 Other Events. On July 9, 2026, Marvell Technology, Inc. filed a prospectus supplement to its automatic shelf registration statement on Form S-3 (Registration No. 333-285742) with the Securities and Exchange Commission. This Current Report is being filed solely for the purpose of filing the opinion of Wilson Sonsini Goodrich & Rosati, Professional Corporation relating to the legality of the issuance and sale of the securities set forth in the prospectus supplement, which opinion is attached as Exhibit 5.1 hereto."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-299843/d82462d8k.htm",
+      "filing_accession_number": "0001193125-26-299843",
+      "filing_acceptance_datetime": "2026-07-09T21:19:10.000Z",
+      "filing_content_sha256": "9b4fc9d15b6f6a14f2a36d15cc91e844dd22d9f8c5408b8b6efefb6cbbeb20b3",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "d82462d8k.htm",
+      "filing_report_date": "2026-07-09",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001835632.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 1954,
+      "extraction_end_offset": 2482,
+      "extraction_section_length": 527,
+      "extraction_start_pattern": "item_8_01_other_events",
+      "extraction_start_pattern_label": "Item 8.01 other events",
+      "extraction_warnings": []
+    }
+  ]
+}

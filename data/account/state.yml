@@ -1,12 +1,12 @@
 schema_version: 1
-as_of: 2026-08-06
+as_of: 2026-08-07
 status: funded_with_positions
 base_currency: USD
-confirmed_cash: 6446.45
-settled_cash: 6649.58
-buying_power: 6446.45
+confirmed_cash: 7334.45
+settled_cash: 7334.45
+buying_power: 7334.45
 positions_count: 3
-last_confirmed_ledger_event_id: 2026-08-06-buy-mda-001
+last_confirmed_ledger_event_id: 2026-08-07-deposit-weekly-888-001
 last_reconciled_with_broker_at: 2026-08-06
 notes:
   - User confirmed USD 888 deposits available in the brokerage account on
@@ -17,4 +17,4 @@ notes:
   - User confirmed an MDA buy execution on 2026-08-06 from redacted screenshot
     evidence; cash settlement is due on 2026-08-07.
   - Raw broker screenshots and full broker identifiers are not committed.
-last_standing_contribution_date: 2026-07-31
+last_standing_contribution_date: 2026-08-07

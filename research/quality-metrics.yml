@@ -1,20 +1,20 @@
 schema_version: 1
-as_of: 2026-08-06
+as_of: 2026-08-09
 last_research_engine_run:
-  as_of: 2026-08-06
-  scope: event_driven_full_operating_cycle_with_august_5_completed_closes_gilt_leu_ionq_results_mda_financing_asts_launch_alab_post_results_close_and_broker_state_adjudication
-  notes: Completed the 2026-08-06 v1.3 event-driven full operating cycle using fresh August 5 completed closes for all 55 tradable research securities, targeted current SEC coverage, material GILT LEU IONQ MDA ASTS and ALAB evidence, all-symbol comparison, and independent discovery, freshness, bull, bear, valuation and allocation review. The cycle issued no duplicate action while the prior MDA order state was unknown. Later redacted broker evidence confirmed the August 6 MDA execution and resolved that account-truth blocker.
+  as_of: 2026-08-09
+  scope: missed_saturday_weekly_full_operating_cycle_with_august_7_completed_closes_mda_q2_full_sec_coverage_six_new_r1_sprints_and_rklb_event_adjudication
+  notes: Completed the 2026-08-09 v1.3 weekly full operating cycle using August 7 completed closes, MDA second-quarter evidence, the current full-universe filing index, six new R1 readiness sprints, 64-symbol opportunity-cost coverage and six independent xhigh review roles. Existing MDA exposure remains mission-relevant; zero incremental quantity is valid only through the Rocket Lab August 10 result.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support target-level decisions after the fresh August 5 completed-close cross-check, targeted SEC review, material GILT LEU IONQ MDA ASTS and ALAB evidence, bounded current-world discovery, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto. The prior MDA order state is now resolved as a confirmed 6-share position; any further action requires the August 7 results and a fresh mission, evidence, entry, and opportunity-cost review.
+  reason: Repository-public research is current enough to support target-level decisions after the August 7 completed-close refresh, MDA Q2 review, current full-universe SEC coverage, six new R1 readiness sprints, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto; target evidence and entry quality produce the current zero-add conclusion.
   user_only_execution_prerequisites:
-    - broker cash and buying-power confirmation still showing at least the recorded confirmed 6446.45 USD before any future real order
+    - broker cash and buying-power confirmation still showing at least the recorded confirmed 7334.45 USD before any future real order
     - complete broker execution confirmation fields before mutating repository account records
     - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
     - do not rely on the committed public record as executable order guidance
-    - rerun after any material issuer event, a 5 percent reviewed-symbol price move, MDA August 7 results, RKLB August 10 results, IREN contract or commissioning evidence, or 2026-08-07
+    - rerun after Rocket Lab August 10 results, any material issuer event, a 5 percent MDA move, acquisition or financing evidence, or another confirmed account change
     - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
     - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
 mission_accountability:
@@ -26,63 +26,63 @@ mission_accountability:
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
   latest_confirmed_return_seeking_buy_date: 2026-08-06
-  latest_research_nav: 8673.70
-  confirmed_cash: 6649.58
-  latest_research_nav_basis: August 5 completed-close snapshot before the August 6 MDA execution; current confirmed cash is USD 6446.45 and the next completed-close refresh will update this valuation block
+  latest_research_nav: 9741.44
+  confirmed_cash: 7334.45
+  latest_research_nav_basis: August 7 completed-close snapshot after the confirmed MDA starter and the due standing contribution
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 76.6637
+  liquidity_option_weight_pct: 75.2912
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
   latest_mission_relevant_deployment_date: 2026-08-06
   mission_relevant_deployment_basis: 2026-08-06-buy-mda-001
-  days_since_latest_mission_relevant_deployment: 0
+  days_since_latest_mission_relevant_deployment: 3
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
   next_required_review_at: 2026-09-20
-  strongest_counterfactual: MDA remains the strongest current configuration candidate after the Telesat expansion and financing close; GILT remains the closest low-denominator challenger, LEU the strongest structural bottleneck expression, IREN the strongest powered-site challenger, and IONQ the post-acquisition quantum-platform challenger.
-  smallest_prudent_exposure_considered: The bounded 6-share MDA starter was confirmed executed on August 6 and is treated as the smallest mission-relevant rather than symbolic exposure; it does not authorize a further add.
-  zero_vs_starter_result: The bounded MDA starter displaced zero and is now confirmed in the account. Zero additional quantity remains appropriate until the August 7 results refresh contract margins, cash conversion, leverage, integration, valuation, concentration, and opportunity cost. GILT LEU and IONQ remain target-specific non-buys after current results.
+  strongest_counterfactual: MDA remains the strongest scale-up candidate; GILT is the closest low-denominator challenger, LEU the strongest scarcity expression, APLD the strongest new R1, IREN the strongest existing powered-site challenger and SEI the strongest newly improved operating challenger.
+  smallest_prudent_exposure_considered: A three-share MDA add at the USD 34.60 research ceiling was explicitly tested; it would use USD 103.80, raise MDA from 2.13 to about 3.20 percent of NAV and remain inside the starter loss budget.
+  zero_vs_starter_result: Existing MDA exposure captures the strengthened operating thesis. Zero incremental shares beat a three-share add only through the Rocket Lab event because Q2 did not prove cash conversion or acquisition economics, the current price offers no margin below the research ceiling and the one-session waiting cost is small relative to the event's portfolio information value.
   zero_exposure_reason_code: other_documented
-  decision_critical_missing_evidence: MDA's August 7 results now control any further action through contract margins, cash conversion, leverage, integration, and post-execution opportunity cost. GILT normalized cash conversion and final transaction economics, LEU funded fixed-price contract protection and TENEX substitution, and IONQ post-close unit economics and dilution block those targets, not the whole opportunity set.
-  why_risk_sizing_cannot_absorb_uncertainty: The existing MDA starter bounds pre-results uncertainty, but a further add before August 7 evidence would increase correlated space exposure without resolving contract margin, leverage, integration, or cash-conversion risk. GILT transaction-denominator risk, LEU contract and funding risk, and IONQ post-close unit economics remain target-specific blockers.
-  cash_opportunity_cost: The confirmed MDA starter creates current exposure while USD 6446.45 of confirmed cash preserves capacity for stronger post-results evidence or a superior cross-lane opportunity. The remaining cash still carries waiting cost and must not become a permanent default.
-  conjunctive_evidence_and_price_trigger: Any further MDA decision requires current mission, evidence, entry, concentration, and opportunity-cost gates after August 7 results; price alone never authorizes an add. GILT LEU and IONQ require their company-specific economics to improve, not merely lower prices.
-  next_evidence_deadline: 2026-08-07
-  no_action_streak: 0
+  decision_critical_missing_evidence: For an MDA scale-up, the missing items are working-capital reversal, final post-offering dilution, acquisition funding and pro-forma leverage, plus the Rocket Lab result that can change the relative value of the largest position. These are target and ranking blockers, not a portfolio-wide veto.
+  why_risk_sizing_cannot_absorb_uncertainty: Three additional shares are loss-budget feasible, so risk sizing alone is not the veto. Quantity remains zero because the current price has no entry cushion and existing exposure already bounds the short waiting cost while evidence arrives.
+  cash_opportunity_cost: The confirmed MDA starter participates in upside while USD 7334.45 preserves capacity for a post-event scale-up or a superior cross-lane candidate. A 10 percent missed move on three MDA shares is about 0.11 percent of NAV, so the brief wait is measurable but bounded.
+  conjunctive_evidence_and_price_trigger: Reconsider MDA only after a fresh tradable price and Rocket Lab comparison, with working-capital recovery, final diluted shares, acquisition funding, pro-forma leverage and no material backlog or margin damage. USD 32.85 and USD 36.32 are review-only triggers, not orders.
+  next_evidence_deadline: 2026-08-11
+  no_action_streak: 1
   article1_red_team_status: completed_current_v1.3_multi_candidate_starter_challenge
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: The August 6 MDA buy is now confirmed as a 6-share mission-relevant starter. No further action is active before the August 7 results and a fresh all-gate review; GILT LEU and IONQ remain at zero after current evidence. The next 45-day mission-pressure review is due on 2026-09-20 if no later mission-relevant deployment occurs.
+  current_conclusion: Hold RKLB 17, ASTS 11 and MDA 6; add zero and sell zero only through Rocket Lab's August 10 result. MDA remains first for scale review, APLD is the strongest new R1 and no current executable limit exists. The 45-day mission-pressure review remains 2026-09-20 if no later mission-relevant deployment occurs.
 coverage:
-  universe_scan_as_of: 2026-08-06
-  discovery_lane_map_as_of: 2026-08-06
+  universe_scan_as_of: 2026-08-09
+  discovery_lane_map_as_of: 2026-08-09
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
-  active_watchlist_symbols: 23
-  active_symbols_with_current_valuation_state: 23
+  active_watchlist_symbols: 22
+  active_symbols_with_current_valuation_state: 22
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 23
+  active_symbols_with_latest_filing_review: 22
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 25
+  raw_discovery_candidates_open: 31
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-08-06-event-driven-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-08-06-event-driven-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-08-06-event-driven-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-08-06-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-08-09-weekly-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-08-09-weekly-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-08-09-weekly-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-08-09-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
   issuer_profile_semantic_coverage_pct: 0
   broad_semantic_search_status: gap_open
-  organic_recall_count: 18
+  organic_recall_count: 17
   hard_coded_proxy_only_recall_count: 42
   exploratory_match_count: 60
   exploratory_sample_count: 18
   exploratory_sample_coverage_pct: 30
-  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed, and every returned candidate received a disposition. No new R1 lead displaced the current opportunity set; VIP remains a bounded R1 powered-land lead. Zero issuer-profile semantic coverage remains bounded discovery debt rather than an allocation veto.
+  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed, every returned deterministic candidate received a disposition, and primary-source work retained six new R1 leads. APLD changed the research top five; zero whole-universe semantic coverage remains bounded discovery debt rather than an allocation veto.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -112,9 +112,9 @@ discovery_process:
     - unknown_future_bottlenecks
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 25
+  material_open_candidates: 31
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 25
+  open_candidate_readiness_completed: 31
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -164,4 +164,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.3 decision uses August 5 completed-close provenance, targeted SEC coverage, material GILT LEU IONQ MDA ASTS and ALAB review, independent starter-versus-zero adjudication and current liquidity. The prior MDA order state is an owner-only target prerequisite; bounded semantic-discovery and CAE security-master debt are not portfolio-wide vetoes. The prior standing contribution was not duplicated; no order, fill or account mutation was inferred.
+notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.3 decision uses August 7 completed closes, MDA Q2, current full-universe SEC coverage, six new R1 readiness sprints, independent MDA add-versus-zero adjudication and current liquidity. The due contribution was applied once; no trade, order or fill was inferred. Semantic discovery debt remains visible but is not a target veto.
