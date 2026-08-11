@@ -37,3 +37,4 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-08-05,2024.12,6649.58,8673.70,9216.00,-5.8843,-0.1778,Automated daily close valuation from Yahoo Finance chart.
 2026-08-06,2232.91,6446.45,8679.36,9216.00,-5.8229,0.0653,Automated daily close valuation from Yahoo Finance chart.
 2026-08-07,2406.99,7334.45,9741.44,10104.00,-3.5883,2.0057,Automated daily close valuation from Yahoo Finance chart after the due weekly contribution.
+2026-08-10,2317.50,7334.45,9651.95,10104.00,-4.4740,-0.9187,Automated daily close valuation from Yahoo Finance chart.
