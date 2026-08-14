@@ -1,22 +1,20 @@
 schema_version: 1
-as_of: 2026-08-09
+as_of: 2026-08-11
 last_research_engine_run:
-  as_of: 2026-08-09
-  scope: missed_saturday_weekly_full_operating_cycle_with_august_7_completed_closes_mda_q2_full_sec_coverage_six_new_r1_sprints_and_rklb_event_adjudication
-  notes: Completed the 2026-08-09 v1.3 weekly full operating cycle using August 7 completed closes, MDA second-quarter evidence, the current full-universe filing index, six new R1 readiness sprints, 64-symbol opportunity-cost coverage and six independent xhigh review roles. Existing MDA exposure remains mission-relevant; zero incremental quantity is valid only through the Rocket Lab August 10 result.
+  as_of: 2026-08-11
+  scope: event_driven_L2_with_august_10_closes_rklb_asts_riot_material_filings_mda_scale_decision_and_seven_new_R1_sprints
+  notes: Completed a v1.3 event-driven L2 cycle covering 71 symbols. The August 11 MDA +3 proposal was the smallest mission-consistent scale step for that session, then expired without a linked execution; RIOT advanced to watch/R2 and seven new leads remained R1.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public research is current enough to support target-level decisions after the August 7 completed-close refresh, MDA Q2 review, current full-universe SEC coverage, six new R1 readiness sprints, all-symbol comparison and independent xhigh review. Repository readiness is not an allocation veto; target evidence and entry quality produce the current zero-add conclusion.
+  reason: Primary evidence, August 10 completed closes, the 71-symbol comparison and independent reviews supported one bounded MDA scale step for August 11. That proposal has expired; a future order requires a fresh decision after the evidence deadline rather than rolling the old terms forward.
   user_only_execution_prerequisites:
-    - broker cash and buying-power confirmation still showing at least the recorded confirmed 7334.45 USD before any future real order
-    - complete broker execution confirmation fields before mutating repository account records
-    - broker order preview for commissions, fees, fractional-share support, settlement constraints, and final user execution instruction before any real order
-    - do not rely on the committed public record as executable order guidance
-    - rerun after Rocket Lab August 10 results, any material issuer event, a 5 percent MDA move, acquisition or financing evidence, or another confirmed account change
-    - do not buy SPCX without a fresh post-IPO promotion review covering valuation, float, lockup, governance, capital structure, notes, and xAI/X exposure
-    - SGOV broker ETF eligibility, fee, fractional-share, and settlement treatment before any future reserve purchase
+    - account owner must verify a fresh broker quote and order preview before any future real action
+    - the MDA proposal expired without a linked execution at the 2026-08-11 regular close and must not roll or chase
+    - the separately confirmed 2026-08-13 MDA buy is an independent historical account event and creates no further-action authorization
+    - complete broker execution evidence is required before any account-record mutation
+    - RIOT requires the first event-after completed close plus permanent-financing and credit evidence before active or buy eligibility
 mission_accountability:
   policy_version: v1.3
   latest_full_decision_policy_version: v1.3
@@ -25,64 +23,64 @@ mission_accountability:
   repository_health_is_allocation_veto: false
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
-  latest_confirmed_return_seeking_buy_date: 2026-08-06
-  latest_research_nav: 9741.44
+  latest_confirmed_return_seeking_buy_date: 2026-08-13
+  latest_research_nav: 9651.95
   confirmed_cash: 7334.45
-  latest_research_nav_basis: August 7 completed-close snapshot after the confirmed MDA starter and the due standing contribution
+  latest_research_nav_basis: August 10 completed-close snapshot before the August 13 MDA execution and August 14 standing contribution; current confirmed cash is USD 8115.92 and MDA is 9 shares, and the next completed-close refresh will update this valuation block
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 75.2912
+  liquidity_option_weight_pct: 75.9893
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
   latest_mission_relevant_deployment_date: 2026-08-06
   mission_relevant_deployment_basis: 2026-08-06-buy-mda-001
-  days_since_latest_mission_relevant_deployment: 3
+  days_since_latest_mission_relevant_deployment: 5
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
   next_required_review_at: 2026-09-20
-  strongest_counterfactual: MDA remains the strongest scale-up candidate; GILT is the closest low-denominator challenger, LEU the strongest scarcity expression, APLD the strongest new R1, IREN the strongest existing powered-site challenger and SEI the strongest newly improved operating challenger.
-  smallest_prudent_exposure_considered: A three-share MDA add at the USD 34.60 research ceiling was explicitly tested; it would use USD 103.80, raise MDA from 2.13 to about 3.20 percent of NAV and remain inside the starter loss budget.
-  zero_vs_starter_result: Existing MDA exposure captures the strengthened operating thesis. Zero incremental shares beat a three-share add only through the Rocket Lab event because Q2 did not prove cash conversion or acquisition economics, the current price offers no margin below the research ceiling and the one-session waiting cost is small relative to the event's portfolio information value.
+  strongest_counterfactual: At the August 11 decision snapshot, MDA was the only starter-level action; GILT and LEU were the closest active challengers, APLD the strongest R1 and RIOT the highest-priority new R2/watch review.
+  smallest_prudent_exposure_considered: The historical August 11 proposal considered three MDA shares at no more than USD 34.60; it expired without a linked execution and creates no current authorization.
+  zero_vs_starter_result: At the August 11 decision snapshot, zero no longer provided superior Article 1 exposure and a three-share stage bounded the identified uncertainty. That proposal expired; the separately confirmed August 13 purchase establishes 9 MDA shares as an account fact without reviving the old order terms.
   zero_exposure_reason_code: other_documented
-  decision_critical_missing_evidence: For an MDA scale-up, the missing items are working-capital reversal, final post-offering dilution, acquisition funding and pro-forma leverage, plus the Rocket Lab result that can change the relative value of the largest position. These are target and ranking blockers, not a portfolio-wide veto.
-  why_risk_sizing_cannot_absorb_uncertainty: Three additional shares are loss-budget feasible, so risk sizing alone is not the veto. Quantity remains zero because the current price has no entry cushion and existing exposure already bounds the short waiting cost while evidence arrives.
-  cash_opportunity_cost: The confirmed MDA starter participates in upside while USD 7334.45 preserves capacity for a post-event scale-up or a superior cross-lane candidate. A 10 percent missed move on three MDA shares is about 0.11 percent of NAV, so the brief wait is measurable but bounded.
-  conjunctive_evidence_and_price_trigger: Reconsider MDA only after a fresh tradable price and Rocket Lab comparison, with working-capital recovery, final diluted shares, acquisition funding, pro-forma leverage and no material backlog or margin damage. USD 32.85 and USD 36.32 are review-only triggers, not orders.
-  next_evidence_deadline: 2026-08-11
+  decision_critical_missing_evidence: Working-capital reversal, final post-offering dilution and Blue Canyon/CLS pro-forma leverage block five shares and every fully underwritten scale step, not the smallest three-share starter completion.
+  why_risk_sizing_cannot_absorb_uncertainty: Risk sizing can absorb the residual uncertainty only at three shares; five shares would consume the full starter band before acquisition evidence arrives.
+  cash_opportunity_cost: The historical proposal used at most 1.08 percent of the decision-snapshot NAV and preserved about 74.9 percent cash for MDA milestones, RIOT financing evidence or a superior cross-lane opportunity.
+  conjunctive_evidence_and_price_trigger: The August 11 price-and-session trigger expired. Any later scale step requires a new decision using current price, working-capital, diluted-share, acquisition-funding, pro-forma leverage and full opportunity-cost evidence.
+  next_evidence_deadline: 2026-08-14
   no_action_streak: 1
-  article1_red_team_status: completed_current_v1.3_multi_candidate_starter_challenge
+  article1_red_team_status: completed_current_v1.3_smallest_scale_vs_zero_and_plus_five
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: Hold RKLB 17, ASTS 11 and MDA 6; add zero and sell zero only through Rocket Lab's August 10 result. MDA remains first for scale review, APLD is the strongest new R1 and no current executable limit exists. The 45-day mission-pressure review remains 2026-09-20 if no later mission-relevant deployment occurs.
+  current_conclusion: The independently confirmed August 13 MDA buy is recorded as a 3-share account event, bringing MDA to 9 shares; confirmed cash is USD 8115.92 after the August 14 standing contribution. The August 11 proposal expired without a linked execution and no current trade authorization survives.
 coverage:
-  universe_scan_as_of: 2026-08-09
-  discovery_lane_map_as_of: 2026-08-09
+  universe_scan_as_of: 2026-08-11
+  discovery_lane_map_as_of: 2026-08-11
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
   emerging_discovery_lanes: 1
-  active_watchlist_symbols: 22
-  active_symbols_with_current_valuation_state: 22
+  active_watchlist_symbols: 23
+  active_symbols_with_current_valuation_state: 23
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 22
+  active_symbols_with_latest_filing_review: 23
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 31
+  raw_discovery_candidates_open: 38
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-08-09-weekly-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-08-09-weekly-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-08-09-weekly-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-08-09-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-08-11-event-driven-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-08-11-event-driven-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-08-11-event-driven-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-08-11-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
   issuer_profile_semantic_coverage_pct: 0
-  broad_semantic_search_status: gap_open
-  organic_recall_count: 17
-  hard_coded_proxy_only_recall_count: 42
-  exploratory_match_count: 60
+  broad_semantic_search_status: gap_open_bounded_process_debt
+  organic_recall_count: 7
+  hard_coded_proxy_only_recall_count: 0
+  exploratory_match_count: 59
   exploratory_sample_count: 18
-  exploratory_sample_coverage_pct: 30
-  search_quality_conclusion: Name and ticker scanning plus known-proxy regression coverage completed, every returned deterministic candidate received a disposition, and primary-source work retained six new R1 leads. APLD changed the research top five; zero whole-universe semantic coverage remains bounded discovery debt rather than an allocation veto.
+  exploratory_sample_coverage_pct: 30.5085
+  search_quality_conclusion: All 18 deterministic candidates were dispositioned, an 18-of-59 exploratory recall sample was reviewed, and seven separately verified primary-source leads entered R1. No discovery gap blocks MDA; broad semantic coverage remains bounded process debt.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -112,9 +110,9 @@ discovery_process:
     - unknown_future_bottlenecks
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 31
+  material_open_candidates: 38
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 31
+  open_candidate_readiness_completed: 38
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -164,4 +162,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: Repository ready means target evidence and opportunity-set sufficiency control allocation. The current v1.3 decision uses August 7 completed closes, MDA Q2, current full-universe SEC coverage, six new R1 readiness sprints, independent MDA add-versus-zero adjudication and current liquidity. The due contribution was applied once; no trade, order or fill was inferred. Semantic discovery debt remains visible but is not a target veto.
+notes: The current v1.3 cycle uses August 10 completed closes, current material filings, a 71-symbol opportunity set, RIOT promotion and seven new R1 sprints. The August 11 MDA proposal expired without a linked execution; its exact terms are historical only and no current authorization survives.

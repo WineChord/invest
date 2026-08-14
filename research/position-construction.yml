@@ -1,21 +1,25 @@
 schema_version: 1
 policy_version: v1.3
-as_of: 2026-08-09
+as_of: 2026-08-11
 records:
   - symbol: MDA
-    as_of: 2026-08-09
+    as_of: 2026-08-11
     policy_version: v1.3
-    research_stage: held_active_candidate_post_results_reunderwriting
-    initial_weight_range_pct: [2, 4]
-    fully_underwritten_weight_range_pct: [6, 12]
-    current_stage: starter_held_scale_gate_closed
+    research_stage: held_active_candidate_historical_scale_review
+    initial_weight_range_pct:
+      - 2
+      - 4
+    fully_underwritten_weight_range_pct:
+      - 6
+      - 12
+    current_stage: august_11_scale_proposal_expired_without_linked_execution
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 4
     downside_portfolio_result: Acquisition leverage, integration failure, dilution or weak cash conversion could impair the starter and compound correlated space losses.
     base_portfolio_result: The existing starter can participate in a capable space platform while cash conversion and acquisition economics remain under review.
     upside_portfolio_result: Successful Blue Canyon and CLS integration with strong per-share cash conversion could justify a material platform position.
     exceptional_portfolio_result: A vertically integrated global spacecraft, payload and geospatial-data platform could create rare multi-decade asymmetry.
-    contribution_dilution_check: The current starter is mission-relevant; future scaling must use total confirmed liquidity and compare the full RKLB, ASTS and MDA space exposure rather than the latest contribution.
+    contribution_dilution_check: The historical three-share increment was mission-relevant and used total confirmed liquidity rather than the latest contribution, but its one-session proposal expired without a linked execution. The separately confirmed August 13 account event does not revive the old terms or authorize another scale step; further sizing waits for cash conversion and pro-forma acquisition evidence.
     scale_milestones:
       - post-offering diluted shares and acquisition consideration are fully reconciled
       - pro-forma leverage stays within the stated target and declines through operating cash flow
@@ -27,15 +31,22 @@ records:
       - leverage exceeds the stated range without a credible operating-cash-flow path
       - persistent dilution-adjusted cash conversion misses the underwriting case
       - backlog, margin or integration evidence breaks the shareholder-value path
-    stage_review_by: 2026-08-11
-    source_path: decisions/2026-08-09-weekly-operating-cycle.md
-    source_ids: [completed_close_universe_2026_08_07, mda_q2_2026_results, mda_notes_close_2026_08_05]
+    stage_review_by: 2026-08-14
+    source_path: decisions/2026-08-11-event-driven-operating-cycle.md
+    source_ids:
+      - completed_close_universe_2026_08_10
+      - mda_q2_2026_results
+      - rklb_q2_2026_10q
   - symbol: GILT
     as_of: 2026-08-09
     policy_version: v1.3
     research_stage: active_candidate_transaction_reunderwriting
-    initial_weight_range_pct: [2, 4]
-    fully_underwritten_weight_range_pct: [6, 12]
+    initial_weight_range_pct:
+      - 2
+      - 4
+    fully_underwritten_weight_range_pct:
+      - 6
+      - 12
     current_stage: cash_conversion_and_transaction_gate_closed
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 4
@@ -57,13 +68,19 @@ records:
       - customer or technology displacement breaks the thesis
     stage_review_by: 2026-08-16
     source_path: decisions/2026-08-09-weekly-operating-cycle.md
-    source_ids: [completed_close_universe_2026_08_07, gilt_q2_2026_results]
+    source_ids:
+      - completed_close_universe_2026_08_07
+      - gilt_q2_2026_results
   - symbol: LEU
     as_of: 2026-08-09
     policy_version: v1.3
     research_stage: active_candidate_contract_and_entry_reunderwriting
-    initial_weight_range_pct: [2, 3.5]
-    fully_underwritten_weight_range_pct: [6, 12]
+    initial_weight_range_pct:
+      - 2
+      - 3.5
+    fully_underwritten_weight_range_pct:
+      - 6
+      - 12
     current_stage: strategic_thesis_intact_entry_gate_closed
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 3.5
@@ -85,13 +102,19 @@ records:
       - valuation eliminates dilution-adjusted asymmetry
     stage_review_by: 2026-08-16
     source_path: decisions/2026-08-09-weekly-operating-cycle.md
-    source_ids: [completed_close_universe_2026_08_07, leu_q2_2026_results]
+    source_ids:
+      - completed_close_universe_2026_08_07
+      - leu_q2_2026_results
   - symbol: IREN
     as_of: 2026-08-09
     policy_version: v1.3
     research_stage: watch_powered_site_value_capture_reunderwriting
-    initial_weight_range_pct: [2, 4]
-    fully_underwritten_weight_range_pct: [6, 10]
+    initial_weight_range_pct:
+      - 2
+      - 4
+    fully_underwritten_weight_range_pct:
+      - 6
+      - 10
     current_stage: research_only_not_buy_eligible
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 4
@@ -113,13 +136,19 @@ records:
       - bitcoin exposure overwhelms the infrastructure thesis
     stage_review_by: 2026-08-16
     source_path: decisions/2026-08-09-weekly-operating-cycle.md
-    source_ids: [completed_close_universe_2026_08_07, iren_mirantis_close_2026_08_04]
+    source_ids:
+      - completed_close_universe_2026_08_07
+      - iren_mirantis_close_2026_08_04
   - symbol: SEI
     as_of: 2026-08-09
     policy_version: v1.3
     research_stage: watch_power_contract_and_capital_reunderwriting
-    initial_weight_range_pct: [2, 4]
-    fully_underwritten_weight_range_pct: [6, 10]
+    initial_weight_range_pct:
+      - 2
+      - 4
+    fully_underwritten_weight_range_pct:
+      - 6
+      - 10
     current_stage: promotion_gate_closed
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 4
@@ -141,5 +170,41 @@ records:
       - dilution-adjusted upside falls below competing powered-site candidates
     stage_review_by: 2026-08-16
     source_path: decisions/2026-08-09-weekly-operating-cycle.md
-    source_ids: [completed_close_universe_2026_08_07, sei_q2_2026_10q]
-notes: These are public-safe analytical ranges and milestone paths, not orders, exact target weights, share counts, or live scale ladders. Current buy quantities and executable limits are absent.
+    source_ids:
+      - completed_close_universe_2026_08_07
+      - sei_q2_2026_10q
+  - symbol: RIOT
+    as_of: 2026-08-11
+    policy_version: v1.3
+    research_stage: watch_R2_financing_and_contract_underwriting
+    initial_weight_range_pct:
+      - 1
+      - 3
+    fully_underwritten_weight_range_pct:
+      - 5
+      - 10
+    current_stage: no_position_entry_gate_closed
+    adverse_permanent_impairment_pct: 100
+    max_nav_impairment_pct: 3
+    downside_portfolio_result: Bridge stress, tenant-credit weakness, capex overruns, Bitcoin funding or dilution could destroy a starter.
+    base_portfolio_result: A delivered AMD lease and signed 191 MW project create a real but not yet underwritable powered-site business.
+    upside_portfolio_result: Permanent limited-recourse financing and replicated leases could justify a material non-space infrastructure position.
+    exceptional_portfolio_result: A multi-campus AI power platform could convert legacy mining sites into long-duration high-margin infrastructure cash flow.
+    contribution_dilution_check: A one-percent starter would be mission-relevant, but sizing cannot repair unknown project IRR and financing capture.
+    scale_milestones:
+      - binding permanent financing and credit support
+      - downside project IRR and fully diluted per-share NPV
+      - repeat tenant and delivery evidence
+    hold_milestones:
+      - AMD rent and margin remain durable
+      - 191 MW schedule and capex stay within disclosed bounds
+    reduce_or_exit_milestones:
+      - bridge refinancing fails
+      - tenant support weakens
+      - common-equity funding destroys per-share value
+    stage_review_by: 2026-08-12
+    source_path: research/promotion/2026-08-11-RIOT-promotion.md
+    source_ids:
+      - completed_close_universe_2026_08_10
+      - riot_q2_2026_10q_and_lease
+notes: Analytical construction ranges are not orders. MDA has one local, time-limited three-share proposal; RIOT remains quantity zero and every later scale step requires fresh evidence.

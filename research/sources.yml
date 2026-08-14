@@ -3960,3 +3960,129 @@ sources:
     first_seen_at: 2026-08-09
     related_symbols: [APLD, ONDS, AXTI, ALMU, SATL, EOSE]
     summary: Primary issuer and SEC review retained APLD, ONDS, AXTI, ALMU, SATL and EOSE at R1 researchable under short evidence deadlines. APLD changes the research top-five opportunity-cost queue, but none is R2, promoted or buy-zone eligible.
+  - id: completed_close_universe_2026_08_10
+    title: Yahoo Finance Completed Daily Bars for the Current Research Universe
+    source_type: market_data
+    url: https://query2.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [MDA, RKLB, ASTS, RIOT, GILT, LEU, APLD, IREN, SEI, MTSI, LASR, USAR, QNT, COHR, CRDO, ALAB, VRT, ONDS, AXTI, ALMU, SATL, EOSE, VIP, CRWV, IONQ, QUBT, GSAT, OKLO, NBIS, CRCL, LITE, SPCX, MU, CBRS, NWPX, STDN, INFQ, IQMX, ETN, PWR, KTOS, YSS, LUNR, BE, AAOI, FN, OCC, POET, WYFI, WULF, CIFR, VOYG, FLY, RDW, XNDU, NNE, IMSR, SMR, HQ, QBTS, RGTI, NUCL, QSI, QTEX, ENRD, ASPI, KEEL, FRMI]
+    summary: Completed August 10 regular-session closes and adjusted-close history were retrieved on August 11 for every listed current research security; shorter histories and unlisted securities are reported as N/A.
+  - id: sec_event_index_full_universe_2026_08_11
+    title: SEC Event-Filing Index for the Current Tradable Watchlist
+    source_type: sec_filing
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [RKLB, ASTS, CRWV, GILT, IONQ, QUBT, RIOT]
+    summary: Current supported filing state was indexed for all 54 tradable watchlist issuers; seven material filing bodies received target-level review.
+  - id: rklb_q2_2026_10q
+    title: Rocket Lab Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000181999426000062/rklb-20260630.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [RKLB]
+    summary: Revenue and backlog strengthened while negative cash conversion, share issuance, Neutron timing and Iridium financing keep the add gate closed.
+  - id: asts_q2_2026_10q
+    title: AST SpaceMobile Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1780312/000119312526342550/asts-20260630.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [ASTS]
+    summary: Backlog, satellites and liquidity strengthened while commercial revenue, capex, cash use and fully diluted economics keep the add gate closed.
+  - id: riot_q2_2026_10q_and_lease
+    title: Riot Second-Quarter 2026 Form 10-Q and 191 MW AI Lease
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1167419/000110465926093448/riot-20260630x10q.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [RIOT]
+    summary: A signed 191 MW lease and delivered AMD capacity support R2/watch promotion, while permanent financing, customer credit, project IRR and dilution block active and buy eligibility.
+  - id: mtsi_q3_fy2026_10q
+    title: MACOM Technology Solutions Primary Filing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [MTSI]
+    summary: Fiscal Q3 revenue was USD 342.2 million, data-center revenue was USD 137.6 million and diluted weighted-average shares were 78.4 million. Net debt, convertible claims, equity awards, customer concentration and the current diluted enterprise-value denominator remain unbounded.
+  - id: lasr_q2_2026_10q
+    title: nLIGHT Primary Filing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1124796/000112479626000038/lasr-20260630.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [LASR]
+    summary: Q2 revenue was USD 82.6 million, 69% came from aerospace and defense, H1 operating cash flow was positive USD 30.4 million and cash was USD 296 million. Q3 supply constraints, customer concentration, program timing and contract-margin durability remain unresolved.
+  - id: usar_q2_2026_10q
+    title: USA Rare Earth Primary Filing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000197062226000057/usar-20260630.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [USAR]
+    summary: Q2 revenue was USD 5.8 million, product gross margin remained negative, cash was about USD 1.53 billion and 244.7 million common shares plus preferred shares were outstanding. The Serra Verde transaction requires USD 300 million cash and approximately 126.8 million new shares; pro-forma ownership, margin and project funding remain unresolved.
+  - id: qnt_2026_ipo_424b4
+    title: Quantinuum Primary Filing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2110105/000162828026041003/quantinuum-424b4.htm
+    source_published_at: 2026-06-05
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [QNT]
+    summary: The IPO sold 28 million shares at USD 60 while the reorganization left roughly 256 million common-equivalent shares; 2025 revenue was USD 30.9 million and net loss was USD 192.6 million. Deep losses, exchangeable units, a large tax-receivable obligation and the post-IPO valuation leave common-equity capture unbounded.
+  - id: cohr_q3_fy2026_10q
+    title: Coherent Corp. Primary Filing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000013/iivi-20260331.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [COHR]
+    summary: Fiscal Q3 revenue was USD 1.806 billion, approximately 75% of revenue came from communications and data-center markets, cash was USD 1.593 billion and debt was USD 3.194 billion. Scaled market value, leverage, capex, weak nine-month operating cash flow and material ordinary-share growth reduce Article 1 asymmetry.
+  - id: keel_q2_2026_10q
+    title: Keel Infrastructure Primary Filing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1812477/000181247726000023/keel-20260630.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [KEEL]
+    summary: The U.S. successor had 616.7 million shares, USD 1.019 billion of long-term debt and USD 117.6 million of H1 operating cash use. Key conversion sites are uncontracted, Bitcoin exposure remains material and debt, dilution and construction economics dominate the optionality.
+  - id: frmi_q1_2026_10q
+    title: Fermi Inc. Primary Filing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2071778/000207177826000032/frmi-20260331.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [FRMI]
+    summary: The company remained pre-revenue with roughly 629.8 million shares plus 38.7 million RSUs, about USD 421 million of net debt and USD 441 million of Q1 capital spending. No binding tenant, going-concern conditions, construction funding, massive capex and dilution make the common equity a negative-watch R1 rather than a viable order candidate.
+  - id: new_r1_primary_evidence_2026_08_11
+    title: Primary-Source Readiness Evidence for Seven New R1 Leads
+    source_type: sec_and_company_ir
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: [MTSI, LASR, USAR, QNT, COHR, KEEL, FRMI]
+    summary: MTSI, LASR, USAR, QNT, COHR, KEEL and FRMI were retained at R1 under dated evidence SLAs; none reached R2, promotion or buy eligibility.
+  - id: macro_regime_snapshot_2026_08_11
+    title: Current Financing and Volatility Overlay
+    source_type: market_and_government_data
+    url: https://fred.stlouisfed.org/
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-08-11
+    first_seen_at: 2026-08-11
+    related_symbols: []
+    summary: The current curve, credit spreads and VIX show selective financing conditions rather than a broad crisis; the overlay informs risk but creates no buy eligibility.

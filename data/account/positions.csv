@@ -1,4 +1,4 @@
 symbol,asset_type,exchange,quantity,average_cost,cost_basis,currency,first_trade_date,last_trade_date,notes
 ASTS,common_stock,Nasdaq,11,78.65,865.11,USD,2026-06-05,2026-07-08,Confirmed buys from 2026-06-05; 2026-06-12; 2026-06-22; and 2026-07-08 ledger events.
-MDA,common_stock,NYSE,6,33.85,203.13,USD,2026-08-06,2026-08-06,Confirmed buy from the 2026-08-06 ledger event.
+MDA,common_stock,NYSE,9,34.41,309.66,USD,2026-08-06,2026-08-13,Confirmed buys from the 2026-08-06 and 2026-08-13 ledger events.
 RKLB,common_stock,Nasdaq,17,100.08,1701.31,USD,2026-06-05,2026-07-08,Confirmed buys from 2026-06-05; 2026-06-12; 2026-06-22; and 2026-07-08 ledger events.

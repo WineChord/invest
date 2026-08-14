@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-08-09
+as_of: 2026-08-11
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -601,17 +601,23 @@ records:
   - symbol: RIOT
     material_to_current_allocation: true
     affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
-    materiality_reason: A power-ready campus with a ten-year AMD lease and expansion options materially expands the public comparison set for converting scarce grid-connected capacity into AI-infrastructure rent.
-    blocking_scope: ai_compute_lane_opportunity_cost_completeness
-    readiness_status: incubated_after_review
+    materiality_reason: Delivered AMD capacity and a signed 191 MW frontier-AI lease make RIOT a material powered-site opportunity-cost comparator.
+    blocking_scope: ai_compute_and_power_opportunity_cost
+    research_stage: R2_comparable
+    readiness_status: completed
     dashboard_surface_status: complete
-    readiness_path: research/discovery/readiness/2026-07-25-RIOT-readiness.md
-    blocker_type: evidence_based
-    blocker_reason: The AMD lease and potential expansion are direct evidence, but Q1 data-center revenue was primarily fit-out related, bitcoin mining remains dominant, project delivery and recurring rent economics are unproved, and USD 500 million of ATM capacity creates dilution risk.
+    readiness_path: research/discovery/readiness/2026-08-11-RIOT-readiness.md
+    blocker_type: none
+    blocker_reason: Discovery readiness and watch promotion are complete; permanent financing, customer credit, event-after price, project IRR, Bitcoin funding and fully diluted per-share value are entry and further-promotion gates rather than readiness blockers.
     reachable_evidence_remaining: none
-    last_readiness_reviewed_at: 2026-07-25
-    next_action: Monitor AMD capacity delivery, recurring rent and utilization, fit-out reimbursement mix, project capex and financing, customer concentration, bitcoin exposure, ATM issuance and cash conversion.
-    conclusion: Incubated into C+ research-only AI-compute and power-campus coverage; no promotion and no current buy.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: First event-after completed close, permanent financing or credit-support filing, AMD delivery update, Q3 filing or bridge resolution.
+    next_evidence_due: 2026-08-12
+    cost_of_waiting: A one-percent starter could matter if the lease rerates the equity, but one session of waiting is preferable to sizing an unbounded financing and contract-credit structure.
+    false_negative_early_warning: Binding investment-grade backstop, non-recourse permanent financing, disclosed project IRR or another high-quality tenant.
+    reopen_or_reject_trigger: Advance only when event-after valuation, financing, contract credit and fully diluted project returns are bounded; demote if the bridge, tenant, capex or common-equity funding deteriorates.
+    next_action: Complete the event-after valuation review by 2026-08-12 and the permanent-financing review no later than 2026-10-15.
+    conclusion: Promoted to B- watch and R2 comparable; quantity zero, no executable limit and no active-candidate or buy-zone eligibility.
   - symbol: GPUS
     material_to_current_allocation: false
     affected_lanes: [ai_compute_infrastructure]
@@ -892,3 +898,143 @@ records:
     reopen_or_reject_trigger: Advance only after third-party demand, gross-margin bridge, runway and fully diluted capitalization are reconciled; reject if related-party and financing support remain the main economics.
     next_action: Complete the R2 rejection test by 2026-08-16.
     conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+  - symbol: MTSI
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: RF, optical and photonic semiconductors are direct inputs to data-center and defense connectivity.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-MTSI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Net debt, convertible claims, equity awards, customer concentration and the current diluted enterprise-value denominator remain unbounded.
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: Build a same-lane R2 comparison with LASR, COHR, CRDO, LITE and AAOI by 2026-08-14.
+    next_evidence_due: 2026-08-14
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+    next_action: Build a same-lane R2 comparison with LASR, COHR, CRDO, LITE and AAOI by 2026-08-14.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: LASR
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: High-power lasers and directed-energy programs are direct bottleneck expressions with a relatively small denominator.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-LASR-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Q3 supply constraints, customer concentration, program timing and contract-margin durability remain unresolved.
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: Reconcile backlog, customer economics and diluted EV by 2026-08-14.
+    next_evidence_due: 2026-08-14
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+    next_action: Reconcile backlog, customer economics and diluted EV by 2026-08-14.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: USAR
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints, unknown_future_bottlenecks]
+    materiality_reason: Non-China heavy-rare-earth processing and magnet capacity directly express a strategic materials bottleneck.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-USAR-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The Serra Verde transaction requires USD 300 million cash and approximately 126.8 million new shares; pro-forma ownership, margin and project funding remain unresolved.
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: Review transaction filings, government support and the combined diluted capitalization by 2026-08-18.
+    next_evidence_due: 2026-08-18
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+    next_action: Review transaction filings, government support and the combined diluted capitalization by 2026-08-18.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: QNT
+    material_to_current_allocation: true
+    affected_lanes: [quantum_computing_and_networking]
+    materiality_reason: Integrated trapped-ion hardware, software and error-correction capability can create extreme technical optionality if commercialization catches up.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-QNT-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Deep losses, exchangeable units, a large tax-receivable obligation and the post-IPO valuation leave common-equity capture unbounded.
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: Build a full dilution bridge and review the first public quarter by 2026-08-21.
+    next_evidence_due: 2026-08-21
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+    next_action: Build a full dilution bridge and review the first public quarter by 2026-08-21.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: COHR
+    material_to_current_allocation: true
+    affected_lanes: [semiconductor_interconnect_and_memory]
+    materiality_reason: Coherent is a direct photonics manufacturing benchmark with large data-center exposure.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-COHR-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Scaled market value, leverage, capex, weak nine-month operating cash flow and material ordinary-share growth reduce Article 1 asymmetry.
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: Complete current EV, cash-conversion and same-lane value comparison by 2026-08-18.
+    next_evidence_due: 2026-08-18
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+    next_action: Complete current EV, cash-conversion and same-lane value comparison by 2026-08-18.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: KEEL
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
+    materiality_reason: Former Bitfarms sites could convert grid-connected power and land into AI infrastructure.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-KEEL-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Key conversion sites are uncontracted, Bitcoin exposure remains material and debt, dilution and construction economics dominate the optionality.
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: Require a creditworthy tenant and funded project economics before R2; review by 2026-08-21.
+    next_evidence_due: 2026-08-21
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+    next_action: Require a creditworthy tenant and funded project economics before R2; review by 2026-08-21.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: FRMI
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
+    materiality_reason: Project Matador targets unusually large co-located power and AI-campus capacity.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-FRMI-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: No binding tenant, going-concern conditions, construction funding, massive capex and dilution make the common equity a negative-watch R1 rather than a viable order candidate.
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    last_readiness_reviewed_at: 2026-08-11
+    next_evidence_source: Reopen only on a binding lease and limited-recourse funding; review by 2026-08-21.
+    next_evidence_due: 2026-08-21
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+    next_action: Reopen only on a binding lease and limited-recourse funding; review by 2026-08-21.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.

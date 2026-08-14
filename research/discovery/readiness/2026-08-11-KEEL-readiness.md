@@ -1,0 +1,68 @@
+# KEEL Discovery Readiness — 2026-08-11
+
+```yaml
+symbol: KEEL
+candidate_name: Keel Infrastructure
+review_date: 2026-08-11
+policy_version: v1.3
+material_to_current_allocation: true
+affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
+research_stage: R1_researchable
+readiness_status: researchable_open
+blocker_type: evidence_based
+blocker_reason: "Key conversion sites are uncontracted, Bitcoin exposure remains material and debt, dilution and construction economics dominate the optionality."
+classification: incubate
+dashboard_surface_status: not_required_pre_promotion
+next_evidence_source: "Require a creditworthy tenant and funded project economics before R2; review by 2026-08-21."
+next_evidence_due: 2026-08-21
+cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
+false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or dilution-adjusted valuation reset.
+reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
+source_ids: [keel_q2_2026_10q, completed_close_universe_2026_08_10]
+readiness_index_record: research/discovery/candidate-readiness.yml
+```
+
+## Bottleneck Fit
+
+```yaml
+what_could_become_scarce: Former Bitfarms sites could convert grid-connected power and land into AI infrastructure.
+who_controls_or_removes_scarcity: Keel Infrastructure controls or supplies the relevant assets, products or technical capability.
+who_can_monetize_into_shareholder_value: Common equity benefits only if operating scale and reinvestment outrun financing, dilution and concentration.
+public_security_expression: KEEL is a listed common stock eligible for research, but R1 creates no buy eligibility.
+early_small_misunderstood_or_newly_public: The setup is early, awkward, underfollowed, recently public or incompletely valued enough to warrant false-negative protection.
+```
+
+## Evidence Gathered
+
+The U.S. successor had 616.7 million shares, USD 1.019 billion of long-term debt and USD 117.6 million of H1 operating cash use. Key conversion sites are uncontracted, Bitcoin exposure remains material and debt, dilution and construction economics dominate the optionality.
+
+```yaml
+security_metadata: Listed common stock identity and policy eligibility confirmed.
+market_data: August 10 completed close and adjusted-close history retrieved on August 11; not an executable quote.
+filings_and_reports: Current primary filing reviewed and indexed under keel_q2_2026_10q.
+same_lane_peers: Current holdings, active candidates, watch names and stronger R1 candidates in the affected lanes.
+```
+
+## Analysis
+
+```yaml
+reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence.
+thesis_delta: new_researchable_bottleneck_expression
+entry_delta: not_underwritable_at_R1
+priority_delta: incubate_under_dated_SLA
+valuation_and_entry_state: No executable limit; complete R2 before promotion.
+```
+
+## Decision
+
+```yaml
+final_classification: incubate_at_R1
+dashboard_surface_status: not_required_pre_promotion
+buy_or_no_buy_implication: Quantity zero; no promotion or buy-zone eligibility.
+company_analysis_entry: Not required before promotion; the readiness note and index are canonical.
+next_action: Require a creditworthy tenant and funded project economics before R2; review by 2026-08-21.
+```
+
+The waiting cost is a possible rerating before the next evidence review; that cost is bounded because current capitalization or survival evidence cannot yet support a mission-consistent starter.
+
+Source: [primary filing](https://www.sec.gov/Archives/edgar/data/1812477/000181247726000023/keel-20260630.htm), published no later than 2026-08-10 and retrieved 2026-08-11.

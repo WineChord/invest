@@ -1559,3 +1559,39 @@ entries:
     risk_watch: Customer credit and concentration, contract cancellation and return protection, project delivery, equipment commitments, debt and converts, project-level financing, guarantees, dilution and capital intensity.
     next_check: Customer and contract economics, deployment and rent commencement, project financing, guarantees, debt and fully diluted capitalization or a material valuation reset.
     source_path: research/filings/2026-08-09-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-11-rklb-q2
+    symbol: RKLB
+    analyzed_at: "2026-08-11"
+    analysis_type: material_filing_refresh
+    policy_version: v1.3
+    title: Record quarter strengthens hold but not entry
+    stance: Hold 17; add 0
+    summary: Revenue and backlog strengthened, while valuation, negative cash conversion, Neutron timing, ATM issuance and Iridium financing block another share.
+    upside_path: Execute Neutron, integrate Iridium and convert backlog into durable per-share cash flow.
+    risk_watch: Neutron qualification, acquisition financing, dilution, margins and cash conversion.
+    next_check: Neutron pad-delivery evidence, Iridium financing or approval, Q3 results or valuation reset.
+    source_path: research/filings/2026-08-11-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-11-asts-q2
+    symbol: ASTS
+    analyzed_at: "2026-08-11"
+    analysis_type: material_filing_refresh
+    policy_version: v1.3
+    title: Constellation evidence strengthens while commercial economics remain absent
+    stance: Hold 11; add 0
+    summary: Backlog, satellite production and liquidity improved, but commercial service, cash use, capex and the economic share denominator block adding.
+    upside_path: Convert launches and carrier partnerships into recurring global direct-to-device revenue.
+    risk_watch: Launch and production cadence, service adoption, regulatory approvals, financing and dilution.
+    next_check: BlueBird 14-16 launch, beta service, commercial revenue, financing or Q3.
+    source_path: research/filings/2026-08-11-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-11-riot-promotion
+    symbol: RIOT
+    analyzed_at: "2026-08-11"
+    analysis_type: promotion_review
+    policy_version: v1.3
+    title: Signed AI lease advances RIOT to watch and R2
+    stance: B- watch; buy 0
+    summary: Delivered AMD capacity and a 191 MW lease prove direct powered-site monetization, while permanent financing, contract credit, project IRR and dilution remain decision-critical.
+    upside_path: Repeat limited-recourse powered-campus development for creditworthy AI tenants.
+    risk_watch: Bridge refinancing, capex, tenant credit, Bitcoin funding, ATM and convertible dilution.
+    next_check: First event-after close, permanent financing, credit support, AMD November delivery or 2026-10-15 bridge resolution.
+    source_path: research/promotion/2026-08-11-RIOT-promotion.md

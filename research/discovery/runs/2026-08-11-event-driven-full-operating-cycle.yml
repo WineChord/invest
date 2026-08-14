@@ -1,0 +1,654 @@
+schema_version: 1
+run_id: 2026-08-11-event-driven-full-operating-cycle
+run_date: 2026-08-11
+request_type: event_driven_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: MDA proposal expired without a linked execution at the 2026-08-11 U.S. regular close; research conclusion required refresh no later than 2026-08-14 or earlier on a material event
+linked_decision_or_research_note: decisions/2026-08-11-event-driven-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-11-subagent-evidence-packet.yml
+execution_update:
+  status: no_execution_and_no_account_mutation
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 7334.45
+  resulting_confirmed_positions:
+    - RKLB 17 shares
+    - ASTS 11 shares
+    - MDA 6 shares
+  notes: The standing contribution workflow returned already_recorded. The MDA recommendation is not a broker order or fill.
+article_one_preflight:
+  sentinel_level: WARN
+  reason_codes:
+    - evidence_deadline_due
+  disposition: The expired Rocket Lab evidence deadline triggered this full L2 review; the filing was reviewed and the decision deadline was reset from current primary evidence.
+  protected_surfaces_changed: false
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --as-of 2026-08-11 --json --output research/discovery/runs/2026-08-11-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-11-scan.json
+      output_sha256: bb0c182323be47e4e276f1944669c2dad9eba86800078b1294c8b78c96e03fef
+      retrieved_at: 2026-08-11
+      result_summary: Eighteen deterministic leads were dispositioned; none reached R2, promotion or buy eligibility.
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        dispositioned_candidates: 18
+        result: No deterministic candidate entered R2 or buy eligibility; ticker and issuer identity checks corrected several false positives before disposition.
+    - command: npm run research:community -- --as-of 2026-08-11 --json
+      dry_run: true
+      output_path: not_saved_for_original_run
+      retrieved_at: 2026-08-11
+      result_summary: Community sources produced 269 leads for triage only and created no investment eligibility.
+      candidate_payload_summary:
+        source_success_count: 38
+        source_error_count: 8
+        lead_count: 269
+        result: Community activity was used only to order primary-source review and created no status, promotion or buy eligibility.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings and current issuer submissions
+      sources_or_queries:
+        - 54-symbol August 11 SEC event index
+        - material filing bodies for RKLB, ASTS, CRWV, GILT, IONQ, QUBT and RIOT
+      source_ids:
+        - sec_event_index_full_universe_2026_08_11
+        - rklb_q2_2026_10q
+        - asts_q2_2026_10q
+        - riot_q2_2026_10q_and_lease
+      retrieved_at: 2026-08-11
+      material_findings: Rocket Lab and ASTS operating evidence strengthened their hold theses without opening add gates; RIOT's signed AI lease justified promotion to watch/R2 but not active or buy eligibility.
+      unavailable_or_skipped_reason: SEC issuer-profile semantic coverage remained partial at 54 of 7,653 eligible issuers; name/ticker scanning and primary-source triage bounded this process debt without vetoing the MDA target.
+    - family_id: issuer_material
+      family: Issuer operations, contracts, financing, acquisitions and capitalization
+      sources_or_queries:
+        - MDA Q2 and acquisition financing
+        - RKLB and ASTS Q2
+        - RIOT 191 MW lease and financing
+        - new R1 primary filings
+      source_ids:
+        - mda_q2_2026_results
+        - rklb_q2_2026_10q
+        - asts_q2_2026_10q
+        - riot_q2_2026_10q_and_lease
+        - new_r1_primary_evidence_2026_08_11
+      retrieved_at: 2026-08-11
+      material_findings: MDA remained the strongest starter-level action after the Rocket Lab comparison; RIOT advanced to R2/watch; seven new names entered R1 only.
+      unavailable_or_skipped_reason: MDA post-acquisition cash conversion and RIOT permanent financing remain future evidence rather than current process gaps.
+    - family_id: market_data
+      family: Completed regular-session prices and adjusted-close history
+      sources_or_queries:
+        - August 10 completed closes for the full tradable watchlist
+        - supplemental August 10 completed closes for R1 names
+      source_ids:
+        - completed_close_universe_2026_08_10
+      retrieved_at: 2026-08-11
+      material_findings: The account snapshot uses only August 10 completed closes; price returns use 1, 5, 21, 63 and 126 trading sessions.
+      unavailable_or_skipped_reason: OPENAI and ANTHROPIC remain unlisted; XTND remains pre-listing; shorter histories are reported as N/A rather than inferred.
+    - family_id: current_world_context
+      family: Macro financing conditions, volatility and event timing
+      sources_or_queries:
+        - current yield-curve, spread and VIX overlay
+        - issuer financing disclosures
+        - confirmed 75.99 percent cash weight
+      source_ids:
+        - macro_regime_snapshot_2026_08_11
+        - completed_close_universe_2026_08_10
+      retrieved_at: 2026-08-11
+      material_findings: Financing conditions remain selective rather than crisis-like; company-specific capital structures control entry decisions.
+      unavailable_or_skipped_reason: Macro conditions are a risk overlay and do not independently create buy eligibility.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, bottleneck lanes and independent lead review
+      sources_or_queries:
+        - deterministic 18-name disposition
+        - 269 community leads
+        - primary-source review of MTSI, LASR, USAR, QNT, COHR, KEEL and FRMI
+      source_ids:
+        - new_r1_primary_evidence_2026_08_11
+      retrieved_at: 2026-08-11
+      material_findings: Seven public securities entered R1 with dated evidence SLAs; none reached R2 or displaced MDA. QNT was verified as Quantinuum rather than a crypto asset.
+      unavailable_or_skipped_reason: R1 preserves false-negative protection without fabricating buy readiness.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck-lane evolution and current-world challenger search
+      sources_or_queries:
+        - powered-site and AI infrastructure
+        - compound-semiconductor and photonics bottlenecks
+        - space and strategic-material challenger review
+      source_ids:
+        - new_r1_primary_evidence_2026_08_11
+        - riot_q2_2026_10q_and_lease
+      retrieved_at: 2026-08-11
+      material_findings: RIOT advanced to R2/watch and seven new securities entered bounded R1 queues; none displaced the current MDA starter-scale opportunity after dilution, survival and entry review.
+      unavailable_or_skipped_reason: R1 and R2 evidence SLAs preserve promising challengers without treating incomplete entry underwriting as a buy signal.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-11
+    notes: Current closes, filings, operating results, financing, acquisitions, dilution, community leads, new listings and the complete current opportunity set were refreshed or revalidated.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 0
+    deterministic_candidates_dispositioned: 18
+    new_primary_source_r1_count: 7
+    result: No unresolved decision-critical discovery gap blocks the current target; broad semantic coverage remains bounded process debt.
+unknown_future_review:
+  exploratory_match_count: 59
+  exploratory_denominator: 59
+  stratified_sample_count: 18
+  stratified_sample_pct: 30.5085
+  unsampled_reason: All 18 returned candidates were dispositioned; the separate 59-name exploratory set received a bounded 18-name stratified sample because it is a recall-audit surface rather than a buy-eligibility queue.
+  top_clusters:
+    - issuer and ticker collisions
+    - blank-check vehicles and units
+    - funds, preferred securities and mature weak proxies
+  sampled_symbols:
+    - NWPX
+    - ENRD
+    - ANET
+    - AVNW
+    - BFLY
+    - BIP
+    - BNAI
+    - CRNT
+    - EXTR
+    - HASI
+    - KEEL
+    - META
+    - PANW
+    - SEI
+    - VIP
+    - AIIA
+    - KYN
+    - UTF
+  false_positive_patterns:
+    - issuer-name collision
+    - blank-check vehicle
+    - ineligible security
+    - weak proxy
+  lane_decisions:
+    - retain all current top-level lanes
+    - advance RIOT within powered-site research
+    - deepen photonics and strategic-material sublanes
+    - promote no new R1 security
+  disposition: All deterministic leads received a disposition; seven separately verified primary-source leads remain open at R1 under dated evidence deadlines.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Spacecraft capacity, energized AI-ready land, high-power optical components, compound-semiconductor inputs, non-China rare earths and quantum fault tolerance remain plausible long-horizon bottlenecks.
+    inferences: Common equity captures the scarcity only when project finance, dilution, customer concentration and reinvestment leave durable per-share economics.
+    disconfirming_evidence: Several new leads are already large, pre-revenue, acquisition-shaped or financed through complex debt and equity claims.
+    source_ids:
+      - new_r1_primary_evidence_2026_08_11
+      - riot_q2_2026_10q_and_lease
+    investment_implication: Scale MDA only at the smallest staged quantity; advance RIOT to R2/watch and keep new R1 names at zero.
+  who_controls_or_removes_scarcity:
+    facts: MDA owns scaled spacecraft and payload capabilities; RIOT controls energized sites; MTSI, LASR and COHR supply photonics; USAR targets rare-earth processing; QNT develops integrated quantum systems.
+    inferences: Control is direct enough for research, but only MDA currently combines scaled operating evidence with starter-level entry discipline.
+    disconfirming_evidence: RIOT lacks permanent financing and event-after price; every new R1 retains material capitalization or commercialization blockers.
+    source_ids:
+      - mda_q2_2026_results
+      - riot_q2_2026_10q_and_lease
+      - new_r1_primary_evidence_2026_08_11
+    investment_implication: MDA remains the next-dollar choice; all new names require R2 or promotion evidence first.
+  who_can_monetize_into_shareholder_value:
+    facts: MDA reported revenue, bookings and backlog at scale; RIOT has one delivered lease and a new signed 191 MW lease; the R1 set ranges from scaled suppliers to pre-revenue projects.
+    inferences: MDA has the best current evidence-to-denominator balance even after negative free cash flow and acquisition uncertainty.
+    disconfirming_evidence: MDA still lacks post-acquisition cash conversion; RIOT and the R1 names lack bounded fully diluted returns.
+    source_ids:
+      - mda_q2_2026_results
+      - riot_q2_2026_10q_and_lease
+      - new_r1_primary_evidence_2026_08_11
+    investment_implication: Use a three-share MDA add rather than five; keep RIOT and all R1 names at zero.
+  public_security_expression:
+    facts: Sixty-eight listed securities have completed prices; OPENAI and ANTHROPIC are unlisted and XTND is pre-listing.
+    inferences: Listing and price availability establish observability, not buy eligibility.
+    disconfirming_evidence: Seven new listed leads remain R1 and RIOT remains R2/watch rather than active.
+    source_ids:
+      - completed_close_universe_2026_08_10
+      - new_r1_primary_evidence_2026_08_11
+    investment_implication: No unlisted, pre-listing or R1 security receives an order.
+  early_small_misunderstood_or_newly_public:
+    facts: MDA, GILT, APLD, ONDS, ALMU, SATL, QNT, USAR, KEEL and FRMI are early, awkward, newly listed or incompletely understood expressions.
+    inferences: Small or new denominators improve right-tail potential only when survival and dilution-adjusted value capture are credible.
+    disconfirming_evidence: Each new lead retains debt, dilution, concentration, pre-revenue, construction or customer blockers.
+    source_ids:
+      - completed_close_universe_2026_08_10
+      - new_r1_primary_evidence_2026_08_11
+    investment_implication: Preserve the leads under SLA without using incomplete research as either a buy signal or a whole-portfolio veto.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - current deterministic scan
+        - community lead queue
+        - bottleneck map
+        - candidate readiness
+        - watchlist
+      sources_checked:
+        - sec_event_index_full_universe_2026_08_11
+        - new_r1_primary_evidence_2026_08_11
+      facts_verified: Seven new R1 leads retained; RIOT alone reached R2/watch and no new name entered buy eligibility; APLD remains the strongest existing R1.
+      stale_or_missing_evidence: Whole-universe semantic issuer-profile coverage remains incomplete; each open R1 has a dated evidence source and deadline.
+      confidence: high
+      key_findings: MTSI and LASR lead the new R1 queue; QNT identity was corrected to Quantinuum; all seven retain dated SLAs.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - August 11 SEC event index
+        - material filing bodies
+        - August 10 completed-close cutoff
+      sources_checked:
+        - sec_event_index_full_universe_2026_08_11
+        - rklb_q2_2026_10q
+        - asts_q2_2026_10q
+        - riot_q2_2026_10q_and_lease
+      facts_verified: RKLB, ASTS, CRWV, GILT, IONQ, QUBT, RIOT and ONDS material filings were reviewed.
+      stale_or_missing_evidence: MDA post-acquisition cash conversion and RIOT permanent financing remain future issuer evidence, not silently assumed current facts.
+      confidence: high
+      key_findings: Hold RKLB and ASTS; promote RIOT to R2/watch; do not promote CRWV, GILT, IONQ, QUBT or ONDS.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - MDA Q2 evidence
+        - August 10 completed close
+        - confirmed NAV
+        - full opportunity set
+      sources_checked:
+        - mda_q2_2026_results
+        - completed_close_universe_2026_08_10
+        - rklb_q2_2026_10q
+      facts_verified: MDA Q2 supports the smallest scale-up but not fully underwritten sizing.
+      stale_or_missing_evidence: Working-capital reversal and the final acquisition-funded capitalization require later primary evidence.
+      confidence: medium_high
+      key_findings: Prefer MDA +3 over zero or +5, subject to a one-session price cap.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - MDA cash flow
+        - acquisition financing
+        - dilution
+        - space concentration
+        - cross-lane challengers
+      sources_checked:
+        - mda_q2_2026_results
+        - completed_close_universe_2026_08_10
+        - new_r1_primary_evidence_2026_08_11
+      facts_verified: MDA negative free cash flow and acquisition capitalization remain unresolved.
+      stale_or_missing_evidence: Blue Canyon and SatixFy Communication Systems pro-forma leverage and cash conversion are not yet reported.
+      confidence: high
+      key_findings: Preferred zero narrowly but identified no ruin veto; +3 is the strongest bounded counterfactual.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - August 10 adjusted close
+        - dilution-aware capitalization
+        - MDA acquisition funding
+        - current opportunity cost
+      sources_checked:
+        - completed_close_universe_2026_08_10
+        - mda_q2_2026_results
+        - rklb_q2_2026_10q
+      facts_verified: Latest MDA close was USD 33.41 and RKLB next-dollar economics are weaker.
+      stale_or_missing_evidence: The effective order remains conditional on the August 11 session and expires rather than rolling to a later date.
+      confidence: high
+      key_findings: MDA +3 is entry-feasible; +5 is not; RKLB add zero.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      inputs_used:
+        - confirmed cash
+        - August 10 research NAV
+        - current holdings
+        - zero versus three versus five MDA shares
+      sources_checked:
+        - completed_close_universe_2026_08_10
+        - mda_q2_2026_results
+        - rklb_q2_2026_10q
+      facts_verified: MDA +3 raises total space exposure to about 25.1 percent and caps incremental loss near 1.08 percent NAV.
+      stale_or_missing_evidence: Future acquisition economics determine whether MDA may scale beyond the starter band; RIOT financing controls its future eligibility.
+      confidence: high
+      key_findings: MDA +3 ranks above zero and +5; RIOT remains zero pending financing and event-after price.
+  unresolved_conflicts: 0
+  conflict_resolution: MDA +3 prevailed over the narrow bear preference for zero because the unresolved cash-flow and acquisition issues can be bounded by the smallest staged quantity and one-session limit. RIOT was promoted to watch/R2 but not buy eligibility after additional filing, valuation, bear and opportunity-cost review.
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: ONDS created an autonomous-defense hypothesis and APLD, AXTI, ALMU and EOSE deepened existing powered-site, optical-input and grid-duration lanes without proving a new top-level lane.
+  no_change_reason: The ten-lane map remains useful; newly found expressions require R2 evidence before a formal lane split or promotion.
+candidate_delta:
+  candidates_added:
+    - MTSI
+    - LASR
+    - USAR
+    - QNT
+    - COHR
+    - KEEL
+    - FRMI
+  candidates_rejected_or_archived: []
+  candidates_promoted:
+    - RIOT
+  candidates_incubated:
+    - MTSI
+    - LASR
+    - USAR
+    - QNT
+    - COHR
+    - KEEL
+    - FRMI
+  r0_leads: []
+  r1_researchable:
+    - APLD
+    - ONDS
+    - AXTI
+    - ALMU
+    - SATL
+    - EOSE
+    - VIP
+    - MTSI
+    - LASR
+    - USAR
+    - QNT
+    - COHR
+    - KEEL
+    - FRMI
+  r2_comparable:
+    - RIOT
+  r3_promotion_ready: []
+  no_action_challenger: RIOT entered watch/R2 after a material AI lease but remains quantity zero; MDA remains the only current starter-level action.
+  false_positive_patterns:
+    - issuer-name collisions
+    - blank-check vehicles and units
+    - funds and preferred securities
+    - mature weak proxies
+readiness_sprints:
+  - symbol: RIOT
+    material_to_current_allocation: true
+    readiness_status: completed
+    dashboard_surface_status: complete
+    readiness_path: research/discovery/readiness/2026-08-11-RIOT-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#RIOT
+    blocker_type: none
+    reachable_evidence_remaining: none
+    final_classification: promote
+  - symbol: VIP
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-07-29-VIP-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#VIP
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Financing close, pro-forma capitalization, site-level power and capex, a binding customer and survival runway are reachable through near-term issuer filings.
+    final_classification: incubate
+  - symbol: APLD
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-APLD-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#APLD
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Form 10-K, project financing documents, lease credit support, construction budgets and ChronoScale ownership can bound project and common-equity economics.
+    final_classification: incubate
+  - symbol: ONDS
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-ONDS-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#ONDS
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 Form 10-Q can separate organic and acquired revenue, reconcile backlog, cash use, acquisition consideration and diluted securities.
+    final_classification: incubate
+  - symbol: AXTI
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-AXTI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#AXTI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 Form 10-Q can provide cash flow, capex, customers, export and diluted-capitalization detail.
+    final_classification: incubate
+  - symbol: ALMU
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-ALMU-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#ALMU
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Commercial design wins, production qualification, full-year results and subsequent financing disclosures can establish or reject a scalable revenue path.
+    final_classification: incubate
+  - symbol: SATL
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-SATL-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#SATL
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 filing and launch-capital plan can reconcile revenue quality, debt conversion, warrants and ongoing constellation funding.
+    final_classification: incubate
+  - symbol: EOSE
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-09-EOSE-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#EOSE
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The Q2 filing, DOE facility terms, Frontier Power USA relationship and fully diluted security schedule can bound gross-margin and financing economics.
+    final_classification: incubate
+  - symbol: MTSI
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-MTSI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#MTSI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    final_classification: incubate
+  - symbol: LASR
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-LASR-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#LASR
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    final_classification: incubate
+  - symbol: USAR
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-USAR-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#USAR
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    final_classification: incubate
+  - symbol: QNT
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-QNT-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#QNT
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    final_classification: incubate
+  - symbol: COHR
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-COHR-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#COHR
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    final_classification: incubate
+  - symbol: KEEL
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-KEEL-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#KEEL
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    final_classification: incubate
+  - symbol: FRMI
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-11-FRMI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#FRMI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
+    final_classification: incubate
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Current completed closes, primary issuer evidence, full-universe comparison, bounded readiness sprints and independent xhigh review supported the historical three-share MDA proposal. That one-session proposal later expired without a linked execution and creates no current authorization.
+opportunity_cost_and_allocation:
+  confirmed_research_nav: 9651.95
+  confirmed_cash: 7334.45
+  cash_weight_pct: 75.9893
+  confirmed_return_seeking_weight_pct: 24.0107
+  confirmed_space_weight_pct: 24.0107
+  strongest_current_challenger: MDA
+  next_dollar_queue:
+    - MDA
+    - GILT
+    - LEU
+    - APLD
+    - IREN
+    - RIOT
+    - SEI
+  high_quality_expensive_comparators:
+    - CRDO
+    - ALAB
+    - VRT
+  public_action_state: public_safe_expired_historical_record
+  holdings:
+    - Hold RKLB 17
+    - Hold ASTS 11
+    - Hold MDA 6 at the decision snapshot; the historical 3-share one-session proposal expired without a linked execution
+  no_trade_execution: true
+full_coverage:
+  watchlist_symbol_count: 56
+  additional_current_research_symbols:
+    - VIP
+    - XTND
+    - APLD
+    - ONDS
+    - AXTI
+    - ALMU
+    - SATL
+    - EOSE
+    - MTSI
+    - LASR
+    - USAR
+    - QNT
+    - COHR
+    - KEEL
+    - FRMI
+  total_current_research_symbols: 71
+  symbols:
+    - MDA
+    - RKLB
+    - ASTS
+    - RIOT
+    - GILT
+    - LEU
+    - APLD
+    - IREN
+    - SEI
+    - MTSI
+    - LASR
+    - USAR
+    - QNT
+    - COHR
+    - CRDO
+    - ALAB
+    - VRT
+    - ONDS
+    - AXTI
+    - ALMU
+    - SATL
+    - EOSE
+    - VIP
+    - CRWV
+    - IONQ
+    - QUBT
+    - GSAT
+    - OKLO
+    - NBIS
+    - CRCL
+    - LITE
+    - SPCX
+    - MU
+    - CBRS
+    - NWPX
+    - STDN
+    - INFQ
+    - IQMX
+    - ETN
+    - PWR
+    - KTOS
+    - YSS
+    - LUNR
+    - BE
+    - AAOI
+    - FN
+    - OCC
+    - POET
+    - WYFI
+    - WULF
+    - CIFR
+    - VOYG
+    - FLY
+    - RDW
+    - XNDU
+    - NNE
+    - IMSR
+    - SMR
+    - HQ
+    - QBTS
+    - RGTI
+    - NUCL
+    - QSI
+    - QTEX
+    - ENRD
+    - ASPI
+    - KEEL
+    - FRMI
+    - OPENAI
+    - ANTHROPIC
+    - XTND
+  watchlist_cycle_rows_written: 56
+  public_buy_zone_rows_written: 0
+  symbol_decision_path: decisions/2026-08-11-event-driven-operating-cycle.md
+publication_review:
+  status: public_safe_expired_historical_record
+  contains_actionable_trading_content: false
+  public_release_earliest_at: 2026-08-12T04:30:00+08:00
+  embargo_status: cleared_after_expiry_and_safety_buffer
+  broker_artifacts_committed: false
+  sensitive_field_review_status: passed_private_and_public_boundary_review
+  notes: The August 11 MDA proposal expired without a linked execution. Exact terms are historical only, no current authorization survives, and no raw broker artifact or identifier exists in the run.
+validation:
+  status: passed
+  notes: Article 1 decision and data checks passed; npm run verify passed and generated 92 static pages; the live dashboard, MDA research page and latest public run were consistent at 390-pixel mobile and 1280-pixel desktop widths with no document-level horizontal overflow; the latest deterministic market-data and published Pages runs succeeded; sensitive-field review passed. The exact action terms are now an expired historical record and no current authorization survives.
+article_one_postflight:
+  status: mission_advanced_with_required_boundaries_preserved
+  mission_delta: The decision converts prolonged cash optionality into the smallest mission-relevant MDA scale step while opening RIOT and seven R1 challengers for future competition.
+  necessary_boundaries_preserved:
+    - no trade execution
+    - no account mutation
+    - primary-source freshness
+    - dilution-aware sizing
+    - public actionable-content embargo
+  ceremony_or_inactivity_check: The Rocket Lab event was reviewed and no longer serves as a waiting rationale; unresolved MDA risks reduce quantity from five to three rather than forcing zero.
