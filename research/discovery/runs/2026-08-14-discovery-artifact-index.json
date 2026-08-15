@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-08-14T15:54:35.196Z",
+  "as_of": "2026-08-14",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-08-14.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-08-14-community-scan.json",
+      "sha256": "22e7ded1c00a65b36956ecaae23af3b8084a775378834bacc5927ca6dab45f9e",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-14-community-triage.json",
+      "sha256": "4fc27462b24ae3b49b69d36e8a20d70d6f4493053f645bb03746c9d2053e4b07",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-14-scan.json",
+      "sha256": "616d8533753277ad1eadd24994a2a717db26733bc5dd1766361d6a0d7a10b193",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-14-sec-event-filing-index-index.metadata.json",
+      "sha256": "52a2d43599385a5a5a8b624a8e2ee9de0d9c06eb13e5b4fb19217c874bafe9e8",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-14-sec-event-filing-index-manifest.csv",
+      "sha256": "9ad590b7b544c859a8e2683bbf8f3f10ae6a78bb3588841040d03f7e4d403839",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-14-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "aca75ab55947104d62cfba7e9a1ae5118d0f0c9857b8c201b34356c85bc4d2e3",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-14-sec-event-filing-index-profiles.json",
+      "sha256": "4b593a20ce3cc0bdac03e558d35111fa3ac1f5e27e8b3002f3b2001020b44c33",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-14-sec-event-filing-index-scan.json",
+      "sha256": "2bcaa1b1125e2e8a6d860a63d1052b2a82d5b17464fee0f318ee07e6c61468ff",
+      "role": "deterministic_scan_artifact"
+    }
+  ]
+}

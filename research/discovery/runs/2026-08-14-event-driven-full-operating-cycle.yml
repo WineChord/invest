@@ -1,0 +1,333 @@
+schema_version: 1
+run_id: 2026-08-14-event-driven-full-operating-cycle
+run_date: 2026-08-14
+request_type: event_driven_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: The five-share IREN proposal was broker-confirmed filled on 2026-08-14 within the one-session decision boundary; no unfilled term or further purchase authorization survives, and research refreshes by 2026-08-28 or earlier on a material event
+linked_decision_or_research_note: decisions/2026-08-14-event-driven-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-14-subagent-evidence-packet.yml
+execution_update:
+  status: public_safe_historical_record
+  confirmed_ledger_event_ids: [2026-08-14-buy-iren-001]
+  resulting_confirmed_cash: 7895.87
+  resulting_confirmed_positions:
+    - RKLB 17 shares
+    - ASTS 11 shares
+    - MDA 9 shares
+    - IREN 5 shares
+  notes: Redacted broker evidence confirms 5 IREN shares at an average USD 44.01 on 2026-08-14. Standard default broker, account, fee, currency and T+1 settlement fields were used; raw screenshots and full broker identifiers are not committed. The close-plus-buffer embargo cleared before release, and this historical record creates no further purchase authorization.
+article_one_preflight:
+  sentinel_level: WARN
+  reason_codes: [evidence_deadline_due]
+  disposition: The due evidence deadline triggered a current primary-source L2 review. The target and full opportunity set were refreshed without weakening any protected surface.
+  protected_surfaces_changed: false
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --as-of 2026-08-14 --json --output research/discovery/runs/2026-08-14-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-14-scan.json
+      output_sha256: 616d8533753277ad1eadd24994a2a717db26733bc5dd1766361d6a0d7a10b193
+      retrieved_at: 2026-08-14
+      profile_coverage_scope: none
+      profile_coverage_status: not_applicable_no_profile_input
+      profile_requested_symbols: []
+      targeted_scope_acknowledged: false
+      targeted_scope_reason: Broad deterministic scan used the full eligible SEC ticker input without a targeted profile packet.
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 59
+        suppressed_known_matches: 0
+        recall_diagnostics: deterministic candidates and exploratory matches were dispositioned by identity, eligibility, directness and primary evidence
+        miss_counts: 0 unresolved known material proxies
+      result_summary: All 18 returned names were ticker or issuer collisions, ineligible structures or weak proxies; none created R1, promotion or buy eligibility.
+    - command: targeted SEC event filing index for ONDS AXTI MTSI LASR CRDO IREN MDA RKLB ASTS COHR
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-14-sec-event-filing-index-scan.json
+      output_sha256: 2bcaa1b1125e2e8a6d860a63d1052b2a82d5b17464fee0f318ee07e6c61468ff
+      retrieved_at: 2026-08-14
+      profile_coverage_scope: partial_requested_symbols
+      profile_coverage_status: targeted_partial
+      profile_requested_symbols: [ONDS, AXTI, MTSI, LASR, CRDO, IREN, MDA, RKLB, ASTS, COHR]
+      targeted_scope_acknowledged: true
+      targeted_scope_reason: Targeted event review covered holdings, the action target and material same-lane comparators; it does not claim broad semantic universe completeness.
+      candidate_payload_summary:
+        returned_candidates: 18
+        omitted_candidates: 0
+        exploratory_unknown_lane_matches: 59
+        suppressed_known_matches: 0
+        recall_diagnostics: issuer profiles were used only for the named event set
+        miss_counts: 0 target-specific unresolved filing gaps after the final COHR submissions refresh
+      result_summary: Targeted filings resolved the current target and comparison evidence; COHR's same-day 10-K race was caught in final synthesis.
+  community_attention:
+    scan_command: npm run research:community -- --as-of 2026-08-14 --json
+    scan_output_path: research/discovery/runs/2026-08-14-community-scan.json
+    scan_output_sha256: 22e7ded1c00a65b36956ecaae23af3b8084a775378834bacc5927ca6dab45f9e
+    triage_command: npm run triage:community -- --as-of 2026-08-14 --json
+    triage_output_path: research/discovery/runs/2026-08-14-community-triage.json
+    triage_output_sha256: 4fc27462b24ae3b49b69d36e8a20d70d6f4493053f645bb03746c9d2053e4b07
+    previous_scan_status: loaded
+    top_existing_priority_boosts: [IREN, RKLB, ONDS, AXTI, COHR]
+    top_new_primary_source_queue: [BRUN, ALOY, RCAT]
+    identity_confirmation_queue: []
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC filings and current issuer submissions
+      sources_or_queries: [IREN Horizon 1 8-K, RKLB preliminary S-4 and financing filings, COHR 10-K, ONDS and AXTI 10-Qs]
+      source_ids: [iren_horizon1_acceptance_2026_08_13, rklb_iridium_s4_financing_2026_08_13, cohr_fy2026_10k, onds_q2_2026_10q, axti_q2_2026_10q]
+      retrieved_at: 2026-08-14
+      material_findings: IREN cleared its first acceptance trigger; RKLB addition remained blocked; COHR and ONDS remained R1; AXTI advanced only to R2.
+      unavailable_or_skipped_reason: Contract-level IREN cash returns and final RKLB financing remain future issuer evidence rather than reachable current process gaps.
+    - family_id: issuer_material
+      family: Company investor releases and issuer-filed operating exhibits
+      sources_or_queries: [IREN Horizon 1 acceptance release, MDA Q2 operating release, ONDS Q2 operating release]
+      source_ids: [iren_horizon1_acceptance_2026_08_13, mda_q2_2026_results, onds_q2_2026_10q]
+      retrieved_at: 2026-08-14
+      material_findings: Issuer evidence confirmed the IREN delivery milestone, preserved the MDA hold thesis and kept ONDS at R1 because acquisition and cash-conversion economics remain unresolved.
+      unavailable_or_skipped_reason: No unavailable issuer material was substituted with commentary; future project cash returns remain explicit evidence milestones.
+    - family_id: market_data
+      family: Completed regular-session closes and adjusted-close history
+      sources_or_queries: [August 13 Yahoo Finance watchlist closes, August 13 Nasdaq supplemental R1 and R2 closes]
+      source_ids: [completed_close_universe_2026_08_13, supplemental_R1_R2_closes_2026_08_13]
+      retrieved_at: 2026-08-14
+      material_findings: IREN closed at USD 44.76 after the acceptance announcement; the five-share entry passed only below the USD 45 research ceiling.
+      unavailable_or_skipped_reason: OPENAI and ANTHROPIC remain unlisted and XTND remains pre-listing; no unavailable price is estimated.
+    - family_id: current_world_context
+      family: Current financing, transaction, regulation and cross-lane market context
+      sources_or_queries: [current SEC event index, completed-close universe, active financing and acquisition disclosures]
+      source_ids: [sec_event_index_targeted_2026_08_14, completed_close_universe_2026_08_13, rklb_iridium_s4_financing_2026_08_13]
+      retrieved_at: 2026-08-14
+      material_findings: The market context supports a bounded non-space starter while acquisition financing and dilution keep another RKLB or MDA increment inferior.
+      unavailable_or_skipped_reason: Macroeconomic and community inputs were used only as prioritization context and did not create eligibility.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: New listings, acquisitions and independently sourced leads
+      sources_or_queries: [BRUN Q1 filing, ALOY filing and financing, RCAT filing and offering]
+      source_ids: [brun_q1_2026_10q, aloy_q1_2026_10q_and_financing, rcat_q1_2026_10q_and_offering]
+      retrieved_at: 2026-08-14
+      material_findings: BRUN, ALOY and RCAT entered R1 under dated SLAs; none reached promotion or buy eligibility.
+      unavailable_or_skipped_reason: Contract economics, commercial qualification and recurring program value remain R2 work rather than silent gaps.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck-lane and cross-lane opportunity-cost review
+      sources_or_queries: [powered AI sites, compound-semiconductor substrates, photonics, autonomous defense, strategic materials]
+      source_ids: [iren_horizon1_acceptance_2026_08_13, axti_q2_2026_10q, onds_q2_2026_10q]
+      retrieved_at: 2026-08-14
+      material_findings: No top-level lane changed; IREN became the strongest non-space starter and BRUN the highest-priority new R1.
+      unavailable_or_skipped_reason: R1 and R2 SLAs preserve false-negative protection without treating incomplete underwriting as buy eligibility.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-14
+    notes: Completed closes, filings, issuer releases, financing, acquisitions, dilution, community leads and the 74-symbol opportunity set were refreshed or revalidated.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 0
+    organic_recall_count: 3
+    hard_coded_proxy_only_recall_count: 0
+    outside_watchlist_effort_pct: 100
+    new_listing_to_r1_latency_days: 0
+unknown_future_review:
+  exploratory_match_count: 59
+  exploratory_denominator: 59
+  stratified_sample_count: 18
+  stratified_sample_pct: 30.5085
+  unsampled_reason: The 59-name exploratory set is a recall-audit surface; 18 deterministic top matches were fully dispositioned and separate primary-source review admitted three R1 leads.
+  repeated_hit_max_age_days: 31
+  top_clusters: [issuer_and_ticker_collisions, blank_check_vehicles, funds_preferreds_and_weak_proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, FTRA, GDYN, NGG, QLEP, LPAA, LPBB, GPUS-PD, HBM, UROY, SAAQ, SPB, AIO, BRUN, ALOY, RCAT]
+  false_positive_patterns: [issuer_name_collision, blank_check_vehicle, ineligible_security, weak_proxy]
+  lane_decisions: [retain_all_top_level_lanes, deepen_autonomous_defense_and_photonics, add_no_top_level_lane]
+  disposition: Three independently verified primary-source leads entered R1; no deterministic output created buy eligibility.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Energized AI-ready sites, GPU clusters, high-speed optical inputs, autonomous defense systems, strategic materials and spacecraft capacity remain plausible bottlenecks.
+    inferences: Common equity captures scarcity only when contracts, project finance, dilution and reinvestment leave durable per-share economics.
+    disconfirming_evidence: Most early leads remain acquisition-shaped, capital intensive, diluted or customer concentrated.
+    source_ids: [iren_horizon1_acceptance_2026_08_13, axti_q2_2026_10q, onds_q2_2026_10q]
+    investment_implication: Use only the smallest IREN starter; retain new leads under SLA.
+  who_controls_or_removes_scarcity:
+    facts: IREN controls energized sites and delivered GPU infrastructure; MDA controls spacecraft capability; AXTI supplies InP; ONDS and RCAT supply autonomous systems.
+    inferences: IREN now has the best current non-space evidence-to-denominator balance.
+    disconfirming_evidence: IREN still lacks disclosed GAAP cash returns and every early challenger retains capital-structure blockers.
+    source_ids: [iren_horizon1_acceptance_2026_08_13, completed_close_universe_2026_08_13]
+    investment_implication: Promote IREN and cap the current action at five shares.
+  who_can_monetize_into_shareholder_value:
+    facts: IREN has a five-year Microsoft contract and first accepted deployment; other new leads have earlier or less bounded evidence.
+    inferences: Starter-level value capture is plausible before scale-level economics are proven.
+    disconfirming_evidence: GPU depreciation, remaining capex, project debt, Mirantis economics and gross dilution can still absorb value.
+    source_ids: [iren_horizon1_acceptance_2026_08_13]
+    investment_implication: Cash-return uncertainty is sizing risk for 2.115 percent and decision-critical above it.
+  public_security_expression:
+    facts: Seventy-one securities have completed prices; OPENAI and ANTHROPIC are unlisted and XTND is pre-listing.
+    inferences: Listing and price availability establish observability rather than buy eligibility.
+    disconfirming_evidence: Seventeen open R1 and R2 names remain outside promotion and buy eligibility.
+    source_ids: [completed_close_universe_2026_08_13, supplemental_R1_R2_closes_2026_08_13]
+    investment_implication: Only IREN receives a nonzero proposal.
+  early_small_misunderstood_or_newly_public:
+    facts: MDA, GILT, APLD, BRUN, ALOY, RCAT, AXTI, LASR and other R1 and R2 records provide small or awkward expressions.
+    inferences: Small denominators improve the right tail only when survival and per-share capture are credible.
+    disconfirming_evidence: Each early lead retains contract, financing, concentration, commercialization or dilution blockers.
+    source_ids: [brun_q1_2026_10q, aloy_q1_2026_10q_and_financing, rcat_q1_2026_10q_and_offering]
+    investment_implication: Preserve the leads without using incomplete evidence as either buy signal or portfolio-wide veto.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [deterministic scan, community triage, bottleneck map, candidate readiness]
+      sources_checked: [sec_event_index_targeted_2026_08_14, brun_q1_2026_10q, aloy_q1_2026_10q_and_financing, rcat_q1_2026_10q_and_offering]
+      facts_verified: BRUN, ALOY and RCAT are R1; AXTI, MTSI and LASR are R2 comparable; no new name is promotion ready.
+      stale_or_missing_evidence: Each open R1 and R2 has a dated next source and deadline.
+      confidence: high
+      key_findings: BRUN is the strongest new R1 and IREN remains the only current non-space action candidate.
+      conflicts: none
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [targeted SEC index, current submissions, material filings]
+      sources_checked: [iren_horizon1_acceptance_2026_08_13, rklb_iridium_s4_financing_2026_08_13, cohr_fy2026_10k, onds_q2_2026_10q, axti_q2_2026_10q]
+      facts_verified: Current target and opportunity-cost filings were reviewed through the final synthesis cutoff.
+      stale_or_missing_evidence: Future contract cash returns and permanent financing remain issuer milestones.
+      confidence: high
+      key_findings: IREN evidence strengthened; RKLB add, COHR promotion and ONDS promotion remain blocked.
+      conflicts: Preferred IREN zero because contract cash returns can change expected value.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [IREN filings, prices, account math, opportunity set]
+      sources_checked: [iren_horizon1_acceptance_2026_08_13, completed_close_universe_2026_08_13]
+      facts_verified: Five shares use 2.115 percent of NAV and Horizon 1 is accepted.
+      stale_or_missing_evidence: Scale-level GAAP economics remain unavailable.
+      confidence: medium_high
+      key_findings: Promote IREN and propose five shares below the research ceiling.
+      conflicts: Disagreed with the bear zero recommendation.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [IREN cash-return gap, dilution, financing, price]
+      sources_checked: [iren_horizon1_acceptance_2026_08_13, completed_close_universe_2026_08_13]
+      facts_verified: Acceptance does not disclose margin, cash return, depreciation or remaining funding.
+      stale_or_missing_evidence: Contract-level cash economics remain unavailable.
+      confidence: medium_high
+      key_findings: Preferred zero and no automatic promotion.
+      conflicts: Main synthesis treats the gap as sizing risk for the smallest starter and decision-critical for scale.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [dilution bridge, completed price, target ARR, downside scenarios]
+      sources_checked: [iren_horizon1_acceptance_2026_08_13, completed_close_universe_2026_08_13]
+      facts_verified: Basic-plus-RSU value is about USD 18.3 billion and gross-potential stress about USD 27.3 billion.
+      stale_or_missing_evidence: Conversion-consistent EV and GAAP cash returns remain scale blockers.
+      confidence: medium
+      key_findings: USD 45 is a research ceiling; USD 44.75 DAY is acceptable only for five shares.
+      conflicts: none after size boundary
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [confirmed account, holdings, NAV, scenario loss, full opportunity set]
+      sources_checked: [completed_close_universe_2026_08_13, iren_horizon1_acceptance_2026_08_13]
+      facts_verified: Existing space weight is 23.27 percent and the IREN starter adds 2.115 percent non-space exposure.
+      stale_or_missing_evidence: No broker quote, preview or execution fact is inferred.
+      confidence: high
+      key_findings: Five IREN shares diversify the portfolio and remain below the starter risk boundary.
+      conflicts: Initial zero preference changed after the independent dilution and entry bridge.
+  unresolved_conflicts: 0
+  conflict_resolution: The main synthesis classifies undisclosed IREN cash returns as sizing uncertainty at five shares and as decision-critical for every larger step; the one-session limit prevents the conclusion from rolling forward.
+lane_delta:
+  lanes_added: []
+  lanes_revised: [ai_compute_infrastructure, semiconductor_interconnect_and_memory, unknown_future_bottlenecks]
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: BRUN, ALOY and RCAT retained at R1; no top-level lane change.
+  no_change_reason: Existing lane taxonomy covers the new direct expressions without a new allocation category.
+candidate_delta:
+  candidates_added: [BRUN, ALOY, RCAT]
+  candidates_rejected_or_archived: []
+  candidates_promoted: [IREN]
+  r0_leads: []
+  r1_researchable: [VIP, APLD, ONDS, ALMU, SATL, EOSE, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
+  r2_comparable: [AXTI, MTSI, LASR]
+  r3_promotion_ready: [IREN]
+  no_action_challenger: BRUN
+  candidates_incubated: [BRUN, ALOY, RCAT]
+  false_positive_patterns: [issuer_name_collision, ticker_collision, blank_check_vehicle, fund_or_preferred, mature_weak_proxy]
+readiness_sprints:
+  - symbol: ONDS
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-ONDS-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#ONDS
+    blocker_type: evidence_based
+    reachable_evidence_remaining: A company reconciliation of organic versus acquired revenue, backlog quality, cash use, acquisition consideration and diluted securities remains reachable.
+    final_classification: incubate
+  - symbol: AXTI
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-AXTI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#AXTI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Same-lane scenario comparison, current diluted valuation, Lumentum agreement economics and export/Tongmei downside remain reachable.
+    final_classification: incubate
+  - symbol: MTSI
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-MTSI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#MTSI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Customer economics, sustainable cash conversion and a material valuation reset can still change the comparison.
+    final_classification: incubate
+  - symbol: LASR
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-LASR-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#LASR
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Backlog conversion, customer economics, supply recovery and a material valuation reset can change the comparison.
+    final_classification: incubate
+  - symbol: BRUN
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-BRUN-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#BRUN
+    blocker_type: evidence_based
+    reachable_evidence_remaining: The next quarterly filing and current contract and capitalization disclosures can bound backlog quality, unit economics and fully diluted common-equity capture.
+    final_classification: incubate
+  - symbol: ALOY
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-ALOY-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#ALOY
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Commercial qualification, repeat customer revenue, gross margin, cash runway and current fully diluted capitalization remain publicly testable.
+    final_classification: incubate
+  - symbol: RCAT
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-RCAT-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#RCAT
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Program awards, repeat deliveries, customer concentration, cash use, acquired economics and a current diluted-capitalization bridge remain reachable.
+    final_classification: incubate
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: false
+  reason: Current primary evidence, completed prices, the 74-symbol opportunity set and reconciled independent reviews supported the now-confirmed five-share IREN one-session starter. The action is complete; all current incremental quantities are zero or holds.

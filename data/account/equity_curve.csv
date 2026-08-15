@@ -40,3 +40,4 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-08-10,2317.50,7334.45,9651.95,10104.00,-4.4740,-0.9187,Automated daily close valuation from Yahoo Finance chart.
 2026-08-12,2411.08,7334.45,9745.53,10104.00,-3.5478,0.9695,Automated daily close valuation from Yahoo Finance chart.
 2026-08-13,2357.28,7334.45,9691.73,10104.00,-4.0803,-0.5520,Automated daily close valuation from Yahoo Finance chart.
+2026-08-14,2681.76,7895.87,10577.63,10992.00,-3.7697,-0.0217,Estimated account-event snapshot using confirmed IREN execution price and August 13 completed closes for other positions; replace after reliable August 14 completed closes are available.

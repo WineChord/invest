@@ -4086,3 +4086,111 @@ sources:
     first_seen_at: 2026-08-11
     related_symbols: []
     summary: The current curve, credit spreads and VIX show selective financing conditions rather than a broad crisis; the overlay informs risk but creates no buy eligibility.
+  - id: completed_close_universe_2026_08_13
+    title: Completed Regular-Session Close Universe — 2026-08-13
+    source_type: market_data_provider
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-13
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [RKLB, ASTS, MDA, CRDO, ALAB, VRT, IREN, LEU, GILT, SEI, RIOT]
+    summary: Adjusted-close history for the current tradable research universe was refreshed after the completed August 13 regular session; price data is evidence for entry review, not an automatic order signal.
+  - id: sec_event_index_targeted_2026_08_14
+    title: Targeted SEC Event and Filing Index — 2026-08-14
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-14
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [RKLB, IREN, COHR, ONDS, AXTI, MTSI, LASR, CRDO, MDA, ASTS]
+    summary: The targeted SEC refresh covered holdings and material semiconductor, photonics and AI-infrastructure challengers; a same-day COHR filing race was caught in final synthesis and recorded as process debt.
+  - id: iren_horizon1_acceptance_2026_08_13
+    title: IREN Horizon 1 Microsoft Acceptance and NVIDIA Exemplar Cloud Status
+    source_type: sec_filing_and_company_release
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000114036126032638/ef20080141_8k.htm
+    source_published_at: 2026-08-13
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [IREN]
+    summary: Microsoft accepted the first 50 MW Horizon deployment and NVIDIA granted GB300 NVL72 Exemplar Cloud status; the milestone strengthens delivery evidence but does not disclose revenue start, cash returns, remaining capex or the final diluted denominator.
+  - id: rklb_iridium_s4_financing_2026_08_13
+    title: Rocket Lab Preliminary Iridium S-4 and Acquisition Financing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000175392626001452/g085840_s4.htm
+    source_published_at: 2026-08-13
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [RKLB]
+    summary: Preliminary merger and financing filings quantify acquisition consideration, share issuance, bridge debt, interest burden, goodwill and the remaining ATM capacity; the long-term thesis remains intact but incremental entry is blocked.
+  - id: onds_q2_2026_10q
+    title: Ondas Holdings Q2 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1646188/000119312526349288/onds-20260630.htm
+    source_published_at: 2026-08-13
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [ONDS, RCAT]
+    summary: Q2 growth is material but acquisitions, cash use and layered dilution prevent the reported revenue trajectory from establishing common-equity value capture.
+  - id: axti_q2_2026_10q
+    title: AXT Q2 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1051627/000143774926027677/axti20260630_10q.htm
+    source_published_at: 2026-08-13
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [AXTI, CRDO, LITE, MTSI, LASR, COHR]
+    summary: InP-led growth and improved cash conversion support an R2 comparison, while China, export, Tongmei, customer and valuation risks block promotion and purchase.
+  - id: cohr_fy2026_10k
+    title: Coherent Fiscal 2026 Form 10-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000020/iivi-20260630.htm
+    source_published_at: 2026-08-14
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [COHR, CRDO, LITE, MTSI, LASR]
+    summary: Revenue and margin growth strengthen photonics demand evidence, but weak cash conversion, capex commitments, leverage, customer concentration and ordinary-share growth retain the R1 blocker.
+  - id: brun_q1_2026_10q
+    title: Bifrost Run Q1 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2090646/000149315226026667/form10-q.htm
+    source_published_at: 2026-06-01
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [BRUN, IREN, APLD]
+    summary: Actual GPU-cloud and colocation revenue support R1 retention, but management contract claims, dual-class shares, earnouts and warrants require a bounded R2 bridge.
+  - id: aloy_q1_2026_10q_and_financing
+    title: Alloy Advanced Materials Q1 2026 Filing and June Financing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1567900/000162828026036966/aloy-20260331.htm
+    source_published_at: 2026-06-25
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [ALOY]
+    summary: Small commercial revenue and a strategic-materials thesis justify R1 monitoring, while stock compensation, cash conversion and the expanded share denominator block promotion.
+  - id: rcat_q1_2026_10q_and_offering
+    title: Red Cat Q1 2026 Filing and May Offering
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/748268/000162828026032121/rcat-20260331.htm
+    source_published_at: 2026-05-12
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [RCAT, ONDS]
+    summary: Autonomous-defense revenue supports R1 peer coverage, but customer concentration, controls, acquisitions and the May share offering leave per-share economics unresolved.
+  - id: supplemental_R1_R2_closes_2026_08_13
+    title: Supplemental Completed Closes for Open R1 and R2 Candidates
+    source_type: exchange_market_data
+    url: https://api.nasdaq.com/api/quote/
+    source_published_at: 2026-08-13
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [VIP, APLD, ONDS, AXTI, ALMU, SATL, EOSE, MTSI, LASR, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
+    summary: Nasdaq historical data supplied completed August 13 closes and available lookback history for the open R1 and R2 comparison set; the prices are research inputs and create no promotion or order eligibility by themselves.
+  - id: yss_q2_2026_10q
+    title: York Space Systems Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086587/000162828026056874/yss-20260630.htm
+    source_published_at: 2026-08-14
+    retrieved_at: 2026-08-14
+    first_seen_at: 2026-08-14
+    related_symbols: [YSS]
+    summary: The filed quarterly report was checked after the issuer release and did not reverse the backlog, guidance, customer-concentration, integration or cash-quality blockers; YSS remains watch-only at lower priority.

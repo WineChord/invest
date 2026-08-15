@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-08-11
+as_of: 2026-08-14
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -806,38 +806,38 @@ records:
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
-    readiness_path: research/discovery/readiness/2026-08-09-ONDS-readiness.md
+    readiness_path: research/discovery/readiness/2026-08-14-ONDS-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Reported revenue and backlog depend heavily on acquisitions, while cash use, warrants, options, RSUs and the fully diluted denominator are extreme.
-    reachable_evidence_remaining: The Q2 Form 10-Q can separate organic and acquired revenue, reconcile backlog, cash use, acquisition consideration and diluted securities.
-    last_readiness_reviewed_at: 2026-08-09
-    next_evidence_source: Second-quarter 2026 results and Form 10-Q.
-    next_evidence_due: 2026-08-14
+    blocker_reason: The Q2 filing confirms rapid revenue growth but shows that acquisitions supplied a material share of revenue while cash use, warrants, options, RSUs and the fully diluted denominator remain extreme.
+    reachable_evidence_remaining: A company reconciliation of organic versus acquired revenue, backlog quality, cash use, acquisition consideration and diluted securities remains reachable.
+    last_readiness_reviewed_at: 2026-08-14
+    next_evidence_source: Organic-revenue and backlog reconciliation plus the next capitalization update.
+    next_evidence_due: 2026-08-21
     cost_of_waiting: Defense demand can accelerate quickly, but the near-term filing provides a much better bound on whether growth reaches common shareholders.
     false_negative_early_warning: Large funded government awards, recurring autonomous-deployment revenue or a materially cleaner diluted capitalization.
     reopen_or_reject_trigger: Advance only after organic revenue, backlog quality, cash runway and dilution are reconciled; reject if acquisition accounting and securities issuance continue to dominate per-share value.
-    next_action: Complete the Q2 R1 gate by 2026-08-14.
+    next_action: Reconcile organic growth, backlog quality, cash use and fully diluted capitalization by 2026-08-21.
     conclusion: Retained as R1 only; quantity zero, no executable limit, no formal lane promotion and no buy-zone eligibility.
   - symbol: AXTI
     material_to_current_allocation: true
     affected_lanes: [semiconductor_interconnect_and_memory]
     materiality_reason: Indium phosphide substrates are a direct upstream input to high-speed optical connectivity and therefore materially improve photonics-lane completeness.
     blocking_scope: compound_semiconductor_substrate_opportunity_cost
-    research_stage: R1_researchable
-    readiness_status: researchable_open
+    research_stage: R2_comparable
+    readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
-    readiness_path: research/discovery/readiness/2026-08-09-AXTI-readiness.md
+    readiness_path: research/discovery/readiness/2026-08-14-AXTI-readiness.md
     blocker_type: evidence_based
-    blocker_reason: The operating inflection follows material share growth and a sharp price rerating, while customer concentration, China manufacturing, export permissions and Tongmei economics remain unbounded.
-    reachable_evidence_remaining: The Q2 Form 10-Q can provide cash flow, capex, customers, export and diluted-capitalization detail.
-    last_readiness_reviewed_at: 2026-08-09
-    next_evidence_source: Second-quarter 2026 Form 10-Q.
-    next_evidence_due: 2026-08-14
+    blocker_reason: The Q2 filing confirms an InP-led operating and cash-conversion inflection, but customer concentration, China manufacturing, export permissions, Tongmei redemption economics and a sharp valuation rerating remain material.
+    reachable_evidence_remaining: Same-lane scenario comparison, current diluted valuation, Lumentum agreement economics and export/Tongmei downside remain reachable.
+    last_readiness_reviewed_at: 2026-08-14
+    next_evidence_source: R2 comparison with CRDO, LITE, MTSI, LASR and COHR.
+    next_evidence_due: 2026-08-21
     cost_of_waiting: A durable InP upcycle can rerate further, but current price and geopolitical risks make entry without the filing unattractive.
     false_negative_early_warning: Repeat InP orders, higher utilization and margins, cleaner cash conversion or reduced China and customer concentration.
     reopen_or_reject_trigger: Advance only after cash conversion, customer durability, export access, ownership structure and fully diluted value are reconciled; reject if the current rerating already capitalizes the plausible upside.
-    next_action: Complete the Q2 filing and valuation review by 2026-08-14.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+    next_action: Complete same-lane valuation and disconfirming-evidence comparison by 2026-08-21.
+    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
   - symbol: ALMU
     material_to_current_allocation: true
     affected_lanes: [semiconductor_interconnect_and_memory]
@@ -903,41 +903,41 @@ records:
     affected_lanes: [semiconductor_interconnect_and_memory]
     materiality_reason: RF, optical and photonic semiconductors are direct inputs to data-center and defense connectivity.
     blocking_scope: current_opportunity_set_false_negative_hygiene
-    research_stage: R1_researchable
-    readiness_status: researchable_open
+    research_stage: R2_comparable
+    readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
-    readiness_path: research/discovery/readiness/2026-08-11-MTSI-readiness.md
+    readiness_path: research/discovery/readiness/2026-08-14-MTSI-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Net debt, convertible claims, equity awards, customer concentration and the current diluted enterprise-value denominator remain unbounded.
-    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
-    last_readiness_reviewed_at: 2026-08-11
-    next_evidence_source: Build a same-lane R2 comparison with LASR, COHR, CRDO, LITE and AAOI by 2026-08-14.
-    next_evidence_due: 2026-08-14
+    blocker_reason: Current diluted enterprise value is about USD 23.8 billion, roughly 17 times annualized sales and more than 100 times trailing free cash flow; net debt, convertible claims, equity awards and customer concentration further compress the right tail.
+    reachable_evidence_remaining: Customer economics, sustainable cash conversion and a material valuation reset can still change the comparison.
+    last_readiness_reviewed_at: 2026-08-14
+    next_evidence_source: Same-lane operating and valuation comparison with LASR, COHR, CRDO, LITE and AAOI.
+    next_evidence_due: 2026-08-21
     cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
-    next_action: Build a same-lane R2 comparison with LASR, COHR, CRDO, LITE and AAOI by 2026-08-14.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+    next_action: Refresh on customer economics, sustainable cash conversion or a completed close at or below the USD 215 research-review level by 2026-08-21.
+    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
   - symbol: LASR
     material_to_current_allocation: true
     affected_lanes: [semiconductor_interconnect_and_memory]
     materiality_reason: High-power lasers and directed-energy programs are direct bottleneck expressions with a relatively small denominator.
     blocking_scope: current_opportunity_set_false_negative_hygiene
-    research_stage: R1_researchable
-    readiness_status: researchable_open
+    research_stage: R2_comparable
+    readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
-    readiness_path: research/discovery/readiness/2026-08-11-LASR-readiness.md
+    readiness_path: research/discovery/readiness/2026-08-14-LASR-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Q3 supply constraints, customer concentration, program timing and contract-margin durability remain unresolved.
-    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
-    last_readiness_reviewed_at: 2026-08-11
-    next_evidence_source: Reconcile backlog, customer economics and diluted EV by 2026-08-14.
-    next_evidence_due: 2026-08-14
+    blocker_reason: The roughly USD 2.8 billion diluted enterprise value is smaller than scaled photonics peers but still above the base scenario range; supply constraints, customer concentration, program timing and contract-margin durability remain unresolved.
+    reachable_evidence_remaining: Backlog conversion, customer economics, supply recovery and a material valuation reset can change the comparison.
+    last_readiness_reviewed_at: 2026-08-14
+    next_evidence_source: Same-lane operating and valuation comparison with MTSI, COHR, CRDO, LITE and AAOI.
+    next_evidence_due: 2026-08-21
     cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
-    next_action: Reconcile backlog, customer economics and diluted EV by 2026-08-14.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+    next_action: Refresh on backlog conversion, supply recovery or a completed close at or below the USD 40 research-review level by 2026-08-21.
+    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
   - symbol: USAR
     material_to_current_allocation: true
     affected_lanes: [advanced_nuclear_and_grid_constraints, unknown_future_bottlenecks]
@@ -1037,4 +1037,64 @@ records:
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
     next_action: Reopen only on a binding lease and limited-recourse funding; review by 2026-08-21.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: BRUN
+    material_to_current_allocation: true
+    affected_lanes: [ai_compute_infrastructure]
+    materiality_reason: A newly public GPU-cloud and colocation operator with actual revenue and a small denominator could become a direct AI-compute bottleneck expression if the claimed contract base survives primary-source reconciliation.
+    blocking_scope: current_opportunity_set_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-BRUN-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Management's USD 940 million contracted-revenue claim is not reconciled to audited backlog, cancellation rights, customer concentration, delivery obligations, full-cost economics, earnouts, warrants or the dual-class denominator.
+    reachable_evidence_remaining: The next quarterly filing and current contract and capitalization disclosures can bound backlog quality, unit economics and fully diluted common-equity capture.
+    last_readiness_reviewed_at: 2026-08-14
+    next_evidence_source: Q2 filing or current-filing reconciliation of contracts, customer concentration, GPU and colocation obligations and the fully diluted Class A/Class B denominator.
+    next_evidence_due: 2026-08-18
+    cost_of_waiting: High if the contract claim validates, but the recent rerating and unbounded denominator make premature promotion more dangerous than a short R2 sprint.
+    false_negative_early_warning: Audited contracted revenue, limited cancellation rights, funded GPU delivery and positive full-cost unit economics.
+    reopen_or_reject_trigger: Advance only after contracted revenue, unit economics, lease obligations, customer concentration and fully diluted capitalization reconcile; reject if promotional claims or financing dominate the operating evidence.
+    next_action: Complete the contract, unit-economics and dilution bridge by 2026-08-18.
+    conclusion: Retained as the highest-priority new R1; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: ALOY
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints, unknown_future_bottlenecks]
+    materiality_reason: Domestic advanced-materials production could directly express a strategic-metals bottleneck if commercial qualification and scaled economics emerge.
+    blocking_scope: strategic_materials_lane_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-ALOY-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Revenue remains tiny, operating cash flow is not sustainably positive, stock compensation is extreme and the June financing materially expanded the denominator.
+    reachable_evidence_remaining: Commercial qualification, repeat customer revenue, gross margin, cash runway and current fully diluted capitalization remain publicly testable.
+    last_readiness_reviewed_at: 2026-08-14
+    next_evidence_source: Next quarterly filing and any binding commercial qualification or customer contract.
+    next_evidence_due: 2026-08-18
+    cost_of_waiting: A strategic contract could rerate the small base, but current per-share economics do not justify paying for unverified scale.
+    false_negative_early_warning: Binding production qualification, repeat commercial revenue, positive gross margin or funded non-dilutive scale-up.
+    reopen_or_reject_trigger: Advance only after commercial demand, gross margin, cash runway and fully diluted value reconcile; reject if grants, stock compensation and financing remain the principal economics.
+    next_action: Complete the commercial-qualification and dilution bridge by 2026-08-18.
+    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+  - symbol: RCAT
+    material_to_current_allocation: true
+    affected_lanes: [unknown_future_bottlenecks]
+    materiality_reason: Small autonomous-defense drones and counter-UAS systems are a direct peer expression for testing whether an emerging defense-robotics bottleneck is investable.
+    blocking_scope: autonomous_defense_lane_false_negative_hygiene
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-14-RCAT-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: Customer concentration, internal-control weaknesses, acquisitions and a large May equity offering leave recurring demand, margin and fully diluted common-equity capture unresolved.
+    reachable_evidence_remaining: Program awards, repeat deliveries, customer concentration, cash use, acquired economics and a current diluted-capitalization bridge remain reachable.
+    last_readiness_reviewed_at: 2026-08-14
+    next_evidence_source: Next quarterly filing and funded-program or delivery evidence.
+    next_evidence_due: 2026-08-18
+    cost_of_waiting: Defense awards can move quickly, but the recent offering and execution risks make a short evidence wait cheaper than premature promotion.
+    false_negative_early_warning: Repeat funded program awards, durable gross margin, customer diversification or a cleaner capitalization path.
+    reopen_or_reject_trigger: Advance only after recurring program economics, controls, acquisition contribution and fully diluted value reconcile; reject if financing or one customer dominates the thesis.
+    next_action: Complete the program-economics, concentration and dilution bridge by 2026-08-18.
     conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.

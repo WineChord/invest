@@ -1,20 +1,20 @@
 schema_version: 1
-as_of: 2026-08-11
+as_of: 2026-08-14
 last_research_engine_run:
-  as_of: 2026-08-11
-  scope: event_driven_L2_with_august_10_closes_rklb_asts_riot_material_filings_mda_scale_decision_and_seven_new_R1_sprints
-  notes: Completed a v1.3 event-driven L2 cycle covering 71 symbols. The August 11 MDA +3 proposal was the smallest mission-consistent scale step for that session, then expired without a linked execution; RIOT advanced to watch/R2 and seven new leads remained R1.
+  as_of: 2026-08-14
+  scope: event_driven_L2_with_august_13_closes_IREN_acceptance_RKLB_Iridium_financing_current_filings_three_new_R1_sprints_and_three_R2_comparisons
+  notes: Completed a v1.3 event-driven L2 cycle covering 74 symbols. IREN advanced to B+ active candidate and a five-share one-session starter after Horizon 1 acceptance; BRUN, ALOY and RCAT entered R1 while AXTI, MTSI and LASR advanced only to R2 comparable.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Primary evidence, August 10 completed closes, the 71-symbol comparison and independent reviews supported one bounded MDA scale step for August 11. That proposal has expired; a future order requires a fresh decision after the evidence deadline rather than rolling the old terms forward.
+  reason: Repository-public evidence remains sufficient for fresh all-gate recommendations. The bounded five-share IREN starter was broker-confirmed filled within the one-session boundary, so this completed action creates no further buy authorization.
   user_only_execution_prerequisites:
-    - account owner must verify a fresh broker quote and order preview before any future real action
-    - the MDA proposal expired without a linked execution at the 2026-08-11 regular close and must not roll or chase
-    - the separately confirmed 2026-08-13 MDA buy is an independent historical account event and creates no further-action authorization
-    - complete broker execution evidence is required before any account-record mutation
-    - RIOT requires the first event-after completed close plus permanent-financing and credit evidence before active or buy eligibility
+    - the confirmed five-share IREN execution completes the current action and must not roll into another order
+    - any future IREN scale step requires a fresh full decision, broker quote and order preview
+    - the confirmed 2026-08-13 MDA buy is an independent historical account event and creates no further-action authorization
+    - complete broker execution evidence remains required before any later account-record mutation
+    - every IREN scale step above five shares requires GAAP AI-cloud cash returns and a conversion-consistent capitalization bridge
 mission_accountability:
   policy_version: v1.3
   latest_full_decision_policy_version: v1.3
@@ -23,37 +23,37 @@ mission_accountability:
   repository_health_is_allocation_veto: false
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
-  latest_confirmed_return_seeking_buy_date: 2026-08-13
-  latest_research_nav: 9651.95
-  confirmed_cash: 7334.45
-  latest_research_nav_basis: August 10 completed-close snapshot before the August 13 MDA execution and August 14 standing contribution; current confirmed cash is USD 8115.92 and MDA is 9 shares, and the next completed-close refresh will update this valuation block
+  latest_confirmed_return_seeking_buy_date: 2026-08-14
+  latest_research_nav: 10577.63
+  confirmed_cash: 7895.87
+  latest_research_nav_basis: Estimated August 14 account-event snapshot using the confirmed IREN execution price and August 13 completed closes for RKLB 17 ASTS 11 and MDA 9 pending a reliable August 14 completed-close refresh
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 75.9893
+  liquidity_option_weight_pct: 74.6469
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
-  latest_mission_relevant_deployment_date: 2026-08-06
-  mission_relevant_deployment_basis: 2026-08-06-buy-mda-001
-  days_since_latest_mission_relevant_deployment: 5
+  latest_mission_relevant_deployment_date: 2026-08-14
+  mission_relevant_deployment_basis: 2026-08-14-buy-iren-001
+  days_since_latest_mission_relevant_deployment: 0
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
-  next_required_review_at: 2026-09-20
-  strongest_counterfactual: At the August 11 decision snapshot, MDA was the only starter-level action; GILT and LEU were the closest active challengers, APLD the strongest R1 and RIOT the highest-priority new R2/watch review.
-  smallest_prudent_exposure_considered: The historical August 11 proposal considered three MDA shares at no more than USD 34.60; it expired without a linked execution and creates no current authorization.
-  zero_vs_starter_result: At the August 11 decision snapshot, zero no longer provided superior Article 1 exposure and a three-share stage bounded the identified uncertainty. That proposal expired; the separately confirmed August 13 purchase establishes 9 MDA shares as an account fact without reviving the old order terms.
+  next_required_review_at: 2026-09-28
+  strongest_counterfactual: The confirmed IREN starter supplies the strongest non-space bottleneck exposure; the next-dollar counterfactual is cash until Horizons 2-4, GAAP cash returns and capitalization evidence support a fresh scale decision.
+  smallest_prudent_exposure_considered: The confirmed five-share IREN starter cost USD 220.05 at an average USD 44.01, approximately 2.0803 percent of current research NAV, and diversifies the existing space concentration.
+  zero_vs_starter_result: The bounded starter was superior to zero and is now confirmed. No larger quantity is supported because the same cash-return and capitalization uncertainty remains decision-critical for scale.
   zero_exposure_reason_code: other_documented
-  decision_critical_missing_evidence: Working-capital reversal, final post-offering dilution and Blue Canyon/CLS pro-forma leverage block five shares and every fully underwritten scale step, not the smallest three-share starter completion.
-  why_risk_sizing_cannot_absorb_uncertainty: Risk sizing can absorb the residual uncertainty only at three shares; five shares would consume the full starter band before acquisition evidence arrives.
-  cash_opportunity_cost: The historical proposal used at most 1.08 percent of the decision-snapshot NAV and preserved about 74.9 percent cash for MDA milestones, RIOT financing evidence or a superior cross-lane opportunity.
-  conjunctive_evidence_and_price_trigger: The August 11 price-and-session trigger expired. Any later scale step requires a new decision using current price, working-capital, diluted-share, acquisition-funding, pro-forma leverage and full opportunity-cost evidence.
-  next_evidence_deadline: 2026-08-14
-  no_action_streak: 1
-  article1_red_team_status: completed_current_v1.3_smallest_scale_vs_zero_and_plus_five
+  decision_critical_missing_evidence: Horizons 2-4 acceptance, GAAP AI-cloud revenue and margin, project-level cash returns, remaining capex, Mirantis economics and a conversion-consistent capitalization bridge block every scale step above the five-share starter.
+  why_risk_sizing_cannot_absorb_uncertainty: Risk sizing can absorb the identified uncertainty only at five shares; a 4-percent or fully underwritten position would depend on undisclosed cash-return and capitalization evidence.
+  cash_opportunity_cost: The confirmed starter uses 2.0803 percent of NAV and preserves about 74.65 percent cash for IREN evidence milestones, MDA acquisition evidence or a superior cross-lane opportunity.
+  conjunctive_evidence_and_price_trigger: The one-session action is complete. Any future IREN scale step requires fresh price, GAAP AI-cloud revenue and margin, project cash returns, remaining-capex, Mirantis and conversion-consistent capitalization evidence.
+  next_evidence_deadline: 2026-08-28
+  no_action_streak: 0
+  article1_red_team_status: completed_current_v1.3_IREN_zero_vs_five_and_scale_boundary
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: The independently confirmed August 13 MDA buy is recorded as a 3-share account event, bringing MDA to 9 shares; confirmed cash is USD 8115.92 after the August 14 standing contribution. The August 11 proposal expired without a linked execution and no current trade authorization survives.
+  current_conclusion: Redacted broker evidence confirms 5 IREN shares bought at an average USD 44.01 on August 14. Confirmed holdings are IREN 5 RKLB 17 ASTS 11 and MDA 9 with USD 7895.87 cash; no current add or sell is authorized, and the repository executed no trade.
 coverage:
-  universe_scan_as_of: 2026-08-11
-  discovery_lane_map_as_of: 2026-08-11
+  universe_scan_as_of: 2026-08-14
+  discovery_lane_map_as_of: 2026-08-14
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
@@ -64,23 +64,23 @@ coverage:
   active_symbols_missing_valuation_state: 0
   active_symbols_with_latest_filing_review: 23
   active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 38
+  raw_discovery_candidates_open: 41
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-08-11-event-driven-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-08-11-event-driven-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-08-11-event-driven-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-08-11-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-08-14-event-driven-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-08-14-event-driven-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-08-14-event-driven-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-08-14-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
   issuer_profile_semantic_coverage_pct: 0
   broad_semantic_search_status: gap_open_bounded_process_debt
-  organic_recall_count: 7
+  organic_recall_count: 3
   hard_coded_proxy_only_recall_count: 0
   exploratory_match_count: 59
   exploratory_sample_count: 18
   exploratory_sample_coverage_pct: 30.5085
-  search_quality_conclusion: All 18 deterministic candidates were dispositioned, an 18-of-59 exploratory recall sample was reviewed, and seven separately verified primary-source leads entered R1. No discovery gap blocks MDA; broad semantic coverage remains bounded process debt.
+  search_quality_conclusion: All 18 deterministic candidates were dispositioned as collisions, ineligible structures or weak proxies. Primary-source review added BRUN, ALOY and RCAT at R1 and advanced AXTI, MTSI and LASR only to R2; no discovery gap blocks the bounded IREN starter.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -110,9 +110,9 @@ discovery_process:
     - unknown_future_bottlenecks
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 38
+  material_open_candidates: 41
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 38
+  open_candidate_readiness_completed: 41
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -162,4 +162,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: The current v1.3 cycle uses August 10 completed closes, current material filings, a 71-symbol opportunity set, RIOT promotion and seven new R1 sprints. The August 11 MDA proposal expired without a linked execution; its exact terms are historical only and no current authorization survives.
+notes: The current v1.3 cycle uses August 13 completed closes, current material filings and a 74-symbol opportunity set. The bounded five-share IREN starter was broker-confirmed filled on August 14; no unfilled term or further authorization survives, and the account-event valuation remains explicitly estimated until a reliable August 14 completed close is available.

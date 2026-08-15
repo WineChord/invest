@@ -1,25 +1,25 @@
 schema_version: 1
 policy_version: v1.3
-as_of: 2026-08-11
+as_of: 2026-08-14
 records:
   - symbol: MDA
-    as_of: 2026-08-11
+    as_of: 2026-08-14
     policy_version: v1.3
-    research_stage: held_active_candidate_historical_scale_review
+    research_stage: held_active_candidate_confirmed_starter
     initial_weight_range_pct:
       - 2
       - 4
     fully_underwritten_weight_range_pct:
       - 6
       - 12
-    current_stage: august_11_scale_proposal_expired_without_linked_execution
+    current_stage: nine_share_starter_held_after_confirmed_august_13_execution
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 4
     downside_portfolio_result: Acquisition leverage, integration failure, dilution or weak cash conversion could impair the starter and compound correlated space losses.
     base_portfolio_result: The existing starter can participate in a capable space platform while cash conversion and acquisition economics remain under review.
     upside_portfolio_result: Successful Blue Canyon and CLS integration with strong per-share cash conversion could justify a material platform position.
     exceptional_portfolio_result: A vertically integrated global spacecraft, payload and geospatial-data platform could create rare multi-decade asymmetry.
-    contribution_dilution_check: The historical three-share increment was mission-relevant and used total confirmed liquidity rather than the latest contribution, but its one-session proposal expired without a linked execution. The separately confirmed August 13 account event does not revive the old terms or authorize another scale step; further sizing waits for cash conversion and pro-forma acquisition evidence.
+    contribution_dilution_check: The independently confirmed August 13 execution brought MDA to nine shares and about 2.96 percent of current research NAV. It is mission-relevant but creates no authorization for another scale step; further sizing waits for cash conversion and pro-forma acquisition evidence.
     scale_milestones:
       - post-offering diluted shares and acquisition consideration are fully reconciled
       - pro-forma leverage stays within the stated target and declines through operating cash flow
@@ -31,10 +31,10 @@ records:
       - leverage exceeds the stated range without a credible operating-cash-flow path
       - persistent dilution-adjusted cash conversion misses the underwriting case
       - backlog, margin or integration evidence breaks the shareholder-value path
-    stage_review_by: 2026-08-14
-    source_path: decisions/2026-08-11-event-driven-operating-cycle.md
+    stage_review_by: 2026-08-21
+    source_path: decisions/2026-08-14-event-driven-operating-cycle.md
     source_ids:
-      - completed_close_universe_2026_08_10
+      - completed_close_universe_2026_08_13
       - mda_q2_2026_results
       - rklb_q2_2026_10q
   - symbol: GILT
@@ -106,23 +106,23 @@ records:
       - completed_close_universe_2026_08_07
       - leu_q2_2026_results
   - symbol: IREN
-    as_of: 2026-08-09
+    as_of: 2026-08-14
     policy_version: v1.3
-    research_stage: watch_powered_site_value_capture_reunderwriting
+    research_stage: active_candidate_powered_site_starter
     initial_weight_range_pct:
       - 2
       - 4
     fully_underwritten_weight_range_pct:
       - 6
       - 10
-    current_stage: research_only_not_buy_eligible
+    current_stage: five_share_starter_held_after_confirmed_august_14_execution
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 4
     downside_portfolio_result: Capex, project financing, GPU depreciation, customer concentration, bitcoin cyclicality or dilution could impair the starter.
     base_portfolio_result: Powered-site optionality may create value, but capital intensity can divert it from common shareholders.
     upside_portfolio_result: Accepted recurring AI-cloud revenue and self-funded commissioning could justify material exposure.
     exceptional_portfolio_result: Scarce energized sites converted into a scalable AI cloud could become an unusually asymmetric platform.
-    contribution_dilution_check: Sizing must follow accepted revenue, remaining funding and diluted capitalization rather than nominal share price.
+    contribution_dilution_check: The confirmed five-share starter cost USD 220.05 at an average USD 44.01, approximately 2.0803 percent of current research NAV. It used total confirmed liquidity rather than the latest contribution and is not a license to scale before GAAP cash returns and capitalization reconcile.
     scale_milestones:
       - customer acceptance and recurring GPU economics are disclosed and repeatable
       - remaining capex and utilization reconcile to a survivable funding plan
@@ -134,11 +134,11 @@ records:
       - AI value capture fails before capital needs accelerate
       - financing or dilution destroys per-share asymmetry
       - bitcoin exposure overwhelms the infrastructure thesis
-    stage_review_by: 2026-08-16
-    source_path: decisions/2026-08-09-weekly-operating-cycle.md
+    stage_review_by: 2026-08-28
+    source_path: research/promotion/2026-08-14-IREN-promotion-review.md
     source_ids:
-      - completed_close_universe_2026_08_07
-      - iren_mirantis_close_2026_08_04
+      - completed_close_universe_2026_08_13
+      - iren_horizon1_acceptance_2026_08_13
   - symbol: SEI
     as_of: 2026-08-09
     policy_version: v1.3

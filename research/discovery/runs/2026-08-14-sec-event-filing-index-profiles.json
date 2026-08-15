@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-14T15:10:10.359Z",
+  "source": "sec_filing_business_sections",
+  "profile_purpose": "issuer_universe_discovery",
+  "profile_text_fields": [
+    "business_description"
+  ],
+  "source_files": [
+    "research/discovery/runs/2026-08-14-sec-event-filing-index-manifest.csv",
+    "https://www.sec.gov/files/company_tickers_exchange.json",
+    "research/discovery/runs/2026-08-14-sec-event-filing-index-manifest.metadata.json"
+  ],
+  "filing_cache_dir": "",
+  "filing_cache_hits": 0,
+  "filing_cache_misses": 0,
+  "filing_cache_writes": 0,
+  "filing_cache_only": false,
+  "filing_ledger_output": "",
+  "filing_ledger_count": 10,
+  "filing_ledger": [
+    {
+      "symbol": "ASTS",
+      "cik": "0001780312",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1780312/000119312526342550/asts-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "4c14231117158f4bf89f502fee7cf44f619eb6193cbda9cc090e3491d1e6e1a6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "AXTI",
+      "cik": "0001051627",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926027677/axti20260630_10q.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "b951d234a8a2519b478c5232b079c39d9e497338c00814b2b8e94558fb91ec3a",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "COHR",
+      "cik": "0000820318",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/820318/000119312526346860/d128030d8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "42f9e4d68f584b89496012aa31db09f660b5a7f4a67e73e51a803bcbadc69cc2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "CRDO",
+      "cik": "0001807794",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/crdo-20260528.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "c59bc500ebdc89ec3ceb57dcadc168eab4d7c12a1c28b7f3678864a7086ff24e",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126032638/ef20080141_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "74cf6d1c7f33e5e2d56b007ac14b04e0f9d021dbeca31b0cd5ab7237794d3924",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "LASR",
+      "cik": "0001124796",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479626000038/lasr-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "cad0beff6bb3a8970d72b5a053b34413d2436fc2dca514b87780fe96753fd8a6",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "MDA",
+      "cik": "0001857047",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1857047/000110465926092384/tm2621766d2_6k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "f1cca9603c8ca34e78e486e71683bd09acb724de6c7355aa9de14522b4f42960",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "MTSI",
+      "cik": "0001493594",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "bb08066a22d6d989644ea76dbdce4b9e24970529199fa0b479de34d0f32ac857",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "ONDS",
+      "cik": "0001646188",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1646188/000119312526349288/onds-20260630.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "566774b778116800c1513b8c6d134f143bd12528c304e3442d14cdbe6a46e3a2",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001463/g085846_8k.htm",
+      "cache_status": "network_fetch",
+      "cache_observed_at": "2026-08-14T15:10:10.359Z",
+      "cache_age_days": 0,
+      "max_cache_age_days": 1,
+      "payload_sha256": "a5ee28de0d64bd9f1889d5357053dc80e1c32498c2a4b0cc05f00831f37f0c93",
+      "validation_status": "validated",
+      "request_attempt_count": 1,
+      "request_statuses": [
+        "200"
+      ],
+      "retrieved_at": "2026-08-14",
+      "fetched_at": "2026-08-14T15:10:10.359Z"
+    }
+  ],
+  "max_filing_cache_age_days": 1,
+  "sec_fetch_retries": 2,
+  "sec_retry_delay_ms": 1000,
+  "sec_user_agent": "winechord-invest/1.0 (discovery research; set SEC_USER_AGENT with contact for live runs)",
+  "sec_request_delay_ms": 0,
+  "selection_strategy": "manifest_filing_sections",
+  "manifest_selection_strategy": "requested_symbols",
+  "profile_coverage_strategy": "requested_symbols",
+  "coverage_scope": "partial_requested_symbols",
+  "requested_symbols": [
+    "ONDS",
+    "AXTI",
+    "MTSI",
+    "LASR",
+    "CRDO",
+    "IREN",
+    "MDA",
+    "RKLB",
+    "ASTS",
+    "COHR"
+  ],
+  "selected_symbol_count": 10,
+  "eligible_universe_count": 7659,
+  "coverage_limit": 10,
+  "sampling_note": "Explicit symbol list supplied by the caller; coverage claims are limited to requested symbols.",
+  "manifest_metadata_path": "research/discovery/runs/2026-08-14-sec-event-filing-index-manifest.metadata.json",
+  "manifest_row_count": 10,
+  "profile_count": 5,
+  "skipped_symbols": [
+    {
+      "symbol": "ASTS",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "AXTI",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "CRDO",
+      "reason": "missing_business_section_start"
+    },
+    {
+      "symbol": "MDA",
+      "reason": "business_section_too_short"
+    },
+    {
+      "symbol": "ONDS",
+      "reason": "missing_business_section_start"
+    }
+  ],
+  "profiles": [
+    {
+      "symbol": "COHR",
+      "cik": "0000820318",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/820318/000119312526346860/d128030d8k.htm",
+      "source_published_at": "2026-08-12",
+      "retrieved_at": "2026-08-14",
+      "text": "Item 7.01. Regulation FD Disclosure. A slide presentation to be used by senior management of the Company in connection with its discussions with investors and others regarding the financial results is furnished as Exhibit 99.2. The information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934 or otherwise subject to the liabilities under that Section. Furthermore, the information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed to be incorporated by reference into the filings of the Company under the Securities Act of 1933.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01. Regulation FD Disclosure. A slide presentation to be used by senior management of the Company in connection with its discussions with investors and others regarding the financial results is furnished as Exhibit 99.2. The information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934 or otherwise subject to the liabilities under that Section. Furthermore, the information in this Item 7.01 of this Current Report on Form 8-K, including Exhibit 99.2 furnished pursuant to Item 9.01, shall not be deemed to be incorporated by reference into the filings of the Company under the Securities Act of 1933."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001193125-26-346860/d128030d8k.htm",
+      "filing_accession_number": "0001193125-26-346860",
+      "filing_acceptance_datetime": "2026-08-12T20:10:13.000Z",
+      "filing_content_sha256": "42f9e4d68f584b89496012aa31db09f660b5a7f4a67e73e51a803bcbadc69cc2",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "d128030d8k.htm",
+      "filing_report_date": "2026-08-12",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0000820318.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2881,
+      "extraction_end_offset": 3650,
+      "extraction_section_length": 768,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "IREN",
+      "cik": "0001878848",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1878848/000114036126032638/ef20080141_8k.htm",
+      "source_published_at": "2026-08-13",
+      "retrieved_at": "2026-08-14",
+      "text": "Item 7.01 Regulation FD Disclosure. On August 13, 2026, IREN Limited (the “Company”) issued a press release announcing the delivery to, and acceptance by Microsoft of Horizon 1, and its achievement of NVIDIA Exemplar Cloud Status on GB300 NVL72. A copy of the press release is attached as Exhibit 99.1 hereto and incorporated by reference herein. The information contained in this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing.",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01 Regulation FD Disclosure. On August 13, 2026, IREN Limited (the “Company”) issued a press release announcing the delivery to, and acceptance by Microsoft of Horizon 1, and its achievement of NVIDIA Exemplar Cloud Status on GB300 NVL72. A copy of the press release is attached as Exhibit 99.1 hereto and incorporated by reference herein. The information contained in this Item 7.01, including Exhibit 99.1, is being furnished and shall not be deemed “filed” for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference into any filing under the Securities Act of 1933, as amended, or the Exchange Act, except as expressly set forth by specific reference in such filing."
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001140361-26-032638/ef20080141_8k.htm",
+      "filing_accession_number": "0001140361-26-032638",
+      "filing_acceptance_datetime": "2026-08-13T11:46:14.000Z",
+      "filing_content_sha256": "74cf6d1c7f33e5e2d56b007ac14b04e0f9d021dbeca31b0cd5ab7237794d3924",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "ef20080141_8k.htm",
+      "filing_report_date": "2026-08-13",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001878848.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2033,
+      "extraction_end_offset": 2857,
+      "extraction_section_length": 823,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "LASR",
+      "cik": "0001124796",
+      "filing_type": "10-Q",
+      "source_name": "sec_filing_business_sections:10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479626000038/lasr-20260630.htm",
+      "source_published_at": "2026-08-07",
+      "retrieved_at": "2026-08-14",
+      "text": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 19",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 19"
+      },
+      "profile_text_truncated": false,
+      "filing_accession_or_document_id": "0001124796-26-000038/lasr-20260630.htm",
+      "filing_accession_number": "0001124796-26-000038",
+      "filing_acceptance_datetime": "2026-08-07T16:04:59.000Z",
+      "filing_content_sha256": "cad0beff6bb3a8970d72b5a053b34413d2436fc2dca514b87780fe96753fd8a6",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "lasr-20260630.htm",
+      "filing_report_date": "2026-06-30",
+      "filing_sec_form_original": "10-Q",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-Q",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001124796.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-q_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 18403,
+      "extraction_end_offset": 18500,
+      "extraction_section_length": 96,
+      "extraction_start_pattern": "item_2_mdna",
+      "extraction_start_pattern_label": "Item 2 management discussion",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "MTSI",
+      "cik": "0001493594",
+      "filing_type": "10-Q",
+      "source_name": "sec_filing_business_sections:10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm",
+      "source_published_at": "2026-08-06",
+      "retrieved_at": "2026-08-14",
+      "text": "ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS The following discussion of our financial condition and results of operations should be read in conjunction with the condensed consolidated financial statements and the notes thereto included elsewhere in this Quarterly Report on Form 10-Q and our Annual Report on Form 10-K for the fiscal year ended October 3, 2025 filed with the United States Securities and Exchange Commission (“SEC”) on November 14, 2025 (the “2025 Annual Report on Form 10-K”). In this document, the words “Company,” “we,” “our,” “us,” and similar terms refer only to MACOM Technology Solutions Holdings, Inc. and its consolidated subsidiaries, and not any other person or entity. “MACOM,” “MACOM Technology Solutions,” and related logos are trademarks of MACOM Technology Solutions Holdings, Inc. All other brands and names listed are trademarks of their respective owners. Cautionary Note Regarding Forward-Looking Statements This Item 2, “Management’s Discussion and Analysis of Financial Condition and Results of Operations” and other sections of this Quarterly Report on Form 10-Q contain “forward-looking statements” including statements regarding our business outlook, strategic plans and priorities, expectations, anticipated drivers of future revenue growth, industry trends, our plans for use of our cash and cash equivalents and short-term investments, interest rate and foreign currency risks, our ability to meet working capital requirements, estimates and objectives for future operations, our future results of operations and our financial position, including liquidity, and other matters that do not relate strictly to historical facts. Forward-looking statements generally may be identified by terms such as “anticipates,” “believes,” “could,” “continue,” “estimates,” “expects,” “intends,” “may,” “plans,” “potential,” “predicts,” “projects,” “seeks,” “should,” “targets,” “will,” “would” or similar expressions or variations or the negatives of those terms. Forward-looking statements are neither historical facts nor assurances about future performance. Instead, they are based only on our current beliefs, expectations and assumptions. Because forward-looking statements relate to the future, such statements involve inherent risks, changes and uncertainties that are difficult to predict and many of which are outside of our control. A number of important factors could cause actual results and outcomes to differ materially and adversely from those expressed or implied by our forward-looking statements. Important factors that could cause actual results to differ materially from the forward-looking statements include, among others, the risks described in the section entitled “Item 1A - Risk Factors” in this Quarterly Report on Form 10-Q and our 2025 Annual Report on Form 10-K. We caution the reader to carefully consider such factors. Furthermore, such forward-looking statements speak only as of the date of this Quarterly Report on Form 10-Q. Except as required by law, we undertake no obligation to revise or update our forward-looking statements to reflect any event or circumstance that may arise after the date of this Quarterly Report on Form 10-Q. Overview We design, develop and manufacture differentiated semiconductor products and solutions for the Industrial and Defense (“I&D”), Data Center and Telecommunications (“Telecom”) industries for customers who demand high performance, quality and reliability. We are headquartered in Lowell, Massachusetts, with operational facilities throughout North America, Europe and Asia. We have more than 70 years of application expertise, combined with expertise in analog and mixed signal circuit design, compound semiconductor fabrication (including GaAs, GaN, indium phosphide (“InP”) and specialized silicon), advanced packaging and back-end assembly and test. We offer a broad portfolio of thousands of standard and custom devices, which include int",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS The following discussion of our financial condition and results of operations should be read in conjunction with the condensed consolidated financial statements and the notes thereto included elsewhere in this Quarterly Report on Form 10-Q and our Annual Report on Form 10-K for the fiscal year ended October 3, 2025 filed with the United States Securities and Exchange Commission (“SEC”) on November 14, 2025 (the “2025 Annual Report on Form 10-K”). In this document, the words “Company,” “we,” “our,” “us,” and similar terms refer only to MACOM Technology Solutions Holdings, Inc. and its consolidated subsidiaries, and not any other person or entity. “MACOM,” “MACOM Technology Solutions,” and related logos are trademarks of MACOM Technology Solutions Holdings, Inc. All other brands and names listed are trademarks of their respective owners. Cautionary Note Regarding Forward-Looking Statements This Item 2, “Management’s Discussion and Analysis of Financial Condition and Results of Operations” and other sections of this Quarterly Report on Form 10-Q contain “forward-looking statements” including statements regarding our business outlook, strategic plans and priorities, expectations, anticipated drivers of future revenue growth, industry trends, our plans for use of our cash and cash equivalents and short-term investments, interest rate and foreign currency risks, our ability to meet working capital requirements, estimates and objectives for future operations, our future results of operations and our financial position, including liquidity, and other matters that do not relate strictly to historical facts. Forward-looking statements generally may be identified by terms such as “anticipates,” “believes,” “could,” “continue,” “estimates,” “expects,” “intends,” “may,” “plans,” “potential,” “predicts,” “projects,” “seeks,” “should,” “targets,” “will,” “would” or similar expressions or variations or the negatives of those terms. Forward-looking statements are neither historical facts nor assurances about future performance. Instead, they are based only on our current beliefs, expectations and assumptions. Because forward-looking statements relate to the future, such statements involve inherent risks, changes and uncertainties that are difficult to predict and many of which are outside of our control. A number of important factors could cause actual results and outcomes to differ materially and adversely from those expressed or implied by our forward-looking statements. Important factors that could cause actual results to differ materially from the forward-looking statements include, among others, the risks described in the section entitled “Item 1A - Risk Factors” in this Quarterly Report on Form 10-Q and our 2025 Annual Report on Form 10-K. We caution the reader to carefully consider such factors. Furthermore, such forward-looking statements speak only as of the date of this Quarterly Report on Form 10-Q. Except as required by law, we undertake no obligation to revise or update our forward-looking statements to reflect any event or circumstance that may arise after the date of this Quarterly Report on Form 10-Q. Overview We design, develop and manufacture differentiated semiconductor products and solutions for the Industrial and Defense (“I&D”), Data Center and Telecommunications (“Telecom”) industries for customers who demand high performance, quality and reliability. We are headquartered in Lowell, Massachusetts, with operational facilities throughout North America, Europe and Asia. We have more than 70 years of application expertise, combined with expertise in analog and mixed signal circuit design, compound semiconductor fabrication (including GaAs, GaN, indium phosphide (“InP”) and specialized silicon), advanced packaging and back-end assembly and test. We offer a broad portfolio of thousands of standard and custom devices, which include int"
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001493594-26-000038/mtsi-20260703.htm",
+      "filing_accession_number": "0001493594-26-000038",
+      "filing_acceptance_datetime": "2026-08-06T20:02:42.000Z",
+      "filing_content_sha256": "bb08066a22d6d989644ea76dbdce4b9e24970529199fa0b479de34d0f32ac857",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "mtsi-20260703.htm",
+      "filing_report_date": "2026-07-03",
+      "filing_sec_form_original": "10-Q",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "10-Q",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001493594.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_10-q_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 87522,
+      "extraction_end_offset": 116260,
+      "extraction_section_length": 28737,
+      "extraction_start_pattern": "item_2_mdna",
+      "extraction_start_pattern_label": "Item 2 management discussion",
+      "extraction_warnings": []
+    },
+    {
+      "symbol": "RKLB",
+      "cik": "0001819994",
+      "filing_type": "8-K",
+      "source_name": "sec_filing_business_sections:8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001463/g085846_8k.htm",
+      "source_published_at": "2026-08-13",
+      "retrieved_at": "2026-08-14",
+      "text": "Item 7.01. Regulation FD Disclosure. On August 13, 2026, Rocket Lab Corporation (the “Company”) issued a press release announcing the entry into the Equity Distribution Agreement (as defined below). A copy of the press release is attached hereto and furnished herewith as Exhibit 99.1. In addition, on August 13, 2026, the Company issued a press release announcing progress on its previously announced proposed acquisition of Iridium Communications Inc. A copy of the press release is attached hereto and furnished herewith as Exhibit 99.2. The information set forth under this Item 7.01, Exhibit 99.1 and Exhibit 99.2 is not being filed for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (“Exchange Act”), and is not to be incorporated by reference into any filing of the Company under the Securities Act of 1933, as amended, or the Exchange Act, whether made before or after the date hereof, regardless of any general incorporation language in any such filing, except as shall be expressly set forth by specific reference in such a filing. Item 8.01 Other Items. On August 13, 2026, the Company entered into an equity distribution agreement (the “Equity Distribution Agreement”) with Deutsche Bank Securities Inc. and Wells Fargo Securities, LLC, as sales agents (in such capacity, each, a “Sales Agent” and, collectively, the “Sales Agents”), the Forward Sellers (as defined below) and the Forward Purchasers (as defined below). Under the Equity Distribution Agreement, the Company may offer and sell, from time to time, shares of the Company’s common stock, par value $0.0001 per share (“Common Stock”) (the “Shares”), through or to the Sales Agents, acting as the Company’s agents or principals, having an aggregate offering price of up to $1,944,369,826 or by the Forward Sellers, acting as sales agents for the relevant Forward Purchasers. The Equity Distribution Agreement provides that, in addition to the issuance and sale of shares of Common Stock through the Sales Agents acting as sales agents or directly to the Sales Agents acting as principals, the Company also may enter into forward sale agreements under separate forward sale confirmations between the Company and Deutsche Bank AG, London Branch and Wells Fargo Bank, National Association or one or more of their respective affiliates. These entities, when acting in such capacity, are referred to herein as “Forward Purchasers.” In connection with each forward sale agreement, the relevant Forward Purchaser (or its affiliate or agent) will, at the Company’s request, attempt to borrow from third-party stock lenders and, through the relevant Sales Agent, sell a number of shares of Common Stock equal to the number of shares that underlie the forward sale agreement to hedge such forward sale agreement. Each of the Sales Agents, when acting as the agent for a Forward Purchaser, is referred to herein as a “Forward Seller.” Transactions contemplated by the forward sale agreements are referred to herein as “Forward Transactions.” In a Forward Transaction under one form of forward sale agreement, referred to as an “Initially Priced Forward Transaction,” the Company may enter into one or more Initially Priced Forward Transactions with a Forward Purchaser, pursuant to which the Company will receive the forward sale price under the forward sale agreement at the settlement of the Initially Priced Forward Transaction, subject to the price adjustment and other provisions of the applicable forward sale agreement. The initial forward sale price per share under each Initially Priced Forward Transaction will be equal to the product of (1) an amount equal to one minus the applicable forward hedge selling commission rate and (2) the adjusted volume weighted average hedge price per share at which the borrowed shares of Common Stock were sold pursuant to the Equity Distribution Agreement by the relevant Forward Seller to hedge the relevant Forward Purchaser’s exposure under such Initially Priced ",
+      "profile_text_fields": [
+        "business_description"
+      ],
+      "profile_field_texts": {
+        "business_description": "Item 7.01. Regulation FD Disclosure. On August 13, 2026, Rocket Lab Corporation (the “Company”) issued a press release announcing the entry into the Equity Distribution Agreement (as defined below). A copy of the press release is attached hereto and furnished herewith as Exhibit 99.1. In addition, on August 13, 2026, the Company issued a press release announcing progress on its previously announced proposed acquisition of Iridium Communications Inc. A copy of the press release is attached hereto and furnished herewith as Exhibit 99.2. The information set forth under this Item 7.01, Exhibit 99.1 and Exhibit 99.2 is not being filed for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (“Exchange Act”), and is not to be incorporated by reference into any filing of the Company under the Securities Act of 1933, as amended, or the Exchange Act, whether made before or after the date hereof, regardless of any general incorporation language in any such filing, except as shall be expressly set forth by specific reference in such a filing. Item 8.01 Other Items. On August 13, 2026, the Company entered into an equity distribution agreement (the “Equity Distribution Agreement”) with Deutsche Bank Securities Inc. and Wells Fargo Securities, LLC, as sales agents (in such capacity, each, a “Sales Agent” and, collectively, the “Sales Agents”), the Forward Sellers (as defined below) and the Forward Purchasers (as defined below). Under the Equity Distribution Agreement, the Company may offer and sell, from time to time, shares of the Company’s common stock, par value $0.0001 per share (“Common Stock”) (the “Shares”), through or to the Sales Agents, acting as the Company’s agents or principals, having an aggregate offering price of up to $1,944,369,826 or by the Forward Sellers, acting as sales agents for the relevant Forward Purchasers. The Equity Distribution Agreement provides that, in addition to the issuance and sale of shares of Common Stock through the Sales Agents acting as sales agents or directly to the Sales Agents acting as principals, the Company also may enter into forward sale agreements under separate forward sale confirmations between the Company and Deutsche Bank AG, London Branch and Wells Fargo Bank, National Association or one or more of their respective affiliates. These entities, when acting in such capacity, are referred to herein as “Forward Purchasers.” In connection with each forward sale agreement, the relevant Forward Purchaser (or its affiliate or agent) will, at the Company’s request, attempt to borrow from third-party stock lenders and, through the relevant Sales Agent, sell a number of shares of Common Stock equal to the number of shares that underlie the forward sale agreement to hedge such forward sale agreement. Each of the Sales Agents, when acting as the agent for a Forward Purchaser, is referred to herein as a “Forward Seller.” Transactions contemplated by the forward sale agreements are referred to herein as “Forward Transactions.” In a Forward Transaction under one form of forward sale agreement, referred to as an “Initially Priced Forward Transaction,” the Company may enter into one or more Initially Priced Forward Transactions with a Forward Purchaser, pursuant to which the Company will receive the forward sale price under the forward sale agreement at the settlement of the Initially Priced Forward Transaction, subject to the price adjustment and other provisions of the applicable forward sale agreement. The initial forward sale price per share under each Initially Priced Forward Transaction will be equal to the product of (1) an amount equal to one minus the applicable forward hedge selling commission rate and (2) the adjusted volume weighted average hedge price per share at which the borrowed shares of Common Stock were sold pursuant to the Equity Distribution Agreement by the relevant Forward Seller to hedge the relevant Forward Purchaser’s exposure under such Initially Priced "
+      },
+      "profile_text_truncated": true,
+      "filing_accession_or_document_id": "0001753926-26-001463/g085846_8k.htm",
+      "filing_accession_number": "0001753926-26-001463",
+      "filing_acceptance_datetime": "2026-08-13T11:10:48.000Z",
+      "filing_content_sha256": "a5ee28de0d64bd9f1889d5357053dc80e1c32498c2a4b0cc05f00831f37f0c93",
+      "filing_content_cache_status": "network_fetch",
+      "filing_content_request_attempt_count": 1,
+      "filing_content_request_statuses": [
+        "200"
+      ],
+      "filing_primary_document": "g085846_8k.htm",
+      "filing_report_date": "2026-08-13",
+      "filing_sec_form_original": "8-K",
+      "filing_business_prospectus_424b_candidate_count": "0",
+      "filing_foundational_candidate_count": "0",
+      "filing_lower_tier_newer_filing_forms": "",
+      "filing_newer_supported_filing_displaced_count": "0",
+      "filing_newer_supported_filing_forms": "",
+      "filing_selected_sec_form_base": "8-K",
+      "filing_selection_family": "material_event_or_periodic_filing",
+      "filing_selection_policy": "latest-supported",
+      "filing_selection_reason": "selected_latest_supported_filing",
+      "filing_selection_tier": "material_event_or_periodic_filing",
+      "filing_selection_warnings": "",
+      "filing_submission_url": "https://data.sec.gov/submissions/CIK0001819994.json",
+      "filing_supplement_424b_candidate_count": "0",
+      "filing_unknown_424b_candidate_count": "0",
+      "extraction_method": "auto_8-k_business_section",
+      "extraction_start_marker": "auto",
+      "extraction_end_marker": "auto",
+      "extraction_start_offset": 2085,
+      "extraction_end_offset": 18271,
+      "extraction_section_length": 16185,
+      "extraction_start_pattern": "item_7_01_regulation_fd",
+      "extraction_start_pattern_label": "Item 7.01 regulation FD disclosure",
+      "extraction_warnings": []
+    }
+  ]
+}
