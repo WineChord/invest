@@ -42,6 +42,14 @@ Use the relevant template under `templates/`:
 - Run an Article 1 postflight before finishing: check whether the result advanced the mission or a necessary mission boundary rather than adding ceremony, conventional comfort, false certainty, or inactivity.
 - Keep the check proportional. Narrow maintenance does not require a full investment operating cycle unless the request also triggers one.
 
+## First-Principles Analysis
+
+- Every material company, filing, discovery, valuation, promotion, opportunity-cost, allocation, macro-regime, retrospective, or process analysis must include the explicit `First-Principles Analysis` contract from `SPEC.md`.
+- Begin with current primary facts and binding constraints. Rebuild the causal chain, challenge inherited assumptions, identify disconfirming evidence, and state the decision consequence before assigning or inheriting a rating, status, valuation, ranking, size, or action.
+- For company or security work, carry the chain through dilution-adjusted per-share value and feasible portfolio impact. Treat prior ratings, watchlist status, consensus, comparable multiples, historical analogies, and price action as tests of the reconstruction, never as substitutes for it.
+- Keep an unchanged conclusion concise but substantive. Do not satisfy the contract with empty fields, copied boilerplate, or a restatement of the prior decision.
+- In a Chinese private decision report or self-email, use the visible heading `从第一性原理出发` and give every material company or decision block a concise, evidence-specific reconstruction. Do not replace the per-company work with one generic report-level slogan.
+
 ## Trigger Routing
 
 - Questions about deposits, cash deployment, buying, selling, SGOV, allocation, or "what should I do" are full decision operating-cycle requests.

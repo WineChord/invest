@@ -8,8 +8,10 @@ import {
   calculateLiquidityOptionWeight,
   calendarDayDifference,
   containsEmbargoedPositionField,
+  firstPrinciplesAnalysisRequiredFields,
   missionAccountabilityStatus,
   validateArticleOneRepositoryInvariant,
+  validateFirstPrinciplesAnalysisContent,
   validateMissionReviewParameters,
   validateNoActionAccountability,
 } from "./article-one-mission-lib.mjs";
@@ -88,6 +90,32 @@ assert.ok(
 assert.equal(containsEmbargoedPositionField({ initial_weight_range_pct: [1, 2] }), false);
 assert.equal(containsEmbargoedPositionField({ exact_target_weight_pct: 2.25 }), true);
 
+const completeFirstPrinciplesAnalysis = `
+# First-Principles Analysis
+
+\`\`\`yaml
+first_principles_analysis:
+${firstPrinciplesAnalysisRequiredFields.map((field) => `  ${field}: substantive`).join("\n")}
+\`\`\`
+`;
+assert.deepEqual(
+  validateFirstPrinciplesAnalysisContent(completeFirstPrinciplesAnalysis, "fixture"),
+  [],
+);
+assert.ok(
+  validateFirstPrinciplesAnalysisContent(
+    completeFirstPrinciplesAnalysis.replace("  causal_chain: substantive\n", ""),
+    "fixture",
+  ).includes("fixture is missing First-Principles Analysis contract: first_principles_causal_chain"),
+);
+assert.ok(
+  validateFirstPrinciplesAnalysisContent(
+    completeFirstPrinciplesAnalysis.replace("  causal_chain: substantive", "  causal_chain:"),
+    "fixture",
+    { requireSubstantiveValues: true },
+  ).includes("fixture has an empty or placeholder First-Principles Analysis field: causal_chain"),
+);
+
 const canonicalSurfaces = Object.fromEntries(
   articleOneRepositoryInvariantPaths.map((path) => [path, readFileSync(path, "utf8")]),
 );
@@ -128,6 +156,16 @@ assert.ok(
     path: "AGENTS.md",
     remove: "Article 1 is controlling, not one consideration among many.",
     contract: "article_one_controls",
+  },
+  {
+    path: "CONSTITUTION.md",
+    remove: "First-principles analysis is the required method",
+    contract: "first_principles_required",
+  },
+  {
+    path: "AGENTS.md",
+    remove: "First-principles analysis is mandatory for every material",
+    contract: "first_principles_required",
   },
   {
     path: ".agents/skills/invest-operating-cycle/SKILL.md",
@@ -181,6 +219,21 @@ assert.ok(
     `${path} must reject targeted drift of ${contract}`,
   );
 });
+
+Object.entries(articleOneRepositoryInvariantContracts)
+  .filter(([, contracts]) => contracts.some((contract) => contract.id === "first_principles_block"))
+  .forEach(([path]) => {
+    const driftedSurfaces = {
+      ...canonicalSurfaces,
+      [path]: canonicalSurfaces[path].replace("first_principles_analysis:", ""),
+    };
+    assert.ok(
+      validateArticleOneRepositoryInvariant(driftedSurfaces).includes(
+        `${path} is missing Article 1 invariant contract: first_principles_block`,
+      ),
+      `${path} must reject removal of the First-Principles Analysis block`,
+    );
+  });
 
 const ciGuard = spawnSync(
   process.execPath,

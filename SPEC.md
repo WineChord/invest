@@ -38,6 +38,32 @@ Guard results are `PASS`, `WARN`, or `BLOCK`. `WARN` requires a dated, evidence-
 
 The guard is self-protecting across `package.json`, the quick runner, and the Pages and daily-market workflows. Policy `v1.3` carries forward the 60% liquidity-option threshold and the 45/90/180-day accountability periods. Reversed constitutional statements, removal of the quick guard, placeholder-only no-action accountability, and unsupported zero-exposure reason codes must fail deterministic checks.
 
+## First-Principles Analysis Contract
+
+First-principles analysis is the required method for every material company, filing, discovery, valuation, promotion, opportunity-cost, allocation, macro-regime, retrospective, and process analysis. The analysis must reconstruct the question from current primary evidence and confirmed account facts before it relies on a ticker, prior rating, watchlist status, consensus narrative, comparable multiple, historical analogy, or price chart.
+
+Every applicable analysis template and every new dated durable analysis artifact on or after 2026-08-15 must contain an explicit `First-Principles Analysis` section with this common schema:
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
+`irreducible_facts` contains current primary-source facts and confirmed account facts, not conclusions. `binding_constraints` covers the physical, technical, economic, regulatory, capital, account, and policy limits that cannot be wished away. `causal_chain` connects scarcity or customer need to control or capability, willingness to pay, monetization, reinvestment or scale, dilution-adjusted per-share value, and feasible portfolio impact. For macro or process work, the final links become the mechanism by which the regime or process changes Article 1 outcomes. `inherited_assumptions_challenged` names the prior premises that were retested. `disconfirming_evidence` states what would break the chain. `decision_consequence` states the concrete effect on research status, gates, valuation, ranking, sizing, or account action.
+
+Comparables, analogies, historical patterns, prior conclusions, ratings, and price action are secondary tests of the reconstructed causal chain. They cannot stand in for it. The section should be concise when the conclusion is unchanged, but an empty or template-identical block is not analysis. Historical artifacts remain historical and must not be rewritten solely to retrofit this contract.
+
+Reader-facing private decision reports must express the same contract in the report's natural language. A Chinese private report or self-email uses the visible heading `从第一性原理出发` and gives each material company or decision block its own concise, evidence-specific reconstruction; one generic report-level slogan does not satisfy the contract. Durable repository records retain the English heading and schema under the repository language policy.
+
+The Article 1 guard protects the constitutional definition, routing rules, skill, specification, and all material analysis templates. Data validation also rejects new dated durable analysis artifacts that omit the explicit section or any common field. Passing these structural checks does not prove that the causal chain is true; source freshness, independent challenge, and the normal mission, evidence, entry, survival, and opportunity-cost gates remain controlling.
+
 ## Non-Goals
 
 - Do not manage the user's large Nasdaq technology core allocation.

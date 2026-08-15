@@ -9,6 +9,7 @@ import {
   containsEmbargoedPositionField,
   missionAccountabilityStatus,
   validateArticleOneRepositoryInvariant,
+  validateFirstPrinciplesAnalysisContent,
   validateMissionReviewParameters,
   validateNoActionAccountability,
 } from "./article-one-mission-lib.mjs";
@@ -91,6 +92,14 @@ const watchlistPricesFile = "data/market/watchlist_prices.csv";
 const secCompanyTickersExchangeUrl = "https://www.sec.gov/files/company_tickers_exchange.json";
 const defaultDiscoveryScope = "active_emerging_incubating";
 const noProfileSemanticCoverageStatus = "absent_name_ticker_only";
+const firstPrinciplesAnalysisEffectiveDate = "2026-08-15";
+const firstPrinciplesDatedAnalysisDirectories = Object.freeze([
+  "decisions",
+  "research/filings",
+  "research/discovery/readiness",
+  "research/promotion",
+  "research/process",
+]);
 
 const requiredCsvHeaders = new Map([
   [
@@ -812,6 +821,7 @@ for (const file of yamlFiles) {
 validateSources();
 validateConstitution();
 validateArticleOneRepositoryInvariantSurfaces();
+validateFirstPrinciplesAnalysisArtifacts();
 validatePublicationPolicy();
 validatePublicDisclaimerSurfaces();
 validateAccountRecords();
@@ -1221,6 +1231,33 @@ function validateDurableDiscoveryArtifactPortability() {
     });
   });
   console.log("ok durable discovery artifact portability checks");
+}
+
+function validateFirstPrinciplesAnalysisArtifacts() {
+  const datedMarkdownFiles = firstPrinciplesDatedAnalysisDirectories.flatMap((directory) =>
+    portableArtifactFiles(directory).filter((file) => file.endsWith(".md")));
+  if (existsSync("research")) {
+    readdirSync("research", { withFileTypes: true })
+      .filter((entry) => entry.isFile() && /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(entry.name))
+      .forEach((entry) => datedMarkdownFiles.push(`research/${entry.name}`));
+  }
+  const agenticDiscoveryRunFiles = portableArtifactFiles("research/discovery/runs")
+    .filter((file) => /\.ya?ml$/.test(file))
+    .filter((file) => readFileSync(file, "utf8").includes("first_layer_bottleneck_questions:"));
+  const scopedFiles = [...new Set([...datedMarkdownFiles, ...agenticDiscoveryRunFiles])]
+    .filter((file) => {
+      const match = file.match(/(?:^|\/)(\d{4}-\d{2}-\d{2})-/);
+      return match !== null && match[1] >= firstPrinciplesAnalysisEffectiveDate;
+    })
+    .sort();
+  const errors = scopedFiles.flatMap((file) =>
+    validateFirstPrinciplesAnalysisContent(readFileSync(file, "utf8"), file, {
+      requireSubstantiveValues: true,
+    }));
+  if (errors.length > 0) {
+    throw new Error(`First-Principles Analysis artifact validation failed:\n- ${errors.join("\n- ")}`);
+  }
+  console.log(`ok First-Principles Analysis artifacts (${scopedFiles.length} files since ${firstPrinciplesAnalysisEffectiveDate})`);
 }
 
 function validateNoTrackedIgnoredCacheArtifacts() {

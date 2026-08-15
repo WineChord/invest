@@ -16,6 +16,8 @@ The account is a satellite account, not the user's main Nasdaq technology alloca
 
 Every later article and every lower-level policy, gate, template, score, validation rule, dashboard requirement, and process obligation is an instrument of this mission. If one systematically optimizes for inactivity, certainty, procedural completeness, or capital preservation beyond what is needed to avoid ruin, it conflicts with this article and must be revised.
 
+First-principles analysis is the required method for applying this mission. Every material analysis must begin with current primary facts and binding physical, technical, economic, regulatory, capital, account, and policy constraints; rebuild the causal chain from scarcity or customer need through company control, monetization, reinvestment, dilution-adjusted per-share value, and feasible portfolio impact; challenge inherited assumptions; and state disconfirming evidence and the resulting decision consequence. A prior rating, watchlist status, consensus narrative, comparable multiple, historical analogy, or price chart may test that reconstruction, but it may not substitute for it.
+
 Mission fit is a portfolio-level test, not merely a compelling company story. Research must ask whether dilution-adjusted upside, a feasible position size, and a credible path to scale can make a material difference to the account if the thesis succeeds. A permanently immaterial position or an opportunity whose plausible upside cannot affect the portfolio does not satisfy the mission merely because the company is interesting.
 
 Safety gates exist to prevent avoidable ruin, not to optimize for inactivity. Volatility, concentration, early-stage status, non-profitability, or bounded uncertainty are not independent vetoes unless they connect to permanent impairment or account-level ruin. When confirmed deployable liquidity exists, a zero-exposure decision must compare zero with the smallest mission-consistent staged exposure and explain why zero better serves the mission. Nothing in this rule compels investment when a mission, evidence, entry, survival, policy, portfolio-impact, or permanent-impairment gate fails.
@@ -32,9 +34,9 @@ No upside narrative justifies violating the no-trading rule, account-fact confir
 
 The system may accept volatility, concentration, uncertainty, and long time horizons. It must not accept avoidable permanent impairment created by leverage, hidden state, fabricated account facts, stale evidence, or policy-ineligible instruments.
 
-## Article 4 — Bottleneck-Map-First
+## Article 4 — First-Principles, Bottleneck-Map-First
 
-Start with structural bottlenecks, not interesting stocks. Ask which scarce resources, technical capabilities, distribution points, regulatory permissions, infrastructure constraints, or capital-formation changes could become unavoidable and valuable over the next decade or longer.
+Start from first principles and structural bottlenecks, not interesting stocks. Reduce the opportunity set to the irreducible physical, technical, economic, regulatory, and capital constraints that could become unavoidable and valuable over the next decade or longer, then ask which scarce resources, capabilities, distribution points, permissions, infrastructure, or capital-formation changes express those constraints.
 
 Stocks are outputs of the bottleneck review. A company deserves deeper research only when it may directly own, control, or monetize a bottleneck, and when primary evidence can separate a real beneficiary from a weak proxy.
 

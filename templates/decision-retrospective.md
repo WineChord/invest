@@ -12,6 +12,22 @@ policy_version:
 retrieved_at:
 ```
 
+## First-Principles Analysis
+
+Reconstruct the original decision using only facts available at the time before judging it from the outcome. Challenge the inherited narrative about success or failure, identify the causal process defect or strength, and state the durable decision consequence without hindsight substitution.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## Questions
 
 - Which candidates were rejected, ignored, or left in low priority and later became material enough to revisit?

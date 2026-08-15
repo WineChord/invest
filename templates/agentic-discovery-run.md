@@ -4,6 +4,10 @@ Use this template for every material monthly decision, full operating cycle, maj
 
 The artifact should be saved under `research/discovery/runs/YYYY-MM-DD-SCOPE.yml`. It is an audit record for the discovery process, not a raw subagent transcript and not a buy recommendation.
 
+## First-Principles Analysis
+
+Complete the common block before ticker ranking. Start with current primary facts and binding constraints, reconstruct the path from scarcity to shareholder value and portfolio consequence, challenge inherited lane and watchlist assumptions, and state the evidence that would disconfirm the chain.
+
 ```yaml
 schema_version: 1
 run_id:
@@ -15,6 +19,16 @@ operator:
 validity_window:
 linked_decision_or_research_note:
 subagent_evidence_packet_path:
+
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
 
 source_coverage:
   deterministic_commands:

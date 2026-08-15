@@ -27,6 +27,32 @@ export const articleOneV13MissionAccountabilityPolicy = Object.freeze({
   strategyReviewAfterDays: 180,
 });
 
+export const firstPrinciplesAnalysisRequiredFields = Object.freeze([
+  "question_rebuilt_from_basics",
+  "irreducible_facts",
+  "binding_constraints",
+  "causal_chain",
+  "inherited_assumptions_challenged",
+  "value_capture_or_mission_link",
+  "disconfirming_evidence",
+  "decision_consequence",
+]);
+
+const firstPrinciplesTemplateContracts = Object.freeze([
+  Object.freeze({
+    id: "first_principles_heading",
+    any: Object.freeze([/\bfirst-principles\s+analysis\b/]),
+  }),
+  Object.freeze({
+    id: "first_principles_block",
+    any: Object.freeze([/\bfirst_principles_analysis\s*:/]),
+  }),
+  ...firstPrinciplesAnalysisRequiredFields.map((field) => Object.freeze({
+    id: `first_principles_${field}`,
+    any: Object.freeze([new RegExp(`\\b${field}\\s*:`)]),
+  })),
+]);
+
 export const articleOneRepositoryInvariantContracts = Object.freeze({
   "CONSTITUTION.md": Object.freeze([
     Object.freeze({
@@ -53,6 +79,10 @@ export const articleOneRepositoryInvariantContracts = Object.freeze({
       id: "no_forced_investment",
       any: Object.freeze([/\bnothing\s+in\s+this\s+rule\s+compels\s+investment\b/]),
     }),
+    Object.freeze({
+      id: "first_principles_required",
+      any: Object.freeze([/\bfirst-principles\s+analysis\s+is\s+the\s+required\s+method\b/]),
+    }),
   ]),
   "AGENTS.md": Object.freeze([
     Object.freeze({
@@ -70,6 +100,10 @@ export const articleOneRepositoryInvariantContracts = Object.freeze({
     Object.freeze({
       id: "lower_level_yields",
       any: Object.freeze([/\brevise\s+the\s+conflicting\s+lower-level\s+artifact\b/]),
+    }),
+    Object.freeze({
+      id: "first_principles_required",
+      any: Object.freeze([/\bfirst-principles\s+analysis\s+is\s+mandatory\s+for\s+every\s+material\b/]),
     }),
   ]),
   ".agents/skills/invest-operating-cycle/SKILL.md": Object.freeze([
@@ -89,6 +123,10 @@ export const articleOneRepositoryInvariantContracts = Object.freeze({
       id: "lower_level_yields",
       any: Object.freeze([/\blower-level\s+artifact\s+conflicts\b.{0,100}\brevise\s+that\s+artifact\b/]),
     }),
+    Object.freeze({
+      id: "first_principles_required",
+      any: Object.freeze([/\bevery\s+material\b.{0,240}\bfirst-principles\s+analysis\b.{0,120}\bcontract\b/]),
+    }),
   ]),
   "SPEC.md": Object.freeze([
     Object.freeze({
@@ -106,6 +144,10 @@ export const articleOneRepositoryInvariantContracts = Object.freeze({
     Object.freeze({
       id: "deterministic_drift_control",
       any: Object.freeze([/\bdeterministic\s+validation\b.{0,240}\barticle\s+1\s+precedence\b/]),
+    }),
+    Object.freeze({
+      id: "first_principles_required",
+      any: Object.freeze([/\bfirst-principles\s+analysis\s+is\s+the\s+required\s+method\s+for\s+every\s+material\b/]),
     }),
   ]),
   "data/policy/policy-v1.3.md": Object.freeze([
@@ -127,19 +169,52 @@ export const articleOneRepositoryInvariantContracts = Object.freeze({
     }),
   ]),
   "templates/full-operating-cycle.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
     Object.freeze({ id: "preflight_field", any: Object.freeze([/\barticle1_preflight:/]) }),
     Object.freeze({ id: "lower_level_revision_field", any: Object.freeze([/\blower_level_artifacts_revised:/]) }),
     Object.freeze({ id: "postflight_field", any: Object.freeze([/\barticle1_postflight:/]) }),
   ]),
   "templates/monthly-decision.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
     Object.freeze({ id: "preflight_field", any: Object.freeze([/\barticle1_preflight:/]) }),
     Object.freeze({ id: "lower_level_revision_field", any: Object.freeze([/\blower_level_artifacts_revised:/]) }),
     Object.freeze({ id: "postflight_field", any: Object.freeze([/\barticle1_postflight:/]) }),
   ]),
   "templates/meta-self-improvement.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
     Object.freeze({ id: "preflight_field", any: Object.freeze([/\barticle1_preflight:/]) }),
     Object.freeze({ id: "lower_level_revision_field", any: Object.freeze([/\blower_level_artifacts_revised:/]) }),
     Object.freeze({ id: "postflight_field", any: Object.freeze([/\barticle1_postflight:/]) }),
+  ]),
+  "templates/company-research-card.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/filing-review.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/bottleneck-lane-review.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/agentic-discovery-run.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/discovery-readiness-sprint.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/research-engine-run.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/promotion-review.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/decision-retrospective.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/weekly-ai-cycle-monitor.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
+  ]),
+  "templates/policy-change-proposal.md": Object.freeze([
+    ...firstPrinciplesTemplateContracts,
   ]),
   "package.json": Object.freeze([
     Object.freeze({
@@ -238,7 +313,67 @@ const contradictionPatterns = Object.freeze([
     id: "automatic_trading_allowed",
     pattern: /\bautomatic\s+trade\s+execution\s+(?:is|must\s+be)\s+(?:allowed|required)\b/,
   }),
+  Object.freeze({
+    id: "first_principles_optional",
+    pattern: /\bfirst-principles\s+analysis\s+(?:is|must\s+be)\s+(?:optional|unnecessary)\b/,
+  }),
 ]);
+
+function hasSubstantiveFirstPrinciplesValue(content, field) {
+  const lines = content.split(/\r?\n/);
+  const fieldPattern = new RegExp(`^(\\s*)${field}\\s*:\\s*(.*)$`);
+  const placeholderPattern = /^(?:""|''|\[\]|\{\}|null|~|tbd|todo|pending)$/i;
+  for (let index = 0; index < lines.length; index += 1) {
+    const match = lines[index].match(fieldPattern);
+    if (match === null) {
+      continue;
+    }
+    const inlineValue = match[2].trim();
+    if (inlineValue !== "" && !placeholderPattern.test(inlineValue)) {
+      return true;
+    }
+    const fieldIndent = match[1].length;
+    for (let nextIndex = index + 1; nextIndex < lines.length; nextIndex += 1) {
+      const nextLine = lines[nextIndex];
+      const trimmed = nextLine.trim();
+      if (trimmed === "" || trimmed === "```" || trimmed.startsWith("#")) {
+        continue;
+      }
+      const nextIndent = nextLine.match(/^\s*/)[0].length;
+      if (nextIndent <= fieldIndent) {
+        break;
+      }
+      const nestedValue = trimmed.replace(/^[-*]\s+/, "").trim();
+      if (nestedValue !== "" && !placeholderPattern.test(nestedValue)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+export function validateFirstPrinciplesAnalysisContent(
+  content,
+  context = "analysis",
+  { requireSubstantiveValues = false } = {},
+) {
+  if (typeof content !== "string") {
+    return [`${context} is missing First-Principles Analysis content`];
+  }
+  const normalized = normalizeArticleOneSurface(content);
+  const errors = firstPrinciplesTemplateContracts.flatMap((contract) =>
+    contract.any.some((pattern) => pattern.test(normalized))
+      ? []
+      : [`${context} is missing First-Principles Analysis contract: ${contract.id}`]);
+  if (requireSubstantiveValues) {
+    firstPrinciplesAnalysisRequiredFields.forEach((field) => {
+      if (!hasSubstantiveFirstPrinciplesValue(content, field)) {
+        errors.push(`${context} has an empty or placeholder First-Principles Analysis field: ${field}`);
+      }
+    });
+  }
+  return errors;
+}
 
 export function validateArticleOneRepositoryInvariant(surfaces) {
   const errors = [];

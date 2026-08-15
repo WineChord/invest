@@ -13,6 +13,22 @@ market_holidays_or_short_sessions:
 unavailable_sources:
 ```
 
+## First-Principles Analysis
+
+Reconstruct the regime from current demand, supply, capacity, financing, cost, pricing, and policy facts before selecting an analogy or regime label. Historical analogies, index patterns, and prior scores may test the causal chain; they may not define it.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## 1. Weekly Regime Judgment
 
 Market regime:

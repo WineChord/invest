@@ -20,6 +20,22 @@ retrieval_window:
 validity_window:
 ```
 
+## First-Principles Analysis
+
+Complete this before inheriting the current status, priority, peer set, valuation, or promotion narrative. Start from current primary evidence and binding constraints. Carry the causal chain through dilution-adjusted per-share value and feasible portfolio impact before changing status or buy-zone eligibility.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## Promotion Thesis
 
 State the actual reason to promote before discussing order sizing.

@@ -18,6 +18,22 @@ related_files:
 next_review_date:
 ```
 
+## First-Principles Analysis
+
+Rebuild the process problem from observed facts and binding mission or safety constraints before preserving or adding workflow. Existing templates, scores, cadence, and repository structure are hypotheses, not premises. State the mechanism by which the change should improve Article 1 outcomes and the evidence that would justify rollback.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## Problem Observed
 
 State what became slow, ambiguous, stale, noisy, fragile, biased, or error-prone. Separate symptoms from root-cause hypotheses.

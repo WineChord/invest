@@ -13,6 +13,22 @@ previous_run:
 market_data_as_of:
 ```
 
+## First-Principles Analysis
+
+Complete this before preserving or changing prior theses, statuses, rankings, valuation states, or lanes. Start from current primary evidence and confirmed account facts. For company or security work, carry the causal chain through dilution-adjusted per-share value and feasible portfolio impact.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## Executive Summary
 
 State what changed, what did not change, and whether the system is ready for an allocation decision.

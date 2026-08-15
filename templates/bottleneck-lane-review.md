@@ -13,6 +13,22 @@ related_cycle:
 lane_map_as_of:
 ```
 
+## First-Principles Analysis
+
+Complete this before naming or ranking companies. Reduce the lane to current primary facts and the physical, technical, economic, regulatory, and capital constraints that could create scarcity. Existing lanes, tickers, sector labels, and historical analogies may test the reconstruction; they may not define it.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## Frame
 
 Do not start with "which stocks look interesting?" Start with the bottleneck map.

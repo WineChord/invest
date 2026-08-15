@@ -27,6 +27,22 @@ source_ids:
 readiness_index_record:
 ```
 
+## First-Principles Analysis
+
+Complete this before inheriting a lane label, prior rejection, comparable set, rating, or watchlist status. Start from current primary evidence and binding constraints. Carry any investable company chain through dilution-adjusted per-share value and feasible portfolio impact.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 `not_started`, unbounded `in_progress`, and `continue_sprint` are scratch-only transient states or labels. A committed R0-R2 candidate may remain open only when the next source, due date, waiting cost, false-negative warning, and reopen-or-reject trigger are complete.
 
 `dashboard_surface_status` is mandatory in both the sprint note and `research/discovery/candidate-readiness.yml`. Use `not_required_pre_promotion` for bounded R0-R2 records, and `complete` for R3, promoted, or completed material public-stock candidates. Do not use a not-required dashboard status as a shortcut for missing R3 work.

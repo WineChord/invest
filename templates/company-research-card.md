@@ -14,6 +14,22 @@ Discovery lane:
 
 Direct bottleneck exposure:
 
+## First-Principles Analysis
+
+Complete this before relying on an inherited rating, status, narrative, comparable multiple, historical analogy, or price pattern. Start from current primary evidence. Carry the causal chain through dilution-adjusted per-share value and feasible portfolio impact. Comparables and analogies may test the reconstruction; they may not replace it.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## One-Sentence Thesis
 
 ## Why It Could Be a Multi-Decade Outlier

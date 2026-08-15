@@ -27,6 +27,22 @@ policy_version:
 related_prior_analysis:
 ```
 
+## First-Principles Analysis
+
+Complete this before inheriting the prior thesis, rating, valuation, or filing narrative. Start from the filing's primary facts and the binding business, capital, regulatory, and accounting constraints. Carry company implications through dilution-adjusted per-share value and feasible portfolio impact.
+
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics:
+  irreducible_facts:
+  binding_constraints:
+  causal_chain:
+  inherited_assumptions_challenged:
+  value_capture_or_mission_link:
+  disconfirming_evidence:
+  decision_consequence:
+```
+
 ## Executive Conclusion
 
 State whether the filing strengthened, weakened, broke, or did not materially change the thesis.
