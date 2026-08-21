@@ -43,3 +43,4 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-08-14,2682.22,7895.87,10578.09,10992.00,-3.7656,9.1455,Automated daily close valuation from Yahoo Finance chart.
 2026-08-18,2670.10,7895.87,10565.97,10992.00,-3.8758,-0.1146,Automated daily close valuation from Yahoo Finance chart; stale closes ASTS:2026-08-17 IREN:2026-08-17 MDA:2026-08-17.
 2026-08-19,2526.08,7895.87,10421.95,10992.00,-5.1860,-1.3631,Automated daily close valuation from Yahoo Finance chart.
+2026-08-20,2450.06,7895.87,10345.93,10992.00,-5.8776,-0.7294,Automated daily close valuation from Yahoo Finance chart.
