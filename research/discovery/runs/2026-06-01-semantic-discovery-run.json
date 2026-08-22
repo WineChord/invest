@@ -68,7 +68,7 @@
     "selection_strategy": "complete_sec_universe",
     "source": "semantic_issuer_packets"
   },
-  "cache_path": "research/discovery/semantic-cache.jsonl",
+  "cache_path": "research/cache/discovery/2026-06-01/semantic-cache-snapshot.jsonl",
   "cache_sha256": "0834e7804bc74612a99585dcbd369e55da38fb3337378bf5fe352face7a2b661",
   "classifier_version": "semantic_triage_v5",
   "packet_count": 7575,

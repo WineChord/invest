@@ -1,0 +1,293 @@
+schema_version: 1
+run_id: 2026-08-22-weekly-full-operating-cycle
+run_date: 2026-08-22
+request_type: weekly_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: Current through 2026-08-28 or earlier on a material filing, financing, contract, regulatory event, promotion trigger, confirmed account change, or research-trigger price dislocation
+linked_decision_or_research_note: decisions/2026-08-22-weekly-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-22-subagent-evidence-packet.yml
+execution_update:
+  status: no_new_account_event
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 8783.87
+  resulting_confirmed_positions:
+    - ASTS 11 shares
+    - IREN 5 shares
+    - MDA 9 shares
+    - RKLB 17 shares
+  notes: The canonical standing-contribution command returned already_recorded for all due dates through 2026-08-21. No trade, order, fill, fee, reserve position, or other broker fact changed.
+article_one_preflight:
+  sentinel_level: PASS
+  reason_codes: []
+  disposition: The fixed Saturday route required a current full opportunity-set and allocation review using the completed 2026-08-21 close and confirmed account facts.
+  protected_surfaces_changed: false
+first_principles_heading: First-Principles Analysis
+first_principles_analysis:
+  question_rebuilt_from_basics: Which current public security can convert a scarce long-duration bottleneck into exceptional dilution-adjusted per-share value at a feasible portfolio weight and beat holdings, cash and all material alternatives now?
+  irreducible_facts:
+    - Confirmed cash is USD 8783.87 and confirmed holdings are ASTS 11, IREN 5, MDA 9 and RKLB 17.
+    - Seventy-one listed securities have a completed August 21 close and the full 74-security universe was reviewed.
+    - No target has a complete incremental bridge from scarcity and demand to after-capex, after-financing fully diluted per-share cash value.
+  binding_constraints:
+    - Mission, evidence, entry, survival, promotion and opportunity-cost gates must all pass before a nonzero quantity.
+    - Uncertainty that can reverse residual common-equity value cannot be absorbed by a symbolic size or short validity window.
+  causal_chain: Scarcity must create binding demand; demand must produce protected unit economics; cash returns must exceed capex, financing and dilution; residual per-share value and a feasible position must materially improve the portfolio relative to cash and alternatives.
+  inherited_assumptions_challenged:
+    - High cash weight or a lower price requires a trade.
+    - Backlog, gross contracted revenue, strategic importance or a deployment milestone alone proves common-equity economics.
+  value_capture_or_mission_link: Existing IREN, MDA, ASTS and RKLB starters preserve live right-tail exposure; the next dollar should move only when another security adds a stronger attainable per-share path rather than symbolic exposure or duplicated risk.
+  disconfirming_evidence: Protected funded LEU cascade economics, positive IREN project cash returns, clean GILT post-Comtech cash conversion or limited-recourse APLD parent cash yield could reverse the current zero-increment conclusion.
+  decision_consequence: Hold confirmed positions and cash; open no incremental quantity or executable limit before the named conjunctive evidence and a fresh valuation.
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --as-of 2026-08-22 --json --output research/discovery/runs/2026-08-22-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-22-scan.json
+      output_sha256: 6bdcc6926676544a48ec474fe3ee7503d07600a78316f728608eb90df5e74c23
+      retrieved_at: 2026-08-22
+      result_summary: Eighteen deterministic matches and fifty-nine exploratory matches were dispositioned as collisions, ineligible structures, known low-directness proxies, or non-material leads; no new R1 or lane was created.
+  community_attention:
+    scan_output_path: research/discovery/runs/2026-08-22-community-scan.json
+    scan_output_sha256: 7dc0d6a60652b17b38ce0918f3bb5d1047f78f9aad49830f3907946a476fab30
+    triage_output_path: research/discovery/runs/2026-08-22-community-triage.json
+    triage_output_sha256: 600e1435e735a680108f2c3a27dd481b40afe44f527e5503e55df1ac3674d9dc
+    result: Forty-six configured sources produced 132 attention signals; none created security metadata, a candidate, promotion, freshness fact, or allocation evidence.
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  sec_coverage:
+    listed_security_count: 71
+    event_profile_path: research/discovery/runs/2026-08-22-sec-event-filing-index-profiles.json
+    event_profile_sha256: 8c23707de8e16d642cdda409fb8f7c881aa36ea3e7112fb8930cd0af56131d41
+    foundational_profile_path: research/discovery/runs/2026-08-22-sec-foundational-filing-index-profiles.json
+    foundational_profile_sha256: f22cc42096efda8ab46bbbf26294d1c54986eb3dda99a03a1cd7cc4df897d761
+    reconciliation: The event and foundational-first selectors were run over the same 71 listed securities. The foundational companion surfaced APLD's 2026-07-29 Form 10-K, superseding the stale future-source blocker while preserving event-form review separately.
+  semantic_discovery:
+    classified_issuer_count: 71
+    coverage_pct: 100
+    run_path: research/discovery/runs/2026-08-22-semantic-discovery-run.json
+    run_sha256: be2b023ab918740b9a92ce28c5e016259740b52a18f49f116a46f110ca0a3cd7
+    review_packet_path: research/discovery/runs/2026-08-22-semantic-review-packet.json
+    review_packet_sha256: 29ee12877f193d0328957c609c40f665ff99847fda51645ae342f259f518baa8
+    result: ALMU, IQMX, OKLO, POET, QNT, RKLB, SMR, STDN and YSS received high-reasoning review; no semantic classification created buy or promotion eligibility.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC event, periodic, registration, ownership, compensation, financing and transaction filings
+      sources_or_queries: [full 71-security event index, full 71-security foundational-first index, registration and transaction interval scan, current submissions delta]
+      source_ids: [sec_event_index_full_universe_2026_08_22, apld_fy2026_10k, aaoi_atm_2026_08_21, nbis_convertible_notes_2026_08_20]
+      retrieved_at: 2026-08-22
+      material_findings: APLD advanced to R2 on current annual evidence; AAOI, ASPI, NBIS, QTEX and WYFI financing increased dilution or capital-stack risk; no target became buy eligible.
+    - family_id: issuer_material
+      family: Company investor relations releases and issuer-filed operating exhibits
+      sources_or_queries: [Standard Nuclear Radiant agreement, Einride first-half results, Quantinuum second-quarter results, IQM first public results]
+      source_ids: [stdn_radiant_supply_release_2026_08_20, enrd_h1_2026_results, qnt_q2_2026_results, iqmx_h1_2026_results]
+      retrieved_at: 2026-08-22
+      material_findings: STDN, ENRD, QNT and IQMX gained operating or demand evidence, but contract economics, losses, financing, dilution and valuation kept promotion and entry closed.
+    - family_id: market_data
+      family: Completed regular-session adjusted closes and lookback history
+      sources_or_queries: [2026-08-21 full watchlist close, 2026-08-21 supplemental R1 and R2 closes]
+      source_ids: [completed_close_universe_2026_08_21, supplemental_R1_R2_closes_2026_08_21]
+      retrieved_at: 2026-08-22
+      material_findings: Seventy-one listed securities had a current completed close. Price moves triggered research on CRCL, CRWV, NBIS, FN, HQ, INFQ, IQMX, OCC, WYFI, USAR and ALOY but created no buy qualification.
+    - family_id: current_world_context
+      family: Financing conditions, volatility, contracts and cross-lane capital formation
+      sources_or_queries: [current macro regime, current convertible and ATM issuance, current contract and deployment evidence]
+      source_ids: [macro_regime_snapshot_2026_08_22, nbis_convertible_notes_2026_08_20, wyfi_convertible_notes_2026_08_21, gilt_peru_broadband_2026_08_17]
+      retrieved_at: 2026-08-22
+      material_findings: The regime remains strong-trend with price-disciplined waiting or staged exposure, not a verified crisis. Financing capacity generally came with material common-equity cost.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Registration, transaction, pre-listing and newly public security review
+      sources_or_queries: [current SEC registration and transaction candidate interval, open R1 and R2 candidates, XTND pre-listing record]
+      source_ids: [sec_event_index_full_universe_2026_08_22, supplemental_R1_R2_closes_2026_08_21]
+      retrieved_at: 2026-08-22
+      material_findings: No new eligible direct expression displaced the current queue; XTND remains pre-listing and the seventeen open R1 or R2 names retain dated service levels.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck-map and full opportunity-cost lane comparison
+      sources_or_queries: [advanced nuclear fuel, powered AI campuses, sovereign quantum systems, photonics and optical interconnect, autonomous freight and defense]
+      source_ids: [stdn_radiant_supply_release_2026_08_20, apld_fy2026_10k, iqmx_h1_2026_results, enrd_h1_2026_results]
+      retrieved_at: 2026-08-22
+      material_findings: Existing lanes cover the new evidence. STDN is the strongest newly strengthened direct bottleneck lead, but no lane, promotion, buy zone, or top-five action set changed.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-22
+    notes: Current prices, filings, issuer releases, financing, dilution, debt, contracts, regulation, technology, customers, management, transactions, listings, macro conditions and discovery leads were refreshed or bounded for all 74 securities.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 100
+    organic_recall_count: 0
+    hard_coded_proxy_only_recall_count: 0
+    exploratory_match_count: 59
+    conclusion: Broad deterministic, semantic, registration and primary-source review found no new material candidate; the only material correction was the already-filed APLD annual baseline.
+unknown_future_review:
+  exploratory_match_count: 59
+  exploratory_denominator: 59
+  stratified_sample_count: 18
+  stratified_sample_pct: 30.5085
+  top_clusters: [issuer_and_ticker_collisions, blank_check_and_ineligible_structures, mature_or_weak_bottleneck_proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, FTRA, GDYN, NGG, QLEP, LPAA, LPBB, HBM, UROY, SAAQ, SPB, AIO, BRUN, ALOY, RCAT, GPUS-PD]
+  false_positive_patterns: [issuer_name_collision, ticker_collision, ineligible_security, weak_proxy]
+  lane_decisions: [retain_all_current_lanes, raise_STDN_targeted_review_priority, add_no_new_lane]
+  disposition: No exploratory match supplied both a source-backed bottleneck causal chain and a policy-eligible public security capable of displacing the current opportunity set.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Qualified HALEU and TRISO fuel, energized AI-ready sites, sovereign quantum systems, optical interconnect capacity and autonomous deployment financing remain plausible long-duration bottlenecks.
+    inferences: Scarcity matters to common equity only when qualification, binding demand, positive unit economics and bounded financing preserve per-share value.
+    disconfirming_evidence: Current leaders remain capital intensive, pre-commercial, customer concentrated, richly valued or dilution dependent.
+    source_ids: [stdn_radiant_supply_release_2026_08_20, apld_fy2026_10k, iqmx_h1_2026_results, enrd_h1_2026_results]
+    investment_implication: Keep LEU, IREN, GILT and APLD at the top of the next-dollar research queue without opening a new order.
+  who_controls_or_removes_scarcity:
+    facts: LEU and STDN most directly express fuel capacity; IREN and APLD control energized campuses; IQMX and QNT sell full-stack quantum systems; photonics issuers supply high-speed links.
+    inferences: Direct control is stronger than a thematic proxy but still needs delivered economics and a survivable denominator.
+    disconfirming_evidence: No newly strengthened issuer disclosed a complete project-to-parent cash-return and dilution bridge.
+    source_ids: [stdn_radiant_supply_release_2026_08_20, apld_fy2026_10k, qnt_q2_2026_results, iqmx_h1_2026_results]
+    investment_implication: IREN's confirmed starter remains the best bounded powered-compute expression; additions remain zero.
+  who_can_monetize_into_shareholder_value:
+    facts: IREN has accepted Horizon 1; LEU has strategic backlog; GILT has current demand; APLD has long leases; each still lacks a decision-grade incremental per-share cash bridge.
+    inferences: The binding constraint is residual common-equity capture after capex, debt, integration and dilution rather than demand headlines.
+    disconfirming_evidence: A protected funded cascade, positive project cash returns, clean transaction close or limited-recourse campus refinancing would change the ranking.
+    source_ids: [apld_fy2026_10k, gilt_peru_broadband_2026_08_17, completed_close_universe_2026_08_21]
+    investment_implication: Cash wins the next dollar while existing starters preserve live exposure.
+  public_security_expression:
+    facts: Seventy-one securities have current completed closes; OPENAI and ANTHROPIC remain unlisted and XTND remains pre-listing.
+    inferences: Observability and policy eligibility do not establish promotion or buy eligibility.
+    disconfirming_evidence: A completed listing plus current filing, valuation and promotion work could change a not-tradable conclusion.
+    source_ids: [completed_close_universe_2026_08_21, supplemental_R1_R2_closes_2026_08_21]
+    investment_implication: No unavailable price is estimated and no pre-listing candidate receives a quantity.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT, APLD, STDN, IQMX, ENRD and the open R1 or R2 set provide smaller or awkward direct expressions.
+    inferences: A small denominator enlarges the right tail only when survival, customer economics and dilution-adjusted capture are credible.
+    disconfirming_evidence: Financing, losses, capital stacks or missing unit economics dominate every early challenger today.
+    source_ids: [gilt_peru_broadband_2026_08_17, apld_fy2026_10k, stdn_radiant_supply_release_2026_08_20, enrd_h1_2026_results]
+    investment_implication: Retain dated evidence work and false-negative triggers without promoting an incomplete lead.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [bottleneck map, deterministic scan, semantic review packet, candidate readiness, current filings]
+      sources_checked: [stdn_radiant_supply_release_2026_08_20, iqmx_h1_2026_results, enrd_h1_2026_results]
+      facts_verified: [STDN received binding multi-metric-ton demand through 2031, IQMX backlog exceeded EUR 102.1 million, ENRD deployments strengthened while loss and financing risks remained]
+      stale_or_missing_evidence: [contract economics, production readiness, backlog conversion, non-dilutive financing and stage-adjusted valuation remain named future milestones]
+      confidence: high
+      key_findings: No new lane or promotion; STDN received only higher targeted-review priority.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [full event index, full foundational-first index, issuer releases, material filing review]
+      sources_checked: [sec_event_index_full_universe_2026_08_22, apld_fy2026_10k, aaoi_atm_2026_08_21, nbis_convertible_notes_2026_08_20]
+      facts_verified: [APLD annual filing was already public, current financing events were classified as capacity or priced issuance rather than assumed cash]
+      stale_or_missing_evidence: [future project cash returns and completed financing outcomes remain issuer milestones, not repository gaps]
+      confidence: high
+      key_findings: APLD advanced to R2 on current evidence but did not clear promotion or entry; no open high or critical event remains.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [LEU, GILT, APLD, IREN and displacement evidence, account math, current closes]
+      sources_checked: [apld_fy2026_10k, gilt_peru_broadband_2026_08_17, completed_close_universe_2026_08_21]
+      facts_verified: [IREN retains delivery proof, LEU has the strongest nonholding scarcity, GILT has the smallest active-candidate denominator, APLD has direct powered-campus exposure]
+      stale_or_missing_evidence: [per-share project cash returns remain absent for every incremental exposure candidate]
+      confidence: medium_high
+      key_findings: The bull case supports holding existing starters and continuing targeted research, not an incremental buy.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [capital stacks, financing, concentration, survival, dilution and alternative candidates]
+      sources_checked: [apld_fy2026_10k, nbis_convertible_notes_2026_08_20, wyfi_convertible_notes_2026_08_21]
+      facts_verified: [debt, capex, guarantees, conversion claims and customer concentration can consume headline growth before common shareholders benefit]
+      stale_or_missing_evidence: [the named target blockers require future issuer evidence but are already sufficient for evidence-based zero incremental quantity]
+      confidence: high
+      key_findings: Sizing and a shorter validity window cannot absorb uncertainty that changes whether residual common-equity value is positive.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [current adjusted closes, diluted denominators, contract and project economics, zero-versus-starter comparisons]
+      sources_checked: [completed_close_universe_2026_08_21, supplemental_R1_R2_closes_2026_08_21, apld_fy2026_10k]
+      facts_verified: [LEU one share is 1.6541 percent of NAV, GILT twenty-two shares are 2.0514 percent, hypothetical APLD nine shares are 2.1748 percent, IREN one additional share raises the holding to 2.2315 percent]
+      stale_or_missing_evidence: [decision-grade scenario values remain null because cash returns and fully diluted denominators are not bounded]
+      confidence: high
+      key_findings: No target has a current executable limit; review prices remain research triggers only.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [confirmed account, holdings, completed closes, policy caps, cash, SGOV and full opportunity set]
+      sources_checked: [completed_close_universe_2026_08_21, supplemental_R1_R2_closes_2026_08_21]
+      facts_verified: [research NAV is USD 11260.39, cash weight is 78.0068 percent, existing space exposure is 20.1336 percent, latest mission-relevant deployment was eight days ago]
+      stale_or_missing_evidence: [SGOV value is confirmed zero; no broker quote, preview or transaction fact is inferred]
+      confidence: high
+      key_findings: Cash wins the next dollar; hold ASTS 11, IREN 5, MDA 9 and RKLB 17 with all adds and sells at zero.
+  unresolved_conflicts: 0
+  conflict_resolution: Reviewers differed on whether IREN or LEU led the research ranking and on LEU versus GILT. Primary evidence reconciles this as IREN hold without add, LEU strongest nonholding forced-choice, GILT second nonholding, APLD third nonholding; the ordering does not change zero incremental exposure.
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: No exploratory candidate passed identity, directness, eligibility and per-share value-capture review.
+  no_change_reason: Existing lanes already cover nuclear fuel, powered compute, quantum, photonics, autonomous systems and strategic materials.
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: [APLD]
+  r1_researchable: [VIP, ONDS, ALMU, SATL, EOSE, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
+  r2_comparable: [APLD, AXTI, MTSI, LASR]
+  r3_promotion_ready: []
+  no_action_challenger: LEU
+readiness_sprints:
+  - symbol: APLD
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-22-APLD-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#APLD
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Project refinancing, campus delivery and rent commencement, tenant credit support, parent-recourse changes, ChronoScale value separation and the fully diluted denominator can change the R2 comparison.
+    final_classification: incubate
+allocation:
+  confirmed_cash: 8783.87
+  confirmed_sgov_value: 0
+  research_nav: 11260.39
+  cash_weight_pct: 78.0068
+  return_seeking_weight_pct: 21.9932
+  existing_space_weight_pct: 20.1336
+  holdings:
+    - {symbol: ASTS, quantity: 11, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: IREN, quantity: 5, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: MDA, quantity: 9, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: RKLB, quantity: 17, action: hold, add_quantity: 0, sell_quantity: 0}
+  strongest_nonholding: LEU
+  closest_nonholding_order: [LEU, GILT, APLD]
+  strongest_holding_add_candidate: IREN
+  decision: no_trade_all_quantities_zero_no_executable_limits
+article_one_offensive_challenge:
+  strongest_counterfactual: LEU
+  smallest_mission_consistent_exposure: Two whole shares at USD 186.26 would cost USD 372.52 and represent 3.3082 percent of research NAV.
+  zero_vs_starter_result: Zero wins because funding, fixed-price cascade economics, TENEX replacement, expansion capital and dilution can change whether common equity captures positive value; a smaller one-share position falls below the recorded mission-consistent floor and does not solve the blocker.
+  cash_opportunity_cost: Waiting can miss a nuclear-fuel rerating and leaves 78.0068 percent in cash, but a premature starter cannot bound adverse contract economics and would still lose to the existing IREN starter, GILT's cleaner small denominator, SGOV as cash management and full cash optionality.
+  conjunctive_trigger: Funded and protected cascade economics, credible TENEX replacement and expansion capital, bounded fully diluted shares, positive per-share cash conversion, and a fresh valuation leaving exceptional upside must all be present.
+  next_evidence_deadline: 2026-08-28
+  conclusion: "Why buy reasons remain smaller than no-buy reasons: direct scarcity and theoretical right tail do not outweigh unbounded funded unit economics and the current equity denominator."
+publication_release:
+  contains_actionable_trading_content: false
+  public_release_status: public_safe_no_action_after_sensitive_field_review
+  public_release_earliest_at: 2026-08-22T00:00:00+08:00
+  sensitive_field_review_status: passed_no_raw_broker_identifiers_secrets_private_paths_or_actionable_order_terms
+  embargo_reason: No nonzero proposed quantity, executable limit, order preview, same-day trade intent or new execution fact exists.
+cleanup_and_meta_improvement:
+  process_review_path: research/process/2026-08-22-paired-sec-filing-coverage.md
+  durable_change: Full cycles and material decisions now pair event and foundational-first SEC selectors over the same applicable scope and reconcile selected accessions.
+  additional_durable_change: Semantic discovery runs now bind to ignored immutable dated cache snapshots instead of the mutable shared cache, preserving historical hashes without publishing bulky derived data.
+  repository_skill_updated: true
+  protected_surface_changed: false
+  article_one_postflight: The cycle improved the opportunity set and repaired a freshness blind spot while preserving truth, survival, human control and public safety; zero incremental exposure is target-specific rather than a repository-health veto.

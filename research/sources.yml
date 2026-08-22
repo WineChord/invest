@@ -4194,3 +4194,174 @@ sources:
     first_seen_at: 2026-08-14
     related_symbols: [YSS]
     summary: The filed quarterly report was checked after the issuer release and did not reverse the backlog, guidance, customer-concentration, integration or cash-quality blockers; YSS remains watch-only at lower priority.
+  - id: completed_close_universe_2026_08_21
+    title: Completed Regular-Session Close Universe — 2026-08-21
+    source_type: market_data_provider
+    url: https://query2.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-21
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [RKLB, ASTS, MDA, IREN, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LEU, GILT]
+    summary: Adjusted-close history for every listed watchlist security was refreshed after the completed August 21 regular session at 2026-08-22T04:01:47.114Z; prices are entry-review evidence and never create buy eligibility or an order by themselves.
+  - id: supplemental_R1_R2_closes_2026_08_21
+    title: Supplemental Completed Closes for Open R1 and R2 Candidates — 2026-08-21
+    source_type: market_data_provider
+    url: https://query2.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-21
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [VIP, APLD, ONDS, AXTI, ALMU, SATL, EOSE, MTSI, LASR, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
+    summary: Yahoo adjusted-close history supplied a complete current comparison for all 17 open R1 and R2 candidates at 2026-08-22T07:30:44.357Z; the supplemental rows remain research evidence only and do not change promotion or order eligibility.
+  - id: sec_event_index_full_universe_2026_08_22
+    title: Full-Universe SEC Event and Filing Index — 2026-08-22
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-21
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [AAOI, ASPI, ENRD, FN, GILT, INFQ, NBIS, QBTS, QTEX, STDN, WYFI]
+    summary: The current SEC profile pass covered all 71 listed securities in the decision universe and identified the material financing, dilution, accounting, customer-production and contract events reviewed in this cycle.
+  - id: aaoi_atm_2026_08_21
+    title: Applied Optoelectronics USD 600 Million At-the-Market Program
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1158114/000110465926099688/tm2623389d2_8k.htm
+    source_published_at: 2026-08-21
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [AAOI]
+    summary: AAOI authorized up to USD 600 million of common-stock sales through an at-the-market program with 2 percent agent compensation; actual issuance is not assumed, but the available denominator expansion materially weakens entry quality.
+  - id: aspi_renergen_loan_2026_08_20
+    title: ASP Isotopes Renergen Loan Restatement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1921865/000147793226005196/aspi_8k.htm
+    source_published_at: 2026-08-20
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [ASPI]
+    summary: A wholly owned Renergen subsidiary restated a secured loan at about USD 14.21 million, an effective 8.31 percent rate and August 14 2027 maturity, with collateral, cross-default and waiver conditions that increase financing and survival complexity.
+  - id: fn_financing_and_results_2026_08_17
+    title: Fabrinet Facility Expansion, Term Loan and Fiscal Results
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1408710/000140871026000026/fn-20260811.htm
+    source_published_at: 2026-08-17
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [FN]
+    summary: Fabrinet expanded a Thai credit facility and added a USD 75 million term loan while reporting results; the funding supports capacity but does not by itself prove customer-diversified dilution-adjusted asymmetry at the current denominator.
+  - id: gilt_peru_broadband_2026_08_17
+    title: Gilat USD 14 Million Peru Broadband Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326004161/zk2635977.htm
+    source_published_at: 2026-08-17
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [GILT]
+    summary: Gilat signed a USD 14 million agreement to expand broadband access in Peru; the order strengthens demand continuity but does not resolve the pending Comtech transaction, cash conversion or diluted-share path.
+  - id: infq_earnings_correction_2026_08_18
+    title: Infleqtion Preliminary Results Correction
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2007825/000162828026057510/infq-20260812.htm
+    source_published_at: 2026-08-18
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [INFQ]
+    summary: Infleqtion amended preliminary results for contract revenue, cost recognition and expected-loss accounting, including prior-period effects; the corrections weaken accounting-quality confidence and keep the security outside promotion eligibility.
+  - id: nbis_convertible_notes_2026_08_20
+    title: Nebius USD 5 Billion Convertible Senior Notes
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926098924/tm2623617d1_6k.htm
+    source_published_at: 2026-08-20
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [NBIS]
+    summary: Nebius priced an upsized USD 5.0 billion private convertible-note offering; capacity funding strengthens runway, but the enlarged capital stack and conversion economics materially weaken current per-share entry confidence.
+  - id: qbts_docomo_production_2026_08_18
+    title: D-Wave Second NTT DOCOMO Production Deployment
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000135/qbts-20260818.htm
+    source_published_at: 2026-08-18
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [QBTS]
+    summary: DOCOMO deployed a second D-Wave-powered production application that reduced peak location-registration signals by 65.3 percent and paging signals by 7.0 percent; real production utility strengthens the evidence gate but not the revenue-scale or valuation gate.
+  - id: qtex_registered_direct_2026_08_20
+    title: QTREX USD 10 Million Registered Direct Offering
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526003653/qtrex6k082026.htm
+    source_published_at: 2026-08-20
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [QTEX]
+    summary: QTREX priced a USD 10 million registered direct ordinary-share offering; the capital extends runway but confirms dilution dependence before repeat production economics are established.
+  - id: stdn_radiant_fuel_supply_2026_08_20
+    title: Standard Nuclear Binding Radiant Fuel Supply Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000162828026058139/stdn-20260820.htm
+    source_published_at: 2026-08-20
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [STDN]
+    summary: Standard Nuclear announced a binding TRISO fuel-supply agreement with Radiant; direct demand evidence strengthens the bottleneck thesis, while price, volume, margin, readiness and capitalization terms remain undisclosed.
+  - id: wyfi_convertible_notes_2026_08_21
+    title: WhiteFiber USD 310 Million Convertible Senior Notes
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2042022/000121390026092599/ea0302925-8k_white.htm
+    source_published_at: 2026-08-21
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [WYFI]
+    summary: WhiteFiber completed an upsized USD 310 million 5 percent convertible-note offering due 2032 with an initial conversion price near USD 33.84; funding improves runway but leverage, interest and potential dilution remain material to common-equity capture.
+  - id: macro_regime_snapshot_2026_08_22
+    title: Current Financing and Volatility Overlay — 2026-08-22
+    source_type: market_and_government_data
+    url: https://fred.stlouisfed.org/
+    source_published_at: 2026-08-21
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: []
+    summary: Current rates, credit spreads, volatility and broad-index trend indicators remain consistent with a selective strong-trend regime rather than a verified crisis; the overlay tightens entry discipline but creates no buy eligibility.
+  - id: apld_fy2026_10k
+    title: Applied Digital Fiscal 2026 Form 10-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1144879/000114487926000048/apld-20260531.htm
+    source_published_at: 2026-07-29
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [APLD, IREN, RIOT, SEI, WYFI, WULF, CIFR]
+    summary: The annual filing reports 291.469 million shares outstanding on July 28, USD 1.6 billion unrestricted cash, USD 2.6 billion restricted cash, USD 5.307 billion of contractual debt obligations, USD 3.042 billion of planned capital expenditures, concentrated long-term hyperscaler leases, parent guarantees and consolidated ChronoScale complexity; APLD advances to R2 comparison but remains outside promotion and entry.
+  - id: stdn_radiant_supply_release_2026_08_20
+    title: Standard Nuclear Multi-Metric-Ton Radiant Fuel Supply Agreement
+    source_type: company_ir
+    url: https://ir.standardnuclear.com/news-events/press-releases/detail/101/standard-nuclear-executes-fuel-supply-agreement-with-radiant-for-triso-nuclear-fuel
+    source_published_at: 2026-08-20
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [STDN]
+    summary: Standard Nuclear states that Radiant secured multiple metric tons of TRISO fuel for delivery through 2031; the release confirms scale and duration but does not disclose dollar value, take-or-pay protection, margin or delivery conditions.
+  - id: enrd_h1_2026_results
+    title: Einride First-Half 2026 Results
+    source_type: company_ir
+    url: https://www.einride.tech/press/einride-reports-first-half-2026-results
+    source_published_at: 2026-08-18
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [ENRD]
+    summary: Einride reported SEK 273 million of first-half revenue, approximately USD 27 million at constant currency, SEK 748 million of cash and a SEK 1.12 billion net loss, alongside Amazon, Tesla and DAF deployment evidence; third-party fleet financing, potential ARR conversion, burn and dilution remain decisive.
+  - id: qnt_q2_2026_results
+    title: Quantinuum Second-Quarter 2026 Results
+    source_type: company_ir
+    url: https://ir.quantinuum.com/news-releases/news-release-details/quantinuum-reports-second-quarter-2026-results
+    source_published_at: 2026-08-11
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [QNT]
+    summary: Quantinuum reported USD 8.0 million of quarterly revenue, USD 596.5 million of GAAP net loss, USD 68.3 million of adjusted EBITDA loss, USD 2.1 billion of cash and investments and a 261.5 million fully distributed adjusted-share basis; commercialization strengthens while loss scale and valuation block promotion.
+  - id: iqmx_h1_2026_results
+    title: IQM Quantum First Public Results
+    source_type: company_ir
+    url: https://investors.iqm.tech/news-releases/news-release-details/iqm-quantum-computers-reports-first-earnings-public-company
+    source_published_at: 2026-08-04
+    retrieved_at: 2026-08-22
+    first_seen_at: 2026-08-22
+    related_symbols: [IQMX]
+    summary: IQM reported EUR 8.9 million of first-half revenue, EUR 69.1 million of June backlog and more than EUR 102.1 million by August 3, alongside large operating losses and substantial cash; backlog strengthens the thesis but not current entry.

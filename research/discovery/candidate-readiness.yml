@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-08-21
+as_of: 2026-08-22
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -783,21 +783,21 @@ records:
     affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
     materiality_reason: Contracted AI-factory capacity and live megawatts make APLD the first new powered-site lead in this cycle that can materially challenge IREN in the next-dollar queue.
     blocking_scope: ai_compute_and_power_opportunity_cost_completeness
-    research_stage: R1_researchable
-    readiness_status: researchable_open
+    research_stage: R2_comparable
+    readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
-    readiness_path: research/discovery/readiness/2026-08-09-APLD-readiness.md
+    readiness_path: research/discovery/readiness/2026-08-22-APLD-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Heavy project debt, construction capital, hyperscaler concentration, stock compensation and unresolved parent-level recourse and dilution prevent R2 comparison or entry.
-    reachable_evidence_remaining: The Form 10-K, project financing documents, lease credit support, construction budgets and ChronoScale ownership can bound project and common-equity economics.
-    last_readiness_reviewed_at: 2026-08-21
-    next_evidence_source: Fiscal 2026 Form 10-K and current project-financing and lease disclosures.
-    next_evidence_due: 2026-08-29
-    cost_of_waiting: Contracted capacity can rerate before project economics are fully reconciled, but the current debt and concentration risks make premature promotion more costly than a one-week R2 sprint.
-    false_negative_early_warning: New project financing with limited parent recourse, an additional investment-grade tenant, or materially better construction completion and rent commencement.
-    reopen_or_reject_trigger: Advance only after project-level returns, customer support, remaining capex, parent recourse, leverage and fully diluted per-share value are reconciled; reject if funding or concentration leaves common equity as the residual loss absorber.
-    next_action: Complete the bounded project-debt, lease-support, remaining-capex, parent-recourse and dilution comparison against IREN by 2026-08-29.
-    conclusion: Retained as the cycle's highest-priority new R1; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+    blocker_reason: The fiscal 2026 Form 10-K confirms direct contracted campuses while reporting 291.469 million shares, USD 5.307 billion of contractual debt obligations, USD 3.042 billion of planned capex, USD 2.6 billion restricted cash, customer concentration, parent guarantees and consolidated ChronoScale complexity; project and common-equity returns remain too uncertain for promotion or entry.
+    reachable_evidence_remaining: Project refinancing, campus delivery and rent commencement, tenant credit support, parent-recourse changes, ChronoScale value separation and the fully diluted denominator can change the R2 comparison.
+    last_readiness_reviewed_at: 2026-08-22
+    next_evidence_source: Project refinancing, campus delivery and rent commencement, tenant credit support, parent-recourse changes, remaining-capex updates or the next quarterly filing.
+    next_evidence_due: 2026-09-04
+    cost_of_waiting: Contracted capacity can rerate before normalized rent begins, but a starter would expose common equity to unbounded construction, recourse and dilution risk while IREN already provides a confirmed powered-compute starter.
+    false_negative_early_warning: Limited-recourse permanent financing, another investment-grade tenant, on-budget delivery, rent commencement or a materially lower fully diluted valuation.
+    reopen_or_reject_trigger: Advance only when project returns, tenant support, remaining capex, parent recourse, ChronoScale value and fully diluted per-share economics show exceptional retained common-equity upside; reject if funding or construction repeatedly shifts losses to the parent common share.
+    next_action: Recheck limited-recourse financing, campus delivery, rent commencement, tenant support, ChronoScale separation and fully diluted value by 2026-09-04 or sooner on a material filing.
+    conclusion: Advanced to R2 comparable after completing the previously stale annual-report evidence; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
   - symbol: ONDS
     material_to_current_allocation: true
     affected_lanes: [unknown_future_bottlenecks]
@@ -968,15 +968,15 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-08-11-QNT-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Deep losses, exchangeable units, a large tax-receivable obligation and the post-IPO valuation leave common-equity capture unbounded.
-    reachable_evidence_remaining: Stage-adjusted R2 comparison, current diluted valuation and disconfirming operating evidence remain reachable.
-    last_readiness_reviewed_at: 2026-08-21
-    next_evidence_source: Build a full dilution bridge and review the first public quarter by 2026-08-21.
+    blocker_reason: The first public quarter reports USD 8.0 million of revenue, a USD 596.5 million GAAP net loss, a USD 68.3 million adjusted EBITDA loss and a 261.5 million fully distributed adjusted-share basis; commercialization evidence improves, but loss scale, exchangeable units, tax-receivable obligations and valuation leave common-equity capture unbounded.
+    reachable_evidence_remaining: A stage-adjusted R2 comparison, backlog conversion, repeat customer revenue, cash economics and the first Form 10-Q can still change the comparison.
+    last_readiness_reviewed_at: 2026-08-22
+    next_evidence_source: Stage-adjusted R2 comparison using the first public-quarter results, 261.5 million fully distributed adjusted shares and the next SEC filing.
     next_evidence_due: 2026-09-04
     cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
-    next_action: Reconcile the first public quarter, exchangeable units, tax-receivable obligation and full dilution bridge by 2026-09-04 or sooner on a material filing.
+    next_action: Complete the stage-adjusted R2 comparison, backlog conversion and cash-economics review by 2026-09-04 or sooner on a Form 10-Q, customer or technical milestone.
     conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
   - symbol: COHR
     material_to_current_allocation: true

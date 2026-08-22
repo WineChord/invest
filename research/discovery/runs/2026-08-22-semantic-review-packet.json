@@ -1,0 +1,960 @@
+{
+  "schema_version": 1,
+  "source": "semantic_review_packet",
+  "generated_at": "2026-08-22T08:30:56.657Z",
+  "as_of": "2026-08-22",
+  "semantic_run_path": "research/discovery/runs/2026-08-22-semantic-discovery-run.json",
+  "semantic_run_sha256": "12975289e4e6a12af91b78188d0fe125b52383d16e96173e598ed4a4bba7be92",
+  "semantic_cache_path": "research/cache/discovery/2026-08-22/semantic-cache-snapshot.jsonl",
+  "semantic_cache_sha256": "bd400671a4376d1bb0bc864f99c608b833c30b2d1c8330a264934b0222f2561b",
+  "packet_artifact_path": "research/cache/discovery/2026-08-22/semantic-targeted-packets.json",
+  "packet_artifact_sha256": "25a89896c3f9eb8d89f466c3f294581a5101e679d48a6b14cbb8cdc2e333b503",
+  "summary": {
+    "classifier_version": "semantic_triage_v5",
+    "packet_count": 71,
+    "classified_current_count": 71,
+    "unclassified_count": 0,
+    "stale_cache_count": 7575,
+    "classification_coverage_ratio": 1,
+    "escalation_counts": {
+      "medium_lane_compare": 49,
+      "reject_or_archive": 13,
+      "xhigh_readiness_candidate": 9
+    },
+    "bottleneck_exposure_counts": {
+      "none": 3,
+      "possible": 14,
+      "strong": 54
+    },
+    "directness_counts": {
+      "direct": 57,
+      "indirect": 1,
+      "unknown": 11,
+      "weak_proxy": 2
+    },
+    "lane_counts": {
+      "advanced_nuclear_and_grid_constraints": 5,
+      "ai_compute_infrastructure": 2,
+      "ai_power_and_cooling": 1,
+      "quantum_computing_and_networking": 5,
+      "semiconductor_interconnect_and_memory": 6,
+      "space_infrastructure": 3,
+      "unknown_future_bottlenecks": 3
+    }
+  },
+  "xhigh_readiness_candidates": [
+    {
+      "symbol": "ALMU",
+      "name": "Aeluma, Inc.",
+      "business_plain_english": "Develops advanced semiconductor and optoelectronic materials and devices.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Early semiconductor exposure and CHIPS-related opportunity; business specifics need readiness work."
+    },
+    {
+      "symbol": "IQMX",
+      "name": "IQM Quantum Computers Oyj",
+      "business_plain_english": "IQM Quantum Computers Oyj operates in a quantum computing and networking business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "OKLO",
+      "name": "Oklo Inc.",
+      "business_plain_english": "Oklo Inc. operates in a advanced nuclear and grid constraints business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "POET",
+      "name": "POET TECHNOLOGIES INC.",
+      "business_plain_english": "POET TECHNOLOGIES INC. operates in a semiconductor interconnect and memory business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "QNT",
+      "name": "Quantinuum Inc.",
+      "business_plain_english": "Quantinuum Inc. operates in a quantum computing and networking business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corp",
+      "business_plain_english": "Rocket Lab provides launch services, spacecraft, components, and space systems.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Direct space-infrastructure exposure; packet also shows substantial equity-distribution capacity."
+    },
+    {
+      "symbol": "SMR",
+      "name": "NUSCALE POWER Corp",
+      "business_plain_english": "NuScale develops small modular nuclear reactor technology and related services.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Direct nuclear-power bottleneck exposure; ATM authorization makes dilution a key review item."
+    },
+    {
+      "symbol": "STDN",
+      "name": "Standard Nuclear, Inc.",
+      "business_plain_english": "Standard Nuclear fabricates TRISO nuclear fuel for advanced-reactor customers.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Packet identifies industrial-scale U.S. TRISO fabrication and a binding supply agreement."
+    },
+    {
+      "symbol": "YSS",
+      "name": "York Space Systems Inc.",
+      "business_plain_english": "York Space Systems provides defense and commercial space hardware and software across the mission lifecycle.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "strong",
+      "confidence": "high",
+      "notes": "Recent IPO with direct national-security space exposure and proprietary hardware/software."
+    }
+  ],
+  "medium_lane_compare": [
+    {
+      "symbol": "AAOI",
+      "name": "APPLIED OPTOELECTRONICS, INC.",
+      "business_plain_english": "Makes optical transceivers and components used in high-speed data networks.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Optical-network exposure is direct, but packet evidence is sparse and recent financing implies dilution risk."
+    },
+    {
+      "symbol": "ALAB",
+      "name": "Astera Labs, Inc.",
+      "business_plain_english": "Develops connectivity and data-movement chips for AI and cloud infrastructure.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Direct AI interconnect bottleneck exposure, but already large and richly valued."
+    },
+    {
+      "symbol": "APLD",
+      "name": "Applied Digital Corp.",
+      "business_plain_english": "Provides data-center infrastructure and computing capacity for digital workloads.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Likely data-center bottleneck exposure, but packet lacks operating detail."
+    },
+    {
+      "symbol": "ASPI",
+      "name": "ASP Isotopes Inc.",
+      "business_plain_english": "Develops isotope-enrichment and related energy or medical isotope technologies.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Isotope supply can be strategic, but leverage and financing complexity are visible risks."
+    },
+    {
+      "symbol": "ASTS",
+      "name": "AST SpaceMobile, Inc.",
+      "business_plain_english": "Builds a satellite network intended to provide direct-to-device mobile connectivity.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Direct connectivity infrastructure exposure with potentially large addressable bottleneck."
+    },
+    {
+      "symbol": "AXTI",
+      "name": "AXT INC",
+      "business_plain_english": "Makes compound-semiconductor substrates and materials used in communications and electronics.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Direct specialty semiconductor-material exposure; packet lacks current evidence."
+    },
+    {
+      "symbol": "CBRS",
+      "name": "Cerebras Systems Inc.",
+      "business_plain_english": "Designs specialized AI processors and computing systems for high-performance workloads.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Direct AI-compute bottleneck exposure, but high valuation and sparse packet evidence."
+    },
+    {
+      "symbol": "COHR",
+      "name": "COHERENT CORP.",
+      "business_plain_english": "Makes lasers, optical components, and related photonics systems for communications and industry.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Photonics bottleneck exposure is direct, but company is mature and packet detail is limited."
+    },
+    {
+      "symbol": "CRDO",
+      "name": "Credo Technology Group Holding Ltd",
+      "business_plain_english": "Makes high-speed connectivity and signal-integrity chips for data-center networks.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Direct data-center interconnect bottleneck exposure; active core candidate warrants comparison."
+    },
+    {
+      "symbol": "CRWV",
+      "name": "CoreWeave, Inc.",
+      "business_plain_english": "Provides cloud-based GPU computing infrastructure for AI workloads.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Direct AI-compute capacity exposure, but capital intensity and leverage need deeper review."
+    },
+    {
+      "symbol": "ENRD",
+      "name": "Einride AB",
+      "business_plain_english": "Builds autonomous electric trucks and fleet software for freight logistics.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Freight automation could address labor and logistics constraints, but packet evidence is thin."
+    },
+    {
+      "symbol": "EOSE",
+      "name": "Eos Energy Enterprises, Inc.",
+      "business_plain_english": "Develops zinc-based battery systems for long-duration grid energy storage.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Grid storage is a structural bottleneck; financing and dilution structure require scrutiny."
+    },
+    {
+      "symbol": "FLY",
+      "name": "Firefly Aerospace Inc.",
+      "business_plain_english": "Develops launch vehicles, spacecraft, and space systems for government and commercial customers.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "strong",
+      "confidence": "low",
+      "notes": "Direct launch and space-infrastructure exposure with early-stage asymmetric potential."
+    },
+    {
+      "symbol": "FN",
+      "name": "Fabrinet",
+      "business_plain_english": "Manufactures optical and precision components used in communications and industrial systems.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Direct optical supply-chain exposure, though established scale lowers extreme-upside fit."
+    },
+    {
+      "symbol": "FRMI",
+      "name": "Fermi Inc.",
+      "business_plain_english": "Develops large-scale data-center campuses and power infrastructure for computing workloads.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Data-center power and land constraints are relevant, but packet gives no operating detail."
+    },
+    {
+      "symbol": "GILT",
+      "name": "GILAT SATELLITE NETWORKS LTD",
+      "business_plain_english": "Provides satellite communications equipment, ground systems, and network services.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Direct satellite connectivity exposure, but established scale and limited packet evidence temper priority."
+    },
+    {
+      "symbol": "GSAT",
+      "name": "Globalstar, Inc.",
+      "business_plain_english": "Operates satellite communications infrastructure and spectrum for connectivity services.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Direct satellite-network bottleneck exposure, but mature profile requires comparison with earlier-stage peers."
+    },
+    {
+      "symbol": "IMSR",
+      "name": "Terrestrial Energy Inc. /DE/",
+      "business_plain_english": "Terrestrial Energy Inc. /DE/ operates in a advanced nuclear and grid constraints business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "INFQ",
+      "name": "Infleqtion, Inc.",
+      "business_plain_english": "Infleqtion, Inc. operates in a quantum computing and networking business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "IONQ",
+      "name": "IonQ, Inc.",
+      "business_plain_english": "IonQ, Inc. operates in a quantum computing and networking business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "IREN",
+      "name": "IREN Ltd",
+      "business_plain_english": "IREN Ltd operates in a ai compute infrastructure business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "KEEL",
+      "name": "Keel Infrastructure Corp.",
+      "business_plain_english": "Keel Infrastructure Corp. operates in a unknown future bottlenecks business.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "unknown",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "KTOS",
+      "name": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",
+      "business_plain_english": "KRATOS DEFENSE & SECURITY SOLUTIONS, INC. operates in a space infrastructure business.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "unknown",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "LASR",
+      "name": "NLIGHT, INC.",
+      "business_plain_english": "NLIGHT, INC. operates in a semiconductor interconnect and memory business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "LEU",
+      "name": "CENTRUS ENERGY CORP",
+      "business_plain_english": "CENTRUS ENERGY CORP operates in a advanced nuclear and grid constraints business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "LITE",
+      "name": "Lumentum Holdings Inc.",
+      "business_plain_english": "Lumentum Holdings Inc. operates in a semiconductor interconnect and memory business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "LUNR",
+      "name": "Intuitive Machines, Inc.",
+      "business_plain_english": "Intuitive Machines, Inc. operates in a space infrastructure business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "MDA",
+      "name": "MDA Space Ltd.",
+      "business_plain_english": "MDA Space Ltd. operates in a space infrastructure business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "space_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "MTSI",
+      "name": "MACOM Technology Solutions Holdings, Inc.",
+      "business_plain_english": "MACOM Technology Solutions Holdings, Inc. operates in a semiconductor interconnect and memory business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "NBIS",
+      "name": "Nebius Group N.V.",
+      "business_plain_english": "Nebius Group N.V. operates in a ai compute infrastructure business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "ai_compute_infrastructure"
+      ],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "NNE",
+      "name": "Nano Nuclear Energy Inc.",
+      "business_plain_english": "Nano Nuclear Energy Inc. operates in a advanced nuclear and grid constraints business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "NUCL",
+      "name": "Eagle Nuclear Energy Corp.",
+      "business_plain_english": "Eagle Nuclear Energy Corp. operates in a advanced nuclear and grid constraints business.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "advanced_nuclear_and_grid_constraints"
+      ],
+      "directness": "unknown",
+      "company_stage": "early",
+      "extreme_upside_fit": "unknown",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "NWPX",
+      "name": "NWPX Infrastructure, Inc.",
+      "business_plain_english": "NWPX Infrastructure, Inc. operates in a unknown future bottlenecks business.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "unknown",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "OCC",
+      "name": "OPTICAL CABLE CORP",
+      "business_plain_english": "OPTICAL CABLE CORP operates in a semiconductor interconnect and memory business.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "unknown",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "ONDS",
+      "name": "Ondas Inc.",
+      "business_plain_english": "Ondas Inc. operates in a unknown future bottlenecks business.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [
+        "unknown_future_bottlenecks"
+      ],
+      "directness": "unknown",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "QBTS",
+      "name": "D-Wave Quantum Inc.",
+      "business_plain_english": "D-Wave Quantum Inc. operates in a quantum computing and networking business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "quantum_computing_and_networking"
+      ],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "strong",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "QSI",
+      "name": "Quantum-Si Inc",
+      "business_plain_english": "Quantum-Si develops semiconductor-based protein sequencing instruments and consumables.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Name-only packet; protein sequencing bottleneck thesis needs primary verification."
+    },
+    {
+      "symbol": "QTEX",
+      "name": "QTREX Quantum Ltd.",
+      "business_plain_english": "QTREX Quantum appears to be a newly public quantum-technology issuer, but the packet provides no operating description.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "unknown",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Offering filing confirms financing only; business identity remains unverified."
+    },
+    {
+      "symbol": "QUBT",
+      "name": "Quantum Computing Inc.",
+      "business_plain_english": "Quantum Computing Inc. develops photonic and quantum-computing technologies.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Name-only packet; quantum commercialization and survival require review."
+    },
+    {
+      "symbol": "RCAT",
+      "name": "Red Cat Holdings, Inc.",
+      "business_plain_english": "Red Cat builds drone systems and related technology for defense and security users.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Name-only packet; defense-drone directness is plausible but unverified."
+    },
+    {
+      "symbol": "RDW",
+      "name": "Redwire Corp",
+      "business_plain_english": "Redwire supplies space infrastructure, components, and mission systems.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Name-only packet; space infrastructure exposure needs primary-source review."
+    },
+    {
+      "symbol": "RGTI",
+      "name": "Rigetti Computing, Inc.",
+      "business_plain_english": "Rigetti develops superconducting quantum processors and cloud-accessible quantum computing systems.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Name-only packet; technical and commercial milestones remain unverified."
+    },
+    {
+      "symbol": "SATL",
+      "name": "Satellogic Inc.",
+      "business_plain_english": "Satellogic operates a constellation providing high-resolution Earth-observation data.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Name-only packet; constellation economics and listing status require verification."
+    },
+    {
+      "symbol": "SEI",
+      "name": "Solaris Energy Infrastructure, Inc.",
+      "business_plain_english": "Solaris provides mobile power-generation and energy-infrastructure equipment for industrial users.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Energy infrastructure exposure is plausible; business details absent from packet."
+    },
+    {
+      "symbol": "USAR",
+      "name": "USA Rare Earth, Inc.",
+      "business_plain_english": "USA Rare Earth is developing domestic rare-earth mining, processing, and magnet production.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "early",
+      "extreme_upside_fit": "strong",
+      "confidence": "low",
+      "notes": "Name-only packet; domestic rare-earth value chain must be verified."
+    },
+    {
+      "symbol": "VOYG",
+      "name": "Voyager Technologies, Inc./TX",
+      "business_plain_english": "Voyager supplies defense and space-technology solutions and is developing Starlab space stations.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "high",
+      "notes": "Direct defense/space exposure; packet only recasts segments, so economics need deeper review."
+    },
+    {
+      "symbol": "VRT",
+      "name": "Vertiv Holdings Co",
+      "business_plain_english": "Vertiv supplies power, cooling, and infrastructure systems for data centers and critical computing facilities.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Direct data-center power/cooling bottleneck exposure, but already large and mature."
+    },
+    {
+      "symbol": "WYFI",
+      "name": "WhiteFiber, Inc.",
+      "business_plain_english": "WhiteFiber appears to operate data-center or digital-infrastructure assets, but the packet supplies mainly financing terms.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "indirect",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Convertible-note filing is not enough to establish the operating bottleneck."
+    },
+    {
+      "symbol": "XNDU",
+      "name": "Xanadu Quantum Technologies Ltd",
+      "business_plain_english": "Xanadu develops photonic quantum-computing hardware and software.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "low",
+      "notes": "Quantum exposure is direct, but packet provides little operating evidence beyond a quarterly-report pointer."
+    }
+  ],
+  "reject_or_archive": [
+    {
+      "symbol": "ALOY",
+      "name": "REALLOYS INC.",
+      "business_plain_english": "The packet identifies a company named Realloys but does not describe its operating business.",
+      "bottleneck_exposure": "none",
+      "matched_lane_ids": [],
+      "directness": "unknown",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Identity-only packet prevents meaningful bottleneck classification."
+    },
+    {
+      "symbol": "BE",
+      "name": "Bloom Energy Corp",
+      "business_plain_english": "Develops and sells solid-oxide fuel-cell systems for distributed power generation.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "low",
+      "notes": "Energy infrastructure relevance exists, but large mature profile and frozen status reduce priority."
+    },
+    {
+      "symbol": "BRUN",
+      "name": "Boost Run Inc.",
+      "business_plain_english": "The packet identifies Boost Run but provides no description of its products or operations.",
+      "bottleneck_exposure": "none",
+      "matched_lane_ids": [],
+      "directness": "unknown",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Identity-only newly public packet; no business classification is supportable."
+    },
+    {
+      "symbol": "CIFR",
+      "name": "Cipher Digital Inc.",
+      "business_plain_english": "Operates digital-asset data-center infrastructure and computing capacity.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "growth",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "low",
+      "notes": "Computing-power exposure is direct, but crypto-linked economics are outside the account action policy."
+    },
+    {
+      "symbol": "CRCL",
+      "name": "Circle Internet Group, Inc.",
+      "business_plain_english": "Provides regulated digital-dollar and payment infrastructure centered on stablecoins.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "possible",
+      "confidence": "medium",
+      "notes": "Financial-infrastructure relevance is possible, but policy and regulatory dependence are material."
+    },
+    {
+      "symbol": "ETN",
+      "name": "Eaton Corp plc",
+      "business_plain_english": "Supplies electrical distribution, power-management, and automation equipment.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "too_large_mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "medium",
+      "notes": "Direct power-infrastructure exposure, but scale is too large for the asymmetric satellite screen."
+    },
+    {
+      "symbol": "HQ",
+      "name": "Horizon Quantum Holdings Ltd.",
+      "business_plain_english": "The packet identifies Horizon Quantum Holdings but provides no description of its quantum business or operations.",
+      "bottleneck_exposure": "none",
+      "matched_lane_ids": [],
+      "directness": "unknown",
+      "company_stage": "newly_public",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Identity-only packet; quantum exposure cannot be confirmed from supplied evidence."
+    },
+    {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "business_plain_english": "MICRON TECHNOLOGY INC operates in a semiconductor interconnect and memory business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "semiconductor_interconnect_and_memory"
+      ],
+      "directness": "direct",
+      "company_stage": "too_large_mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "PWR",
+      "name": "QUANTA SERVICES, INC.",
+      "business_plain_english": "QUANTA SERVICES, INC. operates in a ai power and cooling business.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [
+        "ai_power_and_cooling"
+      ],
+      "directness": "direct",
+      "company_stage": "too_large_mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "medium",
+      "notes": "Bounded packet classification; deeper review requires primary evidence."
+    },
+    {
+      "symbol": "RIOT",
+      "name": "Riot Platforms, Inc.",
+      "business_plain_english": "Riot operates large-scale Bitcoin mining and digital-infrastructure facilities.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "weak_proxy",
+      "company_stage": "mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "low",
+      "notes": "Crypto-mining exposure is an indirect infrastructure proxy and policy-ineligible for action."
+    },
+    {
+      "symbol": "SPCX",
+      "name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+      "business_plain_english": "Space Exploration Technologies builds launch vehicles, spacecraft, satellite networks, and related services.",
+      "bottleneck_exposure": "strong",
+      "matched_lane_ids": [],
+      "directness": "direct",
+      "company_stage": "too_large_mature",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "high",
+      "notes": "Strategically direct but extremely large and outside the satellite asymmetry profile."
+    },
+    {
+      "symbol": "VIP",
+      "name": "Vulcan Infrastructure & Power Inc.",
+      "business_plain_english": "Vulcan Infrastructure & Power appears to develop infrastructure and power assets, but the packet lacks operating detail.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "unknown",
+      "company_stage": "unknown",
+      "extreme_upside_fit": "unknown",
+      "confidence": "low",
+      "notes": "Identity and bottleneck linkage cannot be established from the name-only packet."
+    },
+    {
+      "symbol": "WULF",
+      "name": "TERAWULF INC.",
+      "business_plain_english": "TeraWulf develops and operates energy-intensive computing infrastructure, including mining and high-performance computing sites.",
+      "bottleneck_exposure": "possible",
+      "matched_lane_ids": [],
+      "directness": "weak_proxy",
+      "company_stage": "growth",
+      "extreme_upside_fit": "unlikely",
+      "confidence": "low",
+      "notes": "Energy/data-center angle is possible, but packet lacks evidence and crypto linkage is material."
+    }
+  ],
+  "none_sample": [],
+  "review_questions": [
+    "Which xhigh_readiness_candidate symbols are genuine material readiness sprint candidates versus known names, too-large mature issuers, weak proxies, or false positives?",
+    "Which medium_lane_compare symbols should be promoted to xhigh, rejected, or kept cached until source evidence changes?",
+    "Which lane keywords or issuer-profile fields caused noisy matches and should be tightened?",
+    "Did the packet set miss a new structural bottleneck lane or newly public direct beneficiary that fixed screens could miss?"
+  ]
+}

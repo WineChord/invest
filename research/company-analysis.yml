@@ -1595,3 +1595,135 @@ entries:
     risk_watch: Bridge refinancing, capex, tenant credit, Bitcoin funding, ATM and convertible dilution.
     next_check: First event-after close, permanent financing, credit support, AMD November delivery or 2026-10-15 bridge resolution.
     source_path: research/promotion/2026-08-11-RIOT-promotion.md
+  - id: 2026-08-22-aaoi-atm-refresh
+    symbol: AAOI
+    analyzed_at: "2026-08-22"
+    analysis_type: material_financing_and_dilution_refresh
+    policy_version: v1.3
+    title: Domestic optical demand remains real while the new ATM weakens per-share entry
+    stance: C+ research only; buy 0
+    summary: AAOI's AI-optics and domestic-capacity exposure remain strategically direct, but the new USD 600 million at-the-market program can materially expand the common-share denominator before FAB4 returns and cash conversion are demonstrated.
+    upside_path: Convert 800G and 1.6T demand plus domestic manufacturing into durable customer-diversified margins and self-funded capacity.
+    risk_watch: Actual ATM issuance, sale prices, customer concentration, FAB4 capital returns, gross margin, cash conversion and diluted shares.
+    next_check: ATM usage, next quarterly filing, sustained 800G or 1.6T ramp, customer diversification or free-cash-flow proof.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-aspi-financing-refresh
+    symbol: ASPI
+    analyzed_at: "2026-08-22"
+    analysis_type: material_debt_and_survival_refresh
+    policy_version: v1.3
+    title: Renergen loan terms increase survival and recourse uncertainty
+    stance: C+ research only; buy 0
+    summary: The restated subsidiary loan supplies a defined maturity bridge but capitalizes prior interest, uses collateral and cross-defaults, and requires specified waivers, so common-equity survival and dilution-adjusted capture are harder to bound.
+    upside_path: Commercialize isotope enrichment and nuclear-fuel inputs with qualified customers, defensible production economics and financing that does not transfer most upside away from common shares.
+    risk_watch: Waivers, refinancing, cross-defaults, recourse, project cash generation, commercial shipment, production yields and diluted shares.
+    next_check: November 30 waiver evidence, refinancing, customer acceptance, commercial shipment or the next periodic filing.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-gilt-peru-contract-refresh
+    symbol: GILT
+    analyzed_at: "2026-08-22"
+    analysis_type: material_contract_and_entry_refresh
+    policy_version: v1.3
+    title: Peru order strengthens demand continuity without clearing the transaction bridge
+    stance: B active candidate; buy 0
+    summary: The USD 14 million Peru agreement adds direct ground-infrastructure demand, but it does not resolve first-half cash conversion, final Comtech economics, combined working capital, dilution or the account's existing space concentration.
+    upside_path: Combine profitable satellite-ground equipment, managed networks, defense communications and Comtech assets into a larger cash-generating platform at a still-modest denominator.
+    risk_watch: Comtech closing, final purchase price, integration, working capital, combined margins, customer concentration, diluted shares and space correlation.
+    next_check: Comtech close, final transaction economics, normalized cash conversion, diluted-share path or another material contract.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-infq-accounting-refresh
+    symbol: INFQ
+    analyzed_at: "2026-08-22"
+    analysis_type: material_accounting_quality_refresh
+    policy_version: v1.3
+    title: Preliminary-result corrections weaken confidence in the revenue bridge
+    stance: B- research only; buy 0
+    summary: Contract-revenue, cost-recognition and expected-loss accounting corrections do not prove thesis failure, but they reduce the reliability of preliminary growth and backlog conversion as evidence for per-share value.
+    upside_path: Convert neutral-atom computing, sensing and resilient-PNT deployments into repeat commercial revenue with improving margins and disciplined dilution.
+    risk_watch: Final adjustments, controls, government concentration, project losses, commercial mix, cash burn and diluted capitalization.
+    next_check: Final filed results, control remediation, commercial mix, gross margin, RPO conversion or valuation reset.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-nbis-convertible-refresh
+    symbol: NBIS
+    analyzed_at: "2026-08-22"
+    analysis_type: material_financing_and_entry_refresh
+    policy_version: v1.3
+    title: Convertible funding expands runway and the claims ahead of common equity
+    stance: B+ watch; buy 0
+    summary: The upsized USD 5.0 billion convertible-note offering can fund AI-cloud capacity and reduce near-term liquidity risk, but the larger capital stack and still-unproved project cash returns weaken current dilution-adjusted entry quality.
+    upside_path: Convert scarce powered AI capacity and software into high-utilization recurring cash returns that outrun financing and dilution.
+    risk_watch: Conversion terms, project returns, capex, utilization, customer prepayments, concentration, GAAP AI-cloud margin and free cash flow.
+    next_check: Offering close, use of proceeds, deployment economics, utilization, customer conversion or next results.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-qbts-docomo-refresh
+    symbol: QBTS
+    analyzed_at: "2026-08-22"
+    analysis_type: material_customer_production_refresh
+    policy_version: v1.3
+    title: Repeat production use strengthens utility evidence but not per-share value
+    stance: C+ research only; buy 0
+    summary: A second NTT DOCOMO production deployment with quantified network improvements is stronger than a demonstration, but contract economics, repeatability and revenue scale remain far below what the current denominator requires.
+    upside_path: Turn annealing systems and software into repeat production optimization workloads with recurring customer economics and improving cash conversion.
+    risk_watch: Contract value, customer concentration, replication, bookings conversion, gross margin, cash burn and dilution.
+    next_check: Revenue attribution, another production customer, system sale, bookings conversion, quarterly filing or valuation reset.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-qtex-offering-refresh
+    symbol: QTEX
+    analyzed_at: "2026-08-22"
+    analysis_type: material_equity_financing_refresh
+    policy_version: v1.3
+    title: Fresh equity extends runway before production economics are proven
+    stance: C+ research only; buy 0
+    summary: The USD 10 million registered direct offering may extend runway, but it confirms external-equity dependence before qualified production demand, repeat orders and positive gross margin are established.
+    upside_path: Convert cryogenic interconnect and additive-electronics capability into qualified high-margin production orders with self-funded growth.
+    risk_watch: Issued shares, net proceeds, runway, customer qualification, repeat orders, gross margin, cash burn and further financing.
+    next_check: Offering close, qualified customer, repeat order, positive gross margin or next filing.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-stdn-radiant-contract-refresh
+    symbol: STDN
+    analyzed_at: "2026-08-22"
+    analysis_type: material_contract_and_readiness_refresh
+    policy_version: v1.3
+    title: Binding Radiant agreement improves directness while economics remain absent
+    stance: B- research only; buy 0
+    summary: A binding agreement for multiple metric tons of TRISO fuel through 2031 provides stronger demand scale than an expression of interest, but undisclosed dollar value, take-or-pay protection, margin, production readiness and funded delivery conditions keep STDN outside R2, promotion and entry.
+    upside_path: Become a reactor-agnostic domestic TRISO supplier with repeat funded orders, industrial utilization, positive margins and disciplined common-equity financing.
+    risk_watch: Contract economics, production authorization, readiness, delivery timing, customer concentration, gross margin, cash use and capitalization.
+    next_check: Contract value or volume, production authorization, first delivery, funded-backlog conversion, next quarterly filing or financing.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-wyfi-convertible-refresh
+    symbol: WYFI
+    analyzed_at: "2026-08-22"
+    analysis_type: material_convertible_financing_refresh
+    policy_version: v1.3
+    title: Convertible funding improves runway while leverage and dilution remain decisive
+    stance: C+ research only; buy 0
+    summary: The USD 310 million 5 percent convertible notes due 2032 fund capacity but add senior claims, interest and potential conversion dilution before customer-contract economics and free-cash-flow timing are proven.
+    upside_path: Convert powered compute capacity into recurring high-utilization revenue whose cash returns exceed debt service, capex and dilution.
+    risk_watch: Use of proceeds, deployment returns, customer commitments, capex completion, interest, conversion, parent ownership and free cash flow.
+    next_check: Deployment and customer evidence, cash returns, capex completion, conversion update, refinancing or next filing.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-enrd-h1-results
+    symbol: ENRD
+    analyzed_at: "2026-08-22"
+    analysis_type: material_results_and_commercial_deployment_refresh
+    policy_version: v1.3
+    title: Deployment evidence strengthens while financing and burn retain the blocker
+    stance: C+ research only; buy 0
+    summary: First-half revenue and Amazon, Tesla and DAF deployment evidence strengthen the autonomous-freight thesis, while the SEK 1.12 billion net loss, third-party fleet financing, potential-ARR conversion, acquisition consideration and dilution keep common-equity value capture unbounded.
+    upside_path: Scale software-directed electric and autonomous freight through asset-backed financing that converts binding customer demand into recurring high-margin revenue without repeated equity issuance.
+    risk_watch: Binding customer economics, fleet financing, operating burn, ARR conversion, autonomy commercialization, Flipturn consideration, warrants and dilution.
+    next_check: Contracted deployment economics, non-dilutive fleet financing, second-half revenue conversion, operating burn, acquisition capitalization or next filing.
+    source_path: research/filings/2026-08-22-MATERIAL-FILING-REFRESH.md
+  - id: 2026-08-22-iqmx-public-results-refresh
+    symbol: IQMX
+    analyzed_at: "2026-08-22"
+    analysis_type: material_public_results_and_backlog_refresh
+    policy_version: v1.3
+    title: Backlog strengthens commercial proof while losses and valuation block entry
+    stance: B- research only; buy 0
+    summary: IQM reported EUR 8.9 million of first-half revenue and backlog rising from EUR 69.1 million at June 30 to more than EUR 102.1 million on August 3, but operating loss, system-conversion timing and the public denominator prevent promotion.
+    upside_path: Convert sovereign and enterprise quantum-system demand into repeat deliveries, software and service revenue with improving margins and durable technical differentiation.
+    risk_watch: Backlog conversion, system acceptance, operating loss, cash use, post-SPAC shares, technical competition, customer concentration and valuation.
+    next_check: Backlog conversion, next system deliveries, first quarterly filing, margin and cash use, diluted capitalization or valuation reset.
+    source_path: research/discovery/candidate-readiness.yml

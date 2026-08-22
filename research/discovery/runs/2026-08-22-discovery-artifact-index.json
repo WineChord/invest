@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-08-22T08:31:38.887Z",
+  "as_of": "2026-08-22",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-08-22.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-08-22-community-scan.json",
+      "sha256": "7dc0d6a60652b17b38ce0918f3bb5d1047f78f9aad49830f3907946a476fab30",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-community-triage.json",
+      "sha256": "600e1435e735a680108f2c3a27dd481b40afe44f527e5503e55df1ac3674d9dc",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-scan.json",
+      "sha256": "6bdcc6926676544a48ec474fe3ee7503d07600a78316f728608eb90df5e74c23",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-event-filing-index-index.metadata.json",
+      "sha256": "ed95fe41e0603898719f08e101ef5fb572e7731305942784c9e53e74bbae7aca",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-event-filing-index-manifest.csv",
+      "sha256": "be2e2616b675194445fae1f55942c35485e12fe8cd9e4269190b046e7819000e",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "36ae776cef12a803238e4178efac6b25d3cdd2d3a7863677b72ca41b7a12d990",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-event-filing-index-profiles.json",
+      "sha256": "8c23707de8e16d642cdda409fb8f7c881aa36ea3e7112fb8930cd0af56131d41",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-event-filing-index-scan.json",
+      "sha256": "23a4b04048594d81ce0d36b187b0d2f987ce6bf1cda4ee4c8f7a4eba71e94688",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-foundational-filing-index-index.metadata.json",
+      "sha256": "6679c09470b2fac90c2753602ecb379f3c71f8d5c896c9bcd0ca18281e016caa",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-foundational-filing-index-manifest.csv",
+      "sha256": "f97d4e07617966e3405e63346cd442da09a1c8f1704103196756de74e194b9cb",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-foundational-filing-index-manifest.metadata.json",
+      "sha256": "5cbc171dc352f07e97d08c533411cb6167700a58aec6e543692fada8f461bd00",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-foundational-filing-index-profiles.json",
+      "sha256": "f22cc42096efda8ab46bbbf26294d1c54986eb3dda99a03a1cd7cc4df897d761",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-foundational-filing-index-scan.json",
+      "sha256": "4b73d8643ca237cb99613c547f4900de2cacc080ffb06f9f5774904ab9600c3b",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-sec-registration-transaction-candidates.json",
+      "sha256": "ff5f1a64df26313744181dc7b349d7a306a722c4836bf58547901c61eb251881",
+      "role": "sec_registration_transaction_candidate_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-semantic-discovery-run.json",
+      "sha256": "12975289e4e6a12af91b78188d0fe125b52383d16e96173e598ed4a4bba7be92",
+      "role": "semantic_discovery_run_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-semantic-import.json",
+      "sha256": "8cb4205ab35f3ec61fef0bed012416f9f0b7332871dfb0419959784af791e32b",
+      "role": "semantic_classification_import_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-08-22-semantic-review-packet.json",
+      "sha256": "186453a5a91537c29f0bf557c755fc973603d3c2114a1ea8526dac97155f06c0",
+      "role": "semantic_review_packet_artifact"
+    }
+  ]
+}
