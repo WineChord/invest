@@ -1,12 +1,12 @@
 schema_version: 1
-as_of: 2026-08-21
+as_of: 2026-08-28
 status: funded_with_positions
 base_currency: USD
-confirmed_cash: 8783.87
-settled_cash: 8783.87
-buying_power: 8783.87
+confirmed_cash: 9671.87
+settled_cash: 9671.87
+buying_power: 9671.87
 positions_count: 4
-last_confirmed_ledger_event_id: 2026-08-21-deposit-weekly-888-001
+last_confirmed_ledger_event_id: 2026-08-28-deposit-weekly-888-001
 last_reconciled_with_broker_at: 2026-08-14
 notes:
   - User confirmed USD 888 deposits available in the brokerage account on
@@ -21,4 +21,4 @@ notes:
   - User confirmed an IREN buy execution on 2026-08-14 from redacted screenshot
     evidence; cash settlement is due on 2026-08-17.
   - Raw broker screenshots and full broker identifiers are not committed.
-last_standing_contribution_date: 2026-08-21
+last_standing_contribution_date: 2026-08-28

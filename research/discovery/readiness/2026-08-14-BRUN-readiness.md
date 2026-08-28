@@ -2,7 +2,7 @@
 
 ```yaml
 symbol: BRUN
-candidate_name: Bifrost Run Inc.
+candidate_name: Boost Run Inc.
 review_date: 2026-08-14
 policy_version: v1.3
 material_to_current_allocation: true
@@ -69,3 +69,5 @@ reopen_or_reject_trigger: Advance only after contracted revenue, unit economics,
 ```
 
 Primary source: [Q1 Form 10-Q](https://www.sec.gov/Archives/edgar/data/2090646/000149315226026667/form10-q.htm), published 2026-06-01 and retrieved 2026-08-14.
+
+Identity correction recorded 2026-08-28: the SEC registrant name is Boost Run Inc.; the contemporaneous readiness conclusion is otherwise preserved and is superseded by `research/discovery/readiness/2026-08-28-BRUN-readiness.md`.

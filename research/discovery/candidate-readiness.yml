@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-08-22
+as_of: 2026-08-27
 records:
   - symbol: INFQ
     material_to_current_allocation: true
@@ -393,15 +393,21 @@ records:
     affected_lanes: [advanced_nuclear_and_grid_constraints]
     materiality_reason: Standard Nuclear directly manufactures TRISO fuel, a scarce input that can constrain multiple advanced-reactor developers and therefore improves the fuel-cycle opportunity-cost comparison.
     blocking_scope: advanced_nuclear_fuel_cycle_lane_completeness
-    readiness_status: incubated_after_review
-    dashboard_surface_status: complete
-    readiness_path: research/discovery/readiness/2026-07-18-STDN-readiness.md
+    research_stage: R2_comparable
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-27-STDN-readiness.md
     blocker_type: evidence_based
-    blocker_reason: The final prospectus and two completed closes resolve the old external blocker, but about USD 1.67 billion of basic equity value on roughly USD 3.36 million trailing revenue, negative gross economics, scale-up, customer, fuel, governance, and layered dilution risks fail entry.
-    reachable_evidence_remaining: none
-    last_readiness_reviewed_at: 2026-07-18
-    next_action: Monitor Q2 results, commissioning, funded-backlog conversion, repeat commercial delivery, gross margin, customer concentration, and capitalization.
-    conclusion: Incubated into research-only dashboard coverage after the external tradability blocker resolved; no promotion and no current buy.
+    blocker_reason: The first commercial core, first quarterly gross profit, USD 119.3 million funded backlog and approximately USD 239.9 million debt-free pro-forma cash justify R2 comparison, but the event-after price, filed Q2 financials, contract protection, authorization, repeat industrial margin, customer concentration and reconciled diluted denominator still fail promotion and entry.
+    reachable_evidence_remaining: Filed Q2 statements and footnotes, the first post-results completed close, authorization, protected firm-order economics, customer HALEU and funding, repeat multi-customer delivery, normalized margin, cash conversion and capitalization reconciliation.
+    last_readiness_reviewed_at: 2026-08-27
+    next_evidence_source: SEC quarterly filings, issuer authorization and delivery disclosures, contract evidence and the next completed market-data refresh.
+    next_evidence_due: 2026-09-04
+    cost_of_waiting: STDN could reprice before a filing or authorization, but entering at a stale pre-event price or after an unbounded gap would make common equity absorb cancellation, industrial-margin and dilution risk without a base-case valuation bridge.
+    false_negative_early_warning: Filed confirmation of capitalization and contract quality, final authorization, another funded customer or repeat positive-margin delivery at a valuation near the current enterprise-value range.
+    reopen_or_reject_trigger: Advance toward R3 only when filed financials, event-after price, authorization, protected firm economics, repeat delivery and diluted per-share scenarios support exceptional upside; reject or demote on authorization failure, cancellations, negative normalized margins, faster cash use or excessive dilution.
+    next_action: Recheck the first event-after completed close and SEC submissions immediately, then by 2026-09-04 review the filed quarter, authorization, contract protections, repeat delivery and capitalization.
+    conclusion: Advanced to R2 comparable and the top-three opportunity-cost screen after Q2; retain B- research-only status, no promotion, no buy zone, quantity zero and no executable limit.
   - symbol: CIFR
     material_to_current_allocation: true
     affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
@@ -1041,23 +1047,23 @@ records:
   - symbol: BRUN
     material_to_current_allocation: true
     affected_lanes: [ai_compute_infrastructure]
-    materiality_reason: A newly public GPU-cloud and colocation operator with actual revenue and a small denominator could become a direct AI-compute bottleneck expression if the claimed contract base survives primary-source reconciliation.
+    materiality_reason: A newly public GPU-cloud and colocation operator with a binding large customer order, actual revenue and a small denominator is a direct AI-compute bottleneck expression, but full-cost cash conversion and obligation coverage remain unproved.
     blocking_scope: current_opportunity_set_false_negative_hygiene
-    research_stage: R1_researchable
-    readiness_status: researchable_open
+    research_stage: R2_comparable
+    readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
-    readiness_path: research/discovery/readiness/2026-08-14-BRUN-readiness.md
+    readiness_path: research/discovery/readiness/2026-08-28-BRUN-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Management's USD 940 million contracted-revenue claim is not reconciled to audited backlog, cancellation rights, customer concentration, delivery obligations, full-cost economics, earnouts, warrants or the dual-class denominator.
-    reachable_evidence_remaining: The next quarterly filing and current contract and capitalization disclosures can bound backlog quality, unit economics and fully diluted common-equity capture.
-    last_readiness_reviewed_at: 2026-08-21
-    next_evidence_source: Q2 filing or current-filing reconciliation of contracts, customer concentration, GPU and colocation obligations and the fully diluted Class A/Class B denominator.
-    next_evidence_due: 2026-09-04
-    cost_of_waiting: High if the contract claim validates, but the recent rerating and unbounded denominator make premature promotion more dangerous than a short R2 sprint.
-    false_negative_early_warning: Audited contracted revenue, limited cancellation rights, funded GPU delivery and positive full-cost unit economics.
-    reopen_or_reject_trigger: Advance only after contracted revenue, unit economics, lease obligations, customer concentration and fully diluted capitalization reconcile; reject if promotional claims or financing dominate the operating evidence.
-    next_action: Reconcile binding contract terms, cancellation rights, delivery obligations, full-cost economics and the diluted denominator by 2026-09-04 or sooner on a material filing.
-    conclusion: Retained as the highest-priority new R1; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+    blocker_reason: Three disclosed orders reconcile only about 47.5 percent of management's total contract value, operating cash flow is dominated by customer deposits, headline gross margin excludes depreciation and colocation, commitments exceed USD 2.0 billion, disclosure controls are ineffective and incentive-plan dilution remains unbounded.
+    reachable_evidence_remaining: Current and future filings can bound customer concentration, energized deployment, normalized cash conversion, obligation coverage, current cash after warrant proceeds, internal-control remediation and incentive-plan awards.
+    last_readiness_reviewed_at: 2026-08-28
+    next_evidence_source: Contract-by-contract TCV and customer-concentration reconciliation, deployment milestones, cash flow after customer-deposit changes and finance-lease payments, current cash after warrant proceeds, internal-control remediation and incentive-plan awards.
+    next_evidence_due: 2026-09-11
+    cost_of_waiting: A binding large order and rapid revenue growth can rerate the shares, but the August 27 price already capitalizes substantial conversion while full-cost cash economics and obligation coverage remain unproved.
+    false_negative_early_warning: Diversified creditworthy customers, energized capacity, recurring cash flow after deposit and lease-principal normalization, remediated controls and bounded incentive awards.
+    reopen_or_reject_trigger: Start a promotion review only after contract concentration, deployment economics, full-cost cash conversion, survival obligations, current cash and incentive-plan awards reconcile; demote if TCV cancels, deployment slips or customer deposits fail to convert into earned cash margin.
+    next_action: Reconcile contract concentration, deployment milestones, normalized cash conversion, obligations, current cash, controls and incentive-plan awards by 2026-09-11 or sooner on a material filing.
+    conclusion: Advanced to R2 comparable but retained as incubating outside the current top five; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
   - symbol: ALOY
     material_to_current_allocation: true
     affected_lanes: [advanced_nuclear_and_grid_constraints, unknown_future_bottlenecks]

@@ -1727,3 +1727,24 @@ entries:
     risk_watch: Backlog conversion, system acceptance, operating loss, cash use, post-SPAC shares, technical competition, customer concentration and valuation.
     next_check: Backlog conversion, next system deliveries, first quarterly filing, margin and cash use, diluted capitalization or valuation reset.
     source_path: research/discovery/candidate-readiness.yml
+  - id: 2026-08-27-stdn-q2-r2-refresh
+    symbol: STDN
+    analyzed_at: "2026-08-27"
+    analysis_type: material_results_delivery_backlog_and_fast_path_promotion_review
+    policy_version: v1.3
+    title: First commercial core and quarterly gross profit advance STDN to R2 without opening entry
+    stance: B- research only; R2 comparable; buy 0
+    summary: Q2 revenue of USD 4.736 million, USD 3.183 million gross profit, a completed Radiant reactor core, USD 119.3 million funded backlog and approximately USD 239.9 million debt-free pro-forma cash materially strengthen commercial and survival evidence. USD 443.5 million of customer options, absent filed Q2 statements, authorization, HALEU and customer funding, repeat economics, a 154.2 million versus 160.674 million basic-share conflict and the lack of an event-after close keep promotion and entry closed.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Can scarce domestic TRISO manufacturing convert protected firm demand into repeat cash flows that create exceptional diluted per-share value from the current denominator?
+      irreducible_facts: The first commercial core is complete; Q2 produced gross profit; funded backlog is USD 119.3 million; customer options are USD 443.5 million; pro-forma cash is approximately USD 239.9 million with no debt; the USD 13.70 close predates the release.
+      binding_constraints: Filed financials, event-after entry, authorization, customer HALEU and reactor funding, cancellation protection, repeat industrial margin, customer concentration and diluted shares.
+      causal_chain: TRISO scarcity must become authorized production, protected orders, repeat positive-margin delivery, cash reinvestment and dilution-adjusted per-share value.
+      inherited_assumptions_challenged: Total backlog is not contracted revenue; the Antares agreement rather than Radiant created the August backlog increase; one positive-margin quarter is not normalized economics; cash runway is not valuation support.
+      value_capture_or_mission_link: A 17-share reference starter could be mission-relevant, but current base-case value and stale entry do not justify deploying capital.
+      disconfirming_evidence: Filed Q2 footnotes, reconciled shares, authorization, protected firm orders, repeat multi-customer positive-margin delivery and a current valuation preserving a credible exceptional path.
+      decision_consequence: Advance to R2 and the top-three screen; retain B- research-only status, quantity zero and no executable limit.
+    upside_path: Become the reactor-agnostic domestic TRISO supplier across multiple funded programs, sustain industrial margins and reinvest debt-free cash while containing dilution.
+    risk_watch: Event-after price, filed quarter, backlog cancellation and take-or-pay protection, customer concentration, HALEU, reactor funding, authorization, yield, utilization, cash conversion and diluted capitalization.
+    next_check: First post-results close and SEC filing; authorization, contract, repeat-delivery, capitalization or material price event; otherwise 2026-09-04.
+    source_path: research/filings/2026-08-27-MATERIAL-EVENT-AND-FILING-REVIEW.md

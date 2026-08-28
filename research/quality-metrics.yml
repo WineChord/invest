@@ -1,9 +1,9 @@
 schema_version: 1
-as_of: 2026-08-22
+as_of: 2026-08-27
 last_research_engine_run:
-  as_of: 2026-08-22
-  scope: weekly_L2_with_august_21_closes_full_74_security_review_paired_event_and_foundational_SEC_indexes_semantic_coverage_APLD_R2_and_independent_allocation_review
-  notes: Completed a v1.3 Saturday full cycle covering 74 securities. APLD advanced to R2 after its already-filed annual report replaced a stale future-source claim; STDN, IQMX, QNT and ENRD gained evidence without promotion, and every incremental quantity remained zero.
+  as_of: 2026-08-27
+  scope: event_driven_full_cycle_with_august_26_closes_full_74_security_review_paired_event_and_foundational_SEC_indexes_STDN_Q2_R2_fast_path_promotion_and_independent_allocation_review
+  notes: Completed a v1.3 event-driven full cycle covering 74 securities. STDN advanced to R2 and the top-three opportunity-cost screen after its first commercial core, first quarterly gross profit, larger funded backlog and debt-free pro-forma cash; missing filed financials, an event-after close, protected contract economics, authorization and capitalization reconciliation kept B- research-only status and every incremental quantity at zero.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
@@ -24,36 +24,36 @@ mission_accountability:
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
   latest_confirmed_return_seeking_buy_date: 2026-08-14
-  latest_research_nav: 11260.39
-  confirmed_cash: 8783.87
-  latest_research_nav_basis: August 21 research snapshot using confirmed cash and completed adjusted closes for ASTS 11 IREN 5 MDA 9 and RKLB 17; this is research valuation rather than same-timestamp broker reconciliation
+  latest_research_nav: 11971.61
+  confirmed_cash: 9671.87
+  latest_research_nav_basis: August 27 research snapshot using confirmed cash after the authorized August 28 contribution and completed adjusted closes for ASTS 11 IREN 5 MDA 9 and RKLB 17; this is research valuation rather than same-timestamp broker reconciliation
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 78.0068
+  liquidity_option_weight_pct: 80.7901
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
   latest_mission_relevant_deployment_date: 2026-08-14
   mission_relevant_deployment_basis: 2026-08-14-buy-iren-001
-  days_since_latest_mission_relevant_deployment: 8
+  days_since_latest_mission_relevant_deployment: 13
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
   next_required_review_at: 2026-09-28
-  strongest_counterfactual: LEU is the strongest nonholding forced-choice challenger; GILT and APLD rank second and third, while IREN is the strongest holding add candidate.
-  smallest_prudent_exposure_considered: Two LEU shares at USD 186.26 would cost USD 372.52 and represent 3.3082 percent of research NAV; one share is 1.6541 percent and below the recorded 2 percent mission-consistent floor.
+  strongest_counterfactual: LEU is the strongest current nonholding forced-choice challenger; GILT and STDN rank second and third after STDN received an event-after close, IREN is the strongest holding add candidate, and BRUN advanced to R2 but remains outside the top five.
+  smallest_prudent_exposure_considered: Two LEU shares at USD 194.78 would cost USD 389.56 and represent 3.2540 percent of research NAV; one share is 1.6270 percent and below the recorded 2 percent mission-consistent floor. A 17-share STDN reference starter would cost USD 243.27 or 2.0321 percent. A 12-share BRUN reference would cost USD 247.32 or 2.0659 percent, while 11 shares would be below the floor. None passes the evidence and entry gates.
   zero_vs_starter_result: Zero wins because funded cascade economics, fixed-price protection, TENEX replacement, expansion capital and dilution can reverse residual common-equity value; two shares cannot bound that uncertainty and one symbolic share does not satisfy the mission-consistent floor.
   zero_exposure_reason_code: decision_critical_economics_gap
   decision_critical_missing_evidence: LEU requires funded and protected cascade economics, credible TENEX replacement and expansion capital, bounded fully diluted shares, positive per-share cash conversion and a fresh valuation leaving exceptional upside.
   why_risk_sizing_cannot_absorb_uncertainty: Smaller size, staging, a shorter window or a tighter stop cannot repair uncertainty about whether fixed-price and financing economics leave positive residual common-equity value.
-  cash_opportunity_cost: Waiting can miss a nuclear-fuel rerating and leaves 78.0068 percent of NAV in cash, but preserves full optionality for funded LEU economics, IREN cash-return evidence, a clean GILT transaction or a superior new bottleneck.
+  cash_opportunity_cost: Waiting can miss a nuclear-fuel or AI-compute rerating and leaves 80.7901 percent of NAV in cash, but preserves full optionality for funded LEU economics, IREN cash-return evidence, a clean GILT transaction, filed STDN economics, normalized BRUN cash conversion or a superior new bottleneck.
   conjunctive_evidence_and_price_trigger: Funded and protected cascade economics, credible TENEX replacement and expansion capital, bounded fully diluted shares, positive per-share cash conversion, and a fresh valuation leaving exceptional upside must all be present; price alone never opens the gate.
-  next_evidence_deadline: 2026-08-28
-  no_action_streak: 1
-  article1_red_team_status: completed_current_v1.3_LEU_zero_vs_two_share_bridge_and_full_opportunity_cost_comparison
+  next_evidence_deadline: 2026-08-29
+  no_action_streak: 2
+  article1_red_team_status: completed_current_v1.3_LEU_zero_vs_two_share_bridge_STDN_zero_vs_17_share_reference_and_full_opportunity_cost_comparison
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: Hold ASTS 11 IREN 5 MDA 9 and RKLB 17; add zero sell zero and buy no new security or SGOV. Confirmed cash is USD 8783.87; no executable limit or trade authorization exists, and the repository executed no trade.
+  current_conclusion: Hold ASTS 11 IREN 5 MDA 9 and RKLB 17; add zero sell zero and buy no new security or SGOV. Confirmed cash is USD 9671.87 after the authorized August 28 contribution; no executable limit or trade authorization exists, and the repository executed no trade.
 coverage:
-  universe_scan_as_of: 2026-08-22
-  discovery_lane_map_as_of: 2026-08-22
+  universe_scan_as_of: 2026-08-27
+  discovery_lane_map_as_of: 2026-08-27
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
@@ -66,10 +66,10 @@ coverage:
   active_symbols_missing_latest_filing_review: 0
   raw_discovery_candidates_open: 41
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-08-22-weekly-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-08-22-weekly-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-08-22-weekly-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-08-22-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-08-28-targeted-sentinel.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-08-28-targeted-sentinel.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-08-28-targeted-sentinel.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-08-27-revalidated-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
@@ -80,7 +80,7 @@ discovery_process:
   exploratory_match_count: 59
   exploratory_sample_count: 18
   exploratory_sample_coverage_pct: 30.5085
-  search_quality_conclusion: All 18 deterministic candidates and 59 exploratory matches were dispositioned without a new candidate. Semantic review covered 71 of 71 listed securities; APLD advanced to R2 from already-filed annual evidence, but no discovery gap or process debt controls the zero-action conclusion.
+  search_quality_conclusion: All 18 deterministic candidates and 59 exploratory matches were dispositioned without a new candidate. Existing semantic coverage remained valid for 71 of 71 listed securities; fresh high-reasoning review advanced STDN to R2 and the top-three screen, but no discovery gap or process debt controls the zero-action conclusion.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -162,4 +162,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: The current v1.3 cycle uses August 21 completed closes, paired event and foundational SEC coverage, current issuer evidence and a 74-security opportunity set. No incremental security clears all gates; every quantity and executable limit is zero or null, and no trade was executed.
+notes: The current v1.3 cycle uses August 26 completed closes, paired event and foundational SEC coverage, current issuer evidence and a 74-security opportunity set. STDN advanced to R2 and the top-three screen without promotion; no incremental security clears all gates, every new or sell quantity and executable limit is zero or null, and no trade was executed.

@@ -4150,7 +4150,7 @@ sources:
     related_symbols: [COHR, CRDO, LITE, MTSI, LASR]
     summary: Revenue and margin growth strengthen photonics demand evidence, but weak cash conversion, capex commitments, leverage, customer concentration and ordinary-share growth retain the R1 blocker.
   - id: brun_q1_2026_10q
-    title: Bifrost Run Q1 2026 Form 10-Q
+    title: Boost Run Q1 2026 Form 10-Q
     source_type: sec_filing
     url: https://www.sec.gov/Archives/edgar/data/2090646/000149315226026667/form10-q.htm
     source_published_at: 2026-06-01
@@ -4365,3 +4365,219 @@ sources:
     first_seen_at: 2026-08-22
     related_symbols: [IQMX]
     summary: IQM reported EUR 8.9 million of first-half revenue, EUR 69.1 million of June backlog and more than EUR 102.1 million by August 3, alongside large operating losses and substantial cash; backlog strengthens the thesis but not current entry.
+  - id: completed_close_universe_2026_08_26
+    title: Completed Regular-Session Close Universe — 2026-08-26
+    source_type: market_data_provider
+    url: https://query2.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [RKLB, ASTS, MDA, IREN, LEU, GILT, STDN, APLD, QTEX]
+    summary: Adjusted-close history provided a reliable completed August 26 close for all 71 listed securities. Prices are research and entry-review evidence only and never create buy eligibility or an order.
+  - id: yahoo_chart_close_2026_08_26
+    title: Yahoo Finance Adjusted-Close History — 2026-08-26
+    source_type: market_data_provider
+    url: https://query2.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [STDN, LEU, GILT, IREN, APLD, RKLB, ASTS, MDA, QTEX]
+    summary: Current adjusted-close history was retrieved between 2026-08-27T07:09:37.978Z and 2026-08-27T07:20:56.921Z. STDN's USD 13.70 close predates the material after-close quarterly release.
+  - id: sec_event_index_full_universe_2026_08_27
+    title: Full-Universe SEC Event Filing Index — 2026-08-27
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [STDN, RKLB, NBIS, MU, WYFI, QBTS, ENRD, IQMX, INFQ, QTEX]
+    summary: The event selector covered the same 71 listed-security scope as the foundational companion and produced 32 usable issuer profiles for current periodic, event, transaction and proxy evidence.
+  - id: sec_foundational_index_full_universe_2026_08_27
+    title: Full-Universe SEC Foundational Filing Index — 2026-08-27
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [STDN, RKLB, NBIS, MU, WYFI, QBTS, ENRD, IQMX, INFQ, QTEX]
+    summary: The foundational-first selector covered 71 listed securities and produced 62 usable profiles, preserving annual and prospectus context separately from event detection.
+  - id: sec_submissions_stdn_2026_08_27
+    title: Standard Nuclear Current SEC Submissions Metadata — 2026-08-27
+    source_type: sec_submissions
+    url: https://data.sec.gov/submissions/CIK0002086716.json
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [STDN]
+    summary: Current SEC submissions metadata showed no second-quarter Form 10-Q or results Form 8-K by the evidence cutoff, leaving filing-level financial, contract and capitalization reconciliation open.
+  - id: stdn_q2_release_2026_08_26
+    title: Standard Nuclear Second-Quarter 2026 Results
+    source_type: company_ir
+    url: https://ir.standardnuclear.com/news-events/press-releases/detail/102/standard-nuclear-reports-second-quarter-and-year-to-date-2026-results
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [STDN]
+    summary: STDN reported USD 4.736 million of Q2 revenue, USD 3.183 million of gross profit, a completed first commercial reactor core, USD 119.3 million of funded backlog, USD 443.5 million of customer options and approximately USD 239.9 million of pro-forma post-IPO cash with no debt. The new backlog step is tied to Antares rather than Radiant.
+  - id: stdn_final_424b4_2026_07_16
+    title: Standard Nuclear Final Initial Public Offering Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000121390026078747/ea0276071-13.htm
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-07-18
+    related_symbols: [STDN]
+    summary: The final prospectus supports 149095234 Class A and 11578308 Class B shares after the base offering, or 160673542 basic shares, and records customer, cancellation, HALEU, authorization, cash-use and option risks.
+  - id: stdn_s8_plan_2026_07_16
+    title: Standard Nuclear Equity Plan Registration Exhibit
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000121390026078470/ea029808801ex5-1.htm
+    source_published_at: 2026-07-16
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [STDN]
+    summary: The equity-plan registration identifies existing low-strike options and additional plan and employee-purchase reserves used for dilution stress testing; unused reserves are not treated as current basic shares.
+  - id: rklb_definitive_424b3_2026_08_26
+    title: Rocket Lab Definitive Iridium Merger Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1819994/000175392626001639/g085904_424b3.htm
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [RKLB]
+    summary: The definitive prospectus sets the September 24 vote and current exchange-ratio mechanics but leaves permanent financing, final dilution, approvals, closing, integration and combined cash conversion unresolved.
+  - id: nbis_agm_issuance_authority_2026_08_26
+    title: Nebius Annual Meeting Results and Issuance Authority
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926101076/tm2624077d1_6k.htm
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [NBIS]
+    summary: Shareholders approved all proposals, including five-year authority to issue up to 20 percent additional Class A shares and exclude pre-emption rights. The authority is not treated as an actual issuance.
+  - id: mu_management_8k_2026_08_26
+    title: Micron Management Role Realignment
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/723125/000110465926101067/tm2624017d1_8k.htm
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [MU]
+    summary: Micron appointed internal presidents for operations and technology and moved the prior business leader to an advisory role without a new compensation arrangement; the event does not change current HBM economics or entry.
+  - id: wyfi_real_estate_8ka_2026_08_26
+    title: WhiteFiber Real Estate Purchase Agreement Exhibit
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2042022/000121390026094022/ea0303443-8ka1_whitefiber.htm
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [WYFI]
+    summary: The amendment files the previously disclosed purchase agreement and clarifies a refundable USD 2.25 million inspection-period deposit, 60 MW initial capacity and potential expansion to 138 MW without proving closing or after-capex returns.
+  - id: qbts_cfo_transition_2026_08_25
+    title: D-Wave Chief Financial Officer Transition
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000138/qbts-20260819.htm
+    source_published_at: 2026-08-25
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [QBTS]
+    summary: The CFO will retire on September 2 and an acting CFO was appointed; the filing reports no accounting or operating disagreement and creates a governance monitor rather than an action change.
+  - id: enrd_equipment_financing_2026_08_25
+    title: Einride Equipment Financing Facility
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2095096/000149315226040065/form6-k.htm
+    source_published_at: 2026-08-25
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [ENRD]
+    summary: Up to USD 25 million of 42-month equipment financing can support fleet deployment but adds collateral, guarantees, fees, prepayment constraints and cross-default risk before customer cash economics are proved.
+  - id: iqmx_424b3_2026_08_26
+    title: IQM Quantum Capitalization and Warrant Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2113060/000119312526368699/d36013d424b3.htm
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [IQMX]
+    summary: The prospectus confirms 189496218 basic shares and approximately 12.531 million public and private warrants at USD 11.50; losses and public-sector revenue concentration keep promotion and entry closed.
+  - id: infq_424b3_2026_08_26
+    title: Infleqtion Selling-Holder Distribution Prospectus
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2007825/000119312526368786/d25094d424b3.htm
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [INFQ]
+    summary: The supplement adds selling holders for an in-kind distribution of 350115 existing shares; it supplies no issuer cash and does not create new shares.
+  - id: crdo_annual_proxy_2026_08_25
+    title: Credo Technology Group Annual Proxy Statement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026058936/crdo-20260825.htm
+    source_published_at: 2026-08-25
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: [CRDO]
+    summary: The annual proxy covers routine director election, compensation and auditor matters and reports 187934000 shares outstanding on the record date; it adds no operating, financing or thesis-changing evidence.
+  - id: macro_regime_snapshot_2026_08_27
+    title: Financing and Volatility Overlay — 2026-08-27
+    source_type: market_and_government_data
+    url: https://fred.stlouisfed.org/
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-27
+    first_seen_at: 2026-08-27
+    related_symbols: []
+    summary: Rates, credit and volatility inputs were refreshed where available. Some index-proxy and qualitative inputs failed upstream with HTTP 403, so the regime remains explicitly incomplete and cannot create buy eligibility or a portfolio-wide veto.
+  - id: brun_q2_2026_10q
+    title: Boost Run Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2090646/000149315226039031/form10-q.htm
+    source_published_at: 2026-08-18
+    retrieved_at: 2026-08-28
+    first_seen_at: 2026-08-28
+    related_symbols: [BRUN, IREN, APLD, CRWV, NBIS]
+    summary: Revenue growth and three disclosed orders totaling about USD 901.7 million support R2 comparison, while deposit-driven cash flow, infrastructure costs below headline gross profit, large lease and purchase obligations, ineffective controls and incentive-plan dilution block promotion and entry.
+  - id: brun_q2_results_2026_08_14
+    title: Boost Run Second-Quarter 2026 Results and Outlook
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/2090646/000149315226038014/ex99-1.htm
+    source_published_at: 2026-08-14
+    retrieved_at: 2026-08-28
+    first_seen_at: 2026-08-28
+    related_symbols: [BRUN, IREN, APLD, CRWV, NBIS]
+    summary: Management reports USD 1.9 billion of TCV, more than USD 1 billion of Q2 contracts and a roughly USD 400 million year-end exit-ARR target, but warns that execution, cancellations, supply, customer demand and facility deployment can differ materially.
+  - id: brun_thinking_machines_orders_2026_05_21
+    title: Boost Run Thinking Machines GPU Orders
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2090646/000149315226025672/form8-k.htm
+    source_published_at: 2026-05-28
+    retrieved_at: 2026-08-28
+    first_seen_at: 2026-08-28
+    related_symbols: [BRUN]
+    summary: Two 36-month orders cover 5000 NVIDIA B300 GPUs and approximately USD 471.7 million of TCV; order fees are non-cancelable and non-refundable except for termination after uncured company breach.
+  - id: brun_resale_prospectus_2026_08_19
+    title: Boost Run Resale Prospectus Supplement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2090646/000149315226039115/form424b5.htm
+    source_published_at: 2026-08-19
+    retrieved_at: 2026-08-28
+    first_seen_at: 2026-08-28
+    related_symbols: [BRUN]
+    summary: The supplement covers 58738753 Class A shares or equivalents and 4007216 private warrants held by selling holders; it is a resale registration rather than evidence that every covered share is newly issued.
+  - id: brun_warrant_redemption_completion_2026_08_26
+    title: Boost Run Warrant Redemption Completion
+    source_type: company_ir
+    url: https://investors.boostrun.com/news-releases/news-release-details/boost-run-announces-completion-warrant-redemption
+    source_published_at: 2026-08-26
+    retrieved_at: 2026-08-28
+    first_seen_at: 2026-08-28
+    related_symbols: [BRUN]
+    summary: The company reports 54312123 Class A and 29533018 Class B shares and no warrants as of August 25 after 99.8 percent of warrants were exercised for approximately USD 130 million of aggregate gross proceeds since the business combination.
+  - id: supplemental_R1_R2_closes_2026_08_27
+    title: Supplemental Completed Closes for Open R1 and R2 Candidates — 2026-08-27
+    source_type: exchange_market_data
+    url: https://api.nasdaq.com/api/quote/
+    source_published_at: 2026-08-27
+    retrieved_at: 2026-08-28
+    first_seen_at: 2026-08-28
+    related_symbols: [VIP, APLD, ONDS, AXTI, ALMU, SATL, EOSE, MTSI, LASR, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
+    summary: Nasdaq historical data supplied completed August 27 closes for all 17 open R1 and R2 candidates. BRUN alone crossed its raw-close short-window trigger; adjusted-close treatment was not independently verified, so the rows are research triggers and create no promotion or order eligibility.

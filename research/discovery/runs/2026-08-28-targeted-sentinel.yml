@@ -1,0 +1,243 @@
+schema_version: 1
+run_id: 2026-08-28-targeted-sentinel
+run_date: 2026-08-28
+request_type: friday_targeted_sentinel
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: Current through a material issuer filing or release, the completed August 28 regular-session close, or the scheduled August 29 full operating cycle, whichever occurs first
+linked_decision_or_research_note: research/filings/2026-08-28-PRICE-AND-EVIDENCE-DEADLINE-REVIEW.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-27-revalidated-subagent-evidence-packet.yml
+reuse_boundary: The complete August 27 universe, lane, watchlist, filing, valuation and opportunity-cost review remains within its stated validity window. This run refreshed completed August 27 prices for the priced universe, checked all open R1 and R2 closes, and re-underwrote only BRUN plus the LEU, GILT, STDN and IREN opportunity-cost bridge. It does not claim a second full-universe research rerun.
+execution_update:
+  status: standing_contribution_applied_no_trade
+  confirmed_ledger_event_ids: [2026-08-28-deposit-weekly-888-001]
+  resulting_confirmed_cash: 9671.87
+  resulting_confirmed_positions:
+    - ASTS 11 shares
+    - IREN 5 shares
+    - MDA 9 shares
+    - RKLB 17 shares
+  notes: The canonical standing-contribution command applied the exact due USD 888 occurrence under the active owner authorization. No trade, order, fill, fee, reserve position or other broker fact changed.
+article_one_preflight:
+  initial_sentinel_level: WARN
+  initial_reason_codes: [evidence_deadline_due]
+  repaired_sentinel_level: PASS
+  disposition: The due evidence deadline triggered a dated BRUN filing and price review. The narrow repair advanced BRUN to R2, moved the next evidence deadline to the scheduled Saturday cycle and left protected surfaces unchanged.
+  protected_surfaces_changed: false
+first_principles_heading: First-Principles Analysis
+first_principles_analysis:
+  question_rebuilt_from_basics: Did BRUN's filed quarter, disclosed contracts and current valuation establish a protected path from scarce AI compute to exceptional dilution-adjusted per-share cash value that beats the current opportunity set?
+  irreducible_facts:
+    - Three disclosed BRUN contracts total approximately USD 901.723 million, while management reports USD 1.9 billion of TCV and a roughly USD 400 million exit-ARR target.
+    - Q2 revenue was USD 31.138 million, but only about USD 0.721 million remained after cost of revenue, depreciation and colocation before SG&A.
+    - Customer deposits supplied USD 112.949 million of USD 114.249 million first-half operating cash flow, and finance-lease principal payments were USD 99.933 million.
+    - Disclosed purchase, software, lease and financial commitments exceed USD 2.0 billion, disclosure controls are ineffective and the current 83845141-share denominator still has incentive-plan dilution capacity.
+    - The August 27 USD 20.61 close implies approximately USD 1.728 billion of current equity value and followed a 13.30 percent raw-close one-day increase.
+  binding_constraints:
+    - Contracted demand must survive customer credit, acceptance and termination conditions.
+    - Revenue must exceed GPU depreciation, colocation, power, financing, maintenance, refresh capex and corporate overhead.
+    - Residual cash must survive dual-class control and incentive dilution, while the current price must beat LEU, GILT, STDN, held IREN and cash.
+  causal_chain: Scarce GPUs and power support binding orders; customer cash funds hardware and sites; accepted capacity produces revenue; full-cost cash exceeds all capital claims; retained cash funds expansion; and the diluted per-share result compounds from a mission-relevant position.
+  inherited_assumptions_challenged:
+    - Headline gross margin is full infrastructure margin.
+    - Customer-deposit cash is recurring owner cash.
+    - Management TCV is audited backlog.
+    - A sharp price increase creates investment eligibility.
+  value_capture_or_mission_link: BRUN is direct and newly public enough to preserve a meaningful right tail, but its present value and obligation stack require several billion dollars of durable full-cost cash-generating revenue before an extreme per-share outcome becomes credible.
+  disconfirming_evidence: Diversified creditworthy customers, accepted deployments, recurring normalized cash generation, current cash and obligation coverage, remediated controls, bounded incentive awards and a valuation reset could reverse the zero conclusion.
+  decision_consequence: Advance BRUN to R2 comparable for active research, retain incubating and pre-promotion status, keep it outside the top five and recommend no quantity or executable limit.
+source_coverage:
+  deterministic_commands:
+    - command: Reuse the complete 2026-08-27 deterministic universe scan within its validity window and revalidate the changed BRUN evidence packet against current canonical state.
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-27-scan.json
+      output_sha256: e613f45b617143d24c2bd36b72eef7b34ea25603d628b802c872b7c2371e10c9
+      retrieved_at: 2026-08-28
+      result_summary: The prior complete scan remains valid for lane and candidate scope; the current targeted review changes BRUN readiness only and adds no candidate or lane.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC quarterly, contract, capitalization and resale evidence
+      sources_or_queries: [BRUN Q2 Form 10-Q, Thinking Machines material agreement, August resale prospectus]
+      source_ids: [brun_q2_2026_10q, brun_thinking_machines_orders_2026_05_21, brun_resale_prospectus_2026_08_19]
+      retrieved_at: 2026-08-28
+      material_findings: Three disclosed contracts validate substantial demand, while total contract concentration, current cash, full-cost conversion, controls and incentive awards remain unresolved.
+    - family_id: issuer_material
+      family: Issuer results, outlook and warrant-redemption completion
+      sources_or_queries: [BRUN Q2 results, BRUN completed warrant redemption]
+      source_ids: [brun_q2_results_2026_08_14, brun_warrant_redemption_completion_2026_08_26]
+      retrieved_at: 2026-08-28
+      material_findings: Management reports USD 1.9 billion of TCV and USD 400 million exit ARR; current shares are 83845141 and warrants are zero, but current unrestricted cash and owner-cash economics remain unavailable.
+    - family_id: market_data
+      family: Completed regular-session closes and short-window research triggers
+      sources_or_queries: [August 27 supplemental closes for all open R1 and R2 candidates]
+      source_ids: [supplemental_R1_R2_closes_2026_08_27]
+      retrieved_at: 2026-08-28
+      material_findings: BRUN alone crossed the open-candidate raw-close trigger; adjusted-close precision is unverified and price creates no eligibility.
+    - family_id: current_world_context
+      family: Financing, customer, contract, deployment, control and capital-formation evidence
+      sources_or_queries: [BRUN obligations, customer prepayments, order terms, warrant proceeds and deployment schedule]
+      source_ids: [brun_q2_2026_10q, brun_thinking_machines_orders_2026_05_21, brun_warrant_redemption_completion_2026_08_26]
+      retrieved_at: 2026-08-28
+      material_findings: Customer financing and warrant proceeds improve near-term liquidity, while purchase and lease obligations, customer concentration and deployment risk still dominate survival and entry.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public capitalization, resale supply and post-SPAC structure
+      sources_or_queries: [BRUN current share count, resale registration, earnouts, dual-class control and incentive plan]
+      source_ids: [brun_q2_2026_10q, brun_resale_prospectus_2026_08_19, brun_warrant_redemption_completion_2026_08_26]
+      retrieved_at: 2026-08-28
+      material_findings: Warrant overhang is cleared and resale shares are not all new issuance, but dual-class control, existing earnouts and future incentive awards remain material.
+    - family_id: lane_evolution_current_world_search
+      family: AI-compute bottleneck and same-lane opportunity-cost comparison
+      sources_or_queries: [BRUN versus IREN, APLD, CRWV and NBIS; cross-lane LEU, GILT and STDN comparison]
+      source_ids: [brun_q2_2026_10q, brun_q2_results_2026_08_14, supplemental_R1_R2_closes_2026_08_27]
+      retrieved_at: 2026-08-28
+      material_findings: BRUN becomes an R2 compute comparator but does not add a lane, displace IREN as the strongest holding add or enter the current top five.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-28
+    notes: The complete August 27 universe review was re-used only where facts remained in their validity window. Current closes and the changed BRUN filing, contract, capitalization and issuer surfaces were refreshed; direct SEC submissions intermittently blocked, so durable SEC archives and issuer releases define the bounded coverage.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 100
+    organic_recall_count: 0
+    hard_coded_proxy_only_recall_count: 0
+    exploratory_match_count: 59
+    conclusion: The current review corrected Boost Run's issuer name and advanced BRUN to R2 without adding a candidate or lane or changing the top-five opportunity-cost set.
+unknown_future_review:
+  exploratory_match_count: 59
+  top_clusters: [issuer_and_ticker_collisions, blank_check_and_ineligible_structures, mature_or_weak_bottleneck_proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, FTRA, GDYN, NGG, QLEP, LPAA, LPBB, HBM, UROY, SAAQ, SPB, AIO, BRUN, ALOY, RCAT, GPUS-PD]
+  false_positive_patterns: [issuer_name_collision, ticker_collision, ineligible_security, weak_proxy]
+  lane_decisions: [retain_all_current_lanes, advance_BRUN_to_R2, add_no_new_lane]
+  disposition: The August 27 stratified dispositions remain valid; BRUN alone received fresh primary-source re-underwriting and remains an existing candidate rather than a newly discovered lead.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Energized and supported advanced-GPU capacity remains scarce, and BRUN has executed contracts for 5000 Thinking Machines B300 GPUs plus two other large orders.
+    inferences: Scarcity becomes common-equity value only if deployments earn cash after hardware, colocation, financing and refresh costs.
+    disconfirming_evidence: Full-cost contribution is thin and more than half of management TCV remains unreconciled.
+    source_ids: [brun_q2_2026_10q, brun_thinking_machines_orders_2026_05_21]
+    investment_implication: Preserve BRUN as an R2 comparator without promotion or quantity.
+  who_controls_or_removes_scarcity:
+    facts: BRUN assembles GPU procurement, powered colocation, automation and multi-year customer orders rather than owning a proprietary GPU or power source.
+    inferences: Contract assembly can remove deployment scarcity, but supplier, lessor and customer claims can capture much of the economics.
+    disconfirming_evidence: Purchase, software and lease commitments exceed current revenue scale and current unrestricted cash is unavailable.
+    source_ids: [brun_q2_2026_10q, brun_q2_results_2026_08_14]
+    investment_implication: Require funded deployment and obligation coverage before promotion.
+  who_can_monetize_into_shareholder_value:
+    facts: Three disclosed contracts total about USD 901.7 million and customer deposits finance part of deployment.
+    inferences: Per-share value requires positive normalized cash after deposit changes, lease principal, depreciation, colocation and dilution.
+    disconfirming_evidence: Deposits produced nearly all first-half operating cash flow and disclosure controls remain ineffective.
+    source_ids: [brun_q2_2026_10q]
+    investment_implication: Evidence passes R2 comparison but fails purchase.
+  public_security_expression:
+    facts: BRUN is Nasdaq-listed, had 83845141 current economic shares and no warrants on August 25, and closed at USD 20.61 on August 27.
+    inferences: Direct tradability and a cleared warrant overhang improve observability but do not create a buy zone.
+    disconfirming_evidence: The current price implies about USD 1.728 billion of equity value before incentive-plan dilution.
+    source_ids: [brun_warrant_redemption_completion_2026_08_26, supplemental_R1_R2_closes_2026_08_27]
+    investment_implication: Use the current denominator for comparison and keep the order quantity at zero.
+  early_small_misunderstood_or_newly_public:
+    facts: BRUN became public in May 2026 and is smaller than many listed compute peers, with a substantial named contract and rapid revenue growth.
+    inferences: The right tail is real only if multiple rounds of profitable reinvestment avoid transferring value to lessors, suppliers or new shares.
+    disconfirming_evidence: A credible tenfold outcome needs several billion dollars of sustainable revenue and much larger owner cash than current evidence proves.
+    source_ids: [brun_q2_2026_10q, brun_q2_results_2026_08_14]
+    investment_implication: Advance research depth, not security status.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [BRUN bottleneck fit, current candidate readiness, August 27 full opportunity set, IREN APLD CRWV NBIS peer context]
+      sources_checked: [brun_q2_2026_10q, brun_q2_results_2026_08_14, supplemental_R1_R2_closes_2026_08_27]
+      facts_verified: [direct AI-compute exposure, three disclosed order sets, current R2 evidence, no new lane or candidate]
+      stale_or_missing_evidence: [full TCV reconciliation, customer concentration, accepted deployments, normalized cash conversion]
+      confidence: medium_high
+      key_findings: BRUN advances to R2 in the existing AI-compute lane but does not enter the current top five.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [Q2 statements, subsequent events, customer agreement, resale prospectus, warrant completion, SEC and issuer freshness checks]
+      sources_checked: [brun_q2_2026_10q, brun_thinking_machines_orders_2026_05_21, brun_resale_prospectus_2026_08_19, brun_warrant_redemption_completion_2026_08_26]
+      facts_verified: [Boost Run issuer identity, 83845141 current shares, zero warrants, deposit-driven cash flow, large obligations, ineffective controls]
+      stale_or_missing_evidence: [current unrestricted cash, customer concentration, incentive awards, full-cost contract economics]
+      confidence: high
+      key_findings: The Q2 evidence debt is resolved and the warrant denominator is current; promotion-grade cash and contract evidence remains absent.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [disclosed contracts, revenue growth, deposits, current capitalization, management ARR and cash-margin claims, same-lane peers]
+      sources_checked: [brun_q2_2026_10q, brun_q2_results_2026_08_14, brun_thinking_machines_orders_2026_05_21, brun_warrant_redemption_completion_2026_08_26]
+      facts_verified: [USD 901.7 million of disclosed contracts, rapid Q2 revenue growth, customer prepayments, cleared warrants]
+      stale_or_missing_evidence: [TCV bridge, customer credit, deployments, owner cash, funded obligations]
+      confidence: medium
+      key_findings: Contract-funded scaling can create a meaningful right tail, but current evidence supports R2 rather than promotion or purchase.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [full-cost margin, cash-flow quality, leases, purchase commitments, customer terms, controls, governance and dilution]
+      sources_checked: [brun_q2_2026_10q, brun_thinking_machines_orders_2026_05_21, brun_resale_prospectus_2026_08_19]
+      facts_verified: [2.3 percent pre-SG-and-A full-cost contribution proxy, deposit-driven cash flow, large economic leverage, dual-class control and control weaknesses]
+      stale_or_missing_evidence: [credit support, order forms, current cash, positive normalized owner cash and funding bridge]
+      confidence: high
+      key_findings: Economic leverage, customer and funding uncertainty and full-cost losses remain decision-critical and cannot be repaired by symbolic size.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [USD 20.61 close, current shares, incentive-plan reserve stress, annualized Q2 revenue, exit ARR target and cash-margin scenarios]
+      sources_checked: [brun_q2_2026_10q, brun_q2_results_2026_08_14, brun_warrant_redemption_completion_2026_08_26, supplemental_R1_R2_closes_2026_08_27]
+      facts_verified: [USD 1.728 billion current equity value, USD 1.918 billion plan-reserve stress, 13.9 times annualized Q2 revenue and 4.3 times unproved exit ARR]
+      stale_or_missing_evidence: [current EV, normalized owner cash, incentive awards, valuation after accepted deployments]
+      confidence: high
+      key_findings: The current price assumes substantial conversion and the one-day rise weakens entry; no executable limit is supportable.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [confirmed cash and holdings, current research NAV, LEU GILT STDN IREN comparisons, smallest mission-consistent BRUN starter test]
+      sources_checked: [brun_q2_2026_10q, brun_q2_results_2026_08_14, supplemental_R1_R2_closes_2026_08_27]
+      facts_verified: [USD 9671.87 confirmed cash, USD 11971.61 research NAV, the smallest mission-consistent BRUN reference still failed to absorb the evidence gap and all current incremental quantities remain zero]
+      stale_or_missing_evidence: [BRUN full-cost owner cash, LEU funded cascade economics, GILT transaction cash flow, STDN filed quarter and IREN project returns]
+      confidence: high
+      key_findings: BRUN does not displace LEU GILT STDN or IREN; cash wins the current next dollar and position size cannot cure the evidence gap.
+  unresolved_conflicts: 0
+  conflict_resolution: Bull review supports urgent R2 comparison; filing and bear-allocation reviews agree that current contract, cash, controls, obligation and entry evidence blocks promotion and purchase. The primary evidence reconciles urgency as R2 outside the top five with quantity zero.
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: No current evidence requires a new lane; BRUN strengthens an existing direct AI-compute comparison.
+  no_change_reason: The existing AI-compute infrastructure lane already captures BRUN, IREN, APLD, CRWV and NBIS.
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: [BRUN]
+  r1_researchable: [VIP, ONDS, ALMU, SATL, EOSE, USAR, QNT, COHR, KEEL, FRMI, ALOY, RCAT]
+  r2_comparable: [STDN, APLD, AXTI, MTSI, LASR, BRUN]
+  r3_promotion_ready: []
+  no_action_challenger: LEU
+readiness_sprints:
+  - symbol: BRUN
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-28-BRUN-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#BRUN
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Current and future filings can bound customer concentration, energized deployment, normalized cash conversion, obligation coverage, current cash after warrant proceeds, internal-control remediation and incentive-plan awards.
+    final_classification: incubate
+article_one_postflight:
+  mission_advanced: true
+  necessary_boundary_preserved: true
+  ceremony_or_inactivity_added: false
+  conclusion: The run converts a reachable quarterly filing into R2 comparison, tests the smallest mission-consistent position and preserves current cash for better evidence rather than using a price move or process debt as either buy evidence or a portfolio-wide veto.

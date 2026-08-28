@@ -1,0 +1,311 @@
+schema_version: 1
+run_id: 2026-08-27-event-driven-full-operating-cycle
+run_date: 2026-08-27
+request_type: event_driven_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: Current through the first completed 2026-08-27 regular-session close, a material filing, financing, contract, authorization, confirmed account change or research-trigger price event, or 2026-08-28, whichever occurs first
+linked_decision_or_research_note: decisions/2026-08-27-event-driven-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-08-27-subagent-evidence-packet.yml
+execution_update:
+  status: no_new_account_event
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 8783.87
+  resulting_confirmed_positions:
+    - ASTS 11 shares
+    - IREN 5 shares
+    - MDA 9 shares
+    - RKLB 17 shares
+  notes: The canonical standing-contribution command returned already_recorded for all due dates through 2026-08-21. No trade, order, fill, fee, reserve position or other broker fact changed.
+article_one_preflight:
+  sentinel_level: PASS
+  reason_codes: []
+  disposition: A post-close STDN quarterly result could change evidence, entry, promotion and the top-five opportunity-cost comparison, so the Thursday sentinel escalated to a full decision cycle.
+  protected_surfaces_changed: false
+first_principles_heading: First-Principles Analysis
+first_principles_analysis:
+  question_rebuilt_from_basics: Which current public security can turn a scarce bottleneck into exceptional dilution-adjusted per-share value at a feasible weight and beat holdings, cash and all material alternatives now?
+  irreducible_facts:
+    - Confirmed cash is USD 8783.87 and confirmed holdings are ASTS 11, IREN 5, MDA 9 and RKLB 17.
+    - Seventy-one listed securities have a completed August 26 close and the full 74-security universe was reviewed.
+    - STDN completed its first commercial reactor core, reported its first quarterly gross profit, raised funded backlog to USD 119.3 million and has approximately USD 239.9 million of pro-forma cash with no debt.
+    - STDN's only completed price predates the release, USD 443.5 million of total backlog is customer options and no Q2 filing reconciles contracts or capitalization.
+  binding_constraints:
+    - Mission, evidence, entry, survival, promotion and opportunity-cost gates must all pass before a nonzero quantity.
+    - A stale event price and uncertainty that can reverse residual common-equity value cannot be repaired by symbolic size.
+  causal_chain: Scarcity must create funded demand; authorized capacity must deliver; protected economics must create repeat cash above capex and financing; the residual must survive dilution; and a feasible position must improve portfolio outcomes relative to cash and alternatives.
+  inherited_assumptions_challenged:
+    - Total backlog is contracted revenue.
+    - One positive-margin quarter or debt-free cash creates an attractive security entry.
+    - High cash weight or a sharp price move requires activity.
+  value_capture_or_mission_link: Existing holdings preserve live right tails. STDN materially improves the opportunity set and deserves R2 and top-three attention, but no current security has a complete incremental value bridge.
+  disconfirming_evidence: Protected funded LEU economics, clean GILT transaction cash flow, a filed and attractively priced STDN event bridge or positive IREN GAAP project cash returns could reverse zero exposure.
+  decision_consequence: Hold all confirmed positions and cash; open no new quantity or executable limit before fresh conjunctive evidence and valuation.
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --as-of 2026-08-27 --json --output research/discovery/runs/2026-08-27-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-08-27-scan.json
+      output_sha256: e613f45b617143d24c2bd36b72eef7b34ea25603d628b802c872b7c2371e10c9
+      retrieved_at: 2026-08-27
+      result_summary: Eighteen deterministic candidates, sixty-one known suppressed matches and fifty-nine exploratory matches produced no new retained candidate or lane.
+  community_attention:
+    status: scratch_only_current
+    source_count: 46
+    symbol_signal_count: 312
+    lane_signal_count: 43
+    result: Existing-priority attention for NVDA, NBIS, INFQ, SPCX, LITE, POET and other known symbols did not create a candidate, promotion, issuer fact or buy evidence.
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  sec_coverage:
+    listed_security_count: 71
+    event_profile_path: research/discovery/runs/2026-08-27-sec-event-filing-index-profiles.json
+    event_profile_sha256: 286c736e8901e72bc57a57492a1cea9e0cb2e8cc064d14121c8c7ae0f52633e8
+    event_profile_count: 32
+    foundational_profile_path: research/discovery/runs/2026-08-27-sec-foundational-filing-index-profiles.json
+    foundational_profile_sha256: ce35910876d37208ba9292f7205acf11f8e5e8c2adff1af2c0100a123bd89f6b
+    foundational_profile_count: 62
+    reconciliation: The event and foundational-first selectors covered the same 71 listed symbols. One foundational attempt was discarded when the live eligible count changed between child validations; a stable immediate retry succeeded. STDN still had no Q2 filing by the evidence cutoff.
+  semantic_discovery:
+    status: reused_unchanged_source_backed_classification
+    classified_issuer_count: 71
+    coverage_pct: 100
+    prior_run_path: research/discovery/runs/2026-08-22-semantic-discovery-run.json
+    invalidation_check: Current deterministic scan, lane map, filing indexes and issuer events were reviewed; STDN received fresh high-reasoning work and no other name or lane required semantic reclassification.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC event, foundational, registration, ownership, financing and transaction evidence
+      sources_or_queries: [full 71-security event index, full 71-security foundational-first index, current submissions delta]
+      source_ids: [sec_event_index_full_universe_2026_08_27, sec_foundational_index_full_universe_2026_08_27, rklb_definitive_424b3_2026_08_26, nbis_agm_issuance_authority_2026_08_26]
+      retrieved_at: 2026-08-27
+      material_findings: STDN lacks a filed quarter; RKLB advanced merger process but not financing; NBIS gained dilution authority; WYFI, ENRD, IQMX, INFQ, QBTS and MU received current dispositions.
+    - family_id: issuer_material
+      family: Company investor-relations results, contracts and operating updates
+      sources_or_queries: [STDN second-quarter result and backlog bridge]
+      source_ids: [stdn_q2_release_2026_08_26]
+      retrieved_at: 2026-08-27
+      material_findings: STDN advanced to R2 and the top-three opportunity-cost screen but retained research-only status and quantity zero.
+    - family_id: market_data
+      family: Completed regular-session adjusted closes and lookback history
+      sources_or_queries: [2026-08-26 full listed-universe close]
+      source_ids: [completed_close_universe_2026_08_26]
+      retrieved_at: 2026-08-27
+      material_findings: Seventy-one listed securities had a reliable completed close; QTEX alone crossed its tier threshold and remained unqualified.
+    - family_id: current_world_context
+      family: Macro financing, volatility, debt, contracts, customers, regulation and capital formation
+      sources_or_queries: [current macro refresh, current financing and issuer events]
+      source_ids: [macro_regime_snapshot_2026_08_27, enrd_equipment_financing_2026_08_25, nbis_agm_issuance_authority_2026_08_26]
+      retrieved_at: 2026-08-27
+      material_findings: The macro snapshot is incomplete after upstream index-proxy failures; current financing evidence adds capacity and senior claims rather than creating buy qualification.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public and transaction evidence
+      sources_or_queries: [STDN post-IPO quarter, RKLB definitive merger prospectus, open R1 and R2 candidates, XTND pre-listing record]
+      source_ids: [stdn_q2_release_2026_08_26, rklb_definitive_424b3_2026_08_26]
+      retrieved_at: 2026-08-27
+      material_findings: STDN is the only material newly public delta. OPENAI and ANTHROPIC remain unlisted and XTND remains pre-listing.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck-map and cross-lane opportunity-cost comparison
+      sources_or_queries: [advanced nuclear fuel, powered compute, satellite infrastructure, quantum systems, optical interconnect and autonomous freight]
+      source_ids: [stdn_q2_release_2026_08_26, completed_close_universe_2026_08_26]
+      retrieved_at: 2026-08-27
+      material_findings: Existing lanes cover current evidence. STDN rises to R2 and ahead of APLD; no lane is added, split, promoted, demoted or retired.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-08-27
+    notes: Current prices, filings, issuer releases, financing, dilution, debt, contracts, regulation, customers, management, transactions, listings, macro conditions and discovery leads were refreshed or bounded for all 74 securities. SEC daily-index block pages and macro proxy 403 responses were not converted into facts.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 100
+    organic_recall_count: 0
+    hard_coded_proxy_only_recall_count: 0
+    exploratory_match_count: 59
+    conclusion: Current deterministic, filing, issuer and high-reasoning review found no new material candidate; STDN was the only opportunity-set change and received a complete R2 and promotion review.
+unknown_future_review:
+  exploratory_match_count: 59
+  exploratory_denominator: 59
+  stratified_sample_count: 18
+  stratified_sample_pct: 30.5085
+  top_clusters: [issuer_and_ticker_collisions, blank_check_and_ineligible_structures, mature_or_weak_bottleneck_proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, FTRA, GDYN, NGG, QLEP, LPAA, LPBB, HBM, UROY, SAAQ, SPB, AIO, BRUN, ALOY, RCAT, GPUS-PD]
+  false_positive_patterns: [issuer_name_collision, ticker_collision, ineligible_security, weak_proxy]
+  lane_decisions: [retain_all_current_lanes, advance_STDN_to_R2, add_no_new_lane]
+  disposition: No exploratory match supplied both a source-backed bottleneck causal chain and a policy-eligible security capable of displacing the current set.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Qualified domestic TRISO and HALEU capacity, energized AI sites, optical links, sovereign quantum systems and deployment capital remain plausible long-duration bottlenecks.
+    inferences: Scarcity matters only when qualification, funded demand, protected economics and bounded dilution preserve per-share value.
+    disconfirming_evidence: Current leaders remain capital intensive, customer concentrated, richly valued, option-dependent or financing exposed.
+    source_ids: [stdn_q2_release_2026_08_26, completed_close_universe_2026_08_26]
+    investment_implication: Advance STDN to R2 and the top-three screen without opening an order.
+  who_controls_or_removes_scarcity:
+    facts: LEU and STDN express nuclear-fuel capacity; IREN and APLD control energized sites; GILT provides satellite-ground infrastructure; quantum and photonics issuers supply other constrained layers.
+    inferences: Direct control is stronger than a proxy but must still survive delivery, capex, financing and dilution.
+    disconfirming_evidence: No current issuer disclosed a complete incremental project-to-common cash-return bridge.
+    source_ids: [stdn_q2_release_2026_08_26]
+    investment_implication: LEU, GILT and STDN lead nonholdings; IREN remains the strongest holding-add candidate.
+  who_can_monetize_into_shareholder_value:
+    facts: STDN has one complete core, IREN one accepted deployment, LEU strategic backlog and GILT current operations; each lacks a decision-grade incremental per-share bridge.
+    inferences: Residual common-equity capture after contract, capex and dilution remains the binding constraint.
+    disconfirming_evidence: Protected funded contracts, repeat cash conversion or a lower valuation could change the order.
+    source_ids: [stdn_q2_release_2026_08_26, completed_close_universe_2026_08_26]
+    investment_implication: Cash wins the current next dollar.
+  public_security_expression:
+    facts: Seventy-one securities have completed closes; three remain unavailable for direct current trading under policy.
+    inferences: Observability and eligibility do not establish promotion or buy eligibility.
+    disconfirming_evidence: A completed listing plus current filing, valuation and promotion work could change a not-tradable conclusion.
+    source_ids: [completed_close_universe_2026_08_26]
+    investment_implication: No unavailable price is estimated and no pre-listing name receives quantity.
+  early_small_misunderstood_or_newly_public:
+    facts: STDN, GILT, APLD, IQMX, ENRD and the open R1/R2 set provide smaller or awkward direct expressions.
+    inferences: A smaller denominator enlarges the right tail only when survival, customer economics and dilution-adjusted capture are credible.
+    disconfirming_evidence: Contract options, financing, losses, capital stacks and missing unit economics dominate every early challenger today.
+    source_ids: [stdn_q2_release_2026_08_26]
+    investment_implication: Preserve dated service levels and false-negative triggers without promoting incomplete evidence.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [bottleneck map, deterministic scan, candidate readiness, current STDN evidence, full opportunity set]
+      sources_checked: [stdn_q2_release_2026_08_26, completed_close_universe_2026_08_26, sec_event_index_full_universe_2026_08_27]
+      facts_verified: [STDN completed a first core and reported first quarterly gross profit, the Antares agreement created the August backlog step, no exploratory lead created a new lane]
+      stale_or_missing_evidence: [filed Q2 statements, event-after price, authorization, protected contracts, repeat delivery and diluted capitalization]
+      confidence: high
+      key_findings: STDN advances to R2 and ahead of APLD but not promotion; no new candidate or lane.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [full event index, full foundational-first index, current submissions delta, issuer Q2 release, final prospectus]
+      sources_checked: [stdn_q2_release_2026_08_26, stdn_final_424b4_2026_07_16, sec_submissions_stdn_2026_08_27, rklb_definitive_424b3_2026_08_26]
+      facts_verified: [exact STDN backlog bridge, Antares customer identity, 160.674 million filed basic shares, absence of a Q2 filing, current RKLB merger timetable]
+      stale_or_missing_evidence: [STDN filed quarter and contract footnotes, event-after price, authorization and repeat industrial economics]
+      confidence: high
+      key_findings: Corrected Antares versus Radiant backlog identity, verified exact backlog bridge and share conflict, and found no Q2 filing.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [STDN Q2 economics, delivery milestones, balance sheet, backlog, dilution, portfolio weight scenarios]
+      sources_checked: [stdn_q2_release_2026_08_26, stdn_final_424b4_2026_07_16, completed_close_universe_2026_08_26]
+      facts_verified: [first complete core, Q2 gross profit, funded backlog, pro-forma debt-free cash and basic market value]
+      stale_or_missing_evidence: [repeat margins, authorization, protected firm economics, customer HALEU and event-after entry]
+      confidence: medium_high
+      key_findings: Mission and survival pass; first core gross profit funded backlog and cash strengthen the company, while evidence remains conditional and entry fails.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [STDN backlog quality, customer concentration, H1 financials, authorization, HALEU, capitalization and valuation]
+      sources_checked: [stdn_q2_release_2026_08_26, stdn_final_424b4_2026_07_16, stdn_s8_plan_2026_07_16, sec_submissions_stdn_2026_08_27]
+      facts_verified: [76.9 percent option backlog, negative H1 gross margin, 65.5 percent Q2 revenue from one agreement, basic-share conflict and no filed quarter]
+      stale_or_missing_evidence: [contract protection, customer credit and funding, normalized industrial margin, authorization, HALEU and reconciled diluted shares]
+      confidence: high
+      key_findings: Customer options are 76.9 percent of total backlog, H1 margin remains negative and authorization HALEU concentration and dilution remain material.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [STDN basic and diluted denominators, pro-forma cash, scenario valuation, current NAV, current price and alternatives]
+      sources_checked: [stdn_q2_release_2026_08_26, stdn_final_424b4_2026_07_16, stdn_s8_plan_2026_07_16, completed_close_universe_2026_08_26]
+      facts_verified: [USD 2.201 billion basic value, USD 1.961 billion pro-forma EV, 17-share mission-consistent floor and pre-event price boundary]
+      stale_or_missing_evidence: [first post-result price, filed Q2 notes, exact diluted capitalization and repeat contract economics]
+      confidence: high
+      key_findings: A 17-share starter is mission-consistent but zero wins because the base scenario is below current price and the event-after close and filed quarter are absent.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [confirmed account facts, completed closes, all holdings, LEU GILT STDN APLD and IREN comparisons, position construction]
+      sources_checked: [completed_close_universe_2026_08_26, stdn_q2_release_2026_08_26, rklb_definitive_424b3_2026_08_26]
+      facts_verified: [USD 11031.73 research NAV, 79.6237 percent cash, 18.5824 percent space exposure and all zero incremental quantities]
+      stale_or_missing_evidence: [STDN post-event price, IREN project returns, LEU protected economics and GILT final transaction cash flow]
+      confidence: high
+      key_findings: STDN leads conditional follow-up after a current price, IREN remains the strongest holding add, and all present quantities remain zero except existing holds.
+    - role: source_quality_process_red_team
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [source hierarchy, issuer release, SEC filings, submissions metadata, deterministic and filing artifacts]
+      sources_checked: [stdn_q2_release_2026_08_26, stdn_final_424b4_2026_07_16, sec_submissions_stdn_2026_08_27, sec_event_index_full_universe_2026_08_27]
+      facts_verified: [Radiant added no August backlog, Antares identity controls the backlog bridge, a blocked SEC daily index was not retained and the Q2 filing is absent]
+      stale_or_missing_evidence: [filed contract and capitalization reconciliation, event-after market data and authorization evidence]
+      confidence: high
+      key_findings: The customer-identity correction and unfiled-event boundary are preserved; R2 and top-three rank capture urgency without a false status or entry conclusion.
+  unresolved_conflicts: 0
+  conflict_resolution: The valuation reviewer favored watch promotion and allocation placed STDN first conditionally; discovery, filing and bear reviews favored no status promotion. Primary evidence resolves this as R2 and top-three urgency with research-only status, plus a first-place conditional event trigger after a reliable post-result price.
+lane_delta:
+  lanes_added: []
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: No exploratory lead passed identity, directness, eligibility and per-share value-capture review.
+  no_change_reason: Existing lanes already cover nuclear fuel, powered compute, quantum, photonics, autonomous systems, space and strategic materials.
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: [STDN]
+  r1_researchable: [VIP, ONDS, ALMU, SATL, EOSE, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
+  r2_comparable: [STDN, APLD, AXTI, MTSI, LASR]
+  r3_promotion_ready: []
+  no_action_challenger: LEU
+readiness_sprints:
+  - symbol: STDN
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-08-27-STDN-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#STDN
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Filed Q2 statements and footnotes, the first post-results completed close, authorization, protected firm-order economics, customer HALEU and funding, repeat multi-customer delivery, normalized margin, cash conversion and capitalization reconciliation.
+    final_classification: incubate
+promotion_reviews:
+  - symbol: STDN
+    review_path: research/promotion/2026-08-27-STDN-promotion-review.md
+    result: no_change_research_only_R2_top_three
+    buy_zone_status: no_buy_until_new_evidence
+allocation:
+  confirmed_cash: 8783.87
+  confirmed_sgov_value: 0
+  research_nav: 11031.73
+  cash_weight_pct: 79.6237
+  return_seeking_weight_pct: 20.3763
+  existing_space_weight_pct: 18.5824
+  holdings:
+    - {symbol: ASTS, quantity: 11, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: IREN, quantity: 5, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: MDA, quantity: 9, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: RKLB, quantity: 17, action: hold, add_quantity: 0, sell_quantity: 0}
+  strongest_nonholding: LEU
+  closest_nonholding_order: [LEU, GILT, STDN]
+  strongest_conditional_event_follow_up: STDN
+  strongest_holding_add_candidate: IREN
+  decision: no_trade_all_quantities_zero_no_executable_limits
+article_one_offensive_challenge:
+  strongest_counterfactual: LEU
+  smallest_mission_consistent_exposure: Two shares at USD 187.63 would cost USD 375.26 and represent 3.4016 percent of research NAV.
+  zero_vs_starter_result: Zero wins because protected cascade returns, TENEX replacement, expansion capital and dilution can reverse residual value; one share is below the mission-consistent floor and two shares cannot bound those economics.
+  cash_opportunity_cost: Waiting can miss a nuclear-fuel rerating and leaves 79.6237 percent in cash, but preserves flexibility for funded LEU economics, clean GILT transaction cash flow, STDN post-event evidence, IREN project returns or a stronger new bottleneck.
+  conjunctive_trigger: Funded and protected LEU economics, credible TENEX replacement and expansion capital, bounded diluted shares, positive per-share cash conversion and a fresh valuation leaving exceptional upside must all be present.
+  next_evidence_deadline: 2026-08-28
+  conclusion: "Why buy reasons remain smaller than no-buy reasons: direct scarcity does not outweigh contract and financing gaps capable of reversing common-equity value."
+publication_release:
+  contains_actionable_trading_content: true
+  public_release_status: release_allowed_after_embargo
+  public_release_earliest_at: 2026-08-28T04:30:00+08:00
+  sensitive_field_review_status: passed_no_raw_broker_identifiers_secrets_private_paths_or_unlicensed_raw_sources
+  embargo_reason: The still-valid decision contains exact existing holdings and analytical starter share counts. They are explicitly not orders or authorizations, but the conservative same-day exact-share-count embargo remains controlling until the August 27 regular close plus the 30-minute safety buffer.
+cleanup_and_meta_improvement:
+  process_review_path: null
+  durable_change: STDN now has a corrected filing review, R2 readiness record, fast-path promotion review, current valuation and top-three opportunity-cost treatment.
+  repository_skill_updated: false
+  protected_surface_changed: false
+  article_one_postflight: The cycle improved rare-opportunity coverage and corrected source identity while preserving truth, current-price, account, human-control and public-safety boundaries; zero exposure is target-specific rather than a repository-health veto.
