@@ -1,6 +1,6 @@
 schema_version: 1
 policy_version: v1.3
-as_of: 2026-08-14
+as_of: 2026-09-11
 records:
   - symbol: MDA
     as_of: 2026-08-14
@@ -31,30 +31,34 @@ records:
       - leverage exceeds the stated range without a credible operating-cash-flow path
       - persistent dilution-adjusted cash conversion misses the underwriting case
       - backlog, margin or integration evidence breaks the shareholder-value path
-    stage_review_by: 2026-08-21
+    stage_review_by: 2026-09-25
     source_path: decisions/2026-08-14-event-driven-operating-cycle.md
     source_ids:
       - completed_close_universe_2026_08_13
       - mda_q2_2026_results
       - rklb_q2_2026_10q
   - symbol: GILT
-    as_of: 2026-08-09
+    as_of: 2026-09-11
     policy_version: v1.3
-    research_stage: active_candidate_transaction_reunderwriting
+    research_stage: held_active_candidate_confirmed_starter
     initial_weight_range_pct:
       - 2
       - 4
     fully_underwritten_weight_range_pct:
       - 6
       - 12
-    current_stage: cash_conversion_and_transaction_gate_closed
+    current_stage: twenty_nine_share_starter_confirmed_at_9_66_original_9_60_ceiling_preserved
     adverse_permanent_impairment_pct: 100
     max_nav_impairment_pct: 4
-    downside_portfolio_result: Comtech integration, negative cash conversion or continued share growth could permanently impair the full starter range.
-    base_portfolio_result: A profitable small-denominator satellite-ground business can compound, but the current transaction may absorb much of that value.
-    upside_portfolio_result: Successful integration and recurring defense and mobility demand could justify material scaling.
-    exceptional_portfolio_result: A scaled ground, mobility and defense communications platform could become an underfollowed infrastructure compounder.
-    contribution_dilution_check: Weekly contributions are not the sizing cap; the post-transaction denominator and total liquidity must control any starter.
+    downside_portfolio_result: The confirmed starter can lose its full USD 280.14 cost if the transaction, cash conversion or denominator is adverse; cost was 2.0541 percent of the original pretrade research reference.
+    base_portfolio_result: Standalone profitability, acquired-segment operating profit, the funded closing bridge and the defense award support a bounded initial position while combined cash generation remains a scale gate.
+    upside_portfolio_result: Clean integration, repeat defense and mobility orders and positive combined cash conversion could support later evidence-based scaling.
+    exceptional_portfolio_result: A durable multi-orbit ground and defense platform could create rare upside, but a position becomes mission-relevant only if the portfolio can scale toward 6–12 percent after per-share economics are proved.
+    contribution_dilution_check: The broker-confirmed 29-share starter cost USD 280.14 or 2.0541 percent of the pretrade reference. It establishes mission-relevant exposure with the documented evidence-dependent scale path. The USD 9.66 fill exceeded the historical USD 9.60 ceiling and creates no further order authorization.
+    confirmed_ledger_event_id: 2026-09-11-buy-gilt-001
+    execution_note_path: decisions/2026-09-11-gilt-execution-confirmation.md
+    current_proposal_quantity: 0
+    current_proposal_execution_status: closed_after_broker_confirmed_execution
     scale_milestones:
       - combined operating cash conversion becomes positive and repeatable
       - final consideration and liquidity preserve a small per-share denominator
@@ -66,11 +70,13 @@ records:
       - persistent negative cash conversion
       - transaction economics enlarge the denominator without proportional value
       - customer or technology displacement breaks the thesis
-    stage_review_by: 2026-08-16
-    source_path: decisions/2026-08-09-weekly-operating-cycle.md
+    stage_review_by: 2026-09-18
+    source_path: research/promotion/2026-09-11-GILT-buy-zone-review.md
     source_ids:
-      - completed_close_universe_2026_08_07
+      - completed_close_universe_2026_09_10
       - gilt_q2_2026_results
+      - gilt_convert_close_2026_09_08
+      - gilt_us_defense_order_2026_09_09
   - symbol: LEU
     as_of: 2026-08-09
     policy_version: v1.3
@@ -100,7 +106,7 @@ records:
       - contract losses or funding gaps destroy per-share value
       - import replacement or financing failure breaks the bottleneck path
       - valuation eliminates dilution-adjusted asymmetry
-    stage_review_by: 2026-08-16
+    stage_review_by: 2026-09-18
     source_path: decisions/2026-08-09-weekly-operating-cycle.md
     source_ids:
       - completed_close_universe_2026_08_07
@@ -134,7 +140,7 @@ records:
       - AI value capture fails before capital needs accelerate
       - financing or dilution destroys per-share asymmetry
       - bitcoin exposure overwhelms the infrastructure thesis
-    stage_review_by: 2026-08-28
+    stage_review_by: 2026-09-25
     source_path: research/promotion/2026-08-14-IREN-promotion-review.md
     source_ids:
       - completed_close_universe_2026_08_13
@@ -168,7 +174,7 @@ records:
       - project returns fail to cover capital and financing costs
       - customer credit or contract changes impair cash flow
       - dilution-adjusted upside falls below competing powered-site candidates
-    stage_review_by: 2026-08-16
+    stage_review_by: 2026-09-25
     source_path: decisions/2026-08-09-weekly-operating-cycle.md
     source_ids:
       - completed_close_universe_2026_08_07
@@ -202,9 +208,9 @@ records:
       - bridge refinancing fails
       - tenant support weakens
       - common-equity funding destroys per-share value
-    stage_review_by: 2026-08-12
+    stage_review_by: 2026-10-15
     source_path: research/promotion/2026-08-11-RIOT-promotion.md
     source_ids:
       - completed_close_universe_2026_08_10
       - riot_q2_2026_10q_and_lease
-notes: Analytical construction ranges are not orders. MDA has one local, time-limited three-share proposal; RIOT remains quantity zero and every later scale step requires fresh evidence.
+notes: The September 11 GILT starter is confirmed as 29 shares at USD 9.66. The original USD 9.60 ceiling is preserved as an execution variance; no current proposal or live scale ladder survives. All future allocation requires fresh evidence and a new decision.

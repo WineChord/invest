@@ -1670,7 +1670,7 @@ sources:
     source_type: sec_filing
     url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003179/exhibit_99-1.htm
     source_published_at: 2026-06-15
-    retrieved_at: 2026-07-25
+    retrieved_at: 2026-09-11
     first_seen_at: 2026-07-11
     related_symbols: [GILT]
     summary: USD 157.5 million base purchase price, management-adjusted target metrics, combined forecast, regulatory approvals, price adjustments and integration risks used to re-underwrite the GILT entry gate.
@@ -1688,7 +1688,7 @@ sources:
     source_type: sec_filing
     url: https://www.sec.gov/Archives/edgar/data/23197/000002319726000069/cmtl-20260430.htm
     source_published_at: 2026-06-10
-    retrieved_at: 2026-07-25
+    retrieved_at: 2026-09-11
     first_seen_at: 2026-07-25
     related_symbols: [GILT]
     summary: The Satellite and Space Communications segment showed declining nine-month revenue, low GAAP operating margin and prior impairment, reinforcing the need for audited carve-out economics and cash conversion.
@@ -3848,7 +3848,7 @@ sources:
     source_type: sec_filing
     url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003830/zk2635803.htm
     source_published_at: 2026-08-05
-    retrieved_at: 2026-08-06
+    retrieved_at: 2026-09-11
     first_seen_at: 2026-08-06
     related_symbols: [GILT]
     summary: Gilat reported USD 122.7 million of revenue and USD 15.4 million of adjusted EBITDA, while GAAP earnings declined, first-half operating cash flow remained negative, diluted shares increased materially, and the Comtech transaction remained pending. Guidance was reiterated rather than raised.
@@ -4581,3 +4581,219 @@ sources:
     first_seen_at: 2026-08-28
     related_symbols: [VIP, APLD, ONDS, AXTI, ALMU, SATL, EOSE, MTSI, LASR, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
     summary: Nasdaq historical data supplied completed August 27 closes for all 17 open R1 and R2 candidates. BRUN alone crossed its raw-close short-window trigger; adjusted-close treatment was not independently verified, so the rows are research triggers and create no promotion or order eligibility.
+  - id: leu_radiant_haleu_contract_2026_09_09
+    title: Centrus and Radiant Domestic HALEU Supply Contract
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000162828026061036/ex991-centrusandradianta.htm
+    source_published_at: 2026-09-09
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [LEU]
+    summary: A definitive multi-year contract covers HALEU for multiple Radiant Kaleidos microreactors with deliveries before decade-end and customer prepayments toward domestic enrichment capacity; value, volume, pricing, margins, termination terms and total funding needs are undisclosed.
+  - id: completed_close_universe_2026_09_10
+    title: Completed September 10 Research-Universe Market Data
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/
+    source_published_at: 2026-09-10
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [RKLB, ASTS, CRDO, ALAB, VRT, NBIS, MU, CRWV, CRCL, LITE, CBRS, IREN, OKLO, BE, LEU, GSAT, KTOS, IONQ, LUNR, RDW, FLY, YSS, VOYG, XNDU, FN, ETN, PWR, SPCX, MDA, GILT, IQMX, NNE, HQ, NUCL, QBTS, QUBT, RGTI, SMR, AAOI, INFQ, WYFI, WULF, IMSR, POET, STDN, CIFR, OCC, SEI, QTEX, ENRD, QSI, NWPX, RIOT, ASPI]
+    summary: Committed Yahoo chart data supplies completed September 10 regular-session closes and adjusted-close return windows for all 54 canonical listed research securities; retrieved at 2026-09-11T07:10:15.035Z.
+  - id: nasdaq_supplemental_closes_2026_09_10
+    title: Nasdaq Historical Data for Open R1 and R2 Candidates
+    source_type: market_data
+    url: https://api.nasdaq.com/api/quote/
+    source_published_at: 2026-09-10
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [VIP, APLD, ONDS, AXTI, ALMU, SATL, EOSE, MTSI, LASR, USAR, QNT, COHR, KEEL, FRMI, BRUN, ALOY, RCAT]
+    summary: Nasdaq historical pages supplied completed September 10 raw closes and 1D, 5D, 1M, 3M and 6M raw-close windows for all 17 supplemental open candidates. Adjusted-close treatment was not independently verified, so these data are research triggers and not promotion or order evidence.
+  - id: gilt_convert_close_2026_09_08
+    title: Gilat USD 100 Million Convertible Notes Closing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326004427/zk2636044.htm
+    source_published_at: 2026-09-08
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [GILT]
+    summary: Gilat completed USD 100 million of senior unsecured notes bearing 3.75 percent interest, subject to a 1.25-point step-up, due 2031 and initially convertible at USD 16.00 per share.
+  - id: gilt_us_defense_order_2026_09_09
+    title: Gilat Multi-Band DKET Defense Order
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326004448/zk2636093.htm
+    source_published_at: 2026-09-09
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [GILT]
+    summary: Gilat DataPath received a greater-than-USD 32 million U.S. defense order for deployable Ku, Ka and X-band systems, with deliveries expected over 12 months.
+  - id: leu_provisional_424b5_2026_09_09
+    title: Centrus Provisional Multi-Security Prospectus Supplement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000110465926106409/tm2625019d1_424b5.htm
+    source_published_at: 2026-09-09
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [LEU]
+    summary: The preliminary supplement describes common stock, pre-funded warrants and warrant series at 125, 150, 175 and 200 percent of an unspecified reference price; quantities, price and proceeds remain blank.
+  - id: iren_fy2026_10k
+    title: IREN Fiscal 2026 Form 10-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1878848/000187884826000052/iren-20260630.htm
+    source_published_at: 2026-08-27
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [IREN]
+    summary: The annual filing reports USD 707 million revenue, USD 128.8 million AI-cloud revenue, USD 5.896 billion cash, approximately USD 7.976 billion debt and lease liabilities, a USD 702.6 million loss and approximately USD 13.81 billion of commitments.
+  - id: stdn_q2_2026_10q
+    title: Standard Nuclear Second-Quarter 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2086716/000162828026059189/nucl-20260630.htm
+    source_published_at: 2026-08-27
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [STDN]
+    summary: The filed quarter confirms first quarterly gross profit and a current 144,972,447 Class A plus 11,578,308 Class B basic-share denominator, while authorization, repeat cash economics and customer-option quality remain unresolved.
+  - id: crdo_q2_fy2027_10q
+    title: Credo Second-Quarter Fiscal 2027 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026060111/crdo-20260801.htm
+    source_published_at: 2026-09-02
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [CRDO]
+    summary: Credo reported USD 479 million quarterly revenue, 64.5 percent gross margin and USD 129.4 million net income, alongside 43 and 28 percent customer concentrations and USD 88 million of stock compensation.
+  - id: occ_q3_fy2026_10q
+    title: Optical Cable Third-Quarter Fiscal 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1000230/000143774926029950/occ20260731_10q.htm
+    source_published_at: 2026-09-09
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [OCC]
+    summary: OCC reported USD 24.3 million quarterly revenue, 37.4 percent gross margin, USD 1.9 million net income and USD 13.5 million backlog, with USD 0.297 million cash and USD 6.3 million revolver borrowings.
+  - id: rgti_chips_award_2026_09_08
+    title: Rigetti CHIPS Research Award and Equity Issuance
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1838359/000110465926105662/tm2624940d1_8k.htm
+    source_published_at: 2026-09-08
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [RGTI]
+    summary: The Department of Commerce agreed to provide up to USD 100 million of milestone-based CHIPS funding and received 7,739,938 shares at an implied USD 12.92 price, subject to transfer, clawback and compliance terms.
+  - id: vrt_utility_innovation_acquisition_2026_09_02
+    title: Vertiv Utility Innovation Holdings Acquisition Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1674101/000119312526379306/d472406d8k.htm
+    source_published_at: 2026-09-02
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [VRT]
+    summary: Vertiv agreed to approximately USD 1.45 billion of upfront cash consideration plus up to USD 1.15 billion of contingent cash consideration for Utility Innovation Holdings.
+  - id: sei_omega_acquisition_2026_09_08
+    title: Solaris Omega Foundation Services Acquisition
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526385257/d441137d8k.htm
+    source_published_at: 2026-09-08
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [SEI]
+    summary: Solaris closed the Omega acquisition for 3,599,199 Class A shares plus approximately USD 77 million cash, subject to post-closing adjustments and related integration obligations.
+  - id: crcl_tazapay_acquisition_2026_09_08
+    title: Circle Tazapay Share Purchase Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1876042/000187604226000267/crcl-20260904.htm
+    source_published_at: 2026-09-08
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [CRCL]
+    summary: Circle agreed to acquire Tazapay for Class A shares worth USD 400 million, with the exact share count tied to the pre-closing 20-day volume-weighted price and subject to adjustments and holdbacks.
+  - id: qbts_doc_resale_2026_09_10
+    title: D-Wave Department of Commerce Resale Registration
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000146/qbts-20260910.htm
+    source_published_at: 2026-09-10
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [QBTS]
+    summary: The filing registers 7,095,721 Department of Commerce shares for resale; it does not create new issuer cash or technical-commercial evidence.
+  - id: xndu_canada_support_2026_08_28
+    title: Xanadu CAD 195 Million Canada Support Agreement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2097163/000121390026095089/ea0302726-6k_xanadu.htm
+    source_published_at: 2026-08-28
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [XNDU]
+    summary: Canada committed CAD 195 million to Xanadu's quantum supply-chain and advanced-photonics facility, improving technical runway without proving commercial per-share economics.
+  - id: aaoi_texas_property_purchase_2026_09_10
+    title: Applied Optoelectronics Texas Property Purchase
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1158114/000168316826007057/aaoi_8k.htm
+    source_published_at: 2026-09-10
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [AAOI]
+    summary: Applied Optoelectronics paid USD 26.783 million cash for a 153,928-square-foot Texas office, warehouse and light-manufacturing property.
+  - id: usar_serra_verde_close_2026_09_04
+    title: USA Rare Earth Serra Verde Acquisition Closing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000121390026097399/ea0304001-8k_usarare.htm
+    source_published_at: 2026-09-04
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [USAR, ALOY]
+    summary: USA Rare Earth closed the Serra Verde acquisition for USD 300 million cash plus 126849307 shares and disclosed potential DFC financing capacity of up to USD 565 million; pro-forma leverage, cash needs and dilution-adjusted economics remain unresolved.
+  - id: qnt_chips_award_2026_09_08
+    title: Quantinuum CHIPS Award and Equity Issuance
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2110105/000162828026060934/qnt-20260908.htm
+    source_published_at: 2026-09-08
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [QNT]
+    summary: Commerce agreed to provide up to USD 100 million, with USD 56 million initially available and later USD 32 million and USD 12 million milestone tranches, and received 2369528 shares.
+  - id: xtnd_merger_close_2026_09_03
+    title: XTEND Merger Closing and NYSE Listing
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2111860/000119312526381857/d230933d8k12b.htm
+    source_published_at: 2026-09-03
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [XTND]
+    summary: The merger closed and XTND began NYSE trading on September 4; former owners retain 79.61 percent on a fully diluted basis and 27544248 pre-funded warrants add denominator pressure.
+  - id: vip_pipe_recapitalization_2026_09_10
+    title: Vulcan PIPE Recapitalization
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1844971/000119380526001214/e665775_8k-vulcan.htm
+    source_published_at: 2026-09-10
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: [VIP]
+    summary: A roughly USD 39.32 million PIPE primarily redeems USD 33.1 million of senior notes while adding approximately 17.15 million shares, a USD 10 million 10 percent PIK convertible and 1.754 million warrants against 35.548 million shares outstanding.
+  - id: macro_regime_snapshot_2026_09_11
+    title: Financing and Volatility Overlay — 2026-09-11
+    source_type: market_and_government_data
+    url: https://fred.stlouisfed.org/
+    source_published_at: 2026-09-10
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: []
+    summary: The available snapshot records 4.43 percent two-year and 4.83 percent ten-year Treasury yields, 2.46 percent ten-year real yield, 271 basis-point high-yield and 81 basis-point investment-grade spreads, and VIX 16.46; equity-index proxies were unavailable after upstream 403 responses.
+  - id: sec_event_index_full_universe_2026_09_11
+    title: Full 72-Security SEC Event Filing Index — 2026-09-11
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-11
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: []
+    summary: The event selector covered all 72 listed decision-universe securities and produced 72 manifest rows and 40 filing profiles; generated artifacts are hash-anchored in the dated discovery index.
+  - id: sec_foundational_index_full_universe_2026_09_11
+    title: Full 72-Security SEC Foundational-First Filing Index — 2026-09-11
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-11
+    retrieved_at: 2026-09-11
+    first_seen_at: 2026-09-11
+    related_symbols: []
+    summary: The foundational-first selector covered all 72 listed decision-universe securities and produced 71 manifest rows and 63 profiles; newly listed XTND had no supported foundational filing.

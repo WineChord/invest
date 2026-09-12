@@ -3,12 +3,66 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { parse as parseYaml, stringify as stringifyYaml } from "yaml";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkDataScript = path.join(repoRoot, "scripts/check-data.mjs");
 const fixtureRoot = mkdtempSync(path.join(tmpdir(), "invest-promotion-gates-"));
 
 const testCases = [
+  ...["tool_unavailable", "not_material_to_request", "already_resolved_by_primary_evidence"].map((reason) => ({
+    name: `accepts a bound structured promotion review with ${reason}`,
+    mutate: (cwd) => installStructuredReviewerFixture(cwd, reason),
+    expected: null,
+  })),
+  {
+    name: "rejects a false completed reviewer claim",
+    mutate: (cwd) => {
+      installStructuredReviewerFixture(cwd);
+      const records = readCsvFile(cwd, "research/watchlist-transitions.csv");
+      records.rows.filter((row) => row.symbol === "RKLB").at(-1).xhigh_roles_completed += ";evidence_freshness";
+      writeCsvFile(cwd, "research/watchlist-transitions.csv", records);
+    },
+    expected: "claimed completed reviewer freshness_filing_review is not completed in the linked run",
+  },
+  {
+    name: "rejects a wrong promotion binding despite a full completed-role claim",
+    mutate: (cwd) => {
+      const file = installStructuredReviewerFixture(cwd);
+      const review = parseYaml(readFileSync(file, "utf8"));
+      review.promotion_reviews[0].symbol = "GILT";
+      writeFileSync(file, stringifyYaml(review));
+      const records = readCsvFile(cwd, "research/watchlist-transitions.csv");
+      records.rows.filter((row) => row.symbol === "RKLB").at(-1).xhigh_roles_completed = "evidence_freshness;valuation_entry;bull_case;bear_case;opportunity_cost_allocation";
+      writeCsvFile(cwd, "research/watchlist-transitions.csv", records);
+    },
+    expected: "structured promotion review must bind the same symbol and source_path with reviewer records",
+  },
+  {
+    name: "rejects an unsupported structured reviewer skip reason",
+    mutate: (cwd) => installStructuredReviewerFixture(cwd, "convenient_to_skip"),
+    expected: "structured reviewer freshness_filing_review skip_reason",
+  },
+  {
+    name: "rejects a structured review bound to another decision date",
+    mutate: (cwd) => {
+      const file = installStructuredReviewerFixture(cwd);
+      const review = parseYaml(readFileSync(file, "utf8"));
+      review.run_date = "1900-01-01";
+      writeFileSync(file, stringifyYaml(review));
+    },
+    expected: "structured reviewer run_date must match decided_at",
+  },
+  {
+    name: "rejects duplicate aliases for a structured reviewer role",
+    mutate: (cwd) => {
+      const file = installStructuredReviewerFixture(cwd);
+      const review = parseYaml(readFileSync(file, "utf8"));
+      review.subagents.required_roles.push({ ...review.subagents.required_roles[0], role: "evidence_freshness" });
+      writeFileSync(file, stringifyYaml(review));
+    },
+    expected: "duplicate structured reviewer role freshness_filing_review",
+  },
   {
     name: "rejects missing active transition",
     mutate: (cwd) => {
@@ -101,6 +155,13 @@ try {
     const cwd = makeFixture(slug(testCase.name));
     testCase.mutate(cwd);
     const result = runCheckData(cwd);
+    if (testCase.expected === null) {
+      if (result.status !== 0) {
+        throw new Error(`${testCase.name}: expected success, got:\n${result.output}`);
+      }
+      console.log(`ok ${testCase.name}`);
+      continue;
+    }
     if (result.status === 0) {
       throw new Error(`${testCase.name}: expected failure, got success`);
     }
@@ -119,6 +180,7 @@ function makeFixture(name) {
     cpSync(path.join(repoRoot, entry), path.join(target, entry), {
       recursive: true,
       force: true,
+      filter: (source) => !/^research\/(cache|downloads)(\/|$)/.test(path.relative(repoRoot, source).split(path.sep).join("/")),
     });
   }
   mkdirSync(path.join(target, "scripts"), { recursive: true });
@@ -141,6 +203,29 @@ function runCheckData(cwd) {
     status: result.status,
     output: `${result.stdout ?? ""}${result.stderr ?? ""}`,
   };
+}
+
+function installStructuredReviewerFixture(cwd, reason = "tool_unavailable") {
+  const records = readCsvFile(cwd, "research/watchlist-transitions.csv");
+  const row = records.rows.filter((entry) => entry.symbol === "RKLB").at(-1);
+  row.xhigh_roles_completed = "bull_case;bear_case";
+  row.subagent_review_path = "research/promotion/structured-reviewer-fixture.yml";
+  writeCsvFile(cwd, "research/watchlist-transitions.csv", records);
+  const file = path.join(cwd, row.subagent_review_path);
+  writeFileSync(file, stringifyYaml({
+    run_date: row.decided_at,
+    promotion_reviews: [{ symbol: row.symbol, review_path: row.source_path }],
+    subagents: {
+      required_roles: ["freshness_filing_review", "valuation_entry", "allocation_risk", "bull_case", "bear_case"].map((role) => ({
+        role,
+        reasoning_level: "xhigh",
+        independent_context: true,
+        completed: role === "bull_case" || role === "bear_case",
+        skip_reason: role === "bull_case" || role === "bear_case" ? null : reason,
+      })),
+    },
+  }));
+  return file;
 }
 
 function removeSymbolRow(cwd, relativePath, symbol) {

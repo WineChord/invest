@@ -1216,6 +1216,106 @@ function requireNonEmptyStringArray(value, context) {
   }
 }
 
+function validateResolvedXhighRoles(process, context) {
+  const completedRoles = new Set(process.completed_xhigh_roles);
+  const skippedRoles = new Set(process.skipped_xhigh_roles);
+  const skipReasons = process.skipped_xhigh_role_reasons;
+  if (skipReasons === null || typeof skipReasons !== "object" || Array.isArray(skipReasons)) {
+    throw new Error(`${context}.skipped_xhigh_role_reasons must be an object`);
+  }
+  completedRoles.forEach((role) => {
+    if (skippedRoles.has(role)) {
+      throw new Error(`${context} role ${role} must not be both completed and skipped`);
+    }
+  });
+  process.required_xhigh_roles.forEach((role) => {
+    if (!completedRoles.has(role) && !skippedRoles.has(role)) {
+      throw new Error(`${context}.resolved_xhigh_roles is missing required role ${role}`);
+    }
+  });
+  skippedRoles.forEach((role) => {
+    if (!Object.hasOwn(skipReasons, role)) {
+      throw new Error(`${context} missing skip reason for ${role}`);
+    }
+    requireAllowed(skipReasons[role], allowedSubagentSkipReasons, `${context}.skipped_xhigh_role_reasons.${role}`);
+  });
+  Object.keys(skipReasons).forEach((role) => {
+    if (!skippedRoles.has(role)) {
+      throw new Error(`${context}.skipped_xhigh_role_reasons includes unskipped role ${role}`);
+    }
+  });
+}
+
+function resolvedXhighReviewStatus(process) {
+  if (process.skipped_xhigh_roles.length === 0) {
+    return "complete";
+  }
+  return process.skipped_xhigh_roles.some((role) =>
+    process.skipped_xhigh_role_reasons[role] === "tool_unavailable")
+    ? "partial_tool_unavailable"
+    : "partial_allowed_skips";
+}
+
+function validateTransitionReviewerCoverage(row, requiredRoles, context) {
+  const normalizeRole = (role) => ({
+    evidence_freshness: "freshness_filing_review",
+    opportunity_cost_allocation: "allocation_risk",
+  }[role] ?? role);
+  const completed = splitSemicolonList(row.xhigh_roles_completed).map(normalizeRole);
+  const review = /\.ya?ml$/.test(row.subagent_review_path)
+    ? parseYaml(readFileSync(row.subagent_review_path, "utf8"))
+    : null;
+  if (review?.promotion_reviews === undefined) {
+    requireRoles(row.xhigh_roles_completed, requiredRoles, `${context} xhigh_roles_completed`);
+    return;
+  }
+  const roles = review?.subagents?.required_roles;
+  const boundPromotion = Array.isArray(review.promotion_reviews)
+    && review.promotion_reviews.some((entry) =>
+      entry.symbol === row.symbol && entry.review_path === row.source_path);
+  if (!Array.isArray(roles) || !boundPromotion) {
+    throw new Error(`${context} structured promotion review must bind the same symbol and source_path with reviewer records`);
+  }
+  if (review.run_date !== row.decided_at) {
+    throw new Error(`${context} structured reviewer run_date must match decided_at`);
+  }
+  const byRole = new Map();
+  for (const entry of roles) {
+    requireString(entry?.role, `${context} structured reviewer role`);
+    const role = normalizeRole(entry.role);
+    if (byRole.has(role)) {
+      throw new Error(`${context} duplicate structured reviewer role ${role}`);
+    }
+    requireBoolean(entry.completed, `${context} structured reviewer ${role} completed`);
+    if (entry.completed && entry.skip_reason != null) {
+      throw new Error(`${context} structured reviewer ${role} cannot be completed and skipped`);
+    }
+    if (!entry.completed) {
+      requireAllowed(entry.skip_reason, allowedSubagentSkipReasons, `${context} structured reviewer ${role} skip_reason`);
+    } else if (entry.reasoning_level !== "xhigh" || entry.independent_context !== true) {
+      throw new Error(`${context} completed structured reviewer ${role} must be independent xhigh`);
+    }
+    byRole.set(role, entry);
+  }
+  if (new Set(completed).size !== completed.length) {
+    throw new Error(`${context} xhigh_roles_completed contains duplicate roles`);
+  }
+  for (const role of completed) {
+    if (byRole.get(role)?.completed !== true) {
+      throw new Error(`${context} claimed completed reviewer ${role} is not completed in the linked run`);
+    }
+  }
+  for (const role of requiredRoles.map(normalizeRole)) {
+    if (completed.includes(role)) {
+      continue;
+    }
+    const entry = byRole.get(role);
+    if (entry?.completed !== false || !allowedSubagentSkipReasons.has(entry.skip_reason)) {
+      throw new Error(`${context} required reviewer ${role} needs recorded completion or an explicit allowed skip`);
+    }
+  }
+}
+
 function validateDurableDiscoveryArtifactPortability() {
   [
     "research/discovery/runs",
@@ -2571,7 +2671,6 @@ function validatePromotionData() {
       "trigger_type",
       "source_path",
       "subagent_review_path",
-      "xhigh_roles_completed",
       "mission_gate",
       "evidence_gate",
       "entry_gate",
@@ -2608,7 +2707,7 @@ function validatePromotionData() {
       || row.buy_zone_status === "in_buy_zone"
       ? corePromotionXhighRoles
       : requiredPromotionXhighRoles;
-    requireRoles(row.xhigh_roles_completed, requiredRoles, `${context} xhigh_roles_completed`);
+    validateTransitionReviewerCoverage(row, requiredRoles, context);
   });
 
   buyZoneRows.forEach((row, index) => {
@@ -2863,6 +2962,7 @@ function validateQualityMetrics() {
     "completed_xhigh_roles",
     "skipped_xhigh_roles",
   ].forEach((field) => requireStringArray(watchlistProcess[field], `${qualityMetricsFile} watchlist_process.${field}`));
+  validateResolvedXhighRoles(watchlistProcess, `${qualityMetricsFile} watchlist_process`);
   if (!existsSync(watchlistProcess.latest_cycle_review_path)) {
     throw new Error(`${qualityMetricsFile} watchlist_process.latest_cycle_review_path does not exist: ${watchlistProcess.latest_cycle_review_path}`);
   }
@@ -2873,17 +2973,15 @@ function validateQualityMetrics() {
     "full_watchlist_review_status",
     "priority_status_refresh_status",
     "buy_zone_refresh_status",
-    "independent_xhigh_reprioritization_status",
   ].forEach((field) => {
     if (watchlistProcess[field] !== "complete") {
       throw new Error(`${qualityMetricsFile} watchlist_process.${field} must be complete`);
     }
   });
-  watchlistProcess.required_xhigh_roles.forEach((role) => {
-    if (!watchlistProcess.completed_xhigh_roles.includes(role)) {
-      throw new Error(`${qualityMetricsFile} watchlist_process.completed_xhigh_roles is missing required role ${role}`);
-    }
-  });
+  const expectedWatchlistReviewStatus = resolvedXhighReviewStatus(watchlistProcess);
+  if (watchlistProcess.independent_xhigh_reprioritization_status !== expectedWatchlistReviewStatus) {
+    throw new Error(`${qualityMetricsFile} watchlist_process.independent_xhigh_reprioritization_status must be ${expectedWatchlistReviewStatus}`);
+  }
   [
     "latest_discovery_run_path",
     "latest_bottleneck_review_path",
@@ -2915,15 +3013,19 @@ function validateQualityMetrics() {
     "skipped_xhigh_roles",
     "allocation_relevant_lanes",
   ].forEach((field) => requireStringArray(discoveryProcess[field], `${qualityMetricsFile} discovery_process.${field}`));
+  validateResolvedXhighRoles(discoveryProcess, `${qualityMetricsFile} discovery_process`);
   [
     "first_layer_questions_status",
     "broad_source_search_status",
-    "independent_xhigh_subagents_status",
   ].forEach((field) => {
     if (discoveryProcess[field] !== "complete") {
       throw new Error(`${qualityMetricsFile} discovery_process.${field} must be complete`);
     }
   });
+  const expectedDiscoveryReviewStatus = resolvedXhighReviewStatus(discoveryProcess);
+  if (discoveryProcess.independent_xhigh_subagents_status !== expectedDiscoveryReviewStatus) {
+    throw new Error(`${qualityMetricsFile} discovery_process.independent_xhigh_subagents_status must be ${expectedDiscoveryReviewStatus}`);
+  }
   if (discoveryProcess.name_ticker_universe_coverage_status !== "complete") {
     throw new Error(`${qualityMetricsFile} discovery_process.name_ticker_universe_coverage_status must be complete`);
   }
@@ -2940,28 +3042,6 @@ function validateQualityMetrics() {
     throw new Error(
       `${qualityMetricsFile} exploratory_sample_coverage_pct is ${discoveryProcess.exploratory_sample_coverage_pct}, expected ${expectedExploratoryCoverage.toFixed(4)}`,
     );
-  }
-  const completedDiscoveryRoles = new Set(discoveryProcess.completed_xhigh_roles);
-  const skippedDiscoveryRoles = new Set(discoveryProcess.skipped_xhigh_roles);
-  completedDiscoveryRoles.forEach((role) => {
-    if (skippedDiscoveryRoles.has(role)) {
-      throw new Error(`${qualityMetricsFile} discovery_process role ${role} must not be both completed and skipped`);
-    }
-  });
-  discoveryProcess.required_xhigh_roles.forEach((role) => {
-    if (!completedDiscoveryRoles.has(role) && !skippedDiscoveryRoles.has(role)) {
-      throw new Error(`${qualityMetricsFile} discovery_process.resolved_xhigh_roles is missing required role ${role}`);
-    }
-  });
-  if (readiness.can_recommend_buys) {
-    discoveryProcess.required_xhigh_roles.forEach((role) => {
-      if (!completedDiscoveryRoles.has(role)) {
-        throw new Error(`${qualityMetricsFile} buy-capable discovery_process.completed_xhigh_roles is missing required role ${role}`);
-      }
-    });
-    if (discoveryProcess.skipped_xhigh_roles.length > 0) {
-      throw new Error(`${qualityMetricsFile} buy-capable discovery_process must not skip required xhigh roles`);
-    }
   }
   const laneIds = discoveryLaneIds();
   discoveryProcess.allocation_relevant_lanes.forEach((laneId) => {
@@ -3048,6 +3128,14 @@ function validateQualityMetrics() {
     );
   }
   const activeSymbolsWithLatestFilingReview = currentFilingReviewSymbolSet(activeSymbols, asOfTimestamp, gates.watchlist_cycle_review_max_age_days);
+  const currentBuyZoneSymbols = [...latestRowsBySymbol(csvRecords(buyZonesFile), "as_of").values()]
+    .filter((row) => row.as_of === parsed.as_of && row.buy_zone_status === "in_buy_zone")
+    .map((row) => row.symbol);
+  currentBuyZoneSymbols.forEach((symbol) => {
+    if (!activeSymbolsWithLatestFilingReview.has(symbol)) {
+      throw new Error(`${qualityMetricsFile} current in_buy_zone target ${symbol} lacks a current latest-filing review`);
+    }
+  });
   if (coverage.active_symbols_with_latest_filing_review !== activeSymbolsWithLatestFilingReview.size) {
     throw new Error(
       `${qualityMetricsFile} active_symbols_with_latest_filing_review is ${coverage.active_symbols_with_latest_filing_review}, expected ${activeSymbolsWithLatestFilingReview.size}`,
@@ -3114,7 +3202,12 @@ function validateQualityMetrics() {
     );
   }
   validateOldestOpenEventDate(freshness, openEvents);
-  validateStaleThesisCount(freshness, asOfTimestamp, gates.thesis_review_max_age_days);
+  const staleThesisSymbols = validateStaleThesisCount(freshness, asOfTimestamp, gates.thesis_review_max_age_days);
+  currentBuyZoneSymbols.forEach((symbol) => {
+    if (staleThesisSymbols.has(symbol)) {
+      throw new Error(`${qualityMetricsFile} current in_buy_zone target ${symbol} has a stale thesis baseline`);
+    }
+  });
   validateStaleValuationCount(freshness, activeSymbols, asOfTimestamp, gates.valuation_state_max_age_days);
 
   if (readiness.status === "ready") {
@@ -3122,16 +3215,14 @@ function validateQualityMetrics() {
       allocationBlockingOpenCriticalEvents > 0
       || allocationBlockingOpenHighEvents > 0
       || missingValuations > 0
-      || missingFilingReviews > 0
       || missingCycleReviews > 0
-      || freshness.stale_theses_over_90_days > 0
       || freshness.stale_valuation_states_over_45_days > 0
       || discoveryProcess.unresolved_subagent_conflicts > 0
       || watchlistProcess.unresolved_watchlist_review_conflicts > 0
       || discoveryProcess.open_candidates_without_readiness_sprint > 0
       || discoveryProcess.material_open_candidates_blocking_allocation > 0
     ) {
-      throw new Error(`${qualityMetricsFile} cannot be ready with allocation-blocking high or critical events, missing active-symbol coverage, missing current watchlist-cycle reviews, stale active theses or valuations, unresolved subagent conflicts, or material candidate readiness blockers`);
+      throw new Error(`${qualityMetricsFile} cannot be ready with allocation-blocking high or critical events, missing current valuations or watchlist-cycle reviews, stale valuations, unresolved subagent conflicts, or material candidate readiness blockers`);
     }
   }
   console.log(`ok ${qualityMetricsFile} semantic checks`);
@@ -5381,7 +5472,11 @@ function validateDiscoveryRunSubagents(file, subagents, discoveryProcess) {
     );
     requiredDiscoveryRunSubagentFields.forEach((field) => {
       if (Array.isArray(role?.[field])) {
-        requireNonEmptyStringArray(role[field], `${context} ${field}`);
+        if (role.completed) {
+          requireNonEmptyStringArray(role[field], `${context} ${field}`);
+        } else {
+          requireStringArray(role[field], `${context} ${field}`);
+        }
       } else {
         requireString(role?.[field], `${context} ${field}`);
       }
@@ -5436,13 +5531,14 @@ function validateOldestOpenEventDate(freshness, openEvents) {
 }
 
 function validateStaleThesisCount(freshness, asOfTimestamp, maxAgeDays) {
-  const staleCount = csvRecords(watchlistFile)
+  const staleSymbols = new Set(csvRecords(watchlistFile)
     .filter((row) => activeWatchlistStatuses.has(row.status))
     .filter((row) => daysBetween(parseDate(row.latest_baseline_date, `${watchlistFile} ${row.symbol} latest_baseline_date`), asOfTimestamp) > maxAgeDays)
-    .length;
-  if (freshness.stale_theses_over_90_days !== staleCount) {
-    throw new Error(`${qualityMetricsFile} stale_theses_over_90_days is ${freshness.stale_theses_over_90_days}, expected ${staleCount}`);
+    .map((row) => row.symbol));
+  if (freshness.stale_theses_over_90_days !== staleSymbols.size) {
+    throw new Error(`${qualityMetricsFile} stale_theses_over_90_days is ${freshness.stale_theses_over_90_days}, expected ${staleSymbols.size}`);
   }
+  return staleSymbols;
 }
 
 function validateStaleValuationCount(freshness, activeSymbols, asOfTimestamp, maxAgeDays) {

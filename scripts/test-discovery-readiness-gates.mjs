@@ -5,6 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { parse as parseYaml, stringify as stringifyYaml } from "yaml";
+import { parseCsv } from "./standing-contribution-lib.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkDataScript = path.join(repoRoot, "scripts/check-data.mjs");
@@ -220,6 +221,34 @@ const testCases = [
     expected: "active_symbols_with_latest_filing_review is",
   },
   {
+    name: "rejects in-buy-zone target without current filing review",
+    mutate: (cwd) => {
+      setCurrentGiltBuyZone(cwd);
+      removeSymbolRows(cwd, "research/freshness/events.csv", "GILT");
+    },
+    expected: "current in_buy_zone target GILT lacks a current latest-filing review",
+  },
+  {
+    name: "rejects in-buy-zone target with stale thesis baseline",
+    mutate: (cwd) => {
+      setCurrentGiltBuyZone(cwd);
+      const metrics = readQualityMetrics(cwd);
+      let staleCountDelta = 0;
+      updateCsvSymbolRow(cwd, "research/watchlist.csv", "GILT", (row) => {
+        const age = (Date.parse(metrics.as_of) - Date.parse(row.latest_baseline_date)) / 86400000;
+        staleCountDelta = age > metrics.quality_gates.thesis_review_max_age_days ? 0 : 1;
+        return { ...row, latest_baseline_date: "1900-01-01" };
+      });
+      updateYaml(cwd, "research/quality-metrics.yml", (doc) => {
+        doc.freshness.stale_theses_over_90_days += staleCountDelta;
+      });
+      updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
+        doc.quality_metrics.freshness.stale_theses_over_90_days += staleCountDelta;
+      });
+    },
+    expected: "current in_buy_zone target GILT has a stale thesis baseline",
+  },
+  {
     name: "rejects newer active SEC filing without latest review",
     mutate: (cwd) => {
       appendCsvRow(cwd, "research/freshness/events.csv", {
@@ -280,7 +309,7 @@ const testCases = [
     expected: "discovery_process.resolved_xhigh_roles is missing required role bear_case",
   },
   {
-    name: "rejects skipped buy-capable discovery xhigh role",
+    name: "rejects discovery reviewer skip without an explicit allowed reason",
     mutate: (cwd) => {
       updateYaml(cwd, "research/quality-metrics.yml", (doc) => {
         doc.discovery_process.completed_xhigh_roles = doc.discovery_process.completed_xhigh_roles
@@ -292,13 +321,8 @@ const testCases = [
           .filter((role) => role !== "bear_case");
         doc.quality_metrics.discovery_process.skipped_xhigh_roles.push("bear_case");
       });
-      updateYaml(cwd, "research/discovery/runs/2026-05-31-agentic-discovery.yml", (doc) => {
-        const role = doc.subagents.required_roles.find((entry) => entry.role === "bear_case");
-        role.completed = false;
-        role.skip_reason = "not_material_to_request";
-      });
     },
-    expected: "buy-capable discovery_process.completed_xhigh_roles is missing required role bear_case",
+    expected: "discovery_process missing skip reason for bear_case",
   },
   {
     name: "rejects unknown discovery source id",
@@ -1417,26 +1441,41 @@ function removeSymbolRows(cwd, relativePath, symbol) {
 
 function updateCsvSymbolRow(cwd, relativePath, symbol, mutate) {
   const filePath = path.join(cwd, relativePath);
-  const content = readFileSync(filePath, "utf8");
-  const lines = content.split("\n");
-  const headers = lines[0].split(",");
-  const symbolColumnIndex = headers.indexOf("symbol");
-  if (symbolColumnIndex === -1) {
+  const [headers, ...values] = parseCsv(readFileSync(filePath, "utf8"));
+  if (!headers.includes("symbol")) {
     throw new Error(`${relativePath} does not have a symbol column`);
   }
-  const updated = lines.map((line, index) => {
-    if (index === 0 || line.trim() === "") {
-      return line;
-    }
-    const values = line.split(",");
-    if (values[symbolColumnIndex] !== symbol) {
-      return line;
-    }
-    const row = Object.fromEntries(headers.map((header, columnIndex) => [header, values[columnIndex] ?? ""]));
-    const next = mutate(row);
-    return headers.map((header) => next[header] ?? "").join(",");
+  const updated = values.map((fields) => {
+    const row = Object.fromEntries(headers.map((header, index) => [header, fields[index] ?? ""]));
+    const next = row.symbol === symbol ? mutate(row) : row;
+    return headers.map((header) => csvCell(next[header] ?? "")).join(",");
   });
-  writeFileSync(filePath, updated.join("\n"));
+  writeFileSync(filePath, `${headers.join(",")}\n${updated.join("\n")}\n`);
+}
+
+function csvCell(value) {
+  const text = String(value);
+  return /[",\r\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+}
+
+function setCurrentGiltBuyZone(cwd) {
+  const filePath = path.join(cwd, "research/buy-zones.csv");
+  const content = readFileSync(filePath, "utf8");
+  const [headers, ...values] = parseCsv(content);
+  const rows = values.map((fields) => Object.fromEntries(headers.map((header, index) => [header, fields[index] ?? ""])));
+  const current = rows.filter((row) => row.symbol === "GILT")
+    .sort((left, right) => left.as_of.localeCompare(right.as_of)).at(-1);
+  if (!current) {
+    throw new Error("GILT fixture requires an existing research row");
+  }
+  const row = {
+    ...current,
+    as_of: readQualityMetrics(cwd).as_of,
+    buy_zone_status: "in_buy_zone",
+    max_staged_entry_price: "9.60",
+    entry_trigger: "Explicit current target for the filing and thesis gate fixture",
+  };
+  writeFileSync(filePath, `${content.trimEnd()}\n${headers.map((header) => csvCell(row[header] ?? "")).join(",")}\n`);
 }
 
 function syncFlyReadinessArtifacts(cwd) {

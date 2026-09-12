@@ -1,17 +1,17 @@
 schema_version: 1
-as_of: 2026-08-27
+as_of: 2026-09-11
 last_research_engine_run:
-  as_of: 2026-08-27
-  scope: event_driven_full_cycle_with_august_26_closes_full_74_security_review_paired_event_and_foundational_SEC_indexes_STDN_Q2_R2_fast_path_promotion_and_independent_allocation_review
-  notes: Completed a v1.3 event-driven full cycle covering 74 securities. STDN advanced to R2 and the top-three opportunity-cost screen after its first commercial core, first quarterly gross profit, larger funded backlog and debt-free pro-forma cash; missing filed financials, an event-after close, protected contract economics, authorization and capitalization reconciliation kept B- research-only status and every incremental quantity at zero.
+  as_of: 2026-09-11
+  scope: weekly_full_cycle_with_september_10_closes_full_74_security_review_corrected_72_symbol_paired_SEC_indexes_material_filing_readiness_lane_and_allocation_review
+  notes: Historical policy-v1.3 September 11 cycle covering 74 securities. The GILT proposal is closed after 29 shares were broker-confirmed at USD 9.66; the original USD 9.60 ceiling remains an execution variance. OCC XNDU USAR and QNT advanced to R2 and XTND to R1 without new order eligibility.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: Repository-public evidence is current enough for an all-gate decision. No target passes mission, evidence, entry, survival and opportunity-cost gates together for incremental exposure; this is an evidence-based no-action conclusion rather than a repository-health veto.
+  reason: The September 11 historical decision evidence was ready for its bounded proposal. Execution is now confirmed and the proposal is closed; research readiness creates no new order or repeat authorization.
   user_only_execution_prerequisites:
     - confirmed holdings and cash remain controlling until later broker evidence changes them
-    - any future action requires a fresh full decision, broker quote and order preview
+    - the GILT starter is complete; any later allocation requires fresh evidence and a new human-controlled decision
     - complete broker execution evidence remains required before any later trade or non-standing-deposit account mutation
     - the active standing authorization confirms only each exact due USD 888 Friday contribution and is not broker reconciliation
     - every IREN scale step above five shares requires GAAP AI-cloud cash returns and a conversion-consistent capitalization bridge
@@ -23,53 +23,53 @@ mission_accountability:
   repository_health_is_allocation_veto: false
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
-  latest_confirmed_return_seeking_buy_date: 2026-08-14
-  latest_research_nav: 11971.61
-  confirmed_cash: 9671.87
-  latest_research_nav_basis: August 27 research snapshot using confirmed cash after the authorized August 28 contribution and completed adjusted closes for ASTS 11 IREN 5 MDA 9 and RKLB 17; this is research valuation rather than same-timestamp broker reconciliation
+  latest_confirmed_return_seeking_buy_date: 2026-09-11
+  latest_research_nav: 13634.84
+  confirmed_cash: 11167.73
+  latest_research_nav_basis: Mixed-time reference using the confirmed post-fill ledger and September 10 completed closes for ASTS 11 GILT 29 IREN 5 MDA 9 and RKLB 17. This is not a September 11 close or broker balance; the September 11 equity-curve close remains absent until reliable market data arrives.
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 80.7901
+  liquidity_option_weight_pct: 81.9058
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
-  latest_mission_relevant_deployment_date: 2026-08-14
-  mission_relevant_deployment_basis: 2026-08-14-buy-iren-001
-  days_since_latest_mission_relevant_deployment: 13
+  latest_mission_relevant_deployment_date: 2026-09-11
+  mission_relevant_deployment_basis: 2026-09-11-buy-gilt-001
+  days_since_latest_mission_relevant_deployment: 0
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
-  next_required_review_at: 2026-09-28
-  strongest_counterfactual: LEU is the strongest current nonholding forced-choice challenger; GILT and STDN rank second and third after STDN received an event-after close, IREN is the strongest holding add candidate, and BRUN advanced to R2 but remains outside the top five.
-  smallest_prudent_exposure_considered: Two LEU shares at USD 194.78 would cost USD 389.56 and represent 3.2540 percent of research NAV; one share is 1.6270 percent and below the recorded 2 percent mission-consistent floor. A 17-share STDN reference starter would cost USD 243.27 or 2.0321 percent. A 12-share BRUN reference would cost USD 247.32 or 2.0659 percent, while 11 shares would be below the floor. None passes the evidence and entry gates.
-  zero_vs_starter_result: Zero wins because funded cascade economics, fixed-price protection, TENEX replacement, expansion capital and dilution can reverse residual common-equity value; two shares cannot bound that uncertainty and one symbolic share does not satisfy the mission-consistent floor.
-  zero_exposure_reason_code: decision_critical_economics_gap
-  decision_critical_missing_evidence: LEU requires funded and protected cascade economics, credible TENEX replacement and expansion capital, bounded fully diluted shares, positive per-share cash conversion and a fresh valuation leaving exceptional upside.
-  why_risk_sizing_cannot_absorb_uncertainty: Smaller size, staging, a shorter window or a tighter stop cannot repair uncertainty about whether fixed-price and financing economics leave positive residual common-equity value.
-  cash_opportunity_cost: Waiting can miss a nuclear-fuel or AI-compute rerating and leaves 80.7901 percent of NAV in cash, but preserves full optionality for funded LEU economics, IREN cash-return evidence, a clean GILT transaction, filed STDN economics, normalized BRUN cash conversion or a superior new bottleneck.
-  conjunctive_evidence_and_price_trigger: Funded and protected cascade economics, credible TENEX replacement and expansion capital, bounded fully diluted shares, positive per-share cash conversion, and a fresh valuation leaving exceptional upside must all be present; price alone never opens the gate.
-  next_evidence_deadline: 2026-08-29
-  no_action_streak: 2
-  article1_red_team_status: completed_current_v1.3_LEU_zero_vs_two_share_bridge_STDN_zero_vs_17_share_reference_and_full_opportunity_cost_comparison
+  next_required_review_at: 2026-10-26
+  strongest_counterfactual: Historical pretrade reasoning; original proposal now closed. GILT is the strongest current nonholding and clears the smallest staged exposure; LEU and STDN rank second and third, IREN is the strongest holding add candidate, and OCC is the strongest newly elevated R2 challenger.
+  smallest_prudent_exposure_considered: Historical pretrade reasoning; original proposal now closed. Twenty-nine GILT shares at the USD 9.60 maximum cost USD 278.40 or 2.0413 percent of research NAV and pass the gates. Two LEU shares cost USD 331.74 or 2.432 percent, 23 STDN shares cost USD 280.37 or 2.056 percent, seven IREN add shares cost USD 305.48 or 2.240 percent, and 20 OCC shares cost USD 285.60 or 2.094 percent; those alternatives remain zero.
+  zero_vs_starter_result: Historical pretrade reasoning; original proposal now closed. The 29-share GILT starter wins because financing covers the remaining base consideration, the acquired segment has positive operating economics and the current denominator permits a credible evidence-gated scale path.
+  zero_exposure_reason_code: other_documented
+  decision_critical_missing_evidence: Historical pretrade reasoning; original proposal now closed. Price above USD 9.60, adverse new evidence, failed or materially repriced closing, or a financing fact that invalidates the funded bridge restores GILT quantity zero. Combined cash conversion, final working capital and the diluted denominator remain required before any scale step.
+  why_risk_sizing_cannot_absorb_uncertainty: Historical pretrade reasoning; original proposal now closed. The 29-share size, one-session validity and USD 9.60 ceiling absorb ordinary closing and integration uncertainty; they do not support any larger quantity before combined cash conversion and dilution reconcile.
+  cash_opportunity_cost: Historical pretrade reasoning; original proposal now closed. Zero would miss all GILT upside and leave 83.9390 percent of NAV in cash. The bounded starter reduces cash by only 2.0413 percent of NAV at maximum cost and preserves more than 81 percent liquidity for stronger future evidence.
+  conjunctive_evidence_and_price_trigger: Historical pretrade reasoning; original proposal now closed. GILT must remain at or below USD 9.60 with no adverse filing or transaction evidence through the September 11 regular-session close; any later scale step requires closing and combined cash-conversion proof.
+  next_evidence_deadline: 2026-09-18
+  no_action_streak: 0
+  article1_red_team_status: completed_current_v1.3_GILT_bounded_starter_vs_zero_and_full_opportunity_cost_comparison
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: Hold ASTS 11 IREN 5 MDA 9 and RKLB 17; add zero sell zero and buy no new security or SGOV. Confirmed cash is USD 9671.87 after the authorized August 28 contribution; no executable limit or trade authorization exists, and the repository executed no trade.
+  current_conclusion: The account owner confirmed 29 GILT shares at USD 9.66. The USD 280.14 cost is 2.0541 percent of the pretrade research reference and the existing source-backed scale path supports mission-relevant exposure tracking. The original USD 9.60 ceiling remains a documented execution variance; no further action is authorized. See decisions/2026-09-11-gilt-execution-confirmation.md.
 coverage:
-  universe_scan_as_of: 2026-08-27
-  discovery_lane_map_as_of: 2026-08-27
+  universe_scan_as_of: 2026-09-11
+  discovery_lane_map_as_of: 2026-09-11
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
   watchlist_symbols_missing_current_cycle_review: 0
   active_discovery_lanes: 9
-  emerging_discovery_lanes: 1
+  emerging_discovery_lanes: 2
   active_watchlist_symbols: 23
   active_symbols_with_current_valuation_state: 23
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 23
-  active_symbols_missing_latest_filing_review: 0
-  raw_discovery_candidates_open: 41
+  active_symbols_with_latest_filing_review: 19
+  active_symbols_missing_latest_filing_review: 4
+  raw_discovery_candidates_open: 38
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-08-28-targeted-sentinel.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-08-28-targeted-sentinel.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-08-28-targeted-sentinel.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-08-27-revalidated-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-09-11-weekly-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-09-11-weekly-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-09-11-weekly-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-09-11-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
@@ -80,8 +80,8 @@ discovery_process:
   exploratory_match_count: 59
   exploratory_sample_count: 18
   exploratory_sample_coverage_pct: 30.5085
-  search_quality_conclusion: All 18 deterministic candidates and 59 exploratory matches were dispositioned without a new candidate. Existing semantic coverage remained valid for 71 of 71 listed securities; fresh high-reasoning review advanced STDN to R2 and the top-three screen, but no discovery gap or process debt controls the zero-action conclusion.
-  independent_xhigh_subagents_status: complete
+  search_quality_conclusion: All 18 deterministic candidates and 59 exploratory matches were dispositioned without a new retained candidate. Corrected paired SEC coverage reached all 72 listed securities; fresh primary evidence advanced XNDU USAR QNT and OCC to R2 and XTND to R1, while no discovery gap or process debt controls the bounded GILT action.
+  independent_xhigh_subagents_status: partial_tool_unavailable
   required_xhigh_roles:
     - discovery_lane_candidate_triage
     - freshness_filing_review
@@ -91,12 +91,16 @@ discovery_process:
     - allocation_risk
   completed_xhigh_roles:
     - discovery_lane_candidate_triage
-    - freshness_filing_review
     - bull_case
     - bear_case
+  skipped_xhigh_roles:
+    - freshness_filing_review
     - valuation_entry
     - allocation_risk
-  skipped_xhigh_roles: []
+  skipped_xhigh_role_reasons:
+    freshness_filing_review: tool_unavailable
+    valuation_entry: tool_unavailable
+    allocation_risk: tool_unavailable
   allocation_relevant_lanes:
     - space_infrastructure
     - direct_to_device_connectivity
@@ -108,17 +112,18 @@ discovery_process:
     - semiconductor_interconnect_and_memory
     - frontier_ai_public_platforms
     - unknown_future_bottlenecks
+    - strategic_critical_materials
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 41
+  material_open_candidates: 38
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 41
+  open_candidate_readiness_completed: 38
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
   priority_status_refresh_status: complete
   buy_zone_refresh_status: complete
-  independent_xhigh_reprioritization_status: complete
+  independent_xhigh_reprioritization_status: partial_tool_unavailable
   required_xhigh_roles:
     - discovery_lane_candidate_triage
     - freshness_filing_review
@@ -128,12 +133,16 @@ watchlist_process:
     - bear_case
   completed_xhigh_roles:
     - discovery_lane_candidate_triage
+    - bull_case
+    - bear_case
+  skipped_xhigh_roles:
     - freshness_filing_review
     - valuation_entry
     - allocation_risk
-    - bull_case
-    - bear_case
-  skipped_xhigh_roles: []
+  skipped_xhigh_role_reasons:
+    freshness_filing_review: tool_unavailable
+    valuation_entry: tool_unavailable
+    allocation_risk: tool_unavailable
   unresolved_watchlist_review_conflicts: 0
 freshness:
   open_critical_events: 0
@@ -142,7 +151,7 @@ freshness:
   allocation_blocking_open_high_events: 0
   oldest_open_event_date: null
   stale_valuation_states_over_45_days: 0
-  stale_theses_over_90_days: 0
+  stale_theses_over_90_days: 13
 macro_process:
   latest_regime_snapshot_path: research/macro/regime-snapshots.csv
   watchlist_sensitivity_path: research/macro/watchlist-sensitivity.csv
@@ -162,4 +171,4 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: The current v1.3 cycle uses August 26 completed closes, paired event and foundational SEC coverage, current issuer evidence and a 74-security opportunity set. STDN advanced to R2 and the top-three screen without promotion; no incremental security clears all gates, every new or sell quantity and executable limit is zero or null, and no trade was executed.
+notes: Historical September 11 v1.3 research uses September 10 completed closes and a 74-security comparison. Later broker evidence confirms the 29-share GILT starter at USD 9.66 and closes the original USD 9.60-capped proposal. OCC XNDU USAR and QNT remain R2 and XTND R1 without promotion. Any later allocation requires fresh evidence and a new decision.

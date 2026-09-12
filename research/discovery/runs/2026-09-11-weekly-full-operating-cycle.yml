@@ -1,0 +1,451 @@
+schema_version: 1
+run_id: 2026-09-11-weekly-full-operating-cycle
+run_date: 2026-09-11
+market_session_date: 2026-09-10
+evidence_cutoff: 2026-09-11T17:45:00+08:00
+request_type: scheduled_weekly_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: The original one-session GILT proposal is closed after confirmed execution; research context remains historical and any later action requires a new decision. Next evidence review is September 18 or an earlier material event.
+linked_decision_or_research_note: decisions/2026-09-11-weekly-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-09-11-subagent-evidence-packet.yml
+artifact_hash_index_path: research/discovery/runs/2026-09-11-discovery-artifact-index.json
+execution_update:
+  status: broker_confirmed_execution_recorded
+  confirmed_ledger_event_ids:
+    - 2026-09-04-deposit-weekly-888-001
+    - 2026-09-11-deposit-weekly-888-001
+    - 2026-09-11-buy-gilt-001
+  resulting_confirmed_cash: 11167.73
+  resulting_settled_cash: 11447.87
+  resulting_confirmed_positions:
+    - ASTS 11 shares
+    - GILT 29 shares
+    - IREN 5 shares
+    - MDA 9 shares
+    - RKLB 17 shares
+  execution_note_path: decisions/2026-09-11-gilt-execution-confirmation.md
+  notes: Broker evidence confirms 29 GILT shares at USD 9.66 on September 11 at 09:30 ET, above the historical USD 9.60 ceiling. Standard T+1 settlement is September 14. No repeated deposit, follow-on order or live scale authorization is created.
+analysis_scope: Historical pretrade September 11 analysis; account and execution updates above supersede the original no-position snapshot below without changing the original recommendation ceiling.
+article_one_preflight:
+  sentinel_level: PASS
+  reason_codes: []
+  disposition: The scheduled full cycle tested high liquidity against mission-consistent staged exposures without weakening truth, survival, human control or public safety.
+  protected_surfaces_changed: false
+first_principles_heading: First-Principles Analysis
+first_principles_analysis:
+  question_rebuilt_from_basics: Which current public security can turn a scarce bottleneck into exceptional dilution-adjusted per-share value at a feasible weight and beat holdings, cash and all material alternatives now?
+  irreducible_facts:
+    - Confirmed cash is USD 11447.87 and confirmed holdings are ASTS 11, IREN 5, MDA 9 and RKLB 17.
+    - The 74-security opportunity set contains 72 listed securities plus OPENAI and ANTHROPIC as unlisted research references.
+    - LEU has a definitive commercial HALEU contract but lacks quantified protected economics, total expansion capital and bounded dilution.
+    - GILT has a material defense order, positive standalone and acquired-segment operating economics, and financing that covers the remaining Comtech base consideration without an evident liquidity cliff.
+    - STDN has filed gross-profit evidence but lacks authorization, protected repeat delivery and an entry valuation consistent with exceptional upside.
+    - GILT's closing, integration, working-capital, cash-conversion and dilution uncertainties remain material but can be bounded at the smallest mission-consistent weight.
+    - IREN and OCC retain project-return, cash-conversion or survival gaps that block another allocation.
+  binding_constraints:
+    - Mission, evidence, entry, survival, promotion and opportunity-cost gates must pass before nonzero quantity.
+    - A starter must preserve a credible evidence-backed path to mission-relevant scale; loss containment alone is insufficient.
+    - A current price, award, backlog number or high cash weight cannot replace residual per-share cash economics.
+  causal_chain: Scarcity attracts funded demand; delivery creates protected margin; recurring cash exceeds debt, capex and working capital; residual value survives dilution; and feasible portfolio scaling can materially affect long-run NAV.
+  inherited_assumptions_challenged:
+    - High liquidity requires immediate deployment.
+    - A small starter does not repair uncertainty, but it can bound ordinary closing and integration risk when current evidence already supports survival and a credible scale path.
+    - Strategic importance, a contract headline or price decline proves common-share value capture.
+  value_capture_or_mission_link: GILT now has the strongest bounded bridge from bottleneck demand to a mission-relevant starter; its current evidence supports 2.0413 percent initial exposure but not a larger position.
+  disconfirming_evidence: Failed or repriced Comtech closing, adverse working-capital adjustment, persistent negative operating cash flow, customer loss, margin compression, unexpected dilution or price above USD 9.60 would restore quantity zero.
+  decision_consequence: Recommend 29 GILT shares at a maximum USD 9.60 day limit through the September 11 regular-session close; hold confirmed positions and keep every other incremental quantity at zero.
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --as-of 2026-09-11 --json --output research/discovery/runs/2026-09-11-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-09-11-scan.json
+      output_sha256: 33fd7fcf308225f0b90cc55774ffdf6efc8657ae6d83f6905854fce9bc17e329
+      retrieved_at: 2026-09-11
+      result_summary: Eighteen deterministic candidates, sixty-one suppressed known matches and fifty-nine exploratory matches were dispositioned without a new retained security; the lane map added strategic critical materials from current primary evidence.
+  community_attention:
+    status: scratch_only_current
+    source_count: 46
+    symbol_signal_count: 312
+    lane_signal_count: 43
+    result: Public community attention was used only to prioritize primary-source review and created no candidate, promotion, issuer fact or buy eligibility.
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC event, foundational, registration, financing and transaction evidence
+      sources_or_queries: [full 72-security event index, full 72-security foundational-first request, current submissions delta]
+      source_ids: [sec_event_index_full_universe_2026_09_11, sec_foundational_index_full_universe_2026_09_11, gilt_convert_close_2026_09_08, leu_provisional_424b5_2026_09_09]
+      retrieved_at: 2026-09-11
+      material_findings: Event coverage reached 72 of 72 listed securities and foundational coverage 71 of 72; XTND lacks a supported post-listing foundational filing, while GILT, LEU, STDN, OCC, XNDU, QNT, USAR and XTND received explicit disposition.
+    - family_id: issuer_material
+      family: Company results, transaction releases, contracts and operating updates
+      sources_or_queries: [GILT Q2 and Comtech evidence, current defense order, LEU commercial HALEU contract, STDN and OCC quarterly results]
+      source_ids: [gilt_q2_2026_results, gilt_comtech_2026_06_15, gilt_us_defense_order_2026_09_09, leu_radiant_haleu_contract_2026_09_09, stdn_q2_2026_10q, occ_q3_fy2026_10q]
+      retrieved_at: 2026-09-11
+      material_findings: GILT's funded acquisition bridge and positive acquired operating economics support the smallest starter; the other material challengers remain non-buyable.
+    - family_id: market_data
+      family: Completed regular-session closes and return windows
+      sources_or_queries: [Yahoo adjusted closes for the canonical universe, Nasdaq raw-close windows for supplemental candidates]
+      source_ids: [completed_close_universe_2026_09_10, nasdaq_supplemental_closes_2026_09_10]
+      retrieved_at: 2026-09-11
+      material_findings: Fifty-four canonical and seventeen supplemental securities have September 10 closes; XTND alone lacks a reliable completed close, and supplemental adjusted-close treatment remains unverified.
+    - family_id: current_world_context
+      family: Macro, financing, volatility, contracts, customers and current capital formation
+      sources_or_queries: [current macro refresh, current issuer financing and contract events]
+      source_ids: [macro_regime_snapshot_2026_09_11, gilt_convert_close_2026_09_08, gilt_us_defense_order_2026_09_09, qnt_chips_award_2026_09_08]
+      retrieved_at: 2026-09-11
+      material_findings: The macro overlay is incomplete after index-proxy 403 responses and remains a sizing input only; issuer financing and awards changed GILT entry and several research-stage comparisons.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public, merger and acquisition evidence
+      sources_or_queries: [XTND merger close, USAR Serra Verde close, open R1 and R2 candidates]
+      source_ids: [xtnd_merger_close_2026_09_03, usar_serra_verde_close_2026_09_04, xndu_canada_support_2026_08_28]
+      retrieved_at: 2026-09-11
+      material_findings: XTND advanced to R1 after listing, USAR advanced to R2 after closing Serra Verde, and XNDU advanced to R2 after funded Canadian support without gaining buy eligibility.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck-map and cross-lane opportunity-cost comparison
+      sources_or_queries: [ground communications, nuclear fuel, powered compute, strategic critical materials, quantum systems and optical connectivity]
+      source_ids: [completed_close_universe_2026_09_10, gilt_comtech_2026_06_15, usar_serra_verde_close_2026_09_04, xndu_canada_support_2026_08_28]
+      retrieved_at: 2026-09-11
+      material_findings: Strategic critical materials became an emerging lane; GILT became the strongest bounded entry while no discovery-stage candidate displaced it.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-09-11
+    notes: Current prices, filings, issuer releases, financing, contracts, listings, transactions, macro conditions and discovery leads were refreshed or explicitly bounded for the 74-security universe.
+  search_quality:
+    name_ticker_coverage_pct: 100
+    issuer_profile_semantic_coverage_pct: 100
+    organic_recall_count: 0
+    hard_coded_proxy_only_recall_count: 0
+    exploratory_match_count: 59
+    conclusion: The deterministic scan and primary-source review found no new retained security; eight material lower-stage candidates received current readiness dispositions.
+unknown_future_review:
+  exploratory_match_count: 59
+  exploratory_denominator: 59
+  stratified_sample_count: 18
+  stratified_sample_pct: 30.5085
+  unsampled_reason: The deterministic ranking bounded lower-signal matches after reviewing the highest-scoring cross-lane sample and all known material candidates.
+  repeated_hit_max_age_days: 31
+  top_clusters: [issuer_and_ticker_collisions, ineligible_or_blank_check_structures, mature_or_weak_bottleneck_proxies]
+  sampled_symbols: [QMCO, QNTM, EXR, FTRA, GDYN, NGG, QLEP, LPAA, LPAAU, LPBB, LPBBU, GPUS-PD, HBM, UROY, SAAQ, SAAQU, SPB, AIO]
+  false_positive_patterns: [issuer_name_collision, ticker_collision, ineligible_security, weak_proxy]
+  lane_decisions: [add_strategic_critical_materials, retain_existing_lanes, add_no_new_security]
+  disposition: No exploratory match supplied both a source-backed bottleneck causal chain and a policy-eligible security capable of displacing GILT or the current opportunity set.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Deployable multi-band ground communications, domestic nuclear fuel, energized AI sites, strategic heavy-rare-earth processing, optical links and sovereign quantum systems remain plausible long-duration bottlenecks.
+    inferences: Scarcity matters only when funded demand, delivery, protected economics and bounded dilution preserve per-share value.
+    disconfirming_evidence: Capital intensity, customer concentration, technical failure, financing claims or substitution can prevent scarcity from reaching common shareholders.
+    source_ids: [gilt_us_defense_order_2026_09_09, leu_radiant_haleu_contract_2026_09_09, usar_serra_verde_close_2026_09_04, xndu_canada_support_2026_08_28]
+    investment_implication: GILT has the strongest current bounded entry; strategic critical materials enters the lane map without creating a buy.
+  who_controls_or_removes_scarcity:
+    facts: GILT supplies ground and defense communications; LEU and STDN express nuclear-fuel capacity; IREN and APLD control powered sites; USAR targets mine-to-magnet capacity; quantum and optical issuers address other constrained layers.
+    inferences: Direct control is valuable only if delivery and financing preserve residual common-equity value.
+    disconfirming_evidence: Unprotected contracts, weak cash conversion, excessive capex or dilution can transfer the value away from shareholders.
+    source_ids: [gilt_comtech_2026_06_15, leu_radiant_haleu_contract_2026_09_09, usar_serra_verde_close_2026_09_04]
+    investment_implication: Start GILT at the minimum weight and keep every other incremental quantity at zero.
+  who_can_monetize_into_shareholder_value:
+    facts: GILT has profitable standalone operations, acquired-segment operating profit, funded closing capacity and a current defense order; competing candidates lack one or more protected-economics, survival or entry elements.
+    inferences: GILT can plausibly convert the bottleneck into per-share value, but only a two-percent starter is underwritten before combined cash conversion.
+    disconfirming_evidence: Adverse closing terms, customer loss, margin compression, negative cash conversion or unexpected dilution would invalidate the starter or block scale.
+    source_ids: [gilt_q2_2026_results, gilt_comtech_2026_06_15, gilt_convert_close_2026_09_08, gilt_us_defense_order_2026_09_09]
+    investment_implication: Recommend exactly 29 GILT shares at no more than USD 9.60 for one session.
+  public_security_expression:
+    facts: Seventy-two securities are listed, seventy-one have a reliable completed September 10 close, and OPENAI and ANTHROPIC remain unlisted research references.
+    inferences: Listing and observability do not create eligibility; current promotion and buy-zone gates still control.
+    disconfirming_evidence: A listed security with current filings, valuation and promotion work could displace the current ordering.
+    source_ids: [completed_close_universe_2026_09_10, sec_event_index_full_universe_2026_09_11]
+    investment_implication: GILT alone enters the current buy zone; XTND remains R1 without a reliable close.
+  early_small_misunderstood_or_newly_public:
+    facts: GILT, STDN, OCC, XNDU, USAR, QNT and XTND provide smaller, awkward or newly public direct expressions, while GILT alone has sufficient current operating and entry evidence.
+    inferences: A small denominator enlarges the right tail only when survival, customer economics and dilution-adjusted capture are credible.
+    disconfirming_evidence: A stronger lower-stage cash bridge or a failure in GILT's current bridge would reorder the set.
+    source_ids: [gilt_q2_2026_results, stdn_q2_2026_10q, occ_q3_fy2026_10q, xndu_canada_support_2026_08_28]
+    investment_implication: Preserve dated lower-stage service levels while funding only the bounded GILT starter.
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [bottleneck map, deterministic scan, current GILT evidence, candidate readiness, full opportunity set]
+      sources_checked: [completed_close_universe_2026_09_10, sec_event_index_full_universe_2026_09_11, sec_foundational_index_full_universe_2026_09_11, gilt_q2_2026_results, gilt_comtech_2026_06_15, gilt_convert_close_2026_09_08, gilt_us_defense_order_2026_09_09]
+      facts_verified: [financing covers the remaining base consideration without an evident liquidity cliff, acquired operations have positive operating economics, 29 shares clear the two-percent floor]
+      stale_or_missing_evidence: [closing adjustments, combined cash conversion, post-close retention and margins]
+      confidence: high
+      key_findings: Reconsideration overturned the prior zero conclusion and supports 29 GILT shares at no more than USD 9.60; all scale steps remain blocked.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: false
+      skip_reason: tool_unavailable
+      inputs_used: [paired SEC indexes, material filing review, GILT primary evidence]
+      sources_checked: []
+      facts_verified: []
+      stale_or_missing_evidence: [independent freshness reviewer output unavailable after bounded retries]
+      confidence: unavailable
+      key_findings: No independent finding returned; primary filing review by the main agent controls and the skip is not represented as consensus.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [GILT operating evidence, acquisition financing, defense order, valuation and position scenarios]
+      sources_checked: [gilt_q2_2026_results, gilt_comtech_2026_06_15, gilt_convert_close_2026_09_08, gilt_us_defense_order_2026_09_09]
+      facts_verified: [positive standalone and acquired operating economics, funded remaining base consideration, material defense demand, small current denominator]
+      stale_or_missing_evidence: [combined free cash flow, final working capital, integration and customer retention]
+      confidence: medium_high
+      key_findings: The funded bridge and operating economics make a two-percent starter preferable to zero, while missing combined cash evidence blocks scale.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [GILT transaction terms, cash conversion, debt, dilution, customer and portfolio concentration]
+      sources_checked: [gilt_q2_2026_results, gilt_comtech_2026_06_15, gilt_convert_close_2026_09_08, gilt_us_defense_order_2026_09_09]
+      facts_verified: [closing and working-capital uncertainty, first-half cash-conversion weakness, conversion dilution, integration and customer risk]
+      stale_or_missing_evidence: [final consideration, first combined statements, repeat cash conversion]
+      confidence: high
+      key_findings: Remaining risks justify a hard two-percent cap, one-session expiry and no larger quantity rather than a total veto.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: false
+      skip_reason: tool_unavailable
+      inputs_used: [GILT post-deal enterprise-value bridge, scenario prices, current NAV and alternatives]
+      sources_checked: []
+      facts_verified: []
+      stale_or_missing_evidence: [independent valuation reviewer output unavailable after bounded retries]
+      confidence: unavailable
+      key_findings: No independent finding returned; reconciled primary-source arithmetic supports the bounded entry and the skip is not represented as consensus.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: false
+      skip_reason: tool_unavailable
+      inputs_used: [confirmed account facts, holdings, GILT and top alternatives, position construction]
+      sources_checked: []
+      facts_verified: []
+      stale_or_missing_evidence: [independent allocation reviewer output unavailable after bounded retries]
+      confidence: unavailable
+      key_findings: No independent finding returned; main-agent portfolio math limits GILT to 2.0413 percent at maximum cost and the skip is not represented as consensus.
+  unresolved_conflicts: 0
+  conflict_resolution: The completed discovery review reversed its earlier zero recommendation after the remaining consideration, financing and acquired operating profit were reconciled. Primary evidence supports the bounded starter; the unavailable roles are disclosed and every larger quantity remains blocked.
+market_data:
+  canonical_symbols: 54
+  canonical_session_date: 2026-09-10
+  canonical_retrieved_at: 2026-09-11T07:10:15.035Z
+  canonical_return_basis: adjusted_close
+  supplemental_symbols: 17
+  supplemental_session_date: 2026-09-10
+  supplemental_return_basis: raw_close_not_independently_adjusted
+  listed_universe_count: 72
+  listed_with_reliable_completed_close_count: 71
+  explicit_price_gap: XTND
+macro_overlay:
+  as_of: 2026-09-11
+  status: macro_data_incomplete
+  action_bias: price_disciplined_wait_or_staged_only
+  unavailable_inputs: [QQQ, SMH, IWM]
+  unavailable_reason: upstream_403
+  role: sizing_entry_and_financing_overlay_only
+discovery:
+  starting_frame: bottleneck_map_first
+  deterministic_scan_path: research/discovery/runs/2026-09-11-scan.json
+  paired_sec_event_index: research/discovery/runs/2026-09-11-sec-event-filing-index-index.metadata.json
+  paired_sec_foundational_index: research/discovery/runs/2026-09-11-sec-foundational-filing-index-index.metadata.json
+  requested_sec_scope_count: 72
+  event_scope_covered: 72
+  foundational_scope_covered: 71
+  foundational_gap: XTND has no supported post-listing foundational filing in the selector output
+  retained_new_candidates: []
+  new_lanes: [strategic_critical_materials]
+  conclusion: The new strategic-critical-materials lane captures a distinct bottleneck; no discovery-stage security becomes buy eligible, while the existing active candidate GILT enters a bounded one-session buy zone.
+lane_delta:
+  lanes_added: [strategic_critical_materials]
+  lanes_revised: []
+  lanes_demoted_or_retired: []
+  unknown_future_bottlenecks_result: Current deterministic and community leads were dispositioned without a new retained security.
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: [KEEL, FRMI]
+  candidates_promoted: []
+  candidates_incubated: [XNDU, USAR, QNT, OCC, XTND, COHR]
+  r0_leads: []
+  r1_researchable: [XTND]
+  r2_comparable: [XNDU, USAR, QNT, OCC]
+  advanced_to_r2: [XNDU, USAR, QNT, OCC]
+  advanced_to_r1: [XTND]
+  comparator_only: [COHR]
+  r3_promotion_ready: []
+  no_action_challenger: LEU
+  false_positive_patterns: [issuer_name_collision, ticker_collision, ineligible_security, weak_proxy]
+  all_open_r1_r2_slas_reviewed: true
+  next_evidence_due: 2026-09-18
+readiness_sprints:
+  - symbol: XNDU
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-11-XNDU-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#XNDU
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Funding milestones, technical delivery, repeat customer revenue, Yorkville draws, fully diluted capitalization and cash conversion remain publicly testable.
+    final_classification: incubate
+  - symbol: USAR
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-11-USAR-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#USAR
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Pro-forma financial statements, debt and cash bridge, Serra Verde operating margins, U.S. commissioning capital, offtake and fully diluted capitalization remain publicly testable.
+    final_classification: incubate
+  - symbol: QNT
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-11-QNT-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#QNT
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Award milestones, backlog conversion, repeat customer revenue, cash economics, tax-receivable and exchangeable-unit claims and fully diluted capitalization remain publicly testable.
+    final_classification: incubate
+  - symbol: OCC
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-11-OCC-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#OCC
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Customer and data-center mix, repeat backlog conversion, working-capital normalization, revolver capacity and covenants, cash conversion and current diluted capitalization remain publicly testable.
+    final_classification: incubate
+  - symbol: XTND
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-11-XTND-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#XTND
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Reliable completed price history, post-close financial statements, customer concentration, government-contract economics, cash runway and the fully diluted capitalization.
+    final_classification: incubate
+  - symbol: COHR
+    material_to_current_allocation: true
+    readiness_status: not_material_current_allocation
+    dashboard_surface_status: not_required_not_material
+    readiness_path: research/discovery/readiness/2026-09-11-COHR-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#COHR
+    blocker_type: not_material_current_allocation
+    reachable_evidence_remaining: none
+    final_classification: not_material
+  - symbol: KEEL
+    material_to_current_allocation: true
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-09-11-KEEL-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#KEEL
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+  - symbol: FRMI
+    material_to_current_allocation: true
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-09-11-FRMI-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#FRMI
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    final_classification: reject
+promotion_reviews:
+  - symbol: GILT
+    review_path: research/promotion/2026-09-11-GILT-buy-zone-review.md
+    result: active_candidate_priority_raised_to_B_plus_bounded_starter_entry_open
+    buy_zone_status: in_buy_zone
+  - symbol: OCC
+    review_path: research/promotion/2026-09-11-OCC-promotion.md
+    result: remain_C_plus_research_only_advance_to_R2
+    buy_zone_status: no_buy_until_new_evidence
+  - symbol: STDN
+    review_path: research/filings/2026-09-11-MATERIAL-FILING-REFRESH.md
+    result: no_change_research_only_R2
+    buy_zone_status: no_buy_until_new_evidence
+quality_gate_implication:
+  decision_readiness_status: ready
+  can_recommend_buys: true
+  reason: Current primary evidence and whole-universe comparison support the bounded GILT starter; reviewer unavailability is disclosed and does not create a target-specific evidence gap.
+reviewers:
+  discovery_lane_candidate_triage:
+    status: completed
+    finding: Independent reconsideration overturned the prior zero conclusion and supports a 29-share GILT starter at no more than USD 9.60.
+  freshness_filing_review:
+    status: tool_unavailable
+    reason: repeated_high_demand_errors_after_bounded_retries
+  bull_case:
+    status: completed
+    finding: The smaller denominator, funded acquisition bridge, positive acquired operating economics and direct defense demand support the smallest starter.
+  bear_case:
+    status: completed
+    finding: Closing, integration, working-capital, cash-conversion and dilution risks cap GILT at 29 shares and block every scale step.
+  valuation_entry:
+    status: tool_unavailable
+    reason: repeated_high_demand_errors_after_bounded_retries
+  allocation_risk:
+    status: tool_unavailable
+    reason: repeated_high_demand_errors_after_bounded_retries
+  allowed_skip_reason: tool_unavailable
+  unresolved_conflicts: 0
+  resolution: Primary SEC and issuer evidence, completed prices, reconciled financing arithmetic, whole-universe opportunity cost and explicit sizing control; unavailable advisory service is not portfolio evidence.
+allocation:
+  confirmed_cash: 11447.87
+  confirmed_sgov_value: 0
+  research_nav: 13638.32
+  cash_weight_pct: 83.9390
+  return_seeking_weight_pct: 16.0610
+  holdings:
+    - {symbol: ASTS, quantity: 11, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: IREN, quantity: 5, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: MDA, quantity: 9, action: hold, add_quantity: 0, sell_quantity: 0}
+    - {symbol: RKLB, quantity: 17, action: hold, add_quantity: 0, sell_quantity: 0}
+  recommended_new_position: {symbol: GILT, quantity: 29, maximum_limit: 9.60, valid_through: 2026-09-11 U.S. regular-session close}
+  buy_quantity_all_securities: 29
+  sell_quantity_all_securities: 0
+  sgov_quantity: 0
+  executable_limit: {symbol: GILT, price: 9.60, order_type: day_limit}
+  strongest_nonholding_order: [GILT, LEU, STDN]
+  strongest_holding_add_candidate: IREN
+  strongest_new_r2_challenger: OCC
+article_one_offensive_challenge:
+  strongest_counterfactual: GILT
+  smallest_mission_consistent_exposures:
+    - LEU 2 shares at USD 165.87 cost USD 331.74 or 2.432 percent of research NAV
+    - GILT 29 shares at USD 9.54 cost USD 276.66 or 2.028 percent of research NAV
+    - STDN 23 shares at USD 12.19 cost USD 280.37 or 2.056 percent of research NAV
+    - IREN 7 additional shares at USD 43.64 cost USD 305.48 or 2.240 percent of research NAV
+    - OCC 20 shares at USD 14.28 cost USD 285.60 or 2.094 percent of research NAV
+  zero_vs_starter_result: The 29-share GILT starter wins because financing covers the remaining base consideration, acquired operations are profitable and the current denominator supports a credible scale path; price, size and expiry bound the remaining risk.
+  residual_zero_reason_code: every_larger_or_alternative_quantity_loses_on_evidence_entry_or_opportunity_cost
+  cash_opportunity_cost: Cash would miss all GILT upside and leave 83.9390 percent of NAV liquid; a 2.0413 percent bounded starter improves mission exposure while retaining more than 81 percent cash at maximum cost.
+  conjunctive_evidence_and_price_trigger: GILT must remain at or below USD 9.60 with no adverse filing or transaction evidence through the September 11 regular-session close; any larger position waits for closing and combined cash-conversion proof.
+  next_evidence_deadline: 2026-09-18
+  next_mission_pressure_review: 2026-09-28 unless a later mission-relevant buy is broker-confirmed
+watchlist_cycle:
+  non_removed_symbols: 56
+  reviewed_symbols: 56
+  missing_symbols: 0
+  current_buy_zone_symbols: 23
+  current_valuation_symbols: 23
+  additional_current_R2_valuation: STDN
+publication_release:
+  contains_actionable_trading_content: true
+  contains_current_personalized_allocation_and_reference_sizing: false
+  public_release_status: public_safe_historical_record
+  public_release_earliest_at: 2026-09-12T04:30:00+08:00
+  sensitive_field_review_status: passed
+  embargo_reason: The September 11 regular close and safety buffer passed before the September 12 release review; the execution is confirmed, sensitive-field review passed and no unfilled recommendation survives.
+cleanup_and_meta_improvement:
+  process_review_path: research/process/2026-09-11-scheduled-cycle-resilience-review.md
+  durable_change: Current filing and price continuity, stage-adjusted R1/R2 service levels, the strategic-critical-materials lane, the STDN denominator correction and target-specific readiness validation are recorded without changing protected rules or automation.
+  stale_conflict_reconciled: Earlier GILT no-trade surfaces were corrected to the final bounded 29-share recommendation without changing broker facts.
+  repository_skill_updated: true
+  protected_surface_changed: false
+  article_one_postflight: The cycle advanced the mission with the smallest supported GILT exposure while preserving price discipline, evidence-gated scale, broker truth, no-auto-trading and the publication embargo.

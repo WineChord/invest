@@ -98,24 +98,32 @@ uncertainty_classification:
 
 Use independent fresh-context xhigh subagents whenever the promotion could affect allocation, active status, core status, or buy-zone ranking. Keep them read-only unless a narrow write scope is assigned.
 
+Record actual completion only. A skipped role needs one explicit `AGENTS.md` reason: `tool_unavailable`, `not_material_to_request`, or `already_resolved_by_primary_evidence`. The transition's `xhigh_roles_completed` must not list skipped reviewers. When relying on a skip, link a structured run with the same decision date, a matching `promotion_reviews` symbol and review path, and `subagents.required_roles` records containing `role`, `reasoning_level`, `independent_context`, `completed`, and `skip_reason`.
+
 ```yaml
 evidence_freshness_reviewer:
   completed:
+  skip_reason:
   key_findings:
 valuation_entry_reviewer:
   completed:
+  skip_reason:
   key_findings:
 bull_case_reviewer:
   completed:
+  skip_reason:
   key_findings:
 bear_case_reviewer:
   completed:
+  skip_reason:
   key_findings:
 opportunity_cost_and_allocation_reviewer:
   completed:
+  skip_reason:
   key_findings:
 process_or_source_quality_reviewer:
   completed:
+  skip_reason:
   key_findings:
 unresolved_conflicts:
 conflict_resolution:

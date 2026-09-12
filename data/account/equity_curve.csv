@@ -53,8 +53,8 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-09-01,2116.41,9671.87,11788.28,12768.00,-7.6732,-0.5560,Automated daily close valuation from Yahoo Finance chart.
 2026-09-02,2209.28,9671.87,11881.15,12768.00,-6.9459,0.7878,Automated daily close valuation from Yahoo Finance chart.
 2026-09-03,2237.99,9671.87,11909.86,12768.00,-6.7210,0.2416,Automated daily close valuation from Yahoo Finance chart.
-2026-09-04,2266.91,9671.87,11938.78,12768.00,-6.4945,0.2428,Automated daily close valuation from Yahoo Finance chart.
-2026-09-08,2353.02,9671.87,12024.89,12768.00,-5.8201,0.7213,Automated daily close valuation from Yahoo Finance chart.
-2026-09-09,2244.95,9671.87,11916.82,12768.00,-6.6665,-0.8987,Automated daily close valuation from Yahoo Finance chart.
-2026-09-10,2190.45,9671.87,11862.32,12768.00,-7.0934,-0.4573,Automated daily close valuation from Yahoo Finance chart.
-2026-09-11,2208.49,9671.87,11880.36,12768.00,-6.9521,0.1521,Automated daily close valuation from Yahoo Finance chart.
+2026-09-04,2266.91,10559.87,12826.78,13656.00,-6.0722,7.6988,Automated daily close valuation from Yahoo Finance chart. Derived cash and deposits corrected on 2026-09-12 for the September 4 standing contribution recorded during catch-up; completed-close security values are unchanged. Period change includes the USD 888 contribution and is not a cash-flow-adjusted investment return.
+2026-09-08,2353.02,10559.87,12912.89,13656.00,-5.4416,0.6713,Automated daily close valuation from Yahoo Finance chart. Derived cash and deposits corrected on 2026-09-12 for the September 4 standing contribution recorded during catch-up; completed-close security values are unchanged.
+2026-09-09,2244.95,10559.87,12804.82,13656.00,-6.2330,-0.8369,Automated daily close valuation from Yahoo Finance chart. Derived cash and deposits corrected on 2026-09-12 for the September 4 standing contribution recorded during catch-up; completed-close security values are unchanged.
+2026-09-10,2190.45,10559.87,12750.32,13656.00,-6.6321,-0.4256,Automated daily close valuation from Yahoo Finance chart. Derived cash and deposits corrected on 2026-09-12 for the September 4 standing contribution recorded during catch-up; completed-close security values are unchanged.
+2026-09-11,2495.30,11167.73,13663.03,14544.00,-6.0573,7.1583,"Completed September 11 closes from Yahoo Finance chart, retrieved 2026-09-12T08:01:09.484Z. Reconciled on September 12 to the confirmed GILT execution and both catch-up standing deposits; replaces the earlier pre-reconciliation automated snapshot. Period change follows the existing raw equity-change convention and includes the USD 888 contribution; it is not a cash-flow-adjusted investment return."

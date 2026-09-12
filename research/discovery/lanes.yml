@@ -1,5 +1,5 @@
 schema_version: 1
-as_of: 2026-08-27
+as_of: 2026-09-11
 mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
 review_cadence: Review every full operating cycle and every monthly decision; reopen the map after major technology, regulation, financing, listing, or market-structure changes.
 framework_name: bottleneck_map_first
@@ -23,6 +23,7 @@ notes:
   - The 2026-07-21 full-cycle review retained the ten-lane map. QTEX fits quantum-enabling connectivity, ALP was rejected, and pre-listing XTND remains in unknown-future monitoring until listing and capitalization evidence can justify a dedicated defense-autonomy lane.
   - The 2026-07-22 full-cycle review retained the ten-lane map. STDN advanced within the existing fuel-cycle lane without clearing entry, QTEX dilution weakened its existing quantum-lane expression, ENRD entered C+ research-only coverage as a fragile autonomous-freight expression inside the emerging unknown-future lane, UEC and GOWell were rejected after primary-source review, and no lane-status or allocation change was justified.
   - The 2026-07-28 full-cycle review retained the ten-lane map. RKLB's responsive-launch contract, QBTS's AT&T use case and QTEX's cryogenic collaboration strengthen existing space and quantum-lane evidence without creating a new bottleneck; NBIS's proposed equity authority weakens per-share entry, and the broad scan produced no material direct candidate that outranks current coverage.
+  - The 2026-09-11 full-cycle review added an emerging strategic-critical-materials lane after USA Rare Earth closed the Serra Verde acquisition and paired Brazilian heavy-rare-earth supply with planned U.S. mine-to-magnet capacity. USAR and ALOY are direct but early public expressions; transaction dilution, funding, commissioning and customer economics keep both outside promotion and buy eligibility.
 lanes:
   - id: space_infrastructure
     name: Space Infrastructure
@@ -346,6 +347,31 @@ lanes:
       - public platforms with credible AI distribution and unit economics
     next_review_trigger: S-1, direct listing, merger, spinoff, governance change, or durable public reporting.
     invalidation_or_demote_signal: Public exposure is unavailable, indirect, overvalued, governance-impaired, or mostly duplicates the user's main Nasdaq technology core.
+  - id: strategic_critical_materials
+    name: Strategic Critical Materials
+    status: emerging
+    bottleneck_thesis: Non-China heavy-rare-earth separation, metal and permanent-magnet capacity can become a strategic industrial and defense bottleneck as supply-chain security requirements rise.
+    why_asymmetric: A small public company that combines scarce feedstock with qualified downstream processing and magnet production could capture pricing power and reinvest at a scale far above its early equity base.
+    source_families:
+      - SEC filings
+      - company investor relations
+      - U.S. Department of Defense and Department of Energy awards
+      - export-control and trade-policy sources
+      - customer qualification and offtake disclosures
+    screen_keywords:
+      - rare earth
+      - dysprosium
+      - terbium
+      - neodymium
+      - permanent magnet
+      - mine to magnet
+    current_public_proxies: []
+    candidate_entry_points:
+      - newly public non-China separation and magnet producers
+      - listed mine-to-magnet platforms with binding offtake and funded commissioning
+      - public processors with qualified defense or industrial customers
+    next_review_trigger: Pro-forma Serra Verde capitalization, government funding, binding offtake, commissioning, qualification, production yield, margin, cash conversion or dilution update.
+    invalidation_or_demote_signal: Equity financing and project overruns absorb the scarcity value, feedstock or qualification fails, or pricing remains commodity-like without durable shareholder capture.
   - id: unknown_future_bottlenecks
     name: Unknown Future Bottlenecks
     status: emerging

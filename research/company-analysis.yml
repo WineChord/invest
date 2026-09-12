@@ -1748,3 +1748,171 @@ entries:
     risk_watch: Event-after price, filed quarter, backlog cancellation and take-or-pay protection, customer concentration, HALEU, reactor funding, authorization, yield, utilization, cash conversion and diluted capitalization.
     next_check: First post-results close and SEC filing; authorization, contract, repeat-delivery, capitalization or material price event; otherwise 2026-09-04.
     source_path: research/filings/2026-08-27-MATERIAL-EVENT-AND-FILING-REVIEW.md
+  - id: 2026-09-11-gilt-priority-and-entry-refresh
+    symbol: GILT
+    analyzed_at: "2026-09-11"
+    analysis_type: material_financing_contract_priority_and_entry_review
+    policy_version: v1.3
+    title: Financing, acquired operating profit and defense demand support a bounded starter
+    stance: Historical pretrade B+ review; original 29-share proposal capped at USD 9.60, now closed after separately confirmed execution
+    summary: Gilat completed USD 100 million of convertible notes, disclosed a greater-than-USD 32 million U.S. defense order and closed September 10 at USD 9.54 after a 29.646 percent three-month decline. June liquidity plus the notes covers the remaining Comtech base consideration without an evident liquidity cliff, and the acquired segment already has positive operating economics. Closing, working-capital, integration, cash-conversion and dilution risks cap the position at 29 shares.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Can deployable ground and defense communications become a durable platform whose after-financing cash value is large enough to justify even the smallest mission-consistent position from the current denominator?
+      irreducible_facts: June cash and short-term deposits were USD 159.155 million after the USD 10 million advance; approximately USD 147.5 million of base consideration remains; the USD 100 million notes initially convert at USD 16; Comtech Satellite and Space generated approximately USD 156 million of nine-month revenue, USD 7.3 million of GAAP operating income and USD 15.5 million of adjusted EBITDA; the new defense order exceeds USD 32 million.
+      binding_constraints: Price must remain at or below USD 9.60 through the one-session window; transaction closing, working-capital adjustments, integration, normalized combined cash conversion, customer concentration and diluted shares block every larger quantity.
+      causal_chain: Ground-system demand becomes delivered hardware and service revenue; Comtech expands the capability set; combined cash earnings exceed acquisition and financing costs; bounded dilution leaves per-share reinvestment value.
+      inherited_assumptions_challenged: A pending acquisition need not force zero when the funded bridge and acquired operating profit bound survival; the 150 million authorized-share ceiling is capacity rather than current issuance; a price decline and large award do not justify more than the minimum position.
+      value_capture_or_mission_link: A 29-share maximum-cost position is 2.0413 percent of NAV and can affect the portfolio in an exceptional outcome; a credible path to 6–12 percent exists only if combined per-share cash economics are later proved.
+      disconfirming_evidence: Failed or repriced closing, adverse working-capital adjustment, persistent negative operating cash flow, customer loss, margin compression or dilution beyond the note stress.
+      decision_consequence: Raise priority to B+, enter a one-session buy zone and recommend exactly 29 shares at no more than USD 9.60; every larger quantity remains zero.
+    upside_path: Integrate Comtech, deepen defense and mobility communications, convert orders into recurring cash and scale from a small denominator without excessive dilution.
+    risk_watch: Comtech close, final consideration, working capital, integration, combined margins, cash conversion, customer concentration, note conversion, authorized shares and existing space correlation.
+    next_check: Comtech close or amendment, first combined financials, normalized cash conversion, share-count change, material order or 2026-09-18.
+    source_path: research/promotion/2026-09-11-GILT-buy-zone-review.md
+  - id: 2026-09-11-xndu-capitalization-and-funding-refresh
+    symbol: XNDU
+    analyzed_at: "2026-09-11"
+    analysis_type: discovery_readiness_capitalization_and_funding_refresh
+    policy_version: v1.3
+    title: Canadian support advances comparability while the corrected denominator blocks entry
+    stance: C+ research only; R2 comparable; buy 0
+    summary: Definitive Canadian support totals CAD 195 million, but the May 22 F-1 reports 298,511,339 basic Class A plus Class B shares. At USD 8.98, basic market value is approximately USD 2.681 billion and enterprise value approximately USD 2.438 billion, about 946.6 times trailing sales and 860.9 times enterprise value to trailing sales before further dilution.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Can public funding for photonic quantum development become repeat customer cash value before financing claims dilute current shares?
+      irreducible_facts: Canadian support totals CAD 195 million; trailing revenue is approximately USD 2.832 million and concentrated; the current basic share basis is 298,511,339 rather than the quarterly weighted-average count; Yorkville and equity-plan capacity remain.
+      binding_constraints: Technical delivery, repeat commercial demand, positive gross margin and cash conversion, Yorkville usage and a reconciled fully diluted denominator.
+      causal_chain: Public support funds technical milestones; useful systems attract repeat customers; gross profit must exceed development burn; residual cash must accrue across bounded shares.
+      inherited_assumptions_challenged: Government funding improves runway but does not establish commercial value; the quarterly weighted-average share count cannot substitute for the filed current basic denominator.
+      value_capture_or_mission_link: A direct photonic platform could be asymmetric, but the corrected USD 2.681 billion equity value makes current dilution-adjusted capture too uncertain to displace GILT, LEU, STDN or cash.
+      disconfirming_evidence: Missed milestones, absent repeat demand, Yorkville dependence or dilution that consumes funded technical value would weaken the thesis; repeat customers and bounded dilution at a materially better valuation could strengthen it.
+      decision_consequence: Advance to R2 comparison under a dated service level; retain C+ research-only status, quantity zero and no buy-zone eligibility.
+    upside_path: Convert funded photonic-system milestones into repeat enterprise deployments, positive gross margin and disciplined per-share reinvestment.
+    risk_watch: Technical milestones, customer concentration, commercial revenue quality, burn, Yorkville draws, equity-plan dilution, voting control and valuation.
+    next_check: Canadian funding milestone, system delivery, repeat paying customer, Yorkville draw, equity issuance or 2026-09-25.
+    source_path: research/discovery/readiness/2026-09-11-XNDU-readiness.md
+  - id: 2026-09-11-leu-contract-and-offering-refresh
+    symbol: LEU
+    analyzed_at: "2026-09-11"
+    analysis_type: material_contract_and_dilution_refresh
+    policy_version: v1.3
+    title: Commercial HALEU demand strengthens while blank offering terms block entry
+    stance: B+ active candidate; buy 0
+    summary: The Radiant contract adds a multi-year commercial HALEU customer and capacity prepayments, but the same-day 424B5 leaves common and warrant quantities, price and proceeds blank. Contract volume, margin, protection, total expansion funding and dilution-adjusted cash capture remain unbounded.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Does commercial HALEU scarcity now create protected value for current common shares after capacity funding and new issuance?
+      irreducible_facts: A definitive customer exists and prepayments support expansion; offering security quantities and proceeds remain blank.
+      binding_constraints: Protected unit economics, TENEX replacement, expansion capex, final offering terms and diluted shares.
+      causal_chain: Scarce enrichment must create protected contracts, funded cascades and cash generation that survives financing dilution.
+      inherited_assumptions_challenged: Strategic scarcity and customer prepayments do not reveal common-equity returns.
+      value_capture_or_mission_link: LEU remains a potentially exceptional bottleneck but cannot be sized while the immediate denominator is unknown.
+      disconfirming_evidence: Final offering terms plus funded protected cascade economics and positive per-share cash conversion.
+      decision_consequence: Retain active status and quantity zero; no executable limit.
+    upside_path: Build protected domestic LEU and HALEU cascades, replace TENEX supply and retain durable cash economics for common shareholders.
+    risk_watch: Offering size and warrants, DOE funding, fixed-price protection, TENEX, capex, cash conversion and diluted shares.
+    next_check: Final offering terms, funded cascade economics, TENEX replacement or material valuation reset.
+    source_path: research/filings/2026-09-11-MATERIAL-FILING-REFRESH.md
+  - id: 2026-09-11-iren-fy2026-refresh
+    symbol: IREN
+    analyzed_at: "2026-09-11"
+    analysis_type: annual_capitalization_and_cash_return_refresh
+    policy_version: v1.3
+    title: Scale and liquidity grow while commitments keep the starter below scale
+    stance: B+ active candidate held 5; add 0; sell 0
+    summary: Fiscal revenue reached USD 707 million including USD 128.8 million of AI-cloud revenue, but the USD 702.6 million loss, approximately USD 7.976 billion of debt and lease liabilities and USD 13.81 billion of commitments outweigh the USD 5.896 billion cash headline for the next scale step.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Do energized sites and deployed GPUs produce after-capex and after-financing cash per diluted share?
+      irreducible_facts: AI revenue and cash are material; losses, obligations and commitments are larger than the simple liquidity narrative suggests.
+      binding_constraints: GAAP AI-cloud margin, utilization, depreciation, financing, remaining capex and diluted capitalization.
+      causal_chain: Power access enables GPU deployment; accepted utilization creates revenue; cash returns must exceed depreciation, interest and expansion; residual value must survive dilution.
+      inherited_assumptions_challenged: Cash on hand is not free capacity when contracted spending and financing claims exceed it.
+      value_capture_or_mission_link: The held five-share starter preserves optionality; another share is immaterial and compounds unproved project returns.
+      disconfirming_evidence: Repeat positive GAAP AI-cloud cash returns, delivered capacity within budget and a bounded conversion-consistent share count.
+      decision_consequence: Hold 5; add zero; sell zero.
+    upside_path: Turn scarce powered sites into high-utilization AI infrastructure with recurring cash returns and disciplined financing.
+    risk_watch: Project returns, commitments, capex, debt, leases, bitcoin exposure, Mirantis integration and dilution.
+    next_check: GAAP AI-cloud cash returns, capacity acceptance, remaining capex, financing or capitalization change.
+    source_path: research/filings/2026-09-11-MATERIAL-FILING-REFRESH.md
+  - id: 2026-09-11-stdn-filed-quarter-refresh
+    symbol: STDN
+    analyzed_at: "2026-09-11"
+    analysis_type: filed_quarter_share_count_and_entry_refresh
+    policy_version: v1.3
+    title: Filed shares resolve the denominator conflict but not the valuation bridge
+    stance: B- research only; R2 comparable; buy 0
+    summary: The Q2 cover page confirms 156,550,755 current basic shares. At USD 12.19, market value is approximately USD 1.908 billion and cash-adjusted enterprise value approximately USD 1.806 billion, about 403.0 and 381.4 times trailing sales; authorization and repeat protected cash economics remain absent.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Can TRISO scarcity become repeat protected cash flow large enough to justify the current diluted denominator?
+      irreducible_facts: First quarterly gross profit and a current share count are filed; trailing revenue remains only USD 4.736 million.
+      binding_constraints: Authorization, HALEU, firm-order protection, repeat delivery, normalized margin, cash conversion and dilution.
+      causal_chain: Authorized capacity must receive fuel, win funded protected orders and repeat profitable delivery before backlog becomes cash value.
+      inherited_assumptions_challenged: A corrected lower share count and first gross-profit quarter do not make a roughly 400-times-sales entry attractive.
+      value_capture_or_mission_link: STDN remains an important nuclear-fuel comparator but cannot yet beat LEU, GILT or cash.
+      disconfirming_evidence: Authorization, repeat multi-customer profitable delivery and a valuation reset that preserves exceptional per-share upside.
+      decision_consequence: Retain R2 research-only status and quantity zero.
+    upside_path: Become the reactor-agnostic domestic TRISO supplier across multiple funded programs with protected margins.
+    risk_watch: Authorization, HALEU, options, customer funding, repeat delivery, normalized margin, cash use and diluted shares.
+    next_check: Authorization, new funded firm order, repeat delivery, cash conversion, share-count change or 2026-09-18.
+    source_path: research/filings/2026-09-11-MATERIAL-FILING-REFRESH.md
+  - id: 2026-09-11-crdo-quarterly-refresh
+    symbol: CRDO
+    analyzed_at: "2026-09-11"
+    analysis_type: quarterly_growth_concentration_and_entry_refresh
+    policy_version: v1.3
+    title: Exceptional growth remains offset by concentrated value capture and valuation
+    stance: A- active core candidate; buy 0
+    summary: USD 479 million quarterly revenue, 64.5 percent gross margin and USD 129.4 million net income confirm powerful execution, while 43 and 28 percent customer concentrations, USD 88 million stock compensation and the current denominator keep entry unattractive for the satellite mission.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Can interconnect scarcity yield durable per-share cash once customer bargaining power and employee dilution are included?
+      irreducible_facts: Revenue and margin scale rapidly; two customers dominate and stock compensation is material.
+      binding_constraints: Customer diversification, durable margins, cash conversion, stock compensation and starting valuation.
+      causal_chain: AI bandwidth demand drives interconnect volumes; product differentiation supports margin; diversified cash flow must outgrow dilution.
+      inherited_assumptions_challenged: Rapid revenue growth does not guarantee rare per-share returns from an already-large denominator.
+      value_capture_or_mission_link: CRDO is a quality benchmark but its current denominator offers less extreme entry asymmetry than the smaller LEU and GILT research candidates.
+      disconfirming_evidence: Diversified growth, lower stock compensation and a material valuation reset.
+      decision_consequence: Retain core research status and quantity zero.
+    upside_path: Sustain a differentiated electrical and optical connectivity platform with diversified hyperscale adoption and high cash margins.
+    risk_watch: Customer concentration, product cycles, stock compensation, cash conversion and valuation.
+    next_check: Next quarterly filing, customer diversification or material valuation reset.
+    source_path: research/filings/2026-09-11-MATERIAL-FILING-REFRESH.md
+  - id: 2026-09-11-occ-quarterly-refresh
+    symbol: OCC
+    analyzed_at: "2026-09-11"
+    analysis_type: quarterly_profit_backlog_and_survival_refresh
+    policy_version: v1.3
+    title: Profit and backlog improve while liquidity and directness block promotion
+    stance: C+ research only; buy 0
+    summary: Quarterly revenue of USD 24.3 million, 37.4 percent gross margin, USD 1.9 million net income and USD 13.5 million backlog improve operating evidence, but USD 0.297 million cash, USD 6.3 million revolver borrowings and unquantified AI/data-center directness keep the security below promotion.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Can a small optical cable supplier turn connectivity demand into defensible repeat cash before liquidity risk consumes the option?
+      irreducible_facts: Revenue, margin, profit and backlog improved; liquidity remains thin and borrowing is material.
+      binding_constraints: Quantified data-center exposure, customer concentration, repeat cash conversion, revolver de-risking and moat.
+      causal_chain: Connectivity buildout creates cable demand; specialized products support margin; repeat cash must fund working capital and reduce debt.
+      inherited_assumptions_challenged: A low sales multiple is not asymmetric if liquidity and differentiation remain fragile.
+      value_capture_or_mission_link: The small denominator merits monitoring but does not yet beat higher-quality optical peers or cash.
+      disconfirming_evidence: Repeat positive operating cash flow, revolver reduction and quantified high-growth data-center wins.
+      decision_consequence: Retain C+ research-only status and quantity zero.
+    upside_path: Convert specialized optical connectivity demand into repeat high-margin orders and self-funded growth from a very small denominator.
+    risk_watch: Cash, revolver, customer concentration, backlog conversion, margins, moat and dilution.
+    next_check: Next quarter, revolver reduction, quantified data-center order or sustained positive operating cash flow.
+    source_path: research/filings/2026-09-11-MATERIAL-FILING-REFRESH.md
+  - id: 2026-09-12-gilt-execution-confirmed
+    symbol: GILT
+    analyzed_at: "2026-09-12"
+    analysis_type: confirmed_execution_closure
+    policy_version: v1.3
+    title: Starter confirmed with the original price ceiling preserved
+    stance: B+ active candidate; confirmed holding of 29 shares; no further order authorized
+    summary: Broker evidence confirms 29 GILT shares at USD 9.66 for USD 280.14. The fill exceeded the historical USD 9.60 recommendation ceiling by USD 0.06 per share; the old ceiling is not rewritten. Confirmed cash is USD 11167.73 and standard T+1 settlement is September 14. The original proposal is closed.
+    first_principles_analysis:
+      question_rebuilt_from_basics: What ownership and cash follow from the broker fill while keeping the original investment decision auditable?
+      irreducible_facts: Filled quantity is 29, actual average price is USD 9.66, cost is USD 280.14 and trade date is September 11; the old ceiling was USD 9.60.
+      binding_constraints: Broker truth, append-only events, narrow administrative defaults, settlement timing and delayed historical publication.
+      causal_chain: Confirmed quantity times actual price determines cost, reduces cash and establishes ownership; closing the proposal prevents an obsolete instruction from being repeated.
+      inherited_assumptions_challenged: A recommendation ceiling or screenshot market quote cannot replace actual fill economics; a completed starter does not authorize scaling.
+      value_capture_or_mission_link: The actual cost is 2.0541 percent of the pretrade reference and the existing ground and defense thesis has an evidence-dependent path to meaningful scale; this accounting classification does not excuse the price variance.
+      disconfirming_evidence: Later broker fees, settlement changes, corrected fills or reversals require append-only corrections; weakened cash conversion or dilution changes the investment thesis in a separate fresh review.
+      decision_consequence: Record the actual execution, retain the original ceiling and close every current proposal field; require a new decision for any later allocation.
+    upside_path: Historical thesis remains repeat ground and defense demand converted into per-share cash after acquisition and financing costs; no new underwriting is implied.
+    risk_watch: Comtech completion, final consideration, working capital, cash conversion, integration, customer retention and dilution.
+    next_check: Comtech close or amendment, combined cash conversion, share-count change, another confirmed broker event or 2026-09-18.
+    source_path: decisions/2026-09-11-gilt-execution-confirmation.md

@@ -3,6 +3,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { parse as parseYaml, stringify as stringifyYaml } from "yaml";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkDataScript = path.join(repoRoot, "scripts/check-data.mjs");
@@ -57,14 +58,18 @@ const testCases = [
     expected: "next_review_trigger is required",
   },
   {
-    name: "rejects stale active thesis count",
+    name: "rejects self-reported stale active thesis count",
     mutate: (cwd) => {
-      updateCsvSymbolRow(cwd, "research/watchlist.csv", "RKLB", (row) => ({
-        ...row,
-        latest_baseline_date: "2026-01-01",
-      }));
+      const file = path.join(cwd, "research/quality-metrics.yml");
+      const metrics = parseYaml(readFileSync(file, "utf8"));
+      metrics.freshness.stale_theses_over_90_days += 1;
+      writeFileSync(file, stringifyYaml(metrics));
+      const packetFile = path.join(cwd, metrics.discovery_process.latest_evidence_packet_path);
+      const packet = parseYaml(readFileSync(packetFile, "utf8"));
+      packet.quality_metrics.freshness = metrics.freshness;
+      writeFileSync(packetFile, stringifyYaml(packet));
     },
-    expected: "research/quality-metrics.yml stale_theses_over_90_days is 0, expected 1",
+    expected: "research/quality-metrics.yml stale_theses_over_90_days is",
   },
   {
     name: "rejects unknown linked run ledger event",
@@ -122,6 +127,7 @@ function makeFixture(name) {
     cpSync(path.join(repoRoot, entry), path.join(target, entry), {
       recursive: true,
       force: true,
+      filter: (source) => !/^research\/(cache|downloads)(\/|$)/.test(path.relative(repoRoot, source).split(path.sep).join("/")),
     });
   }
   mkdirSync(path.join(target, "scripts"), { recursive: true });

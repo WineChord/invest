@@ -1,24 +1,20 @@
 schema_version: 1
-as_of: 2026-08-28
+as_of: 2026-09-11
 status: funded_with_positions
 base_currency: USD
-confirmed_cash: 9671.87
-settled_cash: 9671.87
-buying_power: 9671.87
-positions_count: 4
-last_confirmed_ledger_event_id: 2026-08-28-deposit-weekly-888-001
-last_reconciled_with_broker_at: 2026-08-14
+confirmed_cash: 11167.73
+settled_cash: 11447.87
+buying_power: 11167.73
+positions_count: 5
+last_confirmed_ledger_event_id: 2026-09-11-buy-gilt-001
+last_reconciled_with_broker_at: 2026-09-11
 notes:
-  - User confirmed USD 888 deposits available in the brokerage account on
-    2026-05-30, 2026-06-12, 2026-06-18, 2026-07-08, 2026-07-11, and 2026-07-24,
-    plus an additional USD 3000 deposit on 2026-07-23.
-  - User confirmed ASTS and RKLB buy executions on 2026-06-05, 2026-06-12,
-    2026-06-22, and 2026-07-08 from redacted screenshot evidence.
-  - User confirmed an MDA buy execution on 2026-08-06 from redacted screenshot
-    evidence; cash settlement is due on 2026-08-07.
-  - User confirmed an additional MDA buy execution on 2026-08-13 from redacted
-    screenshot evidence; cash settlement is due on 2026-08-14.
-  - User confirmed an IREN buy execution on 2026-08-14 from redacted screenshot
-    evidence; cash settlement is due on 2026-08-17.
+  - User confirmed USD 888 deposits available in the brokerage account on 2026-05-30, 2026-06-12, 2026-06-18, 2026-07-08, 2026-07-11, and 2026-07-24, plus an additional USD 3000 deposit on 2026-07-23.
+  - User confirmed ASTS and RKLB buy executions on 2026-06-05, 2026-06-12, 2026-06-22, and 2026-07-08 from redacted screenshot evidence.
+  - User confirmed an MDA buy execution on 2026-08-06 from redacted screenshot evidence; cash settlement is due on 2026-08-07.
+  - User confirmed an additional MDA buy execution on 2026-08-13 from redacted screenshot evidence; cash settlement is due on 2026-08-14.
+  - User confirmed an IREN buy execution on 2026-08-14 from redacted screenshot evidence; cash settlement is due on 2026-08-17.
   - Raw broker screenshots and full broker identifiers are not committed.
-last_standing_contribution_date: 2026-08-28
+  - "User supplied a filled GILT buy on 2026-09-11: 29 shares at USD 9.66, with standard T+1 settlement due 2026-09-14. Broker reconciliation covers this execution; cash and positions are derived from the confirmed ledger, not a new broker balance statement."
+  - The USD 280.14 unsettled purchase is deducted from confirmed cash and buying power; settled cash remains USD 11447.87 until settlement. No September 11 equity-curve close is recorded before a reliable completed close is available.
+last_standing_contribution_date: 2026-09-11

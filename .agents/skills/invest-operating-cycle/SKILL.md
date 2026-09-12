@@ -87,6 +87,7 @@ Use the relevant template under `templates/`:
 - Use `npm run test:standing-contribution` when changing the recurring contribution plan, application, account-state reconciliation, or automation route.
 - Use `npm run verify` for dashboard, broad repository changes, or final validation when practical.
 - Use the focused validation commands in `docs/research-command-reference.md` when changing discovery, SEC, semantic-discovery, readiness, promotion, watchlist-cycle, or market-refresh behavior.
+- Before direct or deferred release, use `templates/publication-release-review.md` to check the exact staged payload, including new files; stop unattended retries when a deterministic failure or changed release requires review.
 
 ## Output Standard
 

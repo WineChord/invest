@@ -66,10 +66,14 @@ no_compensated_or_referral_language:
 
 ## Release Decision
 
+Review the exact staged payload, including newly added files, and run `git diff --cached --check`; an unstaged diff is insufficient. A deterministic validation failure or a changed reviewed payload or remote base stops unattended delivery until the corrected release is reviewed. Elapsed time is not a repair.
+
 ```yaml
 status: release_allowed | release_blocked | release_allowed_after_redaction | release_allowed_after_embargo
 required_redactions:
 required_delay:
+staged_payload_reviewed:
+staged_diff_check:
 validation_run:
 notes:
 ```
