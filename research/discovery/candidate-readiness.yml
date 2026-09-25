@@ -75,7 +75,7 @@ records:
     reachable_evidence_remaining: Funding milestones, technical delivery, repeat customer revenue, Yorkville draws, fully diluted capitalization and cash conversion remain publicly testable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Next quarterly filing, Canadian funding milestone, system delivery or material commercial contract.
-    next_evidence_due: 2026-09-25
+    next_evidence_due: 2026-10-02
     cost_of_waiting: Government support can accelerate technical validation and rerating, but buying before milestone conversion and dilution reconcile would make common equity absorb pre-commercial execution risk.
     false_negative_early_warning: A funded technical milestone, repeat paying customer, material commercial backlog or bounded dilution at an enterprise value substantially below the current approximately USD 2.438 billion.
     reopen_or_reject_trigger: Advance only when funded milestones convert into technical and customer proof with bounded dilution; demote if financing dependence or execution delay overwhelms the program support.
@@ -408,7 +408,7 @@ records:
     reachable_evidence_remaining: Authorization, protected firm-order economics, customer HALEU and funding, repeat multi-customer delivery, normalized margin, cash conversion and capitalization reconciliation.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Issuer authorization and delivery disclosures, customer contract evidence and the next quarterly filing.
-    next_evidence_due: 2026-09-25
+    next_evidence_due: 2026-10-02
     cost_of_waiting: STDN could reprice before a filing or authorization, but entering at a stale pre-event price or after an unbounded gap would make common equity absorb cancellation, industrial-margin and dilution risk without a base-case valuation bridge.
     false_negative_early_warning: Filed confirmation of capitalization and contract quality, final authorization, another funded customer or repeat positive-margin delivery at a valuation near the current enterprise-value range.
     reopen_or_reject_trigger: Advance toward R3 only when filed financials, event-after price, authorization, protected firm economics, repeat delivery and diluted per-share scenarios support exceptional upside; reject or demote on authorization failure, cancellations, negative normalized margins, faster cash use or excessive dilution.
@@ -442,7 +442,7 @@ records:
     reachable_evidence_remaining: Customer and data-center mix, repeat backlog conversion, working-capital normalization, revolver capacity and covenants, cash conversion and current diluted capitalization remain publicly testable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Next quarterly filing, material customer award or revolver amendment.
-    next_evidence_due: 2026-09-25
+    next_evidence_due: 2026-10-02
     cost_of_waiting: The small denominator and operating inflection can rerate quickly, but thin liquidity and working-capital dependence can also destroy equity value before a durable cash-conversion pattern is visible.
     false_negative_early_warning: A second quarter of positive operating cash flow, sustained gross margin, disclosed data-center wins and lower revolver dependence.
     reopen_or_reject_trigger: Start a promotion review only when customer mix, moat, working capital, revolver headroom and diluted per-share value support a survivable right tail; demote if backlog fails to convert or liquidity tightens.
@@ -546,7 +546,7 @@ records:
     reachable_evidence_remaining: Reliable completed price history, post-close financial statements, customer concentration, government-contract economics, cash runway and the fully diluted capitalization.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: First supported market-data close and next post-merger SEC filing.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A newly listed autonomy platform can rerate before full coverage, but without a reliable entry price and post-close economics no mission-consistent starter can be underwritten.
     false_negative_early_warning: A reliable completed close paired with funded defense orders, repeat gross margin and bounded dilution.
     reopen_or_reject_trigger: Advance to R2 only after current market data, post-close operating evidence and fully diluted per-share scenarios reconcile; demote if cash burn, concentration or dilution dominates the technical optionality.
@@ -796,7 +796,7 @@ records:
     reachable_evidence_remaining: Pro-forma capitalization, residual liquidity, site-level power and capex, a binding customer and a credible survival runway remain reachable through near-term filings.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: PIPE closing evidence, the next Form 10-Q, or a binding AI/HPC customer agreement, whichever arrives first.
-    next_evidence_due: 2026-09-25
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A binding customer or completed recapitalization could rerate the small equity before R2 work is complete; the bounded two-week review window limits that false-negative cost.
     false_negative_early_warning: Confirmed financing close, old-debt redemption, a binding customer contract, or independently verified powered-site capacity before the due date.
     reopen_or_reject_trigger: Advance only after financing close, a reconciled fully diluted denominator, verified site power and capex, a binding customer and credible survival runway; reject if financing fails or going-concern risk persists without a funded customer.
@@ -816,7 +816,7 @@ records:
     reachable_evidence_remaining: Project refinancing, campus delivery and rent commencement, tenant credit support, parent-recourse changes, ChronoScale value separation and the fully diluted denominator can change the R2 comparison.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Project refinancing, campus delivery and rent commencement, tenant credit support, parent-recourse changes, remaining-capex updates or the next quarterly filing.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: Contracted capacity can rerate before normalized rent begins, but a starter would expose common equity to unbounded construction, recourse and dilution risk while IREN already provides a confirmed powered-compute starter.
     false_negative_early_warning: Limited-recourse permanent financing, another investment-grade tenant, on-budget delivery, rent commencement or a materially lower fully diluted valuation.
     reopen_or_reject_trigger: Advance only when project returns, tenant support, remaining capex, parent recourse, ChronoScale value and fully diluted per-share economics show exceptional retained common-equity upside; reject if funding or construction repeatedly shifts losses to the parent common share.
@@ -836,7 +836,7 @@ records:
     reachable_evidence_remaining: A company reconciliation of organic versus acquired revenue, backlog quality, cash use, acquisition consideration and diluted securities remains reachable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Organic-revenue and backlog reconciliation plus the next capitalization update.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: Defense demand can accelerate quickly, but the near-term filing provides a much better bound on whether growth reaches common shareholders.
     false_negative_early_warning: Large funded government awards, recurring autonomous-deployment revenue or a materially cleaner diluted capitalization.
     reopen_or_reject_trigger: Advance only after organic revenue, backlog quality, cash runway and dilution are reconciled; reject if acquisition accounting and securities issuance continue to dominate per-share value.
@@ -856,7 +856,7 @@ records:
     reachable_evidence_remaining: Same-lane scenario comparison, current diluted valuation, Lumentum agreement economics and export/Tongmei downside remain reachable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: R2 comparison with CRDO, LITE, MTSI, LASR and COHR.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A durable InP upcycle can rerate further, but current price and geopolitical risks make entry without the filing unattractive.
     false_negative_early_warning: Repeat InP orders, higher utilization and margins, cleaner cash conversion or reduced China and customer concentration.
     reopen_or_reject_trigger: Advance only after cash conversion, customer durability, export access, ownership structure and fully diluted value are reconciled; reject if the current rerating already capitalizes the plausible upside.
@@ -876,7 +876,7 @@ records:
     reachable_evidence_remaining: Commercial design wins, production qualification, full-year results and subsequent financing disclosures can establish or reject a scalable revenue path.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Commercial qualification or order disclosure, fiscal results, or the next financing filing.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A small denominator can rerate on a commercial qualification, but buying research ahead of customer proof would mistake technical potential for value capture.
     false_negative_early_warning: A binding high-volume design win, production qualification or a strategic manufacturing partnership with disclosed economics.
     reopen_or_reject_trigger: Advance only after commercial scale, gross margin, customer concentration, runway and dilution are bounded; reject if government research remains the principal revenue source without a manufacturing transition.
@@ -896,7 +896,7 @@ records:
     reachable_evidence_remaining: The Q2 filing and launch-capital plan can reconcile revenue quality, debt conversion, warrants and ongoing constellation funding.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Second-quarter 2026 Form 10-Q and Merlin launch or capital update.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A small denominator and first quarterly operating profit can rerate, but current space concentration and capitalization uncertainty reduce the cost of a short evidence wait.
     false_negative_early_warning: Repeat high-margin data revenue, a funded multi-year sovereign contract, successful Merlin launch or cleaner capitalization.
     reopen_or_reject_trigger: Advance only after recurring revenue, customer mix, constellation funding and fully diluted shares are reconciled; reject if one-off satellite deliveries or financing dominate the improvement.
@@ -916,7 +916,7 @@ records:
     reachable_evidence_remaining: The Q2 filing, DOE facility terms, Frontier Power USA relationship and fully diluted security schedule can bound gross-margin and financing economics.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Q2 Form 10-Q follow-up, financing documents and related-party contract evidence.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: Grid-storage demand can grow quickly, but related-party revenue and financing complexity make premature promotion more likely to destroy than preserve optionality.
     false_negative_early_warning: Sustained third-party revenue, positive gross margin, DOE-backed production milestones or simplified financing.
     reopen_or_reject_trigger: Advance only after third-party demand, gross-margin bridge, runway and fully diluted capitalization are reconciled; reject if related-party and financing support remain the main economics.
@@ -936,7 +936,7 @@ records:
     reachable_evidence_remaining: Customer economics, sustainable cash conversion and a material valuation reset can still change the comparison.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Same-lane operating and valuation comparison with LASR, COHR, CRDO, LITE and AAOI.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
@@ -956,7 +956,7 @@ records:
     reachable_evidence_remaining: Backlog conversion, customer economics, supply recovery and a material valuation reset can change the comparison.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Same-lane operating and valuation comparison with MTSI, COHR, CRDO, LITE and AAOI.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
@@ -976,7 +976,7 @@ records:
     reachable_evidence_remaining: Pro-forma financial statements, debt and cash bridge, Serra Verde operating margins, U.S. commissioning capital, offtake and fully diluted capitalization remain publicly testable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Pro-forma transaction filing, next quarterly report and DFC financing terms.
-    next_evidence_due: 2026-09-25
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
@@ -996,7 +996,7 @@ records:
     reachable_evidence_remaining: Award milestones, backlog conversion, repeat customer revenue, cash economics, tax-receivable and exchangeable-unit claims and fully diluted capitalization remain publicly testable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: CHIPS milestone evidence, next quarterly filing and repeat commercial customer disclosures.
-    next_evidence_due: 2026-09-25
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion more costly.
     false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
     reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker dominates the plausible right tail.
@@ -1096,7 +1096,7 @@ records:
     reachable_evidence_remaining: Commercial qualification, repeat customer revenue, gross margin, cash runway and current fully diluted capitalization remain publicly testable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Next quarterly filing and any binding commercial qualification or customer contract.
-    next_evidence_due: 2026-09-25
+    next_evidence_due: 2026-10-02
     cost_of_waiting: A strategic contract could rerate the small base, but current per-share economics do not justify paying for unverified scale.
     false_negative_early_warning: Binding production qualification, repeat commercial revenue, positive gross margin or funded non-dilutive scale-up.
     reopen_or_reject_trigger: Advance only after commercial demand, gross margin, cash runway and fully diluted value reconcile; reject if grants, stock compensation and financing remain the principal economics.
@@ -1116,7 +1116,7 @@ records:
     reachable_evidence_remaining: Program awards, repeat deliveries, customer concentration, cash use, acquired economics and a current diluted-capitalization bridge remain reachable.
     last_readiness_reviewed_at: 2026-09-11
     next_evidence_source: Next quarterly filing and funded-program or delivery evidence.
-    next_evidence_due: 2026-09-18
+    next_evidence_due: 2026-10-02
     cost_of_waiting: Defense awards can move quickly, but the recent offering and execution risks make a short evidence wait cheaper than premature promotion.
     false_negative_early_warning: Repeat funded program awards, durable gross margin, customer diversification or a cleaner capitalization path.
     reopen_or_reject_trigger: Advance only after recurring program economics, controls, acquisition contribution and fully diluted value reconcile; reject if financing or one customer dominates the thesis.

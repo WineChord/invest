@@ -1,0 +1,307 @@
+schema_version: 1
+run_id: 2026-09-25-weekly-full-operating-cycle
+run_date: 2026-09-25
+market_session_date: 2026-09-24
+evidence_cutoff: 2026-09-25T18:00:00+08:00
+request_type: scheduled_weekly_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: No trade is authorized. Research conclusions remain valid until the September 30 LEU operating checkpoint, an earlier material event or a confirmed account change; the next full review is October 2.
+linked_decision_or_research_note: decisions/2026-09-25-weekly-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-09-25-subagent-evidence-packet.yml
+artifact_hash_index_path: research/discovery/runs/2026-09-25-discovery-artifact-index.json
+execution_update:
+  status: standing_contributions_recorded_no_trade
+  confirmed_ledger_event_ids:
+    - 2026-09-18-deposit-weekly-888-001
+    - 2026-09-25-deposit-weekly-888-001
+  resulting_confirmed_cash: 12943.73
+  resulting_settled_cash: 12943.73
+  resulting_confirmed_positions:
+    - ASTS 11 shares
+    - GILT 29 shares
+    - IREN 5 shares
+    - MDA 9 shares
+    - RKLB 17 shares
+  notes: The two overdue standing contributions were applied exactly once under the existing authorization. No trade, fill, fee, order, reserve position or broker reconciliation was inferred.
+analysis_scope: September 24 completed closes, current account ledger, 56 non-removed watchlist reviews, 23 current valuation states, paired 72-symbol SEC indexes, omitted-form review, focused registration and transaction review, discovery, community triage and independent allocation review.
+article_one_preflight:
+  sentinel_level: WARN
+  reason_codes: [evidence_deadline_due]
+  disposition: Complete the due evidence review and force a current allocation decision without weakening account truth, human control or publication safety.
+  protected_surfaces_changed: false
+first_principles_heading: First-Principles Analysis
+first_principles_analysis:
+  question_rebuilt_from_basics: Which current security can turn a scarce bottleneck into exceptional dilution-adjusted per-share value at a feasible total-liquidity weight and beat holdings and cash now?
+  irreducible_facts:
+    - Confirmed cash is USD 12943.73 and September 24 equity value is USD 2727.68.
+    - RKLB completed its ATM and removed the bridge-financing cliff, but dilution, retained Iridium debt, integration and entry valuation remain material.
+    - LEU completed its financing and signed a second binding HALEU customer with prepayments, but the September 30 operating transition and expansion-return bridge remain unresolved.
+    - Existing holdings already preserve five distinct right-tail exposures; cash weight alone does not make a sixth position positive expected value.
+  binding_constraints:
+    - A starter must have a credible evidence-backed path to mission-relevant scale; small size alone cannot repair negative or indeterminate expected value.
+    - No recommendation changes the ledger and no cash-management order is valid without broker eligibility and economics.
+    - Current economic share counts, debt and dilution must replace stale automated denominators before scaling.
+  causal_chain: Scarcity attracts funded demand; delivery creates protected economics; operating cash exceeds capital and financing claims; residual value survives dilution; entry price then permits a portfolio-scale asymmetric return.
+  inherited_assumptions_challenged:
+    - RKLB still has an unfunded acquisition bridge.
+    - LEU financing quantities remain blank.
+    - MDA authorization proves a completed repurchase.
+    - A high cash weight requires immediate deployment.
+  value_capture_or_mission_link: Holding existing starters while waiting five days for decision-critical LEU evidence preserves convexity and avoids symbolic exposure that cannot yet be scaled on evidence.
+  disconfirming_evidence: A funded authorized post-September-30 LEU operating path with protectable economics, positive combined GILT cash conversion, a material valuation reset or adverse holding evidence would change the decision.
+  decision_consequence: Hold ASTS 11, GILT 29, IREN 5, MDA 9 and RKLB 17; add zero, reduce zero, sell zero, buy no new equity and place no SGOV order.
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --as-of 2026-09-25 --json --output research/discovery/runs/2026-09-25-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-09-25-scan.json
+      output_sha256: e3c6b3a36e6c6f6fdd3d7d6120ba49f714b0e94987900a7b71f1f6b29fc44d79
+      retrieved_at: 2026-09-25
+      result_summary: The current 7662-security name and ticker reference produced 60 exploratory matches; full-universe issuer-semantic coverage was not performed and is disclosed as a bounded gap.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC event, foundational, omitted-form, financing and registration evidence
+      sources_or_queries: [targeted 72-symbol event index, targeted 72-symbol foundational index, submissions delta, focused registration interval]
+      source_ids: [sec_event_index_targeted_72_2026_09_25, sec_foundational_index_targeted_72_2026_09_25, sec_omitted_forms_2026_09_25]
+      retrieved_at: 2026-09-25
+      material_findings: RKLB financing and vote, LEU contract, MDA authorization, INFQ milestone and CRWV converts were reviewed; targeted scope and incomplete current-day index are explicit.
+    - family_id: issuer_material
+      family: Issuer releases, transaction announcements, customer contracts and technical milestones
+      sources_or_queries: [current material issuer releases, SEC exhibits, investor-relations announcements]
+      source_ids: [sec_event_index_targeted_72_2026_09_25, sec_omitted_forms_2026_09_25]
+      retrieved_at: 2026-09-25
+      material_findings: Current primary issuer evidence changed stale blockers but did not establish a new protected cash-return and entry combination.
+    - family_id: market_data
+      family: Completed regular-session closes and current screening metrics
+      sources_or_queries: [canonical universe refresh, watchlist price refresh]
+      source_ids: [completed_close_universe_2026_09_24]
+      retrieved_at: 2026-09-25
+      material_findings: September 24 closes support current NAV and comparisons; automated capitalization fields are screening aids where legal structures differ.
+    - family_id: current_world_context
+      family: Macro, financing, volatility, contracts, customers and capital formation
+      sources_or_queries: [macro regime refresh, SEC financing delta, community attention triage]
+      source_ids: [completed_close_universe_2026_09_24, sec_event_index_targeted_72_2026_09_25, public_community_triage_2026_09_25]
+      retrieved_at: 2026-09-25
+      material_findings: Strong-trend macro permits research but does not relax price discipline; capital-structure changes dominate several valuation comparisons.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public, pre-listing, merger and acquisition evidence
+      sources_or_queries: [focused S-1 and F-1 interval, S-4 and F-4 interval, 425 and DEF 14A interval]
+      source_ids: [sec_omitted_forms_2026_09_25, sec_event_index_targeted_72_2026_09_25]
+      retrieved_at: 2026-09-25
+      material_findings: NSCALE, SeeQC and Accelevation plus three additional registrations require R0 skims; none is currently executable or allocation-ready.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map and cross-lane opportunity-cost comparison
+      sources_or_queries: [public community scan, independent discovery review, current event and foundational filings]
+      source_ids: [public_community_triage_2026_09_25, sec_event_index_targeted_72_2026_09_25, sec_foundational_index_targeted_72_2026_09_25]
+      retrieved_at: 2026-09-25
+      material_findings: IMC and REA improve strategic-materials research recall and INFQ raises technical-review priority, but no lead clears readiness and entry gates.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-09-25
+    notes: Current prices, macro, filings, issuer releases, transactions, financing, community attention and bottleneck leads were refreshed or explicitly bounded; complete does not mean full-universe semantic issuer classification.
+  deterministic_scan:
+    status: complete_name_ticker_only
+    eligible_securities: 7662
+    output_path: research/discovery/runs/2026-09-25-scan.json
+    limitation: Full-universe semantic issuer coverage is zero in the current deterministic artifact and is not represented as complete.
+  community_attention:
+    status: complete_with_four_rate_limited_sources
+    source_entries: 46
+    leads: 199
+    output_path: research/discovery/runs/2026-09-25-community-triage.json
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  sec_event_index:
+    listed_symbol_scope: 72
+    output_path: research/discovery/runs/2026-09-25-sec-event-filing-index-scan.json
+  sec_foundational_index:
+    listed_symbol_scope: 72
+    output_path: research/discovery/runs/2026-09-25-sec-foundational-filing-index-scan.json
+  omitted_forms_review:
+    filings_since_2026_09_12: 195
+    result: Ownership, resale, compensation, financing and other forms omitted by the paired selectors were reviewed and dispositioned.
+  registration_transaction_review:
+    completed_filing_days: 9
+    source_index_rows: 33082
+    focused_records: 502
+    output_path: research/discovery/runs/2026-09-25-sec-registration-transaction-candidates.json
+    limitation: September 25 daily index was not complete at cutoff; structured-note 424B2 records were excluded after the initial 500-row output exposed truncation.
+unknown_future_review:
+  exploratory_match_count: 60
+  top_clusters: [issuer_name_collisions, ticker_collisions, ineligible_or_weak_bottleneck_proxies]
+  sampled_symbols: [QMCO, QNTM, INFQ, NBIS, MU, SPCX, IMC, REA]
+  false_positive_patterns: [quantum_name_collision, ticker_collision, strategic_label_without_value_capture]
+  lane_decisions: [retain_current_lanes, retain_strategic_critical_materials_as_emerging, add_no_buy_ready_security]
+  disposition: Independent review corrected name-collision false positives and added current research leads, but no exploratory result supplied both a source-backed bottleneck chain and a dilution-adjusted entry that displaced the current opportunity set.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Deployable space communications, domestic nuclear fuel, energized compute, strategic materials processing, optical interconnect and reliable quantum control remain plausible bottlenecks.
+    inferences: Scarcity is investable only when funded demand, delivery and residual common-equity economics are jointly visible.
+    disconfirming_evidence: Capital intensity, technical substitution, customer concentration, financing claims and dilution can prevent physical scarcity from producing shareholder value.
+    source_ids: [sec_event_index_targeted_72_2026_09_25, sec_foundational_index_targeted_72_2026_09_25]
+    investment_implication: Preserve current starters and make LEU the leading dated nonholding review without opening a new position.
+  who_controls_or_removes_scarcity:
+    facts: Current holdings and candidates control different parts of launch, communications, fuel, powered-compute and manufacturing chains, while new registrations offer future comparison points.
+    inferences: Direct control matters more than labels but still requires operating rights, customer acceptance and funded scale.
+    disconfirming_evidence: A supplier can control a technical layer while customers, creditors or repeated equity issuance capture most economics.
+    source_ids: [sec_event_index_targeted_72_2026_09_25, sec_omitted_forms_2026_09_25]
+    investment_implication: Correct capital denominators before scaling any direct bottleneck exposure.
+  who_can_monetize_into_shareholder_value:
+    facts: GILT has operating profit and an existing starter; LEU has binding customers and new capital; RKLB has a larger financed platform; each still has a different cash-return or entry gap.
+    inferences: Monetization requires recurring cash after capital needs and claims, not contract count, backlog or financing alone.
+    disconfirming_evidence: Weak unit economics, adverse integration, unbounded capex or further dilution would break the per-share chain.
+    source_ids: [completed_close_universe_2026_09_24, sec_event_index_targeted_72_2026_09_25]
+    investment_implication: Hold existing quantities and keep every incremental equity quantity at zero through the near-term LEU checkpoint.
+  public_security_expression:
+    facts: The deterministic reference includes 7662 eligible securities by name and ticker, while paired SEC review intentionally targets 72 listed decision-universe symbols.
+    inferences: Listing and observability do not create buy eligibility, and targeted SEC coverage is not a full-market semantic search.
+    disconfirming_evidence: A current listed issuer with protected economics, correct capitalization and a superior entry could displace the present ordering.
+    source_ids: [completed_close_universe_2026_09_24, sec_event_index_targeted_72_2026_09_25]
+    investment_implication: No current new public-security expression clears promotion and allocation gates.
+  early_small_misunderstood_or_newly_public:
+    facts: IMC and REA are early strategic-materials leads; NSCALE, SeeQC and Accelevation are pre-listing direct comparators; INFQ has a new technical milestone.
+    inferences: Small or new denominators enlarge upside only when technology, financing and per-share capture survive primary-source review.
+    disconfirming_evidence: Going-concern risk, inferred-only resources, prelisting status, high sales multiples or technical demonstrations without paid utility can dominate the right tail.
+    source_ids: [sec_omitted_forms_2026_09_25, public_community_triage_2026_09_25]
+    investment_implication: Route these leads to dated readiness work rather than promotion or purchase.
+candidate_delta:
+  candidates_added: []
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: []
+readiness_sprints: []
+watchlist_and_readiness:
+  non_removed_watchlist_rows_reviewed: 56
+  active_core_watch_valuation_rows: 23
+  candidates_with_current_readiness: 38
+  promotions: []
+  buy_zone_additions: []
+  prelisting_leads_for_followup: [NSCALE, SeeQC, Accelevation, SB Energy, Nth Cycle, Amaero]
+  additional_research_leads: [IMC, REA]
+material_event_disposition:
+  - symbol: RKLB
+    finding: ATM completed, bridge terminated and Iridium vote approved; acquisition and dilution risks replace the obsolete funding-cliff blocker.
+    decision: hold 17, add zero, reduce zero
+  - symbol: LEU
+    finding: Completed financing and Antares prepayment contract strengthen the case, but September 30 operating authority, protected economics and dilution-adjusted returns remain decision-critical.
+    decision: strongest nonholding counterfactual, buy zero and recheck September 30
+  - symbol: MDA
+    finding: NCIB authorization and updated basic share count improve monitoring but do not prove cash deployment or per-share accretion.
+    decision: hold 9, add zero
+  - symbol: INFQ
+    finding: Thirty entangled logical qubits and disclosed circuit customers raise technical priority but do not prove fault-tolerant commercial utility or acceptable entry value.
+    decision: research only, buy zero
+  - symbol: CRWV
+    finding: USD 4.2 billion convertible issuance raises financing and dilution obligations.
+    decision: no promotion and buy zero
+allocation_decision:
+  account_nav: 15671.41
+  confirmed_cash: 12943.73
+  equity_value: 2727.68
+  liquidity_weight_pct: 82.5945
+  equity_weight_pct: 17.4055
+  holdings:
+    ASTS: hold 11, add 0, reduce 0, sell 0
+    GILT: hold 29, add 0, reduce 0, sell 0
+    IREN: hold 5, add 0, reduce 0, sell 0
+    MDA: hold 9, add 0, reduce 0, sell 0
+    RKLB: hold 17, add 0, reduce 0, sell 0
+  new_equity_quantity: 0
+  cash_management_quantity: 0
+  strongest_counterfactual: LEU two-to-three-share analytical starter, followed by GILT scale and MDA add; all quantities remain zero.
+  no_buy_reason: The September 30 LEU operating transition can change expected value within five days, while current dilution and contract-return evidence cannot yet support a scale path.
+  cash_opportunity_cost: At a 3.66 percent gross SEC-yield reference, zero-yield cash would forgo about USD 473.74 per year before tax, fees and spread; actual sweep yield and SGOV eligibility are unknown.
+  next_review_date: 2026-09-30
+portfolio_risk:
+  independent_stress_loss_usd: 1936.24
+  independent_stress_loss_pct_nav: 12.3553
+  complete_equity_loss_pct_nav: 17.4055
+  leu_three_share_zero_loss_pct_nav: 2.8202
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [deterministic scan, community triage, focused registration interval, candidate readiness]
+      sources_checked: [sec_event_index_targeted_72_2026_09_25, sec_foundational_index_targeted_72_2026_09_25, public_community_triage_2026_09_25]
+      facts_verified: [name and ticker coverage is not semantic coverage, registration truncation omitted direct leads, no new lead is buy-ready]
+      stale_or_missing_evidence: [full-universe semantic classification, six prelisting R0 skims]
+      confidence: high_on_process_gaps_medium_on_exhaustive_opportunity_set
+      key_findings: Added IMC and REA research leads, surfaced prelisting comparisons and rejected QMCO and QNTM lane collisions without changing allocation.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [paired SEC indexes, omitted forms, issuer releases, current positions]
+      sources_checked: [sec_event_index_targeted_72_2026_09_25, sec_foundational_index_targeted_72_2026_09_25, sec_omitted_forms_2026_09_25]
+      facts_verified: [RKLB financing cliff removed, LEU Antares contract includes prepayment, MDA repurchase is authorization only]
+      stale_or_missing_evidence: [LEU post-September-30 operating arrangement, corrected automated capital denominators]
+      confidence: high
+      key_findings: Hold all five positions and make LEU the leading nonholding review; stale blockers cannot be reused.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [current holdings, LEU evidence, total-liquidity sizing, scenario impacts]
+      sources_checked: [completed_close_universe_2026_09_24, sec_event_index_targeted_72_2026_09_25]
+      facts_verified: [LEU financing quantities known, customer prepayments strengthen funding, two-to-three shares are portfolio-meaningful]
+      stale_or_missing_evidence: [operating transition, protected margin and expansion return]
+      confidence: medium
+      key_findings: A two-to-three-share LEU starter is the strongest counterfactual, but waiting five days for decision-critical evidence is preferable.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [holdings, corrected dilution, downside stress, acquisition and project obligations]
+      sources_checked: [completed_close_universe_2026_09_24, sec_event_index_targeted_72_2026_09_25, sec_omitted_forms_2026_09_25]
+      facts_verified: [RKLB denominator materially exceeds automated data, total-equity loss is bounded by current weight, several debt fields are stale]
+      stale_or_missing_evidence: [final RKLB merger denominator, full ASTS economic claim bridge, IREN project cash returns]
+      confidence: high_on_risk_medium_on_action
+      key_findings: Preferred trimming four RKLB shares on valuation, but did not identify a new survival fact requiring a sale.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [current closes, economic-share bridges, debt, warrants, cash and reverse-return thresholds]
+      sources_checked: [completed_close_universe_2026_09_24, sec_event_index_targeted_72_2026_09_25, sec_foundational_index_targeted_72_2026_09_25]
+      facts_verified: [LEU current economic shares are about 22.46 million, GILT current ordinary shares exceed automated data, RKLB known economic denominator is materially higher]
+      stale_or_missing_evidence: [complete fully diluted bridges, merger awards, cash burn and exercise proceeds]
+      confidence: medium_high
+      key_findings: Existing starters can be held, but corrected entry denominators make every incremental stock quantity zero.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [confirmed cash, all holdings, completed closes, stock and cash-management alternatives]
+      sources_checked: [completed_close_universe_2026_09_24, sec_event_index_targeted_72_2026_09_25]
+      facts_verified: [cash is 82.5945 percent of NAV, equity stress is bounded, SGOV reference yield does not prove broker eligibility]
+      stale_or_missing_evidence: [broker sweep yield, ETF eligibility, fee and order preview]
+      confidence: high
+      key_findings: Hold all stocks and proposed conditional cash management only if broker mechanics were confirmed; main review keeps SGOV quantity zero.
+  unresolved_conflicts: 0
+  conflict_resolution: Bear review preferred trimming four RKLB shares and allocation review proposed conditional SGOV. Main review retained RKLB because corrected financing reduced survival risk and rejected an executable SGOV order because broker eligibility and economics are unknown. Valuation uncertainty blocks adds without forcing a sale at the current small total-equity weight.
+meta_improvement:
+  durable_review_path: research/process/2026-09-25-full-cycle-meta-review.md
+  fixes: [focused registration scan removed 424B2 truncation, BRUN source chronology corrected, stale contribution dates advanced, automated denominator warnings made explicit]
+  bounded_debt: [full-universe semantic issuer coverage, six prelisting primary-source readiness skims, stale thesis refreshes]
+  debt_due: 2026-10-02
+publication:
+  status: public_safe_no_trade_with_confirmed_contributions
+  embargoed_action_detail_present: false
+  notes: No unexpired order, raw broker artifact, identifier, secret, cache path or inferred trade is included.
+validation:
+  data_checks: PASS; semantic checks cover account, market, discovery, freshness, valuation, watchlist, buy zones, operating runs, quality metrics, evidence packet, portability and ignored-cache boundaries.
+  full_verify: PASS; the full npm run verify suite completed and Astro generated 97 static pages.
+  dashboard: PASS for production build and HTTP content checks on home, runs index, current run, LEU and RKLB pages. Desktop and mobile screenshot capture was skipped because Playwright browser binaries are not installed in the runtime.
+article_one_postflight:
+  status: PASS
+  mission_advancement: Corrected stale financing and dilution assumptions, preserved existing convexity, identified a dated information checkpoint and completed an explicit allocation without forcing deployment from cash weight.
+  truth_and_control: Account facts remain separate from research; no trade was executed or inferred.

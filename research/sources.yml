@@ -4797,3 +4797,48 @@ sources:
     first_seen_at: 2026-09-11
     related_symbols: []
     summary: The foundational-first selector covered all 72 listed decision-universe securities and produced 71 manifest rows and 63 profiles; newly listed XTND had no supported foundational filing.
+  - id: completed_close_universe_2026_09_24
+    title: Completed Regular-Session Close Universe — 2026-09-24
+    source_type: market_data
+    url: https://finance.yahoo.com/
+    source_published_at: 2026-09-24
+    retrieved_at: 2026-09-25
+    first_seen_at: 2026-09-25
+    related_symbols: []
+    summary: Adjusted and raw completed-session prices were refreshed through September 24 for the canonical and watchlist universes; current allocation arithmetic uses only completed closes.
+  - id: sec_event_index_targeted_72_2026_09_25
+    title: Targeted 72-Symbol SEC Event Filing Index — 2026-09-25
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-25
+    retrieved_at: 2026-09-25
+    first_seen_at: 2026-09-25
+    related_symbols: []
+    summary: The event selector requested the current 72-symbol listed scope and produced dated profiles, scans and ledgers; it is targeted coverage rather than a full SEC-company universe.
+  - id: sec_foundational_index_targeted_72_2026_09_25
+    title: Targeted 72-Symbol SEC Foundational Filing Index — 2026-09-25
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-25
+    retrieved_at: 2026-09-25
+    first_seen_at: 2026-09-25
+    related_symbols: []
+    summary: The foundational-first selector requested the same current 72-symbol listed scope and produced dated profiles, scans and ledgers; it is targeted coverage rather than a full SEC-company universe.
+  - id: sec_omitted_forms_2026_09_25
+    title: SEC Omitted-Form Delta Review — 2026-09-25
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-25
+    retrieved_at: 2026-09-25
+    first_seen_at: 2026-09-25
+    related_symbols: []
+    summary: Recent submissions caches for the targeted listed scope yielded 195 filings since September 12, including ownership, resale, compensation, financing and other forms outside the paired selectors.
+  - id: public_community_triage_2026_09_25
+    title: Public Community Attention Triage — 2026-09-25
+    source_type: community_attention
+    url: https://www.reddit.com/
+    source_published_at: 2026-09-25
+    retrieved_at: 2026-09-25
+    first_seen_at: 2026-09-25
+    related_symbols: []
+    summary: Public community feeds produced 199 leads from 46 source entries; four Reddit endpoints were rate limited and all signals were used only to prioritize primary-source review.
