@@ -1,0 +1,328 @@
+schema_version: 1
+run_id: 2026-09-30-weekly-full-operating-cycle
+run_date: 2026-09-30
+market_session_date: 2026-09-29
+evidence_cutoff: 2026-09-30T18:00:00+08:00
+request_type: scheduled_weekly_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: No trade is authorized; conclusions expire 2026-10-02 or on an earlier material event or confirmed account change.
+linked_decision_or_research_note: decisions/2026-09-30-weekly-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-09-30-subagent-evidence-packet.yml
+artifact_hash_index_path: research/discovery/runs/2026-09-30-discovery-artifact-index.json
+execution_update:
+  status: standing_contributions_current_no_trade
+  confirmed_ledger_event_ids: []
+  resulting_confirmed_cash: 12943.73
+  resulting_settled_cash: 12943.73
+  resulting_confirmed_positions: [ASTS 11 shares, GILT 29 shares, IREN 5 shares, MDA 9 shares, RKLB 17 shares]
+  notes: Standing-contribution tooling returned already_recorded. No trade, fee, order, reserve position or broker reconciliation was inferred.
+article_one_preflight:
+  sentinel_level: WARN
+  reason_codes: [evidence_deadline_due]
+  disposition: The due checkpoint was reviewed without treating the unfinished United States session or absence of disclosure as failure.
+first_principles_heading: First-Principles Analysis
+first_principles_analysis:
+  question_rebuilt_from_basics: Does an incremental dollar buy protected dilution-adjusted long-run value today versus existing exposures and near-term information optionality?
+  irreducible_facts:
+    - Confirmed cash is USD 12943.73 and September 29 equity value is USD 2600.22.
+    - LEU has binding customers and funding but no verified post-September-30 commercial operating arrangement at cutoff.
+    - Convertible principal, premium dilution and warrant exercise proceeds require state-consistent treatment.
+    - Existing holdings preserve right-tail exposure without opening a sixth position.
+  binding_constraints: [lawful_funded_operation, bounded_after_capex_returns, claim_consistent_capitalization, attractive_contemporaneous_entry]
+  causal_chain: scarcity -> authorized funded production -> customer delivery -> cash after capital and senior claims -> diluted per-share value -> portfolio payoff
+  inherited_assumptions_challenged: [high_cash_requires_action, small_starter_is_immaterial, calendar_endpoint_is_failed_transition, full_conversion_plus_full_debt_is_coherent]
+  value_capture_or_mission_link: Preserve existing convexity and require a scalable common-share capture path before new deployment.
+  disconfirming_evidence: A funded operating transition and conservative residual-value case can reverse LEU no-buy; adverse terms can weaken the thesis.
+  decision_consequence: Hold five positions; buy add reduce and sell zero; no SGOV order; review by October 2.
+source_coverage:
+  deterministic_commands:
+    - command: npm run discover:universe -- --dry-run --as-of 2026-09-30 --json --output research/discovery/runs/2026-09-30-scan.json
+      dry_run: true
+      output_path: research/discovery/runs/2026-09-30-scan.json
+      output_sha256: 5cd833931700f429cfc3e984096c3b9cdb7081c43788efd0b85403fee1cd538f
+      retrieved_at: 2026-09-30
+      result_summary: The 7673-security name and ticker reference produced 23 candidate rows and 60 exploratory matches; issuer-profile semantic coverage remains zero percent.
+  source_families_checked:
+    - family_id: primary_filings_regulatory
+      family: SEC event foundational omitted-form and registration evidence
+      sources_or_queries: [targeted event index, targeted foundational index, submissions delta, daily master indexes]
+      source_ids: [sec_event_index_targeted_72_2026_09_30, sec_foundational_index_targeted_71_of_72_2026_09_30, sec_omitted_forms_2026_09_30]
+      retrieved_at: 2026-09-30
+      material_findings: Eight changed event selections were dispositioned; foundational output had 71 rows and MDA is explicit process debt.
+    - family_id: issuer_material
+      family: Issuer releases contracts financing and technical milestones
+      sources_or_queries: [current issuer releases, filing exhibits, transaction announcements]
+      source_ids: [sec_event_index_targeted_72_2026_09_30, sec_omitted_forms_2026_09_30]
+      retrieved_at: 2026-09-30
+      material_findings: LEU transition timing, VOYG financing, QSI technical evidence and current holding continuity were reviewed.
+    - family_id: market_data
+      family: Completed regular-session closes and screening metrics
+      sources_or_queries: [canonical universe refresh, watchlist price refresh, SEC companyfacts]
+      source_ids: [completed_close_universe_2026_09_29]
+      retrieved_at: 2026-09-30
+      material_findings: September 29 closes support current NAV and comparisons; automated claim metrics remain screening aids.
+    - family_id: current_world_context
+      family: Macro financing volatility contracts customers and capital formation
+      sources_or_queries: [macro refresh, SEC financing delta, public community attention]
+      source_ids: [completed_close_universe_2026_09_29, sec_event_index_targeted_72_2026_09_30, public_community_triage_2026_09_30]
+      retrieved_at: 2026-09-30
+      material_findings: Strong-trend macro supports research but not relaxed entry discipline; funding changes did not create a qualified buy.
+    - family_id: new_listings_ipo_spinoff_transactions
+      family: Newly public pre-listing merger and acquisition evidence
+      sources_or_queries: [S-4 F-4 425 DEF14A interval, completed daily master indexes]
+      source_ids: [sec_omitted_forms_2026_09_30, sec_event_index_targeted_72_2026_09_30]
+      retrieved_at: 2026-09-30
+      material_findings: NuCube WISeSat and REA received bounded R1 classifications; none is buy-ready.
+    - family_id: lane_evolution_current_world_search
+      family: Bottleneck map and cross-lane opportunity-cost comparison
+      sources_or_queries: [community scan, independent discovery review, current filings and issuer releases]
+      source_ids: [public_community_triage_2026_09_30, sec_event_index_targeted_72_2026_09_30, sec_foundational_index_targeted_71_of_72_2026_09_30]
+      retrieved_at: 2026-09-30
+      material_findings: Industrial process heat is a nuclear sub-question and strategic materials remains emerging; no top-level lane change or buy-ready security.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: 2026-09-30
+    notes: Current prices macro filings issuer releases transactions financing community attention and bottleneck leads were refreshed or explicitly bounded; complete does not mean semantic classification of every eligible issuer.
+  deterministic_scan:
+    status: complete_name_ticker_only
+    eligible_securities: 7673
+    candidate_rows: 23
+    exploratory_match_count: 60
+    issuer_profile_semantic_coverage_pct: 0
+    output_path: research/discovery/runs/2026-09-30-scan.json
+  community_attention:
+    status: complete_with_five_errors
+    source_entries: 46
+    successful_sources: 41
+    leads: 203
+    output_path: research/discovery/runs/2026-09-30-community-triage.json
+    policy_boundary: analysis_priority_only_not_buy_or_promotion_evidence
+  sec_event_index:
+    target_scope: 72
+    selected_rows: 72
+    output_path: research/discovery/runs/2026-09-30-sec-event-filing-index-scan.json
+  sec_foundational_index:
+    target_scope: 72
+    selected_rows: 71
+    missing_symbol: MDA
+    output_path: research/discovery/runs/2026-09-30-sec-foundational-filing-index-scan.json
+  omitted_forms_review:
+    filings_after_2026_09_25: 25
+    material_symbols: [APLD, ASTS, CIFR, CRCL, QSI, RIOT, VIP, VOYG]
+  registration_transaction_review:
+    completed_index_dates: [2026-09-28, 2026-09-29]
+    weekend_dates: [2026-09-26, 2026-09-27]
+    incomplete_current_date: 2026-09-30
+    source_index_rows: 10823
+    provisional_records: 2919
+    output_path: research/discovery/runs/2026-09-30-sec-registration-transaction-candidates.json
+unknown_future_review:
+  exploratory_match_count: 60
+  top_clusters: [issuer_name_collisions, ticker_collisions, prelisting_and_transaction_stage_leads]
+  sampled_symbols: [LEU, GILT, REA, NUCUBE_PRELISTING, WISESAT_PRELISTING, QSI, INFQ]
+  false_positive_patterns: [theme_label_without_operating_control, ticker_collision, transaction_security_not_operating_company]
+  lane_decisions: [retain_current_top_level_lanes, add_industrial_process_heat_as_nuclear_subquestion, retain_strategic_materials_as_emerging]
+  disposition: Source-backed triage created three bounded R1 records but no promotion, buy zone or allocation change.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Deployable space communications, domestic enrichment and process heat, energized compute, strategic materials processing and optical interconnect remain plausible bottlenecks.
+    inferences: Scarcity becomes investable only with authorization, funded delivery and residual common-share economics.
+    disconfirming_evidence: Capital intensity, substitution, customer concentration, senior claims and repeated dilution can prevent physical scarcity from producing shareholder value.
+    source_ids: [sec_event_index_targeted_72_2026_09_30, sec_foundational_index_targeted_71_of_72_2026_09_30]
+    investment_implication: Preserve existing starters and keep LEU as the leading dated nonholding review without opening a new position.
+  who_controls_or_removes_scarcity:
+    facts: Operators need qualified assets, licenses, fuel, grid access, customer contracts and manufacturing execution rather than labels alone.
+    inferences: Direct control matters only when it can be lawfully operated and economically scaled.
+    disconfirming_evidence: A technical layer can be controlled while creditors, customers or capital providers capture most returns.
+    source_ids: [sec_event_index_targeted_72_2026_09_30, sec_omitted_forms_2026_09_30]
+    investment_implication: Correct capital claims and operating rights before scaling any bottleneck exposure.
+  who_can_monetize_into_shareholder_value:
+    facts: GILT has an operating business, LEU has customers and funding, and current holdings have distinct right-tail paths; each retains a cash-return or entry gap.
+    inferences: Monetization requires recurring cash after capital needs and senior claims rather than contract count alone.
+    disconfirming_evidence: Weak unit economics, overruns, integration failure or further dilution can break the per-share chain.
+    source_ids: [completed_close_universe_2026_09_29, sec_event_index_targeted_72_2026_09_30]
+    investment_implication: Hold current quantities and keep every incremental equity quantity at zero through October 2.
+  public_security_expression:
+    facts: The deterministic reference includes 7673 eligible securities while paired SEC review intentionally targets 72 listed decision-universe symbols.
+    inferences: Listing and observability do not create buy eligibility; targeted SEC coverage is not full-market semantic search.
+    disconfirming_evidence: A listed issuer with protected economics, correct claims and a superior entry could displace the present ordering.
+    source_ids: [completed_close_universe_2026_09_29, sec_event_index_targeted_72_2026_09_30]
+    investment_implication: No current new expression clears promotion and allocation gates.
+  early_small_misunderstood_or_newly_public:
+    facts: NuCube and WISeSat are transaction-stage leads and REA is a listed exploration option; none has bounded shareholder economics.
+    inferences: Small denominators enlarge upside only if technology, funding and diluted value capture survive source review.
+    disconfirming_evidence: Prelisting status, unlicensed technology, poor metallurgy, redemptions or destructive financing can dominate the right tail.
+    source_ids: [sec_omitted_forms_2026_09_30, public_community_triage_2026_09_30]
+    investment_implication: Retain dated R1 work without promotion or purchase.
+candidate_delta:
+  candidates_added: [NUCUBE_PRELISTING, WISESAT_PRELISTING, REA]
+  candidates_rejected_or_archived: []
+  candidates_promoted: []
+  candidates_incubated: [NUCUBE_PRELISTING, WISESAT_PRELISTING, REA]
+  buy_zone_additions: []
+  disposition: Three source-backed R1 records; no allocation relevance or completed promotion.
+readiness_sprints:
+  - symbol: NUCUBE_PRELISTING
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-30-NUCUBE_PRELISTING-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#NUCUBE_PRELISTING
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Final capitalization, redemptions, authorization, fuel procurement, customer economics and binding financing.
+    final_classification: incubate
+  - symbol: WISESAT_PRELISTING
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-30-WISESAT_PRELISTING-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#WISESAT_PRELISTING
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Vote and close, exchange commencement, redemptions, final capitalization, licenses, external customers and funded deployment.
+    final_classification: incubate
+  - symbol: REA
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-30-REA-readiness.md
+    readiness_index_record: research/discovery/candidate-readiness.yml#REA
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Assay QA/QC, recovery and impurities, resource estimates, permits, development economics, royalties and dilution.
+    final_classification: incubate
+watchlist_and_readiness:
+  non_removed_watchlist_rows_reviewed: 56
+  active_current_valuation_rows: 23
+  watchlist_status_changes: 0
+  watchlist_priority_changes: 0
+  new_R1_records: 3
+material_event_disposition:
+  - {symbol: ASTS, finding: change-of-control severance policy only, decision: hold 11 add 0 reduce 0 sell 0}
+  - {symbol: VOYG, finding: USD 402.5 million zero-coupon converts closed, decision: research only buy 0}
+  - {symbol: QSI, finding: interim single-chamber technical evidence strengthened while full-run claims remain projected, decision: research only buy 0}
+  - {symbol: CIFR, finding: longer term and revenue offset by substantial construction overrun exposure, decision: research only buy 0}
+  - {symbol: RIOT, finding: Coinbase facility repaid but separate project-financing economics remain open, decision: watch buy 0}
+  - {symbol: LEU, finding: no post-transition agreement verified before the United States session and no failure inferred, decision: strongest counterfactual buy 0}
+allocation_decision:
+  account_nav: 15543.95
+  confirmed_cash: 12943.73
+  equity_value: 2600.22
+  liquidity_weight_pct: 83.2718
+  equity_weight_pct: 16.7282
+  holdings:
+    ASTS: hold 11 add 0 reduce 0 sell 0
+    GILT: hold 29 add 0 reduce 0 sell 0
+    IREN: hold 5 add 0 reduce 0 sell 0
+    MDA: hold 9 add 0 reduce 0 sell 0
+    RKLB: hold 17 add 0 reduce 0 sell 0
+  new_equity_quantity: 0
+  cash_management_quantity: 0
+  strongest_counterfactual: LEU followed by GILT scale and MDA add; current quantities remain zero.
+  no_buy_reason: The lawful funded operating transition and sufficiently attractive after-capex residual common-share value are not yet established.
+  cash_opportunity_cost: Official SGOV 3.67 percent SEC-yield reference implies about USD 475.03 annual gross carry if cash otherwise earns zero; actual broker economics are unknown.
+  next_review_date: 2026-10-02
+portfolio_risk:
+  severe_joint_holding_stress_loss_usd: 1842.55
+  severe_joint_holding_stress_loss_pct_nav: 11.8538
+  complete_equity_loss_pct_nav: 16.7282
+subagents:
+  required_roles:
+    - role: discovery_lane_candidate_triage
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [deterministic scan, community triage, registration candidates, candidate readiness]
+      sources_checked: [sec_event_index_targeted_72_2026_09_30, sec_foundational_index_targeted_71_of_72_2026_09_30, sec_omitted_forms_2026_09_30]
+      facts_verified: [name and ticker coverage is not semantic coverage, NuCube and WISeSat are transaction stage, REA is listed but pre-revenue]
+      stale_or_missing_evidence: [full-universe semantic classification, transaction outcomes, REA metallurgy]
+      confidence: high_on_stage_medium_on_terminal_economics
+      key_findings: Three bounded R1 records; no promotion or allocation change.
+    - role: freshness_filing_review
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [paired SEC indexes, omitted forms, issuer releases, holdings]
+      sources_checked: [sec_event_index_targeted_72_2026_09_30, sec_foundational_index_targeted_71_of_72_2026_09_30, sec_omitted_forms_2026_09_30]
+      facts_verified: [eight event selections changed, LEU endpoint is not a promised disclosure date, VOYG financing closed]
+      stale_or_missing_evidence: [LEU commercial operating arrangement, QSI independent replication]
+      confidence: high
+      key_findings: No reviewed filing independently creates a qualified buy or thesis-breaking sell.
+    - role: bull_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [LEU filings, holdings, account NAV, claim mechanics]
+      sources_checked: [completed_close_universe_2026_09_29, sec_event_index_targeted_72_2026_09_30]
+      facts_verified: [LEU converts require cash principal settlement, warrants require exercise proceeds, a small starter is meaningful]
+      stale_or_missing_evidence: [commercial operation, protected capacity returns]
+      confidence: medium
+      key_findings: LEU is strongest new-position bull case but does not yet clear expected-value underwriting.
+    - role: bear_case
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [holdings, LEU, current closes, severe stress tests]
+      sources_checked: [completed_close_universe_2026_09_29, sec_event_index_targeted_72_2026_09_30]
+      facts_verified: [no current thesis-killing holding event, September 30 is not a survival cliff, correlated space risk is material]
+      stale_or_missing_evidence: [LEU transition, IREN guarantee release, transaction cash returns]
+      confidence: medium
+      key_findings: Hold all positions; no add or forced diversification trim.
+    - role: valuation_entry
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [current prices, primary capitalization filings, valuation states]
+      sources_checked: [completed_close_universe_2026_09_29, sec_event_index_targeted_72_2026_09_30]
+      facts_verified: [LEU claim consistency, GILT note conversion, ASTS economic units, MDA official shares]
+      stale_or_missing_evidence: [post-quarter cash use, contract economics, current issued award bridges]
+      confidence: high_on_claim_corrections_medium_on_ranking
+      key_findings: Remove false denominator veto; no current entry is sufficiently underwritten.
+    - role: allocation_risk
+      reasoning_level: xhigh
+      independent_context: true
+      completed: true
+      skip_reason: null
+      inputs_used: [account state, current closes, macro, SGOV official reference, reviewer findings]
+      sources_checked: [completed_close_universe_2026_09_29, sec_event_index_targeted_72_2026_09_30]
+      facts_verified: [cash and NAV reconciliation, 83.2718 percent liquidity, severe stress, waiting cost]
+      stale_or_missing_evidence: [broker SGOV eligibility, LEU transition]
+      confidence: high_on_arithmetic_medium_on_allocation
+      key_findings: Zero wins for a two-day checkpoint on expected-value evidence, not risk capacity.
+  unresolved_conflicts: 0
+no_action_accountability:
+  strongest_counterfactual: LEU
+  smallest_prudent_exposure_considered: exact current counterfactual retained in private result under publication policy
+  zero_vs_starter_result: zero wins for the short checkpoint because expected value is not sufficiently underwritten
+  zero_exposure_reason_code: commercial_transition_and_after_capex_value_gap
+  decision_critical_missing_evidence: authoritative operating transition and enough capital and contract economics for attractive residual value
+  why_risk_sizing_cannot_absorb_uncertainty: loss sizing cannot establish a positive acquisition expected value
+  cash_opportunity_cost: about USD 475.03 annual gross SGOV-reference carry before investor and broker specifics
+  conjunctive_evidence_and_price_trigger: lawful funded operation plus bounded after-capex economics plus state-consistent claims plus price below independently underwritten value
+  next_evidence_deadline: 2026-10-02
+  no_action_streak: 1
+meta_improvement:
+  durable_fixes: [stale_watchlist_dates, LEU_claim_consistency, contribution_contaminated_return_warning_identified]
+  bounded_debt:
+    - Full-universe semantic issuer coverage remains zero percent; next source is semantic packet workflow; due 2026-10-02.
+    - Current-day SEC daily index was incomplete; next source is completed September 30 index; due 2026-10-01.
+    - MDA foundational selector produced no row; next source is selector diagnosis; due 2026-10-02.
+    - NuCube and WISeSat transaction outcomes plus REA technical economics remain R1 work; due October 2/9.
+validation:
+  status: passed
+  commands:
+    - npm run check:article-one -- --mode decision --as-of 2026-09-30 --json
+    - npm run check:data
+    - npm run verify
+    - npm run preview -- --port 4321 with five HTTP and content route checks
+publication_release:
+  status: public_safe_no_action
+  actionable_trading_content: false
+  exact_unexpired_counterfactuals_published: false
+  sensitive_field_review: passed_public_safe_no_action
+  notes: No broker identifiers, raw screenshots, credentials, live order details or private cache payloads are included.

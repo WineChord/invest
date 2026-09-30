@@ -1916,3 +1916,24 @@ entries:
     risk_watch: Comtech completion, final consideration, working capital, cash conversion, integration, customer retention and dilution.
     next_check: Comtech close or amendment, combined cash conversion, share-count change, another confirmed broker event or 2026-09-18.
     source_path: decisions/2026-09-11-gilt-execution-confirmation.md
+  - id: 2026-09-30-leu-transition-and-claims-refresh
+    symbol: LEU
+    analyzed_at: "2026-09-30"
+    analysis_type: operating_transition_claim_consistency_and_entry_refresh
+    policy_version: v1.3
+    title: Claim consistency improves while the commercial operating bridge remains open
+    stance: B+ active candidate; strongest new-position counterfactual; buy 0
+    summary: Completed financing and the Antares contract strengthen funding and demand. September 30 ends a maintenance-and-storage option rather than promising a disclosure, so the unfinished U.S. session is not evidence of failure. Cash-principal convertibles and cash-exercise warrants can be modeled state-consistently; the remaining entry gap is lawful funded operation and sufficiently attractive after-capex residual value.
+    first_principles_analysis:
+      question_rebuilt_from_basics: Can domestic enrichment scarcity generate enough cash after operating rights, construction, financing and dilution to justify the current common-share price?
+      irreducible_facts: Qualified capability, binding customers and funding exist; the current option covers maintenance and storage without production; no post-transition commercial operating arrangement was verified at cutoff.
+      binding_constraints: Lawful funded operation, bounded capital and contract economics, and claim-consistent residual value at the contemporaneous price.
+      causal_chain: Scarce enrichment capability must become authorized funded production, customer deliveries, cash after capex and senior claims, and durable diluted per-share value.
+      inherited_assumptions_challenged: September 30 is not a promised announcement date; a small position is not immaterial; full conversion shares plus full debt and no warrant proceeds is not a coherent valuation state.
+      value_capture_or_mission_link: LEU remains the most distinct new bottleneck challenger, but exceptional portfolio impact requires a credible scale path that survives capital consumption and contingent claims.
+      disconfirming_evidence: Adverse operating terms, inadequate milestone funding, fixed-price overruns, low customer margin or destructive financing would weaken the thesis; a funded attractive operating bridge would reverse no-buy.
+      decision_consequence: Retain active status and quantity zero through the October 2 re-underwriting; no executable limit exists.
+    upside_path: Build multiple funded domestic LEU and HALEU cascades, deliver to government and commercial customers, and retain attractive cash economics for common shareholders.
+    risk_watch: Operating agreements, milestone funding, fixed-price execution, expansion capital, customer economics, TENEX replacement, cash-principal debt, premium dilution, warrant proceeds and valuation.
+    next_check: Authoritative commercial operating arrangement, bounded after-capex returns, material financing or customer update, or 2026-10-02.
+    source_path: decisions/2026-09-30-weekly-operating-cycle.md

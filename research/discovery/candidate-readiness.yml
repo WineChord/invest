@@ -1,6 +1,66 @@
 schema_version: 1
 as_of: 2026-09-11
 records:
+  - symbol: NUCUBE_PRELISTING
+    material_to_current_allocation: true
+    affected_lanes: [advanced_nuclear_and_grid_constraints]
+    materiality_reason: NuCube is an early industrial-process-heat and microreactor-fuel comparator, but the security and transaction are not yet a completed listed operating-company expression.
+    blocking_scope: candidate_specific_only
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-30-NUCUBE_PRELISTING-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: No commercial revenue, approved NuSun site or funded FOAK path is established; the S-4 estimates roughly USD 150 million of FOAK capital and the September 29 Form 425 adds marketing rather than operating evidence.
+    reachable_evidence_remaining: Final capitalization, redemptions, authorization, fuel procurement, customer economics and binding financing.
+    last_readiness_reviewed_at: 2026-09-30
+    next_evidence_source: Effective registration or transaction filing, authorization filing, customer contract or binding financing evidence.
+    next_evidence_due: 2026-10-02
+    cost_of_waiting: A transaction or authorization milestone could rerate the future security, but the operating company is not yet an eligible funded listed expression.
+    false_negative_early_warning: Binding site authorization, fuel access, customer economics and nondestructive FOAK financing.
+    reopen_or_reject_trigger: Advance only on an eligible security plus bounded authorization, funding and customer economics; reject if the transaction fails or financing becomes destructive.
+    next_action: Complete the bounded S-4 capitalization, authorization, fuel, customer and funding review.
+    conclusion: R1 researchable pre-listing lead; no promotion, buy zone or allocation.
+  - symbol: WISESAT_PRELISTING
+    material_to_current_allocation: true
+    affected_lanes: [space_infrastructure]
+    materiality_reason: Secure orbital connectivity is relevant to the space lane, but a pending merger and quantum branding do not establish public-security eligibility or protected economics.
+    blocking_scope: candidate_specific_only
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-30-WISESAT_PRELISTING-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: The vote remained pending at the cutoff; nominal revenue, licensing dependence, related-party arrangements and unknown redemption proceeds leave value capture unbounded.
+    reachable_evidence_remaining: Vote and close, exchange commencement, redemptions, final capitalization, licenses, external customers and funded deployment.
+    last_readiness_reviewed_at: 2026-09-30
+    next_evidence_source: Vote result, merger close filing, exchange notice, final capitalization and issuer operating disclosures.
+    next_evidence_due: 2026-10-02
+    cost_of_waiting: A successful low-redemption close could improve funding, but buying is impossible before confirmed tradability and current capitalization.
+    false_negative_early_warning: Completed exchange listing, retained cash, independent licenses and binding external customer revenue.
+    reopen_or_reject_trigger: Advance on a completed well-funded listing and verifiable customer economics; reject if redemptions, licensing or related-party dependence impair value capture.
+    next_action: Verify transaction outcome and complete capitalization, licensing and external-revenue review.
+    conclusion: R1 researchable transaction-stage lead; no promotion, buy zone or allocation.
+  - symbol: REA
+    material_to_current_allocation: true
+    affected_lanes: [strategic_critical_materials]
+    materiality_reason: REA is a small listed rare-earth exploration option that improves recall in an emerging lane but does not yet control a qualified separation or magnet bottleneck.
+    blocking_scope: candidate_specific_only
+    research_stage: R1_researchable
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-09-30-REA-readiness.md
+    blocker_type: evidence_based
+    blocker_reason: No mining revenue, commercially exploitable reserves or economic extraction is established; metallurgy, permitting, project funding and complete dilution remain open.
+    reachable_evidence_remaining: Assay QA/QC, recovery and impurities, resource estimates, permits, development economics, royalties and dilution.
+    last_readiness_reviewed_at: 2026-09-30
+    next_evidence_source: Technical report, assay and metallurgical results, permit filings, development study and current capitalization disclosures.
+    next_evidence_due: 2026-10-09
+    cost_of_waiting: Technical results can rerate a small listed denominator, but purchase before recovery and economics are bounded would make shareholders fund geological uncertainty.
+    false_negative_early_warning: Reproducible recoveries, a compliant resource, credible development economics and nondestructive funding.
+    reopen_or_reject_trigger: Advance on qualified recoverable material and investable project economics; reject if metallurgy, permitting or funding is structurally adverse.
+    next_action: Complete a bounded technical, project-economics and capitalization review.
+    conclusion: R1 researchable listed lead; no promotion, buy zone or allocation.
   - symbol: INFQ
     material_to_current_allocation: true
     affected_lanes: [quantum_computing_and_networking]

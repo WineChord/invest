@@ -4842,3 +4842,48 @@ sources:
     first_seen_at: 2026-09-25
     related_symbols: []
     summary: Public community feeds produced 199 leads from 46 source entries; four Reddit endpoints were rate limited and all signals were used only to prioritize primary-source review.
+  - id: completed_close_universe_2026_09_29
+    title: Completed Regular-Session Close Universe — 2026-09-29
+    source_type: market_data
+    url: https://finance.yahoo.com/
+    source_published_at: 2026-09-29
+    retrieved_at: 2026-09-30
+    first_seen_at: 2026-09-30
+    related_symbols: []
+    summary: Completed-session prices and SEC-derived screening metrics were refreshed through September 29; current allocation arithmetic excludes the unfinished September 30 session.
+  - id: sec_event_index_targeted_72_2026_09_30
+    title: Targeted 72-Symbol SEC Event Filing Index — 2026-09-30
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-30
+    retrieved_at: 2026-09-30
+    first_seen_at: 2026-09-30
+    related_symbols: []
+    summary: The event selector requested 72 listed symbols and produced 72 manifest rows; eight selections changed from September 25.
+  - id: sec_foundational_index_targeted_71_of_72_2026_09_30
+    title: Targeted SEC Foundational Filing Index — 71 of 72 Symbols — 2026-09-30
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-30
+    retrieved_at: 2026-09-30
+    first_seen_at: 2026-09-30
+    related_symbols: []
+    summary: The foundational selector requested the same 72 listed symbols and produced 71 rows; MDA lacked a selection and is disclosed as process debt.
+  - id: sec_omitted_forms_2026_09_30
+    title: SEC Omitted-Form Delta Review — 2026-09-30
+    source_type: sec_index
+    url: https://data.sec.gov/submissions/
+    source_published_at: 2026-09-30
+    retrieved_at: 2026-09-30
+    first_seen_at: 2026-09-30
+    related_symbols: []
+    summary: Recent submissions after September 25 were reviewed for ownership, compensation, financing, registration and other forms outside the paired selectors.
+  - id: public_community_triage_2026_09_30
+    title: Public Community Attention Triage — 2026-09-30
+    source_type: community_attention
+    url: https://www.reddit.com/
+    source_published_at: 2026-09-30
+    retrieved_at: 2026-09-30
+    first_seen_at: 2026-09-30
+    related_symbols: []
+    summary: Public feeds produced 203 signals from 46 attempted sources; 41 succeeded and five failed or were rate limited. Signals were used only to prioritize primary-source review.
