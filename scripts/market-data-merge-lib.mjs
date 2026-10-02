@@ -52,6 +52,15 @@ export function detectHistoryDateRegression(
   };
 }
 
+export function hasConfirmedExternalFlow(ledger, previousDate, valuationDate) {
+  return ledger.some((event) =>
+    event.status === "confirmed"
+    && ["deposit", "withdrawal"].includes(event.event_type)
+    && event.trade_date > previousDate
+    && event.trade_date <= valuationDate
+    && Number(event.net_cash_effect) !== 0);
+}
+
 function latestDate(rows) {
   return rows.reduce((latest, row) => {
     const date = String(row.date ?? row.as_of ?? "");

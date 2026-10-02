@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {
   detectHistoryDateRegression,
+  hasConfirmedExternalFlow,
   preserveRowsForUnrefreshedSymbols,
 } from "./market-data-merge-lib.mjs";
 
@@ -8,6 +9,17 @@ const nextRows = [
   { symbol: "ASTS", date: "2026-07-21", close: "63.34" },
   { symbol: "RKLB", date: "2026-07-21", close: "69.12" },
 ];
+const fundingLedger = [
+  { event_type: "deposit", status: "confirmed", trade_date: "2026-09-25", net_cash_effect: "888" },
+  { event_type: "trade", status: "confirmed", trade_date: "2026-09-24", net_cash_effect: "-280.14" },
+  { event_type: "deposit", status: "pending", trade_date: "2026-09-24", net_cash_effect: "888" },
+];
+assert.equal(hasConfirmedExternalFlow(fundingLedger, "2026-09-23", "2026-09-25"), true,
+  "a standing deposit must prevent funding-driven NAV growth from being labeled performance");
+assert.equal(hasConfirmedExternalFlow(fundingLedger, "2026-09-23", "2026-09-24"), false,
+  "security purchases and unconfirmed deposits are not external confirmed funding");
+assert.equal(hasConfirmedExternalFlow(fundingLedger, "2026-09-25", "2026-09-28"), false,
+  "a deposit already in the beginning valuation must not suppress a later market-only return");
 const existingRows = [
   { symbol: "ASTS", date: "2026-07-20", close: "57.42" },
   { symbol: "BE", date: "2026-07-20", close: "197.06" },

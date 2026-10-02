@@ -275,6 +275,8 @@ total_return_pct,period_return_pct,notes
 
 The equity curve is a valuation snapshot series, not a trade ledger and not a broker statement. It can be updated from confirmed positions, confirmed cash, and timestamped market prices without changing broker-confirmed account records. A market-close snapshot must never combine a price date with account state from a later date; when confirmed account state is newer than the latest available close, leave the valuation gap until a same-date-or-later market close exists.
 
+The simple `period_return_pct` is omitted when a confirmed deposit or withdrawal crosses the interval. An increase in NAV caused by external funding must not be presented as an investment return. A decision may separately record an explicitly estimated current-date valuation using the last completed close, with both account and price dates in `notes` and no period return; it must not relabel that estimate as the current session's closing valuation.
+
 Snapshot cadence policy:
 
 - Minimum cadence: add or refresh a portfolio-level valuation snapshot during each monthly decision cycle when confirmed cash or positions exist.
@@ -751,6 +753,8 @@ Guardrails:
 - Do not let the initial watchlist, prior favorite names, or old thesis language override fresh evidence and current opportunity cost.
 
 ### Universe Discovery Loop
+
+Registration and transaction discovery must expose the matched and omitted row counts and whether the selected payload is truncated. A complementary scan may exclude exact filing types such as structured-note-heavy 424B2, but must retain the exclusion in provenance and cannot claim coverage of the excluded filings. This protects recall for small operating-company registrations without changing security eligibility or promotion gates.
 
 Purpose: find public companies that are not already in the watchlist but may fit the satellite mission.
 

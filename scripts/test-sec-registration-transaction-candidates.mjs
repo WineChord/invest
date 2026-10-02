@@ -79,6 +79,9 @@ try {
   assert.equal(output.daily_indices.length, 1);
   assert.equal(output.source_row_count, 7);
   assert.equal(output.provisional_candidate_count, 6);
+  assert.equal(output.matched_row_count, 6);
+  assert.equal(output.omitted_candidate_count, 0);
+  assert.equal(output.truncated, false);
   assert.equal(output.daily_index_sha256.length, 64);
   assert(!JSON.stringify(output).includes(fixtureRoot), "output must not leak local fixture paths");
 
@@ -185,6 +188,21 @@ try {
     customFamilyOutput.provisional_candidates.map((candidate) => candidate.company_name).sort(),
     ["Arcadia Space Systems Inc.", "MEF IPO Corp."],
   );
+
+  const limitedResult = run(["--as-of", "2026-05-31", "--daily-index", dailyIndexPath, "--limit", "2"]);
+  assert.equal(limitedResult.status, 0, limitedResult.stderr);
+  const limitedOutput = JSON.parse(limitedResult.stdout);
+  assert.equal(limitedOutput.matched_row_count, 6);
+  assert.equal(limitedOutput.provisional_candidate_count, 2);
+  assert.equal(limitedOutput.omitted_candidate_count, 4);
+  assert.equal(limitedOutput.truncated, true);
+
+  const excludedResult = run(["--as-of", "2026-05-31", "--daily-index", dailyIndexPath, "--exclude-filing-types", "424B5"]);
+  assert.equal(excludedResult.status, 0, excludedResult.stderr);
+  const excludedOutput = JSON.parse(excludedResult.stdout);
+  assert.deepEqual(excludedOutput.excluded_filing_types, ["424B5"]);
+  assert.equal(excludedOutput.matched_row_count, 5);
+  assert(!excludedOutput.provisional_candidates.some((candidate) => candidate.filing_type === "424B5"));
 
   const emptyFailure = run([
     "--as-of",

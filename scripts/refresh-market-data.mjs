@@ -18,6 +18,7 @@ import { filterCompletedDailyBars } from "./market-session-lib.mjs";
 import { preserveSameDateCuratedCompanyMetrics } from "./company-metric-merge-lib.mjs";
 import {
   detectHistoryDateRegression,
+  hasConfirmedExternalFlow,
   preserveRowsForUnrefreshedSymbols,
 } from "./market-data-merge-lib.mjs";
 
@@ -1374,21 +1375,27 @@ function buildEquitySnapshot(positions, historyBySymbol) {
     .sort((left, right) => left.date.localeCompare(right.date))
     .at(-1);
   const previousEquity = toNumber(previousPoint?.total_equity);
+  const externalFlow = previousPoint !== undefined && hasConfirmedExternalFlow(
+    readCsvFile(ledgerFile), previousPoint.date, valuationDate,
+  );
   const totalReturnPct =
     cumulativeDeposits !== null && cumulativeDeposits > 0
       ? ((totalEquity - cumulativeDeposits) / cumulativeDeposits) * 100
       : null;
   const periodReturnPct =
-    previousEquity !== null && previousEquity > 0
+    previousEquity !== null && previousEquity > 0 && !externalFlow
       ? ((totalEquity - previousEquity) / previousEquity) * 100
       : null;
   const staleSymbols = marketValues
     .filter((row) => row.closeDate !== valuationDate)
     .map((row) => `${row.symbol}:${row.closeDate}`);
-  const notes =
+  let notes =
     staleSymbols.length === 0
       ? `Automated daily close valuation from ${priceHistorySource}.`
       : `Automated daily close valuation from ${priceHistorySource}; stale closes ${staleSymbols.join(" ")}.`;
+  if (externalFlow) {
+    notes += " Period return omitted because external funding crosses the interval; raw NAV change is not investment return.";
+  }
 
   return {
     reason: null,

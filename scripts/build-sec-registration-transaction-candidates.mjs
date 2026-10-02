@@ -32,8 +32,9 @@ const missingOrUnscannedDates = requestedDates.filter((date) => !coveredDateSet.
 const rows = dailyIndexes.flatMap((dailyIndex) => parseMasterIndex(dailyIndex.content, dailyIndex.asOf));
 const matchedRows = rows
   .filter((row) => targetFilingFamilies(options.filingFamilies).has(row.filing_family))
-  .sort(compareRows)
-  .slice(0, options.limit);
+  .filter((row) => !options.excludedFilingTypes.has(row.filing_type))
+  .sort(compareRows);
+const selectedRows = matchedRows.slice(0, options.limit);
 
 if (matchedRows.length === 0 && !options.allowEmpty) {
   throw new Error("No registration or transaction candidates were emitted; pass --allow-empty only for explicit empty-artifact tests");
@@ -63,9 +64,13 @@ const result = {
     row_count: parseMasterIndex(dailyIndex.content, dailyIndex.asOf).length,
   })),
   target_filing_families: Array.from(targetFilingFamilies(options.filingFamilies)).sort(),
+  excluded_filing_types: Array.from(options.excludedFilingTypes).sort(),
   source_row_count: rows.length,
-  provisional_candidate_count: matchedRows.length,
-  provisional_candidates: matchedRows.map((row) => candidateRecord(row, retrievedAt)),
+  matched_row_count: matchedRows.length,
+  omitted_candidate_count: matchedRows.length - selectedRows.length,
+  truncated: selectedRows.length < matchedRows.length,
+  provisional_candidate_count: selectedRows.length,
+  provisional_candidates: selectedRows.map((row) => candidateRecord(row, retrievedAt)),
   caveats: [
     "This artifact is pre-ticker discovery scaffolding, not buy eligibility.",
     "A candidate is not tradable until security metadata confirms an eligible US-listed public equity under the active policy.",
@@ -84,6 +89,7 @@ if (options.output !== undefined) {
 function parseArgs(args) {
   const parsed = {
     allowEmpty: false,
+    excludedFilingTypes: new Set(),
     limit: defaultLimit,
   };
   for (let index = 0; index < args.length; index += 1) {
@@ -117,6 +123,10 @@ function parseArgs(args) {
         .split(",")
         .map((value) => filingFamily(value))
         .filter(Boolean);
+      index += 1;
+    } else if (arg === "--exclude-filing-types") {
+      parsed.excludedFilingTypes = new Set(requireNextArg(args, index, arg)
+        .split(",").map((value) => value.trim().toUpperCase()).filter(Boolean));
       index += 1;
     } else if (arg === "--limit") {
       parsed.limit = positiveInteger(requireNextArg(args, index, arg), "--limit");
