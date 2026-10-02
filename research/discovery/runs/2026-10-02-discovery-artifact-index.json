@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "source": "discovery_artifact_index",
+  "generated_at": "2026-10-02T09:01:23.588Z",
+  "as_of": "2026-10-02",
+  "purpose": "Hash-anchor generated discovery artifacts from 2026-10-02.",
+  "artifacts": [
+    {
+      "path": "research/discovery/runs/2026-10-02-community-scan.json",
+      "sha256": "c5040a08eedd748684ffc592c151eff9f0f64d20d0e148ff06083e745c40af82",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-community-triage.json",
+      "sha256": "f8fa5728988b242fa9c4faef4aad45761aac1b738b4ab041ecaad4b7bc19fea6",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-scan.json",
+      "sha256": "a3dcf6158d26f61f90733078d700fbcf9defad60be6165d754a6b65c17080cd5",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-event-filing-index-index.metadata.json",
+      "sha256": "ebda2ca94258ee7d4d519e1f38afda14380dd71d0e7b4773cb951ba7fb378ed8",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-event-filing-index-manifest.csv",
+      "sha256": "d292ce76f1b6c0957922ad22e59ba7af9fbfb9f4a497d9ddb921664d6544850c",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-event-filing-index-manifest.metadata.json",
+      "sha256": "bb0281f5886374466581369a79302e2a4b3f9aef883eba7ed0a8b654e99a91d4",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-event-filing-index-profiles.json",
+      "sha256": "7e2fc25e20789bffe4316cf4ec78e37b91a91ef884432159a5afce6d4d8b1cc9",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-event-filing-index-scan.json",
+      "sha256": "69633882d2677fc99b22054a14cf9fc423e8551a7c67f5c3d6965c86652d5be7",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-foundational-filing-index-index.metadata.json",
+      "sha256": "4a16f229fc66eca7f78a20491bde78a93326db47089a69a2aa65cbee349d645b",
+      "role": "sec_filing_index_metadata"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-foundational-filing-index-manifest.csv",
+      "sha256": "5a3a895d138cf63c4c8492e439f4ffd7c8f28a66b11466e8ba228657efc8ae09",
+      "role": "generated_csv_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-foundational-filing-index-manifest.metadata.json",
+      "sha256": "397647cd11f4452470d814a4c5e29e21147de0d22bf5e2368e28b65a5968ce0b",
+      "role": "metadata_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-foundational-filing-index-profiles.json",
+      "sha256": "390a21c91eebc9e794602e172d84a8d48d83a4b7a2f061191980c4d022dfa6c0",
+      "role": "profile_or_profile_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-foundational-filing-index-scan.json",
+      "sha256": "1fe3d342732e2517bc6ac05ee74742092055bec34cbe49d510dbb1bf657c0f3a",
+      "role": "deterministic_scan_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-omitted-form-review.json",
+      "sha256": "4e5c90073812bed35738b86b0d5791be07394e6205763625dca20a55b9b6cdac",
+      "role": "generated_discovery_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-sec-registration-transaction-candidates.json",
+      "sha256": "9cde75d41ff322bd57342afa651858b94bbbcf582b76d01648f7fd85a827a2fc",
+      "role": "sec_registration_transaction_candidate_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-semantic-discovery-run.json",
+      "sha256": "d1314e3b0c153da1d815a6b71c4555af9fb51acecb5e26f4fc7df6ed94b05379",
+      "role": "semantic_discovery_run_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-semantic-import.json",
+      "sha256": "21f6493abf1fc112a94b23613b2a671cb67884da3888abd27b81205ec75fa489",
+      "role": "semantic_classification_import_artifact"
+    },
+    {
+      "path": "research/discovery/runs/2026-10-02-semantic-review-packet.json",
+      "sha256": "3acb69ade580fec6115981d7fd54894daabba65faf016ca097f7d428b7832a1a",
+      "role": "semantic_review_packet_artifact"
+    }
+  ]
+}

@@ -1937,3 +1937,51 @@ entries:
     risk_watch: Operating agreements, milestone funding, fixed-price execution, expansion capital, customer economics, TENEX replacement, cash-principal debt, premium dilution, warrant proceeds and valuation.
     next_check: Authoritative commercial operating arrangement, bounded after-capex returns, material financing or customer update, or 2026-10-02.
     source_path: decisions/2026-09-30-weekly-operating-cycle.md
+  - id: 2026-10-02-mu-material-review
+    symbol: MU
+    analyzed_at: 2026-10-02
+    analysis_type: filing_refresh
+    policy_version: v1.3
+    title: Current material evidence review
+    stance: hold_existing_or_research_no_new_buy
+    summary: FY2026 record financials; curated stale metrics; capex and customer-deposit financing separated.
+    upside_path: Qualified operating demand converts to retained common-share cash after capital and senior claims.
+    risk_watch: Execution, financing, dilution, customer economics and current entry value.
+    next_check: October9 or earlier material event; see current cycle.
+    source_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+  - id: 2026-10-02-sei-material-review
+    symbol: SEI
+    analyzed_at: 2026-10-02
+    analysis_type: filing_refresh
+    policy_version: v1.3
+    title: Current material evidence review
+    stance: hold_existing_or_research_no_new_buy
+    summary: Closed1250m7pctnotes net1227.2m;87.5m annualcoupon;undrawn revolver notcash.
+    upside_path: Qualified operating demand converts to retained common-share cash after capital and senior claims.
+    risk_watch: Execution, financing, dilution, customer economics and current entry value.
+    next_check: October9 or earlier material event; see current cycle.
+    source_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+  - id: 2026-10-02-nbis-material-review
+    symbol: NBIS
+    analyzed_at: 2026-10-02
+    analysis_type: filing_refresh
+    policy_version: v1.3
+    title: Current material evidence review
+    stance: hold_existing_or_research_no_new_buy
+    summary: Inferize closed; consideration and updatedKPI not disclosed; no invented cash/issuance.
+    upside_path: Qualified operating demand converts to retained common-share cash after capital and senior claims.
+    risk_watch: Execution, financing, dilution, customer economics and current entry value.
+    next_check: October9 or earlier material event; see current cycle.
+    source_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+  - id: 2026-10-02-rklb-material-review
+    symbol: RKLB
+    analyzed_at: 2026-10-02
+    analysis_type: filing_refresh
+    policy_version: v1.3
+    title: Current material evidence review
+    stance: hold_existing_or_research_no_new_buy
+    summary: TwentyadditionalSynspectiveElectronmissions2028to2031; pricing undisclosed.
+    upside_path: Qualified operating demand converts to retained common-share cash after capital and senior claims.
+    risk_watch: Execution, financing, dilution, customer economics and current entry value.
+    next_check: October9 or earlier material event; see current cycle.
+    source_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md

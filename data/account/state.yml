@@ -1,12 +1,12 @@
 schema_version: 1
-as_of: 2026-09-25
+as_of: 2026-10-02
 status: funded_with_positions
 base_currency: USD
-confirmed_cash: 12943.73
-settled_cash: 12943.73
-buying_power: 12943.73
+confirmed_cash: 13831.73
+settled_cash: 13831.73
+buying_power: 13831.73
 positions_count: 5
-last_confirmed_ledger_event_id: 2026-09-25-deposit-weekly-888-001
+last_confirmed_ledger_event_id: 2026-10-02-deposit-weekly-888-001
 last_reconciled_with_broker_at: 2026-09-11
 notes:
   - User confirmed USD 888 deposits available in the brokerage account on
@@ -28,4 +28,4 @@ notes:
   - The USD 280.14 GILT purchase settled on 2026-09-14. The 2026-09-18 and
     2026-09-25 standing contributions were applied exactly once; this update is
     not a new broker reconciliation or trade confirmation.
-last_standing_contribution_date: 2026-09-25
+last_standing_contribution_date: 2026-10-02

@@ -1,18 +1,18 @@
 schema_version: 1
-as_of: 2026-09-30
+as_of: 2026-10-02
 last_research_engine_run:
-  as_of: 2026-09-30
-  scope: weekly_full_cycle_with_september_29_closes_56_watchlist_reviews_72_event_and_71_foundational_SEC_rows_omitted_forms_registration_discovery_and_allocation_review
-  notes: Policy-v1.3 full cycle. The account holds all five confirmed positions,
-    adds and sells zero, and retains cash. LEU transition timing and claim
-    consistency, eight changed event filings and three bounded R1 leads were reviewed.
+  as_of: 2026-10-02
+  scope: full_cycle_56_watchlist_72_paired_scope_38_omitted_forms_7675_name_scan_72_semantic_attempts_and_final_allocation
+  notes: Current price, contributions, material filing and claim-consistent
+    underwriting completed. Six independent xhigh reviewers; bounded discovery
+    depth disclosed.
 decision_readiness:
   status: ready
   scope: repository_and_public_observable_information
   can_recommend_buys: true
-  reason: The allocation decision is complete, but no stock clears all current
-    evidence and entry gates. LEU remains the strongest new-position challenger;
-    its October 2 review is a short evidence checkpoint rather than an indefinite veto.
+  reason: "Complete no-action allocation: LEU calendar veto retired; explicit
+    after-capex and state-consistent claim scenarios do not establish attractive
+    entry. New LPTH is a bounded R1/R2 challenger, not an allocation veto."
   user_only_execution_prerequisites:
     - confirmed holdings and cash remain controlling until later broker evidence
       changes them
@@ -30,18 +30,17 @@ mission_accountability:
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
   latest_confirmed_return_seeking_buy_date: 2026-09-11
-  latest_research_nav: 15543.95
-  confirmed_cash: 12943.73
-  latest_research_nav_basis: Confirmed cash plus September 29 completed closes
-    for ASTS 11 GILT 29 IREN 5 MDA 9 and RKLB 17;
-    not a broker balance statement.
+  latest_research_nav: 16406.33
+  confirmed_cash: 13831.73
+  latest_research_nav_basis: October2 standing-authorized cash plus October1
+    completed closes; not broker NAV.
   confirmed_liquidity_reserve_value: 0
-  liquidity_option_weight_pct: 83.2718
+  liquidity_option_weight_pct: 84.3073
   high_liquidity_option_threshold_pct: 60
   high_liquidity_option_since: 2026-07-23
   latest_mission_relevant_deployment_date: 2026-09-11
   mission_relevant_deployment_basis: 2026-09-11-buy-gilt-001
-  days_since_latest_mission_relevant_deployment: 19
+  days_since_latest_mission_relevant_deployment: 21
   pressure_review_after_days: 45
   opportunity_set_reset_after_days: 90
   strategy_review_after_days: 180
@@ -50,35 +49,35 @@ mission_accountability:
     GILT is the strongest existing starter to scale and MDA the strongest
     operating-quality holding add.
   smallest_prudent_exposure_considered: The smallest integer LEU exposure through
-    a policy-meaningful starter was tested privately and is financially meaningful;
-    exact current counterfactuals are withheld under the publication policy.
-  zero_vs_starter_result: Zero new stock exposure wins through the October 2
-    review because residual expected value is not sufficiently underwritten,
-    not because the smallest exposure is immaterial or intolerable.
-  zero_exposure_reason_code: decision_critical_economics_gap
-  decision_critical_missing_evidence: LEU needs an authoritative lawful and
-    funded commercial operating path plus enough capital and contract economics
-    to establish attractive state-consistent residual common-share value.
+    a policy-meaningful starter was tested privately and is financially
+    meaningful; exact current counterfactuals are withheld under the publication
+    policy.
+  zero_vs_starter_result: A meaningful small LEU exposure fits risk capacity but
+    current acquisition expected value lacks margin; zero wins economically, not
+    by calendar or trivial-position reasoning.
+  zero_exposure_reason_code: entry_gate_failed
+  decision_critical_missing_evidence: No calendar veto; fuller
+    capex/funding/contract data would narrow scenarios but present favorable and
+    central cases do not justify current entry.
   why_risk_sizing_cannot_absorb_uncertainty: A small position caps loss but cannot
     establish that the acquisition price has positive expected value. Existing
     holdings already preserve nonzero right-tail exposure.
-  cash_opportunity_cost: If uninvested brokerage cash earns zero, SGOV's September
-    28 3.67 percent SEC yield implies about USD 475.03 annual gross carry on USD
-    12943.73 before investor tax, fees, spread and actual sweep yield.
-  conjunctive_evidence_and_price_trigger: Reopen LEU only with authoritative
-    lawful and funded operation, bounded after-capex economics, a state-consistent
-    capitalization bridge and a contemporaneous price below independently
-    underwritten value. Reopen GILT scale on claim-consistent acquisition and
-    combined cash-return evidence rather than a mechanical weight target.
-  next_evidence_deadline: 2026-10-02
-  no_action_streak: 1
+  cash_opportunity_cost: SGOV3.68pct SEC yield implies509.01USD annual/9.76USD
+    weekly/41.84USD30day gross reference carry before investor tax, brokerage
+    specifics and sweep yield; yield already reflects fund expenses.
+  conjunctive_evidence_and_price_trigger: Reopen on price below after-capex
+    independently underwritten value and bounded funding/diluted claims; new
+    announcement not mandatory. GILT requires combined cash returns; MDA
+    requires FX-consistent capital-return model.
+  next_evidence_deadline: 2026-10-09
+  no_action_streak: 2
   article1_red_team_status: completed_zero_smallest_exposure_total_liquidity_waiting_cost_and_correlated_stress_review
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: Hold ASTS 11, GILT 29, IREN 5, MDA 9 and RKLB 17; buy zero,
-    add zero, reduce zero and sell zero. Hold USD 12943.73 cash; no SGOV order
-    without eligibility and broker-economics confirmation.
+  current_conclusion: Hold all five confirmed quantities; no buy/add/trim/sell.
+    Cash13831.73. SGOV is preferred conditional cash-management economics, no
+    unverified broker order.
 coverage:
-  universe_scan_as_of: 2026-09-30
+  universe_scan_as_of: 2026-10-02
   discovery_lane_map_as_of: 2026-09-11
   watchlist_symbols: 56
   watchlist_symbols_with_current_cycle_review: 56
@@ -88,29 +87,29 @@ coverage:
   active_watchlist_symbols: 23
   active_symbols_with_current_valuation_state: 23
   active_symbols_missing_valuation_state: 0
-  active_symbols_with_latest_filing_review: 9
-  active_symbols_missing_latest_filing_review: 14
-  raw_discovery_candidates_open: 41
+  active_symbols_with_latest_filing_review: 11
+  active_symbols_missing_latest_filing_review: 12
+  raw_discovery_candidates_open: 44
 discovery_process:
-  latest_discovery_run_path: research/discovery/runs/2026-09-30-weekly-full-operating-cycle.yml
-  latest_bottleneck_review_path: research/discovery/runs/2026-09-30-weekly-full-operating-cycle.yml
-  latest_agentic_discovery_path: research/discovery/runs/2026-09-30-weekly-full-operating-cycle.yml
-  latest_evidence_packet_path: research/discovery/runs/2026-09-30-subagent-evidence-packet.yml
+  latest_discovery_run_path: research/discovery/runs/2026-10-02-weekly-full-operating-cycle.yml
+  latest_bottleneck_review_path: research/discovery/runs/2026-10-02-weekly-full-operating-cycle.yml
+  latest_agentic_discovery_path: research/discovery/runs/2026-10-02-weekly-full-operating-cycle.yml
+  latest_evidence_packet_path: research/discovery/runs/2026-10-02-subagent-evidence-packet.yml
   first_layer_questions_status: complete
   broad_source_search_status: complete
   name_ticker_universe_coverage_status: complete
-  issuer_profile_semantic_coverage_pct: 0
-  broad_semantic_search_status: not_complete_current_cycle_name_ticker_and_independent_web_discovery_only
-  organic_recall_count: 0
-  hard_coded_proxy_only_recall_count: 0
+  issuer_profile_semantic_coverage_pct: 0.6645
+  broad_semantic_search_status: bounded_72_targeted_attempts_51_valid_not_full_universe
+  organic_recall_count: 17
+  hard_coded_proxy_only_recall_count: 42
   exploratory_match_count: 60
-  exploratory_sample_count: 18
-  exploratory_sample_coverage_pct: 30.0000
-  search_quality_conclusion: The 7673-security deterministic name/ticker scan,
-    independent bottleneck review, 2919 provisional registration/transaction
-    records and current community triage found no buy-ready challenger. NuCube,
-    WISeSat and REA received bounded R1 records. Full-universe semantic issuer
-    coverage remains bounded process debt and is not represented as complete.
+  exploratory_sample_count: 5
+  exploratory_sample_coverage_pct: 8.3333
+  search_quality_conclusion: 7675 name/ticker references,72 semantic attempts of
+    which51source-sufficient,2093registration/transaction leads, community
+    attention and independent broad source discovery. LPTH strongest new R1
+    lead; no qualified promotion. 21insufficient/mismatched semantic
+    classifications invalidated, including corrected REalloys/MDA profiles.
   independent_xhigh_subagents_status: complete
   required_xhigh_roles:
     - discovery_lane_candidate_triage
@@ -142,9 +141,9 @@ discovery_process:
     - strategic_critical_materials
   unresolved_subagent_conflicts: 0
   open_candidates_without_readiness_sprint: 0
-  material_open_candidates: 41
+  material_open_candidates: 44
   material_open_candidates_blocking_allocation: 0
-  open_candidate_readiness_completed: 41
+  open_candidate_readiness_completed: 44
 watchlist_process:
   latest_cycle_review_path: research/watchlist-cycle-reviews.csv
   full_watchlist_review_status: complete
@@ -195,9 +194,8 @@ quality_gates:
   thesis_review_max_age_days: 90
   discovery_scan_max_age_days: 31
   watchlist_cycle_review_max_age_days: 31
-notes: September 30 v1.3 full cycle uses September 29 completed closes, current
-  primary filings, the full 56-symbol watchlist review, 72 event and 71
-  foundational SEC selections, omitted-form checks, and six independent xhigh
-  reviews. No trade is executed or inferred. Full-universe semantic issuer
-  coverage, the current-day SEC index and three bounded R1 followups remain
-  disclosed process debt with dated next sources.
+notes: October2 full operating cycle and no-action decision; completed October1
+  US closes only. New standing888USDdeposit; holdings unchanged. Full-universe
+  semantic coverage and candidate-depth SLAs remain bounded debt, never claimed
+  exhaustive. MDA foundational manual F10/AIF supplement resolves selector blind
+  spot.

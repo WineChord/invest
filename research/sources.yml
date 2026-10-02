@@ -4887,3 +4887,769 @@ sources:
     first_seen_at: 2026-09-30
     related_symbols: []
     summary: Public feeds produced 203 signals from 46 attempted sources; 41 succeeded and five failed or were rate limited. Signals were used only to prioritize primary-source review.
+  - id: completed_close_universe_2026_10_01
+    title: October1 completed regular-session close
+    source_type: market_data
+    url: https://query1.finance.yahoo.com/v8/finance/chart/RKLB?range=max&interval=1d
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - AAOI
+    - ALAB
+    - ASPI
+    - ASTS
+    - BE
+    - CBRS
+    - CIFR
+    - CRCL
+    - CRDO
+    - CRWV
+    - ENRD
+    - ETN
+    - FLY
+    - FN
+    - GILT
+    - GSAT
+    - HQ
+    - IMSR
+    - INFQ
+    - IONQ
+    - IQMX
+    - IREN
+    - KTOS
+    - LEU
+    - LITE
+    - LUNR
+    - MDA
+    - MU
+    - NBIS
+    - NNE
+    - NUCL
+    - NWPX
+    - OCC
+    - OKLO
+    - POET
+    - PWR
+    - QBTS
+    - QSI
+    - QTEX
+    - QUBT
+    - RDW
+    - RGTI
+    - RIOT
+    - RKLB
+    - SEI
+    - SMR
+    - SPCX
+    - STDN
+    - VOYG
+    - VRT
+    - WULF
+    - WYFI
+    - XNDU
+    - YSS
+    summary: Current source retrieval; exact underlying publication dates retained in dated report and hashed artifacts. Not
+      trade confirmation.
+  - id: sec_event_index_targeted_72_2026_10_02
+    title: October2 targeted72 SEC event index
+    source_type: public_evidence_index
+    url: https://data.sec.gov/submissions/CIK0001065059.json
+    source_published_at: 2026-10-02
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LEU
+    - MU
+    - SEI
+    - NBIS
+    summary: Current source retrieval; exact underlying publication dates retained in dated report and hashed artifacts. Not
+      trade confirmation.
+  - id: sec_foundational_index_targeted_71_of_72_2026_10_02
+    title: October2 foundational index plus separate MDA manual fallback
+    source_type: public_evidence_index
+    url: https://data.sec.gov/submissions/CIK0001857047.json
+    source_published_at: 2026-10-02
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - MDA
+    - LEU
+    summary: Current source retrieval; exact underlying publication dates retained in dated report and hashed artifacts. Not
+      trade confirmation.
+  - id: sec_omitted_forms_2026_10_02
+    title: "September30\u2013October1 omitted forms reviewed October2"
+    source_type: public_evidence_index
+    url: https://www.sec.gov/Archives/edgar/daily-index/2026/QTR4/master.20261001.idx
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - IREN
+    - ALMU
+    - ASTS
+    - CIFR
+    - IONQ
+    summary: Current source retrieval; exact underlying publication dates retained in dated report and hashed artifacts. Not
+      trade confirmation.
+  - id: public_community_triage_2026_10_02
+    title: Public community attention triage October2
+    source_type: market_data
+    url: https://www.reddit.com/r/wallstreetbets/top/.rss?t=day
+    source_published_at: 2026-10-02
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols: []
+    summary: Current source retrieval; exact underlying publication dates retained in dated report and hashed artifacts. Not
+      trade confirmation.
+  - id: sgov_official_2026_10_02
+    title: SGOV sponsor yield and portfolio reference
+    source_type: market_data
+    url: https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - SGOV
+    summary: Current source retrieval; exact underlying publication dates retained in dated report and hashed artifacts. Not
+      trade confirmation.
+  - id: discovery_lpth_fy2026_results_2026_09_10
+    title: LightPath FY2026 results
+    source_type: company_ir
+    url: https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/lightpath-technologies-reports-fiscal-2026-fourth-quarter-and-ful-1219233
+    source_published_at: 2026-09-10
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LPTH
+    summary: FY26 sales $71.722m; backlog $110.9m with $85.6m scheduled within twelve months; June cash $93.205m; operating
+      cash outflow $10.225m and capex $6.268m. Historical publication newly reviewed October 2.
+  - id: discovery_lpth_fy2026_10k_2026_09_11
+    title: LightPath FY2026 Form 10-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/889971/000143774926030106/lpth20260630_10k.htm
+    source_published_at: 2026-09-11
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LPTH
+    summary: Cover confirms 70,036,252 September 8 basic shares, correcting the 39.939m denominator. No warrants outstanding
+      June 30; preferred, options, awards and acquisition consideration remain claims. Exclusive BDNL license is distinct from
+      generic BD2/BD6 materials.
+  - id: discovery_lpth_completed_close_2026_10_01
+    title: LPTH completed October 1 daily close
+    source_type: market_data
+    url: https://query2.finance.yahoo.com/v8/finance/chart/LPTH?range=1mo&interval=1d
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LPTH
+    summary: Root independently retrieved $10.850000381469727 October 1 completed close on October 2 and excluded the incomplete
+      October 2 session. Cached at research/cache/discovery/2026-10-02/manual/LPTH-chart.json; corrected basic cap approximately
+      $759.893m.
+  - id: discovery_saiq_close_2026_10_01
+    title: WISeSat business-combination closing
+    source_type: company_ir
+    url: https://www.globenewswire.com/news-release/2026/10/01/3373382/0/en/wisesat-space-holdings-corp-announces-closing-of-business-combination-with-columbus-acquisition-corp.html
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - WISESAT_PRELISTING
+    - SAIQ
+    - COLA
+    summary: Issuer reports October 1 closing after September 30 shareholder approval and proposed October 2 SAIQ trading. Release
+      does not establish post-close retained cash. Issuer BVI domicile conflicts with Nasdaq Cayman label; resolve through legal
+      filing.
+  - id: discovery_saiq_nasdaq_action_2026_10_01
+    title: Nasdaq SAIQ corporate action
+    source_type: exchange
+    url: https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-711
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - WISESAT_PRELISTING
+    - SAIQ
+    - COLA
+    summary: Exchange independently reports October 1 completion and October 2 SAIQ effectiveness, COLA suspension and rights/unit
+      treatment. Corporate action is not a completed October 2 market close; domicile label differs from issuer closing release.
+  - id: discovery_nucube_lpbb_8k_2026_10_01
+    title: Launch Two NuCube sponsor conversion and extension proposal
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2023676/000121390026105744/ea0307246-8k_launch.htm
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - NUCUBE_PRELISTING
+    - LPBB
+    summary: Reports September 30 conversion of 5,749,999 Class B sponsor shares to A; proposed October 9 deadline extension
+      to April 9, 2027; non-redemption economics still negotiated. Reclassification is not total-share issuance or business-combination
+      completion.
+  - id: discovery_rea_drilling_qaqc_2026_09_23
+    title: Rare Earths Americas initial drilling and QA/QC
+    source_type: company_ir
+    url: https://ir.rareearthsamericas.com/news-events/press-releases/detail/97/rare-earths-americas-reports-initial-drill-results-at-homer-a-widespread-near-surface-rare-earth-mineralization-with-heavy-rare-earth-enrichment
+    source_published_at: 2026-09-23
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - REA
+    summary: Issuer reports initial assays, QA/QC and QP review; assays represent about 8% of planned drilling. Initial resource
+      targeted 2027; economically leachable ionic adsorption mineralization remains under metallurgical evaluation. Exploration
+      results are not reserves or demonstrated economic output.
+  - id: discovery_rea_technical_supplement_2026_09_23
+    title: Rare Earths Americas supplemental technical data
+    source_type: company_ir
+    url: https://d1io3yog0oux5.cloudfront.net/_fee285f52f1390368cd0f7c57d5f802c/rareearthsamericas/db/3649/34491/file/REA_Supplemental_Technical_Data_21SEP2026_revFinal3.pdf
+    source_published_at: 2026-09-23
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - REA
+    summary: Supporting technical PDF posted with September 23 results; selected access only. No full independent assay audit
+      or complete technical-report verification claimed.
+  - id: discovery_rea_q2_2026_10q_2026_08_11
+    title: Rare Earths Americas Q2 Form 10-Q
+    source_type: sec_filing
+    url: https://ir.rareearthsamericas.com/sec-filings/all-sec-filings/content/0001193125-26-344825/rea-20260630.htm
+    source_published_at: 2026-08-11
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - REA
+    summary: Reviewed selected quarterly and capitalization passages; June 30 shares 19,953,892. Exploration/development company
+      with no mining revenue; subsequent capitalization still requires reconciliation.
+  - id: discovery_brnx_h1_2026_results_2026_09_09
+    title: BrenX H1 financial results and thermal-storage progress
+    source_type: company_ir
+    url: https://www.newsfilecorp.com/release/313475/BrenX-Reports-First-Half-2026-Financial-Results-and-Advances-Integrated-Energy-Infrastructure-Strategy
+    source_published_at: 2026-09-09
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - BRNX
+    - BNRG
+    summary: H1 revenue zero, June cash $5.689m, operating outflow $5.501m; Tempo 32MWh system commissioning is not final customer
+      acceptance. Early industrial steam storage has fragile current funding economics.
+  - id: discovery_brnx_eib_settlement_2026_09_15
+    title: BrenX conditional EIB debt settlement
+    source_type: company_ir
+    url: https://www.newsfilecorp.com/release/314339/BrenX-Signs-Strategic-Settlement-with-European-Investment-Bank-EIB-to-Eliminate-Approximately-4.8-Million-of-Debt-and-Strengthen-the-Balance-Sheet
+    source_published_at: 2026-09-15
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - BRNX
+    - BNRG
+    summary: Expected debt extinguishment depends on initial EUR1.1m payment and EIB conditions; possible contingent EUR2.9m
+      payment remains. Pro-forma cash is not actual retained cash and announced settlement is not unconditional completed forgiveness.
+  - id: discovery_brnx_f3_2026_09_25
+    title: BrenX resale Form F-3
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1901215/000121390026103505/ea0306419-f3_brenx.htm
+    source_published_at: 2026-09-25
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - BRNX
+    - BNRG
+    summary: September 24 basic ordinary shares 1,946,972. Resale package includes conversion, antidilution and warrant shares;
+      registration does not itself provide primary cash and the package is not the complete fully diluted denominator.
+  - id: discovery_onen_close_8k_2026_09_29
+    title: ONE Nuclear Energy closing Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1846416/000149315226044924/form8-k.htm
+    source_published_at: 2026-09-29
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - ONEN
+    - HVII
+    - HVIIU
+    - HVIIR
+    summary: Combination closed September 23 and Nasdaq Capital Market trading began September 24; 108.259m post-close shares.
+      About $1.7m trust cash remained after forward-purchase payments; pipeline claims are not funded operating assets.
+  - id: discovery_onen_proforma_2026_09_29
+    title: ONE Nuclear Energy transaction pro forma
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1846416/000149315226044924/ex99-3.htm
+    source_published_at: 2026-09-29
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - ONEN
+    summary: Transaction pro forma supports financing review but is not actual current cash; distinguish pro-forma balance from
+      historical operating LLC and trust balances.
+  - id: discovery_imc_ipo_close_2026_07_30
+    title: IMC Rare Earths IPO closing release
+    source_type: company_ir
+    url: https://www.nasdaq.com/press-release/imc-rare-earths-ltd-announces-closing-20-million-initial-public-offering-2026-07-30
+    source_published_at: 2026-07-30
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - IMC
+    summary: 'NYSE American IPO closed July 30: 4m shares at $5, $20m gross. Offered/free-float shares must not be confused
+      with total equity capitalization.'
+  - id: discovery_imc_f1a_2026_07_13
+    title: IMC Rare Earths Form F-1/A
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2098395/000149315226032946/formf-1a.htm
+    source_published_at: 2026-07-13
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - IMC
+    summary: Modeled total post-IPO shares 105.1m. Itarantim inferred resource and sample leaching exist, but producing-mine,
+      detailed engineering, payability and financeable economic-operation evidence remain incomplete; later capital changes
+      require review.
+  - id: discovery_mkar_f4_announcement_2026_09_30
+    title: Mkango amended Form F-4 announcement
+    source_type: company_ir
+    url: https://www.accessnewswire.com/newsroom/en/metals-and-mining/mkango-magnetic-materials-limited-announces-filing-of-amended-form-f-4-1228947
+    source_published_at: 2026-09-30
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - MKAR_PRELISTING
+    - MKAR
+    - CPTKW
+    summary: Issuer says amended F-4 filed September 29 and not effective. Proposed Nasdaq MKAR remains conditional; Songwe/Pulawy
+      subsidiary assets differ from parent magnet/recycling exposure. DFC $4.6m support is development/FEED reimbursement, not
+      construction funding. Full linked F-4 browser retrieval failed.
+  - id: discovery_aloy_q2_2026_10q_2026_08_13
+    title: REalloys Q2 Form 10-Q and identity
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1567900/000162828026056817/aloy-20260630.htm
+    source_published_at: 2026-08-13
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - ALOY
+    - BLBX
+    summary: Confirms REalloys Nasdaq ALOY rather than stale Blackbox operating profile. June cash $122.357m, H1 operating cash
+      outflow $17.720m and substantial stock compensation; project and per-share economics still require underwriting.
+  - id: discovery_aloy_q2_release_2026_08_14
+    title: REalloys Q2 project funding and supply rights
+    source_type: company_ir
+    url: https://realloys.com/realloys-press-release/realloys-reports-second-quarter-2026-results/
+    source_published_at: 2026-08-14
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - ALOY
+    summary: Issuer page date August 14. Approximately $58.3m committed SRC/metallization project funding and rights to approximately
+      80% expanded SRC output. Potential Q4 2026 qualification and Q3 2027 commercial intake are targets, not delivered customer
+      economics.
+  - id: discovery_occ_8k_2026_09_11
+    title: Optical Cable results and transcript Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1000230/000143774926030174/occ20260910_8k.htm
+    source_published_at: 2026-09-11
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - OCC
+    summary: 'Current cached filing text reviewed: attaches September 9 results and earnings-call transcript. The September
+      11 filing is not a second quarter of working-capital or cash-conversion proof.'
+  - id: discovery_vip_exchange_8k_2026_09_29
+    title: Vulcan Infrastructure and Power debt exchange
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1844971/000162828026063839/gree-20260923.htm
+    source_published_at: 2026-09-29
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - VIP
+    summary: Exchange agreement describes about $2.793m old notes for $2.833m 10% notes due 2030 plus 1m warrants at $1.87;
+      expected October 1 closing is not confirmed by this filing. Residual liquidity and binding customer/site returns remain
+      separate questions.
+  - id: discovery_onds_acquisition_shares_2026_09_23
+    title: Ondas acquisition-share issuance and resale
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1646188/000121390026102458/ea0306273-8k_ondas.htm
+    source_published_at: 2026-09-23
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - ONDS
+    summary: September 23 filing covers 7.822m resale shares, principally 7.821m acquisition shares for CaribouLabs, Insignito
+      and Ottopia. Resale registration is not operating cash; organic/acquired economics and dilution require reconciliation.
+  - id: discovery_eose_separation_8ka_2026_09_16
+    title: Eos Energy executive-separation Form 8-K/A
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1805077/000162828026062265/eose-20260910.htm
+    source_published_at: 2026-09-16
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - EOSE
+    summary: Amendment describes CCO separation, salary continuation and equity acceleration. It supplies no new third-party
+      demand, gross-margin or production economics proof.
+  - id: discovery_usar_ceo_transition_2026_10_01
+    title: USA Rare Earth CEO transition Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000121390026105454/ea0307183-8k_usarare.htm
+    source_published_at: 2026-10-01
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - USAR
+    summary: Announces completion of CEO transition to Thras Moraitis; transition does not itself resolve project economics,
+      qualified production, acquisition pro forma or common-share claims.
+  - id: discovery_usar_risk_supplement_2026_09_15
+    title: USA Rare Earth current risk supplement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000121390026100190/ea030552601ex99-1.htm
+    source_published_at: 2026-09-15
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - USAR
+    summary: US magnet operations remain under development; demonstration work and supplier/offtake plans are not commercial
+      qualification. Do not extend this to a false assertion that the whole acquired group has no revenue.
+  - id: discovery_usar_s3_2026_09_04
+    title: USA Rare Earth Form S-3 following Serra Verde close
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000121390026097754/ea0304147-s3_usarare.htm
+    source_published_at: 2026-09-04
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - USAR
+    summary: Shelf capacity is not executed financing proceeds. Acquisition consideration and current pro-forma operating/capital
+      claims must be reconciled before promotion.
+  - id: leu_q2_2026_10q_claim_review
+    title: Centrus Q2 2026 Form 10-Q
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000162828026053863/leu-20260630.htm
+    source_published_at: 2026-08-06
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LEU
+    summary: Cash, restricted deposits, cash-principal debt, maintenance-only operating option and milestone-based expansion
+      payments anchor the delayed-transition model.
+  - id: leu_final_offering_2026_09_11
+    title: Centrus Final September 2026 Offering Supplement
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000110465926106829/tm2625019d3_424b5.htm
+    source_published_at: 2026-09-11
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LEU
+    summary: Final economic-basic ownership bridge is 22,458,621 shares including Class B and pre-funded equivalents; estimated
+      net proceeds are USD 489 million before future warrant exercise.
+  - id: leu_final_warrant_terms_2026_09_11
+    title: Centrus September 2026 Underwriting Agreement and Warrant Terms
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000110465926107103/tm2625019d5_ex1-1.htm
+    source_published_at: 2026-09-11
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LEU
+    summary: Agreement dated September 9 gives 6,992,382 cash-warrant shares, four exercise-price series, staggered expirations
+      and approximately USD 2 billion aggregate cash proceeds if exercised.
+  - id: leu_2025_10k_convert_claim_review
+    title: Centrus 2025 Form 10-K Convertible Settlement Terms
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1065059/000162828026007117/leu-20251231.htm
+    source_published_at: 2026-02-11
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LEU
+    summary: Notes require cash principal settlement; only incremental conversion value may become shares. Initial strikes are
+      approximately USD 97.50 and USD 229.62.
+  - id: leu_2025_results_initial_haleu_scale
+    title: Centrus 2025 Results and Initial HALEU Production Ambition
+    source_type: company_ir
+    url: https://investors.centrusenergy.com/news-releases/news-release-details/centrus-reports-fourth-quarter-and-full-year-2025-results-and
+    source_published_at: 2026-02-10
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - LEU
+    summary: The proposed 12-MTU production ambition is a capacity scenario anchor rather than completed capacity or committed
+      annual sales.
+  - id: gilt_interim_actual_shares_2026_08_10
+    title: Gilat June 2026 Interim Financial Statements
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003967/exhibit_99-1.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - GILT
+    summary: Actual June 30 issued shares were 77,029,657, distinct from weighted-average earnings denominators.
+  - id: gilt_proxy_actual_shares_2026_08_10
+    title: Gilat August 2026 Proxy Actual Share Count
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/897322/000117891326003999/exhibit_99-1.htm
+    source_published_at: 2026-08-10
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - GILT
+    summary: Proxy confirms 77,029,657 actual ordinary shares as of July 31; authorized capacity is not current issuance.
+  - id: mda_ncib_actual_shares_2026_09_21
+    title: MDA TSX NCIB Approval and Actual Share Count
+    source_type: company_ir
+    url: https://www.newswire.ca/news-releases/mda-space-announces-tsx-approval-of-normal-course-issuer-bid-874579493.html
+    source_published_at: 2026-09-21
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - MDA
+    summary: Issuer confirms 162,130,797 shares as of September 11; permission to repurchase 8,106,539 shares is not evidence
+      of completed cancellations.
+  - id: mda_q2_2026_results_claim_review
+    title: MDA Second Quarter 2026 Results
+    source_type: company_ir
+    url: https://mda-en.investorroom.com/2026-08-07-MDA-SPACE-REPORTS-SECOND-QUARTER-2026-RESULTS
+    source_published_at: 2026-08-07
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - MDA
+    summary: Canadian-dollar financials show operating growth, negative cash conversion and substantial investment; do not mix
+      them with US-dollar equity value without FX conversion.
+  - id: mda_acquisition_notes_2026_08_05
+    title: MDA CAD 600 Million Acquisition Financing Closing
+    source_type: company_ir
+    url: https://mda-en.investorroom.com/2026-08-05-MDA-SPACE-ANNOUNCES-CLOSING-OF-C-600-MILLION-OFFERING-OF-SENIOR-UNSECURED-NOTES-DUE-2033
+    source_published_at: 2026-08-05
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - MDA
+    summary: Debt proceeds support Blue Canyon consideration and fees; do not treat them as surplus cash while omitting acquisition
+      payments.
+  - id: mda_manual_AIF_foundation_2026_10_02
+    title: MDA FY2025 AIF incorporated in July F10
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1857047/000110465926025809/tm266080d2_ex4-1.htm
+    source_published_at: 2026-03-04
+    retrieved_at: 2026-10-02
+    first_seen_at: 2026-10-02
+    related_symbols:
+    - MDA
+    summary: Freshly read foundational business and risk sections; old reporting period retained. Manual supplement to empty
+      supported selector.
+  - id: mu_2026_09_30_fy2026_8k
+    title: Micron fiscal 2026 results Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/mu-20260930.htm
+    source_published_at: '2026-09-30'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - MU
+    summary: Accession 0000723125-26-000018; FY2026 earnings. September 30 publication newly reviewed October 2.
+  - id: mu_2026_09_30_fy2026_results_ex991
+    title: Micron FY2026 earnings release and financial statements
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm
+    source_published_at: '2026-09-30'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - MU
+    summary: Revenue USD 133188 million; cash equivalents 38364 million and debt carrying amount 5179 million. Weighted-average
+      shares are not current shares outstanding.
+  - id: mu_2026_09_30_fy2026_results_ir
+    title: Micron record fiscal Q4 and FY2026 results
+    source_type: company_ir
+    url: https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/
+    source_published_at: '2026-09-30'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - MU
+    summary: Official issuer counterpart to earnings exhibit.
+  - id: mu_2026_09_30_fy2026_earnings_deck
+    title: Micron Q4 FY2026 earnings presentation
+    source_type: company_ir
+    url: https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-26-Earnings-Deck.pdf
+    source_published_at: '2026-09-30'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - MU
+    summary: Supply commitment agreements, pricing structure, customer financial commitments and capacity plans.
+  - id: mu_2026_09_30_fy2026_prepared_remarks
+    title: Micron Q4 FY2026 prepared remarks
+    source_type: company_ir
+    url: https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-FY26-Prepared-Remarks.pdf
+    source_published_at: '2026-09-30'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - MU
+    summary: Approximately USD 150 billion RPO, deposit mechanics and future capex; forecasts remain management expectations.
+  - id: sei_2026_10_01_notes_revolver_8k
+    title: Solaris notes offering and revolving credit amendment
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526410682/d567251d8k.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - SEI
+    summary: Closed USD 1250 million 7% notes due 2032; revolving commitments rise to USD 850 million.
+  - id: sei_2026_10_01_senior_notes_indenture
+    title: Solaris 7% senior notes indenture
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526410682/d567251dex41.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - SEI
+    summary: Guarantees, senior claim structure, covenant baskets, redemption and default terms.
+  - id: sei_2026_10_01_credit_amendment
+    title: Solaris revolving credit agreement amendment
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1697500/000119312526410682/d567251dex101.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - SEI
+    summary: USD 850 million commitments and USD 325 million LC sublimit; specified incremental feature exhausted.
+  - id: nbis_2026_10_01_inferize_6k
+    title: Nebius Inferize acquisition Form 6-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926112824/tm2626792d1_6k.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - NBIS
+    summary: Acquisition of inference optimization team and technology; financial terms undisclosed.
+  - id: nbis_2026_10_01_inferize_ex991
+    title: Nebius Inferize acquisition announcement
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926112824/tm2626792d1_ex99-1.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - NBIS
+    summary: Token Factory stack expansion; realized utilization, revenue and margin benefits not quantified.
+  - id: nbis_2026_10_01_inferize_ir
+    title: Nebius acquires Inferize for Token Factory
+    source_type: company_ir
+    url: https://nebius.com/newsroom/nebius-acquires-inferize-to-strengthen-nebius-token-factorys-production-inference-stack
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - NBIS
+    summary: Official issuer corroboration; consideration and dilution not disclosed.
+  - id: enrd_2026_10_01_invoice_facility_6k
+    title: Einride invoice purchase facility amendment
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/2095096/000149315226045378/form6-k.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - ENRD
+    summary: September 30 amendment raises nonrecourse invoice purchase credit limit SEK 550 to 650 million and adds a US subsidiary.
+  - id: rklb_2026_09_30_synspective_20_launches
+    title: Rocket Lab twenty-launch Synspective contract
+    source_type: company_ir
+    url: https://rocketlabcorp.com/updates/rocket-lab-secures-largest-ever-electron-commercial-deal-20-launch-contract-for-synspective/
+    source_published_at: '2026-09-30'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - RKLB
+    summary: Twenty additional missions planned 2028-2031; 47 total Synspective contracted launches and Electron backlog above
+      100; economic terms undisclosed.
+  - id: almu_2026_09_30_annual_proxy
+    title: Aeluma definitive annual proxy
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1828805/000121390026105227/ea0306962-01.htm
+    source_published_at: '2026-09-30'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - ALMU
+    summary: November 19 meeting and routine director/auditor proposals; 19314923 shares at September 23 record date.
+  - id: qbts_2026_10_01_simulator_beta_8k
+    title: D-Wave gate-model simulator beta Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1907982/000190798226000159/qbts-20261001.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - QBTS
+    summary: Gate-model simulator beta and named participants; no new financial results or commercial fault-tolerant hardware.
+  - id: qtex_2026_10_01_cryo_interconnect_6k
+    title: Qtrex cryogenic interconnect testing Form 6-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526004479/qtrex6k100126.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - QTEX
+    summary: Issuer reports independent testing and a definitive agreement being finalized, not yet signed.
+  - id: qtex_2026_10_01_cryo_interconnect_ex991
+    title: Qtrex cryogenic interconnect test announcement
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1837493/000118518526004479/qtrexex99-1.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - QTEX
+    summary: Reported isolation above 100 dB at 4-8 GHz and 20 mK; counterparty unnamed, order economics undisclosed.
+  - id: usar_2026_10_01_ceo_transition_8k
+    title: USA Rare Earth CEO transition Form 8-K
+    source_type: sec_filing
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000121390026105454/ea0307183-8k_usarare.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - USAR
+    summary: Completed transition to CEO Thras Moraitis and described operating priorities.
+  - id: usar_2026_10_01_ceo_transition_ex991
+    title: USA Rare Earth leadership announcement exhibit
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000121390026105454/ea030718301ex99-1.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - USAR
+    summary: Leadership transition and execution priorities; no new quantified financing commitment.
+  - id: usar_2026_10_01_ceo_transition_ex992
+    title: USA Rare Earth additional leadership exhibit
+    source_type: sec_filing_exhibit
+    url: https://www.sec.gov/Archives/edgar/data/1970622/000121390026105454/ea030718301ex99-2.htm
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - USAR
+    summary: Governance, integration and group capital allocation context.
+  - id: voyg_2026_10_01_q3_earnings_calendar
+    title: Voyager Q3 2026 earnings release and call schedule
+    source_type: company_ir
+    url: https://voyagertechnologies.com/press-releases/voyager-announces-third-quarter-2026-earnings-results-call/
+    source_published_at: '2026-10-01'
+    retrieved_at: '2026-10-02'
+    first_seen_at: '2026-10-02'
+    related_symbols:
+    - VOYG
+    summary: Results November 2 after market; call November 3 at 9 a.m. Eastern. Calendar update only.

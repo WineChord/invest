@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source": "semantic_classification_import",
+  "generated_at": "2026-10-02T08:05:01.616Z",
+  "as_of": "2026-10-02",
+  "packet_artifact_path": "research/cache/discovery/2026-10-02/semantic-packets.json",
+  "packet_artifact_sha256": "5dd3f26ed7946249f9f541b9b9265ffe5532e211928e8bf65d70841a9d09f22d",
+  "result_path": "research/cache/discovery/2026-10-02/semantic-agent-results.jsonl",
+  "result_sha256": "5fa7a330bf5eb3feb8c730bf891261d2d728158fc4e80c5978ce2354b9d0dea4",
+  "input_cache_path": "",
+  "input_cache_sha256": "",
+  "cache_output_path": "research/discovery/semantic-cache.jsonl",
+  "classifier_version": "semantic_triage_v5",
+  "imported_count": 72,
+  "cache_record_count": 72,
+  "current_cache_count": 72,
+  "stale_cache_count": 0,
+  "escalation_counts": {
+    "medium_lane_compare": 46,
+    "none": 21,
+    "reject_or_archive": 5
+  },
+  "main_agent_post_import_validation": {
+    "invalid_source_insufficient_attempts": 21,
+    "source_sufficient_current_attempts": 51,
+    "prior_records_preserved": 7646,
+    "durable_cache_records_after_merge": 7718,
+    "note": "Import was performed into isolated current-run output; main then merged prior cache without deleting audit history."
+  }
+}

@@ -1,0 +1,878 @@
+schema_version: 1
+run_id: 2026-10-02-weekly-full-operating-cycle
+run_date: '2026-10-02'
+market_session_date: '2026-10-01'
+evidence_cutoff: '2026-10-02T16:30:00+08:00'
+request_type: scheduled_weekly_full_operating_cycle
+policy_version: v1.3
+mission_anchor: multi-decade asymmetric compounding with avoidable-ruin controls
+operator: codex
+validity_window: No trade authorized; conclusions expire October9 or earlier material event/account change.
+linked_decision_or_research_note: decisions/2026-10-02-weekly-operating-cycle.md
+subagent_evidence_packet_path: research/discovery/runs/2026-10-02-subagent-evidence-packet.yml
+artifact_hash_index_path: research/discovery/runs/2026-10-02-discovery-artifact-index.json
+execution_update:
+  status: standing_deposit_applied_no_trade
+  confirmed_ledger_event_ids:
+  - 2026-10-02-deposit-weekly-888-001
+  confirmation_source: owner_standing_contribution
+  resulting_confirmed_cash: 13831.73
+  resulting_settled_cash: 13831.73
+  resulting_confirmed_positions:
+  - ASTS11
+  - GILT29
+  - IREN5
+  - MDA9
+  - RKLB17
+  idempotency_result: already_recorded_on_repeat
+  broker_reconciliation_date: '2026-09-11'
+article_one_preflight:
+  sentinel_level: WARN
+  reason_codes:
+  - evidence_deadline_due
+  disposition: Current due decision reconstructed; calendar veto removed and noaction economic case red-teamed.
+first_principles_heading: First-Principles Analysis
+first_principles_analysis:
+  question_rebuilt_from_basics: Does the next total-liquidity dollar buy attractive protected per-share cash versus
+    current holdings and temporary information optionality?
+  irreducible_facts: Standing-authorized cash is USD13831.73; October1 marked equity is USD2574.60 and research
+    NAV is USD16406.33. LEU has binding demand and financing, but expansion cash and complete ownership claims determine
+    common value.
+  binding_constraints: Remaining growth capital, operating cash after senior claims, cash-principal debt settlement,
+    conditional premium dilution and attractive current entry value.
+  causal_chain: Scarcity -> lawful qualified funded capacity -> deliveries -> operating cash -> capital needs and
+    senior claims -> diluted per-share value -> portfolio payoff
+  inherited_assumptions_challenged: A calendar endpoint alone requires zero; small starters are immaterial; high
+    cash forces purchase; generic selector absence means no filing; weighted-average EPS shares are actual issued
+    shares.
+  value_capture_or_mission_link: Preserve current convex holdings while making nonzero deployment depend on scalable
+    positive expected value, not process perfection.
+  disconfirming_evidence: More favorable funded capacity returns, lower non-destructive expansion costs or an evidence-consistent
+    valuation reset can overturn zero.
+  decision_consequence: Hold all confirmed positions,zeroincrementalstockorders;conditionalSGOVeconomicpreference;recheckOct9orearliermaterialchange.
+execution_order:
+- step: 1
+  task: Rules/preflight and standing contribution
+  status: complete
+  reason: Current remote main and all governance/templates read; WARN due checkpoint resolved. Apply888USD; repeat
+    already_recorded.
+- step: 2
+  task: Broker truth separation
+  status: complete
+  reason: Holdings and last broker reconciliation unchanged; no execution inferred.
+- step: 3
+  task: Deterministic market/data/dashboard
+  status: complete
+  reason: All canonical quotes/metrics and macro refreshed; October1 completed close; retrospective equity snapshot
+    skipped because October2 cash state is newer.
+- step: 4
+  task: Bottleneck lanes
+  status: complete
+  reason: Top-level lanes retained; dated infrared-materials and industrial-heat subquestions; strategic materials
+    comparison broadened.
+- step: 5
+  task: Universe/community/registration/semantics
+  status: complete_with_bounded_coverage
+  reason: 7675eligible name/ticker references;199community leads;2093provisional SECregistration records;72semantic
+    attempts51valid; full-universe semantic coverage incomplete.
+- step: 6
+  task: Freshness paired SEC selectors
+  status: complete_with_manual_supplement
+  reason: 72event/71foundation selections; same72scope. MDA F10/incorporatedAIF separately reviewed.
+- step: 7
+  task: Evidence packet and independent reviews
+  status: complete
+  reason: Six fresh-context xhigh roles and one low-reasoning semantic batch actually completed; current sources
+    hash-anchored.
+- step: 8
+  task: All watchlist cycle reviews
+  status: complete
+  reason: 56of56nonremoved rows; low-signal continuity distinguished from deep underwriting.
+- step: 9
+  task: Self-evolution/promotion
+  status: complete_no_promotion
+  reason: Fresh events did not create qualified promotion; no status/priority changes; no forced trade.
+- step: 10
+  task: Candidate readiness
+  status: complete_with_bounded_R1_R2_debt
+  reason: Five source-backed additions; BRNX/ONEN rejected current allocation expression. LPTH first scopedR2challenger.
+    Candidate-specific Oct6/9/16SLAs.
+- step: 11
+  task: Material filing reviews and omitted forms
+  status: complete
+  reason: Current material review;38omitted forms reviewed,PDFcorrectlyextracted,IONQwarrants vscommon and ownership
+    vsissuerfinancing distinguished.
+- step: 12
+  task: Valuation/entry
+  status: complete
+  reason: 23active valuations/buyzones;LEU state-consistent four-scenario cash/claim model;GILT/MDA issued-share
+    corrections;MU new financials.
+- step: 13
+  task: Macro/AI financing regime
+  status: complete
+  reason: Oct2refresh strong_trend overlay; existing sensitivity/runway/shared-risk matrices cited and holding financing
+    risks checked; regime cannot create buyeligibility.
+- step: 14
+  task: Final allocation and offensive challenge
+  status: complete
+  reason: Zero/newstarter/fullliquidity compared; all5held,zeroadd/trim/sell;cashandSGOVcarry compared;noaction
+    expiresOct9.
+- step: 15
+  task: Meta-improvement and retrospective
+  status: complete
+  reason: Calendar/claims/identity/parser/currentcash chronology defects corrected;datedprocessreview andretrospective.
+- step: 16
+  task: Durable research/account/dashboard records
+  status: complete
+  reason: Current run/report/source/event/readiness/watchlist/valuation/quality records;onlynewledger888standingdeposit.
+- step: 17
+  task: Publication release
+  status: complete_public_safe
+  reason: Livecounterfactual quantities/weights/thresholds privateonly;publicnoaction andhistoricalfacts sanitized;
+    no active orders.
+- step: 18
+  task: Cleanup
+  status: complete
+  reason: Preserve old dirtycheckout; ignoredrawcache; invalidate21badclassifications;withholdunreconciledEV.
+- step: 19
+  task: Fullverify/Article1postflight/dashboard
+  status: complete_with_visual_limit
+  reason: Fullverify and decisionArticle1 PASS; 99pages;five previewHTTP/SSRchecks pass. Browservisualcheck unavailable
+    with documented externaldownloadfailure.
+- step: 20
+  task: Commit/push and finalremoteaudit
+  status: validated_prepared_for_authorized_publication
+  reason: Finalcommitandremoteupdatearecheckedafterthisartifactisprepared;completionmessagecontainsexactremotecommitlink.
+source_coverage:
+  deterministic_scan:
+    status: complete_name_ticker_only
+    eligible_securities: 7675
+    candidate_rows: 22
+    exploratory_match_count: 60
+    output_path: research/discovery/runs/2026-10-02-scan.json
+  community_attention:
+    status: complete_with_five_source_errors
+    source_entries: 46
+    successful_sources: 41
+    leads: 199
+    high_priority: 26
+    medium_priority: 39
+    output_path: research/discovery/runs/2026-10-02-community-triage.json
+    policy_boundary: attention_not_buy_evidence
+  sec_event_index:
+    target_scope: 72
+    selected_rows: 72
+    extracted_profiles: 40
+  sec_foundational_index:
+    target_scope: 72
+    selected_rows: 71
+    extracted_profiles: 63
+    manual_supplement: research/filings/2026-10-02-MDA-FOUNDATIONAL-SUPPLEMENT.md
+  omitted_forms_review:
+    filings_reviewed: 38
+    failed_fetches: 0
+    review_path: research/discovery/runs/2026-10-02-sec-omitted-form-review.json
+  registration_transaction_review:
+    completed_index_dates:
+    - '2026-09-30'
+    - '2026-10-01'
+    incomplete_current_date: '2026-10-02'
+    source_index_rows: 9121
+    provisional_records: 2093
+    output_path: research/discovery/runs/2026-10-02-sec-registration-transaction-candidates.json
+  semantic_discovery:
+    packet_count: 72
+    valid_source_sufficient_classifications: 51
+    invalid_attempts: 21
+    eligible_universe: 7675
+    coverage_pct: 0.6645
+    status: bounded_targeted_not_full_universe
+    output_path: research/discovery/runs/2026-10-02-semantic-discovery-run.json
+  deterministic_commands:
+  - command: npm run discover:universe -- --dry-run --as-of 2026-10-02 --json --output research/discovery/runs/2026-10-02-scan.json
+    dry_run: true
+    output_path: research/discovery/runs/2026-10-02-scan.json
+    output_sha256: a3dcf6158d26f61f90733078d700fbcf9defad60be6165d754a6b65c17080cd5
+    retrieved_at: '2026-10-02'
+    result_summary: 7675eligible names/tickers;22candidate rows;60exploratorymatches. Separate targetedsemantic72attempts51valid,
+      notfulluniverse.
+  source_families_checked:
+  - family_id: primary_filings_regulatory
+    family: SEC event foundational omitted-form and registration evidence
+    sources_or_queries:
+    - targeted event index
+    - targeted foundational index
+    - submissions delta
+    - daily master indexes
+    source_ids:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    - sec_omitted_forms_2026_10_02
+    retrieved_at: '2026-10-02'
+    material_findings: Eight selectorchanges and38omittedforms dispositioned;72event/71foundation with manualMDAAIF
+      supplement.
+  - family_id: issuer_material
+    family: Issuer releases contracts financing and technical milestones
+    sources_or_queries:
+    - current issuer releases
+    - filing exhibits
+    - transaction announcements
+    source_ids:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_omitted_forms_2026_10_02
+    retrieved_at: '2026-10-02'
+    material_findings: MUnewFYfinancials,SEIclosednotes,NBISacquisition,RKLB20launches and technical/governance
+      events reviewed.
+  - family_id: market_data
+    family: Completed regular-session closes and screening metrics
+    sources_or_queries:
+    - canonical universe refresh
+    - watchlist price refresh
+    - SEC companyfacts
+    source_ids:
+    - completed_close_universe_2026_10_01
+    retrieved_at: '2026-10-02'
+    material_findings: CompletedOctober1closes; currentOctober2standingcash explicitly differenttimestamp.
+  - family_id: current_world_context
+    family: Macro financing volatility contracts customers and capital formation
+    sources_or_queries:
+    - macro refresh
+    - SEC financing delta
+    - public community attention
+    source_ids:
+    - completed_close_universe_2026_10_01
+    - sec_event_index_targeted_72_2026_10_02
+    - public_community_triage_2026_10_02
+    retrieved_at: '2026-10-02'
+    material_findings: Macrostrongtrendoverlay;SGOVofficial3.68pctyield;issuerfinancingand cashconversion control.
+  - family_id: new_listings_ipo_spinoff_transactions
+    family: Newly public pre-listing merger and acquisition evidence
+    sources_or_queries:
+    - S-4 F-4 425 DEF14A interval
+    - completed daily master indexes
+    source_ids:
+    - sec_omitted_forms_2026_10_02
+    - sec_event_index_targeted_72_2026_10_02
+    retrieved_at: '2026-10-02'
+    material_findings: Sep30andOct1 completedSECindexes2093provisionalrecords;SAIQclosed;NuCubepending;LPTH/BRNX/ONEN/IMC/MKAR
+      reviewed.
+  - family_id: lane_evolution_current_world_search
+    family: Bottleneck map and cross-lane opportunity-cost comparison
+    sources_or_queries:
+    - community scan
+    - independent discovery review
+    - current filings and issuer releases
+    source_ids:
+    - public_community_triage_2026_10_02
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    retrieved_at: '2026-10-02'
+    material_findings: Independentbottleneckreasoning,infraredmaterials/industrialheat subquestions andstrategicmaterials
+      expressions;no newpromotion.
+  broad_current_world_search:
+    status: complete
+    retrieval_window: '2026-10-02'
+    notes: Currentprimaryfilings,issuer releases,transactions,publicmarketandmacrosources,communityattentionandindependentbottlenecksearchcompletedwithscopelimits.
+      Completeworkflowdoesnotmeansemanticreviewofeveryissuer.
+candidate_delta:
+  candidates_added:
+  - LPTH
+  - BRNX
+  - ONEN
+  - IMC
+  - MKAR_PRELISTING
+  candidates_rejected_or_archived:
+  - BRNX
+  - ONEN
+  candidates_promoted: []
+  buy_zone_additions: []
+  identity_corrections:
+  - ALOY_REalloys
+  - WISESAT_PRELISTING_to_SAIQ
+  - HVII_aliases_to_ONEN
+  - BNRG_to_BRNX
+  disposition: Source-backed R1 leads; no active-watchlist promotion.
+watchlist_and_readiness:
+  non_removed_watchlist_rows_reviewed: 56
+  active_current_valuation_rows: 23
+  watchlist_status_changes: 0
+  watchlist_priority_changes: 0
+  new_R1_records: 5
+material_event_disposition:
+- symbol: MU
+  finding: FY2026 record financials; curated stale metrics; capex and customer-deposit financing separated.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: SEI
+  finding: Closed1250m7pctnotes net1227.2m;87.5m annualcoupon;undrawn revolver notcash.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: NBIS
+  finding: Inferize closed; consideration and updatedKPI not disclosed; no invented cash/issuance.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: ENRD
+  finding: Invoicefinance limit550to650mSEK; no immediate receipt or revenue inferred.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: RKLB
+  finding: TwentyadditionalSynspectiveElectronmissions2028to2031; pricing undisclosed.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: ALMU
+  finding: 19314923 shares September23; director/auditorvote,no equityplan proposal.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: QBTS
+  finding: Gate model simulator beta; no material revenue evidence.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: QTEX
+  finding: Issuerreportedcryogenicvalidation; unnamed customer definitiveagreement notfinal.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+- symbol: USAR
+  finding: CEOtransitioncompleted; no new commercialproduction or funding proof.
+  review_path: research/filings/2026-10-02-MATERIAL-FILING-REFRESH.md
+allocation_decision:
+  account_nav: 16406.33
+  confirmed_cash: 13831.73
+  equity_value: 2574.6
+  liquidity_weight_pct: 84.3073
+  equity_weight_pct: 15.6927
+  holdings:
+    ASTS: hold 11;add0;trim0;sell0
+    GILT: hold 29;add0;trim0;sell0
+    IREN: hold 5;add0;trim0;sell0
+    MDA: hold 9;add0;trim0;sell0
+    RKLB: hold 17;add0;trim0;sell0
+  new_equity_quantity: 0
+  cash_management_quantity: 0
+  strongest_counterfactual: LEU;GILTstrongestexistingstarter_to_scale;MDAoperatingqualityholding
+  no_buy_reason: Explicit after-capex and state-consistent claim models do not establish attractive current entry;
+    not a calendar, risk-capacity or immaterial-starter veto.
+  cash_management_conclusion: SGOV conditionally economically preferred to near-zero-yield idlecash; user accounteligibility/sweep/fees/taxexecutionprerequisites
+    unknown.
+  next_review_date: '2026-10-09'
+portfolio_risk:
+  severe_joint_holding_stress_loss_usd: 1835.96
+  severe_joint_holding_stress_loss_pct_nav: 11.1906
+  complete_equity_loss_pct_nav: 15.6927
+  stress_assumptions:
+    ASTS: -80
+    GILT: -50
+    IREN: -80
+    MDA: -50
+    RKLB: -75
+  space_comm_pct_equity: 92.1056
+  space_comm_pct_nav: 14.4539
+subagents:
+  required_roles:
+  - role: discovery_lane_candidate_triage
+    reasoning_level: xhigh
+    independent_context: true
+    completed: true
+    skip_reason: null
+    inputs_used:
+    - currentpolicy_v1.3
+    - datedOct2evidencepacket
+    - currentaccountandpublicprimaryfilings
+    - completedOct1marketreferences
+    sources_checked:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    - completed_close_universe_2026_10_01
+    facts_verified:
+    - LPTH strongestnewresearchchallenger;SAIQclose/ALOYidentitycorrected;fiveR1leads;noqualifiedpromotion.
+    stale_or_missing_evidence:
+    - Candidate-specificremainingcapitalandcustomercashassumptions;notfulluniversesemanticcoverage.
+    confidence: high_on_sourcefacts_and_arithmetic_medium_on_future_returns
+    key_findings: LPTH strongestnewresearchchallenger;SAIQclose/ALOYidentitycorrected;fiveR1leads;noqualifiedpromotion.
+  - role: freshness_filing_review
+    reasoning_level: xhigh
+    independent_context: true
+    completed: true
+    skip_reason: null
+    inputs_used:
+    - currentpolicy_v1.3
+    - datedOct2evidencepacket
+    - currentaccountandpublicprimaryfilings
+    - completedOct1marketreferences
+    sources_checked:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    - completed_close_universe_2026_10_01
+    facts_verified:
+    - MUnewFYfinancials/SEIclosednotes/NBISacquisition/RKLBcontract distinguishactualcashvsfutureclaims.
+    stale_or_missing_evidence:
+    - Candidate-specificremainingcapitalandcustomercashassumptions;notfulluniversesemanticcoverage.
+    confidence: high_on_sourcefacts_and_arithmetic_medium_on_future_returns
+    key_findings: MUnewFYfinancials/SEIclosednotes/NBISacquisition/RKLBcontract distinguishactualcashvsfutureclaims.
+  - role: bull_case
+    reasoning_level: xhigh
+    independent_context: true
+    completed: true
+    skip_reason: null
+    inputs_used:
+    - currentpolicy_v1.3
+    - datedOct2evidencepacket
+    - currentaccountandpublicprimaryfilings
+    - completedOct1marketreferences
+    sources_checked:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    - completed_close_universe_2026_10_01
+    facts_verified:
+    - Favorable2035LEUreverseDCFrequiresroughly400mincrementalFCF;optimisticvaluationstilllittlecurrententrymargin;calendarveto
+      retired.
+    stale_or_missing_evidence:
+    - Candidate-specificremainingcapitalandcustomercashassumptions;notfulluniversesemanticcoverage.
+    confidence: high_on_sourcefacts_and_arithmetic_medium_on_future_returns
+    key_findings: Favorable2035LEUreverseDCFrequiresroughly400mincrementalFCF;optimisticvaluationstilllittlecurrententrymargin;calendarveto
+      retired.
+  - role: bear_case
+    reasoning_level: xhigh
+    independent_context: true
+    completed: true
+    skip_reason: null
+    inputs_used:
+    - currentpolicy_v1.3
+    - datedOct2evidencepacket
+    - currentaccountandpublicprimaryfilings
+    - completedOct1marketreferences
+    sources_checked:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    - completed_close_universe_2026_10_01
+    facts_verified:
+    - Nocurrentverifiedholdingthesisbreak;jointstress11.1906pctNAV;fundingcashnotoperatingFCF.
+    stale_or_missing_evidence:
+    - Candidate-specificremainingcapitalandcustomercashassumptions;notfulluniversesemanticcoverage.
+    confidence: high_on_sourcefacts_and_arithmetic_medium_on_future_returns
+    key_findings: Nocurrentverifiedholdingthesisbreak;jointstress11.1906pctNAV;fundingcashnotoperatingFCF.
+  - role: valuation_entry
+    reasoning_level: xhigh
+    independent_context: true
+    completed: true
+    skip_reason: null
+    inputs_used:
+    - currentpolicy_v1.3
+    - datedOct2evidencepacket
+    - currentaccountandpublicprimaryfilings
+    - completedOct1marketreferences
+    sources_checked:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    - completed_close_universe_2026_10_01
+    facts_verified:
+    - LEUactualeconomicbasic22.458621m;convertcashprincipal,premiumsharesandwarrantproceedsconsistent;GILT/MDAactualcountsresolved.
+    stale_or_missing_evidence:
+    - Candidate-specificremainingcapitalandcustomercashassumptions;notfulluniversesemanticcoverage.
+    confidence: high_on_sourcefacts_and_arithmetic_medium_on_future_returns
+    key_findings: LEUactualeconomicbasic22.458621m;convertcashprincipal,premiumsharesandwarrantproceedsconsistent;GILT/MDAactualcountsresolved.
+  - role: allocation_risk
+    reasoning_level: xhigh
+    independent_context: true
+    completed: true
+    skip_reason: null
+    inputs_used:
+    - currentpolicy_v1.3
+    - datedOct2evidencepacket
+    - currentaccountandpublicprimaryfilings
+    - completedOct1marketreferences
+    sources_checked:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_foundational_index_targeted_71_of_72_2026_10_02
+    - completed_close_universe_2026_10_01
+    facts_verified:
+    - NAV16406.33,cash84.3073pct;meaningfulsmallstarteraffordablebutentryeconomicsfail;SGOVconditionalcarrypreference.
+    stale_or_missing_evidence:
+    - Candidate-specificremainingcapitalandcustomercashassumptions;notfulluniversesemanticcoverage.
+    confidence: high_on_sourcefacts_and_arithmetic_medium_on_future_returns
+    key_findings: NAV16406.33,cash84.3073pct;meaningfulsmallstarteraffordablebutentryeconomicsfail;SGOVconditionalcarrypreference.
+  semantic_batch:
+    reasoning_level: low
+    completed: true
+    packet_count: 72
+  unresolved_conflicts: 0
+  reconciliation: Do not average unlike horizons. Bull2035reverseDCF sensitivity and2033claimmodel both fail comfortableentrymargin;centralclaimsquantities
+    corrected;severestressusesRKLB75pctloss.
+no_action_accountability:
+  strongest_counterfactual: LEU remains the strongest new-stock counterfactual; GILT is the strongest existing starter
+    to scale and MDA the strongest operating-quality holding add.
+  smallest_prudent_exposure_considered: The smallest integer LEU exposure through a policy-meaningful starter was
+    tested privately and is financially meaningful; exact current counterfactuals are withheld under the publication
+    policy.
+  zero_vs_starter_result: A meaningful small LEU exposure fits risk capacity but current acquisition expected value
+    lacks margin; zero wins economically, not by calendar or trivial-position reasoning.
+  zero_exposure_reason_code: entry_gate_failed
+  decision_critical_missing_evidence: No calendar veto; fuller capex/funding/contract data would narrow scenarios
+    but present favorable and central cases do not justify current entry.
+  why_risk_sizing_cannot_absorb_uncertainty: A small position caps loss but cannot establish that the acquisition
+    price has positive expected value. Existing holdings already preserve nonzero right-tail exposure.
+  cash_opportunity_cost: SGOV3.68pct SEC yield implies509.01USD annual/9.76USD weekly/41.84USD30day gross reference
+    carry before investor tax, brokerage specifics and sweep yield; yield already reflects fund expenses.
+  conjunctive_evidence_and_price_trigger: Reopen on price below after-capex independently underwritten value and
+    bounded funding/diluted claims; new announcement not mandatory. GILT requires combined cash returns; MDA requires
+    FX-consistent capital-return model.
+  next_evidence_deadline: '2026-10-09'
+  no_action_streak: 2
+  article1_red_team_status: completed_zero_smallest_exposure_total_liquidity_waiting_cost_and_correlated_stress_review
+meta_improvement:
+  durable_review_path: research/process/2026-10-02-EVIDENCE-AND-ZERO-DECISION-REVIEW.md
+  bounded_debt:
+  - Full-universe semantic coverage and21deficienttargetedpackets:October9.
+  - Candidate-specific scope/economics deadlinesOctober6/9/16;see readiness.
+  - October2completedSECindex/USclose unavailable because currentdayunfinished;check nextcompletedday.
+  - SGOVactualbrokereligibility/tax/sweep/feesareexecutionprerequisitesnotresearchveto.
+validation:
+  status: passed_with_browser_visual_limit
+  commands:
+  - npm run check:article-one -- --mode decision --as-of 2026-10-02 --json
+  - npm run check:data
+  - npm run verify
+  - five HTTP and rendered browser/dashboard content checks
+  test_suites: 19
+  built_pages: 99
+  dashboard_routes:
+  - path: /invest/
+    status: 200
+    body_bytes: 6728998
+    disclaimer: true
+    cash: true
+    current_date: true
+  - path: /invest/runs/
+    status: 200
+    body_bytes: 212145
+    disclaimer: true
+    cash: false
+    current_date: true
+  - path: /invest/runs/2026-10-02-weekly-full-operating-cycle/
+    status: 200
+    body_bytes: 18460
+    disclaimer: true
+    cash: false
+    current_date: true
+  - path: /invest/research/leu/
+    status: 200
+    body_bytes: 384689
+    disclaimer: true
+    cash: false
+    current_date: true
+  - path: /invest/research/mu/
+    status: 200
+    body_bytes: 513461
+    disclaimer: true
+    cash: false
+    current_date: true
+  browser_visual_check:
+    status: unavailable
+    reason: Chromium absent; five public download retries and direct-content diagnosis returned 195-byte HTML Site
+      Unavailable instead of ZIP. No visual/hydration claim.
+  data_repairs:
+  - Candidate status enum and per-symbol readiness metadata
+  - First-principles parser contract
+  - Derived filing-review counts and reason-code enum
+  - Run source families, scoped sprints and source hashes
+  verification_note: Full npm run verify exit0; final record-only changes revalidated with check:data, article-one
+    and build.
+publication_release:
+  status: public_safe_no_action
+  actionable_trading_content: false
+  exact_unexpired_counterfactuals_published: false
+  sensitive_field_review: passed_public_safe_no_action
+  notes: Publichistoricalholdingsandstandingdepositonly;noliveorderdetails,credentials,brokeridentifiersorrawcommunitypayload.
+unknown_future_review:
+  exploratory_match_count: 60
+  top_clusters:
+  - existinginfrastructureoperators
+  - fund_preferred_SPAC_and_ticker_collisions
+  - actual_early_bottleneck_expressions
+  sampled_symbols:
+  - NWPX
+  - ENRD
+  - KEEL
+  - SEI
+  - VIP
+  false_positive_patterns:
+  - fund_names
+  - preferred_or_bond_security
+  - mature_platform_brand
+  - SPAC_sponsor_before_operatingclose
+  lane_decisions:
+  - retain_top_level_map
+  - infrared_materials_and_industrial_heat_supplemental_subquestions
+  - broaden_strategic_materials_comparison
+  disposition: Fivecurrentexploratoryexamplescontinuity/filingreviewed;other55notclaimedfulleconomicunderwriting.
+    Additionalindependentnewcandidateprimaryresearchseparatefromnamerecall.
+first_layer_bottleneck_questions:
+  what_could_become_scarce:
+    facts: Qualifiedinfraredmaterials andsystems;authorizedcleanindustrialheat;domesticenrichment;deployablespaceconnectivity;strategicmaterialsprocessing.
+    inferences: Scarcityneedsprotectedqualifiedproductionandfundingnotatheme.
+    disconfirming_evidence: Substitution,costoverrunsandunqualifiedcapacitycanremovemargin.
+    investment_implication: LPTHpriorityR2;retainexistingmissionexposure;noautomaticbuy.
+    source_ids:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_omitted_forms_2026_10_02
+  who_controls_or_removes_scarcity:
+    facts: LPTHoperatesqualifiedoptics;LEUenrichmentcapacity;currentholdingslaunchorproductionassets;prelistingprojectsneedauthorization.
+    inferences: Directcontrolisstrongerthanpromotionalnamingbutmustsurviveseniorclaims.
+    disconfirming_evidence: Seniorfunders,customersorlicensorsmaycapturethereturn.
+    investment_implication: Compareafter-capexclaimsandfundedcapacitybeforepromotion.
+    source_ids:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_omitted_forms_2026_10_02
+  who_can_monetize_into_shareholder_value:
+    facts: LEUeconomicbasic22.458621m;GILTactual77.029657m;MDAactual162.130797m;LPTH70.036252mactualSep8.
+    inferences: Capacitygrowthmustincreasecashperdilutedshare.
+    disconfirming_evidence: Growthspending,conversionpremiums,compensationandwarrantscanerodecapture.
+    investment_implication: LEUcurrententryfailsmargin;ownedGILT/MDAholdwhilecombinedcashreturnisbounded.
+    source_ids:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_omitted_forms_2026_10_02
+  public_security_expression:
+    facts: 7675eligibleSECnames;72targetedSECscope;SAIQcloseconfirmedandOctober2listing;NuCube/MKARremainconditional.
+    inferences: Historicalaliasesandsuccessorclosemustbereconciledwithoutparentcashsubstitution.
+    disconfirming_evidence: Redemptionsorunfavorablepostclosecapitalmayleavethepublicresidualunattractive.
+    investment_implication: SAIQretainR1postcloseeconomics;noCOLApriceasSAIQentry.
+    source_ids:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_omitted_forms_2026_10_02
+  early_small_misunderstood_or_newly_public:
+    facts: LPTHactualcustomersandqualifiedmaterials;REA/IMCresourceoptions;BRNXzeroH1revenue;ONENlowretainedtrustcash.
+    inferences: Smallpublicfloatdoesnotimplysmalltotalclaimsorreliableasymmetry.
+    disconfirming_evidence: Negativecashconversion,economicrecoverygapsandclaimdilutioncanoverwhelmrighttail.
+    investment_implication: LPTHscopedR2;rejectBRNX/ONENcurrentallocation;boundedR1others.
+    source_ids:
+    - sec_event_index_targeted_72_2026_10_02
+    - sec_omitted_forms_2026_10_02
+readiness_sprints:
+- symbol: NUCUBE_PRELISTING
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-NUCUBE_PRELISTING-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: October9 extension outcome plus fuel/site authorization and binding FOAK finance
+  readiness_index_record: research/discovery/candidate-readiness.yml#NUCUBE_PRELISTING
+  final_classification: incubate
+- symbol: WISESAT_PRELISTING
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-WISESAT_PRELISTING-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Post-close SAIQ retained cash, redemptions, full capitalization, independent customer
+    and license economics
+  readiness_index_record: research/discovery/candidate-readiness.yml#WISESAT_PRELISTING
+  final_classification: incubate
+- symbol: REA
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-REA-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Recovery, impurities, payability, resource confidence, permitting, capex and current
+    dilution; issuer/QP QA/QC supplied, independent lab audit not established.
+  readiness_index_record: research/discovery/candidate-readiness.yml#REA
+  final_classification: incubate
+- symbol: XNDU
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-XNDU-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Funding draws, recurring customer revenue and fully diluted operating economics
+  readiness_index_record: research/discovery/candidate-readiness.yml#XNDU
+  final_classification: incubate
+- symbol: STDN
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-STDN-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Authorization, firm-versus-option backlog, fuel and protected industrial margin
+  readiness_index_record: research/discovery/candidate-readiness.yml#STDN
+  final_classification: incubate
+- symbol: OCC
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-OCC-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Revolver headroom and cash/backlog conversion
+  readiness_index_record: research/discovery/candidate-readiness.yml#OCC
+  final_classification: incubate
+- symbol: XTND
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-XTND-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Post-close capitalization/operating filing and diluted value; October1 completed
+    price USD3.29 now verified
+  readiness_index_record: research/discovery/candidate-readiness.yml#XTND
+  final_classification: incubate
+- symbol: VIP
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-VIP-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Actual October1 financing close, residual liquidity, warrants and binding funded
+    customer
+  readiness_index_record: research/discovery/candidate-readiness.yml#VIP
+  final_classification: incubate
+- symbol: APLD
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-APLD-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Project recourse, remaining capex and ChronoScale separation
+  readiness_index_record: research/discovery/candidate-readiness.yml#APLD
+  final_classification: incubate
+- symbol: ONDS
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-ONDS-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Organic/acquired revenue, acquisition obligations and 7.821m share bridge
+  readiness_index_record: research/discovery/candidate-readiness.yml#ONDS
+  final_classification: incubate
+- symbol: AXTI
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-AXTI-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Export approvals, shipped InP economics and minority claims
+  readiness_index_record: research/discovery/candidate-readiness.yml#AXTI
+  final_classification: incubate
+- symbol: ALMU
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-ALMU-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: FY2026 financials, commercial qualification and September proxy award denominator
+  readiness_index_record: research/discovery/candidate-readiness.yml#ALMU
+  final_classification: incubate
+- symbol: SATL
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-SATL-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Repeat data revenue, Merlin funding and warrant/note claims
+  readiness_index_record: research/discovery/candidate-readiness.yml#SATL
+  final_classification: incubate
+- symbol: EOSE
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-EOSE-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Third-party demand, DOE milestones and priority security stack
+  readiness_index_record: research/discovery/candidate-readiness.yml#EOSE
+  final_classification: incubate
+- symbol: MTSI
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-MTSI-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Current diluted FCF valuation compared with LPTH and other optical peers
+  readiness_index_record: research/discovery/candidate-readiness.yml#MTSI
+  final_classification: incubate
+- symbol: LASR
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-LASR-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Current funded program backlog, supply recovery and normalized cash margins
+  readiness_index_record: research/discovery/candidate-readiness.yml#LASR
+  final_classification: incubate
+- symbol: USAR
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-USAR-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Serra Verde pro forma, DFC conditions, cash/debt and operating-margin bridge
+  readiness_index_record: research/discovery/candidate-readiness.yml#USAR
+  final_classification: incubate
+- symbol: QNT
+  material_to_current_allocation: true
+  readiness_status: comparable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-QNT-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: CHIPS milestone cash, recurring revenue, exchangeable units and TRA
+  readiness_index_record: research/discovery/candidate-readiness.yml#QNT
+  final_classification: incubate
+- symbol: ALOY
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-ALOY-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Current REalloys identity, SRC qualification, protected supply economics and incentives
+  readiness_index_record: research/discovery/candidate-readiness.yml#ALOY
+  final_classification: incubate
+- symbol: RCAT
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-RCAT-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Funded deliveries, margins, controls and acquisitions versus dilution
+  readiness_index_record: research/discovery/candidate-readiness.yml#RCAT
+  final_classification: incubate
+- symbol: LPTH
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-LPTH-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Qualified infrared materials and optical systems; FY26 backlog111m but negative
+    FCF and large share growth.
+  readiness_index_record: research/discovery/candidate-readiness.yml#LPTH
+  final_classification: incubate
+- symbol: BRNX
+  material_to_current_allocation: true
+  readiness_status: rejected_after_review
+  dashboard_surface_status: not_required_rejected
+  readiness_path: research/discovery/readiness/2026-10-02-BRNX-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: none
+  readiness_index_record: research/discovery/candidate-readiness.yml#BRNX
+  final_classification: reject
+- symbol: ONEN
+  material_to_current_allocation: true
+  readiness_status: rejected_after_review
+  dashboard_surface_status: not_required_rejected
+  readiness_path: research/discovery/readiness/2026-10-02-ONEN-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: none
+  readiness_index_record: research/discovery/candidate-readiness.yml#ONEN
+  final_classification: reject
+- symbol: IMC
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-IMC-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Exploration resource and leaching claim require economic processing and 105.1m modeled
+    post-IPO denominator reconciliation.
+  readiness_index_record: research/discovery/candidate-readiness.yml#IMC
+  final_classification: incubate
+- symbol: MKAR_PRELISTING
+  material_to_current_allocation: true
+  readiness_status: researchable_open
+  dashboard_surface_status: not_required_pre_promotion
+  readiness_path: research/discovery/readiness/2026-10-02-MKAR_PRELISTING-readiness.md
+  blocker_type: evidence_based
+  reachable_evidence_remaining: Registration not effective; separate Songwe/Pulawy listing assets from parent recycled
+    magnet business.
+  readiness_index_record: research/discovery/candidate-readiness.yml#MKAR_PRELISTING
+  final_classification: incubate
+article_one_postflight:
+  sentinel_level: PASS
+  mode: decision
+  as_of: 2026-10-02
+  reason_codes: []
