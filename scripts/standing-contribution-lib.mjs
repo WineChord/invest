@@ -189,11 +189,13 @@ function validateAuthorization(contribution) {
     throw new Error("recurring contribution authorization must be exactly USD 888");
   }
   if (
-    contribution.cadence !== "weekly"
-    || contribution.weekday !== "friday"
+    !(
+      (contribution.cadence === "weekly" && contribution.weekday === "friday" && contribution.day_of_month === undefined)
+      || (contribution.cadence === "monthly" && contribution.day_of_month === 1 && contribution.weekday === undefined)
+    )
     || contribution.timezone !== "Asia/Shanghai"
   ) {
-    throw new Error("recurring contribution authorization must use the approved Friday Asia/Shanghai cadence");
+    throw new Error("recurring contribution authorization must use the approved Friday or monthly first-day Asia/Shanghai cadence");
   }
   if (contribution.occurrence_confirmation_required !== false) {
     throw new Error("recurring contribution occurrence confirmation must be disabled");
@@ -209,7 +211,10 @@ function validateAuthorization(contribution) {
   }
   validateDateOnly(contribution.authorized_on, "recurring contribution authorized_on");
   validateDateOnly(contribution.effective_from, "recurring contribution effective_from");
-  if (contribution.effective_from < contribution.authorized_on || weekday(contribution.effective_from) !== 5) {
+  if (contribution.effective_from < contribution.authorized_on) {
+    throw new Error("recurring contribution effective_from must be on or after authorization");
+  }
+  if (contribution.cadence === "weekly" && weekday(contribution.effective_from) !== 5) {
     throw new Error("recurring contribution effective_from must be a Friday on or after authorization");
   }
   if (contribution.effective_until !== null) {
@@ -247,6 +252,16 @@ export function dueContributionDates(contribution, asOf) {
     return [];
   }
   const dates = [];
+  if (contribution.cadence === "monthly") {
+    const start = new Date(`${contribution.effective_from.slice(0, 7)}-01T00:00:00.000Z`);
+    for (let cursor = start.toISOString().slice(0, 10); cursor <= end; cursor = start.toISOString().slice(0, 10)) {
+      if (cursor >= contribution.effective_from) {
+        dates.push(cursor);
+      }
+      start.setUTCMonth(start.getUTCMonth() + 1);
+    }
+    return dates;
+  }
   for (let cursor = contribution.effective_from; cursor <= end; cursor = addDays(cursor, 7)) {
     dates.push(cursor);
   }
@@ -303,6 +318,7 @@ function matchingOccurrenceRows(records, contribution, date) {
 }
 
 export function standingAuthorizationForLedgerRow(plan, row) {
+  validateDateOnly(row.trade_date, "standing event trade_date");
   const registry = recurringContributionRegistry(plan);
   const matches = registry.authorizations.filter((contribution) =>
     row.confirmation_id === `${contribution.authorization_id}-${row.trade_date}`);
@@ -316,7 +332,7 @@ export function standingAuthorizationForLedgerRow(plan, row) {
   if (
     row.trade_date < contribution.effective_from
     || (contribution.effective_until !== null && row.trade_date > contribution.effective_until)
-    || weekday(row.trade_date) !== 5
+    || (contribution.cadence === "weekly" ? weekday(row.trade_date) !== 5 : Number(row.trade_date.slice(8)) !== contribution.day_of_month)
   ) {
     throw new Error(`standing event ${row.event_id} falls outside its authorization period`);
   }
@@ -325,7 +341,7 @@ export function standingAuthorizationForLedgerRow(plan, row) {
 
 function canonicalEvent(contribution, date, createdAt) {
   return {
-    event_id: `${date}-deposit-weekly-888-001`,
+    event_id: `${date}-deposit-${contribution.cadence}-888-001`,
     event_type: "deposit",
     status: "confirmed",
     broker: contribution.broker,
@@ -343,7 +359,7 @@ function canonicalEvent(contribution, date, createdAt) {
     currency: contribution.currency,
     source: "owner_standing_contribution",
     created_at: createdAt,
-    notes: `Weekly USD 888 contribution recorded under the active account-owner standing authorization effective ${contribution.effective_from}.`,
+    notes: `${contribution.cadence === "monthly" ? "Monthly" : "Weekly"} USD 888 contribution recorded under the active account-owner standing authorization effective ${contribution.effective_from}.`,
   };
 }
 
@@ -517,7 +533,14 @@ export function applyStandingContribution({
 
   const ledgerCash = roundCurrency(confirmedLedgerCash(records, contribution.currency));
   const stateDelta = roundCurrency(ledgerCash - stateCash);
-  const latestStandingDate = [...existingDates, ...appliedDates].sort().at(-1);
+  const latestStandingDate = records
+    .filter((row) => row.status === "confirmed" && row.source === "owner_standing_contribution"
+      && row.broker === contribution.broker && row.account_alias === contribution.account_alias
+      && row.currency === contribution.currency)
+    .map((row) => {
+      standingAuthorizationForLedgerRow(plan, row);
+      return row.trade_date;
+    }).sort().at(-1);
   const nextStateAsOf = [state.as_of, latestStandingDate].filter(Boolean).sort().at(-1);
   const nextSettledCash = settledLedgerCash(records, contribution.currency, nextStateAsOf);
   const nextLastConfirmedEventId = records.filter((row) => row.status === "confirmed").at(-1)?.event_id;
@@ -629,8 +652,10 @@ export function recordStandingContributionConflict({
     throw new Error("correctsEventId must identify a confirmed standing contribution");
   }
   const correctedAuthorization = standingAuthorizationForLedgerRow(plan, corrected);
-  if (correctedAuthorization.authorization_id !== contribution.authorization_id) {
-    throw new Error("the corrected standing event is not under the current authorization");
+  if (correctedAuthorization.broker !== contribution.broker
+    || correctedAuthorization.account_alias !== contribution.account_alias
+    || correctedAuthorization.currency !== contribution.currency) {
+    throw new Error("the corrected standing event is not for the current authorization's broker account and currency");
   }
   if (corrected.trade_date > asOf) {
     throw new Error("the correction date cannot precede the standing event");
@@ -695,6 +720,14 @@ export function recordStandingContributionConflict({
   nextAuthorization.status = "paused_broker_conflict";
   nextAuthorization.paused_on = asOf;
   nextAuthorization.broker_conflict_correction_event_id = correctionEventId;
+  if (correctedAuthorization.authorization_id !== contribution.authorization_id) {
+    const historicalAuthorization = nextPlan.recurring_contribution.authorizations.find(
+      (authorization) => authorization.authorization_id === correctedAuthorization.authorization_id,
+    );
+    historicalAuthorization.status = "paused_broker_conflict";
+    historicalAuthorization.paused_on = asOf;
+    historicalAuthorization.broker_conflict_correction_event_id = correctionEventId;
+  }
 
   const nextState = {
     ...state,

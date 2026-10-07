@@ -8,7 +8,9 @@ If the event is a same-day trade or includes actionable trading content, do not 
 
 ## Standing Recurring Deposit
 
-The active versioned account-owner authorization in `data/account/plan.yml` is occurrence confirmation only for the fixed USD 888 Friday deposit once its `Asia/Shanghai` due date arrives. Do not request a second confirmation for a valid due occurrence.
+The active versioned account-owner authorization in `data/account/plan.yml` is occurrence confirmation only for the fixed USD 888 monthly first-day deposit once its `Asia/Shanghai` due date arrives. Do not request a second confirmation for a valid due occurrence.
+
+The 2026-10-07 amendment stops the weekly authorization after 2026-10-06. Preserve historical weekly events and validate them against their original version. The first new monthly occurrence is 2026-11-01; do not add a second October contribution. A broker correction to an old weekly occurrence must remain possible and must pause the current same-account authorization as well as link the corrected historical version.
 
 Before applying it:
 
@@ -21,7 +23,7 @@ Before applying it:
 - record a distinct same-day deposit with source `user_confirmed_additional_deposit`; otherwise treat the collision as ambiguous and stop;
 - fail closed on an ambiguous duplicate, identity collision, account-state drift, inactive plan, or broker conflict.
 
-Use `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json`. The command appends one row per missing due Friday, applies at most the earliest eight missing occurrences in one run, reports any remainder for the next run, and updates confirmed, settled, and available cash without changing positions, equity-curve values, or `last_reconciled_with_broker_at`. A private crash-recovery journal prevents an interrupted ledger/state write from becoming silent drift.
+Use `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json`. The command appends one row per missing due scheduled date, applies at most the earliest eight missing occurrences in one run, reports any remainder for the next run, and updates confirmed, settled, and available cash without changing positions, equity-curve values, or `last_reconciled_with_broker_at`. A private crash-recovery journal prevents an interrupted ledger/state write from becoming silent drift.
 
 Standing deposit events use:
 
@@ -34,7 +36,7 @@ currency: USD
 deposit_available_date: YYYY-MM-DD
 source: owner_standing_contribution
 created_at: ACTUAL_WRITE_TIME
-notes: Weekly USD 888 contribution recorded under the active account-owner standing authorization.
+notes: Monthly USD 888 contribution recorded under the active account-owner standing authorization.
 ```
 
 This source records account-owner confirmation that the due amount is deposited, settled, and available, not live broker API verification. If later broker evidence contradicts an occurrence, preserve the original event and run `npm run account:record-standing-conflict -- --corrects-event-id EVENT_ID --confirmation-id REDACTED_BROKER_ALIAS --reason "REDACTED_REASON" --as-of YYYY-MM-DD --json`. The reason must summarize the conflict without raw broker text, account identifiers, or private reference numbers. The command appends a machine-linked correction and pauses the current authorization in one recoverable account transaction. Do not apply later occurrences until the conflict is resolved.
@@ -52,7 +54,7 @@ Deposit confirmations may use repository defaults when the user explicitly confi
 
 Do not use these deposit defaults for dividends, corrections, broker/account changes, or missing trade economics.
 
-When an explicitly confirmed deposit is additional to the standing Friday occurrence, use `source: user_confirmed_additional_deposit`. This machine-readable distinction is required when the amount, account, currency, and date would otherwise collide with the standing event.
+When an explicitly confirmed deposit is additional to the standing scheduled occurrence, use `source: user_confirmed_additional_deposit`. This machine-readable distinction is required when the amount, account, currency, and date would otherwise collide with the standing event.
 
 ```yaml
 event_type: deposit

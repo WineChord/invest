@@ -1,7 +1,7 @@
 schema_version: 2
 base_currency: USD
 recurring_contribution:
-  current_authorization_id: owner-standing-weekly-888-2026-07-29-v1
+  current_authorization_id: owner-standing-monthly-888-2026-10-07-v1
   authorizations:
     - authorization_id: owner-standing-weekly-888-2026-07-29-v1
       amount: 888
@@ -11,6 +11,23 @@ recurring_contribution:
       timezone: Asia/Shanghai
       authorized_on: 2026-07-29
       effective_from: 2026-07-31
+      effective_until: 2026-10-06
+      status: superseded
+      broker: Charles Schwab International
+      account_alias: satellite
+      occurrence_confirmation_required: false
+      availability_semantics: deposited_settled_and_available_for_trading
+      catch_up_missed_occurrences: true
+      max_catch_up_events_per_run: 8
+      backfill_before_effective_from: false
+    - authorization_id: owner-standing-monthly-888-2026-10-07-v1
+      amount: 888
+      currency: USD
+      cadence: monthly
+      day_of_month: 1
+      timezone: Asia/Shanghai
+      authorized_on: 2026-10-07
+      effective_from: 2026-10-07
       effective_until: null
       status: active_owner_standing_authorization
       broker: Charles Schwab International
@@ -34,7 +51,7 @@ liquidity_reserve:
   role: cash_management_only_not_return_seeking_allocation
   deployment_rule: use_only_for_idle_cash_when_no_return_seeking_candidate_passes_mission_evidence_and_entry_gates
   liquidation_rule: sell_some_or_all_reserve_when_needed_for_approved_high_conviction_return_seeking_purchase_and_follow_broker_settlement_rules
-  sizing_rule: weekly_contribution_is_not_a_cap_evaluate_total_confirmed_deployable_liquidity_for_rare_high_conviction_opportunities
+  sizing_rule: recurring_contribution_is_not_a_cap_evaluate_total_confirmed_deployable_liquidity_for_rare_high_conviction_opportunities
   schwab_international_note: unsettled_sale_proceeds_may_be_available_to_trade_but_avoid_selling_the_new_purchase_before_reserve_sale_settles_unless_broker_confirms_no_violation
 mission_accountability:
   policy_version: v1.3
@@ -49,6 +66,6 @@ mission_accountability:
 recordkeeping:
   ledger_is_append_only: true
   update_only_after_valid_account_fact_confirmation: true
-  standing_authorization_scope: fixed_weekly_deposit_only
+  standing_authorization_scope: fixed_recurring_deposit_only
   broker_facts_override_standing_authorization: true
   corrections_are_new_events: true

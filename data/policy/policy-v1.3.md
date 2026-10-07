@@ -20,9 +20,9 @@ Truth, source freshness, auditability, clone portability, human trade execution,
 
 ## Recurring Contribution
 
-The default contribution is USD 888 every Friday in `Asia/Shanghai`.
+Dated account-owner amendment, 2026-10-07: the current default contribution is USD 888 on the first calendar day of each month in `Asia/Shanghai`. The monthly authorization is effective 2026-10-07, and its first due occurrence is 2026-11-01. The original USD 888 Friday authorization operated from 2026-07-31 through 2026-10-06; historical events retain those original terms and are not rewritten or reclassified.
 
-The account owner's standing authorization recorded in `data/account/plan.yml` confirms each fixed contribution once its scheduled date arrives. The first new occurrence is 2026-07-31. No occurrence before that date may be inferred or backfilled from this policy.
+The account owner's standing authorization recorded in `data/account/plan.yml` confirms each fixed contribution once its scheduled date arrives. Each authorization version defines its own effective period and scheduled dates. The October 2 historical contribution remains recorded; no additional October monthly contribution or subsequent weekly contribution is authorized by this amendment. No occurrence before its authorization effective date may be inferred or backfilled.
 
 The standing authorization:
 
@@ -33,13 +33,13 @@ The standing authorization:
 - never advances the broker-reconciliation timestamp;
 - yields to later broker evidence.
 
-Each due occurrence is a separate append-only ledger event. A missed scheduled run catches up each due Friday separately rather than combining deposits. One run applies at most the earliest eight missing events and reports the remaining dates for a later run; it never skips or merges them. The application must be idempotent, crash-recoverable across account files, and fail closed on ambiguity or state drift.
+Each due occurrence is a separate append-only ledger event. A missed scheduled run catches up each due scheduled occurrence separately rather than combining deposits. One run applies at most the earliest eight missing events and reports the remaining dates for a later run; it never skips or merges them. The application must be idempotent, crash-recoverable across account files, and fail closed on ambiguity or state drift.
 
 If broker evidence later contradicts a recorded occurrence, preserve the original event, append a machine-linked correction, and pause future automatic occurrences in the same recoverable account transaction until the conflict is resolved. Calendar time without the active versioned standing authorization is not account confirmation.
 
 ## Capital Deployment
 
-Weekly contributions do not need to be fully deployed. Calendar time and confirmed cash alone do not create a stock order. A decision may recommend no trade, holding cash, parking idle cash in an approved liquidity reserve, or buying fewer shares than available cash could afford.
+Recurring contributions do not need to be fully deployed. Calendar time and confirmed cash alone do not create a stock order. A decision may recommend no trade, holding cash, parking idle cash in an approved liquidity reserve, or buying fewer shares than available cash could afford.
 
 Cash and an approved liquidity reserve are temporary option value, not target allocations or success metrics. Define `liquidity_option_weight` as confirmed cash plus the latest reliable confirmed liquidity-reserve market value, divided by the latest reliable research NAV. When this weight is at least 60%, the following periods since the latest mission-relevant deployment trigger escalating Article 1 reviews:
 
@@ -51,7 +51,7 @@ These thresholds trigger research and policy review, not a mandatory trade. A pu
 
 A mission-relevant deployment must lower liquidity-option weight by a material amount or establish a source-backed, mission-relevant position with a credible path to scale. A symbolic, activity-seeking, or immaterial purchase does not reset the clock.
 
-Weekly contributions are not position-sizing buckets. When a rare opportunity passes the gates strongly enough, evaluate total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale, after preserving any needed buffer for fees, settlement, taxes, account restrictions, and avoidable-ruin risk.
+Recurring contributions are not position-sizing buckets. When a rare opportunity passes the gates strongly enough, evaluate total confirmed deployable liquidity, including confirmed cash and confirmed SGOV or equivalent reserve value available for sale, after preserving any needed buffer for fees, settlement, taxes, account restrictions, and avoidable-ruin risk.
 
 ## Mission, Evidence, and Entry Standard
 
@@ -109,7 +109,7 @@ A return-seeking buy recommendation needs fresh price data, a fresh primary-sour
 
 A no-action decision needs the strongest counterfactual candidate, the smallest mission-consistent staged exposure considered, concrete decision-critical blockers, why size cannot bound them, cash opportunity cost, conjunctive evidence-and-price re-underwriting triggers, mission-accountability status, and a dated next evidence deadline.
 
-The weekly contribution cadence never creates a weekly trading quota. A return-seeking buy, reserve transaction, reduction, or sale remains a separate decision and is never executed by the repository.
+The contribution cadence never creates a trading quota. A return-seeking buy, reserve transaction, reduction, or sale remains a separate decision and is never executed by the repository.
 
 ## Record Standard
 

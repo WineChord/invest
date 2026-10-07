@@ -11,6 +11,7 @@ import path from "node:path";
 import {
   applyStandingContribution,
   csvRecords,
+  dueContributionDates,
   recordStandingContributionConflict,
   standingAuthorizationForLedgerRow,
   validateRecurringContributionPlan,
@@ -61,6 +62,97 @@ const state = {
 };
 
 assert.equal(validateRecurringContributionPlan(plan).effective_from, "2026-07-31");
+
+// A cadence transition must preserve historical facts and never backfill the current month.
+const monthlyPlan = structuredClone(plan);
+const historicalWeekly = monthlyPlan.recurring_contribution.authorizations[0];
+historicalWeekly.status = "superseded";
+historicalWeekly.effective_until = "2026-10-06";
+const monthlyAuthorization = {
+  ...historicalWeekly,
+  authorization_id: "owner-standing-monthly-888-2026-10-07-v1",
+  cadence: "monthly",
+  day_of_month: 1,
+  authorized_on: "2026-10-07",
+  effective_from: "2026-10-07",
+  effective_until: null,
+  status: "active_owner_standing_authorization",
+};
+delete monthlyAuthorization.weekday;
+monthlyPlan.recurring_contribution.authorizations.push(monthlyAuthorization);
+monthlyPlan.recurring_contribution.current_authorization_id = monthlyAuthorization.authorization_id;
+assert.equal(validateRecurringContributionPlan(monthlyPlan).cadence, "monthly");
+const octoberLedger = `${header}${baseline}2026-10-02-deposit-weekly-888-001,deposit,confirmed,Charles Schwab International,satellite,owner-standing-weekly-888-2026-07-29-v1-2026-10-02,2026-10-02,2026-10-02,,,,,0.00,888.00,888.00,USD,owner_standing_contribution,2026-10-02T15:00:00+08:00,Historical weekly fixture.\n`;
+const octoberState = {
+  ...state,
+  as_of: "2026-10-02",
+  confirmed_cash: 6649.58,
+  settled_cash: 6649.58,
+  buying_power: 6649.58,
+  last_confirmed_ledger_event_id: "2026-10-02-deposit-weekly-888-001",
+  last_standing_contribution_date: "2026-10-02",
+};
+for (const asOf of ["2026-10-07", "2026-10-09", "2026-10-31"]) {
+  const result = applyStandingContribution({ plan: monthlyPlan, ledgerContent: octoberLedger,
+    state: octoberState, asOf, createdAt: `${asOf}T15:00:00+08:00` });
+  assert.equal(result.status, "not_due");
+  assert.equal(result.state_reconciled, false);
+  assert.equal(result.ledger_content, octoberLedger);
+  assert.deepEqual(result.state, octoberState);
+}
+const november = applyStandingContribution({ plan: monthlyPlan, ledgerContent: octoberLedger,
+  state: octoberState, asOf: "2026-11-01", createdAt: "2026-11-01T15:00:00+08:00" });
+assert.deepEqual(november.applied_dates, ["2026-11-01"]);
+assert.equal(november.cash_after, 7537.58);
+assert.equal(november.state.positions_count, octoberState.positions_count);
+assert.equal(november.state.last_reconciled_with_broker_at, octoberState.last_reconciled_with_broker_at);
+const monthlyRow = csvRecords(november.ledger_content).at(-1);
+assert.equal(monthlyRow.event_id, "2026-11-01-deposit-monthly-888-001");
+assert.match(monthlyRow.notes, /^Monthly USD 888/);
+assert.equal(standingAuthorizationForLedgerRow(monthlyPlan, monthlyRow).cadence, "monthly");
+assert.equal(standingAuthorizationForLedgerRow(monthlyPlan, csvRecords(octoberLedger).at(-1)).cadence, "weekly");
+assert.throws(() => standingAuthorizationForLedgerRow(monthlyPlan, {
+  ...monthlyRow, trade_date: "2026-11-02", settlement_date: "2026-11-02",
+  confirmation_id: `${monthlyAuthorization.authorization_id}-2026-11-02`,
+}), /outside its authorization period/);
+const novemberRepeat = applyStandingContribution({ plan: monthlyPlan, ledgerContent: november.ledger_content,
+  state: november.state, asOf: "2026-11-06", createdAt: "2026-11-06T15:00:00+08:00" });
+assert.deepEqual(novemberRepeat.applied_dates, []);
+assert.equal(novemberRepeat.state_reconciled, false);
+assert.equal(novemberRepeat.ledger_content, november.ledger_content);
+assert.deepEqual(dueContributionDates(monthlyAuthorization, "2027-03-01"),
+  ["2026-11-01", "2026-12-01", "2027-01-01", "2027-02-01", "2027-03-01"]);
+assert.deepEqual(dueContributionDates({ ...monthlyAuthorization, effective_until: "2027-02-15" }, "2027-03-01"),
+  ["2026-11-01", "2026-12-01", "2027-01-01", "2027-02-01"]);
+const monthlyCatchUp = applyStandingContribution({ plan: monthlyPlan, ledgerContent: octoberLedger,
+  state: octoberState, asOf: "2027-08-01", createdAt: "2027-08-01T15:00:00+08:00" });
+assert.equal(monthlyCatchUp.status, "partial_catch_up");
+assert.equal(monthlyCatchUp.applied_dates.length, 8);
+assert.deepEqual(monthlyCatchUp.remaining_due_dates, ["2027-07-01", "2027-08-01"]);
+const historicalConflict = recordStandingContributionConflict({ plan: monthlyPlan,
+  ledgerContent: octoberLedger, state: octoberState,
+  correctsEventId: "2026-10-02-deposit-weekly-888-001", confirmationId: "redacted-historical-conflict",
+  reason: "Broker contradicts the historical standing occurrence.",
+  asOf: "2026-10-07", createdAt: "2026-10-07T15:00:00+08:00" });
+assert.equal(historicalConflict.cash_after, 5761.58);
+assert.equal(historicalConflict.plan.recurring_contribution.authorizations[0].effective_until, "2026-10-06");
+assert.ok(historicalConflict.plan.recurring_contribution.authorizations.every((authorization) =>
+  authorization.status === "paused_broker_conflict"
+  && authorization.broker_conflict_correction_event_id === historicalConflict.correction_event_id));
+assert.throws(() => applyStandingContribution({ plan: historicalConflict.plan,
+  ledgerContent: historicalConflict.ledger_content, state: historicalConflict.state,
+  asOf: "2026-11-01", createdAt: "2026-11-01T15:00:00+08:00" }), /is not active/);
+for (const invalid of [
+  { ...monthlyAuthorization, day_of_month: 31 },
+  { ...monthlyAuthorization, weekday: "friday" },
+  { ...monthlyAuthorization, cadence: "daily" },
+  { ...monthlyAuthorization, timezone: "UTC" },
+  { ...monthlyAuthorization, effective_from: "2026-10-06" },
+]) {
+  const invalidMonthlyPlan = structuredClone(monthlyPlan);
+  invalidMonthlyPlan.recurring_contribution.authorizations[1] = invalid;
+  assert.throws(() => validateRecurringContributionPlan(invalidMonthlyPlan));
+}
 
 const beforeFriday = applyStandingContribution({
   plan,

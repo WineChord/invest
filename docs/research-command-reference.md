@@ -185,7 +185,7 @@ npm run test:standing-contribution
 npm run verify
 ```
 
-Use `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json` before sentinel routing to apply an exact due Friday occurrence under the current account-owner standing authorization. Pass the local `Asia/Shanghai` date; use `--dry-run` for a no-write preview. The command applies at most eight missing Fridays per run, reports remaining dates, and uses a private crash-recovery journal. It does not create a trade, alter positions, update the equity curve, or claim broker reconciliation.
+Use `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json` before sentinel routing to apply an exact due scheduled occurrence under the current account-owner standing authorization. Pass the local `Asia/Shanghai` date; use `--dry-run` for a no-write preview. The command applies at most eight missing scheduled occurrences per run, reports remaining dates, and uses a private crash-recovery journal. It does not create a trade, alter positions, update the equity curve, or claim broker reconciliation.
 
 If later broker evidence contradicts a standing event, use `npm run account:record-standing-conflict -- --corrects-event-id EVENT_ID --confirmation-id REDACTED_BROKER_ALIAS --reason "REDACTED_REASON" --as-of YYYY-MM-DD --json`. The reason must omit raw broker text and private identifiers. This is an execution-confirmation path, not a scheduled inference: it requires current broker evidence, appends a machine-linked correction, updates cash, and pauses the current authorization in one recoverable transaction.
 

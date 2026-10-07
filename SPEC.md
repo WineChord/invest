@@ -6,7 +6,7 @@ This repository is the durable memory and operating manual for a long-term satel
 
 The highest-order principles are stated in [CONSTITUTION.md](CONSTITUTION.md). This specification implements those principles as system design; it should evolve when doing so improves the constitutional mission without weakening truth, freshness, auditability, clone portability, or avoidable-ruin controls.
 
-The account initially started with no confirmed holdings and no confirmed cash balance. The current default contribution is USD 888 every Friday in `Asia/Shanghai`. Account state changes only from broker-confirmed activity or the exact due deposit covered by the active versioned account-owner standing authorization.
+The account initially started with no confirmed holdings and no confirmed cash balance. The current default contribution is USD 888 on the first calendar day of each month in `Asia/Shanghai`, under the 2026-10-07 authorization amendment. The first new monthly occurrence is 2026-11-01; historical weekly contributions remain unchanged. Account state changes only from broker-confirmed activity or the exact due deposit covered by the active versioned account-owner standing authorization.
 
 The portfolio's ultimate objective is not to look stable or diversified in a conventional sense. The objective is multi-decade asymmetric compounding: pursue outcomes that can plausibly become tens, hundreds, or thousands of times larger over a very long horizon, while avoiding avoidable ruin.
 
@@ -205,11 +205,11 @@ recurring_contribution:
     - authorization_id:
       amount: 888
       currency: USD
-      cadence: weekly
-      weekday: friday
+      cadence: monthly
+      day_of_month: 1
       timezone: Asia/Shanghai
-      authorized_on: 2026-07-29
-      effective_from: 2026-07-31
+      authorized_on: 2026-10-07
+      effective_from: 2026-10-07
       effective_until:
       status: active_owner_standing_authorization
       broker:
@@ -306,21 +306,21 @@ Daily close automation:
 - Daily automation must not mutate `ledger.csv`, `positions.csv`, `state.yml`, research files, or decision files. Those remain user-confirmed or agent-researched records.
 - Because commits made by `GITHUB_TOKEN` may not reliably trigger a second Pages workflow, the daily market data workflow builds and deploys the dashboard itself after committing a data change.
 
-Scheduled agent-review cadence:
+Scheduled agent-review cadence (account-owner amendment, 2026-10-07):
 
-- Deterministic completed-close, macro, validation, and Pages work remains on the existing market-day schedule. Qualitative agent work should consume those committed results after the deterministic workflow has had time to finish rather than repeat the same refresh first.
-- The reference local review window is Monday through Saturday at 15:00 Asia/Shanghai. The window follows the observed completion time of scheduled GitHub workflows while remaining well before the next U.S. regular session. Monday is a weekend-evidence sentinel, Tuesday through Friday follow each completed U.S. regular session, and Saturday is the standing full operating cycle using the completed Friday session and the week's accumulated evidence.
-- A sentinel checks repository sync and safety, the latest deterministic workflow result, completed-close dislocations, new SEC or issuer evidence, open high or critical freshness events, confirmed account-state changes, due evidence deadlines, and Article 1 mission-accountability thresholds. With no material trigger it produces no full-universe decision, no investment email, no research churn, and no repository commit.
-- Before sentinel routing, apply the canonical standing contribution with `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json`. The automation must pass the current `Asia/Shanghai` date. A due contribution is an account-state change and therefore receives targeted account validation even when investment evidence remains quiet.
-- A sentinel escalates in the same powered-on session when a new filing, financing, dilution, contract, regulatory, technical, customer, management, market-regime, broker-state, or price event could change thesis validity, survival, entry attractiveness, buy-zone status, portfolio action, or opportunity-cost ranking. Target-specific recorded triggers control. As fallback triage thresholds, review a holding or A/A-/B+ priority symbol after an absolute completed-close move of at least 8% in one session or 15% over five sessions, another researched symbol after at least 12% in one session or 20% over five sessions, and a relevant broad index after at least 4% in one session or 8% over five sessions. These thresholds only start research; they never create buy eligibility or an order.
-- A targeted review becomes a full allocation decision when the evidence could change a proposed buy, add, hold, reduce, or sell action; promotion or buy-zone eligibility; the top-five opportunity-cost ranking; or the mission-accountability conclusion. An allocation-relevant escalation must complete the applicable decision cycle before proposing action.
-- The Saturday full cycle performs the complete bottleneck, discovery, freshness, filing, valuation, watchlist, opportunity-cost, allocation, mission-accountability, validation, publication, dashboard, and email workflow.
-- Scheduled review is not broker confirmation. The active versioned standing authorization is nevertheless occurrence confirmation for its exact USD 888 Friday deposit after the due date. It cannot confirm any other amount or account fact. Each due Friday receives one separate event; missed occurrences are caught up separately; dates before 2026-07-31 are not backfilled. Deduplicate only through the canonical authorization identity and full event economics. A separate same-day USD 888 deposit must use the explicit `user_confirmed_additional_deposit` source; any other same-day collision is ambiguous and blocks automatic application.
-- The standing-contribution application must fail closed on an inactive or malformed plan, duplicate ambiguity, account-state drift, identity collision, or broker conflict. One run applies at most the earliest eight missing occurrences and returns every remaining due date so later runs can continue without skipping or combining history. Its crash-recovery journal completes an interrupted multi-file update before new work. It must not change positions, equity-curve valuations, or `last_reconciled_with_broker_at`. Later contradictory broker evidence requires a machine-linked append-only correction and `paused_broker_conflict`.
-- A Friday contribution alone does not create a full investment decision, mandatory purchase, or shortened email. Run targeted account validation and let the Saturday full cycle consume the updated liquidity unless another existing L2 trigger is present.
-- A complete Chinese full-universe investment email is sent after the Saturday full cycle and after any event-driven escalation that reaches a new full decision. Quiet sentinels and targeted reviews that do not change a full decision do not send investment email. This preserves fast reaction to material evidence without converting unchanged daily closes into repeated full reports.
-- The first Saturday full cycle of each month includes a cadence and research-process meta-review. The first Saturday full cycle of each quarter includes a deeper bottleneck-lane and strategy-feasibility review. A high-event or high-volatility period may temporarily treat Tuesday and Saturday as full cycles for up to two weeks; a verified crisis or rare-opportunity period may use each scheduled market-day review as a full cycle for at most five consecutive sessions before mandatory recalibration.
-- Review the normal cadence after four completed Saturday cycles, or sooner after a missed material event, stale decision, duplicate contribution, repeated unnecessary escalation, or materially changed portfolio. Compare detection latency, full-cycle count, decision changes, missed triggers, email noise, compute cost, and whether the cadence improved the probability of establishing and scaling mission-relevant exposure. Do not optimize this review for trade count.
+- The standing full operating cycle runs once per calendar month, on the first Saturday at 15:00 `Asia/Shanghai`. The October 2 completed cycle satisfies the October standing cycle; the next scheduled full cycle is November 7. Other Saturdays and weekly contributions do not create a full-cycle obligation. Keep these operating instructions and contribution amounts out of every README.
+- Deterministic completed-close, macro, validation, and Pages work remains on the existing market-day schedule. Qualitative agent work consumes those committed results after the deterministic workflow finishes rather than repeating the same refresh. This does not create an additional daily or weekly qualitative agent schedule.
+- A user-triggered event review or existing deterministic evidence alert checks repository safety, completed-close dislocations, new SEC or issuer evidence, open high or critical freshness events, confirmed account changes, due evidence deadlines, and Article 1 mission-accountability thresholds. With no material trigger it produces no full-universe decision, investment email, research churn, or repository commit. Monthly scheduling does not extend an evidence deadline or a decision validity window.
+- Before event-review or full-cycle routing, apply the canonical standing contribution with `npm run account:apply-standing-contribution -- --as-of YYYY-MM-DD --json`, passing the current `Asia/Shanghai` date. A due contribution receives targeted account validation even when investment evidence remains quiet.
+- A material event receives a same-session targeted review when a filing, financing, dilution, contract, regulatory, technical, customer, management, market-regime, broker-state, or price event could change thesis validity, survival, entry attractiveness, buy-zone status, portfolio action, or opportunity-cost ranking. Do not postpone a user-triggered material review until the next monthly date. Target-specific recorded triggers control. Fallback triage thresholds are an absolute completed-close move of at least 8% in one session or 15% over five sessions for a holding or A/A-/B+ symbol, 12% in one session or 20% over five sessions for another researched symbol, and 4% in one session or 8% over five sessions for a relevant broad index. Thresholds start research; they never create buy eligibility or an order.
+- A targeted review becomes a full allocation decision when evidence could change a proposed buy, add, hold, reduce, or sell action; promotion or buy-zone eligibility; the top-five opportunity-cost ranking; or the mission-accountability conclusion. Complete the applicable decision cycle with fresh evidence before proposing action. Event-driven work is separate from the once-monthly standing schedule and must not silently introduce a higher-frequency recurring schedule.
+- The monthly full cycle performs the complete bottleneck, discovery, freshness, filing, valuation, watchlist, opportunity-cost, allocation, mission-accountability, validation, publication, dashboard, and applicable authorized email workflow.
+- Scheduled review is not broker confirmation. The active versioned standing authorization confirms only the exact USD 888 first-day monthly deposit after its due date. The old Friday authorization ended on October 6; preserve every historical weekly event under its original authorization. The monthly version is effective October 7 with first due date November 1; do not infer another October deposit or any later weekly deposit. Each due date receives a separate event. Catch up missed monthly occurrences separately, never backfill before the relevant effective date, and deduplicate through canonical authorization identity and full economics. A separate same-day USD 888 deposit requires `user_confirmed_additional_deposit`; any other collision blocks application.
+- Standing-contribution application fails closed on an inactive or malformed plan, duplicate ambiguity, account-state drift, identity collision, or broker conflict. One run applies at most the earliest eight missing occurrences and reports every remainder. Its crash-recovery journal completes interrupted writes. It must not change positions, equity-curve valuations, or `last_reconciled_with_broker_at`, and a no-due authorization transition must preserve the latest historical standing-contribution date. Later contradictory broker evidence requires an append-only linked correction; a conflict with a superseded same-account authorization also pauses the current authorization.
+- A contribution alone does not create a full investment decision, mandatory purchase, or shortened email. Run targeted account validation; the next monthly cycle consumes updated liquidity unless a separate material event requires review.
+- An authorized complete Chinese investment email follows a monthly full cycle or an event-driven new full decision. Unchanged event checks do not create investment email. Existing execution and notification authorization boundaries continue to apply.
+- Every monthly cycle includes cadence and research-process meta-review. The first scheduled cycle of each quarter includes a deeper bottleneck-lane and strategy-feasibility review. Temporary higher-frequency recurring schedules require explicit account-owner authorization rather than an automatic volatility override.
+- Review the cadence after three completed monthly cycles, or sooner after a missed material event, stale decision, duplicate contribution, repeated unnecessary escalation, or material portfolio change. Compare detection latency, full-cycle count, decision changes, missed triggers, email noise, compute cost, and mission-relevant exposure quality. Trade count is not the objective.
 
 Market snapshots used for display and decision support are stored in `data/market/`. They do not mutate confirmed account records.
 
@@ -1073,7 +1073,7 @@ Cadence:
 
 - Run before any monthly allocation decision when the active universe has material AI infrastructure, space infrastructure, power, cooling, or financing-cycle exposure.
 - Run after major market events such as a sharp Nasdaq or SOX drawdown, a major AI financing failure, a hyperscaler capex shock, a credit spread break, a semiconductor supply-chain warning, or a material regulatory/geopolitical event.
-- A weekly Saturday review can be automated later, but automation may only collect and structure evidence. Allocation judgment still requires agent or human review.
+- A monthly first-Saturday review can be automated later, but automation may only collect and structure evidence. Allocation judgment still requires agent or human review.
 
 Required coverage:
 
@@ -1131,7 +1131,7 @@ Bubble risk dimensions:
 2. Load confirmed ledger, positions, contribution plan, and prior decisions.
 3. Apply any due standing contribution deterministically. Ask whether the account owner has confirmed a different deposit if the request is ambiguous.
 4. Run the full decision operating cycle through discovery-lane review, universe discovery, freshness, filing, valuation, risk, allocation, cleanup, and validation stages. This is mandatory and must not be skipped because the user phrased the request casually.
-5. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest weekly contribution when a stronger opportunity justifies broader deployment.
+5. Compute total deployable liquidity from confirmed cash, confirmed deposits, and confirmed liquidity reserve value available for sale. Do not limit sizing to the latest recurring contribution when a stronger opportunity justifies broader deployment.
 6. Retrieve fresh prices for current holdings, active candidates, and any newly promoted or decision-relevant discovery candidate.
 7. Retrieve fresh primary evidence for each active candidate and any newly decision-relevant candidate.
 8. Run discovery readiness sprints for plausible new candidates that could affect allocation, opportunity cost, lane completeness, or watchlist priority. Do the reachable public research before declaring the candidate not buy-ready because of missing repository data.
@@ -1160,7 +1160,7 @@ Default sizing principles:
 - Start new names in stages when bounded uncertainty makes optionality valuable; ownership itself is not evidence, and an initial position must not create an endowment-bias shortcut around fresh issuer evidence.
 - Prefer adding to existing high-conviction names when fresh evidence confirms the thesis and valuation remains tolerable.
 - Prefer holding cash or liquidity reserve over forcing deployment when evidence or valuation is not strong enough.
-- When evidence and entry quality are unusually strong, consider using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, rather than only the latest weekly contribution.
+- When evidence and entry quality are unusually strong, consider using total confirmed deployable liquidity, including SGOV or equivalent reserve sales, rather than only the latest recurring contribution.
 - Prefer withholding new cash from downgraded names before selling existing positions.
 - Do not make forced rebalancing trades just because a position outperformed.
 - Do not sell winners solely because they became large; sell only if the thesis breaks, risk becomes unacceptable, or opportunity cost becomes overwhelming.
@@ -1172,7 +1172,7 @@ Suggested guardrails for normal decisions:
 
 - Keep a small cash buffer for price slippage and fees.
 - Size unprofitable or pre-commercial exposure from portfolio NAV, dilution-adjusted survival, correlated risk, and maximum acceptable permanent impairment, not from the amount of the latest contribution.
-- Do not deploy the full weekly contribution merely to avoid idle cash. Cash and the liquidity reserve preserve option value.
+- Do not deploy the full recurring contribution merely to avoid idle cash. Cash and the liquidity reserve preserve option value.
 - Do not preserve the liquidity reserve mechanically when a rare opportunity passes all gates strongly enough to justify deployment. Explain why the opportunity deserves reserve capital and what buffer remains.
 - Track theme concentration, especially AI infrastructure and space infrastructure, because multiple tickers can depend on the same capital spending cycle.
 
