@@ -72,3 +72,4 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-10-02,2668.27,13831.73,16500.00,17208.00,-4.1144,,Automated daily close valuation from Yahoo Finance chart. Period return omitted because external funding crosses the interval; raw NAV change is not investment return.
 2026-10-05,2624.68,13831.73,16456.41,17208.00,-4.3677,-0.2642,Automated daily close valuation from Yahoo Finance chart.
 2026-10-06,2716.37,13831.73,16548.10,17208.00,-3.8348,0.5572,Automated daily close valuation from Yahoo Finance chart.
+2026-10-07,2611.62,13831.73,16443.35,17208.00,-4.4436,-0.6330,Automated daily close valuation from Yahoo Finance chart.
