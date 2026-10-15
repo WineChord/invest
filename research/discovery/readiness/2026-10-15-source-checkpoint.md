@@ -18,7 +18,7 @@ Published 2026-10-09; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: October 8 extension through April 9 2027 resolved; 18.322 million redemptions leave 4.678 million public shares. Sponsor transfers are not issuer funding.
-  binding_constraints: External gates: completed eligible listing; site and fuel permission; binding financeable FOAK customer economics.
+  binding_constraints: "External gates: completed eligible listing; site and fuel permission; binding financeable FOAK customer economics."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -37,8 +37,8 @@ Published 2026-10-07; retrieved/re-reviewed and observation first seen 2026-10-1
 ```yaml
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
-  irreducible_facts: SAIQ trades at October 14 close USD 3.88. Equal economic claims include 16,818,772 ordinary plus 12,997,400 Class F shares: USD 115.687 million. Maximum 1,073,216 price-protection shares raise this to USD 119.851 million. June cash plus PIPE less direct closing payments is USD 15.333 million before subsequent burn; not current cash. H1 revenue zero and operating loss USD 2.908 million.
-  binding_constraints: Resolved public access and transaction claims. External gates: independent paying customers; license economics; actual post-close cash burn. Class F control and economic participation remain material.
+  irreducible_facts: "SAIQ trades at October 14 close USD 3.88. Equal economic claims include 16,818,772 ordinary plus 12,997,400 Class F shares: USD 115.687 million. Maximum 1,073,216 price-protection shares raise this to USD 119.851 million. June cash plus PIPE less direct closing payments is USD 15.333 million before subsequent burn; not current cash. H1 revenue zero and operating loss USD 2.908 million."
+  binding_constraints: "Resolved public access and transaction claims. External gates: independent paying customers; license economics; actual post-close cash burn. Class F control and economic participation remain material."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -78,7 +78,7 @@ Published 2026-10-06; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: GlobalFoundries collaboration supports a 300mm SiN/SNSPD manufacturing path; no disclosed yield or paid volume. October 14 close USD 3.19 makes the old USD 2.438 billion EV reference stale.
-  binding_constraints: Agent analytical queue: current economic denominator and funding-adjusted valuation; external milestones: paid demand and manufacturing yield.
+  binding_constraints: "Agent analytical queue: current economic denominator and funding-adjusted valuation; external milestones: paid demand and manufacturing yield."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -138,7 +138,7 @@ Published 2026-09-03; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Closing 8-K12B and exhibits resolve operating-filing access. Robotics H1 revenue USD 10.578 million; gross profit USD 0.916 million; net loss USD 19.364 million. Pro forma cash USD 99.779 million before identified USD 15.5 million claims and subsequent burn. September 4 common 284842854 plus 27544248 pre-funded warrants imply USD 671.632 million at USD 2.15; up to 20 million revenue earnout shares are additional.
-  binding_constraints: Agent queue: reconcile employee claims and actual liquidity; external repeat-customer margins and collections. JFB construction revenue is not robotics revenue; ownership caps do not remove warrant dilution.
+  binding_constraints: "Agent queue: reconcile employee claims and actual liquidity; external repeat-customer margins and collections. JFB construction revenue is not robotics revenue; ownership caps do not remove warrant dilution."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -158,7 +158,7 @@ Published 2026-10-13; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Old notes redemption completed for USD 30.9 million. Earlier exchange created USD 2.833358 million 10 percent 2030 notes plus one million USD 1.87 warrants. Pro forma USD 16.9 million cash and digital assets is not current unrestricted cash. Form 25 concerns debt rather than common shares.
-  binding_constraints: Agent queue: residual senior claims and runway; external funded repeat-customer proof. Remove unknown redemption and common-delist assertions.
+  binding_constraints: "Agent queue: residual senior claims and runway; external funded repeat-customer proof. Remove unknown redemption and common-delist assertions."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -178,7 +178,7 @@ Published 2026-10-07; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Quarter revenue USD 341.875 million includes Chrono USD 41.482 million. Unrestricted cash USD 2.9 billion and restricted USD 728 million are distinct; investment use USD 2.1 billion. October 4 related-party 1200MW power arrangement creates recourse and financial-close conditions.
-  binding_constraints: Agent queue: funded capex and recourse bridge through residual common claims; external delivery and PPA financial close.
+  binding_constraints: "Agent queue: funded capex and recourse bridge through residual common claims; external delivery and PPA financial close."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -198,7 +198,7 @@ Published 2026-10-13; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Regna AI is a wholly owned subsidiary powered by Palantir with Ondas as first customer. This is not independent paid customer revenue or new third-party financing.
-  binding_constraints: Agent queue: senior and dilution claims; external independently funded customer conversion.
+  binding_constraints: "Agent queue: senior and dilution claims; external independently funded customer conversion."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -218,7 +218,7 @@ Published 2026-08-13; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: October 5 ownership filing is not an operating update; June quarterly report remains the financial base.
-  binding_constraints: Agent queue: export shipments; minority ownership; diluted cash-return comparison. Publicly available analysis is not an external source blocker.
+  binding_constraints: "Agent queue: export shipments; minority ownership; diluted cash-return comparison. Publicly available analysis is not an external source blocker."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -238,7 +238,7 @@ Published 2026-09-30; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: October 13 and 14 insider-sale and ownership forms do not establish product qualification or new operating funding. September proxy supplies governance evidence.
-  binding_constraints: Agent queue: capital and award denominator; external qualified paying customer and repeat gross-margin evidence.
+  binding_constraints: "Agent queue: capital and award denominator; external qualified paying customer and repeat gross-margin evidence."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -258,7 +258,7 @@ Published 2026-10-09; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: 8-K amendment adds USD 150000 interim CFO bonus; it does not establish new financing or Merlin operating economics.
-  binding_constraints: Agent queue: full compensation and funding claims; external funded satellite deployment and customer conversion.
+  binding_constraints: "Agent queue: full compensation and funding claims; external funded satellite deployment and customer conversion."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -278,7 +278,7 @@ Published 2026-09-16; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Checked SEC feed has no selected newer material filing after October 2. Absence of a filing does not establish successful production or funding.
-  binding_constraints: Agent queue: senior financing and DOE draw bridge; external accepted deliveries and sustainable gross margins.
+  binding_constraints: "Agent queue: senior financing and DOE draw bridge; external accepted deliveries and sustainable gross margins."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -298,7 +298,7 @@ Published 2026-08-06; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: October 5 ownership disclosure adds no new operating financial period; dated quarterly report remains the base.
-  binding_constraints: Agent queue: diluted owner cash and same-lane optical-peer opportunity cost; no fictitious external data-access veto.
+  binding_constraints: "Agent queue: diluted owner cash and same-lane optical-peer opportunity cost; no fictitious external data-access veto."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -318,7 +318,7 @@ Published 2026-08-07; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: No selected SEC event newer than October 2 in checked feed; September 17 ownership form is not new operating cash.
-  binding_constraints: Agent queue: backlog conversion; supply obligations and owner-cash margins; external funded acceptance.
+  binding_constraints: "Agent queue: backlog conversion; supply obligations and owner-cash margins; external funded acceptance."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -338,7 +338,7 @@ Published 2026-10-01; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: October 5 ownership disclosure does not supersede the October 1 capital and transaction base.
-  binding_constraints: Agent queue: Serra Verde and DFC financing through net debt; actual margins and residual economic claims.
+  binding_constraints: "Agent queue: Serra Verde and DFC financing through net debt; actual margins and residual economic claims."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -358,7 +358,7 @@ Published 2026-09-08; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: October 6 ownership form is not CHIPS cash receipt or new paid operating proof.
-  binding_constraints: Agent queue: milestone cash versus award ceiling; exchangeable shares and tax receivable claims.
+  binding_constraints: "Agent queue: milestone cash versus award ceiling; exchangeable shares and tax receivable claims."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -378,7 +378,7 @@ Published 2026-10-06; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Cohere agreement USD 525.6 million over five years has rack acceptance and refund conditions. First acceptance expected Q2 2027; minimum July 15 2027. October 8 POSAM registers no additional securities; old resale capacity is not issuer funding.
-  binding_constraints: Agent queue: full lease capex and refund funding; external actual rack acceptance. Known CFO award is bounded rather than an unavailable-document excuse.
+  binding_constraints: "Agent queue: full lease capex and refund funding; external actual rack acceptance. Known CFO award is bounded rather than an unavailable-document excuse."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -398,7 +398,7 @@ Published 2026-08-13; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Correct issuer is REalloys rather than obsolete Blackbox identity. October 6 ownership filing does not demonstrate protected supplier/customer economics.
-  binding_constraints: Agent queue: current capital claims; external SRC qualification and funded protected supply.
+  binding_constraints: "Agent queue: current capital claims; external SRC qualification and funded protected supply."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -418,7 +418,7 @@ Published 2026-08-06; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: October 6 ownership filing does not establish new funded delivery margins; June financial base remains dated.
-  binding_constraints: Agent queue: control and acquired claims; external profitable accepted deliveries and cash collections.
+  binding_constraints: "Agent queue: control and acquired claims; external profitable accepted deliveries and cash collections."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -438,7 +438,7 @@ Published 2026-10-09; retrieved/re-reviewed and observation first seen 2026-10-1
 first_principles_analysis:
   question_rebuilt_from_basics: Can the candidate's scarce capability produce cash belonging to each common economic claim?
   irreducible_facts: Omitted from paired issuer scope but independently checked. Form D discloses USD 10800 offered and sold with zero remaining; not USD 10.8 million and not a survival-funding solution.
-  binding_constraints: Agent queue: negative cash flow; full claim denominator and backlog economics.
+  binding_constraints: "Agent queue: negative cash flow; full claim denominator and backlog economics."
   causal_chain: Qualified capability must become funded customer acceptance, cash after necessary investment and senior claims, then dilution-adjusted owner value.
   inherited_assumptions_challenged: An old missing-source label, transaction announcement, gross financing receipt, ownership form or price decline cannot establish current common-share value.
   value_capture_or_mission_link: Keep this expression visible only while direct bottleneck economics can plausibly scale to material portfolio impact; no such gate is newly certified here.
@@ -520,11 +520,14 @@ Published 2026-09-29; retrieved/re-reviewed and observation first seen 2026-10-1
 
 ### First-Principles Analysis
 
-question_rebuilt_from_basics: Can the scarce operating capability produce residual common-owner cash after funding?
-irreducible_facts: Latest October 5 Form 3 is ownership-only. Closing redemptions were about USD 146.5 million; USD 1.7 million trust remained before combination costs. Closing common 108258979 is not a fully diluted denominator or current cash. B. Riley note maturity extended to December 31 2026.
-binding_constraints: Retain rejected current expression and event monitoring. External funded sites, interconnection and binding customer economics; post-fee liquidity and full claim normalization remain explicit agent work.
-causal_chain: Funded productive assets must serve paying customers and leave cash after investment and senior claims per diluted share.
-inherited_assumptions_challenged: A new filing or funding capacity is not earned cash; historical pro forma liquidity is not current cash.
-value_capture_or_mission_link: Preserve direct exposure candidates only when a credible path to material owner value exists.
-disconfirming_evidence: Failure of accepted deliveries or financing; cash burn and dilution exceeding attainable residual returns.
-decision_consequence: Preserve existing readiness and eligibility; record actual source facts and remaining economic work separately.
+```yaml
+first_principles_analysis:
+  question_rebuilt_from_basics: Can the scarce operating capability produce residual common-owner cash after funding?
+  irreducible_facts: Latest October 5 Form 3 is ownership-only. Closing redemptions were about USD 146.5 million; USD 1.7 million trust remained before combination costs. Closing common 108258979 is not a fully diluted denominator or current cash. B. Riley note maturity extended to December 31 2026.
+  binding_constraints: Retain rejected current expression and event monitoring. External funded sites, interconnection and binding customer economics; post-fee liquidity and full claim normalization remain explicit agent work.
+  causal_chain: Funded productive assets must serve paying customers and leave cash after investment and senior claims per diluted share.
+  inherited_assumptions_challenged: A new filing or funding capacity is not earned cash; historical pro forma liquidity is not current cash.
+  value_capture_or_mission_link: Preserve direct exposure candidates only when a credible path to material owner value exists.
+  disconfirming_evidence: Failure of accepted deliveries or financing; cash burn and dilution exceeding attainable residual returns.
+  decision_consequence: Preserve existing readiness and eligibility; record actual source facts and remaining economic work separately.
+```
