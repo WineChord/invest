@@ -1292,8 +1292,8 @@ function validateTransitionReviewerCoverage(row, requiredRoles, context) {
     }
     if (!entry.completed) {
       requireAllowed(entry.skip_reason, allowedSubagentSkipReasons, `${context} structured reviewer ${role} skip_reason`);
-    } else if (entry.reasoning_level !== "xhigh" || entry.independent_context !== true) {
-      throw new Error(`${context} completed structured reviewer ${role} must be independent xhigh`);
+    } else if (!["medium", "xhigh"].includes(entry.reasoning_level) || entry.independent_context !== true) {
+      throw new Error(`${context} completed structured reviewer ${role} must be independent medium or historical xhigh`);
     }
     byRole.set(role, entry);
   }
@@ -3760,8 +3760,8 @@ function validateSubagentEvidencePacket(file, discoveryProcess) {
   }
   requireStringArray(readiness.user_only_execution_prerequisites, `${file} quality_metrics.decision_readiness.user_only_execution_prerequisites`);
   const defaults = parsed.subagent_defaults ?? {};
-  if (defaults.reasoning_level !== "xhigh") {
-    throw new Error(`${file} subagent_defaults.reasoning_level must be xhigh`);
+  if (!["medium", "xhigh"].includes(defaults.reasoning_level)) {
+    throw new Error(`${file} subagent_defaults.reasoning_level must be medium or historical xhigh`);
   }
   requireBoolean(defaults.independent_context, `${file} subagent_defaults.independent_context`);
   if (!defaults.independent_context) {
@@ -5481,8 +5481,8 @@ function validateDiscoveryRunSubagents(file, subagents, discoveryProcess) {
         requireString(role?.[field], `${context} ${field}`);
       }
     });
-    if (role.reasoning_level !== "xhigh") {
-      throw new Error(`${context} reasoning_level must be xhigh`);
+    if (!["medium", "xhigh"].includes(role.reasoning_level)) {
+      throw new Error(`${context} reasoning_level must be medium or historical xhigh`);
     }
     requireBoolean(role.independent_context, `${context} independent_context`);
     if (!role.independent_context) {

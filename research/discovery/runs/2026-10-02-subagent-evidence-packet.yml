@@ -4,6 +4,14 @@ current_date: 2026-10-02
 request_type: monthly_decision_full_cycle
 mission: multi-decade asymmetric compounding with avoidable-ruin controls
 policy_version: v1.3
+post_cycle_execution_update:
+  as_of: 2026-10-07
+  confirmed_ledger_event_id: 2026-10-07-buy-mu-001
+  execution_confirmation_path: decisions/2026-10-07-mu-execution-confirmation.md
+  synchronized_current_watchlist_metadata: active_watchlist MU notes only
+  original_mu_watchlist_notes: Promoted from candidate scan; HBM exposure is strong but memory cyclicality keeps it watch-only.
+  original_account_and_research_snapshot_preserved: true
+  notes: Current MU holding metadata changed after this original October 2 cycle and was not part of its reviewer evidence. Original account facts, market dates, research findings and reviewer coverage remain historical; no new review or promotion is implied.
 freshness_window:
   quality_metrics_as_of: 2026-10-02
   universe_scan_as_of: 2026-10-02
@@ -1354,9 +1362,13 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: October9 extension outcome plus fuel/site
-      authorization and binding FOAK finance
-    conclusion: R1 researchable pre-listing lead; no promotion, buy zone or allocation.
+    reachable_evidence_remaining: "External gates: completed eligible listing; site
+      and fuel permission; binding financeable FOAK customer economics."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: October 8 extension through April 9 2027
+      resolved; 18.322 million redemptions leave 4.678 million public shares.
+      Sponsor transfers are not issuer funding. No promotion or allocation
+      decision."
   - symbol: WISESAT_PRELISTING
     material_to_current_allocation: true
     affected_lanes:
@@ -1364,10 +1376,18 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Post-close SAIQ retained cash, redemptions, full
-      capitalization, independent customer and license economics
-    conclusion: Merger closed October1; SAIQ effective October2. Preserve historical
-      alias. R1; first completed SAIQ quote not yet available; no promotion.
+    reachable_evidence_remaining: "Resolved public access and transaction claims.
+      External gates: independent paying customers; license economics; actual
+      post-close cash burn. Class F control and economic participation remain
+      material."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: SAIQ trades at October 14 close USD 3.88.
+      Equal economic claims include 16,818,772 ordinary plus 12,997,400 Class F
+      shares: USD 115.687 million. Maximum 1,073,216 price-protection shares
+      raise this to USD 119.851 million. June cash plus PIPE less direct closing
+      payments is USD 15.333 million before subsequent burn; not current cash.
+      H1 revenue zero and operating loss USD 2.908 million. No promotion or
+      allocation decision."
   - symbol: REA
     material_to_current_allocation: true
     affected_lanes:
@@ -1375,10 +1395,12 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Recovery, impurities, payability, resource
-      confidence, permitting, capex and current dilution; issuer/QP QA/QC
-      supplied, independent lab audit not established.
-    conclusion: R1 researchable listed lead; no promotion, buy zone or allocation.
+    reachable_evidence_remaining: External metallurgy; recovery and payability;
+      permitted project economics and nondestructive finance.
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: New initial assessments expected Alpha
+      early 2027 and Constellation mid-2027; plans do not establish recoverable
+      economic reserves. No promotion or allocation decision."
   - symbol: INFQ
     material_to_current_allocation: true
     affected_lanes:
@@ -1427,10 +1449,14 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Funding draws, recurring customer revenue and
-      fully diluted operating economics
-    conclusion: Advanced to R2 comparable after definitive Canadian support; retain
-      research-only status, quantity zero, no executable limit and no promotion.
+    reachable_evidence_remaining: "Agent analytical queue: current economic
+      denominator and funding-adjusted valuation; external milestones: paid
+      demand and manufacturing yield."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: GlobalFoundries collaboration supports a
+      300mm SiN/SNSPD manufacturing path; no disclosed yield or paid volume.
+      October 14 close USD 3.19 makes the old USD 2.438 billion EV reference
+      stale. No promotion or allocation decision."
   - symbol: YSS
     material_to_current_allocation: true
     affected_lanes:
@@ -1651,11 +1677,14 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Authorization, firm-versus-option backlog, fuel
-      and protected industrial margin
-    conclusion: Retain R2 comparable and the top-three opportunity-cost screen after
-      resolving the filed-quarter and event-price gaps; keep B- research-only
-      status, no promotion, no buy zone, quantity zero and no executable limit.
+    reachable_evidence_remaining: External industrial authorization; funded delivery
+      economics and contract conversion. Current source continuity does not
+      complete valuation.
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: June cash USD 102.185 million. Distinguish
+      binding backlog from options and nonbinding indications; no newer material
+      selected event in checked SEC and issuer surfaces. No promotion or
+      allocation decision."
   - symbol: CIFR
     material_to_current_allocation: true
     affected_lanes:
@@ -1674,10 +1703,16 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Revolver headroom and cash/backlog conversion
-    conclusion: Advanced to R2 comparable after Q3 operating improvement; retain C+
-      research-only status, quantity zero, no executable limit and no buy-zone
-      eligibility.
+    reachable_evidence_remaining: Remove unknown revolver blocker. External
+      quarterly cash conversion and qualified customer demand remain weak;
+      annual-source checkpoint is a monitoring date rather than a promised
+      filing date.
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: Revolver USD 6.3 million drawn and USD 6.6
+      million available are disclosed. Nine-month CFO USD 147635 versus
+      equipment purchases USD 424600 and intangibles USD 27818; backlog USD 13.5
+      million. No later selected material event. No promotion or allocation
+      decision."
   - symbol: SEI
     material_to_current_allocation: true
     affected_lanes:
@@ -1744,11 +1779,18 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Post-close capitalization/operating filing and
-      diluted value; October1 completed price USD3.29 now verified
-    conclusion: Advanced from not tradable to R1 researchable after transaction
-      close and NYSE listing; no promotion, buy zone, executable limit or
-      quantity exists.
+    reachable_evidence_remaining: "Agent queue: reconcile employee claims and actual
+      liquidity; external repeat-customer margins and collections. JFB
+      construction revenue is not robotics revenue; ownership caps do not remove
+      warrant dilution."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: Closing 8-K12B and exhibits resolve
+      operating-filing access. Robotics H1 revenue USD 10.578 million; gross
+      profit USD 0.916 million; net loss USD 19.364 million. Pro forma cash USD
+      99.779 million before identified USD 15.5 million claims and subsequent
+      burn. September 4 common 284842854 plus 27544248 pre-funded warrants imply
+      USD 671.632 million at USD 2.15; up to 20 million revenue earnout shares
+      are additional. No promotion or allocation decision."
   - symbol: ENRD
     material_to_current_allocation: true
     affected_lanes:
@@ -1808,8 +1850,10 @@ candidate_readiness:
     dashboard_surface_status: complete
     blocker_type: none
     reachable_evidence_remaining: none
-    conclusion: Promoted to B- watch and R2 comparable; quantity zero, no executable
-      limit and no active-candidate or buy-zone eligibility.
+    conclusion: Preserve completed; Custody moves to BitGo with segregation terms,
+      monthly fees and liability limitations; October 7 code-of-ethics update
+      discloses no waiver. Neither is new project financing or company cash. No
+      promotion or allocation decision.
   - symbol: GPUS
     material_to_current_allocation: false
     affected_lanes:
@@ -1919,11 +1963,15 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Actual October1 financing close, residual
-      liquidity, warrants and binding funded customer
-    conclusion: Retained as an R1 researchable lead after recapitalization; quantity
-      zero, no executable limit, no watchlist promotion and no change to the
-      current first-five opportunity-cost order.
+    reachable_evidence_remaining: "Agent queue: residual senior claims and runway;
+      external funded repeat-customer proof. Remove unknown redemption and
+      common-delist assertions."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: Old notes redemption completed for USD
+      30.9 million. Earlier exchange created USD 2.833358 million 10 percent
+      2030 notes plus one million USD 1.87 warrants. Pro forma USD 16.9 million
+      cash and digital assets is not current unrestricted cash. Form 25 concerns
+      debt rather than common shares. No promotion or allocation decision."
   - symbol: APLD
     material_to_current_allocation: true
     affected_lanes:
@@ -1932,10 +1980,15 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Project recourse, remaining capex and ChronoScale separation
-    conclusion: Advanced to R2 comparable after completing the previously stale
-      annual-report evidence; quantity zero, no executable limit, no watchlist
-      promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: funded capex and recourse bridge
+      through residual common claims; external delivery and PPA financial
+      close."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: Quarter revenue USD 341.875 million
+      includes Chrono USD 41.482 million. Unrestricted cash USD 2.9 billion and
+      restricted USD 728 million are distinct; investment use USD 2.1 billion.
+      October 4 related-party 1200MW power arrangement creates recourse and
+      financial-close conditions. No promotion or allocation decision."
   - symbol: ONDS
     material_to_current_allocation: true
     affected_lanes:
@@ -1943,9 +1996,13 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Organic/acquired revenue, acquisition obligations and 7.821m share bridge
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no formal
-      lane promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: senior and dilution claims; external
+      independently funded customer conversion."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: Regna AI is a wholly owned subsidiary
+      powered by Palantir with Ondas as first customer. This is not independent
+      paid customer revenue or new third-party financing. No promotion or
+      allocation decision."
   - symbol: AXTI
     material_to_current_allocation: true
     affected_lanes:
@@ -1953,9 +2010,13 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Export approvals, shipped InP economics and minority claims
-    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit,
-      no watchlist promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: export shipments; minority
+      ownership; diluted cash-return comparison. Publicly available analysis is
+      not an external source blocker."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: October 5 ownership filing is not an
+      operating update; June quarterly report remains the financial base. No
+      promotion or allocation decision."
   - symbol: ALMU
     material_to_current_allocation: true
     affected_lanes:
@@ -1963,10 +2024,13 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: FY2026 financials, commercial qualification and
-      September proxy award denominator
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no
-      watchlist promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: capital and award denominator;
+      external qualified paying customer and repeat gross-margin evidence."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: October 13 and 14 insider-sale and
+      ownership forms do not establish product qualification or new operating
+      funding. September proxy supplies governance evidence. No promotion or
+      allocation decision."
   - symbol: SATL
     material_to_current_allocation: true
     affected_lanes:
@@ -1974,9 +2038,12 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Repeat data revenue, Merlin funding and warrant/note claims
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no
-      watchlist promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: full compensation and funding
+      claims; external funded satellite deployment and customer conversion."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: 8-K amendment adds USD 150000 interim CFO
+      bonus; it does not establish new financing or Merlin operating economics.
+      No promotion or allocation decision."
   - symbol: EOSE
     material_to_current_allocation: true
     affected_lanes:
@@ -1984,9 +2051,12 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Third-party demand, DOE milestones and priority security stack
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no
-      watchlist promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: senior financing and DOE draw
+      bridge; external accepted deliveries and sustainable gross margins."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: Checked SEC feed has no selected newer
+      material filing after October 2. Absence of a filing does not establish
+      successful production or funding. No promotion or allocation decision."
   - symbol: MTSI
     material_to_current_allocation: true
     affected_lanes:
@@ -1994,9 +2064,12 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Current diluted FCF valuation compared with LPTH and other optical peers
-    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit,
-      no promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: diluted owner cash and same-lane
+      optical-peer opportunity cost; no fictitious external data-access veto."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: October 5 ownership disclosure adds no new
+      operating financial period; dated quarterly report remains the base. No
+      promotion or allocation decision."
   - symbol: LASR
     material_to_current_allocation: true
     affected_lanes:
@@ -2004,9 +2077,12 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Current funded program backlog, supply recovery and normalized cash margins
-    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit,
-      no promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: backlog conversion; supply
+      obligations and owner-cash margins; external funded acceptance."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: No selected SEC event newer than October 2
+      in checked feed; September 17 ownership form is not new operating cash. No
+      promotion or allocation decision."
   - symbol: USAR
     material_to_current_allocation: true
     affected_lanes:
@@ -2014,11 +2090,12 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Serra Verde pro forma, DFC conditions, cash/debt
-      and operating-margin bridge
-    conclusion: Advanced to R2 comparable and the new strategic-critical-materials
-      lane after Serra Verde closed; quantity zero, no promotion and no buy-zone
-      eligibility.
+    reachable_evidence_remaining: "Agent queue: Serra Verde and DFC financing
+      through net debt; actual margins and residual economic claims."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: October 5 ownership disclosure does not
+      supersede the October 1 capital and transaction base. No promotion or
+      allocation decision."
   - symbol: QNT
     material_to_current_allocation: true
     affected_lanes:
@@ -2026,9 +2103,11 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: CHIPS milestone cash, recurring revenue, exchangeable units and TRA
-    conclusion: Advanced to R2 comparable after the CHIPS award; quantity zero, no
-      executable limit, no promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: milestone cash versus award ceiling;
+      exchangeable shares and tax receivable claims."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: October 6 ownership form is not CHIPS cash
+      receipt or new paid operating proof. No promotion or allocation decision."
   - symbol: COHR
     material_to_current_allocation: true
     affected_lanes:
@@ -2071,13 +2150,15 @@ candidate_readiness:
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Current and future filings can bound customer
-      concentration, energized deployment, normalized cash conversion,
-      obligation coverage, current cash after warrant proceeds, internal-control
-      remediation and incentive-plan awards.
-    conclusion: Advanced to R2 comparable but retained as incubating outside the
-      current top five; quantity zero, no executable limit, no promotion and no
-      buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: full lease capex and refund funding;
+      external actual rack acceptance. Known CFO award is bounded rather than an
+      unavailable-document excuse."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility.
+      October 15 source/claim review: Cohere agreement USD 525.6 million over
+      five years has rack acceptance and refund conditions. First acceptance
+      expected Q2 2027; minimum July 15 2027. October 8 POSAM registers no
+      additional securities; old resale capacity is not issuer funding. No
+      promotion or allocation decision."
   - symbol: ALOY
     material_to_current_allocation: true
     affected_lanes:
@@ -2085,10 +2166,13 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Current REalloys identity, SRC qualification,
-      protected supply economics and incentives
-    conclusion: REalloys Q2 cash and SRC supply rights improve funding visibility;
-      old Blackbox semantic profile invalidated. R1, no promotion.
+    reachable_evidence_remaining: "Agent queue: current capital claims; external SRC
+      qualification and funded protected supply."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: Correct issuer is REalloys rather than
+      obsolete Blackbox identity. October 6 ownership filing does not
+      demonstrate protected supplier/customer economics. No promotion or
+      allocation decision."
   - symbol: RCAT
     material_to_current_allocation: true
     affected_lanes:
@@ -2096,9 +2180,12 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Funded deliveries, margins, controls and acquisitions versus dilution
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no
-      promotion and no buy-zone eligibility.
+    reachable_evidence_remaining: "Agent queue: control and acquired claims;
+      external profitable accepted deliveries and cash collections."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: October 6 ownership filing does not
+      establish new funded delivery margins; June financial base remains dated.
+      No promotion or allocation decision."
   - symbol: LPTH
     material_to_current_allocation: true
     affected_lanes:
@@ -2106,9 +2193,13 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Qualified infrared materials and optical systems;
-      FY26 backlog111m but negative FCF and large share growth.
-    conclusion: R1 source-backed lead, no promotion or allocation.
+    reachable_evidence_remaining: "Agent queue: negative cash flow; full claim
+      denominator and backlog economics."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: Omitted from paired issuer scope but
+      independently checked. Form D discloses USD 10800 offered and sold with
+      zero remaining; not USD 10.8 million and not a survival-funding solution.
+      No promotion or allocation decision."
   - symbol: BRNX
     material_to_current_allocation: true
     affected_lanes:
@@ -2117,7 +2208,13 @@ candidate_readiness:
     dashboard_surface_status: not_required_rejected
     blocker_type: evidence_based
     reachable_evidence_remaining: none
-    conclusion: Rejected current allocation expression; event monitoring only.
+    conclusion: Preserve rejected_after_review; Completed July–September preferred
+      issuance netted USD 4.877 million with 1541018 warrants. June cash plus
+      proceeds is USD 10.566 million before burn. The new USD 2.886 million ATM
+      is prospective, not completed cash. Pre-offering common is 1946972; USD
+      4.814 million EIB debt remains in the capitalization table. October 5
+      Wolfson construction progress and Tempo commissioning are not final paid
+      acceptance. No promotion or allocation decision.
   - symbol: ONEN
     material_to_current_allocation: true
     affected_lanes:
@@ -2126,7 +2223,11 @@ candidate_readiness:
     dashboard_surface_status: not_required_rejected
     blocker_type: evidence_based
     reachable_evidence_remaining: none
-    conclusion: Rejected current allocation expression; event monitoring only.
+    conclusion: Preserve rejected_after_review; Latest October 5 Form 3 is
+      ownership-only. Closing redemptions were about USD 146.5 million; USD 1.7
+      million trust remained before combination costs. Closing common 108258979
+      is not a fully diluted denominator or current cash. B. Riley note maturity
+      extended to December 31 2026. No promotion or allocation decision.
   - symbol: IMC
     material_to_current_allocation: true
     affected_lanes:
@@ -2145,9 +2246,14 @@ candidate_readiness:
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     blocker_type: evidence_based
-    reachable_evidence_remaining: Registration not effective; separate Songwe/Pulawy
-      listing assets from parent recycled magnet business.
-    conclusion: R1 source-backed lead, no promotion or allocation.
+    reachable_evidence_remaining: Resolved source access and identity. External
+      effectiveness; transaction close; nondestructive project finance and
+      technical economics.
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility.
+      October 15 source/claim review: Full F-4/A is reachable; identity is
+      Mkango Rare Earths Limited CIK 2052373. Preliminary transaction covers
+      Songwe and Pulawy; not all parent magnet assets. FEED is not funded mine
+      construction. No promotion or allocation decision."
 active_watchlist_scope: all non-removed research/watchlist.csv rows, including
   active, watch, research_only, and not_tradable rows
 active_watchlist:
@@ -2217,8 +2323,7 @@ active_watchlist:
     priority: B+
     initial_role: AI memory bottleneck
     next_review_trigger: next earnings or HBM supply/margin update
-    notes: Promoted from candidate scan; HBM exposure is strong but memory
-      cyclicality keeps it watch-only.
+    notes: Confirmed holding from the October 7 owner-directed execution; research status remains watch and a fresh post-execution holding review is pending. Prior HBM bottleneck research does not establish a fresh entry gate or authorize another purchase; see decisions/2026-10-07-mu-execution-confirmation.md.
   - symbol: CRWV
     name: CoreWeave
     theme: AI cloud infrastructure
@@ -23762,3 +23867,10 @@ expected_output_schema:
   buy_or_no_buy_implication: ""
   confidence: ""
   unresolved_questions: []
+
+post_cycle_evidence_checkpoint_update:
+  as_of: 2026-10-15
+  review_path: research/filings/2026-10-15-overdue-evidence-checkpoint.md
+  candidate_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+  synchronized_section: candidate_readiness only; historical October 2 reviewer inputs and original research dates remain unchanged
+  full_cycle_completed: false

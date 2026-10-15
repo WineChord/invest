@@ -29,7 +29,8 @@ mission_accountability:
   repository_health_is_allocation_veto: false
   target_readiness_controls_action: true
   opportunity_set_sufficiency_required: true
-  latest_confirmed_return_seeking_buy_date: 2026-09-11
+  latest_confirmed_return_seeking_buy_date: 2026-10-07
+  latest_confirmed_return_seeking_buy_date_basis: Current confirmed ledger, including the October 7 owner-directed MU execution. This live account field does not advance the October 2 research snapshot or mission-relevant deployment date.
   latest_research_nav: 16406.33
   confirmed_cash: 13831.73
   latest_research_nav_basis: October2 standing-authorized cash plus October1
@@ -69,13 +70,11 @@ mission_accountability:
     independently underwritten value and bounded funding/diluted claims; new
     announcement not mandatory. GILT requires combined cash returns; MDA
     requires FX-consistent capital-return model.
-  next_evidence_deadline: 2026-10-09
+  next_evidence_deadline: 2026-10-19
   no_action_streak: 2
   article1_red_team_status: completed_zero_smallest_exposure_total_liquidity_waiting_cost_and_correlated_stress_review
   latest_constitutional_audit_path: research/process/2026-07-28-article-one-constitutional-audit.md
-  current_conclusion: Hold all five confirmed quantities; no buy/add/trim/sell.
-    Cash13831.73. SGOV is preferred conditional cash-management economics, no
-    unverified broker order.
+  current_conclusion: Historical October 2 conclusion was no action for the then-confirmed five positions and USD 13831.73 cash. The owner subsequently confirmed a MU execution on October 7; current ownership and cash are in the account ledger/state and the execution confirmation. That account change expires the prior account-dependent decision context and does not refresh research, entry eligibility or scale authorization.
 coverage:
   universe_scan_as_of: 2026-10-02
   discovery_lane_map_as_of: 2026-09-11
@@ -199,3 +198,22 @@ notes: October2 full operating cycle and no-action decision; completed October1
   semantic coverage and candidate-depth SLAs remain bounded debt, never claimed
   exhaustive. MDA foundational manual F10/AIF supplement resolves selector blind
   spot.
+account_execution_update:
+  as_of: 2026-10-07
+  confirmed_ledger_event_id: 2026-10-07-buy-mu-001
+  execution_confirmation_path: decisions/2026-10-07-mu-execution-confirmation.md
+  research_snapshot_preserved_as_of: 2026-10-02
+  mission_relevant_deployment_clock_reset: false
+  notes: Confirmed execution only; current account facts are newer than the research NAV and cash snapshot. No new full cycle, promotion, allocation review or completed October 7 market close is claimed.
+evidence_checkpoint_update:
+  as_of: 2026-10-15
+  previous_evidence_deadline: 2026-10-09
+  previous_deadline_result: missed_then_source_review_completed
+  review_path: research/filings/2026-10-15-overdue-evidence-checkpoint.md
+  candidate_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+  scope: primary_source_claim_and_counterfactual_price_currency_review_not_new_allocation
+  original_full_research_snapshot_as_of: 2026-10-02
+  next_analytical_queue_review_at: 2026-10-19
+  next_material_source_checkpoint: 2026-10-22
+  mission_relevant_deployment_clock_reset: false
+  unresolved_economic_models: Explicit candidate queue remains unfinished; no fresh allocation or promotion certified.

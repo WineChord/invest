@@ -292,3 +292,7 @@ Do not blindly follow the user's initial candidate list. Treat it as a starting 
 The user allows direct commits and pushes to `main` for this repository.
 
 Commit after meaningful changes to policy, records, research, or decisions when the public release embargo allows the changed content to become public. Push to the default remote when the work is coherent and `PUBLICATION_POLICY.md` has been satisfied. Use concise commit messages in the repository's style. Never commit secrets, raw broker artifacts, unredacted broker identifiers, actionable pre-close trading content, or local-only paths.
+
+## Current execution model preference
+
+The current execution profile uses `gpt-6.1-sol` with `medium` reasoning for the main task and independent or nested reviewers. It supersedes older execution-level model and reasoning recommendations while preserving required roles, independent contexts, source checks and review evidence. Record actual reasoning as `medium`; preserve historical `xhigh` provenance and legacy schema field names.

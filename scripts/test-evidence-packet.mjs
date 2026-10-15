@@ -27,6 +27,10 @@ const expectedPositionValue = positions.reduce((sum, position) => {
 }, 0);
 const expectedNav = confirmedCash + expectedPositionValue;
 
+assert(packet.subagent_defaults.reasoning_level === "medium", "new reviewer packets must use the current medium execution profile");
+assert(packet.expected_output_schema.reasoning_level === "medium", "review output schema must record actual medium reasoning");
+assert(packet.subagent_defaults.independent_context === true, "the model profile must preserve independent reviewer contexts");
+
 assert(closeEnough(packet.portfolio_snapshot.confirmed_cash, confirmedCash), "packet must use current confirmed cash");
 assert(closeEnough(packet.portfolio_snapshot.current_position_value, expectedPositionValue), "packet must value current positions from latest completed closes");
 assert(closeEnough(packet.portfolio_snapshot.research_nav, expectedNav), "packet NAV must equal current confirmed cash plus current position value");

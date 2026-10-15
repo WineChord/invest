@@ -1,89 +1,119 @@
 schema_version: 1
-as_of: 2026-10-02
+as_of: 2026-10-15
 records:
   - symbol: NUCUBE_PRELISTING
     material_to_current_allocation: true
     affected_lanes:
-    - advanced_nuclear_and_grid_constraints
-    materiality_reason: NuCube is an early industrial-process-heat and microreactor-fuel comparator, but the security and transaction
-      are not yet a completed listed operating-company expression.
+      - advanced_nuclear_and_grid_constraints
+    materiality_reason: NuCube is an early industrial-process-heat and microreactor-fuel comparator, but the security and
+      transaction are not yet a completed listed operating-company expression.
     blocking_scope: candidate_specific_only
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-NUCUBE_PRELISTING-readiness.md
     blocker_type: evidence_based
-    blocker_reason: October9 extension outcome plus fuel/site authorization and binding FOAK finance
-    reachable_evidence_remaining: October9 extension outcome plus fuel/site authorization and binding FOAK finance
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
+    blocker_reason: "External gates: completed eligible listing; site and fuel permission; binding financeable FOAK customer economics."
+    reachable_evidence_remaining: "External gates: completed eligible listing; site and fuel permission; binding financeable FOAK customer economics."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/2023676/000121390026108504/ea0308166-8k_launch2.htm
+    next_evidence_due: 2026-11-09
     cost_of_waiting: A transaction or authorization milestone could rerate the future security, but the operating company is
       not yet an eligible funded listed expression.
     false_negative_early_warning: Binding site authorization, fuel access, customer economics and nondestructive FOAK financing.
-    reopen_or_reject_trigger: Advance only on an eligible security plus bounded authorization, funding and customer economics;
-      reject if the transaction fails or financing becomes destructive.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: R1 researchable pre-listing lead; no promotion, buy zone or allocation.
+    reopen_or_reject_trigger: Advance only on an eligible security plus bounded authorization, funding and customer
+      economics; reject if the transaction fails or financing becomes destructive.
+    next_action: "External gates: completed eligible listing; site and fuel permission; binding financeable FOAK customer
+      economics. Next checkpoint 2026-11-09, or earlier on a material filing, financing, customer or technical event. This
+      does not represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: October
+      8 extension through April 9 2027 resolved; 18.322 million redemptions leave 4.678 million public shares. Sponsor
+      transfers are not issuer funding. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: October 8 extension through April 9 2027 resolved; 18.322 million redemptions leave 4.678
+      million public shares. Sponsor transfers are not issuer funding.
   - symbol: WISESAT_PRELISTING
     material_to_current_allocation: true
     affected_lanes:
-    - space_infrastructure
-    materiality_reason: Completed listed orbital connectivity expression requires post-close residual-economic review; prelisting
-      blocker retired.
+      - space_infrastructure
+    materiality_reason: Completed listed orbital connectivity expression requires post-close residual-economic review;
+      prelisting blocker retired.
     blocking_scope: candidate_specific_only
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-WISESAT_PRELISTING-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Post-close SAIQ retained cash, redemptions, full capitalization, independent customer and license economics
-    reachable_evidence_remaining: Post-close SAIQ retained cash, redemptions, full capitalization, independent customer and
-      license economics
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-06
-    cost_of_waiting: A successful low-redemption close could improve funding, but buying is impossible before confirmed tradability
-      and current capitalization.
-    false_negative_early_warning: Completed exchange listing, retained cash, independent licenses and binding external customer
-      revenue.
-    reopen_or_reject_trigger: Advance on a completed well-funded listing and verifiable customer economics; reject if redemptions,
-      licensing or related-party dependence impair value capture.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Merger closed October1; SAIQ effective October2. Preserve historical alias. R1; first completed SAIQ quote not
-      yet available; no promotion.
+    blocker_reason: "Resolved public access and transaction claims. External gates: independent paying customers; license
+      economics; actual post-close cash burn. Class F control and economic participation remain material."
+    reachable_evidence_remaining: "Resolved public access and transaction claims. External gates: independent paying
+      customers; license economics; actual post-close cash burn. Class F control and economic participation remain
+      material."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/2101411/000121390026107579/ea0307768-20f_wisesat.htm
+    next_evidence_due: 2026-11-09
+    cost_of_waiting: SAIQ is tradable; paid customer proof may rerate it, but zero revenue and contingent dilution currently
+      leave owner cash generation unproven.
+    false_negative_early_warning: Completed exchange listing, retained cash, independent licenses and binding external customer revenue.
+    reopen_or_reject_trigger: Advance on a completed well-funded listing and verifiable customer economics; reject if
+      redemptions, licensing or related-party dependence impair value capture.
+    next_action: "Resolved public access and transaction claims. External gates: independent paying customers; license
+      economics; actual post-close cash burn. Class F control and economic participation remain material. Next checkpoint
+      2026-11-09, or earlier on a material filing, financing, customer or technical event. This does not represent
+      completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: SAIQ
+      trades at October 14 close USD 3.88. Equal economic claims include 16,818,772 ordinary plus 12,997,400 Class F
+      shares: USD 115.687 million. Maximum 1,073,216 price-protection shares raise this to USD 119.851 million. June cash
+      plus PIPE less direct closing payments is USD 15.333 million before subsequent burn; not current cash. H1 revenue
+      zero and operating loss USD 2.908 million. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-06
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: "SAIQ trades at October 14 close USD 3.88. Equal economic claims include 16,818,772 ordinary
+      plus 12,997,400 Class F shares: USD 115.687 million. Maximum 1,073,216 price-protection shares raise this to USD
+      119.851 million. June cash plus PIPE less direct closing payments is USD 15.333 million before subsequent burn; not
+      current cash. H1 revenue zero and operating loss USD 2.908 million."
   - symbol: REA
     material_to_current_allocation: true
     affected_lanes:
-    - strategic_critical_materials
-    materiality_reason: REA is a small listed rare-earth exploration option that improves recall in an emerging lane but does
-      not yet control a qualified separation or magnet bottleneck.
+      - strategic_critical_materials
+    materiality_reason: REA is a small listed rare-earth exploration option that improves recall in an emerging lane but
+      does not yet control a qualified separation or magnet bottleneck.
     blocking_scope: candidate_specific_only
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-REA-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Recovery, impurities, payability, resource confidence, permitting, capex and current dilution
-    reachable_evidence_remaining: Recovery, impurities, payability, resource confidence, permitting, capex and current dilution;
-      issuer/QP QA/QC supplied, independent lab audit not established.
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
+    blocker_reason: External metallurgy; recovery and payability; permitted project economics and nondestructive finance.
+    reachable_evidence_remaining: External metallurgy; recovery and payability; permitted project economics and nondestructive finance.
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://ir.rareearthsamericas.com/news-events/press-releases/detail/98/rare-earths-americas-launches-initial-assessment-at-constellation-in-poos-de-caldas-amid-growing-strategic-focus-on-brazilian-ionic-clay-rare-earths
+    next_evidence_due: 2026-11-16
     cost_of_waiting: Technical results can rerate a small listed denominator, but purchase before recovery and economics are
       bounded would make shareholders fund geological uncertainty.
-    false_negative_early_warning: Reproducible recoveries, a compliant resource, credible development economics and nondestructive
-      funding.
-    reopen_or_reject_trigger: Advance on qualified recoverable material and investable project economics; reject if metallurgy,
-      permitting or funding is structurally adverse.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: R1 researchable listed lead; no promotion, buy zone or allocation.
+    false_negative_early_warning: Reproducible recoveries, a compliant resource, credible development economics and nondestructive funding.
+    reopen_or_reject_trigger: Advance on qualified recoverable material and investable project economics; reject if
+      metallurgy, permitting or funding is structurally adverse.
+    next_action: External metallurgy; recovery and payability; permitted project economics and nondestructive finance. Next
+      checkpoint 2026-11-16, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting.
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: New
+      initial assessments expected Alpha early 2027 and Constellation mid-2027; plans do not establish recoverable
+      economic reserves. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: New initial assessments expected Alpha early 2027 and Constellation mid-2027; plans do not
+      establish recoverable economic reserves.
   - symbol: INFQ
     material_to_current_allocation: true
     affected_lanes: [quantum_computing_and_networking]
@@ -146,31 +176,41 @@ records:
   - symbol: XNDU
     material_to_current_allocation: true
     affected_lanes:
-    - quantum_computing_and_networking
-    materiality_reason: XNDU is a newly public pure-play photonic quantum computing issuer, so the quantum lane needs a comparable
-      research-only surface rather than relying only on IONQ.
+      - quantum_computing_and_networking
+    materiality_reason: XNDU is a newly public pure-play photonic quantum computing issuer, so the quantum lane needs a
+      comparable research-only surface rather than relying only on IONQ.
     blocking_scope: quantum_lane_completeness
     research_stage: R2_comparable
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-XNDU-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Funding draws, recurring customer revenue and fully diluted operating economics
-    reachable_evidence_remaining: Funding draws, recurring customer revenue and fully diluted operating economics
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: Government support can accelerate technical validation and rerating, but buying before milestone conversion
-      and dilution reconcile would make common equity absorb pre-commercial execution risk.
-    false_negative_early_warning: A funded technical milestone, repeat paying customer, material commercial backlog or bounded
-      dilution at an enterprise value substantially below the current approximately USD 2.438 billion.
-    reopen_or_reject_trigger: Advance only when funded milestones convert into technical and customer proof with bounded dilution;
-      demote if financing dependence or execution delay overwhelms the program support.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable after definitive Canadian support; retain research-only status, quantity zero, no
-      executable limit and no promotion.
+    blocker_reason: "Agent analytical queue: current economic denominator and funding-adjusted valuation; external
+      milestones: paid demand and manufacturing yield."
+    reachable_evidence_remaining: "Agent analytical queue: current economic denominator and funding-adjusted valuation;
+      external milestones: paid demand and manufacturing yield."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://investors.xanadu.ai/news-releases/news-release-details/xanadu-and-globalfoundries-announce-strategic-partnership
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: Government support can accelerate technical validation and rerating, but buying before milestone
+      conversion and dilution reconcile would make common equity absorb pre-commercial execution risk.
+    false_negative_early_warning: Funded technical milestones, repeat paying customers, material commercial backlog or a
+      price dislocation against a newly reconciled economic denominator; the old USD 2.438 billion EV is historical.
+    reopen_or_reject_trigger: Advance only when funded milestones convert into technical and customer proof with bounded
+      dilution; demote if financing dependence or execution delay overwhelms the program support.
+    next_action: "Agent analytical queue: current economic denominator and funding-adjusted valuation; external milestones:
+      paid demand and manufacturing yield. Next checkpoint 2026-10-19, or earlier on a material filing, financing,
+      customer or technical event. This does not represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review:
+      GlobalFoundries collaboration supports a 300mm SiN/SNSPD manufacturing path; no disclosed yield or paid volume.
+      October 14 close USD 3.19 makes the old USD 2.438 billion EV reference stale. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: GlobalFoundries collaboration supports a 300mm SiN/SNSPD manufacturing path; no disclosed yield
+      or paid volume. October 14 close USD 3.19 makes the old USD 2.438 billion EV reference stale.
   - symbol: YSS
     material_to_current_allocation: true
     affected_lanes:
@@ -487,33 +527,43 @@ records:
   - symbol: STDN
     material_to_current_allocation: true
     affected_lanes:
-    - advanced_nuclear_and_grid_constraints
-    materiality_reason: Standard Nuclear directly manufactures TRISO fuel, a scarce input that can constrain multiple advanced-reactor
-      developers and therefore improves the fuel-cycle opportunity-cost comparison.
+      - advanced_nuclear_and_grid_constraints
+    materiality_reason: Standard Nuclear directly manufactures TRISO fuel, a scarce input that can constrain multiple
+      advanced-reactor developers and therefore improves the fuel-cycle opportunity-cost comparison.
     blocking_scope: advanced_nuclear_fuel_cycle_lane_completeness
     research_stage: R2_comparable
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-STDN-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Authorization, firm-versus-option backlog, fuel and protected industrial margin
-    reachable_evidence_remaining: Authorization, firm-versus-option backlog, fuel and protected industrial margin
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: STDN could reprice before a filing or authorization, but entering at a stale pre-event price or after an
-      unbounded gap would make common equity absorb cancellation, industrial-margin and dilution risk without a base-case valuation
-      bridge.
-    false_negative_early_warning: Filed confirmation of capitalization and contract quality, final authorization, another funded
-      customer or repeat positive-margin delivery at a valuation near the current enterprise-value range.
+    blocker_reason: External industrial authorization; funded delivery economics and contract conversion. Current source
+      continuity does not complete valuation.
+    reachable_evidence_remaining: External industrial authorization; funded delivery economics and contract conversion.
+      Current source continuity does not complete valuation.
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/2086716/000162828026059189/nucl-20260630.htm
+    next_evidence_due: 2026-11-16
+    cost_of_waiting: STDN could reprice before a filing or authorization, but entering at a stale pre-event price or after
+      an unbounded gap would make common equity absorb cancellation, industrial-margin and dilution risk without a
+      base-case valuation bridge.
+    false_negative_early_warning: Filed confirmation of capitalization and contract quality, final authorization, another
+      funded customer or repeat positive-margin delivery at a valuation near the current enterprise-value range.
     reopen_or_reject_trigger: Advance toward R3 only when filed financials, event-after price, authorization, protected firm
-      economics, repeat delivery and diluted per-share scenarios support exceptional upside; reject or demote on authorization
-      failure, cancellations, negative normalized margins, faster cash use or excessive dilution.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Retain R2 comparable and the top-three opportunity-cost screen after resolving the filed-quarter and event-price
-      gaps; keep B- research-only status, no promotion, no buy zone, quantity zero and no executable limit.
+      economics, repeat delivery and diluted per-share scenarios support exceptional upside; reject or demote on
+      authorization failure, cancellations, negative normalized margins, faster cash use or excessive dilution.
+    next_action: External industrial authorization; funded delivery economics and contract conversion. Current source
+      continuity does not complete valuation. Next checkpoint 2026-11-16, or earlier on a material filing, financing,
+      customer or technical event. This does not represent completion of pending economic underwriting.
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: June cash
+      USD 102.185 million. Distinguish binding backlog from options and nonbinding indications; no newer material selected
+      event in checked SEC and issuer surfaces. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: June cash USD 102.185 million. Distinguish binding backlog from options and nonbinding
+      indications; no newer material selected event in checked SEC and issuer surfaces.
   - symbol: CIFR
     material_to_current_allocation: true
     affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
@@ -531,7 +581,7 @@ records:
   - symbol: OCC
     material_to_current_allocation: true
     affected_lanes:
-    - semiconductor_interconnect_and_memory
+      - semiconductor_interconnect_and_memory
     materiality_reason: Very small public scale, improving optical demand, data-center references, and a low sales multiple
       make OCC a credible optical-connectivity comparator that could otherwise be missed by large-cap screens.
     blocking_scope: optical_interconnect_lane_completeness
@@ -540,22 +590,35 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-OCC-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Revolver headroom and cash/backlog conversion
-    reachable_evidence_remaining: Revolver headroom and cash/backlog conversion
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: The small denominator and operating inflection can rerate quickly, but thin liquidity and working-capital
-      dependence can also destroy equity value before a durable cash-conversion pattern is visible.
-    false_negative_early_warning: A second quarter of positive operating cash flow, sustained gross margin, disclosed data-center
-      wins and lower revolver dependence.
+    blocker_reason: Remove unknown revolver blocker. External quarterly cash conversion and qualified customer demand remain
+      weak; annual-source checkpoint is a monitoring date rather than a promised filing date.
+    reachable_evidence_remaining: Remove unknown revolver blocker. External quarterly cash conversion and qualified customer
+      demand remain weak; annual-source checkpoint is a monitoring date rather than a promised filing date.
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1000230/000143774926029950/occ20260731_10q.htm
+    next_evidence_due: 2026-12-18
+    cost_of_waiting: The small denominator and operating inflection can rerate quickly, but thin liquidity and
+      working-capital dependence can also destroy equity value before a durable cash-conversion pattern is visible.
+    false_negative_early_warning: A second quarter of positive operating cash flow, sustained gross margin, disclosed
+      data-center wins and lower revolver dependence.
     reopen_or_reject_trigger: Start a promotion review only when customer mix, moat, working capital, revolver headroom and
       diluted per-share value support a survivable right tail; demote if backlog fails to convert or liquidity tightens.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable after Q3 operating improvement; retain C+ research-only status, quantity zero, no
-      executable limit and no buy-zone eligibility.
+    next_action: Remove unknown revolver blocker. External quarterly cash conversion and qualified customer demand remain
+      weak; annual-source checkpoint is a monitoring date rather than a promised filing date. Next checkpoint 2026-12-18,
+      or earlier on a material filing, financing, customer or technical event. This does not represent completion of
+      pending economic underwriting.
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: Revolver
+      USD 6.3 million drawn and USD 6.6 million available are disclosed. Nine-month CFO USD 147635 versus equipment
+      purchases USD 424600 and intangibles USD 27818; backlog USD 13.5 million. No later selected material event. No
+      promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Revolver USD 6.3 million drawn and USD 6.6 million available are disclosed. Nine-month CFO USD
+      147635 versus equipment purchases USD 424600 and intangibles USD 27818; backlog USD 13.5 million. No later selected
+      material event.
   - symbol: SEI
     material_to_current_allocation: true
     affected_lanes: [ai_power_and_cooling]
@@ -643,7 +706,7 @@ records:
   - symbol: XTND
     material_to_current_allocation: true
     affected_lanes:
-    - unknown_future_bottlenecks
+      - unknown_future_bottlenecks
     materiality_reason: Edge-autonomy robotics and defense drones could become a scarce deployment and software capability,
       and the registration filing surfaced the candidate before a policy-eligible listing exists.
     blocking_scope: emerging_defense_autonomy_lane_completeness
@@ -652,22 +715,37 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-XTND-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Post-close capitalization/operating filing and diluted value; October1 completed price USD3.29 now verified
-    reachable_evidence_remaining: Post-close capitalization/operating filing and diluted value; October1 completed price USD3.29 now verified
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-06
-    cost_of_waiting: A newly listed autonomy platform can rerate before full coverage, but without a reliable entry price and
-      post-close economics no mission-consistent starter can be underwritten.
-    false_negative_early_warning: A reliable completed close paired with funded defense orders, repeat gross margin and bounded
-      dilution.
+    blocker_reason: "Agent queue: reconcile employee claims and actual liquidity; external repeat-customer margins and
+      collections. JFB construction revenue is not robotics revenue; ownership caps do not remove warrant dilution."
+    reachable_evidence_remaining: "Agent queue: reconcile employee claims and actual liquidity; external repeat-customer
+      margins and collections. JFB construction revenue is not robotics revenue; ownership caps do not remove warrant
+      dilution."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/2111860/000119312526381857/d230933d8k12b.htm
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: A newly listed autonomy platform can rerate before full coverage, but without a reliable entry price
+      and post-close economics no mission-consistent starter can be underwritten.
+    false_negative_early_warning: A reliable completed close paired with funded defense orders, repeat gross margin and bounded dilution.
     reopen_or_reject_trigger: Advance to R2 only after current market data, post-close operating evidence and fully diluted
       per-share scenarios reconcile; demote if cash burn, concentration or dilution dominates the technical optionality.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced from not tradable to R1 researchable after transaction close and NYSE listing; no promotion, buy zone,
-      executable limit or quantity exists.
+    next_action: "Agent queue: reconcile employee claims and actual liquidity; external repeat-customer margins and
+      collections. JFB construction revenue is not robotics revenue; ownership caps do not remove warrant dilution. Next
+      checkpoint 2026-10-19, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: Closing
+      8-K12B and exhibits resolve operating-filing access. Robotics H1 revenue USD 10.578 million; gross profit USD 0.916
+      million; net loss USD 19.364 million. Pro forma cash USD 99.779 million before identified USD 15.5 million claims
+      and subsequent burn. September 4 common 284842854 plus 27544248 pre-funded warrants imply USD 671.632 million at USD
+      2.15; up to 20 million revenue earnout shares are additional. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-06
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Closing 8-K12B and exhibits resolve operating-filing access. Robotics H1 revenue USD 10.578
+      million; gross profit USD 0.916 million; net loss USD 19.364 million. Pro forma cash USD 99.779 million before
+      identified USD 15.5 million claims and subsequent burn. September 4 common 284842854 plus 27544248 pre-funded
+      warrants imply USD 671.632 million at USD 2.15; up to 20 million revenue earnout shares are additional.
   - symbol: ENRD
     material_to_current_allocation: true
     affected_lanes: [unknown_future_bottlenecks]
@@ -740,24 +818,43 @@ records:
     conclusion: Incubated into B- research-only coverage and an emerging water-transmission and industrial-reuse sublane; no promotion and no current buy.
   - symbol: RIOT
     material_to_current_allocation: true
-    affected_lanes: [ai_compute_infrastructure, ai_power_and_cooling]
-    materiality_reason: Delivered AMD capacity and a signed 191 MW frontier-AI lease make RIOT a material powered-site opportunity-cost comparator.
+    affected_lanes:
+      - ai_compute_infrastructure
+      - ai_power_and_cooling
+    materiality_reason: Delivered AMD capacity and a signed 191 MW frontier-AI lease make RIOT a material powered-site
+      opportunity-cost comparator.
     blocking_scope: ai_compute_and_power_opportunity_cost
     research_stage: R2_comparable
     readiness_status: completed
     dashboard_surface_status: complete
     readiness_path: research/discovery/readiness/2026-08-11-RIOT-readiness.md
     blocker_type: none
-    blocker_reason: Discovery readiness and watch promotion are complete; permanent financing, customer credit, event-after price, project IRR, Bitcoin funding and fully diluted per-share value are entry and further-promotion gates rather than readiness blockers.
+    blocker_reason: Discovery readiness and watch promotion are complete; permanent financing, customer credit, event-after
+      price, project IRR, Bitcoin funding and fully diluted per-share value are entry and further-promotion gates rather
+      than readiness blockers.
     reachable_evidence_remaining: none
-    last_readiness_reviewed_at: 2026-08-21
-    next_evidence_source: First event-after completed close, permanent financing or credit-support filing, AMD delivery update, Q3 filing or bridge resolution.
-    next_evidence_due: 2026-10-15
-    cost_of_waiting: A one-percent starter could matter if the lease rerates the equity, but one session of waiting is preferable to sizing an unbounded financing and contract-credit structure.
-    false_negative_early_warning: Binding investment-grade backstop, non-recourse permanent financing, disclosed project IRR or another high-quality tenant.
-    reopen_or_reject_trigger: Advance only when event-after valuation, financing, contract credit and fully diluted project returns are bounded; demote if the bridge, tenant, capex or common-equity funding deteriorates.
-    next_action: Review permanent financing, customer credit support, project returns and the fully diluted bridge no later than 2026-10-15; reopen sooner on a material filing or financing close.
-    conclusion: Promoted to B- watch and R2 comparable; quantity zero, no executable limit and no active-candidate or buy-zone eligibility.
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1167419/000110465926115855/riot-20261007x8k.htm
+    next_evidence_due: 2026-10-22
+    cost_of_waiting: A one-percent starter could matter if the lease rerates the equity, but one session of waiting is
+      preferable to sizing an unbounded financing and contract-credit structure.
+    false_negative_early_warning: Binding investment-grade backstop, non-recourse permanent financing, disclosed project IRR
+      or another high-quality tenant.
+    reopen_or_reject_trigger: Advance only when event-after valuation, financing, contract credit and fully diluted project
+      returns are bounded; demote if the bridge, tenant, capex or common-equity funding deteriorates.
+    next_action: Permanent financing and tenant support; agent project-return and diluted-value underwriting. Preserve the
+      original October 15 economic-work obligation as unfinished. Source/event check October 22 or earlier material
+      disclosure.
+    conclusion: Preserve completed; Custody moves to BitGo with segregation terms, monthly fees and liability limitations;
+      October 7 code-of-ethics update discloses no waiver. Neither is new project financing or company cash. No promotion
+      or allocation decision.
+    previous_evidence_due: 2026-10-15
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: bounded_source_event_and_claim_review_not_completed_economic_underwriting
+    original_sla_result: source_check_on_due_date_economic_work_unfinished
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Custody moves to BitGo with segregation terms, monthly fees and liability limitations; October 7
+      code-of-ethics update discloses no waiver. Neither is new project financing or company cash.
   - symbol: GPUS
     material_to_current_allocation: false
     affected_lanes: [ai_compute_infrastructure]
@@ -901,38 +998,50 @@ records:
   - symbol: VIP
     material_to_current_allocation: true
     affected_lanes:
-    - ai_power_and_cooling
-    - ai_compute_infrastructure
-    materiality_reason: A renamed micro-cap power producer is attempting to convert already energized generation and owned land
-      into AI and HPC infrastructure, a direct but highly fragile expression that static industry labels could miss.
+      - ai_power_and_cooling
+      - ai_compute_infrastructure
+    materiality_reason: A renamed micro-cap power producer is attempting to convert already energized generation and owned
+      land into AI and HPC infrastructure, a direct but highly fragile expression that static industry labels could miss.
     blocking_scope: ai_power_lane_false_negative_hygiene
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-VIP-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Actual October1 financing close, residual liquidity, warrants and binding funded customer
-    reachable_evidence_remaining: Actual October1 financing close, residual liquidity, warrants and binding funded customer
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-06
-    cost_of_waiting: A binding customer or completed recapitalization could rerate the small equity before R2 work is complete;
-      the bounded two-week review window limits that false-negative cost.
-    false_negative_early_warning: Confirmed financing close, old-debt redemption, a binding customer contract, or independently
-      verified powered-site capacity before the due date.
-    reopen_or_reject_trigger: Advance only after financing close, a reconciled fully diluted denominator, verified site power
-      and capex, a binding customer and credible survival runway; reject if financing fails or going-concern risk persists without
-      a funded customer.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Retained as an R1 researchable lead after recapitalization; quantity zero, no executable limit, no watchlist
-      promotion and no change to the current first-five opportunity-cost order.
+    blocker_reason: "Agent queue: residual senior claims and runway; external funded repeat-customer proof. Remove unknown
+      redemption and common-delist assertions."
+    reachable_evidence_remaining: "Agent queue: residual senior claims and runway; external funded repeat-customer proof.
+      Remove unknown redemption and common-delist assertions."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1844971/0001628280-26-065739.txt
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: A binding customer or completed recapitalization could rerate the small equity before R2 work is
+      complete; the bounded two-week review window limits that false-negative cost.
+    false_negative_early_warning: Confirmed financing close, old-debt redemption, a binding customer contract, or
+      independently verified powered-site capacity before the due date.
+    reopen_or_reject_trigger: Advance only after financing close, a reconciled fully diluted denominator, verified site
+      power and capex, a binding customer and credible survival runway; reject if financing fails or going-concern risk
+      persists without a funded customer.
+    next_action: "Agent queue: residual senior claims and runway; external funded repeat-customer proof. Remove unknown
+      redemption and common-delist assertions. Next checkpoint 2026-10-19, or earlier on a material filing, financing,
+      customer or technical event. This does not represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: Old
+      notes redemption completed for USD 30.9 million. Earlier exchange created USD 2.833358 million 10 percent 2030 notes
+      plus one million USD 1.87 warrants. Pro forma USD 16.9 million cash and digital assets is not current unrestricted
+      cash. Form 25 concerns debt rather than common shares. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-06
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Old notes redemption completed for USD 30.9 million. Earlier exchange created USD 2.833358
+      million 10 percent 2030 notes plus one million USD 1.87 warrants. Pro forma USD 16.9 million cash and digital assets
+      is not current unrestricted cash. Form 25 concerns debt rather than common shares.
   - symbol: APLD
     material_to_current_allocation: true
     affected_lanes:
-    - ai_compute_infrastructure
-    - ai_power_and_cooling
+      - ai_compute_infrastructure
+      - ai_power_and_cooling
     materiality_reason: Contracted AI-factory capacity and live megawatts make APLD the first new powered-site lead in this
       cycle that can materially challenge IREN in the next-dollar queue.
     blocking_scope: ai_compute_and_power_opportunity_cost_completeness
@@ -941,27 +1050,40 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-APLD-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Project recourse, remaining capex and ChronoScale separation
-    reachable_evidence_remaining: Project recourse, remaining capex and ChronoScale separation
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
+    blocker_reason: "Agent queue: funded capex and recourse bridge through residual common claims; external delivery and PPA
+      financial close."
+    reachable_evidence_remaining: "Agent queue: funded capex and recourse bridge through residual common claims; external
+      delivery and PPA financial close."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1144879/000114487926000059/apld-20260831.htm
+    next_evidence_due: 2026-10-19
     cost_of_waiting: Contracted capacity can rerate before normalized rent begins, but a starter would expose common equity
-      to unbounded construction, recourse and dilution risk while IREN already provides a confirmed powered-compute starter.
+      to unbounded construction, recourse and dilution risk while IREN already provides a confirmed powered-compute
+      starter.
     false_negative_early_warning: Limited-recourse permanent financing, another investment-grade tenant, on-budget delivery,
       rent commencement or a materially lower fully diluted valuation.
-    reopen_or_reject_trigger: Advance only when project returns, tenant support, remaining capex, parent recourse, ChronoScale
-      value and fully diluted per-share economics show exceptional retained common-equity upside; reject if funding or construction
-      repeatedly shifts losses to the parent common share.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable after completing the previously stale annual-report evidence; quantity zero, no executable
-      limit, no watchlist promotion and no buy-zone eligibility.
+    reopen_or_reject_trigger: Advance only when project returns, tenant support, remaining capex, parent recourse,
+      ChronoScale value and fully diluted per-share economics show exceptional retained common-equity upside; reject if
+      funding or construction repeatedly shifts losses to the parent common share.
+    next_action: "Agent queue: funded capex and recourse bridge through residual common claims; external delivery and PPA
+      financial close. Next checkpoint 2026-10-19, or earlier on a material filing, financing, customer or technical
+      event. This does not represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: Quarter
+      revenue USD 341.875 million includes Chrono USD 41.482 million. Unrestricted cash USD 2.9 billion and restricted USD
+      728 million are distinct; investment use USD 2.1 billion. October 4 related-party 1200MW power arrangement creates
+      recourse and financial-close conditions. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Quarter revenue USD 341.875 million includes Chrono USD 41.482 million. Unrestricted cash USD
+      2.9 billion and restricted USD 728 million are distinct; investment use USD 2.1 billion. October 4 related-party
+      1200MW power arrangement creates recourse and financial-close conditions.
   - symbol: ONDS
     material_to_current_allocation: true
     affected_lanes:
-    - unknown_future_bottlenecks
+      - unknown_future_bottlenecks
     materiality_reason: Autonomous aerial and ground systems, counter-UAS and defense robotics create a direct candidate for
       an emerging autonomous-defense bottleneck.
     blocking_scope: autonomous_defense_lane_false_negative_hygiene
@@ -970,106 +1092,142 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-ONDS-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Organic/acquired revenue, acquisition obligations and 7.821m share bridge
-    reachable_evidence_remaining: Organic/acquired revenue, acquisition obligations and 7.821m share bridge
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
+    blocker_reason: "Agent queue: senior and dilution claims; external independently funded customer conversion."
+    reachable_evidence_remaining: "Agent queue: senior and dilution claims; external independently funded customer conversion."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1646188/000121390026108757/ea0308390-8k_ondas.htm
+    next_evidence_due: 2026-10-22
     cost_of_waiting: Defense demand can accelerate quickly, but the near-term filing provides a much better bound on whether
       growth reaches common shareholders.
-    false_negative_early_warning: Large funded government awards, recurring autonomous-deployment revenue or a materially cleaner
-      diluted capitalization.
+    false_negative_early_warning: Large funded government awards, recurring autonomous-deployment revenue or a materially
+      cleaner diluted capitalization.
     reopen_or_reject_trigger: Advance only after organic revenue, backlog quality, cash runway and dilution are reconciled;
       reject if acquisition accounting and securities issuance continue to dominate per-share value.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no formal lane promotion and no buy-zone eligibility.
+    next_action: "Agent queue: senior and dilution claims; external independently funded customer conversion. Next
+      checkpoint 2026-10-22, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: Regna
+      AI is a wholly owned subsidiary powered by Palantir with Ondas as first customer. This is not independent paid
+      customer revenue or new third-party financing. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Regna AI is a wholly owned subsidiary powered by Palantir with Ondas as first customer. This is
+      not independent paid customer revenue or new third-party financing.
   - symbol: AXTI
     material_to_current_allocation: true
     affected_lanes:
-    - semiconductor_interconnect_and_memory
-    materiality_reason: Indium phosphide substrates are a direct upstream input to high-speed optical connectivity and therefore
-      materially improve photonics-lane completeness.
+      - semiconductor_interconnect_and_memory
+    materiality_reason: Indium phosphide substrates are a direct upstream input to high-speed optical connectivity and
+      therefore materially improve photonics-lane completeness.
     blocking_scope: compound_semiconductor_substrate_opportunity_cost
     research_stage: R2_comparable
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-AXTI-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Export approvals, shipped InP economics and minority claims
-    reachable_evidence_remaining: Export approvals, shipped InP economics and minority claims
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: A durable InP upcycle can rerate further, but current price and geopolitical risks make entry without the
-      filing unattractive.
-    false_negative_early_warning: Repeat InP orders, higher utilization and margins, cleaner cash conversion or reduced China
-      and customer concentration.
-    reopen_or_reject_trigger: Advance only after cash conversion, customer durability, export access, ownership structure and
-      fully diluted value are reconciled; reject if the current rerating already capitalizes the plausible upside.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+    blocker_reason: "Agent queue: export shipments; minority ownership; diluted cash-return comparison. Publicly available
+      analysis is not an external source blocker."
+    reachable_evidence_remaining: "Agent queue: export shipments; minority ownership; diluted cash-return comparison.
+      Publicly available analysis is not an external source blocker."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1051627/000143774926027677/axti20260630_10q.htm
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: A durable InP upcycle can rerate further, but current price and geopolitical risks make entry without
+      the filing unattractive.
+    false_negative_early_warning: Repeat InP orders, higher utilization and margins, cleaner cash conversion or reduced
+      China and customer concentration.
+    reopen_or_reject_trigger: Advance only after cash conversion, customer durability, export access, ownership structure
+      and fully diluted value are reconciled; reject if the current rerating already capitalizes the plausible upside.
+    next_action: "Agent queue: export shipments; minority ownership; diluted cash-return comparison. Publicly available
+      analysis is not an external source blocker. Next checkpoint 2026-10-19, or earlier on a material filing, financing,
+      customer or technical event. This does not represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: October 5
+      ownership filing is not an operating update; June quarterly report remains the financial base. No promotion or
+      allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: October 5 ownership filing is not an operating update; June quarterly report remains the financial base.
   - symbol: ALMU
     material_to_current_allocation: true
     affected_lanes:
-    - semiconductor_interconnect_and_memory
-    materiality_reason: A 300 millimeter compound-semiconductor platform could become a low-cost wafer-scale photonics bottleneck
-      that conventional optical-component screens miss.
+      - semiconductor_interconnect_and_memory
+    materiality_reason: A 300 millimeter compound-semiconductor platform could become a low-cost wafer-scale photonics
+      bottleneck that conventional optical-component screens miss.
     blocking_scope: early_photonics_platform_false_negative_hygiene
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-ALMU-readiness.md
     blocker_type: evidence_based
-    blocker_reason: FY2026 financials, commercial qualification and September proxy award denominator
-    reachable_evidence_remaining: FY2026 financials, commercial qualification and September proxy award denominator
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: A small denominator can rerate on a commercial qualification, but buying research ahead of customer proof
-      would mistake technical potential for value capture.
-    false_negative_early_warning: A binding high-volume design win, production qualification or a strategic manufacturing partnership
-      with disclosed economics.
+    blocker_reason: "Agent queue: capital and award denominator; external qualified paying customer and repeat gross-margin evidence."
+    reachable_evidence_remaining: "Agent queue: capital and award denominator; external qualified paying customer and repeat gross-margin evidence."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1828805/000121390026105227/ea0306962-01.htm
+    next_evidence_due: 2026-10-22
+    cost_of_waiting: A small denominator can rerate on a commercial qualification, but buying research ahead of customer
+      proof would mistake technical potential for value capture.
+    false_negative_early_warning: A binding high-volume design win, production qualification or a strategic manufacturing
+      partnership with disclosed economics.
     reopen_or_reject_trigger: Advance only after commercial scale, gross margin, customer concentration, runway and dilution
       are bounded; reject if government research remains the principal revenue source without a manufacturing transition.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+    next_action: "Agent queue: capital and award denominator; external qualified paying customer and repeat gross-margin
+      evidence. Next checkpoint 2026-10-22, or earlier on a material filing, financing, customer or technical event. This
+      does not represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: October
+      13 and 14 insider-sale and ownership forms do not establish product qualification or new operating funding.
+      September proxy supplies governance evidence. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: October 13 and 14 insider-sale and ownership forms do not establish product qualification or new
+      operating funding. September proxy supplies governance evidence.
   - symbol: SATL
     material_to_current_allocation: true
     affected_lanes:
-    - space_infrastructure
-    materiality_reason: A lower-denominator earth-observation constellation with improving operating evidence could challenge
-      larger geospatial-data and satellite-platform expressions.
+      - space_infrastructure
+    materiality_reason: A lower-denominator earth-observation constellation with improving operating evidence could
+      challenge larger geospatial-data and satellite-platform expressions.
     blocking_scope: space_geospatial_opportunity_cost_completeness
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-SATL-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Repeat data revenue, Merlin funding and warrant/note claims
-    reachable_evidence_remaining: Repeat data revenue, Merlin funding and warrant/note claims
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: A small denominator and first quarterly operating profit can rerate, but current space concentration and
-      capitalization uncertainty reduce the cost of a short evidence wait.
+    blocker_reason: "Agent queue: full compensation and funding claims; external funded satellite deployment and customer conversion."
+    reachable_evidence_remaining: "Agent queue: full compensation and funding claims; external funded satellite deployment and customer conversion."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1874315/000187431526000050/satl-20260821.htm
+    next_evidence_due: 2026-10-22
+    cost_of_waiting: A small denominator and first quarterly operating profit can rerate, but current space concentration
+      and capitalization uncertainty reduce the cost of a short evidence wait.
     false_negative_early_warning: Repeat high-margin data revenue, a funded multi-year sovereign contract, successful Merlin
       launch or cleaner capitalization.
-    reopen_or_reject_trigger: Advance only after recurring revenue, customer mix, constellation funding and fully diluted shares
-      are reconciled; reject if one-off satellite deliveries or financing dominate the improvement.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+    reopen_or_reject_trigger: Advance only after recurring revenue, customer mix, constellation funding and fully diluted
+      shares are reconciled; reject if one-off satellite deliveries or financing dominate the improvement.
+    next_action: "Agent queue: full compensation and funding claims; external funded satellite deployment and customer
+      conversion. Next checkpoint 2026-10-22, or earlier on a material filing, financing, customer or technical event.
+      This does not represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: 8-K
+      amendment adds USD 150000 interim CFO bonus; it does not establish new financing or Merlin operating economics. No
+      promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: 8-K amendment adds USD 150000 interim CFO bonus; it does not establish new financing or Merlin operating economics.
   - symbol: EOSE
     material_to_current_allocation: true
     affected_lanes:
-    - advanced_nuclear_and_grid_constraints
+      - advanced_nuclear_and_grid_constraints
     materiality_reason: Domestic long-duration storage is a direct grid-duration bottleneck expression that broad generation
       and transmission proxies do not capture.
     blocking_scope: long_duration_storage_lane_false_negative_hygiene
@@ -1078,25 +1236,33 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-EOSE-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Third-party demand, DOE milestones and priority security stack
-    reachable_evidence_remaining: Third-party demand, DOE milestones and priority security stack
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
+    blocker_reason: "Agent queue: senior financing and DOE draw bridge; external accepted deliveries and sustainable gross margins."
+    reachable_evidence_remaining: "Agent queue: senior financing and DOE draw bridge; external accepted deliveries and sustainable gross margins."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1805077/000162828026062265/eose-20260910.htm
+    next_evidence_due: 2026-10-22
     cost_of_waiting: Grid-storage demand can grow quickly, but related-party revenue and financing complexity make premature
       promotion more likely to destroy than preserve optionality.
-    false_negative_early_warning: Sustained third-party revenue, positive gross margin, DOE-backed production milestones or
-      simplified financing.
-    reopen_or_reject_trigger: Advance only after third-party demand, gross-margin bridge, runway and fully diluted capitalization
-      are reconciled; reject if related-party and financing support remain the main economics.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no watchlist promotion and no buy-zone eligibility.
+    false_negative_early_warning: Sustained third-party revenue, positive gross margin, DOE-backed production milestones or simplified financing.
+    reopen_or_reject_trigger: Advance only after third-party demand, gross-margin bridge, runway and fully diluted
+      capitalization are reconciled; reject if related-party and financing support remain the main economics.
+    next_action: "Agent queue: senior financing and DOE draw bridge; external accepted deliveries and sustainable gross
+      margins. Next checkpoint 2026-10-22, or earlier on a material filing, financing, customer or technical event. This
+      does not represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: Checked
+      SEC feed has no selected newer material filing after October 2. Absence of a filing does not establish successful
+      production or funding. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Checked SEC feed has no selected newer material filing after October 2. Absence of a filing does
+      not establish successful production or funding.
   - symbol: MTSI
     material_to_current_allocation: true
     affected_lanes:
-    - semiconductor_interconnect_and_memory
+      - semiconductor_interconnect_and_memory
     materiality_reason: RF, optical and photonic semiconductors are direct inputs to data-center and defense connectivity.
     blocking_scope: current_opportunity_set_false_negative_hygiene
     research_stage: R2_comparable
@@ -1104,52 +1270,67 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-MTSI-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Current diluted FCF valuation compared with LPTH and other optical peers
-    reachable_evidence_remaining: Current diluted FCF valuation compared with LPTH and other optical peers
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion
-      more costly.
-    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted
-      valuation reset.
-    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker
-      dominates the plausible right tail.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+    blocker_reason: "Agent queue: diluted owner cash and same-lane optical-peer opportunity cost; no fictitious external
+      data-access veto."
+    reachable_evidence_remaining: "Agent queue: diluted owner cash and same-lane optical-peer opportunity cost; no
+      fictitious external data-access veto."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature
+      promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current
+      blocker dominates the plausible right tail.
+    next_action: "Agent queue: diluted owner cash and same-lane optical-peer opportunity cost; no fictitious external
+      data-access veto. Next checkpoint 2026-10-19, or earlier on a material filing, financing, customer or technical
+      event. This does not represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: October 5
+      ownership disclosure adds no new operating financial period; dated quarterly report remains the base. No promotion
+      or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: October 5 ownership disclosure adds no new operating financial period; dated quarterly report remains the base.
   - symbol: LASR
     material_to_current_allocation: true
     affected_lanes:
-    - semiconductor_interconnect_and_memory
-    materiality_reason: High-power lasers and directed-energy programs are direct bottleneck expressions with a relatively small
-      denominator.
+      - semiconductor_interconnect_and_memory
+    materiality_reason: High-power lasers and directed-energy programs are direct bottleneck expressions with a relatively small denominator.
     blocking_scope: current_opportunity_set_false_negative_hygiene
     research_stage: R2_comparable
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-LASR-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Current funded program backlog, supply recovery and normalized cash margins
-    reachable_evidence_remaining: Current funded program backlog, supply recovery and normalized cash margins
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion
-      more costly.
-    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted
-      valuation reset.
-    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker
-      dominates the plausible right tail.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+    blocker_reason: "Agent queue: backlog conversion; supply obligations and owner-cash margins; external funded acceptance."
+    reachable_evidence_remaining: "Agent queue: backlog conversion; supply obligations and owner-cash margins; external funded acceptance."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1124796/000112479626000038/lasr-20260630.htm
+    next_evidence_due: 2026-10-22
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature
+      promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current
+      blocker dominates the plausible right tail.
+    next_action: "Agent queue: backlog conversion; supply obligations and owner-cash margins; external funded acceptance.
+      Next checkpoint 2026-10-22, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: No selected
+      SEC event newer than October 2 in checked feed; September 17 ownership form is not new operating cash. No promotion
+      or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: No selected SEC event newer than October 2 in checked feed; September 17 ownership form is not new operating cash.
   - symbol: USAR
     material_to_current_allocation: true
     affected_lanes:
-    - strategic_critical_materials
+      - strategic_critical_materials
     materiality_reason: Non-China heavy-rare-earth processing and magnet capacity directly express a strategic materials bottleneck.
     blocking_scope: current_opportunity_set_false_negative_hygiene
     research_stage: R2_comparable
@@ -1157,50 +1338,61 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-USAR-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Serra Verde pro forma, DFC conditions, cash/debt and operating-margin bridge
-    reachable_evidence_remaining: Serra Verde pro forma, DFC conditions, cash/debt and operating-margin bridge
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion
-      more costly.
-    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted
-      valuation reset.
-    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker
-      dominates the plausible right tail.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable and the new strategic-critical-materials lane after Serra Verde closed; quantity zero,
-      no promotion and no buy-zone eligibility.
+    blocker_reason: "Agent queue: Serra Verde and DFC financing through net debt; actual margins and residual economic claims."
+    reachable_evidence_remaining: "Agent queue: Serra Verde and DFC financing through net debt; actual margins and residual economic claims."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1970622/000121390026105454/ea0307183-8k_usarare.htm
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature
+      promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current
+      blocker dominates the plausible right tail.
+    next_action: "Agent queue: Serra Verde and DFC financing through net debt; actual margins and residual economic claims.
+      Next checkpoint 2026-10-19, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: October 5
+      ownership disclosure does not supersede the October 1 capital and transaction base. No promotion or allocation
+      decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: October 5 ownership disclosure does not supersede the October 1 capital and transaction base.
   - symbol: QNT
     material_to_current_allocation: true
     affected_lanes:
-    - quantum_computing_and_networking
-    materiality_reason: Integrated trapped-ion hardware, software and error-correction capability can create extreme technical
-      optionality if commercialization catches up.
+      - quantum_computing_and_networking
+    materiality_reason: Integrated trapped-ion hardware, software and error-correction capability can create extreme
+      technical optionality if commercialization catches up.
     blocking_scope: current_opportunity_set_false_negative_hygiene
     research_stage: R2_comparable
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-QNT-readiness.md
     blocker_type: evidence_based
-    blocker_reason: CHIPS milestone cash, recurring revenue, exchangeable units and TRA
-    reachable_evidence_remaining: CHIPS milestone cash, recurring revenue, exchangeable units and TRA
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
-    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature promotion
-      more costly.
-    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted
-      valuation reset.
-    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current blocker
-      dominates the plausible right tail.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Advanced to R2 comparable after the CHIPS award; quantity zero, no executable limit, no promotion and no buy-zone
-      eligibility.
+    blocker_reason: "Agent queue: milestone cash versus award ceiling; exchangeable shares and tax receivable claims."
+    reachable_evidence_remaining: "Agent queue: milestone cash versus award ceiling; exchangeable shares and tax receivable claims."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/2110105/000162828026060934/qnt-20260908.htm
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: A rerating before R2 is possible, but the current capitalization or survival gap makes premature
+      promotion more costly.
+    false_negative_early_warning: A binding customer, funded scale milestone, durable margin inflection or a dilution-adjusted valuation reset.
+    reopen_or_reject_trigger: Advance only after R2 comparison and fully diluted value capture; reject if the current
+      blocker dominates the plausible right tail.
+    next_action: "Agent queue: milestone cash versus award ceiling; exchangeable shares and tax receivable claims. Next
+      checkpoint 2026-10-19, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: October 6
+      ownership form is not CHIPS cash receipt or new paid operating proof. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: October 6 ownership form is not CHIPS cash receipt or new paid operating proof.
   - symbol: COHR
     material_to_current_allocation: true
     affected_lanes: [semiconductor_interconnect_and_memory]
@@ -1263,109 +1455,153 @@ records:
     conclusion: Rejected from the current opportunity set after the dated evidence deadline passed without a binding lease or funded construction plan; quantity zero and no promotion.
   - symbol: BRUN
     material_to_current_allocation: true
-    affected_lanes: [ai_compute_infrastructure]
-    materiality_reason: A newly public GPU-cloud and colocation operator with a binding large customer order, actual revenue and a small denominator is a direct AI-compute bottleneck expression, but full-cost cash conversion and obligation coverage remain unproved.
+    affected_lanes:
+      - ai_compute_infrastructure
+    materiality_reason: A newly public GPU-cloud and colocation operator with a binding large customer order, actual revenue
+      and a small denominator is a direct AI-compute bottleneck expression, but full-cost cash conversion and obligation
+      coverage remain unproved.
     blocking_scope: current_opportunity_set_false_negative_hygiene
     research_stage: R2_comparable
     readiness_status: comparable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-08-28-BRUN-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Three disclosed orders reconcile only about 47.5 percent of management's total contract value, operating cash flow is dominated by customer deposits, headline gross margin excludes depreciation and colocation, commitments exceed USD 2.0 billion, disclosure controls are ineffective and incentive-plan dilution remains unbounded.
-    reachable_evidence_remaining: Current and future filings can bound customer concentration, energized deployment, normalized cash conversion, obligation coverage, current cash after warrant proceeds, internal-control remediation and incentive-plan awards.
-    last_readiness_reviewed_at: 2026-09-11
-    next_evidence_source: Contract-by-contract TCV and customer-concentration reconciliation, deployment milestones, cash flow after customer-deposit changes and finance-lease payments, current cash after warrant proceeds, internal-control remediation and incentive-plan awards.
-    next_evidence_due: 2026-10-15
-    cost_of_waiting: A binding large order and rapid revenue growth can rerate the shares, but the August 27 price already capitalizes substantial conversion while full-cost cash economics and obligation coverage remain unproved.
-    false_negative_early_warning: Diversified creditworthy customers, energized capacity, recurring cash flow after deposit and lease-principal normalization, remediated controls and bounded incentive awards.
-    reopen_or_reject_trigger: Start a promotion review only after contract concentration, deployment economics, full-cost cash conversion, survival obligations, current cash and incentive-plan awards reconcile; demote if TCV cancels, deployment slips or customer deposits fail to convert into earned cash margin.
-    next_action: Reconcile contract concentration, deployment milestones, normalized cash conversion, obligations, current cash, controls and incentive-plan awards by 2026-10-15 or sooner on a material quarterly or contract filing.
-    conclusion: Advanced to R2 comparable but retained as incubating outside the current top five; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+    blocker_reason: "Agent queue: full lease capex and refund funding; external actual rack acceptance. Known CFO award is
+      bounded rather than an unavailable-document excuse."
+    reachable_evidence_remaining: "Agent queue: full lease capex and refund funding; external actual rack acceptance. Known
+      CFO award is bounded rather than an unavailable-document excuse."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/2090646/000149315226045861/form8-k.htm
+    next_evidence_due: 2026-10-19
+    cost_of_waiting: A binding large order and rapid revenue growth can rerate the shares, but the August 27 price already
+      capitalizes substantial conversion while full-cost cash economics and obligation coverage remain unproved.
+    false_negative_early_warning: Diversified creditworthy customers, energized capacity, recurring cash flow after deposit
+      and lease-principal normalization, remediated controls and bounded incentive awards.
+    reopen_or_reject_trigger: Start a promotion review only after contract concentration, deployment economics, full-cost
+      cash conversion, survival obligations, current cash and incentive-plan awards reconcile; demote if TCV cancels,
+      deployment slips or customer deposits fail to convert into earned cash margin.
+    next_action: "Agent queue: full lease capex and refund funding; external actual rack acceptance. Known CFO award is
+      bounded rather than an unavailable-document excuse. Next checkpoint 2026-10-19, or earlier on a material filing,
+      financing, customer or technical event. This does not represent completion of pending economic underwriting."
+    conclusion: "R2_comparable; retain existing comparable_open and eligibility. October 15 source/claim review: Cohere
+      agreement USD 525.6 million over five years has rack acceptance and refund conditions. First acceptance expected Q2
+      2027; minimum July 15 2027. October 8 POSAM registers no additional securities; old resale capacity is not issuer
+      funding. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-15
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Cohere agreement USD 525.6 million over five years has rack acceptance and refund conditions.
+      First acceptance expected Q2 2027; minimum July 15 2027. October 8 POSAM registers no additional securities; old
+      resale capacity is not issuer funding.
   - symbol: ALOY
     material_to_current_allocation: true
     affected_lanes:
-    - strategic_critical_materials
-    materiality_reason: Domestic advanced-materials production could directly express a strategic-metals bottleneck if commercial
-      qualification and scaled economics emerge.
+      - strategic_critical_materials
+    materiality_reason: Domestic advanced-materials production could directly express a strategic-metals bottleneck if
+      commercial qualification and scaled economics emerge.
     blocking_scope: strategic_materials_lane_false_negative_hygiene
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-ALOY-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Current REalloys identity, SRC qualification, protected supply economics and incentives
-    reachable_evidence_remaining: Current REalloys identity, SRC qualification, protected supply economics and incentives
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
+    blocker_reason: "Agent queue: current capital claims; external SRC qualification and funded protected supply."
+    reachable_evidence_remaining: "Agent queue: current capital claims; external SRC qualification and funded protected supply."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1567900/000118518526003512/realloys8k081326.htm
+    next_evidence_due: 2026-10-22
     cost_of_waiting: A strategic contract could rerate the small base, but current per-share economics do not justify paying
       for unverified scale.
-    false_negative_early_warning: Binding production qualification, repeat commercial revenue, positive gross margin or funded
-      non-dilutive scale-up.
-    reopen_or_reject_trigger: Advance only after commercial demand, gross margin, cash runway and fully diluted value reconcile;
-      reject if grants, stock compensation and financing remain the principal economics.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: REalloys Q2 cash and SRC supply rights improve funding visibility; old Blackbox semantic profile invalidated.
-      R1, no promotion.
+    false_negative_early_warning: Binding production qualification, repeat commercial revenue, positive gross margin or funded non-dilutive scale-up.
+    reopen_or_reject_trigger: Advance only after commercial demand, gross margin, cash runway and fully diluted value
+      reconcile; reject if grants, stock compensation and financing remain the principal economics.
+    next_action: "Agent queue: current capital claims; external SRC qualification and funded protected supply. Next
+      checkpoint 2026-10-22, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: Correct
+      issuer is REalloys rather than obsolete Blackbox identity. October 6 ownership filing does not demonstrate protected
+      supplier/customer economics. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Correct issuer is REalloys rather than obsolete Blackbox identity. October 6 ownership filing
+      does not demonstrate protected supplier/customer economics.
   - symbol: RCAT
     material_to_current_allocation: true
     affected_lanes:
-    - unknown_future_bottlenecks
-    materiality_reason: Small autonomous-defense drones and counter-UAS systems are a direct peer expression for testing whether
-      an emerging defense-robotics bottleneck is investable.
+      - unknown_future_bottlenecks
+    materiality_reason: Small autonomous-defense drones and counter-UAS systems are a direct peer expression for testing
+      whether an emerging defense-robotics bottleneck is investable.
     blocking_scope: autonomous_defense_lane_false_negative_hygiene
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-RCAT-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Funded deliveries, margins, controls and acquisitions versus dilution
-    reachable_evidence_remaining: Funded deliveries, margins, controls and acquisitions versus dilution
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Primary issuer/SEC operating and capital evidence; see candidate-specific source table in readiness
-      note
-    next_evidence_due: 2026-10-09
+    blocker_reason: "Agent queue: control and acquired claims; external profitable accepted deliveries and cash collections."
+    reachable_evidence_remaining: "Agent queue: control and acquired claims; external profitable accepted deliveries and cash collections."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/748268/000162828026054368/rcat-20260630.htm
+    next_evidence_due: 2026-10-22
     cost_of_waiting: Defense awards can move quickly, but the recent offering and execution risks make a short evidence wait
       cheaper than premature promotion.
-    false_negative_early_warning: Repeat funded program awards, durable gross margin, customer diversification or a cleaner
-      capitalization path.
-    reopen_or_reject_trigger: Advance only after recurring program economics, controls, acquisition contribution and fully diluted
-      value reconcile; reject if financing or one customer dominates the thesis.
-    next_action: Complete the named arithmetic/economic comparison by the due date or explicitly downgrade to rejected-current-expression/event
-      watch. No uniform extension.
-    conclusion: Retained as R1 only; quantity zero, no executable limit, no promotion and no buy-zone eligibility.
+    false_negative_early_warning: Repeat funded program awards, durable gross margin, customer diversification or a cleaner capitalization path.
+    reopen_or_reject_trigger: Advance only after recurring program economics, controls, acquisition contribution and fully
+      diluted value reconcile; reject if financing or one customer dominates the thesis.
+    next_action: "Agent queue: control and acquired claims; external profitable accepted deliveries and cash collections.
+      Next checkpoint 2026-10-22, or earlier on a material filing, financing, customer or technical event. This does not
+      represent completion of pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: October
+      6 ownership filing does not establish new funded delivery margins; June financial base remains dated. No promotion
+      or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: October 6 ownership filing does not establish new funded delivery margins; June financial base remains dated.
   - symbol: LPTH
     material_to_current_allocation: true
     affected_lanes:
-    - semiconductor_interconnect_and_memory
-    materiality_reason: Qualified infrared materials and optical systems; FY26 backlog111m but negative FCF and large share
-      growth.
+      - semiconductor_interconnect_and_memory
+    materiality_reason: Qualified infrared materials and optical systems; FY26 backlog111m but negative FCF and large share growth.
     blocking_scope: candidate_specific_only
     research_stage: R1_researchable
     readiness_status: researchable_open
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-LPTH-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Qualified infrared materials and optical systems; FY26 backlog111m but negative FCF and large share growth.
-    reachable_evidence_remaining: Qualified infrared materials and optical systems; FY26 backlog111m but negative FCF and large
-      share growth.
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Current issuer/SEC capitalization and qualified customer cash conversion evidence
-    next_evidence_due: 2026-10-09
+    blocker_reason: "Agent queue: negative cash flow; full claim denominator and backlog economics."
+    reachable_evidence_remaining: "Agent queue: negative cash flow; full claim denominator and backlog economics."
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/889971/000143774926032453/xslFormDX01/primary_doc.xml
+    next_evidence_due: 2026-10-19
     cost_of_waiting: Positive milestone may rerate security; current residual economics do not establish a superior purchase.
     false_negative_early_warning: Funded qualified repeat deliveries and retained cash after senior/dilution claims
-    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise reject
-      current expression/event monitor.
-    next_action: LPTH scoped R2 by October9; others candidate-specific evidence disposition.
-    conclusion: R1 source-backed lead, no promotion or allocation.
+    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise
+      reject current expression/event monitor.
+    next_action: "Agent queue: negative cash flow; full claim denominator and backlog economics. Next checkpoint 2026-10-19,
+      or earlier on a material filing, financing, customer or technical event. This does not represent completion of
+      pending economic underwriting."
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: Omitted
+      from paired issuer scope but independently checked. Form D discloses USD 10800 offered and sold with zero remaining;
+      not USD 10.8 million and not a survival-funding solution. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Omitted from paired issuer scope but independently checked. Form D discloses USD 10800 offered
+      and sold with zero remaining; not USD 10.8 million and not a survival-funding solution.
   - symbol: BRNX
     material_to_current_allocation: true
     affected_lanes:
-    - unknown_future_bottlenecks
-    materiality_reason: Industrial thermal storage bottleneck; zero H1 revenue and financing claims reject current allocation
-      expression.
+      - unknown_future_bottlenecks
+    materiality_reason: Industrial thermal storage bottleneck; zero H1 revenue and financing claims reject current allocation expression.
     blocking_scope: candidate_specific_only
     research_stage: R1_researchable
     readiness_status: rejected_after_review
@@ -1374,19 +1610,34 @@ records:
     blocker_type: evidence_based
     blocker_reason: Industrial thermal storage bottleneck; zero H1 revenue and financing claims reject current allocation expression.
     reachable_evidence_remaining: none
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Current issuer/SEC capitalization and qualified customer cash conversion evidence
-    next_evidence_due: 2026-10-09
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1901215/000121390026109458/ea0308363-424b5_brenx.htm
+    next_evidence_due: 2026-10-22
     cost_of_waiting: Positive milestone may rerate security; current residual economics do not establish a superior purchase.
     false_negative_early_warning: Funded qualified repeat deliveries and retained cash after senior/dilution claims
-    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise reject
-      current expression/event monitor.
-    next_action: LPTH scoped R2 by October9; others candidate-specific evidence disposition.
-    conclusion: Rejected current allocation expression; event monitoring only.
+    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise
+      reject current expression/event monitor.
+    next_action: Retain rejected current expression and event monitoring. External accepted installations, cash conversion,
+      actual ATM execution and EIB settlement; cash/claims arithmetic is agent work. Source/event check October 22 or
+      earlier material disclosure.
+    conclusion: Preserve rejected_after_review; Completed July–September preferred issuance netted USD 4.877 million with
+      1541018 warrants. June cash plus proceeds is USD 10.566 million before burn. The new USD 2.886 million ATM is
+      prospective, not completed cash. Pre-offering common is 1946972; USD 4.814 million EIB debt remains in the
+      capitalization table. October 5 Wolfson construction progress and Tempo commissioning are not final paid acceptance.
+      No promotion or allocation decision.
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: bounded_source_event_and_claim_review_not_completed_economic_underwriting
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Completed July–September preferred issuance netted USD 4.877 million with 1541018 warrants. June
+      cash plus proceeds is USD 10.566 million before burn. The new USD 2.886 million ATM is prospective, not completed
+      cash. Pre-offering common is 1946972; USD 4.814 million EIB debt remains in the capitalization table. October 5
+      Wolfson construction progress and Tempo commissioning are not final paid acceptance.
   - symbol: ONEN
     material_to_current_allocation: true
     affected_lanes:
-    - ai_power_and_cooling
+      - ai_power_and_cooling
     materiality_reason: Closed transaction leaves about1.7m trust cash after forward payments; funded project economics unproved.
     blocking_scope: candidate_specific_only
     research_stage: R1_researchable
@@ -1396,15 +1647,28 @@ records:
     blocker_type: evidence_based
     blocker_reason: Closed transaction leaves about1.7m trust cash after forward payments; funded project economics unproved.
     reachable_evidence_remaining: none
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Current issuer/SEC capitalization and qualified customer cash conversion evidence
-    next_evidence_due: 2026-10-09
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/1846416/000149315226044924/form8-k.htm
+    next_evidence_due: 2026-10-22
     cost_of_waiting: Positive milestone may rerate security; current residual economics do not establish a superior purchase.
     false_negative_early_warning: Funded qualified repeat deliveries and retained cash after senior/dilution claims
-    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise reject
-      current expression/event monitor.
-    next_action: LPTH scoped R2 by October9; others candidate-specific evidence disposition.
-    conclusion: Rejected current allocation expression; event monitoring only.
+    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise
+      reject current expression/event monitor.
+    next_action: Retain rejected current expression and event monitoring. External funded sites, interconnection and binding
+      customer economics; post-fee liquidity and full claim normalization remain explicit agent work. Source/event check
+      October 22 or earlier material disclosure.
+    conclusion: Preserve rejected_after_review; Latest October 5 Form 3 is ownership-only. Closing redemptions were about
+      USD 146.5 million; USD 1.7 million trust remained before combination costs. Closing common 108258979 is not a fully
+      diluted denominator or current cash. B. Riley note maturity extended to December 31 2026. No promotion or allocation
+      decision.
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: bounded_source_event_and_claim_review_not_completed_economic_underwriting
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Latest October 5 Form 3 is ownership-only. Closing redemptions were about USD 146.5 million; USD
+      1.7 million trust remained before combination costs. Closing common 108258979 is not a fully diluted denominator or
+      current cash. B. Riley note maturity extended to December 31 2026.
   - symbol: IMC
     material_to_current_allocation: true
     affected_lanes:
@@ -1433,7 +1697,7 @@ records:
   - symbol: MKAR_PRELISTING
     material_to_current_allocation: true
     affected_lanes:
-    - strategic_critical_materials
+      - strategic_critical_materials
     materiality_reason: Registration not effective; separate Songwe/Pulawy listing assets from parent recycled magnet business.
     blocking_scope: candidate_specific_only
     research_stage: R1_researchable
@@ -1441,15 +1705,27 @@ records:
     dashboard_surface_status: not_required_pre_promotion
     readiness_path: research/discovery/readiness/2026-10-02-MKAR_PRELISTING-readiness.md
     blocker_type: evidence_based
-    blocker_reason: Registration not effective; separate Songwe/Pulawy listing assets from parent recycled magnet business.
-    reachable_evidence_remaining: Registration not effective; separate Songwe/Pulawy listing assets from parent recycled magnet
-      business.
-    last_readiness_reviewed_at: 2026-10-02
-    next_evidence_source: Current issuer/SEC capitalization and qualified customer cash conversion evidence
-    next_evidence_due: 2026-10-09
+    blocker_reason: Resolved source access and identity. External effectiveness; transaction close; nondestructive project
+      finance and technical economics.
+    reachable_evidence_remaining: Resolved source access and identity. External effectiveness; transaction close;
+      nondestructive project finance and technical economics.
+    last_readiness_reviewed_at: 2026-10-15
+    next_evidence_source: https://www.sec.gov/Archives/edgar/data/2052373/000121390026104835/ea0271516-14.htm
+    next_evidence_due: 2026-10-22
     cost_of_waiting: Positive milestone may rerate security; current residual economics do not establish a superior purchase.
     false_negative_early_warning: Funded qualified repeat deliveries and retained cash after senior/dilution claims
-    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise reject
-      current expression/event monitor.
-    next_action: LPTH scoped R2 by October9; others candidate-specific evidence disposition.
-    conclusion: R1 source-backed lead, no promotion or allocation.
+    reopen_or_reject_trigger: Advance only on bounded financeable operating cash and attractive per-share value; otherwise
+      reject current expression/event monitor.
+    next_action: Resolved source access and identity. External effectiveness; transaction close; nondestructive project
+      finance and technical economics. Next checkpoint 2026-10-22, or earlier on a material filing, financing, customer or
+      technical event. This does not represent completion of pending economic underwriting.
+    conclusion: "R1_researchable; retain existing researchable_open and eligibility. October 15 source/claim review: Full
+      F-4/A is reachable; identity is Mkango Rare Earths Limited CIK 2052373. Preliminary transaction covers Songwe and
+      Pulawy; not all parent magnet assets. FEED is not funded mine construction. No promotion or allocation decision."
+    previous_evidence_due: 2026-10-09
+    checkpoint_review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
+    checkpoint_scope: primary_source_and_claim_reconciliation_not_full_valuation_or_promotion
+    original_sla_result: missed
+    source_checkpoint_completed_at: 2026-10-15
+    checkpoint_observation: Full F-4/A is reachable; identity is Mkango Rare Earths Limited CIK 2052373. Preliminary
+      transaction covers Songwe and Pulawy; not all parent magnet assets. FEED is not funded mine construction.

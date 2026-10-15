@@ -1,5 +1,7 @@
 # 2026-10-02 Weekly Full Operating Cycle
 
+The account owner later confirmed a [MU execution on October 7](2026-10-07-mu-execution-confirmation.md). This account change ends the original account-dependent validity window. The October 2 no-action conclusion and five-position snapshot remain historical; they neither recommended that purchase nor authorize a repeat order.
+
 Personal historical research journal. Not investment advice. This public-safe record describes the account owner's research process and contains no current order, private entry threshold, proposed position size or instruction for readers.
 
 ## Decision

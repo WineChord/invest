@@ -1642,3 +1642,7 @@ As of 2026-05-26:
 - initial policy version: `v1.0`;
 - initial baseline research: [research/2026-05-26-initial-baseline.md](research/2026-05-26-initial-baseline.md);
 - initial simulated decision: [decisions/2026-05-26-initial-simulation.md](decisions/2026-05-26-initial-simulation.md).
+
+## Current execution model preference
+
+Follow the current execution model and reasoning profile in `AGENTS.md`. Preserve required independent reviewer roles and historical provenance when recording the actual execution settings.

@@ -328,7 +328,7 @@ function buildPacket({
       current_public_proxies: lane.current_public_proxies,
     })),
     subagent_defaults: {
-      reasoning_level: "xhigh",
+      reasoning_level: "medium",
       independent_context: true,
       roles,
       do_not_fork_full_history_unless_needed: true,
@@ -339,7 +339,7 @@ function buildPacket({
     expected_output_schema: {
       role: "",
       scope: "",
-      reasoning_level: "xhigh",
+      reasoning_level: "medium",
       inputs_used: [],
       sources_checked: [],
       facts_verified: [],

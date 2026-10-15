@@ -93,3 +93,7 @@ Use the relevant template under `templates/`:
 ## Output Standard
 
 Final responses for serious runs should state which operating-cycle steps ran or were skipped, subagents run or skipped, material disagreements and resolution, watchlist or discovery deltas, meta-self-improvement findings, publication-release status, files changed, validations run, whether changes were committed and pushed, and any unavailable evidence or required user input.
+
+## Current execution model preference
+
+Follow the current execution model and reasoning profile in `AGENTS.md`. Preserve required independent reviewer roles and historical provenance when recording the actual execution settings.

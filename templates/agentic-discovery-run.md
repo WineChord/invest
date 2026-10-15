@@ -129,7 +129,7 @@ first_layer_bottleneck_questions:
 subagents:
   required_roles:
     - role:
-      reasoning_level: xhigh
+      reasoning_level: medium
       independent_context: true
       completed: true
       skip_reason:

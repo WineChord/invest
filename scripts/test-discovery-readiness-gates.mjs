@@ -13,6 +13,14 @@ const fixtureRoot = mkdtempSync(path.join(tmpdir(), "invest-discovery-gates-"));
 
 const positiveTestCases = [
   {
+    name: "accepts independent medium reviewer packet defaults",
+    mutate: (cwd) => {
+      updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
+        doc.subagent_defaults.reasoning_level = "medium";
+      });
+    },
+  },
+  {
     name: "accepts targeted partial issuer profile scan evidence",
     mutate: (cwd) => {
       const outputSha256 = writePartialProfileScan(cwd);
@@ -984,6 +992,15 @@ const testCases = [
       });
     },
     expected: "subagent_defaults.independent_context must be true",
+  },
+  {
+    name: "rejects unsupported reviewer reasoning level",
+    mutate: (cwd) => {
+      updateYaml(cwd, "research/discovery/runs/2026-05-31-subagent-evidence-packet.yml", (doc) => {
+        doc.subagent_defaults.reasoning_level = "low";
+      });
+    },
+    expected: "subagent_defaults.reasoning_level must be medium or historical xhigh",
   },
   {
     name: "rejects evidence packet wrong readiness scope",

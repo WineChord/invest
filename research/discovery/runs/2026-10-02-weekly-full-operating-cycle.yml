@@ -639,240 +639,275 @@ first_layer_bottleneck_questions:
     - sec_event_index_targeted_72_2026_10_02
     - sec_omitted_forms_2026_10_02
 readiness_sprints:
-- symbol: NUCUBE_PRELISTING
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-NUCUBE_PRELISTING-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: October9 extension outcome plus fuel/site authorization and binding FOAK finance
-  readiness_index_record: research/discovery/candidate-readiness.yml#NUCUBE_PRELISTING
-  final_classification: incubate
-- symbol: WISESAT_PRELISTING
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-WISESAT_PRELISTING-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Post-close SAIQ retained cash, redemptions, full capitalization, independent customer
-    and license economics
-  readiness_index_record: research/discovery/candidate-readiness.yml#WISESAT_PRELISTING
-  final_classification: incubate
-- symbol: REA
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-REA-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Recovery, impurities, payability, resource confidence, permitting, capex and current
-    dilution; issuer/QP QA/QC supplied, independent lab audit not established.
-  readiness_index_record: research/discovery/candidate-readiness.yml#REA
-  final_classification: incubate
-- symbol: XNDU
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-XNDU-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Funding draws, recurring customer revenue and fully diluted operating economics
-  readiness_index_record: research/discovery/candidate-readiness.yml#XNDU
-  final_classification: incubate
-- symbol: STDN
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-STDN-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Authorization, firm-versus-option backlog, fuel and protected industrial margin
-  readiness_index_record: research/discovery/candidate-readiness.yml#STDN
-  final_classification: incubate
-- symbol: OCC
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-OCC-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Revolver headroom and cash/backlog conversion
-  readiness_index_record: research/discovery/candidate-readiness.yml#OCC
-  final_classification: incubate
-- symbol: XTND
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-XTND-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Post-close capitalization/operating filing and diluted value; October1 completed
-    price USD3.29 now verified
-  readiness_index_record: research/discovery/candidate-readiness.yml#XTND
-  final_classification: incubate
-- symbol: VIP
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-VIP-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Actual October1 financing close, residual liquidity, warrants and binding funded
-    customer
-  readiness_index_record: research/discovery/candidate-readiness.yml#VIP
-  final_classification: incubate
-- symbol: APLD
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-APLD-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Project recourse, remaining capex and ChronoScale separation
-  readiness_index_record: research/discovery/candidate-readiness.yml#APLD
-  final_classification: incubate
-- symbol: ONDS
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-ONDS-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Organic/acquired revenue, acquisition obligations and 7.821m share bridge
-  readiness_index_record: research/discovery/candidate-readiness.yml#ONDS
-  final_classification: incubate
-- symbol: AXTI
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-AXTI-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Export approvals, shipped InP economics and minority claims
-  readiness_index_record: research/discovery/candidate-readiness.yml#AXTI
-  final_classification: incubate
-- symbol: ALMU
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-ALMU-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: FY2026 financials, commercial qualification and September proxy award denominator
-  readiness_index_record: research/discovery/candidate-readiness.yml#ALMU
-  final_classification: incubate
-- symbol: SATL
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-SATL-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Repeat data revenue, Merlin funding and warrant/note claims
-  readiness_index_record: research/discovery/candidate-readiness.yml#SATL
-  final_classification: incubate
-- symbol: EOSE
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-EOSE-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Third-party demand, DOE milestones and priority security stack
-  readiness_index_record: research/discovery/candidate-readiness.yml#EOSE
-  final_classification: incubate
-- symbol: MTSI
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-MTSI-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Current diluted FCF valuation compared with LPTH and other optical peers
-  readiness_index_record: research/discovery/candidate-readiness.yml#MTSI
-  final_classification: incubate
-- symbol: LASR
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-LASR-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Current funded program backlog, supply recovery and normalized cash margins
-  readiness_index_record: research/discovery/candidate-readiness.yml#LASR
-  final_classification: incubate
-- symbol: USAR
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-USAR-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Serra Verde pro forma, DFC conditions, cash/debt and operating-margin bridge
-  readiness_index_record: research/discovery/candidate-readiness.yml#USAR
-  final_classification: incubate
-- symbol: QNT
-  material_to_current_allocation: true
-  readiness_status: comparable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-QNT-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: CHIPS milestone cash, recurring revenue, exchangeable units and TRA
-  readiness_index_record: research/discovery/candidate-readiness.yml#QNT
-  final_classification: incubate
-- symbol: ALOY
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-ALOY-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Current REalloys identity, SRC qualification, protected supply economics and incentives
-  readiness_index_record: research/discovery/candidate-readiness.yml#ALOY
-  final_classification: incubate
-- symbol: RCAT
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-RCAT-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Funded deliveries, margins, controls and acquisitions versus dilution
-  readiness_index_record: research/discovery/candidate-readiness.yml#RCAT
-  final_classification: incubate
-- symbol: LPTH
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-LPTH-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Qualified infrared materials and optical systems; FY26 backlog111m but negative
-    FCF and large share growth.
-  readiness_index_record: research/discovery/candidate-readiness.yml#LPTH
-  final_classification: incubate
-- symbol: BRNX
-  material_to_current_allocation: true
-  readiness_status: rejected_after_review
-  dashboard_surface_status: not_required_rejected
-  readiness_path: research/discovery/readiness/2026-10-02-BRNX-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: none
-  readiness_index_record: research/discovery/candidate-readiness.yml#BRNX
-  final_classification: reject
-- symbol: ONEN
-  material_to_current_allocation: true
-  readiness_status: rejected_after_review
-  dashboard_surface_status: not_required_rejected
-  readiness_path: research/discovery/readiness/2026-10-02-ONEN-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: none
-  readiness_index_record: research/discovery/candidate-readiness.yml#ONEN
-  final_classification: reject
-- symbol: IMC
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-IMC-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Exploration resource and leaching claim require economic processing and 105.1m modeled
-    post-IPO denominator reconciliation.
-  readiness_index_record: research/discovery/candidate-readiness.yml#IMC
-  final_classification: incubate
-- symbol: MKAR_PRELISTING
-  material_to_current_allocation: true
-  readiness_status: researchable_open
-  dashboard_surface_status: not_required_pre_promotion
-  readiness_path: research/discovery/readiness/2026-10-02-MKAR_PRELISTING-readiness.md
-  blocker_type: evidence_based
-  reachable_evidence_remaining: Registration not effective; separate Songwe/Pulawy listing assets from parent recycled
-    magnet business.
-  readiness_index_record: research/discovery/candidate-readiness.yml#MKAR_PRELISTING
-  final_classification: incubate
+  - symbol: NUCUBE_PRELISTING
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-NUCUBE_PRELISTING-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "External gates: completed eligible listing; site
+      and fuel permission; binding financeable FOAK customer economics."
+    readiness_index_record: research/discovery/candidate-readiness.yml#NUCUBE_PRELISTING
+    final_classification: incubate
+  - symbol: WISESAT_PRELISTING
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-WISESAT_PRELISTING-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Resolved public access and transaction claims.
+      External gates: independent paying customers; license economics; actual
+      post-close cash burn. Class F control and economic participation remain
+      material."
+    readiness_index_record: research/discovery/candidate-readiness.yml#WISESAT_PRELISTING
+    final_classification: incubate
+  - symbol: REA
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-REA-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: External metallurgy; recovery and payability;
+      permitted project economics and nondestructive finance.
+    readiness_index_record: research/discovery/candidate-readiness.yml#REA
+    final_classification: incubate
+  - symbol: XNDU
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-XNDU-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent analytical queue: current economic
+      denominator and funding-adjusted valuation; external milestones: paid
+      demand and manufacturing yield."
+    readiness_index_record: research/discovery/candidate-readiness.yml#XNDU
+    final_classification: incubate
+  - symbol: STDN
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-STDN-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: External industrial authorization; funded delivery
+      economics and contract conversion. Current source continuity does not
+      complete valuation.
+    readiness_index_record: research/discovery/candidate-readiness.yml#STDN
+    final_classification: incubate
+  - symbol: OCC
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-OCC-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Remove unknown revolver blocker. External
+      quarterly cash conversion and qualified customer demand remain weak;
+      annual-source checkpoint is a monitoring date rather than a promised
+      filing date.
+    readiness_index_record: research/discovery/candidate-readiness.yml#OCC
+    final_classification: incubate
+  - symbol: XTND
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-XTND-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: reconcile employee claims and actual
+      liquidity; external repeat-customer margins and collections. JFB
+      construction revenue is not robotics revenue; ownership caps do not remove
+      warrant dilution."
+    readiness_index_record: research/discovery/candidate-readiness.yml#XTND
+    final_classification: incubate
+  - symbol: VIP
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-VIP-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: residual senior claims and runway;
+      external funded repeat-customer proof. Remove unknown redemption and
+      common-delist assertions."
+    readiness_index_record: research/discovery/candidate-readiness.yml#VIP
+    final_classification: incubate
+  - symbol: APLD
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-APLD-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: funded capex and recourse bridge
+      through residual common claims; external delivery and PPA financial
+      close."
+    readiness_index_record: research/discovery/candidate-readiness.yml#APLD
+    final_classification: incubate
+  - symbol: ONDS
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-ONDS-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: senior and dilution claims; external
+      independently funded customer conversion."
+    readiness_index_record: research/discovery/candidate-readiness.yml#ONDS
+    final_classification: incubate
+  - symbol: AXTI
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-AXTI-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: export shipments; minority
+      ownership; diluted cash-return comparison. Publicly available analysis is
+      not an external source blocker."
+    readiness_index_record: research/discovery/candidate-readiness.yml#AXTI
+    final_classification: incubate
+  - symbol: ALMU
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-ALMU-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: capital and award denominator;
+      external qualified paying customer and repeat gross-margin evidence."
+    readiness_index_record: research/discovery/candidate-readiness.yml#ALMU
+    final_classification: incubate
+  - symbol: SATL
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-SATL-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: full compensation and funding
+      claims; external funded satellite deployment and customer conversion."
+    readiness_index_record: research/discovery/candidate-readiness.yml#SATL
+    final_classification: incubate
+  - symbol: EOSE
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-EOSE-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: senior financing and DOE draw
+      bridge; external accepted deliveries and sustainable gross margins."
+    readiness_index_record: research/discovery/candidate-readiness.yml#EOSE
+    final_classification: incubate
+  - symbol: MTSI
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-MTSI-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: diluted owner cash and same-lane
+      optical-peer opportunity cost; no fictitious external data-access veto."
+    readiness_index_record: research/discovery/candidate-readiness.yml#MTSI
+    final_classification: incubate
+  - symbol: LASR
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-LASR-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: backlog conversion; supply
+      obligations and owner-cash margins; external funded acceptance."
+    readiness_index_record: research/discovery/candidate-readiness.yml#LASR
+    final_classification: incubate
+  - symbol: USAR
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-USAR-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: Serra Verde and DFC financing
+      through net debt; actual margins and residual economic claims."
+    readiness_index_record: research/discovery/candidate-readiness.yml#USAR
+    final_classification: incubate
+  - symbol: QNT
+    material_to_current_allocation: true
+    readiness_status: comparable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-QNT-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: milestone cash versus award ceiling;
+      exchangeable shares and tax receivable claims."
+    readiness_index_record: research/discovery/candidate-readiness.yml#QNT
+    final_classification: incubate
+  - symbol: ALOY
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-ALOY-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: current capital claims; external SRC
+      qualification and funded protected supply."
+    readiness_index_record: research/discovery/candidate-readiness.yml#ALOY
+    final_classification: incubate
+  - symbol: RCAT
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-RCAT-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: control and acquired claims;
+      external profitable accepted deliveries and cash collections."
+    readiness_index_record: research/discovery/candidate-readiness.yml#RCAT
+    final_classification: incubate
+  - symbol: LPTH
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-LPTH-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: "Agent queue: negative cash flow; full claim
+      denominator and backlog economics."
+    readiness_index_record: research/discovery/candidate-readiness.yml#LPTH
+    final_classification: incubate
+  - symbol: BRNX
+    material_to_current_allocation: true
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-10-02-BRNX-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    readiness_index_record: research/discovery/candidate-readiness.yml#BRNX
+    final_classification: reject
+  - symbol: ONEN
+    material_to_current_allocation: true
+    readiness_status: rejected_after_review
+    dashboard_surface_status: not_required_rejected
+    readiness_path: research/discovery/readiness/2026-10-02-ONEN-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: none
+    readiness_index_record: research/discovery/candidate-readiness.yml#ONEN
+    final_classification: reject
+  - symbol: IMC
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-IMC-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Exploration resource and leaching claim require
+      economic processing and 105.1m modeled post-IPO denominator
+      reconciliation.
+    readiness_index_record: research/discovery/candidate-readiness.yml#IMC
+    final_classification: incubate
+  - symbol: MKAR_PRELISTING
+    material_to_current_allocation: true
+    readiness_status: researchable_open
+    dashboard_surface_status: not_required_pre_promotion
+    readiness_path: research/discovery/readiness/2026-10-02-MKAR_PRELISTING-readiness.md
+    blocker_type: evidence_based
+    reachable_evidence_remaining: Resolved source access and identity. External
+      effectiveness; transaction close; nondestructive project finance and
+      technical economics.
+    readiness_index_record: research/discovery/candidate-readiness.yml#MKAR_PRELISTING
+    final_classification: incubate
 article_one_postflight:
   sentinel_level: PASS
   mode: decision
   as_of: 2026-10-02
   reason_codes: []
+
+post_cycle_readiness_checkpoint_update:
+  as_of: 2026-10-15
+  scope: Synchronize current readiness_sprints reachable_evidence_remaining only; original October 2 cycle dates and
+    reviewer findings remain historical.
+  review_path: research/discovery/readiness/2026-10-15-source-checkpoint.md
