@@ -79,3 +79,4 @@ date,total_market_value,cash,total_equity,cumulative_deposits,total_return_pct,p
 2026-10-13,3233.41,12759.02,15992.43,17208.00,-7.0640,-0.6443,Completed-close valuation reconstructed on 2026-10-15 from dated confirmed ledger quantities and existing same-date raw closes; includes the October 7 MU execution. Not a broker balance statement.
 2026-10-14,3016.95,12759.02,15775.97,17208.00,-8.3219,-1.3535,Completed-close valuation reconstructed on 2026-10-15 from dated confirmed ledger quantities and existing same-date raw closes; includes the October 7 MU execution. Not a broker balance statement.
 2026-10-15,3002.98,12759.02,15762.00,17208.00,-8.4031,-0.0886,Automated daily close valuation from Yahoo Finance chart.
+2026-10-16,2806.38,12759.02,15565.40,17208.00,-9.5456,-1.2473,Automated daily close valuation from Yahoo Finance chart.
