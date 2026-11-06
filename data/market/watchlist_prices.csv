@@ -1,55 +1,55 @@
 symbol,price,currency,price_as_of,source,retrieved_at,notes
-AAOI,59.2700,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-ALAB,223.2700,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-ASPI,1.9100,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-ASTS,35.6200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh for confirmed holding.
-BE,200.4000,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-CBRS,91.8500,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-CIFR,6.5000,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-CRCL,76.1200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-CRDO,136.5000,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-CRWV,48.4200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-ENRD,1.9400,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-ETN,353.0800,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-FLY,17.1600,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-FN,341.6400,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-GILT,7.0600,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh for confirmed holding.
-GSAT,84.5800,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-HQ,12.8800,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-IMSR,2.8700,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-INFQ,8.5600,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-IONQ,29.5400,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-IQMX,8.8000,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-IREN,21.7100,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh for confirmed holding.
-KTOS,35.9600,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-LEU,92.5800,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-LITE,626.7500,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-LUNR,9.9300,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-MDA,26.2300,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh for confirmed holding.
-MU,795.2300,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh for confirmed holding.
-NBIS,141.5200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-NNE,10.9500,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-NUCL,4.1600,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-NWPX,91.9300,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-OCC,11.2100,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-OKLO,22.1200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-POET,4.8800,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-PWR,580.4400,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-QBTS,10.3800,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-QSI,1.2900,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-QTEX,1.0100,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-QUBT,6.4300,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-RDW,7.7200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-RGTI,11.2100,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-RIOT,15.3700,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-RKLB,52.3700,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh for confirmed holding.
-SEI,57.6400,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-SMR,5.1300,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-SPCX,135.9200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-STDN,12.1600,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-VOYG,23.0800,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-VRT,205.5500,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-WULF,11.7000,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-WYFI,9.1500,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-XNDU,2.6200,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
-YSS,6.0900,USD,2026-11-04,Yahoo Finance chart,2026-11-05T11:15:43.246Z,Automated daily close refresh from committed price history.
+AAOI,46.8900,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+ALAB,179.4700,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+ASPI,1.7200,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+ASTS,30.2000,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh for confirmed holding.
+BE,167.5200,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+CBRS,81.7100,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+CIFR,5.5500,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+CRCL,69.4800,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+CRDO,112.3300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+CRWV,43.6600,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+ENRD,1.7800,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+ETN,327.0200,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+FLY,15.1750,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+FN,292.9700,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+GILT,6.6800,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh for confirmed holding.
+GSAT,83.5300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+HQ,10.5000,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+IMSR,2.5650,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+INFQ,7.4400,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+IONQ,26.4300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+IQMX,7.5100,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+IREN,18.0300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh for confirmed holding.
+KTOS,33.3900,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+LEU,89.0300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+LITE,509.7000,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+LUNR,8.6200,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+MDA,26.8400,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh for confirmed holding.
+MU,656.3900,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh for confirmed holding.
+NBIS,120.3700,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+NNE,9.6350,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+NUCL,4.0100,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+NWPX,82.8300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+OCC,8.9600,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+OKLO,19.2000,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+POET,4.2600,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+PWR,509.0600,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+QBTS,9.0500,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+QSI,1.1700,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+QTEX,0.9280,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+QUBT,5.6300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+RDW,6.1900,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+RGTI,9.8500,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+RIOT,14.7600,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+RKLB,45.9900,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh for confirmed holding.
+SEI,50.5500,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+SMR,4.3700,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+SPCX,123.6200,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+STDN,11.5000,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+VOYG,20.3300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+VRT,176.7300,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+WULF,10.0800,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+WYFI,7.8000,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+XNDU,2.3800,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
+YSS,5.5100,USD,2026-11-05,Yahoo Finance chart,2026-11-06T11:13:39.871Z,Automated daily close refresh from committed price history.
